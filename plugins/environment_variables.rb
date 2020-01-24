@@ -11,7 +11,7 @@ module Jekyll
 
       # These values will be available as {{ site.NLY_REPOSITORY_URL }}
       site.config['NLY_REPOSITORY_URL'] = repo_url
-      site.config['NLY_HEAD'] = ENV['HEAD'] || 'current'
+      site.config['NLY_HEAD'] = ENV['HEAD'] || 'master'
     end
   end
 end

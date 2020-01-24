@@ -25,15 +25,15 @@ So here are guidelines:
 
 {% endcomment %}
 
-본 문서는 라즈베리파이에 홈어시스턴트를 운용하는 것에 대한 가이드입니다. 가장 쉬운 방법은 [Hass.io](/hassio/) 를 설치하는 것으로 라즈베리파이와 다른 기기들을 연결해주는 강력한 홈오토메이션 허브를 만들 수 있습니다. 
+본 문서는 라즈베리파이에 홈어시스턴트를 운용하는 것에 대한 가이드입니다. 가장 쉬운 방법은 [Hass.io](/hassio/) 를 설치하는 것으로 라즈베리파이와 다른 기기들을 연결해주는 강력한 홈오토메이션 허브를 만들 수 있습니다.
 
-리눅스에 대한 경험이 없거나 홈어시스턴트를 빨리 시작하려면 이 문서를 참고하세요. 숙련된 유저이거나 [이 문서에서 사용한 장비][supported]가 없다면 [다른 설치 방법](/docs/installation/)을 참고하길 바랍니다. 다른 설치 방법을 완료하신 분은 바로 [다음단계][next-step]로 넘어가세요. 
+리눅스에 대한 경험이 없거나 홈어시스턴트를 빨리 시작하려면 이 문서를 참고하세요. 숙련된 유저이거나 [이 문서에서 사용한 장비][supported]가 없다면 [다른 설치 방법](/docs/installation/)을 참고하길 바랍니다. 다른 설치 방법을 완료하신 분은 바로 [다음단계][next-step]로 넘어가세요.
 
 [supported]: /hassio/installation/
 
-### Suggested hardware
+### 추천 하드웨어
 
-We will need a few things to get started with installing Home Assistant. The Raspberry Pi 4 Model B is a good, affordable starting point for your home automation journey. Links below lead to Amazon US. If you're not in the US, you should be able to find these items in web stores in your country.
+홈어시스턴트를 설치하기 위해서는 몇가지 요구사항이 있습니다. 홈오토메이션을 구현하기 위한 첫 시작으로는 라즈베리파이 4B (모델B)를 추천합니다. 아래 링크에서 미국 아마존 사이트를 통해 구매할 수 있으며 한국 사이트 링크도 연결해두었습니다. 
 
 - [Raspberry Pi 4 Model B (2GB)](https://amzn.to/2XULT2z) + [Power Supply](https://www.raspberrypi.org/help/faqs/#powerReqs) (at least 2.5A)
 - [Micro SD Card](https://amzn.to/2X0Z2di). Ideally get one that is [Application Class 2](https://www.sdcard.org/developers/overview/application/index.html) as they handle small I/O much more consistently than cards not optimized to host applications. A 32 GB or bigger card is recommended.

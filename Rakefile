@@ -1,198 +1,79 @@
-require "rubygems"
-require "bundler/setup"
-require "stringex"
+# Rakefile
+#############################################################################
+#
+# Modified version of jekyllrb Rakefile
+# https://github.com/jekyll/jekyll/blob/master/Rakefile
+#
+#############################################################################
 
-## -- Misc Configs -- ##
-public_dir      = "public/"   # compiled site directory
-source_dir      = "source"    # source file directory
-blog_index_dir  = 'source/blog'    # directory for your blog's index page (if you put your index in source/blog/index.html, set this to 'source/blog')
-stash_dir       = "_stash"    # directory to stash posts for speedy generation
-components_dir  = "_components"    #  directory for component files
-posts_dir       = "_posts"    # directory for blog files
-new_post_ext    = "markdown"  # default new post file extension when using the new_post task
-new_page_ext    = "markdown"  # default new page file extension when using the new_page task
-server_port     = "4000"      # port for preview server eg. localhost:4000
+require 'rake'
+require 'date'
+require 'yaml'
 
-if (/cygwin|mswin|mingw|bccwin|wince|emx/ =~ RUBY_PLATFORM) != nil
-  puts '## Set the codepage to 65001 for Windows machines'
-  `chcp 65001`
+CONFIG = YAML.load(File.read('_config.yml'))
+USERNAME = CONFIG["username"]
+REPO = CONFIG["repo"]
+SOURCE_BRANCH = CONFIG["branch"]
+DESTINATION_BRANCH = "master"
+
+def check_destination
+  unless Dir.exist? CONFIG["destination"]
+    sh "git clone https://$GIT_NAME:$GITHUB_TOKEN@github.com/#{USERNAME}/#{REPO}.git #{CONFIG["destination"]}"
+  end
 end
 
-#######################
-# Working with Jekyll #
-#######################
+namespace :site do
+  desc "Generate the site"
+  task :build do
+    check_destination
+    sh "bundle exec jekyll build"
+  end
 
-desc "Generate jekyll site"
-task :generate do
-  raise "### You haven't set anything up yet. First run `rake install` to set up an Octopress theme." unless File.directory?(source_dir)
-  puts "## Generating Site with Jekyll"
-  success = system "compass compile --css-dir #{source_dir}/stylesheets"
-  abort("Generating CSS failed") unless success
-  success = system "jekyll build"
-  abort("Generating site failed") unless success
-  if ENV["CONTEXT"] != 'production'
-    File.open("#{public_dir}robots.txt", 'w') do |f|
-      f.write "User-agent: *\n"
-      f.write "Disallow: /\n"
+  desc "Generate the site and serve locally"
+  task :serve do
+    check_destination
+    sh "bundle exec jekyll serve"
+  end
+
+  desc "Generate the site, serve locally and watch for changes"
+  task :watch do
+    sh "bundle exec jekyll serve --watch"
+  end
+
+  desc "Generate the site and push changes to remote origin"
+  task :deploy do
+    # Detect pull request
+    if ENV['TRAVIS_PULL_REQUEST'].to_s.to_i > 0
+      puts 'Pull request detected. Not proceeding with deploy.'
+      exit
+    end
+
+    # Configure git if this is run in Travis CI
+    if ENV["TRAVIS"]
+      sh "git config --global user.name $GIT_NAME"
+      sh "git config --global user.email $GIT_EMAIL"
+      sh "git config --global push.default simple"
+    end
+
+    # Make sure destination folder exists as git repo
+    check_destination
+
+    sh "git checkout #{SOURCE_BRANCH}"
+    Dir.chdir(CONFIG["destination"]) { sh "git checkout #{DESTINATION_BRANCH}" }
+
+    # Generate the site
+    sh "bundle exec jekyll build"
+
+    # Commit and push to github
+    sha = `git log`.match(/[a-z0-9]{40}/)[0]
+    Dir.chdir(CONFIG["destination"]) do
+      # check if there is anything to add and commit, and pushes it
+      sh "if [ -n '$(git status)' ]; then
+            git add --all .;
+            git commit -m 'Updating to #{USERNAME}/#{REPO}@#{sha}.';
+            git push https://$GITHUB_TOKEN@github.com/#{USERNAME}/#{USERNAME}.github.io.git #{DESTINATION_BRANCH} --quiet ;
+         fi"
+      puts "Pushed updated branch #{DESTINATION_BRANCH} to GitHub Pages"
     end
   end
-  public_dir
-end
-
-desc "Watch the site and regenerate when it changes"
-task :watch do
-  raise "### You haven't set anything up yet. First run `rake install` to set up an Octopress theme." unless File.directory?(source_dir)
-  puts "Starting to watch source with Jekyll and Compass."
-  system "compass compile --css-dir #{source_dir}/stylesheets" unless File.exist?("#{source_dir}/stylesheets/screen.css")
-  jekyllPid = Process.spawn({"OCTOPRESS_ENV"=>"preview"}, "jekyll build --watch --incremental")
-  compassPid = Process.spawn("compass watch")
-
-  trap("INT") {
-    [jekyllPid, compassPid].each { |pid| Process.kill(9, pid) rescue Errno::ESRCH }
-    exit 0
-  }
-
-  [jekyllPid, compassPid].each { |pid| Process.wait(pid) }
-end
-
-desc "preview the site in a web browser"
-task :preview, :listen do |t, args|
-  listen_addr = args[:listen] || '127.0.0.1'
-  listen_addr = '0.0.0.0' unless ENV['DEVCONTAINER'].nil?
-  raise "### You haven't set anything up yet. First run `rake install` to set up an Octopress theme." unless File.directory?(source_dir)
-  puts "Starting to watch source with Jekyll and Compass. Starting Rack on port #{server_port}"
-  system "compass compile --css-dir #{source_dir}/stylesheets" unless File.exist?("#{source_dir}/stylesheets/screen.css")
-  jekyllPid = Process.spawn({"OCTOPRESS_ENV"=>"preview"}, "jekyll build -t --watch --incremental")
-  compassPid = Process.spawn("compass watch")
-  rackupPid = Process.spawn("rackup --port #{server_port} --host #{listen_addr}")
-
-  trap("INT") {
-    [jekyllPid, compassPid, rackupPid].each { |pid| Process.kill(9, pid) rescue Errno::ESRCH }
-    exit 0
-  }
-
-  [jekyllPid, compassPid, rackupPid].each { |pid| Process.wait(pid) }
-end
-
-# usage rake new_post[my-new-post] or rake new_post['my new post'] or rake new_post (defaults to "new-post")
-desc "Begin a new post in #{source_dir}/#{posts_dir}"
-task :new_post, :title do |t, args|
-  if args.title
-    title = args.title
-  else
-    title = get_stdin("Enter a title for your post: ")
-  end
-  raise "### You haven't set anything up yet. First run `rake install` to set up an Octopress theme." unless File.directory?(source_dir)
-  mkdir_p "#{source_dir}/#{posts_dir}"
-  filename = "#{source_dir}/#{posts_dir}/#{Time.now.strftime('%Y-%m-%d')}-#{title.to_url}.#{new_post_ext}"
-  if File.exist?(filename)
-    abort("rake aborted!") if ask("#{filename} already exists. Do you want to overwrite?", ['y', 'n']) == 'n'
-  end
-  puts "Creating new post: #{filename}"
-  open(filename, 'w') do |post|
-    post.puts "---"
-    post.puts "layout: post"
-    post.puts "title: \"#{title.gsub(/&/,'&amp;')}\""
-    post.puts "date: #{Time.now.strftime('%Y-%m-%d %H:%M:%S %z')}"
-    post.puts "comments: true"
-    post.puts "categories: "
-    post.puts "---"
-  end
-end
-
-# usage rake new_page[my-new-page] or rake new_page[my-new-page.html] or rake new_page (defaults to "new-page.markdown")
-desc "Create a new page in #{source_dir}/(filename)/index.#{new_page_ext}"
-task :new_page, :filename do |t, args|
-  raise "### You haven't set anything up yet. First run `rake install` to set up an Octopress theme." unless File.directory?(source_dir)
-  args.with_defaults(:filename => 'new-page')
-  page_dir = [source_dir]
-  if args.filename.downcase =~ /(^.+\/)?(.+)/
-    filename, dot, extension = $2.rpartition('.').reject(&:empty?)         # Get filename and extension
-    title = filename
-    page_dir.concat($1.downcase.sub(/^\//, '').split('/')) unless $1.nil?  # Add path to page_dir Array
-    if extension.nil?
-      page_dir << filename
-      filename = "index"
-    end
-    extension ||= new_page_ext
-    page_dir = page_dir.map! { |d| d = d.to_url }.join('/')                # Sanitize path
-    filename = filename.downcase.to_url
-
-    mkdir_p page_dir
-    file = "#{page_dir}/#{filename}.#{extension}"
-    if File.exist?(file)
-      abort("rake aborted!") if ask("#{file} already exists. Do you want to overwrite?", ['y', 'n']) == 'n'
-    end
-    puts "Creating new page: #{file}"
-    open(file, 'w') do |page|
-      page.puts "---"
-      page.puts "layout: page"
-      page.puts "title: \"#{title}\""
-      page.puts "date: #{Time.now.strftime('%Y-%m-%d %H:%M')}"
-      page.puts "comments: true"
-      page.puts "sharing: true"
-      page.puts "footer: true"
-      page.puts "---"
-    end
-  else
-    puts "Syntax error: #{args.filename} contains unsupported characters"
-  end
-end
-
-# usage rake isolate[my-post]
-desc "Move all other components and posts than the one currently being worked on to a temporary stash location (stash) so regenerating the site happens much more quickly."
-task :isolate, :filename do |t, args|
-  stash_dir = "#{source_dir}/#{stash_dir}"
-  s_posts_dir = "#{stash_dir}/#{posts_dir}"
-  s_components_dir = "#{stash_dir}/#{components_dir}"
-  FileUtils.mkdir(stash_dir) unless File.exist?(stash_dir)
-  FileUtils.mkdir(s_posts_dir) unless File.exist?(s_posts_dir)
-  FileUtils.mkdir(s_components_dir) unless File.exist?(s_components_dir)
-  Dir.glob("#{source_dir}/#{posts_dir}/*.*") do |post|
-    FileUtils.mv post, s_posts_dir unless post.include?(args.filename)
-  end
-  Dir.glob("#{source_dir}/#{components_dir}/*.*") do |component|
-    FileUtils.mv component, s_components_dir unless component.include?(args.filename)
-  end
-end
-
-desc "Move all stashed posts back into the posts directory, ready for site generation."
-task :integrate do
-  FileUtils.mv Dir.glob("#{source_dir}/#{stash_dir}/#{posts_dir}/*.*"), "#{source_dir}/#{posts_dir}/"
-  FileUtils.mv Dir.glob("#{source_dir}/#{stash_dir}/#{components_dir}/*.*"), "#{source_dir}/#{components_dir}/"
-end
-
-desc "Clean out caches: .pygments-cache, .gist-cache, .sass-cache"
-task :clean do
-  rm_rf [Dir.glob(".pygments-cache/**"), Dir.glob(".gist-cache/**"), Dir.glob(".sass-cache/**"), "source/stylesheets/screen.css"]
-end
-
-def get_stdin(message)
-  print message
-  STDIN.gets.chomp
-end
-
-def ask(message, valid_options)
-  if valid_options
-    answer = get_stdin("#{message} #{valid_options.to_s.gsub(/"/, '').gsub(/, /,'/')} ") while !valid_options.include?(answer)
-  else
-    answer = get_stdin(message)
-  end
-  answer
-end
-
-def blog_url(user, project)
-  url = if File.exists?('source/CNAME')
-    "http://#{IO.read('source/CNAME').strip}"
-  else
-    "http://#{user.downcase}.github.io"
-  end
-  url += "/#{project}" unless project == ''
-  url
-end
-
-desc "list tasks"
-task :list do
-  puts "Tasks: #{(Rake::Task.tasks - [Rake::Task[:list]]).join(', ')}"
-  puts "(type rake -T for more detail)\n\n"
 end

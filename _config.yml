@@ -5,11 +5,31 @@
 
 url: https://hakorea.github.io
 title: 홈어시스턴트
-subtitle: Open source home automation that puts local control and privacy first.
+subtitle: Home Assistant 한국어 번역사이트
 author: Home Assistant
 simple_search: https://www.google.com/search
 description: Open source home automation that puts local control and privacy first.
 
+# Home Assistant release details
+current_major_version: 0
+current_minor_version: 104
+current_patch_version: 3
+date_released: 2020-01-21
+
+keep_files: ["README.md",".git", ".svn",".gitignore"]
+
+# for Travis CI. (shit custom gem api...) ##################
+
+production_url: https://hakorea.github.io/
+source_url: https://github.com/hakorea/hakorea.github.io
+
+safe: False
+lsi: False
+
+username: zooil
+repo: hakorea/hakorea.github.io
+branch: master
+##############################################
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
 # http://www.ruby-doc.org/core-1.9.2/Time.html#method-i-strftime
@@ -27,8 +47,8 @@ email:
 # ----------------------- #
 
 permalink: /blog/:year/:month/:day/:title/
-source: source
-destination: ../hakorea.github.io
+source: ./source
+destination: ./hakorea.github.io
 plugins_dir: plugins
 code_dir: downloads/code
 category_dir: blog/categories
@@ -104,21 +124,16 @@ twitter_tweet_button: true
 google_analytics_tracking_id: UA-57927901-1
 
 # Facebook Like
-facebook_like: true
+#facebook_like: true
 
-social:
-  visible: false
-  facebook:
-    app_id: 338291289691179
+#social:
+#  visible: false
+#  facebook:
+#    app_id: 338291289691179
+#
+#  twitter:
+#    account: home_assistant
 
-  twitter:
-    account: home_assistant
-
-# Home Assistant release details
-current_major_version: 0
-current_minor_version: 104
-current_patch_version: 3
-date_released: 2020-01-21
 
 # Either # or the anchor link to latest release notes in the blog post.
 # Must be prefixed with a # and have double quotes around it.

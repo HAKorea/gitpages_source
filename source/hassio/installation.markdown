@@ -54,11 +54,15 @@ Hass.io를 설치하는 과정을 단계별로 따라하세요.
 7. 환경 설정을 하기 위해서는 Hass.io CLI tools 같은 것이 필요합니다. [삼바 애드온][samba] 또는 [SSH 애드온][ssh]이 첫번째로 설치할 애드온들입니다. 이들 애드온을 통해 `/config/` 폴더에 접근하여 환경 설정을 수정할 수 있습니다.웹 UI에서 **Hass.io** 를 클릭하세요. 그 다음 애드온 스토어(add-on store)를 선택하고 해당 애드온을 찾아서 설치합니다.
 
 <div class='note'>
+
 공유기가 mDNS를 지원하지 않는다면 `hassio.local` 대신에 `http://192.168.0.9:8123` 와 유사한 IP주소를 통해 접근해야 합니다. 라즈베리파이 또는 설치한 기기의 IP주소를 찾을 수 없다면 공유기 업체나 인터넷 관리 업체에 문의하세요.
+
 </div>
 
 <div class='note warning'>
+
 라즈베리파이 사용자라면 적절한 [전원 어댑터][pi-power]를 사용해야 합니다. 스마트폰 충전기는 충분한 전력을 제공하지 못하므로 라즈베리파이에는 적합하지 않습니다. **절대로** 라즈베리파이를 TV나 컴퓨터 또는 그와 유사한 다른 장비의 USB 포트에 연결하지 마세요.
+
 </div>
 
 이제 [환경 설정][configure]을 할 차례입니다.
@@ -113,7 +117,7 @@ Optional:
 
 <div class='note warning'>
 
-   Without the NetworkManager, you will be not able to control your host network setup over the UI. The `modemmanager` package will interfere with any Z-Wave or Zigbee stick and should be removed or disabled. Failure to do so will result in random failures of those integrations. For example you can disable with `sudo systemctl disable ModemManager` and remove with `sudo apt-get purge modemmanager`
+NetworkManager 없이는 UI를 통해 호스트 네트웍 설정을 할 수 없습니다. `modemmanager` 패키지는 Z-Wave나 Zigbee 스틱을 이용하는데 방해가 될 수 있어 삭제하거나 중지시켜두는게 좋습니다. 스틱을 사용할 수 없다면 기기를 통합 설정하는데 않좋은 영향을 미치므로 `sudo systemctl disable ModemManager` 명령으로 중지하거나 `sudo apt-get purge modemmanager`명령으로 삭제하세요.
 
 </div>
 
@@ -128,22 +132,22 @@ Optional:
  - `jq`
  - `socat`
 
-You also need to have Docker-CE installed. There are well-documented procedures for installing Docker on Ubuntu at [Docker.com](https://docs.docker.com/install/linux/docker-ce/ubuntu/), you can find installation steps for your Linux distribution in the menu on the left.
+### 도커
+위 패키지와는 별도로 Docker-CE의 설치가 필요합니다. 우분투에 도커를 설치하는 방법은 [Docker.com](https://docs.docker.com/install/linux/docker-ce/ubuntu/)를 참고하세요. 다른 배포판에서 설치 방법은 왼쪽 메뉴를 살펴보면 됩니다.
 
 <div class='note warning'>
 
-  Some distributions, like Ubuntu, have a `docker.io` package available. Using that packages will cause issues!
-  Be sure to install the official Docker-CE from the above listed URL.
+  우분투와 같은 몇몇 배포판은 `docker.io`를 포함하고 있습니다. 그러나 이 패키지들을 몇가지 이슈가 있습니다! 위 URL에서 공식 Docker-CE 설치 방법을 따르세요.
 
-  Docker is not always ready with a release when a new Ubuntu version is out. Check if your version of Ubuntu is supported by docker [here](https://docs.docker.com/install/linux/docker-ce/ubuntu/).
+  우분투 배포판이 릴리즈 될때 도커 배포판이 같이 배포되지 않으므로 우분투 버전에 따라 [도커 지원 문서](https://docs.docker.com/install/linux/docker-ce/ubuntu/)를 참고하세요.
 
 </div>
 
 ### Preparation
 
-To prepare your machine for the Hass.io installation, run the following commands:
+본인의 리눅스에 따라 Hass.io 를 설치하기 위해 다음 명령을 실행하세요:
 
-For Ubuntu:
+Ubuntu:
 
 ```bash
 add-apt-repository universe
@@ -160,19 +164,19 @@ systemctl disable ModemManager
 curl -fsSL get.docker.com | sh
 ```
 
-The following script will then install Hass.io on a variety of operating systems and machine types.
+다음의 스크립트가 다양한 OS와 컴퓨터에 Hass.io 를 설치합니다.
 
 ```bash
 curl -sL "https://raw.githubusercontent.com/home-assistant/hassio-installer/master/hassio_install.sh" | bash -s
 ```
 
-Some installation types require flags to identify the computer type, for example, when using a Raspberry Pi 3, the flag `-- -m raspberrypi3` is required. The install script would then look like this:
+설치 과정에 컴퓨터의 종류를 명시해야 하는 경우가 있습니다. 예를 들어 라즈베리파이 3의 경우 `-- -m raspberrypi3` 을 명령어 옵션으로 추가합니다. 설치 스크립트는 다음과 같습니다:
 
 ```bash
 curl -sL "https://raw.githubusercontent.com/home-assistant/hassio-installer/master/hassio_install.sh" | bash -s -- -m raspberrypi3
 ```
 
-#### Other machine types
+#### 다양한 machine types
 
  - `intel-nuc`
  - `raspberrypi`
@@ -191,13 +195,13 @@ curl -sL "https://raw.githubusercontent.com/home-assistant/hassio-installer/mast
  - `qemux86`
  - `qemux86-64`
 
-See the [hassio-installer](https://github.com/home-assistant/hassio-installer) Github page for an up-to-date listing of supported machine types.
+지원하는 최신 machine type을 살펴보기 위해 [hassio-installer](https://github.com/home-assistant/hassio-installer) 깃헙 페이지를 방문하세요.
 
 <div class='note'>
-When you use this installation method, the core SSH add-on may not function correctly. If that happens, use the community SSH add-on. Some of the documentation might not work for your installation either.
+위와 같은 방법으로 설치하면 공식 core SSH 애드온이 정상 동작 하지 않을 수 있습니다. 그럴 경우,커뮤니티에서 제공하는 SSH 애드온을 설치하세요. 설치 방법에 따라 문서에서 이야기 하는 내용이 조금씩 다를 수도 있습니다.
 </div>
 
-A detailed guide about running Hass.io as a virtual machine is available in the [blog][hassio-vm].
+버추얼 머신에서 Hass.io 설치는 [blog][hassio-vm] 글을 참고하세요.
 
 [balenaEtcher]: https://www.balena.io/etcher
 [Virtual Appliance]: https://github.com/home-assistant/hassos/blob/dev/Documentation/boards/ova.md
@@ -222,5 +226,5 @@ A detailed guide about running Hass.io as a virtual machine is available in the 
 [samba]: /addons/samba/
 [ssh]: /addons/ssh/
 [pi-power]: https://www.raspberrypi.org/help/faqs/#powerReqs
-[hassio-vm]: /blog/2017/11/29/hassio-virtual-machine/
+[hassio-vm]: https://www.home-assistant.io/blog/2017/11/29/hassio-virtual-machine/
 [configure]: /getting-started/configuration/

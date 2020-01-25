@@ -1,9 +1,9 @@
 ---
-title: "Documentation"
-description: "Documentation for Home Assistant"
+title: "문서"
+description: "홈어시스턴트 문서"
 ---
 
-The documentation covers beginner to advanced topics around the installation, setup, configuration, and usage of Home Assistant.
+이 문서는 초보자들을 위해 홈어시스턴트의 설치, 설정, 환경 구성 그리고 사용법에 대한 고급 주제들을 다룹니다
 
 <div class="text-center hass-option-cards" markdown="0">
   <a class='option-card' href='/hassio/'>
@@ -16,7 +16,7 @@ The documentation covers beginner to advanced topics around the installation, se
     <div class='img-container'>
       <img src='/images/supported_brands/pencil.png' />
     </div>
-    <div class='title'>Configuration</div>
+    <div class='title'>환경 설정</div>
   </a>
   <a class='option-card' href='/docs/z-wave/'>
     <div class='img-container'>
@@ -46,4 +46,4 @@ The documentation covers beginner to advanced topics around the installation, se
 
 <br/>
 
-To see what Home Assistant can do, take a look at the [demo page](/demo).
+홈어시스턴트가 어떻게 동작하는지 지금 보려면 [demo page](/demo)를 클릭하세요. 

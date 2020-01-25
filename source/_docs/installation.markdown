@@ -1,5 +1,5 @@
 ---
-title: "다양한 홈어시스턴트 설치 방법"
+title: "다양한 설치 방법"
 description: "Instructions on how to install Home Assistant to launch on start."
 redirect_from: /getting-started/installation/
 ---

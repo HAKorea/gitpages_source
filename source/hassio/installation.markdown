@@ -1,105 +1,99 @@
 ---
-title: "Installing Hass.io"
+title: "Hass.io 설치"
 description: "Instructions on how to install Hass.io."
 ---
 
-The following will take you through the steps required to install Hass.io.
+Hass.io를 설치하는 과정을 단계별로 따라하세요.
 
-1. Download the appropriate install option:
+1. 적합한 설치 파일을 다운 받으세요:
 
-   - As an image for your device:
-   
-     - [Raspberry Pi 3 Model B and B+ 32bit][pi3-32] (recommended)
+   - 본인의 장비에 따른 이미지:
+
+     - [Raspberry Pi 3 Model B and B+ 32bit][pi3-32] (추천)
      - [Raspberry Pi 3 Model B and B+ 64bit][pi3-64]
-     - [Raspberry Pi 4 Model B 32bit][pi4-32] (recommended)
+     - [Raspberry Pi 4 Model B 32bit][pi4-32] (추천)
      - [Raspberry Pi 4 Model B 64bit][pi4-64]
      - [Tinkerboard][tinker]
      - [Odroid-C2][odroid-c2]
      - [Odroid-N2 (Beta)][odroid-n2]
      - [Odroid-XU4][odroid-xu4]
      - [Intel-Nuc][intel-nuc]
-    
-   - As a virtual appliance: 
-  
+
+   - virtual appliance 따른 이미지:
+
      - [VMDK][vmdk] (VMWare Workstation)
      - [VHDX][vhdx]
      - [VDI][vdi]
      - [OVA][Virtual Appliance] (not available at this time!)
-    
-   - Not recommended Hardware:
-  
+
+   - 비추천 하드웨어용:
+
      - [Raspberry Pi][pi1]
      - [Raspberry Pi Zero-W][pi0-w]
      - [Raspberry Pi 2][pi2]
 
-2. Install Hass.io:
+2. Hass.io 설치:
 
-   - Flash the downloaded image to an SD card using [balenaEtcher][balenaEtcher]. If using a Pi we recommend at least a 32 GB SD card to avoid running out of space. On Virtual machine platforms, provide at least 32 GB of disk space for the VM.
-   - Load the appliance image into your virtual machine software. Choose 64-bit Linux and UEFI boot.
+   - 다운 받은 이미지 파일을 [balenaEtcher][balenaEtcher]를 사용하여 SD카드에 플래싱합니다. 추천하는 라즈베리파이를 사용한다면 용량 부족을 피하기 위해 최소 32기가 이상의 SD카드를 사용하세요. 버추얼 머신에 설치한다면 VM의 디스크 공간을 32기가 이상으로 설정하세요.
+   - 버추얼 소프트웨어가 설치된 장비 이미지를 사용하려면 64-bit 리눅스와 UEFI boot를 선택하세요.
 
-3. Optional - set up the WiFi or static IP. There are two possible places for that: 
-   - on a blank USB stick with a FAT32 partition having partition label `CONFIG`, while in its root directory, create the `network/my-network` file, or
-   - on the Hass.io SD card's first, bootable partition (labeled `hassio-boot`, might not be auto mounted in Linux) create the `CONFIG/network/my-network` file.
+3. 옵션 - 무선 와이파이를 설정하거나 고정IP를 부여하려면 2가지 방법이 존재합니다.
+   - FAT32로 포맷한 USB 메모리 스틱을 준비하고 디스크 볼륨명은 `CONFIG`으로 정합니다. 최상위 폴더에 `network/my-network`라는 이름의 파일을 생성하거나
+   - Hass.io SD카드의 첫번째 부팅 파티션( `hassio-boot` 레이블로 리눅스에서 자동으로 마운트는 안됩니다)에 `CONFIG/network/my-network` 파일을 생성합니다.
 
-   For the content of this file, follow the [HassOS howto][hassos-network].
+   이렇게 만든 파일의 환경 설정은 [HassOS howto][hassos-network]를 참고하여 입력합니다.
 
-4. For image-based installs insert the SD card (and optional USB stick) into the device.
+4. 이미지로 만든 SD카드를 장비에 꼽아주세요(옵션으로 만든 USB를 같이 꼽습니다).
 
-5. Turn on your device or virtual appliance. On first boot, it downloads the latest version of Home Assistant which takes around 20 minutes (slower/faster depending on the platform and your Internet connection).
+5. 장비의 전원 또는 버추얼 기기의 전원을 켭니다. 처음 부팅을 하면 최신 버전의 홈어시스턴트를 다운받아 설치하기 시작하며 인터넷 환경이나 장비의 성능에 따라 최대 20분 정도 소요됩니다.
 
    <img src='/images/hassio/screenshots/first-start.png' style='clear: right; border:none; box-shadow: none; float: right; margin-bottom: 12px;' width='150' />
 
-6. You will be able to reach your installation at `http://hassio.local:8123` (if your router supports mDNS, otherwise see below).
+6. 웹브라우저에서 `http://hassio.local:8123`로 접근합니다 (만일 접속이 안되면 아래 Note를 참고하세요).
 
-7. It is important to provide yourself proper access, including the Hass.io CLI tools. Both the [Samba add-on][samba] and the [SSH add-on][ssh] should be the first add-ons you should install, before making changes to the configuration in the `/config/` folder. From the UI choose **Hass.io**, which is located in the sidebar and then the add-on store.
+7. 환경 설정을 하기 위해서는 Hass.io CLI tools 같은 것이 필요합니다. [삼바 애드온][samba] 또는 [SSH 애드온][ssh]이 첫번째로 설치할 애드온들입니다. 이들 애드온을 통해 `/config/` 폴더에 접근하여 환경 설정을 수정할 수 있습니다.웹 UI에서 **Hass.io** 를 클릭하세요. 그 다음 애드온 스토어(add-on store)를 선택하고 해당 애드온을 찾아서 설치합니다.
 
 <div class='note'>
-
-If your router doesn't support mDNS, then you'll have to use the IP address of your Pi instead of `hassio.local`. For example, `http://192.168.0.9:8123`. You should be able to find the IP address of your Pi from the admin interface of your router.
-
+공유기가 mDNS를 지원하지 않는다면 `hassio.local` 대신에 `http://192.168.0.9:8123` 와 유사한 IP주소를 통해 접근해야 합니다. 라즈베리파이 또는 설치한 기기의 IP주소를 찾을 수 없다면 공유기 업체나 인터넷 관리 업체에 문의하세요.
 </div>
 
 <div class='note warning'>
-
-If you are using a Raspberry Pi please remember to ensure you're using an [appropriate power supply][pi-power] with your Pi. Mobile chargers may not be suitable since some were only designed to provide just enough power to the device it was designed for by the manufacturer. **Do not** try to power the Pi from the USB port on a TV, computer, or similar.
-
+라즈베리파이 사용자라면 적절한 [전원 어댑터][pi-power]를 사용해야 합니다. 스마트폰 충전기는 충분한 전력을 제공하지 못하므로 라즈베리파이에는 적합하지 않습니다. **절대로** 라즈베리파이를 TV나 컴퓨터 또는 그와 유사한 다른 장비의 USB 포트에 연결하지 마세요.
 </div>
 
-Now you can [configure][configure] your install.
+이제 [환경 설정][configure]을 할 차례입니다.
 
-## Updating a Hass.io installation
+## Hass.io 업데이트
 
-Best practice for updating a Hass.io installation:
+Hass.io 업데이트 설치를 위한 추천 방법:
 
-1. Backup your installation, using the snapshot functionality Hass.io offers.
-2. Check the release notes for breaking changes on [Home Assistant release notes](https://github.com/home-assistant/home-assistant/releases). Be sure to check all release notes between the version you are running and the one you are upgrading to. Use the search function in your browser (`CTRL + f`) and search for **Breaking Changes**.
-3. Check your configuration using the [Check Home Assistant configuration](/addons/check_config/) add-on. 
-4. If the check passes, you can safely update. If not, update your configuration accordingly.
-5. Select _Dashboard_ from the _Hass.io_ menu, and then select _Update_.
+1. 환경 구성을 백업하세요. Hass.io가 제공하는 스냅샷(Snapshot)을 이용하면 손쉽게 백업 가능합니다.
+2. [홈어시스턴트 릴리즈 노트](https://github.com/home-assistant/home-assistant/releases)에서 어떤 변경 사항이 반영됐는지 살펴봅니다. 기존에 쓰는 버전과 신규로 설치할 버전의 차이가 어떤지 꼼꼼히 살펴봅니다. 브라우저에서 (`CTRL + f`)를 눌러 **Breaking Changes** 단어들을 검색합니다.
+3. [Check Home Assistant configuration](/addons/check_config/) 애드온으로 업데이트할 버전과 호환성을 체크해볼 수도 있습니다.
+4. 체크가 끝나면 안전하게 업데이트를 설치합니다. 만일 문제가 있다면 업데이트 버전에 맞춰 환경 설정을 수정합니다.
+5. _Hass.io_ 메뉴에서 _Dashboard_ 를 선택하고 신규 업데이트가 표시된 카드창에서 _Update_ 를 누르면 새로운 버전을 설치합니다.
 
-## Run a specific version on Hass.io
+## 특정 버전의 Hass.io 설치
 
-SSH to your Hass.io system, or connect to the console, and run:
+Hass.io 시스템에 SSH로 접속하거나 도커 등 다른 환경에서 콘솔로 접속하여 아래 명령을 실행하면 특정 버전의 Hass.io를 이용할 수 있습니다.
 
 ```bash
 hassio ha update --version=0.XX.X
 ```
 
-## Run the beta version on Hass.io
+## 베타버전 Hass.io 설치
+새로운 버전이 릴리즈 되기전에 먼저 사용해보고 싶다면 3주마다 배포되는 베타버전을 사용해볼 수 있습니다:
 
-If you would like to test next release before anyone else, you can install the beta version released every three weeks:
+1. Hass.io에서 제공하면 스냅샷 기능으로 환경 설정을 백업하세요.
+2. [Home Assistant RC release notes](https://rc.home-assistant.io/latest-release-notes/)  버전에서 breaking changes를 확인하세요. 릴리즈 노트에서 현재 운영하는 버전과의 차이점을 잘 살펴봅니다. 브라우저에서 (`CTRL + f`) **Breaking Changes** 를 꼼꼼히 확인합니다.
+3. _Hass.io_ 의 _System_ 탭에서 _Hass.io supervisor_ 아래 있는 _Join Beta Channel_ 을 선택합니다. 그리고 _Reload_ 를 누릅니다.
+4. _Hass.io_ 메뉴의 _Dashboard_ 탭에서 _Update_ 를 누릅니다.
 
-1. Backup your installation, using the snapshot functionality Hass.io offers.
-2. Check the [Home Assistant RC release notes](https://rc.home-assistant.io/latest-release-notes/) for breaking changes. Be sure to check all release notes between the version you are running and the one you are upgrading to. Use the search function in your browser (`CTRL + f`) and search for **Breaking Changes**.
-3. Select _System_ tab from the _Hass.io_ menu, then select _Join Beta Channel_ under _Hass.io supervisor_, then select _Reload_.
-4. Select _Dashboard_ tab from the _Hass.io_ menu, and then select _Update_.
+## 다른 방법: 일반적인 리눅스 컴퓨터에 설치
 
-## Alternative: install on a generic Linux host
+능숙한 유저라면 [리눅스 서버 또는 버추얼 머신][Linux]에 Hass.io를 설치할 수 있습니다. 아래 제시한 방법은 우분투와 Arch 리눅스에서 테스트 했습니다만 다른 리눅스 배포판에서도 비슷하게 설치할 수 있습니다.
 
-For advanced users, it is also possible to try Hass.io on your [Linux server or inside a virtual machine][linux].
-Examples given here are tested on Ubuntu and Arch Linux, but the instructions should work as a guideline for installing on other Linux distrubutions.
-
-The packages you need to have available on your system that will run Hass.io may vary.
+Hass.io를 실행하기 위한 패키지들을 시스템에 따라 조금씩 다를 수 있습니다.
 
 ### Debian/Ubuntu
 
@@ -140,7 +134,7 @@ You also need to have Docker-CE installed. There are well-documented procedures 
 
   Some distributions, like Ubuntu, have a `docker.io` package available. Using that packages will cause issues!
   Be sure to install the official Docker-CE from the above listed URL.
-  
+
   Docker is not always ready with a release when a new Ubuntu version is out. Check if your version of Ubuntu is supported by docker [here](https://docs.docker.com/install/linux/docker-ce/ubuntu/).
 
 </div>
@@ -179,7 +173,7 @@ curl -sL "https://raw.githubusercontent.com/home-assistant/hassio-installer/mast
 ```
 
 #### Other machine types
- 
+
  - `intel-nuc`
  - `raspberrypi`
  - `raspberrypi2`

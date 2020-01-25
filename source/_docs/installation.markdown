@@ -1,5 +1,5 @@
 ---
-title: "Installation of Home Assistant"
+title: "다양한 홈어시스턴트 설치 방법"
 description: "Instructions on how to install Home Assistant to launch on start."
 redirect_from: /getting-started/installation/
 ---
@@ -42,31 +42,31 @@ NUC i5 | 홈어시스턴트 뿐만 아니라 다양한 서비스를 구동시킬
 NUC i7/i9 | 최고의 성능, **어떤** 성능이슈도 없습니다.
 
 ## 추천
-아래 설치 방법은 홈어시스턴트 문서 지원을 최대한 받을 수 있습니다. 예를 들어 장치를 추가할 때 홈어시스턴트와 통합 구성할 경우의 방법들을 지원 문서를 통해 참고할 수 있습니다. Hassio
+아래 설치 방법은 홈어시스턴트 문서 지원을 최대한 받을 수 있습니다. 예를 들어 장치를 추가할 때 홈어시스턴트와 통합 구성할 경우의 방법들을 지원 문서를 통해 참고할 수 있습니다.
 
 <div class='note'>
 
-The only installation methods that allow you to use Hass.io Add-ons are the Hass.io image and manual installer. All other methods only install the base Home Assistant packages, however the software from the add-ons may still usually be installed manually like any other program.
+Hass.io 애드온을 사용하기 위해서는 Hass.io 이미지로 설치하거나(HassOs 설치) 도커에서 직접 설치하는 방법을 사용해야 합니다. 이밖에 다른 방법은 홈어시스턴트 파이썬 패키지를 설치하는 것입니다. 하지만 이 경우 애드온은 사용할 수 없으며 일반적인 프로그램을 설치하듯이 사용자가 직접 설치 해야합니다.
 
 </div>
 
-**Method**|**You have**|**Recommended for**
+**설치방법**|**현재 보유중**|**추천**
 :-----|:-----|:-----
-[Hass.io](/hassio/installation/)|Raspberry Pi<br>VM|Anybody
-[Docker](/docs/installation/docker/)|Docker|Anybody already running Docker
+[Hass.io](/hassio/installation/)|Raspberry Pi<br>VM|누구나
+[Docker](/docs/installation/docker/)|Docker|도커를 사용중인 유저
 
-## Alternative installs
+## 다른 설치 방법
 
-If you use these install methods, we assume that you know how to manage and administer the operating system you're using. Due to the range of platforms on which these install methods can be used, integration documentation may only tell you what you have to install, not how to install it.
+아래 설치 방법을 이용하려면 현재 운용중인 OS의 시스템 관리자이거나 관리 방법에 대해 상세히 아는 이용자여야 합니다. 플랫폼에 관한 지식이 다양하기 때문에 설치 또는 장비를 추가하는 방법들이 상이 할 수 있기에 이 곳에서 핵심 포인트만을 알려줄 수 있습니다. 상세한 설치 방법은 인터넷 검색을 통해 해결하세요.
 
-**Method**|**You have**|**Recommended for**
+**설치방법**|**현재 보유중**|**추천**
 :-----|:-----|:-----
-[venv<BR>(as another user)](/docs/installation/raspberry-pi/)|Any Linux, Python 3.7 or later|Those familiar with their operating system
-[venv<BR>(as your user)](/docs/installation/virtualenv/)|Any Python 3.7 or later|Developers
+[venv<BR>(as another user)](/docs/installation/raspberry-pi/)|리눅스, Python 3.7 or later| 리눅스 관리 지식을 보유한 유저
+[venv<BR>(as your user)](/docs/installation/virtualenv/)|Any Python 3.7 or later|개발자
 
-## Community provided guides
+## 커뮤니티에서 제공하는 설치 방법들
 
-These guides are provided as-is. Some of these install methods are more limited than the methods above. Some integrations may not work due to limitations of the platform or because required Python packages aren't available for that platform.
+아래 제공한 가이드는 위에서 기술한 설치 방법보다 다소 제한적일 수 있습니다. 장비를 추가하는 통합 설치 과정에서 플랫폼의 제약사항 또는 플랫폼에 따른 파이썬 패키지의 미존재 여부에 따라 동작 안할 수도 있습니다.
 
 <div class="text-center hass-option-cards" markdown="0">
   <a class='option-card' href='/docs/installation/armbian/'>

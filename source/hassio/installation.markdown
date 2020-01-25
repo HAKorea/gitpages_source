@@ -195,7 +195,7 @@ curl -sL "https://raw.githubusercontent.com/home-assistant/hassio-installer/mast
  - `qemux86`
  - `qemux86-64`
 
-지원하는 최신 machine type을 살펴보기 위해 [hassio-installer](https://github.com/home-assistant/hassio-installer) 깃헙 페이지를 방문하세요.
+지원하는 최신 machine type을 살펴보기 위해 [hassio-installer](https://github.com/home-assistant/hassio-installer) 깃허브 페이지를 방문하세요.
 
 <div class='note'>
 위와 같은 방법으로 설치하면 공식 core SSH 애드온이 정상 동작 하지 않을 수 있습니다. 그럴 경우,커뮤니티에서 제공하는 SSH 애드온을 설치하세요. 설치 방법에 따라 문서에서 이야기 하는 내용이 조금씩 다를 수도 있습니다.

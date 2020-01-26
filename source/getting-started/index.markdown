@@ -67,7 +67,7 @@ So here are guidelines:
 
 [다음 예제]: https://github.com/home-assistant/hassos/blob/dev/Documentation/network.md
 
-### [다음 과정: 첫시작 &raquo;][next-step]
+### [다음 과정: 첫만남 &raquo;][next-step]
 
 [next-step]: /getting-started/onboarding/
 

@@ -8,7 +8,7 @@ This is the source for the [Home Assistant Korea Docs Site](https://hakorea.gith
 
 ## 번역 지원
 
-한국어 번역에 도움을 주실 분은 이메일 m@zooil.com 로 문의바랍니다.
+한국어 번역에 도움을 주실 분은 아래 온라인 편집 방법을 참고하세요.
 
 Jekyll을 사용하는 기본적인 방법은 원문 사이트와 동일합니다 [developer documentation](https://developers.home-assistant.io/docs/documentation_index.html).
 

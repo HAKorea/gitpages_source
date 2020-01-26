@@ -1,67 +1,64 @@
 ---
-title: "Advanced Configuration"
+title: "고급 환경 설정"
 description: "Instructions to get Home Assistant configured."
 ---
 
-The onboarding process takes care of the initial setup for Home Assistant, such as naming your home and selecting your location. After initial onboarding, these options can be changed in the user interface by clicking on Configuration in the sidebar and clicking on General, or by manually editing them in the Home Assistant configuration file called `configuration.yaml`. This section will explain how to do the latter.
+지금까지의 첫만남 과정은 공간의 이름을 설정하고 위치를 정하는 등 홈어시스턴트의 초기설정을 맛보는 것이였습니다. 첫만남이 끝나면 설정했던 옵션들을 왼쪽 메뉴의 설정(Configuration)을 클릭하고 UI를 통해 변경할 수 있습니다. 또는 `configuration.yaml` 파일을 직접 편집하여 홈어시스턴트 환경 설정을 진행 할 수 있습니다. 이번 과정은 파일을 직접 편집하는 것에 대해 설명합니다.
 
 <div class='note'>
 
-The steps below only apply if you've installed Home Assistant via Hass.io. If you've used another installation method, [see here](/docs/configuration/).
+아래 과정은 홈어시스턴트를 Hass.io로 설치한 경우에 해당합니다. 만일 다른 방법으로 설치했다면 [이 곳](/docs/configuration/)을 참고하세요.
 
 </div>
 
-We are going to help you make your first changes to `configuration.yaml`. To do this, we are going to install an add-on from the Hass.io add-on store: the Configurator. To get to the add-on store, click on the menu icon in the top left, then click on Hass.io. On the new page, open the add-on store tab.
+이제 처음으로 `configuration.yaml` 파일을 편집 해봅시다. 이를 위해 Hass.io 애드온 스토어에서 Configurator  애드온을 설치해야 합니다. 왼쪽 메뉴에서 Hass.io를 선택하고 화면 상단에서 애드온 스토어(add-on store) 탭을 누릅니다.
 
 <p class='img'>
 <img src='/images/hassio/screenshots/main_panel_addon_store.png' />
-From the Hass.io main panel, open the add-on store.
+Hass.io 메인 패널에서 애드온 스토어를 엽니다
 </p>
 
-Under the "Core" section you will find Configurator.
+공식 애드온(official add-ons) 섹션에서 Configurator를 찾을 수 있습니다.
+ - Configurator 카드를 선택하여 INSTALL을 클릭합니다. 설치가 완료되면 화면에서 INSTALL이 UNINSTALL로 바뀌고 애드온 상세 설정 페이지가 아래쪽에 나타납니다. 사용하는 장치 성능에 따라 시간이 오래 걸릴 수도 있습니다.
+ - 설치가 완료되면 START 버튼을 눌러 애드온을 실행합니다.
+ - 애드온이 실행되면 OPEN WEB UI라는 버튼이 나타납니다. 이것을 눌러 편집기로 이도하세요.
 
- - Click on Configurator and click on INSTALL. When installation is complete, the UI will go to the add-on details page for the configurator.
- - Now start the add-on by clicking on START.
- - Open the user interface by clicking on OPEN WEB UI.
+이제 Configurator를 통해 설정을 변경할 수 있습니다. 홈어시스턴트를 사용하는 공간의 이름, 타임존, 위치, 단위 시스템 등을 바꿔봅시다.
 
-Now let's make a change using the configurator: we are going to change the name, location, unit system, and time zone of your Home Assistant installation.
-
- - Click the folder icon in the top left of the configurator window to open the file browser sidebar.
- - Click the `configuration.yaml` file (in the `/config/` folder) to load it into the main Configurator edit window.
- - Add the following to this file (preferably at the very top, but it ultimately doesn't matter):
+ - 좌측 상단에서 폴더 아이콘을 눌러 파일 브라우저를 실행합니다.
+ - `/config/` 폴더 안에서 `configuration.yaml` 파일을 선택하면 편집창에 내용이 나타납니다.
+ - 다음 내용을 편집창에 입력합니다. (이 내용은 일반적으로 파일의 제일 위쪽에 입력하지만 어떤 위치여도 상관은 없습니다):
  ```yaml
      homeassistant:
        name: Home
        latitude: xx.xxxx
        longitude: xx.xxxx
-       unit_system: imperial
-       time_zone: America/Chicago
+       unit_system: metric
+       time_zone: Asia/Seoul
   ```
 <div class='note'>
- 
-  Valid options for `unit_system` are `imperial` or `metric`. See [here](https://timezonedb.com/time-zones) for a list of valid time zones. Enter the appropriate option found under the Time Zone column at that page.
+
+  `unit_system`은 `imperial` 또는 `metric`만 사용가능합니다. 타임존은 [여기서](https://timezonedb.com/time-zones) 여러분의 시간대를 확인하세요. 위도와 경도(latitude/longitude)는 구글맵 등에서 찾을 수 있습니다.
 
 </div>
 
- - Click the save icon in the top right to commit changes.
- - Most changes in `configuration.yaml` require Home Assistant to be restarted to see the changes. You can verify that your changes are acceptable by running a config check. Do this by clicking on Configuration in the sidebar, click on "Server Control" and click on the CHECK CONFIG button. When it's valid, it will show the text "Configuration valid!"
- - Now Restart Home Assistant using the RESTART button in the Server management section on the same page. In order for "Check Config" to be visible, you must enable "Advanced Mode" on your user profile.
+ - 화면 우측 상단에 저장 아이콘을 눌러 변경 내용을 저장합니다(저장 아이콘은 변경 내용이 있을 때만 나타납니다).
+ - `configuration.yaml` 파일의 수정은 홈어시스턴트를 재시작해야만 적용됩니다. 그 전에 확인해야 할 사항은 변경 내용이 유효한지 여부입니다. 왼쪽 메뉴에서 설정(Configuration)을 눌러 "서버 제어(Server Control)"을 클릭합니다. 화면에서 "구성 내용 확인(CHECK CONFIG)" 버튼을 눌러 변경 내용에 문제가 없다면 "구성 내용이 모두 올바릅니다!(Configuration valid!)"라고 표시됩니다.  
+ - 구성 내용이 올바르다면 서버를 재시작 합니다. 서버 제어 화면 하단에서 재시작을 실행합니다. "구성 내용 확인" 버튼은 "고급 모드(Advanced Mode)"를 활성화한 경우에만 나타납니다. 왼쪽 하단에서 현재 사용자 이름을 선택해서 고급 모드를 켜주세요.
 
 <p class='img'>
 <img src='/images/screenshots/configuration-validation.png' />
-Screenshot of the "General" page in the configuration panel.
+설정 패널의 서버 제어 페이지
 </p>
 
 <div class='note'>
- 
-  If you have watched any videos about setting up Home Assistant using configuration.yaml (particularly ones that are old), you might notice your default configuration file is much smaller than what the videos show. Don't be concerned, you haven't done anything wrong. Many items in the default configuration files shown in those old videos are now included in the `default_config:` line that you see in your configuration file. [See here](/integrations/default_config/) for more information on what's included in that line.
+
+configuration.yaml을 편집하여 홈어시스턴트를 설정하는 동영상(일반적으로 구버전을 다루는 영상)을 시청했다면, 동영상에서 다루는 내용보다 기본 configuration.yaml 파일의 내용이 매우 간결하다고 생각할 수 있습니다. 이 점 개의치 않아도 됩니다. 구버전을 다루는 영상들에서 이야기하는 많은 설정 내용들이 이제는 `default_config:` 안에 포함되어 있습니다. 보다 자세한 내용은 [이 곳](/integrations/default_config/)을 확인하세요.
 
 </div>
 
-### Editing config via Samba/Windows Networking
+### 삼바와 내부 네트워크를 통한 편집
 
-Maybe you are not a big fan of our web editor and want to use a text editor on your computer instead. This is possible by sharing the configuration over the network using the Samba add-on, which can also be installed from the Hass.io add-on store. This will make your configuration accessible via the network tab on your computer.
+우리가 제공하는 웹 에디터가 불편할 수도 있고, 여러분이 주로 사용하는 에디터 프로그램으로 편집하고 싶을 수도 있습니다. 네트워크로 접속해서 편집하는 방법은 삼바 애드온(Samba add-on)으로 가능합니다. Hass.io 애드온 스토어에서 삼바 애드온을 설치하면 탐색기에서 네트워크 탭을 통해 `/config/` 폴더에 접근할 수 있습니다.
 
-Go to the add-on store and look for Samba in the core section. After you have installed the add-on, click on START. Hass.io should now be available in the networking tab on your computer.
-
-We suggest that to edit `configuration.yaml`, you use the free text editor [Visual Studio Code](https://code.visualstudio.com/) in combination with the [Home Assistant Config Helper extension](https://marketplace.visualstudio.com/items?itemName=keesschollaart.vscode-home-assistant).
+ `configuration.yaml`의 편집은 무료인 [Visual Studio Code](https://code.visualstudio.com/)을 추천하며  [Home Assistant Config Helper extension](https://marketplace.visualstudio.com/items?itemName=keesschollaart.vscode-home-assistant)을 함께 사용할 수 있습니다. 

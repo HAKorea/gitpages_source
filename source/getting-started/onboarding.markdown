@@ -1,47 +1,53 @@
 ---
-title: "Onboarding Home Assistant"
+title: "홈어시스턴트 첫만남"
 description: "Instructions to get Home Assistant configured."
 ---
 
-Alright, you made it here. The tough part is done.
+축하합니다. 여기까지 왔다면 힘든 관문을 통과한 것입니다.
 
-With Home Assistant installed, it's time to configure it. Here you will create the owner account of Home Assistant. This account will be an administrator and will always be able to change everything. Enter a name, username, password and click on "create account".
+홈어시스턴트 설치를 마쳤으면 이제 환경 설정을 할 차례입니다. 이번 단계는 홈어시스턴트의 계정을 만드는 일입니다. 이 계정은 모든 것을 변경할 수 있는 권한을 가진 관리자입니다. 이름, 사용자ID(username), 비밀번호를 입력하고 "계정 생성(create account)"을 선택하세요.
 
 <p class='img'>
 <img src='/images/getting-started/username.png' />
-Set your username and password.
+계정과 비밀번호를 생성
 </p>
 
-Next, you can enter a name for your home and set your location and unit system. Click "DETECT" to find your location and set your time zone and unit system based on that location. If you'd rather not send your location, you can set these values manually.
+다음으로 홈어시스턴트를 사용할 공간을 정합니다. 집, 또는 사무실 등 이름을 입력하고 "DETECT" 버튼을 눌러 지도상에 공간의 위치를 설정합니다. 그리고 타임존과 섭씨, 미터법 등을 선택합니다. 만일 공간의 위치를 자동으로 찾지 못하면 나중에 수동으로 입력하는 것이 가능합니다.
 
 <p class='img'>
 <img src='/images/getting-started/location.png' />
-Set your location, time zone, and unit system.
+공간 및 타임존, 도량형 선택
 </p>
 
-Once you are done, click Next. In this screen, Home Assistant will show any devices that it has discovered on your network. Don't be alarmed if you see fewer items than what is shown below; you can always manually add devices later.
+모든 입력을 완료한다음 "다음(NEXT)"을 클릭합니다. 이번 화면에서는 홈어시스턴트가 자동으로 검색한 장치들을 화면에 표시합니다. 화면에 나타난 장치가 없거나 적어도 놀라지 마세요. 향후 수작업으로 장치를 하나씩 추가할 수 있습니다.
 
 <p class='img'>
 <img src='/images/getting-started/devices.png' />
-Discovery of devices on your network.
+네트워크에서 장치 검색
 </p>
 
-Finally, click Finish. Now you're brought to the Home Assistant web interface. This screen will show all of your devices. So let's get that screen filled up!
+이제 "완료(FINISH)" 버튼을 누릅니다. 여러분이 공간을 관리하는 홈어시스턴트 웹페이지와 마주하게 됩니다. 이 화면을 통해 여러분의 장치들을 관리하실 수 있습니다. 차근차근 설정을 완료해봅시다!
 
 <p class='img'>
 <img src='/images/getting-started/lovelace.png' />
-The Home Assistant user interface.
+홈어시스턴트 UI
 </p>
 
-Click on Configuration in the sidebar on the left. On the next screen, click on Integrations. At this screen you will be able to set up integrations with Home Assistant. You might notice a "discovered" section. This section contains integrations that were found on your network and can easily be added with a few clicks. If your integrations are not discovered, click the + button in the lower right and search for your integration in that list.
+왼쪽 메뉴에서 "설정(Configuration)"을 선택하고 화면에서 "통합구성요소(Integrations)"를 클릭합니다. 이제 홈어시스턴트와 연동되는 통합구성요소를 설치할 수 있습니다. 발견된 구성요소(Discovered)에서 여러분의 네트워크상에 존재하는 설치 가능한 장치들이 나타나고 몇번의 클릭을 통해 홈어시스턴트에 추가할 수 있습니다. 만일 자동으로 발견된 구성요소가 없다면 우측 하단에 있는 `+` 버튼을 눌러 목록에서 통합구성요소를 추가할 수 있습니다.
 
 <p class='img'>
 <img src='/images/getting-started/integrations.png' />
-The integrations page in the configurations panel shows you all your configured integrations.
+설정 패널의 통합구성요소 페이지에는 설정 가능한 구성요소들이 나타납니다
 </p>
 
-When each integration is done setting up, it will ask you to put the new devices in areas. Areas allow you to organize all the devices in your home.
+각각의 구성요소 설정이 끝나면 새로운 장치를 어떤 공간(Area)에 둘 것인지를 물어봅니다. 공간은 집안의 장치들을 배치하는 곳입니다.
 
-When you're done, navigate back to the web interface and voila, your devices are ready for you to control.
+모든 작업을 끝내고 이전 페이지를 돌아오면 제어할 수 있는 장치들을 확인할 수 있습니다.
 
-### [Next step: Automate Home Assistant &raquo;](/getting-started/automation/)
+<div class='note'>
+
+제어가능한 장치는 와이파이나 지그비 또는 지웨이브 장치로서 구매후 공유기나 허브에 연결된 상태여야만 홈어시스턴트에 표시됩니다. 만일 집안에 구매한 장치가 없다면 신규 구매후 설치하서야 합니다.
+
+</div>
+
+### [다음 단계: 자동화 &raquo;](/getting-started/automation/)

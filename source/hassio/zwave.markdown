@@ -3,7 +3,7 @@ title: "Z-Wave"
 description: "Instructions on how-to enable Z-Wave with Hass.io."
 ---
 
-To enable Z-Wave, plug your Z-Wave USB stick into your Raspberry Pi 3 and add the following to your `configuration.yaml`:
+지웨이브(Z-Wave)를 사용하려면 지웨이브 USB 스틱을 라즈베리파이 USB포트에 설치해야 합니다.  그 다음 `configuration.yaml` 파일에 아래 내용을 작성합니다:
 
 ```yaml
 zwave:
@@ -12,21 +12,21 @@ zwave:
 
 ## RAZBERRY BOARD
 
-If you need GPIO on Raspberry Pi 3 for your Z-Wave module, add the following line into `config.txt` (you have to access that on the SD card directly. Simply plug it into your PC and edit it there. The `config.txt` is not accessible from your Hass.io system, you may need to open the SD card on a Windows or Linux system.):
+라즈베리파이의 GPIO를 사용하는 지웨이브 모듈이라면 라즈베리파이의 `config.txt`를 수정해야 합니다. 이 파일은 해쇼에서 접근할 수 없고 SD카드에서 직접 수정해야 합니다. SD카드를 윈도우나 리눅스 컴퓨터에 꼽고 아래 내용을 `config.txt`에 입력하세요:
 
 ```txt
 dtoverlay=pi3-miniuart-bt
 ```
 
-After that, you need to change `usb_path` to `/dev/ttyAMA0` in your `configuration.yaml`.
+다음으로 `configuration.yaml`파일에 `usb_path` 를 `/dev/ttyAMA0` 로 추가합니다.
 
 ```yaml
 zwave:
   usb_path: /dev/ttyAMA0
 ```
 
-## HUSBZB-1
-
+## HUSBZB-1 스틱
+지웨이브와 지그비 모두 사용 가능하므로 아래와 같이 설정합니다.
 ```yaml
 zwave:
   usb_path: /dev/ttyUSB0
@@ -36,28 +36,27 @@ zha:
   database_path: /config/zigbee.db
 ```
 
-## Ubuntu and Debian based host system
+## Ubuntu 와 Debian 기반의 시스템
 
-If your instance is running on a Debian based system, e.g., Ubuntu, the ModemManager may cause unexpected issues.
+우분투나 데비안 리눅스에서 홈어시스턴트를 운영중이라면 ModemManager 때문에 에러가 나기도 합니다.
 
-The ModemManager might be claiming or interfering with a USB Z-Wave stick, like the much used Aeotec ones. If you experience issues where the stick stops responding, needs to be re-plugged or Home Assistant needs a restart to get Z-Wave back, chances are high that the ModemManager is causing the issue.
+ ModemManager는 몇몇 지웨이브 스틱을 방해합니다. 특히 가장 많이 사용하는 Aeotec 스틱에서 에러가 많이 발생합니다. 스틱이 응답하지 않거나 홈어시스턴트에서 지웨이브 스틱을 다시 꼽거나 리부팅을 해야 한다면 ModemManager 문제일 확률이 높습니다.
 
-Execute the following command on your host system to disable the ModemManager:
+다음 명령어로 ModemManager 사용을 중지할 수 있습니다:
 
 ```bash
 systemctl disable ModemManager.service
 ```
 
-### Finding the path
+### USB path 찾기
 
-If the above defaults don't work, you can check what hardware has been found using the [`hassio` command](/hassio/commandline/#hardware):
+위에서 작성한 바대로 지웨이브 스틱이 동작하지 않는다면  [`hassio` 명령](/hassio/commandline/#hardware) 으로 USB의 경로를 확인해보세요:
 
 ```bash
 $ hassio hardware info
 ```
-
-Or you can use the UI and look in the *System* section of the *Hass.io* menu. There you'll find a *Hardware* button which will list all the hardware found.
+그 밖에 웹페이지의 *Hass.io* 패널 안에서 *System* 섹션에서도 경로를 확인할 수 있습니다. *Hardware* 버튼을 누르면 모든 하드웨어 정보들이 표시됩니다.
 
 ## Further reading
 
-For more information on using Z-Wave, see the [main documentation](/docs/z-wave/).
+지웨이브의 더 많은 정보는 [지웨이브 설정 문서](/docs/z-wave/)를 참고하세요.

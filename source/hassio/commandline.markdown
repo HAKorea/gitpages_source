@@ -1,14 +1,14 @@
 ---
-title: "Hass.io via the Command line"
+title: "Hass.io 명령어 모드 사용"
 description: "Command line utility to control Hass.io."
 ---
 
 <p class='img'>
 <img src='/images/hassio/screenshots/ssh-upgrade.png'>
-Hass.io upgrade process from the SSH command line
+SSH로 접속하여 명령어로 Hass.io 업그레이드 실행
 </p>
 
-On the SSH command line, you can use the `hassio` command to retrieve logs, check the details of connected hardware, and more.
+SSH로 접속하면 `hassio` 명령어로 로그를 보거나 사용중인 하드웨어 정보 등을 살펴볼 수 있습니다.
 
 ## Home Assistant
 
@@ -49,15 +49,15 @@ hassio hardware info
 hassio hardware audio
 ```
 
-## Usage examples
+## 사용 예제
 
-To update Home Assistant to a specific version, use the command:
+홈어시스턴트를 특정 버전으로 설치하고 싶다면 다음 명령어를 실행하세요:
 ```bash
 hassio homeassistant update --version=x.y.z
 ```
-Replace x.y.z with the desired version like `--version=0.74.2`
+x.y.z 를 버전 숫자로 바꾸세요 `--version=0.74.2`
 
-You can get a better description of the CLI capabilities by typing `hassio help`:
+명령어의 상세한 옵션을 알고 싶다면 `hassio help`라고 쳐보세요:
 
 ```bash
 Usage:
@@ -88,6 +88,6 @@ Use "hassio [command] --help" for more information about a command.
 
 ```
 
-## Console access
+## 콘솔 연결
 
-You can also access HassOS via a directly connected keyboard and monitor, the console. To log in to the physical console the username is `root`, with no password.
+HassOS를 설치한 라즈베리파이에 키보드와 모니터를 연결하면 콘솔로 직접 접근이 가능합니다. 로그인 과정에서 username을 `root`로 비밀번호는 입력하지 않습니다. 

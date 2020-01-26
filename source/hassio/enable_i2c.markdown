@@ -1,45 +1,45 @@
 ---
-title: "Enable HassOS i2c"
+title: "HassOS에서 I2C 사용"
 description: "Instructions on how to enable I2C on a Raspberry PI for Hass.io."
 ---
 
-Hass.io is a managed environment, which means you can't use existing methods to enable the I2C bus on a Raspberry Pi.
+Hass.io는 제한된 환경으로 일반적인 방법으로 라즈베리파이의 I2C bus를 사용할 수 없습니다.
 
-If you're attempting to add an external sensor, you will have to [enable the I2C interface in the Hass.io configuration](https://github.com/home-assistant/hassos/blob/dev/Documentation/boards/raspberrypi.md#i2c) using a USB stick.
+만일 직접 라즈베리파이에 외부 센서를 연결하려면 USB 메모리 스틱을 사용하여 [enable the I2C interface in the Hass.io configuration](https://github.com/home-assistant/hassos/blob/dev/Documentation/boards/raspberrypi.md#i2c) 를 실행해야 합니다.
 
-## Step by step instructions
+## 단계별 적용 방법
 
-You will need:
+필요한 것:
 
 - USB drive
-- A way to add files to the USB drive
-- A way to connect the drive to your Raspberry Pi
+- USB drive에 파일을 복사할 방법
+- Raspberry Pi에 USB 드라이브를 연결할 방법
 
-### Step 1 - Prepare the USB drive
+### 1단계 - USB 드라이브 준비
 
-Connect the USB drive to a device capable of adding and editing files to the USB drive.
+USB 드라이브 안에 파일을 편집 가능한 컴퓨터에 연결합니다.
 
-Format a USB stick with FAT32/EXT4/NTFS and name the drive `CONFIG` (uppercase).
+USB 드라이브를 FAT32/EXT4/NTFS 형식으로 포맷합니다. 그리고 드라이브의 이름을 `CONFIG`(모두 대문자)으로 만듭니다.
 
-### Step 2 - Add files to enable I2C
+### 2단계 - I2C를 적용할 파일 생성
 
-- In the root of the USB drive add a folder called `/modules`.
-- Inside that folder add a text file called `rpi-i2c.conf` with the following contents:
+- USB 드라이브의 루트에 `/modules`이라는 이름의 폴더를 만듭니다.
+- 해당 폴더 안에 `rpi-i2c.conf` 이름으로 텍스트 파일을 만들고 아래 내용을 입력합니다:
   ```txt
   i2c-bcm2708
   i2c-dev
   ```
-- In the root of the USB drive add a file called `config.txt` with the following contents:
+- USB 드라이브 루트에 `config.txt` 이름으로 텍스트 파일을 만들고 아래 내용을 입력합니다:
   ```txt
-  dtparam=i2c1=on 
+  dtparam=i2c1=on
   dtparam=i2c_arm=on
   ```
 
-### Step 3 - Load the new USB config
+### 3단계 - USB 드라이브로 설치
 
-- Insert the USB drive into your Raspberry PI.
-- Now go to your Home Assistant web interface, in the sidebar click **Hass.io** > **System**.
-- Now click `Import from USB`.
-- This will restart your Hass.io instance, and load the new USB configuration.
+- 라즈베리파이에 USB 드라이브를 꼽습니다.
+- 홈어시스턴트 웹페이지로 가서 **Hass.io** > **System** 을 클릭합니다.
+- 이제 `Import from USB`를 클릭합니다.
+- Hass.io를 재시작하면,새로운 USB 설정을 반영합니다.
 
-When the service has restarted, you will have a working I2C interface.
+서버를 재시작 하면 I2C interface를 사용할 수 있습니다.

@@ -1,28 +1,28 @@
 ---
-title: "Installing third-party add-ons"
+title: "서드파티 애드온 설치"
 description: "Instructions on how to get started using third-party add-ons."
 ---
 
-Hass.io allows anyone to create add-on repositories to share their add-ons for Hass.io easily. To try this locally, you can use our example add-on repository at
+Hass.io는 해쇼용 애드온들을 공유하기 위한 저장소를 제공할 수 있습니다. 이것을 사용하기 위해서 예제로 준비한 애드온 저장소를 추가해볼 수 있습니다.
 
 ```text
 https://github.com/home-assistant/hassio-addons-example
 ```
 
 <div class='note warning'>
-Home Assistant cannot guarantee the quality or security of third-party add-ons. Use at your own risk.
+홈어시스턴트는 서드파티 애드온에 대해 보안 사항을 보증하지 않습니다. 서드파티 애드온은 본인이 위험을 감수하고 사용해야 합니다.
 </div>
 
 <p class='img'>
 <img src='/images/hassio/screenshots/main_panel_addon_store.png' />
-From the Hass.io main panel open the add-on store.
+Hass.io 메인 패널에서 애드온 스토어를 선택합니다.
 </p>
 
 <p class='img'>
 <img src='/images/hassio/screenshots/adding_repositories.png' />
-Add the URL of the repository and then press "Add". A new card for the repository will appear.
+저장소의 URL을 입력하고 "Add" 버튼을 누르면 저장소에서 배포중인 애드온들이 신규 카드로 나타납니다.
 </p>
 
-### Help: Repository is not showing up
+### 도움말: 저장소가 보이지 않아요
 
-If you have added a repository, but it's not showing up, it means that the repository contains invalid configuration. Go to the Hass.io panel and then the System tab to find the System log. It should tell you what went wrong. Report this information to the repository author.
+저장소를 추가해도 화면에 아무것도 보이지 않는 경우가 있습니다. 이것은 저장소에서 설정 파일이 잘못된 경우입니다. Hass.io 패널에서 시스템(System) 탭을 선택하여 시스템 로그를 살펴봅니다. 로그를 통해 무엇이 잘못됐는지 힌트를 얻을 수 있습니다. 오류가 있다면 저장소 관리자에게 알려주세요. 

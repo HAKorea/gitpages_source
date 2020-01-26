@@ -4,7 +4,7 @@
     <ul class="divided sidebar-menu">
       <li>
         <b>{% active_link /faq/ FAQ %}</b> |
-        <b>{% active_link /docs/glossary/ Glossary %}</b>
+        <b>{% active_link /docs/glossary/ 용어정리 %}</b>
       </li>
       <li>
         <b>{% active_link /docs/installation/ 설치 %}</b>
@@ -25,43 +25,41 @@
             {% active_link /docs/configuration/basic/ 기본 설정 %}
           </li>
           <li>
-            {% active_link /docs/configuration/devices/ 기기 추가 %}
+            {% active_link /docs/configuration/devices/ 장비 추가 %}
           </li>
           <li>
-            {% active_link /docs/configuration/customizing-devices/ Customizing
-            entities %}
+            {% active_link /docs/configuration/customizing-devices/ 엔티티 수정 %}
           </li>
           <li>
             {% active_link /docs/configuration/troubleshooting/ 문제해결
             %}
           </li>
           <li>
-            {% active_link /docs/configuration/securing/ Security Check Points
+            {% active_link /docs/configuration/securing/ 보안 점검 사항
             %}
           </li>
         </ul>
       </li>
       <li>
-        <b>Advanced Configuration</b>
+        <b>고급 설정</b>
         <ul>
-          <li>{% active_link /docs/configuration/remote/ Remote access %}</li>
-          <li>{% active_link /docs/configuration/packages/ Packages %}</li>
+          <li>{% active_link /docs/configuration/remote/ 원격 접속 %}</li>
+          <li>{% active_link /docs/configuration/packages/ 패키지 %}</li>
           <li>
             {% active_link /docs/configuration/splitting_configuration/
-            Splitting up the configuration %}
+            설정 파일 분할 %}
           </li>
           <li>
-            {% active_link /docs/configuration/secrets/ Storing Secrets %}
+            {% active_link /docs/configuration/secrets/ 보안 유지 %}
           </li>
-          <li>{% active_link /docs/configuration/templating/ Templating %}</li>
+          <li>{% active_link /docs/configuration/templating/ 템플릿 사용 %}</li>
           <li>
-            {% active_link /docs/configuration/platform_options/ Entity
-            component platform options %}
+            {% active_link /docs/configuration/platform_options/ 엔티티 옵션 %}
           </li>
         </ul>
       </li>
       <li>
-        <b>{% active_link /docs/authentication/ Authentication %}</b>
+        <b>{% active_link /docs/authentication/ 인증 %}</b>
         <ul>
           <li>
             {% active_link /docs/authentication/providers/ Auth Providers %}
@@ -73,25 +71,25 @@
         </ul>
       </li>
       <li>
-        <b>Core objects</b>
+        <b>핵심 오브젝트</b>
         <ul>
-          <li>{% active_link /docs/configuration/events/ Events %}</li>
+          <li>{% active_link /docs/configuration/events/ 이벤트 %}</li>
           <li>
-            {% active_link /docs/configuration/state_object/ State Objects %}
+            {% active_link /docs/configuration/state_object/ 상태 오브젝트 %}
           </li>
         </ul>
       </li>
       <li>
-        <b>{% active_link /docs/automation/ Automation %}</b>
+        <b>{% active_link /docs/automation/ 자동화 %}</b>
         <ul>
-          <li>{% active_link /docs/automation/examples/ Examples %}</li>
-          <li>{% active_link /docs/automation/editor/ Editor %}</li>
-          <li>{% active_link /docs/automation/trigger/ Triggers %}</li>
-          <li>{% active_link /docs/automation/condition/ Conditions %}</li>
-          <li>{% active_link /docs/automation/action/ Actions %}</li>
-          <li>{% active_link /docs/automation/templating/ Templates %}</li>
+          <li>{% active_link /docs/automation/examples/ 예제 %}</li>
+          <li>{% active_link /docs/automation/editor/ 자동화 편집기 %}</li>
+          <li>{% active_link /docs/automation/trigger/ 트리거 %}</li>
+          <li>{% active_link /docs/automation/condition/ 조건 %}</li>
+          <li>{% active_link /docs/automation/action/ 동작 %}</li>
+          <li>{% active_link /docs/automation/templating/ 템플릿 %}</li>
           <li>
-            {% active_link /docs/automation/troubleshooting/ Troubleshooting %}
+            {% active_link /docs/automation/troubleshooting/ 문제해결 %}
           </li>
         </ul>
       </li>
@@ -99,10 +97,10 @@
         <b>{% active_link /docs/frontend/ Frontend %}</b>
         <ul>
           <li>
-            {% active_link /docs/frontend/mobile/ Android/iOS Homescreen %}
+            {% active_link /docs/frontend/mobile/ Android/iOS 홈스크린 %}
           </li>
           <li>
-            {% active_link /docs/frontend/browsers/ Browser Compatibility List
+            {% active_link /docs/frontend/browsers/ 호환 브라우저 목록
             %}
           </li>
           <li>{% active_link /lovelace Lovelace UI %}</li>
@@ -111,17 +109,17 @@
       <li>
         <b>{% active_link /docs/backend/ Backend %}</b>
         <ul>
-          <li>{% active_link /docs/backend/database/ Database %}</li>
+          <li>{% active_link /docs/backend/database/ 데이터베이스 %}</li>
           <li>{% active_link /docs/backend/updater/ Updater %}</li>
           <li>{% active_link /developers/api/ API %}</li>
         </ul>
       </li>
       <li>
-        <b>{% active_link /docs/scripts/ Scripts %}</b>
+        <b>{% active_link /docs/scripts/ 스크립트 %}</b>
         <ul>
-          <li>{% active_link /docs/scripts/service-calls/ Service Calls %}</li>
-          <li>{% active_link /docs/scripts/conditions/ Conditions %}</li>
-          <li>{% active_link /docs/scripts/editor/ Editor %}</li>
+          <li>{% active_link /docs/scripts/service-calls/ 서비스 실행 %}</li>
+          <li>{% active_link /docs/scripts/conditions/ 조건 %}</li>
+          <li>{% active_link /docs/scripts/editor/ 스크립트 편집기 %}</li>
         </ul>
       </li>
       <li>
@@ -155,46 +153,45 @@
         <b>{% active_link /docs/z-wave/ Z-Wave %}</b>
         <ul>
           <li>
-            {% active_link /docs/z-wave/installation/ Configuring the Z-Wave
-            component %}
+            {% active_link /docs/z-wave/installation/ 지웨이브 설정 %}
           </li>
-          <li>{% active_link /docs/z-wave/adding/ Adding devices %}</li>
+          <li>{% active_link /docs/z-wave/adding/ 기기 추가 %}</li>
           <li>
-            {% active_link /docs/z-wave/control-panel/ The Z-Wave control panel
+            {% active_link /docs/z-wave/control-panel/ 지웨이브 관리 화면
             %}
           </li>
-          <li>{% active_link /docs/z-wave/controllers/ Controllers %}</li>
+          <li>{% active_link /docs/z-wave/controllers/ 콘트롤러 %}</li>
           <li>
-            {% active_link /docs/z-wave/devices/ Devices %} and {% active_link
-            /docs/z-wave/entities/ Entities %}
+            {% active_link /docs/z-wave/devices/ 기기 %} 와 {% active_link
+            /docs/z-wave/entities/ 엔티티 %}
           </li>
           <li>
-            {% active_link /docs/z-wave/query-stage/ Query Stages %} for devices
+            {% active_link /docs/z-wave/query-stage/ 단계별 초기화 %}
           </li>
           <li>
-            {% active_link /docs/z-wave/device-specific/ Device Specific %}
-            configuration
+            {% active_link /docs/z-wave/device-specific/ 특정 기기 %}
+            설정
           </li>
           <li>
-            {% active_link /docs/z-wave/events/ Events %} and {% active_link
-            /docs/z-wave/services/ Services %}
+            {% active_link /docs/z-wave/events/ 이벤트 %} 와 {% active_link
+            /docs/z-wave/services/ 서비스 %}
           </li>
         </ul>
       </li>
       <li>
         <b>{% active_link /docs/mqtt/ MQTT %}</b>
         <ul>
-          <li>{% active_link /docs/mqtt/broker/ Broker %}</li>
-          <li>{% active_link /docs/mqtt/certificate/ Certificate %}</li>
-          <li>{% active_link /docs/mqtt/discovery/ Discovery %}</li>
+          <li>{% active_link /docs/mqtt/broker/ 브로커 %}</li>
+          <li>{% active_link /docs/mqtt/certificate/ 인증서 %}</li>
+          <li>{% active_link /docs/mqtt/discovery/ 발견 %}</li>
           <li>{% active_link /docs/mqtt/service/ Publish service %}</li>
           <li>
             {% active_link /docs/mqtt/birth_will/ Birth and last will messages
             %}
           </li>
-          <li>{% active_link /docs/mqtt/testing/ Testing your setup %}</li>
+          <li>{% active_link /docs/mqtt/testing/ 테스트 %}</li>
           <li>{% active_link /docs/mqtt/logging/ Logging %}</li>
-          <li>{% active_link /docs/mqtt/processing_json/ Processing JSON %}</li>
+          <li>{% active_link /docs/mqtt/processing_json/ JSON 처리 %}</li>
         </ul>
       </li>
       <li>
@@ -326,23 +323,23 @@
             </ul>
           </li>
           <li>
-            Backup
+            백업
             <ul>
               <li>
-                {% active_link /docs/ecosystem/backup/backup_github/ Backup to
-                GitHub %}
+                {% active_link /docs/ecosystem/backup/backup_github/
+                GitHub 백업 %}
               </li>
               <li>
-                {% active_link /docs/ecosystem/backup/backup_dropbox/ Backup to
-                Dropbox %}
+                {% active_link /docs/ecosystem/backup/backup_dropbox/
+                Dropbox 백업 %}
               </li>
               <li>
-                {% active_link /docs/ecosystem/backup/backup_usb/ Backup to USB
-                device %}
+                {% active_link /docs/ecosystem/backup/backup_usb/ USB
+                백업 %}
               </li>
             </ul>
           </li>
-          <li>{% active_link /docs/ecosystem/synology/ Synology %}</li>
+          <li>{% active_link /docs/ecosystem/synology/ 시놀로지 %}</li>
           <li>
             {% active_link /docs/ecosystem/hass-configurator/ Configurator
             %}

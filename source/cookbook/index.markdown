@@ -1,5 +1,5 @@
 ---
-title: "Cookbook"
+title: "쿡북"
 description: "Community maintained list of different ways to use Home Assistant."
 sidebar: false
 regenerate: true

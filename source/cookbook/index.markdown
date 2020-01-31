@@ -1,5 +1,5 @@
 ---
-title: "Cookbook"
+title: "쿡북 (홈어시스턴트 설정따라하기)"
 description: "Community maintained list of different ways to use Home Assistant."
 sidebar: false
 regenerate: true
@@ -7,18 +7,19 @@ hide_github_edit: true
 ---
 
 This is a community curated list of different ways to use Home Assistant. Most of these examples are using the [automation] integration and other built-in [automation related][sec-automation] and [organization] integrations available.
+다음은 홈어시스턴트 설정의 예시들입니다. 대부분의 예시들은 [automation] 자동화 기능을 사용하여 [automation related][sec-automation]과 [organization]의 통합구성요소를 응용하여 설정한 것들입니다. 
 
-For [`python_script:` examples](/integrations/python_script/) visit the [Scripts section](https://community.home-assistant.io/c/projects/scripts) in our forum.
+[`python_script:` examples](/integrations/python_script/)를 예시를 살펴보기 위해선  [Scripts section](https://community.home-assistant.io/c/projects/scripts) 포럼을 방문해주세요.
 
 [automation]: /getting-started/automation/
 [sec-automation]: /integrations/#automation
 [organization]: /integrations/#organization
 
-New recipes can be added via the [home-assistant.io repository](https://github.com/home-assistant/home-assistant.io/tree/current/source/_cookbook).
+새로운 설정(recipes)은 [home-assistant.io repository](https://github.com/home-assistant/home-assistant.io/tree/current/source/_cookbook)에 추가될 수 있습니다.
 
 <div class='note'>
 
-A great place to find popular configurations is on this [GitHub search](https://github.com/search?q=topic%3Ahome-assistant-config&type=Repositories) for repositories with the `home-assistant-config` topic.
+최신 유행하는 설정을 찾기 위한 최적의 방법은 `home-assistant-config` topic으로 [GitHub search](https://github.com/search?q=topic%3Ahome-assistant-config&type=Repositories)에서 검색하는 것입니다. 
 
 </div>
 

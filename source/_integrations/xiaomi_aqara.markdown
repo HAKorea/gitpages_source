@@ -133,7 +133,7 @@ interface:
 
 #### `xiaomi_aqara.play_ringtone` 서비스
 
-특정 벨소리를 플레이. 게이트웨이 버전 `1.4.1_145` 이상에서 가능. 아래 적용 예시를 살펴보세요.
+특정 벨소리를 재생. 게이트웨이 버전 `1.4.1_145` 이상에서 가능. 아래 적용 예시를 살펴보세요.
 
 | Service data attribute    | Optional | Description                                           |
 |---------------------------|----------|-------------------------------------------------------|
@@ -181,7 +181,7 @@ interface:
 
 #### `xiaomi_aqara.add_device` 서비스
 
-샤오마 아카라 게이트웨이에 기기를 연결하도록 30초간 실행됩니다. 서비스 실행 후 새로운 기기에서 페이링 버튼을 눌러주면 게이트웨이에 추가할 수 있습니다.
+샤오마 아카라 게이트웨이에 기기를 연결하도록 30초간 실행합니다. 서비스 실행 후 새로운 기기에서 페이링 버튼을 눌러주면 게이트웨이에 추가할 수 있습니다.
 
 | Service data attribute    | Optional | Description                                           |
 |---------------------------|----------|-------------------------------------------------------|
@@ -263,7 +263,7 @@ interface:
 2017-08-20 16:51:20 ERROR (MainThread) [homeassistant.setup] Setup failed for xiaomi: Component failed to initialize.
 ```
 
-위 내용은 홈어시스턴트가 샤오미 게이트웨이와 연결하지 못했다는 뜻힙니다. 내부 네트워크나 방화벽 문제일 수 있습니다.
+위 내용은 홈어시스턴트가 샤오미 게이트웨이와 연결하지 못했다는 뜻입니다. 내부 네트워크나 방화벽 문제일 수 있습니다.
 
 - [enabled LAN access](https://www.domoticz.com/wiki/Xiaomi_Gateway_(Aqara)#Adding_the_Xiaomi_Gateway_to_Domoticz)를 확인합니다.
 - 홈어시스턴트가 동작하는 네트워크의 방화벽을 해제합니다.

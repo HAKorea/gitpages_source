@@ -12,14 +12,14 @@ ha_codeowners:
   - '@OttoWinter'
 ---
 
-This integration allows you to connect your [ESPHome](https://esphome.io) devices directly to Home Assistant with the [native ESPHome API](https://esphome.io/components/api.html).
+[ESPHome](https://esphome.io) 장치를 통합구성요소로 사용할 시에는 [native ESPHome API](https://esphome.io/components/api.html)로 완벽하게 직접 연결됩니다. 
 
-## Set up the integration via the integrations screen
+## 통합 구성요소(Integrations)를 통한 기기 추가 방법 
 
-Menu: *Configuration* > *Integrations*
+Menu: *설정* > *통합 구성요소*
 
-Press on **ESPHome** and configure the integration:
+**ESPHome**을 클릭하시고 통합 구성요소 설정:
 
-* Enter the address and port of your node. For example, if the node is called `livingroom`, the address would be `livingroom.local` and the port number would be `6053` (default).
+* 해당 기기의 포트와 주소를 넣으세요. 예를 들어 노트이름이 `livingroom`이면, 해당 주소는 `livingroom.local` 이 되고, 포트번호는 `6053` (default)이 됩니다.
 
-Home Assistant will then try to connect to the device. If you have a password set, Home Assistant will also ask you for it. After that, all the entities you have configured on your ESPHome node will automatically appear in Home Assistant.
+홈어시스턴트는 기기에 접속을 시도할 겁니다. 만일 API 비밀번호를 설정하셨다면 홈어시스턴트는 비밀번호를 요청할것입니다. 그 이후에, 설정한 ESPHOME기기의 모든 entity들이 자동으로 홈어시스턴트에 나타나게 됩니다. 

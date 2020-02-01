@@ -32,7 +32,7 @@ automation:
 ## Configuration
 
 설정에서 default_config : 행을 비활성화하거나 제거하지 않은 경우 통합구성요소는 기본적으로 활성화됩니다. 
-이럴 경우 다음 예는 통합구성요소를 수동으로 활성화하는 방법입니다.
+이럴 경우 다음 예는 통합구성요소를 수동으로 활성화하는 방법입니다. 
 
 ```yaml
 # Example configuration.yaml entry

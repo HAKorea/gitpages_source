@@ -10,15 +10,15 @@ ha_codeowners:
   - '@home-assistant/core'
 ---
 
-Please see the [docs section](/docs/automation/) for in-depth
-documentation on how to use the automation integration.
+자세한 내용은 [docs 섹션] (/ docs / automation /)을 참조하십시오
+자동화 통합 사용 방법에 대한 설명서.
 
 <p class='img'>
   <img src='{{site_root}}/images/screenshots/automation-switches.png' />
 </p>
 
-You can also use `initial_state: 'false'` so that the automation
-is not automatically turned on after a Home Assistant reboot.
+자동화 사용시 `initial_state : 'false'`를 사용할 수 있습니다
+홈 어시스턴트 재부팅 후 자동으로 켜지지 않습니다.
 
 ```yaml
 automation:
@@ -31,7 +31,8 @@ automation:
 
 ## Configuration
 
-This integration is by default enabled, unless you've disabled or removed the [`default_config:`](https://www.home-assistant.io/integrations/default_config/) line from your configuration. If that is the case, the following example shows you how to enable this integration manually:
+설정에서 default_config : 행을 비활성화하거나 제거하지 않은 경우 통합구성요소는 기본적으로 활성화됩니다. 
+이럴 경우 다음 예는 통합구성요소를 수동으로 활성화하는 방법입니다.
 
 ```yaml
 # Example configuration.yaml entry

@@ -5,7 +5,7 @@ featured: true
 og_image: /images/hassio/screenshots/addon-hass-configurator.png
 ---
 
-You can use this add-on to add a browser-based file editor to your Hass.io installation. By default it will be available over Ingress only.
+ABC You can use this add-on to add a browser-based file editor to your Hass.io installation. By default it will be available over Ingress only.
 
 More information and a standalone version for regular Home Assistant installations can be found in the [GitHub repository](https://github.com/danielperna84/hass-configurator).
 

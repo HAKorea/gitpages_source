@@ -6,7 +6,7 @@ regenerate: true
 hide_github_edit: true
 ---
 
-This is a community curated list of different ways to use Home Assistant. Most of these examples are using the [automation] integration and other built-in [automation related][sec-automation] and [organization] integrations available.
+[sec-automation] and [organization] integrations available.
 다음은 홈어시스턴트 설정의 예시들입니다. 대부분의 예시들은 [automation] 자동화 기능을 사용하여 [automation related][sec-automation]과 [organization]의 통합구성요소를 응용하여 설정한 것들입니다. 
 
 [`python_script:` examples](/integrations/python_script/)를 예시를 살펴보기 위해선  [Scripts section](https://community.home-assistant.io/c/projects/scripts) 포럼을 방문해주세요.

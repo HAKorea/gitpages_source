@@ -13,7 +13,6 @@ ha_iot_class: Cloud Polling
 
 ## 설정
 
-<<<<<<< HEAD
 무료이긴 하지만 [가입](https://darksky.net/dev/register)을 한 이후 API키를 받아야 합니다. 무료서비스로는 하루에 최대 1000번의 데이터 사용을 허용하며 플랫폼은 최대 3 분마다 최대 480번을 사용하여 업데이트합니다. (보통은 그 이하로 사용하므로 개인사용자는 무료로 사용 가능)
 
 <div class='note warning'>

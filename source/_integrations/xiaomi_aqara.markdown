@@ -1,5 +1,5 @@
 ---
-title: Xiaomi Gateway (Aqara)
+title: 샤오미 게이트웨이(아카라)
 description: Instructions for how to integrate the Xiaomi Gateway (Aqara) within Home Assistant.
 logo: xiaomi.png
 ha_category:
@@ -11,11 +11,11 @@ ha_codeowners:
   - '@syssi'
 ---
 
-The `xiaomi_aqara` integration allows you to integrate [Xiaomi](https://www.mi.com/en/) Aqara-compatible devices into Home Assistant.
+`xiaomi_aqara` 통합구성요소는 [샤오미](https://www.mi.com/en/) 아카라 호환 기기를 홈어시스턴트와 연결하는데 사용합니다.
 
-Please note, there are two versions of the hub: v1 and v2. v1 can be used with Home Assistant without any problems, however, v2 might be less straight forward when it comes to enabling the local API, and might even require you to open up your device in order to do so. Xiaomi has suggested this is in the pipeline.
+주의사항은 허브의 종류를 v1, v2 두가지로 구분하는데 v1은 아무 문제없이 홈어시스턴트와 통합되는데 v2는 로컬API를 활성화하는데 있어 조금 문제가 있습니다. 허브 장치를 분해하고 로컬API 활성화를 진행해야 합니다. 이에 대해 샤오미측은 수정 제안을 받는 상태입니다.
 
-## Supported Devices
+## 지원 기기
 
 - Aqara Air Conditioning Companion (lumi.acpartner.v3)
 - Aqara Intelligent Door Lock (lock.aq1)
@@ -29,36 +29,37 @@ Please note, there are two versions of the hub: v1 and v2. v1 can be used with H
 - Button 1st generation (Single, Double, Long Click)
 - Button 2nd generation (Single, Double)
 - Cube
-- Door and Window Sensor (1st and 2nd generation)
+- Door and Window Sensor (1세대와 2세대)
 - Gas Leak Detector (reports alarm and density)
 - Gateway (Light, Illumination Sensor, Ringtone play)
 - Intelligent Curtain
-- Motion Sensor (1st and 2nd generation)
-- Plug aka Socket (Zigbee version, reports power consumed, power load, state and if the device is in use)
+- Motion Sensor (1세대와 2세대)
+- Plug aka Socket (지그비 버전, reports power consumed, power load, state and if the device is in use)
 - Smoke Detector (reports alarm and density)
-- Temperature and Humidity Sensor (1st and 2nd generation)
+- Temperature and Humidity Sensor (1세대와 2세대)
 - Vibration Sensor
 - Wall Plug (reports power consumed, power load, and state)
 - Water Leak Sensor
 - Xiaomi Mijia Gateway (lumi.gateway.v2, lumi.gateway.v3)
 
-## Unsupported Devices
+## 미지원 기기
 
-- Xiaomi Aqara Gateway (lumi.gateway.aqhm01), as it is not possible to activate dev mode in the Mi Home App.
+- Xiaomi Aqara Gateway (lumi.gateway.aqhm01), 미홈 앱에서 dev mode를 활성화 할 수 없기 때문
 - Gateway Radio
 - Gateway Button
 - Xiaomi Mi Air Conditioning Companion (lumi.acpartner.v2)
 - Aqara Intelligent Air Conditioner Controller Hub (lumi.acpartner.v1)
 - Decoupled mode of the Aqara Wall Switches (Single & Double)
-- Additional alarm events of the Gas and Smoke Detector: Analog alarm, battery fault alarm (smoke detector only), sensitivity fault alarm, I2C communication failure
+- Gas와 Smoke Detector 에서 추가적인 알람이벤트: I2C 통신 실패로 Analog alarm, battery fault alarm (smoke detector only), sensitivity fault alarm 사용 못함
 
-## Setup
+## 설치
 
-Follow the setup process using your phone and Mi-Home app. From here you will be able to retrieve the key (password) from within the app following [this tutorial](https://www.domoticz.com/wiki/Xiaomi_Gateway_(Aqara)#Adding_the_Xiaomi_Gateway_to_Domoticz).
+스마트폰의 미홈 앱에서 설정 과정을 진행하세요. [이 튜토리얼](https://www.domoticz.com/wiki/Xiaomi_Gateway_(Aqara)#Adding_the_Xiaomi_Gateway_to_Domoticz)을 따라서 앱 안에 저장된 키(비밀번호)를 추출합니다.
 
-To enable {{ page.title }} in your installation, add the following to your `configuration.yaml` file:
 
-### One Gateway
+{{ page.title }}를 사용하기 위해  `configuration.yaml` 파일에 아래와 같이 입력합니다:
+
+### 게이트웨이가 1개인 경우
 
 ```yaml
 # You can leave MAC empty if you only have one gateway.
@@ -68,7 +69,7 @@ xiaomi_aqara:
     - key: xxxxxxxxxxxxxxxx
 ```
 
-### Multiple Gateways
+### 게이트웨이가 여러개인 경우
 
 ```yaml
 # 12 characters MAC can be obtained from the gateway.
@@ -80,7 +81,7 @@ xiaomi_aqara:
       key: xxxxxxxxxxxxxxxx
 ```
 
-### Search for gateways on specific interface
+### 특정 인터페이스의 게이트웨이를 지정하는 경우
 
 ```yaml
 # 12 characters MAC can be obtained from the gateway.
@@ -93,54 +94,54 @@ xiaomi_aqara:
 
 {% configuration %}
 gateways:
-  description: A list of gateways to set up.
+  description: 게이트웨이 목록을 작성
   required: true
   type: map
   keys:
     mac:
-      description: The MAC address of your gateway. Needs to be formatted without ":". *Optional if only using one gateway.*
+      description: 게이트웨이의 MAC 어드레스. MAC 어드레스를 표현할 때 사용하는 ":"를 삭제하고 붙여씁니다. **하나의 게이트웨이만 사용한다면 입력하지 않아도 됩니다**
       required: false
       type: string
     key:
-      description: The key of your gateway. *Optional if only using sensors and/or binary sensors.*
+      description: 게이트웨이의 키 값. **sensors and/or binary sensors 라면 입력하지 않아도 됩니다**
       required: false
       type: string
     host:
-      description: The host/IP address of the gateway. If this parameter is used the multicast discovery of the gateway is skipped.
+      description: 게이트웨이의 이름 또는 IP주소. If this parameter is used the multicast discovery of the gateway is skipped.
       required: false
       type: string
     disable:
-      description: Disable the gateway. This is only useful if you don't want to integrate a specific gateway.
+      description: 게이트웨이 사용 안함. 특정 게이트웨이를 연동하고 싶지 않을때 사용합니다.
       required: false
       type: boolean
       default: false
 discovery_retry:
-  description: Number of times that Home Assistant should try to reconnect to the gateway.
+  description: 홈어시스턴트가 게이트웨이를 재탐색 하는 횟수
   required: false
   type: integer
   default: 3
 interface:
-  description: Which network interface to use.
+  description: 특정 네트워크 인터페이스를 지정
   required: false
   type: string
   default: any
 {% endconfiguration %}
 
-### Services
+### 서비스
 
-The gateway provides the following services:
+게이트웨이는 다음과 같은 서비스를 제공합니다:
 
-#### Service `xiaomi_aqara.play_ringtone`
+#### `xiaomi_aqara.play_ringtone` 서비스
 
-Play a specific ringtone. The version of the gateway firmware must be `1.4.1_145` at least. Take a look at the examples below.
+특정 벨소리를 재생. 게이트웨이 버전 `1.4.1_145` 이상에서 가능. 아래 적용 예시를 살펴보세요.
 
 | Service data attribute    | Optional | Description                                           |
 |---------------------------|----------|-------------------------------------------------------|
-| `gw_mac`                  |       no | MAC address of the Xiaomi Aqara Gateway               |
-| `ringtone_id`             |       no | One of the allowed ringtone ids                       |
-| `ringtone_vol`            |      yes | The volume in percent                                 |
+| `gw_mac`                  |       no | 샤오미 아카라 게이트웨이의 MAC 어드레스       |
+| `ringtone_id`             |       no | 원하는 벨소리 id                      |
+| `ringtone_vol`            |      yes | 볼륨 크기(%값)                                 |
 
-Allowed values of the `ringtone_id` are:
+벨소리의`ringtone_id` 값은 다음과 같습니다:
 
 - Alarms
   - 0 - Police car 1
@@ -168,40 +169,40 @@ Allowed values of the `ringtone_id` are:
   - 27 - MusicBox
   - 28 - Orange
   - 29 - Thinker
-- Custom ringtones (uploaded by the Mi Home app) starting from 10001
+- 커스텀 벨소리(미홈 앱에서 업로드 가능)는 10001부터 시작합니다.
 
-#### Service `xiaomi_aqara.stop_ringtone`
+#### `xiaomi_aqara.stop_ringtone` 서비스
 
-Stops a playing ringtone immediately.
-
-| Service data attribute    | Optional | Description                                           |
-|---------------------------|----------|-------------------------------------------------------|
-| `gw_mac`                  |       no | MAC address of the Xiaomi Aqara Gateway               |
-
-#### Service `xiaomi_aqara.add_device`
-
-Enables the join permission of the Xiaomi Aqara Gateway for 30 seconds. A new device can be added afterwards by pressing the pairing button once.
+벨소리의 재생을 중지합니다.
 
 | Service data attribute    | Optional | Description                                           |
 |---------------------------|----------|-------------------------------------------------------|
-| `gw_mac`                  |       no | MAC address of the Xiaomi Aqara Gateway               |
+| `gw_mac`                  |       no |  샤오미 아카라 게이트웨이의 MAC 어드레스               |
 
-#### Service `xiaomi_aqara.remove_device`
+#### `xiaomi_aqara.add_device` 서비스
 
-Removes a specific device. The removal is required if a device shall be paired with another gateway.
+샤오마 아카라 게이트웨이에 기기를 연결하도록 30초간 실행합니다. 서비스 실행 후 새로운 기기에서 페이링 버튼을 눌러주면 게이트웨이에 추가할 수 있습니다.
 
 | Service data attribute    | Optional | Description                                           |
 |---------------------------|----------|-------------------------------------------------------|
-| `gw_mac`                  |       no | MAC address of the Xiaomi Aqara Gateway               |
-| `device_id`               |       no | Hardware address of the device to remove              |
+| `gw_mac`                  |       no | 샤오미 아카라 게이트웨이의 MAC 어드레스        |
 
-## Examples
+#### `xiaomi_aqara.remove_device` 서비스
 
-### Long Press on Smart Button 1st Generation
+특정 기기를 제거. 사용중인 기기를 다른 게이트웨이에 추가하려면 제거 서비스를 실행해야 합니다.
 
-This example plays the sound of a dog barking when the button is held down and stops the sound when the button is pressed once. Only works for the round button of the 1st generation.
+| Service data attribute    | Optional | Description                                           |
+|---------------------------|----------|-------------------------------------------------------|
+| `gw_mac`                  |       no | 샤오미 아카라 게이트웨이의 MAC 어드레스               |
+| `device_id`               |       no | 제거할 기기의 하드웨어 주소            |
 
-*Note: The sound will stop playing automatically when it has ended.*
+## 사용예제
+
+### 1세대 스마트 버튼의 롱프레스
+
+버튼을 긴시간 누르면 개짖는 소리를 재생하고 다시 짧게 누르면 재생을 멈추는 예제입니다. 1세대 둥근 스마트 버튼에만 적용 가능합니다.
+
+**주의: 재생중인 사운드는 재생이 끝나면 자동으로 종료됩니다.**
 
 ```yaml
 - alias: Let a dog bark on long press
@@ -231,9 +232,9 @@ This example plays the sound of a dog barking when the button is held down and s
       gw_mac: xxxxxxxxxxxx
 ```
 
-### Double Click on Smart Button
+### 스마트 버튼을 더블 클릭
 
-This example toggles the living room lamp on a double click of the button.
+버튼을 더블 클릭하면 룸 램프의 상태를 변경(토글)하는 예제입니다.
 
 ```yaml
 - alias: Double Click to toggle living room lamp
@@ -249,41 +250,41 @@ This example toggles the living room lamp on a double click of the button.
       entity_id: light.living_room_lamp
 ```
 
-## Troubleshooting
+## 문제 해결
 
-### Initial setup problem
+### 게이트웨이 초기화 문제
 
-If you run into trouble initializing the gateway with your app, try another smartphone. E.g., it didn't work on an OnePlus 3, but it worked with a Nexus 5.
+게이트웨이를 미홈앱에서 초기화할 때 문제가 있다면 다른 스마트폰에서 미홈 앱을 실행해보세요. 예를 들어 OnePlus 3 스마트폰에서는 안되고 Nexus 5에서는 동작할 수 있습니다.
 
-### Connection problem
+### 연결 불량
 
 ```bash
 2017-08-20 16:51:19 ERROR (SyncWorker_0) [homeassistant.components.xiaomi] No gateway discovered
 2017-08-20 16:51:20 ERROR (MainThread) [homeassistant.setup] Setup failed for xiaomi: Component failed to initialize.
 ```
 
-That means that Home Assistant is not getting any response from your Xiaomi gateway. Might be a local network problem or your firewall.
+위 내용은 홈어시스턴트가 샤오미 게이트웨이와 연결하지 못했다는 뜻입니다. 내부 네트워크나 방화벽 문제일 수 있습니다.
 
-- Make sure you have [enabled LAN access](https://www.domoticz.com/wiki/Xiaomi_Gateway_(Aqara)#Adding_the_Xiaomi_Gateway_to_Domoticz).
-- Turn off the firewall on the system where Home Assistant is running.
-- Ensure your router supports multicast as this is a requirement of the Xiaomi Gateway.
-- Try to leave the MAC address `mac:` blank.
-- Try to set `discovery_retry: 10`.
-- Try to disable and then enable LAN access.
-- Hard reset the gateway: Press the button of the gateway 30 seconds and start again from scratch.
-- If you are using Home Assistant in [Docker](/docs/installation/docker/), make sure to use `--net=host`.
-- If you receive an `{"error":"Invalid key"}` in your log while trying to control the gateway light
-  - You should generate the key again using an Android Phone or alternatively an emulator such as [bluestacks](https://www.bluestacks.com). In some instances, there is an issue with keys being generated using the iOS application.
-  - You need to make sure to have multicast support on your network. If you are running Home Assistant in a virtual machine (like Proxmox), try `echo 0 >/sys/class/net/vmbr0/bridge/multicast_snooping` on the host and restart the service or reboot the host.
-- If the required library "PyXiaomiGateway" cannot be installed you will need to install some missing system dependencies `python3-dev`, `libssl-dev`, `libffi-dev` manually (e.g., `$ sudo apt-get install python3-dev libssl-dev libffi-dev`).
-- If your gateway's MAC address starts with `04:CF:8C` or `7C:49:EB`, there is a good chance that the required port `9898` is closed on your gateway (you can check it with the Nmap utility, using the command `sudo nmap -sU {gateway_ip} -p 9898`). To fix that issue, you need to do these steps:
-  - Find a specific screw bit (like a fork) to open the gateway case.
-  - Find a USB-UART cable/module and connect it to your computer.
-  - Solder 3 wires - RX, TX and GND like [here](https://cs5-3.4pda.to/14176168/IMG_20181020_201150.jpg).
-  - Turn on the gateway (220V).
-  - Open a serial terminal application (e.g. PuTTY) and connect to the serial port assigned to the USB-UART module (baudrate: 115200).
-  - Wait until the gateway is booted up, connect the RX, TX and GND wires to the UART module (don't connect the Vcc (power) wire!).
-  - You will see all the messages from the gateway.
-  - Send the command `psm-set network open_pf 3` (the command has to end with a `CR` newline character).
-  - Check your settings executing the command `psm-get network open_pf` to be sure it's OK.
-  - Restart the gateway.
+- [enabled LAN access](https://www.domoticz.com/wiki/Xiaomi_Gateway_(Aqara)#Adding_the_Xiaomi_Gateway_to_Domoticz)를 확인합니다.
+- 홈어시스턴트가 동작하는 네트워크의 방화벽을 해제합니다.
+- 샤오미 게이트웨이는 multicast가 필요합니다. 공유기가 멀티캐스트를 지원하는지 확인하세요.
+- MAC 어드레스 입력란 `mac:` 을 공백으로 설정해봅니다.
+- 재탐색 횟수를 10회로 늘려봅니다. `discovery_retry: 10`
+- LAN access 설정을 껐다가 켜봅니다.
+- 게이트웨이를 하드 리셋해봅니다. 게이트웨이의 버튼을 30초간 계속 누르면 하드 리셋 시킬 수 있습니다.
+- [도커](/docs/installation/docker/)로 홈어시스턴트를 구동중이라면 run 옵션으로 `--net=host`를 적용했는지 확인
+- 게이트웨이 라이트를 제어할때 로그에 `{"error":"Invalid key"}` 가 찍힌다면:
+  - 안드로이드 폰이나 [bluestacks](https://www.bluestacks.com)과 같은 에뮬레이터로 키를 다시 생성해야 합니다. iOS에서 생성한 키는 제대로 동작하지 않는 문제가 알려져있습니다.
+  - 네트워크에 멀티캐스트가 적용되어 있는지 확인하세요. 만일 버추얼 머신에서(Proxmox같은) 홈어시스턴트를 실행중이라면 호스트에서 `echo 0 >/sys/class/net/vmbr0/bridge/multicast_snooping` 명령을 실행하고 홈어시스턴트를 재실행하거나 호스트를 리부팅합니다.
+- 필수 라이브러리인 "PyXiaomiGateway"을 설치할 수 없다면 몇몇 의존 라이브러리를 확인해야 합니다. `python3-dev`, `libssl-dev`, `libffi-dev` 을 수동으로 설치하세요. (예:`$ sudo apt-get install python3-dev libssl-dev libffi-dev`).
+- 게이트웨이의 MAC 어드레스가 `04:CF:8C` 또는 `7C:49:EB`로 시작하면 게이트웨이에서 `9898` 포트가 막혔을 수 있습니다. (이것은 Nmap 명령어로 확인해볼 수 있습니다. `sudo nmap -sU {gateway_ip} -p 9898`을 실행해보세요). 이것을 해결하기 위해서 다음 절차를 따라합니다:
+  - 게이트웨이 케이스를 열어볼 적절한 드라이버를 준비합니다(없다면 포크를 준비하세요)
+  - RX, TX, GND 접점을 납땜합니다. [실행 예제](https://cs5-3.4pda.to/14176168/IMG_20181020_201150.jpg).  
+  - 게이트웨이 내부와 연결할 USB-UART cable/module을 구해서 컴퓨터에 연결합니다.
+  - 게이트웨이의 전원을 켭니다(220V).
+  - 시리얼 터미널 프로그램을 실행합니다(PuTTY 같은). USB-UART module이 연결된 시리얼 포트를 터미널 프로그램으로 접속합니다(baudrate: 115200).
+  - 게이트웨이가 부팅되면 RX, TX, GND에 납땜한 전선을 UART module에 연결합니다. **절대로 Vcc를 연결하면 안됩니다!**
+  - 터미널 프로그램에 게이트웨이가 보내는 메시지가 출력됩니다.
+  - `psm-set network open_pf 3` 명령어를 전송합니다 (명령어는 `CR` newline character로 끝나야 합니다).
+  - `psm-get network open_pf` 명령을 전송하여 OK가 표시되는지 확인합니다.
+  - 게이트웨이를 끄고 다시 켭니다.

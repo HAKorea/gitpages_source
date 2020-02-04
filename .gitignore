@@ -3,6 +3,8 @@
 .sass-cache
 .gist-cache
 .pygments-cache
+.Trashes
+Thumbs.db
 public
 source/_stash
 source/stylesheets/screen.css

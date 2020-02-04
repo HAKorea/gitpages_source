@@ -33,7 +33,7 @@ So here are guidelines:
 
 ### 추천 하드웨어
 
-홈어시스턴트를 설치하기 위해서는 몇가지 요구사항이 있습니다. 홈오토메이션을 구현하기 위한 첫 시작으로는 라즈베리파이 4B (모델B)를 추천합니다. 아래 링크에서 미국 아마존 사이트를 통해 구매할 수 있으며 국내 사이트 링크도 연결해두었습니다.
+홈어시스턴트를 설치하기 위해서는 몇가지 요구사항이 있습니다. 홈오토메이션을 구현하기 위한 첫 시작으로는 라즈베리파이 4B (모델B)를 추천합니다. 아래 링크에서 미국 아마존 사이트를 통해 구매할 수 있습니다.
 
 - [Raspberry Pi 4 Model B (2GB)](https://amzn.to/2XULT2z) + [Power Supply](https://www.raspberrypi.org/help/faqs/#powerReqs) (2.5A 이상 추천)
 - [Micro SD Card](https://amzn.to/2X0Z2di)는  [Application Class 2](https://www.sdcard.org/developers/overview/application/index.html) 종류의 카드가 수많은 읽고/쓰는 동작에 있어서 보다 안정적으로 동작합니다. 32 GB 이상의 용량을 추천합니다.

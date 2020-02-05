@@ -20,3 +20,4 @@ source/.jekyll-metadata
 !.vscode/tasks.json
 *.suo
 tags*
+Gemfile.lock

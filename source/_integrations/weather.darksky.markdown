@@ -68,8 +68,4 @@ mode:
 
 </div>
 
-<<<<<<< HEAD
 자세한 설명은 [Dark Sky documentation](https://darksky.net/dev/docs) 문서를 참조해주세요.
-=======
-자세한 설명은ㅇ [Dark Sky documentation](https://darksky.net/dev/docs) 문서를 참조해주세요.
->>>>>>> 9bab4e1b1e31e010b4e2588e5a21f97274f968c2

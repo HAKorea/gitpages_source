@@ -8,48 +8,48 @@ ha_release: 0.7.4
 ha_config_flow: true
 ---
 
-[OwnTracks](https://owntracks.org/) is a free and open source application for iOS and Android that allow you to track your location and send it directly to Home Assistant. It can be set up via the integrations panel in the configuration screen.
+[OwnTracks](https://owntracks.org/)는 아이폰과 안드로이드에서 위치정보를 트래킹하여 홈어시스턴트와 연동하는 오픈소스입니다. 설정 화면에서 통합구성요소로 간단히 추가할 수 있습니다.
 
-By default the integration will listen for incoming messages from OwnTracks via HTTP. It will also listen for MQTT messages if Home Assistant is configured to use MQTT.
+기본 통합 설정은 HTTP 프로토콜을 통해 OwnTracks가 보내는 메시지를 수신합니다. 그리고 홈어시스턴트의 MQTT 서버 설정을 한 다음 MQTT 프로토콜로 메시지를 수신하는 것도 가능합니다.
 
 <div class='videoWrapper'>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/UieAQ8sC6GY" frameborder="0" allowfullscreen></iframe>
+<!-iframe width="560" height="315" src="https://www.youtube.com/embed/UieAQ8sC6GY" frameborder="0" allowfullscreen></iframe>
 </div>
 
-## Configuration
+## 설정
 
-To configure OwnTracks, you must set it up via the integrations panel in the configuration screen. This will give you the webhook URL to use during mobile device configuration (below).
+OwnTracks를 사용하기 위해 설정화면에서 통합구성요소를 추가합니다. 이 과정에서 모바일 기기와 연동가능한 웹훅 URL이 제공됩니다.
 
-### Configuring the app - Android
+### Android
 
-[Install the OwnTracks application for Android.](https://play.google.com/store/apps/details?id=org.owntracks.android)
+[OwnTracks 안드로이드 앱 설치](https://play.google.com/store/apps/details?id=org.owntracks.android)
 
-In the OwnTracks app, open sidebar and click on preferences, then on connection. Change the following settings:
+Owntracks 앱에서 환경 설정을 선택하고 connection 설정을 찾아 다음과 같이 입력합니다:
 
  - Mode: Private HTTP
- - Host: `<URL given to you when setting up the integration>`
+ - Host: `<통합구성요소 설정 단계에서 제시한 URL>`
  - Identification:
    - Username: `<Username>`
-   - Password: Can be left blank.
+   - Password: 비번이 없는 경우 공백으로 남김
    - Device ID: `<Device name>`
-   - Tracker ID: `<xx>` Two character tracker ID. (can be left blank)
+   - Tracker ID: `<xx>` 트래커에 표시할 알파벳 두자리(없어도 됨)
 
-Your tracker device will be known in Home Assistant as `<Username>_<Device name>`. If you entered a Tracker ID the tid attribute will  be set to that ID.
+트래커 기기는 홈어시스턴트에서 `<Username>_<Device name>` 형태로 나타납니다. Tracker ID를 기입하면 tid attribute 속성값을 사용할 수 있습니다.
 
-### Configuring the app - iOS
+### iOS
 
-[Install the OwnTracks application for iOS.](https://itunes.apple.com/us/app/owntracks/id692424691?mt=8)
+[Owntracks 아이폰 앱 설치](https://itunes.apple.com/us/app/owntracks/id692424691?mt=8)
 
-In the OwnTracks app, tap the (i) in the top left and click on settings. Change the following settings:
+아이폰 OwnTracks 앱에서 좌측 상단에 있는 (i) 아이콘을 클릭하고 설정을 시작합니다:
 
  - Mode: HTTP
- - URL: `<URL given to you when setting up the integration>`
+ - URL: `<통합구성요소 설정 단계에서 제시한 URL>`
  - Turn on authentication
  - User ID: `<Your name>`
 
-## Advanced configuration
+## 고급 설정
 
-OwnTracks allows the user to set advanced configuration by adding a section to your `configuration.yaml`.
+OwnTracks는  `configuration.yaml` 파일에서 다양한 설정을 할 수 있습니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -58,40 +58,40 @@ owntracks:
 
 {% configuration %}
 max_gps_accuracy:
-  description: Sometimes Owntracks can report GPS location with a very low accuracy (few kilometers). That can trigger false zoning in your Home Assistant installation. With the parameter, you can filter these GPS reports. The number has to be in meter. For example, if you put 200 only GPS report with an accuracy under 200 will be take in account.
+  description: Owntracks는 간혹 낮은 정확도로 GPS 위치를 전달하고(수키로미터 차이가 나는 경우) 이 경우 홈어시스턴트에서 잘못된 존(Zone)에 따른 잘못된 재실 감지 이벤트를 발생시킬 수 있습니다. GPS 위치에 따른 오차를 보정하기 위해 이 옵션을 설정합니다. 설정값은 미터단위입니다.예를 들어 값을 200으로 설정하면 GPS 위치가 이전 값과 200미터 차이나는 것은 무시합니다(GPS 위치 중 튀는 값을 제외).
   required: false
   type: integer
 waypoints:
-  description: "Owntracks users can define [waypoints](https://owntracks.org/booklet/features/waypoints/) (a.k.a regions) which are similar in spirit to Home Assistant zones. If this configuration variable is `true`, the Owntracks users who are in `waypoint_whitelist` can export waypoints from the device and Home Assistant will import them as zone definitions."
+  description: "Owntracks 사용자는  [waypoints](https://owntracks.org/booklet/features/waypoints/) (a.k.a regions)를 설정할 수 있습니다. 이것은 홈어시스턴트의 존 기능과 유사합니다. 이 옵션을 `true`로 설정하면, `waypoint_whitelist`에 있는 Owntracks 사용자는 기기의 waypoints를 홈어시스턴트가 존 설정으로 가져올 수 있게 허용합니다.
   required: false
   default: true
   type: boolean
 waypoint_whitelist:
-  description: "A list of user names (as defined for [Owntracks](/integrations/owntracks)) who can export their waypoints from Owntracks to Home Assistant. This would be the `username` portion of the Base Topic Name, (e.g., owntracks/**username**/iPhone)"
+  description: "자신의 기기의 waypoints를  홈어시스턴트가 사용할 수 있게 허락하는 Owntracks 사용자 리스트. 베이스 토픽에 `username` 서브 토픽을 추가함(예시: owntracks/**username**/iPhone)"
   required: false
-  default: All users who are connected to Home Assistant via Owntracks.
+  default: OwnTracks를 통해 홈어시스턴트에 연결된 모든 사용자.
   type: list
 secret:
-  description: "[Payload encryption key](https://owntracks.org/booklet/features/encrypt/). This is usable when communicating with a third-party untrusted server or a public server (where anybody can subscribe to any topic). By default the payload is assumed to be unencrypted (although the communication between Home Assistant and the server might still be encrypted). This feature requires the `libsodium` library to be present."
+  description: "[Payload encryption key](https://owntracks.org/booklet/features/encrypt/). 신뢰할 수 없는 서버나 퍼블릭 서버(다수의 사용자가 공유해서 토픽을 주고받는 경우)를 사용한다면 유용한 기능입니다. 기본적으로 페이로드는 암호화 없이 전송하는 걸 가정합니다(홈어시스턴트와 서버가 암호화 전송을 한다 하더라도).이 기능은 `libsodium`를 필요로 합니다"
   required: false
   type: string
 mqtt_topic:
-  description: The topic to subscribe for Owntracks updates on your MQTT instance.
+  description: Owntracks가 전송하는 MQTT 메시지 토픽
   required: false
   default: owntracks/#
   type: string
 events_only:
-  description: Home Assistant will ignore all location updates and rely solely on geofence enter/leave events.
+  description: 홈어시턴트는 모든 위치 정보를 무시하고 재실 감지 이벤트인(geofence) enter/leave만 사용합니다.
   required: false
   type: boolean
   default: false
 region_mapping:
-  description: "Dictionary to remap names of regions as configured in the Owntracks app to Home Assistant zones. Use this if you have multiple homes or Home Assistant instances and want to map a different label to 'home'. `key: value` maps Owntracks region `key` to Home Assistant zone `value`."
+  description: "OwnTracks에서 사용하는 region을 홈어시스턴트에서 사용하는 zone 이름으로 대체할 때 사용합니다. 다수의 home 이라는 이름을 써야 하거나 홈어시스턴트를 여러개 운용할 때 다른 이름으로 변경을 원한다면 사용하세요. `key: value`에서 Owntracks의 region이 `key`이며 홈어시스턴트의 zone이 `value`입니다."
   required: false
   type: list
 {% endconfiguration %}
 
-A full sample configuration for the `owntracks` platform is shown below:
+`owntracks` 플랫폼에 대한 설정 예시는 다음과 같습니다:
 
 ```yaml
 # Example configuration.yaml entry
@@ -108,43 +108,42 @@ owntracks:
     office: work
 ```
 
-## Using Owntracks regions
+## Owntracks의 region
 
-Owntracks can track regions, and send region entry and exit information to Home Assistant. You set up a region in the Owntracks app which you should name the same as your Home Assistant Zone, and then make sure to turn on the `share` option for the region in the owntracks app. Please see the [owntracks documentation](https://owntracks.org/booklet/guide/waypoints/).
+OwnTracks는 특정 영역(region)에 대해 들어가고 나가는 것을 체크하여 홈어시스턴트로 전달이 가능합니다. OwnTracks 앱에서 region을 설정하고 홈어시스턴트의 존(zone)과 동일한 이름을 부여한다음 OwnTracks 앱에서 region에 대해 `share` 옵션을 켤 수가 있습니다. 자세한 것은  [owntracks documentation](https://owntracks.org/booklet/guide/waypoints/)을 참고하세요.
 
-Home Assistant will use the enter and leave messages to set your zone location. Your location will be set to the center of zone when you enter. Location updates from OwnTracks will be ignored while you are inside a zone.
+홈어시스턴트는 존에 대한 출입 여부를 메시지로 사용할 수 있습니다. 만일 여러분이 존으로 들어가면 여러분의 위치는 존의 중심 위치로 설정되며 존 안에 있을 때 OwnTracks가 전달하는 위치는 무시합니다.
 
-When you exit a zone, Home Assistant will start using location updates to track you again. To make sure that Home Assistant correctly exits a zone (which it calculates based on your GPS coordinates), you may want to set your Zone radius in HA to be slightly smaller that the Owntracks region radius.
+존을 벗어나면 홈어시스턴트는 다시 여러분을 추적하기 위해 위치 정보를 업데이트합니다. 홈어시스턴트가 존을 벗어난 것을 정확히 감지하고 싶다면(GPS 좌표를 기준으로 계산합니다), 홈어시스턴트에서 존의 반경을 OwnTracks의 region 반경보다 살짝 작게 설정하면 됩니다.
 
-## Using Owntracks regions - forcing Owntracks to update using iBeacons
+## Owntracks regions - iBeacon 사용
 
 <div class='note'>
-Owntracks v2.0.0 removes support for iBeacons on Android.
+안드로이드에서는 Owntracks v2.0.0 부터 iBeacons을 지원하지 않습니다.
 </div>
+*significant changes mode* (스마트폰의 배터리를 조금 빨리 소모)에서 OwnTracks는 존에 출입한 것을 원하는 만큼 빨리 반영하지 못하기도 합니다. 이 경우 집에 도착한 것을 자동화 트리거로 사용하고 싶은데 그렇지 못해 짜증날 수도 있습니다. 이런 상황은 iBeacon으로 개선할 수 있습니다.
 
-When run in the usual *significant changes mode* (which is kind to your phone battery), Owntracks sometimes doesn't update your location as quickly as you'd like when you arrive at a zone. This can be annoying if you want to trigger an automation when you get home. You can improve the situation using iBeacons.
+iBeacon은 "나 여깄어"라는 메시지를 보내는 소형 블루투스 기기로 아이폰이나 몇몇 안드로이드폰에서 이용할 수 있습니다. 자세한 설명은 Owntracks [문서](https://owntracks.org/booklet/guide/beacons/)를 참고하세요.
 
-iBeacons are simple Bluetooth devices that send out an "I'm here" message. They are supported by IOS and some Android devices. Owntracks explain more [here](https://owntracks.org/booklet/guide/beacons/).
+iBeacon 영역으로 들어가면 OwnTracks는 `region enter` 메시지를 홈어시스턴트에 전달합니다. 따라서 집에 도착한 것을 이벤트 트리거로 사용하고 싶다면 iBeacon을 대문 근처에 두고 사용할 수 있습니다. OwnTracks iBeacon으로 `home`이라는 영역을 설정하고 비콘에 가까이 갔을때 홈어시스턴트 트리거를 생성하여 `home` 존에 도착한 것을 감지하면 됩니다.
 
-When you enter an iBeacon region, Owntracks will send a `region enter` message to HA as described above. So if you want to have an event triggered when you arrive home, you can put an iBeacon outside your front door. If you set up an OwnTracks iBeacon region called `home` then getting close to the beacon will trigger an update to HA that will set your zone to be `home`.
+iBeacon 영역을 벗어나면 홈어시스턴트는 위치를 추적하기 위해 GPS 정보를 사용기 시작합니다. GPS 위치의 정확도와 존의 크기에 따라 홈어시스턴트가 반응하는 범위에 차이가 날 수 있습니다.
 
-When you exit an iBeacon region HA will switch back to using GPS to determine your location. Depending on the size of your zone, and the accuracy of your GPS location this may change your HA zone.
+OwnTracks는 간혹 iBeacon과의 수초간 연결이 안될 수도 있는데 이럴 때는 비콘의 region 이름에 `-`를 붙여 Owntracks가 비콘 영역을 벗어난 것에 대해 체크하는 시간을 늘릴 수 있습니다. 홈어시스턴트는 존과 매칭되는 OwnTracks region 이름에서 `-` 기호는 무시합니다. Owntracks의  region을 `-home`라고 지으면 홈어시스턴트에서는 `home`으로 인식하고 iBeacon 연결을 보다 확실하게 체크합니다.
 
-Sometimes Owntracks will lose connection with an iBeacon for a few seconds. If you name your beacon starting with `-` Owntracks will wait longer before deciding it has exited the beacon zone. HA will ignore the `-` when it matches the Owntracks region with Zones. So if you call your Owntracks region `-home` then HA will recognize it as `home`, but you will have a more stable iBeacon connection.
+## 디바이스를 추적하기 위해 Owntracks iBeacons을 사용
 
-## Using Owntracks iBeacons to track devices
+iBeacon은 한곳에 고정한채로 사용하지 않아도 됩니다. 가령 열쇠꾸러미나 차안에 두고 이동식으로 사용할 수도 있죠.
 
-iBeacons don't need to be stationary. You could put one on your key ring, or in your car.
+스마트폰으로 이동식 iBeacon을 발견하면 iBeacon의 위치를 홈어시스턴트에 전송할 수 있습니다. iBeacon에 연결된채 스마트폰이 이동한다면 홈어시스터트는 iBeacon의 위치도 함께 업데이트합니다. 그러나 스마트폰이 iBeacon과 끊어지면 홈어시스턴트는 iBeacon의 위치 업데이트를 중단합니다.
 
-When your phone sees a mobile iBeacon that it knows about, it will tell HA the location of that iBeacon. If your phone moves while you are connected to the iBeacon, HA will update the location of the iBeacon. But when your phone loses the connection, HA will stop updating the iBeacon location.
+이동식 iBeacon을 홈어시스턴트와 함께 사용하면 region은 zone과 동일하게 만들 수는 없습니다. 홈어시스턴트가 iBeacon의 region으로 들어갔다는 이벤트를 받으면 이것을 zone과 연결하지 않아야 하고(예를 들어 열쇠에 달린 `keys` region) 기기 형태로 `device_tracker.beacon_keys`를 추적해야 합니다.
 
-To use mobile iBeacons with HA, you just set up a region that doesn't match your Zone names. If HA sees an entry event for an iBeacon region that doesn't match a Zone name (say `keys`) - it will start tracking it, calling the device `device_tracker.beacon_keys`).
+이 방법은 기기를 존으로 설정하여 자동화로 사용할 수 있습니다 예를 들어 **내가 집을 나설때 열쇠가 집안에 있다면 알람을 받는다** 는 자동화가 가능합니다. 다른 예로 **차가 집에 도착하면 차고문을 연다** 와 같이 쓸 수 있습니다.
 
-This allows you to write zone automations for devices that can't track themselves (for example *alert me if I leave the house and my keys are still at home*). Another example would be *open the gates if my car arrives home*.
+## 이동식/고정식 iBeacons을 함께 사용
 
-## Using mobile and fixed iBeacons together
-
-You can use iBeacons of both types together, so if you have a Zone `drive` with an iBeacon region called `-drive` and you arrive home with a mobile iBeacon called `-car`, then `device_tracker.beacon_car` will be set to a state of `drive`.
+iBeacon의 두가지 타입을 함께 사용할 수 있는데 `-drive` 라는 iBeacon region이 있고 `drive`라는 존이 존재하며 이동식 iBeacon인 `-car`가 집에 도착할 때  `device_tracker.beacon_car` 는 `drive`의 상태를 변경할 수 있습니다.
 
 ## Importing Owntracks waypoints as zones
 

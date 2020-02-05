@@ -62,7 +62,7 @@ max_gps_accuracy:
   required: false
   type: integer
 waypoints:
-  description: "Owntracks 사용자는  [waypoints](https://owntracks.org/booklet/features/waypoints/) (a.k.a regions)를 설정할 수 있습니다. 이것은 홈어시스턴트의 존 기능과 유사합니다. 이 옵션을 `true`로 설정하면, `waypoint_whitelist`에 있는 Owntracks 사용자는 기기의 waypoints를 홈어시스턴트가 존 설정으로 가져올 수 있게 허용합니다.
+  description: "Owntracks 사용자는  [waypoints](https://owntracks.org/booklet/features/waypoints/) (a.k.a regions)를 설정할 수 있습니다. 이것은 홈어시스턴트의 존 기능과 유사합니다. 이 옵션을 `true`로 설정하면, `waypoint_whitelist`에 있는 Owntracks 사용자는 기기의 waypoints를 홈어시스턴트가 존 설정으로 가져올 수 있게 허용합니다." 
   required: false
   default: true
   type: boolean

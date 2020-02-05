@@ -10,13 +10,13 @@ ha_codeowners:
   - '@danielsjf'
 ---
 
-The `awair` sensor platform will fetch data from your [Awair device(s)](https://getawair.com).
+`awair` 센서 플랫폼은 [Awair device(s)](https://getawair.com) 데이터를 연동 시킵니다.
 
-You will need to request access to the Awair API and obtain an access token from the Awair [Developer Console](https://developer.getawair.com/).
+Awair API에 대한 액세스를 요청하고 [Developer Console](https://developer.getawair.com/)에서 액세스 토큰을 확보해야합니다 .
 
-## Configuring the Platform
+## 플랫폼 설정
 
-To enable these sensors, add the following lines to your `configuration.yaml` file:
+센서를 활성화하려면, `configuration.yaml` 파일에 다음 행을 추가 하십시오.:
 
 ```yaml
 sensor:
@@ -24,9 +24,7 @@ sensor:
     access_token: ACCESS_TOKEN
 ```
 
-The Awair API has stringent usage quotas. The API method to discover devices in your account is
-limited to only 6 calls per 24 hours. If you find that you've exceeded this quota, you may optionally
-append device information to your configuration to bypass this call:
+Awair API에는 엄격한 사용 할당량이 있습니다. 계정에서 기기를 검색하는 API 방법은 24 시간당 6 건으로 제한됩니다. 이 할당량을 초과 한 경우 선택적으로 호출을 무시하도록 장치 정보를 설정에 추가 할 수 있습니다.:
 
 ```yaml
 sensor:
@@ -38,23 +36,23 @@ sensor:
 
 {% configuration %}
 access_token:
-  description: The access token for the Awair API.
+  description: Awair API의 액세스 토큰.
   required: true
   type: string
 devices:
-  description: An optional list to manually configure devices rather than relying upon API discovery.
+  description: API 검색에 의존하지 않고 수동으로 장치를 구성하기위한 선택 옵션입니다.
   required: false
   type: list
   keys:
     uuid:
-      description: UUID of the Awair sensor to monitor.
+      description: 모니터링 할 Awair 센서의 UUID.
       required: true
       type: string
 {% endconfiguration %}
 
-## Available Sensors
+## 사용 가능한 센서
 
-The platform will fetch all available sensors from each Awair device linked to your account. Supported sensors:
+플랫폼은 계정에 연결된 각 Awair 장치에서 사용 가능한 모든 센서를 가져옵니다. 지원되는 센서 :
 
   * Temperature
   * Humidity
@@ -62,4 +60,4 @@ The platform will fetch all available sensors from each Awair device linked to y
   * VOC
   * Dust, PM2.5, PM10: varies according to Awair model
 
-This platform refreshes at an interval based on a 300 API call per-day quota, and the number of devices you have configured.
+이 플랫폼은 하루 300 번의 API 호출 할당량과 설정한 장치 수에 따라 간격을두고 갱신합니다.

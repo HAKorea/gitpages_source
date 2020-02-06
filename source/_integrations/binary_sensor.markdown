@@ -8,13 +8,13 @@ ha_release: 0.9
 ha_quality_scale: internal
 ---
 
-Binary sensors gather information about the state of devices which have a "digital" return value (either 1 or 0). These can be switches, contacts, pins, etc. These sensors only have two states: **0/off/low/closed/false** and **1/on/high/open/true**. Knowing that there are only two states allows Home Assistant to represent these sensors in a better way in the frontend according to their functionality.
+Binary sensors "디지털" 반환 값 (1 또는 0)을 가진 장치의 상태에 대한 정보를 수집합니다. 스위치, 접점, 핀 등일 수 있습니다. 이 센서들은 두 가지 상태만 있습니다 . : **0/off/low/closed/false** 와 **1/on/high/open/true**. 두 개의 상태 만 있다는 것을 알면 홈 어시스턴트는 기능에 따라 이러한 센서를 프론트 엔드에서 더 잘 표현할 수 있습니다.
 
 ### Device Class
 
-The way these sensors are displayed in the frontend can be modified in the [customize section](/getting-started/customizing-devices/). The following device classes are supported for binary sensors:
+T프런트 엔드에 이러한 센서가 표시되는 방식은 [customize section](/getting-started/customizing-devices/)에서 수정할 수 있습니다 .  binary sensors 에 대해 다음과 같은 장치 클래스를 지원합니다.:
 
-- **None**: Generic on/off. This is the default and doesn't need to be set.
+- **None**: 보통의 on/off. 이것이 기본값이며 별도 설정할 필요가 없습니다.
 - **battery**: `on` means low, `off` means normal
 - **cold**: `on` means cold, `off` means normal
 - **connectivity**: `on` means connected, `off` means disconnected
@@ -39,9 +39,9 @@ The way these sensors are displayed in the frontend can be modified in the [cust
 - **vibration**: `on` means vibration detected, `off` means no vibration (clear)
 - **window**: `on` means open, `off` means closed
 
-For analog sensors please check the [integration overview](/integrations/#sensor).
+아날로그 센서는 [integration overview](/integrations/#sensor)를 확인하십시오.
 
 <p class='img'>
 <img src='/images/screenshots/binary_sensor_classes_icons.png' />
-Example of various device classes icons in `on` and `off` state.
+'켜짐'및 '꺼짐'상태의 다양한 장치 클래스 아이콘의 예
 </p>

@@ -21,3 +21,4 @@ source/.jekyll-metadata
 *.suo
 tags*
 Gemfile.lock
+make.sh

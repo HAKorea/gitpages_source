@@ -1,6 +1,6 @@
 ---
 title: "자동화"
-description: "A quick intro on getting your first automation going."
+description: "A quick intro on getting your first automation going"
 redirect_from:
  - /getting-started/automation-create-first/
  - /getting-started/automation-2/

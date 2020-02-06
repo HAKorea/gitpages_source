@@ -18,8 +18,7 @@ description: Open source home automation that puts local control and privacy fir
         </h1>
         Released:
         <span class="release-date"
-          >{{ site.date_released | date: "%B %d, %Y" }}</span
-        >
+          >{{ site.date_released | date: "%B %d, %Y" }}</span>
 
         <div class="links">
           <a href="https://www.home-assistant.io/latest-release-notes/">Release notes</a>
@@ -28,9 +27,10 @@ description: Open source home automation that puts local control and privacy fir
     </div>
     <div class="grid__item two-thirds lap-two-thirds palm-one-whole">
       <div class="recent-posts material-card text">
-        <h1>여기 뭐 넣을 것</h1>
-
-
+        <h1>최근 수정 파일</h1>
+	<ul>
+        {% include_relative modified.html %}
+	</ul>
       </div>
     </div>
   </div>

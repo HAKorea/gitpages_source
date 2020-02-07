@@ -8,30 +8,30 @@ ha_release: 0.19
 ha_quality_scale: internal
 ---
 
-The Climate integration allows you to control and monitor HVAC (heating, ventilating, and air conditioning) devices and thermostats.
+Climate 통합구성요소를 통해 HVAC (가열, 환기 및 공기 조절) 장치 및 온도 조절기를 제어하고 모니터링 할 수 있습니다.
 
-## Services
+## 서비스
 
 ### Climate control services
 
-Available services: `climate.set_aux_heat`, `climate.set_preset_mode`, `climate.set_temperature`, `climate.set_humidity`, `climate.set_fan_mode`, `climate.set_hvac_mode`, `climate.set_swing_mode`, `climate.turn_on`, `climate.turn_off`
+제공 서비스: `climate.set_aux_heat`, `climate.set_preset_mode`, `climate.set_temperature`, `climate.set_humidity`, `climate.set_fan_mode`, `climate.set_hvac_mode`, `climate.set_swing_mode`, `climate.turn_on`, `climate.turn_off`
 
 <div class='note'>
 
-Not all climate services may be available for your platform. Be sure to check the available services Home Assistant has enabled by checking <img src='/images/screenshots/developer-tool-services-icon.png' alt='service developer tool icon' class="no-shadow" height="38" /> **Services**.
+플랫폼에 따라 모든 Climate Service가 제공되는 것은 아닙니다. 홈어시스턴트의 <img src='/images/screenshots/developer-tool-services-icon.png' alt='service developer tool icon' class="no-shadow" height="38" /> **Services**에서 체크해서 사용할 수있는 서비스를 확인해야합니다 
 
 </div>
 
 ### Service `climate.set_aux_heat`
 
-Turn auxiliary heater on/off for climate device
+climate 장치용 보조 히터 켜기 / 끄기
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
-| `entity_id` | yes | String or list of strings that define the entity ID(s) of climate device(s) to control. To target all climate devices, use `all`.
-| `aux_heat` | no | New value of auxiliary heater.
+| `entity_id` | yes | 제어할 climate 장치의 entity ID를 정의하는 문자열 또는 문자열 목록입니다. 모든 Climate 장치를 대상으로 하려면, `all`을 사용하십시오.
+| `aux_heat` | no | 	보조 히터의 새로운 값.
 
-#### Automation example
+#### 자동화 예
 
 ```yaml
 automation:
@@ -47,16 +47,14 @@ automation:
 
 ### Service `climate.set_preset_mode`
 
-Set preset mode for climate device. Away mode changes the target temperature permanently to a temperature
-reflecting a situation where the climate device is set to save energy. For example, this may be used to emulate a
-"vacation mode."
+Climate 장치에 대한 사전 설정 모드를 설정하십시오. Away mode 는 Climate 장치가 에너지를 절약하도록 설정된 상황을 반영하는 온도로 목표 온도를 변경합니다. 이것은 "vacation mode" 를 에뮬레이션하는 데 사용할 수 있습니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
-| `entity_id` | yes | String or list of strings that define the entity ID(s) of climate device(s) to control. To target all climate devices, use `all`.
-| `preset_mode` | no | New value of preset mode.
+| `entity_id` | yes | 제어 할 climate 장치의 entity ID를 정의하는 문자열 또는 문자열 목록입니다. 모든 Climate 장치를 대상으로 하려면, `all`을 사용하십시오.
+| `preset_mode` | no | 사전 설정 모드의 새로운 값.
 
-#### Automation example
+#### 자동화 예
 
 ```yaml
 automation:
@@ -72,17 +70,17 @@ automation:
 
 ### Service `climate.set_temperature`
 
-Set target temperature of climate device
+Climate 장치의 목표 온도 설정
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
-| `entity_id` | yes | String or list of strings that define the entity ID(s) of climate device(s) to control. To target all climate devices, use `all`.
-| `temperature` | no | New target temperature for climate device (commonly referred to as a *setpoint*). Do not use if `hvac_mode` is `heat_cool`.
-| `target_temp_high` | yes | The highest temperature that the climate device will allow. Required if `hvac_mode` is `heat_cool`.
-| `target_temp_low` | yes | The lowest temperature that the climate device will allow. Required if `hvac_mode` is `heat_cool`.
-| `hvac_mode` | yes | HVAC mode to set the climate device to. This defaults to current HVAC mode if not set, or set incorrectly.
+| `entity_id` | yes | 제어할 climate 장치의 entity ID를 정의하는 문자열 또는 문자열 목록입니다. 모든 Climate 장치를 대상으로 하려면, `all`을 사용하십시오.
+| `temperature` | no | Climate 장치의 새로운 목표 온도 (일반적으로 *setpoint*이라 함). `hvac_mode`가 `heat_cool`일 경우 사용하지마십시오.
+| `target_temp_high` | yes | Climate 장치가 허용하는 최고온도입니다. `hvac_mode`가 `heat_cool`인 경우 반드시 필요.
+| `target_temp_low` | yes | Climate 장치가 허용하는 최저온도입니다. `hvac_mode` 가 `heat_cool`인 경우 반드시 필요.
+| `hvac_mode` | yes | Climate 장치를 설정하는 HVAC 모드. 설정하지 않았거나 잘못 설정한 경우 현재 HVAC 모드로 기본 설정됩니다.
 
-#### Automation examples
+#### 자동화 예
 
 ```yaml
 ### Set temperature to 24 in heat mode
@@ -115,14 +113,14 @@ automation:
 
 ### Service `climate.set_humidity`
 
-Set target humidity of climate device
+Climate 장치의 목표 습도 설정
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
-| `entity_id` | yes | String or list of strings that define the entity ID(s) of climate device(s) to control. To target all climate devices, use `all`.
-| `humidity` | no | New target humidity for climate device
+| `entity_id` | yes | 제어할 climate 장치의 entity ID를 정의하는 문자열 또는 문자열 목록입니다. 모든 Climate 장치를 대상으로 하려면, `all`을 사용하십시오.
+| `humidity` | no | Climate 장치의 새로운 목표 습도
 
-#### Automation example
+#### 자동화 예
 
 ```yaml
 automation:
@@ -138,14 +136,14 @@ automation:
 
 ### Service `climate.set_fan_mode`
 
-Set fan operation for climate device
+Climate 장치의 팬 작동 설정
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
-| `entity_id` | yes | String or list of strings that define the entity ID(s) of climate device(s) to control. To target all climate devices, use `all`.
-| `fan_mode` | no | New value of fan mode
+| `entity_id` | yes | 제어할 climate 장치의 entity ID를 정의하는 문자열 또는 문자열 목록입니다. 모든 Climate 장치를 대상으로 하려면, `all`을 사용하십시오.
+| `fan_mode` | no | fan mode의 새로운 값
 
-#### Automation example
+#### 자동화 예
 
 ```yaml
 automation:
@@ -161,14 +159,14 @@ automation:
 
 ### Service `climate.set_hvac_mode`
 
-Set climate device's HVAC mode
+Climate 장치의 HVAC 모드 설정
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
-| `entity_id` | yes | String or list of strings that define the entity ID(s) of climate device(s) to control. To target all climate devices, use `all`.
-| `hvac_mode` | no | New value of HVAC mode
+| `entity_id` | yes | 제어할 climate 장치의 entity ID를 정의하는 문자열 또는 문자열 목록입니다. 모든 Climate 장치를 대상으로 하려면, `all`을 사용하십시오.
+| `hvac_mode` | no | HVAC mode의 새로운 값.
 
-#### Automation example
+#### 자동화 예
 
 ```yaml
 automation:
@@ -184,14 +182,14 @@ automation:
 
 ### Service `climate.set_swing_mode`
 
-Set swing operation mode for climate device
+Climate 장치의 스윙 작동 모드 설정
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
-| `entity_id` | yes | String or list of strings that define the entity ID(s) of climate device(s) to control. To target all climate devices, use `all`.
-| `swing_mode` | no | New value of swing mode
+| `entity_id` | yes | 제어할 climate 장치의 entity ID를 정의하는 문자열 또는 문자열 목록입니다. 모든 Climate 장치를 대상으로 하려면, `all`을 사용하십시오.
+| `swing_mode` | no | 스윙 모드의 새로운 값.
 
-#### Automation example
+#### 자동화 예
 
 ```yaml
 automation:
@@ -207,16 +205,16 @@ automation:
 
 ### Service `climate.turn_on`
 
-Turn climate device on. This is only supported if the climate device supports being turned off.
+Climate 장치를 켭니다. Climate 장치가 꺼져있는 경우에만 지원됩니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
-| `entity_id` | yes | String or list of strings that define the entity ID(s) of climate device(s) to control. To target all climate devices, use `all`.
+| `entity_id` | yes | 제어할 climate 장치의 entity ID를 정의하는 문자열 또는 문자열 목록입니다. 모든 Climate 장치를 대상으로 하려면, `all`을 사용하십시오.
 
 ### Service `climate.turn_off`
 
-Turn climate device off. This is only supported if the climate device has the hvac mode `off`.
+Climate 장치를 끕니다. Climate 장치에 hvac 모드가 off인 경우만 지원됩니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
-| `entity_id` | yes | String or list of strings that define the entity ID(s) of climate device(s) to control. To target all climate devices, use `all`.
+| `entity_id` | yes | 제어할 climate 장치의 entity ID를 정의하는 문자열 또는 문자열 목록입니다. 모든 Climate 장치를 대상으로 하려면, `all`을 사용하십시오.

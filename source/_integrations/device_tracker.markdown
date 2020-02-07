@@ -8,11 +8,11 @@ ha_release: 0.7
 ha_quality_scale: internal
 ---
 
-The device tracker allows you to track devices in Home Assistant. This can happen by querying your wireless router or by having applications push location info.
+device_tracker를 사용하면 Home Assistant에서 장치를 추적 할 수 있습니다. 이것은 무선 라우터를 쿼리하거나 응용 프로그램이 위치 정보를 푸시하도록하여 설정할 수 있습니다.
 
-## Configuring a `device_tracker` platform
+## device_tracker 플랫폼 설정
 
-To get started add the following lines to your `configuration.yaml` (example for Netgear):
+시작하려면 다음 설정을 `configuration.yaml` (Netgear의 예)에 추가하십시오. :
 
 ```yaml
 # Example configuration.yaml entry for Netgear device
@@ -25,24 +25,24 @@ device_tracker:
       track_new_devices: true
 ```
 
-The following optional parameters can be used with any platform:
+다음과 같은 선택적 매개 변수는 모든 플랫폼에서 사용할 수 있습니다.:
 
 <div class='note'>
-  Device tracker will only look for global settings under the configuration of the first configured platform. These 3 are the global settings:
+  Device tracker 첫 번째로 설정된 플랫폼의 설정값에서 전역 설정만을 찾습니다. 다음 3 가지 전역 설정입니다. : 
 </div>
 
 | Parameter           | Default | Description                                                                                                                                                                                                                                                                                                                                                                               |
 |----------------------|---------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `interval_seconds`   | 12      | Seconds between each scan for new devices                                                                                                                                                                                                                                                                                                                                                 |
-| `consider_home`      | 180     | Seconds to wait till marking someone as not home after not being seen. This parameter is most useful for households with Apple iOS devices that go into sleep mode while still at home to conserve battery life. iPhones will occasionally drop off the network and then re-appear. `consider_home` helps prevent false alarms in presence detection when using IP scanners such as Nmap. `consider_home` accepts various time representations, (e.g., the following all represents 3 minutes: `180`, `0:03`, `0:03:00`)  |
+| `interval_seconds`   | 12      | 새 장치를 검색 할 때마다 시간 (초)                                                                                                                                                                                                                                                                                     |
+| `consider_home`      | 180     | 미처 찾지 못한 이후 누군가가 집에 없는 것으로 표시 될 때까지 기다립니다. 이 매개 변수는 집에서 배터리 수명을 절약하기 위해 절전 모드로 전환되는 Apple iOS 장치가 있는 가정에서 가장 유용합니다.  iPhone은 때때로 네트워크를 끊었다가 다시 나타납니다. `consider_home`은 Nmap과 같은 IP 스캐너를 사용할 때 재실 감지시 잘못된 탐지를 방지합니다. `consider_home`  다양한 시간 표현을 인식합니다. (예를 들어, 다음 모두가 3분을 나타냅니다 : `180`, `0:03`, `0:03:00`)  |
 
 <div class='note'>
 
-  Note that setting `track_new_devices: false` will still result in new devices being recorded in `known_devices.yaml`, but they won't be tracked (`track: false`).
+  `track_new_devices: false` 설정은  `known_devices.yaml`에서 기록되고 있는 새로운 장치들을 여전히 찾습니다만 이들은 반영되진 않을겁니다. (`track: false`).
 
 </div>
 
-The extended example from above would look like the following sample:
+위에서 확장 된 예제는 다음 샘플과 같습니다. :
 
 ```yaml
 # Example configuration.yaml entry for Netgear device
@@ -56,19 +56,19 @@ device_tracker:
       track_new_devices: true
 ```
 
-Multiple device trackers can be used in parallel, such as [Owntracks](/integrations/owntracks/) and [Nmap](/integrations/nmap_tracker/). The state of the device will be determined by the source that reported last.
+[Owntracks](/integrations/owntracks/) 및 [Nmap](/integrations/nmap_tracker/)과 같은 여러 장치 추적기를 병렬로 사용할 수 있습니다. 장치의 상태는 마지막으로 보고 한 소스에 따라 결정됩니다.
 
 ## `known_devices.yaml`
 
 <div class='note warning'>
 
-As of 0.94 `known_devices.yaml` is being phased out and no longer used by all trackers. Depending on the integration you use this section may no longer apply. This includes the mobile app, OwnTracks, GeoFency, GPSLogger, Locative and Huawei LTE.
+0.94 기준 `known_devices.yaml`은 단계적으로 폐지되어 모든 트래커에서 더 이상 사용하지 않습니다. 통합구성요소의 상황에 따라 이 섹션이 더 이상 적용되지 않을 수 있습니다. 여기에는 모바일앱, OwnTracks, GeoFency, GPSLogger, Locative 및 Huawei LTE가 해당됩니다.
 
 </div>
 
-Once `device_tracker` is enabled, a file will be created in your config dir named `known_devices.yaml`. Edit this file to adjust which devices to be tracked.
+`device_tracker` 활성화 되면 config 디렉토리에 `known_devices.yaml`파일이 생성됩니다. 추적 할 장치를 조정하려면이 파일을 편집하십시오.
 
-Here's an example configuration for a single device:
+단일 장치에 대한 구성 예는 다음과 같습니다. :
 
 ```yaml
 devicename:
@@ -80,34 +80,34 @@ devicename:
 
 <div class='note warning'>
 
-In the example above, `devicename` refers to the detected name of the device.  For example, with `nmap`, this will be the MAC address (with byte separators omitted).
+위의 사례는 `devicename` 에서 감지 된 장치 이름을 나타냅니다.  예를들어 `nmap` 사용시, 이는 MAC address(바이트 구분 기호는 생략)로 나타납니다. 
 
 </div>
 
 | Parameter      | Default                       | Description                                                                                             |
 |----------------|-------------------------------|---------------------------------------------------------------------------------------------------------|
-| `name`         | Host name or "Unnamed Device" | The friendly name of the device.                                                                         |
-| `mac`          | None                          | The MAC address of the device. Add this if you are using a network device tracker like Nmap or SNMP.     |
-| `picture`      | None                          | A picture that you can use to easily identify the person or device. You can also save the image file in a folder "www" in the same location (can be obtained from developer tools) where you have your configuration.yaml file and just use `picture: /local/favicon-192x192.png`. The path 'local' is mapped to the 'www' folder you create.                                     |
-| `icon`         | mdi:account                   | An icon for this device (use as an alternative to `picture`).                           |
-| `gravatar`     | None                          | An email address for the device's owner. If provided, it will override `picture`.                        |
-| `track`        | [uses platform setting]       | If  `yes`/`on`/`true` then the device will be tracked. Otherwise its location and state will not update. |
-| `consider_home` | [uses platform setting]      | Seconds to wait till marking someone as not home after not being seen. Allows you to override the global `consider_home` setting from the platform configuration on a per device level.                                 |
+| `name`         | Host name or "Unnamed Device" | 장치의 이름입니다.                                                                         |
+| `mac`          | None                          | MAC 주소. Nmap 또는 SNMP와 같은 네트워크 장치 추적기를 사용하는 경우 이를 추가하십시오.     |
+| `picture`      | None                          | 사람이나 장치를 쉽게 식별하는 데 사용할 수있는 사진입니다.  configuration.yaml 파일에 `picture: /local/favicon-192x192.png`를 입력하고 동일 위치에 (개발자 도구에서 얻을 수있는) “www” 폴더에 배치시킬 경우. 'local' 이라는 경로는 지금 만든'www' 폴더로 매핑됩니다. 
+| `icon`         | mdi:account                   | 이 장치의 아이콘입니다. (`picture` 대신 사용).                           |
+| `gravatar`     | None                          | 기기 소유자의 이메일 주소입니다. 설정할 경우, `picture`에 합쳐집니다.                        |
+| `track`        | [uses platform setting]       | `yes`/`on`/`true`일 경우 추적됩니다. 그렇지 않으면 위치와 상태가 업데이트되지 않습니다. |
+| `consider_home` | [uses platform setting]      | 미처 찾지 못한 후 누군가가 집에 없는 것으로 표시 될 때까지 기다립니다. 각 장치 별 플랫폼 설정에서 `consider_home`전역설정을 통해 재정의 할 수 있습니다.  
 
 ## Device states
 
-The state of your tracked device will be `'home'` if it is in the [home zone](/integrations/zone#home-zone), detected by your network or Bluetooth based presence detection. If you're using a presence detection method that includes coordinates then when it's in a zone the state will be the name of the zone (case sensitive). When a device isn't at home and isn't in any zone, the state will be `'not_home'`.
+[home zone](/integrations/zone#home-zone) 에 있을 경우 추적 된 장치가 네트워크나 블루투스 기반의 재실 감지로 찾아지면 `'home'` 상태가 될 것입니다. 좌표를 포함하는 재실 감지 방법을 사용하는 경우 영역에있을 때, 상태는 영역의 이름이됩니다 (대소 문자 구분). 기기가 집에없고 어떤 구역에도 있지 않으면 상태는 `'not_home'` 입니다.
 
 ## `device_tracker.see` service
 
-The `device_tracker.see` service can be used to manually update the state of a device tracker:
+`device_tracker.see` 서비스를 사용하여 device tracker의 상태를 수동으로 업데이트 할 수 있습니다. :
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
-| `dev_id`               |       no | The second half of the `entity_id`, for example `tardis` for `device_tracker.tardis` |
-| `location_name`        |       no | The location, `home`, `not_home`, or the name of the zone |
-| `host_name`            |      yes | The hostname of the device tracker |
-| `mac`                  |      yes | The MAC address of the entity (only specify if you're updating a network based tracker) |
-| `gps`                  |      yes | If you're providing a location, for example `[51.513845, -0.100539]` |
-| `gps_accuracy`         |      yes | The accuracy of the GPS fix |
-| `battery`              |      yes | The battery level of the device |
+| `dev_id`               |       no | `entity_id` 전체이름의 후반부 이름 , 예) `device_tracker.tardis` 에서 `tardis`   |
+| `location_name`        |       no | 위치, `home`, `not_home`, 또는 영역의 이름 |
+| `host_name`            |      yes | device tracker의 호스트 이름 |
+| `mac`                  |      yes | entity의 MAC 주소 (네트워크 기반 추적기를 업데이트하는 경우에만 지정) |
+| `gps`                  |      yes | 위치를 제공하는 경우 예) `[51.513845, -0.100539]` |
+| `gps_accuracy`         |      yes | GPS의 정확성 |
+| `battery`              |      yes | 장치의 배터리 잔량 |

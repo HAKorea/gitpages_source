@@ -7,7 +7,7 @@ ha_category:
 ha_release: 0.88
 ---
 
-This integration is a meta-component and configures a default set of integrations for Home Assistant to load. The integrations that will be loaded are:
+이 통합구성요소는 메타 구성 요소이며 Home Assistant가로드 할 기본 통합 세트를 구성합니다. 다음 통합 구성요소를 로그합니다. :
 
 - [automation](/integrations/automation/)
 - [cloud](/integrations/cloud/)
@@ -25,9 +25,9 @@ This integration is a meta-component and configures a default set of integration
 - [updater](/integrations/updater/)
 - [zeroconf](/integrations/zeroconf/)
 
-## Configuration
+## 설정
 
-To integrate this into Home Assistant, add the following section to your `configuration.yaml` file:
+홈 어시스턴트로 통합하려면, `configuration.yaml` 파일에 다음 섹션을 추가 하십시오. :
 
 ```yaml
 # Example configuration.yaml entry

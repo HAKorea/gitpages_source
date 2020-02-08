@@ -8,11 +8,11 @@ ha_release: 0.12
 ha_iot_class: Local Polling
 ---
 
-The `command_line` binary sensor platform issues specific commands to get data.
+`command_line` binary sensor 플랫폼은 데이터를 가져오기 위한 특정 명령을 만들어 낼 수 있습니다.
 
-## Configuration
+## 설정
 
-To use your Command binary sensor in your installation, add the following to your `configuration.yaml` file:
+binary sensor 명령을 사용하려면 `configuration.yaml` 파일에 다음을 추가 하십시오.:
 
 ```yaml
 # Example configuration.yaml entry
@@ -23,57 +23,57 @@ binary_sensor:
 
 <div class='note'>
 
-It's highly recommended to enclose the command in single quotes `'` as it ensures all characters can be used in the command and reduces the risk of unintentional escaping. To include a single quote in a command enclosed in single quotes, double it: `''`.
+명령에 `'` 문자를 사용할 수 있고 의도하지 않은 이스케이프 위험을 줄이기 때문에 명령을 작은 따옴표 로 묶는 것이 좋습니다. 작은 따옴표로 묶인 명령에 작은 따옴표를 포함하려면 `''`(따옴표를 두 번) 사용하십시오.
 
 </div>
 
 {% configuration %}
 command:
-  description: The action to take to get the value.
+  description: 값을 가져오기 위한 action.
   required: true
   type: string
 name:
-  description: Let you overwrite the name of the device.
+  description: 장치 이름을 덮어 쓰게 합니다.
   required: false
   type: string
   default: "*name* from the device"
 device_class:
-  description: Sets the [class of the device](/integrations/binary_sensor/), changing the device state and icon that is displayed on the frontend.
+  description: 프론트 엔드에 표시되는 디바이스 상태 및 아이콘을 변경하여 [class of the device](/integrations/binary_sensor/) 를 설정합니다. 
   required: false
   type: string
 payload_on:
-  description: The payload that represents enabled state.
+  description: 활성화 된 상태를 나타내는 페이로드입니다.
   required: false
   type: string
   default: 'ON'
 payload_off:
-  description: The payload that represents disabled state.
+  description: 비활성화 된 상태를 나타내는 페이로드입니다.
   required: false
   type: string
   default: 'OFF'
 value_template:
-  description: Defines a [template](/docs/configuration/templating/#processing-incoming-data) to extract a value from the payload.
+  description: 페이로드에서 값을 추출하기 위한 [template](/docs/configuration/templating/#processing-incoming-data) 을 정의합니다.
   required: false
   type: string
 scan_interval:
-  description: Defines number of seconds for polling interval.
+  description: 폴링 간격의 시간 (초)를 정의합니다.
   required: false
   type: integer
   default: 60
 command_timeout:
-  description: Defines number of seconds for command timeout.
+  description: 명령 제한 시간 (초)을 정의합니다.
   required: false
   type: integer
   default: 15
 {% endconfiguration %}
 
-## Examples
+## 사례
 
-In this section you find some real-life examples of how to use this sensor.
+이 섹션에는 본 센서를 실생활에 사용하는 방법에 대한 사례를 찾을 수 있습니다. 
 
 ### SickRage
 
-Check the state of an [SickRage](https://github.com/sickragetv/sickrage) instance.
+[SickRage](https://github.com/sickragetv/sickrage)인스턴스 상태를 확인합니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -88,7 +88,7 @@ binary_sensor:
 
 ### Check RasPlex
 
-Check if [RasPlex](https://www.rasplex.com/) is `online`.
+[RasPlex](https://www.rasplex.com/)가 `online`인지 확인합니다.
 
 ```yaml
 binary_sensor:
@@ -100,7 +100,7 @@ binary_sensor:
     payload_off: 0
 ```
 
-An alternative solution could look like this:
+또한 다른 방법은 다음과 같습니다.:
 
 ```yaml
 binary_sensor:
@@ -112,11 +112,11 @@ binary_sensor:
     payload_off: "fail"
 ```
 
-Consider to use the [`ping` sensor ](/integrations/ping#binary-sensor) as an alternative to the samples above.
+위의 샘플 대신 [`ping` sensor ](/integrations/ping#binary-sensor) 를 사용하십시오.
 
-### Check if a system service is running
+### 시스템 서비스가 실행 중인지 확인
 
-The services running is listed in `/etc/systemd/system` and can be checked with the `systemctl` command:
+`/etc/systemd/system`에 실행중인 서비스가 나열되어 있으며 `systemctl` 명령으로 확인할 수 있습니다. :
 
 ```bash
 $ systemctl is-active home-assistant@rock64.service
@@ -126,7 +126,7 @@ $ systemctl is-active home-assistant@rock64.service
 inactive
 ```
 
-A binary command line sensor can check this:
+binary command line 센서로 다음과 같이 확인할 수 있습니다. :
 
 ```yaml
 binary_sensor:

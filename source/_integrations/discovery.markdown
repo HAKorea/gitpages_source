@@ -8,7 +8,7 @@ ha_release: 0.7
 ha_quality_scale: internal
 ---
 
-Home Assistant can discover and automatically configure [zeroconf](https://en.wikipedia.org/wiki/Zero-configuration_networking)/[mDNS](https://en.wikipedia.org/wiki/Multicast_DNS) and [uPnP](https://en.wikipedia.org/wiki/Universal_Plug_and_Play) devices on your network. Currently the `discovery` integration can detect:
+홈어시스턴트는 네트워크에서 [zeroconf](https://en.wikipedia.org/wiki/Zero-configuration_networking)/[mDNS](https://en.wikipedia.org/wiki/Multicast_DNS) 그리고 [uPnP](https://en.wikipedia.org/wiki/Universal_Plug_and_Play) 장치를 검색하고 자동으로 설정 할 수 있습니다. 현재 `discovery` 통합구성요소는 다음을 감지 할 수 있습니다. :
 
  * [Apple TV](/integrations/apple_tv/)
  * [Belkin WeMo switches](/integrations/wemo/)
@@ -38,16 +38,15 @@ Home Assistant can discover and automatically configure [zeroconf](https://en.wi
  * [Yeelight Sunflower bulb](/integrations/yeelightsunflower/)
  * [Xiaomi Gateway (Aqara)](/integrations/xiaomi_aqara/)
 
-It will be able to add Google Chromecasts and Belkin WeMo switches automatically,
-for Philips Hue it will require some configuration from the user.
+Google Chromecast 및 Belkin WeMo 스위치를 자동으로 추가 할 수 있습니다.
+Philips Hue의 경우 사용자의 일부 설정이 필요합니다.
 
 <div class='note'>
 
-Zeroconf discoverable integrations [Axis](/integrations/axis/)/[ESPHome](/integrations/esphome/)/[HomeKit](/integrations/homekit_controller/)/[Tradfri](/integrations/tradfri/) have been migrated to use [zeroconf](/integrations/zeroconf) integration to initiate discovery.
-
+Zeroconf 검색 가능 통합구성요소 [Axis](/integrations/axis/)/[ESPHome](/integrations/esphome/)/[HomeKit](/integrations/homekit_controller/)/[Tradfri](/integrations/tradfri/)는 [zeroconf](/integrations/zeroconf) 통합구성요소를 사용 하여 검색을 하도록 마이그레이션되었습니다.
 </div>
 
-To load this integration, add the following lines to your `configuration.yaml` file:
+이 통합구성요소를 사용하려면, `configuration.yaml` 파일에 다음 행을 추가 하십시오. :
 
 ```yaml
 # Example configuration.yaml entry
@@ -61,16 +60,16 @@ discovery:
 
 {% configuration discovery %}
 ignore:
-  description: A list of platforms that never will be automatically configured by `discovery`.
+  description: `discovery` 로 절대 자동 설정되지 못하게하는 기능입니다.
   required: false
   type: list
 enable:
-  description: A list of platforms not enabled by default that `discovery` should discover.
+  description: `discovery`로 기본검색이 되게하고 해당 리스트만 플랫폼에서 나타나지 않도록 설정하는 기능입니다.
   required: false
   type: list
 {% endconfiguration %}
 
-Valid values for ignore are:
+ignore에 유효한 값은 다음과 같습니다. :
 
  * `apple_tv`: Apple TV
  * `belkin_wemo`: Belkin WeMo switches
@@ -102,26 +101,26 @@ Valid values for ignore are:
  * `yeelight`: Yeelight lamps and bulbs (not only Yeelight Sunflower bulb)
  * `xiaomi_gw`: Xiaomi Aqara gateway
 
-Valid values for enable are:
+enable에 유효한 값은 다음과 같습니다. :
 
- * `dlna_dmr`: DLNA DMR enabled devices
+ * `dlna_dmr`: DLNA DMR 지원 장치 
 
 ## Troubleshooting
 
 ### UPnP
 
-Home Assistant must be on the same network as the devices for uPnP discovery to work.
-If running Home Assistant in a [Docker container](/docs/installation/docker/) use switch `--net=host` to put it on the host's network.
+홈 어시스턴트는 uPnP 검색이 작동하도록 장치와 동일한 네트워크에 있어야합니다.
+Home Assistant가 [Docker container](/docs/installation/docker/)에서 실행되는 경우 `--net=host`를 사용하여 해당 호스트를 네트워크에 배치하십시오.
 
 ### Windows
 
 #### 64-bit Python
-There is currently a <a href='https://bitbucket.org/al45tair/netifaces/issues/17/dll-fails-to-load-windows-81-64bit'>known issue</a> with running this integration on a 64-bit version of Python and Windows.
+현재 64 비트 버전의 Python 및 Windows에서이 통합을 실행 하는 데 <a href='https://bitbucket.org/al45tair/netifaces/issues/17/dll-fails-to-load-windows-81-64bit'>known issue</a>가 있습니다.
 
 ### could not install dependency netdisco
 
-If you see `Not initializing discovery because could not install dependency netdisco==0.6.1` in the logs, you will need to install the `python3-dev` or `python3-devel` package on your system manually (eg. `sudo apt-get install python3-dev` or `sudo dnf -y install python3-devel`). On the next restart of Home Assistant, the discovery should work. If you still get an error, check if you have a compiler (`gcc`) available on your system.
+`Not initializing discovery because could not install dependency netdisco==0.6.1`를 로그에서 확인했다면, `python3-dev` 혹은 `python3-devel` 패키지를 시스템에 수동을 설치해야합니다. 예) `sudo apt-get install python3-dev` 혹은 `sudo dnf -y install python3-devel`. 이후 Home Assistant를 다시 시작하면 discovery가 작동합니다. 여전히 오류가 발생하면 gcc시스템에서 사용 가능한 컴파일러 (`gcc`) 가 있는지 확인하십시오.
 
 ### DSM and Synology
 
-For DSM/Synology, install via debian-chroot [see this forum post](https://community.home-assistant.io/t/error-starting-home-assistant-on-synology-for-first-time/917/15).
+DSM/Synology 경우, debian-chroot를 통해 설치하려면 [이 포럼의 게시물을 참조하세요.](https://community.home-assistant.io/t/error-starting-home-assistant-on-synology-for-first-time/917/15).

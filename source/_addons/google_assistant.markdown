@@ -5,17 +5,17 @@ featured: true
 ---
 
 <div class='note'>
-
-If you want to integrate your Google Home or mobile phone running Google Assistant, with Home Assistant, then you want the [Google Assistant component][AssistantIntergration].
+구글홈 또는 스마트폰의 구글 어시스턴트와 연결하려면 [구글 어시스턴트 컴포넌트][AssistantIntergration]를 사용합니다.
 
 </div>
 
-[Google Assistant][GoogleAssistant] is an AI-powered voice assistant that runs on the Raspberry Pi and x86 platforms and interacts via the [DialogFlow][comp] integration or the [Google Assistant component][AssistantIntergration] with Home-Assistant. You can also use [Google Actions][GoogleActions] to extend its functionality.
+[구글 어시스턴트][GoogleAssistant]는 AI로 동작하는 보이스 어시스턴트로서 라즈베리파이나 x86 플랫폼에서 홈어시스턴와 [DialogFlow][comp] 또는 [구글 어시스턴트 컴포넌][AssistantIntergration]를 사용해 인터랙션을 합니다. 이들 기능을 확장하기 위해 [구글 액션][GoogleActions]을 추가할 수도 있습니다.
 
-To enable access to the Google Assistant API, do the following:
-1. Go to the [Google Actions Console][GActionsConsole] and create a new project.
-1. After you created the project on the bottom of the page click "Device registration". Keep this tab open for later use.
-1. Enable the Google Assistant API on the new project through [this][enableAPI] link. Make sure you have the right project selected (shown in the middle of the screen in the top bar). If you can't select the right project, it may help to open the link in an incognito window. 
+구글 어시스턴트 API를 사용하려면 다음 과정을 거쳐야 합니다:
+1. [Google Actions Console][GActionsConsole]로 접속해서 create a new project를 선택하세요.
+1. 프로젝트를 생성한 다음 페이지에서 웹 페이지 하단에 있는 "Device registration"을 찾아 대기합니다. 이 페이지를 닫지 마세요. 아래 과정에서 다시 진행할 것입니다.
+1. 우선 [이 곳][enableAPI]에서 구글 어시스턴트 API 사용을 확인해야 합니다. 
+ Make sure you have the right project selected (shown in the middle of the screen in the top bar). If you can't select the right project, it may help to open the link in an incognito window.
 1. Configure the [OAuth consent screen][OAuthConcent]. Also again check that you have the right project and don't forget to hit "Save" at the bottom of the page. You only have to fill in a project name and your e-mail.
 1. You back to you device registration tab and click "Device registration". Or open you project in the [Google Actions Console][GActionsConsole] start the Quick setup, and in the left bar click "Device registration".
 1. Give you project a name, think of a nice manufacturer and for device type select "speaker".
@@ -28,7 +28,7 @@ To enable access to the Google Assistant API, do the following:
 1. Start the add-on. Check the log and click refresh till it says: "ENGINE Bus STARTED".
 1. Now click "Open Web UI" and follow the authentication process. You will get an empty response after you have send your token.
 
-That's it. You should now be able to use the Google Voice assistant. 
+That's it. You should now be able to use the Google Voice assistant.
 
 ### Add-on configuration
 

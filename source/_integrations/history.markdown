@@ -10,13 +10,12 @@ ha_codeowners:
   - '@home-assistant/core'
 ---
 
-The `history` integration will track everything that is going on within Home
-Assistant and allows the user to browse through it. It depends on the `recorder`
-component for storing the data and uses the same database setting.
-If any entities are excluded from being recorded,
-no history will be available for these entities.
+`history` 통합구성요소는 홈어시스턴트내에서 동작하고 있는 모든 것을 추적하고 사용자들이 이를 통해 탐색할 있습니다. 
+데이터를 저장 하는 `recorder` component에 따라 다르며 동일한 데이터베이스 세팅을 사용합니다.
+만일 기록에서 제외 된 항목이 있으면 해당 항목에 대한 기록을 사용할 수 없습니다.
 
-This integration is by default enabled, unless you've disabled or removed the [`default_config:`](https://www.home-assistant.io/integrations/default_config/) line from your configuration. If that is the case, the following example shows you how to enable this integration manually:
+configuration 에서 [`default_config:`](https://www.home-assistant.io/integrations/default_config/)를 비활성화하거나 제거하지 않은 경우 본 통합구성요소는 기본적으로 활성화됩니다. 
+이럴 경우 다음 예는 통합구성요소를 수동으로 활성화하는 방법입니다.:
 
 ```yaml
 # Basic configuration.yaml entry
@@ -30,48 +29,41 @@ history:
 </p>
 
 <div class='note'>
-Events are saved in a local database. Google Graphs is used to draw the graph.
-Drawing is happening 100% in your browser. No data is transferred to anyone at any time.
+이벤트는 로컬 데이터베이스에 저장됩니다. 구글 그래프는 그래프를 그리는 데 사용됩니다.
+브라우저에서 그래프가 로컬로 100 % 생성된것이며,데이터는 언제든지 누구에게도 전송되지 않습니다. 
 </div>
 
 {% configuration %}
 exclude:
-  description: Configure which integrations should **not** be displayed.
+  description: 노출되지 **않을** 장치
   required: false
   type: map
   keys:
     entities:
-      description: The list of entity ids to be excluded from the history.
+      description: History에서 제외할 entitiy ID 목록.
       required: false
       type: list
     domains:
-      description: The list of domains to be excluded from the history.
+      description: History에서 제외 할 도메인 목록.
       required: false
       type: list
 include:
-  description: Configure which integrations should be displayed.
+  description: 나타낼 장치를 설정.
   required: false
   type: map
   keys:
     entities:
-      description: The list of entity ids to be included in the history.
+      description: History에서 포함할 entitiy ID 목록.
       required: false
       type: list
     domains:
-      description: The list of domains to be included in the history.
+      description: History에 포함될 도메인 목록.
       required: false
       type: list
 {% endconfiguration %}
 
-Without any `include` or `exclude` configuration the history displays graphs for
- every entity (well that's not exactly true - for instance `hidden` entities or
- `scenes` are never shown) on a given date. If you are only interested in some
- of the entities you have several options:
-
-Define domains and entities to `exclude` (aka. blacklist). This is convenient
-when you are basically happy with the information displayed, but just want to
-remove some entities or domains. Usually these are entities/domains which do not
-change (like `weblink`) or rarely change (like `updater` or `automation`).
+`include` 또는`exclude`이 설정에 없으면 해당 날짜에 History의 모든 entity (`hidden` entity들 혹은 `scenes`은 절대 나타나지 않습니다.)에 대한 그래프가 표시됩니다. 일부 entity들만 나타내게 하고싶다면 entity의 몇 가지 옵션이 있습니다. :
+domain과 entity를 `exclude` (소위 블랙리스트) 로 정의하십시오.  이것은 기본적으로 표시된 정보에 만족한다면 그냥 써도 되지만, 일부 entity 또는 domain을 제거하려는 경우에 편리합니다. 보통은 (`weblink`같은) 혹은 거의 변화가 없는 (`updater` 혹은 `automation`) 경우에 해당 합니다.
 
 ```yaml
 # Example configuration.yaml entry with exclude
@@ -86,10 +78,7 @@ history:
       - sensor.date
 ```
 
-Define domains and entities to display by using the `include` configuration
-(aka. whitelist). If you have a lot of entities in your system and your
-`exclude` list is getting too large, it might be better just to define the
-entities or domains to `include`.
+`include` 설정(소위 whitelist)을 사용하여 domain과 entity들을 정의하십시오. 만일 시스템에 많은 entity들이 있고 `exclude` 리스트가 점점 더 커지면, domain이나 entity들을 `include`로 정의하는 것이 좋습니다. 
 
 ```yaml
 # Example configuration.yaml entry with include
@@ -101,13 +90,9 @@ history:
       - media_player
 ```
 
-Use the `include` list to define the domains/entities to display, and exclude
-some of them within the `exclude` list. This makes sense if you, for instance,
-include the `sensor` domain, but want to exclude some specific sensors. Instead
-of adding every sensor entity to the `include` `entities` list just include the
-`sensor` domain and exclude the sensor entities you are not interested in.
-Note that the order of any `include` `entities` will be displayed as listed in
-the configuration, otherwise, the display order is arbitrary.
+`include` 목록을 사용하여 표시 할 domain/entity들을 정의 하고 목록에서 일부를 `exclude` 목록을 써서 제외시키십시오. 
+예를 들어 `sensor` domain 을 포함시키지만 특정 sensor를 제외하려는 경우이 방법이 적합 합니다. 
+모든 센서 엔터티를 `include` `entities` 목록에 추가하는 대신 sensor domain을 포함시키고 관심없는 센서 엔터티를 제외시키면 됩니다. configuration 에서 `include` `entities` 설정된 순서대로 표시합니다. 그렇지 않으면 표시 순서는 임의대로 나타납니다.
 
 ```yaml
 # Example configuration.yaml entry with include and exclude
@@ -123,9 +108,8 @@ history:
      - sensor.date
 ```
 
-If you'd like the order of display of the sensors to follow the way they are
-listed in the included entity list,
-you can set the flag `use_include_order` to true.
+Sensor 표시 순서가 포함 된 entity 목록에 나열된 방식을 따르도록하려면,
+`use_include_order` flag를 true 로 설정할 수 있습니다.
 
 ```yaml
 # Example configuration.yaml entry using specified entity display order
@@ -137,29 +121,26 @@ history:
       - light.front_porch
 ```
 
-#### Implementation details
+#### 구현 세부 사항
 
-The history is stored in a SQLite database `home-assistant_v2.db` within your
-configuration directory unless the `recorder` integration is set up differently.
+`recoder` 통합구성요소가 다르게 설정되지 않는 한, history는 configuration 디렉토리 내의 `home-assistant_v2.db`로 SQLite 데이터베이스에 저장됩니다
 
- - events table is all events except `time_changed` that happened while recorder integration was running.
- - states table contains all the `new_state` values of `state_changed` events.
- - Inside the states table you have:
-   - `entity_id`: the entity_id of the entity
-   - `state`: the state of the entity
-   - `attributes`: JSON of the state attributes
-   - `last_changed`: timestamp last time the state has changed. A state_changed event can happen when just attributes change.
-   - `last_updated`: timestamp anything has changed (state, attributes)
-   - `created`: timestamp this entry was inserted into the database
+ - events 테이블은 record 통합구성요소가 실행되는 동안 발생한 `time_changed`를 제외한 모든 event들 입니다.
+ - states 테이블은 `state_changed` 이벤트의 값의 모든 `new_state`를 포함합니다. 
+ - states 테이블 안에는 다음 내용이 있습니다. :
+   - `entity_id`: entity의 entity_id
+   - `state`: entity의 상태
+   - `attributes`: state attributes의 JSON
+   - `last_changed`: state가 마지막으로 변경된 timestamp. 속성이 변경되면 state_changed 이벤트가 발생할 수 있습니다.
+   - `last_updated`: 변경사항 timestamp (state, attributes)
+   - `created`: 해당 항목이 데이터베이스에 삽입된 timestamp.
 
-When the `history` integration queries the states table it only selects states
-where the state has changed: `WHERE last_changed=last_updated`
+`history` 통합구성요소가 states 테이블을 쿼리할 때, 해당 쿼리는 상태가 변경된 states만을 선택합니다. : `WHERE last_changed=last_updated`
 
 #### On dates
 
-SQLite databases do not support native dates. That's why all the dates are saved
-in seconds since the UNIX epoch. Convert them manually using
-[this site](https://www.epochconverter.com/) or in Python:
+SQLite 데이터베이스는 native 날짜를 지원하지 않습니다. 그렇기 때문에 유닉스 시대 이후 모든 날짜가 초 단위로 저장됩니다. 
+[this site](https://www.epochconverter.com/) 혹은 Python을 사용하여 수동으로 변경하십시오. :
 
 ```python
 from datetime import datetime
@@ -169,5 +150,4 @@ datetime.fromtimestamp(1422830502)
 
 #### API
 
-The history information is also available through the
-[RESTful API](/developers/rest_api/#get-apihistory).
+History 정보는 [RESTful API](/developers/rest_api/#get-apihistory)를 통해서 사용할 수도 있습니다. 

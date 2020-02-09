@@ -60,11 +60,11 @@ discovery:
 
 {% configuration discovery %}
 ignore:
-  description: `discovery` 로 절대 자동 설정되지 못하게하는 기능입니다.
+  description:  `discovery` 로 절대 자동 설정되지 못하게하는 기능입니다.
   required: false
   type: list
 enable:
-  description: `discovery`로 기본검색이 되게하고 해당 리스트만 플랫폼에서 나타나지 않도록 설정하는 기능입니다.
+  description:  `discovery`로 기본검색이 되게하고 해당 리스트만 플랫폼에서 나타나지 않도록 설정하는 기능입니다.
   required: false
   type: list
 {% endconfiguration %}

@@ -1,5 +1,5 @@
 ---
-title: Home Assistant Mobile App Support
+title: 홈 어시스턴트 모바일 앱 지원
 description: The Mobile App integration allows a generic platform for integrating with mobile apps.
 logo: home-assistant.png
 ha_category:
@@ -11,22 +11,22 @@ ha_codeowners:
   - '@robbiet480'
 ---
 
-The Mobile App integration allows Home Assistant mobile apps to easily integrate with Home Assistant.
+모바일 앱 통합구성요소를 통해 홈어시스턴트 모바일 앱은 홈어시스턴트와 쉽게 연동할 수 있습니다.
 
-If you are planning to use a mobile application that integrates with Home Assistant, we recommend that you keep this integration enabled.
+홈어시스턴트와 연동하여 모바일 응용 프로그램을 사용하려는 경우이 통합구성요소를 사용하는 것이 좋습니다..
 
-If you are a mobile app developer, see the [developer documentation](https://developers.home-assistant.io/docs/en/app_integration_index.html) for instructions on how to build your app on top of the mobile app component.
+모바일 앱 개발자인 경우 모바일 앱 구성 요소 위에 앱을 빌드하는 방법에 대한 지침은 [developer documentation](https://developers.home-assistant.io/docs/en/app_integration_index.html)를 참조하십시오. 
 
-## Configuration
+## 설정
 
-This integration is by default enabled, unless you've disabled or removed the [`default_config:`](https://www.home-assistant.io/integrations/default_config/) line from your configuration. If that is the case, the following example shows you how to enable this integration manually:
+ configuaration 에서 [`default_config:`](https://www.home-assistant.io/integrations/default_config/)를 비활성화하거나 제거하지 않은 경우이 본 통합구성요소는 기본적으로 활성화되어있습니다. 이 경우 다음 예는 이 통합구성요소를 수동으로 활성화하는 방법입니다. :
 
 ```yaml
 # Example configuration.yaml entry
 mobile_app:
 ```
 
-## Apps that use Mobile App
+## 모바일 앱을 사용하는 앱
 
 - [Home Assistant for iOS](https://apps.apple.com/us/app/home-assistant/id1099568401?ls=1) (official)
 - [Home Assistant for Android](https://play.google.com/store/apps/details?id=io.homeassistant.companion.android) (official)

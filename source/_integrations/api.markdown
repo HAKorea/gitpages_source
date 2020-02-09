@@ -10,7 +10,6 @@ ha_codeowners:
   - '@home-assistant/core'
 ---
 
-The `api` integration exposes a RESTful API and allows one to interact with a Home Assistant instance that is running headless. This integration depends on the [`http` integration](/integrations/http/).
 `api` 통합구성요소는 RESTful API를 공개하고 홈어시스턴스 인스턴스와 상호 작용할 수 있도록 하였습니다.
 
 ```yaml

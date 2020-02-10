@@ -1,11 +1,12 @@
 ---
-title: "After upgrading, your browser login gets stuck"
-description: "After upgrading, your browser login gets stuck"
+title: "업그레이드한 뒤로, 로그인이 안됩니다"
+description: "업그레이드한 뒤로, 브라우저에서 로그인 실패"
 ha_category: Usage
 ---
 
-After upgrading to a new version, you may notice your browser gets stuck at the "loading data" login screen. Close the window/tab and go into your browser settings and delete all the cookies for your URL. You can then log back in and it should work.
+새로운 버전으로 업그레이드하고, 당신의 브라우저는 "데이터 로딩" 로그인 화면에서 멈출수 있습니다. 윈도우/탭을 닫고 브라우저 설정에 들어가 해당 URL의 쿠키를 제거하십시오. 그러면 다시 로그인할 수 있고, 잘 작동할 겁니다.
 
-Android Chrome:
 
-chrome -> settings -> site settings -> storage -> search for your URL for Home Assistant-> "clear & reset"
+안드로이드 Chrome:
+
+Chrome -> 설정 -> 사이트 설정 -> 저장소 -> 당신의 홈 어시스턴트 URL 검색 -> "삭제 및 재설정"

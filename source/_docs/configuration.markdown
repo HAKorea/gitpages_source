@@ -19,7 +19,7 @@ description: "홈 어시스턴트 설정."
 | Hass.io | `/config` |
 | Docker | `/config` |
 
-다른 폴더에 설정 파일을 저장하려면: `hass --config path/to/config`로 실행하면 됩니다.
+다른 폴더에 설정 파일을 저장하려면: `hass --config path/to/config`로 실행하십시오.
 
 설정 폴더 안에 `configuration.yaml`이 있습니다. 이것은 설정으로부터 로드된 통합 구성요소를 포함한 주요한 파일입니다. 문서 전체에서 기능을 사용하기 위해 설정 파일에 추가 할 수 있는 스니펫을 찾을 수 있습니다.
 

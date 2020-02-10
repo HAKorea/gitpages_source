@@ -8,7 +8,7 @@ ha_release: 0.7
 ha_quality_scale: internal
 ---
 
-홈어시스턴트는 네트워크에서 [zeroconf](https://en.wikipedia.org/wiki/Zero-configuration_networking)/[mDNS](https://en.wikipedia.org/wiki/Multicast_DNS) 그리고 [uPnP](https://en.wikipedia.org/wiki/Universal_Plug_and_Play) 장치를 검색하고 자동으로 설정 할 수 있습니다. 현재 `discovery` 통합구성요소는 다음을 감지 할 수 있습니다. :
+홈어시스턴트는 네트워크에서 [zeroconf](https://en.wikipedia.org/wiki/Zero-configuration_networking) / [mDNS](https://en.wikipedia.org/wiki/Multicast_DNS) 그리고 [uPnP](https://en.wikipedia.org/wiki/Universal_Plug_and_Play) 장치를 검색하고 자동으로 설정 할 수 있습니다. 현재 `discovery` 통합구성요소는 다음을 감지 할 수 있습니다:
 
  * [Apple TV](/integrations/apple_tv/)
  * [Belkin WeMo switches](/integrations/wemo/)
@@ -44,9 +44,10 @@ Philips Hue의 경우 사용자의 일부 설정이 필요합니다.
 <div class='note'>
 
 Zeroconf 검색 가능 통합구성요소 [Axis](/integrations/axis/)/[ESPHome](/integrations/esphome/)/[HomeKit](/integrations/homekit_controller/)/[Tradfri](/integrations/tradfri/)는 [zeroconf](/integrations/zeroconf) 통합구성요소를 사용 하여 검색을 하도록 마이그레이션되었습니다.
+
 </div>
 
-이 통합구성요소를 사용하려면, `configuration.yaml` 파일에 다음 행을 추가 하십시오. :
+이 통합구성요소를 사용하려면, `configuration.yaml` 파일에 다음 행을 추가하세요:
 
 ```yaml
 # Example configuration.yaml entry
@@ -60,16 +61,16 @@ discovery:
 
 {% configuration discovery %}
 ignore:
-  description:  `discovery` 로 절대 자동 설정되지 못하게하는 기능입니다.
+  description: 사용하지 않는 기기. `discovery` 로 자동 설정되지 못하게하는 기능입니다.
   required: false
   type: list
 enable:
-  description:  `discovery`로 기본검색이 되게하고 해당 리스트만 플랫폼에서 나타나지 않도록 설정하는 기능입니다.
+  description: 추가할 기기. `discovery`로 기본검색이 되게하고 해당 리스트만 플랫폼에서 나타나지 않도록 설정하는 기능입니다.
   required: false
   type: list
 {% endconfiguration %}
 
-ignore에 유효한 값은 다음과 같습니다. :
+ignore에 유효한 값은 다음과 같습니다:
 
  * `apple_tv`: Apple TV
  * `belkin_wemo`: Belkin WeMo switches
@@ -101,9 +102,9 @@ ignore에 유효한 값은 다음과 같습니다. :
  * `yeelight`: Yeelight lamps and bulbs (not only Yeelight Sunflower bulb)
  * `xiaomi_gw`: Xiaomi Aqara gateway
 
-enable에 유효한 값은 다음과 같습니다. :
+enable에 유효한 값은 다음과 같습니다:
 
- * `dlna_dmr`: DLNA DMR 지원 장치 
+ * `dlna_dmr`: DLNA DMR 지원 장치
 
 ## Troubleshooting
 
@@ -123,4 +124,4 @@ Home Assistant가 [Docker container](/docs/installation/docker/)에서 실행되
 
 ### DSM and Synology
 
-DSM/Synology 경우, debian-chroot를 통해 설치하려면 [이 포럼의 게시물을 참조하세요.](https://community.home-assistant.io/t/error-starting-home-assistant-on-synology-for-first-time/917/15).
+DSM/Synology 경우, debian-chroot를 통해 설치하려면 [이 포럼의 게시물](https://community.home-assistant.io/t/error-starting-home-assistant-on-synology-for-first-time/917/15)을 참조하세요.

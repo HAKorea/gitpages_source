@@ -10,7 +10,7 @@ ha_iot_class: Local Polling
 ha_config_flow: true
 ---
 
-홈어시스턴트에서 설정 -> 통합구성요소로 이동하여 Cast 통합구성요소를 추가하여 사용할 수 있습니다.
+홈어시스턴트에서 설정 - 통합구성요소로 이동하여 Cast 통합구성요소를 추가하여 사용할 수 있습니다.
 
 ## Home Assistant Cast
 
@@ -28,7 +28,7 @@ ha_config_flow: true
 
 ## 고급 사용
 
-Cast 장치는 홈어시트턴트와 동일한 서브넷에있는 경우에만 검색 할 수 있습니다. 그렇지 않은 경우 Cast 장치의 IP 주소를 직접 설정해야합니다. :
+Cast 장치는 홈어시트턴트와 동일한 서브넷에있는 경우에만 검색 할 수 있습니다. 그렇지 않은 경우 Cast 장치의 IP 주소를 직접 설정해야합니다:
 
 ```yaml
 # Example configuration.yaml entry
@@ -39,7 +39,7 @@ cast:
 
 {% configuration %}
 media_player:
-  description: 모든 Cast 장치가 포함 된 목록입니다..
+  description: 모든 Cast 장치가 포함 된 목록입니다.
   required: true
   type: list
   keys:
@@ -49,7 +49,7 @@ media_player:
       type: string
     ignore_cec:
       description: >
-      유효한 입력신호를 결정하기 위해 CEC 데이터를 무시해야하는 Chromecast 목록입니다. [See the upstream documentation for more information.](https://github.com/balloob/pychromecast#ignoring-cec-data)
+        유효한 입력신호를 결정하기 위해 CEC 데이터를 무시해야하는 Chromecast 목록입니다. [See the upstream documentation for more information.](https://github.com/balloob/pychromecast#ignoring-cec-data)
       required: false
       type: list
 {% endconfiguration %}

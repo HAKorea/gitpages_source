@@ -7,17 +7,17 @@ ha_release: 0.64
 logo: apple-homekit.png
 ---
 
-The `homekit` integration allows you to forward entities from Home Assistant to Apple HomeKit, so they can be controlled from Apple's Home app and Siri. Please make sure that you have read the [considerations](#considerations) listed below to save you some trouble later. However if you do encounter issues, check out the [troubleshooting](#troubleshooting) section.
+`homekit` 통합구성요소는 애플의 홈 앱과 시리에서 제어 할 수 있도록 애플 HomeKit에 홈어시스턴트에서 entity들을 전달할 수 있습니다. 나중에 문제를 해결하기 위해 아래 나열된 [considerations](#considerations)을 읽었는지 확인하십시오. 그러나 문제가 발생하면 [troubleshooting](#troubleshooting) 섹션을 확인 하십시오. 
 
 <div class="note">
 
-  If you want to control `HomeKit` only devices with Home Assistant, check out the [HomeKit controller](/integrations/homekit_controller/) component.
+  홈 어시스턴트로 `HomeKit` 장치 만 제어 하려면, [HomeKit controller](/integrations/homekit_controller/) 구성 요소를 확인하십시오.
 
 </div>
 
 <div class="note warning">
 
-  It might be necessary to install an additional package:
+  추가 패키지를 설치해야 할 수도 있습니다. :
   `sudo apt-get install libavahi-compat-libdnssd-dev`
 
 </div>
@@ -59,151 +59,151 @@ homekit:
     type: map
     keys:
       auto_start:
-        description: Flag if the HomeKit Server should start automatically after the Home Assistant Core Setup is done. ([Disable Auto Start](#disable-auto-start))
+        description: Home Assistant Core 설정이 완료된 후 HomeKit 서버가 자동으로 시작되어야하는지 여부를 표시. ([Disable Auto Start](#disable-auto-start))
         required: false
         type: boolean
         default: true
       port:
-        description: Port for the HomeKit extension.
+        description: HomeKit 확장을 위한 포트입니다.
         required: false
         type: integer
         default: 51827
       name:
-        description: Need to be individual for each instance of Home Assistant using the integration on the same local network. Between `3` and `25` characters. Alphanumeric and spaces allowed.
+        description: 동일한 로컬 네트워크에서 통합을 사용하여 각 홈어시스턴트 인스턴스마다 개별적이어야합니다. `3` 에서 `25`의 문자열들. 문자, 영숫자와 공백이 허용됩니다.
         required: false
         type: string
         default: '`Home Assistant Bridge`'
       ip_address:
-        description: The local network IP address. Only necessary if the default from Home Assistant does not work.
+        description: 로컬 네트워크 IP 주소 홈어시스턴트의 기본값이 작동하지 않는 경우에만 필요합니다.
         required: false
         type: string
       safe_mode:
-        description: Only set this parameter if you encounter issues during pairing. ([Safe Mode](#safe-mode))
+        description: 페어링 중에 문제가 발생하는 경우에만 이 매개 변수를 설정하십시오. ([Safe Mode](#safe-mode)).
         required: false
         type: boolean
         default: false
       advertise_ip:
-        description: If you need to override the IP address used for mDNS advertisement. (For example, using network isolation in Docker and together with an mDNS forwarder like `avahi-daemon` in reflector mode)
+        description: mDNS 알림에 사용 된 IP 주소를 재정의해야하는 경우. (예를 들어, Docker에서 네트워크 격리하여 사용하고 `avahi-daemon` reflector 모드 처럼 mDNS Forwarder와 함께 사용하는 경우).
         required: false
         type: string
       filter:
-        description: Filters for entities to be included/excluded from HomeKit. ([Configure Filter](#configure-filter))
+        description: HomeKit에서 포함 / 제외 할 entity를 필터링합니다. ([Configure Filter](#configure-filter)).
         required: false
         type: map
         keys:
           include_domains:
-            description: Domains to be included.
+            description: 포함할 domain들.
             required: false
             type: list
           include_entities:
-            description: Entities to be included.
+            description: 포함할 Entity들. 
             required: false
             type: list
           exclude_domains:
-            description: Domains to be excluded.
+            description: 제외할 domain들.
             required: false
             type: list
           exclude_entities:
-            description: Entities to be excluded.
+            description: 제외할 Entity들.
             required: false
             type: list
       entity_config:
-        description: Configuration for specific entities. All subordinate keys are the corresponding entity ids to the domains, e.g., `alarm_control_panel.alarm`.
+        description: 특정 entity에 대한 설정. 모든 종속된 key들은 domain들에 해당하는 endtity id 입니다. 예:) `alarm_control_panel.alarm`.
         required: false
         type: map
         keys:
           '`<ENTITY_ID>`':
-            description: Additional options for specific entities.
+            description: 특정 entity에 대한 추가 옵션.
             required: false
             type: map
             keys:
               name:
-                description: Name of the entity to show in HomeKit. HomeKit will cache the name on the first run so the accessory must be [reset](#resetting-accessories) for any change to take effect.
+                description: HomeKit에 표시 할 entity의 이름입니다. HomeKit은 첫 실행시 액세서리의 기능 세트를 캐시하므로 변경 사항을 적용하려면 장치를 [reset](#resetting-accessories) 해야 합니다.
                 required: false
                 type: string
               linked_battery_sensor:
-                description: The `entity_id` of a `sensor` entity to use as the battery of the accessory. HomeKit will cache an accessory's feature set on the first run so a device must be [reset](#resetting-accessories) for any change to take effect.
+                description: entity `sensor` 의 `entity_id`는 액세서리의 배터리로 사용할 수 있습니다. HomeKit will cache an accessory's feature set on the first run so a device must be [reset](#resetting-accessories) for any change to take effect.
                 required: false
                 type: string
               low_battery_threshold:
-                description: Minimum battery level before the accessory starts reporting a low battery.
+                description: 액세서리가 배터리 부족을보고하기 전에 최소 배터리 수준.
                 required: false
                 type: integer
                 default: 20
               code:
-                description: Code to `arm / disarm` an alarm or `lock / unlock` a lock. Only applicable for `alarm_control_panel` or `lock` entities.
+                description: 알람 (`arm / disarm`) 혹은 잠금장치 (`lock / unlock`)으로 code를 사용. Only applicable `alarm_control_panel` 혹은 `lock` entity에만 해당.
                 required: false
                 type: string
                 default: '`<No code>`'
               feature_list:
-                description: Only for `media_player` entities. List of feature dictionaries to add for a given entity. Comparable to the platform schema.
+                description: entity(`media_player`)만 해당. 주어진 entity에 추가 할 기능 확인 목록입니다. 플랫폼 스키마와 비교할 수 있습니다.
                 required: false
                 type: list
                 keys:
                   feature:
-                    description: Name of the feature to add to the entity representation. Valid features are `on_off`, `play_pause`, `play_stop` and `toggle_mute`. The media_player entity must support the feature to be valid.
+                    description: entity 표시에 추가 할 기능의 이름입니다. 유효한 기능은 `on_off`, `play_pause`, `play_stop` 그리고 `toggle_mute` 입니다. media_player entity는 이 기능이 유효하도록 지원해야합니다.
                     required: true
                     type: string
               type:
-                description: Only for `switch` entities. Type of accessory to be created within HomeKit. Valid types are `faucet`, `outlet`, `shower`, `sprinkler`, `switch` and `valve`. HomeKit will cache the type on the first run so a device must be [reset](#resetting-accessories) for any change to take effect.
+                description: entity (`switch`)에만 해당.  HomeKit 내에서 생성 할 액세서리 유형. 유효한 유형으로는 `faucet`, `outlet`, `shower`, `sprinkler`, `switch` 그리고 `valve`. HomeKit은 첫 실행시 유형을 캐시하므로 변경 사항을 적용하려면 장치를 [reset](#resetting-accessories) 해야 합니다.
                 required: false
                 type: string
                 default: '`switch`'
 {% endconfiguration %}
 
 
-## Setup
+## 설정
 
-To enable the HomeKit integration in Home Assistant, add the following to your configuration file:
+홈어시스턴트에서 HomeKit 통합구성요소를 사용하려면 configuration 파일에 다음을 추가하십시오.:
 
 ```yaml
 # Example for HomeKit setup
 homekit:
 ```
 
-After Home Assistant has started, the entities specified by the filter are exposed to HomeKit if they are [supported](#supported-components). To add them:
+홈어시스턴트가 시작된 후, 필터로 특정한 entity들은 [supported](#supported-components)되기만 하면 나타납니다. 다음은 이들을 추가하는 방법입니다. :
 
-1. Open the Home Assistant frontend. A new card will display the `pin code`. Note: If pin code is not displayed, check "Notifications" (the bell icon) in the lower-left of the Home Assistant UI.
-2. Open the `Home` app.
-3. Click `Add Accessory`, then select `Don't Have a Code or Can't Scan?` and choose the `Home Assistant Bridge`.
-4. Confirm that you are adding an `Uncertified Accessory` by clicking on `Add Anyway`.
-5. Enter the `PIN` code.
-6. Follow the setup by clicking on `Next` and lastly `Done` in the top right-hand corner.
-7. The `Home Assistant` Bridge and the Accessories should now be listed in the `Home` app.
+1. 홈어시스턴트 프론트엔드를 여십시오. 새 카드에 `pin code` 가 표시됩니다 . 참고 : 핀 코드가 표시되지 않으면 홈어시스턴트 UI의 왼쪽 아래에서 "알림"(종 모양 아이콘)을 확인하십시오.
+2. `Home` 앱을 엽니다.
+3. `Add Accessory`를 클릭한 다음 `Don't Have a Code or Can't Scan?`을 선택, `Home Assistant Bridge`를 선택하십시오.
+4. `Add Anyway`를 클릭해서 `Uncertified Accessory`를 추가하도록 하십시오. 
+5. `PIN` 코드를 입력하십시오.
+6. 화면에 따라 `Next` 를 클릭, 상단의 오른쪽 모서리에 `Done` 을 클릭하십시오. 
+7. `홈어시스턴트` Bridge 와 액세서리는 `Home` 앱에 나오게 됩니다. 
 
-After the setup is completed, you should be able to control your Home Assistant integrations through Apple's Home and Siri.
+설정이 완료되면 Apple의 Home 및 Siri를 통해 홈어시스턴트 연동으로 제어 할 수 있게 됩니다.
 
-## Move Home Assistant install
+## 홈어시스턴트 설치로 이동
 
-If you like to retain your HomeKit pairing through a move to a new Home Assistant device or installation, besides copying the configurations files you need to copy the `.homekit.state` file inside your configurations directory. Keep in mind though that the file is usually hidden by default, depending on your operating system.
+새로운 Home Assistant 장치로 이동하거나 설치하여 HomeKit 페어링을 유지하려면 구성 파일을 복사하는 것 외에도 configuration 디렉토리 안에 `.homekit.state` 파일 을 복사해야합니다. 운영 체제에 따라 파일이 기본적으로 숨겨져 있음을 명심하십시오.
 
-Before you copy it, make sure to stop the old and new Home Assistant instances first entirely, otherwise it won't work.
+복사하기 전에 먼저 이전 및 새 Home Assistant 인스턴스를 완전히 중지하십시오. 그렇지 않으면 작동하지 않습니다.
 
-## Considerations
+## 고려 사항
 
-### Accessory ID
+### 액세서리 ID
 
-Currently, this integration uses the `entity_id` to generate a unique `accessory id (aid)` for `HomeKit`. The `aid` is used to identify a device and save all configurations made for it. This, however, means that if you decide to change an `entity_id` all configurations for this accessory made in the `Home` app will be lost.
+현재 이 통합구성요소는 고유한 `HomeKit`을 위한 `accessory id (aid)`를 생성해내기 위해서 `entity_id`를 사용합니다. The `aid`는 모든 구성 장치를 식별하고 저장하는 데 사용됩니다. 하지만 만일 이 액세서리를 위한 모든 설정을 갖고 있는 `entity_id`가 변경될 경우 `home` 앱에서는 사라지게 됩니다. 
 
-### Device Limit
+### 기기 제한
 
-The HomeKit guidelines only allow a maximum of 100 unique accessories (`aid`) per bridge. Be mindful of this when configuring the filter(s).
+HomeKit 가이드 라인는 브리지 당 최대 100 개의 고유 한 액세서리만 허용합니다.  필터를 구성 할 때 이 점에 유의하십시오.
 
-### Persistence Storage
+### 지속적인 저장
 
-Unfortunately `HomeKit` doesn't support any persistent storage - only the configuration for accessories that are added to the `Home Assistant Bridge` are kept. To avoid problems, it is recommended to use an automation to always start `HomeKit` with at least the same entities setup. If for some reason some entities are not set up, their config will be deleted. (State unknown or similar will not cause any issues.)
+불행하게도 `HomeKit` 지속적인 저장 역할은 지원하지 않습니다 - `Home Assistant Bridge`에 추가 된 액세서리의 구성 만 유지됩니다. 문제를 피하기 위해서, 적어도 entity 셋업이 되어있는 상태에서 `homekit`이 항상 시작되도록 자동화를 사용할 것을 권장합니다.   만일 어떤 이유로 일부 엔티티가 설정되지 않았다면 해당 설정이 삭제됩니다. (알 수없는 상태 또는 비슷한 상태는 문제를 일으키지는 않습니다.)
 
-A common situation might be if you decide to disable parts of the configuration for testing. Please make sure to disable `auto start` and `turn off` the `Start HomeKit` automation (if you have one).
+테스트를 위해 설정의 일부를 비활성화하기로 결정 할지 말지가, 일반적인 상황이 될 수 있습니다. `auto start`, `turn off`, `Start HomeKit` 자동화가 (하나라도 있을 경우) 비활성화시킬 것을 꼭 확인하십시오.
 
-## Disable Auto Start
 
-Depending on your setup, it might be necessary to disable `Auto Start` for all accessories to be available for `HomeKit`. Only those entities that are fully set up when the `HomeKit` integration is started, can be added. To start `HomeKit` when `auto_start: false`, you can call the service `homekit.start`.
+## 자동 시작 비활성화
 
-If you have Z-Wave entities you want to be exposed to HomeKit, then you'll need to disable auto start and then start it after the Z-Wave mesh is ready. This is because the Z-Wave entities won't be fully set up until then. This can be automated using an automation.
+설정에 따라, 사용할 수있는 모든 `HomeKit` 액세서리의 `Auto Start`를 비활성화해야 할 수도 있습니다. `HomeKit` 연동이 시작될 때 모든것이 설정된 entity만 추가 할 수 있습니다. `auto_start: false`일 경우 `HomeKit`을 시작하려면, `homekit.start` service를 호출하면 됩니다..
 
+HomeKit에 노출하려는 Z-Wave entity가 있는 경우 자동 시작을 비활성화 한 다음 Z-Wave mesh가 준비된 후 시작해야합니다.Z-Wave entity는 그때까지 완전히 설정되지 않기 때문입니다. 이는 자동화를 사용하면 자동으로 실행시킬 수 있습니다. 
 <div class='note'>
 
-Please remember that you can only have a single `automation` entry. Add the automation to your existing automations.
+하나의 `automation` 항목 만 가질 수 있습니다. 기존 자동화에 자동화를 추가하십시오.
 
 </div>
 
@@ -227,7 +227,7 @@ automation:
 ```
 {% endraw %}
 
-For a general delay where your integration doesn't generate an event, you can also do:
+연동시 이벤트를 생성하지 않는 일반적인 지연의 경우 다음을 수행 할 수도 있습니다. :
 
 {% raw %}
 ```yaml
@@ -246,7 +246,7 @@ automation:
 ```
 {% endraw %}
 
-In some cases it might be desirable to check that all entities are available before starting `HomeKit`. This can be accomplished by adding an additional `binary_sensor` as follows:
+경우에 따라 `HomeKit`을 시작하기 전에 모든 엔터티를 사용할 수 있는지 확인하는 것이 좋습니다. 다음과 같이 추가적인 `binary_sensor`를 추가 할 수 있습니다. :
 
 {% raw %}
 ```yaml
@@ -275,9 +275,9 @@ automation:
 ```
 {% endraw %}
 
-## Configure Filter
+## 필터 설정
 
-By default, no entity will be excluded. To limit which entities are being exposed to `HomeKit`, you can use the `filter` parameter. Keep in mind only [supported components](#supported-components) can be added.
+기본적으로 entity는 제외되지 않습니다. `HomeKit`에 노출되는 엔터티를 제한하기 위해, `filter` 파라미터를 사용할 수 있습니다. [supported components](#supported-components) 만 추가할 수 있다는 것을 상기하십시오.
 
 {% raw %}
 ```yaml
@@ -292,103 +292,103 @@ homekit:
 ```
 {% endraw %}
 
-Filters are applied as follows:
+필터는 다음과 같이 적용됩니다. :
 
-1. No includes or excludes - pass all entities
-2. Includes, no excludes - only include specified entities
-3. Excludes, no includes - only exclude specified entities
+1. No includes or excludes - 모든 entity 전달
+2. Includes, no excludes - 지정된 entity만 포함
+3. Excludes, no includes - 지정된 entity만 제외
 4. Both includes and excludes:
-   * Include domain specified
-      - if domain is included, and entity not excluded, pass
-      - if domain is not included, and entity not included, fail
+   * 지정된 domain 포함
+      - domain이 포함되고 entity가 제외되지 않은 경우 전달
+      - domain이 포함되지 않고 entity가 포함되지 않은 경우 실패
    * Exclude domain specified
-      - if domain is excluded, and entity not included, fail
-      - if domain is not excluded, and entity not excluded, pass
-      - if both include and exclude domains specified, the exclude domains are ignored
+      - domain이 제외되고 entity가 포함되지 않은 경우 실패
+      - domain이 제외되지 않고 entity가 제외되지 않은 경우 전달
+      - 포함 및 제외 domain이 모두 지정된 경우 제외 domain은 무시됩니다.
    * Neither include or exclude domain specified
-      - if entity is included, pass (as #2 above)
-      - if entity include and exclude, the entity exclude is ignored
+      - entity가 포함되어 있으면 위의 # 2와 같이 전달하십시오
+      - entity 포함 및 제외 인 경우 entity 제외가 무시됩니다.
 
-## Safe Mode
+## 안전 모드
 
-The `safe_mode` option should only be used (and only works) if you encounter issues during the pairing. ([Pairing hangs - zeroconf error](#pairing-hangs---zeroconf-error)).
+페어링시 문제가 발생하는 경우 `safe_mode` 옵션만 사용되야 합니다(어짜피 이 옵션만 작동). ([Pairing hangs - zeroconf error](#pairing-hangs---zeroconf-error)).
 
-To use `safe_mode`, add the option to your `homekit` config:
+`safe_mode`를 사용하려면, `homekit` 설정에 다음을 추가하십시오. :
 
 ```yaml
 homekit:
   safe_mode: true
 ```
 
-Restart your Home Assistant instance. If you don't see a `pincode`, follow the [guide](#deleting-the-homekitstate-file) here. Now you should be able to pair normally.
+홈어시스턴트 인스턴스를 다시 시작하십시오. `pincode`가 보이지 않으면, 여기 [guide](#deleting-the-homekitstate-file)를 따르십시오. 이제 정상적으로 페어링 할 수 있습니다.
 
 <div class="note warning">
 
-To avoid any errors, after you have successfully paired your Home Assistant Bridge, remove the `safe_mode` option from your config and restart Home Assistant.
+오류를 방지하려면, 홈어시스턴트 Bridge를 성공적으로 페어링 한 후, 설정에서 `safe_mode` 옵션을 삭제하고 홈어시스턴트를 재시작 하십시오. 
 
 </div>
 
-## Docker Network Isolation
+## Docker 네트워크와의 격리
 
-The `advertise_ip` option can be used to run this integration even inside an ephemeral Docker container with network isolation enabled, e.g., not using the host network.
+`advertise_ip` 옵션은 예를 들어 호스트 네트워크를 사용하지 않고도 네트워크 격리가 활성화 된 임시 Docker 컨테이너 내에서 조차도 이러한 연동을 실행하는 데 사용할 수 있습니다.
 
-To use `advertise_ip`, add the option to your `homekit` config:
+`advertise_ip` 사용하기 위해서, `homekit` 옵션을 다음과 같이 추가하십시오. :
 
 ```yaml
 homekit:
   advertise_ip: "STATIC_IP_OF_YOUR_DOCKER_HOST"
 ```
 
-Restart your Home Assistant instance. This feature requires running an mDNS forwarder on your Docker host, e.g., `avahi-daemon` in reflector mode. This kind of setup most likely requires `safe_mode` during the bridge setup.
+홈어시스턴트 인스턴스를 다시 시작하십시오. 이 기능을 사용하려면 Docker 호스트에서 mDNS 전달자를 실행해야합니다, (예 : avahi-daemon 리플렉터 모드). 이러한 종류의 bridge 설정을 하는 동안, `safe_mode`를 가장 많이 필요로 합니다. 
 
-## Supported Components
+## 지원되는 구성 요소
 
-The following integrations are currently supported:
+현재 다음 연동이 지원됩니다.:
 
-| Component | Type Name | Description |
-| --------- | --------- | ----------- |
-| alarm_control_panel | SecuritySystem | All security systems. |
-| automation / input_boolean / remote / scene / script | Switch | All represented as switches. |
-| binary_sensor | Sensor | Support for `co2`, `door`, `garage_door`, `gas`, `moisture`, `motion`, `occupancy`, `opening`, `smoke` and `window` device classes. Defaults to the `occupancy` device class for everything else. |
-| climate | Thermostat | All climate devices. |
-| cover | GarageDoorOpener | All covers that support `open` and `close` and have `garage` as their `device_class`. |
-| cover | WindowCovering | All covers that support `set_cover_position`. |
-| cover | WindowCovering | All covers that support `open_cover` and `close_cover` through value mapping. (`open` -> `>=50`; `close` -> `<50`) |
-| cover | WindowCovering | All covers that support `open_cover`, `stop_cover` and `close_cover` through value mapping. (`open` -> `>70`; `close` -> `<30`; `stop` -> every value in between) |
-| device_tracker / person | Sensor | Support for `occupancy` device class. |
-| fan | Fan | Support for `on / off`, `direction` and `oscillating`. |
-| fan | Fan | All fans that support `speed` and `speed_list` through value mapping: `speed_list` is assumed to contain values in ascending order. The numeric ranges of HomeKit map to a corresponding entry of `speed_list`. The first entry of `speed_list` should be equivalent to `off` to match HomeKit's concept of fan speeds. (Example: `speed_list` = [`off`, `low`, `high`]; `off` -> `<= 33`; `low` -> between `33` and `66`; `high` -> `> 66`) |
-| light | Light | Support for `on / off`, `brightness` and `rgb_color`. |
-| lock | DoorLock | Support for `lock / unlock`. |
-| media_player | MediaPlayer | Represented as a series of switches which control `on / off`, `play / pause`, `play / stop`, or `mute` depending on `supported_features` of entity and the `mode` list specified in `entity_config`. |
-| media_player | TelevisionMediaPlayer | All media players that have `tv` as their `device_class`.  Represented as Television and Remote accessories in HomeKit to control `on / off`, `play / pause`, `select source`, or `volume increase / decrease`, depending on `supported_features` of entity. Requires iOS 12.2/macOS 10.14.4 or later. |
-| sensor | TemperatureSensor | All sensors that have `Celsius` or `Fahrenheit` as their `unit_of_measurement` or `temperature` as their `device_class`. |
-| sensor | HumiditySensor | All sensors that have `%` as their `unit_of_measurement` and `humidity` as their `device_class`. |
-| sensor | AirQualitySensor | All sensors that have `pm25` as part of their `entity_id` or `pm25` as their `device_class` |
-| sensor | CarbonMonoxideSensor | All sensors that have `co` as their `device_class` |
-| sensor | CarbonDioxideSensor | All sensors that have `co2` as part of their `entity_id` or `co2` as their `device_class` |
-| sensor | LightSensor | All sensors that have `lm` or `lx` as their `unit_of_measurement` or `illuminance` as their `device_class` |
-| switch | Switch | Represented as a switch by default but can be changed by using `type` within `entity_config`. |
-| water_heater | WaterHeater | All `water_heater` devices. |
+| Component                                            | Type Name             | Description                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| ---------------------------------------------------- | --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| alarm_control_panel                                  | SecuritySystem        | All security systems.                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| automation / input_boolean / remote / scene / script | Switch                | All represented as switches.                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| binary_sensor                                        | Sensor                | Support for `co2`, `door`, `garage_door`, `gas`, `moisture`, `motion`, `occupancy`, `opening`, `smoke` and `window` device classes. Defaults to the `occupancy` device class for everything else.                                                                                                                                                                                                                                            |
+| climate                                              | Thermostat            | All climate devices.                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| cover                                                | GarageDoorOpener      | All covers that support `open` and `close` and have `garage` as their `device_class`.                                                                                                                                                                                                                                                                                                                                                        |
+| cover                                                | WindowCovering        | All covers that support `set_cover_position`.                                                                                                                                                                                                                                                                                                                                                                                                |
+| cover                                                | WindowCovering        | All covers that support `open_cover` and `close_cover` through value mapping. (`open` -> `>=50`; `close` -> `<50`)                                                                                                                                                                                                                                                                                                                           |
+| cover                                                | WindowCovering        | All covers that support `open_cover`, `stop_cover` and `close_cover` through value mapping. (`open` -> `>70`; `close` -> `<30`; `stop` -> every value in between)                                                                                                                                                                                                                                                                            |
+| device_tracker / person                              | Sensor                | Support for `occupancy` device class.                                                                                                                                                                                                                                                                                                                                                                                                        |
+| fan                                                  | Fan                   | Support for `on / off`, `direction` and `oscillating`.                                                                                                                                                                                                                                                                                                                                                                                       |
+| fan                                                  | Fan                   | All fans that support `speed` and `speed_list` through value mapping: `speed_list` is assumed to contain values in ascending order. The numeric ranges of HomeKit map to a corresponding entry of `speed_list`. The first entry of `speed_list` should be equivalent to `off` to match HomeKit's concept of fan speeds. (Example: `speed_list` = [`off`, `low`, `high`]; `off` -> `<= 33`; `low` -> between `33` and `66`; `high` -> `> 66`) |
+| light                                                | Light                 | Support for `on / off`, `brightness` and `rgb_color`.                                                                                                                                                                                                                                                                                                                                                                                        |
+| lock                                                 | DoorLock              | Support for `lock / unlock`.                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| media_player                                         | MediaPlayer           | Represented as a series of switches which control `on / off`, `play / pause`, `play / stop`, or `mute` depending on `supported_features` of entity and the `mode` list specified in `entity_config`.                                                                                                                                                                                                                                         |
+| media_player                                         | TelevisionMediaPlayer | All media players that have `tv` as their `device_class`.  Represented as Television and Remote accessories in HomeKit to control `on / off`, `play / pause`, `select source`, or `volume increase / decrease`, depending on `supported_features` of entity. Requires iOS 12.2/macOS 10.14.4 or later.                                                                                                                                       |
+| sensor                                               | TemperatureSensor     | All sensors that have `Celsius` or `Fahrenheit` as their `unit_of_measurement` or `temperature` as their `device_class`.                                                                                                                                                                                                                                                                                                                     |
+| sensor                                               | HumiditySensor        | All sensors that have `%` as their `unit_of_measurement` and `humidity` as their `device_class`.                                                                                                                                                                                                                                                                                                                                             |
+| sensor                                               | AirQualitySensor      | All sensors that have `pm25` as part of their `entity_id` or `pm25` as their `device_class`                                                                                                                                                                                                                                                                                                                                                  |
+| sensor                                               | CarbonMonoxideSensor  | All sensors that have `co` as their `device_class`                                                                                                                                                                                                                                                                                                                                                                                           |
+| sensor                                               | CarbonDioxideSensor   | All sensors that have `co2` as part of their `entity_id` or `co2` as their `device_class`                                                                                                                                                                                                                                                                                                                                                    |
+| sensor                                               | LightSensor           | All sensors that have `lm` or `lx` as their `unit_of_measurement` or `illuminance` as their `device_class`                                                                                                                                                                                                                                                                                                                                   |
+| switch                                               | Switch                | Represented as a switch by default but can be changed by using `type` within `entity_config`.                                                                                                                                                                                                                                                                                                                                                |
+| water_heater                                         | WaterHeater           | All `water_heater` devices.                                                                                                                                                                                                                                                                                                                                                                                                                  |
 
-## Troubleshooting
+## 문제 해결
 
-### Deleting the `.homekit.state` file
+### `.homekit.state` 파일 삭제
 
-The `.homekit.state` file can be found in the configurations directory. You might need to enable `view hidden files` to see it.
+`.homekit.state` 파일은 구성 디렉토리에서 찾을 수 있습니다. 이를 보기 위해 `view hidden files` 를 활성화 시켜야 할 수 있습니다.
 
- 1. **Stop** Home Assistant
- 2. Delete the `.homekit.state` file
- 3. **Start** Home Assistant
+ 1. 홈어시스턴트 **Stop** 
+ 2. `.homekit.state` 파일 삭제
+ 3. 홈어시스턴트 **Start** 
 
-### Errors during pairing
+### 페어링 중 오류
 
-If you encounter any issues during pairing, make sure to:
+페어링 중에 문제가 발생하면 다음을 확인하십시오 :
 
- 1. **Stop** Home Assistant
- 2. Delete the `.homekit.state` file
- 3. Edit your configuration (see below)
- 4. **Start** Home Assistant
+ 1. 홈어시스턴트 **Stop**
+ 2. `.homekit.state` 파일 삭제
+ 3. configuaration 편집 (아래 참조)
+ 4. 홈어시스턴트 **Start** 
 
 ```yaml
 logger:
@@ -403,96 +403,97 @@ homekit:
       - demo.demo
 ```
 
-#### PIN doesn't appear as persistent status
+#### PIN이 지속적 상태로 표시되지 않습니다
 
-You might have paired the `Home Assistant Bridge` already. If not, delete the `.homekit.state` file ([guide](#deleting-the-homekitstate-file)).
+`Home Assistant Bridge` 이미 페어링했을 수 있습니다 . 그렇지 않은 경우, `.homekit.state` 파일을 삭제하십시오. ([guide](#deleting-the-homekitstate-file)).
 
-#### `Home Assistant Bridge` doesn't appear in the Home App (for pairing)
+#### 홈 어시스턴트 브리지가 홈 앱에 나타나지 않음 (페어링)
 
-This is often setup and network related. Make sure to check the other issues below as well, but things that might work include:
-- Check your router configuration
-- Try with WIFI **and** LAN
-- Change the default [port](#port)
+이것은 종종 설정 및 네트워크 관련이 있습니다. 아래의 다른 외부 환경 문제도 확인해 볼 수 있습니다. :
 
-Remember that the iOS device needs to be in the same local network as the Home Assistant device for pairing.
+- 라우터 설정 확인
+- WiFi **와** LAN을 모두 사용해보십시오. 
+- 기본 포트 변경 [port](#port)
 
-#### `Home Assistant Bridge` doesn't appear in the Home App (for pairing) - Docker
+iOS 기기는 페어링을 위해 홈 어시스턴트 기기와 동일한 로컬 네트워크에 있어야합니다.
 
-Set `network_mode: host`. If you have further problems this [issue](https://github.com/home-assistant/home-assistant/issues/15692) might help.
+#### `홈어시스턴트 브리지`가 홈 앱에 나타나지 않음 (페어링) - Docker
 
-You can also try to use `avahi-daemon` in reflector mode together with the option `advertise_ip`, see above.
+`network_mode: host`를 설정하십시오. 추가 문제가있는 경우 이 [issue](https://github.com/home-assistant/home-assistant/issues/15692) 가 도움이 될 것입니다.
 
-#### `Home Assistant Bridge` doesn't appear in the Home App (for pairing) - VirtualBox
+`advertise_ip` 옵션과 함께 `avahi-daemon` 리플렉터 모드에서 사용을 시도해볼 수 있습니다 (위 참조).
 
-Configure the network mode as `networkbridge`. Otherwise the Home Assistant Bridge won't be exposed to the network.
+#### `홈어시스턴트 브리지`가 홈 앱 (페어링)에 표시되지 않음 - VirtualBox
 
-#### Pairing hangs - zeroconf error
+`networkbridge`로 네트워크 모드를로 설정하십시오.  그렇지 않으면 홈어시스턴트 bridge가 네트워크에 노출되지 않습니다.
 
-Pairing eventually fails, you might see and an error message `NonUniqueNameException`. Add the `safe_mode` option to your config, see [safe_mode](#safe-mode).
+#### 페어링 중단 - zeroconf 오류
+\
+결국 페어링에 실패하면 `NonUniqueNameException` 오류 메시지가 표시 될 수 있습니다. `safe_mode` 옵션을 설정에 추가 하십시오, [safe_mode](#safe-mode) 참조.
 
-#### Pairing hangs - only works with debug config
+#### 페어링 중단 - 디버그 설정에서만 작동
 
-Pairing works fine when the filter is set to only include `demo.demo`, but fails with normal config. See [specific entity doesn't work](#specific-entity-doesnt-work)
+`demo.demo`를 포함하여 세팅 했을 때 페어링은 잘 동작합니다, 일반 설정에서는 동작하지 않습니다. [specific entity doesn't work](#specific-entity-doesnt-work) 참조.
 
-#### Pairing hangs - no error
+#### 페어링 중단 - 에러 없음
 
-1. Make sure that you don't try to add more than 100 accessories, see [device limit](#device-limit). In rare cases, one of your entities doesn't work with the HomeKit component. Use the [filter](#configure-filter) to find out which one. Feel free to open a new issue in the `home-assistant` repo, so we can resolve it.
-2. Check logs, and search for `Starting accessory Home Assistant Bridge on address`. Make sure Home Assistant Bridge hook ups to a correct interface. If it did not, explicitly set `homekit.ip_address` configuration variable.
+1. 100 개가 넘는 액세서리를 추가하지 마십시오,  [device limit](#device-limit) 참조. 드물기는하지만 entity 중 하나가 HomeKit 통합구성요소와 작동하지 않습니다. [filter](#configure-filter)를 사용하여 어느것인지 찾을 수 있습니다. `home-assistant` 리포지토리에서 새로운 문제를 자유롭게 열어, 어떤 문제인지 해결할 수 있습니다. 
+2.  `Starting accessory Home Assistant Bridge on address` 로그를 확인하고을 검색하십시오. 홈어시스턴트 브리지가 올바른 인터페이스에 연결되어 있는지 확인하십시오. 그렇지 않은 경우, `homekit.ip_address` 설정 변수를 명시하여 설정 하십시오.
 
-#### Duplicate AID found when attempting to add accessory
+#### 액세서리를 추가하려고 할 때 중복 된 AID가 발견
 
-Two of your entities share the same `entity_id`. Either resolve this or configure the [filter](#configure-filter) to exclude them.
+두 entity가 `entity_id`를 동일하게 공유합니다. 이를 해결하거나 제외하도록 [filter](#configure-filter) 를 설정하십시오.
 
-### Issues during normal use
+### 정상적인 사용시 문제
 
-#### Some of my devices don't show up - Z-Wave / Discovery
+#### 내 기기 중 일부가 표시되지 않음 - Z-Wave / Discovery
 
-See [disable auto start](#disable-auto-start)
+[disable auto start](#disable-auto-start) 참조
 
-#### My entity doesn't show up
+#### 내 entity가 표시되지 않습니다
 
-Check if the domain of your entity is [supported](#supported-components). If it is, check your [filter](#configure-filter) settings. Make sure the spelling is correct, especially if you use `include_entities`.
+entity의 도메인이 [supported](#supported-components)되는지 확인하십시오. 그렇다면, [filter](#configure-filter) 설정을 확인하십시오.  특히를 `include_entities`를 사용하는 경우, 철자가 올바른지 확인하십시오.
 
-#### HomeKit doesn't work on second Home Assistant instance
+#### HomeKit은 두 번째 홈어시스턴트 인스턴스에서 작동하지 않습니다
 
-To use the HomeKit integration with to different Home Assistant instances on the same local network, you need to set a custom name for at least one of them. [config/name](#name)
+동일한 로컬 네트워크에서 다른 홈어시스턴트 인스턴스와 HomeKit 연동 사용하려면 하나 이상의 사용자 정의 이름을 설정해야합니다. [config/name](#name)
 
-#### Specific entity doesn't work
+#### 특정 엔티티가 작동하지 않습니다
 
-Although we try our best, some entities don't work with the HomeKit integration yet. The result will be that either pairing fails completely or all Home Assistant accessories will stop working. Use the filter to identify which entity is causing the issue. It's best to try pairing and step by step including more entities. If it works unpair and repeat until you find the one that is causing the issues. To help others and the developers, please open a new issue here: [home-assistant/issues/new](https://github.com/home-assistant/home-assistant/issues/new?labels=component:%20homekit)
+최선을 다하고 있지만, 일부 entity는 아직 HomeKit 통합에서 작동하지 않습니다. 그 결과 페어링이 완전히 실패하거나 모든 홈 어시스턴트 액세서리가 작동을 멈출 수 있습니다. 필터를 사용하여 문제를 일으키는 entity를 식별하십시오. 더 많은 entity를 포함하여 단계별로 페어링을 시도하는 것이 가장 좋습니다. 연결이 끊어지면 문제의 원인이 될 때까지 반복하십시오. 다른 사람과 개발자를 돕기 위해 여기에서 issue 를 여십시오.: [home-assistant/issues/new](https://github.com/home-assistant/home-assistant/issues/new?labels=component:%20homekit)
 
-#### Accessories are all listed as not responding
+#### 액세서리가 모두 응답하지 않는 것으로 표시됨
 
-See [specific entity doesn't work](#specific-entity-doesnt-work)
+참조 [specific entity doesn't work](#specific-entity-doesnt-work)
 
-#### Accessory not responding - after restart or update
+#### 액세서리가 응답하지 않음 - 재시작 또는 업데이트 후
 
-See [device limit](#device-limit)
+참조 [device limit](#device-limit)
 
-#### Accessory not responding - randomly
+#### 액세서리가 응답하지 않음 - 임의로
 
-Unfortunately, that sometimes happens at the moment. It might help to close the `Home` App and delete it from the cache. Usually, the accessory should get back to responding after a few minutes at most.
+불행히도, 때때로 그것은 때때로 발생합니다.  `Home` 앱 을 닫고 캐시에서 삭제하는 것이 도움이 될 수 있습니다. 일반적으로 액세서리는 최대 몇 분 후에 다시 응답해야합니다.
 
-#### Accessories not responding / behaving unusual - Upgrade from `0.65.x`
+#### 액세서리가 응답하지 않거나 비정상적인 동작 - `0.65.x`에서 업그레이드
 
-To fix this, you need to unpair the `Home Assistant Bridge`, delete the `.homekit.state` file ([guide](#deleting-the-homekitstate-file)) and pair it again. This should only be an issue if you're upgrading from `0.65.x` or below.
+이 문제를 해결하려면의 `Home Assistant Bridge` 페어링을 해제, `.homekit.state` 파일을 삭제하고 ([guide](#deleting-the-homekitstate-file)) 다시 페어링 합니다. `0.65.x` 또는 이하에서 업그레이드하는 경우에만 문제가 됩니다..
 
-#### The linked battery sensor isn't recognized
+#### 연결된 배터리 센서가 인식되지 않습니다
 
-Try removing the entity from HomeKit and then adding it again. If you are adding this config option to an existing entity in HomeKit, any changes you make to this entity's config options won't appear until the accessory is removed from HomeKit and then re-added. See [resetting accessories](#resetting-accessories).
+HomeKit에서 entity를 제거한 후 다시 추가하십시오. HomeKit의 기존 엔터티에이 구성 옵션을 추가하는 경우 액세서리를 HomeKit에서 제거한 다음 다시 추가 할 때까지이 엔터티의 구성 옵션에 대한 변경 내용이 표시되지 않습니다. [resetting accessories](#resetting-accessories)를 참조하십시오.
 
-#### My media player is not showing up as a television accessory
+#### 미디어 플레이어가 TV 액세서리로 표시되지 않습니다
 
-Media Player entities with `device_class: tv` will show up as Television accessories on  devices running iOS 12.2/macOS 10.14.4 or later. If needed, try removing the entity from HomeKit and then adding it again, especially if the `media_player` was previously exposed as a series of switches. Any changes, including changed supported features, made to an existing accessory won't appear until the accessory is removed from HomeKit and then re-added. See [resetting accessories](#resetting-accessories).
+미디어 플레이어 `device_class: tv` entity는  iOS 12.2 / macOS 10.14.4 이상을 실행하는 기기에서 텔레비전 액세서리로 표시됩니다. 필요한 경우, 특히 이전에 `media_player`가 일련의 스위치로 노출 된 경우 HomeKit에서 entity를 제거한 다음 다시 추가하십시오. 지원되는 기능 변경을 포함하여 기존 액세서리에 대한 변경 사항은 HomeKit에서 액세서리를 제거한 다음 다시 추가 할 때까지 나타나지 않습니다.  [resetting accessories](#resetting-accessories) 참조.
 
-#### Can't control volume of your TV media player?
+#### TV 미디어 플레이어의 볼륨을 조절할 수 없습니까?
 
-The volume and play/pause controls will show up on the Remote app or Control Center. If your TV supports volume control through Home Assistant, you will be able to control the volume using the side volume buttons on the device while having the remote selected on screen.
+볼륨 및 재생 / 일시 정지 제어가 원격 앱 또는 제어 센터에 표시됩니다. TV가 홈 어시스턴트를 통한 볼륨 조절을 지원하는 경우 화면에서 리모컨을 선택한 상태에서 장치의 측면 볼륨 버튼을 사용하여 볼륨을 조절할 수 있습니다.
 
-#### Resetting accessories
+#### 액세서리 재설정
 
-On Home Assistant `0.97.x` or later, you may use the service `homekit.reset_accessory` with one or more entity_ids to reset accessories whose configuration may have changed. This can be useful when changing a media_player's device class to `tv`, linking a battery, or whenever Home Assistant adds support for new HomeKit features to existing entities.
+홈어시스턴트 `0.97.x` 혹은 이후, 에서는 하나 이상의 entity_id와 함께 `homekit.reset_accessory` 서비스 를 사용하여 설정이 변경되었을 수있는 액세서리를 재설정 할 수 있습니다. media_player의 장치 클래스에서 `tv`로 변경했을 때 혹은 기존 entity에 새로운 HomeKit 기능에 대한 지원을 추가 할 때 유용합니다.
 
-On earlier versions of Home Assistant, you can reset accessories by removing the entity from HomeKit (via [filter](#configure-filter)) and then re-adding the accessory.
+이전 버전의 홈어시스턴트에서는, (via [filter](#configure-filter))를 통해 HomeKit에서 entity를 제거한 다음 액세서리를 다시 추가하여 액세서리를 재설정 할 수 있습니다.
 
-With either strategy, the accessory will behave as if it's the first time the accessory has been set up, so you will need to restore the name, group, room, scene, and/or automation settings.
+어느쪽이든, 액세서리를 처음 설치 한 것처럼 액세서리가 작동하므로, 이름, 그룹, 회의실, 장면 및 / 또는 자동화 설정을 복원해야합니다.

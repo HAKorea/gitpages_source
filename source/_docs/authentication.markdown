@@ -1,113 +1,113 @@
 ---
-title: "Authentication"
+title: "인증"
 description: "Guide on authentication in Home Assistant."
 redirect_from:
   - /integrations/auth/
 ---
 
-Our authentication system secures access to Home Assistant.
+인증 시스템은 Home Assistant에 대한 접속을 보호합니다.
 
-If you are starting Home Assistant for the first time, or you have logged out, you will be asked for credentials before you can log in. 
+홈어시스턴를 처음 시작하거나 로그 아웃 한 경우 로그인하기 전에 자격 증명을 묻는 메시지가 나타납니다.
 
 <img src='/images/docs/authentication/login.png' alt='Screenshot of the login screen' style='border: 0;box-shadow: none;'>
 
-## User accounts
+## 사용자 계정
 
-When you start Home Assistant for the first time the _owner_ user account is created. This account has some special privileges and can:
+홈어시스턴트를 처음 시작하면 _소유자 전용 계정_ 이 생성됩니다. 이 계정에는 몇 가지 특별한 권한이 있으며 다음을 수행 할 수 있습니다. :
 
- - Create and manage other user accounts. 
- - Configure integrations and other settings (coming soon).
- - Configure Hass.io (coming soon).
+ - 다른 사용자 계정을 만들고 관리합니다. 
+ - 통합구성요소 및 기타 세팅을 설정합니다. (coming soon).
+ - Hass.io를 설정합니다. (coming soon).
 
 <div class='note'>
-For the moment, other user accounts will have the same access as the owner account. In the future, non-owner accounts will be able to have restrictions applied.
+현재 다른 사용자 계정은 소유자 계정과 동일한 액세스 권한을 갖습니다. 향후 비 소유자 계정에는 제한이 적용될 수 있습니다.
 </div>
 
-### Your Account Profile
+### 당신의 계정 프로필
 
-Once you're logged in, you can see the details of your account at the _Profile_ page by clicking on the circular badge next to the Home Assistant title in the sidebar. 
+로그인 하면 사이드 바의 홈 어시스턴트 제목 옆에있는 원형 배지를 클릭하여 _profile_ 페이지 에서 계정 세부 정보를 볼 수 있습니다
 
 <img src='/images/docs/authentication/profile.png' alt='Screenshot of the profile page' style='border: 0;box-shadow: none;'>
 
-You can:
+당신이 할 수 있는 것들 :
 
-* Change the language you prefer Home Assistant to use.
-* Change your password. 
-* Select the [theme](/integrations/frontend/#defining-themes) for the interface of Home Assistant.
-* Enable or disable [multi-factor authentication](/docs/authentication/multi-factor-auth/).
-* Delete _Refresh Tokens_. These are created when you log in from a device. Delete them if you want to force the device to log out.
-* Create [Long Lived Access Tokens](https://developers.home-assistant.io/docs/en/auth_api.html#long-lived-access-token) so scripts can securely interact with Home Assistant. 
-* Log out of Home Assistant. 
+* 홈어시스턴트에서 선호하는 언어를 변경.
+* 비밀번호 변경. 
+* 홈어시스턴트 인터페이스의 [theme](/integrations/frontend/#defining-themes) 선택.
+* [multi-factor authentication](/docs/authentication/multi-factor-auth/) 활성화 혹은 비활성화.
+* _Refresh Tokens_ 삭제. 장치에서 로그인 할 때 생성됩니다. 장치를 강제로 로그 아웃하려면 삭제.
+* 스크립트가 홈어시스턴트와 안전하게 상호 작용할 수 있도록 [Long Lived Access Tokens](https://developers.home-assistant.io/docs/en/auth_api.html#long-lived-access-token)를 만듬. 
+* 홈어시스턴트에서 로그 아웃. 
 
-### Securing your login
+### 로그인 보안
 
-_Make sure to choose a secure password!_ At some time in the future, you will probably want to access Home Assistant from outside your local network. This means you are also exposed to random black-hats trying to do the same. Treat the password like the key to your house. 
+_미래를 위해 안전한 비밀번호를 선택하십시오 !_ 나중에 언젠가는 로컬 네트워크 외부에서 홈어시스턴트에 접근하려고 할 것입니다. 즉, 동일한 작업을 시도하는 임의의 해커들에게도 노출됩니다. 집 열쇠와 같은 비밀번호를 사용하십시오. 
 
+추가 보안 수준으로, [multi-factor authentication](/docs/authentication/multi-factor-auth/)을 켤 수 있습니다. 
 
-As an extra level of security, you can turn on [multi-factor authentication](/docs/authentication/multi-factor-auth/). 
+## 다른 인증 기술
 
-## Other authentication techniques
+홈어시스턴트는 여러 가지 인증 방법을 제공합니다.  [Auth Providers](/docs/authentication/providers/) 를 참조하세요. 
 
-Home Assistant provides several ways to authenticate. See the [Auth Providers](/docs/authentication/providers/) section.
+## 문제 해결
 
-## Troubleshooting
+### `127.0.0.1` 에서의 인증 실패
 
-### Authentication failures from `127.0.0.1`
+만일에 `127.0.0.1`에서 인증에 하고, `nmap` 장치 추적기를 사용하는 경우, [홈어이스턴트 IP를 제외](/integrations/nmap_tracker#exclude) 하고 IP를 검사해야 합니다.
 
-If you're seeing authentication failures from `127.0.0.1` and you're using the `nmap` device tracker, you should [exclude the Home Assistant IP](/integrations/nmap_tracker#exclude) from being scanned.
+### Bearer 토큰 경고
 
-### Bearer token warnings
-
-Under the new authentication system you'll see the following warning logged when the [legacy API password](/docs/authentication/providers/#legacy-api-password) is supplied, but not configured in Home Assistant:
+새 인증 시스템에서 [legacy API password](/docs/authentication/providers/#legacy-api-password)가 제공되었지만 홈어시스턴트에는 구성되지 않은 경우 다음 경고가 로그에 나타납니다. :
 
 ```txt
 WARNING (MainThread) [homeassistant.components.http.auth] You need to use a bearer token to access /blah/blah from 192.0.2.4
 ```
 
-If you see this, you need to add an [`api_password`](/integrations/http/#api_password) to your `http:` configuration.
+이 메시지가 표시되면 `http:` 설정에 [`api_password`](/integrations/http/#api_password) 를 추가해야합니다.
 
-### Bearer token informational messages
+### Bearer 토큰 정보 메시지
 
-If you see the following, then this is a message for integration developers, to tell them they need to update how they authenticate to Home Assistant. As an end user you don't need to do anything:
+다음이 표시되면 개발자(관리자)에게 홈어시스턴트 인증 방법을 업데이트해야한다는 메시지입니다. 사용자는 어떤것도 할 필요가 없습니다. :
 
 ```txt
 INFO (MainThread) [homeassistant.components.http.auth] You need to use a bearer token to access /blah/blah from 192.0.2.4
 ```
 
-### Lost owner password
+### 소유자 비밀번호 분실
 
-While you should hopefully be storing your passwords in a password manager, if you lose the password associated with the owner account the only way to resolve this is to delete *all* the authentication data. You do this by shutting down Home Assistant and deleting the following files from the `.storage/` folder in your [configuration folder](/docs/configuration/):
+비밀번호 메니저로 비밀번호를 저장해야하지만, 소유자 계정과 연관된 비밀번호를 잊어 버린 경우이를 해결하는 유일한 방법은 *모든* 인증 데이터 를 삭제 하는 것입니다. 
+홈어시스턴트를 종료하고 [configuration folder](/docs/configuration/) 에서 다음 파일을 삭제하면 됩니다. 
 
 * `auth`
 * `auth_provider.homeassistant`
 * `onboarding`
-* `hassio` (for Hass.io users)
-* `cloud` (for nabucasa users)
+* `hassio` (Hass.io 사용자)
+* `cloud` (nabucasa 사용자)
 
-When you start Home Assistant next, you'll be required to set up authentication again.
+홈어시스턴트를 다시 시작하면 인증을 다시 설정해야합니다.
 
-### Error: invalid client id or redirect url
+### 에러: 잘못된 클라이언트 ID 또는 리디렉션 URL
 
 <img src='/images/docs/authentication/error-invalid-client-id.png' alt='Screenshot of Error: invalid client id or redirect url'>
 
-You have to use a domain name, not IP address, to remote access Home Assistant otherwise you will get **Error: invalid client id or redirect url** error on the login form. However, you can use the IP address to access Home Assistant in your home network.
+홈 어시스턴트에 원격 액세스하려면 IP 주소가 아닌 도메인 이름을 사용해야합니다, 그렇지 않으면 로그인 양식에 **Error: invalid client id 또는 redirect url** 오류가 표시됩니다. 그러나 IP 주소를 사용하여 홈 네트워크의 Home Assistant에 액세스 할 수 있습니다.
 
-This is because we only allow an IP address as a client ID when your IP address is an internal network address (e.g., `192.168.0.1`) or loopback address (e.g., `127.0.0.1`).
+IP 주소가 내부 네트워크 주소 (예: `192.168.0.1`) 또는 루프백 주소 (예 :`127.0.0.1`) 인 경우 IP 주소를 클라이언트 ID로만 허용하기 때문입니다.  
 
-If you don't have a valid domain name for your Home Assistant instance, you can modify the `hosts` file on your computer to fake one. On Windows, edit the `C:\Windows\System32\Drivers\etc\hosts` file with administrator privilege, or on Linux the `/etc/hosts` file,  and add following entry:
+홈어시스턴트 인스턴스에 유효한 도메인 이름이 없으면, 컴퓨터 에서 `hosts` 파일을 수정하여 파일을 페이크로 만들 수 있습니다. Windows에서 관리자권한으로 `C:\Windows\System32\Drivers\etc\hosts` 파일을 편집하거나 리눅스에서는 `/etc/hosts`를 편집하고 다음 항목을 추가하십시오. 
 
 ```text
 12.34.56.78 homeassistant.home
 ```
 
-Replace `12.34.56.78` with your Home Assistant's public IP address.
+`12.34.56.78` 홈 어시스턴트의 Public IP 주소로 변경하십시오.
 
-This will allow you to open Home Assistant at `http://homeassistant.home:8123/`
+그러면 홈 어시스턴트를 `http://homeassistant.home:8123/`에서 열 수 있습니다. 
 
-### Stuck on Loading data
+### 데이터로드로 멈춤
 
-Some ad blocking software, such as Wipr, also blocks web sockets. If you're stuck on the Loading data screen, try disabling your ad blocker.
+Wipr과 같은 일부 광고 차단 소프트웨어가 웹 소켓을 차단합니다. 데이터로드 화면이 멈춘 경우 광고 차단기를 사용 중지 해보십시오.
 
-### Migrating from pre 0.77
+### 0.77 이전에서 마이그레이션
 
-If you were using the authentication system before 0.77, you'd likely have `auth:` and `auth_providers:` defined. You'll need to remove these and let Home Assistant [handle it automatically](/docs/authentication/providers/#configuring-auth-providers).
+당신이 0.77 전에 인증 시스템을 사용한다면, 지정한 `auth:` 와 `auth_providers:`를 갖고있을 것입니다. 이들을 제거하고 홈 어시스턴트가 [자동으로 처리](/docs/authentication/providers/#configuring-auth-providers)하도록 해야합니다.

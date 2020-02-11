@@ -1,7 +1,7 @@
 ---
-title: "found character '\t' that cannot start any token"
-description: "found character '\t' that cannot start any token"
+title: "문자 '\t'를 찾았으며, 이 문자로는 어떠한 토큰을 시작할 수 없습니다."
+description: "토큰을 시작할 수 없는 문자 '\t'를 찾았습니다."
 ha_category: Usage
 ---
 
-This error means that you used a tab, rather than two spaces. Replace the tab with spaces.
+이 에러는 당신이 스페이스 2칸 대신 탭을 사용했음을 의미합니다. 탭 대신 스페이스를 사용하십시오.

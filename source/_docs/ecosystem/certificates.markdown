@@ -1,8 +1,8 @@
 ---
-title: "Certificates"
-description: "Protect your communication with Home Assistant."
+title: "인증서"
+description: "홈 어시스턴트와의 연결을 보호하세요."
 ---
 
-If you plan to expose your Home Assistant to the internet or want an extra layer of protection in your local network, consider to use SSL/TLS. This way you can protect your communication. Especially sensitive data like usernames and  passwords are encrypted between the endpoints.
+홈 어시스턴트를 인터넷에 노출시키거나 내부 네트워크에서 추가적인 보호를 원하는 경우, SSL/TLS 사용을 고려하십시오. 이 방법은 연결을 보호할 수 있습니다. 특히 사용자 이름과 비밀번호와 같은 민감한 데이터는 엔드 포인트 간에 암호화됩니다.
 
-Setting up usually requires creating the certificate and configure the [`http`](/integrations/http/) component.
+대게 설정하는데 인증서 발급과 [`http`](/integrations/http/) 콤포넌트 설정이 필요합니다.

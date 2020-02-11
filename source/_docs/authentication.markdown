@@ -5,78 +5,77 @@ redirect_from:
   - /integrations/auth/
 ---
 
-인증 시스템은 Home Assistant에 대한 접속을 보호합니다.
 
-홈어시스턴를 처음 시작하거나 로그 아웃 한 경우 로그인하기 전에 자격 증명을 묻는 메시지가 나타납니다.
+홈어이스턴트로 로그인하는 인증 과정은 안전한 접근을 보장합니다.
+홈어시스턴트를 처음 실행하거나 로그아웃을 한 상태에서 접속하면 로그인 사용자 계정과 비밀번호를 다음과 같이 물어봅니다.
 
 <img src='/images/docs/authentication/login.png' alt='Screenshot of the login screen' style='border: 0;box-shadow: none;'>
 
 ## 사용자 계정
 
-홈어시스턴트를 처음 시작하면 _소유자 전용 계정_ 이 생성됩니다. 이 계정에는 몇 가지 특별한 권한이 있으며 다음을 수행 할 수 있습니다. :
+홈어시스턴트를 처음 실행하면 _관리자_ 계정을 만들게 됩니다. 이 계정은 특별한 권한을 갖는데:
 
- - 다른 사용자 계정을 만들고 관리합니다. 
- - 통합구성요소 및 기타 세팅을 설정합니다. (coming soon).
- - Hass.io를 설정합니다. (coming soon).
+ - 다른 사용자 계정을 만들거나 관리합니다.
+ - 통합구성요소를 설정하고 다른 기기들을 관리합니다.
+ - Hass.io를 관리합니다.
 
 <div class='note'>
-현재 다른 사용자 계정은 소유자 계정과 동일한 액세스 권한을 갖습니다. 향후 비 소유자 계정에는 제한이 적용될 수 있습니다.
+아직까지는 다른 사용자 계정도 관리자 계정과 동일한 권한을 갖습니다. 향후에는 일반 사용자 계정의 권한은 관리자 권한과 다르게 제한될 것입니다.
 </div>
 
-### 당신의 계정 프로필
+### 사용자 프로필
 
-로그인 하면 사이드 바의 홈 어시스턴트 제목 옆에있는 원형 배지를 클릭하여 _profile_ 페이지 에서 계정 세부 정보를 볼 수 있습니다
+로그인이 성공하면 왼쪽 사이드바에서 동그란 원안에 표시된 계정의 첫글자를 누르면 자신의 프로필 페이지에 접속해 상세한 내용을 설정할 수 있습니다(현재 버전에서는 왼쪽 하단에 사용자 계정이 나타납니다)
 
 <img src='/images/docs/authentication/profile.png' alt='Screenshot of the profile page' style='border: 0;box-shadow: none;'>
 
-당신이 할 수 있는 것들 :
+변경 가능한 것들:
 
-* 홈어시스턴트에서 선호하는 언어를 변경.
-* 비밀번호 변경. 
-* 홈어시스턴트 인터페이스의 [theme](/integrations/frontend/#defining-themes) 선택.
-* [multi-factor authentication](/docs/authentication/multi-factor-auth/) 활성화 혹은 비활성화.
-* _Refresh Tokens_ 삭제. 장치에서 로그인 할 때 생성됩니다. 장치를 강제로 로그 아웃하려면 삭제.
-* 스크립트가 홈어시스턴트와 안전하게 상호 작용할 수 있도록 [Long Lived Access Tokens](https://developers.home-assistant.io/docs/en/auth_api.html#long-lived-access-token)를 만듬. 
-* 홈어시스턴트에서 로그 아웃. 
+* 홈어시스턴트의 언어설정
+* 비밀번호 변경
+* 홈어시스턴트 웹 화면에서 사용할 [테마](/integrations/frontend/#defining-themes) 변경
+* [multi-factor authentication](/docs/authentication/multi-factor-auth/) 설정
+* _Refresh Tokens_ 의 삭제. 이것은 홈어시스턴트 앱이나 웹브라우저로 접속할때 저장된 기기의 접속 토큰입니다. 이 토큰을 삭제하면 기기에서 강제로 로그아웃됩니다.
+* [Long Lived Access Tokens](https://developers.home-assistant.io/docs/en/auth_api.html#long-lived-access-token)을 생성하여 홈어시스턴트와 안전하게 연결하는 프로그램을 작성/이용할 수 있습니다.
+* 홈어시스턴트 로그아웃
 
-### 로그인 보안
+### 보안 유의 사항
 
-_미래를 위해 안전한 비밀번호를 선택하십시오 !_ 나중에 언젠가는 로컬 네트워크 외부에서 홈어시스턴트에 접근하려고 할 것입니다. 즉, 동일한 작업을 시도하는 임의의 해커들에게도 노출됩니다. 집 열쇠와 같은 비밀번호를 사용하십시오. 
+**비밀번호를 안전하게 생성하세요!** 떄론 집이나 생활 공간이 아닌 다른 장소에서 홈어시스턴트에 접속하는 경우가 생깁니다. 이것은 다른 사람이 여러분의 비밀번호를 훔쳐볼 수 있다는 뜻이기도 합니다. 여러분의 집을 안전하게 보호한다는 생각으로 비밀번호를 만드시기 바랍니다.
 
-추가 보안 수준으로, [multi-factor authentication](/docs/authentication/multi-factor-auth/)을 켤 수 있습니다. 
+보안을 강화하기 위해 [multi-factor authentication](/docs/authentication/multi-factor-auth/)를 사용할 수도 있습니다.
 
 ## 다른 인증 기술
 
-홈어시스턴트는 여러 가지 인증 방법을 제공합니다.  [Auth Providers](/docs/authentication/providers/) 를 참조하세요. 
+홈어시스턴트는 몇가지 인증 방법을 제공합니다. [Auth Providers](/docs/authentication/providers/) 섹션을 참고하세요.
 
-## 문제 해결
+## 문제해결
 
-### `127.0.0.1` 에서의 인증 실패
+### `127.0.0.1` 인증 실패
 
-만일에 `127.0.0.1`에서 인증에 하고, `nmap` 장치 추적기를 사용하는 경우, [홈어이스턴트 IP를 제외](/integrations/nmap_tracker#exclude) 하고 IP를 검사해야 합니다.
+만일 `127.0.0.1` 인증 실패를 보게 된다면 `nmap` 디바이스 트래커를 사용하는 경우입니다. [홈어시스턴트 IP 제외하기](/integrations/nmap_tracker#exclude) 문서를 참고하세요.
 
-### Bearer 토큰 경고
+### Bearer token 경고
 
-새 인증 시스템에서 [legacy API password](/docs/authentication/providers/#legacy-api-password)가 제공되었지만 홈어시스턴트에는 구성되지 않은 경우 다음 경고가 로그에 나타납니다. :
+새로운 인증 시스템은 [legacy API password](/docs/authentication/providers/#legacy-api-password)를 설정한 경우 다음과 같은 경고를 보여줍니다.
 
 ```txt
 WARNING (MainThread) [homeassistant.components.http.auth] You need to use a bearer token to access /blah/blah from 192.0.2.4
 ```
 
-이 메시지가 표시되면 `http:` 설정에 [`api_password`](/integrations/http/#api_password) 를 추가해야합니다.
+이 경우 `configuration.yaml`에서 `http:` 설정에  [`api_password`](/integrations/http/#api_password) 항목을 추가해야 합니다.
 
-### Bearer 토큰 정보 메시지
+### Bearer token 안내 메시지
 
-다음이 표시되면 개발자(관리자)에게 홈어시스턴트 인증 방법을 업데이트해야한다는 메시지입니다. 사용자는 어떤것도 할 필요가 없습니다. :
+다음과 같은 안내 메시지가 나온다면 통합구성요소 개발자에게 연락하여 홈어시스턴트 인증과 관련해서 업데이트가 필요하다고 알려야 합니다. 일반 사용자에게 해당하는 메시지는 아닙니다:
 
 ```txt
 INFO (MainThread) [homeassistant.components.http.auth] You need to use a bearer token to access /blah/blah from 192.0.2.4
 ```
 
-### 소유자 비밀번호 분실
+### 비밀번호 분실
 
-비밀번호 메니저로 비밀번호를 저장해야하지만, 소유자 계정과 연관된 비밀번호를 잊어 버린 경우이를 해결하는 유일한 방법은 *모든* 인증 데이터 를 삭제 하는 것입니다. 
-홈어시스턴트를 종료하고 [configuration folder](/docs/configuration/) 에서 다음 파일을 삭제하면 됩니다. 
+패스워드 매니저와 같은 툴을 사용하다가 안타깝게도 비밀번호를 분실했다면 홈어시스턴트를 정지시킨 다음 아래 목록에 나온 파일을 **모두** 삭제해야 비밀번호를 초기화 할 수 있습니다. 이 파일들은 홈어시스턴트의 [기본 설정 디렉토리](/docs/configuration/)에서 `.storage/`폴더 안에 들어있습니다. :
 
 * `auth`
 * `auth_provider.homeassistant`
@@ -84,30 +83,31 @@ INFO (MainThread) [homeassistant.components.http.auth] You need to use a bearer 
 * `hassio` (Hass.io 사용자)
 * `cloud` (nabucasa 사용자)
 
-홈어시스턴트를 다시 시작하면 인증을 다시 설정해야합니다.
 
-### 에러: 잘못된 클라이언트 ID 또는 리디렉션 URL
+파일 삭제후 홈어시스턴트를 재시작하면 새로운 관리자 계정을 처음부터 다시 설정할 수 있습니다.
+
+### 에러: invalid client id or redirect url
 
 <img src='/images/docs/authentication/error-invalid-client-id.png' alt='Screenshot of Error: invalid client id or redirect url'>
 
-홈 어시스턴트에 원격 액세스하려면 IP 주소가 아닌 도메인 이름을 사용해야합니다, 그렇지 않으면 로그인 양식에 **Error: invalid client id 또는 redirect url** 오류가 표시됩니다. 그러나 IP 주소를 사용하여 홈 네트워크의 Home Assistant에 액세스 할 수 있습니다.
+IP 주소가 아닌 도메인으로 접속하는 경우  **Error: invalid client id or redirect url** 에러가 로그인 화면에 나타날 수 있습니다. 이 경우 로컬 네트워크 상의 IP 주소로는 접속이 가능합니다.
 
-IP 주소가 내부 네트워크 주소 (예: `192.168.0.1`) 또는 루프백 주소 (예 :`127.0.0.1`) 인 경우 IP 주소를 클라이언트 ID로만 허용하기 때문입니다.  
+이런 경우가 발생하는 이유는 IP 주소가 내부 IP(예, `192.168.0.1`)이거나 loopback address(예, `127.0.0.1`) 일때 client ID를 IP 주소로 허용하기 때문입니다.
 
-홈어시스턴트 인스턴스에 유효한 도메인 이름이 없으면, 컴퓨터 에서 `hosts` 파일을 수정하여 파일을 페이크로 만들 수 있습니다. Windows에서 관리자권한으로 `C:\Windows\System32\Drivers\etc\hosts` 파일을 편집하거나 리눅스에서는 `/etc/hosts`를 편집하고 다음 항목을 추가하십시오. 
+유효한 도메인명이 아니라면 `hosts` 파일을 편집하면 되는데, 윈도우의 `C:\Windows\System32\Drivers\etc\hosts` 파일이나 리눅스의 `/etc/hosts` 파일에 다음과 같이 추가합니다:
 
 ```text
 12.34.56.78 homeassistant.home
 ```
 
-`12.34.56.78` 홈 어시스턴트의 Public IP 주소로 변경하십시오.
+`12.34.56.78`은 여러분의 공인 IP로 바꾸셔야 합니다.
 
-그러면 홈 어시스턴트를 `http://homeassistant.home:8123/`에서 열 수 있습니다. 
+이렇게 하면 `http://homeassistant.home:8123/`로 접속이 가능합니다.
 
 ### 데이터로드로 멈춤
 
-Wipr과 같은 일부 광고 차단 소프트웨어가 웹 소켓을 차단합니다. 데이터로드 화면이 멈춘 경우 광고 차단기를 사용 중지 해보십시오.
+Wipr과 같은 일부 광고 차단 소프트웨어가 웹 소켓을 차단합니다. 데이터로드 화면이 멈춘 경우 광고 차단 소프트웨어 사용을 중지 해보십시오.
 
-### 0.77 이전에서 마이그레이션
+### 0.77 이전 버전에서 마이그레이션
 
-당신이 0.77 전에 인증 시스템을 사용한다면, 지정한 `auth:` 와 `auth_providers:`를 갖고있을 것입니다. 이들을 제거하고 홈 어시스턴트가 [자동으로 처리](/docs/authentication/providers/#configuring-auth-providers)하도록 해야합니다.
+만일 0.77 이전 버전을 사용하고 있다면  `auth:` 또는 `auth_providers:` 추가돼 있을 것입니다. 이것을 제거하고 홈어시스턴트가 [자동으로 설정하는 방법](/docs/authentication/providers/#configuring-auth-providers)을 참고하세요.

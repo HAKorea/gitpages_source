@@ -1,12 +1,12 @@
 ---
-title: "Setup basic information"
+title: "기본 정보 설정"
 description: "Setting up the basic info of Home Assistant."
 redirect_from: /getting-started/basic/
 ---
 
-As part of the default onboarding process, Home Assistant can detect your location from IP address geolocation. Home Assistant will automatically select a temperature unit and time zone based on this location. You may adjust this during onboarding, or afterwards at Configuration -> General. 
+기본적으로 처음시작할 때의 일부 기능으로, Home Assistant는 IP 주소 지리적 위치에서 사용자의 위치를 ​​감지 할 수 있습니다. 홈 어시스턴트는이 위치를 기준으로 온도 단위 및 시간대를 자동으로 선택합니다. 처음 시작할 때 또는 나중에 일반에서 설정에 들어가면 조정할 수 있습니다. 
 
-If you prefer YAML, you can add the following information to your `configuration.yaml`:
+YAML을 선호하는 경우  `configuration.yaml` 파일에 다음 정보를 추가 할 수 있습니다  :
 
 ```yaml
 homeassistant:
@@ -23,47 +23,47 @@ homeassistant:
 
 {% configuration %}
 latitude:
-  description: Latitude of your location required to calculate the time the sun rises and sets.
+  description: 해가 뜨고지는 시간을 계산하는 데 필요한 위치의 위도.
   required: false
   type: float
 longitude:
-  description: Longitude of your location required to calculate the time the sun rises and sets.
+  description: 해가 뜨고지는 시간을 계산하는 데 필요한 위치의 경도.
   required: false
   type: float
 elevation:
-  description: Altitude above sea level in meters. Impacts weather/sunrise data.
+  description: 해발 고도 (미터) 날씨 / 일출 데이터에 영향을 줍니다.
   required: false
   type: integer
 unit_system:
-  description: "`metric` for Metric, `imperial` for Imperial."
+  description: "`metric` 미터법, `imperial` 영국식."
   required: false
   type: string
 time_zone:
-  description: "Pick your time zone from the column **TZ** of [Wikipedia's list of tz database time zones](http://en.wikipedia.org/wiki/List_of_tz_database_time_zones)"
+  description: "컬럼에서 당신의 **TZ**을 [Wikipedia's list of tz database time zones](http://en.wikipedia.org/wiki/List_of_tz_database_time_zones) 중에서 선택"
   required: false
   type: string
 name:
-  description: Name of the location where Home Assistant is running.
+  description: 홈어시스턴트가 실행중인 위치의 이름입니다.
   required: false
   type: string
 customize:
-  description: "[Customize](/docs/configuration/customizing-devices/) entities."
+  description: "[Customize](/docs/configuration/customizing-devices/) entity들."
   required: false
   type: string
 customize_domain:
-  description: "[Customize](/docs/configuration/customizing-devices/) all entities in a domain."
+  description: "[Customize](/docs/configuration/customizing-devices/) domain에 모든 entity."
   required: false
   type: string
 customize_glob:
-  description: "[Customize](/docs/configuration/customizing-devices/) entities matching a pattern."
+  description: "[Customize](/docs/configuration/customizing-devices/) 패턴이 매칭되는 모든 entities."
   required: false
   type: string
 whitelist_external_dirs:
-  description: List of folders that can be used as sources for sending files.
+  description: 파일을 보내기 위한 소스로 사용할 수 있는 폴더 목록
   required: false
   type: list
 {% endconfiguration %}
 
-### Reload Core Service
+### Core Service 재로드
 
-Home Assistant offers a service to reload the core configuration while Home Assistant is running called `homeassistant.reload_core_config`. This allows you to change any of the above sections and see it being applied without having to restart Home Assistant. To call this service, go to the "Service" tab under Developer Tools, select the `homeassistant.reload_core_config` service and click the "CALL SERVICE" button. Alternatively, you can press the "Reload Location & Customizations" button under Configuration > Server Control.
+홈어시스턴트는 `homeassistant.reload_core_config` 서비스가 실행되는 동안 핵심 설정을 다시로드하는 서비스를 제공합니다. 이를 통해 위의 섹션을 변경하고 홈어시스턴트를 다시 시작할 필요없이 적용되는 것을 확인할 수 있습니다. 이 서비스를 호출하려면 개발자 도구 아래의 "서비스"탭으로 이동하여 `homeassistant.reload_core_config` 서비스를 선택 하고 "서비스 요청"버튼을 클릭하십시오. 또는 구성 > 서버 제어에서 "위치 및 사용자 정의 다시로드" 버튼을 누를 수 있습니다.

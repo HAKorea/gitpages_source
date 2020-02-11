@@ -1,12 +1,12 @@
 ---
-title: "Authentication"
+title: "인증"
 description: "Guide on authentication in Home Assistant."
 redirect_from:
   - /integrations/auth/
 ---
 
-홈어이스턴트로 로그인하는 인증 과정은 안전한 접근을 보장합니다.
 
+홈어이스턴트로 로그인하는 인증 과정은 안전한 접근을 보장합니다.
 홈어시스턴트를 처음 실행하거나 로그아웃을 한 상태에서 접속하면 로그인 사용자 계정과 비밀번호를 다음과 같이 물어봅니다.
 
 <img src='/images/docs/authentication/login.png' alt='Screenshot of the login screen' style='border: 0;box-shadow: none;'>
@@ -80,8 +80,8 @@ INFO (MainThread) [homeassistant.components.http.auth] You need to use a bearer 
 * `auth`
 * `auth_provider.homeassistant`
 * `onboarding`
-* `hassio` (for Hass.io users)
-* `cloud` (for nabucasa users)
+* `hassio` (Hass.io 사용자)
+* `cloud` (nabucasa 사용자)
 
 
 파일 삭제후 홈어시스턴트를 재시작하면 새로운 관리자 계정을 처음부터 다시 설정할 수 있습니다.
@@ -101,11 +101,12 @@ IP 주소가 아닌 도메인으로 접속하는 경우  **Error: invalid client
 ```
 
 `12.34.56.78`은 여러분의 공인 IP로 바꾸셔야 합니다.
+
 이렇게 하면 `http://homeassistant.home:8123/`로 접속이 가능합니다.
 
-### Stuck on Loading data
+### 데이터로드로 멈춤
 
-Wipr와 같은 blocking 소프트웨어는 웹소켓을 차단합니다. 로딩 화면에서 더이상 진행하지 못하는 경우 차단 소프트웨어를 중지하세요.
+Wipr과 같은 일부 광고 차단 소프트웨어가 웹 소켓을 차단합니다. 데이터로드 화면이 멈춘 경우 광고 차단 소프트웨어 사용을 중지 해보십시오.
 
 ### 0.77 이전 버전에서 마이그레이션
 

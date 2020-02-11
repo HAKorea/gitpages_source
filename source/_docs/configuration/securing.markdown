@@ -21,7 +21,6 @@ Home Assistant의 주요 장점 중 하나는 클라우드 서비스에 의존�
 
 위의 내용뿐만 아니라 보안을 개선하기 위해 다음 사항을 고려하는 것이 좋습니다.:
 
-- For systems that use SSH set `PermitRootLogin no` in your sshd config (usually `/etc/ssh/sshd_config`) and to use SSH keys for authentication instead of passwords. This is particularly important if you enable remote access to your SSH services.
 - sshd 설정(보통 `/etc/ssh/sshd_config`)에서 SSH 세트를 사용하여 비밀번호를 사용하는 대신에 SSH 인증 key들을 사용하는 방법입니다. SSH 서비스로 원격 접속을 활성화하는 경우 특히 중요합니다.
 - 보안 모범 사례 지침에 따라 호스트를 보호하십시오, 사례:
   * [Securing Debian Manual](https://www.debian.org/doc/manuals/securing-debian-howto/index.en.html) (라즈비안도 똑같이 적용 가능)

@@ -1,36 +1,36 @@
 ---
-title: "Remote access"
+title: "원격 접속"
 description: "Setting up remote access for Home Assistant."
 ---
 
 <div class='note'>
-Users of <a href="https://www.nabucasa.com">Home Assistant Cloud</a> can use the <a href="https://www.nabucasa.com/config/remote/">Remote UI</a> without requiring any configuration.
+<a href="https://www.nabucasa.com">Home Assistant Cloud</a> 사용자는 어떤 설정을 하지 않더라도 <a href="https://www.nabucasa.com/config/remote/">Remote UI</a> 를 사용하여 원격 접속을 할 수 있습니다.
 </div>
 
-If you're interested in logging in to Home Assistant while away, you'll have to make your instance remotely accessible.
+집 밖에서 홈어시스턴트에 로그인하려면, 인스턴스에 원격으로 액세스 할 수 있어야합니다.
 
 <div class='note warning'>
 
-Remember to follow the [securing checklist](/docs/configuration/securing/) before doing this.
+이 작업을 수행하기 전에 [보안 점검 목록](/docs/configuration/securing/)을 따르십시오 .
 
 </div>
 
 <div class='note'>
-Home Assistant no longer support remote access via IP address since release 0.77, you have to use a domain name.
+홈어시스턴트는 더 이상 릴리스 0.77 이후 IP 주소를 통한 원격 액세스를 지원하지 않으므로 도메인 이름을 사용해야합니다.
 </div>
 
-The most common approach is to set up port forwarding (for any port) from your router to port 8123 on the computer that is hosting Home Assistant. General instructions on how to do this can be found by searching `<router model> port forwarding instructions`. You can use any free port on your router and forward that to port 8123.
+가장 일반적인 방법은 공유기에서 홈어시스턴트를 호스팅하는 컴퓨터의 포트 8123으로 포트 전달 (모든 포트에 대해)을 설정하는 것입니다. 이 작업을 수행하는 방법에 대한 일반적인 지침은 `소유한 공유기의 포트포워딩 방법 설명`을 검색하여 찾을 수 있습니다. 공유기의 빈 포트를 사용하여 포트 8123으로 전달할 수 있습니다.
 
-A problem with making a port accessible is that some Internet Service Providers only offer dynamic IPs. This can cause you to lose access to Home Assistant while away. You can solve this by using a free Dynamic DNS service like [DuckDNS](https://www.duckdns.org/).
+포트에 액세스 할 수있게하는 문제는 일부 인터넷 서비스 제공 업체가 동적 IP 만 제공한다는 것입니다. 이로 인해 외부에서 홈어시스턴트에 액세스하지 못할 수 있습니다. [DuckDNS](https://www.duckdns.org/)와 같은 무료 동적 DNS 서비스를 사용하여이 문제를 해결할 수 있습니다.
 
-If you cannot access your Home Assistant installation remotely, remember to check if your ISP provides you with a dedicated IP, instead of one shared with other users via a [CG-NAT](https://en.wikipedia.org/wiki/Carrier-grade_NAT). This is becoming fairly common nowadays due to the shortage of IPv4 addresses. Some, if not most ISPs will require you to pay an extra fee to be assigned a dedicated IPv4 address.
+원격으로 Home Assistant 설치에 액세스 할 수 없는 경우, ISP가 [CG-NAT](https://en.wikipedia.org/wiki/Carrier-grade_NAT)로 다른 사용자와 공유하는 대신 전용 IP를 제공하는지 확인하십시오. 이것은 IPv4 주소의 부족으로 인해 현재는 상당히 일반화되고 있습니다. 대부분의 ISP가 아닌 경우 일부는 전용 IPv4 주소를 할당하기 위해 추가 비용을 지불하도록 요구합니다.
 
 <div class='note'>
 
-Just putting a port up is not secure. You should definitely consider encrypting your traffic if you are accessing your Home Assistant installation remotely. For details please check the [set up encryption using Let's Encrypt](/blog/2017/09/27/effortless-encryption-with-lets-encrypt-and-duckdns/) blog post or this [detailed guide](/docs/ecosystem/certificates/lets_encrypt/) to using Let's Encrypt with Home Assistant.
+포트를 올리는 것만으로는 안전하지 않습니다. 홈어시스턴트에 원격으로 접속하는 경우 트래픽 암호화를 반드시 고려해야합니다. 자세한 내용은 [set up encryption using Let's Encrypt](/blog/2017/09/27/effortless-encryption-with-lets-encrypt-and-duckdns/) 블로그 내용 혹은 홈어시스턴트에 Let's Encrypt 사용하기 [detailed guide](/docs/ecosystem/certificates/lets_encrypt/)를  확인하십시오.
 
 </div>
 
-Protect your communication with a [self-signed certificate](/docs/ecosystem/certificates/tls_self_signed_certificate/) between your client and the Home Assistant instance.
+클라이언트와 홈어시스턴트 인스턴스 간에 [self-signed certificate](/docs/ecosystem/certificates/tls_self_signed_certificate/)로 집안 정보를 보호하십시오.
 
-For another way to access your Home Assistant frontend, check out [the instructions how to use Tor](/docs/ecosystem/tor/).
+홈어시스턴트 프론트 엔드에 액세스하는 다른 방법은,  [the instructions how to use Tor](/docs/ecosystem/tor/) 를 참고하십시오.

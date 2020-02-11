@@ -7,11 +7,11 @@ ha_release: 0.64
 logo: apple-homekit.png
 ---
 
-`homekit` 통합구성요소는 애플의 홈 앱과 시리에서 제어 할 수 있도록 애플 HomeKit에 홈어시스턴트에서 entity들을 전달할 수 있습니다. 나중에 문제를 해결하기 위해 아래 나열된 [considerations](#considerations)을 읽었는지 확인하십시오. 그러나 문제가 발생하면 [troubleshooting](#troubleshooting) 섹션을 확인 하십시오. 
+`homekit` 통합구성요소는 애플의 홈앱과 Siri에서 제어할 수 있도록 애플 HomeKit에 홈어시스턴트에서 entity들을 전달할 수 있습니다. 나중에 문제를 해결하기 위해 아래 나열된 [고려 사항](#consideration)을 읽었는지 확인하십시오. 그러나 문제가 발생하면 [문제해결](#troubleshooting) 섹션을 확인 하십시오. 
 
 <div class="note">
 
-  홈 어시스턴트로 `HomeKit` 장치 만 제어 하려면, [HomeKit controller](/integrations/homekit_controller/) 구성 요소를 확인하십시오.
+  홈어시스턴트로 `HomeKit` 장치만 제어 하려면, [HomeKit controller](/integrations/homekit_controller/) 구성 요소를 확인하십시오.
 
 </div>
 
@@ -69,7 +69,7 @@ homekit:
         type: integer
         default: 51827
       name:
-        description: 동일한 로컬 네트워크에서 통합을 사용하여 각 홈어시스턴트 인스턴스마다 개별적이어야합니다. `3` 에서 `25`의 문자열들. 문자, 영숫자와 공백이 허용됩니다.
+        description: 동일한 로컬 네트워크에서 연동을 사용하여 각 홈어시스턴트 인스턴스마다 개별적이어야합니다. `3` 에서 `25`의 문자열들. 문자, 영숫자와 공백이 허용됩니다.
         required: false
         type: string
         default: '`Home Assistant Bridge`'
@@ -83,11 +83,11 @@ homekit:
         type: boolean
         default: false
       advertise_ip:
-        description: mDNS 알림에 사용 된 IP 주소를 재정의해야하는 경우. (예를 들어, Docker에서 네트워크 격리하여 사용하고 `avahi-daemon` reflector 모드 처럼 mDNS Forwarder와 함께 사용하는 경우).
+        description: mDNS 알림에 사용된 IP 주소를 재정의해야하는 경우. (예를 들어, Docker에서 네트워크 격리하여 사용하고 `avahi-daemon` reflector 모드 처럼 mDNS Forwarder와 함께 사용하는 경우).
         required: false
         type: string
       filter:
-        description: HomeKit에서 포함 / 제외 할 entity를 필터링합니다. ([Configure Filter](#configure-filter)).
+        description: HomeKit에서 포함 / 제외할 entity를 필터링합니다. ([Configure Filter](#configure-filter)).
         required: false
         type: map
         keys:
@@ -118,11 +118,11 @@ homekit:
             type: map
             keys:
               name:
-                description: HomeKit에 표시 할 entity의 이름입니다. HomeKit은 첫 실행시 액세서리의 기능 세트를 캐시하므로 변경 사항을 적용하려면 장치를 [reset](#resetting-accessories) 해야 합니다.
+                description: HomeKit에 표시할 entity의 이름입니다. HomeKit은 첫 실행시 액세서리의 기능 세트를 캐시하므로 변경 사항을 적용하려면 장치를 [reset](#resetting-accessories) 해야 합니다.
                 required: false
                 type: string
               linked_battery_sensor:
-                description: entity `sensor` 의 `entity_id`는 액세서리의 배터리로 사용할 수 있습니다. HomeKit will cache an accessory's feature set on the first run so a device must be [reset](#resetting-accessories) for any change to take effect.
+                description: entity `sensor` 의 `entity_id`는 액세서리의 배터리로 사용할 수 있습니다. HomeKit은 첫 실행시 액세서리 기능 세트를 캐시하므로 변경 사항을 적용하려면 장치를 [reset] (# resetting-accessories)해야합니다.
                 required: false
                 type: string
               low_battery_threshold:
@@ -131,12 +131,12 @@ homekit:
                 type: integer
                 default: 20
               code:
-                description: 알람 (`arm / disarm`) 혹은 잠금장치 (`lock / unlock`)으로 code를 사용. Only applicable `alarm_control_panel` 혹은 `lock` entity에만 해당.
+                description: 알람 (`arm / disarm`) 혹은 잠금장치 (`lock / unlock`)으로 code를 사용. `alarm_control_panel` 혹은 `lock` entity에만 해당.
                 required: false
                 type: string
                 default: '`<No code>`'
               feature_list:
-                description: entity(`media_player`)만 해당. 주어진 entity에 추가 할 기능 확인 목록입니다. 플랫폼 스키마와 비교할 수 있습니다.
+                description: entity(`media_player`)만 해당. 주어진 entity에 추가할 기능 확인 목록입니다. 플랫폼 스키마와 비교할 수 있습니다.
                 required: false
                 type: list
                 keys:
@@ -145,7 +145,7 @@ homekit:
                     required: true
                     type: string
               type:
-                description: entity (`switch`)에만 해당.  HomeKit 내에서 생성 할 액세서리 유형. 유효한 유형으로는 `faucet`, `outlet`, `shower`, `sprinkler`, `switch` 그리고 `valve`. HomeKit은 첫 실행시 유형을 캐시하므로 변경 사항을 적용하려면 장치를 [reset](#resetting-accessories) 해야 합니다.
+                description: entity (`switch`)에만 해당.  HomeKit 내에서 생성 할 액세서리 유형. 유효한 유형으로는 `faucet`, `outlet`, `shower`, `sprinkler`, `switch` 그리고 `valve`. HomeKit은 첫 실행시 타입을 캐시하므로 변경 사항을 적용하려면 장치를 [reset](#resetting-accessories) 해야 합니다.
                 required: false
                 type: string
                 default: '`switch`'
@@ -171,27 +171,27 @@ homekit:
 6. 화면에 따라 `Next` 를 클릭, 상단의 오른쪽 모서리에 `Done` 을 클릭하십시오. 
 7. `홈어시스턴트` Bridge 와 액세서리는 `Home` 앱에 나오게 됩니다. 
 
-설정이 완료되면 Apple의 Home 및 Siri를 통해 홈어시스턴트 연동으로 제어 할 수 있게 됩니다.
+설정이 완료되면 애플의 홈앱 및 Siri를 통해 홈어시스턴트 연동으로 제어 할 수 있게 됩니다.
 
 ## 홈어시스턴트 설치로 이동
 
-새로운 Home Assistant 장치로 이동하거나 설치하여 HomeKit 페어링을 유지하려면 구성 파일을 복사하는 것 외에도 configuration 디렉토리 안에 `.homekit.state` 파일 을 복사해야합니다. 운영 체제에 따라 파일이 기본적으로 숨겨져 있음을 명심하십시오.
+새로운 홈어시스턴트 장치로 이동하거나 설치하여 HomeKit 페어링을 유지하려면 구성 파일을 복사하는 것 외에도 configuration 디렉토리 안에 `.homekit.state` 파일 을 복사해야합니다. 운영 체제에 따라 파일이 기본적으로 숨겨져 있음을 명심하십시오.
 
-복사하기 전에 먼저 이전 및 새 Home Assistant 인스턴스를 완전히 중지하십시오. 그렇지 않으면 작동하지 않습니다.
+복사하기 전에 먼저 홈어시스턴트 인스턴스를 완전히 중지하십시오. 그렇지 않으면 작동하지 않습니다.
 
 ## 고려 사항
 
 ### 액세서리 ID
 
-현재 이 통합구성요소는 고유한 `HomeKit`을 위한 `accessory id (aid)`를 생성해내기 위해서 `entity_id`를 사용합니다. The `aid`는 모든 구성 장치를 식별하고 저장하는 데 사용됩니다. 하지만 만일 이 액세서리를 위한 모든 설정을 갖고 있는 `entity_id`가 변경될 경우 `home` 앱에서는 사라지게 됩니다. 
+현재 이 통합구성요소는 고유한 `HomeKit`을 위한 `accessory id (aid)`를 생성해내기 위해서 `entity_id`를 사용합니다. `aid`는 모든 구성 장치를 식별하고 저장하는 데 사용됩니다. 하지만 만일 이 액세서리를 위한 모든 설정을 갖고 있는 `entity_id`가 변경될 경우 `home` 앱에서는 사라지게 됩니다. 
 
 ### 기기 제한
 
-HomeKit 가이드 라인는 브리지 당 최대 100 개의 고유 한 액세서리만 허용합니다.  필터를 구성 할 때 이 점에 유의하십시오.
+HomeKit 가이드 라인는 브리지 당 최대 100 개의 고유 한 액세서리만 허용합니다.  필터를 구성할 때 이 점에 유의하십시오.
 
 ### 지속적인 저장
 
-불행하게도 `HomeKit` 지속적인 저장 역할은 지원하지 않습니다 - `Home Assistant Bridge`에 추가 된 액세서리의 구성 만 유지됩니다. 문제를 피하기 위해서, 적어도 entity 셋업이 되어있는 상태에서 `homekit`이 항상 시작되도록 자동화를 사용할 것을 권장합니다.   만일 어떤 이유로 일부 엔티티가 설정되지 않았다면 해당 설정이 삭제됩니다. (알 수없는 상태 또는 비슷한 상태는 문제를 일으키지는 않습니다.)
+불행하게도 `HomeKit` 지속적인 저장 역할은 지원하지 않습니다 - `Home Assistant Bridge`에 추가 된 액세서리의 구성 만 유지됩니다. 문제를 피하기 위해서, 적어도 entity 셋업이 되어있는 상태에서 `homekit`이 항상 시작되도록 자동화를 사용할 것을 권장합니다. 만일 어떤 이유로 일부 엔티티가 설정되지 않았다면 해당 설정이 삭제됩니다. (알 수없는 상태 또는 비슷한 상태는 문제를 일으키지는 않습니다.)
 
 테스트를 위해 설정의 일부를 비활성화하기로 결정 할지 말지가, 일반적인 상황이 될 수 있습니다. `auto start`, `turn off`, `Start HomeKit` 자동화가 (하나라도 있을 경우) 비활성화시킬 것을 꼭 확인하십시오.
 
@@ -200,10 +200,10 @@ HomeKit 가이드 라인는 브리지 당 최대 100 개의 고유 한 액세서
 
 설정에 따라, 사용할 수있는 모든 `HomeKit` 액세서리의 `Auto Start`를 비활성화해야 할 수도 있습니다. `HomeKit` 연동이 시작될 때 모든것이 설정된 entity만 추가 할 수 있습니다. `auto_start: false`일 경우 `HomeKit`을 시작하려면, `homekit.start` service를 호출하면 됩니다..
 
-HomeKit에 노출하려는 Z-Wave entity가 있는 경우 자동 시작을 비활성화 한 다음 Z-Wave mesh가 준비된 후 시작해야합니다.Z-Wave entity는 그때까지 완전히 설정되지 않기 때문입니다. 이는 자동화를 사용하면 자동으로 실행시킬 수 있습니다. 
+HomeKit에 노출하려는 Z-Wave entity가 있는 경우 자동 시작을 비활성화 한 다음 Z-Wave mesh가 준비된 후 시작해야합니다. Z-Wave entity는 그때까지 완전히 설정되지 않기 때문입니다. 이는 자동화를 사용하면 자동으로 실행시킬 수 있습니다. 
 <div class='note'>
 
-하나의 `automation` 항목 만 가질 수 있습니다. 기존 자동화에 자동화를 추가하십시오.
+하나의 `automation` 항목만 가질 수 있습니다. 기존 자동화에 자동화를 추가하십시오.
 
 </div>
 
@@ -227,7 +227,7 @@ automation:
 ```
 {% endraw %}
 
-연동시 이벤트를 생성하지 않는 일반적인 지연의 경우 다음을 수행 할 수도 있습니다. :
+연동시 이벤트를 생성하지 않는 일반적인 지연의 경우 다음을 수행 할 수 있습니다. :
 
 {% raw %}
 ```yaml
@@ -405,11 +405,11 @@ homekit:
 
 #### PIN이 지속적 상태로 표시되지 않습니다
 
-`Home Assistant Bridge` 이미 페어링했을 수 있습니다 . 그렇지 않은 경우, `.homekit.state` 파일을 삭제하십시오. ([guide](#deleting-the-homekitstate-file)).
+`Home Assistant Bridge` 이미 페어링했을 수 있습니다. 그렇지 않은 경우, `.homekit.state` 파일을 삭제하십시오. ([guide](#deleting-the-homekitstate-file)).
 
 #### 홈 어시스턴트 브리지가 홈 앱에 나타나지 않음 (페어링)
 
-이것은 종종 설정 및 네트워크 관련이 있습니다. 아래의 다른 외부 환경 문제도 확인해 볼 수 있습니다. :
+이것은 종종 설정 및 네트워크와 관련이 있습니다. 아래의 다른 외부 환경 문제도 확인해 볼 수 있습니다. :
 
 - 라우터 설정 확인
 - WiFi **와** LAN을 모두 사용해보십시오. 
@@ -419,16 +419,16 @@ iOS 기기는 페어링을 위해 홈 어시스턴트 기기와 동일한 로컬
 
 #### `홈어시스턴트 브리지`가 홈 앱에 나타나지 않음 (페어링) - Docker
 
-`network_mode: host`를 설정하십시오. 추가 문제가있는 경우 이 [issue](https://github.com/home-assistant/home-assistant/issues/15692) 가 도움이 될 것입니다.
+`network_mode: host`를 설정하십시오. 추가 문제가있는 경우 [issue](https://github.com/home-assistant/home-assistant/issues/15692) 가 도움이 될 것입니다.
 
 `advertise_ip` 옵션과 함께 `avahi-daemon` 리플렉터 모드에서 사용을 시도해볼 수 있습니다 (위 참조).
 
 #### `홈어시스턴트 브리지`가 홈 앱 (페어링)에 표시되지 않음 - VirtualBox
 
-`networkbridge`로 네트워크 모드를로 설정하십시오.  그렇지 않으면 홈어시스턴트 bridge가 네트워크에 노출되지 않습니다.
+`networkbridge`로 네트워크 모드를 설정하십시오. 그렇지 않으면 홈어시스턴트 bridge가 네트워크에 노출되지 않습니다.
 
 #### 페어링 중단 - zeroconf 오류
-\
+
 결국 페어링에 실패하면 `NonUniqueNameException` 오류 메시지가 표시 될 수 있습니다. `safe_mode` 옵션을 설정에 추가 하십시오, [safe_mode](#safe-mode) 참조.
 
 #### 페어링 중단 - 디버그 설정에서만 작동
@@ -452,7 +452,7 @@ iOS 기기는 페어링을 위해 홈 어시스턴트 기기와 동일한 로컬
 
 #### 내 entity가 표시되지 않습니다
 
-entity의 도메인이 [supported](#supported-components)되는지 확인하십시오. 그렇다면, [filter](#configure-filter) 설정을 확인하십시오.  특히를 `include_entities`를 사용하는 경우, 철자가 올바른지 확인하십시오.
+entity의 도메인이 [supported](#supported-components)되는지 확인하십시오. 그렇다면, [filter](#configure-filter) 설정을 확인하십시오.  특히 `include_entities`를 사용하는 경우, 철자가 올바른지 확인하십시오.
 
 #### HomeKit은 두 번째 홈어시스턴트 인스턴스에서 작동하지 않습니다
 
@@ -472,11 +472,11 @@ entity의 도메인이 [supported](#supported-components)되는지 확인하십�
 
 #### 액세서리가 응답하지 않음 - 임의로
 
-불행히도, 때때로 그것은 때때로 발생합니다.  `Home` 앱 을 닫고 캐시에서 삭제하는 것이 도움이 될 수 있습니다. 일반적으로 액세서리는 최대 몇 분 후에 다시 응답해야합니다.
+불행히도, 이는 종종 발생합니다.  `Home` 앱 을 닫고 캐시에서 삭제하는 것이 도움이 될 수 있습니다. 일반적으로 액세서리는 최대 몇 분 후에 다시 응답합니다.
 
 #### 액세서리가 응답하지 않거나 비정상적인 동작 - `0.65.x`에서 업그레이드
 
-이 문제를 해결하려면의 `Home Assistant Bridge` 페어링을 해제, `.homekit.state` 파일을 삭제하고 ([guide](#deleting-the-homekitstate-file)) 다시 페어링 합니다. `0.65.x` 또는 이하에서 업그레이드하는 경우에만 문제가 됩니다..
+이 문제를 해결하려면의 `Home Assistant Bridge` 페어링을 해제, `.homekit.state` 파일을 삭제하고 ([guide](#deleting-the-homekitstate-file)) 다시 페어링 합니다. `0.65.x` 또는 이하에서 업그레이드하는 경우에만 문제가 됩니다.
 
 #### 연결된 배터리 센서가 인식되지 않습니다
 
@@ -488,7 +488,7 @@ HomeKit에서 entity를 제거한 후 다시 추가하십시오. HomeKit의 기�
 
 #### TV 미디어 플레이어의 볼륨을 조절할 수 없습니까?
 
-볼륨 및 재생 / 일시 정지 제어가 원격 앱 또는 제어 센터에 표시됩니다. TV가 홈 어시스턴트를 통한 볼륨 조절을 지원하는 경우 화면에서 리모컨을 선택한 상태에서 장치의 측면 볼륨 버튼을 사용하여 볼륨을 조절할 수 있습니다.
+볼륨 및 재생 / 일시 정지 제어가 원격 앱 또는 제어 센터에 표시됩니다. TV가 홈어시스턴트를 통한 볼륨 조절을 지원하는 경우 화면에서 리모컨을 선택한 상태에서 장치의 측면 볼륨 버튼을 사용하여 볼륨을 조절할 수 있습니다.
 
 #### 액세서리 재설정
 

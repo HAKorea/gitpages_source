@@ -12,7 +12,7 @@ ha_codeowners:
 
 Groups을 통해 사용자는 여러 entity를 하나로 결합 할 수 있습니다.
 
-**Developer Tools** 에서 **States** <img src='/images/screenshots/developer-tool-states-icon.png' class='no-shadow' height='38' /> 페이지를 확인하고 **Current entities:**를 탐색합니다. : 사용할 수있는 모든 entities에 대한 목록이 나옵니다. 
+**Developer Tools** 에서 **States** <img src='/images/screenshots/developer-tool-states-icon.png' class='no-shadow' height='38' /> 페이지를 확인하고 **Current entities:** 를 탐색합니다. : 사용할 수있는 모든 entities에 대한 목록이 나옵니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -43,7 +43,7 @@ entities:
   required: true
   type: list
 all:
-  description: `true`로 설정, 만일 **all** 그룹화된 entity들이 *on* 명령을 내리면, 반드시 group 상태도 *on*이 되야할 경우.
+  description: 만일 **all** 그룹화된 entity들이 *on* 명령을 내리면, 반드시 group 상태도 *on*이 되야할 경우 `true`로 설정.
   required: false
   type: boolean
   default: false
@@ -55,5 +55,5 @@ icon:
 
 ## Group behavior
 
-기본적으로 어떤 group의 구성원이 `on`일 경우 group은 모두 on 입니다. device tracker와 마찬가지로, 한 group의 구성원이 `home`일 경우 group은 `home`을 나타냅니다. 
-만일  `all` 옵션을 `true`로 세팅했다면, 이 행위는 모든 group이 `on` 상태가 되고 역시 마찬가지로 모든 group의 멤버들은 `on`을 실행하게 됩니다. 
+기본적으로 어떤 group의 구성원이 `on`일 경우 group은 모두 on 입니다. device tracker와 마찬가지로, 한 group의 구성원이 `home`일 경우 group은 `home`을 나타냅니다.
+만일  `all` 옵션을 `true`로 세팅했다면, 이 행위는 모든 group이 `on` 상태가 되고 역시 마찬가지로 모든 group의 멤버들은 `on`을 실행하게 됩니다.

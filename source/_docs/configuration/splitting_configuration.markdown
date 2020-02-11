@@ -1,18 +1,18 @@
 ---
-title: "Splitting up the configuration"
+title: "설정 나누기"
 description: "Splitting the configuration.yaml into several files."
 redirect_from: /topics/splitting_configuration/
 ---
 
-So you've been using Home Assistant for a while now and your configuration.yaml file brings people to tears or you simply want to start off with the distributed approach, here's how to "split the configuration.yaml" into more manageable (read: humanly readable) pieces.
+지금까지 홈어시스턴트를 사용하면서 configuration.yaml 파일을 분리시키거나 분산된 접근으로 시작하고 싶은 단순한 바램이 있어왔습니다, 여기 "configuration.yaml 나누기" 라는 방법으로 더욱 관리하기 용이한 방법(읽기 매우 편한)을 제시합니다.
 
-First off, several community members have sanitized (read: without api keys/passwords etc) versions of their configurations available for viewing, you can see a list of them [here](/cookbook/#example-configurationyaml).
+먼저, 여러 커뮤니티 회원들이 갈고 닦은 여러 보기 편한 여러 설정들(api key, 패스워드는 제외된) 설정들을 [여기서](/cookbook/#example-configurationyaml). 볼수 있을 것입니다, 
 
-As commenting code doesn't always happen, please read on for the details.
+주석코드들이 언제나 적혀있지 않음으로, 자세히 읽어보십시오. 
 
-Now despite the logical assumption that the `configuration.yaml` will be replaced by this process it will in fact remain, albeit in a much less cluttered form.
+이 방법으로 `configuaration.yaml`을 읽어내려가며 이론적 가정하에 설정을 참조하며 바꿔넣더라도, 아무리보아도 어수선한 것은 사실입니다. 
 
-In this lighter version we will still need what could be called the core snippet:
+이 가벼운 버전에서는 핵심 snippet이라고 불리는 것이 여전히 필요합니다.
 
 ```yaml
 homeassistant:
@@ -28,11 +28,12 @@ homeassistant:
   customize: !include customize.yaml
 ```
 
-Note that each line after `homeassistant:` is indented two (2) spaces. Since the configuration files in Home Assistant are based on the YAML language, indentation and spacing are important. Also note that seemingly strange entry under `customize:`.
+`homeassistant:` 이후 각 줄은 2 칸 들여 쓰기됩니다. 홈어시스턴트의 설정 파일은 YAML 언어를 기반으로하기 때문에 들여 쓰기와 간격이 중요합니다. 또한 아래 보기에 이상한 `customize:` 항목을 주목하십시오.    
 
-`!include filename.yaml` is the statement that tells Home Assistant to insert the contents of `filename.yaml` at that point. This is how we are going to break a monolithic and hard to read file (when it gets big) into more manageable chunks.
+`!include filename.yaml`는 해당 지점에 `filename.yaml` 내용을 삽입하도록 홈어시스턴트에 지시하는 명령문입니다.
+이것이 우리가 뭉쳐져있고 읽기 어려운 파일(큰 파일 일 때)보다 관리하기 쉬운 덩어리로 나누는 방법입니다. 
 
-Now before we start splitting out the different components, let's look at the other integrations (in our example) that will stay in the base file:
+이제 다른 컴포넌트를 분리하기 전에 기본 파일에 남을 다른 연동(예제)을 살펴 보겠습니다.:
 
 ```yaml
 history:
@@ -56,11 +57,11 @@ zwave:
 mqtt:
   broker: 127.0.0.1
 ```
-As with the core snippet, indentation makes a difference. The integration headers (`mqtt:`) should be fully left aligned (aka no indent), and the parameters (`broker:`) should be indented two (2) spaces.
+핵심 snippet과 마찬가지로 들여쓰기로 차이를 만듭니다. 통합구성요소인 헤더(`mqtt:`)는 완전히 좌측 정렬된 상태 (인덴트 없음 broker:)여야 하고 매개 변수 (`broker:`)는 2 칸 들여 쓰기해야합니다.
 
-While some of these integrations can technically be moved to a separate file they are so small or "one off's" where splitting them off is superfluous. Also, you'll notice the # symbol (hash/pound). This represents a "comment" as far as the commands are interpreted. Put another way, any line prefixed with a `#` will be ignored. This makes breaking up files for human readability really convenient, not to mention turning off features while leaving the entry intact.
+이러한 연동 중 일부는 기술적으로 별도의 파일로 옮길 수 있지만 너무 작거나 "일회성 (one off)"으로 분리 할 필요가 없는 경우도 있니다. 또한 # 기호 (hash/pound)가 표시된다는 걸 알게 될 것입니다. 이것은 명령이 해석되지 않는 "주석"을 나타냅니다. 다시 말하면 접두사가 a 인 모든 행 #은 무시됩니다. 따라서 항목을 그대로 유지하면서 기능을 끄는 것은 말할 것도 없이 사람이 읽을 수 있도록 파일을 분할하는 것이 매우 편리합니다. 
 
-Now, lets assume that a blank file has been created in the Home Assistant configuration directory for each of the following:
+이제 홈 어시스턴트 구성 디렉토리에 다음 각 항목에 대해 빈 파일이 작성되었다고 가정하십시오.
 
 ```text
 automation.yaml
@@ -71,9 +72,9 @@ device_tracker.yaml
 customize.yaml
 ```
 
-`automation.yaml` will hold all the automation integration details. `zones.yaml` will hold the zone integration details and so forth. These files can be called anything but giving them names that match their function will make things easier to keep track of.
+`automation.yaml`은 모든 자동화 연동 세부 사항을 보유합니다. `zone.yaml`은 zone의 여러가지 연동 세부 사항 등을 유지합니다. 이러한 파일은 무엇이든 호출 할 수도 있지만 기능과 일치하는 이름을 지정하면 추적하기가 쉬워집니다.
 
-Inside the base configuration file add the following entries:
+기본 설정 파일 내에 다음 항목을 추가하십시오.:
 
 ```yaml
 automation: !include automation.yaml
@@ -83,11 +84,11 @@ switch: !include switch.yaml
 device_tracker: !include device_tracker.yaml
 ```
 
-Note that there can only be one `!include:` for each integration so chaining them isn't going to work. If that sounds like Greek, don't worry about it.
+통합구성요소마다 `!include`는 하나만있을 수 있으므로 이들을 연결시키는 것은 작동하지 않습니다. 
 
-Alright, so we've got the single integrations and the include statements in the base file, what goes in those extra files?
+자, 기본 파일에 단일 통합 및 include 문이 있습니다. 추가 파일에 무엇이 들어 있습니까?
 
-Let's look at the `device_tracker.yaml` file from our example:
+`device_tracker.yaml` 예제파일을 보십시오 :
 
 ```yaml
 - platform: owntracks
@@ -100,9 +101,9 @@ Let's look at the `device_tracker.yaml` file from our example:
   consider_home: 120
 ```
 
-This small example illustrates how the "split" files work. In this case, we start with two (2) device tracker entries (`owntracks` and `nmap`). These files follow ["style 1"](/getting-started/devices/#style-2-list-each-device-separately) that is to say a fully left aligned leading entry (`- platform: owntracks`) followed by the parameter entries indented two (2) spaces.
+이 작은 예는 "분할" 파일의 작동 방식을 보여줍니다. 이 경우 두 개의 장치 추적기 항목 (`owntracks` 과 `nmap`) 으로 시작합니다. 이 파일은 ["style 1"](/getting-started/devices/#style-2-list-each-device-separately) 즉, 완전히 왼쪽으로 정렬 된 선행 항목 (`- platform: owntracks`) 다음에 2 개의 공백으로 들여 쓴 매개 변수 항목이 있습니다.
 
-This (large) sensor configuration gives us another example:
+이 (방대한) 센서 설정은 또 다른 예를 제공합니다. :
 
 ```yaml
 ### sensor.yaml
@@ -142,30 +143,30 @@ This (large) sensor configuration gives us another example:
   name: 'Ann Arbor'
 ```
 
-You'll notice that this example includes a secondary parameter section (under the steam section) as well as a better example of the way comments can be used to break down files into sections.
+이 예제에는 2 차 매개 변수 섹션 (steam 섹션 아래)과 주석을 사용하여 파일을 섹션으로 나누는 방법에 대한 더 나은 예가 포함되어 있습니다.
 
-That about wraps it up.
+이제 마무리합니다.
 
-If you have issues checkout `home-assistant.log` in the configuration directory as well as your indentations. If all else fails, head over to our [Discord chat server][discord] and ask away.
+설정 디렉토리 및 들여 쓰기에 문제가있는 경우 `home-assistant.log` 를 체크하십시오. 그럼에도 불구하고 잘되지 않는다면, [Discord chat server][discord]에 와서 상담을 하십시오.  
 
-### Debugging multiple configuration files
+### 여러 설정 파일 디버깅
 
-If you have many configuration files, the `check_config` script allows you to see how Home Assistant interprets them:
-- Listing all loaded files: `hass --script check_config --files`
-- Viewing a component's config: `hass --script check_config --info light`
-- Or all components' config:  `hass --script check_config --info all`
+설정 파일이 많은 경우, `check_config` 스크립트를 사용하면 홈어시스턴트가 해당 파일을 해석하는 방법을 확인할 수 있습니다. :
+- 로드 된 모든 파일 나열 : `hass --script check_config --files`
+- 구성 요소(component) 설정보기 : `hass --script check_config --info light`
+- 또는 모든 구성 요소(component)의 설정보기 :  `hass --script check_config --info all`
 
-You can get help from the command line using: `hass --script check_config --help`
+다음을 사용하여 명령 행에서 도움을받을 수 있습니다. : `hass --script check_config --help`
 
-### Advanced Usage
+### 고급 사용법
 
-We offer four advanced options to include whole directories at once. Please note that your files must have the `.yaml` file extension; `.yml` is not supported.
-- `!include_dir_list` will return the content of a directory as a list with each file content being an entry in the list. The list entries are ordered based on the alphanumeric ordering of the names of the files.
-- `!include_dir_named` will return the content of a directory as a dictionary which maps filename => content of file.
-- `!include_dir_merge_list` will return the content of a directory as a list by merging all files (which should contain a list) into 1 big list.
-- `!include_dir_merge_named` will return the content of a directory as a dictionary by loading each file and merging it into 1 big dictionary.
+우리는 한 번에 전체 디렉토리를 포함하는 네 가지 고급 옵션을 제공합니다. 파일은 `.yaml` 파일 확장자를 가져야합니다.; `.yml` 은 지원되지 않습니다.
+- `!include_dir_list` 는 디렉토리의 내용을 목록으로 반환하며 각 파일 내용은 목록의 항목입니다. 목록 항목은 파일 이름의 영숫자 순서에 따라 정렬됩니다.
+- `!include_dir_named`는 디렉토리의 내용을 파일 이름으로 매핑하는 사전으로 반환합니다. => 파일의 내용.
+- `!include_dir_merge_list`은 모든 파일 (목록을 포함해야 함)을 하나의 큰 목록으로 병합하여 디렉토리의 내용을 목록으로 반환합니다.
+- `!include_dir_merge_named`은 각 파일을로드하고 하나의 큰 사전에 병합하여 디렉토리의 내용을 사전으로 반환합니다.
 
-These work recursively. As an example using `!include_dir_* automation`, will include all 6 files shown below:
+이들은 재귀 적으로 작동합니다. `!include_dir_* automation`를 사용한 예로서, 아래에 표시된 6 개의 파일이 모두 포함됩니다. :
 
 ```bash
 .
@@ -182,7 +183,7 @@ These work recursively. As an example using `!include_dir_* automation`, will in
     └── configuration.yaml (not included)
 ```
 
-#### Example: `!include_dir_list`
+#### 예시 : `!include_dir_list`
 
 `configuration.yaml`
 
@@ -206,7 +207,7 @@ automation:
       entity_id: light.entryway
 ```
 
-can be turned into:
+이렇게 바꿀 수 있습니다. :
 
 `configuration.yaml`
 
@@ -240,9 +241,8 @@ action:
   entity_id: light.entryway
 ```
 
-It is important to note that each file must contain only **one** entry when using `!include_dir_list`.
-It is also important to note that if you are splitting a file after adding -id: to support the automation UI,
-the -id: line must be removed from each of the split files.
+`!include_dir_list`를 사용할때 각 파일에는 **하나**의 항목 만 포함되어야합니다. 
+자동화 UI를 지원하기 위해 -id :를 추가 한 후 파일을 분할하는 경우 각 분할 파일에서 -id : 행을 제거해야합니다.
 
 #### Example: `!include_dir_named`
 
@@ -278,7 +278,7 @@ alexa:
           {% endif %}{% endraw %}
 ```
 
-can be turned into:
+이렇게 바꿀 수 있습니다 :
 
 `configuration.yaml`
 
@@ -345,7 +345,7 @@ automation:
       entity_id: light.entryway
 ```
 
-can be turned into:
+이렇게 바꿀 수 있습니다 :
 
 `configuration.yaml`
 
@@ -374,9 +374,9 @@ automation: !include_dir_merge_list automation/
     entity_id: light.entryway
 ```
 
-It is important to note that when using `!include_dir_merge_list`, you must include a list in each file (each list item is denoted with a hyphen [-]). Each file may contain one or more entries.
+`!include_dir_merge_list`를 사용할 때 , 각 파일에 목록을 포함해야합니다 (각 목록 항목은 하이픈 [-]으로 표시됨).  각 파일에는 하나 이상의 항목이 포함될 수 있습니다.
 
-#### Example: `!include_dir_merge_named`
+#### 예시: `!include_dir_merge_named`
 
 `configuration.yaml`
 
@@ -402,7 +402,7 @@ group:
       - camera.front_porch
 ```
 
-can be turned into:
+이렇게 바꿀 수 있습니다. :
 
 `configuration.yaml`
 

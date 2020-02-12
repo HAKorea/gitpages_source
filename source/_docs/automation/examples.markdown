@@ -1,10 +1,10 @@
 ---
-title: "Automation Examples"
+title: "자동화 사례들"
 description: "Some automation examples to get you started."
 redirect_from: /getting-started/automation-examples/
 ---
 
-Just some sample automation rules to get you started.
+다음은 입문자분들을 위한 몇가지 샘플 자동화 규칙들입니다. 
 
 {% raw %}
 ```yaml

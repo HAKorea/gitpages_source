@@ -4,7 +4,7 @@ description: "Instructions on how to setup the MQTT Publish service within Home 
 logo: mqtt.png
 ---
 
-The MQTT integration will register the service `mqtt.publish` which allows publishing messages to MQTT topics. There are two ways of specifying your payload. You can either use `payload` to hard-code a payload or use `payload_template` to specify a [template](/topics/templating/) that will be rendered to generate the payload.
+MQTT 연동은 MQTT topic으로에 메시지를 퍼블리싱하도록 `mqtt.publish` 서비스를 등록하게 됩니다. 페이로드를 지정하는 두 가지 방법이 있습니다.  하드코딩으로 만든 `payload`를 사용하던지 [template](/topics/templating/)을 사용해서 `payload_template`를 사용하는 방법으로 페이로드를 생성하여 렌더할 수 있습니다. 
 
 ### Service `mqtt.publish`
 
@@ -17,7 +17,7 @@ The MQTT integration will register the service `mqtt.publish` which allows publi
 | `retain` | yes | If message should have the retain flag set. (default: false)
 
 <div class='note'>
-You need to include either payload or payload_template, but not both.
+payload 또는 payload_template 중 하나만 포함해야합니다.
 </div>
 
 ```yaml
@@ -32,14 +32,14 @@ payload_template: {{ states('device_tracker.paulus') }}
 ```
 {% endraw %}
 
-`payload` must be a string. If you want to send JSON then you need to format/escape it properly. Like:
+`payload` 문자열이어야합니다. JSON을 보내려면 다음같이 올바른 포맷/이스케이프를 지켜야합니다.:
 
 ```yaml
 topic: home-assistant/light/1/state
 payload: "{\"Status\":\"off\", \"Data\":\"something\"}"
 ``` 
 
-Example of how to use `qos` and `retain`:
+`qos` 와 `retain`의 예시:
 
 ```yaml
 topic: home-assistant/light/1/command

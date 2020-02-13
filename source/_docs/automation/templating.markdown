@@ -1,12 +1,13 @@
 ---
-title: "Automation Templating"
+title: "자동화 템플릿"
 description: "Advanced automation documentation using templating."
 redirect_from: /getting-started/automation-templating/
 ---
 
-In Home Assistant 0.19 we introduced a new powerful feature: variables in scripts and automations. This makes it possible to adjust your condition and action based on the information of the trigger.
+홈어시스턴트 0.19에는 변수의 스크립트 처리 및 자동화라는 새로운 강력한 기능이 도입되었습니다. 이를 통해 트리거 정보를 기반으로 조건과 액션을 조정할 수 있습니다.
 
 The trigger data made is available during [template](/docs/configuration/templating/) rendering as the `trigger` variable.
+트리거 데이터는 `trigger` 변수로 렌더링하여 [template](/docs/configuration/templating/)에서 사용할 수 있습니다 .
 
 {% raw %}
 ```yaml
@@ -59,32 +60,41 @@ automation 3:
 ```
 {% endraw %}
 
-## Important Template Rules
+## 중요한 템플릿 규칙
 
-There are a few very important rules to remember when writing automation templates:
+자동화 템플릿을 작성할 때 기억해야 할 몇 가지 중요한 규칙이 있습니다. :
 
-1. You **must** use `data_template` in place of `data` when using templates in the `data` section of a service call.
-1. You **must** use `service_template` in place of `service` when using templates in the `service` section of a service call.
-1. You **must** surround single-line templates with double quotes (`"`) or single quotes (`'`).
-1. It is advised that you prepare for undefined variables by using `if ... is not none` or the [`default` filter](http://jinja.pocoo.org/docs/dev/templates/#default), or both.
-1. It is advised that when comparing numbers, you convert the number(s) to a [`float`](http://jinja.pocoo.org/docs/dev/templates/#float) or an [`int`](http://jinja.pocoo.org/docs/dev/templates/#int) by using the respective [filter](http://jinja.pocoo.org/docs/dev/templates/#list-of-builtin-filters).
-1. While the [`float`](http://jinja.pocoo.org/docs/dev/templates/#float) and [`int`](http://jinja.pocoo.org/docs/dev/templates/#int) filters do allow a default fallback value if the conversion is unsuccessful, they do not provide the ability to catch undefined variables.
+1. Service Call의 `data` 섹션에서 템플릿을 사용할 때는`data` 대신 `data_template`을 사용해야합니다.
+2. Service Call의 `service` 섹션에서 템플릿을 사용할 때는`service` 대신 `service_template`을 사용해야합니다.
+3. 작은 따옴표 (`"`) 또는 작은 따옴표 (`'`)로 한 줄로 **묶어야합니다**. 
+4. It is advised that you prepare for undefined variables by using `if ... is not none` or the [`default` filter](http://jinja.pocoo.org/docs/dev/templates/#default), or both.
+4. `if ... is not none` 혹은 [`default` filter](http://jinja.pocoo.org/docs/dev/templates/#default) 를 사용한 정의되지 않은 변수들을 쓸 수 있도록 만들어져 있습니다. 
+5. It is advised that when comparing numbers, you convert the number(s) to a [`float`](http://jinja.pocoo.org/docs/dev/templates/#float) or an [`int`](http://jinja.pocoo.org/docs/dev/templates/#int) by using the respective [filter](http://jinja.pocoo.org/docs/dev/templates/#list-of-builtin-filters).
+5. 숫자들을 비교할 때 각각의 [filter](http://jinja.pocoo.org/docs/dev/templates/#list-of-builtin-filters)를 사용하여 숫자들을 [`float`](http://jinja.pocoo.org/docs/dev/templates/#float) 혹은 [`int`](http://jinja.pocoo.org/docs/dev/templates/#int)로 변환할 수 있도록 만들어져 있습니다.  
+6. While the [`float`](http://jinja.pocoo.org/docs/dev/templates/#float) and [`int`](http://jinja.pocoo.org/docs/dev/templates/#int) filters do allow a default fallback value if the conversion is unsuccessful, they do not provide the ability to catch undefined variables.
+6. [`float`](http://jinja.pocoo.org/docs/dev/templates/#float) 및 [`int`](http://jinja.pocoo.org/docs/dev/templates/#int) 필터는 변환에 실패하면 기본 폴백(fallback) 값을 허용하지만, 정의되지 않은 변수를 잡아내는 기능은 제공하지 않습니다. 
 
-Remembering these simple rules will help save you from many headaches and endless hours of frustration when using automation templates.
+이 간단한 규칙을 기억하면 자동화 템플릿을 사용할 때 많은 고민과 시간을 절약 할 수 있습니다.
 
 It is possible to use `data` and `data_template` concurrently but be aware that `data_template` will overwrite attributes that are provided in both.
+`data`와`data_template`을 동시에 사용할 수 있지만 `data_template`은 양쪽에서 제공되는 속성값을 덮어 쓰기합니다. 
 
-## Trigger State Object
+## 트리거 상태 객체 (Trigger State Object)
 
 Knowing how to access the [state object](/docs/configuration/state_object/) of a trigger entity could be one of the more common questions. Here are a few ways for the [`state`](#state), [`numeric_state`](#numeric_state) and [`template`](#template) triggers:
+트리거 entity의 [state object](/docs/configuration/state_object/)에 액세스하는 방법을 아는 것이 가장 일반적인 질문 중 하나 일 수 있습니다. 여기에 [`state`](#state), [`numeric_state`](#numeric_state) 그리고 [`template`](#template) 트리거를 다루는 방법들을 설명합니다. 
 
 * `trigger.from_state` will return the **previous** [state object](/docs/configuration/state_object/) of the entity.
+* `trigger.from_state` 는 entity의 **이전** [state object](/docs/configuration/state_object/) 를 반환합니다. 
 * `trigger.to_state` will return the **new** [state object](/docs/configuration/state_object/) that triggered trigger.
+* `trigger.to_state` 는 **새로운** [state object](/docs/configuration/state_object/)를 반환합니다. 
 * `states[trigger.to_state.domain][trigger.to_state.object_id]` will return the **current** [state object](/docs/configuration/state_object/) of the entity.
+* `states[trigger.to_state.domain][trigger.to_state.object_id]`는 **현재** entity의 [state object](/docs/configuration/state_object/)를 반환합니다. 
 
-## Available Trigger Data
+## 사용가능한 트리거 데이터
 
-The following tables show the available trigger data per platform.
+다음 표는 플랫폼별로 사용 가능한 트리거 데이터를 보여줍니다.
+
 
 ### event
 

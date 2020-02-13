@@ -1,12 +1,12 @@
 ---
-title: "MQTT 인증서"
+title: "MQTT Certificate"
 description: "Instructions on how to setup MQTT with a certificate in Home Assistant."
 logo: mqtt.png
 ---
 
-인증서를 사용하면 MQTT 통신을 위한 추가 보안 레이어가 제공됩니다. 
+Using certificates will give you an additional layer of security for your MQTT communication. 
 
-MQTT를 인증서와 함께 홈어시스턴트에 연동하려면, `configuration.yaml` 파일에 다음 섹션을 추가 하십시오. :
+To integrate MQTT with certificate into Home Assistant, add the following section to your `configuration.yaml` file:
 
 ```yaml
 # Example configuration.yaml entry
@@ -16,7 +16,7 @@ mqtt:
 
 {% configuration %}
 certificate:
-  description: "이 클라이언트가 신뢰하는 것으로 취급 될 'auto'또는 인증 기관 인증서 파일. 서버에 보안 (TLS) 연결을 사용하려면 'certificate'설정 매개 변수를 정의해야합니다. 'auto'는 certifite CA 번들 인증서를 사용합니다. 파일이 지정되면 파일은 브로커의 인증서에 서명한 인증 기관의 루트 인증서를 포함해야하지만 여러 인증서를 포함 할 수도 있습니다. (예 `/home/user/identrust-root.pem`)" 
+  description: "'auto' or the certificate authority certificate file that is to be treated as trusted by this client. To enable a secure (TLS) connection to your server you must define the 'certificate' configuration parameter. 'auto' uses the certifite CAs bundled certificates. If a file is specified the file should contain the root certificate of the certificate authority that signed your broker's certificate, but may contain multiple certificates. Example: `/home/user/identrust-root.pem`."
   required: false
   type: string
 client_key:

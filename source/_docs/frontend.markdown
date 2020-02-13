@@ -3,13 +3,13 @@ title: "Frontend of Home Assistant"
 description: "Frontend of Home Assistant."
 ---
 
-The frontend of Home Assistant is built with [Polymer](https://www.polymer-project.org/).
+홈 어시스턴트의 프론트엔드는 [Polymer](https://www.polymer-project.org/)로 제작되었습니다.
 
 <p class='img'>
   <img src='{{site_root}}/images/screenshots/ui2015.png' />
 </p>
 
-The [User Interface section](/cookbook/#user-interface) can give you some starting points to expand the frontend.
+[User Interface section](/cookbook/#user-interface)는 프론트엔드를 확장할 시작점을 제공할 수 있습니다.
 
-If you want to work on the frontend, please refer to the [Frontend Development documentation](/developers/frontend/).
+프론트엔드에서 작업할 의향이 있다면, [Frontend Development documentation](/developers/frontend/)를 방문하시길 바랍니다.
 

@@ -1,7 +1,7 @@
 ---
-title: "Tools"
-description: "Description of tools which helps when using Home Assistant."
+title: "도구"
+description: "홈 어시스턴트를 사용하는데 도움을 주는 도구들"
 ---
 
-Home Assistant ships a couple of helpers for the command-line and the frontend which simplify common tasks, are helping with migrations, and ensure that Home Assistant runs properly.
+홈 어시스턴트는 일반적인 작업을 단순화하고, 마이그레이션을 도우며, 홈 어시스턴트가 올바르게 실행되도록 몇가지 도우미를 제공합니다.
 

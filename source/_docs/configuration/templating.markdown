@@ -1,33 +1,33 @@
 ---
-title: "Templating"
+title: "템플릿 사용"
 description: "Instructions on how to use the templating feature of Home Assistant."
 redirect_from: /topics/templating/
 ---
 
-This is an advanced feature of Home Assistant. You'll need a basic understanding of:
+홈어시스턴트의 고급 기능입니다. 다음에 대한 기본 이해가 필요합니다. :
 
-- [Home Assistant architecture](/developers/architecture/), especially states.
-- The [State object](/topics/state_object/).
+- [홈어시스턴트 아키텍처](/developers/architecture/), 특히 상태(states).
+- [상태(State) 객체](/topics/state_object/).
 
-Templating is a powerful feature that allows you to control information going into and out of the system. It is used for:
+템플릿은 시스템으로 들어오고 나가는 정보를 제어 할 수있는 강력한 기능입니다. 다음 용도로 사용됩니다. :
 
-- Formatting outgoing messages in, for example, the [notify](/integrations/notify/) platforms and [alexa](/integrations/alexa/) component.
-- Process incoming data from sources that provide raw data, like [MQTT](/integrations/mqtt/), [`rest` sensor](/integrations/rest/) or the [`command_line` sensor](/integrations/sensor.command_line/).
-- [Automation Templating](/docs/automation/templating/).
+- [notify](/integrations/notify/) 플랫폼 및 [alexa](/integrations/alexa/) component와 같은 발신 메시지 형식화 
+- [MQTT](/integrations/mqtt/), [`rest` sensor](/integrations/rest/) 혹은 [`command_line` sensor](/integrations/sensor.command_line/) 같은 원시 데이터를 제공하는 소스의 데이터 처리.
+- [자동화 템플릿 (Automation Templating))](/docs/automation/templating/).
 
-## Building templates
+## 템플릿 만들기
 
-Templating in Home Assistant is powered by the [Jinja2](https://palletsprojects.com/p/jinja) templating engine. This means that we are using their syntax and make some custom Home Assistant variables available to templates during rendering. Jinja2 supports a wide variety of operations:
+홈어시스턴트 템플릿은 [Jinja2](https://palletsprojects.com/p/jinja) 템플릿 엔진으로 구동됩니다. 이는 특정 문법을 사용하고 렌더링 중에 템플릿에 일부 사용자정의 홈어시스턴트 변수를 제공함을 의미합니다. Jinja2는 다양한 작업을 지원합니다.
 
 - [Mathematical operation](https://jinja.palletsprojects.com/en/master/templates/#math)
 - [Comparisons](https://jinja.palletsprojects.com/en/master/templates/#comparisons)
 - [Logic](https://jinja.palletsprojects.com/en/master/templates/#logic)
 
-We will not go over the basics of the syntax, as Jinja2 does a great job of this in their [templates documentation](https://jinja.palletsprojects.com/en/master/templates/).
+Jinja2는 [templates documentation](https://jinja.palletsprojects.com/en/master/templates/)에서 이 작업을 훌륭하게 수행하므로 문법의 기본사항은 다루지 않습니다 .
 
-The frontend has a template editor tool to help develop and debug templates. Click on the <img src='/images/screenshots/developer-tool-templates-icon.png' alt='template developer tool icon' class="no-shadow" height="38" /> icon, create your template in the _Template editor_ and check the results on the right.
+프런트엔드에는 템플릿 개발 및 디버깅을 도와주는 템플릿 편집기 도구가 있습니다. <img src='/images/screenshots/developer-tool-templates-icon.png' alt='template developer tool icon' class="no-shadow" height="38" /> 아이콘을 클릭 하고 _템플릿 편집기_ 에서 템플릿을 생성 한 다음 오른쪽의 결과를 확인하십시오.
 
-Templates can get big pretty fast. To keep a clear overview, consider using YAML multiline strings to define your templates:
+템플릿은 매우 빠르게 커질 수 있습니다. 명확한 구성를 유지하려면 YAML 여러 줄 문자열을 사용하여 템플릿을 정의하십시오. :
 
 {% raw %}
 ```yaml
@@ -45,31 +45,32 @@ script:
 ```
 {% endraw %}
 
-## Home Assistant template extensions
+##  홈어시스턴트 템플릿 확장
 
-Extensions allow templates to access all of the Home Assistant specific states and adds other convenience functions and filters.
+확장 기능을 통해 템플릿은 모든 홈어시스턴트 특정 상태에 액세스하고 다른 편리한 기능 및 필터를 추가 할 수 있습니다.
 
-### States
+### 상태 (States)
 
-- Iterating `states` will yield each state sorted alphabetically by entity ID.
-- Iterating `states.domain` will yield each state of that domain sorted alphabetically by entity ID.
-- `states.sensor.temperature` returns the state object for `sensor.temperature` (avoid when possible, see note below).
-- `states('device_tracker.paulus')` will return the state string (not the object) of the given entity or `unknown` if it doesn't exist.
-- `is_state('device_tracker.paulus', 'home')` will test if the given entity is the specified state.
-- `state_attr('device_tracker.paulus', 'battery')` will return the value of the attribute or None if it doesn't exist.
-- `is_state_attr('device_tracker.paulus', 'battery', 40)` will test if the given entity attribute is the specified state (in this case, a numeric value).
+- 반복된 `states`는 entity ID별로 알파벳순으로 정렬 된 각 상태(statese)를 생성시킵니다
+- 반복된 `states.domain`는 해당 도메인의 각 상태(states)가 entity ID별로 알파벳순으로 정렬됩니다.
+- `sensor.temperature`에 대한 상태(states) 객체를 `states.sensor.temperature`로 반환합니다. 
+- `states ( 'device_tracker.paulus')`는 해당 entity의 상태(state) 문자열(객체가 아닌)을 반환하고, 혹은 값이 존재하지 않는 경우 `unknown`을 반환합니다.
+- `is_state('device_tracker.paulus', 'home')`는 주어진 entity가 특정한 어떤 상태(state)인지를 테스트합니다.
+- `state_attr('device_tracker.paulus', 'battery')` 속성 값을 반환하거나 존재하지 않는 경우 None을 반환합니다.
+- `is_state_attr('device_tracker.paulus', 'battery', 40)` 주어진 entity 속성이 지정된 상태(state) (이 경우 숫자 값)인지 테스트합니다.
 
 <div class='note warning'>
 
-  Avoid using `states.sensor.temperature.state`, instead use `states('sensor.temperature')`. It is strongly advised to use the `states()`, `is_state()`, `state_attr()` and `is_state_attr()` as much as possible, to avoid errors and error message when the entity isn't ready yet (e.g., during Home Assistant startup).
+  `states('sensor.temperature')` 대체 방법으로 `states.sensor.temperature.state`를 사용 하지 마십시오.
+  entity가 아직 준비가 안되어있을 때, 오류 및 오류 메시지가 나타나지 않도록 가능한 한 `states()`, `is_state()`, `state_attr()` 그리고 `is_state_attr()` 를 사용하기를 권장합니다.  (예를 들어 홈어시스턴트를 시작하는 동안)
 
 </div>
 
-Besides the normal [state object methods and properties](/topics/state_object/), `states.sensor.temperature.state_with_unit` will print the state of the entity and, if available, the unit.
+정상적인 [state object methods and properties](/topics/state_object/) 외에, `states.sensor.temperature.state_with_unit`은 사용 가능한 경우 entity와 장치의 상태를 출력합니다.
 
-#### States examples
+#### 상태(State) 사례들
 
-The next two statements result in the same value if the state exists. The second one will result in an error if the state does not exist.
+상태(state)가 존재하면 다음 두 명령문의 값은 동일합니다. 상태(state)가 존재하지 않으면 두 번째 사례은 오류가 발생합니다.
 
 {% raw %}
 ```text
@@ -78,7 +79,7 @@ The next two statements result in the same value if the state exists. The second
 ```
 {% endraw %}
 
-Print out a list of all the sensor states:
+모든 센서 상태 목록을 출력하기. :
 
 {% raw %}
 ```text
@@ -88,7 +89,7 @@ Print out a list of all the sensor states:
 ```
 {% endraw %}
 
-Other state examples:
+다른 상태(state) 사례 :
 {% raw %}
 
 ```text
@@ -112,11 +113,11 @@ Other state examples:
 ```
 {% endraw %}
 
-### Attributes
+### 속성 (Attributes)
 
-You can print an attribute with `state_attr` if state is defined.
+상태(state)가 정의 된 경우 `state_attr`을 사용하여 속성(Attribute)을 출력할 수 있습니다.
 
-#### Attributes examples
+#### 속성 (Attributes) 사례들
 
 {% raw %}
 ```text
@@ -128,7 +129,7 @@ You can print an attribute with `state_attr` if state is defined.
 ```
 {% endraw %}
 
-With strings:
+문자열의 경우 :
 
 {% raw %}
 ```text
@@ -142,11 +143,11 @@ With strings:
 ```
 {% endraw %}
 
-### Working with Groups
+### 그룹 작업
 
-The `expand` function and filter can be used to sort entities and expand groups. It outputs a sorted array of entities with no duplicates.
+`expand` 기능과 필터는 entity를 정렬하고 그룹을 확장하는 데 사용할 수 있습니다. 중복되지 않은 정렬 된 entity 배열을 출력합니다.
 
-#### Expand examples
+#### 예제 펼쳐보이기
 
 {% raw %}
 ```text
@@ -157,7 +158,7 @@ The `expand` function and filter can be used to sort entities and expand groups.
 ```
 {% endraw %}
 
-The same thing can also be expressed as a filter:
+같은 것을 필터로 표현할 수 있습니다. :
 
 {% raw %}
 ```text
@@ -167,28 +168,28 @@ The same thing can also be expressed as a filter:
 ```
 {% endraw %}
 
-### Time
+### 시간
 
-- `now()` will be rendered as the current time in your time zone.
-  - For specific values: `now().second`, `now().minute`, `now().hour`, `now().day`, `now().month`, `now().year`, `now().weekday()` and `now().isoweekday()`
-- `utcnow()` will be rendered as UTC time.
-  - For specific values: `utcnow().second`, `utcnow().minute`, `utcnow().hour`, `utcnow().day`, `utcnow().month`, `utcnow().year`, `utcnow().weekday()` and `utcnow().isoweekday()`.
-- `as_timestamp()` will convert datetime object or string to UNIX timestamp. This function also be used as a filter.
-- `strptime(string, format)` will parse a string to a datetime based on a [format](https://docs.python.org/3.6/library/datetime.html#strftime-and-strptime-behavior).
-- `relative_time` will convert datetime object to its human-friendly "age" string. The age can be in second, minute, hour, day, month or year (but only the biggest unit is considered, e.g. if it's 2 days and 3 hours, "2 days" will be returned). Note that it only works for dates _in the past_.
-- Filter `timestamp_local`  will convert an UNIX timestamp to local time/data.
-- Filter `timestamp_utc` will convert a UNIX timestamp to UTC time/data.
-- Filter `timestamp_custom(format_string, local_boolean)` will convert a UNIX timestamp to a custom format, the use of a local timestamp is default. Supports the standard [Python time formatting options](https://docs.python.org/3/library/time.html#time.strftime).
+- `now()` 시간대의 현재 시간으로 렌더링됩니다.
+  - 특정 값의 경우: `now().second`, `now().minute`, `now().hour`, `now().day`, `now().month`, `now().year`, `now().weekday()` 그리고 `now().isoweekday()`
+- `utcnow()` UTC 시간으로 렌더링됩니다.
+  - 특정 값의 경우: `utcnow().second`, `utcnow().minute`, `utcnow().hour`, `utcnow().day`, `utcnow().month`, `utcnow().year`, `utcnow().weekday()` and `utcnow().isoweekday()`.
+- `as_timestamp()` datetime 객체 또는 문자열을 UNIX 타임 스탬프로 변환합니다. 이 기능은 필터로도 사용됩니다.
+- `strptime(string, format)` 은 [format](https://docs.python.org/3.6/library/datetime.html#strftime-and-strptime-behavior)에  따라 날짜/시간 문자열을 파싱합니다.
+- `relative_time`은 날짜 시간 객체를 읽기쉬운 "age" 문자열로 변환합니다. age는 초, 분,시, 일, 월 또는 연도 일 수 있습니다 (그러나 가장 큰 단위 만 고려됩니다 (예 : 2 일 및 3 시간 인 경우 "2 일"이 반환 됨)). _지난 날짜_ 에 대해서만 작동한다는 것을 알아두십시오.
+- 필터 `timestamp_local` 는 UNIX 타임 스탬프를 현지 시간 / 데이터로 변환합니다.
+- 필터 `timestamp_utc` 는 UNIX 타임 스탬프를 UTC 시간 / 데이터로 변환합니다.
+- 필터 `timestamp_custom(format_string, local_boolean)` 는 UNIX 타임 스탬프를 사용자 정의 형식으로 변환하며 로컬 타임 스탬프 사용이 기본값입니다. [Python time formatting options](https://docs.python.org/3/library/time.html#time.strftime) 표준을 지원합니다.
 
 ### To/From JSON
 
-The `to_json` filter serializes an object to a JSON string. In some cases, it may be necessary to format a JSON string for use with a webhook, as a parameter for command line utilities or any number of other applications. This can be complicated in a template, especially when dealing with escaping special characters. Using the `to_json` filter, this is handled automatically.
+`to_json` 필터는 JSON 문자열로 객체를 직렬화합니다(serialize).경우에 따라 명령 줄 유틸리티 또는 기타 여러 응용 프로그램의 매개 변수로 웹 후크와 함께 사용하기 위해 JSON 문자열을 형식화해야 할 수도 있습니다. 특히 특수 문자 이스케이프 처리시 템플릿에서 복잡 할 수 있습니다. `to_json` 필터를 사용하면 자동으로 처리됩니다
 
-The `from_json` filter operates similarly, but in the other direction, de-serializing a JSON string back into an object.
+`from_json` 필터는 유사하게 작동하지만 다른 방법으로, 객체로 JSON 문자열 등을 탈직렬화 시킬 수 있습니다.
 
-### To/From JSON examples
+### To/From JSON 예제들
 
-In this example, the special character '°' will be automatically escaped in order to produce valid JSON. The difference between the stringified object and the actual JSON is evident.
+본 예시에서 유효한 JSON을 생성하기 위해 특수 문자  '°' 가 자동으로 이스케이프됩니다. 문자열 화 된 객체와 실제 JSON의 차이점은 분명합니다.
 
 *Template*
 
@@ -209,7 +210,7 @@ object|to_json: {"temperature": 25, "unit": "\u00b0C"}
 ```
 {% endraw %}
 
-Conversely, `from_json` can be used to de-serialize a JSON string back into an object to make it possible to easily extract usable data.
+반대로 `from_json`을 사용하면 JSON 문자열을 객체로 역 직렬화하여 사용 가능한 데이터를 쉽게 추출 할 수 있습니다.
 
 *Template*
 
@@ -228,14 +229,14 @@ The temperature is 25°C
 ```
 {% endraw %}
 
-### Distance
+### 거리
 
-- `distance()` will measure the distance in kilometers between home, entity, coordinates.
-- `closest()` will find the closest entity.
+- `distance()` 집, entity, 좌표 사이의 거리를 킬로미터 단위로 측정합니다..
+- `closest()` 가장 가까운 entity를 찾습니다..
 
-#### Distance examples
+#### distance 예시
 
-If only one location is passed in, Home Assistant will measure the distance from home.
+하나의 위치만 전달하면 홈어시스턴트는 집과의 거리를 측정합니다.
 
 {% raw %}
 ```text
@@ -249,9 +250,9 @@ These can also be combined in any combination:
 ```
 {% endraw %}
 
-#### Closest examples
+#### Closest 예시
 
-The closest function and filter will find the closest entity to the Home Assisant location:
+가장 가까운 함수 및 필터는 홈어시스턴트 위치에 가장 가까운 entity를 찾습니다. :
 
 {% raw %}
 ```text
@@ -262,7 +263,7 @@ Query all entities in group.children: {{ closest(states.group.children) }}
 ```
 {% endraw %}
 
-Find entities closest to a coordinate or another entity. All previous arguments still apply for second argument.
+좌표 또는 다른 entity에 closest entity를 찾으십시오. 이전의 모든 인수는 여전히 두 번째 인수에 적용됩니다.
 
 {% raw %}
 ```text
@@ -272,7 +273,7 @@ Closest to an entity: {{ closest(states.zone.school, 'group.children') }}
 ```
 {% endraw %}
 
-Since closest returns a state, we can combine it with distance too.
+closest 상태를 반환하므로 distance와도 결합 할 수 있습니다.
 
 {% raw %}
 ```text
@@ -280,7 +281,7 @@ Since closest returns a state, we can combine it with distance too.
 ```
 {% endraw %}
 
-The last argument of the closest function has an implicit `expand`, and can take any iterable sequence of states or entity IDs, and will expand groups:
+closest 함수의 마지막 인수는 암시적(implicit) `expand`이며 반복 가능한 상태(states) 또는 entity ID 시퀀스를 취할 수 있으며 그룹을 확장시킬 수 있습니다.
 
 {% raw %}
 ```text
@@ -292,7 +293,7 @@ Closest to some entity:
     {{ closest(states.zone.school, ['group.children', states.device_tracker]) }}
 ```
 
-It will also work as a filter over an iterable group of entities or groups:
+이는 entity들과 group들의 또다른 반복 가능한 group에 대한 필터로 작동합니다. :
 
 ```text
 Closest out of given entities: 
@@ -305,55 +306,56 @@ Closest to some entity:
 
 {% endraw %}
 
-### Formatting
+### 형식화 (Formatting)
 
-- `float` will format the output as float.
+- `float` 출력을 float으로 포맷합니다.
 
-### Numeric functions and filters
+### 숫자형 함수와 핕터 (Numeric functions and filters)
 
-Some of these functions can also be used in a [filter](https://jinja.palletsprojects.com/en/master/templates/#id11). This means they can act as a normal function like this `sqrt(2)`, or as part of a filter like this `2|sqrt`.
+이러한 함수 중 일부는 [filter](https://jinja.palletsprojects.com/en/master/templates/#id11)에 사용할 수도 있습니다. 이는 `sqrt(2)` 같은 일반 함수로 혹은 `2|sqrt`와 같은 필터의 일부로 동작함을 의미합니다.
 
-- `log(value, base)` will take the logarithm of the input. When the base is omitted, it defaults to `e` - the natural logarithm. Can also be used as a filter.
-- `sin(value)` will return the sine of the input. Can be used as a filter.
-- `cos(value)` will return the cosine of the input. Can be used as a filter.
-- `tan(value)` will return the tangent of the input. Can be used as a filter.
-- `asin(value)` will return the arcus sine of the input. Can be used as a filter.
-- `acos(value)` will return the arcus cosine of the input. Can be used as a filter.
-- `atan(value)` will return the arcus tangent of the input. Can be used as a filter.
-- `atan2(y, x)` will return the four quadrant arcus tangent of y / x. Can be used as a filter.
-- `sqrt(value)` will return the square root of the input. Can be used as a filter.
-- `e` mathematical constant, approximately 2.71828.
-- `pi` mathematical constant, approximately 3.14159.
-- `tau` mathematical constant, approximately 6.28318.
-- Filter `round(x)` will convert the input to a number and round it to `x` decimals. Round has four modes and the default mode (with no mode specified) will [round-to-even](https://en.wikipedia.org/wiki/Rounding#Roundhalfto_even).
+- `log(value, base)`는 입력 대수(로그)를 취합니다. 기본이 생략되면, `e` - 자연 대수(로그)로 기본값이 나타납니다. 
+- `sin(value)` 은 사인 입력을 반환합니다. 필터로 사용할 수 있습니다.
+- `cos(value)` 은 코사인 입력을 반환합니다. 필터로 사용할 수 있습니다.
+- `tan(value)` 은 탄젠트 입력을 반환합니다. 필터로 사용할 수 있습니다.
+- `asin(value)` 은 역사인 입력을 반환합니다. 필터로 사용할 수 있습니다.
+- `acos(value)` 은 역코사인 입력을 반환합니다. 필터로 사용할 수 있습니다.
+- `atan(value)` 은 역탄젠트 입력을 반환합니다. 필터로 사용할 수 있습니다.
+- `atan2(y, x)` y / x의 4사분면 역탄젠트를 반환합니다. 필터로 사용할 수 있습니다.
+- `sqrt(value)` 입력의 제곱근을 반환합니다. 필터로 사용할 수 있습니다.
+- `e` 수학 상수, 약 2.71828
+- `pi` 수학 상수, 약 3.14159
+- `tau` 수학 상수, 약 6.28318.
+- 필터 `round(x)`는 입력을 숫자로 변환하고 `x`를 소수로 반올림합니다. Round에는 네 가지 모드가 있으며 기본 모드 (모드를 지정하지 않은 경우)는 [round-to-even](https://en.wikipedia.org/wiki/Rounding#Roundhalfto_even) 입니다.
   - `round(x, "floor")` will always round down to `x` decimals
-  - `round(x, "ceil")` will always round up to `x` decimals
-  - `round(1, "half")` will always round to the nearest .5 value. `x` should be 1 for this mode
-- Filter `max` will obtain the largest item in a sequence.
-- Filter `min` will obtain the smallest item in a sequence.
-- Filter `value_one|bitwise_and(value_two)` perform a bitwise and(&) operation with two values.
-- Filter `value_one|bitwise_or(value_two)` perform a bitwise or(\|) operation with two values.
-- Filter `ord` will return for a string of length one an integer representing the Unicode code point of the character when the argument is a Unicode object, or the value of the byte when the argument is an 8-bit string.
+  - `round(x, "floor")`는 `x`를 항상 소수점 이하로 내림
+  - `round(x, "ceil")` 는 `x`를 항상 소수점 이하로 내림
+  - `round(1, "half")` 항상 가장 가까운 0.5 값으로 반올림합니다. `x` 이 모드에서는 1이어야합니다
+- 필터 `max` 는 가장 큰 항목을 순서대로 가져옵니다.
+- 필터 `min` 는 가장 작은 항목을 순서대로 가져옵니다.
+- 필터 `value_one|bitwise_and(value_two)` 는 두 가지 값으로 비트 단위 (&) 연산을 수행합니다.
+- 필터 `value_one|bitwise_or(value_two)` 두 가지 값으로 비트 단위 또는 (|) 연산을 수행합니다.
+- 필터 `ord` 는 인수가 유니코드 객체 인 경우 문자의 유니코드 코드 포인트를 나타내는 정수 1의 길이의 문자열 또는 인수가 8 비트 문자열인 경우 바이트 값을 반환합니다.
 
-### Regular expressions
+### 정규식
 
-- Filter `string|regex_match(find, ignorecase=FALSE)` will match the find expression at the beginning of the string using regex.
-- Filter `string|regex_search(find, ignorecase=FALSE)` will match the find expression anywhere in the string using regex.
-- Filter `string|regex_replace(find='', replace='', ignorecase=False)` will replace the find expression with the replace string using regex.
-- Filter `string|regex_findall_index(find='', index=0, ignorecase=False)` will find all regex matches of find in string and return the match at index (findall returns an array of matches).
+- 필터 `string|regex_match(find, ignorecase=FALSE)`는 정규식을 사용하여 문자열의 시작 부분에서 찾기 표현식과 일치시킵니다.
+- 필터 `string|regex_search(find, ignorecase=FALSE)` 는 정규식을 사용하여 문자열의 어디에서나 찾기 표현식과 일치시킵니다.
+- 필터 `string|regex_replace(find='', replace='', ignorecase=False)` 는 정규식을 사용하여 교체된 찾기 표현식을 바꿉니다.
+- 필터 `string|regex_findall_index(find='', index=0, ignorecase=False)`는 문자열에서 찾기의 모든 정규식 match를 찾고 색인에서 match를 리턴합니다 (findall은 match 배열을 리턴함).
 
-## Processing incoming data
+## 수신 데이터 처리
 
-The other part of templating is processing incoming data. It allows you to modify incoming data and extract only the data you care about. This will only work for platforms and integrations that mention support for this in their documentation.
+템플릿의 다른 부분은 들어오는 데이터를 처리합니다. 수신 데이터를 수정하고 관심있는 데이터만 추출 할 수 있습니다. 이는 문서에서 이를 지원하는 플랫폼 및 통합구성요소에서만 작동합니다.
 
-It depends per integration or platform, but it is common to be able to define a template using the `value_template` configuration key. When a new value arrives, your template will be rendered while having access to the following values on top of the usual Home Assistant extensions:
+통합구성요소 또는 플랫폼에 따라 다르지만, `value_template` 설정 키를 사용하여 템플릿을 정의하는 것이 일반적입니다. 새 값이 도착하면 일반적인 홈어시스턴트 확장 프로그램의 상단에있는 다음 값에 액세스하면서 템플릿이 렌더링됩니다. :
 
 | Variable     | Description                        |
 |--------------|------------------------------------|
-| `value`      | The incoming value.                |
-| `value_json` | The incoming value parsed as JSON. |
+| `value`      | 들어오는 값.                |
+| `value_json` | 들어오는 값은 JSON으로 파싱되었습니다. |
 
-This means that if the incoming values looks like the sample below:
+이는 들어오는 값이 아래 샘플과 같은 경우를 의미합니다 :
 
 ```json
 {
@@ -362,7 +364,7 @@ This means that if the incoming values looks like the sample below:
 }
 ```
 
-The template for `on` would be:
+템플릿 `on` 은 다음과 같습니다. :
 
 {% raw %}
 ```yaml
@@ -370,7 +372,7 @@ The template for `on` would be:
 ```
 {% endraw %}
 
-Nested JSON in a response is supported as well:
+응답시 Nested JSON(중첩 JSON)도 지원됩니다.:
 
 ```json
 {
@@ -385,7 +387,7 @@ Nested JSON in a response is supported as well:
 }
 ```
 
-Just use the "Square bracket notation" to get the value.
+“스퀘어 브래킷 표기법”을 사용하여 값을 얻으십시오.
 
 {% raw %}
 ```yaml
@@ -393,7 +395,7 @@ Just use the "Square bracket notation" to get the value.
 ```
 {% endraw %}
 
-The following overview contains a couple of options to get the needed values:
+다음 개요에는 필요한 값을 얻는 몇 가지 옵션이 있습니다. :
 
 ```text
 # Incoming value:
@@ -421,7 +423,7 @@ The following overview contains a couple of options to get the needed values:
 {% raw %}{{ value_json.tst | timestamp_custom('%Y' True) }}{% endraw %}
 ```
 
-To evaluate a response, go to the <img src='/images/screenshots/developer-tool-templates-icon.png' alt='template developer tool icon' class="no-shadow" height="38" /> template developer tools, create your output in "Template", and check the result.
+응답으로 값을 받으려면, <img src='/images/screenshots/developer-tool-templates-icon.png' alt='template developer tool icon' class="no-shadow" height="38" /> 템플리트 개발자 도구 로 이동하여, "템플릿"에서 출력을 작성한 후 결과를 확인하십시오.
 
 {% raw %}
 ```yaml
@@ -437,19 +439,19 @@ To evaluate a response, go to the <img src='/images/screenshots/developer-tool-t
 ```
 {% endraw %}
 
-## Some more things to keep in mind
+## 명심해야 할 몇 가지 더
 
-### `entity_id` that begins with a number
+### 숫자로 시작하는 `entity_id`
 
-If your template uses an `entity_id` that begins with a number (example: `states.device_tracker.2008_gmc`) you must use a bracket syntax to avoid errors caused by rendering the `entity_id` improperly. In the example given, the correct syntax for the device tracker would be: `states.device_tracker['2008_gmc']`
+템플릿이 (예: `states.device_tracker.2008_gmc`)와 같이 숫자로 시작하는 `entity_id`를 사용한다면, 렌더링하여 발생하는 오류를 피하려면 대괄호 구문을 사용해야합니다. 주어진 예에서 장치 추적기의 올바른 구문은 다음과 같습니다. : `states.device_tracker['2008_gmc']`
 
-### Templates without entities using `now()`
+### NOW ()를 사용하는 entity가 없는 템플릿
 
-Note that templates that depend on time (`now()`) and do not use any entities will not be updated as it only happens on entity state changes. For more information and examples refer to [`template` sensor documentation](/integrations/template/#working-without-entities)
+(`now()`)은 시간에 종속되어 entity를 사용하지 않는 템플릿은 entity 상태 변경에서만 발생하므로 업데이트되지 않습니다. 자세한 내용과 예는 [`template` sensor documentation](/integrations/template/#working-without-entities)를 참조하십시오. 
 
-### Priority of operators
+### 연산자 우선 순위
 
-The default priority of operators is that the filter (`|`) has priority over everything except brackets. This means that:
+연산자의 기본 우선 순위는 필터 (`|`) 가 대괄호를 제외한 모든 것보다 우선 순위 가 있다는 것입니다. 이것은 다음을 의미합니다.
 
 {% raw %}
 ```yaml
@@ -457,4 +459,4 @@ The default priority of operators is that the filter (`|`) has priority over eve
 ```
 {% endraw %}
 
-Would round `10` to 2 decimal places, then divide `states('sensor.temperature')` by that.
+`10` 을 소수점 이하 두 자리로 반올림 한 다음, `states('sensor.temperature')`를 해당값으로 나눕니다

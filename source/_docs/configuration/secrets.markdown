@@ -1,16 +1,17 @@
 ---
-title: "Storing secrets"
+title: "비밀정보 저장"
 description: "Storing secrets outside of your configuration.yaml."
 redirect_from: /topics/secrets/
 ---
 
-The `configuration.yaml` file is a plain-text file, thus it is readable by anyone who has access to the file. The file contains passwords and API tokens which need to be redacted if you want to share your configuration. By using `!secret` you can remove any private information from your configuration files. This separation can also help you to keep easier track of your passwords and API keys, as they are all stored at one place and no longer spread across the `configuration.yaml` file or even multiple yaml files if you [split up your configuration](/docs/configuration/splitting_configuration/).
+`configuration.yaml` 파일은 해당 파일에 액세스 권한을 가진 사람은 누구나 읽을 수 있는, 일반 텍스트 파일입니다. 이 파일에는 설정을 공유하려는 경우 수정해야하는 비밀정보 및 API 토큰이 포함되어 있습니다. `!secret` 를 사용하면 설정 파일에서 개인정보를 제거 할 수 있습니다. 이 분리는 암호와 API 키가 모두 한 곳에 저장되어 `configuration.yaml`을 [설정 나누기](/docs/configuration/splitting_configuration/)를 하면, 더 이상 파일 또는 여러 yaml 파일에 분산되지 않기 때문에 암호와 API 키를 쉽게 추적하는 데 도움이됩니다.
 
-### Using secrets.yaml
 
-The workflow for moving private information to `secrets.yaml` is very similar to the [splitting of the configuration](/docs/configuration/splitting_configuration/). Create a `secrets.yaml` file in your Home Assistant [configuration directory](/docs/configuration/).
+### secrets.yaml 사용
 
-The entries for password and API keys in the `configuration.yaml` file usually looks like the example below.
+개인정보를 이전하는 워크플로우는 `secrets.yaml`에서 [설정 나누기](/docs/configuration/splitting_configuration/)와 매우 유사합니다. 홈어시스턴트 [설정 디렉토리](/docs/configuration/) 에 `secrets.yaml` 파일을 저장하십시오. 
+
+`configuration.yaml` 파일의 비밀정보 및 API 키 항목은 일반적으로 아래 예와 같습니다.
 
 ```yaml
 homeassistant:
@@ -19,7 +20,7 @@ homeassistant:
      api_password: YOUR_PASSWORD
 ```
 
-Those entries need to be replaced with `!secret` and an identifier.
+이러한 항목은 `!secret` 및 식별자로 교체해야합니다.
 
 ```yaml
 homeassistant:
@@ -28,38 +29,38 @@ homeassistant:
      api_password: !secret http_password
 ```
 
-The `secrets.yaml` file contains the corresponding password assigned to the identifier.
+`secrets.yaml` 파일은 식별자에 할당 된 해당 암호가 포함되어 있습니다.
 
 ```yaml
 http_password: YOUR_PASSWORD
 ```
 
-### Debugging secrets
+### 비밀정보 디버깅 (Debugging secrets)
 
-When you start splitting your configuration into multiple files, you might end up with configuration in sub folders. Secrets will be resolved in this order:
+설정을 여러 파일로 분할하기 시작하면 하위 폴더의 구성이 끝날 수 있습니다. 비밀정보는 다음 순서로 해결됩니다. :
 
-- A `secrets.yaml` located in the same folder as the YAML file referencing the secret,
-- next, parent folders will be searched for a `secrets.yaml` file with the secret, stopping at the folder with the main `configuration.yaml`,
-- lastly, `keyring` will be queried for the secret (more info below).
+- 비밀정보를 참조하는 `secrets.yaml`는 다른 YAML 파일들과 같이 있는 폴더에 위치함. 
+- 다음으로 메인 configuration.yaml와 함께 있는 폴더에서 중지된다면, 부모 폴더의 secrets.yaml 에서 비밀정보가 있는 파일을 검색할 것입니다. 
+- 마지막으로, `keyring`은 비밀정보를 쿼리합니다 (아래 좀 더 자세한 정보).
 
-To see where secrets are being loaded from, you can either add an option to your `secrets.yaml` file or use the `check_config` script.
+비밀정보가 어디에서 로드되는지 확인하려면, `secrets.yaml` 파일에 옵션을 추가 하거나 `check_config` 스크립트를 사용하십시오.
 
-*Option 1*: Print where secrets are retrieved from to the Home Assistant log by adding the following to `secrets.yaml`:
+*Option 1*:  `secrets.yaml` 안에 다음을 추가하여 비밀정보가 검색되는 위치를 홈어시스턴트 로그로 확인하십시오  :
 
 ```yaml
 logger: debug
 ```
-This will not print the actual secret's value to the log.
+이는 실제 비밀정보 값을 로그에 출력하지 않습니다.
 
-*Option 2*: To view where secrets are retrieved from and the contents of all `secrets.yaml` files used, you can use the [`check_config` script](/docs/tools/check_config/) from the command line:
+*Option 2*: `secrets.yaml`파일이 사용한 모든 내용에서 비밀정보들이 검색되는 위치를 보기 위해서  명령행에서 [`check_config` script](/docs/tools/check_config/) 스크립트 를 사용할 수 있습니다. :
 
 ```bash
 $ hass --script check_config --secrets
 ```
-This will print all your secrets.
+모든 비밀정보들이 출력됩니다. 
 
-## Alternatives to `secrets.yaml`
+## `secrets.yaml`에 대한 대안
 
-- [Using a keyring that is managed by your OS to store secrets](/docs/tools/keyring/)
-- [Storing passwords securely in AWS](/docs/tools/credstash/)
+- [OS에서 관리하는 keyring을 사용하여 비밀정보 저장](/docs/tools/keyring/)
+- [AWS에서 안전하게 비밀정보 저장](/docs/tools/credstash/)
 

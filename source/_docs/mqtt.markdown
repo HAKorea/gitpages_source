@@ -3,9 +3,9 @@ title: "MQTT"
 description: "Details about the MQTT support of Home Assistant."
 ---
 
-MQTT (aka MQ Telemetry Transport) is a machine-to-machine or "Internet of Things" connectivity protocol on top of TCP/IP. It allows extremely lightweight publish/subscribe messaging transport.
+MQTT (일명 MQ Telemetry Transport)  TCP/IP 외에 머신to머신 또는 "Internet of Things" 연결 프로토콜입니다.  초경량 publish/subscribe 메시징 전송을 쓸 수 있게 해줍니다.
 
-To integrate MQTT into Home Assistant, add the following section to your `configuration.yaml` file:
+MQTT를 홈어시스턴트에 연동하려면 `configuration.yaml` 파일에 다음 섹션을 추가 하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -13,9 +13,9 @@ mqtt:
   broker: IP_ADDRESS
 ```
 
-For detailed setup instructions, please refer to the [MQTT broker](/docs/mqtt/broker) documentation.
+자세한 설정 지시 사항은, [MQTT broker](/docs/mqtt/broker) 문서를 참조하십시오.
 
-## Additional features
+## 추가 기능
 
 - [Certificate](/docs/mqtt/certificate/)
 - [Discovery](/docs/mqtt/discovery/)
@@ -25,4 +25,4 @@ For detailed setup instructions, please refer to the [MQTT broker](/docs/mqtt/br
 - [Logging](/docs/mqtt/logging/)
 - [Processing JSON](/docs/mqtt/processing_json/)
 
-See the [MQTT example component](/cookbook/python_component_mqtt_basic/) how to integrate your own component.
+[MQTT example component](/cookbook/python_component_mqtt_basic/)를 참조하여 자신의 component를 어떻게 연동하는지 확인하십시오. 

@@ -1,12 +1,12 @@
 ---
-title: "MQTT Discovery"
+title: "MQTT Discovery (장치 찾기)"
 description: "Instructions on how to setup MQTT Discovery within Home Assistant."
 logo: mqtt.png
 ---
 
-The discovery of MQTT devices will enable one to use MQTT devices with only minimal configuration effort on the side of Home Assistant. The configuration is done on the device itself and the topic used by the device. Similar to the [HTTP binary sensor](/integrations/http/#binary-sensor) and the [HTTP sensor](/integrations/http/#sensor). To prevent multiple identical entries if a device reconnects a unique identifier is necessary. Two parts are required on the device side: The configuration topic which contains the necessary device type and unique identifier and the remaining device configuration without the device type.
+MQTT 장치를 발견하면 Home Assistant 측에서 최소한의 설정으로 MQTT 장치를 사용할 수 있습니다.  설정은 장치 자체와 장치가 사용하는 topic에서 수행됩니다. [HTTP binary sensor](/integrations/http/#binary-sensor) 와 [HTTP sensor](/integrations/http/#sensor)가 비슷합니다. 장치가 다시 연결되는 경우 여러 개의 동일한 항목에 연결되는 것을 방지하려면, 고유 한 식별자가 필요합니다. 장치 측에는 두 부분이 필요합니다. : 필요한 장치 유형 및 고유 식별자가 포함 된 설정 topic 및 장치 유형이 없는 장치 설정. **의역 필요**
 
-Supported by MQTT discovery:
+MQTT discovery 지원 장치 :
 
 - [Alarm control panels](/integrations/alarm_control_panel.mqtt/)
 - [Binary sensors](/integrations/binary_sensor.mqtt/)
@@ -20,7 +20,7 @@ Supported by MQTT discovery:
 - [Switches](/integrations/switch.mqtt/)
 - [Vacuums](/integrations/vacuum.mqtt/)
 
-To enable MQTT discovery, add the following to your `configuration.yaml` file:
+MQTT dicovery를 사용하려면, `configuration.yaml` 파일에 다음을 추가 하십시오. :
 
 ```yaml
 # Example configuration.yaml entry
@@ -31,12 +31,12 @@ mqtt:
 
 {% configuration %}
 discovery:
-  description: If the MQTT discovery should be enabled or not.
+  description: MQTT 감지가 사용 가능한지 여부입니다.
   required: false
   default: false
   type: boolean
 discovery_prefix:
-  description: The prefix for the discovery topic.
+  description: discovery topic을 위한 prefix.
   required: false
   default: homeassistant
   type: string
@@ -44,40 +44,40 @@ discovery_prefix:
 
 <div class='note'>
 
-The [embedded MQTT broker](/docs/mqtt/broker#embedded-broker) does not save any messages between restarts. If you use the embedded MQTT broker you have to send the MQTT discovery messages after every Home Assistant restart for the devices to show up.
+[embedded MQTT broker](/docs/mqtt/broker#embedded-broker) 재시작 시에 어떤 메시지들도 저장하지 않습니다. 임베드 된 MQTT 브로커를 사용하는 경우 디바이스가 표시되도록 모든 홈어시스턴트가 재시작 된 후 MQTT 감지 메시지를 보내야합니다.
 
 </div>
 
-The discovery topic need to follow a specific format:
+discovery topic은 특정 형식을 따라야합니다. :
 
 ```text
 <discovery_prefix>/<component>/[<node_id>/]<object_id>/config
 ```
 
-- `<component>`: One of the supported MQTT components, eg. `binary_sensor`.
-- `<node_id>` (*Optional*):  ID of the node providing the topic, this is not used by Home Assistant but may be used to structure the MQTT topic.
-- `<object_id>`: The ID of the device. This is only to allow for separate topics for each device and is not used for the `entity_id`.
+- `<component>`: 지원되는 MQTT 구성 요소 중 하나입니다. (예 `binary_sensor`).
+- `<node_id>` (*선택사항*):  topic를 제공하는 노드의 ID이며, 이는 홈어시스턴트에서 사용되지 않지만 MQTT topic를 설정하는 데 사용될 수 있습니다.
+- `<object_id>`: 장치의 ID입니다. 이것은 각 장치에 대해 별도의 topic을 허용하기위한 것이며 `entity_id`에는 사용될 수 없습니다.
 
-The payload must be a JSON dictionary and will be checked like an entry in your `configuration.yaml` file if a new device is added. This means that missing variables will be filled with the platform's default values. All configuration variables which are *required* must be present in the initial payload send to `/config`.
+페이로드는 JSON dictionay이어야하며 새 장치가 추가되면 `configuration.yaml`에서 특정 항목처럼 체크됩니다. 이는 누락된 변수가 플랫폼의 기본값으로 채워짐을 의미합니다. *요구된* 모든 설정 변수들은 초기 payload에 나타나야하며, `/config`로 보냅니다. 
 
-If the integration is `alarm_control_panel`, `binary_sensor`, or `sensor` and the mandatory `state_topic` is not present in the payload, `state_topic` will be automatically set to:
+연동시 payload에 `alarm_control_panel`, `binary_sensor`, 혹은 `sensor` 등 필수적인 `state_topic`이 없는 경우, `state_topic`은 자동으로 다음과 같이 설정됩니다. :
 
 ```text
 <discovery_prefix>/<component>/[<node_id>/]<object_id>/state
 ```
 
-The automatic setting of `state_topic` is deprecated and may be removed in a future version of Home Assistant.
+자동 설정 `state_topic` 은 더 이상 사용되지 않으며 이후 버전의 홈어시스턴트에서 제거 될 수 있습니다.
 
-An empty payload will cause a previously discovered device to be deleted.
+비어있는 payload는 이전에 검색된 장치를 삭제합니다.
 
-The `<node_id>` level can be used by clients to only subscribe to their own (command) topics by using one wildcard topic like `<discovery_prefix>/+/<node_id>/+/set`.
+`<discovery_prefix>/+/<node_id>/+/set`와 같은 하나의 wildcard topic을 사용함으로서 클라이언트 자체 (명령) topic을 subscribe 하기위해 클라이언트에서 `<node_id>` 레벨을 사용할 수 있습니다.   
 
-A base topic `~` may be defined in the payload to conserve memory when the same topic base is used multiple times.
-In the value of configuration variables ending with `_topic`, `~` will be replaced with the base topic, if the `~` occurs at the beginning or end of the value.
+동일한 topic이 여러 번 사용될 때 메모리를 보존하기 위해 페이로드에 기본topic `~`로 정의할 수 있습니다. 
+만일 `~`가 값의 시작 혹은 끝에서 나타날 경우, `_topic`으로 끝나는 설정 변수 값에서, `~`는 기본topic으로 교체됩니다.  
 
-Configuration variable names in the discovery payload may be abbreviated to conserve memory when sending a discovery message from memory constrained devices.
+디스커버리 페이로드의 설정 변수 이름은 메모리가 제한된 장치에서 디스커버리 메시지를 보낼 때 메모리를 절약하기 위해 줄여서 쓸 수 있습니다.
 
-Supported abbreviations:
+지원되는 약어(줄임말):
 ```txt
     'aux_cmd_t':           'aux_command_topic',
     'aux_stat_tpl':        'aux_state_template',
@@ -212,7 +212,7 @@ Supported abbreviations:
     'xy_val_tpl':          'xy_value_template',
 ```
 
-Supported abbreviations for device registry configuration:
+장치 레지스트리 설정에 지원되는 줄임말(약어):
 ```txt
     'cns':                 'connections',
     'ids':                 'identifiers',
@@ -222,9 +222,9 @@ Supported abbreviations for device registry configuration:
     'sw':                  'sw_version',
 ```
 
-### Support by third-party tools
+### 지원되는 다른 것들 (Support by third-party tools)
 
-The following software has built-in support for MQTT discovery:
+다음 소프트웨어는 MQTT Discovery을 기본적으로 지원합니다.:
 
 - [Sonoff-Tasmota](https://github.com/arendst/Sonoff-Tasmota) (starting with 5.11.1e)
 - [ESPHome](https://esphome.io)
@@ -235,36 +235,36 @@ The following software has built-in support for MQTT discovery:
 - [Zwave2Mqtt](https://github.com/OpenZWave/Zwave2Mqtt) (starting with 2.0.1)
 - [IOTLink](https://iotlink.gitlab.io) (starting with 2.0.0)
 
-### Examples
+### 사례 
 
-#### Motion detection (binary sensor)
+#### Motion 감지 (binary sensor)
 
-A motion detection device which can be represented by a [binary sensor](/integrations/binary_sensor.mqtt/) for your garden would send its configuration as JSON payload to the Configuration topic. After the first message to `config`, then the MQTT messages sent to the state topic will update the state in Home Assistant.
+정원에서 binary 센서로 나타낼 수 있는 Motion 감지 장치는 설정값을 JSON 페이로드로 topic설정에 보냅니다. `config`에 대한 첫번째 message 이후, state topic으로 전송된 MQTT 메시지는 홈어시스턴트에서 상태를 업데이트합니다. 
 
 - Configuration topic: `homeassistant/binary_sensor/garden/config`
 - State topic: `homeassistant/binary_sensor/garden/state`
 - Payload:  `{"name": "garden", "device_class": "motion", "state_topic": "homeassistant/binary_sensor/garden/state"}`
 
-To create a new sensor manually. For more details please refer to the [MQTT testing section](/docs/mqtt/testing/).
+새 센서를 수동으로 작성합니다. 자세한 내용은 [MQTT testing section](/docs/mqtt/testing/)을 참조하십시오 
 
 ```bash
 $ mosquitto_pub -h 127.0.0.1 -p 1883 -t "homeassistant/binary_sensor/garden/config" -m '{"name": "garden", "device_class": "motion", "state_topic": "homeassistant/binary_sensor/garden/state"}'
 ```
-Update the state.
+상태를 업데이트.
 
 ```bash
 $ mosquitto_pub -h 127.0.0.1 -p 1883 -t "homeassistant/binary_sensor/garden/state" -m ON
 ```
 
-Delete the sensor by sending an empty message.
+빈 메시지를 보내 센서를 삭제.
 
  ```bash
 $ mosquitto_pub -h 127.0.0.1 -p 1883 -t "homeassistant/binary_sensor/garden/config" -m ''
 ```
 
-#### Sensors with multiple values
+#### 여러 값을 가진 센서
 
-Setting up a sensor with multiple measurement values requires multiple consecutive configuration topic submissions.
+여러 측정 값으로 센서를 설정하려면 여러 개의 연속설정 topic값의 제출이 필요합니다
 
 - Configuration topic no1: `homeassistant/sensor/sensorBedroomT/config`
 - Configuration payload no1: `{"device_class": "temperature", "name": "Temperature", "state_topic": "homeassistant/sensor/sensorBedroom/state", "unit_of_measurement": "°C", "value_template": "{% raw %}{{ value_json.temperature}}{% endraw %}" }`
@@ -272,9 +272,9 @@ Setting up a sensor with multiple measurement values requires multiple consecuti
 - Configuration payload no2: `{"device_class": "humidity", "name": "Humidity", "state_topic": "homeassistant/sensor/sensorBedroom/state", "unit_of_measurement": "%", "value_template": "{% raw %}{{ value_json.humidity}}{% endraw %}" }`
 - Common state payload: `{ "temperature": 23.20, "humidity": 43.70 }`
 
-#### Switches
+#### 스위치 (Switches)
 
-Setting up a switch is similar but requires a `command_topic` as mentioned in the [MQTT switch documentation](/integrations/switch.mqtt/).
+스위치 설정은 비슷하지만 [MQTT switch documentation](/integrations/switch.mqtt/)에 언급 된대로 `command_topic`이 필요합니다. 
 
 - Configuration topic: `homeassistant/switch/irrigation/config`
 - State topic: `homeassistant/switch/irrigation/state`
@@ -285,24 +285,24 @@ Setting up a switch is similar but requires a `command_topic` as mentioned in th
 $ mosquitto_pub -h 127.0.0.1 -p 1883 -t "homeassistant/switch/irrigation/config" \
   -m '{"name": "garden", "command_topic": "homeassistant/switch/irrigation/set", "state_topic": "homeassistant/switch/irrigation/state"}'
 ```
-Set the state.
+상태를 설정하십시오.
 
 ```bash
 $ mosquitto_pub -h 127.0.0.1 -p 1883 -t "homeassistant/switch/irrigation/set" -m ON
 ```
 
-#### Abbreviating topic names
+#### topic 이름 줄임말(약어)
 
-Setting up a switch using topic prefix and abbreviated configuration variable names to reduce payload length.
+페이로드 길이를 줄이기 위해 topic prefix 및 축약된 설정 변수 이름을 사용하여 스위치 설정.
 
 - Configuration topic: `homeassistant/switch/irrigation/config`
 - Command topic: `homeassistant/switch/irrigation/set`
 - State topic: `homeassistant/switch/irrigation/state`
 - Configuration payload: `{"~": "homeassistant/switch/irrigation", "name": "garden", "cmd_t": "~/set", "stat_t": "~/state"}`
 
-#### Lighting
+#### 조명 (Lighting)
 
-Setting up a [light that takes JSON payloads](/integrations/light.mqtt/#json-schema), with abbreviated configuration variable names:
+축약된 설정 변수 이름으로 [light that takes JSON payloads](/integrations/light.mqtt/#json-schema) 설정 :
 
 - Configuration topic: `homeassistant/light/kitchen/config`
 - Command topic: `homeassistant/light/kitchen/set`
@@ -322,9 +322,9 @@ Setting up a [light that takes JSON payloads](/integrations/light.mqtt/#json-sch
   }
   ```
 
-#### Climate control
+#### 냉난방기 컨트롤 (Climate control)
 
-Setting up a climate integration (heat only):
+냉난방기 연동 설정 (heat only):
 
 - Configuration topic: `homeassistant/climate/livingroom/config`
 - Configuration payload:

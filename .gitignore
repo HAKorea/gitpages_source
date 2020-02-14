@@ -9,6 +9,7 @@ public
 source/_stash
 source/stylesheets/screen.css
 source/.jekyll-cache
+source/modified*
 vendor
 node_modules
 source/.jekyll-metadata
@@ -21,4 +22,3 @@ source/.jekyll-metadata
 *.suo
 tags*
 Gemfile.lock
-make.sh

@@ -4,16 +4,16 @@ description: "Details what the updater integration is reporting about your Home 
 redirect_from: /details/updater/
 ---
 
-Starting with 0.31 the [updater component](/integrations/updater/) sends an optional report about Home Assistant instance.
+0.31부터 [updater component](/integrations/updater/)는 Home Assistant 인스턴스에 대한 선택적 보고서를 보냅니다.
 
-If you want to opt-in to include integration information, add `include_used_components` to your config. This will allow the Home Assistant developers to focus development efforts on the most popular components.
+통합 정보를 포함하도록 [opt-in](https://ko.wikipedia.org/wiki/%EC%98%B5%ED%8A%B8%EC%9D%B8)한다면, `include_used_components`를 설정에 추가 하십시오. 이를 통해 홈 어시스턴트 개발자는 가장 인기있는 구성 요소에 대한 개발 노력에 집중할 수 있습니다.
 
 ```yaml
 updater:
   include_used_components: true
 ```
 
-We are only collecting this information to better understand our user base to provide better long term support and feature development.
+더 나은 장기간의 지원 및 기능 개발을 제공하기 위해 사용자기반 정보를 보다 잘 이해하기 위한 정보 만 수집합니다.
 
 | Name                  | Description                                | Example                            | Data Source    |
 |-----------------------|--------------------------------------------|------------------------------------|----------------|
@@ -41,13 +41,13 @@ We are only collecting this information to better understand our user base to pr
 | `version`             | Home Assistant version                     | `0.31.0`                           | Local Instance |
 | `virtualenv`          | True if running inside virtualenv          | `true`                             | Local Instance |
 
-In addition to the above collected data, the server will also use your IP address to do a geographic IP address lookup to determine a general geographic area that your address is located in. To be extremely, extremely clear about this bit: __The Home Assistant updater does not: store your IP address in a database and also does not submit the location information from your `configuration.yaml`.__
+위에서 수집 한 데이터 외에도 서버는 IP 주소를 사용하여 지리적 IP 주소 조회를 수행하여 주소가있는 일반적인 위치를 결정합니다. : __홈 어시스턴트 업데이터가 하지 않는 것: P 주소를 데이터베이스에 저장하고에서 위치 정보를 제출하지도 않습니다 `configuration.yaml`.__
 
-Our tests showed that at best, we get 4 digits of accuracy on your IP address location which is a 5 mile radius of your actual IP location, assuming that it is even correct in the first place (geo IP lookups are very hit or miss).
+테스트 결과에 따르면 처음부터 정확하다고 가정하면 (지리적 IP 조회가 매우 적거나 누락 된 경우), IP 주소 위치에서 실제 IP 위치의 반경 5 마일 인 4 자리의 정확도가 나옵니다. 
 
-The server also adds two timestamps to the data:
+서버는 또한 데이터에 두 개의 타임 스탬프를 추가합니다. :
 
-- the original date your instance UUID was first seen
-- the timestamp of the last time we have seen your instance
+- 인스턴스 UUID를 처음 본 날짜
+- 마지막으로 본 인스턴스의 타임 스탬프
 
-We will never publicly expose individual gathered data. We might however publish aggregated stats about our user base (example: 70% of all users use Linux). We will never sell or allow the use of this information for non-Home Assistant development purposes.
+우리는 수집 된 개인 데이터를 공개적으로 공개하지 않습니다. 그러나 사용자 기반에 대한 집계 통계를 게시 할 수 있습니다 (예 : 모든 사용자의 70 %가 Linux를 사용함). 우리는 홈어시스턴트 개발 이외의 목적으로 이 정보의 사용을 절대 판매하거나 허용하지 않습니다.

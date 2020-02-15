@@ -8,7 +8,7 @@ redirect_from: /getting-started/z-wave-devices/
 
 **디바이스**는 하드웨어를 뜻합니다. 또한 노드나 노드가 가진 모든 엔티티들을 언급하기도 합니다. 디바이스에는 3가지 종류가 존재합니다:
 
-* [콘트롤러](/docs/z-wave/controllers) - 모든 지웨이브 네트워크는 하나 또는 두개의 컨트롤러(a primary and a secondary)가 필요합니다.
+* [콘트롤러](/docs/z-wave/controllers) - 모든 지웨이브 네트워크는 하나 또는 두개의 콘트롤러(a primary and a secondary)가 필요합니다.
 * 센서 - 주위 환경에 대해 정보를 알려주는 기기입니다. 누수 센서나 모션 센서, 온도 센서 등이 이에 해당합니다.
 * 액터와 액츄에이터 - 제어를 담당하는 기기입니다. 예를 들어 라이트 스위치, 디머, 온도조절기가 이에 해당합니다. 이들 중 상당수는 센서의 역할도 같이 갖고 있습니다.
 
@@ -59,6 +59,11 @@ Hail 또는 그와 비슷한 Controlled Command Class를 다루는 기기 리스
 예를 들어, `polling_interval=60000`(기본값)으로 설정하고 10개의 기기가 있다고 가정할 때, 각각의 폴링 응답(request/response)에 1초가 걸린다면 폴링이 끝나기까지 10초가 걸릴 것입니다. 그럼 50초가 남게 되는데 이것은 일반적인 지웨이브 정보를 주고 받는 시간이 됩니다. 많은 장치를 더 짧은 인터벌로 폴링하면 정보를 주고받는 대역폭이 더욱 줄어들게 됩니다.
 
 폴링은 기기마다 설정할 수 있고 기기의 *polling intensity*로 작성합니다. 자세한 내용은 [노드 관리](/docs/z-wave/control-panel#z-wave-node-management) 문서를 참고하세요.
+
+<div class='note'>
+
+자세한 폴링 설정은 [HA네이버카페 하얀가지님 글](https://cafe.naver.com/koreassistant/665)을 참고하세요
+</div>
 
 ## Central Scene support
 

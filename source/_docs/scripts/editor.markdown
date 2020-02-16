@@ -12,7 +12,6 @@ Home Assistant 0.52에서 첫 번째 버전의 스크립트 편집기를 소개�
 
 ## 편집기를 사용하도록 설정 업데이트
 
-The script editor reads and writes to the file `scripts.yaml` in your [configuration](/docs/configuration/) folder. Make sure that you have set up the script integration to read from it:
 스크립트 편집기를 읽고 쓰도록 scripts.yaml는 [configuration](/docs/configuration/)폴더에 있습니다. 스크립트 통합구성요소를 읽고 설정해 보십시오.
 
 ```yaml

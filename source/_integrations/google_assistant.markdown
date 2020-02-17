@@ -48,7 +48,7 @@ ha_codeowners:
 
     3. Authorization URL은 `https://[YOUR HOME ASSISTANT URL:PORT]/auth/authorize` 와 같이 입력합니다. 본인의 홈어시스턴트 URL을 적용해서 입력합니다.
     4. Token URL은 `https://[YOUR HOME ASSISTANT URL:PORT]/auth/token`와 같은 형식으로 입력고 `Next` 버튼을 누릅니다.
-    5. 스코프 설정에서 `email`을 입력하고 `Add scope`를 눌러 추가된 입력란에 `name`이라고 씁니다. and click `Add scope` again.<img src='/images/integrations/google_assistant/gha05.png' alt='Screenshot: Add Scope'><br><br>
+    5. 스코프 설정에서 `email`을 입력하고 `Add scope`를 눌러 추가된 입력란에 `name`이라고 씁니다. <img src='/images/integrations/google_assistant/gha05.png' alt='Screenshot: Add Scope'><br><br>
 
     6. `Google to transmit clientID and secret via HTTP basic auth header`를 **절대로** 체크하지 마시고 `Next` 버튼을 누릅니다.
 
@@ -86,7 +86,7 @@ Enable Web & App Activity 팝업 화면이 나오면 Visit Activity Controls을 
 
     6. CREATE KEY 버튼을 누르고 키 타입을 JSON으로 선택합니다.<img src='/images/integrations/google_assistant/gha14.png' alt='Screenshot: Sevice Account 설정 5'><br><br>
 
-    7. CREATE 버튼을 눌러 JSON 파일을 다운로드 받습니다. 이 파일의 이름을 SERVICE_ACCOUNT.json 으로 바꾸고 홈어시스턴트의 `/config/` 폴더에 업로드 합니다.
+    7. CREATE 버튼을 눌러 JSON 파일을 다운로드 받습니다. 이 파일의 이름을 service_account.json으로 바꾸고 홈어시스턴트의 `/config/` 폴더에 업로드 합니다.
 
     8. `configuration.yaml`파일을 편집하여 아래 설정을 참고하여 `service_account` 항목에 해당 파일을 `!include`합니다.
     9. [Google API Console](https://console.cloud.google.com/apis/api/homegraph.googleapis.com/overview)로 이동합니다.
@@ -102,7 +102,7 @@ Enable Web & App Activity 팝업 화면이 나오면 Visit Activity Controls을 
 # Example configuration.yaml entry
 google_assistant:
   project_id: YOUR_PROJECT_ID
-  service_account: !include SERVICE_ACCOUNT.JSON
+  service_account: !include service_account.json
   report_state: true
   exposed_domains:
     - switch

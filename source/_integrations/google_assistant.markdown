@@ -244,7 +244,7 @@ Here are the modes that are currently available:
 
 ### Troubleshooting the request_sync service
 
-특정 기간이 지나서 동기화를 하는 경우(예를 들어 30일 이후) 구글 어시스턴트와 홈어시스턴트 간에 기기 동기화에 실패할 수 있습니다. 이것은 Actions on Google app이 테스트 모드이고 출시를 하지 않았기 때문입니다. 따라서 테스트가 종료됐다고 볼 수 있습니다. 연동한 기기는 계속 사용할 수 있지만 기기 동기화는 동작하지 않습니다. "Ok Google, sync my devices"라고 말하면 구글홈(구글 어시스턴트)은 "Unable to sync Home Assistant"(또는 프로젝트 이름)이라고 대답할 것입니다. 이것을 해결하기 위해서는 [Actions on Google console](https://console.actions.google.com/)에서 테스트 앱을 선택하고 `TEST` 메뉴 아래 `Simulator`를 클릭하여 앱을 재생성하면 됩니다. Test App을 재생성한 다음 다시 동기화를 시켜보세요. 테스트 앱을 재생성할 수 없다면  Develop 밑에 `Action` 메뉴로 돌아가서 새로 키를 발급받아야 합니다.
+특정 기간이 지나서 동기화를 하는 경우(예를 들어 30일 이후) 구글 어시스턴트와 홈어시스턴트 간에 기기 동기화가 실패할 수 있습니다. 이것은 Actions on Google app이 테스트 모드이고 출시를 하지 않았기 때문입니다. 따라서 테스트가 종료됐다고 볼 수 있습니다. 연동한 기기는 계속 사용할 수 있지만 기기 동기화는 동작하지 않습니다. "Ok Google, sync my devices"라고 말하면 구글홈(구글 어시스턴트)은 "Unable to sync Home Assistant"(또는 프로젝트 이름)이라고 대답할 것입니다. 이것을 해결하기 위해서는 [Actions on Google console](https://console.actions.google.com/)에서 테스트 앱을 선택하고 `TEST` 메뉴 아래 `Simulator`를 클릭하여 앱을 재생성하면 됩니다. Test App을 재생성한 다음 다시 동기화를 시켜보세요. 테스트 앱을 재생성할 수 없다면  Develop 밑에 `Action` 메뉴로 돌아가서 새로 키를 발급받아야 합니다.
 
 `request_sync` 서비스는 `agent_user_id`를 통해 구글과 최초 동기화가 필요합니다. 그렇지 않으면 "Request contains an invalid argument"와 같은 에러 로그가 쌓이게 됩니다. 이 경우 [unlink the account](https://support.google.com/googlenest/answer/7126338)를 참고하여 재설정해야 합니다.
 

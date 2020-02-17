@@ -3,62 +3,61 @@ title: "Scenes Editor"
 description: "Instructions on how to use the scenes editor."
 ---
 
-In Home Assistant 0.102 we introduced the first version of our scene editor. If you just created a new configuration with Home Assistant, then you're all set! Go to the UI and enjoy.
+홈어시스턴트 0.102에서는 장면 편집기의 첫 번째 버전을 소개했습니다. 방금 홈어시스턴트를 설치하셨다면 모든 설정이 완료된 것입니다! UI로 이동하여 즐기십시오.
 
-From the UI choose **Configuration** which is located in the sidebar, then click on **Scenes** to go to the scene editor. Press the **+** sign in the lower right corner to get started.
+UI 에서 사이드 바에있는 **Configuration**을 선택한 다음 **Scenes**을 클릭하여 Scenes 편집기로 이동 하십시오. 시작하려면 오른쪽 하단에 있는 **+** 기호를 누르십시오 .
 
-Choose a meaningful name for your scene.
+장면에 대한 적당한 이름을 기입하십시오.
 
 <p class='img'>
   <img src='/images/docs/scenes/editor.png' />
 </p>
 
-Select all the devices (and/or entities when in advanced mode) you want to include in your scene.
-The state of your devices will be saved, so it can be restored when you are finished creating your scene.
-Set the state of the devices to how you want them to be in your scene, this can be done by clicking on it and edit the state from the popup, or any other method that changes the state.
-On the moment you save the scene, all the states of your devices are stored in the scene.
-When you leave the editor the states of the devices are restored to the state from before you started editing.
+scene에 포함시키려는 모든 장치 (고급 모드 인 경우 and/or entity)를 선택하십시오
+장치의 상태가 저장되므로 scene 생성을 마치면 복원 할 수 있습니다.
+장치의 상태를 scene에서 원하는 방식으로 설정하십시오. 장치를 클릭하고 팝업에서 상태를 편집하거나 상태를 변경하는 다른 방법으로 수행할 수 있습니다. 
+scene을 저장하는 순간 장치의 모든 상태가 scene에 저장됩니다. 편집기를 종료하면 장치 상태가 편집을 시작하기 전의 상태로 복원됩니다.
 
-## Updating your configuration to use the editor
+## 편집기를 사용하기 위한 설정 업데이트
 
-First, check that you have activated the configuration editor.
+먼저 설정 편집기를 활성화했는지 확인하십시오.
 
 ```yaml
 # Activate the configuration editor
 config:
 ```
 
-The scene editor reads and writes to the file `scenes.yaml` in the root of your [configuration](/docs/configuration/) folder.
-Currently, both the name of this file and its location are fixed.
-Make sure that you have set up the scene integration to read from it:
+scene 편집기는 [configuration](/docs/configuration/) 폴더의 `scenes.yaml`의 루트에 있는 파일을 읽고 씁니다 . 
+현재이 파일의 이름과 위치는 모두 고정되어 있습니다. 
+scene 연동에서 읽을 수 있도록 scene 통합구성요소 설정을 했는지 확인하십시오.
 
 ```yaml
 # Configuration.yaml example
 scene: !include scenes.yaml
 ```
 
-If you still want to use your old scene section, add a label to the old entry:
+이전 장면 섹션을 계속 사용하려면 이전 항목에 다음 레이블을 추가하십시오. : 
 
 ```yaml
 scene old:
   - name: ...
 ```
 
-You can use the `scene:` and `scene old:` sections at the same time:
+`scene:` 와 `scene old:` 섹션을 동시에 사용할 수 있습니다. :
 
-- `scene old:` to keep your manual designed scenes
-- `scene:` to save the scene created by the online editor
+- `scene old:` 수동으로 설계된 scene을 유지
+- `scene:` 온라인 편집기로 생성 한 scene을 저장
 
 ```yaml
 scene: !include scenes.yaml
 scene old: !include_dir_merge_list scenes
 ```
 
-## Migrating your scenes to `scenes.yaml`
+## scene을 `scenes.yaml`로 마이그레이션
 
-If you want to migrate your old scenes to use the editor, you'll have to copy them to `scenes.yaml`. Make sure that `scenes.yaml` remains a list! For each scene that you copy over, you'll have to add an `id`. This can be any string as long as it's unique.
+편집기를 사용하기 위해 이전 scene을 마이그레이션하려면 해당 scene을 `scenes.yaml`에 복사해야합니다. `scenes.yaml`이 목록으로 남아 있는지 확인하십시오. 복사 한 각 scene마다 `id`를 추가해야합니다.  고유한 문자열이어야 합니다.
 
-For example:
+예사 :
 
 ```yaml
 # Example scenes.yaml entry
@@ -73,5 +72,5 @@ For example:
 ```
 
 <div class='note'>
-Any comments in the YAML file will be lost and templates will be reformatted when you update a scene via the editor.
+편집기를 통해 scene을 업데이트하면 YAML 파일의 모든 주석이 손실되고 템플릿이 다시 포맷됩니다.
 </div>

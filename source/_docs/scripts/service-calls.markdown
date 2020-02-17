@@ -4,28 +4,28 @@ description: "Instructions on how to call services in Home Assistant."
 redirect_from: /getting-started/scripts-service-calls/
 ---
 
-Various integrations allow calling services when a certain event occurs. The most common one is calling a service when an automation trigger happens. But a service can also be called from a script or via the Amazon Echo.
+특정 이벤트가 발생할 때 다양한 통합구성요소를 통해 서비스 호출이 가능합니다. 가장 일반적인 것은 자동화 트리거가 발생할 때 서비스를 호출하는 것입니다. 그러나 스크립트 또는 Amazon Echo를 통해 서비스를 호출 할 수도 있습니다.
 
-The configuration options to call a config are the same between all integrations and are described on this page.
+config를 호출하는 설정 옵션은 모든 통합구성요소 간에 동일하며 이 페이지에 설명되어 있습니다.
 
-Examples on this page will be given as part of an automation integration configuration but different approaches can be used for other integrations too.
+이 페이지의 예는 자동화 연동 설정의 일부로 제공되지만 다른 연동에도 다른 접근 방식을 사용할 수 있습니다. 
 
 <div class='note'>
-Use the "Services" tab under Developer Tools to discover available services.
+사용 가능한 서비스를 찾으려면 개발자 도구 아래의 "서비스"탭을 사용하십시오.
 </div>
 
-### The basics
+### 기본 (The basics)
 
-Call the service `homeassistant.turn_on` on the entity `group.living_room`. This will turn all members of `group.living_room` on. You can also use `entity_id: all` and it will turn on all possible entities.
+`group.living_room` entity에서 `homeassistant.turn_on` 서비스를 호출하십시오. 모든 `group.living_room` 이 켜집니다. `entity_id: all`를 사용할 수 있으며 이 또한 모든 해당 entity를 켭니다.
 
 ```yaml
 service: homeassistant.turn_on
 entity_id: group.living_room
 ```
 
-### Passing data to the service call
+### 서비스 요청에 데이터 전달
 
-You can also specify other parameters beside the entity to target. For example, the light turn on service allows specifying the brightness.
+대상으로 지정할 엔티티 옆에 다른 매개 변수를 지정할 수도 있습니다. 예를 들어, 라이트 켜기 서비스를 통해 밝기를 지정할 수 있습니다.
 
 ```yaml
 service: light.turn_on
@@ -35,11 +35,11 @@ data:
   rgb_color: [255, 0, 0]
 ```
 
-A full list of the parameters for a service can be found on the documentation page of each component, in the same way as it's done for the `light.turn_on` [service](/integrations/light/#service-lightturn_on).
+서비스에 대한 전체 매개 변수 목록은 각 구성 요소(component)의 설명서 페이지에서 찾을 수 있습니다, 동일한 방식으로  `light.turn_on` [service](/integrations/light/#service-lightturn_on)로 같은 방법을 쓸 수 있습니다. 
 
-### Use templates to decide which service to call
+### 템플릿을 사용한 서비스 호출 방법
 
-You can use [templating] support to dynamically choose which service to call. For example, you can call a certain service based on if a light is on.
+[templating] 지원을 사용 하여 호출 할 서비스를 동적으로 선택할 수 있습니다 . 예를 들어 표시등이 켜져 있는지에 따라 특정 서비스를 호출 할 수 있습니다.
 
 ```yaml
 service_template: >
@@ -51,19 +51,18 @@ service_template: >
 entity_id: switch.ac
 ```
 
-### Using the Services Developer Tool
+### 서비스 개발자 도구 사용
 
-You can use the Services Developer Tool to test data to pass in a service call.
-For example, you may test turning on or off a 'group' (See [groups] for more info)
+서비스 개발자 도구를 사용하여 서비스 요청에 전달할 데이터를 테스트 할 수 있습니다. 예를 들어 'group'을 켜거나 끄는 테스트를 할 수 있습니다 (자세한 내용은 [group] 참조).
 
-To turn a group on or off, pass the following info:
+그룹을 켜거나 끄려면 다음 정보를 전달하십시오.:
 - Domain: `homeassistant`
 - Service: `turn_on`
 - Service Data: `{ "entity_id": "group.kitchen" }`
 
-### Use templates to determine the attributes
+### 템플릿을 사용하여 속성 결정
 
-Templates can also be used for the data that you pass to the service call.
+서비스 호출에 전달하는 데이터에 템플릿을 사용할 수도 있습니다.
 
 ```yaml
 service: thermostat.set_temperature
@@ -77,7 +76,7 @@ data_template:
   temperature: {% raw %}{{ 22 - distance(states.device_tracker.paulus) }}{% endraw %}
 ```
 
-It is even possible to use `data` and `data_template` concurrently but be aware that `data_template` will overwrite attributes that are provided in both.
+`data` 와 `data_template`를 동시에 사용할 수도 있지만 `data_template`가 두 가지 모두에 제공되는 속성을 덮어 쓰게됩니다.
 
 ```yaml
 service: thermostat.set_temperature
@@ -87,16 +86,16 @@ data_template:
   temperature: {% raw %}{{ 22 - distance(states.device_tracker.paulus) }}{% endraw %}
 ```
 
-### `homeassistant` services
+### 홈어시스턴트 서비스 (`homeassistant`)
 
-There are four `homeassistant` services that aren't tied to any single domain, these are:
+단일 도메인에 연결되지 않은 `homeassistant`의 4 가지 서비스는 다음과 같습니다.:
 
-* `homeassistant.turn_on` - Turns on an entity (that supports being turned on), for example an `automation`, `switch`, etc
-* `homeassistant.turn_off` - Turns off an entity (that supports being turned off), for example an `automation`, `switch`, etc
-* `homeassistant.toggle` - Turns off an entity that is on, or turns on an entity that is off (that supports being turned on and off)
-* `homeassistant.update_entity` - Request the update of an entity, rather than waiting for the next scheduled update, for example [google travel time] sensor, a [template sensor], or a [light]
+* `homeassistant.turn_on` - entity를 켜라 (켜기를 지원할 경우) 예: `automation`, `switch`, etc
+* `homeassistant.turn_off` - - entity를 꺼라 (끄기를 지원할 경우) 예: `automation`, `switch`, etc
+* `homeassistant.toggle` - 켜져있는 entity를 끄거나 꺼진 entity를 켜거나 끕니다. (ON/OFF 지원)
+* `homeassistant.update_entity` - [google travel time] 센서, a [template 센서], 혹은 [light]와 같이 다음 예약 업데이트를 기다리지 않고 entity 업데이트를 바로 요청합니다. 
 
-Complete service details and examples can be found on the [Home Assistant integration][homeassistant-integration-services] page.
+전체 서비스 세부 사항 및 예는 [homeassistant-integration-services] 에서 찾을 수 있습니다.
 
 [templating]: /topics/templating/
 [google travel time]: /integrations/google_travel_time/

@@ -1,16 +1,16 @@
 ---
-title: "Conditions"
+title: "Conditions(조건)"
 description: "Documentation about all available conditions."
 redirect_from: /getting-started/scripts-conditions/
 ---
 
-Conditions can be used within a script or automation to prevent further execution. When a condition does not return true, the script or automation stops executing. A condition will look at the system at that moment. For example, a condition can test if a switch is currently turned on or off.
+스크립트 또는 자동화 내에서 조건을 사용하여 추가 실행을 방지 할 수 있습니다. 조건이 true를 반환하지 않으면 스크립트 또는 자동화가 실행을 중지합니다. 조건은 그 순간에 시스템을 살펴볼 것입니다. 예를 들어, 스위치가 현재 켜져 있는지 여부를 테스트 할 수 있습니다. 
 
-Unlike a trigger, which is always `or`, conditions are `and` by default - all conditions have to be true.
+트리거는 항상 `or`를 기준으로 동작하는 것과 달리, 조건은 `and`가 기본입니다. - 기본적으로 모든 조건이 충족되어야합니다.
 
-### AND condition
+### AND condition(조건)
 
-Test multiple conditions in one condition statement. Passes if all embedded conditions are valid.
+하나의 조건문에서 여러 조건을 테스트하십시오. 모든 해당 조건이 유효한 경우 전달합니다.
 
 ```yaml
 condition:
@@ -24,9 +24,9 @@ condition:
       below: 20
 ```
 
-If you do not want to combine AND and OR conditions, you can list them sequentially.
+AND 및 OR 조건을 결합하지 않으려는 경우 순차적으로 나열 할 수 있습니다.
 
-The following configuration works the same as the one listed above:
+다음 구성은 위에 나열된 설정과 동일하게 작동합니다. :
 
 ```yaml
 condition:
@@ -38,11 +38,11 @@ condition:
     below: 20
 ```
 
-Currently you need to format your conditions like this to be able to edit them using the [automations editor](/docs/automation/editor/).
+현재 [automations editor](/docs/automation/editor/)를 사용하여 조건을 편집 할 수 있도록 조건을 형식화해야합니다.
 
-### OR condition
+### OR condition(조건)
 
-Test multiple conditions in one condition statement. Passes if any embedded condition is valid.
+하나의 조건문에서 여러 조건을 테스트하십시오. 해당 조건이 유효한 경우 전달합니다.
 
 ```yaml
 condition:
@@ -56,10 +56,9 @@ condition:
       below: 20
 ```
 
-### MIXED AND and OR conditions
+### AND 와 OR의 혼합 conditions(조건)
 
-Test multiple AND and OR conditions in one condition statement. Passes if any embedded condition is valid.
-This allows you to mix several AND and OR conditions together.
+하나의 조건문에서 여러 AND 및 OR 조건을 테스트하십시오. 포함 해당 조건이 유효한 경우 전달합니다. 이를 통해 여러 AND 및 OR 조건을 혼합 할 수 있습니다.
 
 ```yaml
 condition:
@@ -78,13 +77,14 @@ condition:
           below: 20
 ```
 
-### Numeric state condition
+### 숫자 상태 조건 (Numeric state condition) 
 
-This type of condition attempts to parse the state of the specified entity as a number, and triggers if the value matches the thresholds.
+이 유형의 조건은 지정된 entity의 상태를 숫자로 구문 분석하려고 시도하고 값이 임계값과 일치하는 경우 트리거합니다.
 
-If both `below` and `above` are specified, both tests have to pass.
+`below` 와 `above`의 두 경우는 해당 두 테스트를 통과해야합니다.
 
 You can optionally use a `value_template` to process the value of the state before testing it.
+선택적으로 a `value_template`를 사용하여 테스트하기 전에 상태 값을 처리 할 수 있습니다.
 
 ```yaml
 condition:
@@ -96,9 +96,9 @@ condition:
   value_template: {% raw %}'{{ float(state.state) + 2 }}'{% endraw %}
 ```
 
-### State condition
+### 상태 조건 (State condition) 
 
-Tests if an entity is a specified state.
+entity가 지정된 상태인지 테스트합니다..
 
 ```yaml
 condition:
@@ -112,11 +112,11 @@ condition:
     seconds: 5
 ```
 
-### Sun condition
+### 태양 조건 (Sun condition)
 
-#### Sun state condition
+#### 태양 상태 조건 (Sun state condition)
 
-The sun state can be used to test if the sun has set or risen.
+태양 상태는 태양이 졌거나 상승했는지 테스트하는 데 사용할 수 있습니다.
 
 ```yaml
 condition:
@@ -132,10 +132,9 @@ condition:
   state: 'below_horizon'
 ```
 
-#### Sun elevation condition
+#### 태양 고도 조건 (Sun elevation condition)
 
-The sun elevation can be used to test if the sun has set or risen, it is dusk, it is night, etc. when a trigger occurs.
-For an in-depth explanation of sun elevation, see [sun elevation trigger][sun_elevation_trigger].
+트리거가 발생했을 때 해가 높아지거나 해가 지는지, 밤이되는지, 밤인지 등을 테스트하는 데 태양 고도를 사용할 수 있습니다. 태양 고도에 대한 자세한 설명은 [sun elevation trigger][sun_elevation_trigger]를 참조하십시오.
 
 [sun_elevation_trigger]: /docs/automation/trigger/#sun-elevation-trigger
 
@@ -155,16 +154,16 @@ condition:
   value_template: {% raw %}'{{ state_attr("sun.sun", "elevation") < -6 }}'{% endraw %}
 ```
 
-#### Sunset/sunrise condition
+#### 일몰/일출 조건 (Sunset/sunrise condition)
 
-The sun condition can also test if the sun has already set or risen when a trigger occurs. The `before` and `after` keys can only be set to `sunset` or `sunrise`. They have a corresponding optional offset value (`before_offset`, `after_offset`) that can be added, similar to the [sun trigger][sun_trigger].
+또한 태양 상태는 트리거가 발생할 때 태양이 이미 졌거나 떴는지 테스트 할 수 있습니다. `before`와 `after` key들은 `sunset` 혹은 `sunrise`만 설정할 수 있습니다. [sun trigger][sun_trigger]와 유사하게 이 키들은 (`before_offset`, `after_offset`)라는 선택적인 오프셋값을 갖습니다. 
 
 [sun_trigger]: /docs/automation/trigger/#sun-trigger
 
 <div class='note warning'>
-The sunset/sunrise conditions do not work in locations inside the polar circles, and also not in locations with a highly skewed local time zone.
+일몰 / 일출 조건은 극지방 내의 위치에서는 작동하지 않으며 현지 시간대가 치우친 곳에서는 작동하지 않습니다.
 
-In those cases it is advised to use conditions evaluating the solar elevation instead of the before/after sunset/sunrise conditions.
+이러한 경우, 전/후, 일몰/일출 조건 대신 태양 고도를 측정하는 조건을 사용하는 것이 좋습니다.
 </div>
 
 ```yaml
@@ -195,13 +194,13 @@ condition:
       after: sunrise
 ```
 
-A visual timeline is provided below showing an example of when these conditions are true. In this chart, sunrise is at 6:00, and sunset is at 18:00 (6:00 PM). The green areas of the chart indicate when the specified conditions are true.
+이러한 조건이 참인 경우의 예를 보여주는 시각적 타임 라인이 아래에 제공됩니다. 이 차트에서 일출 시간은 6:00이며 일몰 시간은 18:00 (6:00 PM)입니다. 차트의 녹색 영역은 지정된 조건이 참일 때를 나타냅니다.
 
 <img src='/images/docs/scripts/sun-conditions.svg' alt='Graphic showing an example of sun conditions' />
 
-### Template condition
+### 템플릿 조건 (Template condition)
 
-The template condition tests if the [given template][template] renders a value equal to true. This is achieved by having the template result in a true boolean expression or by having the template render 'true'.
+템플릿 조건은 주어진 템플릿 이 true와 같은 값을 렌더링 하는지 테스트 합니다. 이는 템플릿 결과가 실제 boolean 형식이되거나 템플릿이 'true'로 렌더링되도록 함으로써 실현됩니다.
 
 ```yaml
 condition:
@@ -209,14 +208,14 @@ condition:
   value_template: "{% raw %}{{ (state_attr('device_tracker.iphone', 'battery_level')|int) > 50 }}{% endraw %}"
 ```
 
-Within an automation, template conditions also have access to the `trigger` variable as [described here][automation-templating].
+자동화 내에서 템플릿 조건 [described here][automation-templating]에 설명 된대로 `trigger` 변수에 액세스 할 수도 있습니다 .
 
 [template]: /topics/templating/
 [automation-templating]: /getting-started/automation-templating/
 
-### Time condition
+### 시간 조건 (Time condition)
 
-The time condition can test if it is after a specified time, before a specified time or if it is a certain day of the week.
+시간 조건은 지정된 시간 이후, 지정된 시간 전 또는 특정 요일인지 테스트 할 수 있습니다.
 
 ```yaml
 condition:
@@ -230,18 +229,17 @@ condition:
     - fri
 ```
 
-Valid values for `weekday` are `mon`, `tue`, `wed`, `thu`, `fri`, `sat`, `sun`.
-Time condition windows can span across the midnight threshold. In the example above, the condition window is from 3pm to 2am.
+유효한 값은 `weekday` 는 `mon`, `tue`, `wed`, `thu`, `fri`, `sat`, `sun` 입니다. 시간 조건 창은 자정 임계값에 걸쳐있을 수 있습니다. 위의 예에서 조건 창은 오후 3 시부 터 오전 2시입니다.
 
 <div class='note tip'>
 
-A better weekday condition could be by using the [Workday Binary Sensor](/integrations/workday/).
+평일에 더 좋은 조건은 [Workday Binary Sensor](/integrations/workday/)를 사용하는 것 입니다.
 
 </div>
 
-### Zone condition
+### 영역 조건 (Zone condition)
 
-Zone conditions test if an entity is in a certain zone. For zone automation to work, you need to have set up a device tracker platform that supports reporting GPS coordinates. Currently this is limited to the [OwnTracks platform](/integrations/owntracks/) and the [iCloud platform](/integrations/icloud/).
+영역 조건은 엔티티가 특정 영역에 있는지 테스트합니다.  영역 자동화가 작동하려면 GPS 좌표보고를 지원하는 장치 추적기 플랫폼을 설정해야합니다. 현재 이는 [OwnTracks platform](/integrations/owntracks/) 및 [iCloud platform](/integrations/icloud/)으로 제한됩니다.
 
 ```yaml
 condition:
@@ -250,7 +248,7 @@ condition:
   zone: zone.home
 ```
 
-### Examples
+### 사례 (Examples)
 
 ```yaml
 condition:

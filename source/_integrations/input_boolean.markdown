@@ -10,9 +10,9 @@ ha_codeowners:
   - '@home-assistant/core'
 ---
 
-The `input_boolean` integration allows the user to define boolean values that can be controlled via the frontend and can be used within conditions of automation. This can for example be used to disable or enable certain automations.
+`input_boolean`통합구성요소를 통해 사용자는 프론트 엔드에서 제어 할 수 있고 자동화 조건 내에서 사용할 수있는 boolean 값을 정의 할 수 있습니다. 예를 들어 특정 자동화를 비활성화하거나 활성화하는 데 사용할 수 있습니다.
 
-To enable input booleans in your installation, add the following lines to your `configuration.yaml`:
+설치에서 input boolean을 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오
 
 ```yaml
 # Example configuration.yaml entry
@@ -25,44 +25,43 @@ input_boolean:
 
 {% configuration %}
   input_boolean:
-    description: Alias for the input. Multiple entries are allowed.
+    description: 입력 별칭. 여러 항목이 허용됩니다.
     required: true
     type: map
     keys:
       name:
-        description: Friendly name of the input.
+        description: 친숙한 입력 이름.
         required: false
         type: string
       initial:
-        description: Initial value when Home Assistant starts.
+        description: 홈어시스턴트 시작시 초기 값.
         required: false
         type: boolean
         default: false
       icon:
-        description: Icon to display in front of the input element in the frontend.
+        description: 프런트 엔드에서 입력 요소 앞에 표시되는 아이콘입니다.
         required: false
         type: icon
 {% endconfiguration %}
 
 ### Services
 
-This integration provides the following services to modify the state of the `input_boolean` and a service to reload the
-configuration without restarting Home Assistant itself.
+이 통합구성요소는 다음과 같은 서비스를 제공하여 `input_boolean`의 상태를 수정하고 홈어시스턴트 자체를 다시 시작하지 않고 설정합니다.
 
 | Service | Data | Description |
 | ------- | ---- | ----------- |
-| `turn_on` | `entity_id(s)`<br>`area_id(s)` | Set the value of specific `input_boolean` entities to `on`
-| `turn_off` | `entity_id(s)`<br>`area_id(s)` | Set the value of specific `input_boolean` entities to `off`
-| `toggle` | `entity_id(s)`<br>`area_id(s)` | Toggle the value of specific `input_boolean` entities
-| `reload` | | Reload `input_boolean` configuration |
+| `turn_on` | `entity_id(s)`<br>`area_id(s)` | 특정 `input_boolean` entities 값을 `on`으로
+| `turn_off` | `entity_id(s)`<br>`area_id(s)` | 특정 `input_boolean` entities 값을 `off`로
+| `toggle` | `entity_id(s)`<br>`area_id(s)` | 특정 `input_boolean` entities 값을 `Toggle`로
+| `reload` | | `input_boolean` 설정 리로드 |
 
 ### Restore State
 
-If you set a valid value for `initial` this integration will start with state set to that value. Otherwise, it will restore the state it had prior to Home Assistant stopping.
+`initial` 에 유효한 값을 설정하면이 통합구성요소는 해당 값으로 설정된 상태로 시작됩니다. 그렇지 않으면, 홈어시스턴트 중지 이전의 상태를 복원합니다.
 
 ## Automation Examples
 
-Here's an example of an automation using the above `input_boolean`. This action will only occur if the switch is on.
+위의 `input_boolean`을 사용한 자동화의 예는 다음과 같습니다. 이 동작은 스위치가 켜져있는 경우에만 발생합니다. 
 
 ```yaml
 automation:
@@ -82,7 +81,7 @@ automation:
       message: "Honey, I'm home!"
 ```
 
-You can also set or change the status of an `input_boolean` by using `input_boolean.turn_on`, `input_boolean.turn_off` or `input_boolean.toggle` in your automations.
+자동화에서 `input_boolean.turn_on`,`input_boolean.turn_off` 또는 `input_boolean.toggle`을 사용하여 `input_boolean`의 상태를 설정하거나 변경할 수도 있습니다.
 
 ```yaml
     - service: input_boolean.turn_on

@@ -10,9 +10,9 @@ ha_codeowners:
   - '@home-assistant/core'
 ---
 
-The `input_number` integration allows the user to define values that can be controlled via the frontend and can be used within conditions of automation. The frontend can display a slider, or a numeric input box. Changes to the slider or numeric input box generate state events. These state events can be utilized as `automation` triggers as well.
+`input_number` 통합구성요소를 통해 사용자는 프론트 엔드를 통해 제어할 수 있고 자동화 조건 내에서 사용할 수 있는 값을 정의할 수 있습니다. 프런트 엔드에는 슬라이더 또는 숫자 입력 상자가 표시 될 수 있습니다. 슬라이더 또는 숫자 입력 상자를 변경하면 상태 이벤트가 생성됩니다. 이러한 상태 이벤트는 `자동화` 트리거로도 사용할 수 있습니다.
 
-To enable this input number in your installation, add the following lines to your `configuration.yaml`:
+설치시 input number 를 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -34,66 +34,65 @@ input_number:
 
 {% configuration %}
   input_number:
-    description: Alias for the input. Multiple entries are allowed.
+    description: 입력 별칭. 여러 항목이 허용됩니다.
     required: true
     type: map
     keys:
       min:
-        description: Minimum value.
+        description: 최소값.
         required: true
         type: float
       max:
-        description: Maximum value.
+        description: 최대값.
         required: true
         type: float
       name:
-        description: Friendly name of the input.
+        description: 친숙한 입력 이름.
         required: false
         type: string
       initial:
-        description: Initial value when Home Assistant starts.
+        description: 홈어시스턴트 시작시 초기 값.
         required: false
         type: float
-        default: The value at shutdown
+        default: 종료시의 값
       step:
-        description: Step value for the slider. Smallest value `0.001`.
+        description: 슬라이더의 단계 값. 최소값은 `0.001`.
         required: false
         type: float
         default: 1
       mode:
-        description: Can specify `box` or `slider`.
+        description: 장치모드를 `box` 혹은 `slider` 로 특정 가능.
         required: false
         type: string
         default: slider
       unit_of_measurement:
-        description: Unit of measurement in which the value of the slider is expressed in.
+        description: 슬라이더 값이 표현되는 측정 단위.
         required: false
         type: string
       icon:
-        description: Icon to display in front of the input element in the frontend.
+        description: 프런트 엔드에서 입력 요소 앞에 표시되는 아이콘입니다.
         required: false
         type: icon
 {% endconfiguration %}
 
 ### Services
 
-This integration provides the following services to modify the state of the `input_number` and a service to reload the
-configuration without restarting Home Assistant itself.
+이 연동은 홈어시스턴트 자체를 다시 시작하지 않고 `input_number`의 상태를 수정하기 위해 다음 서비스같이 리로드(reload)할 수 있게 해줍니다. 
 
 | Service | Data | Description |
 | ------- | ---- | ----------- |
-| `decrement` | `entity_id(s)`<br>`area_id(s)` | Decrement the value of specific `input_number` entities by `step` 
-| `increment` | `entity_id(s)`<br>`area_id(s)` | Increment the value of specific `input_number` entities by `step`
-| `reload` | | Reload `input_number` configuration |
-| `set_value` | `value`<br>`entity_id(s)`<br>`area_id(s)` | Set the value of specific `input_number` entities
+| `decrement` | `entity_id(s)`<br>`area_id(s)` | 특정 `input_number` 엔티티의 값을 `step` 만큼 줄입니다.
+| `increment` | `entity_id(s)`<br>`area_id(s)` | 특정`input_number` 엔티티의 값을 `step` 만큼 늘립니다.
+| `reload` | | `input_number` 설정 리로드(reload) |
+| `set_value` | `value`<br>`entity_id(s)`<br>`area_id(s)` | 특정`input_number` 엔티티의 값을 설정. 
 
-### Restore State
+### 상태 복원 (Restore State)
 
-If you set a valid value for `initial` this integration will start with state set to that value. Otherwise, it will restore the state it had prior to Home Assistant stopping.
+`initial`에 유효한 값을 설정하면이 연동은 상태가 해당 값으로 설정된 상태에서 시작됩니다. 그렇지 않으면, 홈어시스턴트 중지 이전의 상태를 복원합니다.
 
 ### Scenes
 
-To set the value of an input_number in a [Scene](/integrations/scene/):
+[Scene] (/ integrations / scene /)에서 input_number의 값을 설정 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -103,9 +102,9 @@ scene:
       input_number.example_number: 13
 ```
 
-## Automation Examples
+## 자동화 샘플 (Automation Examples)
 
-Here's an example of `input_number` being used as a trigger in an automation.
+다음은 자동화에서 트리거로 사용되는 `input_number`의 예입니다.
 
 {% raw %}
 ```yaml
@@ -131,7 +130,7 @@ automation:
 ```
 {% endraw %}
 
-Another code example using `input_number`, this time being used in an action in an automation.
+`input_number`를 사용하는 또 다른 코드 예제로, 이번에는 자동화 작업에서 사용됩니다.
 
 {% raw %}
 ```yaml
@@ -169,7 +168,7 @@ automation:
 ```
 {% endraw %}
 
-Example of `input_number` being used in a bidirectional manner, both being set by and controlled by an MQTT action in an automation.
+`input_number`가 양방향 방식으로 사용되며, 자동화에서 MQTT action에 의해 설정되고 제어되는 예입니다.
 
 {% raw %}
 ```yaml
@@ -211,7 +210,7 @@ automation:
 ```
 {% endraw %}
 
-Here's an example of `input_number` being used as a delay in an automation.
+다음 `input_number`은 자동화에서 지연으로 사용되는 예입니다.
 
 {% raw %}
 ```yaml

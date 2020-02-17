@@ -1,5 +1,5 @@
 ---
-title: Philips Hue
+title: 필립스 Hue
 description: Instructions on setting up Philips Hue within Home Assistant.
 logo: philips_hue.png
 ha_category:
@@ -13,6 +13,17 @@ ha_quality_scale: platinum
 ha_codeowners:
   - "@balloob"
 ---
+
+필립스 Hue 제품군은 Wifi, Bluetooth, Zigbee 3가지 통신방식의 제품들이 존재합니다. 
+
+그중에서 **현재 가장 많이 쓰는 통신방식은 Zigbee 제품**임으로 [Zigbee2mqtt 설치방법](https://hakorea.github.io/integrations/zha/)를 통해 필립스 Hue 제품군들을 설치하시길 권장합니다. 
+
+zigbee2mqtt의 [필립스 Hue 장치들의 지원 목록](https://www.zigbee2mqtt.io/information/supported_devices.html#philips)을 참조하십시오. 
+
+이외에도 Zigbee2mqtt는 2020년 2월 17일 현재 **112개 회사의 584개 장치**들을 공식 지원합니다. 
+
+----------------------------------------------------------------------------------------------------------
+차후 번역 예정 
 
 Philips Hue support is integrated into Home Assistant as a hub that can drive the light and sensor platforms. The preferred way to set up the Philips Hue platform is by enabling the [discovery component](/integrations/discovery/).
 

@@ -1,5 +1,5 @@
 ---
-title: LG webOS Smart TV
+title: LG webOS 스마트 TV
 description: Instructions on how to integrate a LG webOS Smart TV within Home Assistant.
 logo: webos.png
 ha_category:
@@ -12,22 +12,23 @@ ha_codeowners:
 ---
 
 The `webostv` platform allows you to control a [LG](https://www.lg.com/) webOS Smart TV.
+이 webostv플랫폼을 사용하면 [LG](https://www.lg.com/) webOS 스마트 TV 를 제어 할 수 있습니다 .
 
-There is currently support for the following device types within Home Assistant:
-
-- [Media Player](#media-player)
-- [Notifications](#notifications)
+현재 홈 어시스턴트에는 다음과 같은 장치 유형이 지원됩니다. :
 
 
-To begin with enable *LG Connect Apps* feature in *Network* settings of the TV [instructions](https://www.lg.com/uk/support/product-help/CT00008334-1437131798537-others).
+- [미디어플레이어](#media-player)
+- [알림](#notifications)
 
-Once basic configuration is added to your `configuration.yaml` file. A notification should be visible in the frontend's **Notification** section. Follow the instructions and accept the pairing request on your TV.
+TV [instructions](https://www.lg.com/uk/support/product-help/CT00008334-1437131798537-others)의 *네트워크* 설정 에서 *LG Connect 앱* 기능 을 활성화해서 시작 하십시오 .
 
-Pairing information will be saved to a configuration file `webostv.conf` in the Home Assistant configuration directory. This process is IP address-sensitive, in case the IP address of your TV would change in future.
+기본 설정이 configuration.yaml파일에 추가되면 프런트 엔드의 **알림**섹션에 페어링 정보가 표시되어야합니다. 지침에 따라 TV에서 페어링 요청을 수락하십시오.
 
-### Configuration
+페어링 정보는 `webostv.conf` Home Assistant 구성 디렉토리 의 구성 파일 에 저장됩니다 . 이 과정은 나중에 TV의 IP 주소가 변경 될 경우 IP 주소에 설정에 주의하십시오.
 
-To add a TV to your installation, add the following to your `configuration.yaml` file:
+## 설정 (Configuration)
+
+TV를 설치에 추가하려면 `configuration.yaml`파일에 다음을 추가 하십시오. :
 
 ```yaml
 # Example configuration.yaml entry
@@ -36,43 +37,37 @@ webostv:
 
 {% configuration %}
 host:
-  description: "The IP of the LG webOS Smart TV, e.g., `192.168.0.10`."
+  description: "LG webOS 스마트 TV의 IP 주소 예: `192.168.0.10`."
   required: true
   type: string
 name:
-  description: The name you would like to give to the LG webOS Smart TV.
+  description: LG webOS 스마트 TV에 부여하려는 이름입니다.
   required: false
   type: string
-standby_connection:
-  description: Keep connection alive when TV is in standby (this should be set to true if and only if the "Standby+" option is enabled in the TV UI.)
-  required: false
-  type: boolean
-  default: false
 turn_on_action:
-  description: Defines an [action](/docs/automation/action/) to turn the TV on.
+  description: TV를 켜는 [action](/docs/automation/action/)을 정의합니다. 
   required: false
   type: string
 customize:
-  description: List of options to customize.
+  description: 사용자 정의 할 옵션 목록.
   required: false
   type: map
   keys:
     sources:
-      description: List of hardware and webOS App inputs.
+      description: 하드웨어 및 webOS 앱 입력 목록.
       required: false
       type: list
 {% endconfiguration %}
 
-### Example
+### 전체 설정 예시 (Full configuration example)
 
-A full configuration example will look like the sample below:
+전체 설정 예는 아래 샘플과 같습니다. :
 
 ```yaml
 # Example configuration.yaml entry
 webostv:
   host: 192.168.0.10
   name: Living Room TV
-  standby_connection: true
   turn_on_action:
     service: persistent_notification.create
     data:
@@ -83,21 +78,37 @@ webostv:
       - youtube
       - makotv
       - netflix
-        
+
 media_player:
 
 notify:
 ```
 
-Avoid using `[ ]` in the `name:` of your device.
+장치의 `name :`에서 `[]`를 사용하지 마십시오.
 
-### Turn on action
 
-Home Assistant is able to turn on a LG webOS Smart TV if you specify an action, like HDMI-CEC or WakeOnLan.
+### 다수의 TV 사용 (Using multiple TVs)
 
-Common for webOS 3.0 and higher would be to use WakeOnLan feature. To use this feature your TV should be connected to your network via Ethernet rather than Wireless and you should enable *LG Connect Apps* feature in *Network* settings of the TV [instructions](https://www.lg.com/uk/support/product-help/CT00008334-1437131798537-others) (or *Mobile App* in *General* settings for older models) (*may vary by version).
+이 통합구성요소로 다수의 TV를 사용할 수도 있습니다.
 
-On newer models (2017+), WakeOnLan may need to be enabled in the TV settings by going to Settings > General > Mobile TV On > Turn On Via WiFi [instructions](https://support.quanticapps.com/hc/en-us/articles/115005985729-How-to-turn-on-my-LG-Smart-TV-using-the-App-WebOS-).
+```yaml
+# Example configuration.yaml entry with multiple TVs
+webostv:
+  - name: Living Room TV
+    host: 192.168.1.100
+  - name: Bedroom TV
+    host: 192.168.1.101
+```
+
+위의 예제는 최소 내용의 샘플이지만 모든 옵션을 각 TV에서 사용할 수 있습니다.
+
+## 켜기 동작 (Turn on action)
+
+HDMI-CEC 또는 WakeOnLan과 같은 동작을 지정하면 Home Assistant에서 LG webOS 스마트 TV를 켤 수 있습니다.
+
+webOS 3.0 이상에서는 WakeOnLan 기능을 사용하는 것이 일반적입니다. 이 기능을 사용하려면 TV가 무선이 아닌 이더넷을 통해 네트워크에 연결되어 있어야하며 *네트워크* TV 설정[instructions](https://www.lg.com/uk/support/product-help/CT00008334-1437131798537-others)에서 *LG Connect Apps* 기능을 활성화해야합니다. (구형 모델은 *모바일앱*에서 *일반* 설정)
+
+최신 모델 (2017+)의 경우 설정> 일반> 모바일 TV 켜기> WiFi를 통해 켜기 [instructions](https://support.quanticapps.com/hc/en-us/articles/115005985729-How-to-turn-on-my-LG-Smart-TV-using-the-App-WebOS-)로 이동하여 TV 설정에서 WakeOnLan을 활성화해야 할 수 있습니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -116,19 +127,19 @@ media_player:
 notify:
 ```
 
-Any other [actions](/docs/automation/action/) to power on the device can be configured.
+장치 전원을 켜기위한 다른 모든 [actions](/docs/automation/action/)을 설정 할 수 있습니다.
 
-### Sources
+## Sources
 
-To obtain complete list of available sources currently configured on the TV, once the webOS TV is configured and linked, while its powered on head to the **Developer Tools** > **States**, find your `media_player.<name>` and use the sources listed in `source_list:` remembering to split them per line into your `sources:` configuration.
+현재 TV에 설정된 사용 가능한 소스의 전체 목록을 얻으려면 webOS TV를 설정하고 전원을 켠 상태에서 **개발자 도구**> **상태**에서 `media_player.name`을 찾아 `source_list :`의 각 줄의 나타난 입력(소스)들을 기억해두고 `source:`에  해당 입력을 배치시켜 사용하십시오.
 
-### Change channel through play_media service
+## play_media 서비스를 통한 채널 변경 (Change channel through play_media service)
 
-The `play_media` service can be used in a script to switch to the specified tv channel. It selects the best matching channel according to the `media_content_id` parameter:
+`play_media` 서비스는 스크립트에서 지정된 TV 채널로 전환하는 데 사용될 수 있습니다. `media_content_id` 매개 변수에 따라 가장 일치하는 채널을 선택합니다. : 
 
- 1. Channel number *(i.e. '1' or '6')*
- 2. Exact channel name *(i.e. 'France 2' or 'CNN')*
- 3. Substring in channel name *(i.e. 'BFM' in 'BFM TV')*
+ 1. 채널 번호 *(예: '1' or '6')*
+ 2. 정확한 채널 이름 *(예: 'France 2' or 'CNN')*
+ 3. 채널 이름 하위 문자열 *(예: 'BFM' in 'BFM TV')*
 
 ```yaml
 # Example action entry in script to switch to channel number 1
@@ -146,32 +157,44 @@ data:
   media_content_type: "channel"
 ```
 
-### Next/Previous buttons
+## Next/Previous buttons
 
-The behaviour of the next and previous buttons is different depending on the active source:
+다음 및 이전 버튼의 동작은 활성 입력에 따라 다릅니다. :
 
- - if the source is 'LiveTV' (television): next/previous buttons act as channel up/down
- - otherwise: next/previous buttons act as next/previous track
+- 입력이 'LiveTV'(텔레비전) 인 경우 : 다음/이전 버튼이 채널 위/아래로 작동
+- 그렇지 않으면 다음/이전 버튼이 다음/이전 트랙으로 작동합니다.
 
-### Generic commands and buttons
+### 사운드 출력 (Sound output)
 
-Available services: `button`, `command`
+TV의 현재 사운드 출력은 상태 속성에서 찾을 수 있습니다.
+사운드 출력을 변경하려면 다음 서비스를 이용할 수 있습니다. :
 
-#### Service `webostv.button`
+#### `webostv.select_sound_output` 서비스
 
-| Service data attribute | Optional | Description                                             |
-|------------------------|----------|---------------------------------------------------------|
-| `entity_id`            |       no | Target a specific webostv media player.                 |
-| `button`               |       no | Name of the button. Known possible values are `LEFT`, `RIGHT`, `DOWN`, `UP`, `HOME`, `BACK`, `ENTER`, `DASH`, `INFO`, `ASTERISK`, `CC`, `EXIT`, `MUTE`, `RED`, `GREEN`, `BLUE`, `VOLUMEUP`, `VOLUMEDOWN`, `CHANNELUP`, `CHANNELDOWN`, `0`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9` |
-        
-#### Service `webostv.command`
+| Service data attribute | Optional | Description                             |
+| ---------------------- | -------- | --------------------------------------- |
+| `entity_id`            | no       | 특정 webostv 미디어 플레이어를 대상으로합니다. |
+| `sound_output`         | no       | 전환 할 사운드 출력의 이름입니다.  |
 
-| Service data attribute | Optional | Description                                             |
-|------------------------|----------|---------------------------------------------------------|
-| `entity_id`            |       no | Target a specific webostv media player.                 |
-| `command`              |       no | Endpoint for the command, e.g. `media.controls/rewind`.  The full list of known endpoints is available at https://github.com/bendavid/aiopylgtv/blob/master/aiopylgtv/endpoints.py |
-        
-#### Example
+### 일반 명령 및 버튼
+
+사용가능한 서비스 : `button`, `command`
+
+### `webostv.button` 서비스
+
+| Service data attribute | Optional | Description                                                                                                                                                                                                                                                                            |
+| ---------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `entity_id`            | no       | 특정 webostv 미디어를 대상                                                                                                                                                                                                                                                 |
+| `button`               | no       | 버튼 이름. 알려진 가능한 값은 `LEFT`, `RIGHT`, `DOWN`, `UP`, `HOME`, `BACK`, `ENTER`, `DASH`, `INFO`, `ASTERISK`, `CC`, `EXIT`, `MUTE`, `RED`, `GREEN`, `BLUE`, `VOLUMEUP`, `VOLUMEDOWN`, `CHANNELUP`, `CHANNELDOWN`, `0`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9` |
+
+### `webostv.command` 서비스
+
+| Service data attribute | Optional | Description                                                                                                                                                                          |
+| ---------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `entity_id`            | no       | 특정 webostv 미디어를 대상.                                                                                                                                              |
+| `command`              | no       | 엔드포인트 명령  예: `media.controls/rewind`.   <https://github.com/bendavid/aiopylgtv/blob/master/aiopylgtv/endpoints.py>에서 알려진 엔드포인트 명령의 전체 목록을 사용할 수 있습니다 |
+
+### 사례 (Example)
 
 ```yaml
 script:
@@ -190,11 +213,11 @@ script:
           command: "media.controls/rewind"
 ```
 
-## Notifications
+## 알림 (Notifications)
 
-The `webostv` notify platform allows you to send notifications to a LG webOS Smart TV.
+`webostv` 알림 플랫폼을 통해 LG webOS 스마트 TV에 알림을 보낼 수 있습니다.
 
-The icon can be overridden for individual notifications by providing a path to an alternative icon image to use:
+사용할 대체 아이콘 이미지에 대한 경로를 제공하여 개별 알림에 대해 아이콘을 대체 할 수 있습니다. :
 
 ```yaml
 automation:

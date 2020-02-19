@@ -3,11 +3,12 @@ title: "Automating Home Assistant"
 description: "Steps to help you get automation setup in Home Assistant."
 ---
 
-Home Assistant offers a wide range of automation configurations. In this section, we'll try to guide you through all the different possibilities and options. Besides this documentation, there are also a couple of people who have made their automations [publicly available](/cookbook/#example-configurationyaml).
+Home Assistant는 광범위한 자동화 구성을 제공합니다. 이 섹션에서는 다양한 가능성과 옵션을 모두 안내합니다. 이 문서 외에도 자동화를 [공개적으로 제공](/cookbook/#example-configurationyaml). 한 사람들도 있습니다 .
 
-### Automation basics
+### 자동화 기초 (Automation basics)
 
-Before you can go ahead and create your own automations, it's important to learn the basics. To explore these, let's have a look at the following example home automation rule:
+계속해서 자신 만의 자동화를 만들려면 기본 사항을 익히는 것이 중요합니다. 이에 대해 알아 보려면 다음 홈 자동화 규칙 예를 살펴 보겠습니다. :
+
 
 ```text
 (trigger)    When Paulus arrives home
@@ -15,37 +16,37 @@ Before you can go ahead and create your own automations, it's important to learn
 (action)     Turn the lights in the living room on
 ```
 
-The example consists of three different parts: a [trigger](/docs/automation/trigger/), a [condition](/docs/automation/condition/) and an [action](/docs/automation/action/).
+이 예제는 [trigger](/docs/automation/trigger/), [condition](/docs/automation/condition/), [action](/docs/automation/action/)의 세 부분으로 구성됩니다 .
 
-The first line is the **trigger** of the automation rule. Triggers describe events that should trigger the automation rule. In this case, it is a person arriving home, which can be observed in Home Assistant by observing the state of Paulus changing from 'not_home' to 'home'.
+첫 번째 줄은 자동화 규칙 의 **trigger** 입니다. trigger는 자동화 규칙을 trigger해야하는 이벤트를 나타냅니다. 이 경우, 집에 도착한 사람으로, 홈 상태에서 'not_home'에서 'home'으로 바뀌는 Paulus의 상태를 관찰하여 Home Assistant에서 관찰 할 수 있습니다.
 
-The second line is the **condition**. Conditions are optional tests that can limit an automation rule to only work in your specific use cases. A condition will test against the current state of the system. This includes the current time, devices, people and other things like the sun. In this case, we only want to act when the sun has set.
+두 번째 줄은 **condition** 입니다. condition은 특정 사용 사례에서만 작동하도록 자동화 규칙을 제한 할 수 있는 선택적 테스트입니다. condition은 시스템의 현재 상태에 대해 테스트합니다. 여기에는 현재 시간, 장치, 사람 및 태양과 같은 다른 것들이 포함됩니다. 예를들어 해가 졌을 ​​때만 동작하게 하고 싶을 때입니다. 
 
-The third part is the **action**, which will be performed when a rule is triggered and all conditions are met. For example, it can turn a light on, set the temperature on your thermostat or activate a scene.
+세 번째 부분은 **action** 이며, 규칙이 트리거되고 모든 조건이 충족 될 때 수행됩니다. 예를 들어 조명을 켜거나 온도 조절 장치의 온도를 설정하거나 장면(scene)을 활성화 할 수 있습니다.
 
 <div class='note'>
-The difference between a condition and a trigger can be confusing as they are very similar. Triggers look at the actions, while conditions look at the results: turning a light on versus a light being on.
+조건과 트리거의 차이점은 매우 유사하므로 혼동될 수 있습니다. 트리거는 동작을보고 조건은 결과를 봅니다.: 조명 켜기 vs 조명 켜기.
 </div>
 
-### Exploring the internal state
+### 내부 상태 탐색 (Exploring the internal state)
 
-Automation rules interact directly with the internal state of Home Assistant, so you'll need to familiarize yourself with it. Home Assistant exposes its current state via the developer tools. These are available at the bottom of the sidebar in the frontend. The <img src='/images/screenshots/developer-tool-states-icon.png' class='no-shadow' height='38' /> icon will show all currently available states. An entity can be anything. A light, a switch, a person and even the sun. A state consists of the following parts:
+자동화 규칙은 Home Assistant의 내부 상태와 직접 상호 작용하므로 이에 익숙해 져야합니다. Home Assistant는 개발자 도구를 통해 현재 상태를 표시합니다. 프런트 엔드의 사이드 바 하단에 있습니다. <img src='/images/screenshots/developer-tool-states-icon.png' class='no-shadow' height='38' /> 아이콘은 현재 사용 가능한 모든 상태를 표시합니다. 엔터티는 무엇이든 될 수 있습니다. 빛, 스위치, 사람, 심지어 태양. 상태는 다음과 같은 부분으로 구성됩니다.
 
 | Name | Description | Example |
 | ---- | ----- | ---- |
-| Entity ID | Unique identifier for the entity. | `light.kitchen`
-| State | The current state of the device. | `home`
-| Attributes | Extra data related to the device and/or current state. | `brightness`
+| Entity ID | 엔티티의 고유 식별자입니다. | `light.kitchen`
+| State | 장치의 현재 상태입니다. | `home`
+| Attributes | 장치 및 / 또는 현재 상태와 관련된 추가 데이터. | `brightness`
 
-State changes can be used as the source of triggers and the current state can be used in conditions.
+상태 변경은 trigger 소스로 사용될 수 있으며 현재 상태는 condition에서 사용될 수 있습니다.
 
-Actions are all about calling services. To explore the available services open the <img src='/images/screenshots/developer-tool-services-icon.png' class='no-shadow' height='38' /> Services developer tool. Services allow to change anything. For example turn on a light, run a script or enable a scene. Each service has a domain and a name. For example the service `light.turn_on` is capable of turning on any light in your system. Services can be passed parameters to for example tell which device to turn on or what color to use.
+Action는 서비스 호출에 관한 것입니다. 용 가능한 서비스를 탐색하려면 <img src='/images/screenshots/developer-tool-services-icon.png' class='no-shadow' height='38' /> 서비스 개발자 도구를여십시오. 서비스는 무엇이든 변경할 수 있습니다. 예를 들어 조명을 켜거나 스크립트를 실행하거나 장면을 활성화합니다. 각 서비스에는 도메인과 이름이 있습니다. 예를 들어 서비스 `light.turn_on`는 시스템의 모든 전등을 켤 수 있습니다. 예를 들어 어떤 장치를 켜거나 어떤 색을 사용할지 알려주는 서비스를 매개 변수로 전달할 수 있습니다.
 
-### Automation initial state
+### 자동화 초기 상태 (Automation initial state)
 
-When you create a new automation, it will be enabled unless you explicitly add `initial_state: false` to it or turn it off manually via UI/another automation/developer tools. In case automations need to be always enabled or disabled when Home Assistant starts, then you can set the `initial_state` in your automations. Otherwise, the previous state will be restored.
+새 자동화를 만들 때 `initial_state: false`를 설정하지 않으면, UI/다른 자동화/개발자 도구를 통해 명시적으로 추가 하거나 수동으로 끄지 않는 한 활성화 됩니다. Home Assistant가 시작될 때 자동화를 항상 활성화 또는 비활성화 해야하는 경우 자동화 `initial_state`에서를 설정할 수 있습니다 . 그렇지 않으면 이전 상태가 복원됩니다.
 
-Please note that if for some reason Home Assistant cannot restore the previous state, it will result in the automation being enabled.
+어떤 이유로 Home Assistant가 이전 상태를 복원 할 수없는 경우 자동화가 활성화됩니다. 
 
 ```text
 automation:

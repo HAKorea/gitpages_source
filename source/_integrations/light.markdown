@@ -8,40 +8,41 @@ ha_release: pre 0.7
 ha_quality_scale: internal
 ---
 
-This integration allows you to track and control various light bulbs. Read the integration documentation for your particular light hardware to learn how to enable it.
+이 통합구성요소로 다양한 조명을 추적하고 제어 할 수 있습니다. 특정 조명 하드웨어에 대한 설명서를 읽고 이를 활성화하는 방법을 배우십시오.
 
-### Default turn-on values
+### 기본 켜기 값 (Default turn-on values)
 
-To set the default color and brightness values when the light is turned on, create a custom `light_profiles.csv` (as described below in the `profile` attribute of `light.turn_on`).
+조명이 켜질 때 기본 색상 및 밝기 값을 설정하려면 사용자정의 light_profiles.csv를 만드십시오. (
+`light.turn_on`의 `profile` 속성에서 아래에 설명 된대로)
 
-The `.default` suffix should be added to the entity identifier of each light to define a default value, e.g., for `light.ceiling_2` the `id` field is `light.ceiling_2.default`. To define a default for all lights, the identifier `group.all_lights.default` can be used. Individual settings always supercede the `all_lights` default setting.
+`.default` 접미사는 각 조명의 엔티티 식별자에 추가되어 기본값을 정의해야합니다 (예 : `light.ceiling_2`의 `id` 필드는`light.ceiling_2.default`입니다). 모든 조명의 기본값을 정의하기 위해 식별자 `group.all_lights.default`를 사용할 수 있습니다. 개별 설정은 항상 `all_lights` 기본 설정보다 우선합니다.
 
-### Service `light.turn_on`
+### `light.turn_on` 서비스
 
-Turns one light on or multiple lights on using [groups]({{site_root}}/integrations/group/).
+[groups]({{site_root}}/integrations/group/)를 사용하여 하나의 조명을 켜거나 여러 개의 조명을 켭니다.
 
-Most lights do not support all attributes. You can check the integration documentation of your particular light for hints, but in general, you will have to try things out and see what works.
+대부분의 라이트는 모든 속성을 지원하지는 않습니다. 특정 조명의 통합구성요소 문서에서 힌트를 확인할 수 있지만 일반적으로 문제를 해결하고 작동하는 것을 확인해야합니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
-| `entity_id` | no | String or list of strings that point at `entity_id`s of lights. To target all the lights use all as `entity_id`.
-| `transition` | yes | Number that represents the time (in seconds) the light should take to transition to the new state.
-| `profile` | yes | String with the name of one of the [built-in profiles](https://github.com/home-assistant/home-assistant/blob/master/homeassistant/components/light/light_profiles.csv) (relax, energize, concentrate, reading) or one of the custom profiles defined in `light_profiles.csv` in the current working directory.  Light profiles define an xy color and a brightness. If a profile is given and a brightness then the profile brightness will be overwritten.
-| `hs_color` | yes | A list containing two floats representing the hue and saturation of the color you want the light to be. Hue is scaled 0-360, and saturation is scaled 0-100.
-| `xy_color` | yes | A list containing two floats representing the xy color you want the light to be. Two comma-separated floats that represent the color in XY. You can find a great chart here: [Hue Color Chart](https://developers.meethue.com/documentation/core-concepts#color_gets_more_complicated).
-| `rgb_color` | yes | A list containing three integers between 0 and 255 representing the RGB color you want the light to be. Three comma-separated integers that represent the color in RGB, within square brackets. Note that the specified RGB value will not change the light brightness, only the color.
-| `white_value` | yes | Integer between 0 and 255 for how bright a dedicated white LED should be.
-| `color_temp` | yes | An integer in mireds representing the color temperature you want the light to be.
-| `kelvin` | yes | Alternatively, you can specify the color temperature in Kelvin.
-| `color_name` | yes | A human-readable string of a color name, such as `blue` or `goldenrod`. All [CSS3 color names](https://www.w3.org/TR/css-color-3/#svg-color) are supported.
-| `brightness` | yes | Integer between 0 and 255 for how bright the light should be, where 0 means the light is off, 1 is the minimum brightness and 255 is the maximum brightness supported by the light.
-| `brightness_pct`| yes | Alternatively, you can specify brightness in percent (a number between 0 and 100), where 0 means the light is off, 1 is the minimum brightness and 100 is the maximum brightness supported by the light.
-| `flash` | yes | Tell light to flash, can be either value `short` or `long`.
-| `effect`| yes | Applies an effect such as `colorloop` or `random`.
+| `entity_id` | no | `entity_id`의 조명을 가리키는 문자열 또는 문자열 목록. 모든 조명을 대상으로하려면 `entity_id`로 모두 사용하십시오.
+| `transition` | yes | 조명이 새 상태로 전환되는 데 걸리는 시간 (초)을 나타내는 숫자입니다.
+| `profile` | yes | [내장 프로파일](https://github.com/home-assistant/home-assistant/blob/master/homeassistant/components/light/light_profiles.csv) 중 하나의 이름을 가진 문자열 (휴식, 활력, 집중력, 읽기) 이거나 현재 작업 디렉토리의 `light_profiles.csv`에 정의 된 사용자 정의 프로파일 중 하나입니다. 조명 프로파일은 xy 색상과 밝기를 정의합니다. 프로파일이 제공되고 밝기가 설정되면 프로파일 밝기를 덮어 씁니다.
+| `hs_color` | yes | 빛의 색조와 채도를 나타내는 두 개의 floats을 포함하는 목록입니다. 색조는 0-360으로 조정되고 채도는 0-100으로 조정됩니다.
+| `xy_color` | yes | 빛을 원하는 xy 색상을 나타내는 두 개의 floats을 포함하는 목록입니다. XY의 색상을 나타내는 두 개의 쉼표로 구분 된 floats. 색조 차트는 다음에서 훌륭한 차트를 찾을 수 있습니다. : [Hue Color Chart](https://developers.meethue.com/documentation/core-concepts#color_gets_more_complicated). 
+| `rgb_color` | yes |  조명의 RGB 색상을 나타내는 0에서 255 사이의 3 개의 정수를 포함하는 목록입니다. 대괄호 안에 RGB로 색상을 나타내는 세 개의 쉼표로 구분 된 정수. 지정된 RGB 값은 조명의 밝기를 변경하지 않고 색상 만 변경합니다.
+| `white_value` | yes | 전용 백색 LED의 밝기를 나타내는 0에서 255 사이의 정수입니다.
+| `color_temp` | yes | 빛의 색 온도를 나타내는 mireds의 정수입니다.
+| `kelvin` | yes | 또는 색 온도를 켈빈으로 지정할 수 있습니다.
+| `color_name` | yes | 색 이름의 사람이 읽을 수 있는 문자열 색상 이름, `blue` 또는 `goldenrod`. [CSS3 color names](https://www.w3.org/TR/css-color-3/#svg-color) 지원. 
+| `brightness` | yes | 조명의 밝기를 나타내는 0에서 255 사이의 정수입니다. 여기서 0은 조명이 꺼져 있음을 의미하고 1은 최소 밝기이고 255는 조명이 지원하는 최대 밝기입니다.
+| `brightness_pct`| yes | 또는 밝기를 백분율 (0과 100 사이의 숫자)로 지정할 수 있습니다. 여기서 0은 조명이 꺼져 있음을 의미하고 1은 최소 밝기이고 100은 조명이 지원하는 최대 밝기입니다.
+| `flash` | yes | 빛이 깜박이도록 합니다. `short` 혹은 `long`.
+| `effect`| yes | 효과를 적용합니다.  `colorloop` 혹은 `random`.
 
 <div class='note'>
 
-In order to apply attributes to an entity, you will need to add `data:` to the configuration. See example below
+엔터티에 속성을 적용 하려면, 설정에 `data:`룰 추가해야 합니다. 아래 예를 참조하십시오
 
 </div>
 
@@ -76,18 +77,17 @@ automation:
         rgb_color: [255,0,0]
 ```
 
-### Service `light.turn_off`
+### `light.turn_off` 서비스
 
-Turns one or multiple lights off.
+하나 또는 여러 개의 조명을 끕니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
-| `entity_id` | no | String or list of strings that point at `entity_id`s of lights. To target all the lights use all as `entity_id`.
-| `transition` | yes | Integer that represents the time the light should take to transition to the new state in seconds.
+| `entity_id` | no | 조명의 `entity_id`를 가리키는 문자열 또는 문자열 목록. 모든 라이트를 대상으로하려면 모두 `entity_id`로 사용하십시오  
+| `transition` | yes | 조명이 새 상태로 전환하는 데 걸리는 시간을 초 단위로 나타내는 정수입니다.
 
-### Service `light.toggle`
+### `light.toggle` 서비스
 
-Toggles the state of one or multiple lights using [groups]({{site_root}}/integrations/group/). 
-Takes the same arguments as [`turn_on`](#service-lightturn_on) service.
+여러개의 조명 [groups]({{site_root}}/integrations/group/)혹은 하나 이상의 조명 상태를 토글합니다. [`turn_on`](#service-lightturn_on)서비스와 동일한 인수를 취합니다.
 
-*Note*: If `light.toggle` is used for a group of lights, it will toggle the individual state of each light.
+*참고* : `light.toggle`이 조명 그룹에 사용되는 경우, 각 조명의 개별 상태를 전환합니다

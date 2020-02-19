@@ -1,5 +1,5 @@
 ---
-title: RESTful Command
+title: RESTful 명령
 description: Instructions on how to integrate REST commands into Home Assistant.
 logo: restful.png
 ha_category:
@@ -8,12 +8,12 @@ ha_release: 0.36
 ha_iot_class: Local Push
 ---
 
-This integration can expose regular REST commands as services. Services can be called from a [script] or in [automation].
+이 통합구성요소는 정규 REST 명령을 서비스로 노출 할 수 있습니다. 서비스는 [script] 또는 [automation]에서 호출 할 수 있습니다.
 
 [script]: /integrations/script/
 [automation]: /getting-started/automation/
 
-To use this component, add the following lines to your `configuration.yaml` file:
+이 구성 요소를 사용하려면 configuration.yaml파일에 다음 행을 추가 하십시오. 
 
 ```yaml
 # Example configuration.yaml entry
@@ -24,54 +24,54 @@ rest_command:
 
 {% configuration %}
 service_name:
-  description: The name used to expose the service. E.g., in the above example, it would be 'rest_command.example_request'.
+  description: 서비스를 공개하는 데 사용되는 이름입니다. 예를 들어 위 예에서 'rest_command.example_request'가 됩니다.
   required: true
   type: map
   keys:
     url:
-      description: The URL (supports template) for sending request.
+      description: 요청을 보내기 위한 URL (템플릿 지원).
       required: true
       type: template
     method:
-      description: HTTP method to use (get, patch, post, put, or delete).
+      description: 사용할 HTTP 메소드 (get, patch, post, put 또는 delete)
       required: false
       default: get
       type: string
     headers:
-      description: The headers for the requests.
+      description: 요청의 헤더입니다.
       required: false
       type: list
     payload:
-      description: A string/template to send with request.
+      description: 요청과 함께 보낼 문자열 / 템플릿.
       required: false
       type: template
     username:
-      description: The username for HTTP authentication.
+      description: HTTP 인증을위한 사용자 이름입니다.
       required: false
       type: string
     password:
-      description: The password for HTTP authentication.
+      description: HTTP 인증을위한 비밀번호입니다.
       required: false
       type: string
     timeout:
-      description: Timeout for requests in seconds.
+      description: 요청 시간 (초)입니다.
       required: false
       type: string
       default: 10
     content_type:
-      description: Content type for the request.
+      description: 요청의 컨텐츠 유형.
       required: false
       type: string
     verify_ssl:
-      description: Verify the SSL certificate of the endpoint.
+      description: 엔드 포인트의 SSL 인증서를 확인하십시오.
       required: false
       type: boolean
       default: true
 {% endconfiguration %}
 
-## Examples
+## 사례 (Examples)
 
-The commands can be dynamic, using templates to insert values of other entities. Service call support variables for doing things with templates.
+템플릿을 사용하여 다른 엔티티의 값을 삽입하는 명령은 동적일 수 있습니다. 템플릿으로 작업을 수행하기위한 서비스 콜(service call) 지원 변수.
 
 {% raw %}
 ```yaml
@@ -90,9 +90,9 @@ rest_command:
 ```
 {% endraw %}
 
-In this example entry, you can see some simple [templates](/docs/configuration/templating/) in use for dynamic parameters.
+이 예제 항목에서는 동적 매개 변수에 사용되는 간단한 [templates](/docs/configuration/templating/)을 볼 수 있습니다.
 
-Call the new service from [developer tools](/docs/tools/dev-tools/) in the sidebar with some `data` like:
+사이드 바의 [developer tools](/docs/tools/dev-tools/)에서 다음과 같은 `data`를 사용하여 새로운 서비스를 호출하십시오.
 
 ```json
 {

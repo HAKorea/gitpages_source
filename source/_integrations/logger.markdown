@@ -10,22 +10,16 @@ ha_codeowners:
   - '@home-assistant/core'
 ---
 
-The `logger` integration lets you define the level of logging activities in Home
-Assistant.
+`logger` 통합구성요소는 홈어시스턴트 활동 로깅 레벨을 정의할 수 있습니다.
 
-To enable the `logger` integration in your installation,
-add the following to your `configuration.yaml` file:
 
 ```yaml
-# Example configuration.yaml entry
 logger:
 ```
 
-To log all messages and ignore events lower than critical for specified
-components:
+모든 메시지를 기록하고 특정 구성 요소에 대한 위험보다 낮은 이벤트를 무시하려면 :
 
 ```yaml
-# Example configuration.yaml entry
 logger:
   default: info
   logs:
@@ -33,11 +27,9 @@ logger:
     custom_components.my_integration: critical
 ```
 
-To ignore all messages lower than critical and log event for specified
-components:
+특정 구성 요소에 대해 위험 및 로그 이벤트보다 낮은 모든 메시지를 무시하려면 다음을 수행하십시오. :
 
 ```yaml
-# Example configuration.yaml entry
 logger:
   default: critical
   logs:
@@ -67,36 +59,35 @@ logger:
     glances_api: fatal
 ```
 
-The log entries are in the form  
-*timestamp* *log-level* *thread* [**namespace**] *message*  
-where **namespace** is the *<component_namespace>* currently logging. 
+The log entries are in the form  *timestamp* *log-level* *thread* [**namespace**] *message*  where **namespace** is the *<component_namespace>* currently logging. 
+로그 항목은 *timestamp* *log-level* *thread* [**namespace**] *메시지* 여기서 **namespace**는 *<component_namespace>* 현재 로깅입니다.
 
 {% configuration %}
   default:
-    description: Default log level. See [log_level](#log-levels).
+    description: 기본 log level. [log_level](#log-levels) 참조.
     required: false
     type: string
     default: debug
   logs:
-    description: List of integrations and their log level.
+    description: 연동 목록 및 해당 log level.
     required: false
     type: map
     keys:
       '&lt;component_namespace&gt;':
-        description: Logger namespace of the component. See [log_level](#log-levels).
+        description: 구성 요소의 로거 네임 스페이스. [log_level](#log-levels) 참고.
         type: string
 {% endconfiguration %}
 
-In the example, do note the difference between 'glances_api' and 'homeassistant.components.glances' namespaces, 
-both of which are at root. They are logged by different APIs. 
+이 예에서 'glances_api'와 'homeassistant.components.glances' 네임스페이스의 차이점에 주목하십시오. 
+다른 API에 의해 기록됩니다.
 
-If you want to know the namespaces in your own environment then check your log files on startup. 
-You will see INFO log messages from homeassistant.loader stating `loaded <component> from <namespace>`. 
-Those are the namespaces available for you to set a `log level` against. 
+자신의 환경에서 네임스페이스를 알고 싶다면 시작시 로그 파일을 확인하십시오.
+homeassistant.loader에서 `loaded <component> from <namespace>`의 상태를 확인했다는 INFO log가 메시지가 표시됩니다.
+이것들이 `log level`을 설정할 수있는 네임 스페이스입니다.
 
-### Log Levels
+### 로그 레벨 (Log Levels)
 
-Possible log severity levels, listed in order from most severe to least severe, are:
+가장 문제있는 것부터 덜 문제있는 것까지 순서대로 나열된 가능한 로그 문제 수준(severity levels)은 다음과 같습니다.
 
 - critical
 - fatal
@@ -107,14 +98,13 @@ Possible log severity levels, listed in order from most severe to least severe, 
 - debug
 - notset
 
-## Services
+## 서비스 (Services)
 
-### Service `set_default_level`
+### `set_default_level` 서비스
 
-You can alter the default log level (for integrations without a specified log
-level) using the service `logger.set_default_level`.
+`logger.set_default_level` 서비스를 사용하여 기본 로그 수준으로 변경할 수 있습니다. (지정된 로그 레벨이 없는 연동의 경우).
 
-An example call might look like this:
+예제 호출은 다음과 같습니다. :
 
 ```yaml
 service: logger.set_default_level
@@ -122,12 +112,11 @@ data:
   level: info
 ```
 
-### Service `set_level`
+### `set_level` 서비스
 
-You can alter log level for one or several integrations using the service
-`logger.set_level`. It accepts the same format as `logs` in the configuration.
+`logger.set_level` 서비스를 사용하여 하나 이상의 연동에 대한 로그 수준을 변경할 수 있습니다. 설정에서 `logs`와 동일한 형식을 허용합니다.
 
-An example call might look like this:
+예제 호출은 다음과 같습니다. :
 
 ```yaml
 service: logger.set_level
@@ -139,23 +128,18 @@ data:
   aiohttp: error
 ```
 
-The log information are stored in the
-[configuration directory](/docs/configuration/) as `home-assistant.log`
-and you can read it with the command-line tool `cat` or follow it dynamically
-with `tail -f`.
 
-If you are a Hass.io user, you can use the example below, when logged in through
-the [SSH add-on](/addons/ssh/):
+Hass.io 사용자 인 경우 [SSH 애드온] (/ addons / ssh /)을 통해 로그인 할 때 아래 예를 사용할 수 있습니다. :
 
 ```bash
 $ tail -f /config/home-assistant.log
 ```
 
-On Docker you can use your host command line directly - follow the logs dynamically with:
+Docker에서는 호스트 명령 줄을 직접 사용할 수 있습니다. - 동적으로 로그를 확인합니다 : 
 
 ```bash
 # follow the log dynamically
 docker logs --follow  MY_CONTAINER_ID
 ```
 
-To see other options use `--help` instead, or simply leave with no options to display the entire log.
+다른 옵션을 보려면 대신 `--help`를 사용하거나 전체 로그를 표시하는 옵션없이 그대로 두십시오.

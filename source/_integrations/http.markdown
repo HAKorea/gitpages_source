@@ -13,16 +13,16 @@ ha_codeowners:
   - '@home-assistant/core'
 ---
 
-The `http` integration serves all files and data required for the Home Assistant frontend. You only need to add this to your configuration file if you want to change any of the default settings.
+`http` 통합구성요소는 홈 어시스턴트 프론트 엔드에 필요한 모든 파일과 데이터를 제공합니다. 기본 설정을 변경하려는 경우 설정 파일에만 추가하면됩니다.
 
-There is currently support for the following device types within Home Assistant:
+현재 홈 어시스턴트에서 다음 장치 유형이 지원됩니다. :
 
 - [Binary Sensor](#binary-sensor)
 - [Sensor](#sensor)
 
 <div class='note'>
 
-Don't use option `server_host` on a Hass.io installation!
+Hass.io 설치에서`server_host` 옵션을 사용하지 마십시오!
 
 </div>
 
@@ -33,61 +33,61 @@ http:
 
 {% configuration %}
 server_host:
-  description: "Only listen to incoming requests on specific IP/host. By default it will accept all IPv4 connections. Use `server_host: ::0` if you want to listen to (and only) IPv6."
+  description: "특정 IP/호스트에서 들어오는 요청만 듣습니다. 기본적으로 모든 IPv4 연결을 수락합니다. IPv6을 듣고 싶다면 `server_host : :: 0`을 사용하십시오."
   required: false
   type: string
   default: 0.0.0.0
 server_port:
-  description: Let you set a port to use.
+  description: 사용할 포트를 설정하십시오.
   required: false
   type: integer
   default: 8123
 base_url:
-  description: "The URL that Home Assistant is available on the internet. For example: `https://hass-example.duckdns.org:8123`. The iOS app finds local installations, if you have an outside URL use this so that you can auto-fill when discovered in the app. Note that this setting may only contain a protocol, hostname and port; using a path is *not* currently supported."
+  description: "인터넷에서 홈 어시스턴트를 사용할 수있는 URL. 예: `https://hass-example.duckdns.org:8123`. iOS 앱은 로컬 설치를 찾습니다. 외부 URL이 있는 경우 이를 사용하여 앱에서 발견 될 때 자동으로 채울 수 있습니다. 이 설정에는 프로토콜, 호스트 이름 및 포트만 포함될 수 있습니다. 경로를 사용하는 것은 현재 *지원되지 않습니다.*"
   required: false
   type: string
   default: Your local IP address
 ssl_certificate:
-  description: Path to your TLS/SSL certificate to serve Home Assistant over a secure connection.
+  description: 보안 연결을 통해 Home Assistant에 제공하기위한 TLS/SSL 인증서 경로.
   required: false
   type: string
 ssl_peer_certificate:
-  description: Path to the client/peer TLS/SSL certificate to accept secure connections from.
+  description: 보안 연결을 수락 할 클라이언트/피어 TLS/SSL 인증서의 경로.
   required: false
   type: string
 ssl_key:
-  description: Path to your TLS/SSL key to serve Home Assistant over a secure connection.
+  description: 보안 연결을 통해 Home Assistant를 제공하기위한 TLS/SSL 키 경로.
   required: false
   type: string
 cors_allowed_origins:
-  description: "A list of origin domain names to allow [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) requests from. Enabling this will set the `Access-Control-Allow-Origin` header to the Origin header if it is found in the list, and the `Access-Control-Allow-Headers` header to `Origin, Accept, X-Requested-With, Content-type, Authorization`. You must provide the exact Origin, i.e. `https://www.home-assistant.io` will allow requests from `https://www.home-assistant.io` but __not__ `http://www.home-assistant.io`."
+  description: "[CORS] (https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) 요청을 허용하는 원래 도메인 이름 목록입니다. 이를 활성화하면 목록에 있는 경우 `Access-Control-Allow-Origin` 헤더가 Origin 헤더로 설정되고 `Access-Control-Allow-Headers`헤더는 `Origin, Accept, X-Requested-With Content-type, Authorization`로 설정됩니다. 정확한 출발지(Origin)를 제공해야합니다. 예로서 `https : // www.home-assistant.io`는 `https://www.home-assistant.io`의 요청을 허용하지만 `http://www.home-assistant.io`의 요청을 허용하지 __않습니다__."
   required: false
   type: [string, list]
 use_x_forwarded_for:
-  description: "Enable parsing of the `X-Forwarded-For` header, passing on the client's correct IP address in proxied setups. You **must** also whitelist trusted proxies using the `trusted_proxies` setting for this to work. Non-whitelisted requests with this header will be considered IP spoofing attacks, and the header will, therefore, be ignored."
+  description: "프록시 설정에서 클라이언트의 올바른 IP 주소를 전달하여 `X-Forwarded-For` 헤더의 구문 분석을 활성화하십시오. 이 작업을 수행하려면 `trusted_proxies`'설정을 사용하여 신뢰할 수 있는 프록시를 허용 **해야합니다.** 이 헤더가 있지만 화이트리스트에 없는 요청은 IP 스푸핑 공격으로 간주되므로 헤더가 무시됩니다."
   required: false
   type: boolean
   default: false
 trusted_proxies:
-  description: "List of trusted proxies, consisting of IP addresses or networks, that are allowed to set the `X-Forwarded-For` header.  This is required when using `use_x_forwarded_for` because all requests to Home Assistant, regardless of source, will arrive from the reverse proxy IP address. Therefore in a reverse proxy scenario, this option should be set with extreme care."
+  description: "`X-Forwarded-For` 헤더를 설정할 수 있는 IP주소 또는 네트워크로 구성된 신뢰할 수있는 프록시 목록.`use_x_forwarded_for`를 사용할 때는 소스에 관계없이 홈어시스턴트에 대한 모든 요청이 리버스 프록시 IP주소에서 도착하기 때문에 필요합니다. 따라서 리버스 프록시 시나리오에서이 옵션은주의해서 설정해야합니다. "
   required: false
   type: [string, list]
 trusted_networks:
-  description: "**Deprecated since 0.89 release. Configuration moved to [Trusted Networks auth provider](/docs/authentication/providers/#trusted-networks).** List of trusted networks, consisting of IP addresses or networks, that are allowed to bypass password protection when accessing Home Assistant.  If using a reverse proxy with the `use_x_forwarded_for` and `trusted_proxies` options enabled, requests proxied to Home Assistant with a trusted `X-Forwarded-For` header will appear to come from the IP given in that header instead of the proxy IP."
+  description: "**0.89 릴리스부터 사용되지 않습니다. 설정은 [Trusted Networks auth provider](/docs/authentication/providers/#trusted-networks)로 이동하였습니다.**"
   required: false
   type: [string, list]
 ip_ban_enabled:
-  description: Flag indicating whether additional IP filtering is enabled.
+  description: 추가 IP필터링 사용 여부를 나타내는 플래그입니다.
   required: false
   type: boolean
   default: false
 login_attempts_threshold:
-  description: "Number of failed login attempt from single IP after which it will be automatically banned if `ip_ban_enabled` is `true`. When set to -1 no new automatic bans will be added."
+  description: "`ip_ban_enabled`가 `true` 인 경우 단일 IP에서 실패한 로그인 시도 횟수입니다. -1로 설정하면 새로운 자동 금지가 추가되지 않습니다. "
   required: false
   type: integer
   default: -1
 ssl_profile:
-  description: The [Mozilla SSL profile](https://wiki.mozilla.org/Security/Server_Side_TLS) to use. Only lower if you are experiencing integrations causing SSL handshake errors.
+  description: 사용할 [Mozilla SSL 프로파일](https://wiki.mozilla.org/Security/Server_Side_TLS). The [Mozilla SSL profile](https://wiki.mozilla.org/Security/Server_Side_TLS) to use. SSL 핸드 셰이크 오류를 일으키는 연동이 발생하는 경우에만 써보십시오. 
   required: false
   type: string
   default: modern
@@ -95,11 +95,11 @@ ssl_profile:
 
 <div class='note'>
 
-Configuring trusted_networks via the `http` integration will be deprecated and moved to `auth_providers` instead. For instructions, see <a href="/docs/authentication/providers/#trusted-networks">trusted networks</a>. In Home Assistant 0.89.0 and 0.89.1, you need place the trusted network under both `http` and `auth_providers` if you still want to use trusted networks features. You can remove it from `http` section starting from 0.89.2.
+`http` 통합구성요소를 통한 trusted_networks 구성은 더 이상 사용되지 않으며 대신 `auth_providers`로 이동합니다. 예로서 <a href="/docs/authentication/providers/#trusted-networks">trusted networks</a>를 참조하세요.
 
 </div>
 
-The sample below shows a configuration entry with possible values:
+아래 샘플은 가능한 값을 가진 설정 항목을 보여줍니다. :
 
 ```yaml
 # Example configuration.yaml entry
@@ -117,80 +117,80 @@ http:
   login_attempts_threshold: 5
 ```
 
-The [Set up encryption using Let's Encrypt](/blog/2015/12/13/setup-encryption-using-lets-encrypt/) blog post gives you details about the encryption of your traffic using free certificates from [Let's Encrypt](https://letsencrypt.org/).
+[Let's Encrypt를 사용하여 암호화 설정](/블로그/2015/12/13/setup-encryption-using-lets-encrypt/) 블로그 게시물은 [Let's Encrypt](https://letsencrypt.org/)의 무료 인증서를 사용하여 트래픽 암호화에 대한 세부 정보를 제공합니다. 
 
-Or use a self signed certificate following the instructions here [Self-signed certificate for SSL/TLS](/docs/ecosystem/certificates/tls_self_signed_certificate/).
+또는 여기 지침에 따라 자체 서명 된 인증서를 사용하십시오. [SSL/TLS 용 자체 서명 인증서](/docs/ecosystem/certificates/tls_self_signed_certificate/).
 
 ## APIs
 
-On top of the `http` integration is a [REST API](/developers/rest_api/), [Python API](/developers/python_api/) and [WebSocket API](/developers/websocket_api/) available. There is also support for [Server-sent events](/developers/server_sent_events/).
+`http` 통합구성요소 외에도 [REST API](/developer/rest_api/), [Python API](/developer/python_api/) 및 [WebSocket API](/developer/websocket_api/)를 사용할 수 있습니다.
 
-The `http` platforms are not real platforms within the meaning of the terminology used around Home Assistant. Home Assistant's [REST API](/developers/rest_api/) sends and receives messages over HTTP.
+`http` 플랫폼은 홈어시스턴트 주변에서 사용되는 용어의 의미 내에서 실제 플랫폼이 아닙니다. 홈어시스턴트의 [REST API](/developer/rest_api/)는 HTTP를 통해 메시지를 보내고 받습니다.
 
 ## HTTP sensors
 
-To use those kind of [sensors](#sensor) or [binary sensors](#binary-sensor) in your installation no configuration in Home Assistant is needed. All configuration is done on the devices themselves. This means that you must be able to edit the target URL or endpoint and the payload. The entity will be created after the first message has arrived.
+설치에서 이러한 종류의 [sensors](#sensor) 또는 [binary sensors](#binary-sensor)를 사용하려면 Home Assistant에서 설정 할 필요가 없습니다. 즉, 대상 URL 또는 엔드포인트 및 페이로드를 편집 할 수 있어야합니다. 첫 번째 메시지가 도착하면 엔티티가 작성됩니다.
 
-Create a [Long-Lived Access Tokens](https://developers.home-assistant.io/docs/en/auth_api.html#long-lived-access-token) in the Home Assistant UI at the bottom of your profile if you want to use HTTP sensors.
+HTTP 센서를 사용하려면 프로파일 맨 아래의 Home Assistant UI에서 [Long-Lived Access Tokens](https://developers.home-assistant.io/docs/en/auth_api.html#long-lived-access-token)을 작성하십시오.
 
-All [requests](/developers/rest_api/#post-apistatesltentity_id) need to be sent to the endpoint of the device and must be **POST**.
+모든 [requests](/developers/rest_api/#post-apistatesltentity_id)은 장치의 엔드 포인트로 전송되어야 하며 **POST** 여야합니다.
 
-## IP filtering and banning
+## IP 필터링과 추방 (IP filtering and banning)
 
-If you want to apply additional IP filtering, and automatically ban brute force attempts, set `ip_ban_enabled` to `true` and the maximum number of attempts. After the first ban, an `ip_bans.yaml` file will be created in the root configuration folder. It will have the banned IP address and time in UTC when it was added:
+추가 IP 필터링을 적용하고 무차별 강제 시도를 자동으로 금지하려면 `ip_ban_enabled`를 `true`로 설정하고 최대 시도 횟수를 설정하십시오. 첫 번째 추방 후에 루트 설정 폴더에`ip_bans.yaml` 파일이 생성됩니다. 추방된 IP 주소와 시간이 추가 될 때 UTC로 표시됩니다.
 
 ```yaml
 127.0.0.1:
   banned_at: '2016-11-16T19:20:03'
 ```
 
-After a ban is added a Persistent Notification is populated to the Home Assistant frontend.
+추방이 추가 된 후 홈 어시스턴트 프론트 엔드에 지속적 알림(Persistent Notification)이 채워집니다.
 
 <div class='note warning'>
 
-Please note, that sources from `trusted_networks` won't be banned automatically.
+'trusted_networks'의 소스는 자동으로 추방당하지 않습니다.
 
 </div>
 
-## Hosting files
+## 파일 호스팅 (Hosting files)
 
-If you want to use Home Assistant to host or serve static files then create a directory called `www` under the configuration path (`/config` on Hass.io, `.homeassistant` elsewhere). The static files in `www/` can be accessed by the following URL `http://your.domain:8123/local/`, for example `audio.mp3` would be accessed as `http://your.domain:8123/local/audio.mp3`.
+Home Assistant를 사용하여 정적 파일을 호스트하거나 제공하려면 설정 경로 아래에 `www`라는 디렉토리를 작성하십시오 (Hass.io의`/ config`, 이외는 `.homeassistant`). `www /`의 정적 파일은 다음 URL`http://your.domain: 8123/local/`에서 액세스 할 수 있습니다. 예를 들어 `audio.mp3`은 `http://your.domain:8123/local/audio.mp3`로 액세스합니다. 
 
 <div class='note'>
 
-  If you've had to create the `www/` folder for the first time, you'll need to restart Home Assistant.
+  `www /`폴더를 처음으로 만들어야한다면 Home Assistant를 다시 시작해야합니다.
 
 </div>
 
 <div class='note warning'>
 
-  Files served from the `www`/`local` folder, aren't protected by the Home Assistant authentication. Files stored in this folder, if the URL is known, can be accessed by anybody without authentication.
+  `www` /`local` 폴더에서 제공되는 파일은 Home Assistant 인증으로 보호되지 않습니다. 이 폴더에 저장된 파일은 URL을 알고있는 경우 인증없이 누구나 액세스 할 수 있습니다.
 
 </div>
 
 ## Binary Sensor
 
-The HTTP binary sensor is dynamically created with the first request that is made to its URL. You don't have to define it in the configuration first.
+HTTP binary sensor는 URL에 대한 첫 번째 요청으로 동적으로 생성됩니다. 먼저 설정에서 정의하지 않아도됩니다.
 
-The sensor will then exist as long as Home Assistant is running. After a restart of Home Assistant the sensor will be gone until it is triggered again.
+그러면 홈어시스턴트가 실행되는 한 센서가 존재합니다. Home Assistant를 다시 시작하면 센서가 다시 트리거 될 때까지는 센서가 사라집니다.
 
-The URL for a binary sensor looks like the example below:
+binary sensor의 URL은 아래 예와 같습니다. :
 
 ```bash
 http://IP_ADDRESS:8123/api/states/binary_sensor.DEVICE_NAME
 ```
 
 <div class='note'>
-You should choose a unique device name (DEVICE_NAME) to avoid clashes with other devices.
+다른 장치와의 충돌을 피하려면 고유 한 장치 이름 (DEVICE_NAME)을 선택해야합니다.
 </div>
 
-The JSON payload must contain the new state and can have a friendly name. The friendly name is used in the frontend to name the sensor.
+JSON 페이로드에는 새로운 상태가 포함되어야하며 친숙한 이름을 가질 수 있습니다. 친숙한 이름은 프런트 엔드에서 센서 이름을 지정하는 데 사용됩니다.
 
 ```json
 {"state": "on", "attributes": {"friendly_name": "Radio"}}
 ```
 
-For a quick test `curl` can be useful to "simulate" a device.
+빠른 테스트를 위해`curl`은 "장치를 시뮬레이션"하는 데 유용 할 수 있습니다.
 
 ```bash
 $ curl -X POST -H "Authorization: Bearer LONG_LIVED_ACCESS_TOKEN" \
@@ -199,7 +199,7 @@ $ curl -X POST -H "Authorization: Bearer LONG_LIVED_ACCESS_TOKEN" \
     http://localhost:8123/api/states/binary_sensor.radio
 ```
 
-To check if the sensor is working, use again `curl` to retrieve the [current state](/developers/rest_api/#get-apistatesltentity_id).
+센서가 작동하는지 확인하려면 `curl`을 다시 사용하여 [current state](/developers/rest_api/#get-apistatesltentity_id)를 검색하십시오.
 
 ```bash
 $ curl -X GET -H "Authorization: Bearer LONG_LIVED_ACCESS_TOKEN" \
@@ -216,13 +216,13 @@ $ curl -X GET -H "Authorization: Bearer LONG_LIVED_ACCESS_TOKEN" \
 }
 ```
 
-### Examples
+### 사용예 (Examples)
 
-In this section you'll find some real-life examples of how to use this sensor, besides `curl`, which was shown earlier.
+이 섹션에서는 앞에서 보여준 `curl` 외에도 이 센서를 사용하는 방법에 대한 실제 예를 찾을 수 있습니다.
 
-#### Using Python request module
+#### 파이선 요청 모듈 사용법 (Using Python request module)
 
-As already shown on the [API](/developers/rest_api/) page, it's very simple to use Python and the [Requests](https://requests.kennethreitz.org/en/latest/) module for the interaction with Home Assistant.
+[API](/developers/rest_api/) 페이지에 이미 표시된 것처럼 Python과 [Requests](https://requests.kennethreitz.org/en/latest/) 모듈을 사용하여 매우 간단하게 홈어시스턴트와 상호작용합니다. 
 
 ```python
 response = requests.post(
@@ -236,9 +236,9 @@ response = requests.post(
 print(response.text)
 ```
 
-#### Using `httpie`
+#### `httpie` 사용하기 (Using `httpie`)
 
-[`httpie`](https://github.com/jkbrzt/httpie) is a user-friendly CLI HTTP client.
+[`httpie`] (https://github.com/jkbrzt/httpie)는 사용자 친화적 인 CLI HTTP 클라이언트입니다.
 
 ```bash
 $ http -v POST http://localhost:8123/api/states/binary_sensor.radio \
@@ -246,29 +246,29 @@ $ http -v POST http://localhost:8123/api/states/binary_sensor.radio \
       attributes:='{"friendly_name": "Radio"}'
 ```
 
-## Sensor
+## 센서 (Sensor)
 
-The HTTP sensor is dynamically created with the first request that is made to its URL. You don't have to define it in the configuration first.
+HTTP 센서는 URL에 대한 첫 번째 요청으로 동적으로 작성됩니다. 먼저 설정에서 정의하지 않아도 됩니다.
 
-The sensor will then exist as long as Home Assistant is running. After a restart of Home Assistant the sensor will be gone until it is triggered again.
+그러면 홈어시스턴트가 실행되는 한 센서가 존재합니다. 홈어시스턴트를 다시 시작하면 센서가 다시 트리거 될 때까지 센서가 나타나지 않습니다.
 
-The URL for a sensor looks like the example below:
+센서의 URL은 아래 예와 같습니다.
 
 ```bash
 http://IP_ADDRESS:8123/api/states/sensor.DEVICE_NAME
 ```
 
 <div class='note'>
-You should choose a unique device name (DEVICE_NAME) to avoid clashes with other devices.
+다른 장치와의 충돌을 피하려면 고유 한 장치 이름 (DEVICE_NAME)을 선택해야합니다.
 </div>
 
- The JSON payload must contain the new state and should include the unit of measurement and a friendly name. The friendly name is used in the frontend to name the sensor.
+ JSON 페이로드에는 새로운 상태가 포함되어야하며 측정 단위와 이름이 포함되어야합니다. 친숙한 이름은 프런트 엔드에서 센서 이름을 지정하는 데 사용됩니다.
 
 ```json
 {"state": "20", "attributes": {"unit_of_measurement": "°C", "friendly_name": "Bathroom Temperature"}}
 ```
 
-For a quick test, `curl` can be useful to "simulate" a device.
+빠른 테스트를 위해`curl`은 "장치를 시뮬레이션"하는 데 유용 할 수 있습니다.
 
 ```bash
 $ curl -X POST -H "Authorization: Bearer LONG_LIVED_ACCESS_TOKEN" \
@@ -277,7 +277,7 @@ $ curl -X POST -H "Authorization: Bearer LONG_LIVED_ACCESS_TOKEN" \
        http://localhost:8123/api/states/sensor.bathroom_temperature
 ```
 
-You can then use `curl` again to retrieve the [current sensor state](/developers/rest_api/#get-apistatesltentity_id) and verify the sensor is working.
+그런 다음`curl`을 다시 사용하여 [current sensor state](/developers/rest_api/#get-apistatesltentity_id)를 검색하고 센서가 작동하는지 확인할 수 있습니다.
 
 ```bash
 $ curl -X GET -H "Authorization: Bearer LONG_LIVED_ACCESS_TOKEN" \
@@ -295,4 +295,4 @@ $ curl -X GET -H "Authorization: Bearer LONG_LIVED_ACCESS_TOKEN" \
 }
 ```
 
-For more examples please visit the [HTTP Binary Sensor](#examples) page.
+더 많은 예제를 보려면 [HTTP Binary Sensor](#examples) 페이지를 방문하십시오.

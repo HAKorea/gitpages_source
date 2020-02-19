@@ -16,7 +16,7 @@ ha_codeowners:
 
 [홈어시스턴트 클라우드](/cloud/)를 사용하면, 클릭 몇번만으로 여러분의 홈어시스턴트와 구글 어시스턴트를 연동할 수 있습니다. 홈어시스턴트 클라우스에서는 다이나믹DNS나 SSL인증서 그리고 공유기의 포터 연동에 대해 신경쓰지 않아도 되고, 단지 UI를 통해 로그인하면 클라우드와 보안 접속이 가능합니다. 홈어시스턴트 클라우드는 정기구독료를 내야 하며 30일 무료체험을 해볼 수 있습니다.
 
-홈어시스턴트 사용자는 이 [문서](https://www.nabucasa.com/config/google_assistant/)를 참고하세요.
+홈어시스턴트 클라우드 사용자는 이 [문서](https://www.nabucasa.com/config/google_assistant/)를 참고하세요.
 
 ## 수동으로 설정
 
@@ -27,11 +27,10 @@ ha_codeowners:
 구글 어시스턴트를 사용하기 위해서는 홈어시스턴트에 [외부 접속 가능한 도메인명과 SSL 인증서 설치](/docs/configuration/remote/)가 필요합니다. 이 설정을 하지 않았다면 먼저 설정해주셔야 합니다. 도메인을 DNS에 설정하고 구글이 여러분의 도메인이 정상적인지 체크하기 위해 보통 48시간 정도 시간이 소요됩니다.
 </div>
 
-여러분의 기기를 구글 어시스턴트와 연결하기 위해서는 [구글 서비스 계정을 생성](https://console.cloud.google.com/apis/credentials/serviceaccountkey)해야 합니다([아래 참고](#troubleshooting-the-request_sync-service)).
-구글 서비스 계정을 만들지 않으면  `google_assistant.request_sync` 서비스를 사용할 수 없습니다. 이것은 "오케이 구글, sync my devices"라는 명령으로 여러분의 HA에 연동된 기기를 구글 어시스턴트가 사용하도록 업데이트할 수 있게 합니다. 한번 설정하면 이 명령을 통해 홈어시스턴트에 새로운 기기를 추가하고 구글 어시스턴트가 제어할 수 있게 만듭니다. 이에 대해서는 2번 과정을 참고하세요.  
+여러분의 기기를 구글 어시스턴트와 연결하기 위해서는 [구글 서비스 계정을 생성](https://console.cloud.google.com/apis/credentials/serviceaccountkey)해야 합니다([아래 참고](#troubleshooting-the-request_sync-service)). 구글 서비스 계정을 만들지 않으면  `google_assistant.request_sync` 서비스를 사용할 수 없습니다. 이것은 "오케이 구글, sync my devices"라는 명령으로 여러분의 HA에 연동된 기기를 구글 어시스턴트가 사용하도록 업데이트할 수 있게 합니다. 한번 설정하면 이 명령을 통해 홈어시스턴트에 새로운 기기를 추가하고 구글 어시스턴트가 제어할 수 있게 만듭니다.
 
 1. [Actions on Google console](https://console.actions.google.com/)에서 Create a new project를 클릭하여 여러분의 프로젝트를 만드세요.
-    1. Add/Import a project 로 프로젝트를 생성하고 적절한 프로젝트명을 입력합니다.
+    1. New Project를 선택하여 새로운 프로젝트를 생성하고 적절한 프로젝트명을 입력합니다.
     2. 다음 화면에서 `Smart Home` 카드를 선택합니다.
     <img src='/images/integrations/google_assistant/gha01.png' alt='Screenshot: Smart Home Card'><br><br>
 

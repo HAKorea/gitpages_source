@@ -1,5 +1,5 @@
 ---
-title: Android IP Webcam
+title: Android IP 웹캠
 description: Connect Android devices as an IP webcam to Home Assistant
 logo: android_ip_webcam.png
 ha_category:
@@ -12,24 +12,24 @@ ha_release: '0.40'
 ha_iot_class: Local Polling
 ---
 
-The `android_ip_webcam` integration turns any Android phone or tablet into a network camera with multiple viewing options.
+`android_ip_webcam` 통합구성요소는 모든 Android 폰 또는 태블릿을 여러 보기 옵션이있는 네트워크 카메라로 쓸 수 있습니다.
 
-It's setup as an MJPEG camera and all settings as switches inside of Home Assistant. You can also expose the sensors. If you have multiple phones, you can use all options inside a list.
+MJPEG 카메라로 설정되고 모든 설정은 Home Assistant 내부의 스위치로 설정됩니다. 센서를 노출시킬 수도 있습니다. 스마트폰이 여러 개인 경우 목록 내 모든 옵션을 사용할 수 있습니다.
 
-There is currently support for the following device types within Home Assistant:
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다. :
 
 - Binary Sensor
 - Camera
 - Sensor
 - Switch
 
-## Setup
+## 셋업 (Setup)
 
-Download [the IP Webcam app](https://play.google.com/store/apps/details?id=com.pas.webcam) and launch the app. When you press 'Start Server', it will start streaming video from your phone and the IP address of the device will be shown on screen.
+[the IP Webcam app](https://play.google.com/store/apps/details?id=com.pas.webcam)을 다운로드하고 앱을 시작하십시오. 'Start Server'을 누르면 전화기에서 비디오 스트리밍이 시작되고 장치의 IP 주소가 화면에 표시됩니다. 
 
-## Configuration
+## 설정 (Configuration)
 
-To set up the component, add the following information to your `configuration.yaml` file:
+컴포넌트를 설정하려면 `configuration.yaml` 파일에 다음 정보를 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -39,82 +39,82 @@ android_ip_webcam:
 
 {% configuration %}
 host:
-  description: The IP address of the phone on the network.
+  description: 네트워크에서 전화의 IP 주소.
   required: true
   type: string
 port:
-  description: The port the IP Webcam listens on.
+  description: IP 웹캠이 수신하는 포트.
   required: false
   default: 8080
   type: integer
 name:
-  description: Override the name of the phone.
+  description: 전화 이름을 무시함.
   required: false
   default: IP Webcam
   type: string
 username:
-  description: The username to access the phone.
+  description: 전화에 액세스하기위한 사용자 이름.
   required: inclusive
   type: string
 password:
-  description: The password to access the phone.
+  description: 전화에 액세스하기위한 비밀번호.
   required: inclusive
   type: string
 scan_interval:
-  description: Defines the update interval of the phone.
+  description: 전화의 업데이트 간격을 정의.
   required: false
   default: 10
   type: integer
 sensors:
-  description: Conditions to display sensor in the frontend. See the list of supported sensors.
+  description: 프런트 엔드에 센서를 표시하기위한 조건입니다. 지원되는 센서 목록을 참조하십시오.
   required: false
   type: list
   keys:
     audio_connections:
-      description: The audio connections
+      description: 오디오 연결
     battery_level:
-      description: The battery level
+      description: 배터리 잔량
     battery_temp:
-      description: The battery temperature
+      description: 배터리 온도
     battery_voltage:
-      description: The battery voltage
+      description: 배터리 전압
     light:
-      description: The light level
+      description: 빛의 밝기
     motion:
-      description: Motion detection
+      description: 모션 감지
     pressure:
-      description: The current pressure
+      description: 현재 압력
     proximity:
-      description: The proximity
+      description: 근접
     sound:
-      description: The sound detection
+      description: 소리 감지
     video_connections:
-      description: The video connections
+      description: 비디오 연결
 switches:
-  description: Conditions to display settings in the frontend. See the list of supported switches.
+  description: 프런트 엔드에 설정을 표시하기위한 조건입니다. 지원되는 스위치 목록을 참조하십시오.
   required: false
   type: list
   keys:
     exposure_lock:
-      description: Control the exposure lock
+      description: 노출 잠금 제어
     ffc:
-      description: Control the front-facing camera.
+      description: 전면 카메라를 제어
     focus:
-      description: Control the focus.
+      description: 초점을 조절.
     gps_active:
-      description: Control the GPS.
+      description: GPS를 제어.
     night_vision:
-      description: Control the night vision.
+      description: 나이트 비전을 제어
     overlay:
-      description: Control the overlay.
+      description: 오버레이를 제어.
     torch:
-      description: Control the torch.
+      description: 토치를 제어.
     whitebalance_lock:
-      description: Control the white balance lock.
+      description: 화이트 밸런스 잠금 장치를 제어.
     video_recording:
-      description: Control the video recording.
+      description: 비디오 녹화를 제어.
 motion_sensor:
-  description: Activate motion sensor if `auto_discovery` is disabled.
+  description: 만일 `auto_discovery`가 비활성화 된 경우 모션 센서 활성화
   required: false
   type: boolean
   default: false
@@ -122,7 +122,7 @@ motion_sensor:
 
 <div class='note'>
 
-You need to enable logging in the Android app (`Data logging` > `Enable data logging`), if you wish to see the sensor states in Home Assistant. The sensor states stays as `unknown`, until it's enabled.
+Home Assistant에서 센서 상태를 보려면 Android 앱에서 로깅을 활성화해야합니다 (`Data logging` > `Enable data logging`). 센서 상태는 활성화 될 때까지 `unknown`으로 유지됩니다.
 
 </div>
 
@@ -164,11 +164,11 @@ android_ip_webcam:
 
 ## Binary Sensor
 
-The `android_ip_webcam` binary sensor platform lets you observe the motion state of [Android IP webcam](https://play.google.com/store/apps/details?id=com.pas.webcam) sensors through Home Assistant. Devices will be configured automatically.
+`android_ip_webcam` 바이너리 센서 플랫폼을 사용하면 Home Assistant를 통해 [Android IP webcam](https://play.google.com/store/apps/details?id=com.pas.webcam) 센서의 모션 상태를 관찰 할 수 있습니다. 장치가 자동으로 설정됩니다.
 
 ## Examples
 
-You can also setup the binary motion sensor with the following script:
+다음 스크립트를 사용하여 binary 모션 센서를 설정할 수도 있습니다. :
 
 {% raw %}
 
@@ -183,13 +183,13 @@ binary_sensor:
 
 {% endraw %}
 
-## Camera
+## 카메라 
 
-The `android_ip_webcam` integration adds a camera by default if you choose not to use the integration but still want to see the video feed then the [`mjpeg` camera](/integrations/mjpeg) platform can be used.
+`android_ip_webcam` 통합구성요소는 연동을 사용하지 않고 여전히 비디오 피드를 보려는 경우 [`mjpeg` camera](/integrations/mjpeg) 플랫폼을 사용해서 기본적인 카메라로 추가 가능합니다.
 
-## Configuration
+## 설정
 
-To enable only the camera in your installation, add the following to your `configuration.yaml` file:
+설치시 카메라 만 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -198,8 +198,8 @@ camera:
     mjpeg_url: http://IP_ADDRESS:8080/video
 ```
 
-## Sensor
+## 센서 
 
-The `android_ip_webcam` sensor platform lets you observe states of [Android IP webcam](https://play.google.com/store/apps/details?id=com.pas.webcam) sensors through Home Assistant. Devices will be configured automatically.
+`android_ip_webcam` 센서 플랫폼을 사용하면 Home Assistant를 통해 [Android IP webcam](https://play.google.com/store/apps/details?id=com.pas.webcam) 센서의 상태를 관찰 할 수 있습니다. 
 
-You can setup your own sensors by examining the JSON file from the webcam server: `http://IP:8080/sensors.json`
+웹캠 서버에서 JSON 파일을 검사하여 자체 센서를 설정할 수 있습니다 : `http://IP:8080/sensors.json`

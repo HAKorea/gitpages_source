@@ -10,11 +10,11 @@ ha_codeowners:
   - '@home-assistant/core'
 ---
 
-The `script` integration allows users to specify a sequence of actions to be executed by Home Assistant. These are run when you turn the script on. The script integration will create an entity for each script and allow them to be controlled via services.
+`script` 통합구성요소는 사용자가 동작(action)의 시퀀스(sequence)가 홈어시스턴트에 의해 실행되도록 지정할 수 있습니다. 스크립트를 켤 때 실행됩니다. 스크립트 통합구성요소는 각 스크립트에 대한 엔티티를 작성하고 서비스를 통해 제어 할 수 있도록합니다.
 
-## Configuration
+## 설정 
 
-The sequence of actions is specified using the [Home Assistant Script Syntax](/getting-started/scripts/).
+일련의 동작(action)은 [홈어시스턴트 Script 문법](/getting-started/scripts/)을 사용하여 지정됩니다 .
 
 ```yaml
 # Example configuration.yaml entry
@@ -29,43 +29,43 @@ script:
 
 <div class='note'>
 
-Script names (e.g., `message_temperature` in the example above) are not allowed to contain capital letters, or dash (minus) characters, i.e. `-`. The preferred way to separate words for better readability is to use underscore (`_`) characters.
+스크립트 이름(예 : 위의 예에서 `message_temperature`)은 대문자나 대시(`-`)문자를 포함 할 수 없습니다. 가독성을 높이기 위해 단어를 구분하는 기본 방법은 밑줄 (`_`) 문자를 사용하는 것입니다.
 
 </div>
 
 {% configuration %}
 alias:
-  description: Friendly name for the script.
+  description: 스크립트의 이름.
   required: false
   type: string
 description:
-  description: A description of the script that will be displayed in the Services tab under Developer Tools.
+  description: 개발자 도구의 서비스 탭에 표시 될 스크립트에 대한 설명.
   required: false
   default: ''
   type: string
 fields:
-  description: Information about the parameters that the script uses; see the [Passing variables to scripts](#passing-variables-to-scripts) section below.
+  스크립트가 사용하는 매개 변수에 대한 정보. 아래의 [Passing variables to scripts](#passing-variables-to-scripts) 섹션을 참조하십시오.
   required: false
   default: {}
   type: map
   keys:
     PARAMETER_NAME:
-      description: A parameter used by this script.
+      description: 이 스크립트에서 사용하는 매개 변수.
       type: map
       keys:
         description:
-          description: A description of PARAMETER_NAME.
+          description: PARAMETER_NAME에 대한 설명.
           type: string
         example:
-          description: An example value for PARAMETER_NAME.
+          description: PARAMETER_NAME의 예제 값.
           type: string
 sequence:
-  description: The sequence of actions to be performed in the script.
+  description: 스크립트에서 수행 할 일련의 동작.
   required: true
   type: list
 {% endconfiguration %}
 
-### Full Configuration
+### 전체 설정 (Full Configuration)
 
 {% raw %}
 
@@ -102,11 +102,11 @@ script: 
 
 {% endraw %}
 
-### Passing variables to scripts
+### 변수를 스크립트에 전달 (Passing variables to scripts)
 
-As part of the service, variables can be passed along to a script so they become available within templates in that script.
+서비스의 일부로 변수를 스크립트로 전달하여 해당 스크립트의 템플리트 내에서 변수를 사용할 수 있습니다.
 
-There are two ways to achieve this. One way is using the generic `script.turn_on` service. To pass variables to the script with this service, call it with the desired variables:
+이를 구현하는 두 가지 방법이 있습니다. 한 가지 방법은 일반 `script.turn_on` 서비스를 사용하는 것입니다 . 이 서비스를 통해 스크립트에 변수를 전달하려면 원하는 변수를 사용하여, 변수를 호출하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -125,7 +125,7 @@ automation:
         message: 'The light is on!'
 ```
 
-The other way is calling the script as a service directly. In this case, all service data will be made available as variables. If we apply this approach on the script above, it would look like this:
+다른 방법은 스크립트를 서비스로 직접 호출하는 것입니다. 이 경우 모든 서비스 데이터를 변수로 사용할 수 있습니다. 위의 스크립트에 이 방법을 적용하면 다음과 같습니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -142,7 +142,7 @@ automation:
       message: 'The light is on!'
 ```
 
-Using the variables in the script requires the use of `data_template`:
+스크립트에서 변수를 사용하려면 `data_template`을 사용해야합니다. : 
 
 ```yaml
 # Example configuration.yaml entry
@@ -166,8 +166,8 @@ script:
           message: "{% raw %}{{ message }}{% endraw %}"
 ```
 
-### In the Overview
+### 개요에서 (In the Overview)
 
-Scripts in the Overview panel will be displayed with an **EXECUTE** button if the device has no `delay:` or `wait:` statement, and as a toggle switch if it has either of those.
+장치에 `delay :` 또는 `wait :` 문이 없는 경우 개요 패널(Overview Panel)의 스크립트는 **EXECUTE** 단추와 함께 표시되며 토글스위치 중 하나가 있으면 토글스위치로 표시됩니다.
 
-This is to enable you to stop a running script.
+실행중인 스크립트를 중지 할 수 있습니다.

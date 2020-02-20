@@ -44,7 +44,7 @@ description:
   default: ''
   type: string
 fields:
-  스크립트가 사용하는 매개 변수에 대한 정보. 아래의 [Passing variables to scripts](#passing-variables-to-scripts) 섹션을 참조하십시오.
+  description: 스크립트가 사용하는 매개 변수에 대한 정보. 아래의 [Passing variables to scripts](#passing-variables-to-scripts) 섹션을 참조하십시오.
   required: false
   default: {}
   type: map

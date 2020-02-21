@@ -1,5 +1,5 @@
 ---
-title: Mold Indicator
+title: 곰팡이 표시기 (Mold Indicator)
 description: How to use the mold growth indication integration in Home Assistant
 logo: home-assistant.png
 ha_category:
@@ -9,13 +9,13 @@ ha_iot_class: Local Polling
 ha_quality_scale: internal
 ---
 
-The Mold Indicator sensor integration consumes information of two temperature sensors and a humidity sensor to give an indication for possible mold growth in your home. In case of bad ventilation and insulation, the indoor humidity may lead to condensation on cold surfaces as the windows or even walls. Condensation or a high relative humidity near those cold surfaces leads to a higher risk for mold growth. This sensor integration estimates the temperature at a pre-calibrated critical point in the room (the coldest surface) and calculates the relative humidity of the air at that point. If the sensor value rises above approximately 70 percent, mold growth might occur and the room should be ventilated. At 100%, the air humidity condensates at the critical point.
+곰팡이 표시기 센서 통합수성요소는 2 개의 온도 센서와 습도 센서의 정보를 조합하여 가정에서 곰팡이가 생길 수 있음을 나타냅니다. 환기 및 단열이 불량한 경우 실내 습도로 인해 창문이나 벽처럼 차가운 표면에 응결이 발생할 수 있습니다. 차가운 표면 근처의 응축 또는 상대 습도가 높으면 곰팡이가 생길 위험이 높아집니다. 이 센서 통합구성요소는 실내에서 사전 교정 된 임계점 (가장 추운 표면)의 온도를 추정하고 해당 지점에서 공기의 상대 습도를 계산합니다. 센서 값이 약 70 % 이상 상승하면 곰팡이가 생길 수 있으며 실내를 환기시켜야합니다. 100 %에서는 공기 습도가 임계점에서 응축됩니다.
 
-The sensor data may be used e.g., to signal bad air quality (too high air humidity) or to automate operation of indoor air humidifiers to keep the indoor humidity at an optimum.
+센서 데이터는 예를 들어, 나쁜 공기 질 (너무 높은 습도)을 알리거나 실내 공기 가습기의 작동을 자동화하여 실내 습도를 최적으로 유지하기 위해 사용될 수 있습니다.
 
-## Configuration
+## 설정
 
-To use the Mold Indicator sensor in your installation, add the following to your `configuration.yaml` file:
+설치시 곰팡이 표시기 센서를 사용하려면 `configuration.yaml` 파일에 다음을 추가 하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -29,33 +29,32 @@ sensor:
 
 {% configuration %}
 name:
-  description: The name of the sensor.
+  description: 센서의 이름.
   required: false
   type: string
 indoor_temp_sensor:
-  description: The entity ID of the indoor temperature sensor.
+  description: 실내 온도 센서의 엔티티 ID.
   required: true
   type: string
 indoor_humidity_sensor:
-  description: The entity ID of the indoor humidity sensor.
+  description: 실내 습도 센서의 엔티티 ID.
   required: true
   type: string
 outdoor_temp_sensor:
-  description: The entity ID of the outdoor temperature sensor.
+  description: 실외 온도 센서의 엔티티 ID.
   required: true
   type: string
 calibration_factor:
-  description: Needs to be calibrated to the critical point in the room.
+  description: 실내의 임계점까지 교정필요시 사용.
   required: true
   type: float
 {% endconfiguration %}
 
-In this case, the weather forecast temperature sensor is used for the outside temperature.
+이 경우 일기 예보 온도 센서가 외부 온도에 사용됩니다.
 
 ## Calibration
 
-The Mold Indicator sensor integration needs to be calibrated in order to estimate the temperature at the critical point from the outdoor and indoor temperature. First find the coldest surface in the room (critical point), which is typically near the window frames, but depends on the insulation of your home. For calibration you need to measure the temperature at this critical point and simultaneously write down the values for the indoor- and outdoor temperature sensors used for the Mold Indicator. Be sure that there is a significant indoor to outdoor temperature difference to get the best calibration results.
-With the three measured temperatures (in Celsius or Fahrenheit), the calibration_factor for your configuration file is given by:
+실외 및 실내 온도에서 임계점의 온도를 추정하려면 곰팡이 표시기 센서 연동값을 교정해야합니다. 먼저 방에서 가장 차가운 표면 (임계점)을 찾으십시오.이 지점은 일반적으로 창틀 근처에 있지만 집의 단열재에 따라 다릅니다. 교정을하려면이 임계점에서 온도를 측정하고 금형 표시기에 사용 된 실내 및 실외 온도 센서의 값을 동시에 기록해야합니다. 최상의 교정 결과를 얻으려면 실내와 실외의 온도 차이가 유의해야합니다. 세 가지 측정 온도 (섭씨 또는 화씨)로 구성 파일의 calibration_factor는 다음과 같습니다.
 
 ```text
 calibration_factor = (temp_indoor - temp_outdoor) / (temp_criticalpoint - temp_outdoor)

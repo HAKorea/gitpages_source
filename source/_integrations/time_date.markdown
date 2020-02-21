@@ -11,8 +11,6 @@ ha_codeowners:
   - '@fabaff'
 ---
 
-The time and date (`time_date`) sensor platform adds one or more sensors to your Home Assistant state machine.
-To have these sensors available in your installation, add the following to your `configuration.yaml` file (each option creates a separate sensor that contains appropriate data):
 시간 및 날짜 (`time_date`) 센서 플랫폼은 Home Assistant 상태 시스템에 하나 이상의 센서를 추가합니다. 설치시 이러한 센서를 사용 가능하게하려면 `configuration.yaml` 파일에 다음을 추가 하십시오 (각 옵션은 적절한 데이터를 포함하는 별도의 센서를 만듭니다).
 
 ```yaml
@@ -30,7 +28,7 @@ sensor:
       - 'beat'
 ```
 
-- **display_options** 배열 (*필수*): 보여주기위한 옵션. *date_time*, *date_time_utc*, *time_date*, 그리고 *date_time_iso* 타입들은 시간와 날짜를 보여줍니다. 다른 유형은 시간 또는 날짜 만 입력합니다. *beat*는 [Swatch Internet Time](https://www.swatch.com/en_us/internet-time)을 보여줍니다.
+- **display_options** 배열 (*필수*): 보여주기위한 옵션. *date_time*, *date_time_utc*, *time_date*, 그리고 *date_time_iso* 타입들은 시간와 날짜를 모두 보여줍니다. 다른 타입들은 시간 혹은 날짜입니다. *beat*는 [Swatch Internet Time](https://www.swatch.com/en_us/internet-time)을 보여줍니다.
 
 
 <p class='img'>

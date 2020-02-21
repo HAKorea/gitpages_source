@@ -11,11 +11,11 @@ ha_codeowners:
   - '@fabaff'
 ---
 
-The `worldclock` sensor platform simply displays the current time in a different time zone.
+`worldclock` 센서 플랫폼은 단순히 다른 시간대(time zone)에 현재 시간을 표시한다.
 
-## Configuration
+## 설정 (Configuration)
 
-To enable this sensor in your installation, add the following to your `configuration.yaml` file:
+설치시 이 센서를 사용하려면 `configuration.yaml`파일에 다음을 추가 하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -26,17 +26,17 @@ sensor:
 
 {% configuration %}
 time_zone:
-  description: The resource or endpoint that contains the value.
+  description: 값이 포함된 자원 또는 엔드 포인트.
   required: true
   type: string
 name:
-  description: The name of the sensor, e.g., the city.
+  description: 센서 이름 (예들들어 해당 도시 이름).
   required: false
   type: string
   default: Worldclock Sensor
 {% endconfiguration %}
 
-For valid time zones check the **TZ** column in the [Wikipedia overview](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). Or get the full list from the [pytz](https://pypi.python.org/pypi/pytz) module.
+유효한 시간대 는 [Wikipedia overview](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)에서 **TZ** 열을 확인하십시오 . 또는 [pytz](https://pypi.python.org/pypi/pytz) 모듈 에서 전체 목록을 가져 옵니다 .
 
 ```shell
 python3 -c "import pytz;print(pytz.all_timezones)"

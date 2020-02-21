@@ -60,11 +60,11 @@ content_type:
   default: image/jpeg
   type: string
 framerate:
-  description: 스트림의 초당 프레임 수 (FPS)입니다. 네트워크에 트래픽이 많거나 카메라에 과부하가 발생 가능.
+  description: "스트림의 초당 프레임 수 (FPS)입니다. 네트워크에 트래픽이 많거나 카메라에 과부하가 발생 가능."
   required: false
   type: integer
 verify_ssl:
-  SSL 인증서 확인을 활성화 또는 비활성화합니다. http 전용 카메라를 사용하거나 자체 서명 된 SSL 인증서가 있고 활성화하기 위해 CA 인증서를 설치하지 않은 경우 false로 설정.
+  description: SSL 인증서 확인을 활성화 또는 비활성화합니다. http 전용 카메라를 사용하거나 자체 서명 된 SSL 인증서가 있고 활성화하기 위해 CA 인증서를 설치하지 않은 경우 false로 설정.
   required: false
   default: true
   type: boolean

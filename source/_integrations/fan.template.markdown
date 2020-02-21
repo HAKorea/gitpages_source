@@ -1,5 +1,5 @@
 ---
-title: "Template Fan"
+title: "Fan 탬플릿 (Template Fan)"
 description: "Instructions how to setup the Template fans within Home Assistant."
 ha_category:
   - Fan
@@ -9,12 +9,9 @@ logo: home-assistant.png
 ha_quality_scale: internal
 ---
 
-The `template` platform creates fans that combine integrations and provides the
-ability to run scripts or invoke services for each of the turn_on, turn_off, set_speed,
-set_oscillating, and set_direction commands of a fan.
+`template` 플랫폼은 통합구성요소를 결합하고 팬(fan)의 각 turn_on, turn_off, set_speed, set_oscillating 및 set_direction 명령에 대해 스크립트를 실행하거나 서비스를 호출하는 기능을 제공하는 팬(fan)을 만듭니다
 
-To enable Template Fans in your installation, add the following to your
-`configuration.yaml` file:
+설치에서 템플릿 팬을 활성화하려면 `configuration.yaml` 파일에 다음을 추가 하십시오.
 
 {% raw %}
 
@@ -55,57 +52,57 @@ fan:
 
 {% configuration %}
   fans:
-    description: List of your fans.
+    description: 팬 목록.
     required: true
     type: map
     keys:
       friendly_name:
-        description: Name to use in the frontend.
+        description: 프론트 엔드에서 사용할 이름.
         required: false
         type: string
       value_template:
-        description: "Defines a template to get the state of the fan. Valid value: 'on'/'off'"
+        description: "팬 상태를 가져 오기위한 템플릿을 정의. 유효한 값 : 'on'/'off'"
         required: true
         type: template
       speed_template:
-        description: Defines a template to get the speed of the fan.
+        description: 팬 속도를 얻을 수있는 템플릿을 정의
         required: false
         type: template
       oscillating_template:
-        description: "Defines a template to get the osc state of the fan. Valid value: true/false"
+        description: "팬의 OSC 상태를 가져 오기위한 템플릿을 정의. 유효한 값 : true/false"
         required: false
         type: template
       direction_template:
-        description: "Defines a template to get the direction of the fan. Valid value: 'forward'/'reverse'"
+        description: "팬의 방향을 알 수있는 템플릿을 정의합니다. 유효한 값 : 'forward'/'reverse'"
         required: false
         type: template
       availability_template:
-        description: Defines a template to get the `available` state of the component. If the template returns `true`, the device is `available`. If the template returns any other value, the device will be `unavailable`. If `availability_template` is not configured, the component will always be `available`.
+        description: 컴포넌트의 `available` 상태를 가져오도록 템플리트를 정의합니다. 템플릿이 `true` 를 반환하면 장치는  `available`. 템플릿이 다른 값을 반환하면 장치는 `unavailable`. `availability_template`이 설정되어 있지 않으면 구성 요소는 항상 `available`입니다.
         required: false
         type: template
         default: true
       turn_on:
-        description: Defines an action to run when the fan is turned on.
+        description: 팬이 켜질 때 실행할 동작을 정의.
         required: true
         type: action
       turn_off:
-        description: Defines an action to run when the fan is turned off.
+        description: 팬이 꺼질 때 실행할 동작을 정의.
         required: true
         type: action
       set_speed:
-        description: Defines an action to run when the fan is given a speed command.
+        description: 팬에 속도 명령이 제공 될 때 실행할 동작을 정의.
         required: false
         type: action
       set_oscillating:
-        description: Defines an action to run when the fan is given an osc state command.
+        description: 팬에 osc state 명령이 제공 될 때 실행할 동작을 정의.
         required: false
         type: action
       set_direction:
-        description: Defines an action to run when the fan is given a direction command.
+        description: 팬에 방향 명령이 제공 될 때 실행할 동작을 정의.
         required: false
         type: action
       speeds:
-        description: List of speeds the fan is capable of running at.
+        description: 팬이 작동 할 수있는 속도 목록.
         required: false
         type: [string, list]
         default: ['low', 'medium', 'high']

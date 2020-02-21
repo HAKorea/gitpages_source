@@ -9,9 +9,9 @@ logo: home-assistant.png
 ha_quality_scale: internal
 ---
 
-The group light platform lets you combine multiple lights into one entity. All child lights of a light group can still be used as usual, but controlling the state of the grouped light will forward the command to each child light.
+그룹 조명 플랫폼을 사용하면 여러 조명을 하나의 엔티티로 결합 할 수 있습니다. 조명 그룹의 모든 자식 조명은 평소와 같이 계속 사용할 수 있지만 그룹화 된 조명의 상태를 제어하면 명령이 각 자식 조명으로 전달됩니다.
 
-To enable this platform in your installation, add the following to your `configuration.yaml` file:
+설치시 이 플랫폼을 사용하려면 `configuration.yaml` 파일에 다음을 추가 하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -27,25 +27,25 @@ light:
 
 {% configuration %}
   name:
-    description: The name of the light group. Defaults to "Light Group".
+    description: 조명 그룹의 이름입니다. 기본값은 "Light Group"입니다.
     required: false
     type: string
   entities:
-    description: A list of entities to be included in the light group.
+    description: 조명 그룹에 포함 할 엔티티 목록입니다.
     required: true
     type: [string, list]
 {% endconfiguration %}
 
 <p class='img'>
 <img src='/images/integrations/light/group.png'>
-Example of the light group "Kitchen Lights".
+조명 그룹 "주방 조명"의 예.
 </p>
 
-The supported features of all lights will be added together. For example, if you have one RGB light in a group of otherwise brightness-only lights, the light group will be shown with a color picker.
+모든 조명의 지원되는 기능이 함께 추가됩니다. 예를 들어, 밝기 전용 조명 그룹에 RGB 조명이 하나 있으면 조명 그룹에 색상 선택기가 표시됩니다.
 
-## Script Example
+## 스크립트 사례 (Script Example)
 
-Here's an example of a script using the above light group.
+위의 조명 그룹을 사용하는 스크립트의 예는 다음과 같습니다.
 
 ```yaml
 script:

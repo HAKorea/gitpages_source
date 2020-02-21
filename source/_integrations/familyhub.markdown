@@ -1,5 +1,5 @@
 ---
-title: Samsung Family Hub
+title: 삼성 패밀리 허브 냉장고 카메라
 description: Instructions on how to integrate Samsung Family Hub refrigerator cameras within Home Assistant.
 logo: familyhub.png
 ha_category:
@@ -8,11 +8,11 @@ ha_release: '0.70'
 ha_iot_class: Local Polling
 ---
 
-The `familyhub` platform allows you to get images of the inside of your [Samsung Family Hub refrigerator](https://www.samsung.com/us/explore/family-hub-refrigerator/connected-hub/) in Home Assistant.
+이 familyhub플랫폼을 사용하면 홈 어시스턴트에서 [Samsung Family Hub refrigerator](https://www.samsung.com/us/explore/family-hub-refrigerator/connected-hub/) 내부 이미지를 얻을 수 있습니다.
 
-## Configuration
+## 설정 
 
-To enable your Family Hub camera in your installation, add the following to your `configuration.yaml` file:
+설치시 Family Hub 카메라를 활성화하려면 `configuration.yaml`파일에 다음을 추가 하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -23,7 +23,7 @@ camera:
 
 {% configuration %}
 ip_address:
-  description: The IP address of your refrigerator.
+  description: 냉장고의 IP 주소.
   required: true
   type: string
 {% endconfiguration %}

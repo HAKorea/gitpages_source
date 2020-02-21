@@ -8,13 +8,11 @@ ha_release: pre 0.7
 ha_iot_class: Configurable
 ---
 
-The `mjpeg` camera platform allows you to integrate IP cameras which are capable
-to stream their video with MJPEG into Home Assistant.
+`mjpeg` 카메라 플랫폼은 홈어시스턴트로 MJPEG과의 비디오를 스트리밍 할 수있는 IP 카메라를 통합 할 수 있습니다.
 
-## Configuration
+## 설정 
 
-To enable this camera in your installation,
-add the following to your `configuration.yaml` file:
+설치시 이 카메라를 활성화하려면 `configuration.yaml`파일에 다음을 추가 하십시오
 
 ```yaml
 # Example configuration.yaml entry
@@ -25,40 +23,40 @@ camera:
 
 {% configuration %}
 mjpeg_url:
-  description: The URL your camera serves the video on, e.g., `http://192.168.1.21:2112/`
+  description: 카메라에서 동영상을 제공하는 URL. 예들들면 `http://192.168.1.21:2112/`
   required: true
   type: string
 still_image_url:
-  description: The URL for thumbnail picture if camera support that.
+  description: 카메라가 지원하는 경우 썸네일 사진의 URL.
   required: false
   type: string
 name:
-  description: This parameter allows you to override the name of your camera.
+  description: 이 매개 변수를 사용하면 카메라 이름을 무시 가능.
   required: false
   type: string
 username:
-  description: The username for accessing your camera.
+  description: 카메라에 액세스하기위한 사용자 이름.
   required: false
   type: string
 password:
-  description: The password for accessing your camera.
+  description: 카메라에 액세스하기위한 비밀번호.
   required: false
   type: string
 authentication:
-  description: "`basic` or `digest` auth for requests."
+  description: "`basic` 또는 `digest` 요청에 대한 인증."
   required: false
   type: string
   default: basic
 verify_ssl:
-  description: Validate the ssl certificate for this camera.
+  description: 이 카메라의 SSL 인증서를 확인. 
   required: false
   type: boolean
   default: true
 {% endconfiguration %}
 
-## Examples
+## 예시  
 
-Example of using a DCS-930L Wireless N Network Camera from D-Link:
+D-Link의 DCS-930L Wireless N 네트워크 카메라 사용 예 : 
 
 ```yaml
 camera:
@@ -68,7 +66,7 @@ camera:
     mjpeg_url: http://IP/video/mjpg.cgi
 ```
 
-Example of integrating Blue Iris Cameras from a Blue Iris server.
+Blue Iris 서버에서 Blue Iris 카메라를 연동하는 예
 
 ```yaml
 camera:

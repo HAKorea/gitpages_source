@@ -1,5 +1,5 @@
 ---
-title: Presence-based Lights
+title: 재실 기반 조명
 description: Instructions on how to automate your lights with Home Assistant.
 logo: home-assistant.png
 ha_category:
@@ -8,15 +8,15 @@ ha_release: pre 0.7
 ha_quality_scale: internal
 ---
 
-Home Assistant has a built-in integration called `device_sun_light_trigger` to help you automate your lights. The integration will:
+홈어시스턴트에는 `device_sun_light_trigger` 조명을 자동화하는 데 도움 이되는 내장 통합구성요소 기능이 있습니다. 
 
- * Fade in the lights when the sun is setting and there are people home
- * Turn on the lights when people get home after the sun has set
- * Turn off the lights when all people leave the house
+ * 해가지고 사람들이 집에있을 때 불빛이 희미 해집니다
+ * 해가 진 후에 사람들이 집에 돌아 오면 불을 켭니다
+ * 모든 사람들이 집을 떠날 때 불을 끄십시오
 
-This integration requires the integrations [sun](/integrations/sun/), [device_tracker](/integrations/device_tracker/), [person](/integrations/person/) and [light](/integrations/light/) to be enabled.
+이 통합구성요소를 위해서는 [sun](/integrations/sun/), [device_tracker](/integrations/device_tracker/), [person](/integrations/person/) 그리고 [light](/integrations/light/) 통합구성요소가 활성화 되어야합니다.
 
-To enable this integration, add the following lines to your `configuration.yaml` file:
+이 연동을 가능하게하려면 configuration.yaml파일에 다음 행을 추가 하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -25,26 +25,26 @@ device_sun_light_trigger:
 
 {% configuration %}
 light_group:
-  description: Specify a specific light/group of lights that has to be turned on.
+  description: 켜져 야 할 특정 조명/조명 그룹을 지정하십시오.
   required: false
   type: string
 light_profile:
-  description: Specify which light profile to use when turning lights on.
+  description: 조명을 켤 때 사용할 조명 프로파일을 지정하십시오.
   required: false
   default: relax
   type: string
 device_group:
-  description: Specify which group to track. The group can contain device_trackers or persons.
+  description: 추적할 그룹을 지정하십시오. 그룹에는 device_trackers 또는 person이 포함될 수 있습니다.
   required: false
   type: string
 disable_turn_off:
-  description: Disable lights being turned off when everybody leaves the house.
+  description: 모두가 집을 떠날 때 조명이 꺼지도록합니다.
   required: false
   default: false
   type: boolean
 {% endconfiguration %}
 
-A full configuration example could look like this:
+전체 구성 예는 다음과 같습니다. :
 
 ```yaml
 # Example configuration.yaml entry

@@ -1,12 +1,12 @@
 ---
-title: "Script Syntax"
+title: "Script 문법"
 description: "Documentation for the Home Assistant Script Syntax."
 redirect_from: /getting-started/scripts/
 ---
 
-Scripts are a sequence of actions that Home Assistant will execute. Scripts are available as an entity through the standalone [Script component] but can also be embedded in [automations] and [Alexa/Amazon Echo] configurations.
+스크립트는 홈어시스턴트가 실행할 일련의 동작(action)입니다. 스크립트는 독립형 [Script component]를 통해 엔티티로 사용할 수 있지만 [automations] 및 [Alexa/Amazon Echo] 설정에 임베드 될 수도 있습니다.
 
-The script syntax basic structure is a list of key/value maps that contain actions. If a script contains only 1 action, the wrapping list can be omitted.
+스크립트 문법 기본 구조는 동작(action)이 포함 된 키/값 맵의 목록입니다. 스크립트에 동작(action)이 하나만 있으면 줄 바꿈 목록을 생략 할 수 있습니다.
 
 ```yaml
 # Example script integration containing script syntax
@@ -22,9 +22,9 @@ script:
           message: 'Turned on the ceiling light!'
 ```
 
-### Call a Service
+### 서비스 호출 (Call a Service)
 
-The most important one is the action to call a service. This can be done in various ways. For all the different possibilities, have a look at the [service calls page].
+가장 중요한 것은 서비스를 호출하는 동작(action)입니다. 이것은 다양한 방법으로 수행 할 수 있습니다. 다양한 가능성에 대해서는 [service calls page]를 살펴보십시오.
 
 ```yaml
 - alias: Bedroom lights on
@@ -34,17 +34,17 @@ The most important one is the action to call a service. This can be done in vari
     brightness: 100
 ```
 
-#### Activate a Scene
+#### 장면 활성화 (Activate a Scene)
 
-Scripts may also use a shortcut syntax for activating scenes instead of calling the `scene.turn_on` service.
+스크립트는 또한 `scene.turn_on` 서비스를 호출하는 대신 장면(scene)을 활성화하기 위해 단축 구문을 사용할 수 있습니다.
 
 ```yaml
 - scene: scene.morning_living_room
 ```
 
-### Test a Condition
+### 조건 테스트 (Test a Condition)
 
-While executing a script you can add a condition to stop further execution. When a condition does not return `true`, the script will stop executing. There are many different conditions which are documented at the [conditions page].
+스크립트를 실행하는 동안 추가 실행을 중지하기위한 조건을 추가 할 수 있습니다. 조건이 'true'를 반환하지 않으면 스크립트 실행이 중지됩니다. [conditions page]에는 여러 가지 조건이 문서화되어 있습니다.
 
 ```yaml
 # If paulus is home, continue to execute the script below these lines
@@ -53,9 +53,9 @@ While executing a script you can add a condition to stop further execution. When
   state: 'home'
 ```
 
-### Delay
+### 지연 (Delay)
 
-Delays are useful for temporarily suspending your script and start it at a later moment. We support different syntaxes for a delay as shown below.
+지연은 스크립트를 일시적으로 일시 중단하고 나중에 시작하는 데 유용합니다. 아래와 같이 지연에 대해 다른 구문을 지원합니다.
 
 ```yaml
 # Waits 1 hour
@@ -91,9 +91,9 @@ Delays are useful for temporarily suspending your script and start it at a later
 ```
 {% endraw %}
 
-### Wait
+### 대기 (Wait)
 
-Wait until some things are complete. We support at the moment `wait_template` for waiting until a condition is `true`, see also on [Template-Trigger](/docs/automation/trigger/#template-trigger). It is possible to set a timeout after which the script will continue its execution if the condition is not satisfied. Timeout has the same syntax as `delay`.
+몇 가지 사항이 완료 될 때까지 기다리십시오. 현재 `wait_template`이 조건이 `true`가 될 때까지 기다리는 것을 지원합니다. [Template-Trigger](/docs/automation/trigger/#template-trigger)도 참조하십시오. 조건이 충족되지 않으면 스크립트가 계속 실행되는 시간 초과를 설정할 수 있습니다. 타임 아웃은 `delay`와 같은 문법입니다.
 
 {% raw %}
 ```yaml
@@ -110,7 +110,7 @@ Wait until some things are complete. We support at the moment `wait_template` fo
 ```
 {% endraw %}
 
-When using `wait_template` within an automation `trigger.entity_id` is supported for `state`, `numeric_state` and `template` triggers, see also [Available-Trigger-Data](/docs/automation/templating/#available-trigger-data).
+자동화 내에서 `wait_template`을 사용할 때 `trigger.entity_id`는 `state`, `numeric_state` 그리고 `template` 트리거에 대해 지원됩니다.
 
 {% raw %}
 ```yaml
@@ -118,7 +118,7 @@ When using `wait_template` within an automation `trigger.entity_id` is supported
 ```
 {% endraw %}
 
-It is also possible to use dummy variables, e.g., in scripts, when using `wait_template`.
+더미 변수(dummy variables)를 사용하는 것도 가능합니다. 예를 들어, 스크립트에서`wait_template`을 사용할 때.
 
 {% raw %}
 ```yaml
@@ -132,7 +132,7 @@ It is also possible to use dummy variables, e.g., in scripts, when using `wait_t
 ```
 {% endraw %}
 
-You can also get the script to abort after the timeout by using optional `continue_on_timeout`
+옵션으로 `continue_on_timeout`을 사용하여 타임 아웃 후에 스크립트가 중단되도록 할 수 도 있습니다.
 
 {% raw %}
 ```yaml
@@ -143,11 +143,11 @@ You can also get the script to abort after the timeout by using optional `contin
 ```
 {% endraw %}
 
-Without `continue_on_timeout` the script will always continue.  
+`continue_on_timeout`이 없으면 스크립트는 항상 계속됩니다.
 
-### Fire an Event
+### 이벤트 발생 (Fire an Event)
 
-This action allows you to fire an event. Events can be used for many things. It could trigger an automation or indicate to another integration that something is happening. For instance, in the below example it is used to create an entry in the logbook.
+이 동작(action)은 이벤트를 발생시킬 수 있습니다. 많은 것들에 이벤트가 사용될 수 있습니다. 자동화를 트리거하거나 다른 연동에 문제가 있음을 나타낼 수 있습니다. 예를 들어 아래 예에서는 로그북에 항목을 만드는 데 사용됩니다.
 
 ```yaml
 - event: LOGBOOK_ENTRY
@@ -158,8 +158,7 @@ This action allows you to fire an event. Events can be used for many things. It 
     domain: light
 ```
 
-You can also use event_data_template to fire an event with custom data. This could be used to pass data to another script awaiting
-an event trigger.
+event_data_template을 사용하여 사용자 정의 데이터로 이벤트를 발생시킬 수도 있습니다. 이벤트 트리거를 기다리는 다른 스크립트로 데이터를 전달하는 데 사용할 수 있습니다. 
 
 {% raw %}
 ```yaml
@@ -170,9 +169,9 @@ an event trigger.
 ```
 {% endraw %}
 
-### Raise and Consume Custom Events
+### 사용자정의 이벤트 발생 및 소비 (Raise and Consume Custom Events)
 
-The following automation shows how to raise a custom event called `event_light_state_changed` with `entity_id` as the event data. The action part could be inside a script or an automation.
+다음 자동화는 `entity_id`를 이벤트 데이터로 사용하여 `event_light_state_changed`라는 사용자 정의 이벤트를 발생시키는 방법을 보여줍니다. 동작 부분은 스크립트 또는 자동화 내부에 있을 수 있습니다.
 
 {% raw %}
 ```yaml
@@ -188,7 +187,7 @@ The following automation shows how to raise a custom event called `event_light_s
 ```
 {% endraw %}
 
-The following automation shows how to capture the custom event `event_light_state_changed`, and retrieve corresponding `entity_id` that was passed as the event data.
+다음 자동화는 사용자 정의 이벤트 `event_light_state_changed`를 캡처하고 이벤트 데이터로 전달된 해당 `entity_id`를 검색하는 방법을 보여줍니다.
 
 {% raw %}
 ```yaml

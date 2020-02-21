@@ -13,7 +13,7 @@ ha_codeowners:
   - '@fabaff'
 ---
 
-There is currently support for the following device types within Home Assistant:
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다 :
 
 - [Binary Sensor](#binary-sensor)
 - [Sensor](#sensor)
@@ -21,9 +21,10 @@ There is currently support for the following device types within Home Assistant:
 
 ## Binary Sensor
 
-The `arest` binary sensor platform allows you to get all data from your devices (like Arduinos with an ethernet/wifi connection, the ESP8266, and the Raspberry Pi) running the [aREST](https://arest.io/) RESTful framework.
+`arest` 바이너리 센서 플랫폼을 사용하면 [aREST] (https://arest.io/) RESTful 프레임 워크를 실행하는 장치
+(이더넷 / Wi-Fi 연결이있는 Arduinos, ESP8266 및 Raspberry Pi와 같은)에서 모든 데이터를 가져올 수 있습니다.
 
-To use your aREST binary sensor in your installation, add the following to your `configuration.yaml` file:
+설치시 aREST 이진 센서를 사용하려면 `configuration.yaml` 파일에 다음을 추가 하십시오. 
 
 ```yaml
 # Example configuration.yaml entry
@@ -35,27 +36,27 @@ binary_sensor:
 
 {% configuration %}
 resource:
-  description: IP address and schema of the device that is exposing an aREST API, e.g., `http://192.168.1.10`.
+  description: aREST API를 노출하는 장치의 IP 주소 및 스키마 (예를들면 `http://192.168.1.10`) 
   required: true
   type: string
 pin:
-  description: Number of the pin to monitor.
+  description: 모니터링 할 핀 번호.
   required: true
   type: integer
 name:
-  description: Let you overwrite the name of the device. By default *name* from the device is used.
+  description: 장치 이름을 덮어 씁니다. 기본적으로 장치의 *이름* 이 사용됨.
   required: false
   type: string
 {% endconfiguration %}
 
-Accessing the URL `http://IP_ADDRESS/digital/PIN_NUMBER` should give you the state of the pin inside a JSON response as `return_value`.
+URL `http://IP_ADDRESS/digital/PIN_NUMBER`에 액세스하면 JSON 응답 내부의 핀 상태를 `return_value`로 제공해야 합니다.
 
 ```bash
 $ curl -X GET http://192.168.0.5/digital/9
 {"return_value": 0, "id": "office1", "name": "Office", "connected": true}
 ```
 
-An example for Pin 9 inspired by the command above could look like this:
+위 명령에서 전달한 핀 9의 예는 다음과 같습니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -67,14 +68,14 @@ binary_sensor:
 ```
 
 <div class='note'>
-This sensor is not suitable for fast state changes because there is a high possibility that the change took place between two update cycle.
+이 센서는 두 번의 업데이트주기 사이에 변경이 발생할 가능성이 높기 때문에 빠른 상태 변경에는 적합하지 않습니다.
 </div>
 
 ## Sensor
 
-The `arest` sensor platform allows you to get all data from your devices (like Arduinos with a Ethernet/Wifi connection, the ESP8266, and the Raspberry Pi) running the [aREST](https://arest.io/) RESTful framework.
+`arest` 센서 플랫폼을 사용하면 [aREST](https://arest.io/) RESTful 프레임 워크를 실행하는 장치 (이더넷 / Wi-Fi 연결이있는 Arduino, ESP8266 및 Raspberry Pi 등)에서 모든 데이터를 가져올 수 있습니다.
 
-To use your aREST enabled device in your installation, add the following to your `configuration.yaml` file:
+설치시 aREST 지원 장치를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -91,69 +92,69 @@ sensor:
 
 {% configuration %}
 resource:
-  description: "IP address and schema of the device that is exposing an aREST API, e.g., `https://192.168.1.10`."
+  description: "aREST API를 노출하는 장치의 IP 주소 및 스키마 (예를들어 `https : // 192.168.1.10`)"
   required: true
   type: string
 name:
-  description: Let you overwrite the name of the device.
+  description: 장치 이름을 덮어 씁니다.
   required: false
   default: aREST sensor
   type: string
 pins:
-  description: List of pins to monitor. Analog pins need a leading **A** for the pin number.
+  description: 모니터링 할 핀 목록. 아날로그 핀 은 핀 번호에 선행 **A** 가 필요합니다. 
   required: false
   type: list
   keys:
     pin:
-      description: Pin number to use.
+      description: 사용할 핀 번호.
       required: true
       type: list
       keys:
         name:
-          description: The name of the variable you wish to monitor.
+          description: 모니터링하려는 변수의 이름.
           required: true
           type: string
         unit_of_measurement:
-          description: Defines the unit of measurement of the sensor, if any.
+          description: 센서의 측정 단위를 정의 (있는 경우).
           required: false
           type: string
         value_template:
-          description: Defines a [template](/docs/configuration/templating/#processing-incoming-data) to extract a value from the payload.
+          description: 페이로드에서 값을 추출하기 위해 [template](/docs/configuration/templating/#processing-incoming-data)을 정의.
           required: false
           type: template
 monitored_variables:
-  description: List of exposed variables.
+  description: 노출 된 변수 목록.
   required: false
   type: list
   keys:
     variable:
-      description: Name of the variable to monitor.
+      description: 모니터 할 변수의 이름.
       required: true
       type: list
       keys:
         name:
-          description: The name to use for the frontend.
+          description: 프런트 엔드에 사용할 이름.
           required: false
           type: string
         unit_of_measurement:
-          description: Defines the units of measurement of the sensor, if any.
+          description: 센서의 측정 단위를 정의 (있는 경우).
           required: false
           type: string
         value_template:
-          description: Defines a [template](/docs/configuration/templating/#processing-incoming-data) to extract a value from the payload.
+          description: 페이로드에서 값을 추출하기 위해 [template](/docs/configuration/templating/#processing-incoming-data)을 정의
           required: false
           type: template
 {% endconfiguration %}
 
-The variables in the `monitored_variables` array must be available in the response of the device. As a starting point you could use the one of the example sketches (eg.  [Ethernet](https://raw.githubusercontent.com/marcoschwartz/aREST/master/examples/Ethernet/Ethernet.ino) for an Arduino with Ethernet shield). In those sketches are two variables (`temperature` and `humidity`) available which will act as endpoints.
+`monitored_variables` 배열의 변수는 장치의 응답으로 사용 가능해야 합니다. 이더넷 기능이있는 Arduino에 대한 스케치 (예 : [Ethernet](https://raw.githubusercontent.com/marcoschwartz/aREST/master/examples/Ethernet/Ethernet.ino)) 중 하나를 사용할 수 있습니다. 이 스케치에서는 endpoint 역할을 하는 두 가지 변수 (`온도` 및 `습도`)를 사용할 수 있습니다.
 
-Accessing one of the endpoints (eg. `http://192.168.1.10/temperature`) will give you the value inside a JSON response.
+엔드 포인트 중 하나에 액세스하면 (예를 들면 `http://192.168.1.10/temperature`) JSON 응답 내부의 값을 제공합니다.
 
 ```json
 {"temperature": 23, "id": "sensor01", "name": "livingroom", "connected": true}
 ```
 
-The root will give you a JSON response that contains all variables and their current values along with some device details.
+루트는 모든 변수 및 현재 값과 일부 장치 세부 정보가 포함 된 JSON 응답을 제공합니다.
 
 ```json
 {
@@ -167,17 +168,17 @@ The root will give you a JSON response that contains all variables and their cur
 }
 ```
 
-`return_value` contains the sensor's data in a JSON response for a given pin (eg. `http://192.168.1.10/analog/2/` or  `http://192.168.1.10/digital/7/`).
+`return_value`는 주어진 핀에 대한 JSON 응답의 센서 데이터를 포함합니다. (예: `http://192.168.1.10/analog/2/` 혹은  `http://192.168.1.10/digital/7/`).
 
 ```json
 {"return_value": 34, "id": "sensor02", "name": "livingroom", "connected": true}
 ```
 
-## Switch
+## 스위치 (Switch)
 
-The `arest` switch platform allows you to toggle pins of your devices (like Arduino boards with an Ethernet/Wifi connection, ESP8266 based devices, and the Raspberry Pi) running the [aREST](https://arest.io/) RESTful framework.
+`arest` 스위치 플랫폼을 사용하면 [aREST](https://arest.io/) RESTful 프레임 워크를 실행하는 장치(이더넷 / Wi-Fi 연결이있는 Arduino 보드, ESP8266 기반 장치 및 Raspberry Pi와 같은)에서 핀을 토글 할 수 있습니다.
 
-To use your aREST enabled device with pins in your installation, add the following to your `configuration.yaml` file:
+설치시 핀이있는 aREST 지원 장치를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오. :
 
 ```yaml
 # Example configuration.yaml entry
@@ -192,7 +193,7 @@ switch:
         invert: true
 ```
 
-If you want to use custom functions, then add the following to your `configuration.yaml` file:
+커스텀 함수를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -207,39 +208,39 @@ switch:
 
 {% configuration %}
 resource:
-  description: IP address and schema of the device that is exposing an aREST API, e.g., `http://192.168.1.10` (no-trailing slash)
+  description: aREST API를 노출하는 장치의 IP 주소 및 스키마 (예를들어 `http://192.168.1.10` 슬래시 없음) 
   required: true
   type: string
 name:
-  description: Let you overwrite the name of the device. By default *name* from the device is used.
+  description: 장치 이름을 덮어 씀. 기본적으로 장치의 *name*이 사용됨.
   required: false
   type: string
 pins:
-  description: An array with all used pins.
+  description: 사용 된 핀이 모두있는 배열.
   required: false
   type: map
   keys:
     name:
-      description: The name of the pin to use in the frontend.
+      description: 프론트 엔드에서 사용할 핀의 이름.
       required: true
       type: string
     invert:
-      description: If the logic for on/off should be inverted.
+      description: 온/오프 로직이 반전되어야하는 경우.
       required: false
       type: boolean
       default: false
 functions:
-  description: An array with all used functions.
+  description: 사용 된 모든 함수가있는 배열.
   required: false
   type: map
   keys:
     name:
-      description: The name to use in the frontend.
+      description: 프론트 엔드에서 사용할 이름.
       required: true
       type: string
 {% endconfiguration %}
 
-You can still switch your pins with a web browser or a command line tool. Use the URL `http://192.168.1.10/digital/8/1` to set pin 8 to high/on, the JSON response will give you the feedback.
+웹 브라우저 또는 명령 행 도구를 사용하여 핀을 계속 전환 할 수 있습니다. URL `http://192.168.1.10/digital/8/1`을 사용하여 핀 8을 high/on으로 설정하면 JSON 응답이 피드백을 제공합니다.
 
 ```json
 {"message": "Pin D8 set to 1", "id": "sensor02", "name": "livingroom", "connected": true}

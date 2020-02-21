@@ -9,18 +9,24 @@ ha_iot_class: Configurable
 ---
 
 The `mqtt` binary sensor platform uses an MQTT message payload to set the binary sensor to one of two states: `on` or `off`.
+`mqtt` binary sensor 플랫폼은 MQTT 메시지 페이로드를 사용하여 binary sensor를 두 가지 상태 중 하나로 설정합니다 : `on` 또는 `off`.
 
-The binary sensor state will be updated only after a new message is published on `state_topic` matching `payload_on` or `payload_off`. If these messages are published with the `retain` flag set,
-the binary sensor will receive an instant state update after subscription and Home Assistant will display the correct state on startup.
+The binary sensor state will be updated only after a new message is published on `state_topic` matching `payload_on` or `payload_off`. 
+If these messages are published with the `retain` flag set,the binary sensor will receive an instant state update after subscription and Home Assistant will display the correct state on startup.
 Otherwise, the initial state displayed in Home Assistant will be `unknown`.
+바이너리 센서 상태는 '`state_topic`가 `payload_on` 또는 `payload_off`와 일치할 때 새 메시지가 게시(publish)된 후에 만 ​​업데이트됩니다. 
+이러한 메시지가 'retain'플래그가 설정된 상태로 게시(publish) 된 경우 subscription후 바이너리 센서에 즉시 상태 업데이트가 수신되고 홈어시스턴트는 시작시 올바른 상태를 표시합니다. 그렇지 않으면 홈어시스턴트에 표시되는 초기 상태는 `unknown` 입니다.
 
-## Configuration
+## 설정 (Configuration)
 
 The `mqtt` binary sensor platform optionally supports an `availability_topic` to receive online and offline messages (birth and LWT messages) from the MQTT device. During normal operation, if the MQTT sensor device goes offline (i.e., publishes `payload_not_available` to `availability_topic`), Home Assistant will display the binary sensor as `unavailable`. If these messages are published with the `retain` flag set, the binary sensor will receive an instant update after subscription and Home Assistant will display the correct availability state of the binary sensor when Home Assistant starts up. If the `retain` flag is not set, Home Assistant will display the binary sensor as `unavailable` when Home Assistant starts up. If no `availability_topic`
 is defined, Home Assistant will consider the MQTT device to be available.
+`mqtt` binary sensor 플랫폼은 선택적으로 MQTT 장치에서 온라인 및 오프라인 메시지 (birth 및 LWT 메시지)를 수신 할 수있는 `availability_topic`을 지원합니다. 정상 작동 중에 MQTT 센서 장치가 오프라인 상태가되면 (즉, `payload_not_available`을 `availability_topic`에 게시하는 경우) 홈어시스턴트는  binary sensor를 `unavailable`로 표시합니다. 이러한 메시지가 `retain` 플래그가 설정된 상태로 게시된 경우 subscription 후  binary sensor는 즉시 업데이트를 수신하고 Home Assistant는 Home Assistant가 시작될 때  binary sensor의 올바른 가용성 상태를 표시합니다. `retain` 플래그가 설정되지 않은 경우 Home Assistant는 Home Assistant가 시작될 때 binary sensor를 사용할 수 없는 것으로 표시합니다. 
+`availability_topic`이 정의되지 않은 경우 홈 어시스턴트는 MQTT 디바이스를 사용 가능한 것으로 간주합니다.
 
 To use an MQTT binary sensor in your installation,
 add the following to your `configuration.yaml` file:
+설치에서 MQTT 이진 센서를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -31,26 +37,27 @@ binary_sensor:
 
 {% configuration %}
 state_topic:
-  description: The MQTT topic subscribed to receive sensor values.
+  description: MQTT topic은 센서 값을 수신하도록 구독(subscribe).
   required: true
   type: string
 name:
-  description: The name of the binary sensor.
+  description: 이진 센서의 이름.
   required: false
   type: string
   default: MQTT Binary Sensor
 payload_on:
-  description: The payload that represents the on state.
+  description: 켜짐 상태를 나타내는 페이로드.
   required: false
   type: string
   default: "ON"
 payload_off:
-  description: The payload that represents the off state.
+  description: 오프 상태를 나타내는 페이로드.
   required: false
   type: string
   default: "OFF"
 availability_topic:
-  description: "The MQTT topic subscribed to receive birth and LWT messages from the MQTT device. If `availability_topic` is not defined, the binary sensor availability state will always be `available`. If `availability_topic` is defined, the binary sensor availability state will be `unavailable` by default."
+  description: "MQTT topic은 MQTT 디바이스에서 birth 및 LWT 메시지를 수신하도록 subscribe. 
+`availability_topic`이 정의되어 있지 않으면 이진 센서 가용성 상태는 항상 사용 가능. `availability_topic`이 정의되어 있으면 이진 센서 가용성 상태는 기본적으로 사용할 수 없습니다. If `availability_topic` is not defined, the binary sensor availability state will always be `available`. If `availability_topic` is defined, the binary sensor availability state will be `unavailable` by default."
   required: false
   type: string
 payload_available:

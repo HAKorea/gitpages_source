@@ -11,11 +11,12 @@ ha_codeowners:
   - '@fabaff'
 ---
 
-The `moon` integration tracks the phases of the moon.
+`moon` 통합구성요소는 달의 위치와 상태를 추적합니다.
 
-## Configuration
+## 설정 
 
 To enable the moon sensor, add the following lines to your `configuration.yaml`:
+달 센서를 `configuration.yaml`에 활성화하려면 다음 줄을 추가하십시오
 
 ```yaml
 # Example configuration.yaml entry
@@ -23,7 +24,7 @@ sensor:
   - platform: moon
 ```
 
-This sensor will return one of the following values:
+이 센서는 다음의 값 중 하나를 반환합니다. :
 `new_moon`, `waxing_crescent`, `first_quarter`, `waxing_gibbous`, `full_moon`, `waning_gibbous`, `last_quarter` or `waning_crescent` .
 
 <p class='img'>

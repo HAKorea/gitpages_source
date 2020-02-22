@@ -1,12 +1,12 @@
 ---
-title: "Using time interval and input boolean"
+title: "시간간격과 Input_boolean 사용"
 description: "Automation to get a random color every 2 minutes that can be turned on/off."
 ha_category: Automation Examples
 ---
 
-#### Change Hue light on interval to random color based on state of an input boolean 
+#### input_boolean 상태에 따라 Hue 조명을 일정 시간 간격으로 임의의 색상으로 변경
 
-_Note, Philips Hue is currently the only light platform that support the random effect._
+_Note, 필립스 Hue는 현재 Random Effect를 지원하는 유일한 경량 플랫폼._
 
 ```yaml
 input_boolean:

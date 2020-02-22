@@ -1,10 +1,10 @@
 ---
-title: "Examples using first light"
+title: "아침시간에 맞춰 조명을 켜주는 예"
 description: "Automation examples that trigger lights in the morning."
 ha_category: Automation Examples
 ---
 
-#### Create an input_boolean in your configuration.yaml 
+#### configuration.yaml에서 input_boolean 만들기
 
 ```yaml
 input_boolean:
@@ -13,7 +13,7 @@ input_boolean:
     icon: mdi:kettle
 ```
 
-#### The Main Automation 
+#### 주요 자동화 
 
 ```yaml
 ## These first two control t input_boolean that allows the "first morning action" to occur
@@ -87,9 +87,9 @@ automation:
 
 ```
 
-#### The Scene
+#### 장면 (Scene)
 
-Here is the Scene that is called via the Automations above.
+위의 자동화를 통해 호출 된 장면은 다음과 같습니다.
 
 ```yaml
 # here's the scene that gets called. Lights in

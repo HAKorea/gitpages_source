@@ -1,18 +1,20 @@
 ---
-title: "Automation in Code"
+title: "파이선 코드로 자동화 사례"
 description: "A sample to do automations in Python Code."
 ha_category: Automation in Python Examples
 ---
 
 Example integration to target an `entity_id` to:
+`entity_id` 를 대상으로하는 연동 사례 : 
 
- - turn it on at 7AM in the morning
- - turn it on if anyone comes home and it is off
- - turn it off if all lights are turned off
- - turn it off if all people leave the house
- - offer a service to turn it on for 10 seconds
+ - 아침에 오전 7시에 켜십시오
+ - 누군가 집에 와서 끄면 켜십시오
+ - 모든 표시등이 꺼지면 끄십시오
+ - 모든 사람들이 집을 떠나면 끄십시오
+ - 10 초 동안 켜는 서비스 제공
 
 To set it up, add the following lines to your `configuration.yaml` file:
+설정하려면 `configuration.yaml` 파일에 다음 줄을 추가 하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -22,12 +24,12 @@ example:
 
 {% configuration %}
 target:
-  description: TARGET_ENTITY should be one of your devices that can be turned on and off, e.g., a light or a switch. Example value could be light.Ceiling or switch.AC (if you have these devices with those names).
+  description: "TARGET_ENTITY는 켜거나 끌 수 있는 장치 중 하나여야 합니다 (예 : 조명 또는 스위치). 예제 값은 light.Ceiling 또는 switch.AC 일 수 있습니다 (해당 이름의 장치가 있는 경우)."
   required: true
   type: string
 {% endconfiguration %}
 
-Create the file `<config dir>/custom_components/example.py` and copy paste the content below:
+파일 `<config dir>/custom_components/example.py`를 만들고 아래 내용을 복사하여 붙여 넣습니다.
 
 ```python
 """

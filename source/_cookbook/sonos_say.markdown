@@ -1,12 +1,12 @@
 ---
-title: "Sonos say script to speak with text-to-speech"
+title: "Sonos로 script를 사용하여 text-to-speech로 말하게하기"
 description: "Sonos say script to use text-to-speech with Sonos"
 ha_category: Automation Examples
 ---
 
-#### Sonos say script to speak with text-to-speech
+#### Sonos로 script를 사용하여 text-to-speech 실행
 
-This script allows you to use [TTS](/integrations/#text-to-speech) on Sonos.
+이 스크립트를 사용하면 Sonos에서 [TTS](/integrations/#text-to-speech) 를 사용할 수 있습니다 .
 
 ```yaml
 script:
@@ -33,7 +33,7 @@ script:
          entity_id: {% raw %}"{{ sonos_entity }}"{% endraw %}
 ```
 
-We call this now with:
+이제 다음과 같이 호출이 가능합니다. :
 ```yaml
 automation:
   - alias: 'test'
@@ -48,14 +48,14 @@ automation:
           message: 'Your husband coming home!'
           delay: '00:00:05'
 ```
-Note that this example uses the `voicerss` text-to-speech platform. There are many platforms that can be used. The one installed by default with Home Assistant is Google TTS. This appears in your `configuration.yaml` file as:
+이 예제는 `voicerss` TTS (text-to-speech) 플랫폼을 사용합니다. 사용할 수있는 많은 플랫폼이 있습니다. Home Assistant와 함께 기본적으로 설치되는 것은 Google TTS입니다. `configuration.yaml` 파일에 다음과 같이 나타냅니다 .
 
 ```yaml
 tts:
   - platform: google_translate
 ```
 
-If you want to use this TTS engine, change the line in the example provided to:
+이 TTS 엔진을 사용하려면 제공된 예제에서 라인을 다음과 같이 변경하십시오. :
 ```txt
 - service: tts.google_translate_say
 ```

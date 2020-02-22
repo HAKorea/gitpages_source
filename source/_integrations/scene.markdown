@@ -10,7 +10,7 @@ ha_codeowners:
   - '@home-assistant/core'
 ---
 
-You can create scenes that capture the states you want certain entities to be. For example, a scene can specify that light A should be turned on and light B should be bright red.
+특정 엔티티가 원하는 상태를 설정하는 장면(scene)을 만들 수 있습니다. 예를 들어 장면에서 조명 A를 켜고 조명 B를 밝게 빨간색으로 지정하도록 할 수 있습니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -36,21 +36,21 @@ scene:
 
 {% configuration %}
 name:
-  description: Friendly name of scene.
+  description: 친숙한 장면 이름.
   required: true
   type: string
 entities:
-  description: Entities to control and their desired state.
+  description: 제어 할 엔티티 및 원하는 상태.
   required: true
   type: list
 {% endconfiguration %}
 
-As you can see, there are two ways to define the states of each `entity_id`:
+다음과 같이, 각각의 `entity_id` 상태를 정의하는 두 가지 방법이 있습니다
 
-- Define the `state` directly with the entity. Be aware, that `state` needs to be defined.
-- Define a complex state with its attributes. You can see all attributes available for a particular entity under `developer-tools -> state`.
+- 엔티티와 직접 `state`를 정의하십시오. 반드시 `state`를 정의해야합니다.
+- 속성으로 복잡한 상태를 정의하십시오. `developer-tools-> state` 에서 특정 엔티티에 사용 가능한 모든 속성을 볼 수 있습니다. 
 
-Scenes can be activated using the service `scene.turn_on` (there is no 'scene.turn_off' service).
+`scene.turn_on` 서비스를 사용하지 않고 장면을 활성화 할 수 있습니다 (scene.turn_off '서비스 없음').
 
 ```yaml
 # Example automation
@@ -65,9 +65,9 @@ automation:
     entity_id: scene.romantic
 ```
 
-## Applying a scene without defining it
+## 장면을 정의하지 않고 적용
 
-With the `scene.apply` service you are able to apply a scene without first defining it via configuration. Instead, you pass the states as part of the service data. The format of the data is the same as the `entities` field in a configuration.
+`scene.apply` 서비스를 사용하면 설정을 통해 먼저 장면을 정의하지 않고도 장면을 적용 할 수 있습니다. 대신 서비스 데이터의 일부로 상태를 전달합니다. 데이터의 형식은 설정에서 `entities` 필드와 동일합니다.
 
 ```yaml
 # Example automation
@@ -90,17 +90,17 @@ automation:
           source: HDMI 1
 ```
 
-## Reloading scenes
+## 장면 새로고침
 
-Whenever you make a change to your scene configuration, you can call the `scene.reload` service to reload the scenes.
+장면 구성을 변경할 때마다 `scene.reload` 서비스를 호출 하여 장면을 다시로드 할 수 있습니다.
 
-## Creating scenes on the fly
+## 즉석에서 장면 만들기
 
-Create a new scene without having to configure it by calling the `scene.create` service. This scene will be discarded after reloading the configuration.
+`scene.create`서비스 를 호출하여 별도 설정할 필요없이 새 장면을 만듭니다. 이 장면은 설정을 다시로드 한 후에 삭제됩니다.
 
-You need to pass a `scene_id` in lowercase and with underscores instead of spaces. You also may want to specify the entities in the same format as when configuring the scene. You can also take a snapshot of the current state by using the `snapshot_entities` parameter. In this case, you have to specify the `entity_id` of all entities you want to take a snapshot of. `entities` and `snapshot_entities` can be combined but you have to use at least one of them.
+공백 대신 밑줄로 소문자로 `scene_id`를 전달해야합니다. 장면을 구성 할 때와 같은 형식으로 엔티티를 지정할 수도 있습니다. `snapshot_entities` 매개 변수를 사용하여 현재 상태의 스냅샷을 작성할 수도 있습니다. 이 경우 스냅샷을 만들려는 모든 엔터티의 `entity_id`를 지정해야합니다. `entities`와 `snapshot_entities`는 결합 할 수 있지만 적어도 둘 중 하나를 사용해야합니다.
 
-If the scene was previously created by `scene.create`, it will be overwritten. If the scene was created by YAML, nothing happens but a warning in your log files.
+장면이 이전에 `scene.create`에 의해 생성 된 경우 덮어 씁니다. YAML에서 장면을 만든 경우 로그 파일에 경고 만 표시됩니다. 
 
 ```yaml
 # Example automation using entities
@@ -122,7 +122,7 @@ automation:
           source: HDMI 1
 ```
 
-The following example turns off some entities as soon as a window opens. The states of the entities are restored after the window is closed again.
+다음 예제는 창이 열리면 일부 엔티티를 끕니다. 창을 다시 닫은 후 엔터티의 상태가 복원됩니다.
 
 ```yaml
 # Example automation using snapshot

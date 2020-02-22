@@ -1,10 +1,10 @@
 ---
-title: "Perform actions based on input select"
+title: "input_select로 작업 실행시키기"
 description: "Example playing media to Chromecast based on input select element"
 ha_category: Automation Examples
 ---
 
-This example uses an [`input_select`](/integrations/input_select/) element to pick which mp3 file to play on a [Chromecast](/integrations/cast/).
+이 예에서는 [`input_select`](/integrations/input_select/)를 사용하여 [Chromecast](/integrations/cast/)에서 재생할 mp3 파일을 선택합니다.
 
 ```yaml
 # Define our dropdown list
@@ -69,7 +69,7 @@ automation:
       data:
         entity_id: media_player.nursery
 ```
-A little bit more complex example that uses [`input_select`](/integrations/input_select/) and template to decide what to play, and which [Chromecast](/integrations/cast/) to play on.
+[`input_select`](/integrations/input_select/) 및 템플릿을 사용하여 재생할 대상 및 재생할 [Chromecast](/integrations/cast/)를 결정하는 좀 더 복잡한 예입니다.
 
 ```yaml
 input_select:

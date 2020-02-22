@@ -1,12 +1,12 @@
 ---
-title: "Restart Home Assistant if Wemo Switch is not detected"
+title: "Wemo Switch가 감지 안되면 홈어시스턴트 재시작."
 description: "Restart Home Assistant if Wemo Switch is not detected."
 ha_category: Automation Examples
 ---
 
-### Restart Home Assistant
+### 홈어시스턴트 재시작 
 
-This configuration example is restarting Home Assistant if a [WeMo](/integrations/wemo) switch is not detected. An additional MQTT switch is present for stopping Home Assistant and can be triggered by [IFTTT](/integrations/ifttt/). The running batch script will automatically restart Home Assistant if the process isn't found anymore.
+이 설정 예는 [WeMo](/integrations/wemo) 스위치가 감지되지 않으면 홈어시스턴트를 재시작합니다. 홈어시스턴트 중지를 위한 추가 MQTT 스위치가 있으며 [IFTTT](/integrations/ifttt/)에 의해 트리거 될 수 있습니다. 프로세스가 더 이상 발견되지 않으면 실행중인 배치 스크립트가 홈어시스턴트를 자동으로 재시작합니다.
 
 ```yaml
 mqtt:

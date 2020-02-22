@@ -1,15 +1,15 @@
 ---
-title: "Dim lights when playing media"
+title: "미디어를 재생할 때 조명을 희미하게"
 description: "Dim lights up or down when playing media"
 ha_category: Automation Examples
 ---
 
-Like it how the lights dim up/down at the movies? Do it at home as well!
+영화관에서 조명이 어두워지는 방식처럼 집에서도 적용해보십시오!
 
-This example uses the [media player](/integrations/media_player/), [lights](/integrations/light/) (transitions) and the [sun](/integrations/sun/) integration. We'll use actions to detect media player state changes and [scenes](/integrations/scene/) to control multiple lights and transition between scenes.
+이 예에서는 [media player](/integrations/media_player/), [lights](/integrations/light/) (transitions) 및 [sun](/integrations/sun/) 통합구성요소를 사용합니다. 미디어 플레이어 상태 변화와 [scenes](/integrations/scene/)을 감지하여 여러 조명과 장면(scene) 간 전환을 제어하는 ​​작업을 사용합니다.
 
-#### Scenes
-One scene for normal light, one for when movies are on. A 2 second transition gives a nice 'feel' to the switch.
+#### 장면 (Scenes)
+일반 조명의 경우 한 장면, 영화가 켜졌을 때의 장면. 2초 전환은 스위치에 좋은 '느낌'을 줍니다.
 
 ```yaml
 scene:
@@ -36,8 +36,8 @@ scene:
 ```
 
 
-#### Automation 
-The paused/stopped state is best matched using "from: 'playing'". Adding in the sun condition as we only want this when it's dark.
+#### 자동화
+일시 중지/중지 상태는 "from : 'playing'"을 사용하는 것이 가장 좋습니다. 보통 어두울 때만 동작하기 원하기때문에 태양(sun) 을 상태에 추가합니다. 
 
 ```yaml
 automation:

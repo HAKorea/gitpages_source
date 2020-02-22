@@ -1,5 +1,5 @@
 ---
-title: "Telegram chatbot"
+title: "텔레그램 챗봇 (Telegram chatbot)"
 description: "Telegram chatbot support"
 logo: telegram.png
 ha_category:
@@ -8,167 +8,167 @@ ha_release: 0.42
 ha_iot_class: Cloud Push
 ---
 
-Use Telegram on your mobile or desktop device to send and receive messages or commands to/from your Home Assistant.
+모바일 또는 데스크톱 장치에서 송수신 기능을 사용하여 홈 어시스턴트와 메시지 또는 명령을 주고받습니다.
 
-This integration creates notification services to send, or edit previously sent, messages from a [Telegram Bot account](https://core.telegram.org/bots) configured either with the [polling](/integrations/telegram_polling) platform or with the [webhooks](/integrations/telegram_webhooks) one, and trigger events when receiving messages.
+이 통합구성요소는 [polling](/integrations/telegram_polling) 플랫폼 또는 다음으로 구성된 [Telegram Bot account](https://core.telegram.org/bots)에서 메시지를 보내거나 이전에 보낸 메시지를 편집하는 알림 서비스를 만듭니다. [webhooks](/integrations/telegram_webhooks) 및 메시지 수신시 이벤트를 트리거합니다.
 
-If you don't need to receive messages, you can use the [broadcast](/integrations/telegram_broadcast) platform instead.
+메시지를 받을 필요가 없는 경우 [broadcast](/integrations/telegram_broadcast) 플랫폼을 대신 사용할 수 있습니다.
 
-## Notification services
+## 알림 서비스
 
-Available services: `send_message`, `send_photo`, `send_document`, `send_location`, `send_sticker`, `edit_message`, `edit_replymarkup`, `edit_caption`, `answer_callback_query`, `delete_message` and `leave_chat`.
+제공 서비스 : `send_message`, `send_photo`, `send_document`, `send_location`, `send_sticker`, `edit_message`, `edit_replymarkup`, `edit_caption`, `answer_callback_query`, `delete_message`, `leave_chat`.
 
-### Service `telegram_bot.send_message`
+### `telegram_bot.send_message` 서비스
 
-Send a notification.
-
-| Service data attribute    | Optional | Description                                      |
-|---------------------------|----------|--------------------------------------------------|
-| `message`                 |       no | Message body of the notification. |
-| `title`                   |      yes | Optional title for your notification. Will be composed as '%title\n%message'. |
-| `target`                  |      yes | An array of pre-authorized chat_ids or user_ids to send the notification to. Defaults to the first allowed chat_id. |
-| `parse_mode`              |      yes | Parser for the message text: `html` or `markdown`. |
-| `disable_notification`    |      yes | True/false for send the message silently. iOS users and web users will not receive a notification, Android users will receive a notification with no sound. Defaults to False. |
-| `disable_web_page_preview`|      yes | True/false for disable link previews for links in the message. |
-| `keyboard`                |      yes | List of rows of commands, comma-separated, to make a custom keyboard. `[]` to reset to no custom keyboard. Example: `["/command1, /command2", "/command3"]` |
-| `inline_keyboard`         |      yes | List of rows of commands, comma-separated, to make a custom inline keyboard with buttons with associated callback data. Example: `["/button1, /button2", "/button3"]` or `[[["Text btn1", "/button1"], ["Text btn2", "/button2"]], [["Text btn3", "/button3"]]]` |
-
-### Service `telegram_bot.send_photo` and `telegram_bot.send_sticker`
-
-Send a photo.
+알림을 보냅니다.
 
 | Service data attribute    | Optional | Description                                      |
 |---------------------------|----------|--------------------------------------------------|
-| `url`                     |       no | Remote path to an image. |
-| `file`                    |       no | Local path to an image.  |
-| `caption`                 |      yes | The title of the image. |
-| `username`                |      yes | Username for a URL which requires HTTP basic authentication. |
-| `password`                |      yes | Password for a URL which requires HTTP basic authentication. |
-| `authentication`          |      yes | Define which authentication method to use. Set to `digest` to use HTTP digest authentication. Defaults to `basic`. |
-| `target`                  |      yes | An array of pre-authorized chat_ids or user_ids to send the notification to. Defaults to the first allowed chat_id. |
-| `disable_notification`     |      yes | True/false for send the message silently. iOS users and web users will not receive a notification, Android users will receive a notification with no sound. Defaults to False. |
-| `verify_ssl`              |      yes | True/false for checking the SSL certificate of the server for HTTPS URLs. Defaults to True. |
-| `keyboard`                |      yes | List of rows of commands, comma-separated, to make a custom keyboard. `[]` to reset to no custom keyboard. Example: `["/command1, /command2", "/command3"]` |
-| `inline_keyboard`         |      yes | List of rows of commands, comma-separated, to make a custom inline keyboard with buttons with associated callback data. Example: `["/button1, /button2", "/button3"]` or `[[["Text btn1", "/button1"], ["Text btn2", "/button2"]], [["Text btn3", "/button3"]]]` |
+| `message`                 |       no | 알림의 메시지 본문. |
+| `title`                   |      yes | 알림의 제목입니다. 예: '%title\n%message'. |
+| `target`                  |      yes | 알림을 보낼 사전 승인 된 chat_id 또는 user_id의 배열. 첫 번째로 허용되는 chat_id가 기본값. |
+| `parse_mode`              |      yes | 메시지 텍스트 파서: `html` 혹은 `markdown`. |
+| `disable_notification`    |      yes | 메시지를 자동으로 보내기위한 True/False. iOS 사용자와 웹 사용자는 알림을받지 않으며, Android 사용자는 소리없이 알림을 받습니다. 기본값은 False. |
+| `disable_web_page_preview`|      yes | 메시지의 링크에 대한 링크 미리보기를 사용하지 않는 경우 True/false. |
+| `keyboard`                |      yes | 사용자 정의 키보드를 만들기 위한 쉼표로 구분 된 명령 행 목록. `[]`로 사용자 정의 키보드가 없는 것으로 재설정. 예:`["/command1, /command2", "/command3"]` |
+| `inline_keyboard`         |      yes | 콜백 데이터가 연결된 버튼이있는 사용자 지정 인라인 키보드를 만들기 위해 쉼표로 구분 된 명령 행 목록. 예:  `["/button1, /button2", "/button3"]` or `[[["Text btn1", "/button1"], ["Text btn2", "/button2"]], [["Text btn3", "/button3"]]]` |
 
-### Service `telegram_bot.send_video`
+### `telegram_bot.send_photo` 및 `telegram_bot.send_sticker` 서비스
 
-Send a video.
+사진을 보냅니다. 
 
 | Service data attribute    | Optional | Description                                      |
 |---------------------------|----------|--------------------------------------------------|
-| `url`                     |       no | Remote path to a video. |
-| `file`                    |       no | Local path to a video.  |
-| `caption`                 |      yes | The title of the video. |
-| `username`                |      yes | Username for a URL which requires HTTP basic authentication. |
-| `password`                |      yes | Password for a URL which requires HTTP basic authentication. |
-| `authentication`          |      yes | Define which authentication method to use. Set to `digest` to use HTTP digest authentication. Defaults to `basic`. |
-| `target`                  |      yes | An array of pre-authorized chat_ids or user_ids to send the notification to. Defaults to the first allowed chat_id. |
-| `disable_notification`    |      yes | True/false to send the message silently. iOS users and web users will not receive a notification. Android users will receive a notification with no sound. Defaults to False. |
-| `verify_ssl`              |      yes | True/false for checking the SSL certificate of the server for HTTPS URLs. Defaults to True. |
-| `keyboard`                |      yes | List of rows of commands, comma-separated, to make a custom keyboard. `[]` to reset to no custom keyboard. Example: `["/command1, /command2", "/command3"]` |
-| `inline_keyboard`         |      yes | List of rows of commands, comma-separated, to make a custom inline keyboard with buttons with associated callback data. Example: `["/button1, /button2", "/button3"]` or `[[["Text btn1", "/button1"], ["Text btn2", "/button2"]], [["Text btn3", "/button3"]]]` |
+| `url`                     |       no | 이미지의 원격 경로. |
+| `file`                    |       no | 이미지의 로컬 경로.  |
+| `caption`                 |      yes | 이미지의 제목. |
+| `username`                |      yes | HTTP 기본 인증이 필요한 URL의 사용자 이름. |
+| `password`                |      yes | HTTP 기본 인증이 필요한 URL의 비밀번호. |
+| `authentication`          |      yes | 사용할 인증 방법을 정의하십시오. `digest`는 HTTP 다이제스트 인증을 사용합니다. 기본은 `basic` 입니다. |
+| `target`                  |      yes | 알림을 보낼 사전 승인 된 chat_id 또는 user_id의 배열입니다. 첫 번째로 허용되는 chat_id가 기본값. |
+| `disable_notification`     |      yes | 메시지를 조용히 보내기 True/false. iOS 사용자와 웹 사용자는 알림을 받지 않으며, Android 사용자는 소리없이 알림을 받습니다. 기본값은 False. |
+| `verify_ssl`              |      yes | HTTPS URL에 대한 서버의 SSL 인증서를 확인하는 경우 True / false. 기본값은 True. |
+| `keyboard`                |      yes | 커스텀 키보드를 만들기 위한 쉼표로 구분 된 명령행 목록. `[]`로 사용자 정의 키보드가 없는 것으로 재설정. 예:`["/command1, /command2", "/command3"]` |
+| `inline_keyboard`         |      yes | 연관된 콜백 데이터가 있는 버튼으로 사용자 정의 인라인 키보드를 만들기 위한 쉼표로 구분된 명령행 목록. 예: `["/button1, /button2", "/button3"]` or `[[["Text btn1", "/button1"], ["Text btn2", "/button2"]], [["Text btn3", "/button3"]]]` |
 
-### Service `telegram_bot.send_document`
+### `telegram_bot.send_video` 서비스
 
-Send a document.
-
-| Service data attribute    | Optional | Description                                      |
-|---------------------------|----------|--------------------------------------------------|
-| `url`                     |       no | Remote path to a document. |
-| `file`                    |       no | Local path to a document.  |
-| `caption`                 |      yes | The title of the document. |
-| `username`                |      yes | Username for a URL which requires HTTP basic authentication. |
-| `password`                |      yes | Password for a URL which requires HTTP basic authentication. |
-| `authentication`          |      yes | Define which authentication method to use. Set to `digest` to use HTTP digest authentication. Defaults to `basic`. |
-| `target`                  |      yes | An array of pre-authorized chat_ids or user_ids to send the notification to. Defaults to the first allowed chat_id. |
-| `disable_notification`    |      yes | True/false for send the message silently. iOS users and web users will not receive a notification, Android users will receive a notification with no sound. Defaults to False. |
-| `verify_ssl`              |      yes | True/false for checking the SSL certificate of the server for HTTPS URLs. Defaults to True. |
-| `keyboard`                |      yes | List of rows of commands, comma-separated, to make a custom keyboard. `[]` to reset to no custom keyboard. Example: `["/command1, /command2", "/command3"]` |
-| `inline_keyboard`         |      yes | List of rows of commands, comma-separated, to make a custom inline keyboard with buttons with associated callback data. Example: `["/button1, /button2", "/button3"]` or `[[["Text btn1", "/button1"], ["Text btn2", "/button2"]], [["Text btn3", "/button3"]]]` |
-
-### Service `telegram_bot.send_location`
-
-Send a location.
+비디오 보내기.
 
 | Service data attribute    | Optional | Description                                      |
 |---------------------------|----------|--------------------------------------------------|
-| `latitude`                |       no | The latitude to send. |
-| `longitude`               |       no | The longitude to send.  |
-| `target`                  |      yes | An array of pre-authorized chat_ids or user_ids to send the notification to. Defaults to the first allowed `chat_id`. |
-| `disable_notification`    |      yes | True/false for send the message silently. iOS users and web users will not receive a notification, Android users will receive a notification with no sound. Defaults to False. |
-| `keyboard`                |      yes | List of rows of commands, comma-separated, to make a custom keyboard. `[]` to reset to no custom keyboard. Example: `["/command1, /command2", "/command3"]` |
-| `inline_keyboard`         |      yes | List of rows of commands, comma-separated, to make a custom inline keyboard with buttons with associated callback data. Example: `["/button1, /button2", "/button3"]` or `[[["Text btn1", "/button1"], ["Text btn2", "/button2"]], [["Text btn3", "/button3"]]]` |
+| `url`                     |       no | 비디오의 원격 경로. |
+| `file`                    |       no | 비디오의 로컬 경로.  |
+| `caption`                 |      yes | 비디오의 제목. |
+| `username`                |      yes | HTTP 기본 인증이 필요한 URL의 사용자 이름. |
+| `password`                |      yes | HTTP 기본 인증이 필요한 URL의 비밀번호. |
+| `authentication`          |      yes | 사용할 인증 방법을 정의하십시오. `digest`는 HTTP 다이제스트 인증을 사용합니다. 기본은 `basic` 입니다. |
+| `target`                  |      yes | 알림을 보낼 사전 승인 된 chat_id 또는 user_id의 배열입니다. 첫 번째로 허용되는 chat_id가 기본값입니다. |
+| `disable_notification`    |      yes | 메시지를 자동으로 보내려면 True/False 입니다. iOS 사용자와 웹 사용자는 알림을 받지 않습니다. Android 사용자에게는 소리가 들리지 않는 알림이 수신됩니다. 기본값은 False입니다. |
+| `verify_ssl`              |      yes | HTTPS URL에 대한 서버의 SSL 인증서를 확인하는 True/False 기본값은 True.
+| `keyboard`                |      yes | 커스텀 키보드를 만들기 위한 쉼표로 구분 된 명령행 목록. `[]`로 사용자 정의 키보드가 없는 것으로 재설정. 예:`["/command1, /command2", "/command3"]` |
+| `inline_keyboard`         |      yes | 연관된 콜백 데이터가 있는 버튼으로 사용자 정의 인라인 키보드를 만들기 위한 쉼표로 구분된 명령행 목록. 예: `["/button1, /button2", "/button3"]` or `[[["Text btn1", "/button1"], ["Text btn2", "/button2"]], [["Text btn3", "/button3"]]]` |
 
-### Service `telegram_bot.edit_message`
+### `telegram_bot.send_document` 서비스
 
-Edit a previously sent message in a conversation.
-
-| Service data attribute    | Optional | Description                                      |
-|---------------------------|----------|--------------------------------------------------|
-| `message_id`              |       no | Id of the message to edit. When answering a callback from a pressed button, the id of the origin message is in: {% raw %}`{{ trigger.event.data.message.message_id }}`{% endraw %}. You can use `"last"` to refer to the last message sent to `chat_id`. |
-| `chat_id`                 |       no | The chat_id where to edit the message.  |
-| `message`                 |       no | Message body of the notification. |
-| `title`                   |      yes | Optional title for your notification. Will be composed as '%title\n%message'. |
-| `parse_mode`              |      yes | Parser for the message text: `html` or `markdown`. |
-| `disable_web_page_preview`|      yes | True/false for disable link previews for links in the message. |
-| `inline_keyboard`         |      yes | List of rows of commands, comma-separated, to make a custom inline keyboard with buttons with associated callback data. Example: `["/button1, /button2", "/button3"]` or `[[["Text btn1", "/button1"], ["Text btn2", "/button2"]], [["Text btn3", "/button3"]]]` |
-
-### Service `telegram_bot.edit_caption`
-
-Edit the caption of a previously sent message.
+문서를 보냅니다. 
 
 | Service data attribute    | Optional | Description                                      |
 |---------------------------|----------|--------------------------------------------------|
-| `message_id`              |       no | Id of the message to edit. When answering a callback from a pressed button, the id of the origin message is in: {% raw %}`{{ trigger.event.data.message.message_id }}`{% endraw %}. You can use `"last"` to refer to the last message sent to `chat_id`. |
-| `chat_id`                 |       no | The chat_id where to edit the caption.  |
-| `caption`                 |       no | Message body of the notification. |
-| `disable_web_page_preview`|      yes | True/false for disable link previews for links in the message. |
-| `inline_keyboard`         |      yes | List of rows of commands, comma-separated, to make a custom inline keyboard with buttons with associated callback data. Example: `["/button1, /button2", "/button3"]` or `[[["Text btn1", "/button1"], ["Text btn2", "/button2"]], [["Text btn3", "/button3"]]]` |
+| `url`                     |       no | 문서의 원격 경로. |
+| `file`                    |       no | 문서의 로컬 경로.  |
+| `caption`                 |      yes | 문서의 제목. |
+| `username`                |      yes | HTTP 기본 인증이 필요한 URL의 사용자 이름. |
+| `password`                |      yes | HTTP 기본 인증이 필요한 URL의 비밀번호. |
+| `authentication`          |      yes | 사용할 인증 방법을 정의하십시오. `digest`는 HTTP 다이제스트 인증을 사용합니다. 기본은 `basic` 입니다. |
+| `target`                  |      yes | 알림을 보낼 사전 승인된 chat_id 또는 user_id의 배열입니다. 첫 번째로 허용되는 chat_id가 기본값입니다. | |
+| `disable_notification`    |      yes | 메시지를 자동으로 보내려면 True/False 입니다. iOS 사용자와 웹 사용자는 알림을 받지 않습니다. Android 사용자에게는 소리가 들리지 않는 알림이 수신됩니다. 기본값은 False입니다. |
+| `verify_ssl`              |      yes | HTTPS URL에 대한 서버의 SSL 인증서를 확인하는 True/False 기본값은 True. |
+| `keyboard`                |      yes | 커스텀 키보드를 만들기 위한 쉼표로 구분 된 명령행 목록. `[]`로 사용자 정의 키보드가 없는 것으로 재설정. 예:`["/command1, /command2", "/command3"]` |
+| `inline_keyboard`         |      yes | 연관된 콜백 데이터가 있는 버튼으로 사용자 정의 인라인 키보드를 만들기 위한 쉼표로 구분된 명령행 목록. 예: `["/button1, /button2", "/button3"]` or `[[["Text btn1", "/button1"], ["Text btn2", "/button2"]], [["Text btn3", "/button3"]]]` |
 
-### Service `telegram_bot.edit_replymarkup`
+### `telegram_bot.send_location` 서비스
 
-Edit the inline keyboard of a previously sent message.
-
-| Service data attribute    | Optional | Description                                      |
-|---------------------------|----------|--------------------------------------------------|
-| `message_id`              |       no | Id of the message to edit. When answering a callback from a pressed button, the id of the origin message is in: {% raw %}`{{ trigger.event.data.message.message_id }}`{% endraw %}. You can use `"last"` to refer to the last message sent to `chat_id`. |
-| `chat_id`                 |       no | The chat_id where to edit the reply_markup.  |
-| `disable_web_page_preview`|      yes | True/false for disable link previews for links in the message. |
-| `inline_keyboard`         |      yes | List of rows of commands, comma-separated, to make a custom inline keyboard with buttons with associated callback data. Example: `["/button1, /button2", "/button3"]` or `[[["Text btn1", "/button1"], ["Text btn2", "/button2"]], [["Text btn3", "/button3"]]]` |
-
-### Service `telegram_bot.answer_callback_query`
-
-Respond to a callback query originated by clicking on an online keyboard button. The answer will be displayed to the user as a notification at the top of the chat screen or as an alert.
+위치를 전송합니다.
 
 | Service data attribute    | Optional | Description                                      |
 |---------------------------|----------|--------------------------------------------------|
-| `message`                 |       no | Unformatted text message body of the notification. |
-| `callback_query_id`       |       no | Unique id of the callback response. In the `telegram_callback` event data: {% raw %}`{{ trigger.event.data.id }}`{% endraw %} |
-| `show_alert`              |      yes | True/false for show a permanent notification. Defaults to False. |
+| `latitude`                |       no | 보낼 위도. |
+| `longitude`               |       no | 보낼 경도.  |
+| `target`                  |      yes | 알림을 보낼 사전 승인 된 chat_id 또는 user_id의 배열입니다. 첫 번째로 허용되는 `chat_id`가 기본값입니다. |
+| `disable_notification`    |      yes | 메시지를 자동으로 보내려면 True / false입니다. iOS 사용자와 웹 사용자는 알림을받지 않으며, Android 사용자는 소리없이 알림을받습니다. 기본값은 False입니다. |
+| `keyboard`                |      yes | 커스텀 키보드를 만들기 위한 쉼표로 구분 된 명령행 목록. `[]`로 사용자 정의 키보드가 없는 것으로 재설정. 예:`["/command1, /command2", "/command3"]` |
+| `inline_keyboard`         |      yes | 연관된 콜백 데이터가 있는 버튼으로 사용자 정의 인라인 키보드를 만들기 위한 쉼표로 구분된 명령행 목록. 예: `["/button1, /button2", "/button3"]` or `[[["Text btn1", "/button1"], ["Text btn2", "/button2"]], [["Text btn3", "/button3"]]]` |
 
-### Service `telegram_bot.delete_message`
+### `telegram_bot.edit_message` 서비스
 
-Delete a previously sent message in a conversation.
-
-| Service data attribute    | Optional | Description                                      |
-|---------------------------|----------|--------------------------------------------------|
-| `message_id`              |       no | Id of the message to delete. When answering a callback from a pressed button, the id of the origin message is in: {% raw %}`{{ trigger.event.data.message.message_id }}`{% endraw %}. You can use `"last"` to refer to the last message sent to `chat_id`. |
-| `chat_id`                 |       no | The chat_id where to delete the message.  |
-
-### Service `telegram_bot.leave_chat`
-
-Remove the bot from the chat group where it was added.
+대화에서 이전에 보낸 메시지를 편집합니다. 
 
 | Service data attribute    | Optional | Description                                      |
 |---------------------------|----------|--------------------------------------------------|
-| `chat_id`                 |       no | The chat_id from where to remove the bot.  |
+| `message_id`              |       no | 편집할 메시지의 ID. 누른 버튼에서 콜백에 응답할 때 원본 메시지의 ID는 {% raw %}`{{trigger.event.data.message.message_id}}`{% endraw %}에 있습니다. `"last"`를 사용하여 `chat_id`에 전송된 마지막 메시지 참조 가능. |
+| `chat_id`                 |       no | 메시지를 편집할 chat_id.  |
+| `message`                 |       no | 알림 메시지 본문. |
+| `title`                   |      yes | 알림의 제목입니다. '% title \ n % message'로 구성됩니다. |
+| `parse_mode`              |      yes | 메시지 텍스트 파서 : `html` 혹은 `markdown`. |
+| `disable_web_page_preview`|      yes | 메시지의 링크에 대한 링크 미리보기를 사용하지 않도록 설정하는 경우 True/False. |
+| `inline_keyboard`         |      yes | 연관된 콜백 데이터가 있는 버튼으로 사용자 정의 인라인 키보드를 만들기 위한 쉼표로 구분된 명령행 목록. 예: `["/button1, /button2", "/button3"]` or `[[["Text btn1", "/button1"], ["Text btn2", "/button2"]], [["Text btn3", "/button3"]]]` |
 
-## `telegram` notification platform
+### `telegram_bot.edit_caption` 서비스
 
-The [`telegram` notification platform](/integrations/telegram) requires the `telegram_bot` integration to work with, and it's designed to generate a customized shortcut (`notify.USERNAME`) to send notifications (messages, photos, documents and locations) to a particular `chat_id` with the old syntax, allowing backward compatibility.
+이전에 보낸 메시지의 캡션을 편집합니다.
 
-The required YAML configuration now reduces to:
+| Service data attribute    | Optional | Description                                      |
+|---------------------------|----------|--------------------------------------------------|
+| `message_id`              |       no | 편집할 메시지의 ID. 누른 버튼에서 콜백에 응답할 때 원본 메시지의 ID는 {% raw %}`{{trigger.event.data.message.message_id}}`{% endraw %}에 있습니다. `"last"`를 사용하여 `chat_id`에 전송된 마지막 메시지 참조 가능. |
+| `chat_id`                 |       no | 캡션을 편집 할 chat_id.  |
+| `caption`                 |       no | 알림의 메시지 본문. |
+| `disable_web_page_preview`|      yes | 메시지의 링크에 대한 링크 미리보기를 사용하지 않도록 설정하는 경우 True/False. |
+| `inline_keyboard`         |      yes | 연관된 콜백 데이터가 있는 버튼으로 사용자 정의 인라인 키보드를 만들기 위한 쉼표로 구분된 명령행 목록. 예: `["/button1, /button2", "/button3"]` or `[[["Text btn1", "/button1"], ["Text btn2", "/button2"]], [["Text btn3", "/button3"]]]` |
+
+### `telegram_bot.edit_replymarkup` 서비스
+
+이전에 보낸 메시지의 인라인 키보드를 편집합니다.
+
+| Service data attribute    | Optional | Description                                      |
+|---------------------------|----------|--------------------------------------------------|
+| `message_id`              |       no | 편집할 메시지의 ID. 누른 버튼에서 콜백에 응답할 때 원본 메시지의 ID는 {% raw %}`{{trigger.event.data.message.message_id}}`{% endraw %}에 있습니다. `"last"`를 사용하여 `chat_id`에 전송된 마지막 메시지 참조 가능. |
+| `chat_id`                 |       no | reply_markup을 편집 할 수있는 chat_id.  |
+| `disable_web_page_preview`|      yes | 메시지의 링크에 대한 링크 미리보기를 사용하지 않도록 설정하는 경우 True/False. |
+| `inline_keyboard`         |      yes | 연관된 콜백 데이터가 있는 버튼으로 사용자 정의 인라인 키보드를 만들기 위한 쉼표로 구분된 명령행 목록. 예: `["/button1, /button2", "/button3"]` 혹은 `[[["Text btn1", "/button1"], ["Text btn2", "/button2"]], [["Text btn3", "/button3"]]]` |
+
+### `telegram_bot.answer_callback_query` 서비스
+
+온라인 키보드 버튼을 클릭하여 생성 된 콜백 쿼리에 응답합니다. 답변은 채팅 화면 상단에 알림 또는 경보으로 사용자에게 표시됩니다.
+
+| Service data attribute    | Optional | Description                                      |
+|---------------------------|----------|--------------------------------------------------|
+| `message`                 |       no | 알림의 형식이 지정되지 않은 문자 메시지 본문. |
+| `callback_query_id`       |       no | 콜백 응답의 고유 ID `telegram_callback` 이벤트 데이터: {% raw %}`{{ trigger.event.data.id }}`{% endraw %} |
+| `show_alert`              |      yes | 영구 알림(permanent notification)을 표시하려면 True/false입니다. 기본값은 False입니다. |
+
+### `telegram_bot.delete_message` 서비스
+
+대화에서 이전에 보낸 메시지를 삭제합니다.
+
+| Service data attribute    | Optional | Description                                      |
+|---------------------------|----------|--------------------------------------------------|
+| `message_id`              |       no | 메시지의 ID를 삭제하십시오. 누른 버튼으로 콜백에 응답하면 원래 메시지의 ID : {% raw %}`{{ trigger.event.data.message.message_id }}`{% endraw %}. `"last"`를 사용하여 `chat_id`에 전송된 마지막 메시지 참조 가능. |
+| `chat_id`                 |       no | 메시지를 삭제할 chat_id.  |
+
+### `telegram_bot.leave_chat` 서비스
+
+추가된 채팅 그룹에서 봇을 제거합니다.
+
+| Service data attribute    | Optional | Description                                      |
+|---------------------------|----------|--------------------------------------------------|
+| `chat_id`                 |       no | 봇을 제거 할 위치의 chat_id  |
+
+## `telegram` 알림 플랫폼
+
+[`telegram` notification platform](/integrations/telegram)을 작동하기 위해 `telegram_bot` 연동이 필요하며 알림 (메시지, 사진, 문서 및 위치)을 전송하기 위한 사용자 정의 단축키 (`notify.USERNAME`)를 생성하도록 설계되었습니다. 이전 문법으로 특정 `chat_id`에 추가하여 이전 버전과의 호환성을 허용합니다.
+
+필요한 YAML 설정은 다음같이 줄어듭니다. :
 
 ```yaml
 notify:
@@ -177,11 +177,11 @@ notify:
     chat_id: USER_CHAT_ID
 ```
 
-## Event triggering
+## 이벤트 트리거 (Event triggering)
 
-A command looks like `/thecommand` or `/othercommand with some args`.
+`/thecommand` 혹은 `/othercommand with some args` 같은 것들을.
 
-When received by Home Assistant it will fire a `telegram_command` event on the event bus with the following `event_data`:
+홈어시스턴트가 수신하면 이벤트 버스에서 `telegram_command` 이벤트를 다음과 같은 `event_data`와 함께 시작합니다. :
 
 ```yaml
 command: "/thecommand"
@@ -193,7 +193,7 @@ chat_id: "<origin chat id>"
 chat: "<chat info>"
 ```
 
-Any other message not starting with `/` will be processed as simple text, firing a `telegram_text` event on the event bus with the following `event_data`:
+`/`로 시작하지 않는 다른 메시지는 간단한 텍스트로 처리되어 이벤트 버스에서 `telegram_text` 이벤트를 다음과 같은 `event_data` :
 
 ```yaml
 text: "some text received"
@@ -204,7 +204,7 @@ chat_id: "<origin chat id>"
 chat: "<chat info>"
 ```
 
-If the message is sent from a [press from an inline button](https://core.telegram.org/bots#inline-keyboards-and-on-the-fly-updating), for example, a callback query is received, and Home Assistant will fire a `telegram_callback` event with:
+예를 들어 [press from an inline button](https://core.telegram.org/bots#inline-keyboards-and-on-the-fly-updating)에서 메시지가 전송되면 콜백 쿼리가 수신됩니다. 홈어시스턴트는 다음과 같이 `telegram_callback` 이벤트를 시작합니다.
 
 ```yaml
 data: "<data associated to action callback>"
@@ -217,9 +217,9 @@ chat_instance: "<chat instance>"
 chat_id: "<origin chat id>"
 ```
 
-### Configuration samples
+### 설정 샘플
 
-Simple ping pong example.
+간단한 핑퐁 사례 
 
 ```yaml
 alias: 'Telegram bot that reply pong to ping'
@@ -234,7 +234,7 @@ action:
       message: 'pong'
 ```
 
-An example that shows keyboard interaction with `notify.telegram`
+`notify.telegram`과의 키보드 상호 작용을 보여주는 예
 
 ```yaml
 trigger:
@@ -252,7 +252,7 @@ action:
           - '/siren'
 ```
 
-and an automation to trigger a related command "/siren".
+관련 명령 "/ siren"을 트리거하는 자동화.
 
 ```yaml
 trigger:
@@ -269,7 +269,8 @@ action:
     entity_id: switch.vision_zm1601eu5_battery_operated_siren_switch_9_0
 ```
 
-An example to show the use of event_data in action:
+실제 event_data 사용을 보여주는 예제 : 
+
 
 {% raw %}
 ```yaml
@@ -287,15 +288,15 @@ An example to show the use of event_data in action:
 ```
 {% endraw %}
 
-### Sample automations with callback queries and inline keyboards
+### 콜백 쿼리 및 인라인 키보드를 사용한 샘플 자동화
 
-A quick example to show some of the callback capabilities of inline keyboards with a dumb automation consisting in a simple repeater of normal text that presents an inline keyboard with 3 buttons: 'EDIT', 'NO' and 'REMOVE BUTTON':
+'EDIT', 'NO' 및 'REMOVE BUTTON' 버튼이 있는 인라인 키보드를 표시하는 일반 텍스트의 간단한 리피터로 구성된 단순한 자동화 기능을 갖춘 인라인 키보드의 일부 콜백 기능을 보여주는 간단한 예
 
-- Pressing 'EDIT' changes the sent message.
-- Pressing 'NO' only shows a brief notification (answering the callback query).
-- Pressing 'REMOVE BUTTON' changes the inline keyboard removing that button.
+- 'EDIT', 'NO' 및 'REMOVE BUTTON'
+- 'NO'를 누르면 간단한 알림 만 표시됩니다. (콜백 쿼리에 응답).
+- 'REMOVE BUTTON'를 누르면 해당 버튼을 제거하는 인라인 키보드가 변경됩니다.
 
-Text repeater:
+텍스트 반복 :
 
 {% raw %}
 ```yaml
@@ -316,7 +317,7 @@ Text repeater:
 ```
 {% endraw %}
 
-Message editor:
+메시지 에디터 :
 
 {% raw %}
 ```yaml
@@ -347,7 +348,7 @@ Message editor:
 ```
 {% endraw %}
 
-Keyboard editor:
+키보드 에디터 :
 
 {% raw %}
 ```yaml
@@ -371,7 +372,7 @@ Keyboard editor:
 ```
 {% endraw %}
 
-Only acknowledges the 'NO' answer:
+'NO' 답변만 인지 :
 
 {% raw %}
 ```yaml
@@ -389,7 +390,7 @@ Only acknowledges the 'NO' answer:
 ```
 {% endraw %}
 
-Telegram callbacks also support arguments and commands the same way as normal messages.
+텔레 그램 콜백은 일반 메시지와 동일한 방식으로 인수 및 명령을 지원합니다. 
 
 {% raw %}
 ```yaml
@@ -408,12 +409,11 @@ Telegram callbacks also support arguments and commands the same way as normal me
 ```
 {% endraw %}
 
-In this case, having a callback with `/repeat 1 2 3` with pop a notification saying `I repeat: [1, 2, 3]`
+이 경우, `/ repeat 1 2 3`으로 콜백을 하면 팝업창에 `I repeat : [1, 2, 3]` 라고 알림이 뜹니다. 
 
+`telegram_bot` 기능을보다 복잡하게 사용하려면 [AppDaemon](/docs/ecosystem/appdaemon/tutorial/)을 사용하는 것이 좋습니다.
 
-For a more complex usage of the `telegram_bot` capabilities, using [AppDaemon](/docs/ecosystem/appdaemon/tutorial/) is advised.
-
-This is how the previous 4 automations would be through a simple AppDaemon app:
+이것이 바로 이전의 4가지의 자동화가 간단한 AppDaemon 앱을 통한 방법입니다 : 
 
 ```python
 import appdaemon.plugins.hass.hassapi as hass

@@ -1,12 +1,12 @@
 ---
-title: "Turn on lights for 10 minutes after motion detected"
+title: "모션 감지 후 10분 동안 조명 켜기"
 description: "Turn on lights for 10 minutes when motion detected."
 ha_category: Automation Examples
 ---
 
-#### Turn on lights with a resetable off timer
+#### 재설정 가능한 꺼짐 타이머로 조명 켜기
 
-This recipe will turn on a light when there is motion and turn off the light when ten minutes has passed without any motion events.
+이 레시피는 모션이있을 때 조명을 켜고 모션 이벤트없이 10 분이 지나면 조명을 끕니다.
 
 ```yaml
 automation:
@@ -31,7 +31,7 @@ automation:
     entity_id: light.kitchen_light
 ```
 
-Or in the case of multiple sensors/triggers:
+또는 여러 센서/트리거의 경우 :
 
 ```yaml
 automation:
@@ -68,7 +68,7 @@ timer:
     duration: '00:10:00'
 ```
 
-You can also restrict lights from turning on based on time of day and implement transitions for fading lights on and off.
+또한 시간에 따라 조명이 켜지지 않도록 제한하고 페이딩 조명을 켜고 끄는 전환을 구현할 수도 있습니다. :
 
 ```yaml
 - alias: Motion Sensor Lights On

@@ -1,12 +1,12 @@
 ---
-title: "Examples sending notification depending of the presence"
+title: "재실 여부에 따라 알림을 보내는 예"
 description: "Examples sending notification depending of the presence"
 ha_category: Automation Examples
 ---
 
-This will send a message when someone in your known devices list connects to your local network. In other words, when someone arrives home. It will only work if you are using the [Nmap](/integrations/nmap_tracker) device tracker or a similar integration.
+알려진 장치 목록의 누군가가 로컬 네트워크에 연결하면 메시지가 전송됩니다. 다시 말해 누군가가 집에 도착했을 때입니다. [Nmap](/integrations/nmap_tracker) 장치 추적기 또는 이와 유사한 통합구성요소를 사용하는 경우에만 작동합니다.
 
-This example uses [Telegram](/integrations/telegram) to send the notification.
+이 예에서는 [Telegram](/integrations/telegram)을 사용하여 알림을 보냅니다.
 
 ```yaml
 notify:
@@ -16,7 +16,7 @@ notify:
     chat_id: xxxxxxxxx
 ```
 
-Add the automation rule. Change `device_name_here` to match the device you want to track. 
+자동화 규칙을 추가하십시오. 추적하려는 장치와 일치하도록 `device_name_here`를 변경하십시오 .
 
 ```yaml
 automation:

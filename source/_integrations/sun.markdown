@@ -10,16 +10,16 @@ ha_codeowners:
   - '@Swamp-Ig'
 ---
 
-The sun integration will use your current location to track if the sun is above or
-below the horizon. The sun can be used within automation as
-[a trigger with an optional offset to simulate dawn/dusk][sun_trigger] or as [a condition with an optional offset to test if the sun has already set or risen][sun_condition].
+Sun 통합구성요소는 태양이 수평선 위 또는 아래에 있는지 추적하기 위해 현재 위치를 사용합니다.
+태양은 자동화 내에서 다음과 같이 사용될 수 있습니다. 
+[새벽/황혼을 시뮬레이트하기위한 선택적 오프셋이있는 트리거][sun_trigger] 또는 [해가 이미 졌는지 혹은 떴는지 테스트하기위한 선택적 오프셋이있는 조건][sun_condition].
 
 [sun_trigger]: /docs/automation/trigger/#sun-trigger
 [sun_condition]: /docs/scripts/conditions/#sun-condition
 
-## Configuration
+## 설정
 
-This integration is by default enabled, unless you've disabled or removed the [`default_config:`](https://www.home-assistant.io/integrations/default_config/) line from your configuration. If that is the case, the following example shows you how to enable this integration manually:
+이 통합구성요소는 설정에서 [`default_config :`](https://www.home-assistant.io/integrations/default_config/) 행을 비활성화하거나 제거하지 않는 한 기본적으로 활성화됩니다. 다음 예는이 통합구성요소를 수동으로 활성화하는 방법을 보여줍니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -28,7 +28,7 @@ sun:
 
 {% configuration %}
 elevation:
-  description: "The (physical) elevation of your location, in meters above sea level. Defaults to the `elevation` in `configuration.yaml`, which is retrieved from Google Maps if not set."
+  description: "해발 미터로 표시된 위치의 (물리적) 고도입니다. `configuration.yaml`의 `elevation`은 기본적으로 설정되어 있지 않으면 Google지도에서 검색됩니다. "
   required: false
   type: integer
 {% endconfiguration %}
@@ -37,13 +37,11 @@ elevation:
 <img src='/images/screenshots/more-info-dialog-sun.png' />
 </p>
 
-## Implementation Details
+## 구현 세부 사항
 
-The sun's event listener will call the service when the sun rises or sets with
-an offset.
+태양의 이벤트 리스너는 태양이 뜨거나 오프셋으로 설정 될 때 서비스를 호출합니다.
 
-The sun event need to have the type 'sun', which service to call,
-which event (sunset or sunrise) and the offset.
+sun 이벤트에는 'sun' 유형, 호출 할 서비스, 어떤 이벤트 (일몰 또는 일출) 및 오프셋이 있어야합니다.
 
 ```json
 {
@@ -54,21 +52,21 @@ which event (sunset or sunrise) and the offset.
 }
 ```
 
-### Maintains entity `sun.sun`
+### `sun.sun` 엔티티의 지원 사항
 
 | Possible state | Description |
 | --------- | ----------- |
-| `above_horizon` | When the sun is above the horizon.
-| `below_horizon` | When the sun is below the horizon.
+| `above_horizon` | 태양이 수평선 위에 있을 때.
+| `below_horizon` | 태양이 수평선 아래에 있을 때.
 
 | State Attributes | Description |
 | --------- | ----------- |
-| `next_rising` | Date and time of the next sun rising (in UTC).
-| `next_setting` | Date and time of the next sun setting (in UTC).
-| `next_dawn` | Date and time of the next dawn (in UTC).
-| `next_dusk` | Date and time of the next dusk (in UTC).
-| `next_noon` | Date and time of the next solar noon (in UTC).
-| `next_midnight` | Date and time of the next solar midnight (in UTC).
-| `elevation` |  Solar elevation. This is the angle between the sun and the horizon. Negative values mean the sun is below the horizon.
-| `azimuth` | Solar azimuth. The angle is shown clockwise from north.
-| `rising` | True if the Sun is currently rising, after solar midnight and before solar noon.
+| `next_rising` | 다음 해가 뜨는 날짜와 시간 (UTC).
+| `next_setting` | 다음 태양 설정 날짜 및 시간 (UTC).
+| `next_dawn` | 다음 새벽의 날짜와 시간 (UTC).
+| `next_dusk` | 다음 황혼의 날짜와 시간 (UTC).
+| `next_noon` | 다음 정오의 날짜 및 시간 (UTC).
+| `next_midnight` | 다음 태양 자정의 날짜와 시간 (UTC).
+| `elevation` |  태양 고도. 이것은 태양과 수평선 사이의 각도입니다. 음수 값은 태양이 수평선 아래에 있음을 의미.
+| `azimuth` | 태양 방위각. 각도는 북쪽에서 시계 방향으로 표시.
+| `rising` | 태양이 자정 이후 및 정오 이전에 태양이 현재 상승중인 경우에 해당.

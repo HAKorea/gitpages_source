@@ -1,5 +1,5 @@
 ---
-title: "ManyThing"
+title: "ManyThing을 이용하여 남는스마트폰 CCTV카메라로 만들기"
 description: "Instructions on how to setup ManyThing support with IFTTT."
 logo: manything.png
 ha_category: Camera
@@ -7,11 +7,11 @@ redirect_from:
   /integrations/ifttt.manything/
 ---
 
-[Manything](https://manything.com) is a smart app that turns your Android device, iPhone, iPod, or iPad into a WiFi camera for monitoring your home, your pets, anything! Comes with live streaming, motion activated alerts, cloud video recording, and more.
+[Manything](https://manything.com) 은 집, 애완 동물 등을 모니터링하기 위해 Android 기기, iPhone, iPod 또는 iPad를 WiFi 카메라로 바꾸는 스마트 앱입니다! 라이브 스트리밍, 모션 활성화 경고, 클라우드 비디오 녹화 등이 제공됩니다.
 
-To get manything support, HA will use IFTTT's [Webhooks Service](https://ifttt.com/maker_webhooks) and the [ManyThing Service](https://ifttt.com/manything). Use the [IFTTT Setup instructions](/integrations/ifttt/) to activate the IFTTT Platform.
+많은 지원을 받기 위해 HA는  [Webhooks Service](https://ifttt.com/maker_webhooks) 및 [ManyThing Service](https://ifttt.com/manything) 서비스를 사용 합니다. [IFTTT Setup instructions](/integrations/ifttt/)를 사용하여 IFTTT 플랫폼을 활성화합니다.
 
-After setting up IFTTT, Maker Service and ManyThing Service, you can use the following examples to configure Home Assistant.
+IFTTT, Maker Service 및 ManyThing Service를 설정 한 후 다음 예를 사용하여 Home Assistant에 설정 할 수 있습니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -47,17 +47,17 @@ automation:
       data: {"event":"manything_off"}
 ```
 
-### Setting up a recipe
+### 레시피 설정 
 
 <p class='img'>
 <img src='/images/integrations/ifttt/IFTTT_manything_trigger.png' />
-You need to setup a unique trigger for each event you sent to IFTTT.
-For ManyThing support, you need to set up an `on` and `off` event.
+IFTTT로 보낸 각 이벤트에 대해 고유한 트리거를 설정해야합니다.
+ManyThing을 지원하려면 'on'및 'off'이벤트를 설정해야합니다.
 </p>
 
-### Testing your trigger
+### 트리거 테스트하기 
 
-You can use the developer tools to test your [Maker Service](https://ifttt.com/maker_webhooks) trigger. To do this, open the Home Assistant UI, open the sidebar, click on the first icon in the developer tools. This should get you to the 'Call Service' screen. Fill in the following values:
+개발자 도구를 사용하여 [Maker Service](https://ifttt.com/maker_webhooks) 트리거를 테스트 할 수 있습니다. 이렇게 하려면 Home Assistant UI를 열고 사이드 바를 열고 개발자 도구에서 첫 번째 아이콘을 클릭하십시오. 'Call Service'화면이 나타납니다. 다음 값을 입력하십시오.
 
 | Field        | Value                       |
 | ------------ | --------------------------- |

@@ -1,30 +1,29 @@
 ---
-title: "Lovelace YAML mode"
+title: "Lovelace YAML 모드(직접 편집 모드)"
 description: "Advanced users can switch on YAML mode for editing the Lovelace UI."
 ---
 
-It is possible to customize your Home Assistant interface by writing in YAML instead of via the UI. To do so, you configure the Lovelace integration to be in yaml mode by adding the following to your `configuration.yaml`:
+UI 대신 YAML로 작성하여 Home Assistant 인터페이스를 사용자 정의 할 수 있습니다. 이렇게하려면 `configuration.yaml`에 다음 내용을 추가하여 Lovelace 통합을 yaml 모드로 설정하십시오.  
 
 ```yaml
 lovelace:
   mode: yaml
 ```
 
-Restart Home Assistant for the mode to be changed. Create a new file `<config>/ui-lovelace.yaml` and add your Lovelace configuration. A good way to start this file is to copy and paste the "Raw config" from the UI so your manual configuration starts the same as your existing UI.
+모드를 변경하려면 홈어시스턴트를 다시 시작하십시오. 새 파일 `<config>/ui-lovelace.yaml`을 생성하고 Lovelace 설정을 추가하십시오. 이 파일을 시작하는 좋은 방법은 UI에서 "Raw config"를 복사하여 붙여 넣어 수동 구성이 기존 UI와 동일하게 시작하는 것입니다.
 
-- Go into the `Overview` tab.
-- Click the three dots menu (top-right) and click on `Configure UI`.
-- Click the three dots menu again and click on `Raw config editor`.
-- There you see the config for your current Lovelace UI. Copy that into the `<config>/ui-lovelace.yaml` file.
+- `Overview` 탭으로 이동.
+- 세 개의 점 메뉴 (오른쪽 상단)를 클릭하고 `Configure UI`를 클릭하십시오.
+- 세 개의 점 메뉴를 다시 클릭하고 `Raw config editor`를 클릭하십시오..
+- 현재 Lovelace UI의 구성이 표시됩니다. 이것을 `<config>/ui-lovelace.yaml` 파일에 복사하십시오.
 
-Once you take control of your UI via YAML, the Home Assistant interface for modifying it won't be available anymore and new entities will not automatically be added to your UI.
+YAML을 통해 UI를 제어하면 수정을 위한 홈 어시스턴트 인터페이스를 더 이상 사용할 수 없으며 새 엔티티가 자동으로 UI에 추가되지 않습니다.
 
-When you make changes to `ui-lovelace.yaml`, you don't have to restart Home Assistant or refresh the page. Just hit the refresh button in the menu at the top of the UI.
+`ui-lovelace.yaml`을 변경하면 홈어시스턴트를 다시시작하거나 페이지를 새로 고칠 필요가 없습니다. UI 상단의 메뉴에서 새로 고침 버튼을 누르기만 하면됩니다.
 
-To revert back to using the UI to edit your Lovelace interface, remove the `lovelace` section from your `configuration.yaml` and copy the contents of your `ui-lovelace.yaml` into the raw config section of Home Assistant and restart.
+UI를 사용하여 Lovelace 인터페이스를 편집하도록 되돌리려면 `configuration.yaml`에서 `lovelace` 섹션을 제거하고 `ui-lovelace.yaml`의 내용을 Home Assistant의 raw config 섹션에 복사 한 후 다시 시작하십시오.
 
-
-As a super minimal example, here's the bare minimum you will need for this to work:
+아주 최소한의 예로서, 이것이 작동하는 데 필요한 최소값은 다음과 같습니다.
 
 ```yaml
 title: My Awesome Home
@@ -39,7 +38,7 @@ views:
           Welcome to your **Lovelace UI**.
 ```
 
-A slightly more advanced example shows additional elements which can be used to customize your frontend.
+약간 더 발전된 예는 프런트 엔드를 사용자 정의하는 데 사용할 수있는 추가 요소를 보여줍니다.
 
 ```yaml
 title: My Awesome Home

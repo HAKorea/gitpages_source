@@ -11,37 +11,37 @@ ha_codeowners:
   - '@hunterjm'
 ---
 
-The `stream` integration provides a way to proxy live streams through Home Assistant. The integration currently only supports proxying H.264 source streams to the HLS format and requires at least FFmpeg >= 3.2.
+`stream` 통합구성요소는 홈어시스턴트를 통해 프록시 실시간 스트림을 할 수 있는 방법을 제공합니다. 본 통합구성요소는 현재 H.264 소스 스트림을 HLS 형식으로 프록시하는 것만 지원하며 FFmpeg> = 3.2 이상이 필요합니다.
 
-## Configuration
+## 설정
 
-To enable this component, add the following lines to your `configuration.yaml` file:
+이 컴포넌트를 활성화하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
 stream:
 ```
 
-### Services
+### 서비스
 
-Once loaded, the `stream` platform will expose services that can be called to perform various actions.
+`stream` 플랫폼은 일단 로드되면 다양한 작업을 수행하기 위해 호출 할 수있는 서비스를 노출합니다.
 
-#### Service `record`
+#### `record` 서비스
 
-Make a `.mp4` recording from a provided stream.  While this service can be called directly, it is used internally by the [`camera.record`](/integrations/camera#service-record) service.
+제공된 스트림에서`.mp4` 녹화를 만듭니다. 이 서비스는 직접 호출 할 수 있지만 [`camera.record`](/integrations/camera#service-record) 서비스에서 내부적으로 사용됩니다. 
 
-Both `duration` and `lookback` options are suggestions, but should be consistent per stream.  The actual length of the recording may vary. It is suggested that you tweak these settings to fit your needs.
+`duration` 및 `lookback` 옵션은 모두 제안이지만 스트림 별로 일치해야합니다. 실제 녹음 길이는 다를 수 있습니다. 필요에 따라 이러한 설정을 조정하는 것이 좋습니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
-| `stream_source`        |      no  | The input source for the stream, e.g., `rtsp://my.stream.feed:554`. |
-| `filename`             |      no  | The file name string. e.g., `/tmp/my_stream.mp4`. |
-| `duration`             |      yes | Target recording length (in seconds). Default: 30 |
-| `lookback`             |      yes | Target lookback period (in seconds) to include in addition to duration.  Only available if there is currently an active HLS stream for `stream_source`. Default: 0 |
+| `stream_source`        |      no  | 스트림의 입력 소스 (예 :`rtsp://my.stream.feed:554`). |
+| `filename`             |      no  | 파일 이름 문자열 (예 :`/tmp/my_stream.mp4`). |
+| `duration`             |      yes | 대상 녹화 길이 (초) , 기본값 : 30 |
+| `lookback`             |      yes | 기간과 함께 포함할 대상 전환 기간 (초)입니다. 현재 `stream_source`에 대한 활성 HLS 스트림이있는 경우에만 사용할 수 있습니다, 기본값 : 0 |
 
-The path part of `filename` must be an entry in the `whitelist_external_dirs` in your [`homeassistant:`](/docs/configuration/basic/) section of your `configuration.yaml` file.
+`filename`의 경로 부분은 `configuration.yaml` 파일의 [`homeassistant:`](/docs/configuration/basic/)섹션에 있는 `whitelist_external_dirs`의 항목이어야합니다.
 
-For example, the following action in an automation would take a recording from `rtsp://my.stream.feed:554` and save it to `/config/www`.
+예를 들어, 자동화에서 다음 액션은 `rtsp://my.stream.feed:554`에서 기록을 작성하여 `/config/www`에 저장합니다.
 
 ```yaml
 action:
@@ -52,14 +52,13 @@ action:
     duration: 30
 ```
 
-## Streaming in Lovelace
+## Lovelace에서 스트리밍
 
-As of Homeassistant version 0.92 you can now live-stream a camera feed directly in lovelace.
-To do this add either [picture-entity](/lovelace/picture-entity/), [picture-glance](/lovelace/picture-glance/) or [picture-elements](/lovelace/picture-elements/), set `camera_image` to a stream-ready camera entity and set `camera_view` to `live` in one of your lovelace views.
+Homeassistant 버전 0.92부터는 이제 카메라 피드를 lovelace로 직접 라이브 스트리밍 할 수 있습니다. 이렇게 하려면 [picture-entity](/lovelace/picture-entity/), [picture-glance](/lovelace/picture-glance/) 혹은 [picture-elements](/lovelace/picture-elements/)들 중 하나를 추가하고,  `camera_image`를 스트림 준비 카메라 엔티티로 설정하고 `camera_view`를 lovelace view 중 하나에 `live`로 설정하십시오.
 
-## Troubleshooting
+## 문제 해결
 
-Some users on manual installs may see the following error in their logs after restarting:
+수동 설치의 일부 사용자는 다시 시작한 후 로그에 다음 오류가 표시 될 수 있습니다 :
 
 ```text
 2019-03-12 08:49:59 ERROR (SyncWorker_5) [homeassistant.util.package] Unable to install package av==6.1.2: Command "/home/pi/home-assistant/bin/python3 -u -c "import setuptools, tokenize;__file__='/tmp/pip-install-udfl2b3t/av/setup.py';f=getattr(tokenize, 'open', open)(__file__);code=f.read().replace('\r\n', '\n');f.close();exec(compile(code, __file__, 'exec'))" install --record /tmp/pip-record-ftn5zmh2/install-record.txt --single-version-externally-managed --compile --install-headers /home/pi/home-assistant/include/site/python3.6/av" failed with error code 1 in /tmp/pip-install-udfl2b3t/av/
@@ -67,7 +66,7 @@ Some users on manual installs may see the following error in their logs after re
 2019-03-12 08:49:59 ERROR (MainThread) [homeassistant.setup] Setup failed for stream: Could not install all requirements.
 ```
 
-If you see this error you can solve it by running the following commands and restarting Home Assistant (commands do not need to be ran as the `homeassistant` user):
+이 오류가 표시되면 다음 명령을 실행하고 Home Assistant를 다시 시작하여이 오류를 해결할 수 있습니다 (명령은 `homeassistant` 사용자로 실행할 필요는 없습니다).
 
 ```text
 sudo apt-get install -y python-dev pkg-config libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libswscale-dev libavresample-dev libavfilter-dev

@@ -4,11 +4,11 @@ sidebar_label: Glance
 description: "The Glance card allows you to see a list of entities at a glance."
 ---
 
-Glance cards are very compact. Very useful to group together multiple sensors for a quick and easy overview. Keep in mind that this can be used together with [entity-filter](/lovelace/entity-filter/) cards to create dynamic cards.
+Glance 카드는 매우 컴팩트합니다. 빠르고 쉬운 개요를 위해 여러 센서를 그룹화하는 데 매우 유용합니다.이를 [entity-filter](/lovelace/entity-filter/) 카드 와 함께 사용하여 동적 카드를 만들 수 있습니다. 
 
 <p class='img'>
 <img src='/images/lovelace/lovelace_glance_card.png' alt='Screenshot of the glance card'>
-Screenshot of the glance card.
+glance 카드의 스크린 샷.
 </p>
 
 {% configuration %}
@@ -18,40 +18,40 @@ type:
   type: string
 entities:
   required: true
-  description: "A list of entity IDs or `entity` objects, see below."
+  description: "엔터티 ID 또는 `entity` 개체 목록 은 아래를 참조"
   type: list
 title:
   required: false
-  description: Card title
+  description: 카드 제목
   type: string
 show_name:
   required: false
-  description: Show entity name.
+  description: 엔터티 이름을 표시.
   type: boolean
   default: "true"
 show_icon:
   required: false
-  description: Show entity icon.
+  description: 엔터티 아이콘을 표시.
   type: boolean
   default: "true"
 show_state:
   required: false
-  description: Show entity state-text.
+  description: 엔터티 상태 텍스트를 표시.
   type: boolean
   default: "true"
 theme:
   required: false
-  description: "Set to any theme within `themes.yaml`"
+  description: "내 테마로 설정 `themes.yaml`"
   type: string
 columns:
   required: false
-  description: Number of columns to show. If not specified the number will be set automatically.
+  description: 표시할 열의 수입니다. 지정하지 않으면 번호가 자동으로 설정.
   type: integer
 {% endconfiguration %}
 
-## Options For Entities
+## 엔티티 옵션
 
-If you define entities as objects instead of strings, you can add more customization and configuration:
+엔티티를 문자열 대신 객체로 정의하면 사용자 정의 및 설정을 더 추가 할 수 있습니다. :
 
 {% configuration %}
 entity:
@@ -60,159 +60,160 @@ entity:
   type: string
 name:
   required: false
-  description: Overwrites friendly name.
+  description: 친숙한 이름을 덮어 씁니다.
   type: string
 icon:
   required: false
-  description: Overwrites icon.
+  description: 아이콘을 덮어 씁니다.
   type: string
 image:
   required: false
-  description: Overwrites entity picture.
+  description: 엔터티 그림을 덮어 씁니다.
   type: string
 show_last_changed:
   required: false
-  description: Overwrites the state display with the relative time since last changed.
+  description: 마지막으로 변경된 이후의 상대 시간으로 상태 표시를 덮어 씁니다.
   type: boolean
   default: false
 show_state:
   required: false
-  description: Show entity state-text.
+  description: 엔터티 상태 텍스트를 표시
   type: boolean
   default: true
 tap_action:
   required: false
-  description: Action to take on tap
+  description: 탭할 시의 액션
   type: map
   keys:
     action:
       required: true
-      description: "Action to perform (`more-info`, `toggle`, `call-service`, `navigate`, `url`, `none`)"
+      description: "액션 수행 (`more-info`, `toggle`, `call-service`, `navigate`, `url`, `none`)"
       type: string
       default: "`more-info`"
     navigation_path:
       required: false
-      description: "Path to navigate to (e.g. `/lovelace/0/`) when `action` defined as `navigate`"
+      description: "`action`이 `navigate` 로 정의된 경우 탐색 할 경로 (예: `/lovelace/0/`)"
       type: string
       default: none
     url_path:
       required: false
-      description: "Path to navigate to (e.g. `https://www.home-assistant.io`) when `action` defined as `url`"
+      description: "`action`이 `url` 로 정의된 경우 (예: `https://www.home-assistant.io`)"
       type: string
       default: none
     service:
       required: false
-      description: "Service to call (e.g. `media_player.media_play_pause`) when `action` defined as `call-service`"
+      description: "`action`이 `call-service` 로 정의된 경우 호출 할 서비스 (예 :`media_player.media_play_pause`)"
       type: string
       default: none
     service_data:
       required: false
-      description: "Service data to include (e.g. `entity_id: media_player.bedroom`) when `action` defined as `call-service`"
+      description: "`action`이 `call-service` 로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`"
       type: string
       default: none
     confirmation:
       required: false
-      description: "Present a confirmation dialog to confirm the action. See `confirmation` object below"
+      description: "액션을 컨펌하는 확인 대화 상자를 표시. 아래의 `confirmation` 개체를 참조."
       type: [boolean, map]
       default: "false"
 hold_action:
   required: false
-  description: Action to take on tap-and-hold
+  description: 길게 눌렀을 때 액션
   type: map
   keys:
     action:
       required: true
-      description: "Action to perform (`more-info`, `toggle`, `call-service`, `navigate`, `url`, `none`)"
+      description: "액션 수행 (`more-info`, `toggle`, `call-service`, `navigate`, `url`, `none`)"
       type: string
       default: "`more-info`"
     navigation_path:
       required: false
-      description: "Path to navigate to (e.g. `/lovelace/0/`) when `action` defined as `navigate`"
+      description: "`action`이 `navigate` 로 정의된 경우 탐색 할 경로 (예: `/lovelace/0/`)"
       type: string
       default: none
     url_path:
       required: false
-      description: "Path to navigate to (e.g. `https://www.home-assistant.io`) when `action` defined as `url`"
+      description: "`action`이 `url` 로 정의된 경우 (예: `https://www.home-assistant.io`"
       type: string
       default: none
     service:
       required: false
-      description: "Service to call (e.g. `media_player.media_play_pause`) when `action` defined as `call-service`"
+      description: "`action`이 `call-service` 로 정의된 경우 호출 할 서비스 (예 :`media_player.media_play_pause`"
       type: string
       default: none
     service_data:
       required: false
-      description: "Service data to include (e.g. `entity_id: media_player.bedroom`) when `action` defined as `call-service`"
+      description: "`action`이 `call-service` 로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`"
       type: string
       default: none
     confirmation:
       required: false
-      description: "Present a confirmation dialog to confirm the action. See `confirmation` object below"
+      description: "액션을 컨펌하는 확인 대화 상자를 표시. 아래의 `confirmation` 개체를 참조."
       type: [boolean, map]
       default: "false"
 double_tap_action:
   required: false
-  description: Action to take on double tap
+  description: 더블탭을 눌렀을 때의 실행
   type: map
   keys:
     action:
       required: true
-      description: "Action to perform (`more-info`, `toggle`, `call-service`, `navigate`, `url`, `none`)"
+      description: "액션 수행 (`more-info`, `toggle`, `call-service`, `navigate`, `url`, `none`)"
       type: string
       default: "`more-info`"
     navigation_path:
       required: false
-      description: "Path to navigate to (e.g. `/lovelace/0/`) when `action` defined as `navigate`"
+      description: "`action`이 `navigate` 로 정의된 경우 탐색 할 경로 (예: `/lovelace/0/`)"
       type: string
       default: none
     url_path:
       required: false
-      description: "Path to navigate to (e.g. `https://www.home-assistant.io`) when `action` defined as `url`"
+      description: "`action`이 `url` 로 정의된 경우 (예: `https://www.home-assistant.io`"
       type: string
       default: none
     service:
       required: false
-      description: "Service to call (e.g. `media_player.media_play_pause`) when `action` defined as `call-service`"
+      description: "`action`이 `call-service` 로 정의된 경우 호출 할 서비스 (예 :`media_player.media_play_pause`"
       type: string
       default: none
     service_data:
       required: false
-      description: "Service data to include (e.g. `entity_id: media_player.bedroom`) when `action` defined as `call-service`"
+      description: "`action`이 `call-service` 로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`"
       type: string
       default: none
     confirmation:
       required: false
-      description: "Present a confirmation dialog to confirm the action. See `confirmation` object below"
+      description: "액션을 컨펌하는 확인 대화 상자를 표시. 아래의 `confirmation` 개체를 참조."
       type: [boolean, map]
       default: "false"
 {% endconfiguration %}
 
-## Options For Confirmation
+## Confirmation 옵션 
 
-If you define confirmation as an object instead of boolean, you can add more customization and configurations:
+boolean 대신 객체로 confirmation을 정의하면 더 많은 사용자 정의 및 설정을 추가 할 수 있습니다.
+
 {% configuration %}
 text:
   required: false
-  description: Text to present in the confirmation dialog.
+  description: confirmation 대화 상자에 표시 할 텍스트.
   type: string
 exemptions:
   required: false
-  description: "List of `exemption` objects. See below"
+  description: "`exemption` 목록 객체. 아래 참조"
   type: list
 {% endconfiguration %}
 
-## Options For Exemptions
+## 면제 옵션 (Options For Exemptions)
 
 {% configuration badges %}
 user:
   required: true
-  description: User id that can see the view tab.
+  description: 보기 탭을 볼 수있는 사용자 ID.
   type: string
 {% endconfiguration %}
 
 ## Examples
 
-Basic example:
+기본 예시 :
 
 ```yaml
 type: glance
@@ -229,10 +230,10 @@ entities:
 
 <p class='img'>
 <img src='/images/lovelace/lovelace_glance_card.png' alt='Screenshot of the glance card with custom title'>
-Screenshot of the glance card with custom title.
+custom 제목이 있는 Glance 카드의 스크린 샷.
 </p>
 
-Define entities as objects and apply a custom name:
+엔티티를 오브젝트로 정의하고 사용자 정의 이름을 적용하십시오. :
 
 ```yaml
 type: glance

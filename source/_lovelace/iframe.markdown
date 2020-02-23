@@ -4,15 +4,15 @@ sidebar_label: Iframe
 description: "Embed data from other webservices in your dashboard."
 ---
 
-Embed data from other webservices in your dashboard. You can also embed files stored in your `<config-directory>/www` folder and reference them using `/local/<file>`.
+대시 보드에 다른 웹 서비스의 데이터를 임베드합니다. `<config-directory>/www` 폴더에 저장된 파일을 임베드하고 `/local/<file>`를 사용하여 참조 할 수도 있습니다.
 
 <div class='note warning'>
-You can't embed sites using HTTP if you are using HTTPS for your Home Assistant.
+홈 어시스턴트에 HTTPS를 사용하는 경우 HTTP를 사용하여 사이트를 임베드할 수 없습니다.
 </div>
 
 <p class='img'>
   <img width="500" src='/images/lovelace/lovelace_iframe.png' alt='Windy weather radar as iframe'>
-  Windy weather radar as iframe.
+  iframe으로 Windy Weather 레이더.
 </p>
 
 {% configuration %}
@@ -22,20 +22,20 @@ type:
   type: string
 url:
   required: true
-  description: Website URL.
+  description: 웹 사이트 주소.
   type: string
 aspect_ratio:
   required: false
-  description: Height-width-ratio.
+  description: 높이 너비 비율.
   type: string
   default: "50%"
 title:
   required: false
-  description: The card title.
+  description: 카드 제목.
   type: string
 {% endconfiguration %}
 
-### Examples
+### 사례
 
 ```yaml
 type: iframe

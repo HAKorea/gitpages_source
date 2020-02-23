@@ -22,7 +22,7 @@ entities:
   type: list
 geo_location_sources:
   required: true
-  description: 지리적 위치 소스 목록. 해당 소스가 있는 모든 현재 엔티티가 맵에 표시됩니다. 유효한 소스는 [Geolocation](/integrations/geo_location/) 플랫폼을 참조하십시오. 사용 가능한 모든 소스를 사용하려면 `all`로 설정하십시오. `geo_location_sources` 혹은 `entities`의 설 옵션 중 하나는 필요로 합니다.
+  description: 지리적 위치 소스 목록. 해당 소스가 있는 모든 현재 엔티티가 맵에 표시됩니다. 유효한 소스는 [Geolocation](/integrations/geo_location/) 플랫폼을 참조하십시오. 사용 가능한 모든 소스를 사용하려면 `all`로 설정하십시오. `geo_location_sources` 혹은 `entities`의 설정 옵션 중 하나는 필요로 합니다.
   type: list
 title:
   required: false

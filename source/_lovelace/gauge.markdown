@@ -4,11 +4,11 @@ sidebar_label: Gauge
 description: "The Gauge card allows you to display sensor information visually"
 ---
 
-Gauge card is a basic card that allows visually seeing sensor data.
+게이지 카드는 센서 데이터를 시각적으로 볼 수있는 기본 카드
 
 <p class='img'>
 <img src='/images/lovelace/lovelace_gauge_card.gif' alt='Screenshot of the gauge card'>
-Screenshot of the gauge card.
+게이지 카드의 스크린 샷.
 </p>
 
 ```yaml
@@ -23,54 +23,54 @@ type:
   type: string
 entity:
   required: true
-  description: "Entity id to show"
+  description: "표시 할 엔티티 ID"
   type: string
 name:
   required: false
-  description: Name of Gauge Entity
+  description: 게이지 엔터티 이름
   type: string
   default: Entity Name
 unit:
   required: false
-  description: Unit of Measurement given to data
+  description: 데이터에 주어진 측정 단위
   type: string
   default: "Unit Of Measurement given by entity"
 theme:
   required: false
-  description: Set to any theme within `themes.yaml`
+  description: 내 테마로 설정 `themes.yaml`
   type: string
 min:
   required: false
-  description: Minimum value for graph
+  description: 그래프의 최소값
   type: integer
   default: 0
 max:
   required: false
-  description: Maximum value for graph
+  description: 그래프의 최대값
   type: integer
   default: 100
 severity:
   required: false
-  description: Allows setting of colors for different numbers
+  description: 숫자에 따른 색상을 설정
   type: map
   keys:
     green:
       required: true
-      description: Value from which to start green color
+      description: 녹색을 시작하는 값
       type: integer
     yellow:
       required: true
-      description: Value from which to start yellow color
+      description: 노란색을 시작할 값
       type: integer
     red:
       required: true
-      description: Value from which to start red color
+      description: 붉은 색을 시작할 값
       type: integer
 {% endconfiguration %}
 
-## Examples
+## 예시
 
-Title and Unit of Measurement Example:
+제목 및 측정 단위 예:
 
 ```yaml
 type: gauge
@@ -81,10 +81,10 @@ entity: sensor.cpu_usage
 
 <p class='img'>
 <img src='/images/lovelace/lovelace_gauge_card.gif' alt='Screenshot of the gauge card with custom title and unit of measurement'>
-Screenshot of the gauge card with custom title and unit of measurement.
+사용자 정의 제목 및 측정 단위가있는 게이지 카드의 스크린 샷.
 </p>
 
-Define the severity map:
+심각도 맵을 정의 :
 
 ```yaml
 type: gauge

@@ -127,12 +127,12 @@ hold_action:
       default: none
     service:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 호출 할 서비스 (예 :`media_player.media_play_pause`"
+      description: "`action`이 `call-service` 로 정의된 경우 호출 할 서비스 (예 :`media_player.media_play_pause`)"
       type: string
       default: none
     service_data:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`"
+      description: "`action`이 `call-service` 로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
       type: string
       default: none
 double_tap_action:

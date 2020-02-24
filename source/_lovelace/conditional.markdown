@@ -1,10 +1,10 @@
 ---
-title: Conditional Card
+title: 조건부 카드 (Conditional Card)
 sidebar_label: Conditional
 description: Displays another card based on entity states.
 ---
 
-Displays another card based on entity states.
+엔티티 상태에 따라 다른 카드를 표시합니다.
 
 {% configuration %}
 type:
@@ -13,32 +13,33 @@ type:
   type: string
 conditions:
   required: true
-  description: List of entity IDs and matching states.
+  description: 엔터티 ID 및 일치하는 상태 목록.
   type: list
   keys:
     entity:
       required: true
-      description: HA entity ID.
+      description: 홈어시스턴트 엔티티 ID.
       type: string
     state:
       required: false
-      description: Entity state is equal to this value.*
+      description: 엔티티 상태는 이 값과 같습니다. *
       type: string
     state_not:
       required: false
-      description: Entity state is unequal to this value.*
+      description: 엔티티 상태가 이 값과 다릅니다. *
       type: string
 card:
   required: true
-  description: Card to display if all conditions match.
+  description: 모든 조건이 일치하면 표시 할 카드.
   type: map
 {% endconfiguration %}
 
-*one is required (`state` or `state_not`)
+*하나는 필요합니다. (`state` 혹은 `state_not`)
 
 Note: Conditions with more than one entity are treated as an 'and' condition. This means that for the card to show, *all* entities must meet the state requirements set.
+참고 : 엔티티가 둘 이상인 조건은 'and' 조건으로 취급됩니다. 즉, 카드가 표시 되려면 *모든* 엔티티가 설정된 주요 요구 사항을 모두 충족해야합니다.
 
-### Examples
+### 사례
 
 ```yaml
 type: conditional

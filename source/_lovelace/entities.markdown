@@ -4,7 +4,7 @@ sidebar_label: Entities
 description: "Entities will be the most common type of card that will also be the most familiar to people using the standard interface. It groups items together very close to how groups used to do."
 ---
 
-Entities will be the most common type of card that will also be the most familiar to people using the standard interface. It groups items together very close to how groups used to do.
+엔티티는 표준 인터페이스를 사용하는 사람들에게 가장 친숙한 가장 일반적인 유형의 카드입니다. 그룹(group)이 사용했던 방식과 매우 유사하게 항목을 그룹화합니다. 
 
 {% configuration %}
 type:
@@ -13,161 +13,161 @@ type:
   type: string
 entities:
   required: true
-  description: "A list of entity IDs or `entity` objects, see below."
+  description: "엔터티 ID 또는 `entity` 개체 목록은 아래를 참조"
   type: list
 title:
   required: false
-  description: The card title.
+  description: 카드 제목.
   type: string
 icon:
   required: false
-  description: An icon to display to the left of the title
+  description: 제목 왼쪽에 표시되는 아이콘
   type: string
 show_header_toggle:
   required: false
-  description: Button to turn on/off all entities.
+  description: 모든 엔티티를 켜거나 끄는 버튼.
   type: boolean
   default: true
 theme:
   required: false
-  description: Set to any theme within `themes.yaml`.
+  description: "`themes.yaml`에서 내 테마로 설정."
   type: string
 {% endconfiguration %}
 
-## Options For Entities
+## 엔티티 옵션 (Options For Entities)
 
-If you define entities as objects instead of strings (by adding `entity:` before entity ID), you can add more customization and configuration:
+엔터티를 문자열 대신 개체로 정의(엔티티 ID 앞에 `entity :`를 추가)하면 사용자 지정 및 설정을 더 추가 할 수 있습니다.
 
 {% configuration %}
 entity:
   required: true
-  description: Home Assistant entity ID.
+  description: 홈어시스턴트 엔티티 ID.
   type: string
 type:
   required: false
-  description: "Sets a custom card type: `custom:my-custom-card`"
+  description: "custom card 유형을 설정: `custom:my-custom-card`"
   type: string
 name:
   required: false
-  description: Overwrites friendly name.
+  description: 친숙한 이름을 덮어 씁니다.
   type: string
 icon:
   required: false
-  description: Overwrites icon or entity picture.
+  description: 아이콘 또는 엔터티 picture를 덮어 씁니다.
   type: string
 image:
   required: false
-  description: Overwrites entity picture.
+  description: 엔터티  picture를 덮어 씁니다.
   type: string
 secondary_info:
   required: false
-  description: "Show additional info. Values: `entity-id`, `last-changed`, `last-triggered` (only for automations and scripts)."
+  description: "추가 정보를 표시. 값 : `entity-id`, `last-changed`, `last-triggered` (자동화 및 스크립트만 적용)."
   type: string
 format:
   required: false
-  description: "How the state should be formatted. Currently only used for timestamp sensors. Valid values are: `relative`, `total`, `date`, `time` and `datetime`."
+  description: "상태의 형식을 지정하는 방법. 현재 타임 스탬프 센서에만 사용. 유효한 값 : `relative`, `total`, `date`, `time`, `datetime`."
   type: string
 header:
   required: false
-  description: Header widget to render. See [header documentation](/lovelace/header-footer/).
+  description: 렌더링 할 머릿글 위젯. [header documentation](/lovelace/header-footer/) 참조.
   type: map
 footer:
   required: false
-  description: Footer widget to render. See [footer documentation](/lovelace/header-footer/).
+  description: 렌더링 할 바닥글 위젯. [footer documentation](/lovelace/header-footer/) 참조.
   type: map
 tap_action:
   required: false
-  description: Action to take on tap
+  description: 탭할 시 액션
   type: map
   keys:
     action:
       required: true
-      description: "Action to perform (`more-info`, `toggle`, `call-service`, `navigate`, `url`, `none`)"
+      description: "액션 수행 (`more-info`, `toggle`, `call-service`, `navigate`, `url`, `none`)"
       type: string
       default: "`toggle`"
     navigation_path:
       required: false
-      description: "Path to navigate to (e.g. `/lovelace/0/`) when `action` defined as `navigate`"
+      description: "`action`이 `navigate` 로 정의된 경우 탐색 할 경로 (예: `/lovelace/0/`)"
       type: string
       default: none
     url_path:
       required: false
-      description: "Path to navigate to (e.g. `https://www.home-assistant.io`) when `action` defined as `url`"
+      description: "`action`이 `url` 로 정의된 경우 (예: `https://www.home-assistant.io`)"
       type: string
       default: none
     service:
       required: false
-      description: "Service to call (e.g. `media_player.media_play_pause`) when `action` defined as `call-service`"
+      description: "`action`이 `call-service` 로 정의된 경우 호출 할 서비스 (예 :`media_player.media_play_pause`)"
       type: string
       default: none
     service_data:
       required: false
-      description: "Service data to include (e.g. `entity_id: media_player.bedroom`) when `action` defined as `call-service`"
+      description: "`action`이 `call-service` 로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
       type: string
       default: none
 hold_action:
   required: false
-  description: Action to take on tap-and-hold
+  description: 길게 눌렀을 때의 액션
   type: map
   keys:
     action:
       required: true
-      description: "Action to perform (`more-info`, `toggle`, `call-service`, `navigate`, `url`, `none`)"
+      description: "액션 수행 (`more-info`, `toggle`, `call-service`, `navigate`, `url`, `none`)"
       type: string
       default: "`more-info`"
     navigation_path:
       required: false
-      description: "Path to navigate to (e.g. `/lovelace/0/`) when `action` defined as `navigate`"
+      description: "`action`이 `navigate` 로 정의된 경우 탐색 할 경로 (예: `/lovelace/0/`)"
       type: string
       default: none
     url_path:
       required: false
-      description: "Path to navigate to (e.g. `https://www.home-assistant.io`) when `action` defined as `url`"
+      description: "`action`이 `url` 로 정의된 경우 (예: `https://www.home-assistant.io`)"
       type: string
       default: none
     service:
       required: false
-      description: "Service to call (e.g. `media_player.media_play_pause`) when `action` defined as `call-service`"
+      description: "`action`이 `call-service` 로 정의된 경우 호출 할 서비스 (예 :`media_player.media_play_pause`)"
       type: string
       default: none
     service_data:
       required: false
-      description: "Service data to include (e.g. `entity_id: media_player.bedroom`) when `action` defined as `call-service`"
+      description: "`action`이 `call-service` 로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
       type: string
       default: none
 double_tap_action:
   required: false
-  description: Action to take on double tap
+  description: 더블탭을 눌렀을때의 액션
   type: map
   keys:
     action:
       required: true
-      description: "Action to perform (`more-info`, `toggle`, `call-service`, `navigate`, `url`, `none`)"
+      description: "액션 수행 (`more-info`, `toggle`, `call-service`, `navigate`, `url`, `none`)"
       type: string
       default: "`more-info`"
     navigation_path:
       required: false
-      description: "Path to navigate to (e.g. `/lovelace/0/`) when `action` defined as `navigate`"
+      description: "`action`이 `navigate` 로 정의된 경우 탐색 할 경로 (예: `/lovelace/0/`)"
       type: string
       default: none
     url_path:
       required: false
-      description: "Path to navigate to (e.g. `https://www.home-assistant.io`) when `action` defined as `url`"
+      description: "`action`이 `url` 로 정의된 경우 (예: `https://www.home-assistant.io`)"
       type: string
       default: none
     service:
       required: false
-      description: "Service to call (e.g. `media_player.media_play_pause`) when `action` defined as `call-service`"
+      description: "`action`이 `call-service` 로 정의된 경우 호출 할 서비스 (예 :`media_player.media_play_pause`"
       type: string
       default: none
     service_data:
       required: false
-      description: "Service data to include (e.g. `entity_id: media_player.bedroom`) when `action` defined as `call-service`"
+      description: "`action`이 `call-service` 로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`"
       type: string
       default: none
 {% endconfiguration %}
 
-## Special Row Elements
+## 특수 행 요소 (Special Row Elements)
 
 ### Call Service
 
@@ -178,31 +178,31 @@ type:
   type: string
 name:
   required: true
-  description: Main Label.
+  description: 메인 라벨.
   type: string
 service:
   required: true
-  description: "Service like `media_player.media_play_pause`"
+  description: "`media_player.media_play_pause`같은 서비스"
   type: string
 icon:
   required: false
-  description: "Icon to display (e.g., `mdi:home`)"
+  description: "보여줄 아이콘 (예: `mdi:home`)"
   type: string
   default: "`mdi:remote`"
 action_name:
   required: false
-  description: Button label.
+  description: 버튼 라벨.
   type: string
   default: "`Run`"
 service_data:
   required: false
-  description: The service data to use.
+  description: 사용할 서비스 데이터.
   type: map
 {% endconfiguration %}
 
 ### Cast
 
-Special row to start Home Assistant Cast.
+홈어시스턴트 캐스트를 시작하기위한 특별 행.
 
 {% configuration %}
 type:
@@ -211,26 +211,26 @@ type:
   type: string
 view:
   required: true
-  description: Path to the view that needs to be shown.
+  description: 표시해야하는 View의 경로.
   type: string
 name:
   required: false
-  description: Name to show in the row
+  description: 행에 표시 할 이름
   type: string
   default: Home Assistant Cast
 icon:
   required: false
-  description: Icon to use
+  description: 사용할 아이콘
   type: string
   default: "`hass:television`"
 hide_if_unavailable:
   required: false
-  description: Hide this row if casting is not available in the browser.
+  description: 브라우저에서 전송을 사용할 수 없는 경우이 행을 숨김. 
   type: boolean
   default: false
 {% endconfiguration %}
 
-### Divider
+### 구분선 (Divider)
 
 {% configuration %}
 type:
@@ -239,12 +239,12 @@ type:
   type: string
 style:
   required: false
-  description: Style the element using CSS.
+  description: CSS를 사용하여 요소(elements)의 스타일을 지정.
   type: string
   default: "height: 1px, background-color: var(--secondary-text-color)"
 {% endconfiguration %}
 
-### Section
+### 섹션 (Section)
 
 {% configuration %}
 type:
@@ -253,11 +253,11 @@ type:
   type: string
 label:
   required: false
-  description: Section label
+  description: 섹션 라벨
   type: string
 {% endconfiguration %}
 
-### Weblink
+### 웹링크 (Weblink)
 
 {% configuration %}
 type:
@@ -266,23 +266,23 @@ type:
   type: string
 url:
   required: true
-  description: "Website URL (or internal URL e.g. `/hassio/dashboard` or `/panel_custom_name`)"
+  description: "웹사이트 URL (또는 내부 URL 예: `/hassio/dashboard` 혹은 `/panel_custom_name`)"
   type: string
 name:
   required: false
-  description: Link label
+  description: 링크 라벨
   type: string
   default: url path
 icon:
   required: false
-  description: "Icon to display (e.g., `mdi:home`)"
+  description: "보여줄 아이콘 (예: `mdi:home`)"
   type: string
   default: "`mdi:link`"
 {% endconfiguration %}
 
-## Example
+## 사례
 
-Entity rows:
+엔티티 행 :
 
 ```yaml
 type: entities
@@ -300,7 +300,7 @@ entities:
   - group.all_locks
 ```
 
-Special rows:
+특별한 행 :
 
 ```yaml
 type: entities
@@ -322,5 +322,5 @@ entities:
 ```
 
 <div class='note'>
-Please be aware that the entity types divider and weblink aren't yet supported by the UI editor and a warning about `Expected a value of type...` is shown. You can ignore the warning and save your edits to verify.
+엔티티 유형 구분선(divider) 및 웹링크(Weblink)는 아직 UI ​​편집기에서 지원되지 않으며 '예상 값 유형 ...'에 대한 경고가 표시됩니다. 경고를 무시하고 편집 내용을 저장하여 확인할 수 있습니다.
 </div>

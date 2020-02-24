@@ -4,7 +4,7 @@ sidebar_label: Vertical Stack
 description: "The Vertical Stack card allows you to stack multiple cards together"
 ---
 
-Vertical stack allows you to group multiple cards so they always sit in the same column.
+수직 스택(Vertical Stack)을 사용하면 여러 개의 카드를 그룹화하여 항상 같은 열에 배치 할 수 있습니다.
 
 {% configuration %}
 type:
@@ -13,17 +13,17 @@ type:
   type: string
 title:
   required: false
-  description: Title of Stack
+  description: 스택의 제목.
   type: string
 cards:
   required: true
-  description: List of cards.
+  description: 카드 목록.
   type: list
 {% endconfiguration %}
 
-### Examples
+### 사례
 
-Basic example:
+기본 예제:
 
 ```yaml
 type: vertical-stack
@@ -39,10 +39,10 @@ cards:
 
 <p class="img">
   <img src="/images/lovelace/lovelace_vertical-stack.png" alt="Picture- and entities-card in a stack">
-  Picture- and entities-card in a stack.
+  스택의 그림 및 엔티티 카드.
 </p>
 
-Combination of vertical and horizontal stack card:
+수직 및 수평 스택 카드의 조합 :
 
 ```yaml
 type: vertical-stack
@@ -62,5 +62,5 @@ cards:
 
 <p class="img">
   <img src="/images/lovelace/lovelace_vertical-horizontal-stack.png" alt="Create a grid layout using vertical and horizontal stack">
-  Create a grid layout using vertical and horizontal stack.
+  수직 및 수평 스택을 사용하여 그리드 레이아웃을 만듭니다.
 </p>

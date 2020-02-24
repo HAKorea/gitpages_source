@@ -4,11 +4,11 @@ sidebar_label: Weather Forecast
 description: "The Weather card allows you a visual card to display the weather."
 ---
 
-The weather forecast is a card to display the weather. Very useful to include on interfaces that people display on the wall.
+일기 예보는 날씨를 표시하는 카드입니다. 월패드에 표시하는 인터페이스로 활용시에 매우 유용합니다. 
 
 <p class='img'>
 <img src='/images/lovelace/lovelace_weather.png' alt='Screenshot of the weather card'>
-Screenshot of the weather card.
+날씨 카드의 스크린 샷.
 </p>
 
 {% configuration %}
@@ -18,16 +18,16 @@ type:
   type: string
 entity:
   required: true
-  description: "The `entity_id` of the `weather` platform to use."
+  description: "`weather` 플랫폼의 `entity_id`를 사용"
   type: string
 name:
   required: false
-  description: Overwrites the friendly name.
+  description: 친숙한 이름을 덮어 씁니다.
   type: string
   default: Entity Name
 theme:
   required: false
-  description: "Set to any theme within `themes.yaml`"
+  description: "내 테마로 설정 `themes.yaml`"
   type: string
 {% endconfiguration %}
 
@@ -40,8 +40,7 @@ entity: weather.dark_sky
 
 <div class="note">
 
-  This card works only with platforms that define a `weather` entity.
-  
-  E.g., it works with [Dark Sky](/integrations/weather.darksky/) but not [Dark Sky Sensor](/integrations/darksky)
+  이 카드는 `weather` 엔티티 를 정의하는 플랫폼에서만 작동합니다 . 
+  예를 들어, [Dark Sky](/integrations/weather.darksky/) 에서는 작동 하지만 [Dark Sky Sensor](/integrations/darksky) 에서는 작동 하지 않습니다.
 
 </div>

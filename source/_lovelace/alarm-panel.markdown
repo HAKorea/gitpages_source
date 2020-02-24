@@ -1,14 +1,14 @@
 ---
-title: "Alarm Panel Card"
+title: "경보 패널 Card"
 sidebar_label: Alarm Panel
 description: "The Alarm Panel allows you to Arm and Disarm your Alarm Control Panel Integrations"
 ---
 
-The Alarm Panel allows you to Arm and Disarm your Alarm Control Panel Integrations.
+경보 패널을 사용하면 경보 제어판 통합구성요소를 설정 및 해제 할 수 있습니다.
 
 <p class='img'>
 <img src='/images/lovelace/lovelace_alarm_panel_card.gif' alt='Screenshot of the alarm panel card'>
-Screenshot of the Alarm Panel card.
+경보 패널 카드의 스크린 샷.
 </p>
 
 ```yaml
@@ -19,20 +19,20 @@ entity: alarm_control_panel.alarm
 {% configuration %}
 type:
   required: true
-  description: alarm-panel
+  description: 경보 패널
   type: string
 entity:
   required: true
-  description: "Entity ID of `alarm_control_panel` domain"
+  description: "`alarm_control_panel` 도메인의 엔티티 ID"
   type: string
 name:
   required: false
-  description: Overwrites Friendly Name
+  description: 친숙한 이름으로 덮어씁니다.
   type: string
   default: Current State of Alarm Entity
 states:
   required: false
-  description: Controls which states to have available
+  description: 알람의 상태 제어
   type: list
   default: arm_home, arm_away
   keys:
@@ -46,13 +46,13 @@ states:
       description: Arm Custom Bypass
 theme:
   required: false
-  description: "Set to any theme within `themes.yaml`"
+  description: "`themes.yaml`에서 어떤 테마도 활용 가능"
   type: string
 {% endconfiguration %}
 
-## Examples
+## 예시 
 
-Title Example:
+제목 예시 :
 
 ```yaml
 - type: alarm-panel
@@ -62,10 +62,10 @@ Title Example:
 
 <p class='img'>
 <img src='/images/lovelace/lovelace_alarm_panel_title_card.gif' alt='Screenshot of the alarm panel card'>
-Screenshot of the Alarm Panel card.
+경보 패널 카드의 스크린 샷.
 </p>
 
-Define the State List:
+상태 목록을 정의한 내용 :
 
 ```yaml
 type: alarm-panel

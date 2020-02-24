@@ -4,11 +4,11 @@ sidebar_label: Picture Entity
 description: Displays the entity in form of an image. Instead of images from URL it can also show the picture of `camera` entities.
 ---
 
-Displays the entity in form of an image. Instead of images from URL it can also show the picture of `camera` entities.
+이미지 형태로 엔티티를 표시합니다. URL의 이미지 대신 `camera` 엔티티 그림을 표시할 수도 있습니다 .
 
 <p class='img'>
   <img src='/images/lovelace/lovelace_picture_entity.gif' alt='Picture entity card'>
-  Background changes according to the entity state.
+  엔터티 상태에 따라 배경이 변경됩니다.
 </p>
 
 {% configuration %}
@@ -18,24 +18,24 @@ type:
   type: string
 entity:
   required: true
-  description: "An `entity_id` used for the picture."
+  description: "`entity_id`는 그림으로 사용됨."
   type: string
 camera_image:
   required: false
-  description: "Camera `entity_id` to use. (not required if `entity` is already a camera-entity)."
+  description: "사용할 카메라 `entity_id` (만일 이미 `entity`가 카메라 엔티티일 경우 필요 없음)."
   type: string
 camera_view:
   required: false
-  description: '"live" will show the live view if `stream` is enabled.'
+  description: "만일 `stream`이 활성화 된 경우 live 는 라이브 뷰를 표시합니다."
   default: auto
   type: string
 image:
   required: false
-  description: URL of an image.
+  description: 이미지의 URL.
   type: string
 state_image:
   required: false
-  description: "Map entity states to images (`state: image URL`, check the example below)."
+  description: "엔티티 상태를 이미지에 매핑 (`state: image URL`, 아래 예제 참조)."
   type: map
 state_filter:
   required: false
@@ -43,159 +43,159 @@ state_filter:
   type: map
 aspect_ratio:
   required: false
-  description: "Forces the height of the image to be a ratio of the width. You may enter a value such as: `16x9`, `16:9`, `1.78`."
+  description: "이미지의 높이를 너비의 비율로 만듭니다. 다음과 같은 값을 입력 할 수 있습니다: `16x9`, `16:9`, `1.78`."
   type: string
 name:
   required: false
-  description: Overwrite entity name.
+  description: 엔터티 이름을 덮어 씁니다.
   type: string
 show_name:
   required: false
-  description: Shows name in footer.
+  description: 바닥글에 이름을 표시.
   type: boolean
   default: true
 show_state:
   required: false
-  description: Shows state in footer.
+  description: 바닥글에 상태를 표시.
   type: boolean
   default: true
 theme:
   required: false
-  description: "Set to any theme within `themes.yaml`"
+  description: "내 테마로 설정 `themes.yaml`"
   type: string
 tap_action:
   required: false
-  description: Action to take on tap
+  description: 탭할 때 액션
   type: map
   keys:
     action:
       required: true
-      description: "Action to perform (`more-info`, `toggle`, `call-service`, `navigate`, `url`, `none`)"
+      description: "액션 수행 (`more-info`, `toggle`, `call-service`, `navigate`, `url`, `none`)"
       type: string
       default: "`more-info`"
     navigation_path:
       required: false
-      description: "Path to navigate to (e.g. `/lovelace/0/`) when `action` defined as `navigate`"
+      description: "`action`이 `navigate` 로 정의된 경우 탐색 할 경로 (예: `/lovelace/0/`)"
       type: string
       default: none
     url_path:
       required: false
-      description: "Path to navigate to (e.g. `https://www.home-assistant.io`) when `action` defined as `url`"
+      description: "`action`이 `url` 로 정의된 경우 (예: `https://www.home-assistant.io`"
       type: string
       default: none
     service:
       required: false
-      description: "Service to call (e.g. `media_player.media_play_pause`) when `action` defined as `call-service`"
+      description: "`action`이 `call-service` 로 정의된 경우 호출할 서비스 (예 :`media_player.media_play_pause`)"
       type: string
       default: none
     service_data:
       required: false
-      description: "Service data to include (e.g. `entity_id: media_player.bedroom`) when `action` defined as `call-service`"
+      description: "`action`이 `call-service` 로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
       type: string
       default: none
     confirmation:
       required: false
-      description: "Present a confirmation dialog to confirm the action. See `confirmation` object below"
+      description: "작업을 컨펌하는 확인 대화 상자를 표시. 아래 `confirmation` 개체 참조"
       type: [boolean, map]
       default: "false"
 hold_action:
   required: false
-  description: Action to take on tap-and-hold
+  description: 길게 누를 때 액션
   type: map
   keys:
     action:
       required: true
-      description: "Action to perform (`more-info`, `toggle`, `call-service`, `navigate`, `url`, `none`)"
+      description: "액션 수행 (`more-info`, `toggle`, `call-service`, `navigate`, `url`, `none`)"
       type: string
       default: "`more-info`"
     navigation_path:
       required: false
-      description: "Path to navigate to (e.g. `/lovelace/0/`) when `action` defined as `navigate`"
+      description: "`action`이 `navigate` 로 정의된 경우 탐색 할 경로 (예: `/lovelace/0/`)"
       type: string
       default: none
     url_path:
       required: false
-      description: "Path to navigate to (e.g. `https://www.home-assistant.io`) when `action` defined as `url`"
+      description: "`action`이 `url` 로 정의된 경우 (예: `https://www.home-assistant.io`)"
       type: string
       default: none
     service:
       required: false
-      description: "Service to call (e.g. `media_player.media_play_pause`) when `action` defined as `call-service`"
+      description: "`action`이 `call-service` 로 정의된 경우 호출할 서비스 (예 :`media_player.media_play_pause`)"
       type: string
       default: none
     service_data:
       required: false
-      description: "Service data to include (e.g. `entity_id: media_player.bedroom`) when `action` defined as `call-service`"
+      description: "`action`이 `call-service` 로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
       type: string
       default: none
     confirmation:
       required: false
-      description: "Present a confirmation dialog to confirm the action. See `confirmation` object below"
+      description: "작업을 컨펌하는 확인 대화 상자를 표시. 아래 `confirmation` 개체 참조"
       type: [boolean, map]
       default: "false"
 double_tap_action:
   required: false
-  description: Action to take on double tap
+  description: 더블탭 할때 액션
   type: map
   keys:
     action:
       required: true
-      description: "Action to perform (`more-info`, `toggle`, `call-service`, `navigate`, `url`, `none`)"
+      description: "액션 수행 (`more-info`, `toggle`, `call-service`, `navigate`, `url`, `none`)"
       type: string
       default: "`more-info`"
     navigation_path:
       required: false
-      description: "Path to navigate to (e.g. `/lovelace/0/`) when `action` defined as `navigate`"
+      description: "`action`이 `navigate` 로 정의된 경우 탐색 할 경로 (예: `/lovelace/0/`)"
       type: string
       default: none
     url_path:
       required: false
-      description: "Path to navigate to (e.g. `https://www.home-assistant.io`) when `action` defined as `url`"
+      description: "`action`이 `url` 로 정의된 경우 (예: `https://www.home-assistant.io`)"
       type: string
       default: none
     service:
       required: false
-      description: "Service to call (e.g. `media_player.media_play_pause`) when `action` defined as `call-service`"
+      description: "`action`이 `call-service` 로 정의된 경우 호출할 서비스 (예 :`media_player.media_play_pause`)"
       type: string
       default: none
     service_data:
       required: false
-      description: "Service data to include (e.g. `entity_id: media_player.bedroom`) when `action` defined as `call-service`"
+      description: "`action`이 `call-service` 로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
       type: string
       default: none
     confirmation:
       required: false
-      description: "Present a confirmation dialog to confirm the action. See `confirmation` object below"
+      description: "작업을 컨펌하는 확인 대화 상자를 표시. 아래 `confirmation` 개체 참조"
       type: [boolean, map]
       default: "false"
 {% endconfiguration %}
 
-## Options For Confirmation
+## Confirmation 옵션
 
-If you define confirmation as an object instead of boolean, you can add more customization and configurations:
+boolean 대신 객체로 확인을 정의하면 더 많은 사용자 정의 및 설정을 추가 할 수 있습니다. : 
 {% configuration %}
 text:
   required: false
-  description: Text to present in the confirmation dialog.
+  description: 확인 대화 상자에 표시 할 텍스트.
   type: string
 exemptions:
   required: false
-  description: "List of `exemption` objects. See below"
+  description: "`exemption` 객체 목록. 아래 참조"
   type: list
 {% endconfiguration %}
 
-## Options For Exemptions
+## Exemptions 옵션
 
 {% configuration badges %}
 user:
   required: true
-  description: User id that can see the view tab.
+  description: View 탭을 볼 수있는 사용자 ID.
   type: string
 {% endconfiguration %}
 
-## How to use state_filter
+## state_filter 사용법
 
-Specify different [CSS filters](https://developer.mozilla.org/en-US/docs/Web/CSS/filter)
+다른 [CSS filters](https://developer.mozilla.org/en-US/docs/Web/CSS/filter) 지정. 
 
 ```yaml
 state_filter:
@@ -203,9 +203,9 @@ state_filter:
   "off": brightness(50%) hue-rotate(45deg)
 ```
 
-## Examples
+## 사례
 
-Basic example:
+기본 사례 :
 
 ```yaml
 type: picture-entity
@@ -213,7 +213,7 @@ entity: light.bed_light
 image: /local/bed_light.png
 ```
 
-Different images for each state:
+각 상태에 따른 다른 이미지 사례 :
 
 ```yaml
 type: picture-entity
@@ -223,7 +223,7 @@ state_image:
   "off": /local/bed_light_off.png
 ```
 
-Displaying a live feed from an FFMPEG camera:
+FFMPEG 카메라에 실시간 피드 표시 :
 
 {% raw %}
 ```yaml
@@ -239,4 +239,4 @@ tap_action:
 ```
 {% endraw %}
 
-The filename needs to be a path that is writable by Home Assistant in your system. You may need to configure `whitelist_external_dirs` ([documentation](/docs/configuration/basic/)).
+파일 이름은 시스템의 Home Assistant에서 쓸 수 있는 경로여야합니다. `whitelist_external_dirs` ([documentation](/docs/configuration/basic/))를 설정할 필요가 있을 수 있습니다. 

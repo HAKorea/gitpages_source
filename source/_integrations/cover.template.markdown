@@ -110,7 +110,7 @@ cover:
 
 로드하는 데 추가시간이 더 걸리는 플랫폼의 상태를 사용하는 경우, 시작시 템플릿 표시등이 `unknown` 상태가 될 수 있습니다. 그러면 해당 플랫폼이 로드를 완료 할 때까지 로그 파일에 오류 메시지가 나타납니다. 
 템플릿에서 `is_state()` 함수를 사용하면 이런 상황을 피할 수 있습니다. 
-예를 들어, `true`/`false`를 반환하는 동등한 상황으로 {% raw %}`{{ states.switch.source.state == 'on' }}`{% endraw %}로 대체할 경우 절대 uknown을 나타내지 않습니다. 
+예를 들어, `true`/`false`를 반환하는 동등한 상황으로 {% raw %}`{{ states.cover.source.state == 'open' }}`{% endraw %}로 대체할 경우 절대 uknown을 나타내지 않습니다. 
 
 result:
 {% raw %}`{{ is_state('cover.source', 'open') }}`{% endraw %}

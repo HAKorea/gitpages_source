@@ -4,11 +4,11 @@ sidebar_label: Thermostat
 description: "The thermostat card allows you to control a climate entity."
 ---
 
-The thermostat card gives control of your climate entity.
+온도 조절기 카드는 Climate 개체를 제어합니다.
 
 <p class='img'>
   <img src='/images/lovelace/lovelace_thermostat_card.gif' alt='Screenshot of the thermostat card'>
-  Screenshot of the thermostat card.
+  온도 조절기 카드의 스크린 샷.
 </p>
 
 {% configuration %}
@@ -18,20 +18,20 @@ type:
   type: string
 entity:
   required: true
-  description: Entity id of `climate` domain
+  description: "`climate` 도메인의 엔티티 ID"
   type: string
 name:
   required: false
-  description: Overwrites friendly name.
+  description: 친숙한 이름을 덮어 씁니다.
   type: string
   default: Name of Entity.
 theme:
   required: false
-  description: Set to any theme within `themes.yaml`
+  description: 내 테마로 설정 `themes.yaml`
   type: string
 {% endconfiguration %}
 
-## Example
+## 예시
 
 ```yaml
 type: thermostat

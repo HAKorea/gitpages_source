@@ -14,7 +14,7 @@ ha_iot_class: Cloud Polling
 
 먼저 추가 Google 계정을 만들고 위치를 해당 계정과 공유해야합니다. 이 통합구성요소는 해당 계정을 사용하여 장치의 위치를 ​​가져옵니다.
 
-1. 휴대 전화에서 Google지도 앱을 통해 공유를 설정해야합니다. 내용은 [here](https://support.google.com/accounts?p=location_sharing) 를 참조 하십시오
+1. 휴대 전화에서 Google지도 앱을 통해 공유를 설정해야합니다. 내용은 [here](https://support.google.com/accounts?p=location_sharing) 를 참조 하십시오.
 2. 올바르게 인증 한 후 해당 계정의 쿠키를 사용해야합니다. 이 쿠키는 Firefox("접두사 HttpOnly 쿠키"가 선택 해제되어 있는지 꼭 확인) 용 [Export cookies](https://addons.mozilla.org/en-US/firefox/addon/export-cookies-txt/?src=search) 또는 Chrome / Chromium 용 [cookies.txt](https://chrome.google.com/webstore/detail/cookiestxt/njabckikapfpffapmjgojcnbfjonfjfg?hl=en-US)로 검색할 수 있습니다.
 3. 쿠키 파일을 다음 이름으로 Home Assistant 설정 디렉토리에 저장하십시오. : 새 Google 계정의 간략 사용자 이름이 포함된 `.google_maps_location_sharing.cookies.` `.com` TLD (예 : maps.google.com)를 사용해야합니다. 그렇지 않으면 쿠키에서 유효한 세션을 제공할 수 없습니다.
    - 예를 들면: 이메일 주소가 `location.tracker@gmail.com`이면 파일이름은 : `.google_maps_location_sharing.cookies.location_tracker_gmail_com`.

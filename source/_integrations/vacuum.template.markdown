@@ -8,12 +8,9 @@ logo: home-assistant.png
 ha_quality_scale: internal
 ---
 
-The `template` platform creates vacuums that combine integrations and provides the
-ability to run scripts or invoke services for each of the start, pause, stop,
-return_to_base, clean_spot, locate and set_fan_speed commands of a vacuum.
+`template` 플랫폼은 통합구성요소들을 결합하여 진공청소기 플랫폼을 만들고, 해당 플랫폼에 start, pause, stop, return_to_base, clean_spot, locate, set_fan_speed 명령 각 스크립트 또는 서비스를 실행하는 기능을 제공합니다 
 
-To enable Template Vacuums in your installation, add the following to your
-`configuration.yaml` file:
+설치에서 Template 진공청소기를 사용 가능하게하려면 `configuration.yaml` 파일에 다음을 추가 하십시오.
 
 {% raw %}
 
@@ -31,70 +28,70 @@ vacuum:
 
 {% configuration %}
   vacuums:
-    description: List of your vacuums.
+    description: 진공 청소기 목록.
     required: true
     type: map
     keys:
       friendly_name:
-        description: Name to use in the frontend.
+        description: 프론트 엔드에서 사용할 이름.
         required: false
         type: string
       value_template:
-        description: "Defines a template to get the state of the vacuum. Valid value: `docked`/`cleaning`/`idle`/`paused`/`returning`/`error`"
+        description: "진공청소기 상태를 얻는 템플릿을 정의. 주요값: `docked`/`cleaning`/`idle`/`paused`/`returning`/`error`"
         required: false
         type: template
       battery_level_template:
-        description: "Defines a template to get the battery level of the vacuum. Legal values are numbers between `0` and `100`."
+        description: "진공청소기 상태의 배터리 수준을 얻기위한 템플릿을 정의. 유효한 값은 `0` 및 `100` 사이의 숫자 입니다."
         required: false
         type: template
       fan_speed_template:
-        description: Defines a template to get the fan speed of the vacuum.
+        description: 진공의 팬 속도를 얻기위한 템플릿을 정의.
         required: false
         type: template
       availability_template:
-        description: Defines a template to get the `available` state of the component. If the template returns `true`, the device is `available`. If the template returns any other value, the device will be `unavailable`. If `availability_template` is not configured, the component will always be `available`.
+        description: 컴포넌트의 `available` 상태를 받아오는 템플릿을 정의. 템플릿이 `true`를 반환하면 기기는 `available` 상태이고 다른 값을 반환하면 `unavailable` 상태로 템플릿을 작성해야 함. `availability_template`을 작성하지 않으면 컴포넌트의 `available` 상태는 항상 'true'입니다.
         required: false
         type: template
         default: true
       start:
-        description: Defines an action to run when the vacuum is started.
+        description: 청소가 시작될 때 실행할 동작을 정의.
         required: true
         type: action
       pause:
-        description: Defines an action to run when the vacuum is paused.
+        description: 청소가 일시 중지 될 때 실행할 동작을 정의.
         required: false
         type: action
       stop:
-        description: Defines an action to run when the vacuum is stopped.
+        description: 청소가 중지 될 때 실행할 동작을 정의.
         required: false
         type: action
       return_to_base:
-        description: Defines an action to run when the vacuum is given a return to base command.
+        description: 진공청소기가 기본 명령으로 복귀 될 때 실행할 액션을 정의.
         required: false
         type: action
       clean_spot:
-        description: Defines an action to run when the vacuum is given a clean spot command.
+        description: 진공청소기에 클린 스팟 명령이 제공 될 때 실행할 동작을 정의.
         required: false
         type: action
       locate:
-        description: Defines an action to run when the vacuum is given a locate command.
+        description: 진공청소기에 찾기 명령이 제공 될 때 실행할 동작을 정의
         required: false
         type: action
       set_fan_speed:
-        description: Defines an action to run when the vacuum is given a command to set the fan speed.
+        description: 진공청소기에 팬 속도를 설정하라는 명령이 제공 될 때 실행할 동작을 정의.
         required: false
         type: action
       fan_speeds:
-        description: List of fan speeds supported by the vacuum.
+        description: 진공청소기에 지원되는 팬 속도 목록.
         required: false
         type: [string, list]
 {% endconfiguration %}
 
-## Examples
+## 사례 
 
-### Control vacuum with Harmony Hub
+### 하모니 허브로 진공 제어
 
-This example shows how you can use a Template Vacuum to control an IR vacuum cleaner using the [Harmony Hub Remote component](/integrations/harmony).
+이 예에서는 템플릿 진공을 사용하여 [Harmony Hub Remote component](/integrations/harmony)를 사용하여 IR 진공 청소기를 제어하는 ​​방법을 보여줍니다. 
 
 ```yaml
 vacuum:
@@ -121,9 +118,9 @@ vacuum:
               device: 52840686
 ```
 
-### Vacuum with state
+### 진공청소기 상태 
 
-This example shows how to use templates to specify the state of the vacuum.
+이 예는 템플릿을 사용하여 진공청소기 상태를 지정하는 방법을 보여줍니다.
 
 {% raw %}
 

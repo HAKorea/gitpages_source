@@ -20,9 +20,9 @@ ha_codeowners:
   - '@home-assistant/z-wave'
 ---
 
-The [Z-Wave](https://www.z-wave.com/) integration for Home Assistant allows you to observe and control connected Z-Wave devices. Please see the [Z-Wave getting started section](/docs/z-wave/) for in-depth documentation on how to use and setup the Z-Wave component.
+Home Assistant의 [Z-Wave](https://www.z-wave.com/) 통합구성요소를 통해 연결된 Z-Wave 장치를 관찰하고 제어할 수 있습니다. Z-Wave 컴포넌트 사용 및 설정 방법에 대한 자세한 문서는 [Z-Wave getting started section](/docs/z-wave/)을 참조하십시오.
 
-There is currently support for the following device types within Home Assistant:
+현재 홈 어시스턴트에서 다음 장치 유형이 지원됩니다.
 
 - Binary Sensor
 - [Climate](#climate)
@@ -33,9 +33,9 @@ There is currently support for the following device types within Home Assistant:
 - Sensor
 - Switch
 
-## Configuration
+## 설정 
 
-If you have setup the requirements, then add the following entry `configuration.yaml` file:
+요구 사항을 설정 한 경우 다음 항목을 `configuration.yaml` 파일에 추가하십시오. :
 
 ```yaml
 # Example configuration.yaml entry
@@ -44,31 +44,31 @@ zwave:
 
 ## Climate
 
-To get your Z-Wave thermostat or HVAC unit working with Home Assistant, follow the instructions for the general [Z-Wave component](/getting-started/z-wave/).
+Z-Wave 온도 조절기 또는 HVAC 장치를 Home Assistant와 함께 사용하려면 일반적인 [Z-Wave component](/getting-started/z-wave/) 지침을 따르십시오.
 
 <div class='note'>
 
-Thermostats with support for fan modes or different operating modes, will be handled like a HVAC device and will also be detected as one.
+팬모드 또는 다른 작동 모드를 지원하는 온도 조절 장치는 HVAC 장치처럼 처리되며 하나의 장치로도 감지됩니다.
 
-If the thermostat supports different operating modes, you will get one thermostat entity for each mode. These can be hidden with settings using the customize setting in the `configuration.yaml` file.
+온도 조절기가 다른 작동 모드를 지원하는 경우 각 모드마다 하나의 온도 조절기 엔터티가 제공됩니다. `configuration.yaml` 파일의 사용자 정의 설정을 사용하여 설정으로 숨길 수 있습니다. 
 
 </div>
 
-To enable the climate integration for your Z-Wave network, add the following to your `configuration.yaml` file.
+Z-Wave 네트워크의 Climate 통합구성요소를 가능하게 하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 climate:
   - platform: zwave
 ```
 
-Once enabled, any Z-Wave climate devices will be available to Home Assistant. Multiple entities may be created. The following entities are created for a Remotec ZXT-120.
+활성화되면 Z-Wave 기후 장치를 Home Assistant에서 사용할 수 있습니다. 여러 엔티티가 작성 될 수 있습니다. Remotec ZXT-120에 대해 다음 엔티티가 작성됩니다.
 
-- `climate.remotec_zxt120_heating_1_id`: Allows you to control the connected device. See below for examples.
-- `sensor.remotec_zxt120_temperature_38`: A sensor which returns the current temperature set on the attached device.
+- `climate.remotec_zxt120_heating_1_id`: 연결된 장치를 제어 할 수 있습니다. 사례는 아래를 참조.
+- `sensor.remotec_zxt120_temperature_38`: 연결된 장치에 설정된 현재 온도를 반환하는 센서.
 
-### Automating Z-Wave Climate Devices
+### Z-Wave Climate 장치 자동화
 
-The following examples will instruct a Remotec ZXT-120 to turn the attached device mode to Heating, and set the temperature at 24 degrees after 8pm. Add it to `automation.yaml`.
+다음 예는 Remotec ZXT-120에 연결된 장치 모드를 Heating으로 설정하고 오후 8시 이후 24도에서 온도를 설정하도록 지시합니다. 다음을 `automation.yaml`에 추가하십시오.
 
 ```yaml
 automation:
@@ -87,7 +87,7 @@ automation:
           temperature: 24
 ```
 
-Generally, in Home Assistant, you can use the `homeassistant/turn_off` service to turn devices off. For the Remotec ZXT-120, you must instead make a service call like the following.
+일반적으로 Home Assistant에서 `homeassistant / turn_off` 서비스를 사용하여 장치를 끌 수 있습니다. Remotec ZXT-120의 경우 대신 다음과 같이 서비스를 요청해야합니다.
 
 ```yaml
 automation:
@@ -102,11 +102,11 @@ automation:
           hvac_mode: 'Off'
 ```
 
-**Note:** In the example above, the word `Off` is encased in single quotes to be valid YAML.
+**Note:** 위의 예에서 단어 `Off`는 유효한 YAML이 되도록 작은 따옴표로 묶습니다.
 
-### Test if it works
+### 테스트 (Test if it works)
 
-A simple way to test if your Z-Wave climate device is working is to use <img src='/images/screenshots/developer-tool-services-icon.png' alt='service developer tool icon' class="no-shadow" height="38" /> **Services** from the **Developer Tools**. Choose the applicable Climate service from the list of **Available services:** and enter something like the sample below into the **Service Data** field and then press **CALL SERVICE**.
+Z-Wave Climate 장치가 작동하는지 테스트하는 간단한 방법은 **개발자 도구**의 <img src='/images/screenshots/developer-tool-services-icon.png' alt='service developer tool icon' class="no-shadow" height="38" /> **Service**를 사용하는 것입니다. **Available services:** 목록에서 해당 Climate 서비스를 선택하고 **Service Data** 필드에 아래 샘플과 같은 것을 입력한 다음 **CALL SERVICE**를 누릅니다.
 
 ```json
 {
@@ -115,13 +115,13 @@ A simple way to test if your Z-Wave climate device is working is to use <img src
 }
 ```
 
-## Cover
+## Cover 
 
-Z-Wave garage doors, blinds, and roller shutters are supported as cover in Home Assistant.
+Z-Wave 차고 문, 블라인드 및 롤러 셔터는 홈어시스턴트의 Cover로 지원됩니다.
 
-To get your Z-Wave covers working with Home Assistant, follow the instructions for the general [Z-Wave component](#configuration).
+Z-Wave Cover가 홈어시스턴트와 작동하게 하려면 일반 [Z-Wave component](#configuration)에 대한 지시 사항을 따르십시오.
 
-If you discover that you need to [invert the operation](/docs/z-wave/installation/#invert_openclose_buttons) of open/close for a particular device, you may change this behavior in your Z-Wave section of your `configuration.yaml` file as follows, in addition you can also [invert percent position](/docs/z-wave/installation/#invert_percent):
+특정 장치에 대해 닫기/열기의 [invert the operation](/docs/z-wave/installation/#invert_openclose_buttons)해야한다는 것을 발견 한 경우, `configuration.yaml` 파일의 Z-Wave 섹션에서 이 동작을 다음과 같이 변경할 수 있습니다. 또한 [invert percent position](/docs/z-wave/installation/#invert_percent)도 추가할 수 있습니다. 
 
 ```yaml
 zwave:
@@ -133,12 +133,12 @@ zwave:
 
 ## Lock
 
-To get your Z-Wave locks working with Home Assistant, follow the instructions for the general [Z-Wave component](#configuration).
+Z-Wave Lock이 Home Assistant와 작동하게 하려면 일반 [Z-Wave component](#configuration)에 대한 지침을 따르십시오.
 
-Z-Wave locks will expose three services under the lock domain to manage usercodes if the lock supports it:
+Z-Wave Lock은 Lock 도메인에서 3개의 서비스를 노출하여 Lock이 지원하는 경우 사용자 코드를 관리합니다. :
 
 | Service | Description |
 | ------- | ----------- |
-| clear_usercode | Clears a usercode at code_slot X. Valid code_slots are 1-254, but max is defined by the lock. |
-| get_usercode | Get a usercode from the lock at code_slot. Valid code_slots are 1-254, but max is defined by the lock. |
-| set_usercode | Sets usercode to X at code_slot Y. Valid usercodes are at least 4 digits, and max defined by the lock. |
+| clear_usercode | code_slot X에서 사용자 코드를 지웁니다. 유효한 code_slots는 1-254이지만 max는 lock에 의해 정의됨 |
+| get_usercode | code_slot의 lock에서 사용자 코드를 가져옵니다. Valid code_slots are 1-254이지만 max는 lock에 의해 정의됨. |
+| set_usercode | code_slot Y에서 사용자 코드를 X로 설정합니다. 유효한 사용자 코드는 4자리 이상이며 max lock에 의해 정의됨. |

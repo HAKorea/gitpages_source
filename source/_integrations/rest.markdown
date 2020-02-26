@@ -8,9 +8,9 @@ ha_release: 0.7.4
 ha_iot_class: Local Polling
 ---
 
-The `rest` sensor platform is consuming a given endpoint which is exposed by a [RESTful API](https://en.wikipedia.org/wiki/Representational_state_transfer) of a device, an application, or a web service. The sensor has support for GET and POST requests.
+`rest` 센서 플랫폼은 장치, 애플리케이션 또는 웹서비스의 [RESTful API](https://en.wikipedia.org/wiki/Representational_state_transfer)에 의해 노출되는 지정된 엔드 포인트를 연결(consuming)해줍니다. 
 
-To enable this sensor, add the following lines to your `configuration.yaml` file for a GET request:
+이 센서를 활성화하려면 GET 요청을 위해 `configuration.yaml` 파일에 다음 라인을 추가하십시오. :
 
 ```yaml
 # Example configuration.yaml entry
@@ -19,7 +19,7 @@ sensor:
     resource: http://IP_ADDRESS/ENDPOINT
 ```
 
-or for a POST request:
+또는 POST 요청의 경우 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -30,7 +30,7 @@ sensor:
     payload: '{ "device" : "heater" }'
 ```
 
-or a template based request:
+또는 템플릿 기반 요청 :
 
 {% raw %}
 
@@ -45,102 +45,102 @@ sensor:
 
 {% configuration %}
 resource:
-  description: The resource or endpoint that contains the value.
+  description: 값이 포함된 자원 또는 엔드 포인트.
   required: true
   type: string
 resource_template:
-  description: The resource or endpoint that contains the value with template support.
+  description: 템플리트 지원값이 포함된 자원 또는 엔드 포인트.
   required: true
   type: template
 method:
-  description: The method of the request. Either `POST` or `GET`.
+  description: 요청 방법. `POST` 혹은 `GET` 둘 중 하나.
   required: false
   type: string
   default: GET
 name:
-  description: Name of the REST sensor.
+  description: REST 센서의 이름.
   required: false
   type: string
   default: REST Sensor
 device_class:
-  description: Sets the [class of the device](/integrations/sensor/), changing the device state and icon that is displayed on the frontend.
+  description: 프론트 엔드에 표시되는 디바이스 상태 및 아이콘을 변경하여 [class of the device](/integrations/sensor/)를 설정.
   required: false
   type: string
 value_template:
-  description: "Defines a [template](/docs/configuration/templating/#processing-incoming-data) to extract the value."
+  description: "값을 추출 할 [template](/docs/configuration/templating/#processing-incoming-data) 을 정의"
   required: false
   type: template
 payload:
-  description: The payload to send with a POST request. Depends on the service, but usually formed as JSON.
+  description: POST 요청과 함께 보낼 페이로드. 서비스에 따라 다르지만 일반적으로 JSON으로 구성.
   required: false
   type: string
 verify_ssl:
-  description: Verify the SSL certificate of the endpoint.
+  description: 엔드 포인트의 SSL 인증서를 확인.
   required: false
   type: boolean
   default: True
 timeout:
-  description: Defines max time to wait data from the endpoint.
+  description: 엔드 포인트에서 데이터를 기다리는 최대 시간을 정의.
   required: false
   type: integer
   default: 10
 unit_of_measurement:
-  description: Defines the units of measurement of the sensor, if any.
+  description: 센서의 측정 단위를 정의, 있을 경우.
   required: false
   type: string
 authentication:
-  description:  Type of the HTTP authentication. `basic` or `digest`.
+  description: HTTP 인증의 유형. `basic` 혹은 `digest`.
   required: false
   type: string
 username:
-  description: The username for accessing the REST endpoint.
+  description: REST 엔드 포인트에 액세스하기위한 사용자 이름.
   required: false
   type: string
 password:
-  description: The password for accessing the REST endpoint.
+  description: REST 엔드 포인트에 액세스하기위한 비밀번호.
   required: false
   type: string
 headers:
-  description: The headers for the requests.
+  description: 요청에 대한 헤더.
   required: false
   type: [string, list]
 json_attributes:
-  description: A list of keys to extract values from a JSON dictionary result and then set as sensor attributes.
+  description: JSON 사전(dictinary) 결과에서 값을 추출한 후 센서 속성으로 설정하는 키 목록.
   reqired: false
   type: [string, list]
 force_update:
-  description: Sends update events even if the value hasn't changed. Useful if you want to have meaningful value graphs in history.
+  description: 값이 변경되지 않은 경우에도 업데이트 이벤트를 보냅니다. 히스토리에 유의미한 값들의 그래프를 원할 때 유용합니다.
   reqired: false
   type: boolean
   default: false
 {% endconfiguration %}
 
 <div class='note warning'>
-Make sure that the URL exactly matches your endpoint or resource.
+URL이 엔드 포인트 또는 리소스와 정확히 일치하는지 확인.
 </div>
 
 <div class='note'>
 
-Use either `resource` or `resource_template`.
+`resource` 혹은 `resource_template` 을 사용하십시오.
 
 </div>
 
-`curl` can help you identify the variable you want to display in your Home Assistant frontend. The example below shows the JSON response of a device that is running with [aREST](https://arest.io/).
+`curl`은 홈어시스턴트 프론트 엔드에 표시하려는 변수를 식별하는 데 도움이됩니다. 아래 예는 [aREST](https://arest.io/)로 실행중인 장치의 JSON 응답을 보여줍니다.
 
 ```bash
 $ curl -X GET http://192.168.1.31/temperature/
 {"temperature": 77, "id": "sensor02", "name": "livingroom", "connected": true}
 ```
 
-The response is expected to be a dictionary or a list with a dictionary as its 0th element.
+응답은 사전(dictionary)이거나 0 번째 요소 인 사전(dictionary)이 있는 목록 일 것으로 예상됩니다.
 
-## Examples
+## 사례 
 
-In this section you find some real-life examples of how to use this sensor.
+이 섹션에는이 센서를 사용하는 방법에 대한 실제 예가 나와 있습니다.
 
-### External IP address
+### 외부 IP 주소
 
-You can find your external IP address using the service [JSON Test](https://www.jsontest.com/) at their [http://ip.jsontest.com/](http://ip.jsontest.com/) URL.
+[http://ip.jsontest.com/](http://ip.jsontest.com/) URL에서 서비스 [JSON Test](https://www.jsontest.com/)를 사용하여 외부 IP 주소를 찾을 수 있습니다. 
 
 ```yaml
 sensor:
@@ -150,9 +150,9 @@ sensor:
     value_template: '{% raw %}{{ value_json.ip }}{% endraw %}'
 ```
 
-### Single value from a local Glances instance
+###  로컬 GLANCES 인스턴스의 단일값 (Single value from a local Glances instance)
 
-The [glances](/integrations/glances) sensor is doing the exact same thing for all exposed values.
+[glances](/integrations/glances) 센서는 모든 노출 된 값에 대해 똑같은 일을합니다.
 
 ```yaml
 sensor:
@@ -163,11 +163,11 @@ sensor:
     unit_of_measurement: MB
 ```
 
-### Value from another Home Assistant instance
+### 다른 홈 어시스턴트 인스턴스의 값 (Value from another Home Assistant instance)
 
-The Home Assistant [API](/developers/rest_api/) exposes the data from your attached sensors. If you are running multiple Home Assistant instances which are not [connected](/developers/architecture/#multiple-connected-instances) you can still get information from them.
+홈어시스턴트 [API](/developers/rest_api/)는 연결된 센서에서 데이터를 노출합니다. [connected](/developers/architecture/#multiple-connected-instances) 가 아닌 여러 Home Assistant 인스턴스를 실행중인 경우에도 해당 정보를 얻을 수 있습니다.
 
-If the Home Assistant instance in the resource variable is protected by an API password, you can append `?api_password=YOUR_PASSWORD` to the resource URL to authenticate or use `headers:`.
+자원 변수에서 홈어시스턴트 인스턴스가 API 비밀번호로 보호되는 경우, `? api_password = YOUR_PASSWORD`를 자원 URL에 추가하여 `headers:`를 인증하거나 사용할 수 있습니다.
 
 ```yaml
 sensor:
@@ -178,9 +178,9 @@ sensor:
     unit_of_measurement: "°C"
 ```
 
-### Accessing an HTTP authentication protected endpoint
+### HTTP 인증으로 보호 된 엔드 포인트에 액세스 (Accessing an HTTP authentication protected endpoint)
 
-The REST sensor supports HTTP authentication and customized headers.
+REST 센서는 HTTP 인증 및 사용자 정의된 헤더를 지원.
 
 ```yaml
 sensor:
@@ -194,7 +194,7 @@ sensor:
       Content-Type: application/json
 ```
 
-The headers will contain all relevant details. This will also give you the ability to access endpoints that are protected by tokens.
+헤더에는 모든 관련 세부 사항이 포함. 또한 토큰으로 보호되는 엔드 포인트에 액세스 할 수 있습니다.
 
 ```bash
 Content-Length: 1024
@@ -205,7 +205,8 @@ Content-Type: application/json
 User-Agent: Home Assistant
 ```
 
-If you are accessing a resource protected by a `Bearer` token in an `Authorization` header, you can either put the token in the header field of the sensor configuration (not recommended) or store the token in your [`secrets.yaml`](/docs/configuration/secrets/) file. In that case, be sure to include the word `Bearer` in the `secrets` file.
+`Authorization` 헤더의 `Bearer` 토큰으로 보호되는 리소스에 액세스하는 경우 센서 설정의 헤더 필드에 토큰을 넣거나 (권장하지 않음) [`secrets.yaml`](/docs/configuration/secrets/) 파일에 토큰을 저장할 수 있습니다. 
+이 경우,`secrets` 파일에 `Bearer`라는 단어를 포함 시키십시오.
 
 ```yaml
 sensor:
@@ -215,15 +216,15 @@ sensor:
       Authorization: !secret my_sensor_secret_token
 ```
 
-Example entry for the `secrets.yaml` file:
+`secrets.yaml`파일 항목 예 :
 
 ```yaml
 my_sensor_secret_token: Bearer gh_DHQIXKVf6Pr4H8Yqz8uhApk_mnV6Zje6Pr4H8Yqz8A8nCxz6SBghQdS51
 ```
 
-### Use GitHub to get the latest release of Home Assistant
+### GITHUB를 사용하여 홈어시스턴트 최신 릴리스 확인
 
-This sample is very similar to the [`updater`](/integrations/updater/) integration but the information is received from GitHub.
+이 샘플은 [`updater`](/integrations/updater/) 통합구성요소와 매우 유사 하지만 정보는 GitHub에서 수신됩니다.
 
 ```yaml
 sensor:
@@ -239,9 +240,9 @@ sensor:
       User-Agent: Home Assistant REST sensor
 ```
 
-### Fetch multiple JSON values and present them as attributes
+### 여러 JSON 값을 가져 와서 속성으로 표시
 
-[JSON Test](https://www.jsontest.com/) returns the current time, date and milliseconds since epoch from [http://date.jsontest.com/](http://date.jsontest.com/).
+[JSON Test](https://www.jsontest.com/) 는 [http://date.jsontest.com/](http://date.jsontest.com/) 에서 유닉스시간 이래 현재 시간, 날짜 및 밀리 초를 반환합니다.
 
 {% raw %}
 ```yaml
@@ -264,7 +265,7 @@ sensor:
 ```
 {% endraw %}
 
-This sample fetches a weather report from [OpenWeatherMap](https://openweathermap.org/), maps the resulting data into attributes of the RESTful sensor and then creates a set of [template](/integrations/template) sensors that monitor the attributes and present the values in a usable form.
+이 샘플은 [OpenWeatherMap](https://openweathermap.org/)에서 날씨 보고서를 가져 와서 결과 데이터를 RESTful 센서의 속성에 맵핑 한 후 속성을 모니터링하는 [template](/integrations/template) 센서 세트를 작성하고 해당 값을 사용 가능한 형식으로 나타냅니다. 
 
 {% raw %}
 ```yaml
@@ -300,7 +301,7 @@ sensor:
 ```
 {% endraw %}
 
-This config shows how to extract multiple values from a dictionary with `json_attributes` and `template`. It helps you to avoid flooding the REST service and only ask once the results and separate them in multiple templates referring to it. (No need for a specific state on the REST sensor and it's default state will be the full JSON value which will be longer than the 255 max length. It's why we'll used a static value)
+이 설정은 `json_attributes`와`template`을 사용하여 사전(dictionary)에서 여러 값을 추출하는 방법을 보여줍니다. REST 서비스의 플러딩(flooding)을 피하고 결과를 한 번만 요청하고 이를 참조하는 여러 템플리트로 분리합니다. (REST 센서에서 특정 상태가 필요하지 않으며 기본 상태는 전체 JSON 값이며 최대 255 길이보다 깁니다. 우리가 정적인 값을 사용하는 이유입니다)
 
 {% raw %}
 ```json

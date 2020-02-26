@@ -1,10 +1,10 @@
 ---
-title: "Vertical Stack Card"
+title: "Vertical Stack 카드"
 sidebar_label: Vertical Stack
 description: "The Vertical Stack card allows you to stack multiple cards together"
 ---
 
-수직 스택(Vertical Stack)을 사용하면 여러 개의 카드를 그룹화하여 항상 같은 열에 배치 할 수 있습니다.
+Vertical Stack을 사용하면 여러 개의 카드를 그룹화하여 항상 같은 열에 배치 할 수 있습니다.
 
 {% configuration %}
 type:

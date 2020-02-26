@@ -1,5 +1,5 @@
 ---
-title: "Map Card"
+title: "지도 카드"
 sidebar_label: Map
 description: "A card that allows you to display entities on a map"
 ---

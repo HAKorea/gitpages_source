@@ -1,17 +1,17 @@
 ---
-title: "Markdown Card"
+title: "Markdown 카드"
 sidebar_label: Markdown
 description: "Markdown card is used to render markdown"
 ---
 
-마크 다운 카드는 [Markdown] (https://commonmark.org/help/) 렌더링에 사용됩니다. 
+Markdown 카드는 [Markdown](https://commonmark.org/help/) 렌더링을 사용합니다. 
 
 렌더러는 [Marked.js](https://marked.js.org)를 사용하며, CommonMark, GitHub Flavored Markdown (GFM) 및 `markdown.pl`을 포함한 [Markdown의 여러 스펙](https://marked.js.org/#/README.md#specifications) 을 지원합니다.
  	 
 
 <p class='img'>
 <img src='/images/lovelace/lovelace_markdown.png' alt='Screenshot of the markdown card'>
-마크 다운 카드의 스크린 샷.
+Markdown 카드의 스크린 샷.
 </p>
 
 {% configuration %}
@@ -32,7 +32,7 @@ card_size:
   required: false
   type: integer
   default: none
-  description: 템플릿을 포함하는 경우 심미적으로 카드를 러브레이스에 배치하는 알고리즘에 마크 다운 카드에 문제가 있을 수 있습니다. 이 값을 사용하여 카드 높이를 50 픽셀 단위 (기본 크기의 경우 대략 3 줄의 텍스트)로 추정 할 수 있습니다. (예로서 `4`).
+  description: 템플릿을 포함하는 경우 보기좋게 카드를 러브레이스에 배치하는 알고리즘에 Markdown 카드에 문제가 있을 수 있습니다. 이 값을 사용하여 카드 높이를 50 픽셀 단위 (기본 크기의 경우 대략 3 줄의 텍스트)로 추정할 수 있습니다. (예로서 `4`).
 entity_id:
   required: false
   type: [string, list]

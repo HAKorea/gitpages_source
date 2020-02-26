@@ -1,16 +1,16 @@
 ---
-title: "Picture Elements Card"
+title: "Picture Elements 카드"
 sidebar_label: Picture Elements
 description: "Picture elements card is one of the most versatile types of cards"
 ---
 
-그림 요소 카드(Picture elements card)는 가장 다양한 유형의 카드 중 하나입니다.
+Picture elements 카드는 가장 다양한 유형의 카드 중 하나입니다.
 
-카드를 사용하면 아이콘이나 텍스트, 심지어 서비스를 배치 할 수 있습니다! 좌표를 기준으로 한 이미지 평면도를 상상 하고 제한없이 [picture-glance](/lovelace/picture-glance/)를 활용하는 것을 상상해보십시오 !
+좌표를 기준으로 한 이미지 위에 이 카드를 사용하면 아이콘이나 텍스트, 심지어 서비스까지 배치할 수 있습니다! 평면도(floorplan)를 그려보세요! [picture-glance](/lovelace/picture-glance/)로 어떤 제한도 없이 그려보세요 !
 
 <p class='img'>
   <img src='/images/lovelace/lovelace_picture_elements.gif' alt='A functional floorplan powered by picture elements'>
-  그림 요소로 구동되는 기능적인 평면도(floorplan)
+  Picture Elements로 구현된 기능적인 평면도(floorplan)
 </p>
 
 {% configuration %}

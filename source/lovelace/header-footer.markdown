@@ -3,7 +3,6 @@ title: "Lovelace 카드용 머리글 및 바닥글"
 description: "Decorate your Lovelace cards with header and footer widgets."
 ---
 
-Some Lovelace cards have support for header and footer widgets. These widgets fill up the whole available space in a card.
 일부 Lovelace 카드는 머리글 및 바닥 글 위젯을 지원합니다. 이 위젯은 카드에서 사용 가능한 전체 공간을 채웁니다.
 
 ## 그림을 머리글 및 바닥글로

@@ -1,5 +1,5 @@
 ---
-title: "Entity Filter Card"
+title: "엔티티 필터 카드"
 sidebar_label: Entity Filter
 description: "This card allows you to define a list of entities that you want to track only when in a certain state. Very useful for showing lights that you forgot to turn off or show a list of people only when they're at home. "
 ---

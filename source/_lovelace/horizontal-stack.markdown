@@ -1,10 +1,10 @@
 ---
-title: "Horizontal Stack Card"
+title: "Horizontal Stack 카드"
 sidebar_label: Horizontal Stack
 description: "Horizontal stack card allows you to stack together multiple cards, so they always sit next to each other in the space of one column."
 ---
 
-Horizontal 스택 카드를 사용하면 여러 카드를 함께 쌓을 수 있으므로 항상 한 열의 공간에서 서로 옆에 배치되어 있습니다.
+Horizontal Stack 카드를 사용하면 여러카드를 함께 쌓을 수 있으므로 항상 한 열의 공간에서 서로 옆에 배치되어 있습니다.
 
 {% configuration %}
 type:
@@ -13,7 +13,7 @@ type:
   type: string
 title:
   required: false
-  description: 스택 타이틀.
+  description: Stack 타이틀.
   type: string
 cards:
   required: true
@@ -37,5 +37,5 @@ cards:
 
 <p class='img'>
   <img src='/images/lovelace/lovelace_horizontal_stack.PNG' alt='Two picture cards in a horizontal stack card'>
-  horizontal 스택 카드에 두 장의 그림 카드.
+  horizontal Stack 카드에 두 장의 그림 카드.
 </p>

@@ -9,14 +9,11 @@ logo: home-assistant.png
 ha_quality_scale: internal
 ---
 
-The `template` platform can create covers that combine integrations and provides
-the ability to run scripts or invoke services for each of the open,
-close, stop, position and tilt commands of a cover.
+`template` 플랫폼은 통합구성요소들을 결합한 커버를 만들 수 있고, Cover(개폐장치)의 열기, 닫기, 중지, 위치 및 기울기 명령 각각에 대해 스크립트를 실행하거나 서비스를 호출 할 수 있습니다.
 
-## Configuration
+## 설정
 
-To enable Template Covers in your installation,
-add the following to your `configuration.yaml` file:
+설치에서 템플릿 커버를 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오 : 
 
 {% raw %}
 
@@ -45,102 +42,92 @@ cover:
     type: map
     keys:
       friendly_name:
-        description: Name to use in the frontend.
+        description: 프론트 엔드에서 사용할 이름.
         required: false
         type: string
       entity_id:
-        description: A list of entity IDs so the cover only reacts to state changes of these entities. This can be used if the automatic analysis fails to find all relevant entities.
+        description: Cover의 엔티티 상태 변경에만 반응하는 엔티티 ID 목록입니다. 자동 분석에서 모든 관련 엔티티를 찾지 못하면 사용할 수 있습니다.
         required: false
         type: [string, list]
       value_template:
-        description: Defines a template to get the state of the cover. Valid values are `open`/`true` or `closed`/`false`. [`value_template`](#value_template) and [`position_template`](#position_template) cannot be specified concurrently.
+        description: Cover 상태를 가져 오는 템플릿을 정의. 유효한 값은 `open`/`true` 혹은 `closed`/`false`. [`value_template`](#value_template) 그리고 [`position_template`]
         required: exclusive
         type: template
       position_template:
-        description: Defines a template to get the state of the cover. Legal values are numbers between `0` (closed) and `100` (open). [`value_template`](#value_template) and [`position_template`](#position_template) cannot be specified concurrently.
+        description: Cover 상태를 가져 오는 템플릿을 정의. 올바른 값은 `0`(닫힘)과 `100`(열림) 사이의 숫자. [`value_template`](#value_template)과 [`position_template`](#position_template)은 동시에 지정 불가.
         required: exclusive
         type: template
       icon_template:
-        description: Defines a template to specify which icon to use.
+        description: 사용할 아이콘을 지정하기위한 템플릿을 정의.
         required: false
         type: template
       availability_template:
-        description: Defines a template to get the `available` state of the component. If the template returns `true`, the device is `available`. If the template returns any other value, the device will be `unavailable`. If `availability_template` is not configured, the component will always be `available`.
+        description: 컴포넌트의 `available` 상태를 가져 오도록 템플리트를 정의. 템플릿이 `true`를 반환하면 `available` 입니다. 템플릿이 다른 값을 반환하면 장치는 `unavailable`입니다. `availability_template`이 설정되어 있지 않으면 구성 요소는 항상 `available` 입니다.
         required: false
         type: template
         default: true
       device_class:
-        description: Sets the [class of the device](/integrations/cover/), changing the device state and icon that is displayed on the frontend.
+        description: 프런트 엔드에 표시되는 장치 상태 및 아이콘을 변경하여 [class of the device](/integrations/cover/)를 설정합니다.
         required: false
         type: string
       open_cover:
-        description: Defines an action to run when the cover is opened. If [`open_cover`](#open_cover) is specified, [`close_cover`](#close_cover) must also be specified. At least one of [`open_cover`](#open_cover) and [`set_cover_position`](#set_cover_position) must be specified.
+        description: Cover를 열 때 실행할 동작을 정의합니다. [`open_cover`](# open_cover)를 지정하면 [`close_cover`](# close_cover)도 지정해야합니다. [`open_cover`](#open_cover) 및 [`set_cover_position`](#set_cover_position) 중 하나 이상을 지정해야합니다.
         required: inclusive
         type: action
       close_cover:
-        description: Defines an action to run when the cover is closed.
+        description: Cover를 닫을 때 실행할 동작을 정의합니다.
         required: inclusive
         type: action
       stop_cover:
-        description: Defines an action to run when the cover is stopped.
+        description: Cover가 멈출 때 실행할 동작을 정의합니다.
         required: false
         type: action
       set_cover_position:
-        description: Defines an action to run when the cover is set to a specific value (between `0` and `100`).
+        description: Cover가 특정값으로 설정 될 때 실행할 동작을 정의합니다. (`0` 과 `100` 사이).
         required: false
         type: action
       set_cover_tilt_position:
-        description: Defines an action to run when the cover tilt is set to a specific value (between `0` and `100`).
+        description: Cover 틸트(기울기)가 특정값으로 설정 될 때 실행할 동작을 정의합니다 (`0` 과 `100` 사이).
         required: false
         type: action
       optimistic:
-        description: Force cover position to use [optimistic mode](#optimistic-mode).
+        description: 사용할 Cover 위치 지정 [optimistic mode](#optimistic-mode).
         required: false
         type: boolean
         default: false
       tilt_optimistic:
-        description: Force cover tilt position to use [optimistic mode](#optimistic-mode).
+        description: 사용할 Cover 팉트(기울기) 위치 지정 [optimistic mode](#optimistic-mode).
         required: false
         type: boolean
         default: false
       tilt_template:
-        description: Defines a template to get the tilt state of the cover. Legal values are numbers between `0` (closed) and `100` (open).
+        description: Cover의 틸트(기울기) 상태를 얻기 위해 템플릿을 정의합니다. 올바른 값은 `0`(닫힘)과 `100`(열림) 사이의 숫자입니다.
         required: false
         type: template
 {% endconfiguration %}
 
-## Considerations
+## 고려 사항
 
-If you are using the state of a platform that takes extra time to load, the
-Template Cover may get an `unknown` state during startup. This results in error
-messages in your log file until that platform has completed loading.
-If you use `is_state()` function in your template, you can avoid this situation.
-For example, you would replace
-{% raw %}`{{ states.cover.source.state == 'open' }}`{% endraw %}
-with this equivalent that returns `true`/`false` and never gives an unknown
+로드하는 데 추가시간이 더 걸리는 플랫폼의 상태를 사용하는 경우, 시작시 템플릿 표시등이 `unknown` 상태가 될 수 있습니다. 그러면 해당 플랫폼이 로드를 완료 할 때까지 로그 파일에 오류 메시지가 나타납니다. 
+템플릿에서 `is_state()` 함수를 사용하면 이런 상황을 피할 수 있습니다. 
+예를 들어, `true`/`false`를 반환하는 동등한 상황으로 {% raw %}`{{ states.cover.source.state == 'open' }}`{% endraw %}로 대체할 경우 절대 uknown을 나타내지 않습니다. 
+
 result:
 {% raw %}`{{ is_state('cover.source', 'open') }}`{% endraw %}
 
-## Optimistic Mode
+## Optimistic 모드
 
-In optimistic mode, the cover position state is maintained internally. This mode
-is automatically enabled if neither [`value_template`](#value_template) or
-[`position_template`](#position_template) are specified. Note that this is
-unlikely to be very reliable without some feedback mechanism, since there is
-otherwise no way to know if the cover is moving properly. The cover can be
-forced into optimistic mode by using the [`optimistic`](#optimistic) attribute.
-There is an equivalent mode for `tilt_position` that is enabled when
-[`tilt_template`](#tilt_template) is not specified or when the
-[`tilt_optimistic`](#tilt_optimistic) attribute is used.
+optimistic 모드에서는 Cover 위치 상태가 내부적으로 유지됩니다. 이 모드는 [`value_template`](#value_template) 또는 [`position_template`](#position_template)을 지정하지 않으면 자동으로 활성화됩니다. 
+Cover가 제대로 움직이는지 여부를 알 수 있는 방법이 없기 때문에 피드백 메커니즘이 없으면 신뢰성이 떨어질 수 있습니다. [`optimistic`](#optimistic) 속성을 사용하여 표지를 optimistic 모드로 강제 설정할 수 있습니다. 
+`tilt_position`에는 [`tilt_template`](#tilt_template)이 지정되지 않았거나 [`tilt_optimistic`](# tilt_optimistic) 속성이 사용될 때 활성화되는 동등한 모드가 있습니다.
 
-## Examples
+## 사례 
 
-In this section you will find some real-life examples of how to use this cover.
+이 섹션에서는 Cover를 사용하는 방법에 대한 실제 예를 보여줍니다.
 
-### Garage Door
+### 차고 문
 
-This example converts a garage door with a controllable switch and position
-sensor into a cover.
+이 예에서는 제어 가능한 스위치 및 위치 센서가있는 차고 문을 Cover로 변환합니다.
 
 {% raw %}
 
@@ -173,9 +160,9 @@ cover:
 
 {% endraw %}
 
-### Multiple Covers
+### 여러 개폐 장치 (Multiple Covers)
 
-This example allows you to control two or more covers at once.
+이 예에서는 한 번에 둘 이상의 Cover를 제어 할 수 있습니다.
 
 {% raw %}
 
@@ -262,9 +249,9 @@ automation:
 
 {% endraw %}
 
-### Change The Icon
+### 아이콘 변화
 
-This example shows how to change the icon based on the cover state.
+이 예는 Cover 상태에 따라 아이콘을 변경하는 방법을 보여줍니다.
 
 {% raw %}
 
@@ -297,9 +284,9 @@ cover:
 
 {% endraw %}
 
-### Change The Entity Picture
+### 엔티티 사진 변화 (Change The Entity Picture)
 
-This example shows how to change the entity picture based on the cover state.
+이 예는 Cover 상태를 기반으로 엔티티 그림을 변경하는 방법을 보여줍니다
 
 {% raw %}
 

@@ -9,15 +9,15 @@ logo: home-assistant.png
 ha_quality_scale: internal
 ---
 
-The `template` platform creates switches that combines components.
+`template` 플랫폼은 구성 요소를 결합하는 스위치를 만듭니다. 
 
-For example, if you have a garage door with a toggle switch that operates the motor and a sensor that allows you know whether the door is open or closed, you can combine these into a switch that knows whether the garage door is open or closed.
+예를 들어, 모터를 작동하는 토글 스위치가 있는 차고 문과 문이 열려 있는지 또는 닫혀 있는지 알 수 있는 센서가 있는 경우 차고 문이 열려 있는지 닫혀 있는지 알 수 있는 스위치로 이들을 결합 할 수 있습니다.
 
-This can simplify the GUI and make it easier to write automations. You can mark the integrations you have combined as `hidden` so they don't appear themselves.
+이를 통해 GUI를 단순화하고 자동화를보다 쉽게 ​​작성할 수 있습니다. 결합한 통합구성요소를 `hidden`으로 표시하여 자체적으로 나타나지 않도록 할 수 있습니다. 
 
-## Configuration
+## 설정 
 
-To enable Template Switches in your installation, add the following to your `configuration.yaml` file:
+설치에서 템플릿 스위치를 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 {% raw %}
 
@@ -47,51 +47,53 @@ switch:
     type: map
     keys:
       friendly_name:
-        description: Name to use in the frontend.
+        description: 프론트 엔드에서 사용할 이름
         required: false
         type: string
       entity_id:
-        description: A list of entity IDs so the switch only reacts to state changes of these entities. This can be used if the automatic analysis fails to find all relevant entities.
+        description: 스위치의 엔티티 상태 변경에만 반응하는 엔티티 ID 목록. 자동 분석에서 모든 관련 엔티티를 찾지 못하면 사용할 수 있습니다.
         required: false
         type: [string, list]
       value_template:
-        description: Defines a template to set the state of the switch.
+        description: 스위치 상태를 설정하기위한 템플릿을 정의
         required: true
         type: template
       availability_template:
-        description: Defines a template to get the `available` state of the component. If the template returns `true`, the device is `available`. If the template returns any other value, the device will be `unavailable`. If `availability_template` is not configured, the component will always be `available`.
+        description: 컴포넌트의 `available` 상태를 가져 오도록 템플리트를 정의. 템플릿이 `true`를 반환하면 `available` 입니다. 템플릿이 다른 값을 반환하면 장치는 `unavailable`입니다. `availability_template`이 설정되어 있지 않으면 구성 요소는 항상 `available` 입니다.
         required: false
         type: template
         default: true
       turn_on:
-        description: Defines an action to run when the switch is turned on.
+        description: 스위치가 켜질 때 실행할 동작을 정의.
         required: true
         type: action
       turn_off:
-        description: Defines an action to run when the switch is turned off.
+        description: 스위치가 꺼질 때 실행할 동작을 정의.
         required: true
         type: action
       icon_template:
-        description: Defines a template for the icon of the switch.
+        description: 스위치 아이콘의 템플릿을 정의.
         required: false
         type: template
       entity_picture_template:
-        description: Defines a template for the picture of the switch.
+        description: 스위치 그림의 템플릿을 정의.
         required: false
         type: template
 {% endconfiguration %}
 
-## Considerations
+## 고려사항 
 
-If you are using the state of a platform that takes extra time to load, the Template Switch may get an `unknown` state during startup. This results in error messages in your log file until that platform has completed loading. If you use `is_state()` function in your template, you can avoid this situation. For example, you would replace {% raw %}`{{ states.switch.source.state == 'on') }}`{% endraw %} with this equivalent that returns `true`/`false` and never gives an unknown result: {% raw %}`{{ is_state('switch.source', 'on') }}`{% endraw %}
+로드하는 데 추가시간이 더 걸리는 플랫폼의 상태를 사용하는 경우, 시작시 템플릿 표시등이 `unknown` 상태가 될 수 있습니다. 그러면 해당 플랫폼이 로드를 완료 할 때까지 로그 파일에 오류 메시지가 나타납니다. 
+템플릿에서 `is_state()` 함수를 사용하면 이런 상황을 피할 수 있습니다. 
+예를 들어, `true`/`false`를 반환하는 동등한 상황으로 {% raw %}`{{ states.switch.source.state == 'on' }}`{% endraw %}로 대체할 경우 절대 uknown 결과를 나타내지 않습니다. {% raw %}`{{ is_state('switch.source', 'on') }}`{% endraw %}
 
-## Examples
+## 사례 
 
-In this section you find some real-life examples of how to use this switch.
+이 섹션에는이 스위치를 사용하는 방법에 대한 실제 예가 나와 있습니다.
 
-### Copy Switch
+### 스위치 복사 (Copy Switch)
 
-This example shows a switch that copies another switch.
+이 예는 다른 스위치를 복사하는 스위치를 보여줍니다.
 
 {% raw %}
 
@@ -113,9 +115,9 @@ switch:
 
 {% endraw %}
 
-### Toggle Switch
+### 토글 스위치 (Toggle Switch)
 
-This example shows a switch that takes its state from a sensor and toggles a switch.
+이 예는 센서에서 상태를 가져오고 스위치를 토글하는 스위치를 보여줍니다.
 
 {% raw %}
 
@@ -138,10 +140,9 @@ switch:
 
 {% endraw %}
 
-### Sensor and Two Switches
+### 센서와 두개 스위치 (Sensor and Two Switches)
 
-This example shows a switch that takes its state from a sensor, and uses two
-momentary switches to control a device.
+이 예는 센서에서 상태를 가져오고 두 개의 모멘터리 스위치를 사용하여 장치를 제어하는 ​​스위치를 보여줍니다.
 
 {% raw %}
 
@@ -164,9 +165,9 @@ switch:
 
 {% endraw %}
 
-### Change The Icon
+### 아이콘 변화
 
-This example shows how to change the icon based on the day/night cycle.
+이 예는 주야간 주기를 기준으로 아이콘을 변경하는 방법을 보여줍니다.
 
 {% raw %}
 
@@ -194,9 +195,9 @@ switch:
 
 {% endraw %}
 
-### Change The Entity Picture
+### 엔티티 사진 변화 (Change The Entity Picture)
 
-This example shows how to change the entity picture based on the day/night cycle.
+이 예는 주야간주기를 기반으로 엔티티 사진을 변경하는 방법을 보여줍니다.
 
 {% raw %}
 

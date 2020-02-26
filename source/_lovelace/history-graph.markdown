@@ -1,19 +1,19 @@
 ---
-title: "History Graph Card"
+title: "History Graph 카드"
 sidebar_label: History Graph
 description: "History graph is a basic card, allowing you to display a graph for each of the entities in the list specified as config."
 ---
 
-히스토리 그래프는 기본 카드이며, 설정에 지정된 목록의 각 엔티티에 대한 그래프를 표시 할 수 있습니다.
+History Graph는 기본 카드이며, 설정에 지정된 목록의 각 엔티티에 대한 그래프를 표시 할 수 있습니다.
 
 <p class='img'>
 <img src='/images/lovelace/lovelace_history_graph.png' alt='Screenshot of the history graph card for entities without a unit_of_measurement'>
-센서에 'unit_of_measurement'가 정의되어 있지 않은 경우 히스토리 그래프 카드의 스크린 샷..
+센서에 'unit_of_measurement'가 정의되어 있지 않은 경우 History Graph 카드의 스크린 샷..
 </p>
 
 <p class='img'>
 <img src='/images/lovelace/lovelace_history_graph_lines.png' alt='Screenshot of the history graph card for entities with a unit_of_measurement'>
-센서에 'unit_of_measurement'가 정의 된 경우 히스토리 그래프 카드의 스크린 샷.
+센서에 'unit_of_measurement'가 정의 된 경우 History Graph 카드의 스크린 샷.
 </p>
 
 {% configuration %}

@@ -9,63 +9,66 @@ ha_iot_class: Cloud Push
 ha_config_flow: true
 ---
 
-This integration sets up integration with [GPSLogger](https://gpslogger.app/). GPSLogger is an open source app for Android that allows users to update your location in Home Assistant.
+이 통합구성요소는 [GPSLogger](https://gpslogger.app/) 와의 연동을 설정합니다. GPSLogger는 사용자가 Home Assistant에서 위치를 업데이트 할 수 있는 Android용 오픈 소스 앱입니다.
 
-## Configuration
+참고사항 : [네이버 HA 카페 갓북왕님 GPSlogger 설정기](https://cafe.naver.com/koreassistant/730)
 
-To configure GPSLogger, you must set it up via the integrations panel in the configuration screen. This will give you the webhook URL to use during mobile device configuration (below).
+## 설정 
 
-## Setup on your smartphone
+GPSLogger를 설정하려면 설정 화면의 통합 패널을 통해 GPSLogger를 설정해야합니다. 그러면 모바일 장치 설정중 사용할 웹후크 URL이 제공됩니다 (아래).
 
-Install [GPSLogger for Android](https://play.google.com/store/apps/details?id=com.mendhak.gpslogger) on your device.
+## 스마트폰 셋업
 
-After the launch, go to **General Options**. Enable **Start on bootup** and **Start on app launch**.
+[GPSLogger for Android](https://play.google.com/store/apps/details?id=com.mendhak.gpslogger) 를 휴대폰에 설치하십시오. 
+
+
+앱을 실행시킨 후, **General Options** 으로 이동. **Start on bootup** 과 **Start on app launch** 를 활성화. 
 
 <p class='img'>
   <img width='300' src='/images/integrations/gpslogger/settings.png' />
-  GPSLogger Settings
+  GPSLogger 설정
 </p>
 
-Go to **Logging details** and disable **Log to GPX**. Enable **Log to custom URL**.
+**Logging details**으로 이동 **Log to GPX**를 사용 안함으로 설정. **Log to custom URL**를 사용.
 
 <p class='img'>
   <img width='300' src='/images/integrations/gpslogger/logging-details.png' />
-  Logging Details
+  Logging details
 </p>
 
-Right after enabling, the app will take you to the **Log to custom URL** settings.
+활성화 한 직후, 앱에서 **Log to custom URL**으로 이동.
 
 <p class='img'>
   <img width='300' src='/images/integrations/gpslogger/custom-url.png' />
   Log to custom URL details
 </p>
 
-The relevant endpoint starts with: `/api/webhook/` and ends with a unique sequence of characters. This is provided by the integrations panel in the configuration screen (configured above).
+해당 엔드 포인트는`/api/webhook/`로 시작하고 고유한 문자 시퀀스로 끝납니다. 이는 설정 화면(위와같이)의 통합 패널에서 제공합니다.
 
 ```text
 https://YOUR.DNS.HOSTNAME:PORT/api/webhook/WEBHOOK_ID
 ```
 
-- Add the above URL (updating YOUR.DNS.HOSTNAME:PORT to your details) into the **URL** field.
-- It's HIGHLY recommended to use SSL/TLS.
-- Use the domain that Home Assistant is available on the internet (or the public IP address if you have a static IP address). This can be a local IP address if you are using an always on VPN from your mobile device to your home network.
-- Only remove `PORT` if your Home Assistant instance is using port 443. Otherwise set it to the port you're using.
-- Add the following to **HTTP Body**
+- **URL** 필드에 위의 URL(your.DNS.HOSTNAME:PORT를 세부사항으로 업데이트)을 추가하십시오 .
+- SSL/TLS을 사용을 강력 추천합니다. 
+- 인터넷에서 Home Assistant가 사용 가능한 도메인 (또는 고정 IP 주소가 있는 경우 공용 IP 주소)을 사용하십시오.  모바일 장치에서 홈네트워크로 항상 VPN을 사용하는 경우 로컬 IP 주소가 될 수 있습니다.
+- Home Assistant 인스턴스가 포트 443을 사용 하는 경우 `PORT`만 제거 하십시오. 그렇지 않으면 사용중인 포트로 설정하십시오.
+- 다음 **HTTP Body**를 추가하십시오.
 ```text
 latitude=%LAT&longitude=%LON&device=%SER&accuracy=%ACC&battery=%BATT&speed=%SPD&direction=%DIR&altitude=%ALT&provider=%PROV&activity=%ACT
 ```
-- You can change the `device_id` of your phone by replacing `&device=%SER` with `&device=SOME_DEVICE_ID`, otherwise your phone's serial number will be used.
-- Check that the **HTTP Headers** setting contains
+- `&device=%SER`를 `&device=SOME_DEVICE_ID`로 바꾼뒤 휴대폰의 `device_id`를 변경할 수 있습니다. 그렇지 않으면 휴대폰의 `device_id`가 사용됩니다.
+- **HTTP Header** 설정에 포함되어 있는지 확인하십시오
 ```text
 Content-Type: application/x-www-form-urlencoded
 ```
-- Make sure that **HTTP Method** is changed to `POST`
+- **HTTP Method**가 `POST`로 변경되어 있는지 확인하십시오
 
-If your battery drains too fast then you can tune the performance of GPSLogger under **Performance**.
+배터리가 너무 빨리 소모되면 **Performance**에서 GPSLogger의 성능을 조정할 수 있습니다.
 
 <p class='img'>
   <img width='300' src='/images/integrations/gpslogger/performance.png' />
   Performance
 </p>
 
-A request can be forced from the app to test if everything is working fine.
+모든 것이 제대로 작동하는지 테스트하도록 앱의 요청을 강제할 수 있습니다.

@@ -1,5 +1,5 @@
 ---
-title: "Picture Glance Card"
+title: "Picture Glance 카드"
 sidebar_label: Picture Glance
 description: "Show an image card and corresponding entity states as icon"
 ---

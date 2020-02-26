@@ -1,13 +1,13 @@
 ---
-title: "Iframe Card"
+title: "Iframe 카드"
 sidebar_label: Iframe
 description: "Embed data from other webservices in your dashboard."
 ---
 
-대시 보드에 다른 웹 서비스의 데이터를 임베드합니다. `<config-directory>/www` 폴더에 저장된 파일을 임베드하고 `/local/<file>`를 사용하여 참조 할 수도 있습니다.
+대시보드에 다른 웹 서비스의 데이터를 임베드합니다. `<config-directory>/www` 폴더에 저장된 파일을 임베드하고 `/local/<file>`를 사용하여 참조할 수도 있습니다.
 
 <div class='note warning'>
-홈 어시스턴트에 HTTPS를 사용하는 경우 HTTP를 사용하여 사이트를 임베드할 수 없습니다.
+홈어시스턴트에 HTTPS를 사용하는 경우 HTTP를 사용하여 사이트를 임베드할 수 없습니다.
 </div>
 
 <p class='img'>

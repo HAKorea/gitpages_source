@@ -1,5 +1,5 @@
 ---
-title: 조건부 카드 (Conditional Card)
+title: "조건부 카드 (Conditional Card)"
 sidebar_label: Conditional
 description: Displays another card based on entity states.
 ---
@@ -30,14 +30,13 @@ conditions:
       type: string
 card:
   required: true
-  description: 모든 조건이 일치하면 표시 할 카드.
+  description: 모든 조건이 일치하면 표시할 카드.
   type: map
 {% endconfiguration %}
 
 *하나는 필요합니다. (`state` 혹은 `state_not`)
 
-Note: Conditions with more than one entity are treated as an 'and' condition. This means that for the card to show, *all* entities must meet the state requirements set.
-참고 : 엔티티가 둘 이상인 조건은 'and' 조건으로 취급됩니다. 즉, 카드가 표시 되려면 *모든* 엔티티가 설정된 주요 요구 사항을 모두 충족해야합니다.
+참고 : 엔티티가 둘 이상인 조건은 'and' 조건으로 취급합니다. 즉, 카드가 표시 되려면 *모든* 엔티티가 설정된 주요 요구사항을 모두 충족해야합니다.
 
 ### 사례
 

@@ -1,5 +1,5 @@
 ---
-title: "Glance Card"
+title: "glance 카드"
 sidebar_label: Glance
 description: "The Glance card allows you to see a list of entities at a glance."
 ---

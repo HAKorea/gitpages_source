@@ -1,15 +1,14 @@
 ---
-title: "Sensor Card"
+title: "Sensor 카드"
 sidebar_label: Sensor
 description: "The sensor card gives you information about the sensor state"
 ---
 
-The sensor card gives you a quick overview of your sensors state with an optional graph to visualize change over time.
-센서 카드는 시간 경과에 따른 변화를 시각화 할 수있는 옵션 그래프를 통해 센서 상태에 대한 빠른 개요를 제공합니다.
+Sensor 카드는 시간 경과에 따른 변화를 시각화 할 수있는 옵션 그래프를 통해 센서 상태에 대한 빠른 개요를 제공합니다.
 
 <p class='img'>
   <img src='/images/lovelace/lovelace_sensor.png' alt='Screenshot of the sensor card'>
-  Screenshot of the sensor card.
+  Sensor 카드의 스크린샷.
 </p>
 
 {% configuration %}

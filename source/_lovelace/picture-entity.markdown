@@ -1,5 +1,5 @@
 ---
-title: Picture Entity Card
+title: Picture Entity 카드
 sidebar_label: Picture Entity
 description: Displays the entity in form of an image. Instead of images from URL it can also show the picture of `camera` entities.
 ---

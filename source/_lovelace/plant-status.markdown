@@ -1,5 +1,5 @@
 ---
-title: "Plant Status Card"
+title: "Plant Status 카드"
 sidebar_label: Plant Status
 description: "The Plant card gives you an easy way of viewing the status of your plants"
 ---
@@ -8,7 +8,7 @@ description: "The Plant card gives you an easy way of viewing the status of your
 
 <p class='img'>
 <img src='/images/lovelace/lovelace_plant_card.png' alt='Screenshot of the plant status card'>
-plant status card의 스크린 샷.
+plant status 카드의 스크린 샷.
 </p>
 
 {% configuration %}

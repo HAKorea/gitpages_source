@@ -1,14 +1,14 @@
 ---
-title: "Entity Button Card"
+title: "엔티티 버튼 카드"
 sidebar_label: Entity Button
 description: "The Entity Button card allows you to add buttons to perform tasks"
 ---
 
-The Entity Button card allows you to add buttons to perform tasks.
+엔터티 버튼 카드를 사용하면 작업을 수행하기 위해 버튼을 추가 할 수 있습니다.
 
 <p class='img'>
 <img src='/images/lovelace/lovelace_entity_button_card.png' alt='Screenshot of the entity button card'>
-Screenshot of the Entity Button card.
+엔티티 버튼 카드의 스크린 샷
 </p>
 
 ```yaml
@@ -27,166 +27,166 @@ entity:
   type: string
 name:
   required: false
-  description: Overwrites friendly name.
+  description: 친숙한 이름을 덮어 씁니다.
   type: string
-  default: Name of Entity
+  default: 엔터티 이름
 icon:
   required: false
-  description: Overwrites icon or entity picture.
+  description: 아이콘 또는 엔터티 그림을 덮어 씁니다.
   type: string
-  default: Entity Domain Icon
+  default: 엔터티 도메인 아이콘
 show_name:
   required: false
-  description: Show name.
+  description: 이름을 표시
   type: boolean
   default: "true"
 show_icon:
   required: false
-  description: Show icon.
+  description: 아이콘 표시.
   type: boolean
   default: "true"
 icon_height:
   required: false
-  description: Set the height for the icon. This is in pixels which is handled by the config ui. (Advanced users can use other CSS values if they like)
+  description: 아이콘의 높이를 설정하십시오. 설정 UI에서 처리하는 픽셀 단위입니다. (고급 사용자는 원하는 경우 다른 CSS 값을 사용할 수 있습니다)
   type: string
   default: auto
 tap_action:
   required: false
-  description: Action to take on tap
+  description: 탭할 때 액션
   type: map
   keys:
     action:
       required: true
-      description: "Action to perform (`more-info`, `toggle`, `call-service`, `navigate`, `url`, `none`)"
+      description: "액션 수행 (`more-info`, `toggle`, `call-service`, `navigate`, `url`, `none`)"
       type: string
-      default: "`toggle`"
+      default: "`more-info`"
     navigation_path:
       required: false
-      description: "Path to navigate to (e.g. `/lovelace/0/`) when `action` defined as `navigate`"
+      description: "`action`이 `navigate` 로 정의된 경우 탐색 할 경로 (예: `/lovelace/0/`)"
       type: string
       default: none
     url_path:
       required: false
-      description: "Path to navigate to (e.g. `https://www.home-assistant.io`) when `action` defined as `url`"
+      description: "`action`이 `url` 로 정의된 경우 (예: `https://www.home-assistant.io`"
       type: string
       default: none
     service:
       required: false
-      description: "Service to call (e.g. `media_player.media_play_pause`) when `action` defined as `call-service`"
+      description: "`action`이 `call-service` 로 정의된 경우 호출할 서비스 (예 :`media_player.media_play_pause`)"
       type: string
       default: none
     service_data:
       required: false
-      description: "Service data to include (e.g. `entity_id: media_player.bedroom`) when `action` defined as `call-service`"
+      description: "`action`이 `call-service` 로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
       type: string
       default: none
     confirmation:
       required: false
-      description: "Present a confirmation dialog to confirm the action. See `confirmation` object below"
+      description: "작업을 컨펌하는 확인 대화 상자를 표시. 아래 `confirmation` 개체 참조"
       type: [boolean, map]
       default: "false"
 hold_action:
   required: false
-  description: Action to take on tap-and-hold
+  description: 길게 누를 때 액션
   type: map
   keys:
     action:
       required: true
-      description: "Action to perform (`more-info`, `toggle`, `call-service`, `navigate`, `url`, `none`)"
+      description: "액션 수행 (`more-info`, `toggle`, `call-service`, `navigate`, `url`, `none`)"
       type: string
       default: "`more-info`"
     navigation_path:
       required: false
-      description: "Path to navigate to (e.g. `/lovelace/0/`) when `action` defined as `navigate`"
+      description: "`action`이 `navigate` 로 정의된 경우 탐색 할 경로 (예: `/lovelace/0/`)"
       type: string
       default: none
     url_path:
       required: false
-      description: "Path to navigate to (e.g. `https://www.home-assistant.io`) when `action` defined as `url`"
+      description: "`action`이 `url` 로 정의된 경우 (예: `https://www.home-assistant.io`)"
       type: string
       default: none
     service:
       required: false
-      description: "Service to call (e.g. `media_player.media_play_pause`) when `action` defined as `call-service`"
+      description: "`action`이 `call-service` 로 정의된 경우 호출할 서비스 (예 :`media_player.media_play_pause`)"
       type: string
       default: none
     service_data:
       required: false
-      description: "Service data to include (e.g. `entity_id: media_player.bedroom`) when `action` defined as `call-service`"
+      description: "`action`이 `call-service` 로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
       type: string
       default: none
     confirmation:
       required: false
-      description: "Present a confirmation dialog to confirm the action. See `confirmation` object below"
+      description: "작업을 컨펌하는 확인 대화 상자를 표시. 아래 `confirmation` 개체 참조"
       type: [boolean, map]
       default: "false"
 double_tap_action:
   required: false
-  description: Action to take on double tap
+  description: 더블탭 할때 액션
   type: map
   keys:
     action:
       required: true
-      description: "Action to perform (`more-info`, `toggle`, `call-service`, `navigate`, `url`, `none`)"
+      description: "액션 수행 (`more-info`, `toggle`, `call-service`, `navigate`, `url`, `none`)"
       type: string
       default: "`more-info`"
     navigation_path:
       required: false
-      description: "Path to navigate to (e.g. `/lovelace/0/`) when `action` defined as `navigate`"
+      description: "`action`이 `navigate` 로 정의된 경우 탐색 할 경로 (예: `/lovelace/0/`)"
       type: string
       default: none
     url_path:
       required: false
-      description: "Path to navigate to (e.g. `https://www.home-assistant.io`) when `action` defined as `url`"
+      description: "`action`이 `url` 로 정의된 경우 (예: `https://www.home-assistant.io`)"
       type: string
       default: none
     service:
       required: false
-      description: "Service to call (e.g. `media_player.media_play_pause`) when `action` defined as `call-service`"
+      description: "`action`이 `call-service` 로 정의된 경우 호출할 서비스 (예 :`media_player.media_play_pause`)"
       type: string
       default: none
     service_data:
       required: false
-      description: "Service data to include (e.g. `entity_id: media_player.bedroom`) when `action` defined as `call-service`"
+      description: "`action`이 `call-service` 로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
       type: string
       default: none
     confirmation:
       required: false
-      description: "Present a confirmation dialog to confirm the action. See `confirmation` object below"
+      description: "작업을 컨펌하는 확인 대화 상자를 표시. 아래 `confirmation` 개체 참조"
       type: [boolean, map]
       default: "false"
 theme:
   required: false
-  description: "Set to any theme within `themes.yaml`"
+  description: "내 테마로 설정 `themes.yaml`"
   type: string
 {% endconfiguration %}
 
-## Options For Confirmation
+## Confirmation 옵션
 
-If you define confirmation as an object instead of boolean, you can add more customization and configurations:
+boolean 대신 객체로 컴펌을 정의하면 더 많은 사용자 정의 및 설정을 추가 할 수 있습니다:
 {% configuration %}
 text:
   required: false
-  description: Text to present in the confirmation dialog.
+  description: 컨펌 대화 상자에 표시 할 텍스트.
   type: string
 exemptions:
   required: false
-  description: "List of `exemption` objects. See below"
+  description: "`exemption` 객체 목록. 아래 참조"
   type: list
 {% endconfiguration %}
 
-## Options For Exemptions
+## Exemptions 옵션
 
 {% configuration badges %}
 user:
   required: true
-  description: User id that can see the view tab.
+  description: View 탭을 볼 수있는 사용자 ID.
   type: string
 {% endconfiguration %}
 
-## Examples
+## 사례 
 
-Title and Script Service Example:
+제목 및 스크립트 서비스 예:
 
 ```yaml
 type: entity-button
@@ -201,5 +201,5 @@ entity: script.turn_off_lights
 
 <p class='img'>
 <img src='/images/lovelace/lovelace_entity_button_complex_card.png' alt='Screenshot of the entity button card'>
-Screenshot of the Entity Button card with Title and Script Service.
+제목 및 스크립트 서비스가 포함 된 엔티티 버튼 카드의 스크린 샷
 </p>

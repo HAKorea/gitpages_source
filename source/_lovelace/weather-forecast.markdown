@@ -1,10 +1,10 @@
 ---
-title: "Weather Forecast Card"
+title: "Weather Forecast 카드"
 sidebar_label: Weather Forecast
 description: "The Weather card allows you a visual card to display the weather."
 ---
 
-일기 예보는 날씨를 표시하는 카드입니다. 월패드에 표시하는 인터페이스로 활용시에 매우 유용합니다. 
+Weather Forecast는 날씨를 표시하는 카드입니다. 월패드에 표시하는 인터페이스로 활용시에 매우 유용합니다. 
 
 <p class='img'>
 <img src='/images/lovelace/lovelace_weather.png' alt='Screenshot of the weather card'>

@@ -1,5 +1,5 @@
 ---
-title: "경보 패널 Card"
+title: "경보 패널 카드"
 sidebar_label: Alarm Panel
 description: "The Alarm Panel allows you to Arm and Disarm your Alarm Control Panel Integrations"
 ---

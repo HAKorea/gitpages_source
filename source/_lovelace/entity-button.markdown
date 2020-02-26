@@ -1,5 +1,5 @@
 ---
-title: "Entity Button Card"
+title: "엔티티 버튼 카드"
 sidebar_label: Entity Button
 description: "The Entity Button card allows you to add buttons to perform tasks"
 ---

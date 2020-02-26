@@ -1,5 +1,5 @@
 ---
-title: "Picture Card"
+title: "Picture 카드"
 sidebar_label: Picture
 description: "A very simple card that allows you to set an image to use for navigation to various paths in your interface or to call a service."
 ---
@@ -8,7 +8,7 @@ description: "A very simple card that allows you to set an image to use for navi
 
 <p class='img'>
 <img src='/images/lovelace/lovelace_picture.png' alt='Screenshot of the picture card'>
-그림 카드의 스크린 샷.
+Picture 카드의 스크린 샷.
 </p>
 
 {% configuration %}

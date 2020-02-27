@@ -41,7 +41,7 @@ ha_codeowners:
 
 ### ESPHOME 활용 사례 ###
 
-[HA 네이버 카페 ESPHOME 게시판](https://cafe.naver.com/ArticleList.nhn?search.clubid=29860180&search.menuid=14&search.boardtype=L)
+[HA 네이버 카페 ESPHOME 게시판](https://cafe.naver.com/ArticleList.nhn?search.clubid=29860180&search.menuid=14&search.boardtype=L)을 보고 다른분들의 설정기를 따라해 보십시오. 초보자들도 쉽게 따라 할 수 있습니다.  
  
 
 ## 통합 구성요소(Integrations)를 통한 기기 추가 방법 

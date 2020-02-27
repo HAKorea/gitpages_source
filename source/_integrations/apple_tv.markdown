@@ -1,5 +1,5 @@
 ---
-title: Apple TV
+title: 애플 TV
 description: Instructions on how to integrate Apple TV devices into Home Assistant.
 logo: apple.png
 ha_category:
@@ -10,26 +10,26 @@ ha_iot_class: Local Push
 ha_release: 0.49
 ---
 
-The `apple_tv` platform allows you to control an Apple TV (3rd and 4th generation). See the [remote platform](/integrations/apple_tv#remote) if you want to send remote control buttons, e.g., arrow keys.
+`apple_tv` 플랫폼을 사용하면 Apple TV (3세대 및 4세대)를 제어할 수 있습니다. 화살표 키와 같은 리모컨 버튼을 보내려면 [remote platform](/integrations/apple_tv#remote)을 참조하십시오 .
 
-There is currently support for the following device types within Home Assistant:
+현재 홈 어시스턴트에는 다음과 같은 장치 유형이 지원됩니다. :
 
 - Media Player
 - [Remote](#remote)
 
 <div class='note'>
-Currently, you must have Home Sharing enabled for this to work. Support for pairing Home Assistant with your device will be supported in a later release.
+현재이 기능을 사용하려면 홈 공유가 활성화되어 있어야합니다. Home Assistant와 장치의 페어링 지원은 이후 릴리스에서 지원됩니다.
 </div>
 
-## Configuration
+## 설정
 
-To use this component, you must first install some system libraries and a compiler. For Debian or a similar system, this should be enough:
+이 구성 요소를 사용하려면 먼저 일부 시스템 라이브러리와 컴파일러를 설치해야합니다. 데비안 또는 이와 유사한 시스템의 경우 다음을 충족해야합니다.
 
 ```shell
 $ sudo apt-get install build-essential libssl-dev libffi-dev python-dev
 ```
 
-If you want to discover new devices automatically, just make sure you have `discovery:` in your `configuration.yaml` file. To manually add one or more Apple TVs to your installation, add the following to your `configuration.yaml` file:
+새로운 장치를 자동으로 발견하려면 `configuration.yaml` 파일에 `discovery :`가 있는지 확인하십시오. 하나 이상의 Apple TV를 설치에 수동으로 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -48,49 +48,50 @@ apple_tv:
 
 {% configuration %}
 host:
-  description: The IP-address of the device.
+  description: 장치의 IP 주소.
   required: true
   type: string
 login_id:
-  description: An identifier used to login to the device, see below.
+  description: 장치에 로그인하는 데 사용되는 식별자 (아래 참조).
   required: true
   type: string
 name:
-  description: The name of the device used in the frontend.
+  description: 프런트 엔드에 사용 된 장치의 이름
   required: false
   type: string
 start_off:
-  description: Set to true if the device should start in fake standby.
+  description: 장치가 가짜 대기 모드에서 시작해야하는 경우 true로 설정.
   required: false
   type: boolean
   default: false
 credentials:
-  description: Credentials used for AirPlay playback.
+  description: AirPlay 재생에 사용되는 자격 증명.
   required: false
   type: string
 {% endconfiguration %}
 
-In order to connect to the device, you need a *login id*. The easiest way to obtain this identifier is to use the `apple_tv_scan` service (described below). Additional information about `start_off` and `credentials` can also be found under the guides section.
+장치에 연결하려면 *login id*가 필요합니다. 이 식별자를 얻는 가장 쉬운 방법은 `apple_tv_scan` 서비스를 사용하는 것입니다 (아래 설명 참조). `start_off` 및 `credentials` 에 대한 추가 정보는 안내서 섹션에서도 찾을 수 있습니다.
 
-## Guides
+## 가이드
 
-### Scanning for devices
+### 장치 검색
 
-Make sure Home Sharing is enabled on the Apple TV.
+Apple TV에서 홈 공유가 활성화되어 있는지 확인하십시오.
 
-To scan for devices and determine the `login_id`, open the developer tools by selecting the hammer icon in the sidebar. Once in the developer tools select **services**. 
+장치를 검색하고 `login_id`를 결정하려면 사이드바에서 망치 아이콘을 선택하여 개발자 도구를여십시오. 
+개발자 도구에서 **services** 를 선택하십시오.
 
 <img src='/images/screenshots/developer-tools.png' />
 
-Select `apple_tv` as domain and `apple_tv_scan` as service then press the button:
+도메인으로 `apple_tv`를 선택하고 서비스로 `apple_tv_scan`을 선택한 다음 버튼을 누릅니다. :
 
 <img src='/images/integrations/apple_tv/scan_start.jpg' />
 
-Scanning will be done for three seconds and notification will be shown in the state view with all found devices:
+스캔은 3초 동안 수행되며 발견된 모든 장치와 함께 상태보기에 알림이 표시됩니다. : 
 
 <img src='/images/integrations/apple_tv/scan_result.jpg' />
 
-Alternatively, you may use the application ``atvremote``. Install it with ``pip3 install --upgrade pyatv`` in your Home Assistant environment (note: do *not* use sudo). Then run ``atvremote scan`` to scan for all devices (try again if a device is missing):
+또는 ``atvremote`` 응용 프로그램을 사용할 수 있습니다. 홈어시스턴트 환경에서 ``pip3 install --upgrade pyatv`` 로 설치하십시오 (주의: sudo를 사용하지 *마십시오*). 그런 다음 ``atvremote scan`` 을 실행하여 모든 장치를 검색하십시오 (장치가 없는 경우 다시시도).
 
 ```bash
 $ atvremote scan
@@ -100,27 +101,27 @@ Found Apple TVs:
 Note: You must use 'pair' with devices that have home sharing disabled
 ```
 
-Just copy and paste the `login_id` from the device you want to add. For more details about `atvremote`, see: [this page](https://pyatv.readthedocs.io/en/master/atvremote.html).
+추가하려는 장치에서 `login_id`를 복사하여 붙여넣기만 하면됩니다. `atvremote`에 대한 자세한 내용은 [this page](https://pyatv.readthedocs.io/en/master/atvremote.html)를 참조하십시오.
 
-### Setting up device authentication
+### 장치 인증 설정
 
-If you, when playing media with `play_url`, get the following error message:
+`play_url`을 사용하여 미디어를 재생할 때 다음 오류 메시지가 표시됩니다
 
-*“This AirPlay connection requires iOS 7.1 or later, OS X 10.10 or later, or iTunes 11.2 or later.”*
+*"이 AirPlay 연결에는 iOS 7.1 이상, OS X 10.10 이상 또는 iTunes 11.2 이상이 필요합니다."*
 
-then device authentication is required, open the developer tools by selecting the hammer icon in the sidebar. Once in the developer tools select **services**. 
+장치 인증이 필요하면 사이드 바에서 망치 아이콘을 선택하여 개발자 도구를 여십시오. 개발자 도구에서 **services**를 선택하십시오.
 
 <img src='/images/screenshots/developer-tools.png' />
 
-Select `apple_tv` as domain, `apple_tv_authenticate` as service and enter `{"entity_id": "XXX"}` into "Service Data", but replace XXX with the entity id of your device (e.g., `media_player.apple_tv`). Press the button and hopefully you are presented with an input dialog asking for a pin code:
+도메인으로 `apple_tv`를, 서비스로 `apple_tv_authenticate`를 선택하고 `{ "entity_id": "XXX"}`를 "Service Data"에 입력하지만 XXX를 장치의 엔티티 ID (예 :`media_player.apple_tv`)로 바꾸십시오. 버튼을 누르면 핀 코드를 묻는 입력 대화 상자가 나타납니다. : 
 
 <img src='/images/integrations/apple_tv/auth_start.jpg' />
 
-If no dialog appears, go back to the states view and display it from there (press `CONFIGURE` as displayed in the image):
+대화 상자가 나타나지 않으면 상태보기로 돌아가서 여기에서 표시하십시오 (이미지에 표시된대로 `CONFIGURE`를 누름).
 
 <img src='/images/integrations/apple_tv/auth_pin.jpg' />
 
-A PIN code should now be visible on your TV, just enter it into the dialog and press "Confirm". You should see if it succeeded in the state view. Copy the credentials and insert it into your configuration (make sure you copy everything, it should be 81 characters) after ``credentials:`` with no line-break:
+이제 TV에 PIN 코드가 표시됩니다. 대화 상자에 코드를 입력한 후 "확인"을 누르십시오. 상태보기에서 성공했는지 확인해야합니다. credentials를 복사하여 줄바꿈없이 ``credentials :`` 다음에 값을 삽입하십시오 (모든 문자를 복사했는지, 81자 여야 함).
 
 ```yaml
 # Example configuration.yaml entry
@@ -130,45 +131,45 @@ apple_tv:
     credentials: 1B8C387DDB59BDF6:CF5ABB6A2C070688F5926ADB7C010F6DF847252C15F9BDB6DA3E09D6591E90E5
 ```
 
-Restart Home Assistant, and you should now be able to use `play_url` as before.
+홈어시스턴트를 다시 시작하면 이전과 같이 `play_url`을 사용할 수 있습니다.
 
-### My Apple TV turns on when I restart Home Assistant
+### Home Assistant를 다시 시작하면 Apple TV가 켜집니다.
 
-The Apple TV will automatically turn on if a request is sent to it, e.g., if a button is pressed, something is streamed to it via AirPlay or if current state (currently playing) is accessed. This is how Apple has designed it, and it will cause problems if you are using HDMI-CEC. Every time Home Assistant is started, a new request is sent to the device to figure out what is currently playing. When using CEC, this will wake up your TV and other devices you have configured.
+Apple TV는 요청이 전송되는 경우 (예: 버튼을 누르거나 AirPlay를 통해 스트리밍되거나 현재 상태(현재 재생중)인 경우) 자동으로 켜집니다. 이것이 Apple이 설계 한 방식이며 HDMI-CEC를 사용하는 경우 문제가 발생할 수 있습니다. 홈어시스턴트가 시작될 때마다 현재 재생중인 항목을 파악하기 위해 새 요청이 장치로 전송됩니다. CEC를 사용하면 TV 및 설정한 다른 장치가 활성화됩니다.
 
-So, if your TV is randomly turning on, this is probably the reason. As stated, this is by design, and there is no real fix for it. There's also no known way to turn off the Apple TV via the protocol used for communication. You have the following options:
+따라서 TV가 무작위로 켜지는 경우일 수 있습니다. 언급한 바와 같이, 이는 의도적으로 설계된 것이며 실제 해결방법은 없습니다. 통신에 사용되는 프로토콜을 통해 Apple TV를 끄는 방법도 알려져 있지 않습니다. 다음과 같은 옵션이 있습니다. :
 
-- Do not use this platform
-- Disable HDMI-CEC on your Apple TV
-- Use "fake standby"
+- 이 플랫폼을 사용하지 마십시오
+- Apple TV에서 HDMI-CEC 비활성화하십시오
+- "fake standby"를 사용하십시오. 
 
-The first two points are quite obvious. Fake standby is a concept implemented in this platform that disables all requests to the device and makes it appear as being "off" in the web interface. This will make sure that the device is not woken up, but it will of course not show any information or allow you to control it. It is however easy to turn it on (or off) in the web interface or to use an automation with `turn_on`. To make it more useful, you can write automations that turn it on or off depending on some other device, like the input source on your receiver.
+처음 두 지점은 분명합니다. Fake standby는 이 플랫폼에서 구현된 개념으로, 장치에 대한 모든 요청을 비활성화하고 웹 인터페이스에서 "끄기"로 표시합니다. 이렇게하면 장치가 깨어나지 않고, 정보를 표시하거나 제어 할 수도 없습니다. 그러나 웹 인터페이스에서 쉽게 켜거나 끄거나 `turn_on`으로 자동화를 사용하는 것은 쉽습니다. 더 유용하게 사용하려면 수신기의 입력 소스와 같은 다른 장치에 따라 자동화를 켜거나 끄는 자동화를 작성할 수 있습니다.
 
-To put a device into fake standby when starting Home Assistant, add `start_off: true` to your configuration.
+Home Assistant를 시작할 때 장치를 가짜 대기 상태로 만들려면 설정에 `start_off : true`를 추가하십시오.
 
 <div class='note warning'>
-Turning the device on/off in the user interface will *not* turn the physical device on/off according to the description above.
+사용자 인터페이스에서 장치를 켜거나 끄면 위의 설명에 따라 물리적 장치를 켜거나 끌 수 없습니다.
 </div>
 
-## Services
+## 서비스
 
-### Service `apple_tv_authenticate`
+### `apple_tv_authenticate` 서비스
 
-To play media on an Apple TV with device authentication enabled (e.g., ATV4 with tvOS 10.2+), Home Assistant must be properly authenticated. This method starts the process and presents the credentials needed for playback as a persistent notification. Please see guide above for usage.
+장치 인증이 활성화 된 Apple TV (예: tvOS 10.2 이상이있는 ATV4)에서 미디어를 재생하려면 Home Assistant가 올바르게 인증되어야합니다. 이 방법은 프로세스를 시작하고 재생에 필요한 자격 증명을 지속적인 알림으로 표시합니다. 사용법은 위의 가이드를 참조하십시오. 
 
 | Service data attribute | Optional | Description                                                        |
 | ---------------------- | -------- | ------------------------------------------------------------------ |
-| `entity_id`            | yes      | String or list of strings that point at `entity_id`s of Apple TVs. |
+| `entity_id`            | yes      | Apple TV의 `entity_id`를 가리키는 문자열 또는 문자열 목록. |
 
-### Service `apple_tv_scan`
+### `apple_tv_scan` 서비스
 
-Scans the local network for Apple TVs. All found devices are presented as a persistent notification.
+Apple TV의 로컬 네트워크를 스캔합니다. 발견 된 모든 장치는 지속적 알림(persistent notification)으로 표시됩니다.
 
 ## Remote
 
-The `apple_tv` remote platform allows you to send remote control buttons to an Apple TV. It is automatically setup when an Apple TV is configured.
+`apple_tv` 원격 플랫폼을 사용하면 리모컨 버튼을 Apple TV로 보낼 수 있습니다. Apple TV가 셋업되면 자동으로 설정됩니다.
 
-At the moment, the following buttons are supported:
+현재 다음 버튼이 지원됩니다 : 
 
 - up
 - down
@@ -178,7 +179,7 @@ At the moment, the following buttons are supported:
 - top_menu
 - select
 
-A typical service call for press several buttons looks like this.
+여러 버튼을 누르는 일반적인 서비스 요청은 다음과 같습니다. 
 
 ```yaml
 service: remote.send_command

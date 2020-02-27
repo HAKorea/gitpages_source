@@ -1,5 +1,5 @@
 ---
-title: Arduino
+title: 아두이노
 description: Instructions on how to setup an Arduino boards within Home Assistant.
 logo: arduino.png
 ha_category:
@@ -12,23 +12,24 @@ ha_codeowners:
   - '@fabaff'
 ---
 
-The [Arduino](https://www.arduino.cc/) device family are microcontroller boards that are often based on the ATmega328 chip. They come with digital input/output pins (some can be used as PWM outputs), analog inputs, and a USB connection.
-The equipment depends on the [type](https://www.arduino.cc/en/Main/Products) of the board. The most common ones are the Arduino Uno and the Arduino Leonardo with 14 digital input/output pins and 6 analog input pins.
+[Arduino](https://www.arduino.cc/) 디바이스 제품군은 주로 ATmega328 칩을 기반으로하는 마이크로 컨트롤러 보드입니다. 디지털 입력/출력 핀 (PWM출력으로 사용 가능), 아날로그 입력 및 USB 연결이 제공됩니다.
 
-There are a lot of extensions (so-called [shields](https://www.arduino.cc/en/Main/ArduinoShields)) available. Those shields can be plugged-in into the existing connectors and stacked on top of each other. This makes it possible to expand the capabilities of the Arduino boards.
+장비는 보드의 [유형](https://www.arduino.cc/en/Main/Products)에 따라 다릅니다. 가장 일반적인 것은 Arduino Uno와 Arduino Leonardo이며 14 개의 디지털 입력/출력 핀과 6개의 아날로그 입력 핀이 있습니다.
 
-The `arduino` integration is designed to let you use a directly attached board to your Home Assistant host over USB.
+사용할 수 있는 확장 기능(소위 [shields](https://www.arduino.cc/en/Main/ArduinoShields))이 다수 있습니다. 이러한 실드는 기존 커넥터에 꽂고 서로 쌓을 수 있습니다. 이를 통해 Arduino 보드의 기능을 확장할 수 있습니다.
 
-There is currently support for the following device types within Home Assistant:
+`arduino` 통합구성요소는 USB를 통해  어시스턴트 호스트에 직접 연결된 보드를 사용할 수 있도록 설계되었습니다.
+
+현재 홈 어시스턴트에서 다음 장치 유형이 지원됩니다. : 
 
 - [Sensor](#sensor)
 - [Switch](#switch)
 
-## Configuration
+## 설정
 
-You need to have the [Firmata firmware](https://github.com/firmata/) on your board. Please upload the `StandardFirmata` sketch to your board; please refer to the [Arduino documentation](https://www.arduino.cc/en/Main/Howto) for further information.
+보드에 [Firmata firmware](https://github.com/firmata/)가 있어야합니다. `StandardFirmata` 스케치를 보드에 업로드하십시오. 자세한 내용은 [Arduino documentation](https://www.arduino.cc/en/Main/Howto)를 참조하십시오.
 
-To integrate an Arduino boards with Home Assistant, add the following section to your `configuration.yaml` file:
+Arduino 보드를 Home Assistant와 통합하려면 `configuration.yaml` 파일에 다음 섹션을 추가하십시오. 
 
 ```yaml
 # Example configuration.yaml entry
@@ -38,34 +39,34 @@ arduino:
 
 {% configuration %}
 port:
-  description: The port where your board is connected to your Home Assistant host. If you are using an original Arduino, the port will be named `ttyACM*` otherwise `ttyUSB*`.
+  description: 보드가 홈어시스턴트 호스트에 연결된 포트입니다. 원래 Arduino를 사용하는 경우 포트이름은 `ttyACM*` 이며 그렇지 않으면 `ttyUSB *`입니다.
   required: true
   type: string
 {% endconfiguration %}
 
-The exact number can be determined with the command shown below.
+정확한 숫자는 아래 표시된 명령으로 확인할 수 있습니다.
 
 ```bash
 $ ls /dev/ttyACM*
 ```
 
-If that's not working, check your `dmesg` or `journalctl -f` output. Keep in mind that Arduino clones are often using a different name for the port (e.g., `/dev/ttyUSB*`).
+그래도 작동하지 않으면 `dmesg` 또는 `journalctl -f` 출력을 확인하십시오. Arduino 클론은 종종 다른 이름을 사용합니다. (예: `/dev/ttyUSB*`).
 
 <div class='note warning'>
-A word of caution: The Arduino boards are not storing states. This means that with every initialization the pins are set to off/low.
+주의 사항 : Arduino 보드는 상태를 저장하지 않습니다. 이는 모든 초기화시 핀이 off/low으로 설정되어 있음을 의미합니다.
 </div>
 
-Add the user who is used to run Home Assistant to the groups to allow access to the serial port.
+직렬 포트에 액세스 할 수 있도록 Home Assistant를 실행하는데 사용되는 사용자를 그룹에 추가하십시오.
 
 ```bash
 $ sudo usermod -a -G dialout,lock $USER
 ```
 
-## Sensor
+## 센서
 
-The `arduino` sensor platform allows you to get numerical values from an analog input pin of an [Arduino](https://www.arduino.cc/) board. Usually the value is between 0 and 1024.
+`arduino` 센서 플랫폼을 사용하면 [Arduino](https://www.arduino.cc/) 보드의 아날로그 입력 핀에서 숫자 값을 얻을 수 있습니다. 일반적으로 값은 0과 1024 사이입니다.
 
-To enable an Arduino sensor with Home Assistant, add the following section to your `configuration.yaml` file:
+홈어시스턴트로 Arduino 센서를 활성화하려면 `configuration.yaml` 파일에 다음 섹션을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -80,27 +81,28 @@ sensor:
 
 {% configuration %}
 pins:
-  description: List of pins to use.
+  description: 사용할 핀 목록.
   required: true
   type: map
   keys:
     pin_number:
-      description: The pin number that corresponds with the pin numbering schema of your board.
+      description: 보드의 핀 넘버링 스키마에 해당하는 핀 번호.
       required: true
       type: map
       keys:
         name:
-          description: Name that will be used in the frontend for the pin.
+          description: 핀의 프론트 엔드에서 사용될 이름.
           type: string
 {% endconfiguration %}
 
-The 6 analog pins of an Arduino UNO are numbered from A0 to A5.
+Arduino UNO의 6 개의 아날로그 핀은 A0에서 A5까지 번호가 매겨져 있습니다.
 
-## Switch
+## 스위치
 
-The `arduino` switch platform allows you to control the digital pins of your [Arduino](https://www.arduino.cc/) board. Support for switching pins is limited to high/on and low/off of the digital pins. PWM (pin 3, 5, 6, 9, 10, and 11 on an Arduino Uno) is not supported yet.
+`arduino` 스위치 플랫폼을 사용하면 [Arduino](https://www.arduino.cc/) 보드의 디지털 핀을 제어 할 수 있습니다. 
+PWM (Arduino Uno의 핀 3, 5, 6, 9, 10 및 11)은 아직 지원되지 않습니다.
 
-To enable the Arduino pins with Home Assistant, add the following section to your `configuration.yaml` file:
+홈어시스턴트로 Arduino 핀을 활성화하려면 `configuration.yaml` 파일에 다음 섹션을 추가하십시오
 
 ```yaml
 # Example configuration.yaml entry
@@ -117,29 +119,29 @@ switch:
 
 {% configuration %}
 pins:
-  description: List of of pins to use.
+  description: 사용할 핀 목록..
   required: true
   type: map
   keys:
     pin_number:
-      description: The pin number that corresponds with the pin numbering schema of your board.
+      description: 보드의 핀 넘버링 스키마에 해당하는 핀 번호.
       required: true
       type: map
       keys:
         name:
-          description: Name that will be used in the frontend for the pin.
+          description: 핀의 프론트 엔드에서 사용될 이름.
           type: string
           required: false
         initial:
-          description: The initial value for this port.
+          description: 이 포트의 초기 값.
           type: boolean
           required: false
           default: false
         negate:
-          description: If this pin should be inverted.
+          description: 이 핀을 invert 해야하는 경우.
           type: boolean
           required: false
           default: false
 {% endconfiguration %}
 
-The digital pins are numbered from 0 to 13 on a Arduino UNO. The available pins are 2 till 13. For testing purposes you can use pin 13 because with that pin you can control the internal LED.
+Arduino UNO에서 디지털 핀의 번호는 0에서 13까지입니다. 사용 가능한 핀은 2 ~ 13입니다. 테스트 목적으로 핀 13을 사용할 수 있습니다. 핀과 함께 내부 LED를 제어 할 수 있기 때문입니다.

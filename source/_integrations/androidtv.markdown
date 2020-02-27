@@ -10,15 +10,12 @@ ha_codeowners:
   - '@JeffLIrion'
 ---
 
-The `androidtv` platform allows you to control an Android TV device or [Amazon Fire TV](https://www.amazon.com/b/?node=8521791011) device.
 `androidtv` 플랫폼을 사용하면 Android TV 장치 또는 [Amazon Fire TV](https://www.amazon.com/b/?node=8521791011)장치를 제어 할 수 있습니다.
 
 ## 장치 준비
 
-To set up your device, you will need to find its IP address and enable ADB debugging. For Android TV devices, please consult the documentation for your device.
 장치를 설정하려면 IP 주소를 찾고 ADB 디버깅을 활성화해야합니다. Android TV 장치의 경우 설명서를 참조하십시오.
 
-For Fire TV devices, the instructions are as follows:
 Fire TV 장치의 지침은 다음과 같습니다.
 
 - Turn on ADB Debugging on your Amazon Fire TV:
@@ -48,63 +45,63 @@ media_player:
 
 {% configuration %}
 host:
-  description: The IP address for your Android TV / Fire TV device.
+  description: Android TV / Fire TV 장치의 IP 주소.
   required: true
   type: string
 name:
-  description: The friendly name of the device.
+  description: 장치의 이름.
   required: false
   default: Android TV
   type: string
 port:
-  description: The port for your Android TV / Fire TV device.
+  description: Android TV / Fire TV 장치의 포트.
   required: false
   default: 5555
   type: integer
 adbkey:
-  description: The path to your `adbkey` file; if not provided, Home Assistant will generate a key for you (if necessary).
+  description: "`adbkey` 파일의 경로. 제공되지 않으면 홈어시스턴트가 필요한 경우 키를 생성합니다. (필요한 경우)"
   required: false
   type: string
 adb_server_ip:
-  description: The IP address of the ADB server. If this is provided, the integration will utilize an [ADB server](#2-adb-server) to communicate with the device.
+  description: ADB 서버의 IP 주소. 제공되면 통합구성요소는 [ADB Server](#2-adb-server)를 사용하여 장치와 통신.
   required: false
   type: string
 adb_server_port:
-  description: The port for the ADB server.
+  description: ADB 서버의 포트.
   required: false
   default: 5037
   type: integer
 get_sources:
-  description: Whether or not to retrieve the running apps as the list of sources.
+  description: 실행중인 앱을 소스 목록으로 검색할지 여부.
   required: false
   default: true
   type: boolean
 apps:
-  description: A dictionary where the keys are app IDs and the values are app names that will be displayed in the UI; see example below. ([These app names](https://github.com/JeffLIrion/python-androidtv/blob/5c39196ade3f88ab453b205fd15b32472d3e0482/androidtv/constants.py#L267-L283) are configured in the backend package and do not need to be included in your configuration.)
+  description: 키가 앱ID이고 값이 UI에 표시될 앱이름인 dictionary 입니다. 아래 예를 참조하십시오. ([These app names](https://github.com/JeffLIrion/python-androidtv/blob/5c39196ade3f88ab453b205fd15b32472d3e0482/androidtv/constants.py#L267-L283)은 백엔드 패키지에 설정되며 설정에 포함하지 않아도됩니다.)
   required: false
   default: {}
   type: map
 device_class:
-  description: "The type of device: `auto` (detect whether it is an Android TV or Fire TV device), `androidtv`, or `firetv`."
+  description: "장치 유형: `auto` (Android TV 또는 Fire TV 장치인지 감지), `androidtv` 또는`firetv`."
   required: false
   default: auto
   type: string
 state_detection_rules:
-  description: A dictionary whose keys are app IDs and whose values are lists of state detection rules; see the section [Custom State Detection](#custom-state-detection) for more info.
+  description: 키가 앱ID이고 값이 상태 감지 규칙 목록인 dictionary; 자세한 내용은 [Custom State Detection](#custom-state-detection) 섹션을 참조하십시오.
   required: false
   default: {}
   type: map
 turn_on_command:
-  description: An ADB shell command that will override the default `turn_on` command.
+  description: 기본 `turn_on` 명령을 대체 할 ADB 쉘 명령.
   required: false
   type: string
 turn_off_command:
-  description: An ADB shell command that will override the default `turn_off` command.
+  description: 기본 `turn_off` 명령을 대체 할 ADB 쉘 명령.
   required: false
   type: string
 {% endconfiguration %}
 
-### Full Configuration
+### 전체 설정
 
 ```yaml
 # Example configuration.yaml entry
@@ -156,49 +153,49 @@ media_player:
     get_sources: false
 ```
 
-## ADB Setup
+## ADB 셋업
 
-This integration works by sending ADB commands to your Android TV / Fire TV device. There are two ways to accomplish this.
+이 통합구성요소는 ADB 명령을 Android TV / Fire TV 장치로 전송하여 작동합니다. 이를 달성하는 데는 두 가지 방법이 있습니다.
 
 <div class='note'>
-When connecting to your device for the first time, a dialog will appear on your Android TV / Fire TV asking you to approve the connection. Check the box that says "always allow connections from this device" and hit OK.
+기기에 처음 연결하면 Android TV / Fire TV에 ​​연결 승인을 요청하는 대화 상자가 나타납니다. "always allow connections from this device" 이라는 상자를 선택하고 확인을 누르십시오.
 </div>
 
-### 1. Python ADB Implementation
+### 1. 파이썬 ADB 구현
 
-The default approach is to connect to your device using the `adb-shell` Python package. As of Home Assistant 0.101, if a key is needed for authentication and it is not provided by the `adbkey` configuration option, then Home Assistant will generate a key for you.
+기본 접근 방식은 `adb-shell` Python 패키지를 사용하여 장치에 연결하는 것입니다. Home Assistant 0.101부터 인증에 키가 필요하고 `adbkey` 설정 옵션에서 키를 제공하지 않으면 Home Assistant가 키를 생성합니다.
 
-Prior to Home Assistant 0.101, this approach did not work well for newer devices. Efforts have been made to resolve these issues, but if you experience problems then you should use the ADB server option.
+Home Assistant 0.101 이전에는 이 ​​방법이 최신 장치에서는 제대로 작동하지 않았습니다. 이러한 문제를 해결하기 위해 노력했지만 문제가 발생하면 ADB 서버 옵션을 사용해야합니다.
 
-### 2. ADB Server
+### 2. ADB 서버
 
-The second option is to use an ADB server to connect to your Android TV and Fire TV devices.
+두 번째 옵션은 ADB 서버를 사용하여 Android TV 및 Fire TV 장치에 연결하는 것입니다.
 
-For Hass.io users, you can install the [Android Debug Bridge](https://github.com/hassio-addons/addon-adb/blob/master/README.md) addon. Using this approach, Home Assistant will send the ADB commands to the server, which will then send them to the Android TV / Fire TV device and report back to Home Assistant. To use this option, add the `adb_server_ip` option to your configuration. If you are running the server on the same machine as Home Assistant, you can use `127.0.0.1` for this value.
+Hass.io 사용자의 경우 [Android Debug Bridge](https://github.com/hassio-addons/addon-adb/blob/master/README.md) 애드온을 설치할 수 있습니다. 이 방법을 사용하면 Home Assistant는 ADB 명령을 서버로 전송한 다음 Android TV / Fire TV 장치로 전송하여 Home Assistant에 다시 보고합니다. 이 옵션을 사용하려면 `adb_server_ip` 옵션을 설정에 추가하십시오. 홈 어시스턴트와 동일한 머신에서 서버를 실행중인 경우이 값으로 `127.0.0.1`을 사용할 수 있습니다.
 
-## ADB Troubleshooting
+## ADB 문제 해결
 
-If the setup for your Android TV or Fire TV device fails, then there is probably an issue with your ADB connection. Here are some possible causes.
+Android TV 또는 Fire TV 장치 설정에 실패하면 ADB 연결에 문제가 있을 수 있습니다. 가능한 원인은 다음과 같습니다.
 
-1. You have the wrong IP address for the device.
+1. 장치의 IP 주소가 잘못되었습니다.
 
-2. ADB is not enabled on your device.
+2. 장치에서 ADB를 사용할 수 없습니다.
 
-3. You are already connected to the Android TV / Fire TV via ADB from another device. Only one device can be connected, so disconnect the other device, restart the Android TV / Fire TV (for good measure), and then restart Home Assistant.
+3. 다른 기기에서 ADB를 통해 Android TV / Fire TV에 ​​이미 연결되어 있습니다. 하나의 장치 만 연결할 수 있으므로 다른 장치의 연결을 끊고 Android TV / Fire TV를 다시 시작한 다음 (가정용) 홈어시스턴트를 다시 시작하십시오.
 
-4. You need to approve the ADB connection; see the note in the [ADB Setup](#adb-setup) section above.
+4. ADB 연결을 승인해야합니다. 위의 [ADB Setup](#adb-setup) 섹션에있는 참고 사항을 참조하십시오.
 
-5. Some Android TV devices (e.g., Philips TVs running Android TV) only accept the initial ADB connection request over their Wi-Fi interface. If you have the TV wired, you need to connect it to WiFi and try the initial connection again. Once the authentication has been granted via Wi-Fi, you can connect to the TV over the wired interface as well.
+5. 일부 Android TV 장치 (예: Android TV를 실행하는 Philips TV)는 Wi-Fi 인터페이스를 통한 초기 ADB 연결 요청만 수락합니다. TV가 유선 인 경우 WiFi에 연결하고 초기 연결을 다시 시도해야합니다. Wi-Fi를 통해 인증이 승인되면 유선 인터페이스를 통해 TV에 연결할 수도 있습니다.
 
-6. If your device drops off WiFi, breaking the ADB connection and causing the entity to become unavailable in Home Assistant, you could install a wake lock utility (such as [Wakelock](https://github.com/d4rken/wakelock-revamp)) to prevent this from happening. Some users have reported this problem with Xiaomi Mi Box devices.
+6. 장치가 WiFi를 끊어 ADB 연결을 끊고 Home Assistant에서 엔터티를 사용할 수 없는 경우 깨우기 잠금 유틸리티(such as [Wakelock](https://github.com/d4rken/wakelock-revamp))를 설치하여 이 문제가 발생하지 않도록 할 수 있습니다. 일부 사용자는 Xiaomi Mi Box 장치에서이 문제를보고했습니다.
 
-7. If you are using the [Python ADB implementation](#1-python-adb-implementation) approach, as mentioned above, there may be some issues with newer devices. In this case, you should use the [ADB server](#2-adb-server) approach instead.
+7. 위에서 언급한 [Python ADB implementation](#1-python-adb-implementation) 접근 방식을 사용하는 경우 최신 장치에 문제가있을 수 있습니다. 이 경우 [ADB 서버](#2-adb-server) 방법을 대신 사용해야합니다.
 
-## Services
+## 서비스
 
 ### `media_player.select_source`
 
-You can launch an app on your device using the `media_player.select_source` command. Simply provide the app ID as the `source`.  You can also stop an app by prefixing the app ID with a `!`. For example, you could define [scripts](/docs/scripts) to start and stop Netflix as follows:
+`media_player.select_source` 명령을 사용하여 장치에서 앱을 시작할 수 있습니다. 간단히 앱 ID를 `source` 로 제공하십시오. 앱 ID 앞에 `!`를 붙여서 앱을 중지 할 수도 있습니다. 예를 들어 다음과 같이 Netflix를 시작 및 중지하도록 [scripts](/docs/scripts)를 정의 할 수 있습니다.
 
 ```yaml
 start_netflix:
@@ -218,14 +215,15 @@ stop_netflix:
 
 ### `androidtv.adb_command`
 
-The service `androidtv.adb_command` allows you to send either keys or ADB shell commands to your Android TV / Fire TV device. If there is any output, it will be stored in the `'adb_response'` attribute (i.e., `state_attr('media_player.android_tv_living_room', 'adb_response')` in a template) and logged at the INFO level.
+`androidtv.adb_command` 서비스를 사용하면 키 또는 ADB 쉘 명령을 Android TV / Fire TV 장치로 보낼 수 있습니다. 출력이 있으면 `'adb_response` 속성 (즉, 템플릿의 `state_attr('media_player.android_tv_living_room', 'adb_response')`)에 저장되고 INFO 레벨에 기록됩니다.
+
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
 | `entity_id`            |       no | Name(s) of Android TV / Fire TV entities.
 | `command`              |       no | Either a key command or an ADB shell command.
 
-In an [action](/getting-started/automation-action/) of your [automation setup](/getting-started/automation/) it could look like this:
+[automation setup](/getting-started/automation/) 의 [action](/getting-started/automation-action/)에서 다음과 같이 보일 수 있습니다.
 
 ```yaml
 action:
@@ -235,7 +233,7 @@ action:
     command: "HOME"
 ```
 
-Available key commands include:
+사용 가능한 주요 명령은 다음과 같습니다 :
 
 - `POWER`
 - `SLEEP`
@@ -248,15 +246,15 @@ Available key commands include:
 - `BACK`
 - `MENU`
 
-The full list of key commands can be found [here](https://github.com/JeffLIrion/python-androidtv/blob/bf1058a2f746535921b3f5247801469c4567e51a/androidtv/constants.py#L143-L186).
+주요 명령의 전체 목록은 [here](https://github.com/JeffLIrion/python-androidtv/blob/bf1058a2f746535921b3f5247801469c4567e51a/androidtv/constants.py#L143-L186)에서 찾을 수 있습니다 .
 
-You can also use the command `GET_PROPERTIES` to retrieve the properties used by Home Assistant to update the device's state.  These will be stored in the media player's `'adb_response'` attribute and logged at the INFO level. This information can be used to help improve state detection in the backend [androidtv](https://github.com/JeffLIrion/python-androidtv) package, and also to define your own [custom state detection](#custom-state-detection) rules.
+`GET_PROPERTIES` 명령을 사용하여 홈어시스턴트가 장치의 상태를 업데이트하는데 사용하는 속성을 검색 할 수도 있습니다. 이들은 미디어 플레이어의 `'adb_response'` 속성에 저장되고 INFO 레벨에서 기록됩니다. 이 정보는 백엔드 [androidtv](https://github.com/JeffLIrion/python-androidtv) 패키지에서 상태 감지를 개선하고 고유한 [custom state detection](#custom-state-detection) 규칙을 정의하는 데 사용될 수 있습니다.
 
-A list of various intents can be found [here](https://gist.github.com/mcfrojd/9e6875e1db5c089b1e3ddeb7dba0f304).
+다양한 의도(intents) 목록은 [here](https://gist.github.com/mcfrojd/9e6875e1db5c089b1e3ddeb7dba0f304)에서 찾을 수 있습니다
 
-### `androidtv.download` and `androidtv.upload`
+### `androidtv.download` 및 `androidtv.upload`
 
-You can use the `androidtv.download` service to download a file from your Android TV / Fire TV device to your Home Assistant instance. 
+`androidtv.download` 서비스를 사용하여 Android TV / Fire TV 장치에서 홈어시스턴트 인스턴스로 파일을 다운로드 할 수 있습니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
@@ -264,7 +262,7 @@ You can use the `androidtv.download` service to download a file from your Androi
 | `device_path`          |       no | The filepath on the Android TV / Fire TV device.
 | `local_path`           |       no | The filepath on your Home Assistant instance.
 
-Similarly, you can use the `androidtv.upload` service to upload a file from Home Assistant instance to Android TV / Fire TV devices.
+마찬가지로 `androidtv.upload` 서비스를 사용하여 Home Assistant 인스턴스에서 Android TV / Fire TV 장치로 파일을 업로드 할 수 있습니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
@@ -272,13 +270,13 @@ Similarly, you can use the `androidtv.upload` service to upload a file from Home
 | `device_path`          |       no | The filepath on the Android TV / Fire TV device.
 | `local_path`           |       no | The filepath on your Home Assistant instance.
 
-## Custom State Detection
+## 사용자 정의 상태 감지 (Custom State Detection)
 
-The Android TV integration works by polling the Android TV / Fire TV device at a regular interval and collecting a handful of properties. Unfortunately, there is no standard API for determining the state of the device to which all apps adhere. Instead, the backend `androidtv` package uses three of the properties that it collects to determine the state: `audio_state`, `media_session_state`, and `wake_lock_size`. The correct logic for determining the state differs depending on the current app, and the backend `androidtv` package implements app-specific state detection logic for a handful of apps. Of course, it is not feasible to implement custom logic for each and every app in the `androidtv` package. Moreover, the correct state detection logic may differ across devices and device configurations.
+Android TV 통합은 Android TV / Fire TV 장치를 정기적으로 폴링하고 소수의 속성을 수집하여 작동합니다. 불행히도 모든 앱이 준수하는 기기의 상태를 결정하기위한 표준 API는 없습니다. 대신, 백엔드 `androidtv` 패키지는 상태를 판별하기 위해 수집하는 세 가지 특성을 사용합니다. : `audio_state`, `media_session_state`, `wake_lock_size`. 상태를 결정하는 올바른 로직은 현재 앱에 따라 다르며 백엔드 `androidtv` 패키지는 소수의 앱에 대해 앱별 상태 감지 로직을 구현합니다. 물론, 'androidtv'패키지의 각 앱마다 맞춤형 로직을 구현하는 것은 불가능합니다. 또한 올바른 상태 감지 로직은 장치 및 장치 설정에 따라 다를 수 있습니다.
 
-The solution to this problem is the `state_detection_rules` configuration parameter, which allows you to provide your own rules for state detection.  The keys are app IDs, and the values are lists of rules that are evaluated in order.  Valid rules are:
+이 문제에 대한 해결책은 `state_detection_rules` 설정 매개 변수로, 상태 감지에 대한 고유한 규칙을 제공 할 수 있습니다. 키는 앱ID이고 값은 순서대로 평가되는 규칙 목록입니다. 유효한 규칙은 다음과 같습니다. :
 
-* `'standby'`, `'playing'`, `'paused'`, `'idle'`, or `'off'`
+* `'standby'`, `'playing'`, `'paused'`, `'idle'`, 혹은 `'off'`
   * If this is not a map, then this state will always be reported when this app is the current app
   * If this is a map, then its entries are conditions that will be checked.  If all of the conditions are true, then this state will be reported.  Valid conditions pertain to 3 properties (see the example configuration above):
     1. ``'media_session_state'``

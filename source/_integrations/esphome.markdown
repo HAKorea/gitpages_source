@@ -39,6 +39,10 @@ ha_codeowners:
 <iframe width="776" height="437" src="https://www.youtube.com/embed/dt5-iZc4_qU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
+### ESPHOME 활용 사례 ###
+
+[HA 네이버 카페 ESPHOME 게시판](https://cafe.naver.com/ArticleList.nhn?search.clubid=29860180&search.menuid=14&search.boardtype=L)
+ 
 
 ## 통합 구성요소(Integrations)를 통한 기기 추가 방법 
 

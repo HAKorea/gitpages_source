@@ -1,5 +1,5 @@
 ---
-title: Android TV
+title: 안드로이드 TV
 description: Instructions on how to integrate Android TV and Fire TV devices into Home Assistant.
 logo: androidtv.png
 ha_category:
@@ -11,12 +11,15 @@ ha_codeowners:
 ---
 
 The `androidtv` platform allows you to control an Android TV device or [Amazon Fire TV](https://www.amazon.com/b/?node=8521791011) device.
+`androidtv` 플랫폼을 사용하면 Android TV 장치 또는 [Amazon Fire TV](https://www.amazon.com/b/?node=8521791011)장치를 제어 할 수 있습니다.
 
-## Device preparation
+## 장치 준비
 
 To set up your device, you will need to find its IP address and enable ADB debugging. For Android TV devices, please consult the documentation for your device.
+장치를 설정하려면 IP 주소를 찾고 ADB 디버깅을 활성화해야합니다. Android TV 장치의 경우 설명서를 참조하십시오.
 
 For Fire TV devices, the instructions are as follows:
+Fire TV 장치의 지침은 다음과 같습니다.
 
 - Turn on ADB Debugging on your Amazon Fire TV:
   - From the main (Launcher) screen, select Settings.
@@ -26,7 +29,7 @@ For Fire TV devices, the instructions are as follows:
   - From the main (Launcher) screen, select Settings.
   - Select My Fire TV > About > Network.
 
-## Configuration
+## 설정 
 
 ```yaml
 # Example configuration.yaml entry

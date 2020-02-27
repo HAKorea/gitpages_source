@@ -21,7 +21,7 @@ ha_quality_scale: internal
 
 <div class='note'>
 
-이 통합구성요소로 Python 가져 오기를 사용할 수 없습니다. 고급 스크립트를 원한다면 [AppDaemon](/docs/ecosystem/appdaemon/)을 살펴보십시오.
+이 통합구성요소로 Python의 import 구문을 사용할 수 없습니다. 고급 스크립트를 원한다면 [AppDaemon](/docs/ecosystem/appdaemon/)을 살펴보십시오.
 
 </div>
 
@@ -46,7 +46,7 @@ name: you
 
 ## 서비스 호출하기 (Calling Services)
 
-다음 예제는 `python_script` 에서 서비스를 호출하는 방법을 보여줍니다. 이 스크립트는 두가지 매개변수를 취함: 
+다음 예제는 `python_script` 에서 서비스를 호출하는 방법을 보여줍니다. 이 스크립트는 두가지 매개변수를 취함:
 `entity_id` (필수),`rgb_color` (선택 사항) 및 밝기 값을 '255'로 설정하여 `light.turn_on` 서비스를 호출합니다.
 
 ```python
@@ -71,7 +71,7 @@ rgb_color: [255, 0, 0]
 ```yaml
 # services.yaml
 turn_on_light:
-  description: Turn on a light and set its color. 
+  description: Turn on a light and set its color.
   fields:
     entity_id:
       description: The light that will be turned on.

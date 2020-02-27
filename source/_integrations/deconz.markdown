@@ -18,11 +18,12 @@ ha_codeowners:
   - '@kane610'
 ---
 
-[deCONZ](https://www.dresden-elektronik.de/funk/software/deconz.html) by [dresden elektronik](https://www.dresden-elektronik.de) is a software that communicates with ConBee/RaspBee Zigbee gateways and exposes Zigbee devices that are connected to the gateway.
+[dresden elektronik](https://www.dresden-elektronik.de)의 [deCONZ](https://www.dresden-elektronik.de/funk/software/deconz.html)는 ConBee/RaspBee Zigbee 게이트웨이와 통신하고 게이트웨이에 연결된 Zigbee 장치를 보여주는 소프트웨어입니다.
 
 [deCONZ REST API](https://dresden-elektronik.github.io/deconz-rest-doc/).
 
-There is currently support for the following device types within Home Assistant:
+현재 홈 어시스턴트에서 다음 장치 유형이 지원됩니다. :
+
 
 - [Binary Sensor](#binary-sensor)
 - [Climate](#climate)
@@ -32,26 +33,26 @@ There is currently support for the following device types within Home Assistant:
 - [Sensor](#sensor)
 - [Switch](#switch)
 
-## Recommended way of running deCONZ
+## deCONZ를 실행하는 권장 방법
 
-If you are running Hass.io, an official add-on for deCONZ is available in the add-on store.
-Otherwise, use [community container](https://hub.docker.com/r/marthoc/deconz/) by Marthoc for your deCONZ needs.
+홈어시스턴트를 운영하는 경우 add-on store에 [deCONZ 공식 add-on](https://github.com/home-assistant/hassio-addons/tree/master/deconz)이 사용가능합니다. 
+그렇지 않으면 [community container](https://hub.docker.com/r/marthoc/deconz/) 를 사용하십시오.
 
-### Supported devices
+### 지원되는 장치 
 
-See [deCONZ wiki](https://github.com/dresden-elektronik/deconz-rest-plugin/wiki/Supported-Devices) for a list of supported devices.
+[deCONZ wiki](https://github.com/dresden-elektronik/deconz-rest-plugin/wiki/Supported-Devices)에서 지원되는 장치 리스트를 참조하십시오. 
 
-## Configuration
+## 설정
 
-Home Assistant will automatically discover deCONZ presence on your network, if `discovery:` is present in your `configuration.yaml` file.
+`configuration.yaml` 파일에 `discovery : `가 있으면 Home Assistant는 네트워크에서 deCONZ를 자동으로 감지합니다.
 
-If you don't have the API key, you can generate an API key for deCONZ by using the one-click functionality similar to Philips Hue. Go to **Settings** → **Gateway** → **Advanced** → **Authenticate app** in the Phoscon App and then use the deCONZ configurator in Home Assistant frontend to create an API key. When you're done setting up deCONZ it will be stored as a config entry.
+API 키가 없는 경우 Philips Hue와 유사한 원 클릭 기능을 사용하여 deCONZ 용 API 키를 생성 할 수 있습니다. Phoscon 앱에서 **Settings** → **Gateway** → **Advanced** → **Authenticate app** 으로 이동 한 후 홈어시스턴트 프론트 엔드의 deCONZ 설정을 사용하여 API 키를 작성하십시오. deCONZ 설정을 마치면 설정 항목으로 저장됩니다.
 
-You can manually add deCONZ by going to the integrations page.
+통합구성요소 페이지로 이동하여 deCONZ를 수동으로 추가 할 수 있습니다.
 
-## Debugging integration
+## 디버깅 
 
-If you have problems with deCONZ or the integration you can add debug prints to the log.
+deCONZ 또는 연동에 문제가있는 경우 로그에 디버그 출력을 추가 할 수 있습니다.
 
 ```yaml
 logger:
@@ -61,25 +62,25 @@ logger:
     homeassistant.components.deconz: debug
 ```
 
-## Troubleshooting
+## 문제 해결
 
-If you are having issues and want to report a problem, always start with making sure that you're on the latest [deCONZ software version](https://github.com/dresden-elektronik/deconz-rest-plugin/releases) and [latest firmware for hardware](http://deconz.dresden-elektronik.de/deconz-firmware/?C=M;O=D). 
+문제가 발생하여 문제를 보고하려는 경우 항상 최신 [deCONZ software version](https://github.com/dresden-elektronik/deconz-rest-plugin/releases) 및 [latest firmware for hardware](http://deconz.dresden-elektronik.de/deconz-firmware/?C=M;O=D)를 사용하고 있는지 확인하십시오 .
 
-## Device services
+## 장치 서비스
 
-Available services: `configure` and `deconz.device_refresh`.
+사용 가능한 서비스: `configure` 및 `deconz.device_refresh`.
 
-### Service `deconz.configure`
+### `deconz.configure` 서비스
 
-Set attribute of device in deCONZ using [REST-API](https://dresden-elektronik.github.io/deconz-rest-doc/rest/).
+[REST-API](https://dresden-elektronik.github.io/deconz-rest-doc/rest/) 를 사용하여 deCONZ에서 장치의 속성 설정
 
 | Service data attribute | Optional | Description |
 |-----------|----------|-------------|
-| `field` | No | String representing a specific device in deCONZ. |
-| `entity` | No | String representing a specific Home Assistant entity of a device in deCONZ. |
-| `data` | No | Data is a JSON object with what data you want to alter. |
+| `field` | No | deCONZ에서 특정 장치를 나타내는 문자열. |
+| `entity` | No | deCONZ에서 장치의 특정 홈어시스턴트 엔티티를 나타내는 문자열. |
+| `data` | No | 특정 데이터를 변경하려는 JSON 객체 데이터. |
 
-Either `entity` or `field` must be provided. If both are present, `field` will be interpreted as a subpath under the device path corresponding to the specified `entity`:
+`entity` 또는 `field`가 제공되어야 합니다. 둘 다 존재하면 `field`는 특정`entity`에 해당하는 장치경로 아래의 하위 경로로 해석됩니다. :
 
 ```json
 { "field": "/lights/1", "data": {"name": "light2"} }
@@ -97,17 +98,18 @@ Either `entity` or `field` must be provided. If both are present, `field` will b
 { "field": "/config", "data": {"permitjoin": 60} }
 ```
 
-#### Service `deconz.device_refresh`
+#### `deconz.device_refresh` 서비스
 
-Refresh with devices added to deCONZ after Home Assistants latest restart.
+Home Assistants가 최근에 다시 시작된 후 deCONZ에 추가된 장치로 새로 고칩니다.
 
-Note: deCONZ automatically signals Home Assistant when new sensors are added, but other devices must at this point in time (deCONZ v2.05.35) be added manually using this service or a restart of Home Assistant.
+참고 : 새 센서가 추가되면 deCONZ가 자동으로 Home Assistant에 신호를 보내지만 이 시점에서(deCONZ v2.05.35) 다른 장치를 추가할 경우 이 서비스를 사용하여 수동으로 추가하거나 홈 어시스턴트를 다시 시작해야합니다.
 
-## Remote control devices
+## 리모콘 장치
 
-Remote controls (ZHASwitch category) will not be exposed as regular entities, but as events named `deconz_event` with a payload of `id` and `event` and in case of the Aqara Magic Cube also `gesture`. Id will be the device name from deCONZ and Event will be the momentary state of the switch. Gesture is used for some Aqara Magic Cube specific events like: flip 90 degrees, flip 180 degrees, clockwise and counter clockwise rotation. However, a sensor entity will be created that shows the battery level of the switch as reported by deCONZ, named sensor.device_name_battery_level.
+원격 제어 (ZHASwitch 범주)는 일반 엔티티로 표시되지 않고  페이로드가 `id`와 `event`인 `deconz_event`라는 이벤트로 표시되고 Aqara Magic Cube의 경우 `gesture`로 나타납니다. Id는 deCONZ의 장치 이름이고 Event는 스위치의 순간 상태입니다. gesture는 90도 뒤집기, 180도 뒤집기, 시계 방향 및 시계 반대 방향 회전과 같은 Aqara Magic Cube 특정 이벤트에 사용됩니다. 그러나 deCONZ에 의해 보고된 sensor.device_name_battery_level 이라는 스위치의 배터리 수준을 표시하는 센서 엔티티가 작성됩니다. 
 
-Typical values for switches, the event codes are 4 numbers where the first and last number are of interest here.
+Typical values for switches, the event codes are 4 numbers where the first and last number are of interest here. 
+스위치의 일반적인 값인 이벤트 코드는 4개의 숫자입니다. 여기서 첫 번째 숫자와 마지막 숫자가 중요합니다.
 
 | Switch code | Description |
 |-------------|-------------|
@@ -117,10 +119,12 @@ Typical values for switches, the event codes are 4 numbers where the first and l
 | XXX3 | Button long release |
 
 Where for example on a Philips Hue Dimmer, 2001 would be holding the dim up button.
+예를 들어 Philips Hue Dimmer에서 2001은 dim up 버튼을 눌림을 의미합니다.
 
 For the IKEA Tradfri remote the first digit equals, 1 for the middle button, 2 for up, 3 for down, 4 for left, and 5 for right (e.g., "event: 1002" for middle button short release).
+IKEA Tradfri 리모컨의 첫 번째 숫자는 가운데 버튼의 경우 1, 위 버튼의 경우 2, 아래로의 경우 3, 최측의 경우 4, 왼쪽의 경우 5입니다 (예 : 가운데 버튼의 짧은 릴리스의 경우 "이벤트 : 1002").
 
-Specific gestures for the Aqara Magic Cube are:
+Aqara Magic Cube의 특정 제스처는 : 
 
 | Gesture | Description |
 |---------|-------------|
@@ -134,15 +138,15 @@ Specific gestures for the Aqara Magic Cube are:
 | 7 | Turn clockwise |
 | 8 | Turn counter clockwise |
 
-### Finding your events
+### 이벤트 찾기 (Finding your events)
 
-Navigate to **Developer tools->Events**. In the section **Listen to events** add `deconz_event` and press **START LISTENING**. All events from deCONZ will now be shown and by pushing your remote button while monitoring the log it should be fairly easy to find the events you are looking for.
+**개발자 도구->이벤트**로 이동하십시오 . **Listen to events** 섹션에서 `deconz_event`를 추가하고 **START LISTENING**을 누릅니다. deCONZ의 모든 이벤트가 표시되고 로그를 모니터링하는 동안 원격 버튼을 누르면 원하는 이벤트를 쉽게 찾을 수 있습니다.
 
-### Device triggers
+### 장치 트리거
 
-To simplify using remote control devices in automations deCONZ integration exposes them as device triggers. This will expose all possible variations of button presses and rotations. Note that this is a manually curated list and will not initially be as complete as what deCONZ supports.
+자동화에서 원격 제어 장치 사용을 단순화하기 위해 deCONZ 통합구성요소는 장치를 장치 트리거로 표시합니다. 이렇게하면 가능한 모든 버튼 누름 및 회전 변형이 보입니다. 이 목록은 수동으로 선별된 목록이며 deCONZ가 지원하는 것만큼 초기에는 완성되지 않습니다.
 
-Currently supported devices as device triggers:
+장치 트리거로 현재 지원되는 장치 :
 
 - Hue Dimmer Remote
 - Hue Tap
@@ -157,16 +161,15 @@ Currently supported devices as device triggers:
 - Aqara Square Switch
 - Aqara Magic Cube
 
-#### Requesting support for new device trigger
+#### 새로운 장치 트리거에 대한 지원 요청
 
-Requesting support for additional devices requires the device model (can be acquired from debug logs) together with a mapping of action and button event, e.g., Hue dimmer remote model "RWL021", Short press turn on 1000.
+추가 장치에 대한 지원을 요청하려면 장치 모델(디버그 로그에서 얻을 수 있음)과 동작 및 버튼 이벤트 매핑 (예 : Hue dimmer remote model “RWL021”, Short press on 1000)이 필요합니다.
 
-## Examples
+## 사례
 
 ### YAML
 
-#### Step up and step down input number with wireless dimmer
-
+#### 무선 Dimmer의 input number를 통한 스텝업 및 스텝다운 
 {% raw %}
 
 ```yaml
@@ -234,7 +237,7 @@ automation:
 
 #### Appdaemon event helper
 
-Helper app that creates a sensor `sensor.deconz_event` with a state that represents the id from the last event and an attribute to show the event data.
+마지막 이벤트의 id와 이벤트 데이터를 표시하는 속성을 나타내는 상태 센서 `sensor.deconz_event`를 작성하는 헬퍼 앱.
 
 Put this in `apps.yaml`:
 {% raw %}
@@ -245,7 +248,7 @@ deconz_helper:
   class: DeconzHelper
 ```
 
-Put this in `deconz_helper.py`:
+`deconz_helper.py`에 다음을 넣으십시오 : 
 
 ```python
 import appdaemon.plugins.hass.hassapi as hass
@@ -275,9 +278,9 @@ class DeconzHelper(hass.Hass):
 
 {% endraw %}
 
-Note: the event will not be visible before one event gets sent.
+참고 : 하나의 이벤트가 전송되기 전에는 해당 이벤트가 표시되지 않습니다
 
-#### Appdaemon remote template
+#### Appdaemon 원격 템플릿
 
 {% raw %}
 
@@ -313,9 +316,9 @@ class RemoteControl(hass.Hass):
 
 {% endraw %}
 
-#### Appdaemon remote template
+#### Appdaemon 원격 템플릿
 
-Community app from [Teachingbirds](https://community.home-assistant.io/u/teachingbirds/summary). This app uses an Ikea Tradfri remote to control Sonos speakers with play/pause, volume up and down, next and previous track.
+[Teachingbirds](https://community.home-assistant.io/u/teachingbirds/summary)의 커뮤니티앱 . 이 앱은 Ikea Tradfri 리모컨을 사용하여 재생/일시정지, 볼륨 증가 및 감소, 다음 및 이전 트랙으로 Sonos 스피커를 제어합니다.
 
 {% raw %}
 
@@ -369,62 +372,62 @@ class SonosRemote(hass.Hass):
 
 {% endraw %}
 
-## Binary Sensor
+## Binary 센서
 
-The following sensor types are supported:
+다음과 같은 센서 유형이 지원 :
 
-- Fire/Smoke detection
-- Open/Close detection
-- Presence detection
-- Water leakage detection
+- 화재/연기 감지
+- 개폐 감지
+- 재실 감지
+- 누수 감지
 
-The `entity_id` name will be `binary_sensor.device_name`, where `device_name` is defined in deCONZ.
+`entity_id` 이름은 `binary_sensor.device_name`이며, 여기서 `device_name`은 deCONZ에 정의되어 있습니다.
 
-### Verified supported binary sensors
+### 검증된 Binary 센서 장치 
 
-- Open/Close Detection
+- 개폐 감지
   - Xiaomi Smart Home Security Door & Window Contact Sensor
-- Presence Detection
+- 재실 감지
   - IKEA Trådfri Motion Sensor
   - Philips Hue Motion Sensor
   - Xiaomi Motion Sensor
   - Xiaomi Smart Home Aqara Human Body Sensor
-- Water leakage detection
+- 누수 감지
   - Xiaomi Aqara water leak Sensor
 
-## Climate
+## Climate 
 
-See the [deCONZ main integration](/integrations/deconz/) for configuration instructions.
+설정 지침 은 [deCONZ main integration](/integrations/deconz/) 을 참조하십시오 .
 
-Climate currently represent thermostats.
+Climate는 통상 온도 조절기를 나타냅니다.
 
-Note that devices in the climate platform identify as sensors, so there is a manually curated list that defines which "sensors" are climate devices.
+climate 플랫폼의 장치는 센서로 식별되므로 climate 장치인 "센서"를 정의하는 수동 선별 목록이 있습니다.
 
-The `entity_id` name will be `climate.device_name`, where `device_name` is defined in deCONZ.
+`entity_id` 이름은 `climate.device_name`이며, 여기서 `device_name`은 deCONZ에 정의되어 있습니다.
 
-#### Verified supported climate devices
+#### 검증된 climate 장치
 
 - Bitron Thermostat 902010/32
 - Eurotronic SPZB0001
 
-## Cover
+## Cover (개폐 장치)
 
-Covers are devices like ventilation dampers or smart window covers.
+Cover는 환기 댐퍼 또는 스마트 창 덮개와 같은 장치입니다.
 
-Note that devices in the cover platform identify as lights, so there is a manually curated list that defines which "lights" are covers. You therefore add a cover device as a light device in deCONZ (Phoscon App).
+Cover 플랫폼의 장치는 라이트로 식별되므로 어떤 "Light"가 Cover인지를 정의하는 수동으로 선별된 목록이 있습니다. 따라서 deCONZ(Phoscon App)에서 Cover 장치를 Light 장치로 추가합니다.
 
-The `entity_id` name will be `cover.device_name`, where `device_name` is defined in deCONZ.
+`entity_id` 이름은 `cover.device_name`이며, 여기서 `device_name`은 deCONZ에 정의되어 있습니다.
 
-### Verified supported covers
+### 검증된 cover 장치
 
 - Keen vents
 - Xiaomi Aqara Curtain controller
 
-## Light
+## 조명 (Light)
 
-The `entity_id` names will be `light.device_name`, where `device_name` is defined in deCONZ. Light groups created in deCONZ will be created in Home Assistant as lights named `light.group_name_in_deconz`, allowing the user to control groups of lights with only a single API call to deCONZ.
+`entity_id` 이름은 `light.device_name`이며, 여기서 `device_name`은 deCONZ에 정의되어 있습니다. deCONZ에서 생성 된 Light 그룹은 Home Assistant에서 `light.group_name_in_deconz`라는 Light로 생성되므로 사용자는 deCONZ에 대한 단일 API 호출만으로 Light 그룹을 제어 할 수 있습니다.
 
-### Verified supported lights
+### 검증된 light 장치
 
 - IKEA Trådfri bulb E14 WS Opal 400lm
 - IKEA Trådfri bulb E14 WS Opal 600lm
@@ -446,30 +449,31 @@ The `entity_id` names will be `light.device_name`, where `device_name` is define
 - Busch Jaeger ZigBee Light Link univ. relai (6711 U) with ZigBee Light Link control element 6735-84
 - Xiaomi Aqara Smart Led Bulb (white) E27 ZNLDP12LM 
 
-## Scene
+## 장면 (Scene)
 
-The `entity_id` name will be `scene.group_scene_name`, where `group` is which group the scene belongs to and the name of the scene, both group and name are defined in deCONZ.
+`entity_id` 이름은`scene.group_scene_name`이 됩니다. 여기서 `group`은 장면(scene)이 속한 그룹이고 장면 이름, 그룹과 이름 모두 deCONZ에 정의되어 있습니다.
 
-## Sensor
+## 센서
 
-The following sensor types are supported:
+다음과 같은 센서 유형이 지원됩니다. : 
 
-- Humidity sensor
-- Light level sensor
-- Pressure sensor
-- Switches
-- Temperature sensor
 
-The `entity_id` name will be `sensor.device_name`, where `device_name` is defined in deCONZ. Switches aren't exposed as ordinary entities, see the [deCONZ main integration](/integrations/deconz/) for more details.
+- 습도 센서
+- 조도 센서
+- 압력 센서
+- 스위치
+- 온도 센서
 
-### Verified to be supported sensors
+`entity_id` 이름은 `sensor.device_name`이며, 여기서 `device_name`은 deCONZ에 정의되어 있습니다. 스위치는 일반 엔티티로 노출되지 않습니다. 자세한 내용은 [deCONZ main integration](/integrations/deconz/)을 참조하십시오.
 
-- Humidity Sensor
+### 검증된 센서 장치
+
+- 습도 센서
   - Xiaomi Aqara Humidity/Temperature Sensor
   - Xiaomi MiJia Smart Temperature & Humidity Sensor
-- Light Level Sensor
-- Pressure Sensor
-- Switches
+- 조도 센서
+- 압력 센서
+- 스위치
   - IKEA Trådfri Wireless Dimmer
   - Philips Hue Motion Sensor
   - IKEA Trådfri Remote
@@ -477,45 +481,45 @@ The `entity_id` name will be `sensor.device_name`, where `device_name` is define
   - Xiaomi Aqara Smart Light Switch
   - Xiaomi Aqara Smart Wireless Switch
   - Xiaomi Smart Home Wireless Switch
-- Temperature Sensor
+- 온도 센서
   - Xiaomi Temperature/Humidity Sensor
-- OpenClose Sensor
+- 개폐 센서
   - Xiaomi Window / Door Sensor with Temperature
 
-### deCONZ Daylight Sensor
+### DECONZ 일광 센서 (daylights)
 
-The deCONZ Daylight sensor is a special sensor built into the deCONZ software since version 2.05.12. It is represented in Home Assistant as a sensor called sensor.daylight. The sensor's state value is a string corresponding to the phase of daylight (descriptions below taken from https://github.com/mourner/suncalc, on which the deCONZ implementation is based):
+deCONZ Daylight 센서는 버전 2.05.12 이후 deCONZ 소프트웨어에 내장된 특수 센서입니다. Home Assistant에는 sensor.daylight라는 센서로 표시됩니다. 센서의 상태 값은 일광 단계에 해당하는 문자열입니다 (아래 설명 은 deCONZ 구현의 기반이되는 https://github.com/mourner/suncalc 에서 가져옴).
 
 | Sensor State | Description |
 |--------------|-------------|
-| sunrise_start | sunrise (top edge of the sun appears on the horizon) |
-| sunrise_end | sunrise ends (bottom edge of the sun touches the horizon) |
-| golden_hour_1 | morning golden hour (soft light, the best time for photography) |
-| solar_noon | solar noon (sun is in the highest position) |
-| golden_hour_2 | evening golden hour |
-| sunset_start | sunset starts (bottom edge of the sun touches the horizon) |
-| sunset_end | sunset (sun disappears below the horizon, evening civil twilight starts) |
-| dusk | dusk (evening nautical twilight starts) |
-| nautical_dusk | nautical dusk (evening astronomical twilight starts) |
-| night_start | night starts (dark enough for astronomical observations) |
-| nadir | nadir (darkest moment of the night, the sun is in the lowest position) |
-| night_end | night ends (morning astronomical twilight starts) |
-| nautical_dawn | nautical dawn (morning nautical twilight starts) |
-| dawn | dawn (morning nautical twilight ends, morning civil twilight starts) |
+| sunrise_start | 일출 (태양의 가장자리가 수평선에 나타남) |
+| sunrise_end | 일출이 끝납니다 (태양의 아래쪽 가장자리가 수평선에 닿음) |
+| golden_hour_1 | 아침 황금 시간 (소프트 라이트, 사진 촬영에 가장 좋은 시간) |
+| solar_noon | 정오 (태양이 가장 높은 위치에 있음) |
+| golden_hour_2 | 저녁 황금 시간 |
+| sunset_start | 일몰이 시작됩니다 (태양의 아래쪽 가장자리가 수평선에 닿음) |
+| sunset_end | 일몰 (해가 수평선 아래에서 사라지고, 저녁 시민 황혼이 시작됩니다) |
+| dusk | 황혼 (저녁 해상 황혼의 시작) |
+| nautical_dusk | 해상 황혼 (저녁 천문 황혼 시작) |
+| night_start | 야간 시작 (천문학적 관측에 충분한 어둠) |
+| nadir | nadir (밤의 가장 어두운 순간, 태양은 가장 낮은 위치에 있습니다) |
+| night_end | 밤의 끝 (아침 천문학적 황혼이 시작된다) |
+| nautical_dawn | 해상 새벽 (아침 해상 황혼이 시작됩니다) |
+| dawn | 새벽 (아침 황혼이 시작됩니다) |
 
-The sensor also has an attribute called "daylight" that has the value `true` when the sensor's state is `golden_hour_1`, `solar_noon`, or `golden_hour_2`, and `false` otherwise.
+센서에는 "daylight" 라는 속성이 있는데, 센서 상태가 `golden_hour_1`, `solar_noon` 또는 `golden_hour_2`이면 `true`값을 가지며 그렇지 않으면 `false`입니다.
 
-These states can be used in automations as a trigger (e.g., trigger when a certain phase of daylight starts or ends) or condition (e.g., trigger only if in a certain phase of daylight).
+이러한 상태는 자동화에서 트리거 (예 : 특정 일광 단계가 시작되거나 종료 될 때 트리거) 또는 조건 (예 : 특정 일광 단계에있는 경우에만 트리거)으로 사용될 수 있습니다.
 
-## Switch
+## 스위치
 
-Switches are devices like power plugs and sirens.
+스위치는 전원 플러그 및 사이렌과 같은 장치입니다.
 
-Note that devices in the switch platform identify as lights, so there is a manually curated list that defines which "lights" are switches.
+스위치 플랫폼의 장치는 Light으로 식별되므로 스위치인 "Light"을 정의하는 수동으로 선별된 목록이 있습니다.
 
-The `entity_id` name will be `switch.device_name`, where `device_name` is defined in deCONZ.
+`entity_id` 이름은 `switch.device_name`이며, 여기서 `device_name`은 deCONZ에 정의되어 있습니다.
 
-### Verified supported switches
+### 검증된 스위치 장치
 
 - Innr SP120
 - Innr ZB-ONOFFPlug-D0005/SmartThings Smart Plug (2019) (without power measurements)

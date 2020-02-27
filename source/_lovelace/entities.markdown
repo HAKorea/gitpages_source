@@ -1,5 +1,5 @@
 ---
-title: "엔티티 카드"
+title: "Entity 카드"
 sidebar_label: Entities
 description: "Entities will be the most common type of card that will also be the most familiar to people using the standard interface. It groups items together very close to how groups used to do."
 ---

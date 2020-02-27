@@ -34,6 +34,9 @@ ha_codeowners:
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/QZHlhQ7fqrA" frameborder="0" allowfullscreen></iframe>
 </div>
 
+HA 네이버 카페 갓북왕님 유쾌한 SmartThings 연동 설정기(https://cafe.naver.com/koreassistant/592)
+
+
 ## 기본 요구 사항
 
 SmartThings 연동은 Webhook을 사용하거나 Home Assistant Cloud를 구독하여 사용할 수 있습니다. 

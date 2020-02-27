@@ -1,14 +1,14 @@
 ---
-title: "엔티티 버튼 카드"
+title: "Entity Button 카드"
 sidebar_label: Entity Button
 description: "The Entity Button card allows you to add buttons to perform tasks"
 ---
 
-엔터티 버튼 카드를 사용하면 작업을 수행하기 위해 버튼을 추가 할 수 있습니다.
+Entity Button 카드를 사용하면 작업을 수행하기 위해 버튼을 추가 할 수 있습니다.
 
 <p class='img'>
 <img src='/images/lovelace/lovelace_entity_button_card.png' alt='Screenshot of the entity button card'>
-엔티티 버튼 카드의 스크린 샷
+Entity Button 카드의 스크린 샷
 </p>
 
 ```yaml
@@ -201,5 +201,5 @@ entity: script.turn_off_lights
 
 <p class='img'>
 <img src='/images/lovelace/lovelace_entity_button_complex_card.png' alt='Screenshot of the entity button card'>
-제목 및 스크립트 서비스가 포함 된 엔티티 버튼 카드의 스크린 샷
+제목 및 스크립트 서비스가 포함 된 Entity Button 카드의 스크린 샷
 </p>

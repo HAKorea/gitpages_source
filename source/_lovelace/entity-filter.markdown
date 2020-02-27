@@ -1,5 +1,5 @@
 ---
-title: "엔티티 필터 카드"
+title: "Entity Filter 카드"
 sidebar_label: Entity Filter
 description: "This card allows you to define a list of entities that you want to track only when in a certain state. Very useful for showing lights that you forgot to turn off or show a list of people only when they're at home. "
 ---
@@ -142,5 +142,5 @@ entities:
 
 <p class='img'>
   <img src='/images/lovelace/lovelace_entity_filter_glance.png' alt='Entity filter combined with glance card'>
-  Glance 카드와 결합 된 엔티티 필터.
+  Glance 카드와 결합된 Entity Filter.
 </p>

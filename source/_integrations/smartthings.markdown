@@ -1,5 +1,5 @@
 ---
-title: Smartthings
+title: 스마트씽즈
 description: Instructions on setting up Samsung SmartThings within Home Assistant.
 featured: true
 logo: samsung_smartthings.png

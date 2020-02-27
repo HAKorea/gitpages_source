@@ -1,5 +1,5 @@
 ---
-title: aREST
+title: aREST 프레임워크
 description: Instructions on how to integrate aREST within Home Assistant.
 logo: arest.png
 ha_category:

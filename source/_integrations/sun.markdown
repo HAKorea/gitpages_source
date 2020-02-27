@@ -1,5 +1,5 @@
 ---
-title: Sun
+title: 태양(Sun)
 description: Instructions on how to track the sun within Home Assistant.
 logo: home-assistant.png
 ha_category:

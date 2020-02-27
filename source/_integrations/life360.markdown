@@ -1,5 +1,5 @@
 ---
-title: Life360
+title: Life360 위치추적기
 description: Instructions how to use Life360 to track devices in Home Assistant.
 logo: life360.png
 ha_release: 0.95

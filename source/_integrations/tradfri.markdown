@@ -1,5 +1,5 @@
 ---
-title: IKEA TRÅDFRI (TRADFRI)
+title: 이케아 TRÅDFRI (TRADFRI)
 description: Access and control your IKEA Trådfri Gateway and its connected Zigbee-based devices.
 featured: true
 logo: ikea.svg

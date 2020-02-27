@@ -1,5 +1,5 @@
 ---
-title: Home Assistant API
+title: 홈어시스턴트 API
 description: Instructions on how to setup the RESTful API within Home Assistant.
 logo: home-assistant.png
 ha_category:

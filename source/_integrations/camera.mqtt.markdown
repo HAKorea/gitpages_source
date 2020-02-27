@@ -1,5 +1,5 @@
 ---
-title: "MQTT Camera"
+title: "MQTT 카메라"
 description: "Instructions on how to use an MQTT image message as a Camera within Home Assistant."
 logo: mqtt.png
 ha_category:

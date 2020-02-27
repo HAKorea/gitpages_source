@@ -1,5 +1,5 @@
 ---
-title: Persistent Notification
+title: Persistent 통지
 description: Instructions on how to integrate persistent notifications into Home Assistant.
 logo: home-assistant.png
 ha_category:

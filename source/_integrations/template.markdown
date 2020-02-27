@@ -1,5 +1,5 @@
 ---
-title: Template
+title: 템플릿
 description: Instructions on how to integrate Template Sensors into Home Assistant.
 ha_category:
   - Sensor

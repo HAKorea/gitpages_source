@@ -1,5 +1,5 @@
 ---
-title: "텔레그램 챗봇 (Telegram chatbot)"
+title: "텔레그램 챗봇"
 description: "Telegram chatbot support"
 logo: telegram.png
 ha_category:

@@ -1,5 +1,5 @@
 ---
-title: ESPHome
+title: ESPHome 만들기
 description: Support for ESPHome devices using the native ESPHome API.
 featured: true
 logo: esphome.png

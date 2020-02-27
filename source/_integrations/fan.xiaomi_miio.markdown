@@ -1,5 +1,5 @@
 ---
-title: "Xiaomi Air Purifier"
+title: "샤오미 공기 청정기"
 description: "Instructions on how to integrate your Xiaomi Air Purifier and Xiaomi Air Humidifier within Home Assistant."
 logo: xiaomi.png
 ha_category:

@@ -1,5 +1,5 @@
 ---
-title: Google Cast
+title: 구글 캐스트
 description: Instructions on how to integrate Google Cast into Home Assistant.
 logo: google_cast.png
 ha_category:

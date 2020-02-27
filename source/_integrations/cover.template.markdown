@@ -1,5 +1,5 @@
 ---
-title: "Template Cover"
+title: "탬플릿 개폐장치"
 description: "Instructions on how to integrate Template Covers into Home Assistant."
 ha_category:
   - Cover

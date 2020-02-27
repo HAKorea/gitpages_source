@@ -1,5 +1,5 @@
 ---
-title: Device Tracker
+title: 장치 추적기
 description: Instructions on how to setup device tracking within Home Assistant.
 logo: home-assistant.png
 ha_category:

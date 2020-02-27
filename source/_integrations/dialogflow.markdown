@@ -1,5 +1,5 @@
 ---
-title: Dialogflow
+title: 대화흐름(Dialogflow)
 description: Instructions on how integrate Dialogflow with Home Assistant.
 logo: dialogflow.png
 ha_category:

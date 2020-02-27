@@ -1,5 +1,5 @@
 ---
-title: Zigbee Home Automation
+title: Zigbee 홈 자동화
 description: Instructions on how to integrate your Zigbee Home Automation (ZHA) devices within Home Assistant.
 logo: zigbee.png
 ha_category:

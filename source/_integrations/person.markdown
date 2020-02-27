@@ -8,39 +8,39 @@ ha_release: 0.88
 ha_quality_scale: internal
 ---
 
-The person integration allows connecting [device tracker](/integrations/device_tracker/) entities to one or more person entities. The state updates of a connected device tracker will set the state of the person. When multiple device trackers are used, the state of person will be determined in this order:
+Person 통합구성요소를 통해 [device tracker](/integrations/device_tracker/) 엔터티를 하나 이상의 Person 엔터티에 연결할 수 있습니다. 연결된 장치 추적기의 상태 업데이트는 Person 상태를 설정합니다. 여러 장치 추적기를 사용하는 경우 Person 상태는 다음 순서로 결정됩니다.
 
-1. If there are stationary trackers (non-GPS trackers, i.e., a router or Bluetooth 'device_trackers') presenting the status 'home', the tracker most recently updated will be used.
-2. If there are trackers of type 'gps', then the most recently updated tracker will be used.
-3. Otherwise, the latest tracker with status 'not_home' will be used.
+1. 'home' 상태를 나타내는 고정 추적기 (GPS가 아닌 추적기, 즉 라우터 또는 Bluetooth 'device_trackers')가 있는 경우 가장 최근에 업데이트 된 추적기가 사용됩니다.
+2. 'gps' 유형의 추적기가 있는 경우 가장 최근에 업데이트 된 추적기가 사용됩니다.
+3. 그렇지 않으면 상태가 'not_home'인 최신 추적기가 사용됩니다.
 
-Let's say, for example, that you have 3 trackers: 'tracker_gps', 'tracker_router' and 'tracker_ble'.
+예를 들어 'tracker_gps', 'tracker_router' 및 'tracker_ble' 의 3 가지 추적기가 있다고 가정합니다.
 
-1. You're at home, all 3 devices show status 'home' - status of your Person entity will be 'home' with source 'tracker_router' or 'tracker_ble', whichever was most recently updated.
-2. You just left home. 'tracker_gps' shows status 'not_home', but the other two trackers show status 'home' (they may not have yet updated due to their 'consider_home' setting see [device_tracker](/integrations/device_tracker/#configuring-a-device_tracker-platform)). Since the stationary trackers have priority, you are considered 'home'.
-3. After some time, both stationary trackers show status 'not_home'. Now your Person entity has status 'not_home' with source 'tracker_gps'.
-4. While you are away from home, your Home Assistant is restarted. Until 'tracker_gps' receives an update, your status will be determined by the stationary trackers, since they will have the most recent update after a restart. Obviously, the status will be 'not_home'.
-5. Then you're going into a zone you have defined as 'zone1', 'tracker_gps' sends an update, and now your status is 'zone1' with source 'tracker_gps'.
-6. You've returned home and your mobile device has connected to the router, but 'tracker_gps' hasn't updated yet. Your status will be 'home' with source 'tracker_router'.
-7. After the 'tracker_gps' update occurs, your status will still be 'home' with source 'tracker_router' or 'tracker_ble', whichever has the most recent update.
+1. 당신은 집에 있고 3개의 장치 모두 'home' 상태를 표시합니다. Person 엔티티의 상태는 소스 'tracker_router' 또는 'tracker_ble' 중 가장 최근에 업데이트 된 'home' 입니다.
+2. 당신은 방금 집을 떠났습니다. 'tracker_gps'는 'not_home' 상태를 표시하지만 다른 두 추적기는 'home' 상태를 표시합니다 ('consider_home'설정으로 인해 아직 업데이트되지 않았을 수 있습니다 [device_tracker](/integrations/device_tracker/#configuring-a-device_tracker-platform) 참조). 고정 추적기가 우선하므로 'home' 으로 간주됩니다.
+3. 일정 시간이 지나면 두 고정 추적기 모두 'not_home' 상태를 표시합니다. 이제 Person 엔티티는 소스 'tracker_gps'와 함께 'not_home'상태입니다.
+4. 집을 떠나있는 동안 홈어시스턴트가 다시 시작됩니다. 'tracker_gps'가 업데이트를 수신할 때까지는 고정 추적기에 의해 상태가 결정됩니다. 다시 시작한 후 최신 업데이트가 있기 때문입니다. 분명히 상태는 'not_home'입니다.
+5. 그런 다음 'zone1'로 정의한 영역으로 이동하면 'tracker_gps'가 업데이트를 보내고 이제 상태가 'tracker_gps'가있는 'zone1'입니다.
+6. 집으로 돌아 왔으며 휴대 기기가 라우터에 연결되었지만 'tracker_gps'는 아직 업데이트되지 않았습니다. 당신의 상태는 'tracker_router' 소스와 함께 'home'이됩니다.
+7. 'tracker_gps' 업데이트가 발생한 후에도 소스 'tracker_router' 또는 'tracker_ble' 중 최신 업데이트가 있는 상태로 'home'상태가 유지됩니다.
 
-TL;DR: When you're at home, your position is determined first by stationary trackers (if any) and then by GPS. When you're outside your home, your position is determined firstly by GPS and then by stationary trackers.
+요약 : 집에 있을 때는 먼저 위치 추적기 (있는 경우)와 GPS로 위치를 결정합니다. 집 밖에있을 때는 먼저 GPS에 의해 위치가 결정된 다음 고정 추적기에 의해 결정됩니다.
 
-**Hint**: When you use multiple device trackers together, especially stationary and GPS trackers, it's advisable to set `consider_home` for stationary trackers as low as possible see [device_tracker](/integrations/device_tracker/#configuring-a-device_tracker-platform)).
+**Hint**: 여러 장치 추적기, 특히 고정 및 GPS 추적기를 함께 사용하는 경우 고정 추적기에 대해 `consider_home`을 가능한 한 낮게 설정하는 것이 좋습니다. [device_tracker](/integrations/device_tracker/#configuring-a-device_tracker-platform)참조 
 
-You can manage persons via the UI from the person page inside the configuration panel or via `YAML` in your `configuration.yaml` file.
+UI를 통해 설정 패널의 Person 페이지 또는 `configuration.yaml` 파일의 `YAML`을 통해 Person을 관리할 수 ​​있습니다.
 
-## Configuring the `person` integration via the Home Assistant configuration panel
+## 홈어시스턴트 설정 패널을 통해 Person 통합구성요소 설정
 
-This integration is by default enabled, unless you've disabled or removed the [`default_config:`](https://www.home-assistant.io/integrations/default_config/) line from your configuration. If that is the case, the following example shows you how to enable this integration manually:
+이 통합구성요소는 설정에서 [`default_config:`](https://www.home-assistant.io/integrations/default_config/) 행을 비활성화하거나 제거하지 않은 한 기본적으로 활성화되어 있습니다. 이 경우 다음 예는 이 통합구성요소를 수동으로 활성화하는 방법을 보여줍니다.
 
 ```yaml
 person:
 ```
 
-## Configuring the `person` integration via YAML
+## YAML을 통한 `person` 통합구성요소 설정
 
-If you prefer YAML, you can also configure your persons via `configuration.yaml`:
+YAML을 선호하는 경우 `configuration.yaml` 통해 다음과 같이 Person을 설정할 수도 있습니다
 
 ```yaml
 # Example configuration.yaml entry
@@ -53,24 +53,24 @@ person:
 
 {% configuration %}
   id:
-    description: A unique id of the person.
+    description: person의 고유한 ID.
     required: true
     type: string
   name:
-    description: The name of the person.
+    description: person의 이름.
     required: true
     type: string
   user_id:
-    description: The user id of the Home Assistant user account for the person. *`user_id` (aka `ID`) of users can be inspected in the "Users"/"Manage users" screen in the configuration panel.*
+    description: person의 홈어시스턴트 사용자 계정의 사용자 ID입니다. *설정 패널의 "Users"/"Manage users" 화면에서 사용자의 `user_id` (일명`ID`)를 검사할 수 있습니다.*
     required: false
     type: string
   device_trackers:
-    description: A list of device tracker entity ids to track. These will represent the state of the person.
+    description: 추적 할 장치 추적기 엔티티 ID 목록. 이들은 Person의 상태를 나타냅니다.
     required: false
     type: [string, list]
 {% endconfiguration %}
 
-An extended example would look like the following sample:
+확장된 예제는 다음 샘플과 같습니다.:
 
 ```yaml
 # Example configuration.yaml entry
@@ -87,11 +87,12 @@ person:
       - device_tracker.beacon
 ```
 
-If you change the YAML, you can reload it by calling the `person.reload` service.
+YAML을 변경하면 `person.reload` 서비스 를 호출하여 YAML을 다시로드 할 수 있습니다
 
-### Customizing the picture for a person
+### Person의 사진 사용자 정의
 
-By following the instructions on the [customizing entities](/docs/configuration/customizing-devices#entity_picture) page, you can customize the picture used for a person entity in the `customize:` section of your configuration. For example:
+[customizing entities](/docs/configuration/customizing-devices#entity_picture) 페이지의 지시 사항에따라 `customize:` 설정 섹션에서 Person 엔티티에 사용되는 그림을 사용자 정의 할 수 있습니다. 
+예를 들면 다음과 같습니다. :
 
 ```yaml
 customize:
@@ -99,4 +100,4 @@ customize:
     entity_picture: "/local/ada.jpg"
 ```
 
-See the documentation about [hosting files](/integrations/http/#hosting-files) for more information about the `www` folder.
+`www` 폴더에 대한 자세한 내용은 [hosting files](/integrations/http/#hosting-files) 설명서를 참조하십시오.

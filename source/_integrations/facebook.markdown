@@ -1,5 +1,5 @@
 ---
-title: Facebook Messenger
+title: facebook 메신저
 description: Instructions on how to add Facebook user notifications to Home Assistant.
 logo: facebook.png
 ha_category:
@@ -7,9 +7,10 @@ ha_category:
 ha_release: 0.36
 ---
 
-The `facebook` notification platform enables sending notifications via Facebook Messenger, powered by [Facebook](https://facebook.com).
+`facebook` 알림 플랫폼은 Facebook 메신저로 알림을 보낼 수 있습니다. powered by [Facebook](https://facebook.com).
+ 
 
-To use this notification platform in your installation, add the following to your `configuration.yaml` file:
+설치시 이 알림 플랫폼을 사용하려면 `configuration.yaml` 파일에 다음을 추가 하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -21,20 +22,20 @@ notify:
 
 {% configuration %}
 page_access_token:
-  description: "Access token for your Facebook page. Checkout [Facebook Messenger Platform](https://developers.facebook.com/docs/messenger-platform/guides/setup) for more information."
+  description: "Facebook 페이지의 액세스 토큰. 자세한 내용은 [Facebook Messenger Platform](https://developers.facebook.com/docs/messenger-platform/guides/setup)을 확인하십시오." 
   required: true
   type: string
 name:
-  description: Setting the optional parameter `name` allows multiple notifiers to be created. The notifier will bind to the service `notify.NOTIFIER_NAME`.
+  description: 선택적 매개 변수 `name`을 세팅하면 여러 알리미(notifier)를 만들수 있습니다. 알리미는 서비스 `notify.NOTIFIER_NAME`에 바인딩합니다.
   required: false
   default: "`notify`"
   type: string
 {% endconfiguration %}
 
-### Usage
+### 사용법
 
-With Facebook notify service, you can send your notifications to your Facebook messenger with help of your Facebook page. You have to create a [Facebook Page and App](https://developers.facebook.com/docs/messenger-platform/guides/quick-start) for this service. You can control it by calling the notify service [as described here](/integrations/notify/). It will send a message on messenger to user specified by **target** on behalf of your page. See the [quick start](https://developers.facebook.com/docs/messenger-platform/guides/quick-start) guide for more information.
-The phone number used in **target** should be registered with Facebook messenger. Phone number of the recipient should be in +1(212)555-2368 format. If your app is not approved by Facebook then the recipient should by either admin, developer or tester for your Facebook app. [More information](https://developers.facebook.com/docs/messenger-platform/send-api-reference#phone_number) about the phone number.
+Facebook 알림 서비스를 사용하면 Facebook 페이지를 통해 Facebook 메신저에 알림을 보낼 수 있습니다. 이 서비스를 위해 [Facebook Page and App](https://developers.facebook.com/docs/messenger-platform/guides/quick-start)을 만들어야합니다. notify 서비스 [as described here](/integrations/notify/)를 호출하여 제어할 수 있습니다.
+**target**에 사용된 전화 번호는 Facebook 메신저에 등록되어 있어야합니다. 수신자의 전화 번호는 +1(212)555-2368 형식이어야합니다. Facebook에서 앱을 승인하지 않은 경우 수신자는 Facebook 앱의 관리자, 개발자 또는 테스터가 해야합니다. [More information](https://developers.facebook.com/docs/messenger-platform/send-api-reference#phone_number) 전화 번호에 대한 정보입니다.
 
 ```yaml
 # Example automation notification entry
@@ -52,7 +53,7 @@ automation:
           - '+919784516314'
 ```
 
-You can also send messages to users that do not have stored their phone number on Facebook, but this requires a bit more work. The Messenger platform uses page-specific user IDs instead of a global user ID. You will need to enable a webhook for the "messages" event in Facebook's developer console. Once a user writes a message to a page, that webhook will then receive the user's page specific ID as part of the webhook's payload. Below is a simple PHP script that reacts to the message "get my id" and sends a reply containing the user's ID: 
+Facebook에 전화 번호를 저장하지 않은 사용자에게 메시지를 보낼 수도 있지만 약간의 작업이 필요합니다. 메신저 플랫폼은 글로벌 사용자 ID 대신 페이지 별 사용자 ID를 사용합니다. Facebook 개발자 콘솔에서 "message" 이벤트에 대해 웹 후크를 활성화해야합니다. 사용자가 페이지에 메시지를 작성하면 해당 웹 후크는 웹후크 페이로드의 일부로 사용자의 페이지 특정 ID를 받습니다. 다음은 "get my id"메시지에 반응하고 사용자의 ID가 포함된 회신을 보내는 간단한 PHP 스크립트입니다. :
 
 ```php
 <?php
@@ -98,7 +99,7 @@ if (preg_match('/get my id/', strtolower($message))) {
 ```
 
 ### Rich messages
-You could also send rich messing (cards, buttons, images, videos, etc). [Info](https://developers.facebook.com/docs/messenger-platform/send-api-reference) to which types of messages and how to build them.
+카드, 버튼, 이미지, 비디오 등 풍부한 메시지를 보낼 수 있습니다. [Info](https://developers.facebook.com/docs/messenger-platform/send-api-reference) 메시지 유형 및 작성 방법
 
 ```yaml
 # Example script with a notification entry with a rich message
@@ -120,9 +121,9 @@ script:
                 payload: DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_BLUE
 ```
 
-You can now also use Facebook public beta broadcast API to push messages to ALL users who interacted with your chatbot on your page, without having to collect their number. This will scale to thousands of users. Facebook requires that this only be used for non-commercial purposes and they validate every message you send. Also note, your Facebook bot needs to be authorized for "page_subscritions" if you want to make it to all but can be used right away to a selected group of testers of your choice. 
+또한 Facebook 공개 베타 브로드 캐스트 API를 사용하여 번호를 수집하지 않고도 페이지에서 챗봇과 상호작용 한 모든 사용자에게 메시지를 푸시 할 수 있습니다. 이것은 수천 명의 사용자로 확장됩니다. Facebook은 비상업적 인 용도로만 사용해야하며 사용자가 보내는 모든 메시지의 유효성을 검사합니다. 또한 Facebook 봇은 모두 "page_subscritions"에 대한 권한을 부여 받아야하지만 선택한 테스터 그룹에게 바로 사용할 수 있습니다.
 
-To enable broadcast just use the keyword "BROADCAST" as your target. Only put ONE target BROADCAST as below:
+브로드 캐스트를 활성화하려면 "BROADCAST" 키워드를 대상으로 사용하십시오. 아래와 같이 하나의 대상 방송(BROADCAST)만 넣으십시오.
 
 ```yaml
 - alias: Facebook Broadcast

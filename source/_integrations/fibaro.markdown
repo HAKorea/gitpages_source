@@ -1,5 +1,5 @@
 ---
-title: Fibaro
+title: 피바로(Fibaro)
 description: Instructions on how to setup Fibaro Z-Wave hubs (HCL and HC2) and configure devices within Home Assistant.
 logo: fibaro.png
 ha_category:
@@ -15,9 +15,9 @@ ha_release: 0.83
 ha_iot_class: Local Push
 ---
 
-The [Fibaro](https://fibaro.com/) hub is a controller mainly connecting to Z-Wave devices.
+[Fibaro](https://fibaro.com/) 허브는 주로 Z-Wave 장치에 연결되는 컨트롤러입니다.
 
-There is currently support for the following device types within Home Assistant:
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - Binary Sensor
 - Cover
@@ -27,11 +27,11 @@ There is currently support for the following device types within Home Assistant:
 - Scene
 - Switch
 
-They will be automatically added when the `fibaro` hub is connected to Home Assistant.
+`fibaro` 허브가 홈어시스턴트에 연결 되면 자동으로 추가됩니다 
 
-## Configuration
+## 설정
 
-To use Fibaro devices in your installation, add the following to your `configuration.yaml` file using the IP and port number of your Fibaro controller:
+Fibaro 장치를 사용하려면 Fibaro 컨트롤러의 IP 및 포트 번호를 사용하여 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 fibaro:
@@ -51,28 +51,28 @@ fibaro:
 
 {% configuration %}
 gateways:
-  description: List of gateway configurations.
+  description: 게이트웨이 설정 목록.
   requires: true
   type: list
 url:
-  description: The URL for your Fibaro HomeCenter device.
+  description: Fibaro HomeCenter 장치의 URL.
   required: true
   type: string
 username:
-  description: The username for your Fibaro account.
+  description: Fibaro 계정의 사용자 이름.
   required: true
   type: string
 password:
-  description: The password for your Fibaro account.
+  description: Fibaro 계정의 비밀번호.
   required: true
   type: string
 plugins:
-  description: Whether to import plugin-generated devices from Fibaro HomeCenter, such as Netatmo and Sonos devices, etc.
+  description: Netatmo 및 Sonos 장치 등과 같이 Fibaro HomeCenter에서 플러그인 장치를 가져올 지 여부
   required: false
   type: boolean
   default: false
 device_config:
-  description: Lists device specific parameter or behaviour overrides.
+  description: 장치 별 매개 변수 또는 동작 재정의(behaviour override)를 나열.
   required: false
   type: list
   default: None
@@ -80,10 +80,11 @@ device_config:
 
 <div class='note'>
 
-  It is recommended to assign a static IP address to your Fibaro controller. This ensures that it won't change its IP address, so you won't have to change the `url` if the controller reboots and comes up with a different IP address. See your router's manual for details on how to set this up. If you need the MAC address of your Fibaro, check the label on the bottom.
+  Fibaro 컨트롤러에 고정 IP 주소를 할당하는 것이 좋습니다. 이렇게하면 IP 주소가 변경되지 않으므로 컨트롤러가 재부팅되고 다른 IP 주소가 나오는 경우 `url`을 변경할 필요가 없습니다. 이를 설정하는 방법에 대한 자세한 내용은 라우터 설명서를 참조하십시오. Fibaro의 MAC 주소가 필요한 경우 하단의 레이블을 확인하십시오.
 
 </div>
 
-### Using Z-Wave devices in automation
+### 자동화에서 Z-WAVE 장치 사용
 
-If you want to use a Z-Wave device from the Fibaro controller in Home Assistant automation, you'll need the entity id. In the Home Assistant UI you'll find all entities listed under the <img src='/images/screenshots/developer-tool-states-icon.png' alt='service developer tool icon' class="no-shadow" height="38" /> icon of the Developer Tools section. Look for entities that contain 'fibaro_id' in their attributes, and you'll find the entity id on the left.
+홈어시스턴트 자동화에서 Fibaro 컨트롤러로부터 Z-Wave 장치를 사용하려면 엔티티 ID가 필요합니다. 
+홈어시스턴트 UI에는 개발자 도구 섹션의 <img src='/images/screenshots/developer-tool-states-icon.png' alt='service developer tool icon' class="no-shadow" height="38" /> 아이콘 아래에 모든 엔티티가 있습니다. 속성에 'fibaro_id'가 포함 된 엔티티를 찾으면 왼쪽에 엔티티 ID가 있습니다.

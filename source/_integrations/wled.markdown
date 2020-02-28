@@ -1,5 +1,5 @@
 ---
-title: WLED
+title: WLED(LED 스트립)
 description: Instructions on how to integrate WLED with Home Assistant.
 logo: wled.png
 ha_category:
@@ -14,53 +14,42 @@ ha_codeowners:
   - '@frenck'
 ---
 
-[WLED](https://github.com/Aircoookie/WLED) is a fast and feature-rich
-implementation of an ESP8266/ESP32 webserver to control
-NeoPixel (WS2812B, WS2811, SK6812, APA102, and similar) LED's.
+[WLED](https://github.com/Aircoookie/WLED)는 NeoPixel (WS2812B, WS2811, SK6812, APA102 등) LED를 제어할 수 있는  빠르고 기능이 풍부한 ESP8266 / ESP32 웹서버 구현 장치입니다.
 
-## Configuration
+## 설정
 
-This integration can be configured using the integrations in the
-Home Assistant frontend.
+이 통합구성요소는 Home Assistant 프론트 엔드의 연동을 사용하여 설정할 수 있습니다.
 
-Menu: **Configuration** -> **Integrations**.
+Menu: **설정** -> **통합구성요소**.
 
-In most cases, the WLED devices will be automatically discovered by
-Home Assistant. Those automatically discovered WLED devices are listed
-on the integrations page.
+대부분의 경우 WLED 장치는 Home Assistant에서 자동으로 검색합니다. 자동 검색된 LED 장치는 통합구성요소 페이지에 표시됩니다.
 
-If for some reason (e.g., due to lack of mDNS support on your network),
-the WLED device isn't discovered, it can be added manually.
+어떤 이유로 (예 : 네트워크에서 mDNS 지원 부족으로 인해) WLED 장치가 검색되지 않으면 수동으로 추가 할 수 있습니다.
 
-Click on the `+` sign to add an integration and click on **WLED**.
-After completing the configuration flow, the WLED
-integration will be available.
+`+` 부호를 클릭하여 통합구성요소를 추가하고 **WLED**를 클릭하십시오. 설정 단계를 완료하면 WLED 통합구성요소를 사용할 수 있습니다.
 
-## Lights
+## 조명 
 
-This integration adds the WLED device as a light in Home Assistant.
-Home Assistant treats every segment of the LED strip as a separate light
-entity.
+이 통합구성요소로 WLED 장치가 Home Assistant의 조명으로 추가됩니다. 홈어시스턴트는 LED 스트립의 모든 세그먼트를 별도의 조명 개체로 취급합니다.
 
-Only native supported features of a light in Home Assistant are supported
-(which includes effects).
+Home Assistant에서 조명의 기본 지원 기능 만 지원됩니다 (효과 포함).
 
-## Sensors	
+## 센서	
 
-This integration provides sensors for the following information from WLED:	
+이 통합구성요소는 WLED의 다음 정보에 대한 센서를 제공합니다.
 
-- Estimated current.	
-- Uptime.	
-- Free memory.
+- 예상 전류.
+- 가동 시간.
+- 사용 가능한 메모리
 
-## Switches
+## 스위치
 
-The integration will create a number of switches:
+이 통합구성요소는 많은 스위치를 생성합니다 :
 
 - Nightlight.
 - Sync Receive.
 - Sync Send.
 
-## Services
+## 서비스
 
-This integration currently does not offer any additional services.
+이 통합구성요소는 현재 추가 서비스를 제공하지 않습니다.

@@ -1,5 +1,5 @@
 ---
-title: HDMI-CEC
+title: HDMI 원격조정(HDMI-CEC)
 description: Instructions on how to interact with HDMI-CEC via Home Assistant.
 ha_category:
   - Automation
@@ -8,27 +8,27 @@ ha_release: 0.23
 ha_iot_class: Local Push
 ---
 
-The `hdmi_cec` integration provides services that allow selecting the active device, powering on all devices, setting all devices to standby and creates switch entities for HDMI devices. Devices are defined in the configuration file by associating HDMI port number and a device name. Connected devices that provide further HDMI ports, such as sound-bars and AVRs are also supported. Devices are listed from the perspective of the CEC-enabled Home Assistant device. Any connected device can be listed, regardless of whether it supports CEC. Ideally the HDMI port number on your device will map correctly the CEC physical address. If it does not, use `cec-client` (part of the `libcec` package) to listen to traffic on the CEC bus and discover the correct numbers.
+`hdmi_cec` 통합구성요소는 원하는 장치를 선택하고 모든 장치의 전원을 켜고 모든 장치를 대기로 설정하고 HDMI 장치의 스위치 엔티티를 생성 할 수있는 서비스를 제공합니다. 장치는 HDMI 포트 번호와 장치 이름을 연결하여 설정 파일에 정의됩니다. 사운드 바 및 AVR과 같은 추가 HDMI 포트를 제공하는 연결된 장치도 지원됩니다. CEC 지원 Home Assistant 장치의 관점에서 장치가 나열됩니다. CEC 지원 여부에 관계없이 연결된 모든 장치를 나열 할 수 있습니다. 장치의 HDMI 포트 번호가 CEC 실제 주소를 올바르게 매핑하는 것이 이상적입니다. 그렇지 않으면 `cec-client`(`libcec`패키지의 일부)를 사용하여 CEC 버스의 트래픽을 듣고 올바른 번호를 찾으십시오.
 
-## CEC Setup
+## CEC 셋업
 
 ### Adapter
 
-The computer running Home Assistant must support CEC, and of course be connected via HDMI to a device also supporting CEC. You can purchase a [USB CEC adapter](https://www.pulse-eight.com/p/104/usb-hdmi-cec-adapter) to add support if necessary. Note that all Raspberry Pi models support CEC natively.
+Home Assistant를 실행하는 컴퓨터는 CEC를 지원해야하며 물론 CEC를 지원하는 장치에 HDMI를 통해 연결해야합니다. 필요한 경우 [USB CEC adapter](https://www.pulse-eight.com/p/104/usb-hdmi-cec-adapter)를 구입하여 지원을 추가 할 수 있습니다. 모든 Raspberry Pi 모델은 기본적으로 CEC를 지원합니다.
 
 ### libcec
 
-[libcec](https://github.com/Pulse-Eight/libcec) must be installed for this integration to work. Follow the installation instructions for your environment, provided at the link. `libcec` installs Python 3 bindings by default as a system Python module. If you are running Home Assistant in a [Python virtual environment](/docs/installation/virtualenv/), make sure it can access the system module, by either symlinking it or using the `--system-site-packages` flag.
+이 통합구성요소가 작동하려면 [libcec](https://github.com/Pulse-Eight/libcec)가 설치되어 있어야합니다. 링크에 제공된 환경에 맞는 설치 지침을 따르십시오. `libcec`는 기본적으로 파이썬 3 바인딩을 시스템 파이썬 모듈로 설치합니다. [Python virtual environment](/docs/installation/virtualenv/)에서 Home Assistant를 실행중인 경우 시스템 모듈을 심볼릭 링크로 연결하거나`--system-site-packages` 플래그를 사용하여 시스템 모듈에 액세스 할 수 있는지 확인하십시오.
 
 <div class='note'>
 
-If you are using [Hass.io](/hassio/) then just move forward to the configuration as all requirements are already fulfilled.
+[Hass.io](/hassio/)를 사용하는 경우 모든 요구 사항이 이미 충족되었으므로 설정으로 이동하십시오.
 
 </div>
 
-#### Symlinking into virtual environment
+#### 가상 환경으로의 심볼릭 링크
 
-Create a symlink to the `cec` installation including the _cec.so file. Keep in mind different installation methods will result in different locations of cec.
+_cec.so 파일을 포함하여`cec` 설치에 대한 심볼릭 링크를 만듭니다. 설치 방법이 다르면 cec의 위치가 다를 수 있습니다.
 
 ```bash
 ln -s /path/to/your/installation/of/cec.py /path/to/your/venv/lib/python*/site-packages
@@ -36,9 +36,9 @@ ln -s /path/to/your/installation/of/_cec.so /path/to/your/venv/lib/python*/site-
 
 ```
 
-##### Symlinking examples:
+##### 심볼릭 링크 예 :
 
-For the default virtual environment of a [Manual install for Raspberry Pi](/docs/installation/raspberry-pi/) the command would be as follows.
+[Manual install for Raspberry Pi](/docs/installation/raspberry-pi/) 기본 가상 환경에서 명령은 다음과 같습니다.
 
 ```bash
 ln -s /usr/local/lib/python*/dist-packages/cec.py /srv/homeassistant/lib/python*/site-packages
@@ -47,27 +47,26 @@ ln -s /usr/local/lib/python*/dist-packages/_cec.so /srv/homeassistant/lib/python
 
 <div class='note'>
 
-If after symlinking and adding `hdmi_cec:` to your configuration you are getting the following error in your logs,
-`* failed to open vchiq instance` you will also need to add the user account Home Assistant runs under, to the `video` group. To add the Home Assistant user account to the `video` group, run the following command. `$ usermod -a -G video <hass_user_account>`
+`hdmi_cec :`를 심볼릭 링크하고 설정에 추가 한 후 로그에 다음과 같은 오류가 발생합니다, `* failed to open vchiq instance` 이럴 경우 Home Assistant가 실행하는 사용자 계정을 `video` Group에 추가해야합니다. Home Assistant 사용자 계정을 `video` 그룹에 추가하려면 다음 명령을 실행하십시오. `$ usermod -a -G 비디오 <hass_user_account>`
 
 </div>
 
-## Testing your installation
+## 설치 테스트
 
-*  Login to Raspberry Pi
+*  라즈베리 파이에 로그인
 
 ```bash
 ssh pi@your_raspberry_pi_ip
 ```
 
-*  at the command line type:
+*  명령 행에서 :
 
 ```bash
 echo scan | cec-client -s -d 1
 ```
-Note: to use this command you have to install cec-utils package. In Debian based should be: ```sudo apt install cec-utils```
+Note: 이 명령을 사용하려면 cec-utils 패키지를 설치해야합니다. 데비안 기반의 경우: ``sudo apt install cec-utils''``
 
-*  This will give you the list of devices that are on the bus
+*   버스에 있는 장치 목록을 제공합니다. 
 
 ```bash
 opening a connection to the CEC adapter...
@@ -86,15 +85,15 @@ language:      ???
 
 <div class='note'>
 
-`address:` entry above this will be used to configure Home Assistant, this address is represented below as 3: BlueRay player.
+`address:` 항목은 홈어시스턴트를 설정하는데 사용되며 이 주소는 아래 3: BlueRay player 로 표시됩니다.
 
 </div>
 
-## Configuration Example
+## 설정 사례
 
-In the following example, a Pi Zero running Home Assistant is on a TV's HDMI port 1. HDMI port 2 is attached to a AV receiver. Three devices are attached to the AV receiver on HDMI ports 1 through 3.
+다음 예에서 Home Assistant를 실행하는 Pi Zero는 TV의 HDMI 포트 1에 있습니다. HDMI 포트 2는 AV수신기에 연결되어 있습니다. 3개의 장치가 HDMI 포트 1-3의 AV 수신기에 연결되어 있습니다.
 
-You can use either direct mapping name to physical address of device
+장치의 실제 주소에 직접 매핑 이름을 사용할 수 있습니다 
 
 ```yaml
 hdmi_cec:
@@ -107,7 +106,7 @@ hdmi_cec:
     BlueRay player: 3.0.0.0
 ```
 
-or port mapping tree:
+또는 포트 매핑 트리:
 
 ```yaml
 hdmi_cec:
@@ -120,16 +119,16 @@ hdmi_cec:
     3: BlueRay player
 ```
 
-Choose just one schema. Mixing both approaches is not possible.
+하나의 스키마 만 선택하십시오. 두 가지 접근법을 혼합하는 것은 불가능합니다.
 
-Another option you can use in config is `platform` which specifying of default platform of HDMI devices. "switch" and "media_player" are supported. Switch is default.
+config에서 사용할 수있는 또 다른 옵션 `platform` 은 HDMI 장치의 기본 플랫폼을 지정하는 것입니다. "switch" 및 "media_player"가 지원됩니다. 스위치가 기본값입니다.
 
 ```yaml
 hdmi_cec:
   platform: media_player
 ```
 
-Then you set individual platform for devices in customizations:
+그런 다음 사용자 정의에서 장치에 대한 개별 플랫폼을 설정하십시오. :
 
 ```yaml
 hdmi_cec:
@@ -137,7 +136,7 @@ hdmi_cec:
     hdmi_cec.hdmi_5: media_player
 ```
 
-And the last option is `host`. PyCEC supports bridging CEC commands over TCP. When you start pyCEC on machine with HDMI port (`python -m pycec`), you can then run homeassistant on another machine and connect to CEC over TCP. Specify TCP address of pyCEC server:
+그리고 마지막 옵션은 `host`입니다. PyCEC는 TCP를 통한 CEC 명령 브리징을 지원합니다. HDMI 포트 (python -m pycec)가 있는 컴퓨터에서 pyCEC를 시작하면 다른 컴퓨터에서 홈어시스턴트를 실행하고 TCP를 통해 CEC에 연결할 수 있습니다. pyCEC 서버의 TCP 주소를 지정하십시오 :
 
 ```yaml
 hdmi_cec:
@@ -145,11 +144,11 @@ hdmi_cec:
 ```
 
 
-## Services
+## 서비스
 
-### Select Device
+### 장치 선택
 
-Call the `hdmi_cec.select_device` service with the name of the device from config or entity_id or physical address"to select it, for example:
+config 또는 entity_id 또는 물리적 주소에서 장치 이름으로 `hdmi_cec.select_device` 서비스를 호출하여 선택하십시오. 예를 들면 다음과 같습니다.
 
 ```json
 {"device": "Chromecast"}
@@ -163,7 +162,7 @@ Call the `hdmi_cec.select_device` service with the name of the device from confi
 {"device": "1.1.0.0"}
 ```
 
-So an Automation action using the example above would look something like this.
+따라서 위 예제를 사용한 자동화 작업은 다음과 같습니다.
 
 ```yaml
 action:
@@ -174,79 +173,79 @@ action:
 
 ### Power On
 
-Call the `hdmi_cec.power_on` service (no arguments) to power on any devices that support this function.
+이 기능을 지원하는 모든 장치의 전원을 켜려면 `hdmi_cec.power_on` 서비스 (인수 없음)를 호출하십시오.
 
-An Automation action using the example above would look something like this.
+위 예제를 사용한 자동화 작업은 다음과 같습니다.
 
 ```yaml
 action:
   service: hdmi_cec.power_on
 ```
 
-### Standby
+### 대기 모드
 
-Call the `hdmi_cec.standby` service (no arguments) to place in standby any devices that support this function.
+이 기능을 지원하는 모든 장치를 대기 모드로 두려면`hdmi_cec.standby` 서비스 (인수 없음)를 호출하십시오.
 
-An Automation action using the example above would look something like this.
+위 예제를 사용한 자동화 작업은 다음과 같습니다.
 
 ```yaml
 action:
   service: hdmi_cec.standby
 ```
 
-### Change volume level
+### 볼륨 조절
 
-Call the `hdmi_cec.volume` service with one of following commands:
+다음 명령 중 하나를 사용하여 `hdmi_cec.volume` 서비스를 호출하십시오.
 
-#### Volume up
-Increase volume three times:
+#### 볼륨 늘리기
+볼륨을 세 번 늘리십시오. :
 
 ```json
 {"up": 3}
 ```
 
-Keep increasing volume until release is called:
+릴리스가 호출 될 때까지 볼륨을 계속 늘리십시오. :
 
 ```json
 {"up": "press"}
 ```
 
-Stop increasing volume:
+볼륨 증가를 중지하십시오. :
 
 ```json
 {"up": "release"}
 ```
 
-#### Volume down
-Decrease volume three times:
+#### 볼륨 줄이기
+음량을 세 번 줄이십시오. :
 
 ```json
 {"down": 3}
 ```
 
-Keep decreasing volume until release is called:
+릴리스가 호출 될 때까지 볼륨을 줄이십시오.:
 
 ```json
 {"down": "press"}
 ```
 
-Stop decreasing volume:
+볼륨 감소를 중지하십시오 :
 
 ```json
 {"down": "release"}
 ```
 
-#### Volume mute
-Toggle mute:
+#### 음소거
+음소거 전환 :
 
 ```json
 {"mute": ""}
 ```
 
-value is ignored.
+값은 무시됩니다.
 
 
-## Useful References
+## 유용한 참고 자료
 
 * [CEC overview](http://wiki.kwikwai.com/index.php?title=The_HDMI-CEC_bus)
 * [CEC-o-matic](http://www.cec-o-matic.com/)

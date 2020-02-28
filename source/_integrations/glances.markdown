@@ -1,5 +1,5 @@
 ---
-title: Glances
+title: Glances 시스템 모니터
 description: Instructions on how to integrate Glances sensors into Home Assistant.
 logo: glances.png
 ha_category:
@@ -11,6 +11,12 @@ ha_codeowners:
   - '@fabaff'
   - '@engrbm87'
 ---
+
+glances 통합구성요소는 기본적으로 [glance Addon](https://github.com/hassio-addons/addon-glances)이 지원됨으로 홈어시스턴트의 Supervisor -> DASHBOARD에서 `glance add-on` 을 찾아 설치합니다. 
+
+
+------------------------------------------------------------------------------------------------------------------
+차후 번역 예정
 
 The `glances` integration allows you to monitor the system information provided by the [Glances](https://github.com/nicolargo/glances) API. This enables one to track remote host and display their stats in Home Assistant.
 

@@ -1,5 +1,5 @@
 ---
-title: Xiaomi Mijia BLE 온습도 센서
+title: 샤오미 미시아 온습도 센서
 description: MiTemp BLE 온습도 센서를 Home Assistant와 통합하는 방법.
 logo: xiaomi.png
 ha_category:

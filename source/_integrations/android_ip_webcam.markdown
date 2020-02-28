@@ -1,5 +1,5 @@
 ---
-title: Android IP 웹캠
+title: 안드로이드 IP Webcam
 description: Connect Android devices as an IP webcam to Home Assistant
 logo: android_ip_webcam.png
 ha_category:

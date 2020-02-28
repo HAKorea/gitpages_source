@@ -1,5 +1,5 @@
 ---
-title: Tuya
+title: 투야(tuya)
 description: Instructions on how to setup the Tuya hub within Home Assistant.
 logo: tuya.png
 ha_category:

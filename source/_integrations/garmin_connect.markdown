@@ -11,22 +11,21 @@ ha_codeowners:
 ha_config_flow: true
 ---
 
-The Garmin Connect sensor allows you to expose data from [Garmin Connect](https://connect.garmin.com) to Home Assistant.
+Garmin Connect 센서를 사용하면 [Garmin Connect](https://connect.garmin.com) 에서 Home Assistant로 데이터를 노출 할 수 있습니다 .
 
-## Configuration
+## 설정
 
-To add Garmin Connect to your installation, go to Configuration >> Integrations in the UI and enable the Garmin Connect integration by entering your credentials.
+Garmin Connect를 설치에 추가하려면 UI에서 설정 >> 통합구성요소로 이동한 후 사용자정보를 입력하여 Garmin Connect 연동을 활성화하십시오.
 
-After successful login a standard set of sensors are enabled.
-You can enable more if needed by using the Integrations page.
+로그인에 성공하면 표준 센서 세트가 활성화됩니다. 필요한 경우 통합 페이지를 사용하여 더 많은 기능을 사용할 수 있습니다.
 
-Please be aware that Garmin Connect has very low rate limits, max. once every ~10 minutes.
+Garmin Connect는 최대 속도 제한이 매우 낮습니다. 10분이하 마다  1회.
 
-## Available Sensors
+## 사용가능한 센서
 
-Not every sensor holds meaningful values, it depends on the tracking device you use, and the apps you have connected.
+모든 센서에 의미있는 값이 있는 것은 아니며 사용하는 추적 장치 및 연결된 앱에 따라 다릅니다.
 
-Enabled by default:
+기본 활성 센서:
 
 ```text
 Total Steps
@@ -67,7 +66,7 @@ Lowest SPO2
 Latest SPO2
 ```
 
-Disabled by default:
+기본 비활성 센서:
 
 ```text
 Remaining KiloCalories

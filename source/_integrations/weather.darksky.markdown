@@ -1,5 +1,5 @@
 ---
-title: "Dark Sky"
+title: "다크 스카이(Dark Sky)"
 description: "Instructions on how to integrate Dark Sky within Home Assistant."
 featured: true
 logo: dark_sky.png

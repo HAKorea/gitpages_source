@@ -1,5 +1,5 @@
 ---
-title: DOODS - Distributed Outside Object Detection Service
+title: DOODS - 분산형 이미지처리 서비스
 description: Detect and recognize objects with DOODS.
 ha_category:
   - Image Processing
@@ -7,16 +7,17 @@ ha_iot_class: Local Polling
 ha_release: '0.100'
 ---
 
-The `doods` image processing platform allows you to detect and recognize objects in a camera image using [DOODS](https://github.com/snowzach/doods/). The state of the entity is the number of objects detected, and recognized objects are listed in the `summary` attribute along with quantity. The `matches` attribute provides the confidence `score` for recognition and the bounding `box` of the object for each detection category.
+`doods` 이미지 처리 플랫폼을 사용하면 [DOODS](https://github.com/snowzach/doods/)를 사용하여 카메라 이미지에서 물체를 감지하고 인식 할 수 있습니다. 개체의 상태는 감지된 개체의 수이며 인식된 개체는 수량과 함께 `summary` 속성에 나열됩니다. 
+`matches` 속성은 인식에 대한 신뢰도 `score`와 각 탐지 범주에 대한 객체의 경계 `box`를 제공합니다.
 
-## Setup
+## 셋업
 
-You need to have DOODS running somewhere. It's easiest to run as a docker container and deployment is described on docker hub 
 [DOODS - Docker](https://hub.docker.com/r/snowzach/doods)
+DOODS를 어딘가에서 실행해야 합니다. 도커 컨테이너로 실행하는 것이 가장 쉽고 배포는 도커 허브 [DOODS - Docker](https://hub.docker.com/r/snowzach/doods) 에 설명되어 있습니다.
 
-## Configuration
+## 설정
 
-The configuration loosely follows the tensorflow configuration. To enable this platform in your installation, add the following to your `configuration.yaml` file:
+설정은 텐서플로우(Tensorflow) 설정을 비슷하게 따릅니다. 설치시 이 플랫폼을 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오
 
 ```yaml
 # Example configuration.yaml entry
@@ -30,109 +31,109 @@ image_processing:
 
 {% configuration %}
 source:
-  description: The list of image sources.
+  description: 이미지 소스 목록.
   required: true
   type: map
   keys:
     entity_id:
-      description: A camera entity id to get picture from.
+      description: 사진을 가져올 카메라 엔티티 ID.
       required: true
       type: string
     name:
-      description: This parameter allows you to override the name of your `image_processing` entity.
+      description: "`image_processing` 엔티티 이름을 대체할 수 있습니다."
       required: false
       type: string
 url:
-    description: The URL of the DOODS server
+    description: DOODS 서버의 URL
     required: true
     type: string
 timeout:
-    description: Timeout for requests (in seconds)
+    description: 요청 시간 초과 (초)
     required: false
     type: integer
     default: 90
 detector:
-    description: The DOODS detector to use
+    description: 사용할 DOODS 감지기
     required: true
     type: string
 confidence:
-    description: The default confidence for any detected objects where not explicitly set
+    description: 명시적으로 설정되지 않은 감지된 객체에 대한 기본 신뢰도
     required: false
     type: float
 area:
-    description: Global detection area. Objects in this box will be reported. Top of image is 0, bottom is 1.  Same left to right.
+    description: 글로벌 감지 영역. 이 상자의 개체가 보고됩니다. 이미지의 상단은 0, 하단은 1입니다. 왼쪽에서 오른쪽으로 동일합니다.
     required: false
     type: map
     keys:
       top:
-        description: Top line defined as % from top of image.
+        description: 이미지 상단에서 %로 정의된 상단 라인.
         required: false
         type: float
         default: 0
       left:
-        description: Left line defined as % from left of image.
+        description: 이미지 좌측에서 %로 정의된 좌측 라인.
         required: false
         type: float
         default: 0
       bottom:
-        description: Bottom line defined as % from top of image.
+        description: 이미지 상단에서 %로 정의된 하단 라인
         required: false
         type: float
         default: 1
       right:
-        description: Right line defined as % from left of image.
+        description: 이미지 오른쪽에서 %로 정의된 우측 라인
         required: false
         type: float
         default: 1
       covers:
-        description: If true the detection must be fully in this box. If false any part of the detection in the box will trigger. 
+        description: True이면이 상자(box)에 탐지가 완전히 완료되어야합니다. False인 경우 상자의 감지 부분이 트리거됩니다.
         required: false
         type: boolean
         default: true
 file_out:
-    description: A [template](/docs/configuration/templating/#processing-incoming-data) for the integration to save processed images including bounding boxes. `camera_entity` is available as the `entity_id` string of the triggered source camera.
+    description: 바운딩 박스(bounding box) 를 포함하여 처리된 이미지를 저장할 연동을 위한 [템플릿](/docs/configuration/templating/#processing-incoming-data). `camera_entity`는 트리거 된 소스 카메라의 `entity_id` 문자열로 사용 가능합니다.
     required: false
     type: list
 labels:
-    description: Information about the selected labels model.
+    description: 선택된 레이블 모델에 대한 정보.
     required: false
     type: map
     keys:
       name:
-        description: The label of the object to select for detection.
+        description: 탐지를 위해 선택할 개체의 레이블.
         required: true
         type: string
       confidence:
-       description: The minimum confidence for the selected label
+       description: 선택한 라벨에 대한 최소 신뢰
        required: false
        type: float
       area:
-        description: Custom detection area. Only objects fully in this box will be reported. Top of image is 0, bottom is 1.  Same left to right.
+        description: Custom detection area. Only objects fully in this box will be reported. Top of image is 0, bottom is 1.  Same left to right. 사용자정의 감지 영역. 이 상자(box)에 완전하게 있는 개체만 보고됩니다. 이미지의 상단은 0, 하단은 1입니다. 왼쪽에서 오른쪽으로 동일합니다. 
         required: false
         type: map
         keys:
           top:
-            description: Top line defined as % from top of image.
+            description: Top line defined as % from top of image. 이미지 상단에서 %로 정의된 상단 라인
             required: false
             type: float
             default: 0
           left:
-            description: Left line defined as % from left of image.
+            description: Left line defined as % from left of image. 이미지 좌측에서 %로 정의된 좌측 라인
             required: false
             type: float
             default: 0
           bottom:
-            description: Bottom line defined as % from top of image.
+            description: Bottom line defined as % from top of image. 이미지 상단에서 %로 정의된 하단 라인
             required: false
             type: float
             default: 1
           right:
-            description: Right line defined as % from left of image.
+            description: Right line defined as % from left of image. 이미지 좌측에서 %로 정의된 우측 라인
             required: false
             type: float
             default: 1
           covers:
-            description: If true the detection must be fully in this box. If false any part of the detection in the box will trigger. 
+            description: True이면 상자(box)에 탐지가 완전히 완료되어야합니다. False 인 경우 상자의 감지 부분이 트리거됩니다.
             required: false
             type: boolean
             default: true
@@ -176,9 +177,9 @@ image_processing:
       - truck
 ```
 
-## Optimizing resources
+## 자원의 최적화 (Optimizing resources)
 
-[Image processing components](/components/image_processing/) process the image from a camera at a fixed period given by the `scan_interval`. This leads to excessive processing if the image on the camera hasn't changed, as the default `scan_interval` is 10 seconds. You can override this by adding to your config `scan_interval: 10000` (setting the interval to 10,000 seconds), and then call the `image_processing.scan` service when you actually want to perform processing.
+[Image processing components](/components/image_processing/)는 `scan_interval`에 의해 지정된 기간 동안 카메라에서 이미지를 처리합니다. 기본 `scan_interval` 이 10 초이므로 카메라의 이미지가 변경되지 않은 경우 과도한 처리가 발생합니다. 설정에 `scan_interval: 10000` (간격을 10,000초로 세팅)을 추가한 다음 실제로 처리를 수행하려는 경우 `image_processing.scan` 서비스를 호출하여 이를 무시할 수 있습니다.
 
 ```yaml
 # Example advanced configuration.yaml entry

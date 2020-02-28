@@ -1,5 +1,5 @@
 ---
-title: Bayesian
+title: 확률추론(Bayesian)
 description: Instructions on how to integrate threshold Bayesian sensors into Home Assistant.
 logo: home-assistant.png
 ha_category:
@@ -11,7 +11,7 @@ ha_quality_scale: internal
 
 `Bayesian` 이진 센서 플랫폼은 여러 센서의 상태를 관찰하고 [Bayes' rule](https://en.wikipedia.org/wiki/Bayes%27_theorem)을 사용하여 이벤트가 발생한 상황을 예측합니다 관찰 된 센서. 추정 사후 확률이 `probability_threshold` 보다 높으면 센서가 `on` 이고, 그렇지 않으면 `off` 입니다.
 
-이를 통해 요리, 샤워, 침대에서, 아침 루틴 시작 등과 같이 쉽게 관찰 할 수없는 복잡한 이벤트를 감지 할 수 있습니다. 또한 직접 관찰 할 수 있지만 센서가 존재하지 않는 등 신뢰할 수 없는 이벤트에 대한 신뢰도를 높이는 데 사용할 수도 있습니다.
+이를 통해 요리, 샤워, 침대에서, 아침 루틴 시작 등과 같이 쉽게 관찰할 수 없는 복잡한 이벤트를 감지 할 수 있습니다. 또한 직접 관찰할 수 있지만 센서가 존재하지 않는 등 신뢰할 수 없는 이벤트에 대한 신뢰도를 높이는 데 사용할 수도 있습니다.
 
 ## 설정 
 
@@ -38,7 +38,7 @@ prior:
   required: true
   type: float
 probability_threshold:
-  description: 센서가 `on` 으로 트리거해야 할 확률.
+  description: 센서가 `on` 으로 트리거해야할 확률.
   required: false
   type: float
   default: 0.5

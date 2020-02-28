@@ -1,5 +1,5 @@
 ---
-title: Proximity
+title: 근접(Proximity)
 description: Instructions on how to setup Proximity monitoring within Home Assistant.
 logo: home-assistant.png
 ha_category:

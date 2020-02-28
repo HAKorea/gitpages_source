@@ -1,5 +1,5 @@
 ---
-title: 바다 조류 예측 (World Tides)
+title: 세계 조류
 description: Instructions on how to add Tides information to Home Assistant.
 logo: worldtidesinfo.png
 ha_category:

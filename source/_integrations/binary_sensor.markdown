@@ -1,5 +1,5 @@
 ---
-title: Binary Sensor
+title: 이진 센서
 description: Instructions on how-to setup binary sensors with Home Assistant.
 logo: home-assistant.png
 ha_category:

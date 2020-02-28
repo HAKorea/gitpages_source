@@ -1,5 +1,5 @@
 ---
-title: Times of the Day
+title: 특정시간(Times of the Day)
 description: Instructions on how to integrate Times of the Day binary sensors within Home Assistant.
 ha_category:
   - Binary Sensor
@@ -9,7 +9,7 @@ logo: home-assistant.png
 ha_quality_scale: internal
 ---
 
-`tod` 플랫폼은 현재 시간이 정의 된 시간 범위 내에 있는지 확인하여 그 값을 얻을 바이너리 센서를 지원합니다.
+`tod` 플랫폼은 현재 시간이 정의된 시간 범위 내에 있는지 확인하여 그 값을 얻을 바이너리 센서를 지원합니다.
 
 시간 범위는 절대 현지 시간으로 제공되거나 위치의 태양 위치를 기반으로 계산 된 `sunrise` 또는 `sunset` 키워드를 사용하여 제공 할 수 있습니다.
 

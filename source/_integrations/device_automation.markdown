@@ -1,5 +1,5 @@
 ---
-title: Device Automation
+title: 장치 자동화
 logo: home-assistant.png
 ha_category:
   - Automation

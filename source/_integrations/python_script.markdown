@@ -1,5 +1,5 @@
 ---
-title: Python Scripts
+title: 파이선 스크립트
 description: Instructions on how to setup Python scripts within Home Assistant.
 logo: home-assistant.png
 ha_category:

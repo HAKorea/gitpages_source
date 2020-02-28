@@ -1,5 +1,5 @@
 ---
-title: "Light Group"
+title: "조명 그룹"
 description: "Instructions for how to setup light groups within Home Assistant."
 ha_category:
   - Light

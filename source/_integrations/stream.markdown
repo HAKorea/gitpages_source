@@ -1,5 +1,5 @@
 ---
-title: Stream
+title: 스트림(Stream)
 description: Instructions on how to integrate live streams within Home Assistant.
 logo: home-assistant.png
 ha_category:

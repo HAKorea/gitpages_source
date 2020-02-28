@@ -1,5 +1,5 @@
 ---
-title: History
+title: 히스토리(History)
 description: Instructions on how to enable history support for Home Assistant.
 logo: home-assistant.png
 ha_category:

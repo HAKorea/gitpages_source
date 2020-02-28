@@ -1,5 +1,5 @@
 ---
-title: 일반 온도조절기 (Generic Thermostat)
+title: 일반 온도조절기
 description: Turn Home Assistant into a thermostat
 logo: home-assistant.png
 ha_category:

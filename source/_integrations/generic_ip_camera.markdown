@@ -1,5 +1,5 @@
 ---
-title: "일반(generic) IP Camera"
+title: "일반 IP Camera"
 description: "Instructions on how to integrate IP cameras within Home Assistant."
 ha_category:
   - Camera

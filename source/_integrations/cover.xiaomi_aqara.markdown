@@ -1,5 +1,5 @@
 ---
-title: "Xiaomi Cover"
+title: "샤오미 개폐장치"
 description: "Instructions on how to setup the Xiaomi cover within Home Assistant."
 logo: xiaomi.png
 ha_category:

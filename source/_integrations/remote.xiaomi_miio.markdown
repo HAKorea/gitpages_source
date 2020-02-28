@@ -1,5 +1,5 @@
 ---
-title: "Xiaomi IR Remote"
+title: "샤오미 IR Remote"
 description: "Instructions for how to integrate the Xiaomi IR Remote within Home Assistant."
 logo: xiaomi.png
 ha_category:

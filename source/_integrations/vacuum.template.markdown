@@ -1,5 +1,5 @@
 ---
-title: "Template Vacuum"
+title: "템플릿 Vacuum"
 description: "Instructions how to setup Template vacuums within Home Assistant."
 ha_category: Vacuum
 ha_release: 0.96

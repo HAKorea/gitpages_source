@@ -1,5 +1,5 @@
 ---
-title: Alert
+title: 경보
 description: Instructions on how to setup automatic alerts within Home Assistant.
 logo: home-assistant.png
 ha_category:

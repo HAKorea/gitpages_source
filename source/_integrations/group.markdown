@@ -1,5 +1,5 @@
 ---
-title: Group
+title: 그룹(group)
 description: Instructions on how to setup groups within Home Assistant.
 logo: home-assistant.png
 ha_category:

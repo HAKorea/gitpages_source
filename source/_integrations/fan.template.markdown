@@ -1,5 +1,5 @@
 ---
-title: "Fan 탬플릿 (Template Fan)"
+title: "탬플릿 팬(Template Fan)"
 description: "Instructions how to setup the Template fans within Home Assistant."
 ha_category:
   - Fan

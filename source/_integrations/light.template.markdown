@@ -1,5 +1,5 @@
 ---
-title: "Template Light"
+title: "템플릿 조명"
 description: "Instructions on how to integrate Template Lights into Home Assistant."
 ha_category:
   - Light

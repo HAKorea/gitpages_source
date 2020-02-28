@@ -1,5 +1,5 @@
 ---
-title: Home Assistant Cloud
+title: 홈어시스턴트 클라우드
 description: Enable the Home Assistant Cloud integration.
 logo: nabu-casa.svg
 ha_release: '0.60'

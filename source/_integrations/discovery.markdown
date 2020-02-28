@@ -1,5 +1,5 @@
 ---
-title: Discovery
+title: 장치발견(Discovery)
 description: Instructions on how to setup Home Assistant to discover new devices.
 logo: home-assistant.png
 ha_category:

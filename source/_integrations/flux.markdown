@@ -1,5 +1,5 @@
 ---
-title: Flux (건강을 위한 조명)
+title: 생체리듬조명(Flux)
 description: Instructions on how to have switches call command line commands.
 ha_category:
   - Automation

@@ -1,5 +1,5 @@
 ---
-title: Recorder
+title: 레코더(recoder)
 description: Instructions on how to configure the data recorder for Home Assistant.
 logo: home-assistant.png
 ha_category:

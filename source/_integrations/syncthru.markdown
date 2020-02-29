@@ -1,5 +1,5 @@
 ---
-title: Samsung SyncThru Printer
+title: 삼성 SyncThru 프린터
 description: Instructions on how to integrate a Samsung printer providing SyncThru within Home Assistant.
 logo: samsung.png
 ha_category:
@@ -10,12 +10,11 @@ ha_codeowners:
   - '@nielstron'
 ---
 
-The Samsung SyncThru Printer platform allows you to read current data from your local Samsung printer.
+Samsung SyncThru 프린터 플랫폼을 사용하면 로컬 Samsung 프린터에서 현재 데이터를 읽을 수 있습니다.
 
-It usually provides information about the device's state, the left amount of ink or toner and the state of paper trays.
-The platform automatically monitors every supported part.
+일반적으로 장치 상태, 잉크 잔량 또는 토너 량 및 용지함 상태에 대한 정보를 제공합니다. 플랫폼은 지원되는 모든 부품을 자동으로 모니터링합니다.
 
-If you wish not to include certain monitored values specify the values that you would like to see in the front-end via the `monitored_conditions` setting.
+모니터링되는 특정 값을 포함하지 않으려면 `monitored_conditions` 설정을 통해 프런트 엔드에 표시할 값을 지정하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -27,24 +26,24 @@ sensor:
 
 {% configuration %}
   resource:
-    description: The address for connecting to the printer. Equal to the SyncThru Webservice address.
+    description: 프린터 연결을위한 주소. SyncThru 웹 서비스 주소와 같습니다.
     required: true
     default: false
     type: string
   name:
-    description: A user specified name for the printer. Defaults to "Samsung Printer" and the friendly name will be the name of the printer model.
+    description: 프린터의 사용자 지정 이름. 기본값은 "Samsung Printer"이며 친숙한 이름은 프린터 모델의 이름입니다.
     required: false
     default: Samsung Printer
     type: string
 {% endconfiguration %}
 
-The following information is displayed in separate sensors, if it is available:
+다음 정보는 사용 가능한 경우 별도의 센서에 표시됩니다 : 
 
- - Black, cyan, magenta and yellow toner fill level
- - Black, cyan, magenta and yellow drum state
- - First to fifth paper input tray state
- - First to sixth paper output tray state
+ - 검정, 시안, 마젠타 및 노랑 토너 충전량
+ - 블랙, 시안, 마젠타 및 옐로우 드럼 상태
+ - 첫 번째 ~ 다섯 번째 입력 용지함 상태
+ - 첫 번째 ~ 여섯 번째 용지 출력 트레이 상태
 
 <div class="note warning">
-Note that this component or parts thereof may not work if the language of your printer is not configured to be English.
+프린터의 언어가 영어로 설정되어 있지 않으면 이 구성요소나 그 일부가 작동하지 않을 수 있습니다.
 </div>

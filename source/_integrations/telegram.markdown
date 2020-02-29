@@ -1,5 +1,5 @@
 ---
-title: Telegram
+title: 텔레그램
 description: Instructions on how to add Telegram notifications to Home Assistant.
 logo: telegram.png
 ha_category:
@@ -7,21 +7,21 @@ ha_category:
 ha_release: 0.7.5
 ---
 
-The `telegram` platform uses [Telegram](https://web.telegram.org) to deliver notifications from Home Assistant to your Android device, your Windows phone, or your iOS device.
+`telegram` 플랫폼은 [Telegram](https://web.telegram.org)을 사용하여 Home Assistant에서 Android 장치, Windows 전화 또는 iOS 장치로 알림을 전달합니다.
 
-## Setup
+## 셋업
 
-The requirements are:
+요구 사항은 다음과 같습니다.
 
-- You need a [Telegram bot](https://core.telegram.org/bots). Please follow those [instructions](https://core.telegram.org/bots#6-botfather) to create one and get the token for your bot. Keep in mind that bots are not allowed to contact users. You need to make the first contact with your user. Meaning that you need to send a message to the bot from your user.
-- You need to configure a [Telegram bot in Home Assistant](/integrations/telegram_chatbot) and define there your API key and the allowed chat ids to interact with.
-- The `chat_id` of an allowed user. 
+- [Telegram bot](https://core.telegram.org/bots)이 필요합니다. 다음 [instructions](https://core.telegram.org/bots#6-botfather)에 따라 하나를 생성하고 봇에 대한 토큰을 받으십시오.
+- [Telegram bot in Home Assistant](/integrations/telegram_chatbot)을 설정하고 상호작용할 수있는 API 키 및 허용된 chat ID를 정의해야합니다. 
+- 허용된 사용자의 `chat_id`
 
-**Method 1:** You can get your `chat_id` by sending any message to the [GetIDs bot](https://t.me/getidsbot).
+**방법 1 :** [GetIDs bot](https://t.me/getidsbot)에 메시지를 보내면 `chat_id`를 얻을 수 있습니다.
 
-**Method 2:** To retrieve your `chat_id` you can visit `https://api.telegram.org/botYOUR_API_TOKEN/getUpdates` or to use `$ curl -X GET https://api.telegram.org/botYOUR_API_TOKEN/getUpdates` **after** you have sent the bot a message. Replace `YOUR_API_TOKEN` with your actual token.
+**방법 2 :** `chat_id`를 검색하려면 `https://api.telegram.org/botYOUR_API_TOKEN/getUpdates`를 방문하거나 봇에게 메시지를 **보낸 후** `$ curl -X GET https://api.telegram.org/botYOUR_API_TOKEN/getUpdates`를 사용하십시오. `YOUR_API_TOKEN`을 실제 토큰으로 바꾸십시오.
 
-The result set will include your chat ID as `id` in the `chat` section:
+결과 집합에는 `chat` 섹션에 chat ID가 `id` 로 포함됩니다.
 
 ```json
 {
@@ -50,7 +50,7 @@ The result set will include your chat ID as `id` in the `chat` section:
 }
 ```
 
-**Method 3:** Another way to get your chat ID directly is described below. Start your Python interpreter from the command-line:
+**방법 3 :** chat ID를 직접받는 다른 방법은 아래에 설명되어 있습니다. 명령행에서 Python 인터프리터를 시작하십시오.
 
 ```shell
 $ python3
@@ -62,12 +62,12 @@ $ python3
 ```
 
 <div class='note'>
-If you want to add new chat IDs then you will need to disable the active configuration to actually see the result with the IDs, otherwise you may only get empty results array.
+새 chat ID를 추가하려면 active configuaration을 비활성화하여 실제 ID 결과를 확인해야합니다, 그렇지 않으면 빈 결과 배열 만 표시될 수 있습니다.
 </div>
 
-## Configuration
+## 설정 
 
-To enable Telegram notifications in your installation, add the following to your `configuration.yaml` file:
+설치에서 텔레그램 알림을 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry for the Telegram Bot
@@ -86,25 +86,23 @@ notify:
     chat_id: CHAT_ID_2
 ```
 
-Refer to the platforms mentioned in the
-[Telegram chatbot page](/integrations/telegram_chatbot/) for
-`telegram_bot` configuration.
+`telegram_bot` 설정에 대해서는 [Telegram chatbot page](/integrations/telegram_chatbot/)에 언급된 플랫폼을 참조하십시오.
 
 {% configuration %}
 name:
-  description: Setting the optional parameter `name` allows multiple notifiers to be created. The notifier will bind to the service `notify.NOTIFIER_NAME`.
+  description: 선택적 매개 변수 `name`을 설정하면 여러 알리미를 만들 수 있습니다. 알리미는 'notify.NOTIFIER_NAME' 서비스에 바인딩합니다.
   required: false
   default: notify
   type: string
 chat_id:
-  description: The chat ID of your user.
+  description: 사용자의 chat ID.
   required: true
   type: integer
 {% endconfiguration %}
 
-To use notifications, please see the [getting started with automation page](/getting-started/automation/).
+알림을 사용하려면 [getting started with automation page](/getting-started/automation/)를 참조하십시오.
 
-### Text message
+### 텍스트 메시지
 
 ```yaml
 ...
@@ -121,24 +119,24 @@ action:
 
 {% configuration %}
 title:
-  description: Will be composed as '%title\n%message'.
+  description: "'%title\n%message'로 구성됩니다."
   required: false
   type: string
 message:
-  description: Message text.
+  description: 메시지 텍스트.
   required: true
   type: string
 keyboard:
-  description: List of rows of commands, comma-separated, to make a custom keyboard.
+  description: 사용자 정의 키보드를 만들기위한 쉼표로 구분된 명령행 목록
   required: false
   type: list
 inline_keyboard:
-  description: List of rows of commands, comma-separated, to make a custom inline keyboard with buttons with associated callback data.
+  description: 콜백 데이터가 연결된 버튼이있는 사용자 지정 인라인 키보드를 만들기 위해 쉼표로 구분된 명령행 목록.
   required: false
   type: list
 {% endconfiguration %}
 
-### Photo support
+### 사진 지원
 
 ```yaml
 ...
@@ -160,48 +158,48 @@ action:
 
 {% configuration %}
 url:
-  description: A remote path to an image. Either this or the `file` configuration option is required.
+  description: 이미지의 원격 경로, 혹은 `file` 설정 옵션이 필요합니다.
   required: true
   type: string
 file:
-  description: A local path to an image. Either this or the `url` configuration option is required.
+  description: 이미지의 로컬 경로, 혹은 `url` 설정 옵션이 필요합니다.
   required: true
   type: string
 caption:
-  description: The title of the image.
+  description: 이미지의 제목.
   required: false
   type: string
 username:
-  description: Username for a URL which require HTTP authentication.
+  description: HTTP 인증이 필요한 URL의 사용자 이름.
   required: false
   type: string
 password:
-  description: Password for a URL which require HTTP authentication.
+  description: HTTP 인증이 필요한 URL의 비밀번호.
   required: false
   type: string
 authentication:
-  description: Set to 'digest' to use HTTP digest authentication.
+  description: HTTP 요약 인증을 사용하려면 'digest'로 설정.
   required: false
   default: basic
   type: string
 verify_ssl:
-  description: Set to false to skip the validation of the server's SSL certificate.
+  description: 서버의 SSL 인증서 유효성 검증을 건너뛰려면 false로 설정.
   required: false
   default: true
   type: boolean
 keyboard:
-  description: List of rows of commands, comma-separated, to make a custom keyboard.
+  description: 사용자 정의 키보드를 만들기 위한 쉼표로 구분된 명령행 목록.
   required: false
   type: list
 inline_keyboard:
-  description: List of rows of commands, comma-separated, to make a custom inline keyboard with buttons with associated callback data.
+  description: 콜백 데이터가 연결된 버튼이 있는 사용자 지정 인라인 키보드를 만들기 위해 쉼표로 구분된 명령행 목록.
   required: false
   type: list
 {% endconfiguration %}
 
 <div class='note'>
 
-Since Home Assistant version 0.48 you have to [whitelist the source folder](/docs/configuration/basic/) of the file you want to include in the notification.
+Home Assistant 버전 0.48부터는 알림에 포함할 파일의 [whitelist the source folder](/docs/configuration/basic/)를 추가해야합니다.
 
 ```yaml
 configuration.yaml
@@ -214,7 +212,7 @@ homeassistant:
 
 </div>
 
-### Video support
+### 비디오 지원
 
 ```yaml
 ...
@@ -236,46 +234,46 @@ action:
 
 {% configuration %}
 url:
-  description: A remote path to an video. Either this or the `file` configuration option is required.
+  description: 비디오의 원격 경로, 혹은 `file` 설정 옵션이 필요합니다.
   required: true
   type: string
 file:
-  description: A local path to an video. Either this or the `url` configuration option is required.
+  description: 비디오의 로컬 경로, 혹은 `url` 설정 옵션이 필요합니다.
   required: true
   type: string
 caption:
-  description: The title of the video.
+  description: 비디오의 제목.
   required: false
   type: string
 username:
-  description: Username for a URL which require HTTP authentication.
+  description: HTTP 인증이 필요한 URL의 사용자 이름.
   required: false
   type: string
 password:
-  description: Password for a URL which require HTTP authentication.
+  description: HTTP 인증이 필요한 URL의 비밀번호.
   required: false
   type: string
 authentication:
-  description: Set to 'digest' to use HTTP digest authentication.
+  description: HTTP 요약 인증을 사용하려면 'digest'로 설정.
   required: false
   default: basic
   type: string
 verify_ssl:
-  description: Set to false to skip the validation of the server's SSL certificate.
+  description: 서버의 SSL 인증서 유효성 검증을 건너뛰려면 false로 설정
   required: false
   default: true
   type: boolean
 keyboard:
-  description: List of rows of commands, comma-separated, to make a custom keyboard.
+  description: 사용자 정의 키보드를 만들기위한 쉼표로 구분된 명령행 목록.
   required: false
   type: list
 inline_keyboard:
-  description: List of rows of commands, comma-separated, to make a custom inline keyboard with buttons with associated callback data.
+  description: 콜백 데이터가 연결된 버튼이 있는 사용자 지정 인라인 키보드를 만들기 위해 쉼표로 구분된 명령행 목록.
   required: false
   type: list
 {% endconfiguration %}
 
-### Document support
+### 문서 지원
 
 ```yaml
 ...
@@ -295,46 +293,46 @@ action:
 
 {% configuration %}
 url:
-  description: A remote path to a document. Either this or the `file` configuration option is required.
+  description: 문서의 원격 경로, 혹은 `file` 설정 옵션이 필요합니다. 
   required: true
   type: string
 file:
-  description: A local path to a document. Either this or the `url` configuration option is required.
+  description: 문서의 로컬 경로, 혹은 `url` 설정 옵션이 필요합니다.
   required: true
   type: string
 caption:
-  description: The title of the document.
+  description: 문서의 제목.
   required: false
   type: string
 username:
-  description: Username for a URL which require HTTP authentication.
+  description: HTTP 인증이 필요한 URL의 사용자 이름.
   required: false
   type: string
 password:
-  description: Password for a URL which require HTTP authentication.
+  description: HTTP 인증이 필요한 URL의 비밀번호.
   required: false
   type: string
 authentication:
-  description: Set to 'digest' to use HTTP digest authentication.
+  description: HTTP 요약 인증을 사용하려면 'digest'로 설정.
   required: false
   default: basic
   type: string
 verify_ssl:
-  description: Set to false to skip the validation of the server's SSL certificate.
+  description: 서버의 SSL 인증서 유효성 검증을 건너 뛰려면 false로 설정
   required: false
   default: true
   type: boolean
 keyboard:
-  description: List of rows of commands, comma-separated, to make a custom keyboard.
+  description: 사용자 정의 키보드를 만들기 위한 쉼표로 구분된 명령행 목록.
   required: false
   type: list
 inline_keyboard:
-  description: List of rows of commands, comma-separated, to make a custom inline keyboard with buttons with associated callback data.
+  description: 콜백 데이터가 연결된 버튼이 있는 사용자 지정 인라인 키보드를 만들기 위해 쉼표로 구분된 명령행 목록.
   required: false
   type: list
 {% endconfiguration %}
 
-### Location support
+### 위치 지원
 
 ```yaml
 ...
@@ -352,19 +350,19 @@ action:
 
 {% configuration %}
 latitude:
-  description: The latitude to send.
+  description: 보낼 위도.
   required: true
   type: float
 longitude:
-  description: The longitude to send.
+  description: 보낼 경도.
   required: true
   type: float
 keyboard:
-  description: List of rows of commands, comma-separated, to make a custom keyboard.
+  description: 사용자 정의 키보드를 만들기위한 쉼표로 구분된 명령행 목록
   required: false
   type: list
 inline_keyboard:
-  description: List of rows of commands, comma-separated, to make a custom inline keyboard with buttons with associated callback data.
+  description: 콜백 데이터가 연결된 버튼이 있는 사용자 지정 인라인 키보드를 만들기 위해 쉼표로 구분된 명령행 목록.
   required: false
   type: list
 {% endconfiguration %}

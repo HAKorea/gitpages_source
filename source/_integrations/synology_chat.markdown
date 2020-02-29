@@ -1,5 +1,5 @@
 ---
-title: Synology Chat
+title: 시놀로지 Chat
 description: Instructions on how to add a Synology Chat Bot notifications to Home Assistant.
 ha_release: 0.65
 logo: synology.png
@@ -7,11 +7,11 @@ ha_category:
   - Notifications
 ---
 
-The `synology_chat` notification platform allows you to deliver notifications to your [Synology Chat](https://www.synology.com/en-us/dsm/feature/chat) install as a Synology Chat bot.
+`synology_chat` 알림 플랫폼을 사용하면 [Synology Chat](https://www.synology.com/en-us/dsm/feature/chat)를 설치해서 Synology Chat 봇으로 알림을 전달할 수 있습니다.
 
-To configure a Synology Chat bot, first you must create a [Synology Chat Integration Incoming Webhook](https://www.synology.com/en-us/knowledgebase/DSM/tutorial/Collaboration/How_to_configure_webhooks_and_slash_commands_in_Chat_Integration#t2.1). After this is complete, you will have a Webhook URL. This is what will be required in the Home Assistant configuration.
+Synology Chat 봇을 설정하려면 먼저 [Synology Chat Integration Incoming Webhook](https://www.synology.com/en-us/knowledgebase/DSM/tutorial/Collaboration/How_to_configure_webhooks_and_slash_commands_in_Chat_Integration#t2.1) 을 만들어야합니다. 이 작업이 완료되면 Webhook URL이 생성됩니다. 이상의 내용이 홈어시스턴트 설정에 필요한 것들입니다.
 
-To enable the Synology Chat notification in your installation, add the following to your `configuration.yaml` file:
+설치시 Synology Chat 알림을 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오 : 
 
 ```yaml
 # Example configuration.yaml entry
@@ -23,23 +23,23 @@ notify:
 
 {% configuration %}
 name:
-  description: "Setting the  parameter `name` allows multiple notifiers to be created. The notifier will bind to the service `notify.NOTIFIER_NAME`."
+  description: "`name` 매개 변수를 설정하면 여러 알리미를 작성할 수 있습니다. 알리미는 서비스 `notify.NOTIFIER_NAME`에 바인딩합니다."
   required: true
   type: string
 verify_ssl:
-  description: If SSL/TLS verification for HTTPS resources needs to be turned off (for self-signed certs, etc.).
+  description: HTTPS resources에 대한 SSL/TLS 검증(verification)을 해제해야 하는 경우 (자체 서명 된 인증서 등).
   required: false
   type: boolean
   default: true
 resource:
-  description: The incoming webhook URL.
+  description: 수신 웹 후크 URL
   required: true
   type: string
 {% endconfiguration %}
 
-To use notifications, please see the [getting started with automation page](/getting-started/automation/).
+알림을 사용하려면 [getting started with automation page](/getting-started/automation/)를 참조하십시오. 
 
-A full example of a service call:
+Service Call의 예 :
 
 ```json
 {"message": "This is a test message", 

@@ -12,6 +12,7 @@ ha_codeowners:
 
 The `switchbot` switch platform allows you to control Switchbot [devices](https://www.switch-bot.com/).
 
+
 ## Manual Configuration
 
 To enable it, add the following lines to your `configuration.yaml`:

@@ -8,11 +8,11 @@ ha_iot_class: Local Polling
 ha_release: 0.89
 ---
 
-The `sony_projector` switch platform allows you to control the state of SDCP compatible network-connected projectors from [Sony](https://www.sony.com/).
+`sony_projector` 스위치 플랫폼을 사용하면 [Sony](https://www.sony.com/)에서 SDCP 호환 네트워크 연결 프로젝터의 상태를 제어할 수 있습니다.
 
-## Configuration
+## 설정
 
-To use your Sony Projector in your installation, add the following to your `configuration.yaml` file:
+Sony 프로젝터를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -24,11 +24,11 @@ switch:
 
 {% configuration %}
 host:
-  description: The hostname or IP address of the projector.
+  description: 프로젝터의 호스트 이름 또는 IP 주소
   required: true
   type: string
 name:
-  description: The name to use when displaying this switch.
+  description: 이 스위치를 표시 할 때 사용할 이름
   required: false
   type: string
 {% endconfiguration %}

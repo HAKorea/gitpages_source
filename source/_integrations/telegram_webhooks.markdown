@@ -51,7 +51,7 @@ proxy_url:
   required: false
   type: string
 proxy_params:
-  description: "프록시 뒤에서 작업할 경우 프록시 설정 매개 변수 (예 : 사용자 이름, 비밀번호 등)"
+  description: "프록시 뒤에서 작업할 경우 프록시 설정 매개 변수 (예: `username`, `password` 등)"
   required: false
   type: string
 url:

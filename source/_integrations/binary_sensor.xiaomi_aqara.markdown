@@ -1,5 +1,5 @@
 ---
-title: "Xiaomi Binary Sensor"
+title: "샤오미 이진 센서"
 description: "Instructions on how to setup the Xiaomi binary sensors within Home Assistant."
 logo: xiaomi.png
 ha_category:
@@ -8,11 +8,11 @@ ha_release: "0.50"
 ha_iot_class: Local Push
 ---
 
-The `xiaomi aqara` binary sensor platform allows you to get data from your [Xiaomi](https://www.mi.com/en/) binary sensors.
+`xiaomi aqara` 이진 센서 플랫폼을 사용하면 [Xiaomi](https://www.mi.com/en/) 이진 센서에서 데이터를 얻을 수 있습니다.
 
-The requirement is that you have setup the [`xiaomi aqara` integration](/integrations/xiaomi_aqara/).
+요구 사항은 [`xiaomi aqara` 통합구성요소](/integrations/xiaomi_aqara/)를 설정해야합니다.
 
-### Type of sensors supported
+### 지원되는 센서 유형
 
 | Name | Zigbee entity | Model no. | States | Event | Event key | Event values |
 | ---- | ------------- | --------- | ------ | ----- | --------- | ------------ |
@@ -33,7 +33,7 @@ The requirement is that you have setup the [`xiaomi aqara` integration](/integra
 | Cube | cube | MFKZQ01LM | off (always) | `xiaomi_aqara.cube_action` | `action_type`, `action_value` (rotate) | `flip90`, `flip180`, `move`, `tap_twice`, `shake_air`, `swing`, `alert`, `free_fall`, `rotate` (degrees at action_value) |
 | Vibration Sensor | vibration | DJT11LM | off (always) | `xiaomi_aqara.movement` | `movement_type` | `vibrate`, `tilt`, `free_fall` |
 
-### Automation examples
+### 자동화 샘플
 
 #### Motion
 
@@ -152,9 +152,9 @@ The requirement is that you have setup the [`xiaomi aqara` integration](/integra
         message: 'Gas with a density of {% raw %}{{ state_attr('binary_sensor.natgas_sensor_158dxxxxxxxxxx', 'density') }}{% endraw %} detected.'
 ```
 
-#### Xiaomi Wireless Button
+#### 샤오미 무선 버튼
 
-As indicated in the table on top of this page there are 3 versions of the button. For the round shaped button the available events are `single`, `double`, `hold`, `long_click_press` and `long_click_release`. Aqara branded buttons are square shaped. Model WXKG11LM only supports `single` and `double` events. WXKG12LM supports `single`, `double`, `long_click_press` and `shake` events. For the Aqara versions the delay between two clicks to generate a double click must be larger than with the round button. Clicking too quickly generates a single click event.
+이 페이지 상단의 표에 표시된 것처럼 3 가지 버전의 버튼이 있습니다. 원형 버튼의 경우 사용 가능한 이벤트는 `single`, `double`, `hold`, `long_click_press`, `long_click_release` 입니다. Aqara 브랜드 버튼은 사각형입니다. 모델 WXKG11LM은 `single`, `double` 이벤트만 지원합니다. WXKG12LM은 `single`, `double`, `long_click_press`, `shake` 이벤트를 지원합니다. Aqara 버전의 경우 더블 클릭을 생성하기 위해 두 번의 클릭 사이의 지연 시간이 라운드 버튼보다 커야합니다. 너무 빨리 클릭하면 단일 클릭 이벤트가 생성됩니다.
 
 ```yaml
 - alias: Toggle dining light on single press
@@ -192,9 +192,9 @@ As indicated in the table on top of this page there are 3 versions of the button
       ringtone_vol: 8
 ```
 
-#### Xiaomi Cube
+#### 샤오미 큐브
 
-Available events are `flip90`, `flip180`, `move`, `tap_twice`, `shake_air`, `swing`, `alert`, `free_fall` and `rotate`. The integration stores the last action as the attribute `last_action`.
+사용 가능한 이벤트는 `flip90`, `flip180`, `move`, `tap_twice`, `shake_air`, `swing`, `alert`, `free_fall`, `rotate`. 통합구성요소는 마지막 액션을 속성 `last_action`으로 저장합니다 
 
 ```yaml
 - alias: Cube event flip90
@@ -259,9 +259,9 @@ Available events are `flip90`, `flip180`, `move`, `tap_twice`, `shake_air`, `swi
         color_name: "blue"
 ```
 
-#### Aqara Wireless Switch
+#### 아카라 무선 스위치
 
-The Aqara Wireless Switch is available as single-key and double-key version. Each key behaves like the Wireless Button limited to the click event `single`. The double key version adds a third device called `binary_sensor.wall_switch_both_158xxxxxxxxx12` which reports a click event called `both` if both keys are pressed.
+Aqara 무선 스위치는 단일 키 및 이중 키 버전으로 제공됩니다. 각 키는 클릭 이벤트 `single` 로 제한되는 무선 버튼처럼 작동합니다. 이중 키 버전은 `binary_sensor.wall_switch_both_158xxxxxxxxx12`라는 세 번째 장치를 추가하며 두 키를 모두 누르면 `both` 라는 클릭 이벤트를 보고합니다.
 
 ```yaml
 - alias: Decrease brightness of the gateway light
@@ -320,9 +320,9 @@ The Aqara Wireless Switch is available as single-key and double-key version. Eac
     entity_id: light.gateway_light_34xxxxxxxx13
 ```
 
-#### Vibration Sensor
+#### 진동 센서
 
-This automation toggles the living room lamp on vibration/tilt.
+이 자동화는 거실 램프를 진동 / 기울기에서 토글합니다.
 
 ```yaml
 - alias: Turn on Living Room Lamp on vibration

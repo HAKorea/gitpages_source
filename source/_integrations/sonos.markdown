@@ -1,5 +1,5 @@
 ---
-title: Sonos
+title: Sonos(소노스)
 description: Instructions on how to integrate Sonos devices into Home Assistant.
 logo: sonos.png
 ha_category:
@@ -10,85 +10,85 @@ ha_iot_class: Local Push
 ha_config_flow: true
 ---
 
-The `sonos` integration allows you to control your [Sonos](https://www.sonos.com) wireless speakers from Home Assistant. It also works with IKEA Symfonisk speakers.
+`sonos` 통합구성요소를 통해 Home Assistant에서 [Sonos](https://www.sonos.com) 무선 스피커를 제어 할 수 있습니다. IKEA Symfonisk 스피커와도 작동합니다.
 
-You can configure the Sonos integration by going to the integrations page inside the config panel.
+설정 패널 내부의 통합구성요소 페이지로 이동하여 Sonos 통합구성요소를 설정할 수 있습니다.
 
-## Services
+## 서비스
 
-The Sonos integration makes various custom services available.
+Sonos 통합은 다양한 맞춤형 서비스를 제공합니다.
 
-### Service `sonos.snapshot`
+### `sonos.snapshot` 서비스
 
-Take a snapshot of what is currently playing on one or more speakers. This service, and the following one, are useful if you want to play a doorbell or notification sound and resume playback afterwards. If no `entity_id` is provided, all speakers are snapshotted.
+하나 이상의 스피커에서 현재 재생중인 내용의 스냅샷을 만듭니다. 이 서비스와 다음 서비스는 초인종 또는 알림음을 재생하고 나중에 재생을 다시 시작하려는 경우에 유용합니다. `entity_id` 가 제공되지 않으면 모든 스피커가 스냅샷됩니다.
 
 <div class='note'>
 
-The queue is not snapshotted and must be left untouched until the restore. Using `media_player.play_media` is safe and can be used to play a notification sound, including [TTS](/integrations/tts/) announcements.
+큐(queue)는 스냅샷되지 않으며 복원할 때까지 그대로 유지해야합니다. `media_player.play_media`를 사용하면 안전하며 [TTS](/integrations/tts/) 알림을 포함한 알림 사운드를 재생하는 데 사용할 수 있습니다.
 
 </div>
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
-| `entity_id` | yes | The speakers to snapshot.
-| `with_group` | yes | Should we also snapshot the group layout and the state of other speakers in the group, defaults to true.
+| `entity_id` | yes | 스냅샷 할 스피커입니다..
+| `with_group` | yes | 그룹 레이아웃과 그룹에 있는 다른 스피커의 상태도 스냅샷으로 설정하면 기본값은 true입니다.
 
-### Service `sonos.restore`
+### `sonos.restore` 서비스
 
-Restore a previously taken snapshot of one or more speakers. If no `entity_id` is provided, all speakers are restored.
+하나 이상의 스피커의 이전에 찍은 스냅샷을 복원합니다. `entity_id`가 제공되지 않으면 모든 스피커가 복원됩니다.
 
 <div class='note'>
 
-The playing queue is not snapshotted. Using `sonos.restore` on a speaker that has replaced its queue will restore the playing position, but in the new queue!
+재생 대기열(queue)이 스냅샷되지 않습니다. 대기열을 교체한 스피커에서 `sonos.restore`를 사용하면 재생 위치가 복원되지만 새 대기열에서 복원됩니다! 
 
 </div>
 
 <div class='note'>
-A cloud queue cannot be restarted. This includes queues started from within Spotify and queues controlled by Amazon Alexa.
+클라우드 대기열을 다시 시작할 수 없습니다. 여기에는 Spotify 내에서 시작된 대기열과 Amazon Alexa가 제어하는 ​​대기열이 포함됩니다.
 </div>
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
-| `entity_id` | yes | String or list of `entity_id`s that should have their snapshot restored.
-| `with_group` | yes | Should we also restore the group layout and the state of other speakers in the group, defaults to true.
+| `entity_id` | yes | 스냅샷을 복원해야하는 문자열 또는 `entity_id` 목록.
+| `with_group` | yes | 그룹 레이아웃과 그룹에 있는 다른 스피커의 상태도 복원하면 기본값은 true입니다.
 
-### Service `sonos.join`
+### `sonos.join` 서비스
 
-Group players together under a single coordinator. This will make a new group or join to an existing group.
+단일 코디네이터 아래에 플레이어를 그룹화하십시오. 새 그룹을 만들거나 기존 그룹에 가입합니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
-| `master` | no | A single `entity_id` that will become/stay the coordinator speaker.
+| `master` | no | A single `entity_id` that will become/stay the coordinator speaker. 
 | `entity_id` | yes | String or list of `entity_id`s to join to the master.
 
-### Service `sonos.unjoin`
+### `sonos.unjoin` 서비스
 
-Remove one or more speakers from their group of speakers. If no `entity_id` is provided, all speakers are unjoined.
+스피커 그룹에서 하나 이상의 스피커를 제거하십시오. `entity_id`가 제공되지 않으면 모든 스피커가 연결 해제됩니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
 | `entity_id` | yes | String or list of `entity_id`s to separate from their coordinator speaker.
 
-### Service `sonos.set_sleep_timer`
+### `sonos.set_sleep_timer` 서비스
 
-Sets a timer that will turn off a speaker by tapering the volume down to 0 after a certain amount of time. Protip: If you set the sleep_time value to 0, then the speaker will immediately start tapering the volume down.
+일정 시간이 지나면 볼륨을 0으로 줄임으로써 스피커를 끄는 타이머를 설정합니다. 팁 : sleep_time 값을 0으로 설정하면 스피커가 즉시 볼륨을 낮추기 시작합니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
 | `entity_id` | no | String or list of `entity_id`s that will have their timers set.
 | `sleep_time` | no | Integer number of seconds that the speaker should wait until it starts tapering. Cannot exceed 86399 (one day).
 
-### Service `sonos.clear_sleep_timer`
+### `sonos.clear_sleep_timer` 서비스
 
-Clear the sleep timer on a speaker, if one is set.
+스피커에서 슬립 타이머가 설정되어 있으면 지워버립니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
 | `entity_id` | no | String or list of `entity_id`s that will have their timers cleared. Must be a coordinator speaker.
 
-### Service `sonos.update_alarm`
+### `sonos.update_alarm` 서비스
 
-Update an existing Sonos alarm.
+기존 Sonos 알람을 업데이트하십시오.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
@@ -99,11 +99,11 @@ Update an existing Sonos alarm.
 | `enabled` | yes | Boolean for whether or not to enable this alarm.
 | `include_linked_zones` | yes | Boolean that defines if the alarm also plays on grouped players.
 
-### Service `sonos.set_option`
+### `sonos.set_option` 서비스
 
-Set Sonos speaker options.
+Sonos 스피커 옵션을 설정하십시오.
 
-Night Sound and Speech Enhancement modes are only supported when playing from the TV source of products like Sonos Playbar and Sonos Beam. Other speaker types will ignore these options.
+Night Sound 및 Speech Enhancement 모드는 Sonos Playbar 및 Sonos Beam과 같은 제품의 TV 소스에서 재생할 때만 지원됩니다. 다른 스피커 유형은 이 옵션을 무시합니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
@@ -111,22 +111,23 @@ Night Sound and Speech Enhancement modes are only supported when playing from th
 | `night_sound` | yes | Boolean to control Night Sound mode.
 | `speech_enhance` | yes | Boolean to control Speech Enhancement mode.
 
-### Service `sonos.play_queue`
+### `sonos.play_queue` 서비스
 
-Starts playing the Sonos queue.
+Sonos 대기열 재생을 시작합니다.
 
-Force start playing the queue, allows switching from another stream (such as radio) to playing the queue.
+대기열 재생을 강제로 시작하면 다른 스트림 (예 : 라디오)에서 대기열 재생으로 전환 할 수 있습니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
 | `entity_id` | no | String or list of `entity_id`s that will start playing. It must be the coordinator if targeting a group.
 | `queue_position` | yes | Position of the song in the queue to start playing from, starts at 0.
 
-## Advanced use
+## 고급 사용
 
-For advanced uses, there are some manual configuration options available. These are usually only needed if you have a complex network setup where Home Assistant and Sonos are not on the same subnet.
+고급 사용을 위해 사용 가능한 일부 수동 설정 옵션이 있습니다. 이들은 일반적으로 Home Assistant와 Sonos가 동일한 서브넷에 있지 않은 복잡한 네트워크 설정이있는 경우에만 필요합니다.
 
-You can disable auto-discovery by specifying the Sonos IP addresses:
+Sonos IP 주소를 지정하여 자동 검색을 비활성화 할 수 있습니다. :
+
 
 ```yaml
 # Example configuration.yaml entry with manually specified Sonos IP addresses
@@ -138,7 +139,7 @@ sonos:
       - 192.0.2.27
 ```
 
-If your Home Assistant server has multiple IP addresses, you can provide the IP address that should be used for Sonos auto-discovery. This is rarely needed since all addresses should be tried by default.
+Home Assistant 서버에 여러 IP 주소가 있는 경우 Sonos 자동 검색에 사용해야 하는 IP 주소를 제공 할 수 있습니다. 기본적으로 모든 주소를 시도해야 하므로 이는 거의 필요하지 않습니다.
 
 ```yaml
 # Example configuration.yaml entry using Sonos discovery on a specific interface
@@ -147,7 +148,8 @@ sonos:
     interface_addr: 192.0.2.1
 ```
 
-The Sonos speakers will attempt to connect back to Home Assistant to deliver change events (using TCP port 1400). You can change the IP address that Home Assistant advertises to Sonos speakers. This can help in NAT scenarios such as when _not_ using the Docker option `--net=host`:
+Sonos 스피커는 (TCP 포트 1400을 사용하여) 변경 이벤트를 전달하기 위해 홈어시스턴트에 다시 연결을 시도합니다. Docker 옵션 `--net=host`를 사용하는 _not_ 와 같은 NAT 시나리오에서 도움이 될 수 있습니다.
+
 ```yaml
 # Example configuration.yaml entry modifying the advertised host address
 sonos:

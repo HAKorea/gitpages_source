@@ -1,5 +1,5 @@
 ---
-title: SynologyDSM
+title: 시놀로지DSM
 description: Instructions on how to integrate the SynologyDSM sensor within Home Assistant.
 logo: synology.png
 ha_category:
@@ -8,11 +8,11 @@ ha_release: 0.32
 ha_iot_class: Local Polling
 ---
 
-The `synologydsm` sensor platform allows getting various statistics from your [Synology NAS](https://www.synology.com).
+`synologydsm` 센서 플랫폼을 사용하면 [Synology NAS](https://www.synology.com)에서 다양한 통계를 얻을 수 있습니다.
 
-## Configuration
+## 설정
 
-To use the `synologydsm` sensor in your installation, add the following to your `configuration.yaml` file:
+`synologydsm` 센서를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -29,123 +29,123 @@ sensor:
 
 {% configuration %}
 name:
-  description: The name to use in the frontend for your Synology device.
+  description: Synology 장치의 프런트 엔드에서 사용할 이름.
   required: false
   default: Synology DSM
   type: string
 host:
-  description: The IP address of the Synology NAS to monitor.
+  description: 모니터링 할 Synology NAS의 IP 주소.
   required: true
   type: string
 port:
-  description: The port number on which the Synology NAS is reachable.
+  description: Synology NAS에 연결할 수 있는 포트 번호.
   required: false
   default: 5001
   type: integer
 username:
-  description: An user to connect to the Synology NAS (a separate account is advised, see the Separate User Configuration section below for details).
+  description: Synology NAS에 연결하는 사용자 (별도의 계정이 권장됩니다. 자세한 내용은 아래의 별도 사용자 구성 섹션을 참조하십시오).
   required: true
   type: string
 password:
-  description: The password of the user to connect to the Synology NAS.
+  description: Synology NAS에 연결하기위한 사용자의 비밀번호.
   required: true
   type: string
 ssl:
-  description: Determine if HTTPS should be used.
+  description: HTTPS를 사용해야하는지 결정.
   required: false
   default: true
   type: boolean
 volumes:
-  description: "Array of volumes to monitor. Defaults to all volumes. Replace any spaces in the volume name with underscores, e.g., `volume 1` with `volume_1`."
+  description: "모니터링할 볼륨의 배열입니다. 모든 볼륨이 기본값입니다. 볼륨 이름의 공백을 밑줄로 바꿉니다 (예: `volume 1`을 `volume_1`로 바꿉니다.)"
   required: false
   type: list
 disks:
-  description: "Array of disks to monitor. Defaults to all disks. Use only disk names like `sda`, `sdb`, etc."
+  description: "모니터링할 디스크 배열. 모든 디스크가 기본값입니다. `sda`,`sdb` 등과 같은 디스크 이름 만 사용하십시오."
   required: false
   type: list
 monitored_conditions:
-  description: Defines a [template](/topics/templating/) to extract a value from the payload.
+  description: 페이로드에서 값을 추출할 [template](/topics/templating/)을 정의합니다.
   required: true
   type: list
   keys:
     cpu_other_load:
-      description: Displays unspecified load in percentage.
+      description: 지정되지 않은 부하를 백분율로 표시.
     cpu_user_load:
-      description: Displays user load in percentage.
+      description: 사용자부하를 백분율로 표시.
     cpu_system_load:
-      description: Displays system load in percentage.
+      description: 시스템부하를 백분율로 표시.
     cpu_total_load:
-      description: Displays combined load in percentage.
+      description: 모든 부하를 백분율로 표시.
     cpu_1min_load:
-      description: Displays maximum load in past minute.
+      description: 지난 1 분의 최대로드를 표시.
     cpu_5min_load:
-      description: Displays maximum load in past 5 minutes.
+      description: 지난 5 분 동안 최대로드를 표시.
     cpu_15min_load:
-      description: Displays maximum load in past 15 minutes.
+      description: 지난 15 분 동안 최대로드를 표시.
     memory_real_usage:
-      description: Displays percentage of memory used.
+      description: 사용된 메모리의 백분율을 표시.
     memory_size:
-      description: Displays total size of memory in MB.
+      description: 총 메모리 크기 (MB)를 표시.
     memory_cached:
-      description: Displays total size of cache in MB.
+      description: 총 캐시 크기 (MB)를 표시.
     memory_available_swap:
-      description: Displays total size of available swap in MB.
+      description: 사용 가능한 스왑의 총 크기를 MB 단위로 표시.
     memory_available_real:
-      description: Displays total size of memory used (based on real memory) in MB.
+      description: 사용 된 총 메모리 크기 (실제 메모리를 기준으로 함)를 MB 단위로 표시.
     memory_total_swap:
-      description: Displays total size of actual memory in MB.
+      description: 실제 메모리의 총 크기를 MB 단위로 표시
     memory_total_real:
-      description: Displays total size of real memory in MB.
+      description: 실제 메모리의 총 크기 (MB)를 표시.
     network_up:
-      description: Displays total up speed of network interfaces (combines all interfaces).
+      description: 네트워크 인터페이스의 전체 속도를 표시 (모든 인터페이스를 결합).
     network_down:
-      description: Displays total down speed of network interfaces (combines all interfaces).
+      description: 네트워크 인터페이스의 전체 다운 속도를 표시 (모든 인터페이스를 결합).
     disk_name:
-      description: Displays the name of the hard disk (creates a new entry for each disk).
+      description: 하드 디스크의 이름을 표시 (각 디스크에 대한 새 항목을 생성).
     disk_device:
-      description: Displays the path of the hard disk (creates a new entry for each disk).
+      description: 하드 디스크의 경로를 표시 (각 디스크에 대한 새 항목을 생성).
     disk_smart_status:
-      description: Displays the S.M.A.R.T status of the hard disk (creates a new entry for each disk).
+      description: 하드 디스크의 S.M.A.R.T 상태를 표시 (각 디스크에 대한 새 항목 생성).
     disk_status:
-      description: Displays the status of the hard disk (creates a new entry for each disk).
+      description: 하드 디스크의 상태를 표시 (각 디스크에 대한 새 항목 생성).
     disk_exceed_bad_sector_thr:
-      description: Displays true / false to indicate if the hard disk exceeded the maximum bad sector threshold (creates a new entry for each disk).
+      description: 하드 디스크가 최대 불량 섹터 임계 값을 초과했는지 표시하기 위해 true / false를 표시합니다 (각 디스크에 대한 새 항목 생성).
     disk_below_remain_life_thr:
-      description: Displays true / false to indicate if the hard disk dropped below the remain life threshold (creates a new entry for each disk).
+      description: 하드 디스크가 남은 수명 임계 값 아래로 떨어졌는지 표시하기 위해 true / false를 표시 (각 디스크에 대한 새 항목 생성).
     disk_temp:
-      description: Displays the temperature of the hard disk (creates a new entry for each disk, uses the unit_system to display in C or F).
+      description: 하드 디스크의 온도를 표시합니다. (각 디스크에 대해 새 항목을 작성하고 unit_system을 사용하여 C 또는 F 로 표시).
     volume_status:
-      description: Displays the status of the volume (creates a new entry for each volume).
+      description: 볼륨 상태를 표시 (각 볼륨에 대한 새 항목을 만듭니다).
     volume_device_type:
-      description: Displays the volume type (RAID, etc) (creates a new entry for each volume).
+      description: 볼륨 유형 (RAID 등)을 표시 (각 볼륨에 대한 새 항목을 만듭니다).
     volume_size_total:
-      description: Displays the total size of the volume in GB's (creates a new entry for each volume).
+      description: 볼륨의 전체 크기를 GB 단위로 표시 (각 볼륨에 대한 새 항목을 만듭니다).
     volume_size_used:
-      description: Displays the used space on this volume in GB's (creates a new entry for each volume).
+      description: 볼륨의 사용된 공간을 GB 단위로 표시 (각 볼륨에 대한 새 항목을 만듭니다).
     volume_percentage_used:
-      description: Displays the percentage used for this volume in GB's (creates a new entry for each volume).
+      description: 볼륨에 사용 된 백분율을 GB 단위로 표시 (각 볼륨에 대한 새 항목을 만듭니다).
     volume_disk_temp_avg:
-      description: Displays the average temperature of all disks in the volume (creates a new entry for each volume).
+      description: 볼륨에있는 모든 디스크의 평균 온도를 표시 (각 볼륨에 대한 새 항목을 만듭니다).
     volume_disk_temp_max:
-      description: Displays the maximum temperature of all disks in the volume (creates a new entry for each volume).
+      description: 볼륨에있는 모든 디스크의 최대 온도를 표시 (각 볼륨에 대한 새 항목을 만듭니다).
 {% endconfiguration %}
 
 <div class='note'>
-After booting Home Assistant it can take up to 15 minutes for the sensors to show up. This is due to the fact that sensors are created after Home Assistant has fully been initialized.
+Home Assistant를 부팅한 후 센서가 표시되는 데 최대 15 분이 걸릴 수 있습니다. 이는 홈어시스턴트가 완전히 초기화 된 후 센서가 생성되기 때문입니다.
 </div>
 
 <div class='note warning'>
-This sensor will wake up your Synology NAS if it's in hibernation mode.
+이 센서는 최대 절전 모드 인 경우 Synology NAS를 깨웁니다.
 </div>
 
 <div class='note warning'>
 
-  If you set `ssl:` to `False`, you *have* to also explicitly set `port:` to **5000**.
+  `ssl :`를 `False`로 설정하면, *port* 도 명시적으로 **5000**으로 설정해야합니다. 
 
 </div>
 
-## Separate User Configuration
+## 별도의 사용자 설정
 
-Due to the nature of the Synology DSM API it is required to grant the user admin rights. This is related to the fact that utilization information is stored in the core module.
+Synology DSM API의 특성상 사용자에게 관리자 권한을 부여해야합니다. 이는 활용 정보가 핵심 모듈에 저장되어 있다는 사실과 관련이 있습니다.
 
-When creating the user it is possible to deny access to all locations and applications. By doing this the user will not be able to login to the web interface or view any of the files on the Synology NAS. It is still able to read the utilization and storage information using the API.
+사용자를 만들 때 모든 위치 및 응용 프로그램에 대한 액세스를 거부 할 수 있습니다. 이렇게하면 사용자는 웹 인터페이스에 로그인하거나 Synology NAS의 파일을 볼 수 없습니다. 여전히 API를 사용하여 사용률 및 스토리지 정보를 읽을 수 있습니다.

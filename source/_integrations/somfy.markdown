@@ -1,5 +1,5 @@
 ---
-title: Somfy Open API
+title: 솜피 Open API
 description: Instructions on how to set up the Somfy hub within Home Assistant.
 logo: somfy.png
 ha_category:
@@ -11,21 +11,21 @@ ha_codeowners:
   - '@tetienne'
 ---
 
-The Somfy integration will allow users to integrate their Somfy devices into Home Assistant using the [official API](https://developer.somfy.com/somfy-open-api/apis), unlike the [tahoma](/integrations/tahoma/) component.
+Somfy 통합구성요소를 통해 사용자는 [tahoma](/integrations/tahoma/) 구성 요소와 달리 [official API](https://developer.somfy.com/somfy-open-api/apis)를 사용하여 Somfy 장치를 Home Assistant에 연동 할 수 있습니다. 
 
-## Installation
+## 설치
 
-Somfy is leveraging the new account linking service. This means that to set up Somfy, you only need to go to the integrations page and click on add new integration.
+Somfy는 새로운 계정 연결 서비스를 활용하고 있습니다. 즉, Somfy를 설정하려면 통합구성요소 페이지로 이동하여 새 통합구성요소 추가를 클릭하기만 하면됩니다.
 
 <div class='videoWrapper'>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/y0SECWUVR-M" frameborder="0" allowfullscreen></iframe>
 </div>
 
-## Installation with own developer account
+## 자체 개발자 계정으로 설치
 
-It is possible to create your own developer account and configure Somfy via that.
+자신의 개발자 계정을 만들고 이를 통해 Somfy를 설정 할 수 있습니다.
 
-### Setting up developer account
+### 개발자 계정 설정
 
 1. Visit [https://developer.somfy.com](https://developer.somfy.com).
 2. Log in using your Somfy credentials.
@@ -40,7 +40,7 @@ It is possible to create your own developer account and configure Somfy via that
 5. Once Home Assistant restarted, go to Configuration>Integrations.
 6. Select the Somfy integration.
 
-### Configuration
+### 설정
 
 ```yaml
 # Example configuration.yaml entry
@@ -60,9 +60,9 @@ client_secret:
   type: string
 {% endconfiguration %}
 
-### Potential duplicate with the Tahoma integration
+### TAHOMA 통합구성요소와 잠재적 중복 (Potential duplicate with the Tahoma integration)
 
-If you use the [tahoma](/integrations/tahoma) component, you will have to exclude the covers added by this one. Otherwise, they will be added twice.
+[tahoma](/integrations/tahoma) 구성 요소를 사용하는 경우 이 구성 요소에 의해 추가된 Cover를 제외해야합니다. 그렇지 않으면 두 번 추가됩니다.
 
 ```yaml
 # Example configuration.yaml entry

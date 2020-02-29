@@ -1,5 +1,5 @@
 ---
-title: Synology
+title: 시놀로지
 description: Instructions on how to integrate Synology Surveillance Station cameras within Home Assistant.
 logo: synology.png
 ha_category:
@@ -8,18 +8,18 @@ ha_release: 0.31
 ha_iot_class: Local Polling
 ---
 
-The `synology` camera platform allows you to watch the live streams of your [Synology](https://www.synology.com/) Surveillance Station based IP cameras in Home Assistant.
+`synology` 카메라 플랫폼을 사용하면 Home Assistant에서 [Synology](https://www.synology.com/) Surveillance Station 기반 IP 카메라의 라이브 스트림을 볼 수 있습니다.
 
 <div class='note'>
 
-Synology has disabled the livestreaming API and the integration is currently broken if you are using Surveillance Station version 8.2.3-5828.
-There is an unsupported preview fix available. (8.2.3-5829) - Instructions can be found [here](https://www.vcloudinfo.com/2019/04/how-to-manually-upgrade-your-synology-surveillance-system-firmware.html) for updating manually.
+Synology는 라이브 스트리밍 API를 비활성화했으며 Surveillance Station 버전 8.2.3-5828을 사용하는 경우 연동이 현재 중단되었습니다.  
+지원되지 않는 미리보기 수정 프로그램이 있습니다. (8.2.3-5829) - 수동업데이트 지침은 [here](https://www.vcloudinfo.com/2019/04/how-to-manually-upgrade-your-synology-surveillance-system-firmware.html)에서 찾을 수 있습니다.
 
 </div>
 
-## Configuration
+## 설정
 
-To enable your Surveillance Station cameras in your installation, add the following to your `configuration.yaml` file:
+Surveillance Station 카메라를 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Minimum configuration.yaml entry
@@ -32,41 +32,41 @@ camera:
 
 {% configuration %}
 name:
-  description: A name for this Synology camera.
+  description: Synology 카메라의 이름.
   required: false
   type: string
   default: Synology Camera
 url:
-  description: The URL to your Synology, including port.
+  description: 포트를 포함한 Synology의 URL.
   required: true
   type: string
 username:
-  description: The username for accessing Surveillance Station.
+  description: Surveillance Station에 액세스하기 위한 사용자 이름.
   required: true
   type: string
 password:
-  description: The password for accessing Surveillance Station.
+  description: Surveillance Station에 액세스하기 위한 비밀번호.
   required: true
   type: string
 timeout:
-  description: The timeout in seconds used when connecting to the Surveillance Station.
+  description: Surveillance Station에 연결할 때 사용되는 시간 초과 (초).
   required: false
   type: integer
   default: 5
 whitelist:
-  description: A list of which cameras you want to add, the names must be the same as in Surveillance Station. If omitted all cameras are added.
+  description: 추가 할 카메라의 목록이며 이름은 Surveillance Station과 동일해야합니다. 생략하면 모든 카메라가 추가됩니다..
   required: false
   type: list
 verify_ssl:
-  description: Verify SSL/TLS certificate for HTTPS request.
+  description: HTTPS 요청에 대한 SSL/TLS 인증서를 확인.
   required: false
   type: boolean
   default: true
 {% endconfiguration %}
 
-## Full example
+## 전쳬 사례
 
-A full sample configuration for the `synology` camera platform is shown below:
+`synology` 카메라 플랫폼의 전체 샘플 설정은 다음과 같습니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -81,6 +81,6 @@ camera:
 
 <div class='note'>
 
-Most users will need to set `verify_ssl` to false unless they have installed a valid SSL/TLS certificate in place of the built in self-signed certificate.
+내장된 자체 서명 인증서 대신 유효한 SSL/TLS 인증서를 설치하지 않은 경우 대부분의 사용자는 `verify_ssl`을 false로 설정해야합니다.
 
 </div>

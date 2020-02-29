@@ -8,10 +8,8 @@ ha_iot_class: Local Polling
 ha_release: 0.56
 ---
 
-The `xiaomi_miio` switch platform allows you to control the state of your Xiaomi Smart WiFi Socket aka Plug, Xiaomi Smart Power Strip and Xiaomi Chuangmi Plug V1.
 `xiaomi_miio` 스위치 플랫폼은 플러그 일명 샤오미 스마트 와이파이 소켓, 샤오미 스마트 파워 스트립과 샤오미 Chuangmi 플러그 V1의 상태를 제어할 수 있습니다.
 
-Please follow the instructions on [Retrieving the Access Token](/integrations/vacuum.xiaomi_miio/#retrieving-the-access-token) to get the API token to use in the `configuration.yaml` file.
 `configuration.yaml` 파일에서 사용할 API 토큰을 얻으려면 [Retrieving the Access Token](/integrations/vacuum.xiaomi_miio/#retrieving-the-access-token)의 지침을 따르십시오.
 
 ## Features

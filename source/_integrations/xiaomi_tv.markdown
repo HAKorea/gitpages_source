@@ -1,5 +1,5 @@
 ---
-title: Xiaomi TV
+title: 샤오미 TV
 description: Instructions on how to integrate a Xiaomi TV into Home Assistant.
 logo: xiaomi.png
 ha_category:

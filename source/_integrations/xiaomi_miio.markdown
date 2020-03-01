@@ -1,5 +1,5 @@
 ---
-title: Xiaomi miio
+title: 샤오미 miio
 description: Instructions how to integrate your Xiaomi Mi WiFi Repeater 2 within Home Assistant.
 logo: xiaomi.png
 ha_category:

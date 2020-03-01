@@ -1,5 +1,5 @@
 ---
-title: Xbox Live
+title: Xbox 라이브
 description: Instructions on how to set up Xbox Live sensors in Home Assistant.
 logo: xbox-live.png
 ha_category:

@@ -1,5 +1,5 @@
 ---
-title: "Xiaomi Air Quality Monitor"
+title: "샤오미 Air Quality Monitor"
 description: "Instructions how to integrate your Xiaomi Mi Air Quality Monitor within Home Assistant."
 logo: xiaomi.png
 ha_category:
@@ -8,20 +8,20 @@ ha_iot_class: Local Polling
 ha_release: 0.102
 ---
 
-The `xiaomi_miio` sensor platform is observing your Xiaomi Mi Air Quality Monitor and reporting the air quality values.
+`xiaomi_miio` 센서 플랫폼은 샤오미 미 공기질 모니터를 관찰하고 공기 품질 값을 보고합니다. 
 
-Currently, the supported features are:
+현재 지원되는 기능은 다음과 같습니다.
 
-- Particulate matter 2.5
-- Attributes
-  - carbon_dioxide_equivalent
-  - total_volatile_organic_compounds
+- PM 2.5 미세먼지 수치 
+- 속성 
+  - carbon_dioxide_equivalent : CO2 수치 
+  - total_volatile_organic_compounds : TVOC 수치 
 
-Please follow the instructions on [Retrieving the Access Token](/integrations/vacuum.xiaomi_miio/#retrieving-the-access-token) to get the API token.
+API 토큰을 얻으려면 [Retrieving the Access Token](/integrations/vacuum.xiaomi_miio/#retrieving-the-access-token)에 대한 지시 사항을 따르십시오 .
 
-## Configuration
+## 설정 
 
-To add a Xiaomi Mi Air Quality Monitor to your installation, add the following to your `configuration.yaml` file:
+Xiaomi Mi Air Quality Monitor를 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -33,16 +33,16 @@ air_quality:
 
 {% configuration %}
 host:
-  description: The IP address of your miio device.
+  description: miio 장치의 IP 주소.
   required: true
   type: string
 token:
-  description: The API token of your miio device.
+  description: miio 장치의 API 토큰.
   required: true
   type: string
 name:
-  description: The name of your miio device.
+  description: miio 장치의 이름
   required: false
   type: string
-  default: Xiaomi Miio Air Quality Monitor
+  default: Xiaomi Miio 대기 질 모니터
 {% endconfiguration %}

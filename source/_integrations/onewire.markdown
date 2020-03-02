@@ -1,5 +1,5 @@
 ---
-title: 1-Wire
+title: 1-와이어
 description: Instructions on how to integrate One wire (1-wire) sensors into Home Assistant.
 logo: onewire.png
 ha_category:
@@ -10,46 +10,46 @@ ha_codeowners:
   - '@garbled1'
 ---
 
-The `onewire` platform supports sensors which are using the One wire (1-wire) bus for communication.
+`onewire` 플랫폼은 통신을 위해 One wire (1-wire) 버스를 사용하는 센서를 지원합니다.
 
-Supported devices:
+지원되는 장치 :
 
 - [DS18B20](https://datasheets.maximintegrated.com/en/ds/DS18B20.pdf)
 - [DS18S20](https://www.maximintegrated.com/en/products/sensors/DS18S20.html)
 - [DS1822](https://datasheets.maximintegrated.com/en/ds/DS1822.pdf)
 - [DS1825](https://datasheets.maximintegrated.com/en/ds/DS1825.pdf)
-- [DS28EA00](https://datasheets.maximintegrated.com/en/ds/DS28EA00.pdf) temperature sensors
-- [DS2406/TAI-8570](https://datasheets.maximintegrated.com/en/ds/DS2406.pdf) Temperature and pressure sensor made by AAG
-- [DS2438/B1-R1-A](https://datasheets.maximintegrated.com/en/ds/DS2438.pdf) Temperature, pressure and humidity sensor by AAG
+- [DS28EA00](https://datasheets.maximintegrated.com/en/ds/DS28EA00.pdf) 온도 센서
+- [DS2406/TAI-8570](https://datasheets.maximintegrated.com/en/ds/DS2406.pdf) AAG에서 제조한 온도 및 압력 센서
+- [DS2438/B1-R1-A](https://datasheets.maximintegrated.com/en/ds/DS2438.pdf) AAG에서 제조한 온도, 압력 및 습도 센서
 
-The 1-Wire bus can be connected directly to the IO pins of Raspberry Pi or using dedicated interface adapter (e.g [DS9490R](https://datasheets.maximintegrated.com/en/ds/DS9490-DS9490R.pdf)).
+1-Wire 버스는 Raspberry Pi의 IO 핀에 직접 연결하거나 전용 인터페이스 어댑터를 사용하여 연결할 수 있습니다 (예: [DS9490R](https://datasheets.maximintegrated.com/en/ds/DS9490-DS9490R.pdf)).
 
-## Raspberry Pi setup
+## 라즈베리파이 셋업
 
-In order to setup 1-Wire support on Raspberry Pi, you'll need to edit `/boot/config.txt` following [this documentation](https://www.waveshare.com/wiki/Raspberry_Pi_Tutorial_Series:_1-Wire_DS18B20_Sensor#Enable_1-Wire).
-To edit `/boot/config.txt` on Hass.io use [this documentation](https://developers.home-assistant.io/docs/en/hassio_debugging.html) to enable SSH and edit `/mnt/boot/config.txt` via `vi`.
+Raspberry Pi에서 1-Wire 지원을 설정하려면 [this documentation](https://www.waveshare.com/wiki/Raspberry_Pi_Tutorial_Series:_1-Wire_DS18B20_Sensor#Enable_1-Wire)에 따라 `/ boot / config.txt`를 편집해야합니다.
+Hass.io에서 `/boot/config.txt`를 편집하려면 [this documentation](https://developers.home-assistant.io/docs/en/hassio_debugging.html)를 사용하여 SSH를 활성화하고 `vi`를 통해 `/mnt/boot/config.txt`를 편집하십시오.
 
-## Interface adapter setup
+## 인터페이스 어댑터 셋업
 
 ### owfs
 
-When an interface adapter is used, sensors can be accessed on Linux hosts via [owfs 1-Wire file system](https://owfs.org/). When using an interface adapter and the owfs, the `mount_dir` option must be configured to correspond a directory, where owfs device tree has been mounted.
+인터페이스 어댑터를 사용하면 [owfs 1-Wire file system](https://owfs.org/)을 통해 Linux 호스트에서 센서에 액세스할 수 있습니다. 인터페이스 어댑터와 owfs를 사용할 때 `mount_dir` 옵션은 owfs 장치 트리가 마운트 된 디렉토리에 해당하도록 설정되어야합니다.
+
 
 ### owserver
 
-When an interface adapter is used, you can also access sensors on a remote or local Linux host that is running owserver.  owserver by default runs on port 4304. Use the `host` option to specify the host or IP of the remote server, and the optional `port` option to change the port from the default.
+인터페이스 어댑터를 사용하면 owserver를 실행중인 원격 또는 로컬 Linux 호스트의 센서에 액세스 할 수도 있습니다. owserver는 기본적으로 포트 4304에서 실행됩니다. `host` 옵션을 사용하여 원격 서버의 호스트 또는 IP를 지정하고 선택적인 `port` 옵션을 사용하여 포트를 기본값에서 변경하십시오.
 
-### Units with multiple sensors
+### 여러 센서가있는 장치(unit)
 
-This platform works with devices with multiple sensors which will cause a discontinuity in recorded values. Existing devices will receive a new ID and therefore show up as new devices.
-If you wish to maintain continuity it can be resolved in the database by renaming the old devices to the new names.
+이 플랫폼은 여러 센서가있는 장치와 함께 작동하여 기록된 값의 불연속성을 유발합니다. 기존 장치는 새 ID를 수신하므로 새 장치로 표시됩니다. 연속성을 유지하려면 기존 장치의 이름을 새 이름으로 바꾸어 데이터베이스에서 해결할 수 있습니다.
 
-Connect to your database using the instructions from [Database section](/docs/backend/database/). Check the names of sensors:
+[Database section](/docs/backend/database/)의 지침을 사용하여 데이터베이스에 연결. 센서 이름을 확인하십시오.
 
 ```sql
 SELECT entity_id, COUNT(*) as count FROM states GROUP BY entity_id ORDER BY count DESC LIMIT 10;
 ```
-Alter the names of sensors using the following examples:
+다음 예를 사용하여 센서 이름을 변경하십시오.
 
 ```sql
 UPDATE states SET entity_id='sensor.<sensor_name>_temperature' WHERE entity_id LIKE 'sensor.<sensor_name>%' AND attributes LIKE '%\u00b0C%';
@@ -57,11 +57,11 @@ UPDATE states SET entity_id='sensor.<sensor_name>_pressure' WHERE entity_id LIKE
 UPDATE states SET entity_id='sensor.<sensor_name>_humidity' WHERE entity_id LIKE 'sensor.<sensor_name>%' AND attributes LIKE '%%%' ESCAPE '';
 ```
 
-Remember to replace `<sensor_name>` with the actual name of the sensor as seen in the `SELECT` query.
+`SELECT` 쿼리에서 볼 수 있듯이 `<sensor_name>`을 센서의 실제 이름으로 바꿔야합니다.
 
-## Configuration
+## 설정
 
-To enable One wire sensors in your installation, add the following to your `configuration.yaml` file:
+하나의 와이어 센서를 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -71,27 +71,27 @@ sensor:
 
 {% configuration %}
 names:
-  description: ID and friendly name of your sensors.
+  description: 센서의 ID와 친숙한 이름.
   required: false
   type: string
 mount_dir:
-  description: Location of device tree if owfs driver used.
+  description: owfs 드라이버가 사용된 경우 장치 트리(device tree)의 위치
   required: false
   type: string
 host:
-  description: Remote or local host running owserver.
+  description: owserver를 실행하는 원격 또는 로컬 호스트
   required: false
   type: string
 port:
-  description: "The port number of the owserver (requires `host`)."
+  description: "The port number of the owserver (requires `host`). owserver의 포트 번호. (`host` 필수) " 
   required: false
   type: integer
   default: 4304
 {% endconfiguration %}
 
-### Configuration Example
+### 설정 사례
 
-When `onewire` is added to Home Assistant, it will generate an ID for the sensor. You can specify a friendly name for the sensor with the name configuration option.
+`onewire`가 Home Assistant에 추가되면 센서의 ID를 생성합니다. 이름 설정 옵션으로 센서의 이름을 지정할 수 있습니다.
 
 ```yaml
 # Named sensor configuration.yaml entry

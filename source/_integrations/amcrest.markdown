@@ -1,5 +1,5 @@
 ---
-title: Amcrest
+title: Amcrest 카메라
 description: Instructions on how to integrate Amcrest IP cameras within Home Assistant.
 logo: amcrest.png
 ha_category:
@@ -11,17 +11,17 @@ ha_iot_class: Local Polling
 ha_release: 0.49
 ---
 
-The `amcrest` camera platform allows you to integrate your [Amcrest](https://amcrest.com/) IP camera in Home Assistant.
+`amcrest` 카메라 플랫폼을 사용하면 [Amcrest](https://amcrest.com/) IP 카메라를 Home Assistant에 연동할 수 있습니다.
 
-There is currently support for the following device types within Home Assistant:
+현재 홈 어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - Binary Sensor
 - Camera
 - Sensor
 
-## Configuration
+## 설정
 
-To enable your camera in your installation, add the following to your `configuration.yaml` file:
+설치시 카메라를 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -35,176 +35,160 @@ amcrest:
 {% configuration %}
 host:
   description: >
-    The IP address or hostname of your camera.
-    If using a hostname, make sure the DNS works as expected.
+    카메라의 IP 주소 또는 호스트 이름. 호스트 이름을 사용하는 경우 DNS가 예상대로 작동하는지 확인하십시오.
   required: true
   type: string
 username:
-  description: The username for accessing your camera.
+  description: 카메라에 액세스하기위한 사용자 이름.
   required: true
   type: string
 password:
-  description: The password for accessing your camera.
+  description: 카메라에 액세스하기위한 비밀번호.
   required: true
   type: string
 name:
   description: >
-    This parameter allows you to override the name of your camera. In the case of multi-camera setups,
-    this is highly recommended as camera id number will be randomly changed at each reboot if a name is not allocated.
+    이 매개 변수를 사용하면 카메라 이름을 무시할 수 있습니다. 다중 카메라 설정의 경우 이름이 할당되지 않은 경우 재부팅 할 때마다 카메라 ID 번호가 임의로 변경되므로 이름을 정하길 권장합니다.
   required: false
   type: string
   default: Amcrest Camera
 port:
-  description: The port that the camera is running on.
+  description: 카메라가 실행되는 포트.
   required: false
   type: integer
   default: 80
 resolution:
   description: >
-    This parameter allows you to specify the camera resolution.
-    For a high resolution (1080/720p), specify the option `high`.
-    For VGA resolution (640x480p), specify the option `low`.
+    이 매개 변수를 사용하면 카메라 해상도를 지정할 수 있습니다.
+    고해상도 (1080 / 720p)의 경우, `high` 옵션 지정.
+    VGA 해상도 (640x480p)의 경우, `low` 옵션 지정.
   required: false
   type: string
   default: high
 stream_source:
   description: >
-    The data source for the live stream. `mjpeg` will use the camera's native
-    MJPEG stream, whereas `snapshot` will use the camera's snapshot API to
-    create a stream from still images. You can also set the `rtsp` option to
-    generate the streaming via RTSP protocol.
+    라이브 스트림의 데이터 소스. `mjpeg`는 카메라의 기본 MJPEG 스트림을 사용하고 `snapshot`은 카메라의 스냅샷 API를 사용하여 스틸 이미지에서 스트림을 만듭니다. RTSP 프로토콜을 통해 스트리밍을 생성하도록` rtsp` 옵션을 설정할 수도 있습니다.
   required: false
   type: string
   default: snapshot
 ffmpeg_arguments:
   description: >
-    Extra options to pass to ffmpeg, e.g.,
-    image quality or video filter options.
+    이미지 품질 또는 비디오 필터 옵션과 같이 ffmpeg로 전달할 수 있는 추가 옵션.
   required: false
   type: string
   default: -pred 1
 authentication:
   description: >
-    Defines which authentication method to use only when **stream_source**
-    is **mjpeg**. Currently, *aiohttp* only support *basic*.
+    **stream_source** 가 **mjpeg** 인 경우에만 사용할 인증 방법을 정의. 현재 *aiohttp*는 *basic* 만 지원.
   required: false
   type: string
   default: basic
 scan_interval:
-  description: Defines the update interval of the sensor in seconds.
+  description: 센서의 업데이트 간격을 초 단위로 정의
   required: false
   type: integer
   default: 10
 binary_sensors:
   description: >
-    Conditions to display in the frontend.
-    The following conditions can be monitored:
+    프론트 엔드에 표시할 조건.
+    다음과 같은 조건을 모니터링 할 수 있습니다.:
   required: false
   type: list
   default: None
   keys:
     motion_detected:
-      description: "Return `on` when a motion is detected, `off` when not."
+      description: "모션이 감지되었을 때, `on` 반환, 그렇지 않을 경우 `off` 반환."
     online:
-      description: "Return `on` when camera is available (i.e., responding to commands), `off` when not."
+      description: "카메라를 사용할 수 있으면(즉, 명령에 응답하면) `on`, 그렇지 않으면 `off` 반환."
 sensors:
   description: >
-    Conditions to display in the frontend.
-    The following conditions can be monitored:
+    프론트 엔드에 표시 할 조건.
+    다음과 같은 조건을 모니터링 할 수 있습니다. : 
   required: false
   type: list
   default: None
   keys:
     sdcard:
-      description: Return the SD card usage by reporting the total and used space.
+      description: 총공간과 사용된 공간을 보고하여 SD카드 사용량을 반환.
     ptz_preset:
       description: >
-        Return the number of PTZ preset positions
-        configured for the given camera.
+        주어진 카메라에 설정된 PTZ 프리셋 위치 숫자를 반환합니다.
 control_light:
   description: >
-    Automatically control the camera's indicator light, turning it on if the audio or video streams are enabled, and turning it off if both streams are disabled.
+     오디오 또는 비디오 스트림이 활성화 된 경우 카메라의 라이트를 자동으로 제어하고 두 스트림 모두 비활성화된 경우 끄십시오.
   required: false
   type: boolean
   default: true
 {% endconfiguration %}
 
-**Note:** Amcrest cameras with newer firmware no longer have the ability to
-stream `high` definition video with MJPEG encoding. You may need to use `low`
-resolution stream or the `snapshot` stream source instead.  If the quality seems
-too poor, lower the `Frame Rate (FPS)` and max out the `Bit Rate` settings in
-your camera's configuration manager. If you defined the *stream_source* to
-**mjpeg**, make sure your camera supports *Basic* HTTP authentication.
-Newer Amcrest firmware may not work, then **rtsp** is recommended instead.
+최신 펌웨어의 Amcrest 카메라는 더 이상 MJPEG 인코딩으로 고화질(`high`) 비디오를 스트리밍 할 수 없습니다. 대신 저해상도(`low`) 스트림 또는 `snapshot` 스트림 소스를 사용해야 할 수도 있습니다. 품질이 너무 좋지 않으면 카메라 관리자에서 카메라의 `Frame Rate (FPS)`를 낮추고 `Bit Rate` 설정을 최대로 설정하십시오. *stream_source*를 **mjpeg**로 정의한 경우 카메라가 *Basic* HTTP 인증을 지원하는지 확인하십시오. 최신 Amcrest 펌웨어가 작동하지 않을 수 있으며 대신 **rtsp**가 권장됩니다.
 
-**Note:** If you set the `stream_source` option to `rtsp`,
-make sure to follow the steps mentioned at [FFMPEG](/integrations/ffmpeg/)
-documentation to install the `ffmpeg`.
+**Note:** `stream_source` 옵션을 `rtsp`로 설정 한 경우, [ffMPEG](/integrations/ffmpeg/) 문서에 언급된 단계를 따라 `ffmpeg`를 설치하십시오.
 
-## Services
+## 서비스
 
-Once loaded, the `amcrest` integration will expose services that can be called to perform various actions. The `entity_id` service attribute can specify one or more specific cameras, or `all` can be used to specify all configured Amcrest cameras.
+`amcrest` 통합구성요소는 일단 로드되면 다양한 작업을 수행하기 위해 호출할 수있는 서비스를 노출합니다. `entity_id` 서비스 속성은 하나 이상의 특정 카메라를 지정하거나 `all`을 사용하여 설정된 모든 Amcrest 카메라를 지정할 수 있습니다.
 
-Available services:
+사용가능한 서비스:
 `enable_audio`, `disable_audio`,
 `enable_motion_recording`, `disable_motion_recording`,
 `enable_recording`, `disable_recording`,
 `goto_preset`, `set_color_bw`,
 `start_tour` and `stop_tour`
 
-#### Service `enable_audio`/`disable_audio`
+#### `enable_audio`/`disable_audio` 서비스
 
-These services enable or disable the camera's audio stream.
-
-Service data attribute | Optional | Description
--|-|-
-`entity_id` | no | Name(s) of entities, e.g., `camera.living_room_camera`.
-
-#### Service `enable_motion_recording`/`disable_motion_recording`
-
-These services enable or disable the camera to record a clip to its configured storage location when motion is detected.
+이 서비스는 카메라의 오디오 스트림을 활성화 또는 비활성화합니다.
 
 Service data attribute | Optional | Description
 -|-|-
-`entity_id` | no | Name(s) of entities, e.g., `camera.living_room_camera`.
+`entity_id` | no | 엔티티의 이름, 예 :`camera.living_room_camera`
 
-#### Service `enable_recording`/`disable_recording`
+#### `enable_motion_recording`/`disable_motion_recording` 서비스
 
-These services enable or disable the camera to continuously record to its configured storage location.
-
-Service data attribute | Optional | Description
--|-|-
-`entity_id` | no | Name(s) of entities, e.g., `camera.living_room_camera`.
-
-#### Service `goto_preset`
-
-This service will cause the camera to move to one of the PTZ locations configured within the camera.
+이러한 서비스는 움직임이 감지될 때 카메라가 설정된 저장 위치에 클립을 기록할 수 있도록합니다.
 
 Service data attribute | Optional | Description
 -|-|-
-`entity_id` | no | Name(s) of entities, e.g., `camera.living_room_camera`.
-`preset` | no | Preset number, starting from 1.
+`entity_id` | no | 엔티티의 이름, 예 :`camera.living_room_camera`.
 
-#### Service `set_color_bw`
+#### `enable_recording`/`disable_recording` 서비스
 
-This service will set the color mode of the camera.
+이러한 서비스를 통해 카메라가 설정된 저장 위치에 지속적으로 녹화 할 수 있습니다.
 
 Service data attribute | Optional | Description
 -|-|-
-`entity_id` | no | Name(s) of entities, e.g., `camera.living_room_camera`.
+`entity_id` | no | 엔티티의 이름, 예 :`camera.living_room_camera`.
+
+#### `goto_preset` 서비스
+
+이 서비스는 카메라를 카메라 내에 설정된 PTZ 위치 중 하나로 이동시킵니다.
+
+Service data attribute | Optional | Description
+-|-|-
+`entity_id` | no | 엔티티의 이름, 예 :`camera.living_room_camera`.
+`preset` | no | 1부터 시작하는 사전 설정 번호
+
+#### `set_color_bw` 서비스
+
+이 서비스는 카메라의 컬러 모드를 설정합니다.
+
+Service data attribute | Optional | Description
+-|-|-
+`entity_id` | no | 엔티티의 이름, 예 :`camera.living_room_camera`.
 `color_bw` | no | One of `auto`, `bw` or `color`.
 
-#### Service `start_tour`/`stop_tour`
+#### `start_tour`/`stop_tour` 서비스
 
-These services start or stop the camera's PTZ tour function.
+이 서비스는 카메라의 PTZ 투어 기능을 시작하거나 중지합니다.
 
 Service data attribute | Optional | Description
 -|-|-
-`entity_id` | no | Name(s) of entities, e.g., `camera.living_room_camera`.
+`entity_id` | no | 엔티티의 이름, 예 :`camera.living_room_camera`.
 
-## Advanced Configuration
+## 고급 설정
 
-You can also use this more advanced configuration example:
+이 고급 설정 예를 사용할 수도 있습니다. : 
 
 ```yaml
 # Example configuration.yaml entry
@@ -229,4 +213,4 @@ amcrest:
       - ptz_preset
 ```
 
-To check if your Amcrest camera is supported/tested, visit the [supportability matrix](https://github.com/tchellomello/python-amcrest#supportability-matrix) link from the `python-amcrest` project.
+Amcrest 카메라가 지원/테스트되었는지 확인하려면 `python-amcrest` 프로젝트의 [supportability matrix](https://github.com/tchellomello/python-amcrest#supportability-matrix) 링크를 방문하십시오.

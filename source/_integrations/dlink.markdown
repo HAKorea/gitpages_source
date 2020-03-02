@@ -1,5 +1,5 @@
 ---
-title: D-Link Wi-Fi Smart Plugs
+title: 디링크 Wi-Fi Smart Plugs
 description: Instructions on how to integrate D-Link switches into Home Assistant.
 logo: dlink.png
 ha_category:
@@ -8,14 +8,14 @@ ha_iot_class: Local Polling
 ha_release: 0.14
 ---
 
-The `dlink` switch platform allows you to control the state of your [D-Link Wi-Fi Smart Plugs](https://us.dlink.com/en/consumer/smart-plugs).
+`dlink` 스위치 플랫폼을 사용하면 [D-Link Wi-Fi Smart Plugs](https://us.dlink.com/en/consumer/smart-plugs)의 상태를 제어할 수 있습니다
 
-Supported devices (tested):
+지원 장치들 :
 
 - DSP-W215
 - DSP-W110
 
-To use your D-Link smart plugs in your installation, add the following to your `configuration.yaml` file:
+D-Link 스마트 플러그를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -28,26 +28,26 @@ switch:
 
 {% configuration %}
 host:
-  description: "The IP address of your D-Link plug, e.g., 192.168.1.32."
+  description: "D-Link 플러그의 IP 주소 (예 : 192.168.1.32)"
   required: true
   type: string
 name:
-  description: The name to use when displaying this switch.
+  description: 이 스위치를 표시 할 때 사용할 이름.
   required: false
   default: D-link Smart Plug W215
   type: string
 username:
-  description: The username for your plug.
+  description: 플러그의 사용자 이름.
   required: true
   default: admin
   type: string
 password:
-  description: The password for your plug.
+  description: 플러그의 비밀번호.
   required: true
   default: The default password is the `PIN` included on the configuration card.
   type: string
 use_legacy_protocol:
-  description: Enable limited support for legacy firmware protocols (Tested with v1.24).
+  description: 레거시 펌웨어 프로토콜에 대한 제한된 지원을 활성화합니다 (v1.24로 테스트).
   required: false
   default: false
   type: boolean

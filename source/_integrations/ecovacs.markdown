@@ -1,5 +1,5 @@
 ---
-title: Ecovacs
+title: 에코백스 로봇 청소기
 description: Instructions on how to integrate Ecovacs vacuums within Home Assistant.
 logo: ecovacs.png
 ha_category:
@@ -11,15 +11,15 @@ ha_codeowners:
   - '@OverloadUT'
 ---
 
-The `ecovacs` integration is the main integration to integrate all [Ecovacs](https://www.ecovacs.com) (Deebot) vacuums. You will need your Ecovacs account information (username, password) to discover and control vacuums in your account.
+`ecovacs` 통합구성요소는 모든 [Ecovacs](https://www.ecovacs.com) (Deebot) vacuum(로봇청소기)을 연동하는 주요 통합구성요소입니다. 계정에서 vacuum을 감지하고 제어하려면 Ecovacs 계정 정보 (사용자 이름, 비밀번호)가 필요합니다.
 
-There is currently support for the following device types within Home Assistant:
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - [Vacuum](#vacuum)
 
-## Configuration
+## 설정
 
-To add your Ecovacs devices into your Home Assistant installation, add the following to your `configuration.yaml` file:
+Ecovacs 장치를 Home Assistant 설치에 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 ecovacs:
@@ -31,32 +31,32 @@ ecovacs:
 
 {% configuration %}
 username:
-  description: Your username to login to your Ecovacs account.
+  description: Ecovacs 계정에 로그인하기위한 사용자 이름.
   required: true
   type: string
 password:
-  description: Your password to login to your Ecovacs account.
+  description: Ecovacs 계정에 로그인하기위한 비밀번호
   required: true
   type: string
 country:
-  description: Your two-letter country code (us, uk, etc).
+  description: 2 자리 국가 코드 (미국, 영국 등)
   required: true
   type: string
 continent:
-  description: Your two-letter continent code (na, eu, etc).
+  description: 2 글자 대륙 코드 (na, eu 등)
   required: true
   type: string
 {% endconfiguration %}
 
-Note: For some countries, you will need to set `continent` to `ww` (meaning worldwide.) There is unfortunately no way to know the correct settings other than guessing and checking. See the [sucks library protocol documentation](https://github.com/wpietri/sucks/blob/master/protocol.md) for more information about what has been figured out about the Ecovacs servers.
+참고 : 일부 국가의 경우 `continent`을 `ww` (전세계 의미)로 설정해야합니다. 불행히도 추측 및 확인 이외의 올바른 설정을 알 수있는 방법은 없습니다. Ecovacs 서버에 대해 파악된 내용에 대한 자세한 내용은 [sucks library protocol documentation](https://github.com/wpietri/sucks/blob/master/protocol.md)를 참조하십시오.
 
-### Stability and Reporting Bugs
+### 안정성 및 알려진 버그
 
-The library that talks to the Ecovacs servers is in a very early state and still under development. As such, it is likely that not all regions and devices will work at the current time.
+Ecovacs 서버와 통신하는 라이브러리는 매우 초기 상태이며 아직 개발 중입니다. 따라서 현재 일부 지역 및 장치가 작동하지 않을 수 있습니다.
 
-Please see the [sucks library documentation](https://github.com/wpietri/sucks) for some more information about what has been tested, and check out the GitHub issues to see if the issue you're having is known or being worked on.
+테스트 대상에 대한 자세한 내용은 [sucks library documentation](https://github.com/wpietri/sucks)을 참조하십시오. GitHub 문제를 확인하여 현재 발생하고있는 문제가 알려지거나 진행 중인지 확인하십시오.
 
-If you have an issue with the Ecovacs component, please file a [GitHub Issue](https://github.com/home-assistant/home-assistant/issues) and include your Home Assistant logs in the report. To get full debug output from both the Ecovacs integration and the underlying `sucks` library, place this in your `configuration.yaml` file:
+Ecovacs 구성 요소에 문제가있는 경우 [GitHub 문제] (https://github.com/home-assistant/home-assistant/issues)를 제출하고 홈어시스턴트 로그를 보고서에 포함하십시오. Ecovacs 통합 및 기본 `sucks` 라이브러리에서 전체 디버그 출력을 얻으려면 `configuration.yaml` 파일에 배치하십시오.
 
 ```yaml
 logger:
@@ -66,18 +66,17 @@ logger:
     sucks: debug
 ```
 
-Warning: doing this will cause your authentication token to visible in your log files. Be sure to remove any tokens and other authentication details from your log before posting them in an issue.
-
+경고 : 이렇게하면 인증 토큰이 로그 파일에 표시됩니다. 문제를 게시하기 전에 로그에서 토큰 및 기타 인증 세부 정보를 제거하십시오.
 
 ## Vacuum
 
-The `ecovacs` vacuum platform allows you to monitor and control your Ecovacs Deebot vacuums.
+`ecovacs` vacuum 플랫폼을 사용하면 Ecovacs Deebot vacuum을 모니터링하고 제어 할 수 있습니다.
 
-### Component Lifespans
+### Component 수명
 
-The remaining lifespan of components on your Deebot vacuum will be reported as attributes on the vacuum entity. The value will be a whole number representing the percentage of life remaining.
+Deebot vacuum에서 구성 요소의 남은 수명은 vacuum 엔티티의 속성으로보고됩니다. 값은 남은 수명의 백분율을 나타내는 정수입니다.
 
-Here's an example of how to extract the filter's lifespan to its own sensor using a [template sensor](/integrations/template):
+다음은 [template sensor](/integrations/template)를 사용하여 필터 수명을 자체 센서로 추출하는 방법의 예입니다.
 
 {% raw %}
 ```yaml
@@ -92,7 +91,7 @@ sensor:
 ```
 {% endraw %}
 
-Or, if you want a simple binary sensor that becomes `On` when the filter needs to be replaced (5% or less):
+또는 필터를 교체해야 할 때 `On`이 되는 간단한 이진 센서를 원할 경우 (5 % 이하) : 
 
 {% raw %}
 ```yaml
@@ -107,13 +106,13 @@ binary_sensor:
 ```
 {% endraw %}
 
-### Handling Errors
+### 오류 처리
 
-The vacuum entity has an `error` attribute that will contain the _most recent_ error message that came from the vacuum. There is not a comprehensive list of all error messages, so you may need to do some experimentation to determine the error messages that your vacuum can send.
+vacuum 엔티티는 vacuum에서 온 _most recent_ 오류 메시지를 포함하는 `error` 속성을 가집니다. 모든 오류 메시지의 전체 목록이 없으므로 vacuum이 보낼 수있는 오류 메시지를 확인하기 위해 몇 가지 실험을 수행해야 할 수도 있습니다. 
 
-If the vacuum fires a "no error" event, the `error` attribute will change back to `None`. Note, however, that this does not happen for all types of errors.
+vacuum이 "no error" 이벤트를 발생 시키면 `error` 속성이 다시 `None`으로 변경됩니다. 그러나 모든 유형의 오류에 대해서는이 문제가 발생하지 않습니다.
 
-Alternatively, you can use the `ecovacs_error` event to watch for errors. This event will contain a data payload that looks like:
+또는 `ecovacs_error` 이벤트를 사용하여 오류를 감시 할 수 있습니다. 이 이벤트에는 다음과 같은 데이터 페이로드가 포함됩니다.
 
 ```json
 {
@@ -122,4 +121,4 @@ Alternatively, you can use the `ecovacs_error` event to watch for errors. This e
 }
 ```
 
-Finally, if a vacuum becomes unavailable (usually due to being idle and off its charger long enough for it to completely power off,) the vacuum's `status` attribute will change to `offline` until it is turned back on.
+마지막으로, vacuum이 쓸 수 없는 상태가 되면 (일반적으로 충전기가 완전히 꺼질 수 있을 정도로 충전기가 유휴 상태가 되어 오랫동안 꺼진 경우) vacuum의 상태인 `status` 속성은 다시 켜질 때까지 `offline` 으로 변경됩니다.

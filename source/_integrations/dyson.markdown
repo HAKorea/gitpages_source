@@ -1,5 +1,5 @@
 ---
-title: 다이슨(Dyson)
+title: 다이슨 (Dyson)
 logo: dyson.png
 ha_category:
   - Hub

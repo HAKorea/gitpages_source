@@ -38,6 +38,7 @@ hide_github_edit: true
 
 ### Switch
 * [다원 wifi 스위치](https://github.com/GuGu927/dawon) - 랜이
+* [Broadlink-MP1 Component](https://github.com/af950833/Home-Assistant-Broadlink-MP1-Custom-Component) - af950833
 
 ### Transport
 * [서울 버스](https://github.com/miumida/seoul_bus) - miumida
@@ -47,6 +48,7 @@ hide_github_edit: true
 ### Weather
 * [SK weather](https://cafe.naver.com/koreassistant/16) - stkang90
 * [기상청 동네예보](https://github.com/miumida/local_weather_rss) - miumida
+* [세차 센서 제작](https://cafe.naver.com/koreassistant/809) - 검은별31
 
 ### Others
 * [Lotto 6/45](https://github.com/miumida/lotto645) - miumida

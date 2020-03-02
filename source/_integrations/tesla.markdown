@@ -31,7 +31,6 @@ ha_codeowners:
 
 ## 설정
 
-Home Assistant offers the Tesla integration through **Configuration** -> **Integrations** -> **Tesla**.
 Home Assistant는 **설정** -> **통합구성요소** -> **Tesla**를 통해 Tesla 통합구성요소를 제공합니다.
 
 사용자 이름과 비밀번호를 입력 한 다음 계속하십시오.

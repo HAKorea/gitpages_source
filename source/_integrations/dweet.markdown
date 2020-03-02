@@ -1,5 +1,5 @@
 ---
-title: dweet.io
+title: dweet.io(로그공유)
 description: Transfer events to Dweet.io.
 logo: dweet.png
 ha_category:
@@ -11,23 +11,23 @@ ha_codeowners:
   - '@fabaff'
 ---
 
-The `dweet` integration makes it possible to transfer details collected with Home Assistant to [Dweet.io](https://dweet.io/) and visualize them with [freeboard.io](https://freeboard.io). Keep in mind that your information will be public!
+`dweet` 통합구성요소를 통해 Home Assistant로 수집한 세부 정보를 [Dweet.io] (https://dweet.io/)로 전송하고 [freeboard.io](https://freeboard.io)로 시각화 할 수 있습니다. 단, 귀하의 정보는 공개될 것임을 명심하십시오!
 
 <p class='img'>
   <img src='{{site_root}}/images/screenshots/dweet-freeboard.png' />
 </p>
 
 <div class='note warning'>
-The publishing interval is limited to 1 second. This means that it's possible to miss fast changes.
+게시 간격은 1 초로 제한됩니다. 즉, 빠른 변경 사항을 놓칠 수도 있습니다.
 </div>
 
-There is currently support for the following device types within Home Assistant:
+현재 홈 어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - [Sensor](#sensor)
 
-## Configuration
+## 설정
 
-To use the `dweet` integration in your installation, add the following to your `configuration.yaml` file:
+설치시 `dweet` 통합구성요소를 사용하려면`configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -42,22 +42,22 @@ dweet:
 
 {% configuration %}
 name:
-  description: A unique identifier for your Home Assistant instance.
+  description: Home Assistant 인스턴스의 고유 식별자
   required: true
   type: string
 whitelist:
-  description: List of entity IDs you want to publish
+  description: 퍼블리쉬하려는 엔티티 ID 목록
   required: true
   type: list
 {% endconfiguration %}
 
-## Sensor
+## 센서
 
-The `dweet` sensor platform allows you to get details from your devices which are publishing their values to [Dweet.io](https://dweet.io/).
+`dweet` 센서 플랫폼을 사용하면 [Dweet.io](https://dweet.io/)에 값을 게시하는 장치에서 세부 정보를 얻을 수 있습니다.
 
-### Configuration
+### 설정
 
-To use Dweet.io sensors in your installation, add the following to your `configuration.yaml` file:
+설치시 Dweet.io 센서를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 {% raw %}
 ```yaml
@@ -71,27 +71,27 @@ sensor:
 
 {% configuration %}
 device:
-  description: Identification of the device (also known as `thing`).
+  description: "장치 식별자 (`thing`이라고도 함)."
   required: true
   type: string
 value_template:
-  description: The variable to extract a value from the content.
+  description: 컨텐츠에서 값을 추출하는 변수.
   required: true
   type: template
 name:
-  description: Let you overwrite the name of the device in the frontend.
+  description: 프런트 엔드에서 장치 이름을 덮어 씁니다.
   required: false
   default: Dweet.io Sensor
   type: string
 unit_of_measurement:
-  description: Defines the unit of measurement of the sensor, if any.
+  description: 센서의 측정 단위를 정의합니다 (있는 경우).
   required: false
   type: string
-{% endconfiguration %}
+{% endconfiguration %}ㄴ
 
-### Full configuration sample
+### 전체 설정 사례
 
-A full configuration entry could look like the sample below.
+전체 설정 항목은 아래 샘플과 같습니다.
 
 {% raw %}
 ```yaml
@@ -105,23 +105,23 @@ sensor:
 ```
 {% endraw %}
 
-### Interacting with Dweet.io
+### Dweet.io와 상호 작용
 
-You can easily send dweets from the command-line to test your sensor with `curl`.
+`curl`로 센서를 테스트하기 위해 명령 행에서 dweets을 쉽게 보낼 수 있습니다.
 
 ```bash
 $ curl -H 'Content-Type: application/json' -d '{"temperature": 40, "humidity": 65}' https://dweet.io/dweet/for/ha-sensor
 ```
 
-will give you a response like the one below:
+다음과 같은 응답을 제공합니다.
 
 ```json
 {"this":"succeeded","by":"dweeting","the":"dweet","with":{"thing":"ha-sensor","created":"2015-12-10T09:43:31.133Z","content":{"temperature":40,"humidity":65}}}
 ```
 
-The [dweepy](https://github.com/paddycarey/dweepy) module gives you another option to work with [Dweet.io](https://dweet.io/).
+[dweepy](https://github.com/paddycarey/dweepy) 모듈은 [Dweet.io](https://dweet.io/)와 함께 사용할 수있는 다른 옵션을 제공합니다.
 
-Send a dweet.
+dweet을 보냅니다. 
 
 ```bash
 $ python3
@@ -130,7 +130,7 @@ $ python3
 {'thing': 'ha-sensor', 'created': '2015-12-10T09:46:08.559Z', 'content': {'humiditiy': 81, 'temperature': 23}}
 ```
 
-Receive the latest dweet.
+최신 dweet을 받습니다. 
 
 ```bash
 >>> dweepy.get_latest_dweet_for('ha-sensor')

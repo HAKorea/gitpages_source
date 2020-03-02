@@ -1,5 +1,5 @@
 ---
-title: Configurator
+title: 설정(Configurator)
 description: Instructions on how to integrate the configurator in your components.
 logo: home-assistant.png
 ha_category:

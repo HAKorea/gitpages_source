@@ -1,5 +1,5 @@
 ---
-title: Command Line
+title: 컴맨드 라인(Command Line)
 description: Instructions on how to integrate Command binary sensors within Home Assistant.
 logo: command_line.png
 ha_category:

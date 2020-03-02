@@ -1,5 +1,5 @@
 ---
-title: EnOcean
+title: EnOcean(무전원무선)
 description: Connect EnOcean devices to Home Assistant
 logo: enocean.png
 ha_category:
@@ -14,19 +14,19 @@ ha_codeowners:
   - '@bdurrer'
 ---
 
-The [EnOcean](https://en.wikipedia.org/wiki/EnOcean) standard is supported by many different vendors. There are switches and sensors of many different kinds, and typically they employ energy harvesting to get power such that no batteries are necessary.
+[EnOcean] (https://en.wikipedia.org/wiki/EnOcean) 표준은 여러 공급 업체에서 지원합니다. 
+다양한 종류의 스위치와 센서가 있으며 일반적으로 energy harvesting을 사용하여 배터리가 필요하지 않은 전력을 얻습니다.
 
-The `enocean` integration adds support for some of these devices. You will need a controller like the [USB300](https://www.enocean.com/en/enocean_modules/usb-300-oem/) in order for it to work.
+`enocean` 통합구성요소는 이러한 장치 중 일부에 대한 지원을 추가합니다. 작동하려면 [USB300](https://www.enocean.com/en/enocean_modules/usb-300-oem/)과 같은 컨트롤러가 필요합니다.
 
-There is currently support for the following device types within Home Assistant:
+현재 홈 어시스턴트에서 다음 장치 유형이 지원됩니다.
 
-- [Binary Sensor](#binary-sensor) - Wall switches
-- [Sensor](#sensor) - Power meters, temperature sensors, humidity sensors and window handles
-- [Light](#light) - Dimmers
+- [Binary Sensor](#binary-sensor) - 벽 스위치
+- [Sensor](#sensor) - 파워 미터, 온도 센서, 습도 센서 및 창 핸들
+- [Light](#light) - 디머
 - [Switch](#switch)
 
-However, due to the wide range of message types, not all devices will work without code changes.
-The following devices have been confirmed to work out of the box:
+그러나 광범위한 메시지 유형으로 인해 모든 장치가 코드 변경없이 작동하지는 않습니다. 다음 장치가 기본적으로 작동하는 것으로 확인되었습니다.
 
 - Eltako FUD61 dimmer
 - Eltako FT55 battery-less wall switch
@@ -36,15 +36,13 @@ The following devices have been confirmed to work out of the box:
 - EnOcean STM-330 temperature sensor
 - Hoppe SecuSignal window handle from Somfy
 
-If you own a device not listed here, please check whether your device can talk in one of the listed [EnOcean Equipment Profiles](https://www.enocean-alliance.org/what-is-enocean/specifications/) (EEP). 
-If it does, it will most likely work. 
-The available profiles are usually listed somewhere in the device manual. 
+여기에 나열되지 않은 장치를 소유한 경우 장치가 리스트된 [EnOcean 장비 프로파일](https://www.enocean-alliance.org/what-is-enocean/specifications/) 중 있는지 확인하십시오. 그렇다면 대부분 작동 할 것입니다. 사용 가능한 프로파일은 일반적으로 장치 매뉴얼 어딘가에 리스트되어 있습니다.
 
-Support for tech-in messages is not implemented.
+기술 메시지 지원이 모두다 구현되지 않았습니다.
 
-## Hub
+## 허브
 
-To integrate an EnOcean controller with Home Assistant, add the following section to your `configuration.yaml` file:
+EnOcean 컨트롤러를 Home Assistant와 연동하려면 `configuration.yaml` 파일에 다음 섹션을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -54,26 +52,26 @@ enocean:
 
 {% configuration %}
 device:
-  description: The port where your device is connected to your Home Assistant host.
+  description: 장치가 Home Assistant 호스트에 연결된 포트.
   required: true
   type: string
 {% endconfiguration %}
 
 ## Binary Sensor
 
-This can typically be one of those batteryless wall switches.
-Tested with:
+이는 일반적으로 배터리없는 벽면 스위치 중 하나 일 수 있습니다
+다음 장치를 테스트하였습니다. :
 
-- Eltako FT55 which uses the EnOcean PTM 215 module
-- [TRIO2SYS Wall switches](https://www.trio2sys.fr/index.php/fr/produits-enocean-sans-fil-sans-pile-interoperable/emetteur-sans-fils-sans-pile-interoperable-enocean) which uses the EnOcean PTM210 DB module
+- EnOcean PTM 215 모듈을 사용하는 Eltako FT55
+- EnOcean PTM210 DB 모듈을 사용하는 [TRIO2SYS Wall switches](https://www.trio2sys.fr/index.php/fr/produits-enocean-sans-fil-sans-pile-interoperable/emetteur-sans-fils-sans-pile-interoperable-enocean) 
 - Omnio WS-CH-102
 
-The following [EnOcean Equipment Profiles](https://www.enocean-alliance.org/what-is-enocean/specifications/) are supported:
+다음과 같은 [EnOcean Equipment Profiles](https://www.enocean-alliance.org/what-is-enocean/specifications/)이 지원됩니다. :
 
 - F6-02-01 (Light and Blind Control - Application Style 2)
 - F6-02-02 (Light and Blind Control - Application Style 1)
 
-To use your EnOcean device, you first have to set up your [EnOcean hub](#hub) and then add the following to your `configuration.yaml` file:
+EnOcean 장치를 사용하려면 먼저 [EnOcean hub](#hub)를 셋업한 다음 `configuration.yaml` 파일에 다음을 추가해야합니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -84,30 +82,30 @@ binary_sensor:
 
 {% configuration %}
 id:
-  description: The ID of the device. This is the 4 bytes long number written on the dimmer.
+  description: 장치의 ID. 디머에 쓰여진 4 바이트 길이의 숫자.
   required: true
   type: list
 name:
-  description: An identifier for the switch in the frontend.
+  description: 프런트 엔드의 스위치 식별자.
   required: false
   type: string
   default: EnOcean binary sensor
 device_class:
-  description: Sets the [class of the device](/integrations/binary_sensor/), changing the device state and icon that is displayed on the frontend.
+  description: 프런트 엔드에 표시되는 장치 상태 및 아이콘을 변경하여 [class of the device](/integrations/binary_sensor/) 를 세팅합니다.
   required: false
   type: device_class
 {% endconfiguration %}
 
-EnOcean binary sensors have no state, they only generate 'button_pressed' events. The event data has following fields:
+EnOcean 바이너리 센서는 상태가 없으며 'button_pressed' 이벤트만 생성합니다. 이벤트 데이터에는 다음 필드가 있습니다.
 
 - **id**: The ID of the device (see configuration).
 - **pushed**: `1` for a button press, `0` for a button release.
 - **which**: Always `0` when using the single rocket.  `0` or `1` when using the dual rocket switch.
 - **onoff**: `0` or `1` for either side of the rocket.
 
-## Automation example
+## 자동화 사례
 
-Sample automation to switch lights on and off:
+조명을 켜고 끄는 자동화 사례 :
 
 ```yaml
 # Example automation to turn lights on/off on button release
@@ -127,9 +125,9 @@ automation:
 
 ## Light
 
-An EnOcean light can take many forms. Currently only one type has been tested: Eltako FUD61 dimmer.
+EnOcean 조명은 여러 형태를 취할 수 있습니다. 현재 한 가지 유형만 테스트되었습니다 : Eltako FUD61 디머.
 
-To use your EnOcean device, you first have to set up your [EnOcean hub](#hub) and then add the following to your `configuration.yaml` file:
+EnOcean 장치를 사용하려면 먼저 [EnOcean hub](#hub)를 셋업한 다음 `configuration.yaml` 파일에 다음을 추가해야합니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -141,15 +139,15 @@ light:
 
 {% configuration %}
 id:
-  description: The ID of the device. This is the 4 bytes long number written on the dimmer.
+  description: 장치의 ID. 디머에 쓰여진 4 바이트 길이의 숫자.
   required: true
   type: list
 sender_id:
-  description: The Sender ID of the device. This is a 4 bytes long number.
+  description: 장치의 발신자 ID. 이것은 4 바이트 길이.
   required: true
   type: list
 name:
-  description: An identifier for the Ligh in the frontend.
+  description: 프런트 엔드에서 Ligh의 식별자.
   required: false
   default: EnOcean Light
   type: string
@@ -157,14 +155,14 @@ name:
 
 ## Sensor
 
-The EnOcean sensor platform currently supports the following device types:
+EnOcean 센서 플랫폼은 현재 다음 장치 유형을 지원합니다.
 
  * [power sensor](#power-sensor)
  * [humidity sensor](#humidity-sensor)
  * [temperature sensor](#temperature-sensor)
  * [window handle](#window-handle)
  
-To use your EnOcean device, you first have to set up your [EnOcean hub](#hub) and then add the following to your `configuration.yaml` file:
+EnOcean 장치를 사용하려면 먼저 [EnOcean hub](#hub)를 셋업한 다음 `configuration.yaml` 파일에 다음을 추가해야합니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -176,16 +174,17 @@ sensor:
 
 {% configuration %}
 id:
-  description: The ID of the device. This is the 4 bytes long identifier of your device.
+  description: 장치의 ID. 이것은 장치의 4 바이트 길이 식별자.
   required: true
   type: list
 name:
-  description: An identifier for the sensor in the frontend.
+  description: 프런트 엔드의 센서 식별자.
   required: false
   type: string
   default: EnOcean sensor
 device_class:
-  description: Sets the [class of the device](/integrations/binary_sensor/), changing the device state and icon that is displayed on the frontend.
+  description: 프런트 엔드에 표시되는 장치 상태 및 아이콘을 변경하여 [class of the device](/integrations/binary_sensor/) 를 세팅합니다.
+  required: false
   required: false
   type: device_class
   default: powersensor
@@ -193,9 +192,9 @@ device_class:
 
 ### Power sensor
 
-This has been tested with a Permundo PSC234 switch, but any device sending EEP **A5-12-01** messages will work.
+이는 Permundo PSC234 스위치로 테스트되었지만 EEP **A5-12-01** 메시지를 보내는 모든 장치는 작동합니다.
 
-Add the following to your `configuration.yaml` file:
+`configuration.yaml` 파일에 다음을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -208,14 +207,14 @@ sensor:
 
 ### Humidity sensor
 
-The following [EnOcean Equipment Profiles](https://www.enocean-alliance.org/what-is-enocean/specifications/) are supported:
+다음 [EnOcean Equipment Profiles](https://www.enocean-alliance.org/what-is-enocean/specifications/)이 지원됩니다.
 
-- Any profile that contains the humidity value at position **DB2.7** to **DB2.0**
+- Any profile that contains the humidity value at position **DB2.7** to **DB2.0** 
 - **A5-04-01** - Temp. and Humidity Sensor, Range 0°C to +40°C and 0% to 100%
 - **A5-04-02** - Temp. and Humidity Sensor, Range -20°C to +60°C and 0% to 100%
 - **A5-10-10** to **A5-10-14** - Room Operating Panels
 
-Add the following to your `configuration.yaml` file:
+`configuration.yaml` 파일에 다음을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -228,9 +227,9 @@ sensor:
 
 ### Temperature sensor
 
-This sensor has been tested with a generic STM-330 sensor, which is used in most indoor temperature sensor devices. 
+이 센서는 대부분의 실내 온도 센서 장치에 사용되는 일반 STM-330 센서로 테스트되었습니다.
 
-The following [EnOcean Equipment Profiles](https://www.enocean-alliance.org/what-is-enocean/specifications/) are supported:
+다음 [EnOcean Equipment Profiles](https://www.enocean-alliance.org/what-is-enocean/specifications/)이 지원됩니다.
 
 - Any profile that contains an 8-bit temperature at position DB1.7 to DB1.0. 10-bit is not supported.
 - **A5-02-01** to **A5-02-1B** - Temperature Sensor with various temperature ranges
@@ -240,10 +239,10 @@ The following [EnOcean Equipment Profiles](https://www.enocean-alliance.org/what
 - **A5-10-10** - Temp. and Humidity Sensor and Set Point
 - **A5-10-12** - Temp. and Humidity Sensor, Set Point and Occupancy Control
 
-Check the manual of your temperature sensor to figure out what EEP it uses. 
-If you do not know, make an educated guess and check the reported values. It's easiest to validate the temperature at the boundaries of the range, so maybe put the sensor into the fridge for a while. 
+사용하는 EEP를 확인하려면 온도 센서 설명서를 확인하십시오. 
+모르는 경우, 경험을 토대로 추측을 하고 보고된 값을 확인하십시오. 범위의 경계에서 온도를 확인하는 것이 가장 쉬운 방법이므로 센서를 냉장고에 잠시 동안 두십시오.
 
-Add the following to your `configuration.yaml` file:
+`configuration.yaml` 파일에 다음을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -254,39 +253,39 @@ sensor:
     device_class: temperature
 ```
 
-The temperature sensor supports these additional configuration properties.
+온도 센서는 이러한 추가 설정 속성을 지원합니다.
 
 {% configuration %}
 min_temp:
-  description: The minimal temperature in °C your sensor supports.
+  description: 센서가 지원하는 최소 온도 (° C)
   required: false
   type: integer
   default: 0
 max_temp:
-  description: The maximum temperature in °C your sensor supports.
+  description: 센서가 지원하는 최대 온도 (° C)
   required: false
   type: integer
   default: 40
 range_from:
-  description: The range value your sensor reports for `min_temp`
+  description: 센서가 `min_temp`에 대해 보고하는 범위 값
   required: false
   type: integer
   default: 255
 range_to:
-  description: The range value your sensor reports for `max_temp`
+  description: 센서가 `max_temp`에 대해 보고하는 범위 값
   required: false
   type: integer
   default: 0
 {% endconfiguration %}
 
-Note that the default configuration values of _range_from_ and _range_to_ are not typos, the range is backwards for most sensors.
-However, some EEPs have a different, inverted range, which goes from 0 to 250. This includes the following EEPs:
+_range_from_ 및 _range_to_ 의 기본 설정값은 오타가 아니며 범위는 대부분의 센서에서 거꾸로입니다.
+그러나 일부 EEP의 반전 범위는 0에서 250 사이입니다. 여기에는 다음 EEP가 포함됩니다.
 
 - **A5-04-01**
 - **A5-04-02**
 - **A5-10-10** to **A5-10-14**
 
-Adapt the `configuration.yaml` for those sensors:
+해당 센서에 `configuration.yaml`을 적용하십시오:
 
 ```yaml
 # Example configuration.yaml entry for EEP A5-10-10
@@ -301,9 +300,9 @@ sensor:
 
 ### Window handle
 
-As of now, the Hoppe SecuSignal window handle from Somfy has been successfully tested. However, any mechanical window handle that follows the EnOcean RPS telegram spec F6 10 00 (Hoppe AG) is supported.
+현재 Somfy의 Hoppe SecuSignal 창 핸들(Window handle)이 성공적으로 테스트되었습니다. 그러나 EnOcean RPS telegram 사양 F6 10 00 (Hoppe AG)을 따르는 모든 기계식 창 핸들은 지원됩니다.
 
-To configure a window handle, add the following code to your `configuration.yaml`:
+창 핸들을 설정하려면 `configuration.yaml`에 다음 코드를 추가하십시오 
 
 ```yaml
 # Example configuration.yaml entry for window handle EEP F6-10-00
@@ -314,9 +313,9 @@ sensor:
     device_class: windowhandle
 ```
 
-The configuration does not have any optional parameters.
+설정에 선택적 매개 변수가 없습니다.
 
-The window handle sensor can have the following states:
+창 핸들 센서는 다음 상태를 가질 수 있습니다.
 
 - **closed**: The window handle is in closed position (typically down, or 6 o'clock)
 - **open**: The window handle is in open position (typically left or right, or 3 o'clock or 9 o'clock)
@@ -324,9 +323,9 @@ The window handle sensor can have the following states:
 
 ## Switch
 
-An EnOcean switch can take many forms. Currently, only a few types have been tested: Permundo PSC234 and Nod On SIN-2-1-01.
+EnOcean 스위치는 여러 형태를 취할 수 있습니다. 현재 Permundo PSC234 및 Nod On SIN-2-1-01 유형만 테스트되었습니다.
 
-To use your EnOcean device, you first have to set up your [EnOcean hub](#hub) and then add the following to your `configuration.yaml` file:
+EnOcean 장치를 사용하려면 먼저 [EnOcean hub](#hub)를 셋업한 다음 `configuration.yaml` 파일에 다음을 추가해야합니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -337,16 +336,16 @@ switch:
 
 {% configuration %}
 id:
-  description: The ID of the device. This is a 4 bytes long number.
+  description: 장치의 ID. 이것은 4 바이트 길이.
   required: true
   type: list
 name:
-  description: An identifier for the switch.
+  description: 스위치의 식별자
   required: false
   default: EnOcean Switch
   type: string
 channel:
-  description: The number of the channel (typically 0 or 1) for the output channel to switch.
+  description: 출력 채널을 전환할 채널 번호. (일반적으로 0 또는 1)입니다.
   required: false
   default: 0
   type: integer

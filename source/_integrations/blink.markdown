@@ -1,5 +1,5 @@
 ---
-title: Blink
+title: Blink 보안
 description: Instructions for how to integrate Blink camera/security system within Home Assistant.
 logo: blink.png
 ha_category:
@@ -14,15 +14,15 @@ ha_codeowners:
   - '@fronzbot'
 ---
 
-The `blink` integration lets you view camera images and motion events from [Blink](https://blinkforhome.com/) camera and security systems.
+`blink` 통합구성요소를 통해 [Blink](https://blinkforhome.com/) 카메라 및 보안 시스템에서 카메라 이미지 및 모션 이벤트를 볼 수 있습니다.
 
-## Setup
+## 셋업
 
-You will need your Blink login information (username, which is usually your email address, and password) to use this module.
+이 모듈을 사용하려면 Blink 로그인 정보 (일반적으로 전자메일주소인 사용자 이름 및 암호)가 필요합니다.
 
-## Configuration
+## 설정
 
-To enable devices linked in your [Blink](https://blinkforhome.com) account, add the following to your `configuration.yaml` file:
+[Blink](https://blinkforhome.com) 계정에 연결된 장치를 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -33,39 +33,39 @@ blink:
 
 {% configuration %}
 username:
-  description: The username for accessing your Blink account.
+  description: Blink 계정에 액세스하기위한 사용자 이름
   required: true
   type: string
 password:
-  description: The password for accessing your Blink account.
+  description: Blink 계정에 액세스하기위한 비밀번호
   required: true
   type: string
 scan_interval:
-  description: How frequently to query for new data. Defaults to 300 seconds (5 minutes).
+  description: 새 데이터를 쿼리하는 빈도. 기본값은 300 초 (5 분)입니다.
   required: false
   type: integer
 binary_sensors:
-  description: Binary sensor configuration options.
+  description: 이진 센서 설정 옵션.
   required: false
   type: map
   keys:
    monitored_conditions:
-     description: The conditions to create sensors from.
+     description: 센서 생성 조건.
      required: false
      type: list
      default: all (`motion_enabled`, `motion_detected`)
 sensors:
-  description: Sensor configuration options.
+  description: 센서 설정 옵션.
   required: false
   type: map
   keys:
     monitored_conditions:
-      description: The conditions to create sensors from.
+      description: 센서 생성 조건.
       required: false
       type: list
       default: all (`battery`, `temperature`, `wifi_strength`)
 offset:
-  description: How far back in time (minutes) to look for motion. Motion is determined if a new video has been recorded between now and the last time you refreshed plus this offset.
+  description: How far back in time (minutes) to look for motion. Motion is determined if a new video has been recorded between now and the last time you refreshed plus this offset. 
   required: false
   type: integer
   default: 1
@@ -76,18 +76,18 @@ mode:
   default: not set
 {% endconfiguration %}
 
-Once Home Assistant starts, the `blink` integration will create the following platforms:
+Home Assistant가 시작되면 `blink` 통합구성요소는 다음 플랫폼을 만듭니다. :
 
-- An `alarm_control_panel` to arm/disarm the whole blink system (note, `alarm_arm_home` is not implemented and will not actually do anything, despite it being an option in the GUI).
-- A `camera` for each camera linked to your Blink sync module.
-- A `sensor` per camera for every item listed in `monitored_conditions` (if no items specified in your `configuration.yaml`, all of them will be added by default).
-- A `binary_sensor` for each item listed in `monitored_conditions` (if no items specified in your `configuration.yaml`, all of them will be added by default).
+- 모든 blink 시스템을 arm/disarm 하는 `alarm_control_panel`(주의 : `arm_arm_home`은 GUI의 옵션임에도 불구하고 구현되지 않았으며 실제로 아무것도하지 않습니다.)
+- blink 동기화 모듈에 연결된 각 카메라의 `camera`.
+- `monitored_conditions`에 나열된 모든 항목에 대한 카메라마다의 `sensor` (`configuration.yaml`에 지정된 항목이 없으면 기본적으로 모든 항목이 추가됩니다. )
+- `monitored_conditions`에 나열된 각 항목에 대한 `binary_sensor` (`configuration.yaml`에 지정된 항목이 없으면 기본적으로 모든 항목이 추가됩니다.)
 
-Since the cameras are battery operated, setting the `scan_interval` must be done with care so as to not drain the battery too quickly, or hammer Blink's servers with too many API requests.  The cameras can be manually updated via the `trigger_camera` service which will ignore the throttling caused by `scan_interval`.  As a note, all of the camera-specific sensors are only polled when a new image is requested from the camera. This means that relying on any of these sensors to provide timely and accurate data is not recommended.
+카메라는 배터리로 작동하므로 배터리를 너무 빨리 소모하지 않도록 API를 너무 많이 사용하지 않으면서 Blink의 서버를 혼란스럽게 하지 않도록 `scan_interval` 설정을 주의해서 수행해야합니다. `scan_interval`에 의한 조절을 무시하고 `trigger_camera` 서비스를 통해 카메라를 수동으로 업데이트 할 수 있습니다. 참고로, 모든 카메라 특정 센서는 카메라에서 새 이미지를 요청한 경우에만 폴링됩니다. 즉, 적시에 정확한 데이터를 제공하기 위해 이러한 센서를 사용하지 않는 것이 좋습니다. 
 
-Please note that each camera reports two different states: one as `sensor.blink_<camera_name>_status` and the other as `binary_sensor.blink_<camera_name>_motion_enabled`. The `motion_enabled` property reports if the `camera` is ready to detect motion *regardless if the system is actually armed**.
+각 카메라는 서로 다른 두 가지 상태를보고합니다. : 하나는 `sensor.blink_ <camera_name> _status`이고 다른 하나는 `binary_sensor.blink_ <camera_name> _motion_enabled`입니다. `motion_enabled` 속성은 **시스템이 실제로 arm되어 있는지에 관계없이** `camera`가 모션을 감지 할 준비가되었는지 보고합니다.
 
-Below is an example showing every possible entry:
+아래는 가능한 모든 항목을 보여주는 예입니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -106,17 +106,17 @@ blink:
       - wifi_strength
 ```
 
-## Services
+## 서비스
 
-Any sequential calls to services relating to blink should have a minimum of a 5 second delay in between them to prevent the calls fro being throttled and ignored.
+blink와 관련된 서비스에 대한 모든 순차적 호출은 호출이 제한되고 무시되는 것을 방지하기 위해 이들 사이에 최소 5 초의 지연이 있어야합니다.
 
 ### `blink.blink_update`
 
-Force a refresh of the Blink system.
+blink 시스템을 강제로 새로 고침
 
 ### `blink.trigger_camera`
 
-Trigger a camera to take a new still image.
+카메라를 트리거하여 새로운 정지(still) 이미지를 만듭니다.
 
 | Service Data Attribute | Optional | Description                            |
 | ---------------------- | -------- | -------------------------------------- |
@@ -124,7 +124,7 @@ Trigger a camera to take a new still image.
 
 ### `blink.save_video`
 
-Save the last recorded video of a camera to a local file. Note that in most cases, Home Assistant will need to know that the directory is writable via the `whitelist_external_dirs` in your `configuration.yaml` file (see example below).
+카메라의 마지막 녹화 비디오를 로컬 파일에 저장하십시오. 대부분의 경우 Home Assistant는 디렉토리가 `configuration.yaml` 파일의 `whitelist_external_dirs`를 통해 쓰기 가능하다는 것을 알아야합니다 (아래 예 참조).
 
 | Service Data Attribute | Optional | Description                              |
 | ---------------------- | -------- | ---------------------------------------- |
@@ -140,18 +140,18 @@ homeassistant:
         - '/path/to/whitelist'
 ```
 
-### Other Services
+### 다른 서비스들
 
-In addition to the services mentioned above, there are generic `camera` and `alarm_control_panel` services available for use as well. The `camera.enable_motion_detection` and `camera.disable_motion_detection` services allow for individual cameras to be enabled and disabled, respectively, within the Blink system. The `alarm_control_panel.alarm_arm_away` and `alarm_control_panel.alarm_disarm` services allow for the whole system to be armed and disarmed, respectively.
+위에서 언급 한 서비스 외에도 일반적인 `camera` 및 `alarm_control_panel` 서비스도 사용할 수 있습니다. `camera.enable_motion_detection` 및 `camera.disable_motion_detection` 서비스를 통해 Blink 시스템 내에서 개별 카메라를 각각 활성화 및 비활성화 할 수 있습니다. `alarm_control_panel.alarm_arm_away` 및 `alarm_control_panel.alarm_disarm` 서비스를 통해 전체 시스템을 각각 arm 및 disarm 할 수 있습니다.
 
+## 사례
 
-## Examples
+다음은 Blink를 사용하여 서비스 호출을 올바르게 수행하는 방법을 보여주는 몇 가지 예입니다.
 
-The following are some examples showing how to correctly make service calls using Blink:
+### 사진 찍기 및 로컬 저장
 
-### Snap Picture and Save Locally
-
-This example script shows how to take a picture with your camera, named `My Camera` in your Blink app (this is **not necessarily** the friendly name in home-assistant).  After snapping a picture, the image will then be saved to a local directory called `/tmp/my_image.jpg`.  Note that this example makes use of services found in the [camera integration](/integrations/camera#service-snapshot)
+이 예제 스크립트는 Blink 앱에서 `My Camera` 라는 카메라로 사진을 찍는 방법을 보여줍니다 (
+이것은 반드시 홈어시스턴트의 친숙한 이름(friendly name)은 아닙니다). 사진을 찍은 후 이미지는 `/tmp/my_image.jpg`라는 로컬 디렉토리에 저장됩니다. 이 예는 [camera integration](/integrations/camera#service-snapshot)에 있는 서비스를 사용합니다.
 
 ```yaml
 alias: Blink Snap Picture
@@ -167,11 +167,11 @@ sequence:
           filename: /tmp/my_image.jpg
 ```
 
-### Arm Blink When Away
+### 부재중 Blink를 Arm 상태로
 
-This example automation will arm your blink sync module to detect motion on any of your blink cameras that have motion detection enabled.  By default, Blink enables motion detection on all cameras so, unless you've changed anything in your app, you're all set.  If you want to manually enable motion detection for individual cameras, you can utilize the [appropriate camera service](/integrations/camera#service-enable_motion_detection) but please note that motion will only be captured if the sync module is armed.
+이 예제 자동화는 blink 동기화 모듈을 활성화하여 모션 감지가 활성화 된 blink 카메라에서 움직임을 감지합니다. 기본적으로 Blink는 모든 카메라에서 모션 감지를 활성화하므로 앱에서 아무것도 변경하지 않으면 모든 설정이 완료됩니다. 개별 카메라에 대해 모션 감지를 수동으로 활성화하려면 [appropriate camera service](/integrations/camera#service-enable_motion_detection)를 사용할 수 있지만 동기화 모듈이 활성화된 경우에만 모션이 캡처됩니다.
 
-Here, this example assumes your blink module is named `My Sync Module` and that you have [device trackers](/integrations/device_tracker) set up for presence detection.
+이 예에서는 blink 모듈의 이름이 `My Sync Module`이고 재실 감지를 위해 [device trackers](/integrations/device_tracker)가 설정되어 있다고 가정합니다.
 
 ```yaml
 - id: arm_blink_when_away
@@ -185,9 +185,9 @@ Here, this example assumes your blink module is named `My Sync Module` and that 
       entity_id: alarm_control_panel.blink_my_sync_module 
 ```
 
-### Disarm Blink When Home
+### 재실시 Blink Disarm 상태로
 
-Similar to the previous example, this automation will disarm blink when arriving home.
+이전 예와 마찬가지로이 자동화는 집에 도착할 때 Blink가 Arm을 해제합니다.
 
 ```yaml
 - id: disarm_blink_when_home
@@ -201,11 +201,11 @@ Similar to the previous example, this automation will disarm blink when arriving
       entity_id: alarm_control_panel.blink_my_sync_module 
 ```
 
-### Save Video Locally When Motion Detected
+### 모션 감지시 비디오를 로컬에 저장
 
-When motion is detected, you can use the Blink Home-Assistant integration to save the last recorded video locally, rather than relying on Blink's servers to save your data.
+모션이 감지되면 Blink 홈어시스턴트 통합구성요소를 사용하여 Blink의 서버를 사용하여 데이터를 저장하지 않고 마지막으로 녹화 된 비디오를 로컬로 저장할 수 있습니다.
 
-Again, this example assumes your camera's name (in the blink app) is `My Camera` and your sync module name is `My Sync Module`.  The file will be saved to `/tmp/videos/blink_video_{YYYMMDD_HHmmSS}.mp4` where `{YYYYMMDD_HHmmSS}` will be a timestamp create via the use of [templating](/docs/configuration/templating/).
+다시 이 예에서는 blink 앱에서 카메라 이름이 `My Camera`이고 동기화 모듈 이름이 `My Sync Module`이라고 가정합니다. 파일은 `/tmp/videos/blink_video_{YYYMMDD_HHmmSS}.mp4`에 저장됩니다. 여기서 `{YYYYMMDD_HHmmSS}`는 [templating](/docs/configuration/templating/)을 사용하여 생성된 타임 스탬프입니다.
 
 {% raw %}
 ```yaml

@@ -1,5 +1,5 @@
 ---
-title: Elgato Key Light
+title: 엘가토 Key Light
 description: Instructions on how to integrate an Elgato Key Light with Home Assistant.
 logo: elgato.jpg
 ha_category:
@@ -13,32 +13,22 @@ ha_codeowners:
 ha_quality_scale: platinum
 ---
 
-The [Elgato Key Light](https://www.elgato.com/en/gaming/key-light) sets the
-bar for high-end studio lightning. With 80 LEDs, that put out a massive
-2500 lumens, and can change the color temperature as well.
+[Elgato Key Light](https://www.elgato.com/en/gaming/key-light)는 고급 스튜디오 조명의 기준을 제시합니다. 80 개의 LED를 사용하면 2500 루멘을 대량으로 방출할 수 있으며 색온도도 변경할 수 있습니다.
 
-The LED light panel is created specifically, and designed for streamers
-and content creators, many of whom operate on platforms like YouTube and Twitch.
+LED 표시 등 패널은 특별히 제작되었으며 스트리머 및 콘텐츠 제작자를 위해 설계되었으며 대부분 YouTube 및 Twitch와 같은 플랫폼에서 작동합니다.
 
-## Configuration
+## 설정
 
-This integration can be configured using the integrations in the
-Home Assistant frontend.
+이 통합구성요소는 Home Assistant 프론트 엔드의 연동을 사용하여 구성 할 수 있습니다.
 
-Menu: **Configuration** -> **Integrations**.
+메뉴: **설정** -> **통합구성요소**.
 
-In most cases, Elgato Key Lights devices will be automatically discovered by
-Home Assistant. Those automatically discovered devices are listed
-on the integrations page.
+대부분의 경우 Elgato Key Lights 장치는 Home Assistant에서 자동으로 검색합니다. 자동 검색된 장치는 통합구성요소 페이지에 나열됩니다.
 
-If for some reason (e.g., due to lack of mDNS support on your network),
-the Elgato Key Light isn't discovered, it can be added manually.
+어떤 이유로 (예: 네트워크에서 mDNS 지원 부족으로 인해) Elgato Key Light가 검색되지 않으면 수동으로 추가 할 수 있습니다.
 
-Click on the `+` sign to add an integration and click on **Elgato Key Light**.
-After completing the configuration flow, the Key Light integration will be
-available.
+`+` 부호를 클릭하여 통합구성요소를 추가하고 **Elgato Key Light**를 클릭하십시오. 설정 절차를 완료하면 Key Light 통합구성요소를 사용할 수 있습니다.
 
-## Lights
+## 조명
 
-This integration adds the Key Light device as a light in Home Assistant, and
-allows you to control the color temperature, brightness, and its on/off state.
+이 통합구성요소로 Key Assistant 장치가 Home Assistant의 조명으로 추가되고 색온도, 밝기 및 켜짐/꺼짐 상태를 제어 할 수 있습니다.

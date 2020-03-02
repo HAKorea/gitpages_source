@@ -1,5 +1,5 @@
 ---
-title: Epson Workforce
+title: 엡슨 Workforce
 description: Instructions on how to integrate Epson Workforce Printer into Home Assistant.
 logo: epson.png
 ha_category:
@@ -10,10 +10,10 @@ ha_codeowners:
   - '@ThaStealth'
 ---
 
-The `epson workforce` platform allows you to monitor the ink levels of a Epson Workforce printer from Home
-Assistant.
+`epson workforce` 플랫폼을 사용하면 Home Assistant에서 Epson Workforce 프린터의 잉크량을 모니터링 할 수 있습니다.
 
-To add Epson Workforce to your installation, add the following to your `configuration.yaml` file:
+
+Epson Workforce를 설치에 추가하려면 `configuration.yaml` 파일에 다음을 추가 하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -31,33 +31,33 @@ sensor:
 
 {% configuration %}
 host:
-  description: The host name or address of the Epson workforce printer
+  description: Epson Workforce Printer의 호스트 이름 또는 주소
   required: true
   type: string
 monitored_conditions:
-  description: The cartridge colours to monitor. 
+  description: 모니터 할 카트리지 색상.
   required: true
   type: list
   keys:
     black:
-      description: The black ink cartridge
+      description: 검정 잉크 카트리지
     photoblack:
-      description: The photo black ink cartridge (not supported by all printers).
+      description: 포토 검정 잉크 카트리지 (일부 프린터에서 지원되지는 않음).
     yellow:
-      description: The yellow ink cartridge.
+      description: 노랑 잉크 카트리지.
     magenta:
-      description: The magenta (=red) ink cartridge.
+      description: 마젠타 색 (= 빨간색) 잉크 카트리지.
     cyan:
-      description: The cyan (=blue) ink cartridge.      
+      description: 시안 (= 파란색) 잉크 카트리지.   
     clean:
-      description: The cleaning cartridge.      
+      description: 청소 카트리지.
 {% endconfiguration %}
 
-Supported devices:
+지원되는 장치:
 
-- Epson Workforce (and some EcoTank) printers who publish a HTTP page containing the ink cardridge levels
+- 잉크 카트리지 수준이 포함 된 HTTP 페이지를 게시하는 Epson Workforce 및 일부 EcoTank 프린터
 
-Tested devices:
+테스트 된 장치:
 
 - Epson WF3540
 - Epson WF3620

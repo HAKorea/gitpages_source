@@ -1,5 +1,5 @@
 ---
-title: BMW Connected Drive
+title: BMW 컨넥티드 드라이브
 description: Instructions on how to setup your BMW Connected Drive account with Home Assistant.
 logo: bmw.png
 ha_category:
@@ -14,24 +14,23 @@ ha_codeowners:
   - '@gerard33'
 ---
 
-The `bmw_connected_drive` integration lets you retrieve data of your BMW vehicle from the BMW Connected Drive portal. You need to have a working BMW Connected Drive account, and a Connected Drive enabled vehicle for this to work.
+`bmw_connected_drive` 통합구성요소를 통해 BMW 커넥티드 드라이브 포털에서 BMW 차량의 데이터를 검색 할 수 있습니다. 작동하려면 BMW Connected Drive 계정과 Connected Drive 지원 차량이 있어야합니다.
 
-The `bmw_connected_drive` integration also works with (recent) Mini vehicles. You need to have a working Mini Connected account, and a Mini Connected enabled vehicle for this to work.
+`bmw_connected_drive` 통합구성요소는 (최근) 미니 차량과도 작동합니다. 작동하려면 Mini Connected 계정과 Mini Connected 지원 차량이 있어야 작동합니다.
 
-For compatibility with your BMW vehicle check the [bimmer_connected page](https://github.com/bimmerconnected/bimmer_connected) on GitHub.
+BMW 차량과의 호환성을 위해 GitHub의 [bimmer_connected page](https://github.com/bimmerconnected/bimmer_connected)를 확인하십시오.
 
-This integration provides the following platforms:
+이 통합구성요소는 다음 플랫폼을 제공합니다
 
-- Binary Sensors: Doors, windows, condition based services, check control messages, parking lights, door lock state, charging status (electric cars) and connections status (electric cars).
-- Device tracker: The location of your car.
-- Lock: Control the lock of your car.
-- Sensors: Mileage, remaining range, remaining fuel, charging time remaining (electric cars), charging status (electric cars), remaining range electric (electric cars).
-- Services: Turn on air condition, sound the horn, flash the lights and update the state. More details can be found [here](/integrations/bmw_connected_drive/#services).
+- 이진 센서 : 도어, 창문, 상태 기반 서비스, 점검 제어 메시지, 주차 등, 도어록 상태, 충전 상태 (전기 자동차) 및 연결 상태 (전기 자동차).
+- 장치 추적기 : 차량 위치.
+- 잠금 : 자동차 잠금을 제어합니다.
+- 센서 : 마일리지, 잔여 범위, 잔여 연료, 잔여 충전 시간 (전기 자동차), 충전 상태 (전기 자동차), 잔여 범위 전기 (전기 자동차).
+- 서비스 : 에어컨을 켜고 경적을 울리며 표시등을 깜박이고 상태를 업데이트하십시오. 자세한 내용은 [here](/integrations/bmw_connected_drive/#services)를 참조 하십시오 .
 
-## Configuration
+## 설정
 
-To enable this integration in your installation, add the following to your
-`configuration.yaml` file:
+설치에서 이 통합구성요소를 사용 가능하게 하려면 `configuration.yaml`파일에 다음을 추가 하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -49,60 +48,60 @@ bmw_connected_drive:
   type: map
   keys:
     name:
-      description: Name of your account in Home Assistant.
+      description: 홈어시스턴트의 계정 이름
       required: true
       type: string
     username:
-      description: Your BMW Connected Drive username.
+      description: BMW 커넥 티드 드라이브 사용자 이름.
       required: true
       type: string
     password:
-      description: Your BMW Connected Drive password.
+      description: BMW 커넥 티드 드라이브 비밀번호.
       required: true
       type: string
     region:
-      description: "The region of your Connected Drive account. Please use one of these values: `north_america`, `china`, `rest_of_world`"
+      description: "연결된 드라이브 계정의 지역 다음 값 중 하나를 사용: `north_america`, `china`, `rest_of_world`"
       required: true
       type: string
     read_only:
-      description: In read only mode, all services including the lock of the vehicle are disabled.
+      description: 읽기 전용 모드에서는 차량 잠금을 포함한 모든 서비스가 비활성화.
       required: false
       type: boolean
       default: false
 {% endconfiguration %}
 
-## Services
+## 서비스
 
-The `bmw_connected_drive` integration offers several services. In case you need to provide the vehicle identification number (VIN) as a parameter, you can see the VIN in the attributes of the device tracker for the vehicle. The VIN is a 17 digit alphanumeric string, e.g., `WBANXXXXXX1234567`.
+`bmw_connected_drive` 통합구성요소는 여러 가지 서비스를 제공합니다. 차량 식별 번호 (VIN)를 매개 변수로 제공해야하는 경우 차량의 장치 추적기 속성에서 VIN을 볼 수 있습니다. VIN은 17 자리 영숫자 문자열입니다 (예: WBANXXXXXX1234567.) 
 
-Using these services will impact the state of your vehicle. So use these services with care!
+이 서비스를 사용하면 차량 상태에 영향을 미칩니다. 따라서 이 서비스를 주의해서 사용하십시오!
 
-### Locking and unlocking
+### 잠금 및 잠금해제
 
-The vehicle can be locked and unlocked via the lock integration that is created automatically for each vehicle. Before invoking these services, make sure it's safe to lock/unlock the vehicle in the current situation.
+각 차량에 대해 자동으로 생성된 잠금 연동을 통해 차량을 잠금 및 잠금 해제 할 수 있습니다. 이러한 서비스를 호출하기 전에 현재 상황에서 차량을 잠그거나 잠금 해제하는 것이 안전한지 확인하십시오.
 
-### Air condition
+### 에어컨
 
-The air condition of the vehicle can be activated with the service `bmw_connected_drive.activate_air_conditioning`.
+`bmw_connected_drive.activate_air_conditioning` 서비스를 통해 차량의 에어컨을 활성화 할 수 있습니다.
 
-What exactly is started here depends on the type of vehicle. It might range from just ventilation over auxiliary heating to real air conditioning. If your vehicle is equipped with auxiliary heating, only trigger this service if the vehicle is parked in a location where it is safe to use it (e.g., not in an underground parking or closed garage).
+여기서 정확히 시작되는 것은 차량 유형에 따라 다릅니다. 보조 난방을 통한 환기에서부터 실제 에어컨에 이르기까지 다양합니다. 차량에 보조 난방 장치가 장착된 경우 차량을 안전한 장소 (예 : 지하 주차장 또는 폐쇄 차고가 아닌)에 주차 한 경우에만 이 서비스를 시작하십시오.
 
-The vehicle is identified via the parameter `vin`.
+차량 매개 변수는 `vin`를 통해 식별됩니다. 
 
-### Sound the horn
+### 경적 소리
 
-The service `bmw_connected_drive.sound_horn` sounds the horn of the vehicle. This option is not available in some countries (among which  the UK). Use this feature responsibly, as it might annoy your neighbors. The vehicle is identified via the parameter `vin`.
+`bmw_connected_drive.sound_horn` 서비스는 차량의 경적을 울립니다. 일부 국가 (영국 등)에서는이 옵션을 사용할 수 없습니다. 이웃을 귀찮게 할 수 있으므로이 기능을 책임감있게 사용하십시오. 차량 매개 변수는 `vin`를 통해 식별됩니다. 
 
-### Flash the lights
+### 전조등 켜기
 
-The service `bmw_connected_drive.light_flash` flashes the lights of the vehicle. The vehicle is identified via the parameter `vin`.
+`bmw_connected_drive.light_flash` 서비스는 차량의 전조등을 켜고 끌 수 있습니다. 차량 매개 변수는 `vin`를 통해 식별됩니다. 
 
-### Update the state
+### 상태 업데이트
 
-The service `bmw_connected_drive.update_state` fetches the last state of the vehicles of all your accounts from the BMW server. This does *not* trigger an update from the vehicle; it gets the data from the BMW servers. So this service does *not* interact with your vehicles.
+서비스 `bmw_connected_drive.update_state`는 BMW 서버에서 모든 계정의 차량의 마지막 상태를 가져옵니다. 이는 차량으로부터의 업데이트를 트리거하지 *않습니다*. BMW 서버에서 데이터를 가져옵니다. 따라서 이 서비스는 차량과 상호 작용하지 않습니다.
 
-This service does not require any attributes.
+이 서비스에는 속성이 필요하지 않습니다.
 
 ## Disclaimer
 
-This software is not affiliated with or endorsed by BMW Group.
+이 소프트웨어는 BMW 그룹과 제휴하거나 보증하지 않습니다.

@@ -1,5 +1,5 @@
 ---
-title: currencylayer
+title: 실시간환률(currencylayer)
 description: Instructions on integrating exchange rates from https://currencylayer.com/ within Home Assistant.
 ha_category:
   - Finance
@@ -8,11 +8,11 @@ ha_iot_class: Cloud Polling
 ha_release: 0.32
 ---
 
-The `currencylayer` sensor will show you the current exchange rate from [Currencylayer](https://currencylayer.com/) that provides real-time exchange rates for [170 currencies](https://currencylayer.com/currencies). The free account is limited to only USD as a base currency, allows 1000 requests per month, and updates every hour.
+`currencylayer` 센서는 [170 currencies](https://currencylayer.com/currencies)에 대한 실시간 환율을 제공하는 [Currencylayer](https://currencylayer.com/)의 현재 환율을 보여줍니다. 무료 계정은 기본 통화로 USD로만 제한되며 매월 1000 건의 요청을 허용하며 매시간 업데이트됩니다.
 
-Obtain your API key [here](https://currencylayer.com/product)
+[here](https://currencylayer.com/product)에서 API 키를 얻으십시오
 
-To enable this sensor, add the following lines to your `configuration.yaml` file:
+이 센서를 사용하려면 `configuration.yaml` 파일에 다음 줄을 추가 하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -27,16 +27,16 @@ sensor:
 
 {% configuration %}
 api_key:
-  description: "The API Key from [Currencylayer](https://currencylayer.com/)."
+  description: "[Currencylayer](https://currencylayer.com/)에서 받은 API키"
   required: true
   type: string
 quote:
-  description: The symbol(s) of the quote or target currencies.
+  description: 대상 통화의 기호.
   required: false
   type: [string, list]
   default: Exchange rate
 base:
-  description: The symbol of the base currency.
+  description: 기본 통화.
   required: false
   type: string
   default: USD

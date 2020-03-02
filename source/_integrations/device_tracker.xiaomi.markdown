@@ -1,5 +1,5 @@
 ---
-title: "Xiaomi Router"
+title: "샤오미 Router"
 description: "Instructions on how to integrate Xiaomi routers into Home Assistant."
 logo: xiaomi.png
 ha_category:

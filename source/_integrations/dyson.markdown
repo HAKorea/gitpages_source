@@ -1,6 +1,5 @@
 ---
-title: Dyson
-description: Instructions on how to integrate Dyson into Home Assistant.
+title: 다이슨(Dyson)
 logo: dyson.png
 ha_category:
   - Hub
@@ -12,9 +11,9 @@ ha_iot_class: Cloud Polling
 ha_release: 0.47
 ---
 
-The `dyson` integration is the main integration to integrate all [Dyson](https://www.dyson.com) related platforms.
+`dyson` 통합구성요소는 모든 [Dyson](https://www.dyson.com) 관련 플랫폼을 연동하기위한 주요 통합구성요소입니다.
 
-There is currently support for the following device types within Home Assistant:
+현재 홈 어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - Climate
 - Fan
@@ -22,9 +21,9 @@ There is currently support for the following device types within Home Assistant:
 - Vacuum
 - Air Quality
 
-## Configuration
+## 설정
 
-To enable this component, add the following lines to your `configuration.yaml`:
+이 컴포넌트를 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -41,81 +40,82 @@ dyson:
 
 {% configuration %}
 username:
-  description: Dyson account username (email address).
+  description: 다이슨 계정 사용자 이름 (이메일 주소).
   required: true
   type: string
 password:
-  description: Dyson account password.
+  description: 다이슨 계정 비밀번호.
   required: true
   type: string
 language:
-  description: "Dyson account language country code. Known working codes: `FR`, `NL`, `GB`, `AU`. Other codes should be supported."
+  description: "다이슨 계정 언어 국가 코드. 국가 코드 :`FR`,`NL`,`GB`,`AU`. 다른 코드도 지원합니다."
   required: true
   type: string
 devices:
-  description: List of devices.
+  description: 장치 목록..
   required:  false
   type: map
   keys:
     device_id:
-      description: Device ID. The Serial Number of the device. Found in the smart phone app device settings page.
+      description: 장치 아이디. 장치의 일련 번호. 스마트 폰 앱 장치 설정 페이지에서 찾을 수 있습니다.
       required: true
       type: string
     device_ip:
-      description: Device IP address.
+      description: 장치 IP 주소
       required: true
       type: string
 {% endconfiguration %}
 
-The `devices` list is optional, but you'll have to provide them if discovery is not working (warnings in the logs and the devices are not available in Home Assistant web interface).
+`devices` 목록은 선택 사항이지만 검색이 작동하지 않을 경우 제공해야합니다. (로그의 경고 및 Home Assistant 웹 인터페이스에서 장치를 사용할 수 없음).
 
 <div class='note warning'>
 
-Discovery is not yet supported for any robot vacuum models (Dyson 360 Eye). For these devices, you will need to provide them in the `devices` list.
+로봇 청소기 모델 (Dyson 360 Eye)에서는 아직 검색이 지원되지 않습니다. 이 장치들에 대해서는 `devices` 목록에 제공해야합니다.
+
 
 </div>
 
-To find a devices IP address, you can use your router or `nmap`:
+장치 IP 주소를 찾으려면 라우터 또는 `nmap`을 사용할 수 있습니다. : 
 
 ```bash
 $ nmap -p 1883 XXX.XXX.XXX.XXX/YY --open
 ```
 
-Where:
+결과 :
 
-- **XXX.XXX.XXX.XXX** is your network address
-- **YY** is your network mask
+- **XXX.XXX.XXX.XXX** 는 네트워크 주소입니다
+- **YY** 는 네트워크 마스크입니다
 
-For example:
+예시 :
 
 ```bash
 $ nmap -p 1883 192.168.0.0/24 --open
 ```
 
-## Vacuum
+## vacumm 
 
-The `dyson` vacuum platform allows you to control your Dyson 360 Eye robot vacuum.
+`dyson` vacumm 플랫폼을 사용하면 Dyson 360 Eye 로봇 진공을 제어 할 수 있습니다.
 
-### Component services
+### Component 서비스 
 
-This integration support the following services (see [Vacuum Cleaner Robots](/integrations/vacuum/)):
+이 연동은 다음 서비스를 지원합니다 ([Vacuum Cleaner Robots](/integrations/vacuum/) 참조).
 
 - [`turn_on`](/integrations/vacuum/#service-vacuumturn_on)
 - [`turn_off`](/integrations/vacuum/#service-vacuumturn_off)
 - [`start_pause`](/integrations/vacuum/#service-vacuumstart_pause)
 - [`stop`](/integrations/vacuum/#service-vacuumstop)
 - [`return_to_home`](/integrations/vacuum/#service-vacuumreturn_to_home)
-- [`set_fan_speed`](/integrations/vacuum/#service-vacuumset_fanspeed). Fan speed values:
+- [`set_fan_speed`](/integrations/vacuum/#service-vacuumset_fanspeed). 팬 속도 값 :
   - `Quiet`
   - `Max`
 
-## Climate
+## Climate 
 
-The `dyson` climate platform allows you to control your Dyson Pure Hot+Cool Fan thermal control. For controlling the fan functionality, see the Dyson fan part on this page.
+`dyson` Climate 플랫폼을 사용하면 Dyson Pure Hot+Cool Fan thermal를 제어 할 수 있습니다. 팬(fan) 기능을 제어하려면 이 페이지의 Dyson 팬 부분을 참조하십시오.
 
-### Component services
+### Component 서비스
 
-This integration supports the following services (see [Climate](/integrations/climate/)):
+이 연동은 다음 서비스를 지원합니다 ([Climate](/integrations/climate/) 참고):
 
 - [`turn_on`](/integrations/climate/#service-climateturn_on)
 - [`turn_off`](/integrations/climate/#service-climateturn_off)
@@ -125,46 +125,46 @@ This integration supports the following services (see [Climate](/integrations/cl
 
 ## Fan
 
-The `dyson` fan platform allows you to control your Dyson Purifier fans.
+`dyson` 팬 플랫폼을 사용하면 Dyson Purifier 팬을 제어 할 수 있습니다.
 
-### Supported fan devices
+### 지원되는 팬 장치
 
 - Pure Cool link (desk and tower)
 - Pure Hot+cool link (see climate part) for thermal control
 - Pure Cool 2018 (DP04 and TP04)
 
-### Attributes
+### 속성
 
-There are several attributes which can be used for automations and templates.
+자동화 및 템플릿에 사용할 수있는 몇 가지 속성이 있습니다.
 
 | Attribute | Description |
 | --------- | ----------- |
-| `night_mode` | A boolean that indicates if the night mode of the fan device is on.|
-| `auto_mode` | A boolean that indicates if the auto mode of the fan device is on.|
-| `angle_low` | Int (between 5 and 355) that indicates the low angle of oscillation (only for DP04 and TP04).|
-| `angle_high` | Int (between 5 and 355) that indicates the high angle of oscillation (only for DP04 and TP04).|
-| `flow_direction_front` | Boolean that indicates if the frontal flow direction is enabled (only for DP04 and TP04).|
-| `timer` | Attribute that indicates the status of the auto power off timer, can be either 'OFF' or an integer representing the time remaining until shutdown in minutes (only for DP04 and TP04).|
-| `hepa filter` |  State of the fan's HEPA filter in % (only for DP04 and TP04).|
-| `carbon filter` | State of the fan's carbon filter in % (only for DP04 and TP04).|
+| `night_mode` | 팬 장치의 야간 모드가 켜져 있는지 여부를 나타내는 boolean.|
+| `auto_mode` | 팬 장치의 자동 모드가 켜져 있는지 여부를 나타내는 boolean.|
+| `angle_low` | 낮은 진동 각도를 나타내는 Int (5와 355 사이)입니다 (DP04 및 TP04에만 해당).|
+| `angle_high` | 높은 진동 각도를 나타내는 Int (5와 355 사이)입니다 (DP04 및 TP04에만 해당).|
+| `flow_direction_front` | 정면 흐름 방향이 활성화되어 있는지 여부를 나타내는 boolean (DP04 및 TP04에만 해당).|
+| `timer` | 자동 전원 끄기 타이머의 상태를 나타내는 속성은 'OFF' 또는 종료까지 남은 시간을 분 단위로 나타내는 정수(DP04 및 TP04 만 해당)일 수 있습니다.|
+| `hepa filter` |  팬의 HEPA 필터 상태 (%) (DP04 및 TP04에만 해당).|
+| `carbon filter` | 팬의 카본 필터 상태 (%) (DP04 및 TP04에만 해당).|
 
-## Sensor
+## 센서
 
-The `dyson` sensor platform provides temperature and humidity sensors.
+`dyson` 센서 플랫폼은 온도 및 습도 센서를 제공합니다.
 
 ## Air Quality
 
-The `dyson` air quality platform provides the following levels:
+`dyson` 대기 질 플랫폼은 다음과 같은 레벨을 제공합니다.
 
 - Particulate matter 2.5 (<= 2.5 μm) level.
 - Particulate matter 10 (<= 10 μm) level.
 - Air Quality Index (AQI).
-- NO2 (nitrogen dioxide) level.
-- VOC (Volatile organic compounds) level.
+- NO2 (이산화질소) level.
+- VOC (휘발성 유기 화합물) level.
 
-Note: currently only the 2018 dyson fans are supported(TP04 and DP04).
+참고 : 현재 2018 년 다이슨 팬만 지원됩니다 (TP04 및 DP04).
 
-### Supported fan devices
+### 지원되는 팬 장치
 
 - Pure Cool link (desk and tower)
 - Pure Hot+cool link (see climate part) for thermal control

@@ -1,5 +1,5 @@
 ---
-title: Scripts
+title: 스크립트(Scripts)
 description: Instructions on how to setup scripts within Home Assistant.
 logo: home-assistant.png
 ha_category:

@@ -1,5 +1,5 @@
 ---
-title: Apple Push Notification Service (APNS)
+title: 애플 Push Notification Service (APNS)
 description: Instructions on how to add APNS notifications to Home Assistant.
 logo: apple.png
 ha_category:
@@ -7,15 +7,15 @@ ha_category:
 ha_release: 0.31
 ---
 
-The `apns` platform uses the Apple Push Notification service (APNS) to deliver notifications from Home Assistant.
+`apns` 플랫폼은 APNS (Apple Push Notification Service)를 사용하여 Home Assistant에서 알림을 전달합니다.
 
-## Setup
+## 셋업
 
-To use the APNS service you will need an Apple developer account and you will need to create an app to receive push notifications. For more information, see the Apple developer documentation.
+APNS 서비스를 사용하려면 Apple 개발자 계정이 필요하며 푸시 알림을 수신하려면 앱을 만들어야합니다. 자세한 내용은 Apple 개발자 설명서를 참조하십시오.
 
-## Configuration
+## 설정
 
-To enable APNS notifications, add the following lines to your `configuration.yaml`:
+APNS 알림을 사용하려면 `configuration.yaml`에 다음 행을 추가하십시오  :
 
 ```yaml
 # Example configuration.yaml entry
@@ -28,35 +28,35 @@ notify:
 
 {% configuration %}
 name:
-  description: he name of the notifier. The notifier will bind to the service `notify.NOTIFIER_NAME`.
+  description: 알리미의 이름. 알리미는 서비스 `notify.NOTIFIER_NAME`에 바인딩합니다.
   required: true
   type: string
 cert_file:
-  description: The certificate to use to authenticate with the APNS service.
+  description: APNS 서비스를 인증하는데 사용할 인증서.
   required: true
   type: string
 topic:
-  description: The app bundle ID specified in the certificate.
+  description: 인증서에 지정된 app bundle ID.
   required: true
   type: string
 sandbox:
-  description: If true notifications will be sent to the sandbox (test) notification service.
+  description: true일 경우 알림이 sandbox (test) 알림 서비스로 전송
   required: false
   default: false
   type: boolean
 {% endconfiguration %}
 
-The APNS platform will register two services, `notify.NOTIFIER_NAME` and `apns.apns_NOTIFIER_NAME`.
+APNS 플랫폼은 `notify.NOTIFIER_NAME` 과 `apns.apns_NOTIFIER_NAME`의 두 가지 서비스를 등록합니다.
 
 ### apns.apns_NOTIFIER_NAME
 
-This service will register device IDs with Home Assistant. In order to receive a notification a device must be registered. The app on the device can use this service to send an ID to Home Assistant during startup, the ID will be stored in `[NOTIFIER_NAME]_apns.yaml`.
+이 서비스는 홈어시스턴트로 장치 ID를 등록합니다. 알림을 받으려면 장치를 등록해야합니다. 장치의 앱은 이 서비스를 사용하여 시작하는 동안 홈어시스턴트로 ID를 보낼 수 있으며, ID는 `[NOTIFIER_NAME]_apns.yaml`에 저장됩니다.
 
-See `didRegisterForRemoteNotificationsWithDeviceToken` in the [Apple developer documentation](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/#//apple_ref/occ/intfm/UIApplicationDelegate/application:didRegisterForRemoteNotificationsWithDeviceToken:) for more information about how to obtain a device ID.
+장치 ID를 얻는 방법에 대한 자세한 내용은 [Apple developer documentation](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplicationDelegate_Protocol/#//apple_ref/occ/intfm/UIApplicationDelegate/application:didRegisterForRemoteNotificationsWithDeviceToken:)에서 `didRegisterForRemoteNotificationsWithDeviceToken`를 참조하십시오.
 
 ### notify.NOTIFIER_NAME
 
-This service will send messages to a registered device. The following parameters can be used:
+이 서비스는 등록된 장치로 메시지를 보냅니다. 다음과 같은 파라미터를 사용할 수 있습니다.
 
 - **message**: The message to send.
 

@@ -1,5 +1,5 @@
 ---
-title: AfterShip
+title: AfterShip 해외배송추적
 description: Instructions on how to set up AfterShip sensors within Home Assistant.
 logo: aftership.png
 ha_category:
@@ -8,21 +8,21 @@ ha_release: 0.85
 ha_iot_class: Cloud Polling
 ---
 
-The `aftership` platform allows one to track deliveries by [AfterShip](https://www.aftership.com), a service that supports 490+ couriers worldwide. It is free to use up to 100 tracked packages per month, after that there is a fee.
+`aftership` 플랫폼을 통해 전세계 490 개 이상의 택배를 지원하는 [AfterShip](https://www.aftership.com)을 통해 배송을 추적 할 수 있습니다. 한 달에 최대 100 개의 추적 패키지를 사용할 수 있으며, 그 이후에는 요금이 부과됩니다.
 
-The sensor value shows the number of packages that are not in `Delivered` state. As attributes are the number of packages per status.
+센서값은 `Delivered` 상태가 아닌 패키지 수를 나타냅니다. 속성은 상태 당 패키지 갯수입니다.
 
-## Setup
+## 셋업
 
-To use this sensor, you need an [AfterShip Account](https://accounts.aftership.com/register) and set up an API Key. To set up an API Key go to [AfterShip API](https://admin.aftership.com/settings/api-keys) page, and copy existing key or generate a new one.
+이 센서를 사용하려면 [AfterShip Account](https://accounts.aftership.com/register)가 필요하고 API 키를 설정하십시오. API 키를 설정하려면 [AfterShip API](https://accounts.aftership.com/register) 페이지로 이동하여 기존 키를 복사하거나 새 키를 생성하십시오.
 
 <div class='note info'>
-AfterShip recently started requiring having a credit card on file even if you are only using the free plan. That does not change the functionality of the platform, just something to be aware of.
+AfterShip은 최근 무료 요금제만 사용하더라도 파일에 신용 카드를 요구하기 시작했습니다. 플랫폼의 기능을 변경하는 것이 아니라 알아야 할 사항입니다.
 </div>
 
-## Configuration
+## 설정
 
-To enable this sensor, add the following lines to your `configuration.yaml`:
+이 센서를 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오 :
 
 ```yaml
 sensor:
@@ -32,17 +32,17 @@ sensor:
 
 {% configuration %}
 name:
-  description: The sensor name to use in the frontend.
+  description: 프론트 엔드에서 사용할 센서 이름
   required: false
   default: "aftership"
   type: string
 api_key:
-  description: The API key for AfterShip.
+  description: AfterShip의 API 키.
   required: true
   type: string
 {% endconfiguration %}
 
-## Service `add_tracking`
+## `add_tracking` 서비스
 
  You can use the service `aftership.add_tracking` to add trackings to Aftership.
 
@@ -52,7 +52,7 @@ api_key:
 | `slug` | `False` | string | Carrier e.g. `fedex`
 | `title` | `False` | string | Friendly name of package
 
-## Service `remove_tracking`
+## `remove_tracking` 서비스
 
  You can use the service `aftership.remove_tracking` to remove trackings from Aftership.
 
@@ -62,5 +62,5 @@ api_key:
 | `slug` | `True` | string | Carrier e.g. `fedex`
 
 <div class='note info'>
-This integration retrieves data from AfterShip public REST API, but the integration is not affiliated with AfterShip.
+이 통합구성요소는 AfterShip 공개 REST API에서 데이터를 검색하지만 이 연동과정은 AfterShip과 별다른 제휴관계는 없습니다.
 </div>

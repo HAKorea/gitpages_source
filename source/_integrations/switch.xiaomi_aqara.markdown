@@ -1,5 +1,5 @@
 ---
-title: "Xiaomi Switch"
+title: "샤오미 Switch"
 description: "Instructions on how to set up the Xiaomi switch within Home Assistant."
 logo: xiaomi.png
 ha_category:

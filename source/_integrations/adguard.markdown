@@ -1,5 +1,5 @@
 ---
-title: AdGuard Home
+title: AdGuard 홈
 description: Instructions on how to integrate AdGuard Home with Home Assistant.
 logo: adguard.png
 ha_category:
@@ -13,9 +13,16 @@ ha_codeowners:
   - '@frenck'
 ---
 
-AdGuard Home is a network-wide ad- and tracker-blocking DNS server with parental
-control (adult content blocking) capabilities. The `adguard` integration allows
-you to control and monitor your AdGuard Home instance in Home Assistant.
+AdGuard Home은 Parental Control(성인 컨텐츠 블럭킹)이 가능하며 네트워크 전체의 광고 및 추적기 차단 기능을 하는 DNS서버입니다. `adguard` 통합구성요소는 Home Assistant에서 AdGuard Home 인스턴스를 제어하고 모니터링 할 수 있습니다.
+
+[AdGuard Home]((https://github.com/hassio-addons/addon-adguard-home))은 Home Assistant Add-on에 몇번의 클릭으로 설치할 수 있도록 Add-on으로 제공합니다. 
+HA에서 **Supervisor**로 이동하시고 **ADD-ON STORE**에서 **Home Assistant Community Add-ons**에서 **AdGuard Home** 을 찾아 설치하십시오. 
+
+-----------------------------------------------------------------------------------------------------
+
+이하 차후 번역 
+
+
 
 ## Configuration via the frontend
 

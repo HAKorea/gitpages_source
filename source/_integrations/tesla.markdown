@@ -1,5 +1,5 @@
 ---
-title: Tesla
+title: 테슬라
 description: Instructions on how to integrate Tesla car into Home Assistant.
 logo: tesla.png
 ha_category:
@@ -19,14 +19,15 @@ ha_codeowners:
 ---
 
 The `Tesla` integration offers integration with the [Tesla](https://auth.tesla.com/login) cloud service and provides presence detection as well as sensors such as charger state and temperature.
+`Tesla` 통합구성요소는 [Tesla](https://auth.tesla.com/login) 클라우드 서비스와의 연동을 제공하고 재실 상태 감지와 충전기 상태 및 온도와 같은 센서를 제공합니다.
 
-This integration provides the following platforms:
+이 통합구성요소는 다음 플랫폼을 제공합니다:
 
-- Binary sensors - such as parking and charger connection.
-- Sensors - such as Battery level, Inside/Outside temperature, odometer, estimated range, and charging rate.
-- Device tracker - to track location of your car
-- Lock - Door lock. Enables you to control Tesla's door lock
-- Climate - HVAC control. Allow you to control (turn on/off, set target temperature) your Tesla's HVAC system.
+- Binary sensors - 주차 및 충전기 연결.
+- Sensors - 배터리 수준, 내부 / 외부 온도, 주행 거리계, 예상 범위 및 충전 속도 및 기타.
+- Device tracker - 자동차의 위치 ​​추적
+- Lock - 도어 잠금. 테슬라의 도어락을 제어
+- Climate - HVAC 제어.  Tesla의 HVAC 시스템을 제어 (켜기/끄기, 목표 온도 설정) 할 수 있습니다.
 - Switch - Charger and max range switch to allow you to start/stop charging and set max range charging. Update switch to allow you to disable polling of vehicles to conserve battery
 
 ## Configuration

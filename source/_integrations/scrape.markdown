@@ -1,5 +1,5 @@
 ---
-title: Scrape
+title: 스크랩
 description: Instructions on how to integrate Web scrape sensors into Home Assistant.
 logo: home-assistant.png
 ha_category:
@@ -10,9 +10,19 @@ ha_codeowners:
   - '@fabaff'
 ---
 
-The `scrape` sensor platform is scraping information from websites. The sensor loads a HTML page and gives you the option to search and split out a value. As this is not a full-blown web scraper like [scrapy](https://scrapy.org/), it will most likely only work with simple web pages and it can be time-consuming to get the right section.
+`scrape` 센서 플랫폼은 웹사이트에서 정보를 스크랩합니다. 센서는 HTML 페이지를 로드하고 값을 검색하고 분리 할 수 있는 옵션을 제공합니다. 이는 [scrapy](https://scrapy.org/)와 같은 본격적인 웹 스크레이퍼가 아니기 때문에 간단한 웹 페이지에서만 작동하며 올바른 섹션을 얻는데 시간이 오래 걸릴 수 있습니다.
 
-To enable this sensor, add the following lines to your `configuration.yaml` file:
+
+### 한국형 스크랩 사례
+
+HA 네이버카페의 검은별31님이 제작하신 [우리나라 날씨의 세차센서 이용법](https://cafe.naver.com/koreassistant/809) 을 참조하십시오. 
+
+
+
+---------------------------------------------------------------------------------------------------------
+
+이 센서를 활성화하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오 :
+
 
 ```yaml
 # Example configuration.yaml entry
@@ -24,65 +34,65 @@ sensor:
 
 {% configuration %}
 resource:
-  description: The URL to the website that contains the value.
+  description: 값이 포함 된 웹 사이트의 URL
   required: true
   type: string
 select:
-  description: "Defines the HTML tag to search for. Check Beautifulsoup's [CSS selectors](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#css-selectors) for details."
+  description: "검색할 HTML 태그를 정의. Beautifulsoup의 [CSS selectors](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#css-selectors)를 상세하게 체크하십시오."
   required: true
   type: string
 attribute:
-  description: Get value of an attribute on the selected tag.
+  description: 선택한 태그에서 속성값을 가져옵니다..
   required: false
   type: string
 index:
-  description: Defines which of the elements returned by the CSS selector to use.
+  description: CSS selector에서 반환한 elements 중 사용할 element를 정의
   required: false
   default: 0
   type: integer
 name:
-  description: Name of the sensor.
+  description: 센서 이름.
   required: false
   default: Web scrape
   type: string
 value_template:
-  description: Defines a template to get the state of the sensor.
+  description: 센서 상태를 얻기 위한 템플릿을 정의.
   required: false
   type: template
 unit_of_measurement:
-  description: Defines the units of measurement of the sensor, if any.
+  description: "센서의 측정 단위를 정의 (있는 경우)."
   required: false
   type: string
 authentication:
-  description: Type of the HTTP authentication. Either `basic` or `digest`.
+  description: HTTP 인증의 유형. `basic` 혹은 `digest` 중의 하나 
   required: false
   type: string
 verify_ssl:
-  description: Enables/disables verification of SSL-certificate, for example if it is self-signed.
+  description: "예를 들어 자체 서명된 경우 SSL 인증서의 검증을 활성화/비활성화 함."
   required: false
   type: boolean
   default: true
 username:
-  description: The username for accessing the website.
+  description: 웹 사이트에 액세스하기위한 사용자 이름.
   required: false
   type: string
 password:
-  description: The password for accessing the website.
+  description: 웹 사이트에 액세스하기위한 비밀번호.
   required: false
   type: string
 headers:
-  description: Headers to use for the web request.
+  description: 웹 요청에 사용할 헤더.
   required: false
   type: string
 {% endconfiguration %}
 
-## Examples
+## 사례
 
-In this section you find some real-life examples of how to use this sensor. There is also a [Jupyter notebook](https://nbviewer.jupyter.org/github/home-assistant/home-assistant-notebooks/blob/master/other/web-scraping.ipynb) available for this example to give you a bit more insight.
+이 섹션에는이 센서를 사용하는 방법에 대한 실제 예가 나와 있습니다. 이 예에서는 [Jupyter notebook](https://nbviewer.jupyter.org/github/home-assistant/home-assistant-notebooks/blob/master/other/web-scraping.ipynb)을 사용하여 좀 더 통찰력을 얻을 수 있습니다.
 
 ### Home Assistant
 
-The current release Home Assistant is published on [https://www.home-assistant.io/](/)
+현재 릴리스 Home Assistant는 [https://www.home-assistant.io/](/)에 게시되어 있습니다.
 
 {% raw %}
 ```yaml
@@ -96,9 +106,9 @@ sensor:
 ```
 {% endraw %}
 
-### Available implementations
+### 사용가능한 구현들
 
-Get the counter for all our implementations from the [Component overview](/integrations/) page.
+[Component overview](/integrations/) 페이지 에서 모든 구현(implementations)에 대한 카운터를 얻으십시오.
 
 {% raw %}
 ```yaml
@@ -112,9 +122,9 @@ sensor:
 ```
 {% endraw %}
 
-### Get a value out of a tag
+### 태그에서 값을 얻으십시오
 
-The German [Federal Office for Radiation protection (Bundesamt für Strahlenschutz)](http://www.bfs.de/) is publishing various details about optical radiation including an UV index. This example is getting the index for a region in Germany.
+독일의 [Federal Office for Radiation protection (방사선관련 국가기관)](http://www.bfs.de/)에서는 UV지수를 포함하여 광학 방사선에 대한 다양한 세부 사항을 발표하고 있습니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -127,9 +137,9 @@ sensor:
     unit_of_measurement: 'UV Index'
 ```
 
-### IFTTT status
+### IFTTT 상태
 
-If you make heavy use of the [IFTTT](/integrations/ifttt/) web service for your automations and are curious about the [status of IFTTT](https://status.ifttt.com/) then you can display the current state of IFTTT in your frontend.
+자동화를 위해 [IFTTT](/integrations/ifttt/) 웹서비스를 많이 사용하고 [IFTTT 상태](https://status.ifttt.com/) 에 대해 궁금한 경우 프론트 엔드에서 IFTTT 현재 상태를 표시 할 수 있습니다. 
 
 ```yaml
 # Example configuration.yaml entry
@@ -140,9 +150,9 @@ sensor:
     select: '.component-status'
 ```
 
-### Get the latest podcast episode file URL
+### 최신 팟캐스트 에피소드 파일 URL 가져오기
 
-If you want to get the file URL for the latest episode of your [favorite podcast](https://hasspodcast.io/), so you can pass it on to a compatible media player.
+[favorite podcast](https://hasspodcast.io/)의 최신 에피소드에 대한 파일 URL을 얻으려면 호환되는 미디어 플레이어로 전달할 수 있습니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -155,9 +165,9 @@ sensor:
     attribute: url
 ```
 
-### Energy price
+### 에너지 가격
 
-This example tries to retrieve the price for electricity.
+이 예는 전기 가격을 검색하려고합니다.
 
 {% raw %}
 ```yaml
@@ -172,9 +182,9 @@ sensor:
 ```
 {% endraw %}
 
-### BOM Weather
+### BOM 날씨
 
-The Australian Bureau of Meteorology website returns an error if the User Agent header is not sent.
+사용자 에이전트 헤더(User Agent header)가 전송되지 않은 경우 호주 기상청 웹 사이트에서 오류를 반환합니다.
 
 {% raw %}
 ```yaml

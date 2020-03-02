@@ -1,5 +1,5 @@
 ---
-title: Belkin WeMo
+title: 벨킨 WeMo
 description: Instructions on how to integrate Belkin WeMo devices into Home Assistant.
 logo: belkin_wemo.png
 ha_category:
@@ -14,30 +14,31 @@ ha_codeowners:
   - '@sqldiablo'
 ---
 
-The `wemo` integration is the main integration to integrate various [Belkin WeMo](https://www.belkin.com/us/Products/home-automation/c/wemo-home-automation/) devices with Home Assistant.
+`wemo`는 다양한 [Belkin WeMo](https://www.belkin.com/us/Products/home-automation/c/wemo-home-automation/) 장치들을 Home Assistant와 연동하기 위한 주요 통합구성요소입니다.
 
-There is currently support for the following device types within Home Assistant:
+현재 홈 어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
+
 
 - Binary Sensor
 - Fan (Belkin WeMo (Holmes) Smart Humidifier)
 - Light (Belkin WeMo LED lights and [Smart Dimmer Switch](https://www.belkin.com/us/F7C059-Belkin/p/P-F7C059/))
 - Switch ([Belkin WeMo Switches](https://www.belkin.com/us/Products/home-automation/c/wemo-home-automation/) and includes support for Wemo enabled [Mr. Coffee](https://www.mrcoffee.com/wemo-landing-page.html) smart coffee makers.)
 
-## Configuration
+## 설정
 
 {% configuration %}
   discovery:
-    description: Setting this value to false will prevent the automatic discovery of WeMo devices by the wemo platform and the discovery platform (static devices will still be discovered)
+    description: 이 값을 false로 설정하면 wemo 플랫폼 및 discovery 플랫폼이 WeMo 장치를 자동 감지하지 못하게됩니다 (정적 장치는 여전히 감지됨)
     required: false
     type: boolean
     default: true
   static:
-    description: One or more static IP addresses for WeMo to use
+    description: WeMo가 사용할 하나 이상의 정적 IP 주소
     required: false
     type: list
 {% endconfiguration %}
 
-Supported devices will be automatically discovered if the optional `discovery` configuration item is omitted or set to true or if the `discovery` integration is enabled. If the `discovery` configuration item is set to false, then automatic discovery of WeMo devices is disabled both for the `wemo` integration and for the `discovery` component. Loading the `wemo` integration with the `discovery` configuration item omitted or set to true will scan the local network for WeMo devices, even if you are not using the `discovery` component.
+선택적 `discovery` 설정 항목이 생략되거나 true로 설정되거나 `discovery` 통합구성요소가 사용 가능한 경우 지원되는 장치가 자동으로 감지됩니다. `discovery` 설정 항목이 false로 설정되면, wemo 통합구성요소 및 `discovery` 구성요소 모두에 대해 WeMo 디바이스의 자동 발견이 사용 불가능합니다. `discovery` 설정 항목을 생략하거나 true로 설정한 `wemo` 통합구성요소를 로드하면 `discovery` 구성 요소를 사용하지 않더라도 로컬 네트워크에서 WeMo 장치를 스캔합니다.
 
 ```yaml
 # Example configuration.yaml entry with automatic discovery enabled (by omitting the discovery configuration item)
@@ -48,7 +49,7 @@ wemo:
   discovery: true
 ```
 
-Alternately, WeMo devices that are not discoverable can be statically configured. If you have WeMo devices on subnets other than where Home Assistant is running, or devices in a remote location reachable over a VPN, you will need to configure them manually. Statically configured devices may be used with or without automatic discovery enabled. Example static configuration:
+다른 방법으로, 검색할 수 없는 WeMo 장치를 정적으로 설정할 수 있습니다. 홈어시스턴트가 실행되는 곳 이외의 서브넷에 WeMo 장치가 있거나 VPN을 통해 원격 위치에있는 장치가 있는 경우 수동으로 설정해야합니다. 정적으로 구성된 장치는 자동 검색을 사용하거나 사용하지 않고 사용할 수 있습니다. 정적 설정의 예는 다음과 같습니다. :
 
 ```yaml
 # Example configuration.yaml entry with automatic discovery disabled, and 2 statically configured devices
@@ -59,13 +60,13 @@ wemo:
     - 192.168.52.172
 ```
 
-Note that if you use static device entries, you may want to set up your router (or whatever runs your DHCP server) to force your WeMo devices to use a static IP address. Check the DHCP section of your router configuration for this ability.
+고정 장치 항목을 사용하는 경우 WeMo 장치가 고정 IP 주소를 사용하도록 라우터 (또는 DHCP 서버를 실행하는 모든 것)를 설정할 수 있습니다. 이 기능에 대해서는 라우터 구성의 DHCP 섹션을 확인하십시오.
 
-If the device doesn't seem to work and all you see is the state "unavailable" on your dashboard, check that your firewall doesn't block incoming requests on port 8989, since this is the port to which the WeMo devices send their updates.
+장치가 작동하지 않고 대시 보드에서 "unavailable" 상태인 경우 WeMo 장치가 업데이트를 보내는 포트이므로 방화벽이 포트 8989에서 들어오는 요청을 차단하지 않는지 확인하십시오.
 
-## Emulated devices
+## 에뮬레이트된 장치 (Emulated devices)
 
-Various software that emulate WeMo devices often use alternative ports. Static configuration should include the port value:
+WeMo 장치를 에뮬레이트하는 다양한 소프트웨어는 종종 대체 포트를 사용합니다. 정적 구성에는 포트 값이 포함되어야합니다.
 
 ```yaml
 # Example configuration.yaml entry with static device entries that include non-standard port numbers
@@ -77,32 +78,32 @@ wemo:
 
 ## Fan
 
-The `wemo` platform allows you to control your Belkin WeMo humidifiers from within Home Assistant. This includes support for the [Holmes Smart Humidifier](https://www.holmesproducts.com/wemo-humidifier.html).
+`wemo` 플랫폼을 사용하면 Home Assistant 내에서 Belkin WeMo 가습기를 제어 할 수 있습니다. 여기에는 [Holmes Smart Humidifier](https://www.holmesproducts.com/wemo-humidifier.html)지원이 포함됩니다
 
-WeMo devices are automatically discovered if the `discovery` integration is enabled.
+`discovery` 통합구성요소가 활성화 된 경우 WeMo 장치가 자동으로 검색됩니다.
 
-### Attributes
+### 속성 
 
-There are several attributes which can be used for automations and templates:
+자동화 및 템플릿에 사용할 수있는 몇 가지 속성이 있습니다.
 
 | Attribute | Description |
 | --------- | ----------- |
-| `current_humidity` | An integer that indicates the current relative humidity percentage of the room, as determined by the device's onboard humidity sensor.
-| `fan_mode` | String that indicates the current fan speed setting, as reported by the WeMo humidifier.
-| `filter_expired` | A boolean that indicates whether the filter has expired and needs to be replaced.
-| `filter_life` | The used life of the filter (as a percentage).
-| `target_humidity` | An integer that indicates the desired relative humidity percentage (this is constrained to the humidity settings of the device, which are 45, 50, 55, 60, and 100).
-| `water level` | String that indicates whether the water level is Good, Low, or Empty.
+| `current_humidity` | 장치의 온보드 습도 센서에 의해 결정된 실내의 현재 상대 습도 백분율을 나타내는 정수.
+| `fan_mode` | WeMo 가습기에 의해 보고된 현재 팬 속도 세팅을 나타내는 문자열입니다.
+| `filter_expired` | 필터가 만료되어 교체해야하는지 여부를 나타내는 boolean.
+| `filter_life` | 필터 사용 수명 (백분율).
+| `target_humidity` | 원하는 상대 습도 백분율을 나타내는 정수 (45, 50, 55, 60 및 100 인 장치의 습도 설정으로 제한됨).
+| `water level` | 수위가 good, low 또는 empty 여부를 나타내는 문자열입니다.
 
-### Services
+### 서비스
 
-There are several services which can be used for automations and control of the humidifier:
+가습기의 자동화 및 제어에 사용할 수있는 몇 가지 서비스가 있습니다.
 
 | Service | Description |
 | --------- | ----------- |
-| `set_speed` | Calling this service sets the fan speed (entity_id and speed are required parameters, and speed must be one of the following: off, low, medium, or high). When selecting low for the speed, this will map to the WeMo humidifier speed of minimum. When selecting high for the speed, this will map to the WeMo humidifier speed of maximum. The WeMo humidifier speeds of low and high are unused due to constraints on which fan speeds Home Assistant supports.
-| `toggle` | Calling this service will toggle the humidifier between on and off states.
-| `turn_off` | Calling this service will turn the humidifier off (entity_id is required).
-| `turn_on` | Calling this service will turn the humidifier on and set the speed to the last used speed (defaults to medium, entity_id is required).
-| `wemo.set_humidity` | Calling this service will set the desired relative humidity setting on the device (entity_id is a required list of 1 or more entities to set humidity on, and target_humidity is a required float value between 0 and 100 (this value will be rounded down and mapped to one of the valid desired humidity settings of 45, 50, 55, 60, or 100 that are supported by the WeMo humidifier)).
-| `wemo.reset_filter_life` | Calling this service will reset the humdifier's filter life back to 100% (entity_id is a required list of 1 or more entities to reset the filter life on). Call this service when you change the filter on your humidifier.
+| `set_speed` | 이 서비스를 호출하면 팬 속도가 설정됩니다 (entity_id 및 speed는 필수 매개 변수이며 speed는 off, low, medium 또는 high 중 하나여야합니다). 속도를 낮게 선택하면 WeMo 가습기 속도가 최소로 매핑됩니다. 속도를 높게 선택하면 WeMo 가습기 최대속도에 매핑됩니다. 홈어시스턴트가 지원하는 팬 속도의 제약으로 인해 낮고 높은 WeMo 가습기 속도는 사용되지 않습니다.
+| `toggle` | 이 서비스를 호출하면 가습기가 켜짐 및 꺼짐 상태간에 전환됩니다.
+| `turn_off` | 이 서비스를 호출하면 가습기가 꺼집니다 (entity_id 필요).
+| `turn_on` | 이 서비스를 호출하면 가습기를 켜고 속도를 마지막으로 사용한 속도로 설정합니다 (기본값은 medium, entity_id가 필요함).
+| `wemo.set_humidity` | 이 서비스를 호출하면 장치에서 원하는 상대 습도 세팅이 설정됩니다 (entity_id는 습도를 설정하기위한 하나 이상의 엔티티의 필수 목록이며 target_humidity는 0에서 100 사이의 필수 부동 소수점 값입니다 (이 값은 반올림되어에 매핑 됨). WeMo 가습기에서 지원하는 45, 50, 55, 60 또는 100의 유효한 원하는 습도 설정 중 하나))
+| `wemo.reset_filter_life` | 이 서비스를 호출하면 가습기의 필터 수명이 100 %로 다시 설정됩니다 (entity_id는 필터 수명을 재설정하기위한 하나 이상의 엔티티의 필수 목록입니다). 가습기의 필터를 교체 할 때이 서비스에 문의하십시오.

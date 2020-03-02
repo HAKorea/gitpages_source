@@ -1,5 +1,5 @@
 ---
-title: "FFmpeg Camera"
+title: "FFmpeg 카메라"
 description: "Instructions on how to integrate a video feed via FFmpeg as a camera within Home Assistant."
 logo: ffmpeg.png
 ha_category:
@@ -8,11 +8,11 @@ ha_release: 0.26
 ha_iot_class: Local Polling
 ---
 
-The `ffmpeg` platform allows you to use any video feed as a camera in Home Assistant via [FFmpeg](https://www.ffmpeg.org/). This video source must support multiple simultaneous reads, because for every concurrent Home Assistant user, a connection will be made to the source every 10 seconds. Normally this should not be a problem.
+`ffmpeg` 플랫폼을 사용하면 [FFmpeg](https://www.ffmpeg.org/)를 통해 모든 비디오 피드를 Home Assistant에서 카메라로 사용할 수 있습니다. 모든 동시 홈어시스턴트 사용자의 경우 10초마다 소스에 연결되므로 이 비디오 소스는 여러 동시 읽기를 지원해야합니다. 일반적으로 이것은 문제가되지 않습니다.
 
-## Configuration
+## 설정
 
-To enable your FFmpeg feed in your installation you must first configure the [ffmpeg integration](/integrations/ffmpeg/), then add the following to your `configuration.yaml` file:
+설치에서 FFmpeg 피드를 사용하려면 먼저 [ffmpeg integration](/integrations/ffmpeg/)을 설정한 다음 `configuration.yaml` 파일에 다음을 추가해야합니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -23,22 +23,22 @@ camera:
 
 {% configuration %}
 input:
-  description: An FFmpeg-compatible input file, stream, or feed.
+  description: FFmpeg 호환 입력 파일, 스트림 또는 피드.
   required: true
   type: string
 name:
-  description: Override the name of your camera.
+  description: 카메라 이름을 무시.
   required: false
   type: string
 extra_arguments:
-  description: Extra options to pass to `ffmpeg`, e.g., image quality or video filter options.
+  description: "`ffmpeg` 이미지 품질 또는 비디오 필터 옵션과 같은 추가 옵션."
   required: false
   type: string
   default: "-pred 1"
 {% endconfiguration %}
 
-### Image quality
+### 화질
 
-You can control the image quality with [`extra_arguments`](https://www.ffmpeg.org/ffmpeg-codecs.html#jpeg2000) `-q:v 2-32` or with lossless option `-pred 1`. Default is lossless.
+[`extra_arguments`](https://www.ffmpeg.org/ffmpeg-codecs.html#jpeg2000)로 `-q : v 2-32` 또는 무손실 옵션 `-pred 1` 등을 사용하여 이미지 품질을 제어 할 수 있습니다. 기본값은 무손실입니다.
 
-If you are running into trouble with this sensor, please refer to the [Troubleshooting section](/integrations/ffmpeg/#troubleshooting).
+이 센서에 문제가 발생하면 [Troubleshooting section](/integrations/ffmpeg/#troubleshooting)을 참조하십시오 .

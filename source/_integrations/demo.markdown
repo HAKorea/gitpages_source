@@ -1,5 +1,5 @@
 ---
-title: Demo
+title: 데모(Demo)
 description: Instructions on how to use the Platform demos with Home Assistant.
 logo: home-assistant.png
 ha_category:
@@ -10,9 +10,9 @@ ha_codeowners:
   - '@home-assistant/core'
 ---
 
-The `demo` platform allows you to use integrations which are providing a demo of their implementation. The demo entities are dummies but show you how the actual platform looks like. This way you can run own demonstration instance like the online [Home Assistant demo](/demo/) or `hass --demo-mode` but combined with your own real/functional platforms.
+`demo` 플랫폼을 사용하면 데모 구현을 제공하는 통합구성요소를 사용할 수 있습니다. 데모 엔티티는 가상이지만 실제 플랫폼이 어떻게 보이는지 보여줍니다. 이 방법으로 온라인 [Home Assistant demo](/demo/) 또는 `hass --demo-mode`와 같은 자체 데모 인스턴스를 실행할 수 있지만 자신의 실제 기능을하는 플랫폼과 결합할 수 있습니다.
 
-Available demo platforms:
+사용 가능한 데모 플랫폼 :
 
 - [Air Quality](/integrations/air_quality/) (`air_quality`)
 - [Alarm control panel](/integrations/alarm_control_panel/) (`alarm_control_panel`)
@@ -35,7 +35,7 @@ Available demo platforms:
 - [Weather](/integrations/weather/) (`weather`)
 
 
-To integrate a demo platform in Home Assistant, add the following section to your `configuration.yaml` file:
+Home Assistant에서 데모 플랫폼을 통합하려면 `configuration.yaml` 파일에 다음 섹션을 추가 하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -45,7 +45,7 @@ To integrate a demo platform in Home Assistant, add the following section to you
 
 {% configuration %}
 "[component]":
-  description: The name of the integration as stated in the listing above the configuration example.
+  description: 설정 예제 위의 목록에 명시된 통합구성요소의 이름입니다.
   required: true
   type: string
 {% endconfiguration %}

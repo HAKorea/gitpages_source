@@ -1,5 +1,5 @@
 ---
-title: Facebox
+title: Facebox(페이스박스)
 description: Detect and recognize faces with Facebox.
 logo: machine-box.png
 ha_category:
@@ -9,9 +9,11 @@ ha_release: 0.7
 
 The `facebox` image processing platform allows you to detect and recognize faces in a camera image using [Facebox](https://machinebox.io/docs/facebox). The state of the entity is the number of faces detected, and recognized faces are listed in the `matched_faces` attribute. An `image_processing.detect_face` event is fired for each recognized face, and the event `data` provides the `confidence` of recognition, the `name` of the person, the `image_id` of the image associated with the match, the `bounding_box` that contains the face in the image, and the `entity_id` that processing was performed on.
 
-## Setup
+`facebox` 이미지 처리 플랫폼을 사용하면 [Facebox](https://machinebox.io/docs/facebox)를 사용하여 카메라 이미지에서 얼굴을 감지하고 인식 할 수 있습니다. 엔티티의 상태는 감지 된 얼굴의 수이며 인식된 얼굴은 `matched_faces` 속성에 나열됩니다. 인식된 각 얼굴에 대해 `image_processing.detect_face` 이벤트가 발생하며 이벤트 `data`는 해당 인식의 `confidence`을 제공하며, 사람의 `name`, 사진과 매치되어 연관된 `image_id`, 이미지에 얼굴을 포함한 `bounding_box`, `entity_id` 프로세싱이 수행됩니다.  
 
-Facebox runs in a Docker container and it is recommended that you run this container on a machine with a minimum of 2 GB RAM. On your machine with Docker, run the Facebox container with:
+## 셋업
+
+Facebox는 Docker 컨테이너에서 실행되며 최소 2GB RAM이있는 시스템에서 이 컨테이너를 실행하는 것이 좋습니다.  Docker가있는 머신에서 다음을 사용하여 Facebox 컨테이너를 실행하십시오.
 
 ```bash
 MB_KEY="INSERT-YOUR-KEY-HERE"
@@ -35,17 +37,17 @@ services:
       - MB_FACEBOX_DISABLE_RECOGNITION=false
 ```
 
-You can run Facebox with a username and password by adding `-e "MB_BASICAUTH_USER=my_username" -e "MB_BASICAUTH_PASS=my_password"` but bear in mind that the integration does not encrypt these credentials and this approach does not guarantee security on an unsecured network.
+`-e "MB_BASICAUTH_USER=my_username" -e "MB_BASICAUTH_PASS=my_password"`를 추가하여 사용자 이름 및 비밀번호로 Facebox를 실행할 수 있지만 연동시 이러한 신뢰 정보(credentials)가 암호화되지 않으며 보안이 없는 네트워크에서는 보안이 보장되지 않습니다.
 
-After you created an account at [Machinebox](https://machinebox.io/account), you can grab your `MB_KEY` at [your Account page](https://developer.veritone.com/machinebox/overview).
+[Machinebox](https://machinebox.io/account)에서 계정을 생성한 후에는 [your Account page](https://developer.veritone.com/machinebox/overview) 에서 `MB_KEY`를 가져올 수 있습니다.
 
-If you only require face detection (number of faces) you can disable face recognition by adding `-e "MB_FACEBOX_DISABLE_RECOGNITION=true"` in the `docker run` command.
+얼굴 인식(얼굴 수)만 필요한 경우 `docker run` 명령에 `-e "MB_FACEBOX_DISABLE_RECOGNITION = true"`를 추가하여 얼굴 인식을 비활성화 할 수 있습니다.
 
-If your host machine does not support [AVX](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions) and you experience issues running the `machinebox/facebox` image there is an alternative image without AVX support available at `machinebox/facebox_noavx`(*HINT*: This image is currently not supported by machinebox and should only be used if necessary) 
+호스트 컴퓨터가 [AVX](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions)를 지원하지 않고 `machinebox/facebox` 이미지를 실행하는 데 문제가 있는 경우 `machinebox/facebox_noavx`에서 AVX 지원이 없는 대체 이미지가 있습니다. (*힌트* : 이 이미지는 현재 machinebox에서 지원되지 않으며 필요한 경우에만 사용해야 합니다.)
 
-## Configuration
+## 설정
 
-To enable this platform in your installation, add the following to your `configuration.yaml` file:
+이 플랫폼을 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -60,39 +62,39 @@ image_processing:
 
 {% configuration %}
 ip_address:
-  description: The IP address of your machine hosting Facebox.
+  description: Facebox를 호스팅하는 컴퓨터의 IP 주소.
   required: true
   type: string
 port:
-  description: The port which Facebox is exposed on.
+  description: Facebox가 노출된 포트.
   required: true
   type: string
 username:
-  description: The Facebox username if you have set one.
+  description: Facebox 사용자 이름을 설정한 경우.
   required: false
   type: string
 password:
-  description: The Facebox password if you have set one.
+  description: Facebox 비밀번호를 설정한 경우.
   required: false
   type: string
 source:
-  description: The list of image sources.
+  description: 이미지 소스 목록.
   required: true
   type: map
   keys:
     entity_id:
-      description: A camera entity id to get picture from.
+      description: 사진을 가져올 카메라 엔티티 ID.
       required: true
       type: string
     name:
-      description: This parameter allows you to override the name of your `image_processing` entity.
+      description: 이 매개 변수를 사용하면 `image_processing` 엔티티 이름을 대체할 수 있습니다 
       required: false
       type: string
 {% endconfiguration %}
 
-## Automations
+## 자동화
 
-Use the `image_processing.detect_face` events to trigger automations, and breakout the `trigger.event.data` using a [data_template](/docs/automation/templating/). The following example automation sends a notification when Ringo Star is recognized:
+`image_processing.detect_face` 이벤트를 사용하여 자동화를 트리거하고 [data_template](/docs/automation/templating/)을 사용하여 `trigger.event.data` 를 분류하십시오. 다음 예제 자동화는 Ringo Star가 인식될 때 알림을 보냅니다.
 
 {% raw %}
 ```yaml
@@ -111,9 +113,9 @@ Use the `image_processing.detect_face` events to trigger automations, and breako
 ```
 {% endraw %}
 
-## Service `facebox.teach_face`
+## `facebox.teach_face` 서비스
 
-The service `facebox.teach_face` can be used to teach Facebox faces.
+`facebox.teach_face` 서비스는 Facebox 얼굴을 가르치는데 사용될 수 있습니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
@@ -121,7 +123,7 @@ The service `facebox.teach_face` can be used to teach Facebox faces.
 | `name` | no | The name to associate with a face.
 | `file_path` | no | The path to the image file.
 
-A valid service data example:
+유효한 서비스 데이터 예시:
 
 {% raw %}
 ```yaml
@@ -133,7 +135,7 @@ A valid service data example:
 ```
 {% endraw %}
 
-You can use an automation to receive a notification when you train a face:
+얼굴인식을 훈련시킬 때 자동화를 사용하여 알림을 받을 수 있습니다.
 
 {% raw %}
 ```yaml
@@ -154,14 +156,14 @@ You can use an automation to receive a notification when you train a face:
 ```
 {% endraw %}
 
-Any errors on teaching will be reported in the logs. If you enable [system_log](/integrations/system_log/) events:
+얼굴을 가르칠때 오류는 로그에 보고됩니다. [system_log](/integrations/system_log/) 이벤트를 사용하는 경우 :
 
 ```yaml
 system_log:
   fire_event: true
 ```
 
-you can create an automation to receive notifications on Facebox errors:
+Facebox 오류에 대한 알림을 받도록 자동화를 만들 수 있습니다.
 
 {% raw %}
 ```yaml

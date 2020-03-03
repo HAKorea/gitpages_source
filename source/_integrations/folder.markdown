@@ -1,5 +1,5 @@
 ---
-title: Folder
+title: 폴더
 description: Sensor for monitoring the contents of a folder.
 logo: file.png
 ha_category:
@@ -8,12 +8,11 @@ ha_iot_class: Local Polling
 ha_release: 0.64
 ---
 
-Sensor for monitoring the contents of a folder. Note that folder paths must be added to [whitelist_external_dirs](/docs/configuration/basic/). Optionally a [wildcard filter](https://docs.python.org/3.6/library/fnmatch.html) can be applied to the files considered within the folder. The state of the sensor is the size in MB of files within the folder that meet the filter criteria. 
-The sensor exposes the number of filtered files in the folder, total size in bytes of those files and a comma separated list of the file paths as attributes.
+폴더의 내용을 모니터링하기위한 센서. 폴더 경로는 [whitelist_external_dirs](/docs/configuration/basic/)에 추가해야합니다. 선택적으로 [wildcard filter](https://docs.python.org/3.6/library/fnmatch.html)를 폴더 내에서 특정 파일에 적용 할 수 있습니다. 센서 상태는 필터 기준을 충족하는 폴더 내의 파일 크기 (MB)입니다. 센서는 폴더에 있는 필터링된 파일 수, 해당 파일의 전체 크기 (바이트) 및 쉼표로 구분된 파일 경로 목록을 속성으로 표시합니다.
 
-## Configuration
+## 설정
 
-To enable the `folder` sensor in your installation, add the following to your `configuration.yaml` file:
+설치에서 `folder`센서를 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 sensor:
@@ -23,11 +22,11 @@ sensor:
 
 {% configuration %}
 folder:
-  description: The folder path
+  description: 폴더 경로
   required: true
   type: string
 filter:
-  description: Filter to apply
+  description: 적용할 필터
   required: false
   default: "`*`"
   type: string

@@ -1,5 +1,5 @@
 ---
-title: GPSLogger
+title: GPS로거(gpslogger)
 description: Instructions on how to use GPSLogger to track devices in Home Assistant.
 logo: gpslogger.png
 ha_category:

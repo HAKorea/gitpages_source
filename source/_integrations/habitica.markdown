@@ -1,5 +1,5 @@
 ---
-title: Habitica
+title: Habitica(생활을 게임처럼)
 description: Instructions on enabling Habitica support for your Home Assistant
 logo: habitica.png
 ha_category:
@@ -9,15 +9,15 @@ ha_release: 0.78
 ha_iot_class: Cloud Polling
 ---
 
-This integration allows you to monitor and manage your Habitica profile. This integration exposes the [Habitica's API](https://habitica.com/apidoc/) as a Home Assistant service. It supports multiple users and allows you to automate checking out your habits and daily tasks or casting magics using Home Assistant.
+이 통합구성요소를 통해 Habitica 프로필을 모니터링하고 관리 할 수 ​​있습니다. 이 통합구성요소는 [Habitica 's API](https://habitica.com/apidoc/)를 홈어시스턴트 서비스로 노출시킵니다. 여러 사용자를 지원하며 홈어시스턴트를 사용하여 습관 및 일상적인 작업을 확인하거나 마법을 캐스팅 할 수 있습니다.
 
-There is currently support for the following device types within Home Assistant:
+현재 홈 어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
-- Sensor - Allows you to view and monitor your player data from [Habitica](https://habitica.com/) in Home Assistant.
+- Sensor - 홈어시스턴트의 [Habitica](https://habitica.com/)에서 플레이어 데이터를 보고 모니터링 할 수 있습니다.
 
-The sensors will automatically appear, after setup the Habitica component.
+Habitica 구성 요소를 설정하면 센서가 자동으로 나타납니다.
 
-To use the integration you should use this example configuration:
+통합구성요소를 사용하려면 다음 예제 설정을 사용해야합니다.
 
 ```yaml
 # Minimum viable configuration.yaml entry
@@ -26,40 +26,40 @@ habitica:
     api_key: YOUR_API_KEY
 ```
 
-You can specify several users, providing `api_user` and `api_key` for each.
-At runtime you will be able to use API for each respective user by their Habitica's username.
-You can override this by passing `name` key, this value will be used instead of the username.
-If you are hosting your own instance of Habitica, you can specify a URL to it in `url` key.
+각 사용자에 대해 `api_user` 및 `api_key`를 제공하여 여러 사용자를 지정할 수 있습니다.
+런타임에 각 사용자에 대해 Habitica의 사용자 이름으로 API를 사용할 수 있습니다.
+`name` 키를 전달하여 이를 덮어쓸 수 있습니다. 이 값은 사용자 이름 대신 사용됩니다.
+고유한 Habitica 인스턴스를 호스팅하는 경우 `url` 키로 URL을 지정할 수 있습니다.
 
 {% configuration %}
 api_user:
-  description: "Habitica's API user ID. This value can be grabbed from [account setting](https://habitica.com/user/settings/api)"
+  description: "Habitica의 API 사용자 ID. 이 값은 [계정 설정](https://habitica.com/user/settings/api)에서 가져올 수 있습니다."
   required: true
   type: string
 api_key:
-  description: "Habitica's API password (token). This value can be grabbed from [account setting](https://habitica.com/user/settings/api) by pressing 'Show API token'"
+  description: "Habitica의 API 비밀번호 (토큰). 'Show API Token'을 눌러 [계정 설정](https://habitica.com/user/settings/api)에서 이 값을 가져올 수 있습니다."
   required: true
   type: string
 name:
-  description: "Override for Habitica's username. Will be used for service calls"
+  description: "Habitica의 사용자 이름을 재정의합니다. 서비스 요청에 사용됩니다"
   required: false
   type: string
   default: Deduced at startup
 url:
-  description: "URL to your Habitica instance, if you are hosting your own"
+  description: "직접 호스팅하는 경우 Habitica 인스턴스의 URL"
   required: false
   type: string
   default: https://habitica.com
 sensors:
-  description: List of sensors to generate for this user. If you don't specify this entry then the default (all sensors) will be generated. If you specify this entry empty then no sensors will be generated.
+  description: 이 사용자를 위해 생성할 센서 목록. 이 항목을 지정하지 않으면 기본값(모든 센서)이 생성됩니다. 이 항목을 비워두면 센서가 생성되지 않습니다
   required: false
   type: list
   default: all (`name`, `hp`, `maxHealth`, `mp`, `maxMP`, `exp`, `toNextLevel`, `lvl`, `gp`, `class`)
 {% endconfiguration %}
 
-### API Service Parameters
+### API 서비스 매개 변수
 
-The API is exposed to Home Assistant as a service called `habitica.api_call`. To call it you should specify this keys in service data:
+API는 `habitica.api_call`이라는 서비스로 Home Assistant에 노출됩니다. 이를 호출하려면 서비스 데이터에서 이 키를 지정해야합니다.
 
 | Service data attribute | Required | Type     |    Description  |
 |----------------------|--------|--------|----------------|
@@ -67,7 +67,7 @@ The API is exposed to Home Assistant as a service called `habitica.api_call`. To
 | `path` | yes | [string] | Items from API URL in form of an array with method attached at the end. See the example below. |
 | `args` | no | map | Any additional json or url parameter arguments. See the example below and [apidoc](https://habitica.com/apidoc/). |
 
-A successful call to this service will fire an event `habitica_api_call_success`.
+이 서비스를 성공적으로 호출하면 'habitica_api_call_success'이벤트가 발생합니다.
 
 | Event data attribute |  Type     |    Description  |
 |----------------------|--------|----------------|
@@ -75,12 +75,12 @@ A successful call to this service will fire an event `habitica_api_call_success`
 | `path` | [string] | Copied from service data attribute. |
 | `data` | map | Deserialized `data` field of JSON object Habitica's server returned in response to api call. For more info see [docs](https://habitica.com/apidoc/). |
 
-#### Let's consider some examples on how to call the service.
+#### 서비스 호출 방법에 대한 몇 가지 예를 살펴 보겠습니다.
 
-For example, let's say that there is a configured `habitica` platform for user `xxxNotAValidNickxxx` with their respective `api_user` and `api_key`.
-Let's create a new task (a todo) for this user via Home Assistant. There is an [API call](https://habitica.com/apidoc/#api-Task-CreateUserTasks) for this purpose.
-To create a new task one should hit `https://habitica.com/api/v3/tasks/user` endpoint with `POST` request with a json object with task properties.
-So let's call the API on `habitica.api_call`.
+예를 들어, 사용자 `xxxNotAValidNickxxx`에 대해 각각 `api_user` 및 `api_key`로 구성된 `habitica` 플랫폼이 있다고 가정 해 봅시다.
+Home Assistant를 통해 이 사용자에 대한 새 작업 (할 일)을 만들어 봅시다. 이를 위해 [API 호출](https://habitica.com/apidoc/#api-Task-CreateUserTasks)을 합니다.
+새 작업을 만들려면 작업 속성이있는 json 객체로 POST 요청으로 `https://habitica.com/api/v3/tasks/user` 끝점(endpoint)에 도달해야합니다.
+`habitica.api_call`에서 API를 호출해 봅시다.
 
 * The `name` key becomes `xxxNotAValidNickxxx`.
 * The `path` key is trickier.
@@ -100,11 +100,11 @@ call `habitica.api_call` with data
 }
 ```
 
-This call will create a new todo on `xxxNotAValidNickxxx`'s account with text `Use API from Home Assistant` like this:
+이 호출은 `xxxNotAValidNickxxx`의 계정에 다음과 같이 `Use API from Home Assistant`이라는 텍스트로 새로운 할 일을 만듭니다.
 
 ![example task created](/images/screenshots/habitica_new_task.png)
 
-Also an event `habitica_api_call_success` will be fired with the following data:
+또한 `habitica_api_call_success` 이벤트는 다음 데이터와 함께 시작됩니다.
 
 ```json
 {

@@ -1,5 +1,5 @@
 ---
-title: Fast.com
+title: Fast.com(인터넷속도측정)
 description: How to integrate Fast.com within Home Assistant.
 logo: fastdotcom.png
 ha_category:
@@ -11,29 +11,29 @@ ha_codeowners:
   - '@rohankapoorcom'
 ---
 
-The `fastdotcom` integration uses the [Fast.com](https://fast.com/) web service to measure network bandwidth performance.
+`fastdotcom` 통합구성요소는 [Fast.com](https://fast.com/) 웹서비스를 사용하여 네트워크 대역폭 성능을 측정합니다.
 
 <div class='note'>
 
-Currently fast.com only supports measuring download bandwidth. If you want to measure bandwidth metrics other then download such as ping and upload, utilize the [speedtest](/integrations/speedtestdotnet) component.
+현재 fast.com은 다운로드 대역폭 측정 만 지원합니다. Ping 및 업로드와 같은 다른 대역폭 메트릭(Metric)을 측정하려면 [speedtest](/integrations/speedtestdotnet) 구성 요소를 사용하십시오.
 
 </div>
 
-Enabling this integration will automatically create the Fast.com Sensor.
+이 통합구성요소를 활성화하면 Fast.com 센서가 자동으로 생성됩니다.
 
-By default, a speed test will be run every hour. The user can change the update frequency in the configuration by defining the `scan_interval` for a speed test to run.
+기본적으로 속도 테스트는 1 시간마다 실행됩니다. 사용자는 속도 테스트를 실행하기 위해 `scan_interval`을 정의하여 구성에서 업데이트 빈도를 변경할 수 있습니다
 
-## Configuration
+## 설정
 
-To add Fast.com to your installation, add the following to your `configuration.yaml` file:
+설치에 Fast.com을 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
-Once per hour, on the hour (default):
+시간당 한 번, 시간 (기본값) :
 
 ```yaml
 fastdotcom:
 ```
 
-Every half hour of every day:
+매일 30 분마다 :
 
 ```yaml
 fastdotcom:
@@ -43,18 +43,18 @@ fastdotcom:
 
 {% configuration %}
 scan_interval:
-  description: "Minimum time interval between updates. Supported formats: `scan_interval: 'HH:MM:SS'`, `scan_interval: 'HH:MM'` and Time period dictionary (see example below)."
+  description: "업데이트 사이의 최소 시간 간격. 지원되는 형식 :`scan_interval: 'HH:MM:SS'`, `scan_interval: 'HH:MM'` 및 기간 사전(dictionary) (아래 예 참조)"
   required: false
   default: 60 minutes
   type: time
 manual:
-  description: Turn manual mode on or off. Manual mode will disable scheduled speedtests.
+  description: 수동 모드를 켜거나 끕니다. 수동 모드는 예약된 속도 테스트를 비활성화합니다.
   required: false
   default: false
   type: boolean
 {% endconfiguration %}
 
-#### Time period dictionary example
+#### Time period dictionary 사례
 
 ```yaml
 scan_interval:
@@ -66,9 +66,9 @@ scan_interval:
   milliseconds: 0
 ```
 
-### Service
+### 서비스
 
-Once loaded, the `fastdotcom` integration will expose a service (`fastdotcom.speedtest`) that can be called to run a Fast.com speed test on demand. This service takes no parameters. This can be useful if you have enabled manual mode.
+`fastdotcom` 통합구성요소는 일단 로드되면 요청시 Fast.com 속도 테스트를 실행하기 위해 호출할 수있는 서비스 (`fastfastcom.speedtest`)를 노출합니다. 이 서비스에는 매개 변수가 없습니다. 수동 모드를 활성화 한 경우 유용할 수 있습니다.
 
 ```yaml
 action:
@@ -77,6 +77,6 @@ action:
 
 ## Notes
 
-- When running on Raspberry Pi 3 or older, the maximum speed is limited by its 100 Mbit/s LAN adapter.
-- The sensor will return the maximum measured speed during a 15-second test.
-- Speed tests consume data depending on your internet speed, make sure to consider this if your internet connection has limited bandwidth.
+- Raspberry Pi 3 이상에서 실행하는 경우 최대 속도는 100Mbit/s LAN 어댑터에 의해 제한됩니다.
+- 센서는 15 초 테스트 동안 최대 측정 속도를 반환합니다.
+- 속도 테스트는 인터넷 속도에 따라 데이터를 소비하므로 인터넷 연결의 대역폭이 제한적인 경우 이를 고려해야합니다.

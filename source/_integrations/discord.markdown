@@ -1,5 +1,5 @@
 ---
-title: Discord
+title: Discord(디스코드)
 description: Instructions on how to add Discord notifications to Home Assistant.
 logo: discord.png
 ha_category:
@@ -7,15 +7,16 @@ ha_category:
 ha_release: 0.37
 ---
 
-The [Discord service](https://discordapp.com/) is a platform for the notify component. This allows integrations to send messages to the user using Discord.
+[Discord service](https://discordapp.com/)는 알림 구성 요소를 위한 플랫폼입니다. 이를 통해 통합구성요소는 Discord를 사용하여 사용자에게 메시지를 보낼 수 있습니다.
 
-In order to get a token you need to go to the [Discord My Apps page](https://discordapp.com/developers/applications/me) and create a new application. Once the application is ready, create a [bot](https://discordapp.com/developers/docs/topics/oauth2#bots) user (**Create a Bot User**).
+토큰을 얻으려면 [Discord My Apps page](https://discordapp.com/developers/applications/me)로 이동하여 새 응용 프로그램을 만들어야합니다. 응용 프로그램이 준비되면 [bot](https://discordapp.com/developers/docs/topics/oauth2#bots) 사용자(**Create a Bot User**)를 만듭니다.
 
-Retrieve the **Client ID** from the information section and the (hidden) **Token** of your bot for later.
+정보 섹션에서 **Client ID**와 나중에 봇의 (숨겨진)**Token**을 검색합니다.
 
-When setting up the application you can use this [icon](/images/favicon-192x192-full.png).
 
-To use Discord notifications, add the following to your `configuration.yaml` file:
+응용 프로그램을 설정할 때 이[icon](/images/favicon-192x192-full.png)을 사용할 수 있습니다.
+
+Discord를 사용하려면`configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -26,25 +27,25 @@ notify:
 
 {% configuration %}
 name:
-  description: The notifier will bind to the service `notify.NAME`.
+  description: 알리미는 `notify.NAME` 서비스에 바인딩합니다.
   required: false
   type: string
   default: notify
 token:
-  description: Your bot's token.
+  description: 봇의 토큰.
   required: true
   type: string
 {% endconfiguration %}
 
-### Setting up the bot
+### 봇 설정하기
 
-Bots can only send messages to servers or attach local available images. To add the bot to a server you are an admin on, get the details of the bot from the [Discord My Apps page](https://discordapp.com/developers/applications/me).
+봇은 서버로 메시지를 보내거나 사용 가능한 로컬 이미지를 첨부 할 수 있습니다. 봇을 관리자인 서버에 추가하려면 [Discord My Apps page](https://discordapp.com/developers/applications/me)에서 봇의 세부 정보를 얻습니다.
 
 <p class='img'>
   <img src='{{site_root}}/images/screenshots/discord-bot.png' />
 </p>
 
-Now use the Discord Authorization page with the **Client ID** of your [bot](https://discordapp.com/developers/docs/topics/oauth2#bots).
+이제 [bot](https://discordapp.com/developers/docs/topics/oauth2#bots)의 **Client ID**와 함께 Discord Authorization 페이지를 사용하십시오.
 
 `https://discordapp.com/api/oauth2/authorize?client_id=[CLIENT_ID]&scope=bot&permissions=0`
 
@@ -52,19 +53,19 @@ Now use the Discord Authorization page with the **Client ID** of your [bot](http
   <img src='{{site_root}}/images/screenshots/discord-auth.png' />
 </p>
 
-Wait for the confirmation which should say "Authorized".
+"Authorized"라는 확인 메시지가 표시 될 때까지 기다립니다.
 
-Once the bot has been added to your server, get the channel ID of the channel you want the bot to operate in. In The Discord application go to **Settings** > **Appearance** > **Check developer mode**.
+봇이 서버에 추가되면 봇을 작동시키려는 채널의 채널 ID를 얻습니다.   Discord 응용 프로그램에서 **Settings** > **Appearance** > **Check developer mode** 으로 이동하십시오.
 
 <p class='img'>
   <img src='{{site_root}}/images/screenshots/discord-api.png' />
 </p>
 
-Right click channel name and copy the channel ID (**Copy ID**).
+채널 이름을 마우스 오른쪽 단추로 클릭하고 채널 ID를 복사하십시오. (**Copy ID**).
 
-This channel ID has to be used as the target when calling the notification service. Multiple channel IDs can be specified, across multiple servers.
+이 채널 ID는 알림 서비스를 호출 할 때 대상으로 사용해야합니다. 여러 서버에서 여러 채널 ID를 지정할 수 있습니다.
 
-#### Example service call
+#### Service Call 사례 
 
 ```yaml
 - service: notify.discord
@@ -79,10 +80,10 @@ This channel ID has to be used as the target when calling the notification servi
 
 ### Notes
 
-You can tag any user inside a channel by using their user ID in the message like so: `<@userid>` replacing `userid` with the ID you copied. To get the user ID right click on the user name to copy the ID like you did for the channel ID up above.
+메시지에 사용자 ID를 사용하여 채널 내부의 모든 사용자에게 태그를 지정할 수 있습니다. : `<@userid>`에서 `userid`를 복사한 ID로 바꾸는 방법으로. 사용자 ID를 얻으려면 사용자 이름을 마우스 오른쪽 버튼으로 클릭하여 위의 채널 ID와 마찬가지로 ID를 복사하십시오.
 
-For more information about creating and authorizing bots, visit the [OAuth2 information page](https://discordapp.com/developers/docs/topics/oauth2)
+봇 생성 및 권한 부여에 대한 자세한 내용은 [OAuth2 information page](https://discordapp.com/developers/docs/topics/oauth2)를 방문하십시오.
 
-To use notifications effectively, please see the [getting started with automation page](/getting-started/automation/).
+알림을 효과적으로 사용하려면 [getting started with automation page](/getting-started/automation/)를 참조하십시오.
 
-Images are uploaded to Discord when a message is sent. As such, a local path to the image is required (i.e. `/config/www/garage.jpg` as opposed to `/local/garage.jpg`), and updating an image after sending it in a message will not update the message in Discord.
+메시지가 전송될 때 이미지가 Discord에 업로드됩니다. 따라서 이미지에 대한 로컬 경로가 필요합니다 (예: `/local/garage.jpg`가 아닌 `/config/www/garage.jpg`). 메시지로 보낸 후 이미지를 업데이트해도 Discord의 메시지는 업데이트되지 않습니다.

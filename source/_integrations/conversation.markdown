@@ -1,5 +1,5 @@
 ---
-title: Conversation
+title: 대화(Conversation)
 description: Instructions on how to have conversations with your Home Assistant.
 logo: home-assistant.png
 ha_category:
@@ -10,11 +10,11 @@ ha_codeowners:
   - '@home-assistant/core'
 ---
 
-The conversation integration allows you to converse with Home Assistant. You can either converse by pressing the microphone in the frontend (supported browsers only (no iOS)) or by calling the `conversation/process` service with the transcribed text.
+대화 통합구성요소를 통해 Home Assistant와 대화 할 수 있습니다. 프론트 엔드에서 마이크를 누르거나 (지원되는 브라우저만 (iOS는 아님)), 텍스트를 번역하여 `conversation/process` 서비스를 호출하여 대화 할 수 있습니다.
 
 <p class='img'>
   <img src="/images/screenshots/voice-commands.png" />
-  Screenshot of the conversation interface in Home Assistant.
+  홈어시스턴트의 대화 인터페이스 스크린 샷.
 </p>
 
 ```yaml
@@ -34,11 +34,11 @@ intents:
       type: list
 {% endconfiguration %}
 
-## Adding custom sentences
+## 사용자정의 문장 추가
 
-By default, it will support turning devices on and off. You can say things like "turn on kitchen lights" or "turn the living room lights off". You can also configure your own sentences to be processed. This works by mapping sentences to intents and then configure the [intent script integration](/integrations/intent_script/) to handle these intents.
+기본적으로 장치 켜기 및 끄기를 지원합니다. "turn on kitchen lights" 또는 "turn the living room lights off"와 같은 것을 말할 수 있습니다. 자신만의 문장을 처리하도록 설정할 수도 있습니다. 이것은 문장을 의도(intents)에 매핑 한 다음 이러한 의도(intents)를 처리하도록 [intent script integration](/integrations/intent_script/)을 설정하여 작동합니다.
 
-Here is a simple example to be able to ask what the temperature in the living room is.
+다음은 거실의 온도가 얼마인지 묻는 간단한 예입니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -53,11 +53,11 @@ intent_script:
       text: It is currently {% raw %}{{ states.sensor.temperature }}{% endraw %} degrees in the living room.
 ```
 
-## Adding advanced custom sentences
+## 고급사용자정의 문장 추가
 
-Sentences can contain slots (marked with curly braces: `{name}`) and optional words (marked with square brackets: `[the]`). The values of slots will be passed on to the intent and are available inside the templates.
+문장에는 슬롯 (중괄호 :`{name}`)과 선택적 단어 (대괄호 :`[the]`)가 포함될 수 있습니다. 슬롯값은 의도(intents)로 전달되며 템플릿 내에서 사용할 수 있습니다.
 
-The following configuration can handle the following sentences:
+다음 설정은 다음 문장을 처리 할 수 ​​있습니다.
 
  - Change the lights to red
  - Change the lights to green
@@ -87,7 +87,7 @@ intent_script:
 {% endraw %}
 ```
 
-#### Service `conversation.process`
+#### `conversation.process` 서비스
 
 | Service data attribute | Optional | Description                                      |
 |------------------------|----------|--------------------------------------------------|

@@ -1,5 +1,5 @@
 ---
-title: File Size
+title: 파일 크기
 description: Component for monitoring the size of a file.
 logo: file.png
 ha_category:
@@ -8,11 +8,11 @@ ha_iot_class: Local Polling
 ha_release: 0.64
 ---
 
-The `filesize` sensor for displaying the size in MB of a file. Note that paths must be added to [whitelist_external_dirs](/docs/configuration/basic/).
+파일의 크기를 MB 단위로 표시하기위한 `filesize` 센서. 경로는 [whitelist_external_dirs](/docs/configuration/basic/)에 추가되어야합니다.
 
-## Configuration
+## 설정
 
-To enable the `filesize` sensor, add the following lines to your `configuration.yaml`:
+`filesize` 센서를 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오 :
 
 ```yaml
 sensor:
@@ -23,7 +23,7 @@ sensor:
 
 {% configuration %}
 file_paths:
-  description: The absolute path to the file.
+  description: 파일의 절대 경로
   required: true
   type: list
 {% endconfiguration %}

@@ -1,5 +1,5 @@
 ---
-title: Garadget
+title: Garadget(차고문제어)
 description: Instructions on how to integrate Garadget covers within Home Assistant.
 logo: garadget.png
 ha_category:
@@ -8,11 +8,11 @@ ha_release: 0.32
 ha_iot_class: Cloud Polling
 ---
 
-The `garadget` cover platform lets you control [Garadget](https://www.garadget.com/) garage door futurizers through Home Assistant.
+`garadget` Cover 플랫폼을 사용하면 Home Assistant를 통해 [Garadget](https://www.garadget.com/)의 garage door futurizers로 제어 할 수 있습니다.
 
-## Configuration
+## 설정
 
-To enable Garadget Covers in your installation, add the following to your `configuration.yaml` file:
+Garadget Covers를 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -34,7 +34,7 @@ To enable Garadget Covers in your installation, add the following to your `confi
 
 {% configuration %}
 covers:
-  description: List of your doors.
+  description: 차고문 목록.
   required: true
   type: list
   covers:
@@ -62,7 +62,7 @@ covers:
           type: string
 {% endconfiguration %}
 
-If provided, the **access_token** will be used, otherwise the **username** and **password** will be used to automatically generate an access token at start time.
+제공되는 경우 **access_token** 이 사용되며, 그렇지 않으면 **username** 및 **password**가 시작시 자동으로 액세스 토큰을 생성하는 데 사용됩니다.
 
 ## Example
 
@@ -112,7 +112,7 @@ customize:
 ```
 {% endraw %}
 
-Some of the Garadget sensors can create a lot of clutter in the logbook.  Use this section of code in your `configuration.yaml` to exclude those entries.
+Garadget 센서 중 일부는 로그북에 많은 혼란을 줄 수 있습니다. `configuration.yaml`에서 이 코드 섹션을 사용하여 해당 항목을 제외하십시오.
 
 ```yaml
 logbook:
@@ -122,9 +122,9 @@ logbook:
       - sensor.garage_door_wifi_signal_strength
 ```
 
-As of firmware release 1.17 the garadget device has native support for MQTT. The options allow the end-user to configure the device in the following ways 'cloud only', 'cloud and MQTT' or 'MQTT only'.
+펌웨어 릴리스 1.17부터 garadget 장치는 MQTT를 기본적으로 지원합니다. 이 옵션을 통해 최종 사용자는 '클라우드 만', '클라우드 및 MQTT' 또는 'MQTT 만'과 같은 방식으로 장치를 설정할 수 있습니다.
 
-For configuration of the garadget as a MQTT cover:
+garadget을 MQTT Cover로 설정하려면 다음을 수행하십시오.
 
 ```yaml
 cover:

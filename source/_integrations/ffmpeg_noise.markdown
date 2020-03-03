@@ -1,5 +1,5 @@
 ---
-title: FFmpeg Noise
+title: FFmpeg 노이즈
 description: Instructions on how to integrate an FFmpeg-based noise binary sensor
 logo: ffmpeg.png
 ha_category:
@@ -7,17 +7,17 @@ ha_category:
 ha_release: 0.27
 ---
 
-The `ffmpeg` platform allows you to use any video or audio feed with [FFmpeg](https://www.ffmpeg.org/) for various sensors in Home Assistant.
+이 `ffmpeg` 플랫폼을 사용하면 Home Assistant의 다양한 센서에 [FFmpeg](https://www.ffmpeg.org/)가 포함된 모든 비디오 또는 오디오 피드를 사용할 수 있습니다
 
 <div class='note'>
 
-If the `ffmpeg` process is broken, the sensor will be unavailable. To control the ffmpeg process of sensor, use the service *ffmpeg.start*, *ffmpeg.stop*, *ffmpeg.restart*.
+`ffmpeg` 프로세스가 중단되면 센서를 사용할 수 없습니다. 센서의 ffmpeg 프로세스를 제어하려면 *ffmpeg.start*, *ffmpeg.stop*, *ffmpeg.restart* 서비스를 사용하십시오.
 
 </div>
 
-## Configuration
+## 설정
 
-To add FFmpeg with noise detection to your installation, add the following to your `configuration.yaml` file:
+소음 감지 기능이있는 FFmpeg를 설치에 추가하려면`configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -28,25 +28,25 @@ binary_sensor:
 
 {% configuration %}
 input:
-  description: An FFmpeg-compatible input file, stream, or feed.
+  description: FFmpeg 호환 입력 파일, 스트림 또는 피드.
   required: true
   type: string
 name:
-  description: Override the name of your camera.
+  description: 카메라 이름을 덮어씁니다.
   required: false
   type: string
 initial_state:
-  description: Start ffmpeg with home-assistant.
+  description: 홈어시스턴트로 ffmpeg를 시작
   required: false
   type: boolean
   default: true
 peak:
-  description: The threshold of detecting noise, in dB. 0 is very loud and -100 is low.
+  description: 노이즈 감지 임계값 (dB) 0은 매우큼 -100은 낮음.
   required: false
   type: integer
   default: -30
 duration:
-  description: How long the noise needs to be over the peak to trigger the state.
+  description: How long the noise needs to be over the peak to trigger the state. 
   required: false
   type: integer
   default: 1
@@ -56,16 +56,16 @@ reset:
   type: integer
   default: 20
 extra_arguments:
-  description: Extra options to pass to `ffmpeg`, like audio frequency filtering.
+  description: 오디오 주파수 필터링과 같이 `ffmpeg`에 전달할 추가 옵션.
   required: false
   type: string
 output:
-  description: Allows you to send the audio output of this sensor to an Icecast server or other FFmpeg-supported output, e.g., to stream with Sonos after a state is triggered.
+  description: "이 센서의 오디오 출력을 Icecast 서버 또는 다른 FFmpeg 지원 출력 (예: 상태가 트리거 된 후 Sonos로 스트리밍)으로 보낼 수 있습니다."
   required: false
   type: string
 {% endconfiguration %}
 
-To experiment with values:
+값을 실험하려면 :
 
 ```bash
 $ ffmpeg -i YOUR_INPUT -vn -filter:a silencedetect=n=-30dB:d=1 -f null -

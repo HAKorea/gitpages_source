@@ -1,5 +1,5 @@
 ---
-title: DLNA Digital Media Renderer
+title: DLNA 디지털 미디어 렌더러
 description: Instructions on how to integrate a DLNA DMR device into Home Assistant.
 logo: dlna.png
 ha_category:
@@ -8,13 +8,13 @@ ha_release: 0.76
 ha_iot_class: Local Push
 ---
 
-The `dlna_dmr` platform allows you to control a [DLNA Digital Media Renderer](https://www.dlna.org/), such as DLNA enabled TVs or radios.
+`dlna_dmr` 플랫폼을 사용하면 DLNA 지원 TV 또는 라디오와 같은 [DLNA Digital Media Renderer](https://www.dlna.org/)를 제어 할 수 있습니다
 
-Please note that some devices, such as Samsung TVs, are rather picky about the source used to play from. The TTS service might not work in combination with these devices. If the play_media service does not work, please try playing from a DLNA/DMS (such as [MiniDLNA](https://sourceforge.net/projects/minidlna/)).
+삼성 TV와 같은 일부 장치는 재생에 사용되는 소스에 대해 다소 까다롭습니다. TTS 서비스는 이러한 장치와 함께 작동하지 않을 수 있습니다. play_media 서비스가 작동하지 않으면 DLNA/DMS (예: [MiniDLNA](https://sourceforge.net/projects/minidlna/))에서 재생 해보십시오.
 
-## Configuration
+## 설정
 
-To add a DLNA DMR device to your installation, add the following to your `configuration.yaml` file:
+DLNA DMR 장치를 설치에 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -25,24 +25,24 @@ media_player:
 
 {% configuration %}
 url:
-  description: The URL to the device description .xml file, e.g., `http://192.168.0.10:9197/description.xml`.
+  description: "장치 설명. `.xml` 파일의 URL입니다 (예 : `http://192.168.0.10:9197/description.xml`)"
   required: true
   type: string
 listen_ip:
-  description: IP to listen on for events from the device. Only set this when the IP is not detected properly.
+  description: "장치에서 이벤트를 수신하기 위한 IP. IP가 제대로 감지되지 않을 때만 설정하십시오."
   required: false
   type: string
 listen_port:
-  description: Port to listen on for events from the device.
+  description: 장치의 이벤트를 수신 대기하는 포트.
   required: false
   default: 8301
   type: integer
 name:
-  description: The name you would like to give to the device, e.g., `TV living room`.
+  description: "기기에 부여하려는 이름입니다. (예: TV living room.)"
   required: false
   type: string
 callback_url_override:
-  description: Override the advertised callback URL. In case the Home Assistant instance is not directly reachable (e.g., running in a docker container without bridged-networking), advertise this callback URL for events.
+  description: "Override the advertised callback URL. 홈어시스턴트 인스턴스에 직접 연결할 수 없는 경우 (예 : 브리지 된 네트워킹없이 도커 컨테이너에서 실행) 이벤트에 대해 이 콜백 URL을 알리십시오."
   required: false
   type: string
 {% endconfiguration %}

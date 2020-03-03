@@ -1,5 +1,5 @@
 ---
-title: Foscam
+title: 포스캠(foscam)
 description: Instructions on how to integrate Foscam IP cameras within Home Assistant.
 logo: foscam.png
 ha_category:
@@ -10,11 +10,11 @@ ha_codeowners:
   - '@skgsergio'
 ---
 
-The `foscam` platform allows you to watch the live stream of your [Foscam](https://www.foscam.com) IP camera in Home Assistant.
+`foscam` 플랫폼을 사용하면 홈어시스턴트에서 [Foscam](https://www.foscam.com) IP 카메라의 라이브 스트림을 볼 수 있습니다.
 
-## Configuration
+## 설정
 
-To enable your Foscam IP camera in your installation, add the following to your `configuration.yaml` file:
+Foscam IP 카메라를 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -27,40 +27,40 @@ camera:
 
 {% configuration %}
 ip:
-  description: The IP address your camera.
+  description: 카메라의 IP 주소
   required: true
   type: string
 port:
-  description: The port that the camera is running on.
+  description: 카메라가 실행되는 포트
   required: false
   default: 88
   type: integer
 rtsp_port:
-  description: The port that the camera uses for RTSP. This is normally auto-discovered but some models may need this set, such as the R2 and R2C.
+  description: 카메라가 RTSP에 사용하는 포트.  이는 일반적으로 자동 검색되지만 R2 및 R2C와 같은 일부 모델에는 이 세트가 필요할 수 있습니다.
   required: false
   default: None
   type: integer
 username:
-  description: The username for accessing your camera.
+  description: 카메라에 액세스하기위한 사용자 이름
   required: true
   type: string
 password:
-  description: The password for accessing your camera.
+  description: 카메라에 액세스하기위한 비밀번호
   required: true
   type: string
 name:
-  description: This parameter allows you to override the name of your camera.
+  description: 이 매개 변수를 사용하면 카메라 이름을 무시할 수 있습니다
   required: false
   type: string
 {% endconfiguration %}
 
 <div class='note'>
-There seems to be some issues within Foscam with lengthy passwords and passwords containing certain symbols. Be sure to check your camera's documentation.
+Foscam 내에서 암호가 길고 특정 기호가 포함된 암호에 문제가 있는것 같습니다. 카메라 설명서를 확인하십시오.
 </div>
 
-### Service `foscam.ptz`
+### `foscam.ptz` 서비스
 
-If your Foscam camera supports PTZ, you will be able to pan or tilt your camera.
+Foscam 카메라가 PTZ를 지원하는 경우 카메라를 이동하거나 기울일 수 있습니다.
 
 | Service data attribute | Description |
 | -----------------------| ----------- |
@@ -68,15 +68,15 @@ If your Foscam camera supports PTZ, you will be able to pan or tilt your camera.
 | `movement` | 	Direction of the movement. Allowed values: `up`, `down`, `left`, `right`, `top_left`, `top_right`, `bottom_left`, `bottom_right` |
 | `travel_time` | (Optional) Travel time in seconds. Allowed values: float from 0 to 1. Default: 0.125 |
 
-### Example card with controls
+### 컨트롤이 가능한 예제 카드
 
 <p class='img'>
   <img src='/images/integrations/foscam/example-card.png' alt='Screenshot showing a foscam camera using a picture-elements with PTZ controls.'>
-  Example showing a Foscam camera with controls for Pan and Tilt.
+  팬 및 틸트 컨트롤이있는 Foscam 카메라를 보여주는 예.
 </p>
 
 
-Using the following card code you can achieve a card displaying the live video feed from a Foscam camera with controls for moving the camera at the bottom right corner.
+다음 카드 코드를 사용하면 Foscam 카메라의 라이브 비디오 피드를 표시하는 카드를 오른쪽 하단 모서리에서 카메라를 움직일 수 있는 컨트롤과 함께 얻을 수 있습니다.
 
 ```yaml
 type: picture-elements
@@ -182,6 +182,6 @@ elements:
         movement: bottom_right
 ```
 
-### Extra CGI Commands
+### 추가 CGI 명령
 
-Foscam Webcams which support CGI Commands can be controlled by Home Assistant ([Source](http://www.ipcamcontrol.net/files/Foscam%20IPCamera%20CGI%20User%20Guide-V1.0.4.pdf)). For an example of how this can be done, see the [Foscam IP Camera Pan, Tilt, Zoom Control](/cookbook/foscam_away_mode_PTZ/) Cookbook entry.
+CGI 명령을 지원하는 oscam 웹캠은 홈어시스턴트 ([Source](http://www.ipcamcontrol.net/files/Foscam%20IPCamera%20CGI%20User%20Guide-V1.0.4.pdf)에서 제어 할 수 있습니다). 이 작업을 수행하는 방법에 대한 예는 [Foscam IP Camera Pan, Tilt, Zoom Control](/cookbook/foscam_away_mode_PTZ/) Cookbook 항목을 참조하십시오.

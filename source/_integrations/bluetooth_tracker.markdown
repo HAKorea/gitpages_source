@@ -1,5 +1,5 @@
 ---
-title: Bluetooth Tracker
+title: 블루투스 트래커
 description: Instructions for integrating Bluetooth tracking within Home Assistant.
 logo: bluetooth.png
 ha_category:
@@ -8,15 +8,15 @@ ha_iot_class: Local Polling
 ha_release: 0.18
 ---
 
-This tracker discovers new devices on boot and tracks Bluetooth devices periodically based on `interval_seconds` value. It is not required to pair the devices with each other! Devices discovered are stored with 'bt_' as the prefix for device MAC addresses in `known_devices.yaml`.
+이 추적기는 부팅시 새 장치를 검색하고 `interval_seconds` 값을 기준으로 Bluetooth 장치를 정기적으로 추적 합니다. 장치를 서로 페어링 할 필요는 없습니다! 발견 된 장치는 `known_devices.yaml`에 장치 MAC 주소의 접두사로 'bt_'와 함께 저장됩니다.
 
-This platform requires pybluez to be installed. On Debian based installs, run
+이 플랫폼에는 pybluez가 설치되어 있어야합니다. 데비안 기반 설치에서 다음을 실행합니다. 
 
 ```bash
 sudo apt install bluetooth libbluetooth-dev
 ```
 
-To use the Bluetooth tracker in your installation, add the following to your `configuration.yaml` file:
+Bluetooth 트래커를 사용하려면 `configuration.yaml` 파일에 다음을 추가 하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -26,17 +26,17 @@ device_tracker:
 
 {% configuration %}
 request_rssi:
-  description: Performs a request for the "Received signal strength indication" (RSSI) of each tracked device.
+  description: 추적된 각 장치의 "수신된 신호 강도 표시"(RSSI)에 대한 요청을 수행.
   required: false
   type: boolean
   default: false
 device_id:
-  description: The ID of the bluetooth adapter to be used by the tracker, e.g., use `0` for `hci0`, `1` for `hci1`, and so on.
+  description: "추적기에서 사용할 Bluetooth 어댑터 ID (예: use `0` for `hci0`, `1` for `hci1`, and so on.)"
   required: false
   type: integer
   default: "`-1` (The first available bluetooth adapter)"
 {% endconfiguration %}
 
-In some cases it can be that your device is not discovered. In that case let your phone scan for Bluetooth devices while you restart Home Assistant. Just hit `Scan` on your phone all the time until Home Assistant is fully restarted and the device should appear in `known_devices.yaml`.
+경우에 따라 장치가 검색되지 않을 수 있습니다. 이 경우 Home Assistant를 다시 시작하는 동안 전화기에서 Bluetooth 장치를 검색하도록 하십시오. 홈어시스턴트가 완전히 다시 시작되고 장치가 `known_devices.yaml`에 표시될 때까지 휴대 전화에서 `scan` 을 누르십시오.
 
-For additional configuration variables check the [Device tracker page](/integrations/device_tracker/).
+추가 설정 변수에 대해서는 [Device tracker page](/integrations/device_tracker/)를 확인 하십시오 .

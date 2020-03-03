@@ -1,5 +1,5 @@
 ---
-title: Daikin AC
+title: 다이킨(Daikin AC)
 description: Instructions on how to integrate Daikin AC devices with Home Assistant.
 logo: daikin.png
 ha_category:

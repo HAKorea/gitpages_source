@@ -1,5 +1,5 @@
 ---
-title: Default Config
+title: 기본 컨피그(Default Config)
 description: The default config integration will initate a default configuration for Home Assistant.
 logo: home-assistant.png
 ha_category:

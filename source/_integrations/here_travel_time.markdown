@@ -1,5 +1,5 @@
 ---
-title: HERE Travel Time
+title: HERE Travel Time(자율주행준비)
 description: Instructions on how to add HERE travel time to Home Assistant.
 logo: HERE_logo.svg
 ha_category:
@@ -11,23 +11,24 @@ ha_codeowners:
   - '@eifinger'
 ---
 
-The `here_travel_time` sensor provides travel time from the [HERE Routing API](https://developer.here.com/documentation/routing/topics/introduction.html).
+`here_travel_time` 센서는 [HERE Routing API](https://developer.here.com/documentation/routing/topics/introduction.html)에서 이동 시간을 제공합니다.
 
-## Setup
+## 셋업
 
-You need to register for an API key (REST & XYZ HUB API/CLI) by following the instructions [here](https://developer.here.com/documentation/routing/topics/introduction.html?create=Freemium-Basic&keepState=true&step=account).
+[here](https://developer.here.com/documentation/routing/topics/introduction.html?create=Freemium-Basic&keepState=true&step=account) 지침에 따라 API 키 (REST & XYZ HUB API/CLI)를 등록해야합니다. 
 
-HERE offers a Freemium Plan which includes 250,000 free Transactions per month. For the Routing API, one transaction equals one request with one starting point (no multi stop). More information can be found [here](https://developer.here.com/faqs#payment-subscription)
+HERE는 한 달에 250,000 건의 무료 거래가 포함 된 프리미엄 플랜을 제공합니다. 라우팅 API의 경우 하나의 트랜잭션은 하나의 요청과 하나의 시작점 (멀티 stop 없음)과 같습니다. 자세한 내용은 [here](https://developer.here.com/faqs#payment-subscription)를 참조하십시오.
 
-By default HERE will deactivate your account if you exceed the free Transaction limit for the month. You can add payment details to reenable your account as described [here](https://developer.here.com/faqs)
+해당 월의 무료 거래 한도를 초과하면 기본적으로 여기에서 계정이 비활성화됩니다. 
+[here](https://developer.here.com/faqs)에 설명 된대로 결제 세부 정보를 추가하여 계정을 다시 활성화 할 수 있습니다
 
-### Migrate from app_code to api_key
+### app_code에서 api_key로 마이그레이션
 
-HERE has changed its authentication mechanism. It is no longer possible to use `app_id` and `app_code`. Existing users have to follow the [migration guide](https://developer.here.com/documentation/authentication/dev_guide/topics/api-key-credentials.html) in order to retrieve the now needed `api_key`.
+HERE의 인증 메커니즘이 변경되었습니다. 더 이상 `app_id`와 `app_code`를 사용할 수 없습니다. 현재 필요한 `api_key`를 검색하려면 기존 사용자가 [migration guide](https://developer.here.com/documentation/authentication/dev_guide/topics/api-key-credentials.html)를 따라야합니다.
 
-## Configuration
+## 설정
 
-To enable the sensor, add the following lines to your `configuration.yaml` file:
+센서를 활성화하려면 `configuration.yaml` 파일에 다음 라인을 추가하십시오 :
 
 ```yaml
 # Example entry for configuration.yaml
@@ -42,68 +43,69 @@ sensor:
 
 {% configuration %}
 api_key:
-  description: "Your application's API key (get one by following the instructions above)."
+  description: "애플리케이션의 API 키 (위의 지침에 따라 키를 얻습니다)."
   required: true
   type: string
 origin_latitude:
-  description: "The starting latitude for calculating travel distance and time. Must be used in combination with origin_longitude. Cannot be used in combination with `origin_entity_id`."
+  description: "이동 거리 및 시간을 계산하기 위한 시작 위도입니다. origin_longitude와 함께 사용해야합니다. `origin_entity_id`와 함께 사용할 수 없습니다."
   required: exclusive
   type: float
 origin_longitude:
-  description: "The starting longitude for calculating travel distance and time. Must be used in combination with origin_latitude. Cannot be used in combination with `origin_entity_id`."
+  description: "이동 거리 및 시간을 계산하기위한 시작 경도. origin_latitude와 함께 사용해야합니다. `origin_entity_id`와 함께 사용할 수 없습니다."
   required: exclusive
   type: float
 destination_latitude:
-  description: "The finishing latitude for calculating travel distance and time. Must be used in combination with destination_longitude. Cannot be used in combination with `destination_entity_id`."
+  description: "이동 거리 및 시간 계산을 위한 최종 위도. destination_longitude와 함께 사용해야합니다. `destination_entity_id`와 함께 사용할 수 없습니다."
   required: exclusive
   type: float
 destination_longitude:
-  description: "The finishing longitude for calculating travel distance and time. Must be used in combination with destination_latitude. Cannot be used in combination with `destination_entity_id`."
+  description: "이동 거리 및 시간 계산을 위한 최종 경도. destination_latitude와 함께 사용해야합니다. `destination_entity_id`와 함께 사용할 수 없습니다."
   required: exclusive
   type: float
 origin_entity_id:
-  description: "The entity_id holding the starting point for calculating travel distance and time. Cannot be used in combination with `origin_latitude`/`origin_longitude`."
+  description: "이동 거리 및 시간을 계산하기 위한 시작점을 보유한 entity_id. `origin_latitude`/`origin_longitude`와 함께 사용할 수 없습니다."
   required: exclusive
   type: string
 destination_entity_id:
-  description: "The entity_id holding the finishing point for calculating travel distance and time. Cannot be used in combination with `destination_latitude`/`destination_longitude`."
+  description: "이동 거리 및 시간을 계산하기 위한 최종 지점을 보유한 entity_id. `destination_latitude`/`destination_longitude`와 함께 사용할 수 없습니다"
   required: exclusive
   type: string
 name:
-  description: A name to display on the sensor. The default is "HERE Travel Time".
+  description: 센서에 표시 할 이름입니다. 기본값은 "HERE Travel Time" 입니다..
   required: false
   type: string
   default: "HERE Travel Time"
 mode:
-  description: "You can choose between: `bicycle`, `car`, `pedestrian`, `publicTransport`, `publicTransportTimeTable` or `truck`. The default is `car`. For public transport `publicTransportTimeTable` is recommended. You can find more information on the modes [here](https://developer.here.com/documentation/routing/topics/transport-modes.html) and on the public modes [here](https://developer.here.com/documentation/routing/topics/public-transport-routing.html)"
+  description: "`bicycle`, `car`, `pedestrian`, `publicTransport`, `publicTransportTimeTable` 혹은 `truck` 중에서 선택할 수 있습니다. 디폴트는 `car`입니다. 대중 교통의 경우 `publicTransportTimeTable`이 권장됩니다. 일반 모드 [here](https://developer.here.com/documentation/routing/topics/transport-modes.html) 및 공개 모드 [here](https://developer.here.com/documentation/routing/topics/public-transport-routing.html)에 대한 자세한 정보를 찾을 수 있습니다."
   required: false
   type: string
   default: "car"
 route_mode:
-  description: "You can choose between: `fastest`, or `shortest`. This will determine whether the route is optimized to be the shortest and completely disregard traffic and speed limits or the fastest route according to the current traffic information. The default is `fastest`"
+  description: "`fastest` 또는 `shortest` 중에서 선택할 수 있습니다. 이것은 경로가 현재 교통 정보에 따라 가장 짧고 완전히 무시되는 트래픽 및 속도 제한인지 또는 가장 빠른 경로인지를 결정합니다. 기본값은 `fastest` 입니다"
   required: false
   type: string
   default: "fastest"
 traffic_mode:
-  description: "You can choose between: `true`, or `false`. Decide whether you want to take the current traffic condition into account. Default is `false`."
+  description: "`true` 또는 `false` 중에서 선택할 수 있습니다. 
+현재 교통 상황을 고려할지 여부를 결정하십시오. 기본값은 `false` 입니다 "
   required: false
   type: boolean
   default: false
 unit_system:
-  description: "You can choose between `metric` or `imperial`."
+  description: "`metric` 혹은 `imperial`중에서 선택할 수 있습니다 "
   required: false
   default: Defaults to `metric` or `imperial` based on the Home Assistant configuration.
   type: string
 scan_interval:
-  description: "Defines the update interval of the sensor in seconds. Defaults to 300 (5 minutes)."
+  description: "센서의 업데이트 간격을 초 단위로 정의합니다. 기본값은 300 (5 분)입니다."
   required: false
   type: integer
   default: 300
 {% endconfiguration %}
 
-## Dynamic Configuration
+## 동적 설정 (Dynamic Configuration)
 
-Tracking can be set up to track entities of type `device_tracker`, `zone`, `sensor` and `person`. If an entity is placed in the origin or destination then every 5 minutes when the platform updates, it will use the latest location of that entity.
+`device_tracker`, `zone`, `sensor` 및 `person` 유형의 엔티티를 추적하도록 추적을 설정할 수 있습니다. 엔티티가 출발지 또는 목적지에 배치되면 플랫폼이 업데이트 될 때 5 분마다 해당 엔티티의 최신 위치를 사용합니다.
 
 ```yaml
 # Example entry for configuration.yaml
@@ -130,21 +132,21 @@ sensor:
 
 ```
 
-## Entity Tracking
+## 엔터티 추적
 
 - **device_tracker**
-  - If the state is a zone, then the zone location will be used
-  - If the state is not a zone, it will look for the longitude and latitude attributes
+  - 상태가 영역(zone) 인 경우 영역 위치가 사용됩니다
+  - 상태가 영역이 아닌 경우 경도 및 위도 속성을 찾습니다.
 - **zone**
-  - Uses the longitude and latitude attributes
+  - 경도 및 위도 속성을 사용합니다
 - **sensor**
-  - If the state is a zone, then will use the zone location
-  - All other states will be passed directly into the HERE API
-    - This includes all valid locations listed in the *Configuration Variables*
+  - 상태가 영역 인 경우 영역 위치를 사용합니다
+  - 다른 모든 상태는 HERE API로 직접 전달됩니다
+    - 여기에는 *설정 변수* 에 나열된 모든 유효한 위치가 포함됩니다
 
-## Updating sensors on-demand using Automation
+## 자동화를 사용한 주문형 센서 업데이트
 
-You can also use the `homeassistant.update_entity` service to update the sensor on-demand. For example, if you want to update `sensor.morning_commute` every 2 minutes on weekday mornings, you can use the following automation:
+`homeassistant.update_entity` 서비스를 사용하여 주문형 센서를 업데이트 할 수도 있습니다. 예를 들어, 평일 아침 2 분마다 `sensor.morning_commute`를 업데이트하려는 경우 다음 자동화를 사용할 수 있습니다.
 
 ```yaml
 automation:

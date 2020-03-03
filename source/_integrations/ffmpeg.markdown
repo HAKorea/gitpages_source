@@ -1,5 +1,5 @@
 ---
-title: FFmpeg
+title: FFmpeg(이미지프로세싱)
 description: Instructions on how to integrate FFmpeg within Home Assistant.
 logo: ffmpeg.png
 ha_category:
@@ -7,22 +7,22 @@ ha_category:
 ha_release: 0.29
 ---
 
-The `ffmpeg` integration allows other Home Assistant integrations to process video and audio streams. This integration supports all FFmpeg versions since 3.0.0; if you have an older version, please update.
+`ffmpeg` 통합구성요소를 통해 다른 Home Assistant 통합구성요소가 비디오 및 오디오 스트림을 처리 할 수 ​​있습니다. 이 통합구성요소는 3.0.0 이후의 모든 FFmpeg 버전을 지원합니다. 이전 버전인 경우 업데이트하십시오.
 
 <div class='note'>
 
-You need the `ffmpeg` binary in your system path. On Debian 8 or Raspbian (Jessie) you can install it from [debian-backports](https://backports.debian.org/Instructions/). If you want [hardware acceleration](https://trac.ffmpeg.org/wiki/HWAccelIntro) support on a Raspberry Pi, you will need to build from source by yourself. Windows binaries are available on the [FFmpeg](http://www.ffmpeg.org/) website.
+시스템 경로에`ffmpeg` 바이너리가 필요합니다. 데비안 8 또는 Raspbian (Jessie)에서는 [debian-backports](https://backports.debian.org/Instructions/)에서 설치할 수 있습니다. Raspberry Pi에서 [hardware acceleration](https://trac.ffmpeg.org/wiki/HWAccelIntro) 지원을 원한다면 직접 소스에서 빌드해야합니다. Windows 바이너리는 [FFmpeg] (http://www.ffmpeg.org/) 웹 사이트에서 제공됩니다.
 </div>
 
 <div class='note'>
 
-If you are using [Hass.io](/hassio/) then just move forward to the configuration as all requirements are already fulfilled.
+[Hass.io](/hassio/)를 사용하는 경우 모든 요구 사항이 이미 충족되었으므로 설정으로 이동하십시오.
 
 </div>
 
-## Configuration
+## 설정
 
-To set it up, add the following information to your `configuration.yaml` file:
+설정하려면 `configuration.yaml` 파일에 다음 정보를 추가하십시오 :
 
 ```yaml
 ffmpeg:
@@ -36,8 +36,8 @@ ffmpeg_bin:
   type: string
 {% endconfiguration %}
 
-### Raspbian Debian Jessie Lite Installations
-To get the binary on Raspbian Debian Jessie Lite on a RPi you need to perform the following:
+### Raspbian Debian Jessie Lite 설치
+RPi의 Raspbian Debian Jessie Lite에서 바이너리를 가져오려면 다음을 수행해야합니다.
 
 ```bash
 sudo echo "deb http://ftp.debian.org/debian jessie-backports main" >> /etc/apt/sources.list
@@ -45,31 +45,31 @@ sudo apt-get update
 sudo apt-get -t jessie-backports install ffmpeg
 ```
 
-We can use now following in the configuration:
+설정에서 다음을 사용할 수 있습니다.
 
 ```yaml
 ffmpeg:
   ffmpeg_bin: /usr/bin/ffmpeg
 ```
 
-### Troubleshooting
+### 문제 해결
 
-In most cases, `ffmpeg` automatically detects all needed options to read a video or audio stream or file. But it is possible in rare cases that you will need to set options to help `ffmpeg` out.
+대부분의 경우, ffmpeg는 비디오 또는 오디오 스트림 또는 파일을 읽는 데 필요한 모든 옵션을 자동으로 감지합니다. 그러나 드문 경우이지만 `ffmpeg`를 돕기 위해 옵션을 설정해야 할 수도 있습니다.
 
-First, check that your stream is playable by `ffmpeg` outside of Home Assistant with (use option `-an` or `-vn` to disable video or audio stream):
+먼저, 홈어시스턴트 외부의 `ffmpeg`에서 스트림을 재생할 수 있는지 확인하십시오 (비디오 또는 오디오 스트림을 비활성화하려면 `-an` 또는`-vn` 옵션 사용).
 
 ```bash
 ffmpeg -i INPUT -an -f null -
 ```
 
-Now you should be able to see what is going wrong. The following list contains some common problems and solutions:
+이제 무엇이 잘못되었는지 확인할 수 있습니다. 다음 목록에는 몇 가지 일반적인 문제와 해결책이 있습니다. : 
 
 - `[rtsp @ ...] UDP timeout, retrying with TCP`: You need to set an RTSP transport in the configuration with: `input: -rtsp_transport tcp -i INPUT`
 - `[rtsp @ ...] Could not find codec parameters for stream 0 (Video: ..., none): unspecified size`: FFmpeg needs more data or time for autodetection (the default is 5 seconds). You can set the `analyzeduration` and/or `probesize` options to experiment with giving FFmpeg more leeway. If you find the needed value, you can set it with: `input: -analyzeduration xy -probesize xy -i INPUT`. More information about this can be found [here](https://www.ffmpeg.org/ffmpeg-formats.html#Description).
 
-#### USB cameras
+#### USB 카메라
 
-For `INPUT` a valid source is needed. A USB camera is an easy way to test your video setup. To get all available USB cameras connected to the system, e.g., use the v4l2 tools on a Linux machine.
+`INPUT`의 경우 유효한 소스가 필요합니다. USB 카메라를 사용하면 비디오 설정을 쉽게 테스트 할 수 있습니다. 예를 들어, 사용 가능한 모든 USB 카메라를 시스템에 연결하려면 Linux 시스템에서 v4l2 도구를 사용하십시오.
 
 ```bash
 $ v4l2-ctl --list-devices

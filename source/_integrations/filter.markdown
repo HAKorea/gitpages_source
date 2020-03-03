@@ -1,5 +1,5 @@
 ---
-title: Filter
+title: 필터(Filter)
 description: Instructions on how to integrate Data Filter Sensors into Home Assistant.
 ha_category:
   - Utility
@@ -11,17 +11,17 @@ ha_codeowners:
   - '@dgomes'
 ---
 
-The `filter` platform enables sensors that process the states of other entities.
+`filter` 플랫폼은 다른 엔티티의 상태가 조정된 센서로 만들어줍니다.
 
-`filter` applies a signal processing algorithm to a sensor, previous and current states, and generates a `new state` given the chosen algorithm. The next image depicts an original sensor and the filter sensor of that same sensor using the [History Graph]({{site_roor}}/integrations/history_graph/) component.
+`filter`는 신호 처리 알고리즘을 센서, 이전 및 현재 상태에 적용하고 선택한 알고리즘에 따라 `new state`를 생성합니다. 다음 이미지는 [History Graph]({{site_roor}}/integrations/history_graph/) 구성 요소를 사용하여 동일한 센서의 원래 센서와 필터 센서를 보여줍니다.
 
 <p class='img'>
   <img src='{{site_root}}/images/screenshots/filter-sensor.png' />
 </p>
 
-## Configuration
+## 설정
 
-To enable Filter Sensors in your installation, add the following to your `configuration.yaml` file:
+설치시 필터 센서를 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -50,15 +50,15 @@ sensor:
         precision: 2
 ```
 
-Filters can be chained and are applied according to the order present in the configuration file.
+필터는 연결될 수 있으며 설정 파일에 있는 순서에 따라 적용됩니다.
 
 {% configuration %}
 entity_id:
-  description: The entity ID of the sensor to be filtered.
+  description: 필터링 할 센서의 엔티티 ID.
   required: true
   type: string
 name:
-  description: Name to use in the frontend.
+  description: 프론트 엔드에서 사용할 이름.
   required: false
   type: string
 filters:
@@ -107,11 +107,12 @@ filters:
       default: positive infinity
 {% endconfiguration %}
 
-## Filters
+## 필터들 
 
 ### Low-pass
 
 The Low-pass filter (`lowpass`) is one of signal processing most common filters, as it smooths data by shortcutting peaks and valleys.
+
 
 The included Low-pass filter is very basic and is based on [exponential smoothing](https://en.wikipedia.org/wiki/Exponential_smoothing), in which the previous data point is weighted with the new data point.
 

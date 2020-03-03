@@ -1,5 +1,5 @@
 ---
-title: Flic
+title: 플릭(Flic)
 description: Instructions on how to integrate flic buttons within Home Assistant.
 logo: flic.png
 ha_category:

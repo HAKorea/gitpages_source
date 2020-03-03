@@ -1,5 +1,5 @@
 ---
-title: Folder Watcher
+title: 폴더 감시
 description: Component for monitoring changes within the filesystem.
 logo: home-assistant.png
 ha_category:
@@ -9,18 +9,18 @@ ha_release: 0.67
 ha_quality_scale: internal
 ---
 
-This integration adds [Watchdog](https://pythonhosted.org/watchdog/) file system monitoring, publishing events on the Home Assistant bus on the creation/deletion/modification of files within configured folders. The monitored `event_type` are:
+이 통합구성요소는 [Watchdog](https://pythonhosted.org/watchdog/) 파일 시스템 모니터링을 추가하고 설정된 폴더 내의 파일 작성/삭제/수정시 홈어시스턴트에 이벤트를 공개합니다. 모니터링되는 'event_type'은 다음과 같습니다. :
 
 * `created`
 * `deleted`
 * `modified`
 * `moved`
 
-Configured folders must be added to [whitelist_external_dirs](/docs/configuration/basic/). Note that by default folder monitoring is recursive, meaning that the contents of sub-folders are also monitored.
+설정된 폴더는 [whitelist_external_dirs](/docs/configuration/basic/)에 추가해야합니다. 기본적으로 폴더 모니터링은 재귀적이므로 하위 폴더의 내용도 모니터링됩니다. 
 
-## Configuration
+## 설정
 
-To enable the Folder Watcher integration in your installation, add the following to your `configuration.yaml` file:
+설치에서 Folder Watcher 통합을 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 {% raw %}
 ```yaml
@@ -31,19 +31,19 @@ folder_watcher:
 
 {% configuration %}
 folder:
-  description: The folder path
+  description: 폴더 경로
   required: true
   type: string
 patterns:
-  description: Pattern matching to apply
+  description: 적용할 패턴 일치성
   required: false
   default: "*"
   type: string
 {% endconfiguration %}
 
-## Patterns
+## 패턴 
 
-Pattern matching using [fnmatch](https://docs.python.org/3.6/library/fnmatch.html) can be used to limit filesystem monitoring to only files which match the configured patterns. The following example shows the configuration required to only monitor filetypes `.yaml` and `.txt`.
+[fnmatch](https://docs.python.org/3.6/library/fnmatch.html)를 사용한 패턴 일치를 사용하여 파일 시스템 모니터링을 설정된 패턴과 일치하는 파일로만 제한할 수 있습니다. 다음 예는 파일 형식 `.yaml` 및 `.txt` 만 모니터링하는 데 필요한 설정을 보여줍니다.
 
 {% raw %}
 ```yaml
@@ -55,9 +55,9 @@ folder_watcher:
 ```
 {% endraw %}
 
-## Automations
+## 자동화
 
-Automations can be triggered on filesystem event data using a `data_template`. The following automation will send a notification with the name and folder of new files added to that folder:
+`data_template`을 사용하여 파일 시스템 이벤트 데이터에서 자동화를 트리거 할 수 있습니다. 다음 자동화는 해당 폴더에 추가된 새 파일의 이름과 폴더와 함께 알림을 보냅니다.
 
 {% raw %}
 ```yaml

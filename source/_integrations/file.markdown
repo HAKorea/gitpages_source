@@ -1,5 +1,5 @@
 ---
-title: File
+title: 파일
 description: Instructions on how to integrate sensors which read from files into Home Assistant.
 logo: file.png
 ha_category:
@@ -12,16 +12,16 @@ ha_codeowners:
   - '@fabaff'
 ---
 
-There is currently support for the following device types within Home Assistant:
+현재 홈 어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - [Notifications](#notifications)
 - [Sensor](#sensor)
 
-## Notifications
+## 알림 (Notifications)
 
-The `file` platform allows you to store notifications from Home Assistant as a file.
+`file` 플랫폼을 사용하면 Home Assistant의 알림을 파일로 저장할 수 있습니다.
 
-To enable file notifications in your installation, add the following to your `configuration.yaml` file:
+파일 알림을 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -33,28 +33,28 @@ notify:
 
 {% configuration %}
 name:
-  description: Setting the optional parameter `name` allows multiple notifiers to be created. The notifier will bind to the service `notify.NOTIFIER_NAME`.
+  description: 선택적 매개 변수 `name`을 설정하면 여러 알리미를 만들 수 있습니다. 알리미는 서비스 `notify.NOTIFIER_NAME`에 바인딩합니다.
   required: false
   default: notify
   type: string
 filename:
-  description: Name of the file to use. The file will be created if it doesn't exist and saved in your [configuration](/docs/configuration/) folder.
+  description: 사용할 파일 이름입니다. 파일이 존재하지 않으면 파일이 생성되어 [configuration](/docs/configuration/) 폴더에 저장됩니다
   required: true
   type: string
 timestamp:
-  description: Setting `timestamp` to `true` adds a timestamp to every entry.
+  description: "`timestamp`를 `true`로 설정하면 모든 항목에 타임 스탬프가 추가됩니다."
   required: false
   default: false
   type: boolean
 {% endconfiguration %}
 
-To use notifications, please see the [getting started with automation page](/getting-started/automation/).
+알림을 사용하려면 [getting started with automation page](/getting-started/automation/)를 참조하십시오.
 
-## Sensor
+## 센서 (Sensor)
 
-The `file` sensor platform reads the entries from a plain-text file and shows the found value. Only the last line of the file is used. This is similar to do `$ tail -n 1 sensor.txt` on the command-line. Note that file paths must be added to [whitelist_external_dirs](/docs/configuration/basic/).
+`file` 센서 플랫폼은 일반 텍스트 파일에서 항목을 읽고 찾은 값을 보여줍니다. 파일의 마지막 줄만 사용됩니다. 이것은 명령행에서 `$ tail -n 1 sensor.txt`와 유사합니다. 파일 경로는 [whitelist_external_dirs](/docs/configuration/basic/)에 추가되어야합니다.
 
-To enable the `file` sensor, add the following lines to your `configuration.yaml`:
+`file` 센서를 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -65,31 +65,31 @@ sensor:
 
 {% configuration %}
 file_path:
-  description: Path to file that stores the sensor data.
+  description: 센서 데이터를 저장하는 파일의 경로.
   required: true
   type: string
 name:
-  description: Name of the sensor to use in the frontend.
+  description: 프론트 엔드에서 사용할 센서의 이름.
   required: false
   default: file name
   type: string
 unit_of_measurement:
-  description: Defines the units of measurement of the sensor, if any.
+  description: 센서의 측정 단위를 정의. (있는 경우).
   required: false
   type: string
 value_template:
-  description: Defines a [template](/docs/configuration/templating/#processing-incoming-data) to extract a value from the payload.
+  description: 페이로드에서 값을 추출하기 위해 [template](/docs/configuration/templating/#processing-incoming-data)을 정의합니다.
   required: false
   type: template
 {% endconfiguration %}
 
-### Examples
+### 사례
 
-In this section you find some real-life examples of how to use this sensor.
+이 섹션에는 이 센서를 사용하는 방법에 대한 실제 예가 나와 있습니다.
 
-#### Entries as JSON
+#### JSON 항목들 (Entries as JSON)
 
-Assuming that the log file contains multiple values formatted as JSON like shown below:
+로그 파일에 아래와 같이 JSON 형식의 여러 값이 포함되어 있다고 가정합니다.
 
 ```text
 [...]
@@ -97,7 +97,7 @@ Assuming that the log file contains multiple values formatted as JSON like shown
 {"temperature": 22, "humidity": 36}
 ```
 
-This would require the following entry in the `configuration.yaml` file to extract the temperature:
+온도를 추출하려면 `configuration.yaml` 파일에 다음 항목이 필요합니다.
 
 ```yaml
 # Example configuration.yaml entry

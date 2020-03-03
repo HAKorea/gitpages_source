@@ -1,5 +1,5 @@
 ---
-title: Geofency
+title: Geofency(아이폰위치추적)
 description: Instructions for how to use Geofency to track devices in Home Assistant.
 logo: geofency.png
 ha_category:
@@ -9,24 +9,24 @@ ha_iot_class: Cloud Push
 ha_config_flow: true
 ---
 
-This integration sets up integration with [Geofency](https://www.geofency.com/). Geofency is a paid app for iOS that lets users to configure a request that will be sent when a geofence or iBeacon region is entered or exited. This can be configured with Home Assistant to update your location.
+통합구성요소는 [Geofency] (https://www.geofency.com/)와의 연동을 설정합니다. Geofency는 iOS용 유료앱으로, geofence 또는 iBeacon region을 입력하거나 종료할 때 전송되는 요청을 사용자가 설정할 수 있습니다. 위치를 업데이트하도록 홈어시스턴트로 설정할 수 있습니다.
 
-## Configuration
+## 설정
 
-To configure Geofency, you must set it up via the integrations panel in the configuration screen. You must then configure the iOS app (via the Webhook feature) to send a POST request to your Home Assistant server at the webhook URL provided by the integration during setup. Use the default POST format. Make sure to enable the 'Update Geo-Position' functionality for mobile beacons.
+Geofency를 설정하려면 설정 화면의 통합구성요소 패널을 통해 Geofency를 설정해야합니다. 그런 다음 Webhook 기능을 통해 iOS앱을 설정하여 셋업 중에 통합구성요소에서 제공한 webhook URL로 POST 요청을 Home Assistant 서버에 보내야합니다. 기본 POST 형식을 사용하십시오. 모바일 beacon들에 대해 'Update Geo-Position' 기능을 활성화하십시오.
 
-Geofency will automatically generate the device tracker name used for geofences, and you will find it in the integrations section after the first request. For beacons, the device name will be `beacon_<name from Geofency>`, e.g., `device_tracker.beacon_car`.
+Geofency는 geofence들에 사용되는 장치 추적기 이름을 자동으로 생성하며 첫 번째 요청후 통합구성요소 섹션에서 찾을 수 있습니다. beacon의 경우 장치 이름은 `beacon_<name from Geofency>`입니다. (예: `device_tracker.beacon_car`).
 
-When using mobile beacons (optional) an entry in `configuration.yaml` is still needed as this can't be added via the integrations panel.
+모바일 beacon들(옵션)을 사용하는 경우 통합구성요소 패널을 통해 추가 할 수 없으므로 `configuration.yaml`의 항목이 여전히 필요합니다.
 
 {% configuration %}
 mobile_beacons:
-  description: List of beacon names that are to be treated as *mobile*. The name must match the name you configure in Geofency. By default, beacons will be treated as *stationary*.
+  description: "*mobile*로 취급될 beacon 이름들의 목록. 이름은 Geofency에서 설정한 이름과 일치해야합니다. 기본적으로 beacon은 *stationary*로 취급됩니다."
   required: false
   type: list
 {% endconfiguration %}
 
-A sample configuration for the `geofency` integration when using mobile beacons is shown below:
+모바일 beacon을 사용할 때 `geofency` 통합구성요소에 대한 샘플 설정은 다음과 같습니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -36,8 +36,9 @@ geofency:
     - keys
 ```
 
-### Zones
+### 구역 (Zones)
 
-When you enter a geofence or stationary beacon, your location name in Home Assistant will be set to the name of the geofence or beacon location in Geofency. When you exit a geofence or stationary beacon, your location name in Home Assistant will be set to `not home`. For mobile beacons, the location name will be `not_home` whenever the beacon is entered or exited outside of a [zone](/integrations/zone/), otherwise, it will be set to the name of the zone.
+geofence 또는 고정 beacon을 입력하면 홈어시스턴트의 위치 이름이  geofence 또는 Geofency의 beacon 위치 이름으로 설정됩니다. geofence 또는 고정 beacon을 종료하면 홈어시스턴트의 위치 이름이 `not home`으로 설정됩니다. 
+모바일 beacon들의 경우 비콘이 [zone](/integrations/zone/) 외부에 들어오거나 나올 때마다 위치 이름은 `not_home`이 되며, 그렇지 않으면 zone 이름으로 설정됩니다.
 
-To make Geofency work better with the [proximity](/integrations/proximity/) component, you should enable the 'Send Current Location' feature in the Webhook configuration screen. This ensures that the _current_ GPS coordinates are included in exit events instead of the coordinates of the (center of) the zone that was exited.
+[proximity](/integrations/proximity/) 구성 요소로 Geofency가 더 잘 작동하도록 하려면 Webhook 설정 화면에서 'Send Current Location'기능을 활성화해야합니다. 이를 통해 _current_ GPS 좌표가 종료된 zone (중심)의 좌표 대신 종료 이벤트에 포함됩니다.

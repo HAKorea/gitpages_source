@@ -1,5 +1,5 @@
 ---
-title: Habitica(생활을 게임처럼)
+title: 생활을 게임처럼(Habitica)
 description: Instructions on enabling Habitica support for your Home Assistant
 logo: habitica.png
 ha_category:

@@ -1,5 +1,5 @@
 ---
-title: Intent Script
+title: Intent Script(의도 스크립트)
 description: Instructions on how to setup scripts to run on intents.
 logo: home-assistant.png
 ha_category:
@@ -8,7 +8,8 @@ ha_release: '0.50'
 ha_quality_scale: internal
 ---
 
-The `intent_script` integration allows users to configure actions and responses to intents. Intents can be fired by any integration that supports it. Examples are [Alexa](/integrations/alexa/) (Amazon Echo), [Dialogflow](/integrations/dialogflow/) (Google Assistant) and [Snips](/integrations/snips/).
+`intent_script` 통합구성요소를 통해 사용자는 의도(intents)에 대한 액션 및 응답을 설정 할 수 있습니다. 의도(intents)는 이를 지원하는 모든 통합구성요소로 시작될 수 있습니다. 
+예로서 [Alexa](/integrations/alexa/) (Amazon Echo), [Dialogflow](/integrations/dialogflow/) (Google Assistant), [Snips](/integrations/snips/)가 있습니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -22,48 +23,48 @@ intent_script:
         message: Hello from an intent!
 ```
 
-Inside an intent we can define these variables:
+의도(intents) 내에서 다음 변수를 정의 할 수 있습니다.:
 
 {% configuration %}
 intent:
-  description: Name of the intent. Multiple entries are possible.
+  description: 의도의 이름. 여러 항목이 가능.
   required: true
   type: map
   keys:
     action:
-      description: Defines an action to run to intents.
+      description: 의도에 따라 실행할 액션을 정의.
       required: false
       type: action
     async_action:
-      description: Set to True to have Home Assistant not wait for the script to finish before returning the intent response.
+      description: 홈어시스턴트가 의도 응답을 리턴하기 전에 스크립트가 완료되기를 기다리지 않도록하려면 True로 설정하십시오.
       required: false
       default: false
       type: boolean
     card:
-      description: Card to display.
+      description: 표시 할 카드.
       required: false
       type: map
       keys:
         type:
-          description: Type of card to display.
+          description: 표시 할 카드의 유형.
           required: false
           default: simple
           type: string
         title:
-          description: Title of the card to display.
+          description: 표시 할 카드의 제목.
           required: true
           type: template
         content:
-          description: Contents of the card to display.
+          description: 표시 할 카드의 내용.
           required: true
           type: template
     speech:
-      description: Text or template to return.
+      description: 반환 할 텍스트 또는 템플릿.
       required: false
       type: map
       keys:
         type:
-          description: Type of speech.
+          description: speech 유형.
           required: false
           default: plain
           type: string

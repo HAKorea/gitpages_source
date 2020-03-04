@@ -7,7 +7,7 @@ ha_category:
 ha_release: 0.13
 ---
 
-`logentries` 통합구성요소는 Logentries Webhook 엔드 포인트를 사용하여 모든 상태 변경을 [Logentries](http://logentries.com/)에 기록 할 수있게합니다.
+`logentries` 통합구성요소는 Logentries Webhook 엔드 포인트를 사용하여 모든 상태 변경을 [Logentries](http://logentries.com/)에 기록할 수 있게합니다.
 
 Open the **Add a Log** page and choose **Manual**. Enter a name for your log in **Log Name**, add a group in **Select Log Set**, set **Token TCP - logs are identified by a token.** and press **Create Log Token**. The generated token is required for the Home Assistant configuration.
 

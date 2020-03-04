@@ -1,5 +1,5 @@
 ---
-title: Logi Circle
+title: 로지 써클
 description: Instructions on how to integrate your Logi Circle cameras within Home Assistant.
 logo: logi_circle.png
 ha_category:
@@ -12,9 +12,9 @@ ha_codeowners:
   - '@evanjd'
 ---
 
-The `logi_circle` implementation allows you to integrate your [Logi Circle](https://circle.logi.com/) cameras in Home Assistant. To connect Logi Circle, you will have to [sign up for API access](#requesting-api-access) and get a `client_id`, `client_secret` and `api_key`.
+`logi_circle` 구현을 통해 [Logi Circle](https://circle.logi.com/) 카메라를 Home Assistant에 연동할 수 있습니다. Logi Circle을 연결하려면 [sign up for API access](#requesting-api-access)하고 `client_id`, `client_secret`, `api_key`를 가져와야합니다.
 
-## Requesting API access
+## API 액세스 요청 
 
 1. Navigate to the [Circle OAuth2 Client Request Form](https://docs.google.com/forms/d/184FUILJ10rVxotyOQR5DAiu6GcCbK31AZszUdzT1ybs).
 2. Fill out your contact name and e-mail address.
@@ -34,9 +34,9 @@ The `logi_circle` implementation allows you to integrate your [Logi Circle](http
 
 Please note that the turn-around time for API access takes a few business days after which you will be contacted by Logitech using the email address you provided in the form.
 
-## Configuration
+## 설정
 
-To integrate cameras linked with your [Logi Circle](https://circle.logi.com/) account, add the following to your `configuration.yaml` file:
+[Logi Circle](https://circle.logi.com/) 계정에 연결된 카메라를 연동하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -49,37 +49,35 @@ logi_circle:
 
 {% configuration %}
 client_id:
-  description: The client ID issued to you by Logitech.
+  description: Logitech이 발행한 클라이언트 ID
   required: true
   type: string
 client_secret:
-  description: The client secret issued to you by Logitech.
+  description: Logitech이 고객에게 발급한 클라이언트 암호.
   required: true
   type: string
 api_key:
-  description: The API key issued to you by Logitech.
+  description: Logitech이 발행 한 API 키.
   required: true
   type: string
 redirect_uri:
   description: > 
-    The redirect URI that corresponds to your Home Assistant instance.
-    It must match one of the redirect URIs specified when you requested API
-    access from Logitech.
+    Home Assistant 인스턴스에 해당하는 리디렉션 URI입니다. Logitech에서 API 액세스를 요청할 때 지정된 경로 재 지정 URI 중 하나와 일치해야합니다.
   required: true
   type: string
 {% endconfiguration %}
 
-### Camera
+### 카메라
 
-The `logi_circle` camera platform allows you to view still frames from your [Logi Circle](https://circle.logi.com/) camera's live stream in Home Assistant.
+`logi_circle` 카메라 플랫폼을 사용하면 Home Assistant의 [Logi Circle](https://circle.logi.com/) 카메라 라이브 스트림에서 스틸 프레임을 볼 수 있습니다.
 
-Logi Circle cameras support the `camera.turn_on` and `camera.turn_off` services. This will set the streaming mode property of your camera accordingly, controlling whether the live stream is available and activity recordings are captured.
+Logi Circle 카메라는 `camera.turn_on` 및 `camera.turn_off` 서비스를 지원합니다. 이에 따라 카메라의 스트리밍 모드 속성이 설정되어 라이브 스트림을 사용할 수 있는지 여부와 활동 기록이 캡처되는지 여부를 제어합니다.
 
-### Sensor
+### 센서
 
-The `logi_circle` sensor platform lets you monitor sensors connected to your [Logi Circle](https://circle.logi.com) cameras in Home Assistant.
+`logi_circle` 센서 플랫폼을 사용하면 Home Assistant의 [Logi Circle](https://circle.logi.com) 카메라에 연결된 센서를 모니터링 할 수 있습니다.
 
-To customize which sensors are setup, you can extend the Logi Circle integration configuration in your `configuration.yaml` file with the following settings:
+설정할 센서를 사용자 정의하려면 다음 세팅으로 `configuration.yaml` 파일에서 Logi Circle 연동 설정으로 확장 할 수 있습니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -94,7 +92,7 @@ logi_circle:
       - streaming
 ```
 
-By default, all sensors available from your Logi Circle devices will be monitored. Leave `monitored_conditions` blank to disable all sensors for the Logi Circle component. Devices without an internal battery will not expose a `battery_level` sensor.
+기본적으로 Logi Circle 장치에서 사용 가능한 모든 센서가 모니터링됩니다. Logi Circle 구성 요소에 대한 모든 센서를 비활성화하려면 `monitored_conditions`를 비워 두십시오. 내장 배터리가 없는 장치는 배터리 레벨 센서를 노출시키지 않습니다.
 
 {% configuration %}
 sensor:
@@ -122,13 +120,13 @@ sensor:
           description: The soft on/off status of the camera.
 {% endconfiguration %}
 
-## Services
+## 서비스
 
-The `logi_circle` platform exposes 3 services for interacting with your Logi Circle device. When calling a service with one or more entity IDs, please ensure you target the camera entity (eg. `camera.living_room_camera`).
+`logi_circle` 플랫폼은 Logi Circle 장치와 상호 작용하기 위한 3 가지 서비스를 제공합니다. 하나 이상의 엔티티 ID로 서비스를 호출할 때는 카메라 엔티티를 대상으로 해야합니다 (예 :`camera.living_room_camera`).
 
-### Service `logi_circle.livestream_record`
+### `logi_circle.livestream_record` 서비스
 
-Initiates a recording of the camera's live stream.
+카메라의 라이브 스트림 녹화를 시작합니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
@@ -136,24 +134,24 @@ Initiates a recording of the camera's live stream.
 | `filename `            |      no  | Template of a file name. Variable is `entity_id`, e.g., {% raw %}`/tmp/recording_{{ entity_id }}.mp4`{% endraw %}. |
 | `duration`             |      no  | Duration of recording, in seconds.
 
-The path part of `filename` must be an entry in the `whitelist_external_dirs` in your [`homeassistant:`](/docs/configuration/basic/) section of your `configuration.yaml` file.
+`filename`의 경로 부분은 `configuration.yaml` 파일의 [`homeassistant:`](/docs/configuration/basic/) 섹션에 있는 `whitelist_external_dirs`의 항목이어야합니다.
 
-### Service `logi_circle.livestream_snapshot`
+### `logi_circle.livestream_snapshot` 서비스
 
-Take a snapshot from a camera's live stream. This differs from the generic [snapshot](/integrations/camera/#service-snapshot) service in that explicitly requests a fresh image from Logi Circle's API. This will force cameras in a deep sleep state to wake.
+카메라의 라이브 스트림에서 스냅샷을 찍습니다. 이는 Logi Circle의 API에서 새로운 이미지를 명시적으로 요청한다는 점에서 일반적인 [snapshot](/integrations/camera/#service-snapshot) 서비스와 다릅니다. 이렇게하면 수면 상태의 카메라가 강제로 깨어납니다.
 
-Please note that new snapshots will only be generated if the cached snapshot is older than 30s. Requesting multiple snapshots in quick succession will likely return the same image. Likewise, requesting a snapshot from a camera that is actively streaming (ie. is not in deep sleep) will return a cached image no older than 30s.
+캐시된 스냅샷이 30초보다 오래된 경우에만 새 스냅샷이 생성됩니다. 연속해서 여러 스냅샷을 요청하면 동일한 이미지가 반환 될 수 있습니다. 마찬가지로, 적극적으로 스트리밍 중인 카메라에서 스냅샷을 요청하면 (즉, 최대 절전 상태가 아닌) 30초 이전의 캐시 된 이미지를 반환합니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
 | `entity_id`            |      yes | Name(s) of entities to create a live stream snapshot from, e.g., `camera.living_room_camera`. If blank, targets all Logi Circle cameras. |
 | `filename`             |      no  | Template of a file name. Variable is `entity_id`, e.g., {% raw %}`/tmp/snapshot_{{ entity_id }}.jpg`{% endraw %}. |
 
-The path part of `filename` must be an entry in the `whitelist_external_dirs` in your [`homeassistant:`](/docs/configuration/basic/) section of your `configuration.yaml` file.
+`filename`의 경로 부분은 `configuration.yaml` 파일의 [`homeassistant:`](/docs/configuration/basic/) 섹션에 있는 `whitelist_external_dirs`의 항목이어야합니다.
 
-### Service `logi_circle.set_config`
+### `logi_circle.set_config` 서비스
 
-Sets a configuration property for your camera.
+카메라의 설정 속성을 세팅합니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |

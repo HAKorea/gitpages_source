@@ -1,5 +1,5 @@
 ---
-title: Media Extractor
+title: Media 캡처도구(media extractor)
 description: Instructions on how to integrate the Media Extractor into Home Assistant.
 logo: home-assistant.png
 ha_category:
@@ -8,13 +8,13 @@ ha_release: 0.49
 ha_quality_scale: internal
 ---
 
-The `media_extractor` integration gets a stream URL and sends it to a media player entity. This integration can extract entity specific streams if configured accordingly.
+`media_extractor` 통합구성요소는 스트림 URL을 가져와서 미디어 플레이어 엔티티로 보냅니다. 이 통합구성요소는 적절히 설정된 경우 엔티티의 특정 스트림을 추출할 수 있습니다.
 
 <div class='note'>
-Media extractor doesn't transcode streams, it just tries to find stream that match requested query.
+Media extractor는 스트림을 트랜스 코딩하지 않고 요청된 쿼리와 일치하는 스트림을 찾으려고합니다.
 </div>
 
-To use the media extractor service in your installation, add the following to your `configuration.yaml` file:
+설치에서 Media extractor 서비스를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -23,12 +23,12 @@ media_extractor:
 
 {% configuration %}
 default_query:
-  description: Set default stream query for all devices.
+  description: 모든 장치에 대한 기본 스트림 쿼리를 설정.
   required: false
   default: best
   type: string
 customize:
-  description: Set entity specific values.
+  description: 엔터티 특정 값을 설정.
   required: false
   type: list
 {% endconfiguration %}
@@ -43,7 +43,8 @@ media_extractor:
       music: bestaudio[ext=mp3]
 ```
 
-This configuration sets query for all service calls like to 'bestaudio' with the mp3 extension:
+이 구성은 mp3 확장자를 가진 'bestaudio'와 같은 모든 서비스 호출에 대한 쿼리를 설정합니다.
+
 
 ```json
 {
@@ -53,7 +54,7 @@ This configuration sets query for all service calls like to 'bestaudio' with the
 }
 ```
 
-Query examples with explanations:
+설명이 포함된 쿼리 예 :
 
  * **bestvideo**: Best video only stream
  * **best**: Best video + audio stream
@@ -61,13 +62,13 @@ Query examples with explanations:
  * **worst**: Worst video + audio stream
  * **bestaudio[ext=m4a]/bestaudio[ext=ogg]/bestaudio**: Best m4a audio, otherwise best ogg audio and only then any best audio
 
-More info about queries [here](https://github.com/rg3/youtube-dl#format-selection)
+검색에 대한 추가 정보는 [here](https://github.com/rg3/youtube-dl#format-selection)
 
 ### Use the service
 
-Use <img src='/images/screenshots/developer-tool-services-icon.png' alt='service developer tool icon' class="no-shadow" height="38" /> **Services** from the **Developer Tools**. Choose `media_extractor` from the dropdown menu **Domain** and `play_media` from **Service**, enter something like the JSON sample from above into the **Service Data** field, and hit **CALL SERVICE**.
+**개발자 도구**에서 <img src='/images/screenshots/developer-tool-services-icon.png' alt='service developer tool icon' class="no-shadow" height="38" /> **Services** 항목을 사용하십시오. 드롭 다운 메뉴 **Domain** 및 **Services**에서 `play_media`에서 `media_extractor`를 선택하고 위의 JSON 샘플과 같은 것을 **Service Data** 필드에 입력 한 다음 **CALL SERVICE**를 누르십시오. 
 
-This will download the file from the given URL.
+주어진 URL에서 파일을 다운로드합니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |

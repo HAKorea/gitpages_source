@@ -1,5 +1,5 @@
 ---
-title: IOTA
+title: IOTA(가상화폐)
 description: Instructions on how to integrate IOTA wallets with Home Assistant.
 logo: iota.png
 ha_category:

@@ -1,5 +1,5 @@
 ---
-title: Mi Flora
+title: Mi Flora(샤오미 식물재배)
 description: Instructions on how to integrate MiFlora BLE plant sensor with Home Assistant.
 logo: miflora.png
 ha_category:
@@ -10,6 +10,13 @@ ha_codeowners:
   - '@danielhiversen'
   - '@ChristianKuehnel'
 ---
+
+샤오미 miflora는 본 문서와 같이 홈어시스턴트의 블루투스 장치에 연결하여 사용하지만, 블루투스의 태생적 한계로 인해 5미터 이상 거리가 떨어져 있는 경우 올바른 동작을 하지 않습니다. 이를 해결하기위한 방법은 다음과 같습니다. 
+
+miflora를 실제 사용시 어떤 위치에도 식물재배기를 설치할 수 있도록 [ESPHOME](https://hakorea.github.io/integrations/esphome/)의 [ESP32의 내장된 블루투스를 통해 연결하는 방식](https://esphome.io/components/sensor/xiaomi_hhccjcy01.html)으로 설치하시길 적극적으로 추천 드립니다. 
+
+-------------------------------------------------------------------------------------------------------
+이하 차후 번역
 
 The `miflora` sensor platform allows one to monitor plant soil and air conditions. The [Mi Flora plant sensor](https://gadget-freakz.com/product/xiaomi-mi-flora-plant-sensor/) is a small Bluetooth Low Energy device that monitors the moisture and conductivity of the soil as well as ambient light and temperature. Since only one BLE device can be polled at a time, the library implements locking to prevent polling more than one device at a time.
 

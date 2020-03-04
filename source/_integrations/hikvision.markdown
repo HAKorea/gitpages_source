@@ -1,5 +1,5 @@
 ---
-title: Hikvision(하이크비전)
+title: 하이크비전
 description: Instructions on how to set up Hikvision camera binary sensors within Home Assistant.
 logo: hikvision.png
 ha_category:

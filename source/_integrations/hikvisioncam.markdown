@@ -1,5 +1,5 @@
 ---
-title: Hikvision
+title: 하이크비전
 description: Instructions on how to integrate Hikvision camera switches into Home Assistant.
 logo: hikvision.png
 ha_category:
@@ -9,13 +9,13 @@ ha_codeowners:
   - '@fbradyirl'
 ---
 
-This `hikvisioncam` switch platform allows you to control your motion detection setting on your [Hikvision](https://www.hikvision.com/) camera.
+이 `hikvisioncam` 스위치 플랫폼을 사용하면 [Hikvision](https://www.hikvision.com/) 카메라에서 모션 감지 세팅으로 제어할 수 있습니다.
 
 <div class='note warning'>
-Currently works using default https port only.
+현재 기본 https 포트만 사용합니다.
 </div>
 
-To use your Hikvision cam in your installation, add the following to your `configuration.yaml` file:
+Hikvision 캠을 사용하려면 `configuration.yaml` 파일에 다음을 추가 하십시오
 
 ```yaml
 # Example configuration.yaml entry
@@ -26,26 +26,26 @@ switch:
 
 {% configuration %}
 host:
-  description: The IP address of your Hikvision camera, e.g., `192.168.1.32`.
+  description: "Hikvision 카메라의 IP 주소 (예 : 192.168.1.32)"
   required: true
   type: string
 port:
-  description: The port to connect to your Hikvision camera.
+  description: Hikvision 카메라에 연결하는 포트
   required: false
   default: 80
   type: integer
 name:
-  description: This parameter allows you to override the name of your camera.
+  description: 이 매개 변수를 사용하면 카메라 이름을 무시할 수 있습니다.
   required: false
   default: Hikvision Camera Motion Detection
   type: string
 username:
-  description: The username for accessing your Hikvision camera.
+  description: Hikvision 카메라에 액세스하기 위한 사용자 이름
   required: false
   default: admin
   type: string
 password:
-  description: The password to access your Hikvision camera.
+  description: Hikvision 카메라에 액세스하기위한 비밀번호.
   required: false
   default: 12345
   type: string

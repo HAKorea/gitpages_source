@@ -1,5 +1,5 @@
 ---
-title: Hi-Link HLK-SW16
+title: 하이링크(Hi-Link HLK-SW16)
 description: Instructions on how to integrate HLK-SW16 relay into Home Assistant.
 logo: hlktech.jpg
 ha_category:
@@ -10,8 +10,10 @@ ha_iot_class: Local Push
 ---
 
 The [HLK-SW16](http://www.hlktech.net/product_detail.php?ProId=48) by [Hi-Link](http://www.hlktech.net/) is a simple networkable 16 port relay device.
+[Hi-Link](http://www.hlktech.net/)의 [HLK-SW16](http://www.hlktech.net/product_detail.php?ProId=48)은 심플한 네트워크 가능 16 포트 릴레이입니다.
 
 To enable it, add the following lines to your `configuration.yaml`:
+이를 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -55,31 +57,31 @@ hlk_sw16:
 
 {% configuration %}
 deviceid:
-  description: The array that contains the HLK-SW16 devices.
+  description: HLK-SW16 장치가 포함 된 어레이.
   required: true
   type: map
   keys:
     host:
-      description: The IP address or hostname of the HLK-SW16.
+      description: HLK-SW16의 IP 주소 또는 호스트 이름.
       required: true
       type: string
     port:
-      description: The control port for the relays.
+      description: 릴레이의 제어 포트.
       required: false
       type: integer
       default: 8080
     switches:
-      description: The array that contains the relays.
+      description: 릴레이가 포함 된 배열
       required: true
       type: map
       keys:
         relayid:
-          description: The array that contains the HLK-SW16 relays, each must be a number between 0 and 9 or letter between a and f which each corresponds to a labeled relay switch on the HLK-SW16.
+          description: HLK-SW16 릴레이를 포함하는 어레이는 각각 0 과 9 사이의 숫자이거나 a 와 f 사이의 문자 여야하며, 각각 HLK-SW16의 레이블이 있는 릴레이 스위치에 해당합니다.
           required: false
           type: map
           keys:
             name:
-              description: The name used to display the switch in the frontend.
+              description: 프런트 엔드에 스위치를 표시하는 데 사용되는 이름.
               required: false
               type: string
               default: relayid

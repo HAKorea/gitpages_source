@@ -1,5 +1,5 @@
 ---
-title: 달(Moon)
+title: 달
 description: Instructions on how to integrate the moon sensor into Home Assistant.
 logo: home-assistant.png
 ha_category:
@@ -15,8 +15,7 @@ ha_codeowners:
 
 ## 설정 
 
-To enable the moon sensor, add the following lines to your `configuration.yaml`:
-달 센서를 `configuration.yaml`에 활성화하려면 다음 줄을 추가하십시오
+Moon 센서를 `configuration.yaml`에 활성화하려면 다음 줄을 추가하십시오
 
 ```yaml
 # Example configuration.yaml entry
@@ -25,7 +24,7 @@ sensor:
 ```
 
 이 센서는 다음의 값 중 하나를 반환합니다. :
-`new_moon`, `waxing_crescent`, `first_quarter`, `waxing_gibbous`, `full_moon`, `waning_gibbous`, `last_quarter` or `waning_crescent` .
+`new_moon`, `waxing_crescent`, `first_quarter`, `waxing_gibbous`, `full_moon`, `waning_gibbous`, `last_quarter` 혹은 `waning_crescent` .
 
 <p class='img'>
 <img src='/images/screenshots/more-info-dialog-moon.png' />

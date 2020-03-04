@@ -1,5 +1,5 @@
 ---
-title: "Xiaomi Philips Light"
+title: "샤오미 필립스 조명"
 description: "Instructions on how to integrate your Xiaomi Philips Lights within Home Assistant."
 logo: philips.png
 ha_category:
@@ -8,13 +8,13 @@ ha_iot_class: Local Polling
 ha_release: 0.53
 ---
 
-The `xiaomi_miio` platform allows you to control the state of your Xiaomi Philips LED Ball Lamp, Xiaomi Philips Zhirui LED Bulb E14 Candle Lamp, Xiaomi Philips Zhirui Downlight, Xiaomi Philips LED Ceiling Lamp, Xiaomi Philips Eyecare Lamp 2, Xiaomi Philips Moonlight Bedside Lamp and Philips Zhirui Desk Lamp.
+`xiaomi_miio` 플랫폼을 사용하면 Xiaomi Philips LED Ball Lamp, Xiaomi Philips Zhirui LED Bulb E14 Candle Lamp, Xiaomi Philips Zhirui Downlight, Xiaomi Philips LED Ceiling Lamp, Xiaomi Philips Eyecare Lamp 2, Xiaomi Philips Moonlight Bedside Lamp, Philips Zhirui Desk Lamp의 상태를 제어 할 수 있습니다 
 
-## Features
+## 제품 특색 
 
-### Philips LED Ball Lamp, Philips Zhirui LED Candle Lamp and Philips Zhirui Downlight
+### Philips LED Ball Lamp, Philips Zhirui LED Candle Lamp, Philips Zhirui Downlight
 
-Supported models: `philips.light.bulb`, `philips.light.candle`, `philips.light.candle2`, `philips.light.downlight`
+지원 모델 : `philips.light.bulb`, `philips.light.candle`, `philips.light.candle2`, `philips.light.downlight`
 
 * Power (on, off)
 * Brightness
@@ -28,7 +28,7 @@ Supported models: `philips.light.bulb`, `philips.light.candle`, `philips.light.c
 
 ### Philips LED Ceiling Lamp
 
-Supported models: `philips.light.ceiling`, `philips.light.zyceiling`
+지원 모델 : `philips.light.ceiling`, `philips.light.zyceiling`
 
 * Power (on, off)
 * Brightness
@@ -45,7 +45,7 @@ Supported models: `philips.light.ceiling`, `philips.light.zyceiling`
 
 ### Philips Eyecare Smart Lamp 2
 
-Supported models: `philips.light.sread1`
+지원 모델 : `philips.light.sread1`
 
 * Eyecare light (on, off)
 * Ambient light (on, off)
@@ -65,7 +65,7 @@ Supported models: `philips.light.sread1`
 
 ### Philips Zhirui Desk Lamp
 
-Supported models: `philips.light.mono1`
+지원 모델 : `philips.light.mono1`
 
 * Power (on, off)
 * Brightness
@@ -78,7 +78,7 @@ Supported models: `philips.light.mono1`
 
 ### Philips Moonlight Bedside Lamp
 
-Supported models: `philips.light.moonlight`
+지원 모델 : `philips.light.moonlight`
 
 * Power (on, off)
 * Brightness
@@ -96,9 +96,9 @@ Supported models: `philips.light.moonlight`
 
 
 
-Please follow the instructions on [Retrieving the Access Token](/integrations/vacuum.xiaomi_miio/#retrieving-the-access-token) to get the API token to use in the `configuration.yaml` file.
+`configuration.yaml` 파일에서 API 토큰을 사용하려면 [Retrieving the Access Token](/integrations/vacuum.xiaomi_miio/#retrieving-the-access-token)의 지침을 따르십시오.
 
-To add a Xiaomi Philips Light to your installation, add the following to your configuration.yaml file:
+설치에 Xiaomi Philips Light를 추가하려면 configuration.yaml 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entries
@@ -112,88 +112,88 @@ light:
 
 {% configuration %}
 host:
-  description: The IP address of your miio light.
+  description: miio light의 IP 주소.
   required: true
   type: string
 token:
-  description: The API token of your miio light.
+  description: miio light의 API 토큰.
   required: true
   type: string
 name:
-  description: The name of your miio light.
+  description: miio light의 이름. 
   required: false
   type: string
   default: Xiaomi Philips Light
 model:
-  description: The model of your light. Valid values are `philips.light.sread1`, `philips.light.ceiling`, `philips.light.zyceiling`, `philips.light.moonlight`, `philips.light.bulb`, `philips.light.candle`, `philips.light.candle2`, `philips.light.mono1` and `philips.light.downlight`. This setting can be used to bypass the device model detection and is recommended if your device isn't always available.
+  description: 조명의 이름. 유효한 값들은 `philips.light.sread1`, `philips.light.ceiling`, `philips.light.zyceiling`, `philips.light.moonlight`, `philips.light.bulb`, `philips.light.candle`, `philips.light.candle2`, `philips.light.mono1`, `philips.light.downlight`. 이 설정은 장치 모델 감지를 우회하는 데 사용할 수 있으며 장치를 제대로 사용할 수 없는 경우 권장됩니다.
   required: false
   type: string
 {% endconfiguration %}
 
-## Platform Services
+## 플랫폼 서비스
 
-### Service `xiaomi_miio.light_set_scene`
+### `xiaomi_miio.light_set_scene` 서비스
 
-Set one of the 4 available fixed scenes.
+사용 가능한 4 가지 고정 장면(scenes) 중 하나를 설정하십시오.
 
 | Service data attribute    | Optional | Description                                           |
 |---------------------------|----------|-------------------------------------------------------|
-| `entity_id`               |       no | Only act on a specific Xiaomi miIO light entity.      |
+| `entity_id`               |       no | 특정 Xiaomi miIO 조명 엔티티에서만 작동.      |
 | `scene`                   |       no | Scene, between 1 and 4.                               |
 
-### Service `xiaomi_miio.light_set_delayed_turn_off`
+### `xiaomi_miio.light_set_delayed_turn_off` 서비스
 
-Delayed turn off.
+지연 끄기.
 
 | Service data attribute    | Optional | Description                                           |
 |---------------------------|----------|-------------------------------------------------------|
-| `entity_id`               |       no | Only act on a specific Xiaomi miIO light entity.      |
+| `entity_id`               |       no | 특정 Xiaomi miIO 조명 엔티티에서만 작동.      |
 | `time_period`             |       no | Time period for the delayed turn off.                 |
 
-### Service `xiaomi_miio.light_reminder_on` (Eyecare Smart Lamp 2 only)
+### `xiaomi_miio.light_reminder_on` (Eyecare Smart Lamp 2 only) 서비스
 
-Enable the eye fatigue reminder/notification.
-
-| Service data attribute    | Optional | Description                                           |
-|---------------------------|----------|-------------------------------------------------------|
-| `entity_id`               |       no | Only act on a specific Xiaomi miIO light entity.      |
-
-### Service `xiaomi_miio.light_reminder_off` (Eyecare Smart Lamp 2 only)
-
-Disable the eye fatigue reminder/notification.
+눈의 피로 알림(reminder)/통지(notification) 활성화
 
 | Service data attribute    | Optional | Description                                           |
 |---------------------------|----------|-------------------------------------------------------|
-| `entity_id`               |       no | Only act on a specific Xiaomi miIO light entity.      |
+| `entity_id`               |       no | 특정 Xiaomi miIO 조명 엔티티에서만 작동.      |
 
-### Service `xiaomi_miio.light_night_light_mode_on`  (Eyecare Smart Lamp 2 only)
+### `xiaomi_miio.light_reminder_off` (Eyecare Smart Lamp 2 only) 서비스
 
-Turn the smart night light mode on.
-
-| Service data attribute    | Optional | Description                                           |
-|---------------------------|----------|-------------------------------------------------------|
-| `entity_id`               |       no | Only act on a specific Xiaomi miIO light entity.      |
-
-### Service `xiaomi_miio.light_night_light_mode_off`  (Eyecare Smart Lamp 2 only)
-
-Turn the smart night light mode off.
+눈의 피로 알림(reminder)/통지(notification) 비활성화. 
 
 | Service data attribute    | Optional | Description                                           |
 |---------------------------|----------|-------------------------------------------------------|
-| `entity_id`               |       no | Only act on a specific Xiaomi miIO light entity.      |
+| `entity_id`               |       no | 특정 Xiaomi miIO 조명 엔티티에서만 작동.      |
 
-### Service `xiaomi_miio.light_eyecare_mode_on`  (Eyecare Smart Lamp 2 only)
+### `xiaomi_miio.light_night_light_mode_on`  (Eyecare Smart Lamp 2 only) 서비스 
 
-Turn the eyecare mode on.
-
-| Service data attribute    | Optional | Description                                           |
-|---------------------------|----------|-------------------------------------------------------|
-| `entity_id`               |       no | Only act on a specific Xiaomi miIO light entity.      |
-
-### Service `xiaomi_miio.light_eyecare_mode_off`  (Eyecare Smart Lamp 2 only)
-
-Turn the eyecare mode off.
+스마트 야간 조명 모드를 켭니다.
 
 | Service data attribute    | Optional | Description                                           |
 |---------------------------|----------|-------------------------------------------------------|
-| `entity_id`               |       no | Only act on a specific Xiaomi miIO light entity.      |
+| `entity_id`               |       no | 특정 Xiaomi miIO 조명 엔티티에서만 작동.      |
+
+### `xiaomi_miio.light_night_light_mode_off`  (Eyecare Smart Lamp 2 only) 서비스
+
+스마트 야간 조명 모드를 끕니다.
+
+| Service data attribute    | Optional | Description                                           |
+|---------------------------|----------|-------------------------------------------------------|
+| `entity_id`               |       no | 특정 Xiaomi miIO 조명 엔티티에서만 작동.      |
+
+### `xiaomi_miio.light_eyecare_mode_on`  (Eyecare Smart Lamp 2 only) 서비스
+
+아이(eye) 케어 모드를 켜십시오.
+
+| Service data attribute    | Optional | Description                                           |
+|---------------------------|----------|-------------------------------------------------------|
+| `entity_id`               |       no | 특정 Xiaomi miIO 조명 엔티티에서만 작동.      |
+
+### `xiaomi_miio.light_eyecare_mode_off`  (Eyecare Smart Lamp 2 only) 서비스
+
+아이(eye) 케어 모드를 끄십시오. 
+
+| Service data attribute    | Optional | Description                                           |
+|---------------------------|----------|-------------------------------------------------------|
+| `entity_id`               |       no | 특정 Xiaomi miIO 조명 엔티티에서만 작동.        |

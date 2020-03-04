@@ -1,5 +1,5 @@
 ---
-title: LANnouncer
+title: LANnouncer(안드로이드음성알리미)
 description: Instructions on how to add Lannouncer notifications to Home Assistant.
 logo: lannouncer.png
 ha_category:
@@ -7,9 +7,13 @@ ha_category:
 ha_release: 0.36
 ---
 
-The `lannouncer` notification platform allows you to play spoken messages (TTS) or sounds on an Android device running [Lannouncer](https://www.keybounce.com/lannouncer/). This can be useful when you have a wall mounted Android tablet, or an Android device that is permanently powered and turned on and want to use that to play notifications.
+`lannouncer` 알림 플랫폼을 사용하면 [Lannouncer](https://www.keybounce.com/lannouncer/)를 실행하는 Android 기기에서 음성 메시지 (TTS) 또는 사운드를 재생할 수 있습니다. 벽에 장착 된 Android 태블릿 또는 영구적으로 전원이 켜져 있고 켜져 있고 알림을 재생하는 데 사용하는 Android 장치가있는 경우에 유용합니다. 
 
-To enable Lannouncer notifications in your installation, add the following to your `configuration.yaml` file:
+최근 유튜버의 영상 설정기를 참조하십시오. https://www.youtube.com/watch?v=VMA9ZqgLNIA
+
+설치시 Lannouncer 알림을 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
+
+
 
 ```yaml
 # Example configuration.yaml entry
@@ -21,34 +25,34 @@ notify:
 
 {% configuration %}
 name:
-  description: Setting the optional parameter `name` allows multiple notifiers to be created. The notifier will bind to the service `notify.NOTIFIER_NAME`.
+  description: 선택적 매개 변수 `name`을 설정하면 여러 알리미를 만들 수 있습니다. 알리미는 서비스 `notify.NOTIFIER_NAME` 에 바인딩합니다.
   required: false
   default: notify
   type: string
 host:
-  description: The hostname or IP-address of the Android device that is running Lannouncer.
+  description: Lannouncer를 실행하는 Android 장치의 호스트 이름 또는 IP 주소.
   required: true
   type: string
 port:
-  description: The port on which Lannouncer is running.
+  description: Lannouncer가 실행중인 포트.
   required: false
   default: 1035
   type: integer
 {% endconfiguration %}
 
-### Installation
+### 설치
 
-You need to install the Lannouncer app and enable the *Network (TCP) Listener* and *Auto-Start Network Listener*. You can disable the *GCM (Google Cloud) and WAN Messaging* and *SMS Listener* since this integration doesn't use them.
+Lannouncer 앱을 설치하고 *Network (TCP) Listener* 및 *Auto-Start Network Listener* 를 활성화해야합니다. 이 통합구성요소에서는 *GCM (Google Cloud) and WAN Messaging* 및 *SMS Listener*를 사용하지 않을 수 있습니다.
 
-Lannouncer uses the default Android TTS voice. You can tweak that in the Android configuration, or you can install a different TTS engine from the Play Store. You might want to raise the volume in the app settings since that depends on the actual hardware device.
+Lannouncer는 기본 Android TTS 음성을 사용합니다. Android 설정에서 이를 조정하거나 Play 스토어와 다른 TTS 엔진을 설치할 수 있습니다. 실제 하드웨어 장치에 따라 앱 설정에서 볼륨을 높이고 싶을 수 있습니다.
 
-More information can be found [here](https://www.keybounce.com/lannouncer/configuring-lannouncer/).
+자세한 내용은 [here](https://www.keybounce.com/lannouncer/configuring-lannouncer/)를 참조. 
 
-### Sending messages
+### 메시지 보내기
 
-Lannouncer supports two types of messages.
+Lannouncer는 두 가지 유형의 메시지를 지원합니다.
 
-Spoken messages is the default method (`speak`). You just invoke the `notify` service with the following json and the device will speak out the specified message.
+음성 메시지가 기본 방법입니다 (`speak`). 다음 json으로 `notify` 서비스를 호출하면 장치가 지정된 메시지를 말합니다.
 
 ```json
 {
@@ -56,7 +60,7 @@ Spoken messages is the default method (`speak`). You just invoke the `notify` se
 }
 ```
 
-The second method is to play notifications (`alarm`). There are 4 build-in sounds (`chime`, `doorbell`, `alarm` and `siren`).
+두 번째 방법은 알림(`alarm`)을 재생하는 것입니다. 내장 소리는 4 가지가 있습니다 (`chime`, `doorbell`, `alarm`, `siren`).
 
 ```json
 {
@@ -67,7 +71,7 @@ The second method is to play notifications (`alarm`). There are 4 build-in sound
 }
 ```
 
-You can also request to play a configured additional soundfiles (`FILE1`, `FILE2`, `FILE3`, `FILE4` or `FILE5`). You can configure this file in the app settings.
+설정된 추가 사운드 파일 (`FILE1`,`FILE2`,`FILE3`,`FILE4` 또는 `FILE5`) 재생을 요청할 수도 있습니다. 앱 설정에서 이 파일을 설정할 수 있습니다.
 
 ```json
 {
@@ -79,7 +83,7 @@ You can also request to play a configured additional soundfiles (`FILE1`, `FILE2
 ```
 
 <div class='note info'>
-The free version only supports one additional soundfile.
+ 무료 버전은 하나의 추가 사운드 파일 만 지원합니다.
 </div>
 
-To use notifications, please see the [getting started with automation page](/getting-started/automation/).
+알림을 사용하려면 [자동화 시작 페이지](/getting-started/automation/)를 참조하십시오.

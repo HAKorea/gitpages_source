@@ -1,5 +1,5 @@
 ---
-title: Microsoft Teams
+title: 마이크로소프트 Teams
 description: Instructions on how to send a notification to a Microsoft Teams channel.
 logo: msteams.jpg
 ha_category:
@@ -9,16 +9,15 @@ ha_codeowners:
   - '@peroyvind'
 ---
 
-The `Microsoft Teams` platform allows you to send notifications from Home Assistant to a team channel in [Microsoft Teams](https://products.office.com/en-us/microsoft-teams/group-chat-software).
+`Microsoft Teams` 플랫폼을 사용하면 Home Assistant에서 [Microsoft Teams](https://products.office.com/en-us/microsoft-teams/group-chat-software)의 팀 채널로 알림을 보낼 수 있습니다.
 
-## Setup
+## 셋업
 
-To send a notification to teams, you need to add the Incoming Webhook app to your team channel. When the app is added, you will receive a webhook URL that needs to be added to your `configuration.yaml`.
+팀에 알림을 보내려면 들어오는 Webhook 앱을 팀 채널에 추가해야합니다. 앱이 추가되면 `configuration.yaml`에 추가해야하는 웹 후크 URL을 받게됩니다.
 
+## 설정
 
-## Configuration
-
-To add the Microsoft Teams platform to your installation, add the following to your `configuration.yaml` file:
+설치에 Microsoft Teams 플랫폼을 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 notify:
@@ -38,15 +37,15 @@ url:
   type: string
 {% endconfiguration %}
 
-### Microsoft Teams service data
+### Microsoft Teams 서비스 데이터
 
-The following attributes can be placed inside `data` for extended functionality.
+확장된 기능을 위해 다음 속성을 `data`에 배치할 수 있습니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
 | `image_url`            |      yes | Attach an image to the message.
 
-Example for posting file from URL:
+URL에서 파일을 게시하는 예 :
 
 ```yaml
 title: Title of the message.

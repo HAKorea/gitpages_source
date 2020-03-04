@@ -9,16 +9,12 @@ ha_codeowners:
   - '@tkislan'
 ---
 
-This integration adds interaction with [Minio](https://min.io).
-Also enables to listen for bucket notifications: [watch docs](https://docs.min.io/docs/minio-client-complete-guide.html#watch)
 이 통합구성요소는 [Minio](https://min.io)와의 상호 작용을 추가합니다. 버킷 알림을 들을 수도 있습니다: [watch docs](https://docs.min.io/docs/minio-client-complete-guide.html#watch)
 
-To download or upload files, folders must be added to [whitelist_external_dirs](/docs/configuration/basic/).
 파일을 다운로드하거나 업로드하려면 [whitelist_external_dirs](/docs/configuration/basic/)에 폴더를 추가해야합니다.
 
 ## 설정
 
-To enable the Minio integration in your installation, add the following to your `configuration.yaml` file:
 설치에서 Minio 통합구성요소를 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
@@ -81,7 +77,6 @@ listen:
 
 ## 자동화
 
-Automations can be triggered on new files created on the Minio server using the `data_template`.
 `data_template`을 사용하여 Minio 서버의 생성된 새 파일에서 자동화를 트리거 할 수 있습니다.
 
 {% raw %}

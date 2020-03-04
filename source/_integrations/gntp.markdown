@@ -9,7 +9,7 @@ ha_codeowners:
   - '@robbiet480'
 ---
 
-[GNTP](http://growl.info/documentation/developer/gntp.php) is a specification for sending and receiving notifications between computers. The most well known server implementations are [Growl](http://growl.info) for Mac and [Growl for Windows](http://www.growlforwindows.com/).
+[GNTP](http://growl.info/documentation/developer/gntp.php) is a specification for sending and receiving notifications between computers. The most well known server implementations are [Growl](http://grㅇowl.info) for Mac and [Growl for Windows](http://www.growlforwindows.com/).
 
 To use GNTP notifications, add the following to your `configuration.yaml` file:
 

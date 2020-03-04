@@ -1,5 +1,5 @@
 ---
-title: Lock
+title: Lock(락)
 description: Instructions on how to setup your locks with Home Assistant.
 logo: home-assistant.png
 ha_category:
@@ -8,24 +8,24 @@ ha_release: 0.9
 ha_quality_scale: internal
 ---
 
-Keeps track which locks are in your environment, their state and allows you to control them.
+현재 환경에서 Lock 상태와 상태를 추적하고 제어할 수 있습니다.
 
- * Maintains a state per lock and a combined state `all_locks`.
- * Registers services `lock.lock`, `lock.unlock` and `lock.open` (unlatch) to control locks.
+ * Lock에 하나씩의 상태와 결합된 상태 `all_locks`를 유지합니다.
+ * Lock을 제어하기 위해 서비스 `lock.lock`, `lock.unlock`, `lock.open`(열림) 을 등록합니다.
 
-### Services
+### 서비스
 
-A lock integration provides the following services:
+Lock 통합구성요소는 다음 서비스를 제공합니다.
 
-#### Service `lock.lock` 
+#### `lock.lock` 서비스
 
-Lock your door, the attribute should appear under a 'data' attribute for the service.
+문을 잠그십시오. 속성은 서비스의 'data' 속성이 아래에 나타납니다.
 
 | Service data attribute    | Optional | Description                                           |
 |---------------------------|----------|-------------------------------------------------------|
-| `entity_id`               |       no | Entity of the relevant lock.                          |
+| `entity_id`               |       no | 해당 Lock 엔티티.                          |
 
-##### Example
+##### 사례
 
 ```yaml
 action:
@@ -34,15 +34,15 @@ action:
     entity_id: lock.my_place
 ```
 
-#### Service `lock.unlock` 
+#### `lock.unlock` 서비스
 
-Unlock your door, the attribute should appear under a 'data' attribute for the service.
+도어를 잠금 해제하면 속성이 서비스의 'data' 속성이 아래에 나타납니다.
 
 | Service data attribute    | Optional | Description                                           |
 |---------------------------|----------|-------------------------------------------------------|
-| `entity_id`               |       no | Entity of the relevant lock.                          |
+| `entity_id`               |       no | 해당 Lock 엔티티.                           |
 
-##### Example
+##### 사례
 
 ```yaml
 action:
@@ -51,9 +51,9 @@ action:
     entity_id: lock.my_place
 ```
 
-### Use the services
+### 서비스들의 사용법
 
-Go to the **Developer Tools**, then to **Call Service** in the frontend, and choose `lock.lock`, `lock.unlock` or `lock.open` from the list of available services (**Services:** on the left). Enter something like the sample below into the **Service Data** field and hit **CALL SERVICE**.
+**개발자 도구** 로 이동한 다음 프론트 엔드에서 **Call Service**로 이동하여 사용 가능한 서비스 목록에서 `lock.lock`, `lock.unlock` 또는 `lock.open`을 선택하십시오 (왼쪽 **Services:** ).
 
 ```json
 {"entity_id":"lock.front_door"}
@@ -61,4 +61,4 @@ Go to the **Developer Tools**, then to **Call Service** in the frontend, and cho
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
-| `entity_id`            |      yes | Only act on specific lock. Else targets all.
+| `entity_id`            |      yes | 특정 Lock 에서만 작동합니다. 그렇지 않으면 모두를 대상으로 합니다.

@@ -1,5 +1,5 @@
 ---
-title: Huawei Router
+title: Huawei 라우터
 description: Instructions on how to integrate Huawei Routers into Home Assistant.
 logo: huawei.svg
 ha_category:
@@ -9,13 +9,13 @@ ha_codeowners:
   - '@abmantis'
 ---
 
-The `huawei` device tracker platform offers presence detection by looking at connected devices to a [Huawei router](http://m.huawei.com/enmobile/enterprise/products/network/access/pon-one/hw-371813.htm).
+`huawei` 장치 추적기 플랫폼은 [Huawei router](http://m.huawei.com/enmobile/enterprise/products/network/access/pon-one/hw-371813.htm)에 연결된 장치를 보고 존재 감지(presence detection) 기능을 제공합니다. 
 
-Currently, this was only tested with the Huawei HG8247H, HS8247W and HG8247Q Smart Router (used by Vodafone Portugal).
+현재 이것은 Huawei HG8247H, HS8247W 및 HG8247Q Smart Router (Vodafone Portugal에서 사용)에서만 테스트되었습니다.
 
-## Configuration
+## 설정
 
-To use a Huawei router in your installation, add the following to your `configuration.yaml` file:
+설치에서 Huawei 라우터를 사용하려면 `configuration.yaml` 파일에 다음을 추가 하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -28,17 +28,17 @@ device_tracker:
 
 {% configuration %}
 host:
-  description: The IP address of your router, e.g., 192.168.1.1.
+  description: "라우터의 IP 주소 (예 : 192.168.1.1)"
   required: true
   type: string
 username:
-  description: The username to login into the router (the same used trough the router's web interface).
+  description: 라우터에 로그인하기 위한 사용자 이름 (라우터의 웹인터페이스를 통해 사용된 것과 동일).
   required: true
   type: string
 password:
-  description: The password for the specified username.
+  description: 지정된 사용자 이름의 비밀번호
   required: true
   type: string
 {% endconfiguration %}
 
-See the [device tracker integration page](/integrations/device_tracker/) for instructions how to configure the people to be tracked.
+추적할 사람을 설정하는 방법에 대한 지침은 [device tracker integration page](/integrations/device_tracker/)를 참조하십시오 .

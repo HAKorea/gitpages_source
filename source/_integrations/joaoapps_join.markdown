@@ -8,17 +8,14 @@ ha_category:
 ha_release: 0.24
 ---
 
-The `joaoapps_join` integration exposes services from
-[Join](https://joaoapps.com/join). In Home Assistant, the Join features are
-divided up in two locations, the Join component, and the Join notify platform.
-The notify platform allows us to send messages to Join devices, the component
-allows us to access the other special features that Join offers. When in doubt, you can reference the [API documentation](https://joaoapps.com/join/api/) this is based on.
+`joaoapps_join` 통합구성요소는 [Join](https://joaoapps.com/join)의 서비스를 노출해 놓았습니다. 홈어시스턴트에서 Join 기능은 Join 구성 요소 및 Join notify 플랫폼의 두가지로 나뉩니다.
+알림 플랫폼을 통해 Join 장치에 메시지를 보낼 수 있으며, 구성 요소를 통해 Join이 제공하는 다른 특수 기능에 액세스 할 수 있습니다. 확실하지 않은 경우에는 이를 기반으로 하는 [API documentation](https://joaoapps.com/join/api/)을 참조하십시오.
 
-In the `configuration.yaml` file you need to provide the api key and device id
-or name of the target device. You can find your device id and api key
-[here](https://joinjoaomgcd.appspot.com/).
+`configuration.yaml` 파일에서 API 키와 장치 ID 또는 대상 장치의 이름을 제공해야합니다. 장치 ID와 API 키를 [here](https://joinjoaomgcd.appspot.com/)에서 찾을 수 있습니다
 
-To set it up, add the following information to your `configuration.yaml` file:
+**HA 네이버 카페에서 깔롱미니ohminy**님의  [HA와 Joaopps Join 연동 후기](http://blog.naver.com/ohminy11/221468519502)를 참조하십시오. 
+
+설정하려면 `configuration.yaml` 파일에 다음 정보를 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -37,28 +34,28 @@ joaoapps_join:
 
 {% configuration %}
 api_key:
-  description: The API key for Join.
+  description: Join을 위한 API 키.
   required: true
   type: string
 device_id:
-  description: The id of your device or group
+  description: 기기 또는 그룹의 ID
   required: false
   type: string
 device_ids:
-  description: Comma separated list of device ids or groups.
+  description: 장치 ID 또는 그룹의 쉼표로 구분 된 목록.
   required: false
   type: string
 device_names:
-  description: Comma separated list of device names.
+  description: 쉼표로 구분된 장치 이름 목록.
   required: false
   type: string
 name:
-  description: The name parameter is optional but needed if you want to use multiple notification platforms.  The platform will be exposed as service `notify.<name>`. The name will defailt to `notify` if not supplied. See the [Notifications Component](/integrations/notify) for more details.
+  description: name 매개 변수는 선택 사항이지만 여러 알림 플랫폼을 사용하려는 경우 필요합니다. 플랫폼은 `notify.<name>` 서비스로 노출됩니다. 제공하지 않으면 이름이 `notify`으로 기본값이 됩니다. 자세한 내용은 [Notifications Component](/integrations/notify)을 참조하십시오.
   required: false
   type: string
 {% endconfiguration %}
 
-Use only one of `device_id`, `device_ids`, or `device_names`, this will determine the notification recipient(s).
+`device_id`,`device_ids` 또는 `device_names` 중 하나만 사용하면 알림 수신자가 결정됩니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -73,8 +70,9 @@ notify:
     name: NAME2
 ```
 
-The notify service has several optional parameters: `icon`, `smallicon`, `image`, `sound`, `url`, `notification_id`, `tts`, `tts_language` and `vibration`.
-You can use them like so:
+알림 서비스에는 `icon`, `smallicon`, `image`, `sound`, `url`, `notification_id`, `tts`, `tts_language` 및 `vibration`과 같은 몇 가지 선택적 매개 변수가 있습니다.
+
+다음과 같이 사용할 수 있습니다. 
 
 ```json
 {
@@ -94,8 +92,7 @@ You can use them like so:
 }
 ```
 
-The services exposed in the `joaoapps_join` integration can be used with the
-service data described below:
+`joaoapps_join` 통합구성요소에 노출된 서비스는 아래 설명된 서비스 데이터와 함께 사용할 수 있습니다.
 
 | Service                       | Data                                                              |
 |------------------------------ |------------------------------------------------------------------ |

@@ -1,5 +1,5 @@
 ---
-title: History Stats
+title: 히스토리 통계(History Stats) 
 description: Instructions about how to integrate historical statistics into Home Assistant.
 logo: home-assistant.png
 ha_category:
@@ -9,19 +9,20 @@ ha_release: 0.39
 ha_quality_scale: internal
 ---
 
-The `history_stats` sensor platform provides quick statistics about another integration or platforms, using data from the [history](/integrations/history/).
+`history_stats` 센서 플랫폼은 [history](/integrations/history/)의 데이터를 사용하여 다른 통합구성요소에 대한 빠른 통계를 제공합니다.
 
-It can track how long the integration has been in a specific state, in a custom time period.
+사용자 지정 기간 동안 통합구성요소가 특정 상태에 있었던 시간을 추적 할 수 있습니다.
 
-Examples of what you can track:
+추적 할 수 있는 예:
 
-- How long you were at home this week
-- How long the lights were ON yesterday
-- How long you watched TV today
 
-## Configuration
+- 이번 주에 집에 있었던 시간
+- 어제 조명이 켜진 시간
+- 어제 조명이 켜진 시간
 
-To enable the history statistics sensor, add the following lines to your `configuration.yaml`:
+## 설정
+
+히스토리 통계 센서를 사용하려면 `configuration.yaml`에 다음 행을 추가하십시오
 
 {% raw %}
 ```yaml
@@ -39,65 +40,65 @@ sensor:
 
 {% configuration %}
 entity_id:
-  description: The entity you want to track.
+  description: 추적하려는 엔티티
   required: true
   type: string
 state:
-  description: The state you want to track.
+  description: 추적하려는 상태
   required: true
   type: string
 name:
-  description: Name displayed on the frontend.
+  description: 프런트 엔드에 표시되는 이름
   required: false
   default: unnamed statistics
   type: string
 type:
-  description: "The type of sensor: `time`, `ratio`, or `count`."
+  description: "센서의 종류 : `time`, `ratio`, 혹은 `count`."
   required: false
   default: time
   type: string
 start:
-  description: When to start the measure (timestamp or datetime).
+  description: 측정 시작시기 (타임 스탬프 또는 날짜/시간)
   required: false
   type: template
 end:
-  description: When to stop the measure (timestamp or datetime).
+  description: 측정을 중지할 시기 (타임 스탬프 또는 날짜/시간)
   required: false
   type: template
 duration:
-  description: Duration of the measure.
+  description: 측정 기간.
   required: false
   type: time
 {% endconfiguration %}
 
 <div class='note'>
 
-  You have to provide **exactly 2** of `start`, `end` and `duration`.
+  `start`,`end` 및 `duration`의 **정확하게 두가지**를 제공해야 합니다.
 <br/>
-  You can use [template extensions](/topics/templating/#home-assistant-template-extensions) such as `now()` or `as_timestamp()` to handle dynamic dates, as shown in the examples below.
+  `now ()` 또는 `as_timestamp ()`와 같은 [template extensions](/topics/templating/#home-assistant-template-extensions)를 사용하여 아래 예와 같이 동적 날짜를 처리 할 수 ​​있습니다.
 
 </div>
 
-## Sensor type
+## 센서 타입
 
-Depending on the sensor type you choose, the `history_stats` integration can show different values:
+선택한 센서 유형에 따라 `history_stats` 통합구성요소에 다른 값이 표시 될 수 있습니다. :
 
-- **time**: The default value, which is the tracked time, in hours
-- **ratio**: The tracked time divided by the length of your period, as a percentage
-- **count**: How many times the integration you track was changed to the state you track
+- **time**: 추적 시간인 기본값 (시간)
+- **ratio**: 추적 시간을 기간의 길이로 나눈 값 (백분율)
+- **count**: 추적한 통합구성요소가 추적한 상태로 몇 번이나 변경되었는지
 
-## Time periods
+## Period (기간)
 
-The `history_stats` integration will execute a measure within a precise time period. You should always provide 2 of the following :
-- When the period starts (`start` variable)
-- When the period ends (`end` variable)
-- How long is the period (`duration` variable)
+`history_stats` 통합구성요소는 정확한 시간 내에 측정을 실행합니다. 항상 다음 중 2가지를 제공해야합니다.
+- 기간이 시작될 때 (`start` 변수)
+- 기간이 끝나는 시점  (`end` 변수)
+- 기간은 길이 (`duration` 변수)
 
-As `start` and `end` variables can be either datetimes or timestamps, you can configure almost any period you want.
+`start` 및 `end` 변수는 날짜 시간 또는 타임 스탬프일 수 있으므로 원하는 기간을 대부분 설정할 수 있습니다.
 
-### Duration
+### Duration (지속 기간)
 
-The duration variable is used when the time period is fixed. Different syntaxes for the duration are supported, as shown below.
+Duration 변수는 고정된 기간에 사용됩니다. 아래에 표시된 것처럼 기간 동안 다른 문법 구문이 지원됩니다.
 
 ```yaml
 # 6 hours
@@ -119,15 +120,15 @@ duration:
 
 <div class='note'>
 
-  If the duration exceeds the number of days of history stored by the `recorder` component (`purge_keep_days`), the history statistics sensor will not have all the information it needs to look at the entire duration. For example, if `purge_keep_days` is set to 7, a history statistics sensor with a duration of 30 days will only report a value based on the last 7 days of history.
+  duration이 `recorder` 구성 요소에 의해 저장된 기록일 수(`purge_keep_days`)를 초과하는 경우, 기록 통계 센서는 전체 duration을 보는 데 필요한 모든 정보를 갖지 않습니다. 예를 들어, `purge_keep_days`가 7로 설정되면 duration이 30 일인 히스토리 통계 센서는 최근 7 일의 히스토리를 기반으로 한 값만 보고합니다.
 
 </div>
 
-### Examples
+### 예시
 
-Here are some examples of periods you could work with, and what to write in your `configuration.yaml`:
+다음은 작업 할 수있는 period의 예와 `configuration.yaml`에 쓸 내용입니다.
 
-**Today**: starts at 00:00 of the current day and ends right now.
+**오늘**: 현재 날짜의 00:00에 시작하여 지금 끝납니다.
 
 {% raw %}
 ```yaml
@@ -136,7 +137,7 @@ Here are some examples of periods you could work with, and what to write in your
 ```
 {% endraw %}
 
-**Yesterday**: ends today at 00:00, lasts 24 hours.
+**어제**: 오늘 00:00에 종료되며 24 시간 지속됩니다.
 
 {% raw %}
 ```yaml
@@ -146,7 +147,7 @@ Here are some examples of periods you could work with, and what to write in your
 ```
 {% endraw %}
 
-**This morning (6AM - 11AM)**: starts today at 6, lasts 5 hours.
+**오늘 아침 (오전 6시-오전 11시)**: 오늘 6 시에 시작하여 5 시간 지속됩니다.
 
 {% raw %}
 ```yaml
@@ -156,9 +157,9 @@ Here are some examples of periods you could work with, and what to write in your
 ```
 {% endraw %}
 
-**Current week**: starts last Monday at 00:00, ends right now.
+**이번주**: 지난 월요일 00:00에 시작하여 지금 끝납니다.
 
-Here, last Monday is _today_ as a timestamp, minus 86400 times the current weekday (86400 is the number of seconds in one day, the weekday is 0 on Monday, 6 on Sunday).
+여기서 지난 월요일은 오늘 현재 시간을 빼서 현재 요일의 86400 배를 뺀 것입니다 (86400은 하루의 초 수, 월요일은 0, 월요일은 6).
 
 {% raw %}
 ```yaml
@@ -167,7 +168,7 @@ Here, last Monday is _today_ as a timestamp, minus 86400 times the current weekd
 ```
 {% endraw %}
 
-**Last 30 days**: ends today at 00:00, lasts 30 days. Easy one.
+**지난 30 일**: 오늘 00:00에 종료되며 30 일 지속됩니다.
 
 {% raw %}
 ```yaml
@@ -177,7 +178,7 @@ Here, last Monday is _today_ as a timestamp, minus 86400 times the current weekd
 ```
 {% endraw %}
 
-**All your history** starts at timestamp = 0, and ends right now.
+**모든 기록**은 타임 스탬프=0에서 시작하여 지금 끝납니다.
 
 {% raw %}
 ```yaml
@@ -188,6 +189,6 @@ Here, last Monday is _today_ as a timestamp, minus 86400 times the current weekd
 
 <div class='note'>
 
-  The `/developer-tools/template` page of your home-assistant UI can help you check if the values for `start`, `end` or `duration` are correct. If you want to check if your period is right, just click on your component, the `from` and `to` attributes will show the start and end of the period, nicely formatted.
+  홈어시스턴트 UI의 `/developer-tools/template` 페이지에서 `start`, `end` 또는 `duration` 값이 올바른지 확인할 수 있습니다. period가 올바른지 확인하려면 구성 요소를 클릭하기만 하면 `from` 및 `to` 속성에 기간의 시작과 끝이 멋지게 형식화되어 보입니다.
 
 </div>

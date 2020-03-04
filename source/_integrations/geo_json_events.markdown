@@ -1,5 +1,5 @@
 ---
-title: GeoJSON
+title: 지오제이슨(GeoJSON)
 description: Instructions on how to integrate GeoJSON feeds into Home Assistant.
 logo: geo_location.png
 ha_category:
@@ -8,16 +8,16 @@ ha_iot_class: Cloud Polling
 ha_release: 0.79
 ---
 
-The `geo_json_events` platform lets you integrate GeoJSON feeds. It retrieves events from a feed and shows information of those events filtered by distance to Home Assistant's location.
-All entries in the GeoJSON feed must define a `geometry` which typically is a point or polygon with geo coordinates. In addition, this platform will look for a `title` key in the entry's `properties` and use that as the entity's name.
+`geo_json_events` 플랫폼을 사용하면 GeoJSON 피드를 연동할 수 있습니다. 피드에서 이벤트를 검색하고 홈어시스턴트 위치까지의 거리에 따라 필터링된 이벤트 정보를 표시합니다. 
+GeoJSON 피드의 모든 항목은 일반적으로 지리 좌표가 있는 점 또는 다각형 인 `geometry`를 정의해야합니다. 또한 이 플랫폼은 항목의 `properties`에서 `title` 키를 찾아 엔터티 이름으로 사용합니다.
 
-Entities are generated, updated and removed automatically with each update from the GeoJSON feed. Each entity defines latitude and longitude and will be shown on the map automatically. The distance in kilometers is available as the state of each entity.
+GeoJSON 피드에서 업데이트 할 때마다 엔티티가 자동으로 생성, 업데이트 및 제거됩니다. 각 엔티티는 위도와 경도를 정의하며지도에 자동으로 표시됩니다. 킬로미터 단위의 거리는 각 엔티티의 상태로 사용 가능합니다. 
 
-The data is updated every 5 minutes.
+데이터는 5 분마다 업데이트됩니다.
 
-## Configuration
+## 설정
 
-To integrate a GeoJSON feed, add the following lines to your `configuration.yaml`. This is an example configuration showing [earthquake data provided by the U.S. Geological Survey](https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php).
+GeoJSON 피드를 통합하려면 `configuration.yaml`에 다음 줄을 추가하십시오. [미국 지질 조사에서 제공 한 지진 데이터](https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php)를 보여주는 설정 예입니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -28,40 +28,40 @@ geo_location:
 
 {% configuration %}
 url:
-  description: Full URL of the GeoJSON feed.
+  description: GeoJSON 피드의 전체 URL.
   required: true
   type: string
 radius:
-  description: The distance in kilometers around the Home Assistant's coordinates in which events are considered.
+  description: 이벤트를 확인하고자하는 홈어시스턴트 좌표 주위의 거리 (킬로미터).
   required: false
   type: float
   default: 20.0
 latitude:
-  description: Latitude of the coordinates around which events are considered.
+  description: 이벤트를 확인하고자하는 좌표의 위도.
   required: false
   type: string
   default: Latitude defined in your `configuration.yaml`
 longitude:
-  description: Longitude of the coordinates around which events are considered.
+  description: 이벤트를 확인하고자하는 좌표의 경도.
   required: false
   type: string
   default: Longitude defined in your `configuration.yaml`
 {% endconfiguration %}
 
-## State Attributes
+## 상태 속성 (State Attributes)
 
-The following state attributes are available for each entity in addition to the standard ones:
+표준 엔티티 외에 각 엔티티에 대해 다음 상태 속성을 사용할 수 있습니다.
 
 | Attribute   | Description |
 |-------------|-------------|
-| latitude    | Latitude of the event. |
-| longitude   | Longitude of the event. |
-| source      | `geo_json_events` to be used in conjunction with `geo_location` automation trigger. |
-| external_id | The external ID used in the feed to identify the event in the feed. |
+| latitude    | 이벤트의 위도. |
+| longitude   | 이벤트의 경도. |
+| source      | `geo_json_events`는 `geo_location` 자동화 트리거와 함께 사용됩니다. |
+| external_id | 피드에서 이벤트를 식별하기 위해 피드에 사용된 외부 ID입니다. |
 
-## Advanced Configuration Example
+## 고급 설정 사례
 
-When integrating several GeoJSON feeds, it may be useful to distinguish the entities of different feeds. The easiest way to do that is by defining an [`entity_namespace`](/docs/configuration/platform_options/#entity-namespace/) for each platform which will prefix each entity ID with the defined value.
+여러 GeoJSON 피드를 통합 할 때 다른 피드의 엔티티를 구별하는 것이 유용할 수 있습니다. 가장 쉬운 방법은 각 엔티티 ID에 정의된 값이 붙는 각 플랫폼에 대해 [`entity_namespace`](/docs/configuration/platform_options/#entity-namespace/)를 정의하는 것입니다.
 
 ```yaml
 # Example configuration.yaml entry

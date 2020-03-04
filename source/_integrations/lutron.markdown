@@ -1,5 +1,5 @@
 ---
-title: Lutron
+title: 루트론(Lutron)
 description: Instructions on how to use Lutron devices with Home Assistant.
 logo: lutron.png
 ha_category:

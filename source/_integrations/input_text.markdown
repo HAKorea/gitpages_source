@@ -1,5 +1,5 @@
 ---
-title: Input Text
+title: Input Text(문자입력)
 description: Instructions on how to integrate the Input Text integration into Home Assistant.
 logo: home-assistant.png
 ha_category:
@@ -8,9 +8,9 @@ ha_release: 0.53
 ha_quality_scale: internal
 ha_codeowners:
   - '@home-assistant/core'
----
+---`
 
-The `input_text` integration allows the user to define values that can be controlled via the frontend and can be used within conditions of automation. Changes to the value stored in the text box generate state events. These state events can be utilized as `automation` triggers as well. It can also be configured in password mode (obscured text).
+`input_text` 통합구성요소를 통해 사용자는 프론트 엔드를 통해 제어 할 수 있고 자동화 조건 내에서 사용할 수있는 값을 정의할 수 있습니다. 텍스트 상자에 저장된 값을 변경하면 상태 이벤트가 생성됩니다. 이러한 상태 이벤트는 `automation` 트리거로도 사용할 수 있습니다. 암호 모드 (가려진 텍스트)로 설정할 수도 있습니다.
 
 ```yaml
 # Example configuration.yaml entries
@@ -32,60 +32,60 @@ input_text:
 
 {% configuration %}
   input_text:
-    description: Alias for the input. Multiple entries are allowed.
+    description: 별칭 입력. 여러 항목이 허용됩니다.
     required: true
     type: map
     keys:
       name:
-        description: Friendly name of the text input.
+        description: 텍스트 입력의 이름.
         required: false
         type: string
       min:
-        description: Minimum length for the text value.
+        description: 텍스트 값의 최소 길이.
         required: false
         type: integer
         default: 0
       max:
-        description: Maximum length for the text value. 255 is the maximum number of characters allowed in an entity state.
+        description: 텍스트 값의 최대 길이입니다. 255는 엔터티 상태에서 허용되는 최대 문자 수입니다.
         required: false
         type: integer
         default: 100
       initial:
-        description: Initial value when Home Assistant starts.
+        description: 홈어시스턴트 시작시 초기값.
         required: false
         type: string
       icon:
-        description: Icon to display in front of the input element in the frontend.
+        description: 프런트 엔드에서 입력 요소 앞에 표시되는 아이콘.
         required: false
         type: icon
       pattern:
-        description: Regex pattern for client side validation.
+        description: 클라이언트 측 검증을 위한 정규식 패턴.
         required: false
         type: string
         default: empty
       mode:
-        description: Can specify `text` or `password`. Elements of type "password" provide a way for the user to securely enter a value.
+        description: "보통 `text` 또는 `password`를 지정할 수 있습니다. password 유형의 요소는 사용자가 안전하게 값을 입력 할 수 있는 방법을 제공합니다."
         required: false
         type: string
         default: text
 {% endconfiguration %}
 
-### Services
+### 서비스
 
-This integration provides a service to modify the state of the `input_text` and a service to reload the `input_text` configuration without restarting Home Assistant itself.
+이 통합구성요소는 `input_text` 상태를 수정하는 서비스와 Home Assistant 자체를 다시 시작하지 않고 `input_text` 설정을 다시로드하는 서비스를 제공합니다.
 
 | Service | Data | Description |
 | ------- | ---- | ----------- |
-| `set_value` | `value`<br>`entity_id(s)` | Set the value for specific `input_text` entities.
-| `reload` | | Reload `input_text` configuration |
+| `set_value` | `value`<br>`entity_id(s)` | 특정 `input_text` 엔티티의 값을 설정.
+| `reload` | | `input_text` 설정 리로드 |
 
-### Restore State
+### 상태 복원
 
-If you set a valid value for `initial` this integration will start with state set to that value. Otherwise, it will restore the state it had prior to Home Assistant stopping.
+`initial`에 유효한 값을 설정하면 이 통합구성요소는 상태가 해당 값으로 설정된 상태에서 시작됩니다. 그렇지 않으면, 홈어시스턴트 중지 이전의 상태를 복원합니다.
 
-### Scenes
+### 장면 (Scenes)
 
-To set the state of the input_text in a [Scene](/integrations/scene/):
+[Scene](/integrations/scene/)에서 input_text의 상태를 설정하려면 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -95,9 +95,9 @@ scene:
       input_text.example: Hello!
 ```
 
-## Automation Examples
+## 자동화 사례
 
-Here's an example using `input_text` in an action in an automation.
+다음은 자동화 작업에서 `input_text`를 사용하는 예입니다.
 
 {% raw %}
 ```yaml

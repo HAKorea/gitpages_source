@@ -1,5 +1,5 @@
 ---
-title: GitLab-CI
+title: 깃랩(Gitlab-CI)
 description: How to integrate GitLab-CI Job status within Home Assistant.
 logo: gitlab.png
 ha_category:

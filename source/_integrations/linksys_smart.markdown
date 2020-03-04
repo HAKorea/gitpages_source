@@ -1,5 +1,5 @@
 ---
-title: Linksys Smart Wi-Fi
+title: 링크시스 스마트 Wi-Fi
 description: Instructions on how to integrate Linksys Smart Wifi Router into Home Assistant.
 ha_category:
   - Presence Detection
@@ -8,19 +8,20 @@ ha_release: 0.48
 ---
 
 The `linksys_smart` platform offers presence detection by looking at connected devices to a Linksys Smart Wifi based router.
+`linksys_smart플랫폼`은 Linksys Smart Wifi 기반 라우터에 연결된 장치를 보고 재실 감지 기능을 제공합니다.
 
-Tested routers:
+테스트한 라우터 :
 
 - Linksys WRT3200ACM MU-MIMO Gigabit Wi-Fi Wireless Router
 - Linksys WRT1900ACS Dual-band Wi-Fi Router
 
-## Setup
+## 셋업 
 
-For this platform to work correctly, it is necessary to disable the "Access via wireless" feature in the Local Management Access section of the router administration page. If "Access via wireless" is not disabled, a connectivity conflict arises because the Home Assistant integration is trying to pass userid and password, but the router is only expecting a password.
+이 플랫폼이 올바르게 작동하려면 라우터 관리 페이지의 로컬 관리 액세스 섹션에서 "Access via wireless"기능을 비활성화해야합니다. "Access via wireless"가 비활성화되어 있지 않으면 Home Assistant 통합이 사용자 ID 및 암호를 전달하려고하지만 라우터가 암호 만 기대하기 때문에 연결 충돌이 발생합니다.
 
-## Configuration
+## 설정
 
-To use a Linksys Smart Wifi Router in your Home Assistant installation, add the following to your `configuration.yaml` file:
+홈 어시스턴트 설치에서 Linksys Smart Wifi 라우터를 사용하려면 `configuration.yaml` 파일에 다음을 추가 하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -31,9 +32,9 @@ device_tracker:
 
 {% configuration %}
 host:
-  description: The hostname or IP address of your router, e.g., `192.168.1.1`.
+  description: "라우터의 호스트 이름 또는 IP 주소. (예: 192.168.1.1)"
   required: true
   type: string
 {% endconfiguration %}
 
-See the [device tracker integration page](/integrations/device_tracker/) for instructions how to configure the people to be tracked.
+추적할 사람을 설정하는 방법에 대한 지침은 [device tracker integration page](/integrations/device_tracker/)를 참조하십시오 .

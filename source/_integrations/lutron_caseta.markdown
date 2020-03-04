@@ -1,5 +1,5 @@
 ---
-title: Lutron Caseta
+title: 루트론 카세타(Lutron Caseta)
 description: Instructions on how to use Lutron Caseta devices with Home Assistant.
 logo: lutron.png
 ha_category:

@@ -1,5 +1,5 @@
 ---
-title: GeoRSS
+title: GeoRSS(지도 RSS)
 description: Instructions on how to set up GeoRSS sensors within Home Assistant.
 logo: rss.png
 ha_category:
@@ -10,23 +10,24 @@ ha_codeowners:
   - '@exxamalte'
 ---
 
-The `geo_rss_events` sensor retrieves events from a GeoRSS feed and shows information of those events filtered by distance to Home Assistant's location and grouped by category.
+`geo_rss_events` 센서는 GeoRSS 피드에서 이벤트를 검색하고 홈어시스턴트까지의 거리에 따라 필터링 되고 범주별로 그룹화된 해당 이벤트 정보를 표시합니다.
 
-This sensor is particularly useful if events occur unexpectedly in the vicinity of the home while the GeoRSS feed also contains many events representing distant unrelated entries. Typical examples are bush fires alerts or earthquakes.
+이 센서는 집 근처에서 이벤트가 예기치 않게 발생하는 경우 특히 유용하지만 GeoRSS 피드에는 관련없는 항목을 나타내는 많은 이벤트가 포함되어 있습니다. 전형적인 예는 산불 경보 또는 지진입니다.
 
 <p class='img'>
   <img src='{{site_root}}/images/screenshots/geo-rss-incidents-group-screenshot.png' />
 </p>
 
-The reference point for comparing the distance is by default defined by `latitude` and `longitude` in the basic configuration.
+거리를 비교하기위한 기준점은 기본적으로 기본 설정에서 `latitude`와 `longitude`로 정의됩니다.
 
-Only entries of the feed are considered that define a location as `point` or `polygon` in *georss.org* format or as *WGS84 latitude/longitude*.
+*georss.org* 형식 또는 *WGS84 위도/경도*에서 위치를 `point` 또는 `polygon`으로 정의하는 피드 항목만 다룹니다. 
 
 The data is updated every 5 minutes.
+데이터는 5 분마다 업데이트됩니다.
 
-## Configuration
+## 설정
 
-To enable the GeoRSS events sensor, add the following lines to your `configuration.yaml`. This is an example configuration showing bush fire incidents from the NSW Rural Fire Service.
+GeoRSS 이벤트 센서를 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오. NSW Rural Fire Service에서 발생하는 산불 사고를 보여주는 설정 예입니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -43,42 +44,42 @@ sensor:
 
 {% configuration %}
 url:
-  description: Full URL of the GeoRSS feed.
+  description: GeoRSS 피드의 전체 URL
   required: true
   type: string
 name:
-  description: Name of the sensor used in generating the entity id.
+  description: 엔티티 ID 생성에 사용된 센서 이름
   required: false
   type: string
   default: Event Service
 latitude:
-  description: Latitude of the coordinates around which events are considered.
+  description: 이벤트를 확인하고자하는 좌표의 위도.
   required: false
   type: string
   default: Latitude defined in your `configuration.yaml`
 longitude:
-  description: Longitude of the coordinates around which events are considered.
+  description: 이벤트를 확인하고자하는 좌표의 경도.
   required: false
   type: string
   default: Longitude defined in your `configuration.yaml`
 radius:
-  description: The distance in kilometers around the Home Assistant's coordinates in which events are considered.
+  description: 이벤트를 확인하고자 하는 홈어시스턴트 좌표 주위의 거리 (킬로미터).
   required: false
   type: string
   default: 20km
 categories:
-  description: List of event category names found in the GeoRSS feed. A separate sensor is created for each category defined.
+  description: GeoRSS 피드에 있는 이벤트 카테고리 이름 목록. 정의된 각 범주에 대해 별도의 센서가 생성됩니다.
   required: false
   type: list
-  default: Default is to join events from all categories into an 'Any' category.
+  default: Default is to join events from all categories into an 'Any' category. 
 unit_of_measurement:
-  description: The type of events found in the GeoRSS feed.
+  description: GeoRSS 피드에서 발견 된 이벤트 유형.
   required: false
   type: string
   default: Events
 {% endconfiguration %}
 
-## Example Feeds
+## 피드 사례들
 
 **Bush Fire Alerts**
 

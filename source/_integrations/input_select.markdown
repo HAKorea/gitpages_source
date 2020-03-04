@@ -1,5 +1,5 @@
 ---
-title: Input Select
+title: Input Select(선택입력)
 description: Instructions on how to integrate the Input Select integration into Home Assistant.
 logo: home-assistant.png
 ha_category:

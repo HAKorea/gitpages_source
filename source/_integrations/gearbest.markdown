@@ -1,5 +1,5 @@
 ---
-title: Gearbest
+title: 기어베스트(Gearbest)
 description: Instructions on how to integrate a Gearbest sensor into Home Assistant.
 logo: gearbest.png
 ha_category:

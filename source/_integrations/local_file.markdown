@@ -1,5 +1,5 @@
 ---
-title: Local File
+title: 로컬 파일
 description: Instructions how to use Local File as a Camera within Home Assistant.
 logo: file.png
 ha_category:
@@ -8,13 +8,13 @@ ha_iot_class: Local Polling
 ha_release: 0.22
 ---
 
-The `local_file` camera platform allows you to integrate an image file from disk into Home Assistant as a camera. If the image is updated on the file system the image displayed in Home Assistant will also be updated. The service `local_file_update_file_path` can be used to update the image using an automation.
+`local_file` 카메라 플랫폼을 사용하면 디스크의 이미지 파일을 카메라로 Home Assistant에 통합 할 수 있습니다. 파일 시스템에서 이미지가 업데이트되면 홈어시스턴트에 표시된 이미지도 업데이트됩니다. `local_file_update_file_path` 서비스는 자동화를 사용하여 이미지를 업데이트하는 데 사용할 수 있습니다.
 
-The `local_file` camera can for example be used with various camera platforms that save a temporary images locally. It can also be used to display a graph that you render periodically and will then be displayed in Home Assistant.
+`local_file` 카메라는 예를 들어 임시 이미지를 로컬에 저장하는 다양한 카메라 플랫폼과 함께 사용할 수 있습니다. 또한 주기적으로 렌더링 한 다음 홈어시스턴트에 표시되는 그래프를 표시하는 데 사용할 수 있습니다.
 
-## Configuration
+## 설정
 
-To enable this camera in your installation, add the following to your `configuration.yaml` file:
+설치시 이 카메라를 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -25,20 +25,20 @@ camera:
 
 {% configuration %}
 file_path:
-  description: "File to serve as the camera. Use a full path, e.g., `/config/www/images/image.jpg `."
+  description: "카메라에서 제공하는 하는 파일입니다. 전체 경로를 사용하십시오 (예 :`/config/www/images/image.jpg`."
   required: true
   type: string
 name:
-  description: Name of the camera.
+  description: 카메라 이름.
   required: false
   type: string
 {% endconfiguration %}
 
-### Service `local_file.update_file_path`
+### `local_file.update_file_path` 서비스
 
-Use this service to change the file displayed by the camera.
+이 서비스를 사용하여 카메라에서 표시되는 파일을 변경하십시오.
 
 | Service data attribute | Description |
 | -----------------------| ----------- |
-| `entity_id` | String of the `entity_id` of the camera to update. |
-| `file_path` | The full path to the new image file to be displayed. |
+| `entity_id` | 업데이트 할 카메라의 `entity_id` 문자열. |
+| `file_path` | 표시할 새 이미지 파일의 전체 경로입니다. |

@@ -1,5 +1,5 @@
 ---
-title: HTML5 Push Notifications
+title: HTML5 푸시 알림
 description: Instructions on how to use the HTML5 push notifications platform from Home Assistant.
 logo: html5.png
 ha_category:
@@ -9,11 +9,12 @@ ha_codeowners:
   - '@robbiet480'
 ---
 
-The `html5` notification platform enables you to receive push notifications to Chrome or Firefox, no matter where you are in the world. `html5` also supports Chrome and Firefox on Android, which enables native-app-like integrations without actually needing a native app.
+`html5` 알림 플랫폼을 사용하면 세계 어디에 있든 Chrome 또는 Firefox에 푸시 알림을 받을 수 있습니다. `html5`는 안드로이드에서 크롬과 파이어 폭스도 지원하는데, 이는 네이티브 앱 없이도 네이티브 앱과 같은 연동을 가능하게 합니다.
 
 <div class='note'>
 
 HTML5 push notifications **do not** work on iOS.
+iOS에서는 HTML5 푸시 알림이 작동하지 **않습니다.**
 
 </div>
 

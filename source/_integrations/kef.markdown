@@ -1,5 +1,5 @@
 ---
-title: KEF
+title: KEF(고급오디오)
 description: Instructions on how to integrate KEF Speakers into Home Assistant.
 logo: kef.png
 ha_category:
@@ -10,16 +10,16 @@ ha_codeowners:
   - '@basnijholt'
 ---
 
-The `kef` platform allows you to control the [KEF LS50 Wireless](https://international.kef.com/products/ls50-wireless) and [KEF LSX](https://international.kef.com/products/lsx) speakers from Home Assistant.
+`kef` 플랫폼을 사용하면 Home Assistant에서 [KEF LS50 Wireless](https://international.kef.com/products/ls50-wireless) 및 [KEF LSX](https://international.kef.com/products/lsx) 스피커를 제어 할 수 있습니다.
 
-Supported devices:
+지원 장치 :
 
 - KEF LS50 Wireless
 - KEF LSX
 
-To add KEF Speakers to your installation, add the following to your `configuration.yaml` file:
+KEF 스피커를 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
-## Configuration
+## 설정
 
 ```yaml
 # Example configuration.yaml entry
@@ -31,50 +31,50 @@ media_player:
 
 {% configuration %}
 host:
-  description: "IP address of the device. Example: 192.168.1.32"
+  description: "장치의 IP 주소 예: 192.168.1.32"
   required: true
   type: string
 type:
-  description: The speaker type, either `LS50` or `LSX`.
+  description: 스피커 유형. `LS50` 혹은 `LSX`.
   required: true
   type: string
 name:
-  description: The name of the device
+  description: 장치의 이름
   required: false
   default: KEF
   type: string
 port:
-  description: The port of the device
+  description: 장치의 포트
   required: false
   default: 50001
   type: integer
 maximum_volume:
-  description: Maximum volume allowed. Number between 0 and 1.
+  description: 허용되는 최대 볼륨. 0과 1 사이의 숫자.
   required: false
   default: 0.5
   type: float
 volume_step:
-  description: Volume step when increasing volume.
+  description: 볼륨을 높일 때의 볼륨 단계.
   required: false
   default: 0.05
   type: float
 inverse_speaker_mode:
-  description: Switch channels from L/R to R/L.
+  description: 채널을 L/R에서 R/L로 전환.
   required: false
   default: false
   type: boolean
 standby_time:
-  description: The speakers automatically turn to standby mode after either `20` or `60` minutes. Leave out for the speaker to never go into standby mode.
+  description: "`20` 또는 `60` 분 후에 스피커가 자동으로 대기 모드로 전환됩니다. 스피커가 대기 모드로 들어가지 않도록하십시오."
   required: false
   type: integer
 supports_on:
-  description: LS50 Wireless with a serial number below LS50W13074K24L/R2G do not support turning on the speakers over the network. Set this to false if you have an older model.
+  description: LS50W13074K24L/R2G 미만의 일련 번호를 가진 LS50 무선은 네트워크를 통한 스피커 켜기를 지원하지 않습니다. 구형 모델 인 경우 이 값을 false로 설정하십시오.
   default: true
   required: false
   type: integer
 {% endconfiguration %}
 
-## Advanced configuration example
+## 고급 설정의 예
 
 ```yaml
 # Example configuration.yaml entry
@@ -89,7 +89,7 @@ media_player:
 
 Notes:
 
-- The LS50 Wireless was tested with the latest firmware of 19-11-2019: `p6.3001902221.105039422` and older firmware: `p6.2101809171.105039422`
-- The LSX Wireless was tested with the latest firmware of 10-10-2019 v4.1: `p20.4101909240.105243`
+- LS50 Wireless는 19-11-2019의 최신 펌웨어 :`p6.3001902221.105039422` 및 이전 펌웨어: `p6.2101809171.105039422`로 테스트되었습니다.
+- LSX Wireless는 2019 년 10 월 10 일 v4.1의 최신 펌웨어로 테스트되었습니다 : `p20.4101909240.105243`
 
 [KEF Speakers]: /integrations/kef/

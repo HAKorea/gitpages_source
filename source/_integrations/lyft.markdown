@@ -1,5 +1,5 @@
 ---
-title: Lyft
+title: Lyft(승차공유)
 description: How to integrate Lyft in Home Assistant
 logo: lyft.png
 ha_category:

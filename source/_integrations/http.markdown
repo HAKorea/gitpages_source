@@ -22,7 +22,7 @@ ha_codeowners:
 
 <div class='note'>
 
-Hass.io 설치에서`server_host` 옵션을 사용하지 마십시오!
+Hass.io 설치에서 `server_host` 옵션을 사용하지 마십시오!
 
 </div>
 

@@ -1,5 +1,5 @@
 ---
-title: Owlet
+title: 아기모니터링(Owlet)
 description: Instructions on how to integrate Owlet baby monitor into Home Assistant.
 logo: owlet.svg
 ha_category:

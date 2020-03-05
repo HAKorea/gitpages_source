@@ -1,5 +1,5 @@
 ---
-title: Panasonic Viera TV
+title: 파나소닉 Viera TV
 description: Instructions on how to integrate a Panasonic Viera TV into Home Assistant.
 logo: panasonic.png
 ha_category:

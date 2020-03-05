@@ -1,5 +1,5 @@
 ---
-title: Prometheus
+title: 프로메테우스(Prometheus)
 description: Record events in Prometheus.
 logo: prometheus.png
 ha_category:

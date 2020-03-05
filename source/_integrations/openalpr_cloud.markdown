@@ -25,7 +25,7 @@ image_processing:
 
 {% configuration %}
 region:
-  description: Country or region. List of supported [values](https://github.com/openalpr/openalpr/tree/master/runtime_data/config). 국가 혹은 지역. 지원되는 [values](https://github.com/openalpr/openalpr/tree/master/runtime_data/config)
+  description: 국가 혹은 지역. 지원되는 [values](https://github.com/openalpr/openalpr/tree/master/runtime_data/config). 대한민국 있음.
   required: true
   type: string
 api_key:
@@ -33,7 +33,7 @@ api_key:
   required: true
   type: string
 confidence:
-  description: 홈어시스턴트로 처리할 수있는 최소 신뢰 백분율.
+  description: 홈어시스턴트로 처리할 수 있는 최소 신뢰 백분율.
   required: false
   type: integer
   default: 80

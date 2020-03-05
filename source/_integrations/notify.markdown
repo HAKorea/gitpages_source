@@ -1,5 +1,5 @@
 ---
-title: Notifications
+title: 알림(Notifications)
 description: Instructions on how to add user notifications to Home Assistant.
 logo: home-assistant.png
 ha_category:
@@ -10,24 +10,25 @@ ha_codeowners:
   - '@home-assistant/core'
 ---
 
-The `notify` integration makes it possible to send notifications to a wide variety of platforms. To use it you have to setup at least one notification target (notifier), check the [integrations list](/integrations/#notifications) for one that fits your use case.
+`notify` 통합구성요소로 다양한 플랫폼에 notification을 보낼 수 있습니다. 이를 사용하려면 하나 이상의 notification 대상 인 notify를 설정해야합니다. [integrations list](/integrations/#notifications) 사용 사례에 맞는 알림 대상을 확인하십시오.
 
-If you want to send notifications to the Home Assistant web interface, you may use the [Persistent Notification integration](/integrations/persistent_notification/).
+Home Assistant 웹 인터페이스에 notification을 보내려면 [Persistent Notification integration](/integrations/persistent_notification/)을 사용할 수 있습니다.
 
-## Service
+## 서비스
 
-Once loaded, the `notify` platform will expose a service that can be called to send notifications.
+`notify` 플랫폼은 일단 로드되면 알림(notifications)을 보내기 위해 호출할 수있는 서비스를 노출합니다
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
-| `message`              |       no | Body of the notification.
-| `title`                |      yes | Title of the notification.
-| `target`               |      yes | Some platforms allow specifying a recipient that will receive the notification. See your platform page if it is supported.
-| `data`                 |      yes | On platforms who have extended functionality. See your platform page if it is supported.
+| `message`              |       no | notification 본문.
+| `title`                |      yes | notification 제목.
+| `target`               |      yes | 일부 플랫폼에서는 notification을 받을 수신자를 지정할 수 있습니다. 지원되는 경우 플랫폼 페이지를 참조하십시오.
+| `data`                 |      yes | 기능이 확장된 플랫폼에서. 지원되는 경우 플랫폼 페이지를 참조하십시오.
 
-The notify integration supports specifying [templates](/topics/templating/) with `data_template`. This will allow you to use the current state of Home Assistant in your notifications.
+notify 통합구성요소는 `data_template`으로 [templates](/topics/templating/) 지정을 지원합니다. 
+이를 통해 notifications에 현재 홈어시스턴트 상태를 사용할 수 있습니다.
 
-In an [action](/getting-started/automation-action/) of your [automation setup](/getting-started/automation/) it could look like this with a customized subject.
+[automation setup](/getting-started/automation/)의 [action](/getting-started/automation-action/)에서 사용자정의 된 주제를 사용하면 다음과 같이 보일 수 있습니다.
 
 ```yaml
 action:
@@ -37,9 +38,9 @@ action:
     title: "Custom subject"
 ```
 
-### Test if it works
+### 작동하는지 테스트
 
-After you setup a [notifier](/integrations/#notifications) a simple way to test if you have set up your notify platform correctly, is to open **Developer Tools** from the sidebar and then select the  **Services** tab. Choose your service from the **Service** dropdown menu, enter the sample below into the **Service Data** field, and press the **CALL SERVICE** button.
+[notifier](/integrations/#notifications)를 설정 한 후 notify 플랫폼을 올바르게 설정했는지 테스트하는 간단한 방법은 사이드 바에서 **개발자 도구**를 연 다음 **Service** 탭을 선택하는 것입니다. **Service** 드롭 다운 메뉴에서 서비스를 선택하고 **Service Data** 필드에 아래 샘플을 입력 한 다음 **CALL SERVICE** 버튼을 누릅니다.
 
 ```json
 {
@@ -47,7 +48,7 @@ After you setup a [notifier](/integrations/#notifications) a simple way to test 
 }
 ```
 
-The automation equivalent would be:
+자동화에 상응하는 내용은 다음과 같습니다. :
 
 ```yaml
 action:
@@ -56,7 +57,7 @@ action:
     message: "The sun is {% raw %}{% if is_state('sun.sun', 'above_horizon') %}up{% else %}down{% endif %}{% endraw %}!"
 ```
 
-For services which have support for sending images.
+이미지 전송을 지원하는 서비스의 경우.
 
 ```json
 { "message": "Test plugin",
@@ -68,7 +69,7 @@ For services which have support for sending images.
 }
 ```
 
-The automation equivalent would be:
+자동화에 상응하는 내용은 다음과 같습니다.
 
 ```yaml
 action:
@@ -81,7 +82,7 @@ action:
 ```
 
 
-If the service support sending the location, the data from this sample can be used.
+서비스가 위치 전송을 지원하면 이 샘플의 데이터를 사용할 수 있습니다.
 
 ```json
 { "message": "Test plugin",
@@ -94,7 +95,7 @@ If the service support sending the location, the data from this sample can be us
 }
 ```
 
-The automation equivalent would be:
+자동화에 상응하는 내용은 다음과 같습니다.
 
 ```yaml
 action:

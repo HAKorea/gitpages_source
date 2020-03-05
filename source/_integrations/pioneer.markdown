@@ -1,5 +1,5 @@
 ---
-title: Pioneer
+title: 파이오니아
 description: Instructions on how to integrate a Pioneer Network Receivers into Home Assistant.
 logo: pioneer.png
 ha_category:

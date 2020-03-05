@@ -1,5 +1,5 @@
 ---
-title: PJLink
+title: 프로젝트링크(PJLink)
 description: Instructions on how to integrate PJLink enabled projectors into Home Assistant.
 logo: pjlink.png
 ha_category:
@@ -8,11 +8,11 @@ ha_release: 0.76
 ha_iot_class: Local Polling
 ---
 
-The `pjlink` platform allows you to control from Home Assistant, projectors with support for the [PJLink protocol](https://pjlink.jbmia.or.jp/english/index.html).
+`pjlink` 플랫폼을 사용하면 [PJLink protocol](https://pjlink.jbmia.or.jp/english/index.html)을 지원하는 프로젝터 인 Home Assistant에서 제어 할 수 있습니다.
 
-## Configuration
+## 설정
 
-To add a PJLink projector  to your installation, add the following to your `configuration.yaml` file:
+PJLink 프로젝터를 설치에 추가하려면`configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -23,26 +23,26 @@ media_player:
 
 {% configuration %}
 host:
-  description: IP address or hostname of the device. Example:`192.168.1.2`.
+  description: "장치의 IP 주소 또는 호스트 이름. 예 : 192.168.1.2."
   required: true
   type: string
 port:
-  description: port on which the PJLink service runs on the device.
+  description: 장치에서 PJLink 서비스가 실행되는 포트.
   required: false
   type: integer
   default: 4352
 name:
-  description: Name of the device.
+  description: 장치 이름
   required: false
   type: string
   default: name of the device as returned by PJLink.
 encoding:
-  description: Character encoding to use to communicate with the device.
+  description: 장치와 통신하는데 사용되는 문자 인코딩
   required: false
   type: string
   default: utf-8
 password:
-  description: Password to authenticate with the projector.
+  description: 프로젝터 인증을위한 비밀번호
   required: false
   type: string
 {% endconfiguration %}

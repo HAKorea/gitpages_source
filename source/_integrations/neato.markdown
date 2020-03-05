@@ -15,20 +15,20 @@ ha_codeowners:
   - '@Santobert'
 ---
 
-The `neato` integration allows you to control your [Neato Botvac Connected Robots](https://www.neatorobotics.com/robot-vacuum/botvac-connected-series/).
+`neato` 통합구성요소로 [Neato Botvac Connected Robots](https://www.neatorobotics.com/robot-vacuum/botvac-connected-series/)를 제어할 수 있습니다.
 
-To activate `neato` in your installation, you can set it up from the integration screen or add it to your `configuration.yaml` file.
+설치에서 `neato`를 활성화하려면 통합 화면에서 설정하거나 `configuration.yaml` 파일에 추가하십시오.
 
-## Setup the integration via the integrations screen
+## 통합구성요소 화면을 통해 연동 설정
 
-Menu: *Configuration* -> *Integrations*
+Menu: *설정* -> *통합구성요소*
 
-Search for or select **Neato** from the list and configure the integration. You will need to enter your username and password and whether you are using a Neato or Vorwerk device.
-After that, all the entities will automatically show up in Home Assistant.
+목록에서 **Neato**를 검색하거나 선택하고 연동을 설정하십시오. Neato 또는 Vorwerk 장치를 사용하는지 여부와 함께 사용자 이름과 비밀번호를 입력해야합니다.
+그 후 모든 엔티티가 홈어시스턴트에 자동으로 나타납니다.
 
-## Setup the integration via configuration.yaml
+## configuration.yaml을 통한 연동 설정 
 
-Add the following to your configuration.yaml:
+configuration.yaml에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -39,15 +39,15 @@ neato:
 
 {% configuration %}
 username:
-  description: Username for the Neato account.
+  description: Neato 계정의 사용자 이름.
   required: true
   type: string
 password:
-  description: Password for the Neato account.
+  description: Neato 계정의 비밀번호
   required: true
   type: string
 vendor:
-  description: Support for additional vendors. Set to `vorwerk` for Vorwerk robots.
+  description: 추가 공급 업체를 지원합니다. Vorwerk 로봇의 경우 `vorwerk`로 설정하십시오.
   required: false
   type: string
   default: neato
@@ -55,22 +55,21 @@ vendor:
 
 <div class='note'>
 
-After the update to firmware 4.0 (which adds cleaning maps) there is also support for displaying the maps of the Botvac D3 Connected and Botvac D5 Connected robots. More information on how to update can be found [here](https://support.neatorobotics.com/hc/en-us/articles/115004320694-Software-Update-4-0-for-Neato-Botvac-Connected-D3-D5-).
+펌웨어 4.0으로 업데이트 한 후 (클리닝 맵 추가) Botvac D3 Connected 및 Botvac D5 Connected 로봇의 맵표시도 지원됩니다. 업데이트 방법에 대한 자세한 내용은 [here](https://support.neatorobotics.com/hc/en-us/articles/115004320694-Software-Update-4-0-for-Neato-Botvac-Connected-D3-D5-)를 참조하십시오.
 
 </div>
 
 ## Vacuum
 
-The `neato` vacuum platform allows you to control your [Neato Botvac Connected](https://www.neatorobotics.com/robot-vacuum/botvac-connected-series/).
-The status will contain attributes on the robots last clean session.
+`neato` Vacuum 플랫폼을 사용하면 [Neato Botvac Connected](https://www.neatorobotics.com/robot-vacuum/botvac-connected-series/)를 제어 할 수 있습니다. 상태에는 로봇청소기의 마지막 청소 세션의 속성이 포함됩니다.
 
 <div class='note'>
-If you notice the robot stops responding to commands check the state to see if the robot is "unavailable". If you see "unavailable" first try to restart the vacuum and wait about 5 minutes to see if it is no longer "unavailable". If you are still having issues check the Neato app and make sure your robot is connected and working. If it is not then follow the steps in the app to reset your robot and give it the same name as before then restart Home Assistant.
+로봇이 명령에 응답하지 않는 경우 로봇이 "unavailable" 상태인지 확인하십시오. "unavailable"이 표시되면 먼저 로봇 청소기를 다시 시작하고 더 이상 "unavailable" 장치가 아닌지 5 분 정도 기다리십시오. 여전히 문제가 발생하면 Neato 앱을 확인하고 로봇이 연결되어 작동하는지 확인하십시오. 그렇지 않은 경우 앱의 단계에 따라 로봇을 재설정하고 이전과 동일한 이름을 지정한 다음 Home Assistant를 다시 시작하십시오.
 </div>
 
-### Services
+### 서비스
 
-Currently supported services are:
+현재 지원되는 서비스는 다음과 같습니다.
 
 - `start`
 - `pause`
@@ -79,20 +78,20 @@ Currently supported services are:
 - `locate`
 - `clean_spot`
 
-And a specific Platform Service:
+그리고 특정 플랫폼 서비스 :
 
 - `neato.custom_cleaning`
 
-### Platform Services
+### 플랫폼 서비스
 
-#### Service `neato.custom_cleaning`
+#### `neato.custom_cleaning` 서비스
 
-Starts a custom cleaning of your house. You can set the various options like in the mobile application (mode, map usage, navigation mode, zone).
+집 청소를 시작합니다. 모바일 애플리케이션과 같은 다양한 옵션 (모드, 지도 사용법, 탐색 모드, 구역)을 설정할 수 있습니다.
 
 <div class='note'>
 
-Not all Botvac models support all the attributes. Only the Neato Botvac D7 supports the `zone` attribute.
-Some information about the capabilities might be found on the [Neato Developer Portal](https://developers.neatorobotics.com/api/robot-remote-protocol/housecleaning).
+모든 Botvac 모델이 모든 속성을 지원하는 것은 아닙니다. Neato Botvac D7만이 `zone` 속성을 지원합니다.
+기능에 대한 일부 정보는 [Neato Developer Portal](https://developers.neatorobotics.com/api/robot-remote-protocol/housecleaning)에 있습니다.
 
 </div>
 
@@ -105,16 +104,16 @@ Some information about the capabilities might be found on the [Neato Developer P
 | `zone`                 | yes      | Only supported on the Botvac D7. Name of the zone to clean from the Neato app. Use unique names for the zones to avoid the wrong zone from running. Defaults to no zone i.e. complete house cleanup.                                                                  |
 
 
-## Camera
+## 카메라
 
-The `neato` camera platform allows you to view the latest cleaning map of your [Neato Botvac Connected](https://www.neatorobotics.com/robot-vacuum/botvac-connected-series/botvac-connected/).
+`neato` 카메라 플랫폼을 사용하면 [Neato Botvac Connected](https://www.neatorobotics.com/robot-vacuum/botvac-connected-series/botvac-connected/)의 최신 클리닝 맵을 볼 수 있습니다 
 
-## Sensor
+## 센서
 
-The `neato` sensor platform allows you to view the battery level for your [Neato Botvac Connected](https://www.neatorobotics.com/robot-vacuum/botvac-connected-series/botvac-connected/).
+`neato` 센서 플랫폼을 사용하면 [Neato Botvac Connected](https://www.neatorobotics.com/robot-vacuum/botvac-connected-series/botvac-connected/)의 배터리 잔량을 볼 수 있습니다
 
-## Switch
+## 스위치
 
-The `neato` switch platform allows you to enable or disable the schedule of your [Neato Botvac Connected](https://www.neatorobotics.com/robot-vacuum/botvac-connected-series/botvac-connected/).
+`neato` 스위치 플랫폼을 사용하면 [Neato Botvac Connected](https://www.neatorobotics.com/robot-vacuum/botvac-connected-series/botvac-connected/)의 스케줄을 활성화 또는 비활성화 할 수 있습니다
 
-To add `neato` switch, camera and vacuum to your installation, follow instructions above.
+설치시 `neato` 스위치, 카메라 및 vacuum을 추가하려면 위의 지침을 따르십시오.

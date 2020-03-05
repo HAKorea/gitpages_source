@@ -16,7 +16,7 @@ ha_codeowners:
   - '@balloob'
 ---
 
-`ring` 구현을 통해 [Ring.com] (https://ring.com/) 장치를 Home Assistant에 통합 할 수 있습니다.
+`ring` 구현을 통해 [Ring.com](https://ring.com/) 장치를 Home Assistant에 통합 할 수 있습니다.
 
 현재 홈 어시스턴트에는 다음 장치 유형이 지원됩니다.
 

@@ -1,5 +1,5 @@
 ---
-title: QNAP
+title: 큐냅(QNAP)
 description: Instructions on how to integrate the QNAP sensor within Home Assistant.
 logo: qnap.png
 ha_category:

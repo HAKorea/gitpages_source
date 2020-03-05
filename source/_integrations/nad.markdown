@@ -1,5 +1,5 @@
 ---
-title: NAD
+title: NAD(명품오디오리시버)
 description: Instructions on how to integrate NAD receivers into Home Assistant.
 logo: nad.png
 ha_category:
@@ -8,9 +8,9 @@ ha_release: 0.36
 ha_iot_class: Local Polling
 ---
 
-The `nad` platform allows you to control a [NAD receiver](https://nadelectronics.com/) through RS232, TCP and Telnet from Home Assistant.
+`nad` 플랫폼을 사용하면 Home Assistant의 RS232, TCP 및 Telnet을 통해 [NAD 수신기](https://nadelectronics.com/)를 제어할 수 있습니다.
 
-To add an NAD receiver to your installation, add the following to your `configuration.yaml` file:
+설치에 NAD 수신기를 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry for RS232 configuration
@@ -28,61 +28,61 @@ media_player:
 
 {% configuration %}
 type:
-  description: Type of communication. Valid types are `RS232`, `Telnet` or `TCP`
+  description: 통신 타입. 유효한 타입은 `RS232`, `Telnet` 혹은 `TCP`
   required: false
   default: RS232
   type: string
 serial_port:
-  description: The serial port. (for `RS232` type only)
+  description: 시리얼 포트. (`RS232` 타입만 해당)
   required: false
   default: /dev/ttyUSB0
   type: string
 host:
-  description: The IP address of your amplifier. (for `TCP` and `Telnet` types)
+  description: 앰프의 IP 주소. (`TCP` 및 `Telnet` 유형)
   required: false
   type: string
 port:
-  description: The port number of the device. (for `Telnet` type only)
+  description: 장치의 포트 번호. (`Telnet`유형만 해당)
   required: false
   default: 53
   type: integer
 name:
-  description: Name of the device.
+  description: 장치 이름
   required: false
   default: NAD Receiver
   type: string
 min_volume:
-  description: Minimum volume in dB to use with the slider.
+  description: 슬라이더와 함께 사용할 최소 볼륨 (dB).
   required: false
   default: -92
   type: integer
 max_volume:
-  description: Maximum volume in dB to use with the slider.
+  description: 슬라이더와 함께 사용할 최대 볼륨 (dB).
   required: false
   default: -20
   type: integer
 sources:
-  description: A list of mappings from source to source name. Valid sources are `1 to 10`. (for `RS232` and `Telnet` types)
+  description: 미디어에서 미디어이름을 매핑한 리스트. 유효한 미디어갯수는 `1 ~ 10`개 (`RS232` 및  `Telnet` 유형)
   required: false
   type: [list, string]
 volume_step:
-  description: The amount in dB you want to increase the volume with when pressing volume up/down. (for `TCP` type only)
+  description: 볼륨을 올리거나 내릴 때 볼륨을 높이려는 dB 단위의 양입니다. (`TCP` 타입 만 해당)
   required: false
   default: 4
   type: integer
 {% endconfiguration %}
 
-The min_volume and max_volume are there to protect you against misclicks on the slider so you will not blow up your speakers when you go from -92dB to +20dB. You can still force it to go higher or lower than the values set with the plus and minus buttons.
+min_volume 및 max_volume은 슬라이더를 잘못 클릭하지 않도록 보호하기 위해 -92dB에서 + 20dB로 이동할 때 스피커가 터지지 않도록합니다. 플러스 및 마이너스 버튼으로 설정한 값보다 높거나 낮게 설정할 수 있습니다.
 
 <div class='note warning'>
 
-On linux the user running home-assistant needs `dialout` permissions to access the serial port.
-This can be added to the user by doing `sudo usermod -a -G dialout <username>`.
-Be aware that the user might need to logout and logon again to activate these permissions.
+리눅스에서 홈어시스턴트를 실행하는 사용자는 시리얼 포트에 액세스하기 위해 `dialout` 권한이 필요합니다.
+`sudo usermod -a -G dialout <username>`을 통해 사용자에게 추가 할 수 있습니다.
+이러한 권한을 활성화하려면 사용자가 로그 아웃했다가 다시 로그온해야 할 수도 있습니다.
 
 </div>
 
-A full configuration example could look like this:
+전체 설정 예는 다음과 같습니다.
 
 ```yaml
 # Example configuration.yaml entry

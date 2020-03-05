@@ -1,5 +1,5 @@
 ---
-title: Mycroft
+title: Mycroft(AI스피커)
 description: Instructions on how to setup Mycroft AI within Home Assistant.
 logo: mycroft.png
 ha_category:
@@ -8,15 +8,16 @@ ha_category:
 ha_release: 0.53
 ---
 
-[Mycroft](https://mycroft.ai) is an open source voice assistant that allows you to send notifications and more to Mycroft from Home Assistant.
+[Mycroft](https://mycroft.ai)는 Home Assistant에서 Mycroft로 알림 등을 보낼 수있는 오픈 소스 음성 도우미입니다.
 
-There is currently support for the following device types within Home Assistant:
+현재 홈 어시스턴트에는 다음 장치 유형이 지원됩니다.
 
-- **Notifications** - Allows to deliver notifications from Home Assistant to [Mycroft AI](https://mycroft.ai/).
+- **Notifications** - 홈어시스턴트에서 [Mycroft AI](https://mycroft.ai/)로 알림을 전달할 수 있습니다.
 
-## Configuration
 
-To use Mycroft in your installation, add the following to your `configuration.yaml` file:
+## 설정
+
+설치에서 Mycroft를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -26,7 +27,7 @@ mycroft:
 
 {% configuration %}
 host:
-  description: The IP address of your Mycroft instance.
+  description: Mycroft 인스턴스의 IP 주소.
   required: true
   type: string
 {% endconfiguration %}

@@ -1,3 +1,5 @@
+
+
 ---
 title: Nissan Leaf
 description: Instructions for how to integrate Nissan Leaf(s) into Home Assistant.

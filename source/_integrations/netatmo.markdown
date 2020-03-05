@@ -1,5 +1,5 @@
 ---
-title: Netatmo
+title: 네타모(Netatmo)
 description: Instructions on how to integrate Netatmo integration into Home Assistant.
 logo: netatmo.png
 ha_category:

@@ -1,5 +1,5 @@
 ---
-title: OpenGarage
+title: OpenGarage(오픈소스차고문)
 description: Instructions on how to integrate OpenGarage.io covers within Home Assistant.
 logo: opengarage.png
 ha_category:

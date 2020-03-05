@@ -1,5 +1,5 @@
 ---
-title: OpenTherm Gateway
+title: OpenTherm Gateway(개방형온도조절기) 
 description: Control your OpenTherm Gateway from Home Assistant.
 logo: opentherm.png
 ha_category:

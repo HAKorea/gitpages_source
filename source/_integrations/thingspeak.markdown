@@ -1,5 +1,5 @@
 ---
-title: ThingSpeak
+title: 씽스피크(ThingSpeak)
 description: Record one entity in ThingSpeak
 logo: thingspeak.png
 ha_category:

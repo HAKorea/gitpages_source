@@ -1,5 +1,5 @@
 ---
-title: ThermoWorks Smoke
+title: 바베큐온도계(ThermoWorks Smoke)
 description: Pulls temperature data for a ThermoWorks Smoke Thermometer connected with Smoke Gateway.
 logo: thermoworks.png
 ha_category:

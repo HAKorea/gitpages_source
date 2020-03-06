@@ -1,5 +1,5 @@
 ---
-title: OpenSky Network
+title: OpenSky Network(세계항공기추적)
 description: Instructions on how to integrate OpenSky Network into Home Assistant.
 logo: opensky.png
 ha_category:
@@ -8,11 +8,11 @@ ha_release: 0.43
 ha_iot_class: Cloud Polling
 ---
 
-The `opensky` sensor allows one to track overhead flights in a given region. It uses crowd-sourced data from the [OpenSky Network](https://opensky-network.org/) public API. It will also fire Home Assistant events when flights enter and exit the defined region.
+`opensky` 센서를 사용하면 특정 지역의 비행을 추적할 수 있습니다. [OpenSky Network](https://opensky-network.org/) 공개 API의 크라우드 소싱 데이터를 사용합니다. 항공편이 정의된 지역으로 들어오고 나갈 때 홈어시스턴트 이벤트도 시작합니다.
 
-## Configuration
+## 설정
 
-To enable this sensor, add the following lines to your `configuration.yaml` file:
+이 센서를 활성화하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오 :
 
 ```yaml
 sensor:
@@ -20,26 +20,26 @@ sensor:
     radius: 10
 ```
 
-Configuration options for the OpenSky Network sensor:
+OpenSky Network 센서의 설정 옵션:
 
-- **radius** (*Required*): Radius of region to monitor, in kilometers.
-- **latitude** (*Optional*): Region latitude. Defaults to home zone latitude.
-- **longitude** (*Optional*): Region longitude. Defaults to home zone longitude.
-- **altitude** (*Optional*): The maximum altitude (in meters) for planes to be detected in, 0 sets it to unlimited. Defaults to 0).
-- **name** (*Optional*): Sensor name. Defaults to opensky.
+- **radius** (*Required*): 모니터링 할 영역의 반경 (킬로미터).
+- **latitude** (*Optional*): 지역 위도. Home zone 위도가 기본값.
+- **longitude** (*Optional*): 지역 경도. Home zone 경도가 기본값.
+- **altitude** (*Optional*): 비행기를 감지 할 수있는 최대 고도 (미터), 0은 무제한입니다. 기본값은 0입니다.
+- **name** (*Optional*): 센서 이름. 기본적값은 opensky.
 
-## Events
+## 이벤트
 
-- **opensky_entry**: Fired when a flight enters the region.
-- **opensky_exit**: Fired when a flight exits the region.
+- **opensky_entry**: 비행이 지역에 들어 오면 시작.
+- **opensky_exit**: 비행기가 지역을 나가면 시작.
 
-Both events have three attributes:
+두 이벤트 모두 세 가지 속성이 있습니다. 
 
-- **sensor**: Name of `opensky` sensor that fired the event.
-- **callsign**: Callsign of the flight.
-- **altitude**: Altitude of the flight in meters.
+- **sensor**: 이벤트를 시작한 `opensky` 센서의 이름
+- **callsign**: 비행기의 Callsign.
+- **altitude**: 미터 단위의 비행 고도.
 
-To receive notifications of the entering flights using the [Home Assistant Companion App](https://companion.home-assistant.io/), add the following lines to your `configuration.yaml` file:
+[Home Assistant Companion App](https://companion.home-assistant.io/)을 사용하여 비행기에 대한 알림을 받으려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오.
 
 {% raw %}
 ```yaml

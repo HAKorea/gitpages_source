@@ -1,5 +1,5 @@
 ---
-title: Microsoft Face Detect
+title: Microsoft 안면 인식
 description: Instructions on how to integrate Microsoft Face Detect into Home Assistant.
 logo: microsoft.png
 ha_category:
@@ -7,24 +7,19 @@ ha_category:
 ha_release: 0.38
 ---
 
-The `microsoft_face_detect` image processing platform allows you to use the
-[Microsoft Face Identify](https://www.microsoft.com/cognitive-services/en-us/)
-API through Home Assistant. This platform enables you do detect face on camera
-and fire an event with attributes.
+`microsoft_face_detect` 이미지 처리 플랫폼을 사용하면 Home Assistant를 통해 [Microsoft Face Identification](https://www.microsoft.com/cognitive-services/en-us/) API를 사용할 수 있습니다.
 
-Please refer to the [Microsoft Face component](/integrations/microsoft_face/) configuration on
-how to setup the API key.
+API 키 설정 방법에 대해서는 [Microsoft Face component](/integrations/microsoft_face/) 설정을 참조하십시오.
 
-For using the result inside an automation rule,
-take a look at the [Image Processing component](/integrations/image_processing/) page.
+자동화 규칙 내에서 결과를 사용하려면 [Image Processing component](/integrations/image_processing/) 페이지를보십시오.
 
 <div class='note'>
 
-The free version of the Microsoft Face identify API limits the number of requests possible per month. Therefore, it is strongly recommended that you limit the `scan_interval` when setting up an instance of this entity as detailed on the main [Image Processing component](/integrations/image_processing/) page.
+무료 버전의 Microsoft Face 식별 API는 한 달에 가능한 요청 수를 제한합니다. 따라서 메인 [Image Processing component](/integrations/image_processing/) 페이지에 설명 된대로 이 엔티티의 인스턴스를 설정할 때 `scan_interval`을 제한하는 것이 좋습니다.
 
 </div>
 
-### Configuration
+### 설정
 
 ```yaml
 # Example configuration.yaml entry
@@ -36,25 +31,25 @@ image_processing:
 
 {% configuration %}
 confidence:
-  description: The minimum of confidence in percent to process with Home Assistant.
+  description: 홈어시스턴트로 처리 할 수 있는 최소 신뢰 백분율.
   required: false
   type: integer
   default: 80
 source:
-  description: List of image sources.
+  description: 이미지 소스 목록.
   required: true
   type: list
   keys:
     entity_id:
-      description: A camera entity id to get picture from.
+      description: 사진을 가져올 카메라 엔티티 ID.
       required: true
       type: string
     name:
-      description: This parameter allows you to override the name of your `image_processing` entity.
+      description: 이 매개 변수를 사용하면 `image_processing` 엔티티의 이름을 대체 할 수 있습니다.
       required: false
       type: string
 attributes:
-  description: "The image search attributes. Supported: `age`, `gender`, `glasses`."
+  description: "이미지 검색 속성. 지원속성 : `age`, `gender`, `glasses`."
   required: false
   type: list
   default: "[age, gender]"

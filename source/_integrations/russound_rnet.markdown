@@ -1,5 +1,5 @@
 ---
-title: Russound RNET
+title: 러스사운드 RNET
 description: Instructions on how to integrate Russound RNET devices into Home Assistant.
 logo: russound.png
 ha_category:
@@ -8,13 +8,13 @@ ha_release: 0.25
 ha_iot_class: Local Polling
 ---
 
-The `russound_rnet` platform allows you to control Russound devices that make use of the RNET protocol.
+`russound_rnet` 플랫폼을 사용하면 RNET 프로토콜을 사용하는 Russound 장치를 제어할 수 있습니다.
 
-This has initially been tested against a Russound CAV6.6 unit with six zones and six sources. It will also work with a Russound CAA66, but be sure to use a null-modem cable.
+이는 6 개의 구역(zone)과 6 개의 소스(source)가 있는 Russound CAV6.6 장치에 처음 테스트되었습니다. Russound CAA66에서도 작동하지만 null-modem 케이블을 사용해야합니다.
 
-Connecting to the Russound device is only possible by TCP, you can make use of a TCP to Serial gateway such as [tcp_serial_redirect](https://github.com/pyserial/pyserial/blob/master/examples/tcp_serial_redirect.py)
+Russound 장치에 연결하는 것은 TCP를 통해서만 가능합니다. [tcp_serial_redirect](https://github.com/pyserial/pyserial/blob/master/examples/tcp_serial_redirect.py)와 같은 TCP to Serial 게이트웨이를 사용할 수 있습니다
 
-To add a device to your installation, add the following to your `configuration.yaml` file:
+설치시 장치를 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry

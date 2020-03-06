@@ -1,5 +1,5 @@
 ---
-title: Openuv
+title: Openuv(세계자외선오존데이터)
 description: Instructions on how to integrate OpenUV within Home Assistant.
 logo: openuv.jpg
 ha_category:

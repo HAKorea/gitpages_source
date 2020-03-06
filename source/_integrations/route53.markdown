@@ -1,5 +1,5 @@
 ---
-title: AWS Route53
+title: 아마존 AWS Route53
 description: Automatically update your AWS Route53 DNS records.
 logo: route53.png
 ha_category:

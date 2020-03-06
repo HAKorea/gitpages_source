@@ -1,5 +1,5 @@
 ---
-title: "Websocket Connections Sensor"
+title: "웹소켓 컨넥션 센서"
 description: "Instructions on how to count connected clients within Home Assistant."
 logo: home-assistant.png
 ha_category:

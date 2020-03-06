@@ -1,5 +1,5 @@
 ---
-title: Sisyphus
+title: 샌드아트테이블(Sisyphus)
 description: Instructions on how to integrate your Sisyphus Kinetic Art Table within Home Assistant.
 logo: sisyphus.png
 ha_category:

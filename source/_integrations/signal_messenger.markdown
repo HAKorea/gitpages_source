@@ -1,5 +1,5 @@
 ---
-title: Signal Messenger
+title: 시그널 메신저(Signal Messenger)
 description: Instructions on how to integrate Signal Messenger within Home Assistant.
 logo: signal_messenger.png
 ha_category:
@@ -9,22 +9,23 @@ ha_codeowners:
   - '@bbernhard'
 ---
 
-The `signal_messenger` integration uses the [Signal Messenger REST API](https://github.com/bbernhard/signal-cli-rest-api) to deliver notifications from Home Assistant to your Android or iOS device.
+`signal_messenger` 통합구성요소는 [Signal Messenger REST API](https://github.com/bbernhard/signal-cli-rest-api)를 사용하여 Home Assistant에서 Android 또는 iOS 장치로 알림을 전달합니다.
 
-## Setup
+참고: [Signal Messenger 안드로이드](https://play.google.com/store/apps/details?id=org.thoughtcrime.securesms&hl=ko)
+
+## 셋업
  
-The requirements are:
+기본 요구 사항:
 
-- You need to set up the Signal Messenger REST API. 
-- You need a spare phone number to register with the Signal Messenger service. 
-
-
-Please follow those [instructions](https://github.com/bbernhard/signal-cli-rest-api/blob/master/doc/HOMEASSISTANT.md), to set up the Signal Messenger REST API. 
+- Signal Messenger REST API를 설정해야합니다.
+- Signal Messenger 서비스에 등록하려면 여분의 전화 번호가 필요합니다.
 
 
-## Configuration
+Signal Messenger REST API를 설정하려면 해당 [지침](https://github.com/bbernhard/signal-cli-rest-api/blob/master/doc/HOMEASSISTANT.md)을 따르십시오.
 
-To send Signal Messenger notifications with Home Assistant, add the following to your `configuration.yaml` file:
+## 설정
+
+홈어시스턴트로 Signal Messenger 알림을 보내려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry for Signal Messenger 
@@ -57,11 +58,11 @@ recipients:
   type: string
 {% endconfiguration %}
 
-## Examples
+## 사례
 
-A few examples on how to use this integration.
+이 통합구성요소를 사용하는 방법에 대한 몇 가지 예.
 
-### Text message
+### 텍스트 메시지
 
 ```yaml
 ...
@@ -71,7 +72,7 @@ action:
     message: "That's an example that sends a simple text message to the recipients specified in the configuration.yaml"
 ```
 
-### Text message with an attachment
+### 첨부자료와 테스트 메시지
 
 ```yaml
 ...

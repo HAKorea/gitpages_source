@@ -1,5 +1,5 @@
 ---
-title: Plant Monitor
+title: 식물 관리(Plant Monitor)
 description: Instructions on how to setup plant monitoring with Home Assistant.
 logo: home-assistant.png
 ha_category:

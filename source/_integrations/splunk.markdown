@@ -1,5 +1,5 @@
 ---
-title: Splunk
+title: 스플렁크(Splunk)
 description: Record events in Splunk.
 logo: splunk.png
 ha_category:

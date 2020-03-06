@@ -1,5 +1,5 @@
 ---
-title: myChevrolet
+title: myChevrolet(쉐보레차량관리)
 description: Instructions on how to integrate Chevy Bolt car into Home Assistant.
 logo: chevy.png
 ha_category:
@@ -8,16 +8,16 @@ ha_release: 0.62
 ha_iot_class: Cloud Polling
 ---
 
-The `mychevy` integration communicates with the [my.chevrolet](https://my.chevrolet.com) website using the javascript API that the website uses (as of Dec 2018). The MyChevy website has been known to be both unstable (interfaces changing somewhat willy nilly) and has substantial outages. So be forwarned in using this component.
+`mychevy` 통합은 웹 사이트에서 사용하는 자바 스크립트 API (2018 년 12 월 기준)를 사용하여 [my.chevrolet] (https://my.chevrolet.com) 웹 사이트와 통신합니다. MyChevy 웹 사이트는 불안정하고 (인터페이스가 다소 변경 될 수 있음) 알려져 있으며 상당한 중단이 있습니다. 따라서이 구성 요소 사용에 주의하십시오.
 
-This integration provides the following platforms:
+이 통합구성요소는 다음 플랫폼을 제공합니다.
 
 - Binary sensors: if the car is plugged in
 - Sensors: Battery Level, Charge Mode, EST Range, Total Distance Traveled
 
-## Configuration
+## 설정
 
-To use MyChevy in your installation, add the following to your `configuration.yaml` file:
+설치에서 MyChevy를 사용하려면`configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -42,7 +42,7 @@ country:
   type: string
 {% endconfiguration %}
 
-### Limitations
+### 제한사항
 
 The architecture of the GM automotive networking imposes some limitations on the functionality of the component.
 

@@ -1,5 +1,5 @@
 ---
-title: Spotify
+title: 스포티파이(Spotify)
 description: Instructions on how to integrate Spotify into Home Assistant.
 logo: spotify.png
 ha_category:

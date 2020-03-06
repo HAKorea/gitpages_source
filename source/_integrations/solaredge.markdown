@@ -1,5 +1,5 @@
 ---
-title: SolarEdge
+title: 솔라엣지(SolarEdge)
 description: Instructions on how to integrate SolarEdge sensor within Home Assistant.
 logo: solaredge.png
 ha_category:

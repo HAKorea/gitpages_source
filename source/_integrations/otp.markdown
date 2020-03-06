@@ -1,5 +1,5 @@
 ---
-title: One-Time Password (OTP)
+title: 일회성 비밀번호 (OTP)
 description: Instructions on how to add One-Time Password (OTP) sensors into Home Assistant.
 logo: home-assistant.png
 ha_category:

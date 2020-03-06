@@ -1,5 +1,5 @@
 ---
-title: Pushbullet
+title: 푸시불릿(Pushbullet)
 description: Instructions on how to read user pushes in Home Assistant
 logo: pushbullet.png
 ha_category:
@@ -9,30 +9,30 @@ ha_release: 0.44
 ha_iot_class: Cloud Polling
 ---
 
-There is currently support for the following device types within Home Assistant:
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - [Sensor](#sensor)
 - [Notifications](#notifications)
 
 <div class='note'>
 
-The free tier is [limited](https://docs.pushbullet.com/#push-limit) to 500 pushes per month.
+프리 티어는 한 달에 500 회의 푸시로 [limited](https://docs.pushbullet.com/#push-limit) 됩니다.
 
 </div>
 
 ### Sensor
 
-The `pushbullet` sensor platform reads messages from [Pushbullet](https://www.pushbullet.com/), a free service to send information between your phones, browsers, and friends. This sensor platform provides sensors that show the properties of the latest received Pushbullet notification mirror.
+`pushbullet` 센서 플랫폼은 무료 서비스인 [Pushbullet](https://www.pushbullet.com/)에서 휴대전화, 브라우저 및 친구간에 정보를 보내는 메시지를 읽습니다. 이 센서 플랫폼은 최근에 수신된 Pushbullet 알림 미러의 속성을 보여주는 센서를 제공합니다.
 
-### Setup
+### 셋업
 
-Notification Mirroring allows users to see their Android device's notifications on their computer. It must be first enabled in the app and is currently only available on the Android platform. For more information, please see [this announcement](https://blog.pushbullet.com/2013/11/12/real-time-notification-mirroring-from-android-to-your-computer/) on the Pushbullet Blog.
+알림 미러링을 사용하면 컴퓨터에서 Android 기기의 알림을 볼 수 있습니다. 앱에서 먼저 활성화해야 하며 현재 Android 플랫폼에서만 사용할 수 있습니다. 자세한 내용은 Pushbullet 블로그의 [this announcement](https://blog.pushbullet.com/2013/11/12/real-time-notification-mirroring-from-android-to-your-computer/)를 참조하십시오. .
 
-Go to [https://www.pushbullet.com/#settings/account](https://www.pushbullet.com/#settings/account) to retrieve your API key/access token.
+API 키/액세스 토큰을 검색하려면 [https://www.pushbullet.com/#settings/account](https://www.pushbullet.com/#settings/account)로 이동하십시오.
 
-### Configuration
+### 설정
 
-To enable the Pushbullet sensor in your installation, add the following to your `configuration.yaml` file:
+설치시 Pushbullet 센서를 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -45,44 +45,44 @@ sensor:
 
 {% configuration %}
 api_key:
-  description: Your Pushbullet API key.
+  description: Pushbullet API 키.
   required: true
   type: string
 monitored_conditions:
-  description: Properties of the push to monitor.
+  description: 모니터한 푸쉬의 속성.
   required: false
   default: "`body` and `title`"
   type: list
   keys:
     application_name:
-      description: The application sending the push.
+      description: 푸시를 보내는 애플리케이션.
     body:
-      description: Body of the message.
+      description: 메시지 본문.
     notification_id:
-      description: ID of the notification.
+      description: 알림의 ID.
     notification_tag:
-      description: Tag (if the application sending supports it).
+      description: 태그 (응용 프로그램에서 지원하는 경우)
     package_name:
-      description: Name of the sender's package.
+      description: 발신자의 패키지 이름.
     receiver_email:
-      description: The email of the push's target.
+      description: 푸시 대상의 이메일.
     sender_email:
-      description: The sender of the push.
+      description: 푸시 발신자.
     source_device_iden:
-      description: ID of the sender's device.
+      description: 발신자 기기의 ID.
     title:
-      description: Title of the push.
+      description: 푸시의 제목.
     type:
       description: Type of push.
 {% endconfiguration %}
 
-All properties will be displayed as attributes. The properties array are just for logging the sensor readings for multiple properties.
+모든 properties가 attributes으로 표시됩니다. properties 배열은 여러 properties에 대한 센서 판독값을 기록하기 위한 것입니다.
 
-## Notifications
+## 알림 (Notifications)
 
-The `pushbullet` notification platform sends messages to [Pushbullet](https://www.pushbullet.com/), a free service to send information between your phones, browsers, and friends. The free tier is [limited](https://docs.pushbullet.com/#push-limit) to 500 pushes per month.
+`pushbullet` 알림 플랫폼은 [Pushbullet](https://www.pushbullet.com/)에 메시지를 보내며, 이 서비스는 휴대 전화, 브라우저 및 친구간에 정보를 무료로 제공합니다. 프리 티어는 [limited](https://docs.pushbullet.com/#push-limit)으로 매월 500 회의 푸시로 제한됩니다.
 
-To enable Pushbullet notifications in your installation, add the following to your `configuration.yaml` file:
+설치시 Pushbullet 알림을 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -94,19 +94,19 @@ notify:
 
 {% configuration %}
 api_key:
-  description: Enter the API key for Pushbullet. Go to [https://www.pushbullet.com/#settings/account](https://www.pushbullet.com/#settings/account) to retrieve your API key/access token.
+  description: Pushbullet의 API 키를 입력하십시오. API 키/액세스 토큰을 검색하려면 [https://www.pushbullet.com/#settings/account](https://www.pushbullet.com/#settings/account)로 이동하십시오.
   required: true
   type: string
 name:
-  description: Setting the optional parameter `name` allows multiple notifiers to be created. The default value is `notify`. The notifier will bind to the service `notify.NOTIFIER_NAME`.
+  description: 선택적 매개 변수 `name`을 설정하면 여러 알리미(notifier)를 만들 수 있습니다. 기본값은 `notify` 입니다. 알리미(notifier)는 서비스 `notify.NOTIFIER_NAME`에 바인딩합니다.
   required: false
   default: notify
   type: string
 {% endconfiguration %}
 
-### Usage
+### 사용법
 
-Pushbullet is a notify platform and thus can be controlled by calling the notify service [as described here](/integrations/notify/). It will send a notification to all devices registered in the Pushbullet account. An optional **target** parameter can be given to Pushbullet to specify specific account's devices, contacts or channels.
+Pushbullet은 알림 플랫폼이므로 알림 서비스 [as described here](/integrations/notify/)를 호출하여 제어할 수 있습니다. Pushbullet 계정에 등록된 모든 장치에 알림을 보냅니다. 특정 계정의 장치, 연락처 또는 채널을 지정하기 위해 선택적인 **target** 매개 변수를 Pushbullet에 제공할 수 있습니다.
 
 Type | Prefix | Suffix | Example
 ---- | ------ | ------ | -------
@@ -114,9 +114,9 @@ Device | `device/` | Device nickname | `device/iphone`
 Channel | `channel/` | Channel tag | `channel/my_home`
 Email | `email/` | Contact's email address | `email/email@example.com`
 
-If using targets, your own account's email address functions as 'send to all devices'. All targets are verified (if exists) before sending, except email.
+대상을 사용하는 경우 자신의 계정의 전자 메일 주소가 'send to all devices'로 작동합니다. 이메일을 제외한 모든 대상은 전송전에 확인됩니다 (있는 경우).
 
-#### Example service payload
+#### 서비스 페이로드의 예 
 
 ```json
 {
@@ -129,9 +129,9 @@ If using targets, your own account's email address functions as 'send to all dev
 }
 ```
 
-To use notifications, please see the [getting started with automation page](/getting-started/automation/).
+알림을 사용하려면 [getting started with automation page](/getting-started/automation/)를 참조하십시오.
 
-### URL support
+### URL 지원
 
 ```yaml
 action:
@@ -143,9 +143,9 @@ action:
       url: google.com
 ```
 
-- **url** (*Required*): Page URL to send with Pushbullet.
+- **url** (*Required*): Pushbullet과 함께 보낼 페이지 URL입니다
 
-### File support
+### File 지원
 
 ```yaml
 action:
@@ -157,7 +157,7 @@ action:
       file: /path/to/my/file
 ```
 
-- **file** (*Required*): File to send with Pushbullet.
+- **file** (*Required*): Pushbullet과 함께 보낼 파일.
 
 ### File URL support
 
@@ -171,9 +171,9 @@ action:
       file_url:  https://cdn.pixabay.com/photo/2014/06/03/19/38/test-361512_960_720.jpg
 ```
 
-- **file_url** (*Required*): File to send with Pushbullet.
+- **file_url** (*Required*): Pushbullet과 함께 보낼 파일.
 
-### Single target
+### 단일 대상 
 
 ```yaml
   action:
@@ -184,10 +184,10 @@ action:
       target: device/DEVICE_NAME
 ```
 
-- **target**: Pushbullet device to receive the notification.
+- **target**: 알림을 수신할 Pushbullet 장치.
 
 <div class='note'>
 
-Don't forget to [whitelist external directories](/docs/configuration/basic/), so Home Assistant has access to them.
+[whitelist external directories](/docs/configuration/basic/)을 잊지 마십시오. 그래야 홈어시스턴트가 액세스 할 수 있습니다.
 
 </div>

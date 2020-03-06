@@ -1,5 +1,5 @@
 ---
-title: Simulated
+title: 시뮬레이션(Simulated)
 description: Component for simulating a numerical sensor.
 logo: home-assistant.png
 ha_category:
@@ -9,7 +9,7 @@ ha_release: 0.65
 ha_quality_scale: internal
 ---
 
-The `simulated` sensor platform provides a simulated sensor that generates a time-varying signal `V(t)` given by the [function](https://en.wikipedia.org/wiki/Sine_wave):
+`simulated` 센서 플랫폼은 [function](https://en.wikipedia.org/wiki/Sine_wave)에 의해 주어진 time-varying signal `V (t)`를 생성하는 시뮬레이션 센서를 제공합니다.
 
 ```text
 V(t) = M + A sin((2 pi (t - t_0) / w) + P) + N(s)
@@ -27,9 +27,9 @@ where:
 
 The output will be limited to 3 decimals.
 
-## Configuration
+## 설정
 
-To add a simulated sensor to your installation, add the following to your `configuration.yaml` file:
+시뮬레이션 센서를 설치에 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 sensor:
@@ -84,9 +84,9 @@ relative_to_epoch:
   type: boolean
 {% endconfiguration %}
 
-## Example
+## 사례
 
-To give an example of simulating real world data, a simulated relative humidity sensor (in %) can be added using the following configuration:
+실제 데이터를 시뮬레이션하는 예제를 제공하기 위해 다음 설정을 사용하여 시뮬레이션 된 상대 습도 센서 (%)를 추가 할 수 있습니다.
 
 ```yaml
 sensor:

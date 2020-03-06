@@ -1,5 +1,5 @@
 ---
-title: Social Blade
+title: 유튜브 실시간 순위(Social Blade)
 description: Instructions on how to set up Social Blade Sensor within Home Assistant.
 logo: socialblade.png
 ha_category:

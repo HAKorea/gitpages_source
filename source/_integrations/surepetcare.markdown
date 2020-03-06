@@ -1,5 +1,5 @@
 ---
-title: Sure Petcare
+title: 슈어 펫케어(Sure Petcare)
 description: Instructions on how to integrate the Sure Petcare cat and pet flaps into Home Assistant.
 logo: sure_petcare.png
 ha_category:

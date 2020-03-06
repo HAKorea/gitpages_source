@@ -1,5 +1,5 @@
 ---
-title: remote_rpi_gpio
+title: 원격 라즈베리파이 GPIO(remote_rpi_gpio)
 description: Instructions on how to integrate the GPIO capability of a Remote Raspberry Pi into Home Assistant.
 logo: raspberry-pi.png
 ha_category:
@@ -10,19 +10,19 @@ ha_release: 0.94
 ha_iot_class: Local Push
 ---
 
-The `rpi_gpio` integration is the base for all related GPIO platforms in Home Assistant. For the platform configurations, please check their corresponding sections.
+`rpi_gpio` 통합구성요소는 Home Assistant의 모든 관련 GPIO 플랫폼의 기본입니다. 플랫폼 설정에 대해서는 해당 섹션을 확인하십시오.
 
-The remote RPi and the control computer where Home Assistant is running must be prepared to run remote_rpi_gpio, see details [here](https://gpiozero.readthedocs.io/en/stable/remote_gpio.html).
+원격 RPi 및 Home Assistant가 실행중인 제어 컴퓨터는 remote_rpi_gpio를 실행할 수 있도록 준비해야합니다. 자세한 내용은 [here](https://gpiozero.readthedocs.io/en/stable/remote_gpio.html)를 참조하십시오.
 
-Note that for virtual environments you may need to set an environment variable when starting the environment to set the pin factory, example:
+가상 환경의 경우 핀 팩토리(pin factory)를 설정하기 위해 환경을 시작할 때 환경 변수를 설정해야 할 수 있습니다. 예를 들면 다음과 같습니다. 
 
 `Environment =  GPIOZERO_PIN_FACTORY=pigpio PIGPIO_ADDR=YOUR_RPi_IP_ADDRESS`
 
 ## Binary Sensor
 
-The `remote_rpi_gpio` binary sensor platform allows you to read sensor values of the GPIOs of a [Remote Raspberry Pi](https://www.raspberrypi.org/).
+`remote_rpi_gpio` 바이너리 센서 플랫폼은 [Remote Raspberry Pi](https://www.raspberrypi.org/)의 GPIO 센서 값을 읽을 수 있게합니다.
 
-To use your Remote Raspberry Pi's GPIO in your installation, add the following to your `configuration.yaml` file:
+설치에서 Remote Raspberry Pi의 GPIO를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -63,13 +63,13 @@ pull_mode:
   default: "`UP`"
 {% endconfiguration %}
 
-For more details about the GPIO layout, visit the Wikipedia [article](https://en.wikipedia.org/wiki/Raspberry_Pi#GPIO_connector) about the Raspberry Pi.
+GPIO 레이아웃에 대한 자세한 내용은 Raspberry Pi에 대한 Wikipedia [article](https://en.wikipedia.org/wiki/Raspberry_Pi#GPIO_connector)를 방문하십시오.
 
 ## Switch
 
-The `remote_rpi_gpio` switch platform allows you to control the GPIOs of a [Remote Raspberry Pi](https://www.raspberrypi.org/).
+`remote_rpi_gpio` 스위치 플랫폼을 사용하면 [Remote Raspberry Pi](https://www.raspberrypi.org/)의 GPIO를 제어 할 수 있습니다.
 
-To use your Remote Raspberry Pi's GPIO in your installation, add the following to your `configuration.yaml` file:
+설치에서 Remote Raspberry Pi의 GPIO를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -102,14 +102,14 @@ invert_logic:
   type: boolean
 {% endconfiguration %}
 
-For more details about the GPIO layout, visit the Wikipedia [article](https://en.wikipedia.org/wiki/Raspberry_Pi#GPIO_connector) about the Raspberry Pi.
+GPIO 레이아웃에 대한 자세한 내용은 Raspberry Pi에 대한 Wikipedia [article](https://en.wikipedia.org/wiki/Raspberry_Pi#GPIO_connector)를 방문하십시오.
 
 <div class='note warning'>
-Note that a pin managed by Home Assistant is expected to be exclusive to Home Assistant.
+홈어시스턴트가 관리하는 핀은 홈어시스턴트 전용입니다.
 </div>
 
-A common question is what does port refer to, this number is the actual GPIO #, not the pin #.
-For example, if you have a relay connected to pin 11 its GPIO # is 17.
+일반적인 질문은 포트가 무엇을 참조하는지 입니다. 이 숫자는 핀 번호가 아닌 실제 GPIO #입니다.
+예를 들어, 핀 11에 연결된 릴레이가 있는 경우 GPIO 번호는 17입니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -120,6 +120,6 @@ switch:
       17: Speaker Relay
 ```
 
-### Troubleshooting
+### 문제 해결
 
-If you receive an error such as `gpiozero.exc.BadPinFactory: Unable to load any default pin factory!` try changing the pinfactory from `pigpio` to `mock`, this addresses a [known issue](https://www.raspberrypi.org/forums/viewtopic.php?p=1417922).
+`gpiozero.exc.BadPinFactory: Unable to load any default pin factory!` 와 같은 오류가 발생하면 pinfactory를 `pigpio`에서 `mock`으로 변경하십시오, 이는 [known issue](https://www.raspberrypi.org/forums/viewtopic.php?p=1417922)를 해결합니다.

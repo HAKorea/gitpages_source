@@ -1,5 +1,5 @@
 ---
-title: Tahoma(타호마)
+title: 타호마(Tahoma)
 description: Instructions on how to integrate Somfy Tahoma devices with Home Assistant.
 logo: tahoma.png
 ha_category:

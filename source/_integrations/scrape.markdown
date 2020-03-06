@@ -1,5 +1,5 @@
 ---
-title: 스크랩
+title: 스크랩(scrape)
 description: Instructions on how to integrate Web scrape sensors into Home Assistant.
 logo: home-assistant.png
 ha_category:

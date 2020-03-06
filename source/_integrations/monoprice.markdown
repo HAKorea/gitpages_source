@@ -1,5 +1,5 @@
 ---
-title: Monoprice 6-Zone Amplifier
+title: 모노프라이스 앰프(Monoprice 6-Zone Amplifier)
 description: Instructions on how to integrate Monoprice 6-Zone Home Audio Controller into Home Assistant.
 logo: monoprice.svg
 ha_category:
@@ -10,9 +10,9 @@ ha_codeowners:
   - '@etsinko'
 ---
 
-The `monoprice` platform allows you to control [Monoprice 6-Zone Amplifier](https://www.monoprice.com/product?p_id=10761) using a serial connection.
+`monoprice` 플랫폼을 사용하면 직렬 연결을 사용하여 [Monoprice 6-Zone Amplifier](https://www.monoprice.com/product?p_id=10761)를 제어할 수 있습니다.
 
-To add a Monoprice device to your installation, add the following to your `configuration.yaml` file:
+Monoprice 장치를 설치에 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -54,11 +54,11 @@ sources:
   type: integer
 {% endconfiguration %}
 
-### Service `monoprice.snapshot`
+### `monoprice.snapshot` 서비스
 
-Take a snapshot of one or more zones' states. This service, and the following one are useful if you want to play a doorbell or notification sound and resume playback afterward. If no `entity_id` is provided, all zones are snapshotted.
+하나 이상의 영역(zone) 상태에 대한 스냅샷(snapshot)을 만듭니다. 이 서비스 및 다음 서비스는 초인종 또는 알림음을 재생하고 나중에 재생을 재개하려는 경우에 유용합니다. `entity_id`가 제공되지 않으면 모든 영역이 스냅샷됩니다.
 
-The following attributes are stored in a snapshot:
+다음 속성이 스냅샷에 저장됩니다.
 - Power status (On/Off)
 - Mute status (On/Off)
 - Volume level
@@ -68,9 +68,9 @@ The following attributes are stored in a snapshot:
 | ---------------------- | -------- | ----------- |
 | `entity_id` | yes | String or list of strings that point at `entity_id`s of zones.
 
-### Service `monoprice.restore`
+### `monoprice.restore` 서비스
 
-Restore a previously taken snapshot of one or more speakers. If no `entity_id` is provided, all zones are restored.
+하나 혹은 하나 이상의 스피커에서 이전에 찍은 스냅샷을 복원합니다. `entity_id`가 제공되지 않으면 모든 영역이 복원됩니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |

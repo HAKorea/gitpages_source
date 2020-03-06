@@ -1,5 +1,5 @@
 ---
-title: "REST"
+title: "REST 알림"
 description: "Instructions on how to add RESTful notifications to Home Assistant."
 logo: restful.png
 ha_category:

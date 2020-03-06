@@ -1,5 +1,5 @@
 ---
-title: Syslog
+title: 시스로그(Syslog)
 description: Instructions on how to add syslog notifications to Home Assistant.
 logo: syslog.png
 ha_category:
@@ -9,9 +9,9 @@ ha_codeowners:
   - '@fabaff'
 ---
 
-The `syslog` platform allows you to deliver notifications from Home Assistant to the local syslog.
+`syslog` 플랫폼을 사용하면 Home Assistant에서 로컬 syslog로 알림을 전달할 수 있습니다.
 
-To enable syslog notifications in your installation, add the following to your `configuration.yaml` file:
+설치에서 syslog 알림을 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -43,7 +43,7 @@ priority:
   type: string
 {% endconfiguration %}
 
-The table contains values to use in your `configuration.yaml` file.
+이 테이블에는 `configuration.yaml` 파일에서 사용할 값이 들어 있습니다.
 
 | facility  | option  | priority  |
 | :-------- |:--------| :---------|
@@ -66,6 +66,6 @@ The table contains values to use in your `configuration.yaml` file.
 | local6    |         |           |
 | local7    |         |           |
 
-For details about facility, option, and priority please consult the [wikipedia article](https://en.wikipedia.org/wiki/Syslog) and [RFC 3164](https://tools.ietf.org/html/rfc3164).
+시설, 옵션 및 우선 순위에 대한 자세한 내용은 [wikipedia article](https://en.wikipedia.org/wiki/Syslog) 및 [RFC 3164](https://tools.ietf.org/html/rfc3164)를 참조하십시오. 
 
-To use notifications, please see the [getting started with automation page](/getting-started/automation/).
+알림을 사용하려면 [자동화 시작 페이지](/getting-started/automation/).를 참조하십시오.

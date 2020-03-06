@@ -1,5 +1,5 @@
 ---
-title: Minecraft Server
+title: 마인크래프트 서버
 description: Instructions on how to integrate a Minecraft server into Home Assistant.
 logo: minecraft.png
 ha_release: 0.106
@@ -13,26 +13,25 @@ ha_codeowners:
   - '@elmurato'
 ---
 
-Minecraft servers allow players to play the sandbox video game [Minecraft](https://www.minecraft.net) by [Mojang AB](https://www.mojang.com) online or via a local area network with other players. The `Minecraft Server` integration lets you retrieve information from a Minecraft server (Java edition) within Home Assistant.
+Minecraft 서버를 통해 플레이어는 온라인 또는 다른 플레이어와의 로컬 네트워크를 통해 [Mojang AB](https://www.mojang.com)의 샌드 박스 비디오 게임 [Minecraft](https://www.minecraft.net)을 재생할 수 있습니다. `Minecraft Server` 통합구성요소를 통해 Home Assistant 내의 Minecraft 서버 (Java 에디션)에서 정보를 검색 할 수 있습니다.
 
 <div class='note'>
-The server must be version 1.7 or higher, since older versions don't expose any information.
+이전 버전은 정보를 공개하지 않으므로 서버 버전은 1.7 이상이어야합니다
 </div>
 
-## Configuration via the frontend
+## 프론트엔드를 경유한 설정
 
-In the settings go to `Integrations`, click on the `+` sign to add an integration and click on **Minecraft Server**.
-After completing the configuration flow, the Minecraft Server integration will be available.
+설정에서 `통합구성요소`로 이동하여 `+`기호를 클릭하고 통합구성요소를 추가하고 **Minecraft Server**를 클릭하십시오. 설정 절차가 완료하면 Minecraft Server 연동을 사용할 수 있습니다.
 
 ## Binary sensors
 
-This integration provides a binary sensor for the following information from a Minecraft server:
+이 통합구성요소는 Minecraft 서버에서 다음 정보에 대한 이진 센서를 제공합니다.
 
-- Connection status
+- 연결 상태
 
 ## Sensors
 
-This integration provides sensors for the following information from a Minecraft server:
+이 통합구성요소는 Minecraft 서버에서 다음 정보에 대한 센서를 제공합니다.
 
 - Latency time
 - Version

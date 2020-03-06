@@ -1,5 +1,5 @@
 ---
-title: Sentry
+title: 센트리(Sentry)
 description: Record errors to Sentry.
 logo: sentry.svg
 ha_category:

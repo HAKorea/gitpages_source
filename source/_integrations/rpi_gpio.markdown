@@ -1,5 +1,5 @@
 ---
-title: Raspberry Pi GPIO
+title: 라즈베리파이 GPIO
 description: Instructions on how to integrate the GPIO capability of a Raspberry Pi into Home Assistant.
 logo: raspberry-pi.png
 ha_category:

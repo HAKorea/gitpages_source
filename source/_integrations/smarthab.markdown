@@ -1,5 +1,5 @@
 ---
-title: SmartHab
+title: 스마트햅(SmartHab)
 description: Instructions on how to integrate SmartHab devices into Home Assistant
 logo: smarthab.png
 ha_release: 0.94

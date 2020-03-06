@@ -1,5 +1,5 @@
 ---
-title: Seven Segments OCR
+title: 디지털디스플레이 OCR(7 Segments OCR)
 description: Instructions on how to use OCR for seven segments displays into Home Assistant.
 logo: home-assistant.png
 ha_category:
@@ -9,15 +9,15 @@ og_image: /images/screenshots/ssocr.png
 ha_iot_class: Local Polling
 ---
 
-The `seven_segments` image processing platform allows you to read physical seven segments displays through Home Assistant. [`ssocr`](https://www.unix-ag.uni-kl.de/~auerswal/ssocr/) is used to extract the value shown on the display which is observed by a [camera](/integrations/camera/).
+`seven_segments` 이미지 처리 플랫폼을 사용하면 Home Assistant를 통해 실제 7 개의 세그먼트 디스플레이를 읽을 수 있습니다. [`ssocr`](https://www.unix-ag.uni-kl.de/~auerswal/ssocr/)은 [camera](/integrations/camera/)에 의해 관찰되는 디스플레이에 표시된 값을 추출하는데 사용됩니다. 
 
 <div class='note'>
 
-If you are using [Hass.io](/hassio/) then just move forward to the configuration as all requirements are already fulfilled.
+[Hass.io](/hassio/)를 사용하는 경우 모든 요구 사항이 이미 충족되었으므로 설정으로 이동하십시오.
 
 </div>
 
-`ssocr` needs to be available on your system. Check the installation instruction below:
+시스템에서 `ssocr`을 사용할 수 있어야합니다. 아래 설치 지침을 확인하십시오.
 
 ```bash
 sudo dnf -y install imlib2-devel # Fedora
@@ -30,7 +30,7 @@ sudo make PREFIX=/usr install # On most systems
 make deb # (Optional) This allows you to make a deb so that you apt is aware of ssocr
 ```
 
-To enable the OCR of a seven segment display in your installation, add the following to your `configuration.yaml` file:
+설치시 7 세그먼트 디스플레이의 OCR을 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -100,9 +100,9 @@ source:
       type: string
 {% endconfiguration %}
 
-### Setup process
+### 셋업 프로세스
 
-It's suggested that the first attempt to determine the needed parameters is using `ssocr` directly. This may require a couple of iterations to get the result
+필요한 파라미터를 결정하는 첫 번째 시도는 `ssocr`을 직접 사용하는 것입니다. 결과를 얻으려면 몇 번의 반복이 필요할 수 있습니다.
 
 ```bash
 $ ssocr -D erosion crop 390 250 490 280 -t 20 -d 4 seven-seg.png
@@ -131,7 +131,7 @@ image_processing:
   <img src='{{site_root}}/images/screenshots/ssocr.png' />
 </p>
 
-With the help of a [template sensor](/integrations/template), the value can be shown as badge.
+[template sensor](/integrations/template)의 도움으로 값을 badge로 표시 할 수 있습니다.
 
 {% raw %}
 

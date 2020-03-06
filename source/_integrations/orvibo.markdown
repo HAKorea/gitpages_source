@@ -1,5 +1,5 @@
 ---
-title: Orvibo
+title: 오르비보(orvibo)
 description: Instructions on how to integrate Orvibo sockets within Home Assistant.
 logo: orvibo.png
 ha_category:
@@ -9,13 +9,13 @@ ha_release: 0.8
 
 <div class='note warning'>
 
-Please be aware that the product ORVIBO WIFI SMART SOCKET S20 (LGS-20) has been recalled by the European authorities due to safety concerns. For more information, please visit [RAPEX information](https://ec.europa.eu/consumers/consumers_safety/safety_products/rapex/alerts/?event=viewProduct&reference=A12/1577/15&lng=en).
+안전 문제로 인해 유럽 당국은 ORVIBO WIFI SMART SOCKET S20 (LGS-20) 제품을 리콜했습니다. 자세한 내용은 [RAPEX 정보](https://ec.europa.eu/consumers/consumers_safety/safety_products/rapex/alerts/?event=viewProduct&reference=A12/1577/15&lng=en)를 방문하십시오.
 
 </div>
 
-The `orvibo` switch platform allows you to toggle your Orvibo S20 Wifi Smart Sockets.
+`orvibo` 스위치 플랫폼을 사용하면 Orvibo S20 Wifi 스마트 소켓을 토글 할 수 있습니다.
 
-To automatically discover Orvibo sockets on your network:
+네트워크에서 Orvibo 소켓을 자동으로 감지하려면 다음을 수행하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -23,7 +23,7 @@ switch:
   - platform: orvibo
 ```
 
-To specify Orvibo sockets and skip discovery:
+Orvibo 소켓을 지정하고 discovery를 건너 뛰려면 다음을 수행하십시오.
 
 ```yaml
 # Example configuration.yaml entry

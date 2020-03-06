@@ -1,5 +1,5 @@
 ---
-title: System Monitor
+title: 시스템 모니터(System Monitor)
 description: Instructions on how to monitor the Home Assistant host.
 logo: system_monitor.png
 ha_category:
@@ -8,12 +8,9 @@ ha_release: pre 0.7
 ha_iot_class: Local Push
 ---
 
-The `systemmonitor` sensor platform allows you to monitor disk usage,
-memory usage, CPU usage, and running processes. This platform has superseded the
-process integration which is now considered deprecated.
+`systemmonitor` 센서 플랫폼을 사용하면 디스크 사용량, 메모리 사용량, CPU 사용량 및 실행중인 프로세스를 모니터링 할 수 있습니다. 이 플랫폼은 더 이상 사용되지 않는 프로세스 통합구성요소를 대체했습니다.
 
-To add this platform to your installation,
-add the following to your `configuration.yaml` file:
+이 플랫폼을 설치에 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -39,8 +36,7 @@ resources:
       required: false
 {% endconfiguration %}
 
-The table contains types and their argument to use in your `configuration.yaml`
-file.
+이 테이블에는`configuration.yaml` 파일에서 사용할 유형과 인수가 포함되어 있습니다.
 
 | Type (`type:`)         | Argument (`arg:`)         |
 | :--------------------- |:--------------------------|
@@ -68,20 +64,17 @@ file.
 | process                | Binary, e.g., `octave-cli` |
 | last_boot              |                           |
 
-## Linux specific
+## 리눅스에 한함
 
-To retrieve all available network interfaces on a Linux System, execute the
-`ifconfig` command.
+Linux 시스템에서 사용 가능한 모든 네트워크 인터페이스를 검색하려면 `ifconfig` 명령을 실행하십시오.
 
 ```bash
 ifconfig -a | sed 's/[ \t].*//;/^$/d'
 ```
 
-## Windows specific
+## 윈도우에 한함
 
-When running this platform on Microsoft Windows, Typically,
-the default interface would be called `Local Area Connection`,
-so your configuration might look like:
+Microsoft Windows에서이 플랫폼을 실행할 때 일반적으로 기본 인터페이스의 이름은 `Local Area Connection`이며 설정은 다음과 같습니다.
 
 ```yaml
 sensor:
@@ -91,7 +84,7 @@ sensor:
         arg: 'Local Area Connection'
 ```
 
-If you need to use some other interface, open a command line prompt and type `ipconfig` to list all interface names. For example a wireless connection output from `ipconfig` might look like:
+다른 인터페이스를 사용해야하는 경우 명령 행 프롬프트를 열고 `ipconfig`를 입력하여 모든 인터페이스 이름을 나열하십시오. 예를 들어 `ipconfig`의 무선 연결 출력은 다음과 같습니다.
 
 ```bash
 Wireless LAN adapter Wireless Network Connection:
@@ -100,4 +93,4 @@ Wireless LAN adapter Wireless Network Connection:
    Connection-specific DNS Suffix  . :
 ```
 
-Where the name is `Wireless Network Connection`.
+이름이 `Wireless Network Connection` 인 경우

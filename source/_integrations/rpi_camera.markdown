@@ -1,5 +1,5 @@
 ---
-title: Raspberry Pi Camera
+title: 라즈베리파이 Camera
 description: Instructions on how to integrate Raspberry Pi within Home Assistant.
 logo: raspberry-pi.png
 ha_category:

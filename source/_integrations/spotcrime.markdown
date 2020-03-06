@@ -1,5 +1,5 @@
 ---
-title: Spot Crime
+title: 스팟 크라임(Spot Crime)
 description: Instructions on how to integrate spotcrime.com into Home Assistant.
 ha_release: 0.65
 ha_iot_class: Cloud Polling

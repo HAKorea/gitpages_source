@@ -1,5 +1,5 @@
 ---
-title: Sighthound
+title: 사이트하운드(Sighthound)
 description: Detect people with Sighthound Cloud.
 logo: sighthound-logo.png
 ha_category:

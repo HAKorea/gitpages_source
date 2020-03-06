@@ -1,5 +1,5 @@
 ---
-title: iRobot Roomba
+title: 아이로봇 룸바(irobot Roomba)
 description: Instructions on how to integrate your Wi-Fi enabled Roomba within Home Assistant.
 logo: irobot_roomba.png
 ha_category:
@@ -9,19 +9,19 @@ ha_codeowners:
   - '@pschmitt'
 ---
 
-The `roomba` integration allows you to control your [iRobot Roomba](https://www.irobot.com/For-the-Home/Vacuuming/Roomba.aspx) vacuum.
+`roomba` 통합구성요소를 통해 [iRobot Roomba](https://www.irobot.com/For-the-Home/Vacuuming/Roomba.aspx) vacuum을 제어 할 수 있습니다.
 
 <p class='img'>
 <img src='/images/screenshots/more-info-dialog-roomba.png' />
 </p>
 
 <div class='note'>
-This platform has been tested and is confirmed to be working with the iRobot Roomba 980 and 890 models, but should also work fine with any Wi-Fi enabled Roomba like the 690 or the 960.
+이 플랫폼은 테스트를 거쳐 iRobot Roomba 980 및 890 모델과 작동하는 것으로 확인되었지만 690 또는 960과 같은 Wi-Fi 지원 Roomba에서도 잘 작동합니다.
 </div>
 
-## Configuration
+## 설정
 
-To add your Roomba vacuum to your installation, add the following to your `configuration.yaml` file:
+Roomba vacuum을 설치에 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -69,10 +69,10 @@ delay:
 
 <div class='note'>
 
-The Roomba's MQTT server only allows a single connection. Enabling continuous mode will force the App to connect via the cloud to your Roomba. [More info here](https://github.com/NickWaterton/Roomba980-Python#firmware-2xx-notes)
+Roomba의 MQTT 서버는 단일 연결만 허용합니다. 연속 모드를 활성화하면 클라우드를 통해 앱이 Roomba에 연결됩니다. [More info here](https://github.com/NickWaterton/Roomba980-Python#firmware-2xx-notes)
 
 </div>
 
 ### Retrieving your credentials
 
-Please refer to [here](https://github.com/NickWaterton/Roomba980-Python#how-to-get-your-usernameblid-and-password) or [here](https://github.com/koalazak/dorita980#how-to-get-your-usernameblid-and-password) to retrieve both the BLID (username) and the password.
+BLID (사용자 이름)와 비밀번호를 모두 검색하려면 [여기](https://github.com/NickWaterton/Roomba980-Python#how-to-get-your-usernameblid-and-password) 또는 [여기](https://github.com/koalazak/dorita980#how-to-get-your-usernameblid-and-password)를 참조하십시오.

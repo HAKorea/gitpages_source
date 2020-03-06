@@ -1,5 +1,5 @@
 ---
-title: Netdata
+title: 넷데이터(Netdata)
 description: Instructions on how to integrate Netdata within Home Assistant.
 logo: netdata.png
 ha_category:

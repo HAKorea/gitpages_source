@@ -1,5 +1,5 @@
 ---
-title: OpenEVSE
+title: OpenEVSE(개방형전기차충전)
 description: Instructions on how to integrate a WiFi-equipped OpenEVSE Charging station with Home Assistant
 logo: openevse.png
 ha_category:

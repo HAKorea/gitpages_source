@@ -1,5 +1,5 @@
 ---
-title: Threshold
+title: 임계값(Threshold)
 description: Instructions on how to integrate threshold binary sensors into Home Assistant.
 logo: home-assistant.png
 ha_category:
@@ -11,11 +11,11 @@ ha_codeowners:
   - '@fabaff'
 ---
 
-The `threshold` binary sensor platform observes the state of another sensor. If the value is below (`lower`) or higher (`upper`) than the given threshold then state of the threshold sensor is changed. It support also a range if `lower` and `upper` are given.
+`threshold` 이진 센서 플랫폼은 다른 센서의 상태를 관찰합니다. 값이 주어진 임계값보다 낮거나(`lower`) 높거나( `upper`)하면 임계값 센서의 상태가 변경됩니다. `lower`와 `upper`가 주어지면 범위를 지원합니다.
 
-If the sensor is configured with no hysteresis and the sensor value is equal to the threshold, the sensor is turned off since it is not `lower` or `upper` with respect to the threshold.
+센서가 히스테리시스(탄력성)없이 설정되고 센서값이 임계값과 같으면 임계값에 대해 센서가 `lower` 또는 `upper`가 아니기 때문에 센서가 꺼집니다. 
 
-It's an alternative to the template binary sensor's `value_template:` to get the abnormal/too high/too low states.
+비정상적으로 너무 높거나 너무 낮은 상태를 얻기 위해 템플릿 바이너리 센서의 `value_template :` 에 대한 대안입니다.
 
 {% raw %}
 ```yaml
@@ -23,9 +23,9 @@ It's an alternative to the template binary sensor's `value_template:` to get the
 ```
 {% endraw %}
 
-## Configuration
+## 설정
 
-To enable the threshold sensor, add the following lines to your `configuration.yaml`:
+임계값 센서를 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

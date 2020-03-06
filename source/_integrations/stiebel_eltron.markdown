@@ -1,5 +1,5 @@
 ---
-title: STIEBEL ELTRON
+title: 스티벨엘트론(STIEBEL ELTRON)
 description: Instructions on how to integrate STIEBEL ELTRON integral ventilation and heat pump units into Home Assistant.
 logo: stiebel_eltron.png
 ha_category:

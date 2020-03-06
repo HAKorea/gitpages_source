@@ -1,5 +1,5 @@
 ---
-title: Scenes
+title: 장면(Scenes)
 description: Instructions on how to setup scenes within Home Assistant.
 logo: home-assistant.png
 ha_category:

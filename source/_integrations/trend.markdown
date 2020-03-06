@@ -1,5 +1,5 @@
 ---
-title: Trend
+title: 트렌드(Trend)
 description: Instructions on how to integrate Trend binary sensors into Home Assistant.
 ha_category:
   - Utility
@@ -9,16 +9,11 @@ ha_iot_class: Local Push
 ha_quality_scale: internal
 ---
 
-The `trend` platform allows you to create sensors which show the trend of
-numeric `state` or`state_attributes` from other entities. This sensor requires
-at least two updates of the underlying sensor to establish a trend.
-Thus it can take some time to show an accurate state. It can be useful
-as part of automations, where you want to base an action on a trend.
+`trend` 플랫폼을 사용하면 다른 엔티티의 숫자 `state` 또는 `state_attributes` 경향을 보여주는 센서를 만들 수 있습니다. 이 센서에는 트렌드(경향)를 설정하기 위해 기본 센서의 업데이트가 두 개 이상 필요합니다. 따라서 정확한 상태를 표시하는 데 시간이 걸릴 수 있습니다. 트렌드를 기반으로 작업을 수행하려는 자동화의 일부로 유용할 수 있습니다.
 
-## Configuration
+## 설정
 
-To enable Trend binary sensors in your installation,
-add the following to your `configuration.yaml` file:
+트렌드 바이너리 센서를 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -82,27 +77,21 @@ sensors:
       default: 0
 {% endconfiguration %}
 
-## Using Multiple Samples
+## 여러 샘플 사용하기
 
-If the optional `sample_duration` and `max_samples` parameters are specified
-then multiple samples can be stored and used to detect long-term trends.
+선택적 `sample_duration` 및 `max_samples` 매개 변수를 지정하면 여러 샘플을 저장하고 장기 트렌드를 감지하는 데 사용할 수 있습니다.
 
-Each time the state changes, a new sample is stored along with the sample time.
-Samples older than `sample_duration` seconds will be discarded.
+상태가 변경 될 때마다 새로운 샘플이 샘플시간과 함께 저장됩니다. `sample_duration`시간 보다 오래된 샘플은 폐기됩니다. 
 
-A trend line is then fitted to the available samples, and the gradient of this
-line is compared to `min_gradient` to determine the state of the trend sensor.
-The gradient is measured in sensor units per second - so if you want to know
-when the temperature is falling by 2 degrees per hour,
-use a gradient of (-2) / (60 x 60) = -0.00055
+그런 다음 트렌드 라인을 사용 가능한 샘플에 맞추고 이 라인의 gradient를 `min_gradient`와 비교하여 트렌드 센서의 상태를 결정합니다. gradient는 초당 센서 단위로 측정됩니다. - 온도가 시간당 2 도씩 떨어지는 시점을 알고 싶다면 (-2) / (60 x 60) = -0.00055의 gradient를 사용하십시오.
 
-The current number of stored samples is displayed on the States page.
+저장된 샘플의 현재 수가 상태 페이지에 표시됩니다.
 
-## Examples
+## 사례
 
-In this section you find some real-life examples of how to use this sensor.
+이 섹션에는이 센서를 사용하는 방법에 대한 실제 예가 나와 있습니다.
 
-This example indicates `true` if the sun is still rising:
+이 예는 태양이 여전히 떠오르면 `true`를 나타냅니다.
 
 ```yaml
 binary_sensor:
@@ -113,9 +102,7 @@ binary_sensor:
         attribute: elevation
 ```
 
-This example creates two sensors to indicate whether the temperature is
-rising or falling at a rate of at least 3 degrees an hour,
-and collects samples over a two hour period:
+이 예에서는 온도가 시간당 최소 3도 이상으로 상승 또는 하강하는지를 나타내는 두 개의 센서를 만들고 2 시간 동안 샘플을 수집합니다.
 
 ```yaml
 binary_sensor:

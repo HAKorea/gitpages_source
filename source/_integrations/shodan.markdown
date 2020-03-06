@@ -1,5 +1,5 @@
 ---
-title: Shodan
+title: 사물인터넷 검색엔진(Shodan)
 description: Instructions on how to integrate Shodan sensors into Home Assistant.
 ha_category:
   - Sensor
@@ -10,14 +10,11 @@ ha_codeowners:
   - '@fabaff'
 ---
 
-The `shodan` sensor platform is displaying the total of result of a
-[Shodan](https://www.shodan.io/) query.
+`shodan` 센서 플랫폼은 [Shodan](https://www.shodan.io/) 쿼리 결과의 총계를 표시합니다.
 
-Use "Show API Key" in the upper right corner when you are logged in or got to
-your "My Account" page to retrieve your API key.
+로그인하거나 "My Account" 페이지에서 오른쪽 상단 모서리에 있는 "Show API Key"를 사용하여 API 키를 검색하십시오.
 
-To enable this sensor, add the following lines to your `configuration.yaml`
-file:
+이 센서를 활성화하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry

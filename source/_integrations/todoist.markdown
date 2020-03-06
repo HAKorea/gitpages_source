@@ -1,5 +1,5 @@
 ---
-title: Todoist
+title: 투두이스트(Todoist)
 description: Instructions on how to integrate Todoist into Home Assistant.
 logo: todoist.png
 ha_category:
@@ -10,15 +10,15 @@ ha_codeowners:
   - '@boralyl'
 ---
 
-This platform allows you to connect to your [Todoist Projects](https://todoist.com) and generate binary sensors. A different sensor will be created for each individual project, or you can specify "custom" projects which match against criteria you set (more on that below). These sensors will be `on` if you have a task due in that project or `off` if all the tasks in the project are completed or if the project doesn't have any tasks at all. All tasks get updated roughly every 15 minutes.
+이 플랫폼을 사용하면 [Todoist Projects](https://todoist.com)에 연결하고 이진 센서를 생성할 수 있습니다. 각 개별 프로젝트마다 다른 센서가 생성되거나 설정한 기준과 일치하는 "custom" 프로젝트를 지정할 수 있습니다 (아래에서 자세히 설명). 이 센서는 해당 프로젝트로 인해 작업이 있는 경우 `on` 또는 프로젝트의 모든 작업이 완료되었거나 프로젝트에 전혀 작업이 없는 경우 `off`가 됩니다.
 
-### Prerequisites
+### 전제 조건
 
-You need to determine your Todoist API token. This is fairly simple to do; just go [to the Integrations section on your Todoist settings page](https://todoist.com/Users/viewPrefs?page=authorizations) and find the section labeled "API token" at the bottom of the page. Copy that token and use it in your configuration file.
+Todoist API 토큰을 결정해야합니다. 이는 매우 간단합니다. [Todoist 설정 페이지의 통합 섹션](https://todoist.com/Users/viewPrefs?page=authorizations)으로 이동하여 페이지 하단에서 "API token"이라는 섹션을 찾으십시오. 해당 토큰을 복사하여 설정 파일에서 사용하십시오.
 
-### Basic Setup
+### 기본 설정
 
-To integrate Todoist in Home Assistant, add the following section to your `configuration.yaml` file:
+홈어시스턴트에 Todoist를 통합하려면 `configuration.yaml` 파일에 다음 섹션을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -55,8 +55,8 @@ custom_projects:
       type: list
 {% endconfiguration %}
 
-### Custom Projects
-Creating custom projects is super-easy and quite powerful. All you need to run the basic Todoist projects is your API token, but if you wanted, you could go even deeper. Here's an example:
+### Custom 프로젝트
+사용자 정의 프로젝트를 만드는 것은 매우 쉽고 강력합니다. 기본 Todoist 프로젝트를 실행하기 위해서는 API 토큰 만 있으면 되지만 원하는 경우 더 깊이 갈 수 있습니다. 예를 들면 다음과 같습니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -77,55 +77,55 @@ calendar:
           - Calculus II
 ```
 
-(See [here](/docs/configuration/secrets/) for more details about what that `!secret` does -- it's not exclusive to Todoist, and can help keep your API keys and passwords a little safer!)
+(`!secret`의 기능에 대한 자세한 내용은 [here](/docs/configuration/secrets/)를 참조하십시오. -- Todoist에만 해당되는 것이 아니며 API 키와 암호를 좀 더 안전하게 유지할 수 있습니다!)
 
-As you can see, there are 4 custom projects here:
+보시다시피, 여기 4 개의 커스텀 프로젝트가 있습니다 :
 
-- A project containing *all* of the tasks on this account.
+- 이 계정의 *모든* 작업을 포함하는 프로젝트.
 
-- A project containing *all* the tasks on this account that are due today.
+- 오늘 예정된 이 계정의 *모든* 작업을 포함하는 프로젝트. 
 
-- A project containing *all* the tasks on this account due within the next week.
+- 다음주 내에 이 계정의 *모든* 작업을 포함하는 프로젝트 .
 
-- A project containing everything with the label "Homework", taking only 2 projects into account.
+- 2개의 프로젝트 만 고려하여 “Homework”이라는 레이블이 있는 모든 것을 포함하는 프로젝트.
 
-You can mix-and-match these attributes to create all sorts of custom projects. You can even use [IFTTT](https://ifttt.com/todoist) to create a task with a certain label, then have Home Assistant do some kind of automation when a task with that label comes due.
+이러한 속성을 혼합하여 일치시켜 모든 종류의 사용자 정의 프로젝트를 만들 수 있습니다. [IFTTT](https://ifttt.com/todoist)를 사용하여 특정 레이블이 있는 작업을 만든 다음 해당 레이블이 있는 작업이 발생할 때 홈어시스턴트가 일종의 자동화를 수행하도록 할 수도 있습니다.
 
-Home Assistant does its best to [determine what task in each project is "most" important](https://github.com/home-assistant/home-assistant/blob/master/homeassistant/components/todoist/calendar.py), and it's that task which has its state reported. You can access the other tasks you have due soon via the `all_tasks` array (see below).
+홈어시스턴트는 [각 프로젝트에서 어떤 작업이 "가장 중요한" 지 결정하기 위해 최선을 다 하며](https://github.com/home-assistant/home-assistant/blob/master/homeassistant/components/todoist/calendar.py), 그 상태가 보고된 작업입니다. `all_tasks` 배열을 통해 곧 다른 작업에 액세스 할 수 있습니다 (아래 참조).
 
-### Sensor attributes
+### Sensor 속성
 
- - **offset_reached**: Not used.
+ - **offset_reached**: 사용되지 않습니다.
 
- - **all_day**: `True` if the reported task doesn't have a due date. `False` if there is a due date set.
+ - **all_day**: `True` if the reported task doesn't have a due date. `False` if there is a due date set. 보고 된 작업에 기한이없는 경우 `True`. 기한이 설정되어 있으면 `False`.
 
- - **message**: The title of the "most important" task coming up in this project.
+ - **message**: 이 프로젝트에서 “가장 중요한” 과제의 제목.
 
- - **description**: A URL pointing to the task on the Todoist website.
+ - **description**: Todoist 웹 사이트에서 작업을 가리키는 URL.
 
- - **location**: Not used.
+ - **location**: 사용되지 않습니다.
 
- - **start_time**: The last time the Todoist integration got updated. Usually within the last 15 minutes.
+ - **start_time**: Todoist 통합이 마지막으로 업데이트 된 시간입니다. 일반적으로 지난 15 분 이내
 
- - **end_time**: When the task is due.
+ - **end_time**: 작업 마감일.
 
-- **all_tasks**: A list of all tasks in this project, sorted from most important to least important.
+- **all_tasks**: 이 프로젝트의 모든 작업 목록은 가장 중요한 것부터 가장 중요하지 않은 것으로 정렬됩니다.
 
-- **priority**: The priority Todoist reports this task as having. 1 means lowest priority, 4 means highest. Note that this is the **opposite** of how things are displayed in the Todoist app!
+- **priority**: 우선 순위 Todoist는 이 작업을 가지고 있다고 보고합니다. 1은 가장 낮은 우선 순위를 의미하고 4는 가장 높은 우선 순위를 의미합니다. 이것이 Todoist 앱에 표시되는 방식의 **반대**입니다!
 
-- **task_comments**: Any comments added to this task.
+- **task_comments**: 이 작업에 추가된 의견.
 
-- **task_labels**: All labels associated with this task.
+- **task_labels**: 이 작업과 관련된 모든 레이블.
 
-- **overdue**: Whether the reported task is past its due date.
+- **overdue**: 보고된 작업이 마감일이 지났는지 여부.
 
-- **due_today**: Whether the reported task is due today.
+- **due_today**: 보고된 작업이 오늘 예정인지 여부.
 
-### Services
+### 서비스
 
-Todoist also comes with access to a service, `todoist.new_task`. This service can be used to create a new Todoist task. You can specify labels and a project, or you can leave them blank, and the task will go to your "Inbox" project.
+Todoist에는 서비스에 대한 액세스도 제공됩니다. `todoist.new_task`. 이 서비스는 새로운 Todoist 작업을 만드는 데 사용할 수 있습니다. 레이블과 프로젝트를 지정하거나 비워둘 수 있으며 작업은 "Inbox" 프로젝트로 이동합니다.
 
-Here are two example JSON payloads resulting in the same task:
+다음은 동일한 작업을 수행하는 두 개의 JSON 페이로드 예제입니다.
 
 ```json
 {
@@ -148,19 +148,18 @@ Here are two example JSON payloads resulting in the same task:
 }
 ```
 
-- **content** (*Required*): The name of the task you want to create.
+- **content** (*Required*): 만들려는 작업의 이름.
 
-- **project** (*Optional*): The project to put the task in.
+- **project** (*Optional*): 작업을 넣을 프로젝트.
 
-- **labels** (*Optional*): Any labels you want to add to the task, separated by commas.
+- **labels** (*Optional*): 작업에 추가하려는 모든 레이블을 쉼표로 구분.
 
-- **priority** (*Optional*): The priority of the task, from 1-4. Again, 1 means least important, and 4 means most important.
+- **priority** (*Optional*): 1-4의 태스크 우선 순위. 다시 말하지만 1은 가장 중요하지 않으며 4는 가장 중요합니다.
 
-- **due_date_string** (*Optional*): When the task should be due, in [natural language](https://support.todoist.com/hc/en-us/articles/205325931-Dates-and-Times). Mutually exclusive with `due_date`
+- **due_date_string** (*Optional*): [natural language](https://support.todoist.com/hc/en-us/articles/205325931-Dates-and-Times)로 과제가 예정된 시점. `due_date`와 상호 배타적
 
-- **due_date_lang** (*Optional*): When `due_date_string` is set, it is possible to set the language.
-  Valid languages are: `en`, `da`, `pl`, `zh`, `ko`, `de`, `pt`, `ja`, `it`, `fr`, `sv`, `ru`, `es`, `nl`
+- **due_date_lang** (*Optional*): `due_date_string`이 설정되면 언어를 설정할 수 있습니다. 사용가능한 언어들 : `en`, `da`, `pl`, `zh`, `ko`, `de`, `pt`, `ja`, `it`, `fr`, `sv`, `ru`, `es`, `nl`
 
-- **due_date** (*Optional*): When the task should be due, in either YYYY-MM-DD format or YYYY-MM-DD HH:MM format. Mutually exclusive with `due_date_string`.
+- **due_date** (*Optional*): 작업 기한이 YYYY-MM-DD 형식 또는 YYYY-MM-DD HH:MM 형식이어야합니다. `due_date_string`과 상호 배타적입니다.
 
-Note that there's (currently) no way to mark tasks as done through Home Assistant; task names do not necessarily have to be unique, so you could find yourself in a situation where you close the wrong task.
+(현재) 홈어시스턴트를 통해 수행한 작업을 표시할 수있는 방법이 없습니다. 작업 이름은 반드시 고유하지 않아도 되므로 잘못된 작업을 닫는 상황에 처할 수 있습니다.

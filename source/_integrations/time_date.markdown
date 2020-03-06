@@ -1,5 +1,5 @@
 ---
-title: 시간 & 날짜
+title: 시간 & 날짜(time & date)
 description: Instructions on how to integrate the time and the date within Home Assistant.
 logo: home-assistant.png
 ha_category:

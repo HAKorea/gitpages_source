@@ -1,5 +1,5 @@
 ---
-title: SleepIQ
+title: 슬립아이큐(SleepIQ)
 description: Instructions for how to integrate SleepIQ beds within Home Assistant.
 logo: sleepiq.png
 ha_category:
@@ -10,15 +10,15 @@ ha_release: 0.29
 ha_iot_class: Local Polling
 ---
 
-The SleepIQ implementation lets you view sensor data from [SleepIQ by SleepNumber](https://www.sleepnumber.com/sleepiq-sleep-tracker). In particular, it lets you see the occupancy and current SleepNumber (ie current firmness) of each side of a SleepNumber bed.
+SleepIQ 구현을 통해 [SleepIQ by SleepNumber](https://www.sleepnumber.com/sleepiq-sleep-tracker)의 센서 데이터를 볼 수 있습니다
 
-## Setup
+## 셋업
 
-You will need an account on [SleepIQ](https://sleepiq.sleepnumber.com/) to use this component.
+이 구성 요소를 사용하려면 [SleepIQ] (https://sleepiq.sleepnumber.com/)에 계정이 필요합니다.
 
-## Configuration
+## 설정
 
-To set it up, add the following information to your `configuration.yaml` file:
+설정하려면 `configuration.yaml` 파일에 다음 정보를 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry

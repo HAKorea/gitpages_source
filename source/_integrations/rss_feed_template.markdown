@@ -1,5 +1,5 @@
 ---
-title: RSS Feed Template
+title: RSS 피드 템플릿
 description: Use this integration to generate RSS feeds showing your latest data.
 logo: home-assistant.png
 ha_category:
@@ -8,9 +8,9 @@ ha_release: 0.44
 ha_quality_scale: internal
 ---
 
-The `rss_feed_template` integration can export any information from Home Assistant as a static RSS feed. This can be used to display that information on many types of devices using an RSS reader. While native apps for Home Assistant are not widely available, native RSS readers exist for almost any platform.
+`rss_feed_template` 통합구성요소는 Home Assistant의 모든 정보를 정적 RSS 피드로 내보낼 수 있습니다. RSS 리더를 사용하여 여러 유형의 장치에 해당 정보를 표시하는 데 사용할 수 있습니다. 홈어시스턴트 용 기본 앱은 널리 사용되지 않지만 기본 RSS 리더는 거의 모든 플랫폼에 존재합니다. 
 
-For example, on Android, the app "Simple RSS Widget" can be used to display temperatures on the home screen.
+예를 들어, Android에서는 "Simple RSS Widget"앱을 사용하여 홈 화면에 온도를 표시 할 수 있습니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -27,7 +27,7 @@ rss_feed_template:
 
 {% configuration %}
 requires_api_password:
-  description: If true and an API password is set, the password must be passed via '?api_password=...' parameter.
+  description: If true and an API password is set, the password must be passed via '?api_password=...' parameter. 
   required: false
   default: true
   type: boolean

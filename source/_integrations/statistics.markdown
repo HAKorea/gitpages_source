@@ -1,5 +1,5 @@
 ---
-title: Statistics
+title: 통계(Statistics)
 description: Instructions on how to integrate statistical sensors into Home Assistant.
 logo: home-assistant.png
 ha_category:
@@ -11,14 +11,13 @@ ha_codeowners:
   - '@fabaff'
 ---
 
-The `statistics` sensor platform consumes the state from other sensors. It exports the `mean` value as state and the following values as attributes: `count`, `mean`, `median`, `stdev`, `variance`, `total`, `min_value`, `max_value`, `min_age`, `max_age`, `change`, `average_change` and `change_rate`. If it's a binary sensor then only state changes are counted.
+`statistics` 센서 플랫폼은 다른 센서의 상태를 사용합니다. `mean` 값을 상태로 내보내고 다음 값을 속성으로 내 보냅니다. : `count`, `mean`, `median`, `stdev`, `variance`, `total`, `min_value`, `max_value`, `min_age`, `max_age`, `change`, `average_change`, `change_rate`. 이진 센서인 경우 상태 변경만 적용됩니다.
 
-If you are running the [recorder](/integrations/recorder/) component, on startup the data is read from the database. So after a restart of the platform, you will immediately have data available. If you're using the [history](/integrations/history/) component, this will automatically also start the `recorder` integration on startup.
-If you are *not* running the `recorder` component, it can take time till the sensor starts to work because a couple of attributes need more than one value to do the calculation.
+[recorder](/integrations/recorder/) 구성 요소를 실행중인 경우 시작시 데이터베이스에서 데이터를 읽습니다. 따라서 플랫폼을 다시 시작하면 즉시 데이터를 사용할 수 있습니다. [history](/integrations/history/) 구성 요소를 사용하는 경우 시작시 `recorder` 통합구성요소도 자동으로 시작됩니다. `recorder` 구성 요소를 실행하지 *않는* 경우, 계산을 수행하기 위해 두 개의 속성이 둘 이상의 값을 필요로하기 때문에 센서가 작동하기 시작하는데 시간이 걸릴 수 있습니다.
 
-## Configuration
+## 설정
 
-To enable the statistics sensor, add the following lines to your `configuration.yaml`:
+통계 센서를 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오 :
 
 ```yaml
 # enable the recorder integration (optional)

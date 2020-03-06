@@ -1,5 +1,5 @@
 ---
-title: Tile
+title: 타일(Tile)
 description: Instructions on how to use Tile to track devices in Home Assistant.
 logo: tile.png
 ha_release: 0.58
@@ -10,12 +10,9 @@ ha_codeowners:
   - '@bachya'
 ---
 
-The `tile` platform allows Home Assistant to utilize [Tile® Bluetooth trackers](https://www.thetileapp.com).
-The official Tile mobile app handles the actual tracking of Tile devices using
-the mobile device's Bluetooth and GPS.
+`tile` 플랫폼을 통해 Home Assistant는 [Tile® Bluetooth 추적기](https://www.thetileapp.com)를 활용할 수 있습니다. 공식 Tile 모바일 앱은 모바일 장치의 Bluetooth 및 GPS를 사용하여 Tile 장치의 실제 추적을 처리합니다.
 
-To integrate Tile into Home Assistant, add the following section to your
-`configuration.yaml` file:
+Tile을 Home Assistant에 통합하려면 `configuration.yaml` 파일에 다음 섹션을 추가하십시오.
 
 ```yaml
 device_tracker:
@@ -44,4 +41,4 @@ device_tracker:
     default: false
 {% endconfiguration %}
 
-Multiple Tile accounts can be used by repeating the `tile` platform. Tracked devices in `known_devices.yaml` will be named `tile_<tile_identifier>`. You can find `<tile_identifier>` in the Tile app by clicking on a tile.
+`tile` 플랫폼을 반복하여 여러 개의 타일 계정을 사용할 수 있습니다. `known_devices.yaml`에서 추적된 장치의 이름은 `tile_<tile_identifier>`입니다. Tile 앱에서 타일을 클릭하면 `<tile_identifier>`를 찾을 수 있습니다.

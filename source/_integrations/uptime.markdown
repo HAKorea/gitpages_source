@@ -1,5 +1,5 @@
 ---
-title: Uptime
+title: 가동시간(Uptime)
 description: Instructions on how to integrate an uptime sensor into Home Assistant.
 ha_category:
   - Utility
@@ -9,11 +9,11 @@ ha_release: 0.56
 ha_quality_scale: internal
 ---
 
-The `uptime` sensor platform displays the time since the last Home Assistant restart.
+`uptime` 센서 플랫폼은 마지막 홈어시스턴트 재시작 이후의 시간을 표시합니다.
 
-## Configuration
+## 설정
 
-To enable this sensor, add the following lines to your `configuration.yaml`:
+이 센서를 활성화하려면`configuration.yaml`에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry

@@ -1,5 +1,5 @@
 ---
-title: Ubiquiti UniFi AP
+title: 유비쿼티 UniFi AP
 description: Instructions on how to use a Unifi WAP as a device tracker.
 logo: ubiquiti.png
 ha_category:

@@ -1,5 +1,5 @@
 ---
-title: SendGrid
+title: 센드그리드(SendGrid)
 description: Instructions on how to add email notifications via SendGrid to Home Assistant.
 logo: sendgrid.png
 ha_category:

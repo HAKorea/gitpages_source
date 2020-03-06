@@ -1,5 +1,5 @@
 ---
-title: "샤오미 Sensor"
+title: "샤오미 센서"
 description: "Instructions on how to setup the Xiaomi sensor within Home Assistant."
 logo: xiaomi.png
 ha_category:

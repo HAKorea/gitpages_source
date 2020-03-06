@@ -1,5 +1,5 @@
 ---
-title: SkyBell
+title: 스카이벨(SkyBell)
 description: Instructions on how to integrate your Skybell HD devices within Home Assistant.
 logo: skybell.png
 ha_category:
@@ -13,9 +13,9 @@ ha_release: 0.56
 ha_iot_class: Cloud Polling
 ---
 
-The `skybell` implementation allows you to integrate your [Skybell.com](http://www.skybell.com/) doorbells in Home Assistant.
+`skybell` 구현을 통해 [Skybell.com](http://www.skybell.com/) 초인종을 Home Assistant에 통합할 수 있습니다.
 
-There is currently support for the following device types within Home Assistant:
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - [Binary Sensor](/integrations/skybell/#binary-sensor)
 - [Camera](/integrations/skybell/#camera)
@@ -23,11 +23,11 @@ There is currently support for the following device types within Home Assistant:
 - [Sensor](/integrations/skybell/#sensor)
 - [Switch](/integrations/skybell/#switch)
 
-Currently only the Skybell HD is supported by this platform.
+현재 이 플랫폼에서는 Skybell HD 만 지원합니다.
 
-## Configuration
+## 설정
 
-To enable devices set up with your [Skybell.com](http://www.skybell.com/) account, add the following to your `configuration.yaml` file:
+[Skybell.com](http://www.skybell.com/) 계정으로 설정한 장치를 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -49,7 +49,7 @@ password:
 
 ### Binary Sensor
 
-Once you have enabled the Skybell component, add the following to your `configuration.yaml` file:
+Skybell 컴포넌트를 활성화 한 후 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -74,7 +74,7 @@ monitored_conditions:
 
 ### Camera
 
-Once you have enabled the Skybell component, add the following to your `configuration.yaml` file:
+Skybell 컴포넌트를 활성화한 후 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -97,13 +97,12 @@ activity_name:
   type: string
 {% endconfiguration %}
 
-#### Camera Types
+#### Camera 타입
 
-There are two available camera types "Avatar", which is the default, displays the Skybell avatar image.
-It is periodically updated with a fresh image. The other type is "Activity", which displays a snapshot from
-the latest event (motion, bell, or on demand) captured by the camera. You may show either camera, or both, by
-specifying its name under monitored_condtions. It's recommended, but not required, to set either avatar_name or activity_name
-if you are showing both cameras so you can tell them apart. The name will be appended to the skybell device name.
+스카이벨 아바타 이미지를 표시하는 두 가지 카메라 유형이 있는데, "Avatar"가 기본값입니다.
+정기적으로 새로운 이미지로 업데이트됩니다. 다른 유형은 "Activity"으로, 카메라가 캡처한 최신 이벤트 (동작, 벨 또는 주문형)의 스냅샷을 표시합니다. monitor_condtions에 이름을 지정하여 카메라 혹은 둘 다 표시 할 수 있습니다.
+avatar_name 또는 activity_name을 설정하는 것이 좋지만 필수는 아닙니다.
+두 대의 카메라를 모두 보여주는 경우 구별할 수 있습니다. 이름은 skybell 장치 이름에 추가됩니다.
 
 ```yaml
 # Example configuration.yaml with both images
@@ -125,7 +124,7 @@ camera:
 
 ### Light
 
-Once you have enabled the Skybell component, add the following to your `configuration.yaml` file:
+Skybell 컴포넌트를 활성화 한 후 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -135,7 +134,7 @@ light:
 
 ### Sensor
 
-Once you have enabled the Skybell component, add the following to your `configuration.yaml` file:
+Skybell 컴포넌트를 활성화 한 후 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -157,7 +156,7 @@ monitored_conditions:
 
 ### Switch
 
-Once you have enabled the Skybell component, add the following to your `configuration.yaml` file:
+Skybell 컴포넌트를 활성화 한 후 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

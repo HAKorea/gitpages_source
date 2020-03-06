@@ -1,5 +1,5 @@
 ---
-title: TP-Link Kasa Smart
+title: TP-Link 카사 스마트
 description: Instructions on integrating TP-Link Smart Home Devices to Home Assistant.
 logo: tp-link.png
 ha_category:

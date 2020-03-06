@@ -1,5 +1,5 @@
 ---
-title: TCP
+title: TCP 직접 연결
 description: Instructions on how to set up TCP within Home Assistant.
 logo: tcp_ip.png
 ha_category:

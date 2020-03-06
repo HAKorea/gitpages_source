@@ -1,5 +1,5 @@
 ---
-title: System Log
+title: 시스템 로그(System Log)
 description: Summary of errors and warnings in Home Assistant during runtime.
 logo: home-assistant.png
 ha_category:
@@ -8,11 +8,12 @@ ha_release: 0.58
 ha_quality_scale: internal
 ---
 
-The `system_log` integration stores information about all logged errors and warnings in Home Assistant. All collected information is accessible directly in the frontend, just navigate to the `Info` section under `Developer Tools`. In order to not overload Home Assistant with log data, only the 50 last errors and warnings will be stored. Older entries are automatically discarded from the log. It is possible to change the number of stored log entries using the parameter `max_entries`.
+`system_log` 통합구성요소는 기록된 모든 오류 및 경고에 대한 정보를 Home Assistant에 저장합니다. 수집된 모든 정보는 프론트 엔드에서 직접 액세스 할 수 있으며 `개발자 도구` 아래의 `info` 섹션으로 이동하십시오. 로그 데이터로 Home Assistant에 과부하를 주지 않기 위해 마지막 50 개의 오류 및 경고만 저장됩니다. 이전 항목은 자동으로 로그에서 삭제됩니다. `max_entries` 매개 변수를 사용하여 저장된 로그 항목 수를 변경할 수 있습니다.
 
-## Configuration
+## 설정
 
-This integration is automatically loaded by the `frontend` (so no need to do anything if you are using the frontend). If you are not doing so, or if you wish to change a parameter, add the following section to your `configuration.yaml` file:
+이 통합구성요소는 `프론트 엔드`에 의해 자동으로 로드됩니다. (프런트 엔드를 사용하는 경우 아무 것도 할 필요가 없습니다.) 그렇게하지 않거나 매개 변수를 변경하려면 `configuration.yaml` 파일에 다음 섹션을 추가하십시오.
+
 
 ```yaml
 system_log:
@@ -32,15 +33,15 @@ fire_event:
   default: false
 {% endconfiguration %}
 
-## Services
+## 서비스
 
-### Service `clear`
+### `clear` 서비스
 
-To manually clear the system log, call this service.
+시스템 로그를 수동으로 지우려면, 이 서비스를 호출하십시오.
 
-### Service `write`
+### `write` 서비스
 
-Write a log entry
+로그 항목을 작성하십시오. 
 
 | Service data attribute | Optional | Description                                                                     |
 | ---------------------- | -------- | ------------------------------------------------------------------------------- |
@@ -48,9 +49,9 @@ Write a log entry
 | `level`                | yes      | Log level: debug, info, warning, error, critical. Defaults to 'error'.          |
 | `logger`               | yes      | Logger name under which to log the message. Defaults to 'system_log.external'.  |
 
-## Events
+## 이벤트
 
-Errors and warnings are posted as the event `system_log_event`, so it is possible to write automations that trigger whenever a warning or error occurs. The following information is included in each event:
+오류 및 경고는 이벤트 `system_log_event`로 게시되므로 경고 또는 오류가 발생할 때마다 트리거되는 자동화를 작성할 수 있습니다. 각 이벤트에는 다음 정보가 포함됩니다.
 
 | Field       | Description                                                                 |
 |-------------|-----------------------------------------------------------------------------|
@@ -60,7 +61,7 @@ Errors and warnings are posted as the event `system_log_event`, so it is possibl
 | `message`   | Descriptive message of the error, e.g., "Error handling request".           |
 | `timestamp` | Unix timestamp with as a double, e.g., 1517241010.237416.                   |
 
-Live examples of these events can be found in the Home Assistant log file (`home-assistant.log`) or by just looking in the system log. An example could, for instance, look like this:
+이러한 이벤트의 실제 예는 홈어시스턴트 로그 파일 (`home-assistant.log`) 또는 시스템 로그를 보면 찾을 수 있습니다. 예를 들면 다음과 같습니다.
 
 ```text
 2019-02-14 16:20:35 ERROR (MainThread) [homeassistant.loader] Unable to find integration system_healt
@@ -70,15 +71,15 @@ Traceback (most recent call last):
 [...]
 ```
 
-The message ("Unable to find integration system_healt"), source (`homeassistant.loader`) and level (`ERROR`) can easily be extracted from the log. The exact timestamp and if there is a stack trace that's shown as well. Here is another error caused by the `google_map` integration with additional output present.
+메시지 ( "Unable to find integration system_healt"), source (`homeassistant.loader`) 및 level (`ERROR`)을 로그에서 쉽게 추출할 수 있습니다.  정확한 타임 스탬프가 나오고, stack trace가 있을 경우 또한 출력됩니다. 추가 출력이 존재하는 `google_map` 통합구성요소로 인한 또 다른 오류가 있습니다.
 
-## Examples 
+## 사례 
 
-Here are some examples using the events posted by `system_log`. `fire_event` must be set to `true` for these to work.
+다음은 `system_log`에 의해 게시된 이벤트를 사용하는 몇 가지 예입니다. 이것이 작동하려면 `fire_event`를 `true`로 설정해야합니다.
 
-### Counting Number of Warnings
+### Warnings의 갯수를 카운트
 
-This will create a `counter` that increases every time a warning is logged:
+warning이 기록될 때마다 증가하는 `counter`가 생성됩니다.
 
 ```yaml
 counter:
@@ -98,9 +99,9 @@ automation:
       entity_id: counter.warning_counter
 ```
 
-### Conditional Messages
+### 조건 메시지(Conditional Messages)
 
-This automation will create a persistent notification whenever an error or warning is logged that has the word "service" in the message:
+이 자동화는 메시지에 "service"라는 오류나 경고가 기록될 때마다 지속적인 알림을 생성합니다.
 
 {% raw %}
 ```yaml
@@ -120,9 +121,9 @@ automation:
 ```
 {% endraw %}
 
-### Writing to log
+### 로그로 기록하기
 
-This automation will create a new log entry when the door is opened:
+이 자동화는 문이 열릴 때 새 로그 항목을 작성합니다.
 
 {% raw %}
 ```yaml

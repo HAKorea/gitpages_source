@@ -1,5 +1,5 @@
 ---
-title: Vivotek
+title: 비보텍(Vivotek)
 description: Instructions on how to integrate Vivotek cameras within Home Assistant.
 ha_category:
   - Camera
@@ -10,13 +10,14 @@ ha_codeowners:
   - '@HarlemSquirrel'
 ---
 
-The `vivotek` camera platform allows you to integrate a Vivotek IP camera into Home Assistant.
+`vivotek` 카메라 플랫폼을 사용하면 Vivotek IP 카메라를 Home Assistant에 통합할 수 있습니다.
 
-Home Assistant will serve the images via its server, making it possible to view your IP cameras while outside of your network. The endpoint is `/api/camera_proxy/camera.[name]`.
+홈어시스턴트는 서버를 통해 이미지를 제공하므로 네트워크 외부에있는 동안 IP 카메라를 볼 수 있습니다. 
+엔드 포인트는 `/api/camera_proxy/camera.[name]`입니다.
 
-## Configuration
+## 설정
 
-To enable this camera in your installation, add the following to your `configuration.yaml` file:
+설치시 이 카메라를 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -77,7 +78,7 @@ stream_path:
   type: string
 {% endconfiguration %}
 
-### Advanced configuration
+### 고급 설정
 
 ```yaml
 # Example configuration.yaml entry
@@ -95,15 +96,15 @@ camera:
     stream_path: live2.sdp
 ```
 
-### Services
+### 서비스
 
-Once loaded, the `camera` platform will expose services that can be called to perform various actions.
+`camera` 플랫폼은 일단 로드되면 다양한 작업을 수행하기 위해 호출할 수 있는 서비스를 노출합니다.
 
-Available services: `enable_motion_detection`, `disable_motion_detection`, `snapshot`, and `play_stream`.
+사용가능한 서비스 : `enable_motion_detection`, `disable_motion_detection`, `snapshot`, `play_stream`.
 
-#### Service `play_stream`
+#### `play_stream` 서비스
 
-Play a live stream from a camera to selected media player(s). Requires [`stream`](/integrations/stream) integration to be set up.
+카메라에서 선택한 미디어 플레이어로 라이브 스트림을 재생합니다. [`stream`](/integrations/stream) 통합구성요소를 설정해야합니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
@@ -121,34 +122,34 @@ action:
     media_player: media_player.chromecast
 ```
 
-#### Service `enable_motion_detection`
+#### `enable_motion_detection` 서비스
 
-Enable motion detection in a camera. Currently, this will enable the first event configured on the camera.
+카메라에서 움직임 감지를 활성화합니다. 현재 이는 카메라에 설정된 첫 번째 이벤트를 활성화합니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
 | `entity_id`            |     yes  | Name(s) of entities to enable motion detection, e.g., `camera.front_door_camera`. |
 
-#### Service `disable_motion_detection`
+#### `disable_motion_detection` 서비스
 
-Disable the motion detection in a camera. Currently, this will disable the first event configured on the camera.
+카메라에서 동작 감지를 비활성화합니다. 현재 카메라에 설정된 첫 번째 이벤트가 비활성화됩니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
 | `entity_id`            |     yes  | Name(s) of entities to disable motion detection, e.g., `camera.front_door_camera`. |
 
-#### Service `snapshot`
+#### `snapshot` 서비스
 
-Take a snapshot from a camera.
+카메라에서 스냅샷을 찍습니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
 | `entity_id`            |      no  | Name(s) of entities to create a snapshot from, e.g., `camera.front_door_camera`. |
 | `filename`             |      no  | Template of a file name. Variable is `entity_id`, e.g., {% raw %}`/tmp/snapshot_{{ entity_id }}`{% endraw %}. |
 
-The path part of `filename` must be an entry in the `whitelist_external_dirs` in your [`homeassistant:`](/docs/configuration/basic/) section of your `configuration.yaml` file.
+`filename`의 경로 부분은 `configuration.yaml` 파일의 [`homeassistant :`](/docs/configuration/basic/) 섹션에있는 `whitelist_external_dirs`의 항목이어야합니다.
 
-For example, the following action is an automation that would take a snapshot from "front_door_camera" and save it to /tmp with a timestamped filename.
+예를 들어 다음 작업은 "front_door_camera"에서 스냅샷을 찍어 타임 스탬프가 지정된 파일 이름으로 /tmp에 저장하는 자동화입니다.
 
 {% raw %}
 ```yaml

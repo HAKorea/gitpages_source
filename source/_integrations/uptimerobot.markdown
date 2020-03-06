@@ -1,5 +1,5 @@
 ---
-title: Uptime Robot
+title: 업타임로봇(Uptime Robot)
 description: Instructions on how to set up Uptime Robot within Home Assistant.
 logo: uptimerobot.png
 ha_category:
@@ -10,11 +10,11 @@ ha_codeowners:
   - '@ludeeus'
 ---
 
-The `uptimerobot` binary sensor platform allows you get the status for all of your monitors from your account on [Uptime Robot]( https://uptimerobot.com).
+`uptimerobot` 바이너리 센서 플랫폼을 사용하면 [Uptime Robot](https://uptimerobot.com)의 계정에서 모든 모니터의 상태를 확인할 수 있습니다
 
-## Configuration
+## 설정
 
-To enable the sensor, add the following lines to your `configuration.yaml`:
+센서를 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -30,6 +30,6 @@ api_key:
   type: string
 {% endconfiguration %}
 
-All the data will be fetched from [Uptime Robot](https://uptimerobot.com).
+모든 데이터는 [Uptime Robot](https://uptimerobot.com)에서 가져옵니다.
 
-To get your API key, go to [My Settings](https://uptimerobot.com/dashboard#mySettings) on the Uptime Robot website, at the bottom you will find your "Main API Key".
+API 키를 얻으려면 Uptime Robot 웹 사이트의 [My Settings](https://uptimerobot.com/dashboard#mySettings)로 이동하십시오. 맨 아래에는 "Main API Key"가 있습니다.

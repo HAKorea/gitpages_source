@@ -1,5 +1,5 @@
 ---
-title: Samsung Smart TV
+title: 삼성 스마트 TV
 description: Instructions on how to integrate a Samsung Smart TV into Home Assistant.
 logo: samsung.png
 ha_category:
@@ -10,15 +10,20 @@ ha_codeowners:
   - '@escoand'
 ---
 
-The `samsungtv` platform allows you to control a [Samsung Smart TV](https://www.samsung.com/uk/tvs/all-tvs/).
+`samsungtv` 플랫폼을 사용하면 [Samsung Smart TV](https://www.samsung.com/uk/tvs/all-tvs/)를 제어 할 수 있습니다.
 
-### Setup
+### 셋업
 
-When the TV is first connected, you will need to accept Home Assistant on the TV to allow communication.
+TV가 처음 연결되면 TV에서 홈어시스턴트를 수락하여 통신을 허용해야합니다.
 
-### Configuration
+보통은 `discovery` 통합구성요소가 동작하는 상태이므로 자동으로 홈어시스턴트에 `삼성 TV`가 나타납니다. 
+하지만 `discovery`를 비활성화 시킨 상태에서 아래와 같은 UI에서 쉽게 셋업 가능합니다. 
 
-To add a TV to your installation without relying on the [discovery component](/integrations/discovery/), add the following to your `configuration.yaml` file:
+그럴 경우 홈어시스턴트 UI화면에서 **설정** -> **통합구성요소** -> **통합구성요소** **`+`** 추가를 선택하면 `삼성 TV`를 추가할 수 있습니다. 최근에는 별도 아래 설정을 하지 않더라도 한번에 연동할 수 있습니다. 
+
+### 설정
+
+[discovery component](/integrations/discovery/)에 의존하지 않고 TV를 설치에 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -57,17 +62,17 @@ broadcast_address:
   type: string
 {% endconfiguration %}
 
-### Supported models
+### 지원 모델
 
-If your model is not on the list then give it a test, if everything works correctly then add it to the list on [GitHub](https://github.com/home-assistant/home-assistant.io/tree/current/source/_integrations/samsungtv.markdown).
+모델이 목록에없는 경우 테스트를 수행하고 모든 것이 올바르게 작동하면 [GitHub](https://github.com/home-assistant/home-assistant.io/tree/current/source/_integrations/samsungtv.markdown)의 목록에 추가하십시오
 
 #### Naming
 
-The first letter (U, P, L, H & K) represent the screen type, e.g., LED or Plasma. The second letter represents the region, E is Europe, N is North America and A is Asia & Australia. The two numbers following that represent the screen size. If you add your model remember to remove these first 4 characters before adding to the list.
+첫 글자 (U, P, L, H & K)는 화면 유형 (예: LED 또는 플라즈마)을 나타냅니다. 두 번째 문자는 지역을 나타내며 E는 유럽, N은 북미, A는 아시아 및 호주입니다. 다음 두 숫자는 화면 크기를 나타냅니다. 모델을 추가하는 경우 목록에 추가하기 전에 처음 4자를 제거하십시오.
 
-For example: for model `UN55NU7100`, the `UN55` would mean it's an LED, North American, 55 inch TV, and the model number listed below would be the remainder: `NU7100`.
+예를 들어, 모델 `UN55NU7100`의 경우, `UN55`는 LED, 북미, 55 인치 TV이며 아래에 나열된 모델 번호는 `NU7100`입니다.
 
-#### Models tested and working
+#### 실험완료하고 동작하는 모델들
 
 - C7700
 - D5500
@@ -117,7 +122,7 @@ For example: for model `UN55NU7100`, the `UN55` would mean it's an LED, North Am
 - UE49KU6470 (port must be set to 8001, On/Off, Forward/Backward, Volume are OK, but no Play button)
 - UE46ES5500 (partially supported, turn on doesn't work)
 
-#### Models tested but not yet working
+#### 테스트했지만 동작하지 않았던 모델들
 
 - J5200 - Unable to see state and unable to control
 - J5500 - State is always "on" and unable to control (but port 8001 *is* open)
@@ -140,12 +145,11 @@ For example: for model `UN55NU7100`, the `UN55` would mean it's an LED, North Am
 
 None of the 2014 (H) and 2015 (J) model series (e.g., J5200) will work, since Samsung have used a different (encrypted) type of interface for these.
 
-### Usage
+### 사용법
 
-#### Changing channels
+#### 채널 전환
 
-Changing channels can be done by calling the `media_player.play_media` service
-with the following payload:
+다음 페이로드로 `media_player.play_media` 서비스를 호출하여 채널을 변경할 수 있습니다.
 
 ```javascript
 {
@@ -154,24 +158,24 @@ with the following payload:
   "media_content_type": "channel"
 }
 ```
-#### Selecting a source
+#### 소스 선택 (Selecting a source)
 
-Source selection is not yet implemented.
+소스 선택이 아직 구현되지 않았습니다.
 
 ### Hass.io
 
-No additional actions are required
+추가 조치가 필요하지 않습니다
 
 ### Docker
 
-No additional actions are required
+추가 조치가 필요하지 않습니다
 
-### Other install methods
+### 다른 설치 방법
 
-You will need to install the `websocket-client` Python package in your Home Assistant install. This will probably be done with:
+홈어시스턴트 설치에 `websocket-client` Python 패키지를 설치해야합니다. 이는 아마도 다음과 같이 이루어질 것입니다 :
 
 ```bash
 pip3 install websocket-client
 ```
 
-Remembering to activate your venv if you're using a venv install.
+venv 설치를 사용하는 경우 venv를 활성화하는 것을 기억하십시오.

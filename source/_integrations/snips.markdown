@@ -1,5 +1,5 @@
 ---
-title: Snips
+title: Snips(Sonos가 인수)
 description: Instructions on how to integrate Snips within Home Assistant.
 logo: snips.png
 ha_category:

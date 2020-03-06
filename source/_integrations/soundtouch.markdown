@@ -1,5 +1,5 @@
 ---
-title: Bose Soundtouch
+title: 보세 사운드터치(Bose Soundtouch)
 description: Instructions on how to integrate Bose Soundtouch devices into Home Assistant.
 logo: soundtouch.png
 ha_category:
@@ -8,11 +8,11 @@ ha_release: 0.34
 ha_iot_class: Local Polling
 ---
 
-The `soundtouch` platform allows you to control your [Bose Soundtouch](https://www.soundtouch.com/) speakers from Home Assistant.
+`soundtouch` 플랫폼을 통해 Home Assistant에서 [Bose Soundtouch](https://www.soundtouch.com/) 스피커를 제어 할 수 있습니다 .
 
-By default it supports auto-discovery provided by Home Assistant, and you don't need to add anything to your `configuration.yaml`.
+기본적으로 홈 어시스턴트에서 제공하는 자동 검색을 지원하므로 `configuration.yaml`에 추가할 필요가 없습니다 
 
-Alternatively, you can add the following to your `configuration.yaml` file.
+또는 `configuration.yaml` 파일에 다음을 추가 할 수 있습니다.
 
 ```yaml
 # Example configuration.yaml
@@ -23,7 +23,7 @@ media_player:
     name: Soundtouch Living Room
 ```
 
-Or for multiple hosts
+또는 여러 호스트
 
 ```yaml
 # Example configuration.yaml with many devices
@@ -55,7 +55,7 @@ port:
   type: integer
 {% endconfiguration %}
 
-You can switch between one of your 6 pre-configured presets using ```media_player.play_media```
+```media_player.play_media``` 을 사용하여 6 개의 사전 설정된 preset들 중 하나를 전환할 수 있습니다.
 
 ```yaml
 # Play media preset
@@ -66,7 +66,7 @@ You can switch between one of your 6 pre-configured presets using ```media_playe
     media_content_type: PLAYLIST
 ```
 
-You can also play HTTP (not HTTPS) URLs:
+HTTP (HTTPS가 아닌) URL을 재생할 수도 있습니다. :
 
 ```yaml
 # Play media URL
@@ -77,45 +77,43 @@ You can also play HTTP (not HTTPS) URLs:
     media_content_type: MUSIC
 ```
 
-### Text-to-Speech services
+### Text-to-Speech 서비스
 
-You can use TTS services like [Google Text-to-Speech](/integrations/google_translate) or [Amazon Polly](/integrations/amazon_polly) only if your Home Assistant is configured in HTTP and not HTTPS (current device limitation, a firmware upgrade is planned).
+홈어시스턴트가 HTTPS가 아닌 HTTP 로 설정된 경우에만 [Google Text-to-Speech](/integrations/google_translate) 또는 [Amazon Polly](/integrations/amazon_polly)와 같은 TTS services를 사용할 수 있습니다. (현재 장치에 한해, 펌웨어 업그레이드 예정)
 
-A workaround if you want to publish your Home Assistant installation on Internet in SSL is to configure an HTTPS Web Server as a reverse proxy ([nginx](/docs/ecosystem/nginx/) for example) and let your Home Assistant configuration in HTTP on your local network. The Soundtouch devices will be available to access the TTS files in HTTP in local and your configuration will be in HTTPS on the Internet.
+SSL로 인터넷에 Home Assistant 설치를 게시하려는 경우 해결 방법은 HTTPS 웹서버를 리버스 프록시 (예 : [nginx](/docs/ecosystem/nginx/))로 설정하고 Home Assistant 설정을 로컬 네트워크에서 HTTP로 구성하는 것입니다. 이렇게 하면 Soundtouch 장치는 로컬에서 HTTP의 TTS 파일에 액세스 할 수 있으며 인터넷의 설정은 HTTPS입니다.
 
-### Service `play_everywhere`
+### `play_everywhere` 서비스
 
-Create a multi-room (zone) from a master and play same content on all other
- devices (slaves)
+마스터에서 멀티룸 (zone)을 만들고 다른 모든 장치 (슬레이브)에서 동일한 콘텐츠를 재생합니다
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
 | `master` | no | `entity_id` of the master device
 
-### Service `create_zone`
+### `create_zone` 서비스
 
-Create a multi-room (zone) from a master and play on selected slaves
+마스터에서 멀티룸 (zone)을 만들고 선택한 슬레이브에서 재생
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
 | `master` | no | `entity_id` of the master device|
 | `slaves` | no | List of slaves `entity_id`      |
 
-### Service `add_zone_slave`
+### `add_zone_slave` 서비스
 
-Add slave(s) to an existing zone
+기존 영역(zone)에 슬레이브 추가
 
 | Service data attribute | Optional | Description  |
 | ---------------------- | -------- | ------------ |
 | `master` | no | `entity_id` of the master device |
 | `slaves` | no | List of slaves `entity_id` to add|
 
-### Service `remove_zone_slave`
+### `remove_zone_slave` 서비스
 
-Remove slave(s) from an existing zone.
+기존 영역(zone)에서 슬레이브를 제거합니다.
 
-Removing the last slave will destroy the zone. You will need to
-create a new zone in order to be able to add slave(s) again
+마지막 슬레이브를 제거하면 영역이 파괴됩니다. 슬레이브를 다시 추가하려면 새로운 영역을 생성해야합니다
 
 | Service data attribute | Optional | Description      |
 | ---------------------- | -------- | ---------------- |

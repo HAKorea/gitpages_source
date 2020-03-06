@@ -1,5 +1,5 @@
 ---
-title: Slide
+title: Slide 커튼
 description: Instructions on how to integrate the Innovation in Motion Slide covers with Home Assistant.
 logo: slide.png
 ha_category:

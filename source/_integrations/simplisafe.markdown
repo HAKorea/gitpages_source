@@ -1,5 +1,5 @@
 ---
-title: SimpliSafe
+title: 심플리세이프(SimpliSafe)
 description: Instructions on how to integrate SimpliSafe into Home Assistant.
 logo: simplisafe.png
 ha_release: 0.81

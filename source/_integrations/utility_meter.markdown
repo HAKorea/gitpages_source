@@ -1,5 +1,5 @@
 ---
-title: Utility Meter
+title: 유틸리티 미터(Utility Meter)
 description: Instructions on how to integrate the Utility Meter into Home Assistant.
 ha_category:
   - Sensor

@@ -1,5 +1,5 @@
 ---
-title: VLC media player
+title: VLC 미디어 플레이어
 description: Instructions on how to integrate VLC media player into Home Assistant.
 logo: videolan.png
 ha_category:
@@ -8,9 +8,9 @@ ha_release: 0.35
 ha_iot_class: Local Polling
 ---
 
-The `vlc` platform allows you to control [VLC media player](https://www.videolan.org/vlc/index.html).
+`vlc` 플랫폼을 사용하면 [VLC 미디어 플레이어](https://www.videolan.org/vlc/index.html)를 제어 할 수 있습니다.
 
-To add a VLC media player to your installation, add the following to your `configuration.yaml` file:
+VLC 미디어 플레이어를 설치에 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -30,12 +30,13 @@ arguments:
 {% endconfiguration %}
 
 Only the "music" media type is supported for now.
+현재는 "음악" 미디어 유형 만 지원됩니다.
 
-This service will control a background VLC instance, therefore you cannot use this to control a VLC instance launched on your desktop, unlike the Kodi media player for example.
+이 서비스는 백그라운드 VLC 인스턴스를 제어하므로 Kodi 미디어 플레이어와 달리 데스크탑에서 시작된 VLC 인스턴스를 제어하는​​데 사용할 수 없습니다.
 
-## Full configuration
+## 전체 설정
 
-A full configuration for VLC could look like the one below:
+VLC의 전체 설정은 다음과 같습니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -45,22 +46,22 @@ media_player:
     arguments: '--alsa-audio-device=hw:1,0'
 ```
 
-##### Additional configuration on macOS
+##### macOS의 추가 설정
 
-On macOS `python-vlc` won’t find the VLC plugin directory unless you add this to the user’s `.bash_profile` that is running Home Assistant:
+macOS에서 `python-vlc`는 Home Assistant를 실행하는 사용자의 `.bash_profile`에 추가하지 않으면 VLC 플러그인 디렉토리를 찾을 수 없습니다.
 
 ```bash
 export VLC_PLUGIN_PATH=$VLC_PLUGIN_PATH:/Applications/VLC.app/Contents/MacOS/plugins
 ```
 
-##### Additional configuration for Rasperry Pi
+##### Rasperry Pi의 추가 구성
 
-You need to add the `homeassistant` user to the `audio` group:
+`homeassistant` 사용자를`audio` 그룹에 추가해야합니다.
 
 ```bash
 sudo usermod -a -G audio homeassistant
 ```
 
-##### VLC currently not supported with Hass.io
+##### VLC는 현재 Hass.io에서 지원되지 않습니다
 
-According to the forum topic ["How to add VLC into my Hassio"](https://community.home-assistant.io/t/how-to-add-vlc-into-my-hassio/23000/5), it is not possible to install packages like VLC on Hass.io.
+포럼 주제 ["내 Hassio에 VLC를 추가하는 방법"](https://community.home-assistant.io/t/how-to-add-vlc-into-my-hassio/23000/5)에 따르면, Hass.io에는 VLC와 같은 패키지를 설치할 수 없습니다.

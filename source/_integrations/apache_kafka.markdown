@@ -1,5 +1,5 @@
 ---
-title: Apache Kafka
+title: 아파치 카프카(Apache Kafka)
 description: Send data and events to Apache Kafka.
 logo: apache_kafka.png
 ha_category:
@@ -9,14 +9,11 @@ ha_codeowners:
   - '@bachya'
 ---
 
-The `apache_kafka` integration sends all state changes to a
-[Apache Kafka](https://kafka.apache.org/) topic.
+`apache_kafka` 통합구성요소는 모든 상태 변경을 [Apache Kafka](https://kafka.apache.org/) topic으로 보냅니다.
 
-Apache Kafka is a real-time data pipeline that can read and write streams of data. It
-stores its data safely in a distributed, replicated, fault-tolerant cluster.
+Apache Kafka는 데이터 스트림을 읽고 쓸 수있는 실시간 데이터 파이프 라인(real-time data pipeline)입니다. 분산된 복제된 fault-tolerant 클러스터에 데이터를 안전하게 저장합니다.
 
-To use the `apache_kafka` integration in your installation, add the following to your
-`configuration.yaml` file:
+설치시 `apache_kafka` 통합구성요소를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오 :
 
 ```yaml
 apache_kafka:

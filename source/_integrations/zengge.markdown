@@ -1,5 +1,5 @@
 ---
-title: Zengge
+title: 젱게(Zengge)
 description: Instructions on how to integrate Zengge Bluetooth bulbs into Home Assistant.
 logo: zengge.png
 ha_category:
@@ -8,11 +8,11 @@ ha_iot_class: Local Polling
 ha_release: 0.36
 ---
 
-The `zengge` platform allows you to integrate your [Zengge Bluetooth bulbs](http://www.zengge.com/) into Home Assistant.
+`zengge` 플랫폼을 사용하면 [Zengge Bluetooth 전구](http://www.zengge.com/)를 Home Assistant에 통합할 수 있습니다.
 
-## Configuration
+## 설정
 
-To enable the lights, add the following lines to your `configuration.yaml` file:
+조명을 활성화하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry

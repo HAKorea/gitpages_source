@@ -1,15 +1,15 @@
 ---
-title: "Home Assistant/Hass.io porosity"
+title: "Home Assistant/Hass.io 보안에 대한 고찰"
 description: "Use nmap to scan your Home Assistant instance."
 ---
 
-As a large amount of users are running [Hass.io](/hassio/), here we are using a Raspberry Pi 3 B and Hass.io 0.70.0 to show how Home Assistant looks from the network side. This is not a full blown investigation, just a quick overview.
+많은 사용자가 [Hass.io](/hassio/)를 실행함에 따라 여기에서는 Raspberry Pi 3B 및 Hass.io 0.70.0을 사용하여 Home Assistant가 네트워크 쪽에서 어떻게 보이는지 보여줍니다. 이것은 완전한 조사가 아니라 간단한 개요입니다.
 
-The IP address of the Home Assistant machine is 192.168.0.215. The system which is the source of the scans is a machine running Fedora 27 and Nmap 7.60 is used to perform the port scans. Both systems are in the same network.
+홈어시스턴트 시스템의 IP 주소는 192.168.0.215입니다. 스캔 소스인 시스템은 Fedora 27을 실행하는 시스템이며 Nmap 7.60은 포트 스캔을 수행하는 데 사용됩니다. 두 시스템 모두 동일한 네트워크에 있습니다.
 
 ## SSH server Add-on
 
-To get access to Hass.io in secure way, SSH is provided by the [SSH server add-on](/addons/ssh/).
+Hass.io에 안전하게 액세스하기 위해 SSH는 [SSH 서버 애드온](/addons/ssh/)에 의해 제공됩니다.
 
 ```bash
 $ sudo nmap -A -n --reason -Pn -T5 -p1-65535 192.168.0.215
@@ -48,11 +48,11 @@ OS and Service detection performed. Please report any incorrect results at https
 Nmap done: 1 IP address (1 host up) scanned in 726.23 seconds
 ```
 
-That port 22 and 8123 are open was expected. On port 22222 is an additional SSH server running. This port is for [debugging](https://developers.home-assistant.io/docs/en/hassio_debugging.html) and supports only a login with a key. This means that you would need to remove the SD card from your Raspberry Pi, create an `authorized_keys` with your SSH public key in it and put the SD Card back in your Pi to get access.
+포트 22와 8123이 열려있을 것으로 예상되었습니다. 포트 22222에는 추가 SSH 서버가 실행 중입니다. 이 포트는 [debugging](https://developers.home-assistant.io/docs/en/hassio_debugging.html)용이며 키를 사용한 로그인만 지원합니다. 즉, Raspberry Pi에서 SD 카드를 제거하고 SSH 공개키가 있는 `authorized_keys`를 만든 다음 SD 카드를 Pi에 다시 넣어 액세스해야합니다.
 
 ## Mosquitto MQTT broker Add-on
 
-While setting up the [Mosquitto MQTT broker add-on](/addons/mosquitto/) no settings were modified, the add-on was running with the default settings.
+[Mosquitto MQTT 브로커 애드온](/addons/mosquitto/)을 설정하는 동안 설정이 수정되지 않았으며 애드온이 기본 설정으로 실행되었습니다.
 
 ```bash
 $ sudo nmap -A -n --reason -Pn -T5 -p1-65535 192.168.0.215
@@ -93,13 +93,13 @@ OS and Service detection performed. Please report any incorrect results at https
 Nmap done: 1 IP address (1 host up) scanned in 223.76 seconds
 ```
 
-To secure MQTT to consider to use certificates and to specify users with password under `logins:` at least. Use port 1883 only in your local network.
+인증서 사용을 고려하여 MQTT를 보호하고 최소한 `logins : ` 아래에 비밀번호를 가진 사용자를 지정합니다. 로컬 네트워크에서만 포트 1883을 사용하십시오.
 
 ## Samba Add-on
 
-The [Samba add-on](/addons/samba/) enables one to use a Windows system to access the configuration and other shares. Per default there is no user set. To increase your local security we strongly suggest that you set a username and a password and don't allow guests. A sample configuration could look like the one below.
+[Samba 애드온](/addons/samba/)을 사용하면 Windows 시스템을 사용하여 설정 및 다른 공유에 액세스 할 수 있습니다. 기본적으로 사용자 설정은 없습니다. 로컬 보안을 강화하려면 사용자 이름과 비밀번호를 설정하고 guest를 허용하지 않는 것이 좋습니다. 샘플 설정은 다음과 같습니다.
 
-A port scan for Hass.io with this add-on will give you the details.
+이 부가 기능을 사용하여 Hass.io에 대한 포트 스캔으로 세부 정보를 제공합니다.
 
 ```bash
 $ sudo nmap -A -n --reason -Pn -T5 -p1-65535 192.168.0.215
@@ -154,7 +154,7 @@ OS and Service detection performed. Please report any incorrect results at https
 Nmap done: 1 IP address (1 host up) scanned in 727.43 seconds
 ```
 
-139 and 445 are open and it's possible to enumerate the shares. With different tools you will get pretty much the same information.
+139와 445는 공개되어 있으며 주식을 열거 할 수 있습니다. 다른 도구를 사용해도 거의 동일한 정보를 얻을 수 있습니다.
 
 ```bash
 $ smbclient -L //192.168.0.215 -U%
@@ -177,7 +177,7 @@ Reconnecting with SMB1 for workgroup listing.
 	WORKGROUP            HASSIO
 ```
 
-But without username and password you can't get access to the configuration file with the settings shown here.
+그러나 사용자 이름과 비밀번호가 없으면 여기에 표시된 세팅으로 설정 파일에 액세스 할 수 없습니다.
 
 ```json
 [...]

@@ -1,5 +1,5 @@
 ---
-title: Acer Projector
+title: 에이서 프로젝터(Acer Projector)
 description: Instructions on how to integrate Acer Projector switches into Home Assistant.
 logo: acer.png
 ha_category:
@@ -8,11 +8,11 @@ ha_iot_class: Local Polling
 ha_release: 0.19
 ---
 
-The `acer_projector` switch platform allows you to control the state of RS232 connected projectors from [Acer](https://www.acer.com/).
+`acer_projector` 스위치 플랫폼을 사용하면 [Acer](https://www.acer.com/)에서 RS232 연결된 프로젝터의 상태를 제어할 수 있습니다.
 
-## Configuration
+## 설정
 
-To use your Acer Projector in your installation, add the following to your `configuration.yaml` file:
+설치에서 Acer 프로젝터를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

@@ -1,5 +1,5 @@
 ---
-title: AfterShip 해외배송추적
+title: 해외배송추적(Aftership)
 description: Instructions on how to set up AfterShip sensors within Home Assistant.
 logo: aftership.png
 ha_category:

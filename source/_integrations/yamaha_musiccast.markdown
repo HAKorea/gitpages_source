@@ -1,5 +1,5 @@
 ---
-title: 야마하(Yamaha MusicCast)
+title: 야마하 MusicCast
 description: Instructions on how to integrate Yamaha MusicCast Receivers into Home Assistant.
 logo: yamaha.png
 ha_category:
@@ -39,7 +39,7 @@ interval_seconds:
   default: 480
 {% endconfiguration %}
 
-### 지원 사항
+### 지원 동작
 
 현재 이 통합구성요소는 전원 켜기/끄기, 음소거, 볼륨 제어 및 소스 선택을 지원합니다. 재생 및 정지와 같은 재생 컨트롤은 이를 지원하는 소스에서 사용할 수 있습니다.
 

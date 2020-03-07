@@ -1,5 +1,5 @@
 ---
-title: Zestimate
+title: 부동산가치평가(Zestimate)
 description: Instructions on how to integrate the Zestimate sensor into Home Assistant.
 ha_category:
   - Sensor

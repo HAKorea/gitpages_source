@@ -1,5 +1,5 @@
 ---
-title: Waze Travel Time
+title: 웨이즈 트레블 타임(Waze Travel Time)
 description: Instructions on how to add Waze travel time to Home Assistant.
 logo: waze.png
 ha_category:

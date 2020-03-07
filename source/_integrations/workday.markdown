@@ -1,5 +1,5 @@
 ---
-title: Workday
+title: 워크데이(Workday)
 description: Steps to configure the binary workday sensor.
 logo: home-assistant.png
 ha_category:

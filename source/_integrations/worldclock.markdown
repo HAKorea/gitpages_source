@@ -1,5 +1,5 @@
 ---
-title: 세계시간
+title: 세계 시간
 description: Instructions on how to integrate a Worldclock within Home Assistant.
 logo: home-assistant.png
 ha_category:

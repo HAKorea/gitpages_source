@@ -9,7 +9,7 @@ ha_codeowners:
   - '@caronc'
 ---
 
-[Apprise 서비스](https://github.com/caronc/apprise/)는 _거의 모든 알림 플랫폼_ 에 Home Assistant를 열 수 있는 올인원 솔루션입니다. (예 : Amazon SNS, Discord, Telegram, Slack, MSTeams, Twilio 등)
+[Apprise 서비스](https://github.com/caronc/apprise/)는 _거의 모든 알림 플랫폼_ 에 Home Assistant를 연결할 수 있는 올인원 솔루션입니다. (예 : Amazon SNS, Discord, Telegram, Slack, MSTeams, Twilio 등)
 
 Apprise 지원 알림을 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 

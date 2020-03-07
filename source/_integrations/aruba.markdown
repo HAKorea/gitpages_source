@@ -1,5 +1,5 @@
 ---
-title: Aruba
+title: 아루바(Aruba)
 description: Instructions on how to integrate Aruba routers into Home Assistant.
 logo: aruba.png
 ha_category:

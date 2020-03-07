@@ -1,5 +1,5 @@
 ---
-title: AquaLogic
+title: 수영장스파관리(AquaLogic)
 description: Instructions on how to integrate an AquaLogic controller within Home Assistant.
 logo: hayward.png
 ha_category:
@@ -10,16 +10,16 @@ ha_release: '0.80'
 ha_iot_class: Local Push
 ---
 
-The AquaLogic integration provides connectivity to a Hayward/Goldline AquaLogic/ProLogic pool controller. Note that an RS-485 to Ethernet adapter connected to the pool controller is required.
+AquaLogic 통합구성요소는 Hayward/Goldline AquaLogic/ProLogic 수영장 컨트롤러에 대한 연결을 제공합니다. 수영장 컨트롤러에 연결된 RS-485 이더넷 어댑터가 필요합니다.
 
-There is currently support for the following device types within Home Assistant:
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - [Sensor](#sensor)
 - [Switch](#switch)
 
-## Configuration
+## 설정
 
-To add the AquaLogic integration to your installation, add the following to your `configuration.yaml` file:
+AquaLogic 통합구성요소를 설치에 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -41,7 +41,7 @@ port:
 
 ## Sensor
 
-Once you have enabled the AquaLogic component, add the following to your `configuration.yaml` file:
+AquaLogic 컴포넌트를 활성화려하면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -80,7 +80,7 @@ monitored_conditions:
 
 ## Switch
 
-Once you have enabled the AquaLogic component, add the following to your `configuration.yaml` file:
+AquaLogic 컴포넌트를 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

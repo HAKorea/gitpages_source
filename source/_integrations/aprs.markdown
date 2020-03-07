@@ -1,5 +1,5 @@
 ---
-title: APRS
+title: 아마추어무선(APRS)
 description: Instructions on how to use APRS to track devices in Home Assistant.
 logo: aprs.png
 ha_release: 0.95
@@ -9,11 +9,12 @@ ha_codeowners:
   - '@PhilRW'
 ---
 
-The `aprs` [(Automatic Packet Reporting System)](https://en.wikipedia.org/wiki/Automatic_Packet_Reporting_System) device tracker integration connects to the [APRS-IS](http://aprs-is.net/) network for tracking amateur radio devices.
+`aprs` [(Automatic Packet Reporting System)](https://en.wikipedia.org/wiki/Automatic_Packet_Reporting_System) 장치 추적기 통합구성요소는 아마추어 무선 장치 추적을 위한 네트워크인 [APRS-IS](http://aprs-is.net/)에 연결됩니다 
 
-## Configuration
+## 설정
 
-To enable APRS tracking in Home Assistant, add the following section to `configuration.yaml`:
+Home Assistant에서 APRS 추적을 활성화하려면 `configuration.yaml`에 다음 섹션을 추가하십시오.
+
 
 ```yaml
 # Example configuration.yaml entry
@@ -51,5 +52,5 @@ timeout:
   default: 30.0
 {% endconfiguration %}
 
-Verified connections are only required to send data to the APRS-IS network, which the `aprs` platform does not yet do.
-However, you are free to verify your connection if you know your APRS password.
+검증된 연결은 APRS-IS 네트워크로 데이터를 전송하는데만 필요하며, `aprs` 플랫폼은 아직 그렇지 않습니다. 
+그러나 APRS 암호를 알고 있으면 연결을 자유롭게 확인할 수 있습니다.

@@ -1,5 +1,5 @@
 ---
-title: Zabbix
+title: 자빅스(Zabbix)
 description: Instructions on how to integrate Zabbix into Home Assistant.
 logo: zabbix.png
 ha_category:
@@ -9,15 +9,15 @@ ha_release: 0.37
 ha_iot_class: Local Polling
 ---
 
-The `zabbix` integration is the main integration to connect to a [Zabbix](https://www.zabbix.com/) monitoring instance via the Zabbix API.
+`zabbix` 통합구성요소는 Zabbix API를 통해 [Zabbix](https://www.zabbix.com/) 모니터링 인스턴스에 연결하기위한 주요 통합구성요소입니다.
 
-There is currently support for the following device types within Home Assistant:
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - [Sensor](#sensor)
 
-## Configuration
+## 설정
 
-To set the Zabbix integration up, add the following information to your `configuration.yaml` file:
+Zabbix 통합구성요소를 설정하려면 `configuration.yaml` 파일에 다음 정보를 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -50,7 +50,7 @@ password:
   type: string
 {% endconfiguration %}
 
-### Full configuration
+### 전체 설정
 
 ```yaml
 # Example configuration.yaml entry
@@ -64,13 +64,13 @@ zabbix:
 
 ## Sensor
 
-The `zabbix` sensor platform let you monitor the current count of active triggers for your [Zabbix](https://www.zabbix.com/) monitoring instance.
+`zabbix` 센서 플랫폼을 사용하면 [Zabbix](https://www.zabbix.com/) 모니터링 인스턴스에 대한 현재 활성 트리거 수를 모니터링 할 수 있습니다.
 
 <div class='note'>
-You must have the <a href="#configuration">Zabbix component</a> configured to use those sensors.
+해당 센서를 사용하도록 <a href="#configuration">Zabbix component</a>가 설정되어 있어야합니다.
 </div>
 
-To set it up, add the following information to your `configuration.yaml` file:
+설정하려면 `configuration.yaml` 파일에 다음 정보를 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry

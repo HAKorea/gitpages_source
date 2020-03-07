@@ -1,5 +1,5 @@
 ---
-title: Yeelight
+title: 샤오미 Yeelight
 description: Instructions on how to setup Yeelight Wifi devices within Home Assistant.
 logo: yeelight.png
 ha_category:

@@ -1,5 +1,5 @@
 ---
-title: Yamaha MusicCast
+title: 야마하(Yamaha MusicCast)
 description: Instructions on how to integrate Yamaha MusicCast Receivers into Home Assistant.
 logo: yamaha.png
 ha_category:
@@ -9,11 +9,11 @@ ha_codeowners:
   - '@jalmeroth'
 ---
 
-The `yamaha_musiccast` platform allows you to control [Yamaha MusicCast Receivers](https://usa.yamaha.com/products/audio_visual/hifi_components/index.html) from Home Assistant.
+`yamaha_musiccast` 플랫폼을 사용하면 Home Assistant에서 [Yamaha MusicCast Receivers](https://usa.yamaha.com/products/audio_visual/hifi_components/index.html)를 제어할 수 있습니다.
 
-Supported devices are listed on their [German site](https://de.yamaha.com/de/products/contents/audio_visual/musiccast/products.html).
+지원되는 장치는 [독일어 사이트](https://de.yamaha.com/de/products/contents/audio_visual/musiccast/products.html)에 나와 있습니다.
 
-To add a Yamaha MusicCast Receiver to your installation, add the following to your `configuration.yaml` file:
+Yamaha MusicCast Receiver를 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -39,13 +39,13 @@ interval_seconds:
   default: 480
 {% endconfiguration %}
 
-### Supported operations
+### 지원 사항
 
-Currently, this integration supports powering on/off, mute, volume control, and source selection. Playback controls, for instance, play and stop are available for sources that support it.
+현재 이 통합구성요소는 전원 켜기/끄기, 음소거, 볼륨 제어 및 소스 선택을 지원합니다. 재생 및 정지와 같은 재생 컨트롤은 이를 지원하는 소스에서 사용할 수 있습니다.
 
-### Example configuration
+### 설정 사례
 
-A full configuration example will look like the sample below:
+전체 설정 사례는 아래 샘플과 같습니다.
 ```yaml
 # Example configuration.yaml entry
 media_player:

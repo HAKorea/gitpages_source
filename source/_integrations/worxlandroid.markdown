@@ -10,7 +10,7 @@ ha_iot_class: Local Polling
 
 `worxlandroid` 센서 플랫폼을 사용하면 현재 상태, 배터리 레벨 및 오류 상태 Worx Landroid WG796E.1 또는 WG797E를 얻을 수 있습니다.
 
-Worx Landroid 모어를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
+Worx Landroid 잔디깎이기계를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

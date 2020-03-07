@@ -23,7 +23,6 @@ ha_iot_class: Configurable
 
 ## 설정
 
-To enable this platform, add the following lines to your `configuration.yaml`:
 이 플랫폼을 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오 :
 
 ```yaml

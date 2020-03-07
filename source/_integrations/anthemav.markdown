@@ -1,5 +1,5 @@
 ---
-title: Anthem A/V Receivers
+title: Anthem A/V 리시버
 description: Instructions on how to integrate Anthem A/V Receivers into Home Assistant.
 logo: anthemav.png
 ha_category:
@@ -8,9 +8,9 @@ ha_iot_class: Local Push
 ha_release: 0.37
 ---
 
-Both [Anthem]'s current and last generation of A/V Receivers and Processors support IP-based, network control. This Home Assistant platform adds proper "local push" support for any of these receivers on your network.
+[Anthem]의 현재 및 최신 A/V 수신기 및 프로세서는 모두 IP 기반 네트워크 제어를 지원합니다. 이 홈 어시스턴트 플랫폼은 네트워크에서 이러한 수신기에 대한 적절한 "로컬 푸시"지원을 추가합니다.
 
-## Supported Models
+## 지원 모델
 
 * [MRX 520](https://www.anthemav.com/products-current/series=mrx-series-gen3/model=mrx-520/page=overview), [MRX 720](https://www.anthemav.com/products-current/collection=performance/model=mrx-720/page=overview), [MRX 1120](https://www.anthemav.com/products-current/collection=performance/model=mrx-1120/page=overview), and [AVM 60](https://www.anthemav.com/products-current/model=avm-60/page=overview)
 * [MRX 310](https://www.anthemav.com/products-archived/type=av-receiver/model=mrx-310/page=overview), [MRX 510](https://www.anthemav.com/products-archived/series=mrx-series/model=mrx-510/page=overview), [MRX 710](https://www.anthemav.com/products-archived/type=av-receiver/model=mrx-710/page=overview)
@@ -21,7 +21,7 @@ Support is provided through the Python [anthemav] module. Older, RS-232 serial-b
 [anthemav]: https://github.com/nugget/python-anthemav
 
 
-To use your Anthem A/V Receiver in your installation, add the following to your `configuration.yaml` file:
+Anthem A / V 수신기를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -46,17 +46,16 @@ name:
   type: string
 {% endconfiguration %}
 
-## Notes and Limitations
+## 참고 및 제한사항
 
-- The tuner is currently unsupported as are the `media_player` play, pause, prev, and next controls.
-- Enabling this platform will set and enforce "Standby IP Control On" in your Anthem device.  You almost certainly want this.  If you disable it on the device, it will just get re-enabled by Home Assistant.
-- Only Zone 1 is currently supported.
+- 튜너는 현재 `media_player` 재생, 일시 중지, 이전 및 다음 컨트롤과 같은 기능이 지원되지 않습니다.
+- 이 플랫폼을 활성화하면 Anthem 장치에서 "Standby IP Control On"을 설정하고 시행합니다. 당신은 딱 이 기능을 원합니다. 기기에서 사용 중지하면 Home Assistant에서 다시 사용하도록 설정됩니다.
+- 현재 영역(zone) 1 만 지원됩니다.
 
 <div class='note warning'>
 
-This platform will maintain a persistent connection to the network control port which will prevent any other application from communicating with the receiver. This includes the Anthem iOS and Android remote control apps as well as the ARC-2 Anthem Room Calibration software. You will need to disable this platform and restart Home Assistant if you want to use another
-application that makes use of the network control port.
+이 플랫폼은 네트워크 제어 포트에 대한 지속적인 연결을 유지하여 다른 응용 프로그램이 수신기와 통신하지 못하게합니다. 여기에는 Anthem iOS 및 Android 원격 제어 앱과 ARC-2 Anthem Room Calibration 소프트웨어가 포함됩니다. 네트워크 제어 포트를 사용하는 다른 응용 프로그램을 사용하려면 이 플랫폼을 비활성화하고 Home Assistant를 다시 시작해야합니다.
 <br /><br />
-*The underlying Python module has hooks for halting and resuming the network connection but those functions are currently unsupported by the Home Assistant platform.*
+*기본 Python 모듈에는 네트워크 연결을 중지하고 다시 시작하기 위한 후크가 있지만 해당 기능은 현재 Home Assistant 플랫폼에서 지원되지 않습니다.*
 
 </div>

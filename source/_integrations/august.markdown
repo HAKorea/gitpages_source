@@ -1,5 +1,5 @@
 ---
-title: August
+title: August 스마트 도어락
 description: Instructions on how to integrate your August devices into Home Assistant.
 logo: august.png
 ha_category:
@@ -11,9 +11,9 @@ ha_release: 0.64
 ha_iot_class: Cloud Polling
 ---
 
-The `august` integration allows you to integrate your [August](https://august.com/) devices in Home Assistant.
+`august` 통합구성요소를 통해 [August](https://august.com/) 장치를 Home Assistant에 연동할 수 있습니다.
 
-There is currently support for the following device types within Home Assistant:
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - Doorbell
 - Binary Sensor
@@ -21,14 +21,14 @@ There is currently support for the following device types within Home Assistant:
 - Lock
 
 <div class='note'>
-August Lock 2nd Gen will need either August Connect or Doorbell to connect to Home Assistant.
+August Lock 2세대는 홈어시스턴트에 연결하려면 August Connect 또는 Doorbell이 필요합니다.
 </div>
 
-## Configuration
+## 설정
 
-You will need your August login information (username (either phone# or email), and password) to use this module.
+이 모듈을 사용하려면 August 로그인 정보 (사용자 이름(전화번호 또는 이메일) 및 암호)가 필요합니다.
 
-To set it up, add the following to your `configuration.yaml` file:
+설정하려면 `configuration.yaml` 파일에 다음을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -58,20 +58,20 @@ timeout:
   default: 10
 {% endconfiguration %}
 
-Once Home Assistant is started, a configurator will pop up asking you to enter verification code that is sent to your phone number or email.
+홈어시스턴트가 시작되면 전화번호나 이메일로 전송되는 인증 코드를 입력하라는 팝업이 나타납니다.
 
 ### Binary Sensor
 
-If you have August Doorbell, once you have enabled the August component, you should see following sensors:
+August Doorbell이 있는 경우 August 구성 요소를 활성화하면 다음 센서가 표시됩니다.
 
 - Doorbell ding sensor
 - Doorbell motion sensor
 - Doorbell online sensor
 
-If you have August Smart Lock with DoorSense, once you have enabled the August component, you should see the following sensors:
+DoorSense와 함께 August Smart Lock이있는 경우 August 구성 요소를 활성화하면 다음 센서가 표시됩니다.
 
 - Door sensor
 
 ### Camera
 
-The `august` camera platform allows you to view the latest camera image (triggered by motion) by your [August](https://august.com/) device in Home Assistant.
+`august` 카메라 플랫폼을 사용하면 Home Assistant의 [August](https://august.com/) 장치에서 최신 카메라 이미지(동작에 의해 트리거 된)를 볼 수 있습니다.

@@ -9,21 +9,21 @@ ha_codeowners:
   - '@fbradyirl'
 ---
 
-The `cisco_webex_teams` notification platform allows you to deliver rich notifications from Home Assistant to [Cisco Webex Teams](https://www.webex.com/team-collaboration.html) (formerly known as Cisco Spark).
+`cisco_webex_teams` 알림 플랫폼을 사용하면 홈어시스턴트에서 [Cisco Webex Teams](https://www.webex.com/team-collaboration.html)(이전의 Cisco Spark)로 풍부한 알림을 전달할 수 있습니다.
 
-To use this notification platform you will need an app (bot) token. To obtain a token visit [Cisco Webex for Developers](https://developer.webex.com/). 
-* Detailed instructions can be found in the section titled **Creating a Webex Teams Bot** on the [Webex Teams bot documentation](https://developer.webex.com/docs/bots).
+이 알림 플랫폼을 사용하려면 앱(bot) 토큰이 필요합니다. 토큰을 얻으려면 [Cisco Webex for Developers](https://developer.webex.com/)를 방문하십시오.
+* 자세한 지침은 [Webex Teams bot documentation](https://developer.webex.com/docs/bots)에서 **Creating a Webex Teams Bot** 섹션에서 찾을 수 있습니다.
 
-You also need to specify the `room_id` that you wish to post messages into. The `room_id` can be found in one of two ways:
+메시지를 게시할 `room_id`도 지정해야합니다. `room_id`는 다음 두 가지 방법 중 하나로 찾을 수 있습니다.
 
 1. Logging in at [Cisco Webex for Developers](https://developer.webex.com/) and navigate to `Documentation`>`API Reference`>`Messages` and select List Messages, or 
 2. Log into the web client at [teams.webex.com](https://teams.webex.com/), 
  * select the room (or create a new room), 
  * then copying the room ID from the URL. 
  
-<strong>**Note:** you must add the bot email (in the format `mybot@webex.bot`) as a participant to the room specified above.</strong>
+<strong>**Note:** bot 이메일(`mybot@webex.bot` 형식)을 위에서 지정한 회의실에 참가자로 추가해야합니다.</strong>
 
-To enable this platform in your installation, add the following to your `configuration.yaml` file:
+설치에서 이 플랫폼을 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -34,18 +34,18 @@ notify:
     room_id: CISCO_WEBEX_TEAMS_ROOMID
 ```
 
-## Rich Text Formatting
+## 서식있는 텍스트 형식만들기
 
-Webex Teams clients can render rich text via a whitelisted set of html tags. 
+Webex Teams 클라이언트는 허용된 html 태그 세트를 통해 서식있는 텍스트를 렌더링 할 수 있습니다.
 
-For example, you could configure automations to display details in an easy to read fashion like so:
+예를 들어 다음과 같이 읽기 쉬운 방식으로 세부 정보를 표시하도록 자동화를 설정할 수 있습니다. :
 
 <p class='img'>
 <img src='/images/integrations/cisco_webex_teams/rich_formatting.png' />
-Rich text as displayed in the macOS client.
+Rich text as displayed in the macOS client. macOS 클라이언트에 표시되는 서식있는 텍스트
 </p>
 
-Here are the automations for the above screenshot:
+위 스크린 샷의 자동화는 다음과 같습니다.
 
 ```yaml
 
@@ -107,7 +107,7 @@ Here are the automations for the above screenshot:
       "
 ```
 
-The following is a list of the allowed html tags and attributes:
+다음은 허용되는 html 태그 및 속성 목록입니다.
 
 Tag | More Info
 --- | --- 
@@ -143,4 +143,4 @@ room_id:
   type: string
 {% endconfiguration %}
 
-To use notifications, please see the [getting started with automation page](/getting-started/automation/).
+알림을 사용하려면 [getting started with automation page](/getting-started/automation/).를 참조하십시오.

@@ -1,5 +1,5 @@
 ---
-title: Monoprice Blackbird Matrix Switch
+title: 미디어 입력소스 스위치(Monoprice Blackbird Matrix Switch)
 description: Instructions on how to integrate Monoprice Blackbird 4k 8x8 HDBaseT Matrix Switch into Home Assistant.
 logo: monoprice.svg
 ha_category:
@@ -8,9 +8,10 @@ ha_release: 0.68
 ha_iot_class: Local Polling
 ---
 
-The `blackbird` platform allows you to control [Monoprice Blackbird Matrix Switch](https://www.monoprice.com/product?p_id=21819) using a serial connection.
+`blackbird` 플랫폼을 사용하면 직렬 연결을 사용하여 [Monoprice Blackbird Matrix Switch](https://www.monoprice.com/product?p_id=21819)를 제어할 수 있습니다.
 
 To add a Blackbird device to your installation, add the following to your `configuration.yaml` file:
+설치에 Blackbird 장치를 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -52,9 +53,9 @@ sources:
       type: string
 {% endconfiguration %}
 
-### Service `blackbird.set_all_zones`
+### `blackbird.set_all_zones` 서비스
 
-Set all zones to the same input source. This service allows you to immediately synchronize all the TVs in your home. Regardless of `entity_id` provided, all zones will be updated.
+모든 구역(zone)을 동일한 입력 소스로 설정하십시오. 이 서비스를 사용하면 집에있는 모든 TV를 즉시 동기화 할 수 있습니다. 제공된 `entity_id`와 상관없이 모든 영역이 업데이트됩니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |

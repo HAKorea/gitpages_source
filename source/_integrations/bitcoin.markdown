@@ -1,5 +1,5 @@
 ---
-title: Bitcoin
+title: 비트코인(Bitcoin)
 description: Instructions on how to integrate Bitcoin data within Home Assistant.
 logo: bitcoin.png
 ha_category:

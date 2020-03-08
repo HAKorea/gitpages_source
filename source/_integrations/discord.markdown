@@ -1,5 +1,5 @@
 ---
-title: Discord(디스코드)
+title: 디스코드(Discord)
 description: Instructions on how to add Discord notifications to Home Assistant.
 logo: discord.png
 ha_category:

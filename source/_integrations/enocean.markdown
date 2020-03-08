@@ -1,5 +1,5 @@
 ---
-title: EnOcean(무전원무선)
+title: 무전원무선기술(EnOcean)
 description: Connect EnOcean devices to Home Assistant
 logo: enocean.png
 ha_category:

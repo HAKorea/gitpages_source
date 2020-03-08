@@ -1,5 +1,5 @@
 ---
-title: Eight Sleep(스마트침대)
+title: 스마트침대(Eight Sleep)
 description: Interface an Eight Sleep smart cover or mattress to Home Assistant
 logo: eight_sleep.png
 ha_category:

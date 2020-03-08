@@ -1,5 +1,5 @@
 ---
-title: Google Maps Travel Time
+title: 구글 지도 이동 시간
 description: Instructions on how to add Google Maps travel time to Home Assistant.
 logo: google_maps.png
 ha_category:
@@ -10,19 +10,19 @@ ha_codeowners:
   - '@robbiet480'
 ---
 
-The `google_travel_time` sensor provides travel time from the [Google Distance Matrix API](https://developers.google.com/maps/documentation/distance-matrix/).
+`google_travel_time` 센서는 [Google Distance Matrix API](https://developers.google.com/maps/documentation/distance-matrix/)에서 이동 시간을 제공합니다.
 
-## Setup
+## 셋업
 
-You need to register for an API key by following the instructions [here](https://github.com/googlemaps/google-maps-services-python#api-keys). You only need to turn on the Distance Matrix API.
+[여기](https://github.com/googlemaps/google-maps-services-python#api-keys) 지침에 따라 API 키를 등록해야합니다. Distance Matrix API만 켜면됩니다.
 
-[Google now requires billing](https://mapsplatform.googleblog.com/2018/05/introducing-google-maps-platform.html) to be enabled (and a valid credit card loaded) to access Google Maps APIs. The Distance Matrix API is billed at US$10 per 1000 requests, however, a US$200 per month credit is applied (20,000 requests). By default, the sensor will update the travel time every 5 minutes, making approximately 288 calls per day. Note that at this rate, more than 2 sensors will likely exceed the free credit amount. If you need to run more than 2 sensors, consider changing the [scan interval](/docs/configuration/platform_options/#scan-interval) to something longer than 5 minutes to stay within the free credit limit or update the sensors on-demand using an automation (see example below).
+Google Maps API에 액세스하려면 [Google Now에 결제가 필요합니다](https://mapsplatform.googleblog.com/2018/05/introducing-google-maps-platform.html)를 활성화하고 유효한 신용 카드를 로드합니다. Distance Matrix API는 요청 1,000 건당 미화 10 달러로 청구되지만 월 200 달러(요청 2만 건당)의 크레딧이 적용됩니다. 기본적으로 센서는 5 분마다 이동 시간을 업데이트하여 하루에 약 288 개의 통화를합니다. 이 속도에서 2개 이상의 센서가 무료 크레딧 금액을 초과 할 가능성이 있습니다. 두 개 이상의 센서를 실행해야하는 경우 여유 크레딧 한도 내에 머무르거나 자동화를 사용하여 주문형 센서를 업데이트하려면 스캔 간격 을 5분 이상으로 변경하십시오. (아래 예 참조).
 
-A quota can be set against the API to avoid exceeding the free credit amount. Set the 'Elements per day' to a limit of 645 or less. Details on how to configure a quota can be found [here](https://developers.google.com/maps/documentation/distance-matrix/usage-and-billing#set-caps)
+**무료 크레딧 금액을 초과하지 않도록** API에 대해 할당량을 설정할 수 있습니다. 'Elements per day'를 645 이하로 설정하십시오. 할당량을 구성하는 방법에 대한 자세한 내용은 [here](https://developers.google.com/maps/documentation/distance-matrix/usage-and-billing#set-caps)를 참조하십시오.
 
-## Configuration
+## 설정
 
-To enable the sensor, add the following lines to your `configuration.yaml` file:
+센서를 활성화하려면 `configuration.yaml` 파일에 다음 라인을 추가하십시오 :
 
 ```yaml
 # Example entry for configuration.yaml
@@ -92,9 +92,9 @@ options:
       type: string
 {% endconfiguration %}
 
-## Dynamic Configuration
+## 동적 설정
 
-Tracking can be setup to track entities of type `device_tracker`, `zone`, `sensor` and `person`. If an entity is placed in the origin or destination then every 5 minutes when the platform updates it will use the latest location of that entity.
+`device_tracker`, `zone`, `sensor` 및 `person` 유형의 엔티티를 추적하도록 추적을 설정할 수 있습니다. 엔티티가 출발지 또는 목적지에 배치되면 플랫폼이 업데이트 될 때 5 분마다 해당 엔티티의 최신 위치를 사용합니다.
 
 ```yaml
 # Example entry for configuration.yaml
@@ -121,22 +121,22 @@ sensor:
       units: imperial    # 'metric' for Metric, 'imperial' for Imperial
 ```
 
-## Entity Tracking
+## Entity 추적
 
 - **device_tracker**
-  - If state is a zone then the zone location will be used
-  - If state is not a zone it will look for the longitude and latitude attributes
+  - 상태가 영역(zone) 인 경우 영역 위치가 사용됩니다
+  - 상태가 영역이 아닌 경우 경도 및 위도 속성을 찾습니다.
 - **zone**
-  - Uses the longitude and latitude attributes
-  - Can also be referenced by just the zone's friendly name found in the attributes.
+  - 경도 및 위도 속성을 사용합니다
+  - 속성에서 찾은 영역의 이름만으로도 참조 할 수 있습니다.
 - **sensor**
-  - If state is a zone or zone friendly name then will use the zone location
-  - All other states will be passed directly into the Google API
-    - This includes all valid locations listed in the *Configuration Variables*
+  - 상태가 영역 또는 영역 이름 인 경우 영역 위치를 사용합니다
+  - 다른 모든 상태는 Google API로 직접 전달됩니다.
+    - 여기에는 *설성 변수*에 나열된 모든 유효한 위치가 포함됩니다
 
-## Updating sensors on-demand using Automation
+## 자동화를 사용하여 주문형 센서 업데이트
 
-You can also use the `homeassistant.update_entity` service to update the sensor on-demand. For example, if you want to update `sensor.morning_commute` every 2 minutes on weekday mornings, you can use the following automation:
+`homeassistant.update_entity` 서비스를 사용하여 주문형 센서를 업데이트 할 수도 있습니다. 예를 들어, 평일 아침 2 분마다 `sensor.morning_commute`를 업데이트하려는 경우 다음 자동화를 사용할 수 있습니다.
 
 ```yaml
 - id: update_morning_commute_sensor

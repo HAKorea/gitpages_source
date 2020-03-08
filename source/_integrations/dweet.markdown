@@ -1,5 +1,5 @@
 ---
-title: dweet.io(로그공유)
+title: 로그공유(dweet.io)
 description: Transfer events to Dweet.io.
 logo: dweet.png
 ha_category:

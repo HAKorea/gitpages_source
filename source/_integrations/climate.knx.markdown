@@ -1,5 +1,5 @@
 ---
-title: KNX 온습도조절기(KNX Climate)
+title: 온습도조절기(KNX Climate)
 description: "Instructions on how to integrate KNX thermostats with Home Assistant."
 logo: knx.png
 ha_category:

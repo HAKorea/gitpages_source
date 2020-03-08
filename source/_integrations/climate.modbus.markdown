@@ -1,5 +1,5 @@
 ---
-title: "Modbus Climate"
+title: "온습도조절기(Modbus Climate)"
 description: "Instructions how to integrate a Modbus thermostat within Home Assistant."
 logo: modbus.png
 ha_category:
@@ -9,11 +9,12 @@ ha_iot_class: Local Polling
 ---
 
 
-The `modbus` thermostat allows you to use a sensor value (current temperature) and target value (target temperature) from [Modbus](http://www.modbus.org/) registers.
+`modbus` 온도 조절 장치를 사용하면 [Modbus](http://www.modbus.org/) 레지스터의 센서값 (현재 온도) 및 목표값 (대상 온도)을 사용할 수 있습니다.
 
-## Configuration
+## 설정
 
 To use your Modbus thermostat in your installation, add the following to your `configuration.yaml` file:
+설치에서 Modbus 온도 조절기를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -103,7 +104,7 @@ temperature_unit:
 {% endconfiguration %}
 
 
-### Services
+### 서비스
 
 | Service | Description |
 | ------- | ----------- |

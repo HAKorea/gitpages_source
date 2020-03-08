@@ -1,5 +1,5 @@
 ---
-title: BloomSky
+title: 개인기상관측(BloomSky)
 description: Instructions on how to integrate the BloomSky within Home Assistant.
 logo: bloomsky.png
 ha_category:
@@ -11,21 +11,21 @@ ha_release: 0.14
 ha_iot_class: Cloud Polling
 ---
 
-The `bloomsky` integration allows you to access your [BloomSky](https://www.bloomsky.com/) weather station's.
+`bloomsky` 통합구성요소를 통해 [BloomSky](https://www.bloomsky.com/) 기상 관측소에 액세스 할 수 있습니다.
 
-There is currently support for the following device types within Home Assistant:
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - [Binary Sensor](#binary-sensor)
 - [Camera](#camera)
 - [Sensor](#sensor)
 
-## Setup
+## 셋업
 
-Obtain your API key from your [BloomSky dashboard](https://dashboard.bloomsky.com). Click `developers` in the bottom left of the screen.
+[BloomSky 대시 보드](https://dashboard.bloomsky.com)에서 API 키를 얻습니다. 화면 왼쪽 하단에서 `developers`를 클릭하십시오.
 
-## Configuration
+## 설정
 
-To integrate your BloomSky hub with Home Assistant, add the following section to your `configuration.yaml` file:
+BloomSky 허브와 홈어시스턴트를 통합하려면 `configuration.yaml` 파일에 다음 섹션을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -42,13 +42,13 @@ api_key:
 
 ## Binary Sensor
 
-The `bloomsky` binary sensor platform allows you to get data from your BloomSky device.
+`bloomsky` 이진 센서 플랫폼을 사용하면 BloomSky 장치에서 데이터를 얻을 수 있습니다.
 
-To get your BloomSky binary sensors working with Home Assistant, follow the instructions above first.
+BloomSky 바이너리 센서가 홈어시스턴트와 작동하게 하려면 먼저 위의 지시 사항을 따르십시오.
 
-### Configuration
+### 설정
 
-To use your BloomSky binary sensor in your installation, add the following to your `configuration.yaml` file:
+설비에서 BloomSky 바이너리 센서를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -73,11 +73,11 @@ monitored_conditions:
 
 ## Camera
 
-The `bloomsky` camera integration allows you to view the current photo created by the camera in the [BloomSky](https://www.bloomsky.com) weather station. This can work in concert with [BloomSky sensors](#sensor).
+`bloomsky` 카메라 통합구성요소를 통해 [BloomSky](https://www.bloomsky.com) 기상 관측소에서 카메라로 생성된 현재 사진을 볼 수 있습니다. 이것은 [BloomSky sensor](#sensor)와 함께 작동할 수 있습니다.
 
-### Configuration
+### 설정
 
-To enable this camera in your installation, set up the BloomSky integration with your API key and add the following to your `configuration.yaml` file:
+설치시이 카메라를 활성화하려면 API 키와 BloomSky 연동을 설정하고 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -87,11 +87,11 @@ camera:
 
 ## Sensor
 
-The `bloomsky` sensor integration allows you to view the measurements made by sensors in the [BloomSky](https://www.bloomsky.com) weather station. This can work in concert with the [BloomSky camera](#camera).
+`bloomsky` 센서 연동을 통해 [BloomSky](https://www.bloomsky.com) 기상 관측소의 센서로 측정한 값을 볼 수 있습니다. 이것은 [BloomSky camera](#camera)와 함께 작동할 수 있습니다.
 
-### Configuration
+### 설정
 
-To enable these sensors in your installation, set up the BloomSky integration with your API key add the following to your `configuration.yaml` file:
+설치시 이러한 센서를 활성화하려면 API 키와 BloomSky 연동을 설정하여 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -126,4 +126,4 @@ monitored_conditions:
       description: Voltage
 {% endconfiguration %}
 
-More conditions are available using the [BloomSky binary sensor](#binary-sensor) component.
+[BloomSky binary sensor](#binary-sensor) 구성 요소를 사용하여 더 많은 조건을 사용할 수 있습니다.

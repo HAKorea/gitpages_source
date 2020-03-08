@@ -1,5 +1,5 @@
 ---
-title: Amazon Web Services (AWS)
+title: 아마존 웹 서비스 (AWS)
 description: Instructions on how to integrate Amazon Web Services with Home Assistant.
 logo: aws.png
 ha_category:
@@ -10,19 +10,19 @@ ha_codeowners:
   - '@robbiet480'
 ---
 
-The `aws` integration provides a single place to interact with [Amazon Web Services](https://aws.amazon.com/). Currently it provides a notification platform that can send a message to [AWS SQS](https://aws.amazon.com/sqs/), [AWS SNS](https://aws.amazon.com/sns/), or invoke [AWS Lambda](https://aws.amazon.com/lambda/) functions.
+`aws` 통합구성요소는 [Amazon Web Services](https://aws.amazon.com/)와 상호 작용할 수있는 단일 장소를 제공합니다. 현재 [AWS SQS](https://aws.amazon.com/sqs/), [AWS SNS](https://aws.amazon.com/sns/)로 메시지를 보낼 수있는 알림 플랫폼을 제공합니다. 또는 [AWS Lambda](https://aws.amazon.com/lambda/) 함수를 호출하십시오.
 
-## Setup
+## 셋업
 
-You have to have an AWS account to use Amazon Web Services, create one [here](https://aws.amazon.com/free/) with a 12 months free tier benefit. Please note, even in the first 12-months, you may still be billed if you use more resources than offered in the free tier. We advise you to monitor your costs in the [AWS Billing Console](https://console.aws.amazon.com/billing/) closely. You can read the [Control your AWS costs](https://aws.amazon.com/getting-started/tutorials/control-your-costs-free-tier-budgets/) guide for more information.
+Amazon Web Services를 사용하려면 AWS 계정이 있어야합니다. 12 개월의 프리 티어 혜택으로 [여기](https://aws.amazon.com/free/)를 만드십시오. 첫 12 개월 동안에도 프리 티어에서 제공되는 것보다 더 많은 리소스를 사용하면 요금이 청구될 수 있습니다.
 
-The `lambda`, `sns` and `sqs` services, used in the `aws` component, all provide an **Always Free** tier for all users even after the 12-month period. The general usage in Home Automation will most likely not reach the free tier limit. Please read [Lambda Pricing](https://aws.amazon.com/lambda/pricing/), [SNS Pricing](https://aws.amazon.com/sns/pricing/) and [SQS Pricing](https://aws.amazon.com/sqs/pricing/) for more details.
+`aws` 컴포넌트에서 사용되는 `lambda`, `sns` 및 `sqs` 서비스는 모두 12 개월이 지난 후에도 모든 사용자에게 **Always Free** 등급을 제공합니다. 홈오토메이션의 일반적인 사용은 프리 티어 한도에 도달하지 않을 가능성이 높습니다. [Lambda 요금](https://aws.amazon.com/lambda/pricing/), [SNS 요금](https://aws.amazon.com/sns/pricing/) 및 [SQS 요금][SQS Pricing](https://aws.amazon.com/sqs/pricing/)에서 자세한 내용은 확인하십시오. 
 
-The `aws` integration is using [botocore](https://botocore.amazonaws.com/v1/documentation/api/latest/index.html) to communicate with Amazon Web Services, which is also used by the [AWS Command Client Interface](https://aws.amazon.com/cli/) tool. Therefore, `aws` shares the same credential and profiles with `awscli` tool. Please read [Configuring the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) to learn how to get access keys and how to manage them on your local system securely.
+`aws` 통합구성요소는 [botocore](https://botocore.amazonaws.com/v1/documentation/api/latest/index.html)를 사용하여 Amazon Web Services와 통신하며 [AWS Command Client Interface](https://aws.amazon.com/cli/) 도구에서도 사용됩니다. 따라서 `aws`는 `awscli` 도구와 동일한 credential 및 profiles을 공유합니다. 액세스 키를 얻는 방법과 로컬에서 액세스 키를 관리하는 방법은 [Configuring the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)을 참조하십시오.  
 
-## Configuration
+## 설정
 
-To use the `aws` integration and the `notify` platform in your installation, add the following to your `configuration.yaml` file:
+설치에서 `aws` 통합구성요소와 `notify` 플랫폼을 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -37,7 +37,7 @@ aws:
       region_name: us-east-1
 ```
 
-### Configuration for credentials
+### 설정과 자격 증명(credentials)
 
 {% configuration %}
 name:
@@ -63,7 +63,7 @@ validate:
   type: boolean
 {% endconfiguration %}
 
-### Configuration for notify
+### notify 설정
 
 {% configuration %}
 service:
@@ -101,11 +101,11 @@ context:
   type: string
 {% endconfiguration %}
 
-## Lambda Notify Usage
+## Lambda Notify 사용법
 
-AWS Lambda is a notification platform and thus can be controlled by calling the `notify` service [as described here](/integrations/notify/). It will invoke a Lambda for all targets given in the notification payload. A target can be formatted as a function name, an entire ARN ([Amazon Resource Name](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html)) or a partial ARN. For more information, please see the [botocore docs](https://botocore.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.invoke).
+AWS Lambda는 알림 플랫폼이므로 `notify` 서비스 [as described here](/integrations/notify/)를 호출하여 제어 할 수 있습니다. 알림(notification) 페이로드에 지정된 모든 대상에 대해 Lambda를 호출합니다. 대상은 함수 이름, 전체 ARN ([Amazon Resource Name](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html)) 또는 일부분의 ARN으로 형식을 지정할 수 있습니다. 자세한 내용은 [botocore docs](https://botocore.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.invoke)를 참조하십시오.
 
-The Lambda event payload will contain everything passed in the service call payload. Here is an example payload that would be sent to Lambda:
+Lambda 이벤트 페이로드에는 서비스 호출 페이로드에 전달된 모든 것이 포함됩니다. 다음은 Lambda로 전송 될 페이로드의 예입니다.
 
 ```json
 {
@@ -119,6 +119,7 @@ The Lambda event payload will contain everything passed in the service call payl
 ```
 
 The context will look like this:
+컨텍스트는 다음과 같습니다.
 
 ```json
 {
@@ -129,37 +130,37 @@ The context will look like this:
 }
 ```
 
-## SNS Notify Usage
+## SNS Notify 사용법
 
-AWS SNS is a notification platform and thus can be controlled by calling the `notify` service [as described here](/integrations/notify/). It will publish a message to all targets given in the notification payload. A target must be a SNS topic or endpoint ARN ([Amazon Resource Name](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html)). For more information, please see the [botocore docs](https://botocore.amazonaws.com/v1/documentation/api/latest/reference/services/sns.html#SNS.Client.publish).
+AWS SNS는 알림 플랫폼이므로 `notify` 서비스[as described here](/integrations/notify/)를 호출하여 제어 할 수 있습니다. 알림 페이로드에 지정된 모든 대상에 메시지를 게시합니다. 대상은 SNS topic 또는 endpoint ARN([Amazon Resource Name](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html))이어야합니다. 자세한 내용은 [botocore docs](https://botocore.amazonaws.com/v1/documentation/api/latest/reference/services/sns.html#SNS.Client.publish)를 참조하십시오.
 
-If one exists, the SNS Subject will be set to the title. All attributes from the payload, except the message, will be sent as stringified message attributes.
+존재하는 경우 SNS 주제(Subject)가 제목(title)으로 설정됩니다. 메시지를 제외한 페이로드의 모든 속성은 문자열화 된 메시지 속성으로 전송됩니다.
 
-### Setting up SNS within AWS
+### SNS within AWS 셋업하기
 
-- Log into your AWS console and under "Security and Identity", select "Identity & Access Management".
-- On the left-hand side, select "Users" then click "Create New Users". Enter a name here and then click "Create". 
-- You can either download the credentials or click the arrow to display them one time.
+- AWS 콘솔에 로그인하고 "Security and Identity"에서 "Identity & Access Management"를 선택하십시오.
+- 왼쪽에서 "Users"를 선택한 다음 "Create New Users"를 클릭하십시오. 여기에 이름을 입력 한 다음 "Create"를 클릭하십시오.
+- credentials를 다운로드하거나 화살표를 클릭하여 한 번 표시 할 수 있습니다.
 
 <div class='note warning'>
-If you do not download them, you will lose them and will have to recreate a new user.
+다운로드하지 않으면 파일을 잃어 버리고 새 사용자를 다시 만들어야합니다.
 </div>
 
-- Copy/Paste the two keys that are shown here in your `configuration.yaml` file.
-- On the left-hand side of the screen go back to "Users" and select the user you just created. On the "Permissions" tab click the "Attach Policy" icon. Search for "SNS" and attach the policy "AmazonSNSFUullAccess".
-- Back to the AWS Console you now need to find "SNS" and click in to that service. It is under the Mobile Services group.
-- On the left-hand side, select "Topics" then "Create new topic".
-- Choose a Topic Name and Display Name.
-- Now check the box next to the Topic you just created and under Actions, select "Subscribe to topic".
-- In the box that pops up, select the Protocol = SMS and enter in the phone number next to "Endpoint" you wish to SMS. Now click "Create".
-- Repeat for additional numbers.
-- Back in the "Users" section you will see a long alphanumeric line that starts with "arn:" and ends with the Topic Name you choose previously. This is what your "target" in Home Assistant will be.
+- 파일에 표시된 두 개의 키를 복사/붙여 넣기하십시오. 
+- 화면 왼쪽에서 "Users"로 돌아가서 방금 만든 사용자를 선택하십시오. "Permissions" 탭에서 "Attach Policy" 아이콘을 클릭하십시오. "SNS"를 검색하고 "AmazonSNSFUullAccess" 정책을 첨부하십시오.
+- AWS 콘솔로 돌아가서 "SNS"를 찾아 해당 서비스를 클릭해야합니다. 모바일 서비스 그룹에 속합니다.
+- 왼쪽에서 "Topics"를 선택한 다음 "Create new topic"를 선택하십시오.
+- Topic 이름과 Display 이름을 선택하십시오.
+- 이제 방금 만든 Topic 옆의 확인란을 선택하고 작업에서 "Subscribe to topic"을 선택하십시오.
+- 팝업 상자에서 Protocol = SMS를 선택하고 SMS로 보내려는 "Endpoint" 옆에있는 전화번호를 입력하십시오. 이제 "Create"를 클릭하십시오.
+- 추가 번호를 반복하십시오.
+- "Users" 섹션으로 돌아 가면 "arn:"으로 시작하고 이전에 선택한 Topic 이름으로 끝나는 긴 영숫자 줄이 표시됩니다. 이것이 홈어시스턴트의 "대상(target)"입니다.
 
-## SQS Notify Usage
+## SQS Notify 사용법
 
-AWS SQS is a notification platform and thus can be controlled by calling the `notify` service [as described here](/integrations/notify/). It will publish a message to the queue for all targets given in the notification payload. A target must be a SQS topic URL. For more information, please see the [SQS docs](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html) and [bototcore docs](https://botocore.amazonaws.com/v1/documentation/api/latest/reference/services/sqs.html#SQS.Client.send_message)
+AWS SQS는 알림 플랫폼이므로 `notify` 서비스를 호출하여 제어 할 수 있습니다 [as described here](/integrations/notify/). 알림 페이로드에 지정된 모든 대상에 대한 메시지를 큐에 게시합니다. 대상은 SQS topic URL이어야합니다. 자세한 내용은 [SQS docs](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html),  [bototcore docs](https://botocore.amazonaws.com/v1/documentation/api/latest/reference/services/sqs.html#SQS.Client.send_message)를 참조하십시오.
 
-The SQS event payload will contain everything passed in the service call payload. SQS payloads will be published as stringified JSON. All attributes from the payload, except message, will also be sent as stringified message attributes. Here is an example message that would be published to the SQS queue:
+SQS 이벤트 페이로드에는 서비스 호출 페이로드에 전달된 모든 것이 포함됩니다. SQS 페이로드는 문자열화 된 JSON으로 게시됩니다. 메시지를 제외한 페이로드의 모든 속성도 문자열화 된 메시지 속성으로 전송됩니다. 다음은 SQS 대기열에 게시될 메시지 예입니다.
 
 ```json
 {

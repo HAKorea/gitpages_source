@@ -1,5 +1,5 @@
 ---
-title: ATEN Rack PDU
+title: (PDU 랙스위치)ATEN Rack PDU
 description: Instructions on how to integrate ATEN Rack PDUs into Home Assistant.
 logo: aten.png
 ha_category:
@@ -9,14 +9,14 @@ ha_codeowners:
   - '@mtdcr'
 ---
 
-The `aten_pe` integration lets you control [ATEN Rack PDUs](https://www.aten.com/eu/en/products/energy-intelligence-pduupsracks/rack-pdu/) from Home Assistant.
+`aten_pe` 통합구성요소를 통해 Home Assistant에서 [ATEN Rack PDUs](https://www.aten.com/eu/en/products/energy-intelligence-pduupsracks/rack-pdu/)를 제어 할 수 있습니다.
 
-In order to use it, SNMP must be enabled on your PDU. It is recommended to use SNMPv3 to protect your credentials from eavesdropping.
+이를 사용하려면 PDU에서 SNMP를 활성화해야합니다. 자격 증명(credentials)을 도청하지 못하도록 SNMPv3을 사용하는 것이 좋습니다.
 
-Tested devices:
+테스트된 장치 :
   * [PE8324G](https://www.aten.com/eu/en/products/energy-intelligence-pduupsracks/rack-pdu/pe8324/)
 
-To set it up, add the following information to your `configuration.yaml` file:
+설정하려면 `configuration.yaml` 파일에 다음 정보를 추가하십시오 :
 
 ```yaml
 switch:

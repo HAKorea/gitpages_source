@@ -1,5 +1,5 @@
 ---
-title: CoinMarketCap
+title: 코인마켓캡(CoinMarketCap)
 description: Instructions on how to integrate CoinMarketCap data within Home Assistant.
 logo: coinmarketcap.png
 ha_category:
@@ -8,9 +8,9 @@ ha_release: 0.28
 ha_iot_class: Cloud Polling
 ---
 
-The `coinmarketcap` sensor platform displays various details about a cryptocurrency provided by [CoinMarketCap](https://coinmarketcap.com/).
+`coinmarketcap` 센서 플랫폼은 [CoinMarketCap](https://coinmarketcap.com/)에서 제공하는 암호 화폐에 대한 다양한 세부 정보를 표시합니다.
 
-To add the CoinMarketCap sensor to your installation, add the following lines to your `configuration.yaml`:
+CoinMarketCap 센서를 설치에 추가하려면 `configuration.yaml`에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -36,4 +36,4 @@ display_currency_decimals:
   default: 2
 {% endconfiguration %}
 
-All supported currencies can be found [here](https://coinmarketcap.com/api/), a list of currency IDs can be found [here](https://api.coinmarketcap.com/v2/ticker/).
+지원되는 모든 통화는 [여기](https://coinmarketcap.com/api/)에서 찾을 수 있으며 통화 ID 목록은 [여기](https://api.coinmarketcap.com/v2/ticker/)에서 찾을 수 있습니다.

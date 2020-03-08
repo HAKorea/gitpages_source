@@ -1,5 +1,5 @@
 ---
-title: "RESTful Binary Sensor"
+title: "RESTful 이진 센서"
 description: "Instructions on how to integrate REST binary sensors into Home Assistant."
 logo: restful.png
 ha_category:
@@ -8,15 +8,10 @@ ha_release: "0.10"
 ha_iot_class: Local Polling
 ---
 
-The `rest` binary sensor platform is consuming a given endpoint which is exposed
-by a
-[RESTful API](https://en.wikipedia.org/wiki/Representational_state_transfer)
-of a device, an application, or a web service.
-The binary sensor has support for GET and POST requests.
+`rest` 바이너리 센서 플랫폼은 장치, 애플리케이션 또는 웹 서비스의 [RESTful API](https://en.wikipedia.org/wiki/Representational_state_transfer)에 의해 노출되는 주어진 엔드 포인트를 연관하고 있습니다.
+이진 센서는 GET 및 POST requests를 지원합니다.
 
-The JSON messages can contain different values like `1`, `"1"`,
-`TRUE`, `true`, `on`, or `open`. If the value is nested then use a
-[template](/docs/configuration/templating/#processing-incoming-data).
+JSON 메시지는 `1`,` "1"`, `TRUE`, `true`, `on` 혹은 `open`과 같은 다른 값을 포함 할 수 있습니다. 값이 중첩된 경우 [template](/docs/configuration/templating/#processing-incoming-data)을 사용하십시오.
 
 ```json
 {
@@ -28,10 +23,9 @@ The JSON messages can contain different values like `1`, `"1"`,
 }
 ```
 
-## Configuration
+## 설정
 
-To enable this sensor,
-add the following lines to your `configuration.yaml` file for a GET request:
+이 센서를 활성화하려면 GET requests을 위해 `configuration.yaml` 파일에 다음 라인을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -40,7 +34,7 @@ binary_sensor:
     resource: http://IP_ADDRESS/ENDPOINT
 ```
 
-or for a POST request:
+POST request 의 경우:
 
 ```yaml
 # Example configuration.yaml entry
@@ -109,18 +103,16 @@ headers:
 {% endconfiguration %}
 
 <div class='note warning'>
-Make sure that the URL exactly matches your endpoint or resource.
+URL이 엔드 포인트 또는 리소스와 정확히 일치하는지 확인하십시오.
 </div>
 
-## Examples
+## 사례
 
-In this section you find some real-life examples of how to use this sensor.
+이 섹션에는 이 센서를 사용하는 방법에 대한 실제 예가 나와 있습니다.
 
 ### aREST sensor
 
-Instead of using an [aREST](/integrations/arest#binary-sensor) binary sensor,
-you could retrieve the value of a device supporting
-aREST directly with a REST binary sensor.
+[aREST](/integrations/arest#binary-sensor) 이진 센서를 사용하는 대신 REST 이진 센서로 직접 aREST를 지원하는 장치의 값을 검색 할 수 있습니다.
 
 ```yaml
 binary_sensor:
@@ -132,9 +124,9 @@ binary_sensor:
     value_template: {% raw %}'{{ value_json.return_value }}'{% endraw %}
 ```
 
-### Accessing an HTTP authentication protected endpoint
+### HTTP 인증으로 보호된 엔드 포인트에 액세스
 
-The REST sensor supports HTTP authentication and customized headers.
+REST 센서는 HTTP 인증 및 사용자 정의된 헤더를 지원합니다.
 
 ```yaml
 binary_sensor:
@@ -148,8 +140,7 @@ binary_sensor:
       Content-Type: application/json
 ```
 
-The headers will contain all relevant details. This will also give
-you the ability to access endpoints that are protected by tokens.
+헤더에는 모든 관련 세부 사항이 포함됩니다. 또한 토큰으로 보호되는 엔드 포인트에 액세스 할 수 있습니다.
 
 ```bash
 Content-Length: 1024

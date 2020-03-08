@@ -1,5 +1,5 @@
 ---
-title: 어웨어
+title: 어웨어(Awair)
 description: Instructions on how to setup Awair devices in Home Assistant.
 logo: awair.jpg
 ha_category:

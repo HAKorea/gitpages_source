@@ -8,9 +8,9 @@ ha_release: 0.14
 ha_iot_class: Local Polling
 ---
 
-A `command_line`cover platform that issues specific commands when it is moved up, down and stopped. It allows anyone to integrate any type of cover into Home Assistant that can be controlled from the command line.
+`command_line` 은 플랫폼이 위, 아래, 멈출 때 특정 명령을 내리는 플랫폼입니다. Command Line에서 제어할 수있는 모든 유형의 Cover를 Home Assistant에 통합 할 수 있습니다.
 
-To enable a command line cover in your installation, add the following to your `configuration.yaml` file:
+설치에서 Command Line Cover를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -64,11 +64,11 @@ covers:
           type: string
 {% endconfiguration %}
 
-## Examples
+## 사례
 
-In this section you find some real-life examples of how to use this sensor.
+이 섹션에는이 센서를 사용하는 방법에 대한 실제 예가 나와 있습니다.
 
-### Full configuration
+### 전체 설정
 
 ```yaml
 # Example configuration.yaml entry

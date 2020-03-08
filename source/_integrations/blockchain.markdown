@@ -1,5 +1,5 @@
 ---
-title: 블록체인
+title: 블록체인(blockchain)
 description: Instructions on how to integrate Blockchain.info data within Home Assistant.
 logo: blockchain.png
 ha_category:

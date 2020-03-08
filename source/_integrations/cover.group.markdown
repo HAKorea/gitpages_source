@@ -1,5 +1,5 @@
 ---
-title: "개폐장치 그룹(Cover Group)"
+title: "Cover(개폐장치) Group"
 description: "Instructions how to setup grouped covers in Home Assistant."
 ha_category:
   - Cover

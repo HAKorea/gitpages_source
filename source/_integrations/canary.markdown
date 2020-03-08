@@ -1,5 +1,5 @@
 ---
-title: Canary
+title: 보안카메라(Canary)
 description: Instructions on how to integrate your Canary devices into Home Assistant.
 logo: canary.png
 ha_category:

@@ -1,5 +1,5 @@
 ---
-title: Asuswrt
+title: 아수스커펌라우터(Asuswrt)
 description: Instructions on how to integrate Asuswrt into Home Assistant.
 logo: asus.png
 ha_category:
@@ -12,16 +12,16 @@ ha_codeowners:
   - '@kennedyshead'
 ---
 
-The `asuswrt` integration is the main integration to connect to a [ASUSWRT](https://event.asus.com/2013/nw/ASUSWRT/) based router.
+`asuswrt` 통합구성요소는 [ASUSWRT](https://event.asus.com/2013/nw/ASUSWRT/) 기반 라우터에 연결하기위한 주요 통합입니다.
 
-There is currently support for the following device types within Home Assistant:
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
-- **Presence Detection** - The asuswrt platform offers presence detection by looking at connected devices to a ASUSWRT based router.
-- **Sensor** - The asuswrt sensor platform allows you to get upload and download data from your ASUSWRT within Home Assistant.
+- **Presence Detection** - asuswrt 플랫폼은 ASUSWRT 기반 라우터에 연결된 장치를 보고 현재 상태를 감지합니다.
+- **Sensor** - asuswrt 센서 플랫폼을 사용하면 Home Assistant 내의 ASUSWRT에서 데이터를 업로드하고 다운로드하는 정보를 제어할 수 있습니다.
 
-## Configuration
+## 설정
 
-To use an ASUSWRT router in your installation, add the following to your `configuration.yaml` file:
+설치시 ASUSWRT 라우터를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -84,13 +84,13 @@ sensors:
 
 <div class='note warning'>
 
-You need to enable telnet on your router if you choose to use `protocol: telnet`.
+`protocol:telnet`을 사용하려면 라우터에서 텔넷을 활성화해야합니다.
 
 </div>
 
-### Example Sensor Configuration
+### 센서 설정 사례
 
-To enable ASUSWRT sensors as part of your installation, reference the following example configuration:
+설치 과정에서 ASUSWRT 센서를 활성화하려면 다음 설정 예를 참조하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -105,7 +105,7 @@ asuswrt:
     - download_speed
 ```
 
-The example above, creates the following sensors:
+위의 예는 다음 센서를 만듭니다.
 
 - sensor.asuswrt_download (unit_of_measurement: Gigabyte - *Daily accumulation*)
 - sensor.asuswrt_download_speed (unit_of_measurement: Mbit/s)
@@ -113,11 +113,11 @@ The example above, creates the following sensors:
 - sensor.asuswrt_upload_speed (unit_of_measurement: Mbit/s)
 
 
-## Padavan custom firmware (The rt-n56u project)
+## Padavan 사용자 정의 펌웨어 (RT-N56U 프로젝트)
 
-The [rt-n56u project](https://bitbucket.org/padavan/rt-n56u) does not store `dnsmasq.leases` which is used to track devices at `/var/lib/misc/` as `asuswrt` do. However this integration can still be used for the rt-n56u project by linking `dnsmasq.leases` during the boot process of the router.
+[rt-n56u 프로젝트](https://bitbucket.org/padavan/rt-n56u)는 `/var/lib/misc/`에서 장치를 `asuswrt`로 추적하는데 사용되는 `dnsmasq.leases`를 저장하지 않습니다. 그러나 라우터의 부팅 과정에서 `dnsmasq.leases`를 연결하여 rt-n56u 프로젝트에 이 연동을 계속 사용할 수 있습니다.
 
-Follow these steps to setup the link.
+다음 단계에 따라 링크를 설정하십시오.
 
 1. SSH or Telnet into the router. (default ssh admin@my.router)
 2. Run the following command to find the file:
@@ -143,4 +143,4 @@ $ echo "/bin/ln -s /tmp/dnsmasq.leases /var/lib/misc/dnsmasq.leases" >> /etc/sto
 $ /bin/ln -s /tmp/dnsmasq.leases /var/lib/misc/dnsmasq.leases
 ```
 
-The started script is also accessible and editable in the Router's web interface. `Advanced Settings -> Customization -> Scripts -> Custom User Script -> Run After Router Started`
+시작된 스크립트는 라우터의 웹인터페이스에서 액세스하고 편집할 수 있습니다. `Advanced Settings -> Customization -> Scripts -> Custom User Script -> Run After Router Started`

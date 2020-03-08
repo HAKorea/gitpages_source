@@ -1,5 +1,5 @@
 ---
-title: "IFTTT Alarm Control Panel"
+title: "IFTTT 경보 제어판"
 description: "Instructions on how to integrate IFTTT-controlled security systems into Home Assistant."
 logo: ifttt.png
 ha_category:
@@ -7,17 +7,17 @@ ha_category:
 ha_release: 0.66
 ---
 
-The `ifttt` platform allows you to integrate security systems that have no open API but can be controlled through [IFTTT](https://ifttt.com/discover).
+`ifttt` 플랫폼을 사용하면 공개 API가 없지만 [IFTTT](https://ifttt.com/discover)를 통해 제어할 수 있는 보안 시스템을 연동할 수 있습니다.
 
-This platform depends on the [IFTTT](/integrations/ifttt/) Home Assistant integration. See the integrations documentation to set it up.
+이 플랫폼은 [IFTTT](/integrations/ifttt/) 홈어시스턴트 통합구성요소에 따라 다릅니다. 해당 문서를 참조하여 설정하십시오.
 
 <div class='note'>
-It is important to note that this platform fully relies on IFTTT to receive updates when the security system's state changes. Therefore, this platform shows an assumed state.
+이 플랫폼은 보안 시스템의 상태가 변경 될 때 IFTTT에 전적으로 의존하여 업데이트를 받습니다. 따라서 이 플랫폼은 가정 된 상태를 보여줍니다.
 </div>
 
-## Configuration
+## 설정
 
-To enable this, add the following lines to your `configuration.yaml` file:
+이를 활성화하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -72,17 +72,17 @@ optimistic:
 
 <div class='note warning'>
 
-It is strongly discouraged to use this platform when you don't use encryption; otherwise, your API password will be send unprotected through the IFTTT Webhooks. It is advised to [setup encryption using Let's Encrypt](https://home-assistant.io/blog/2017/09/27/effortless-encryption-with-lets-encrypt-and-duckdns/).
+암호화를 사용하지 않을 때는 이 플랫폼을 사용하지 않는 것이 좋습니다. 그렇지 않으면 API 비밀번호가 IFTTT 웹 후크를 통해 보호되지 않은 상태로 전송됩니다. [Let's Encrypt를 사용한 암호화 설정](https://home-assistant.io/blog/2017/09/27/effortless-encryption-with-lets-encrypt-and-duckdns/)을 권장합니다.
 
 </div>
 
-### Required IFTTT applets
+### 필요한 IFTTT 애플릿
 
-Next, you will need to set up the required IFTTT applets as listed below.
+다음으로 필요한 IFTTT 애플릿을 아래와 같이 설정해야합니다.
 
-This platform supports the services `alarm_disarm`, `alarm_arm_away`, `alarm_arm_home` and `alarm_arm_night`. For each of these services, an IFTTT webhook will be triggered.
+이 플랫폼은 `alarm_disarm`,`alarm_arm_away`, `alarm_arm_home`, `alarm_arm_night` 서비스를 지원합니다. 이러한 각 서비스에 대해 IFTTT 웹 후크가 트리거됩니다.
 
-For this system to operate correctly, the following IFTTT applets have to be setup. Obviously, if your alarm device does not support some states, no applets have to be provided for those.
+이 시스템이 올바르게 작동하려면 다음 IFTTT 애플릿을 설정해야합니다. 알람 장치가 일부 상태를 지원하지 않는 경우에는 애플릿을 제공할 필요가 없습니다.
 * **IF** Webhook event `YOUR_DISARM_EVENT` is called, **THEN** disarm the alarm system.
 * **IF** Webhook event `YOUR_ARM_HOME_EVENT` is called, **THEN** set the alarm system to armed home.
 * **IF** Webhook event `YOUR_ARM_NIGHT_EVENT` is called, **THEN** set the alarm system to armed away.

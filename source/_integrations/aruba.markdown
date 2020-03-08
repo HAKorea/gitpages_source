@@ -1,5 +1,5 @@
 ---
-title: Aruba
+title: 아루바(Aruba)
 description: Instructions on how to integrate Aruba routers into Home Assistant.
 logo: aruba.png
 ha_category:
@@ -7,17 +7,17 @@ ha_category:
 ha_release: 0.7
 ---
 
-This platform allows you to detect presence by looking at connected devices to an [Aruba Instant](https://www.arubanetworks.com/products/networking/aruba-instant/) device.
+이 플랫폼을 사용하면 연결된 장치를 [Aruba Instant](https://www.arubanetworks.com/products/networking/aruba-instant/) 장치에서 현재 보고 상태를 감지할 수 있습니다.
 
-Supported devices (tested):
+지원되는 장치 (테스트 완료) :
 
 - ARUBA AP-105
 
 <div class='note warning'>
-This device tracker needs telnet to be enabled on the router.
+이 장치 추적기는 라우터에서 텔넷을 활성화해야합니다.
 </div>
 
-To use this device tracker in your installation, add the following to your `configuration.yaml` file:
+이 장치 추적기를 설치에 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -43,4 +43,4 @@ password:
   type: string
 {% endconfiguration %}
 
-See the [device tracker integration page](/integrations/device_tracker/) for instructions how to configure the people to be tracked.
+추적할 사람을 설정하는 방법에 대한 지침은 [device tracker integration page](/integrations/device_tracker/)를 참조하십시오.

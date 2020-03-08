@@ -1,5 +1,5 @@
 ---
-title: Wake on LAN
+title: 원격부팅(Wake on LAN)
 description: Instructions on how to setup the Wake on LAN integration in Home Assistant.
 logo: ethernet.png
 ha_category:

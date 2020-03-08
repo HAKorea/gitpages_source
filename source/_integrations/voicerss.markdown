@@ -1,5 +1,5 @@
 ---
-title: VoiceRSS
+title: 보이스RSS(VoiceRSS)
 description: Instructions on how to setup VoiceRSS TTS with Home Assistant.
 logo: voicerss.png
 ha_category:
@@ -7,11 +7,11 @@ ha_category:
 ha_release: 0.35
 ---
 
-The `voicerss` text-to-speech platform uses [VoiceRSS](http://www.voicerss.org/) Text-to-Speech engine to read a text with natural sounding voices.
+`voicerss` 텍스트 음성 변환 플랫폼은 [VoiceRSS](http://www.voicerss.org/) Text-to-Speech 엔진을 사용하여 자연스럽게 들리는 음성으로 텍스트를 읽습니다.
 
-## Configuration
+## 설정
 
-To enable text-to-speech with VoiceRSS, add the following lines to your `configuration.yaml`:
+VoiceRSS로 텍스트 음성 변환을 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -42,11 +42,11 @@ format:
   default: 8khz_8bit_mono
 {% endconfiguration %}
 
-Check the [VoiceRSS API documentation](http://www.voicerss.org/api/documentation.aspx) for allowed values.
+허용된 값은 [VoiceRSS API 문서](http://www.voicerss.org/api/documentation.aspx)를 확인하십시오.
 
-## Full configuration example
+## 전체 설정 사례
 
-The configuration sample below shows how an entry can look like:
+아래 설정 샘플은 항목이 어떻게 표시되는지 보여줍니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -58,4 +58,4 @@ tts:
     format: '8khz_8bit_mono'
 ```
 
-Please note, some media_players require a certain format. For example the Sonos requires a format of '44khz_16bit_stereo'
+일부 media_players에는 특정 형식이 필요합니다. 예를 들어 Sonos에는 '44khz_16bit_stereo'형식이 필요합니다

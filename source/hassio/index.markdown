@@ -20,7 +20,7 @@ Hass.io의 장점:
 - 활발한 커뮤니티의 지원과 AppDaemon, Homebridge와  InfluxDB 등 다양한 애드온 제공 <br><br>[해외 커뮤니티 포럼 &raquo;][forums]<br>[Hass.io chat 참여 &raquo;][chat]<br>[커뮤니티 애드온 살펴보기 &raquo;][comm-add-ons]<br>[한국 커뮤니티 / HA Korean Community &raquo;][kr-forum]<br><br>
 
 <div class='videoWrapper'>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/qnCRcGTznXs" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XdiGdC7K4sI" frameborder="0" allowfullscreen></iframe>
 </div>
 
 ### 업그레이드

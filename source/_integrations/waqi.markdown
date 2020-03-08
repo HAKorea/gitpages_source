@@ -1,5 +1,5 @@
 ---
-title: World Air Quality Index (WAQI)
+title: 세계 대기질 지수 (WAQI)
 description: Instructions on how to setup World Air Quality Index sensor in Home Assistant.
 logo: waqi.png
 ha_category:
@@ -10,19 +10,19 @@ ha_codeowners:
   - '@andrey-git'
 ---
 
-The `waqi` sensor platform will query [World Air Quality Index](https://aqicn.org/city/beijing/) service to check AQI value for a specific set of locations. The resulting indexes will be added to the Home Assistant as sensor outputs.
+`waqi` 센서 플랫폼은 [World Air Quality Index](https://aqicn.org/city/beijing/) 서비스를 쿼리하여 특정 위치 세트에 대한 AQI 값을 확인합니다. 결과 색인은 센서 출력으로 홈 어시스턴트에 추가됩니다. 
 
-## Setup
+## 셋업
 
-This sensor requires an API token. Please obtain one at [AQICN API token](https://aqicn.org/data-platform/token/#/).
+이 센서에는 API 토큰이 필요합니다. [AQICN API 토큰](https://aqicn.org/data-platform/token/#/)에서 받으십시오.
 
-The locations field is a search for a location. E.g., "brisbane" or "Brisban" would find Brisbane, Australia and all associated stations in the area.
+위치 필드는 위치를 검색합니다. 예를 들어 "brisbane" 또는 "Brisban"은 Brisbane, Australia 및 해당 지역의 모든 관련 스테이션을 찾습니다.
 
-The format for station fields is exactly from the website, e.g., you would provide the location string "[South Brisbane, Australia](http://aqicn.org/city/australia/queensland/south-brisbane/)" for the linked location.
+스테이션 필드의 형식은 웹 사이트의 형식입니다. 예를 들어 링크된 지역의 위치 문자열 "[South Brisbane, Australia](http://aqicn.org/city/australia/queensland/south-brisbane/)"을 제공합니다.
 
-## Configuration
+## 설정
 
-To enable this sensor, add the following lines to your `configuration.yaml` file:
+이 센서를 활성화하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -35,26 +35,27 @@ sensor:
 
 {% configuration %}
 token:
-  description: The token for the AQICN public API.
+  description: AQICN 공개 API의 토큰.
   required: true
   type: string
 locations:
-  description: A list of location names to look for air quality data. In case a specific location has multiple registered stations all of them will be added to Home Assistant.
+  description: 대기질 데이터를 찾을 위치 이름 목록. 특정 위치에 여러 개의 등록된 스테이션이 있는 경우 모두 홈어시스턴트에 추가됩니다.
   required: true
   type: list
 stations:
-  description: A list of station names to look for air quality data. Station should be within locations specified above.
+  description: 대기질 데이터를 찾을 스테이션 이름 목록. 스테이션은 위에 지정된 위치 내에 있어야합니다.
   required: false
   type: list
 {% endconfiguration %}
 
-The value reported is an overall AQ index for the location. The values of the index can be interpreted as following:
+보고된 값은 위치에 대한 전체 AQ 색인입니다. 색인값은 다음과 같이 해석 될 수 있습니다.
+
 
 AQI | Status | Description
 ------- | :----------------: | ----------
-0 - 50  | **Good** | Air quality is considered satisfactory, and air pollution poses little or no risk
-51 - 100  | **Moderate** | Air quality is acceptable; however, for some pollutants there may be a moderate health concern for a very small number of people who are unusually sensitive to air pollution
-101 - 150 | **Unhealthy for Sensitive Groups** | Members of sensitive groups may experience health effects. The general public is not likely to be affected
-151 - 200 | **Unhealthy** | Everyone may begin to experience health effects; members of sensitive groups may experience more serious health effects
-201 - 300 | **Very unhealthy** | Health warnings of emergency conditions. The entire population is more likely to be affected
-301+ | **Hazardous** | Health alert: everyone may experience more serious health effects
+0 - 50  | **Good** | 대기질은 만족스럽고 대기 오염은 거의 또는 전혀 위험하지 않습니다
+51 - 100  | **Moderate** | 대기질이 어느정도 괜찮습니다. 그러나 일부 오염 물질의 경우 대기 오염에 비정상적으로 민감한 소수의 사람들에게 건강에 대한 우려가 약간 있을 수 있습니다
+101 - 150 | **Unhealthy for Sensitive Groups** | 민감한 그룹의 구성원은 건강에 영향을 줄 수 있습니다. 일반 대중은 영향을 받지 않을 것입니다
+151 - 200 | **Unhealthy** | 모든 사람이 건강에 영향을 미칠 수 있습니다. 민감한 그룹의 구성원은 더 심각한 건강 영향을 경험할 수 있습니다.
+201 - 300 | **Very unhealthy** | 응급 상황에 대한 건강 경고. 전체 인구가 영향을받을 가능성이 더 급니다.
+301+ | **Hazardous** | 건강 경고 : 모든 사람이 보다 심각한 건강의 악영향을 경험할 수 있습니다. 

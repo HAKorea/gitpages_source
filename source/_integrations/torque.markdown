@@ -1,5 +1,5 @@
 ---
-title: Torque
+title: 자동차 OBD2 연동(Torque)
 description: Instructions on how to integrate Torque sensors into Home Assistant.
 logo: torque.png
 ha_category:
@@ -8,13 +8,13 @@ ha_release: '0.10'
 ha_iot_class: Cloud Polling
 ---
 
-The `torque` platform will allow you to monitor [Torque](https://torque-bhp.com/) data relayed from a Bluetooth OBD2 stick via the Torque mobile application.
+`토크` 플랫폼을 사용하면 토크 모바일 애플리케이션을 통해 Bluetooth OBD2 스틱에서 릴레이 된 [Torque](https://torque-bhp.com/) 데이터를 모니터링 할 수 있습니다.
 
-## Setup
+## 셋업
 
-To use Torque sensors with your installation, you must configure both the Torque mobile application and Home Assistant.
+설치시 토크 센서를 사용하려면 Torque 모바일 애플리케이션과 Home Assistant를 모두 설정해야합니다.
 
-### Torque application
+### Torque 앱
 
 In **Settings** -> **Data Logging & Upload**:
 
@@ -30,9 +30,9 @@ Under the **Realtime Web Upload** header:
 - Enter an email address in **User Email Address**.
 - Optionally set the **Web Logging Interval**. The 2-second default may quickly fill up the Home Assistant history database.
 
-### Configuration
+### 설정
 
-Add the following to your `configuration.yaml` file:
+`configuration.yaml` 파일에 다음을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry

@@ -1,5 +1,5 @@
 ---
-title: "Modbus Binary Sensor"
+title: "Modbus 이진 센서"
 description: "Instructions on how to set up Modbus binary sensors within Home Assistant."
 logo: modbus.png
 ha_category:
@@ -8,11 +8,11 @@ ha_release: 0.28
 ha_iot_class: Local Push
 ---
 
-The `modbus` binary sensor allows you to gather data from [Modbus](http://www.modbus.org/) coils.
+`modbus` 이진 센서를 사용하면 [Modbus](http://www.modbus.org/) coils 에서 데이터를 수집 할 수 있습니다.
 
-## Configuration
+## 설정
 
-To use your Modbus binary sensors in your installation, add the following to your `configuration.yaml` file:
+Modbus 바이너리 센서를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -59,11 +59,11 @@ coils:
       default: None
 {% endconfiguration %}
 
-It's possible to change the default 30 seconds scan interval for the sensor updates as shown in the [Platform options](/docs/configuration/platform_options/#scan-interval) documentation.
+[Platform options](/docs/configuration/platform_options/#scan-interval) 설명서에 표시된대로 센서 업데이트에 대한 기본 30 초 스캔 간격을 변경할 수 있습니다.
 
-## Full example
+## 전체 예시
 
-Example a sensor with a 10 seconds scan interval:
+스캔 간격이 10 초인 센서의 예 :
 
 ```yaml
 binary_sensor:

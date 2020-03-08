@@ -1,5 +1,5 @@
 ---
-title: Twitch
+title: 트위치(Twitch)
 description: Instructions on how to integrate Twitch sensors into Home Assistant.
 logo: twitch.png
 ha_category:

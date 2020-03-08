@@ -1,5 +1,5 @@
 ---
-title: "MQTT Alarm Control Panel"
+title: "MQTT 경보 제어판"
 description: "Instructions on how to integrate MQTT capable Alarm Panels into Home Assistant."
 logo: mqtt.png
 ha_category:
@@ -8,9 +8,9 @@ ha_release: 0.7.4
 ha_iot_class: Configurable
 ---
 
-The `mqtt` alarm panel platform enables the possibility to control MQTT capable alarm panels. The Alarm icon will change state after receiving a new state from `state_topic`. If these messages are published with *RETAIN* flag, the MQTT alarm panel will receive an instant state update after subscription and will start with the correct state. Otherwise, the initial state will be `unknown`.
+`mqtt` 경보 패널 플랫폼을 사용하면 MQTT를 사용할 수 있는 경보 패널을 제어 할 수 있습니다. 경보 아이콘은 `state_topic`에서 새로운 상태를 받은 후 해당 상태를 변경합니다. 이러한 메시지가 *RETAIN* 플래그와 함께 공개되면 MQTT 경보 패널은 등록후 즉시 상태 업데이트를 수신하고 변경된 상태로 시작합니다. 그렇지 않으면 초기 상태는 `unknown`이 됩니다.
 
-The integration will accept the following states from your Alarm Panel (in lower case):
+통합구성요소는 경보 패널에서 다음 상태를 수락합니다 (소문자).
 
 - `disarmed`
 - `armed_home`
@@ -19,11 +19,11 @@ The integration will accept the following states from your Alarm Panel (in lower
 - `pending`
 - `triggered`
 
-The integration can control your Alarm Panel by publishing to the `command_topic` when a user interacts with the Home Assistant frontend.
+이 통합구성요소는 사용자가 홈어시스턴트 프론트 엔드와 상호 작용할 때 `command_topic`에 공개하여 경보 패널을 제어할 수 있습니다.
 
-## Configuration
+## 설정
 
-To enable this platform, add the following lines to your `configuration.yaml`:
+이 플랫폼을 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry

@@ -1,5 +1,5 @@
 ---
-title: Vera
+title: 베라(Vera)
 description: Instructions on how to setup Vera Z-Wave hubs and configure devices within Home Assistant.
 logo: vera.png
 ha_category:

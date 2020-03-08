@@ -1,5 +1,5 @@
 ---
-title: Sharp Aquos TV
+title: 샤프 Aquos TV
 description: Instructions on how to integrate a Sharp Aquos TV into Home Assistant.
 logo: sharp_aquos.png
 ha_category:
@@ -8,11 +8,11 @@ ha_release: 0.35
 ha_iot_class: Local Polling
 ---
 
-The `aquostv` platform allows you to control a [Sharp Aquos TV](http://www.sharp-world.com/aquos/en/index.html).
+`aquostv` 플랫폼을 통해 [Sharp Aquos TV](http://www.sharp-world.com/aquos/en/index.html)를 제어할 수 있습니다.
 
-When the TV is first connected, you will need to accept Home Assistant on the TV to allow communication.
+TV가 처음 연결되면 TV에서 홈어시스턴트를 수락하여 통신을 허용해야합니다.
 
-To add a TV to your installation, add the following to your `configuration.yaml` file:
+TV를 설치에 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -54,13 +54,13 @@ power_on_enabled:
 
 <div class='note warning'>
 
-When you set **power_on_enabled** as True, you have to turn on your TV on the first time with the remote.
-Then you will be able to turn on with Home Assistant.
-Also, with **power_on_enabled** as True, the Aquos logo on your TV will stay on when you turn off the TV and your TV could consume more power.
+**power_on_enabled**를 True로 설정하면 반드시 리모컨으로 TV를 처음 켜야합니다.
+그런 다음 홈어시스턴트으로 전원을 켤 수 있습니다.
+또한 **power_on_enabled**를 True로 설정하고 TV를 끄면 TV의 Aquos 로고가 계속 켜져 있고 TV에서 더 많은 전력을 소비 할 수 있습니다.
 
 </div>
 
-Currently known supported models:
+현재 알려진 지원 모델 :
 
 - LC-40LE830U
 - LC-46LE830U
@@ -74,4 +74,4 @@ Currently known supported models:
 - LC-60SQ15U
 - LC-50US40 (no volume control, not fully tested)
 
-If your model is not on the list then give it a test, if everything works correctly then add it to the list on [GitHub](https://github.com/home-assistant/home-assistant.io/blob/current/source/_integrations/aquostv.markdown).
+모델이 목록에 없으면 테스트를 해보고 모든 것이 올바르게 작동하면 [GitHub](https://github.com/home-assistant/home-assistant.io/blob/current/source/_integrations/aquostv.markdown)의 목록에 추가하십시오.

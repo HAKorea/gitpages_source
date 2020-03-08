@@ -1,5 +1,5 @@
 ---
-title: Alpha Vantage
+title: 실시간해외주식(Alpha Vantage)
 description: Instructions on how to setup Alpha Vantage within Home Assistant.
 logo: alpha_vantage.png
 ha_category:
@@ -10,9 +10,10 @@ ha_codeowners:
   - '@fabaff'
 ---
 
-The `alpha_vantage` sensor platform uses [Alpha Vantage](https://www.alphavantage.co) to monitor the stock market. This platform also provides detail about exchange rates.
+`alpha_vantage` 센서 플랫폼은 [Alpha Vantage](https://www.alphavantage.co)를 사용하여 주식 시장을 모니터링합니다. 이 플랫폼은 환율에 대한 세부 정보도 제공합니다.
 
-To enable the `alpha_vantage` platform, add the following lines to your `configuration.yaml` file:
+
+`alpha_vantage` 플랫폼을 활성화하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -28,7 +29,7 @@ sensor:
         to: EUR
 ```
 
-Either a symbol or a foreign exchange must be configured, otherwise you will not get any data.
+symbol 또는 외환(foreign exchange)을 설정해야합니다. 그렇지 않으면 데이터를 얻을 수 없습니다.
 
 {% configuration %}
 api_key:
@@ -72,11 +73,11 @@ foreign_exchange:
       type: string
 {% endconfiguration %}
 
-## Examples
+## 사례 
 
-In this section you find some real-life examples of how to use this sensor.
+이 섹션에는 이 센서를 사용하는 방법에 대한 실제 예가 나와 있습니다.
 
-### Google and the exchange rate for Bitcoin
+### 구글 주가와 비트 코인의 환율
 
 ```yaml
 sensor:

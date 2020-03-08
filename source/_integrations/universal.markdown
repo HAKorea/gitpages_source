@@ -1,5 +1,5 @@
 ---
-title: Universal Media Player
+title: 유니버셜 Media Player
 description: Instructions on how to create a universal media player in Home Assistant.
 logo: home-assistant.png
 ha_category:

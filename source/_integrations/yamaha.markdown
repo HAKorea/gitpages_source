@@ -1,5 +1,5 @@
 ---
-title: Yamaha Network Receivers
+title: 야마하 Network Receivers
 description: Instructions on how to integrate Yamaha Network Receivers into Home Assistant.
 logo: yamaha.png
 ha_category:
@@ -7,18 +7,18 @@ ha_category:
 ha_release: 0.16
 ---
 
-The `yamaha` platform allows you to control [Yamaha Network Receivers](https://usa.yamaha.com/products/audio-visual/av-receivers-amps/rx) from Home Assistant.
+`yamaha` 플랫폼을 사용하면 Home Assistant에서 [Yamaha Network Receivers](https://usa.yamaha.com/products/audio-visual/av-receivers-amps/rx)를 제어할 수 있습니다.
 
-Supported devices:
+지원 기기들 :
 
 - [HTR-4065](https://www.yamaha.com/cchtr4065/)
 - [RX-V473](https://ca.yamaha.com/en/products/audio_visual/av_receivers_amps/rx-v473/specs.html)
 - [RX-V573](https://ca.yamaha.com/en/products/audio_visual/av_receivers_amps/rx-v573/specs.html)
 - [RX-V673](https://ca.yamaha.com/en/products/audio_visual/av_receivers_amps/rx-v673/specs.html)
 - [RX-V773](https://ca.yamaha.com/en/products/audio_visual/av_receivers_amps/rx-v773/specs.html)
-- And more
+- 이외 
 
-To add a Yamaha Network Receiver to your installation, add the following to your `configuration.yaml` file:
+Yamaha Network Receiver를 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -53,33 +53,21 @@ zone_names:
   type: list
 {% endconfiguration %}
 
-### Discovery notes
+### 장치 검색시 알아둘 점
 
-- If the `discovery` integration is enabled, all units on the network
-  will be discovered using UPNP.
-- For receivers that support more than one zone, Home Assistant will
-  add one media player per zone supported by the player, named "$name
-  Zone 2" and "$name Zone 3".
-- If you specify `host` manually, you **must** enable network standby
-  on your receiver, or else startup of Home Assistant will hang if you
-  have your receiver switched off.
-- In some cases, auto-discovery fails due to a known bug in the
-  receiver's firmware. It is possible to manually specify the
-  receiver's IP address or via its hostname (if it is discoverable by
-  your DNS) then.
+- `discovery` 통합구성요소가 활성화 된 경우 UPNP를 사용하여 네트워크의 모든 장치를 검색합니다.
+- 둘 이상의 영역(zone)을 지원하는 Receiver의 경우 Home Assistant는 플레이어가 지원하는 영역 당 "$ name Zone 2", "$ name Zone 3"이라는 하나의 미디어 플레이어를 추가합니다.
+- `host`를 수동으로 지정하면 Receiver에서 네트워크 대기를 활성화 **해야합니다**, 그렇지 않으면 Receiver를 끈 경우 Home Assistant 시작이 중단됩니다.
+- 경우에 따라 Receiver 펌웨어의 알려진 버그로 인해 자동 검색이 실패합니다. Receiver의 IP 주소 또는 호스트 이름 (DNS에서 검색 할 수있는 경우)을 통해 수동으로 지정할 수 있습니다.
 
-### Supported operations
+### 지원 동작
 
-- Media players created by yamaha support powering on/off, mute,
-  volume control and source selection. Playback controls, for instance
-  play and stop are available for sources that supports it.
-- The `play_media` service is implemented for `NET RADIO` source
-  only. The `media_id` is a `>` separated string of the menu path on
-  the vtuner service. For instance `Bookmarks>Internet>WAMC 90.3 FM`.
+- 야마하가 만든 미디어 플레이어는 전원 켜기/끄기, 음소거, 볼륨 조절 및 소스 선택을 지원합니다. 재생 및 정지와 같은 재생 컨트롤은 이를 지원하는 소스들에서 사용할 수 있습니다.
+- `play_media` 서비스는 `NET RADIO` 소스에 대해서만 구현됩니다. `media_id`는 vtuner 서비스에서 메뉴 경로의 `>`로 구분된 문자열입니다. 예를 들어 `Bookmarks>Internet>WAMC 90.3 FM`입니다.
 
-### Example configuration
+### 설정 사례
 
-A full configuration example will look like the sample below:
+전체 설정 예는 아래 샘플과 같습니다.
 ```yaml
 # Example configuration.yaml entry
 media_player:
@@ -97,11 +85,9 @@ media_player:
       Main_Zone: "Family Room"
 ```
 
-### Example `play_media` script
+### `play_media` script 예시
 
-The `play_media` function can be used in scripts easily to build media
-player presets. When done in scripts, the sequence will also allow you
-to set volume per source.
+스크립트에서 `play_media` 기능을 사용하여 미디어 플레이어 사전 설정을 쉽게 구축 할 수 있습니다. 스크립트에서 완료되면 시퀀스를 통해 소스 마다 볼륨을 설정할 수도 있습니다.
 
 ```yaml
 # Example play_media script
@@ -127,9 +113,9 @@ script:
 
 ```
 
-### Service `enable_output`
+### `enable_output` 서비스
 
-Enable or disable an output port (HDMI) on the receiver.
+수신기에서 출력 포트(HDMI)를 활성화 또는 비활성화합니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |

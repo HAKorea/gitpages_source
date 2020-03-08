@@ -1,5 +1,5 @@
 ---
-title: Worx Landroid
+title: 잔디깎기기계(Worx Landroid)
 description: Instructions on how to integrate Worx Landroid WG796E.1 or WG797E as sensors within Home Assistant.
 logo: worx.png
 ha_category:
@@ -8,9 +8,9 @@ ha_release: 0.54
 ha_iot_class: Local Polling
 ---
 
-The `worxlandroid` sensor platform allows you to get the current state, battery level and error status Worx Landroid WG796E.1 or WG797E.
+`worxlandroid` 센서 플랫폼을 사용하면 현재 상태, 배터리 레벨 및 오류 상태 Worx Landroid WG796E.1 또는 WG797E를 얻을 수 있습니다.
 
-To use your Worx Landroid mower in your installation, add the following to your `configuration.yaml` file:
+Worx Landroid 잔디깎이기계를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

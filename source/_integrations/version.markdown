@@ -1,5 +1,5 @@
 ---
-title: Version
+title: 버전(Version)
 description: Instructions on how to integrate a version sensor into Home Assistant.
 ha_category:
   - Utility
@@ -11,11 +11,11 @@ ha_codeowners:
   - '@fabaff'
 ---
 
-The `version` sensor platform that can display the current Home Assistant versions.
+현재 홈어시스턴트 버전을 표시할 수있는 `version` 센서 플랫폼.
 
-## Configuration
+## 설정
 
-To enable this sensor, add the following lines to your `configuration.yaml`:
+이 센서를 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -46,24 +46,21 @@ source:
   default: local
 {% endconfiguration %}
 
-### Supported images for Hass.io and Docker
+### HASS.IO 및 DOCKER에 지원되는 이미지
 
 `default`, `qemux86`, `qemux86-64`, `qemuarm`, `qemuarm-64`, `intel-nuc`, `raspberrypi`, `raspberrypi2`, `raspberrypi3`, `raspberrypi3-64`, `raspberrypi4`, `raspberrypi4-64`, `tinker`, `odroid-c2`, `odroid-xu`
 
-## Alternatives for showing local version
+## 로컬 버전을 표시하기위한 대안
 
-This sensor is an alternative to the existing solutions to achieve the same
-result through various platforms.
-Remember that you can easily get the installed version on the command line.
+이 센서는 다양한 솔루션을 통해 동일한 결과를 얻기 위한 기존 솔루션의 대안입니다. 컴맨드 라인에서 설치된 버전을 쉽게 얻을 수 있습니다.
 
 ```bash
 hass --version
 ```
 
-Or go to the <img src='/images/screenshots/developer-tool-about-icon.png' alt='service developer tool icon' class="no-shadow" height="38" /> **Info** section of the **Developer Tools**.
+또는 **개발자 도구**의 <img src='/images/screenshots/developer-tool-about-icon.png' alt='service developer tool icon' class="no-shadow" height="38" /> **정보** 섹션으로 이동하십시오.
 
-A [`command_line`](/integrations/sensor.command_line/) with
-[`hass`](/docs/tools/hass/) to display your current version.
+[`hass`](/docs/tools/hass/)가 있는 [`command_line`](/integrations/sensor.command_line/)은 현재 버전을 표시합니다.
 
 ```yaml
 sensor:
@@ -72,8 +69,7 @@ sensor:
     command: "/home/homeassistant/bin/hass --version"
 ```
 
-It's also possible to read a file called `.HA_VERSION` which is located in your
-Home Assistant [configuration](/docs/configuration/) folder.
+홈어시스턴트 [configuration](/docs/configuration/) 폴더에 있는 `.HA_VERSION`이라는 파일을 읽을 수도 있습니다.
 
 ```yaml
 sensor:
@@ -82,9 +78,9 @@ sensor:
     command: "cat /home/homeassistant/.homeassistant/.HA_VERSION"
 ```
 
-You might think that a [`rest` sensor](/integrations/rest) could work,
-too,
-but it will not as Home Assistant is not ready when the sensor gets initialized.
+*번역 재검토 필요*
+
+You might think that a [`rest` sensor](/integrations/rest) could work, too , but it will not as Home Assistant is not ready when the sensor gets initialized.
 
 {% raw %}
 ```yaml

@@ -1,5 +1,5 @@
 ---
-title: VersaSense
+title: 산업용IOT(VersaSense)
 description: Integrate your VersaSense MicroPnP devices.
 date: 2019-11-19 14:00
 logo: versasense.png

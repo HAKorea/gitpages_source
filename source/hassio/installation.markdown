@@ -203,6 +203,11 @@ curl -sL "https://raw.githubusercontent.com/home-assistant/hassio-installer/mast
 
 버추얼 머신에서 Hass.io 설치는 [blog][hassio-vm] 글을 참고하세요.
 
+## 또 다른 방법: 시놀로지 NAS에서의 설치
+
+HA 네이버카페 멀더요원님의 [시놀로지 NAS에 Hassio 설치하기](https://cafe.naver.com/koreassistant/95)를 참고하십시오. 
+
+
 [balenaEtcher]: https://www.balena.io/etcher
 [Virtual Appliance]: https://github.com/home-assistant/hassos/blob/dev/Documentation/boards/ova.md
 [hassos-network]: https://github.com/home-assistant/hassos/blob/dev/Documentation/network.md

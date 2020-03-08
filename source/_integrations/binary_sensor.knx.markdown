@@ -1,5 +1,5 @@
 ---
-title: "KNX Binary Sensor"
+title: "KNX 이진 센서"
 description: "Instructions on how to setup the KNX binary sensors within Home Assistant."
 logo: knx.png
 ha_category:
@@ -10,17 +10,17 @@ ha_iot_class: Local Push
 
 <div class='note'>
   
-The `knx` integration must be configured correctly to use this integration, see [KNX Integration](/integrations/knx).
+이 통합구성요소를 사용하려면 `knx` 통합구성요소를 올바르게 설정해야합니다. [KNX Integration](/integrations/knx)을 참조하십시오.
 
 </div>
 
-The `knx` sensor platform allows you to monitor [KNX](https://www.knx.org/) binary sensors.
+`knx` 센서 플랫폼을 사용하면 [KNX](https://www.knx.org/) 이진 센서를 모니터링 할 수 있습니다.
 
-Binary sensors are read-only. To write to the knx-bus configure an exposure [KNX Integration - Expose](/integrations/knx/#exposing-sensor-values-or-time-to-knx-bus).
+이진 센서는 읽기 전용입니다. knx-bus에 쓰려면 노출을 구성하십시오 [KNX Integration - Expose](/integrations/knx/#exposing-sensor-values-or-time-to-knx-bus).
 
-## Configuration
+## 설정
 
-The `knx` integration must be configured correctly, see [KNX Integration](/integrations/knx).
+`knx` 통합구성요소는 정확하게 설정되어야합니다. [KNX Integration](/integrations/knx)을 참조하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -58,9 +58,9 @@ reset_after:
   type: integer
 {% endconfiguration %}
 
-### Automation actions
+### 자동화 액션
 
-You can also attach actions to binary sensors (e.g., to switch on a light when a switch was pressed). In this example, one light is switched on when the button was pressed once and two others when the button was pressed a second time.
+이진 센서에 액션을 연결할 수도 있습니다 (예: 스위치를 눌렀을 때 조명 켜기). 이 예에서, 버튼을 한 번 누르면 하나의 조명이 켜지고, 버튼을 두 번 누르면 다른 하나가 켜집니다.
 
 ```yaml
 # Example configuration.yaml entry

@@ -1,5 +1,5 @@
 ---
-title: Twitter
+title: 트위터(Twitter)
 description: Instructions on how to add Twitter notifications to Home Assistant.
 logo: twitter.png
 ha_category:

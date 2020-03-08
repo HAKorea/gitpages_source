@@ -1,5 +1,5 @@
 ---
-title: VLC media player Telnet
+title: VLC 미디어 플레이어 텔넷
 description: Instructions on how to integrate VLC media player into Home Assistant using the telnet interface.
 logo: videolan.png
 ha_category:
@@ -10,9 +10,9 @@ ha_codeowners:
   - '@rodripf'
 ---
 
-The `vlc_telnet` platform allows you to control a [VLC media player](https://www.videolan.org/vlc/index.html) using the built in telnet interface.
+`vlc_telnet` 플랫폼에서는 내장된 텔넷 인터페이스를 사용하여 [VLC 미디어 플레이어](https://www.videolan.org/vlc/index.html)를 제어 할 수 있습니다.
 
-To add a VLC media player to your installation, add the following to your `configuration.yaml` file:
+VLC 미디어 플레이어를 설치에 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -43,14 +43,13 @@ port:
   type: integer
 {% endconfiguration %}
 
-Only the "music" media type is supported for now.
+현재는 "음악" 미디어 유형 만 지원됩니다.
 
-This service will control any instance of VLC player on the network with the telnet interface activated. 
-To activate the telnet interface on your VLC Player please read the [official VLC documentation](https://wiki.videolan.org/Documentation:Modules/telnet/). Also remember to add a firewall rule allowing inbound connections for the port used in the device running VLC.
+이 서비스는 텔넷 인터페이스가 활성화 된 네트워크의 VLC 플레이어 인스턴스를 제어합니다. VLC 플레이어에서 텔넷 인터페이스를 활성화하려면 [official VLC documentation](https://wiki.videolan.org/Documentation:Modules/telnet/)을 읽으십시오. 또한 VLC를 실행하는 장치에서 사용되는 포트에 대한 인바운드 연결을 허용하는 방화벽 규칙을 추가해야합니다.
 
-## Full configuration
+## 전체 설정
 
-A full configuration for VLC could look like the one below:
+VLC의 전체 설정은 다음과 같습니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -62,6 +61,6 @@ media_player:
     password: your-secure-password
 ```
 
-##### Additional configuration for Rasperry Pi
+##### Rasperry Pi의 추가 구성
 
-You can run a VLC Media Player inside your Hass.io installation using the [hassio-local-vlc add-on](https://github.com/rodripf/hassio-local-vlc). Using it you can play files on the local network, Internet or files and playlist locally saved to the /share folder of your Hass.io installation.
+[hassio-local-vlc 애드온](https://github.com/rodripf/hassio-local-vlc)을 사용하여 Hass.io 설치 내에서 VLC 미디어 플레이어를 실행할 수 있습니다. 이를 사용하여 로컬 네트워크, 인터넷 또는 Hass.io 설치의 /share 폴더에 로컬로 저장된 파일 및 재생 목록의 파일을 재생할 수 있습니다.

@@ -1,5 +1,5 @@
 ---
-title: Twilio
+title: 트윌리오(Twilio)
 description: Instructions on how to add Twilio notifications to Home Assistant.
 logo: twilio.png
 ha_category:

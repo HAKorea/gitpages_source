@@ -1,5 +1,5 @@
 ---
-title: IBM Watson IoT Platform
+title: IBM 왓슨 IoT 플랫폼
 description: Record events in the IBM Watson IoT Platform.
 logo: ibm.png
 ha_category:

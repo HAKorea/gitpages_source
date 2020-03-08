@@ -1,5 +1,5 @@
 ---
-title: Sony Bravia TV
+title: 소니 브라비아 TV
 description: Instructions on how to integrate a Sony Bravia TV into Home Assistant.
 logo: bravia.png
 ha_category:
@@ -10,13 +10,13 @@ ha_codeowners:
   - '@robbiet480'
 ---
 
-The `braviatv` platform allows you to control a [Sony Bravia TV](https://www.sony.com/).
+`braviatv` 플랫폼을 사용하면 [Sony Bravia TV](https://www.sony.com/)를 제어 할 수 있습니다.
 
-Almost all [Sony Bravia TV 2013 and newer](https://info.tvsideview.sony.net/en_ww/home_device.html#bravia) are supported. A more generic method for older TVs connected to a Raspberry Pi with HDMI-CEC is explained further below.
+거의 모든 [Sony Bravia TV 2013 이상](https://info.tvsideview.sony.net/en_ww/home_device.html#bravia)이 지원됩니다. HDMI-CEC를 사용하여 Raspberry Pi에 연결된 구형 TV의 일반적인 방법은 아래에 자세히 설명되어 있습니다.
 
-You will need to configure your TV to allow the Home Assistant for remote usage. To do that, ensure that your TV is turned on. Open the configuration popup on Home Assistant and enter a random PIN (for example 0000). After that, the TV will show you a PIN and Home Assistant will allow you to re-enter that PIN. Enter the PIN shown on your TV and Home Assistant will be able to control your Sony Bravia TV.
+원격 사용을 위해 홈어시스턴트를 허용하도록 TV를 설정해야합니다. 그러려면 TV가 켜져 있는지 확인하십시오. 홈어시스턴트에서 설정 팝업을 열고 임의의 PIN (예: 0000)을 입력하십시오. 그런 다음 TV에 PIN이 표시되고 홈어시스턴트에서 해당 PIN을 다시 입력 할 수 있습니다. TV에 표시된 PIN을 입력하면 홈어시스턴트가 Sony Bravia TV를 제어 할 수 있습니다.
 
-To add a TV to your installation, add the following to your `configuration.yaml` file:
+TV를 설치에 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -37,19 +37,19 @@ name:
   type: string
 {% endconfiguration %}
 
-You are also able to configure the TV manually by placing a `bravia.conf` file in your [configuration directory](/docs/configuration/) with the following information - please update the details to match your setup:
+다음 정보와 함께 [configuration directory](/docs/configuration/)에 `bravia.conf` 파일을 넣어 TV를 수동으로 설정 할 수도 있습니다. 설정에 맞게 세부 정보를 업데이트하십시오.
 
 ```json
 {"192.168.0.10": {"pin": "7745", "mac": "ac:1e:0a:e1:0c:01"}}
 ```
 
-## For TVs older than 2013
+## 2013년 이전 모델
 
-Users of TVs older than 2013 have another option for controlling their TV via Home Assistant.
+2013보다 오래된 TV 사용자는 홈어시스턴트를 통해 TV를 제어할 수있는 다른 옵션이 있습니다.
 
-### Using HDMI-CEC
+### HDMI-CEC 사용하기
 
-If you have a Raspberry Pi connected to your TV:
+Raspberry Pi가 TV에 연결된 경우 :
 
 ```yaml
 switch:
@@ -62,17 +62,17 @@ switch:
         value_template: {% raw %}'{{ value == "power status: on" }}{% endraw %}'
 ```
 
-Using `cec-client` is a great method to turn your TV off/on, however the trade off is if you're using Kodi, it will no longer be able to control your TV using the TV Remote.
+`cec-client`를 사용하면 TV를 켜고 끌 수 있는 좋은 방법이지만 Kodi를 사용하는 경우 더 이상 TV 리모컨을 사용하여 TV를 제어 할 수 없습니다.
 
-This is because only one process can control the CEC functionality within the Raspberry Pi at a time and running the above commands terminates the functionality inside libCEC within Kodi. Kodi must be restarted for TV remove functionality to work again.
+이는 한 번에 하나의 프로세스 만 Raspberry Pi 내에서 CEC 기능을 제어할 수 있고 위 명령을 실행하면 Kodi 내의 libCEC 내 기능이 종료되기 때문입니다. TV 제거 기능이 다시 작동하려면 Kodi를 다시 시작해야합니다.
 
-**Workaround:**
+**해결방법:**
 
-If your desire is only to turn on your TV, the following "workaround" may be desirable:
+TV를 켜려는 것만 원하는 경우 다음 "해결 방법"이 바람직 할 수 있습니다.
 
-Change the 'on' command to a restart for Kodi. This doesn't reboot the Kodi device.
+'on' 명령을 Kodi의 재시작으로 변경하십시오. 이것은 Kodi 장치를 재부팅하지 않습니다.
 
-Restarting Kodi will trigger a HDMI-CEC event to bring the TV out of standby. The following can replace your TV 'on' command.
+Kodi를 다시 시작하면 HDMI-CEC 이벤트가 발생하여 TV가 대기 모드에서 벗어날 수 있습니다. 다음은 TV 'on' 명령을 대체 할 수 있습니다.
 
 ```yaml
 command_on: ssh root@[IP] "systemctl restart kodi"

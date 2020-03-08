@@ -1,5 +1,5 @@
 ---
-title: CO2 Signal
+title: 세계이산화탄소측정(CO2 Signal)
 description: Instructions on how to use CO2Signal data within Home Assistant
 logo: co2signal.png
 ha_category:
@@ -8,19 +8,19 @@ ha_release: 0.87
 ha_iot_class: Cloud Polling
 ---
 
-The `co2signal` sensor platform queries the [CO2Signal](https://www.co2signal.com/) API for the CO2 intensity of a specific region. Data can be collected via latitude/longitude or by country code. This API uses the same data as <https://www.electricitymap.org> Not all countries/regions in the world are supported so please consult this website to check local availability.
+`co2signal` 센서 플랫폼은 [CO2Signal](https://www.co2signal.com/) API에 특정 지역의 CO2 강도를 쿼리합니다. 위도/경도 또는 국가 코드를 통해 데이터를 수집할 수 있습니다. 이 API는 <https://www.electricitymap.org>와 동일한 데이터를 사용합니다. 전 세계의 모든 국가/지역이 지원되는 것은 아니므로 이 웹사이트를 참조하여 로컬 가용성을 확인하십시오.
 
-This platform requires a CO2Signal API key, which can be obtained [here](https://www.co2signal.com/). Note that this API key is for personal use only and other options exist when the data is used commercially.
+이 플랫폼에는 [여기](https://www.co2signal.com/)에서 얻을 수 있는 CO2Signal API 키가 필요합니다. 이 API 키는 개인용이며 데이터가 상업적으로 사용될 때 다른 옵션을 써야합니다.
 
-At the moment, the free CO2Signal API only supports the average carbon intensity of a country and not the marginal carbon intensity.
+현재 무료 CO2Signal API는 한계 탄소 강도가 아닌 국가의 평균 탄소 강도 만 지원합니다.
 
 <div class='note warning'>
-The "free" API key is limited to a limited number of calls. Too many requests can result in data loss.
+"무료" API 키는 제한된 수의 호출로 제한됩니다. 요청이 너무 많으면 데이터가 손실 될 수 있습니다.
 </div>
 
-## Configuration
+## 설정
 
-To set up this platform, get your [API key](https://www.co2signal.com/) and add the following lines to your `configuration.yaml` file:
+이 플랫폼을 설정하려면 [API 키](https://www.co2signal.com/)를 가져 와서 `configuration.yaml` 파일에 다음 줄을 추가하십시오 :
 
 ```yaml
 sensor:
@@ -28,7 +28,7 @@ sensor:
     token: YOUR_CO2SIGNAL_API_KEY
 ```
 
-By default, the sensor will use your Home Assistant longitude and latitude. More detailed configurations to overwrite this can be found below.
+기본적으로 센서는 홈어시스턴트 경도 및 위도를 사용합니다. 이를 덮어쓰는 보다 자세한 설정은 아래에서 확인할 수 있습니다.
 
 {% configuration %}
 token:
@@ -51,7 +51,7 @@ country_code:
   type: string
 {% endconfiguration %}
 
-To enable the platform and gather data via a specific latitude/longitude, add the following lines to your `configuration.yaml` file:
+플랫폼을 활성화하고 특정 위도/경도를 통해 데이터를 수집하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오.
 
 ```yaml
 sensor:
@@ -61,7 +61,7 @@ sensor:
     longitude: YOUR_LONGITUDE
 ```
 
-A similar result can be achieved by using the country code. In that case, use the following lines in your `configuration.yaml` file:
+국가 코드를 사용하여 유사한 결과를 얻을 수 있습니다. 이 경우 `configuration.yaml` 파일에서 다음 줄을 사용하십시오.
 
 ```yaml
 sensor:
@@ -70,9 +70,9 @@ sensor:
     country_code: YOUR_COUNTRY_CODE
 ```
 
-## Example Configurations
+## 설정 사례
 
-Configuration using custom latitude and longitude:
+사용자 지정 위도 및 경도를 사용한 설정 :
 
 ```yaml
 sensor:
@@ -82,7 +82,7 @@ sensor:
     longitude: 5.5
 ```
 
-Configuration using a country code:
+국가 코드를 사용한 설정 :
 
 ```yaml
 sensor:
@@ -91,6 +91,6 @@ sensor:
     country_code: BE
 ```
 
-## Sensor Types
+## Sensor 타입들
 
-When configured, the platform will create one sensor for each configured location.
+연동된 플랫폼은 설정된 각 위치에 대해 하나의 센서를 만듭니다.

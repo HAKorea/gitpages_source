@@ -8,17 +8,17 @@ ha_release: 0.7
 ha_iot_class: Configurable
 ---
 
-The `mqtt` switch platform lets you control your MQTT enabled switches.
+`mqtt` 스위치 플랫폼을 사용하면 MQTT가 가능한 스위치를 제어할 수 있습니다.
 
-## Configuration
+## 설정
 
-In an ideal scenario, the MQTT device will have a `state_topic` to publish state changes. If these messages are published with a `RETAIN` flag, the MQTT switch will receive an instant state update after subscription, and will start with the correct state. Otherwise, the initial state of the switch will be `false` / `off`.
+이상적인 시나리오에서 MQTT 디바이스에는 상태 변경 사항을 공개하기 위한 `state_topic`이 있습니다. 이러한 메시지가 `RETAIN` 플래그와 함께 공개되면 MQTT 스위치는 구독(subscription) 후 즉시 상태 업데이트를 수신하고 변경된 상태로 시작합니다. 그렇지 않으면 스위치의 초기 상태는 `false`/`off`입니다.
 
-When a `state_topic` is not available, the switch will work in optimistic mode. In this mode, the switch will immediately change state after every command. Otherwise, the switch will wait for state confirmation from the device (message from `state_topic`).
+`state_topic`을 사용할 수 없으면 스위치는 optimistic 모드에서 작동합니다. 이 모드에서 스위치는 모든 명령 후에 즉시 상태를 변경합니다. 그렇지 않으면 스위치는 장치의 상태 확인을 기다립니다 (`state_topic`의 메시지).
 
-Optimistic mode can be forced, even if the `state_topic` is available. Try to enable it, if experiencing incorrect switch operation.
+`state_topic`이 사용 가능하더라도 Optimistic 모드를 강제할 수 있습니다. 잘못된 스위치 작동이 발생하면 활성화하십시오.
 
-To enable this switch in your installation, add the following to your `configuration.yaml` file:
+설치에서이 스위치를 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -139,17 +139,17 @@ device:
 
 <div class='note warning'>
 
-Make sure that your topic matches exactly. `some-topic/` and `some-topic` are different topics.
+topic이 정확히 일치하는지 확인하십시오. `some-topic/` 과 `some-topic`은 다른 topic입니다.
 
 </div>
 
-## Examples
+## 사례
 
-In this section, you will find some real-life examples of how to use this sensor.
+이 섹션에서는 이 센서를 사용하는 방법에 대한 실제 예를 제공합니다.
 
-### Full configuration
+### 전체 설정
 
-The example below shows a full configuration for a switch.
+아래 예는 스위치의 전체 설정을 보여줍니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -168,23 +168,23 @@ switch:
     retain: true
 ```
 
-For a check, you can use the command line tools `mosquitto_pub` shipped with `mosquitto` to send MQTT messages. This allows you to operate your switch manually:
+확인을 위해 `mosquitto`와 함께 제공된 `mosquitto_pub`를 command line tools로 사용하여 MQTT 메시지를 보낼 수 있습니다. 이를 통해 스위치를 수동으로 조작할 수 있습니다.
 
 ```bash
 mosquitto_pub -h 127.0.0.1 -t home/bedroom/switch1 -m "ON"
 ```
 
-### Set the state of a device with ESPEasy
+### ESPEasy를 사용하여 장치 상태 설정 
 
-Assuming that you have flashed your ESP8266 unit with [ESPEasy](https://github.com/letscontrolit/ESPEasy). Under "Config" is a name ("Unit Name:") set for your device (here it's "bathroom"). A configuration for a "Controller" for MQTT with the protocol "OpenHAB MQTT" is present and the entries ("Controller Subscribe:" and "Controller Publish:") are adjusted to match your needs. In this example, the topics are prefixed with "home". There is no further configuration needed as the [GPIOs](https://www.letscontrolit.com/wiki/index.php/GPIO) can be controlled with MQTT directly.
+[ESPEasy](https://github.com/letscontrolit/ESPEasy)를 사용하여 ESP8266 장치를 플래시했다고 가정합니다. "Config"아래에 장치의 이름 ( "Unit Name:")이 있습니다 (여기서는 "bathroom"). "OpenHAB MQTT" 프로토콜을 사용하는 MQTT에 대한 "Controller"에 대한 설정이 있으며 항목 ( "Controller Subscribe:"및 "Controller Publish:")이 필요에 맞게 조정됩니다. 이 예에서 topic은 "home"으로 시작합니다. [GPIO](https://www.letscontrolit.com/wiki/index.php/GPIO)를 MQTT로 직접 제어할 수 있으므로 추가 설정이 필요하지 않습니다.
 
-Manually you can set pin 13 to high with `mosquitto_pub` or another MQTT tool:
+`mosquitto_pub` 또는 다른 MQTT 도구를 사용하여 pin 13을 수동으로 HIGH로 설정할 수 있습니다.
 
 ```bash
 mosquitto_pub -h 127.0.0.1 -t home/bathroom/gpio/13 -m "1"
 ```
 
-The configuration will look like the example below:
+설정은 아래 예와 같습니다.
 
 {% raw %}
 ```yaml

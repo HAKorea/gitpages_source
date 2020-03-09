@@ -13,17 +13,17 @@ ha_codeowners:
   - '@michaelarnauts'
 ---
 
-The `tado` integration platform is used as an interface to the [my.tado.com](https://my.tado.com/) website.
+`tado` 통합구성요소 플랫폼은 [my.tado.com](https://my.tado.com/) 웹 사이트의 인터페이스로 사용됩니다.
 
-There is currently support for the following device types within Home Assistant:
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - Climate - for every tado zone.
 - [Presence Detection](#presence-detection)
 - Sensor - for some additional information of the zones.
 
-## Configuration
+## 설정
 
-To use your tado thermostats in your installation, add the following to your `configuration.yaml` file:
+설치에서 tado 온도 조절기를 사용하려면`configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -48,17 +48,17 @@ fallback:
   default: true
 {% endconfiguration %}
 
-The tado thermostats are internet connected thermostats. There exists an unofficial API at [my.tado.com](https://my.tado.com/), which is used by their website and now by this component.
+tado 온도 조절기는 인터넷 연결 온도 조절기입니다. [my.tado.com](https://my.tado.com/)에는 비공식 API가 있으며이 웹 사이트는 현재 이 구성 요소에서 사용합니다.
 
-It currently supports presenting the current temperature, the setting temperature and the current operation mode. Switching the mode is also supported. If no user is at home anymore, the devices are showing the away-state. Switching to away-mode is not supported.
+현재 온도, 설정 온도 및 현재 작동 모드를 나타내는 것을 지원합니다. 모드 전환도 지원됩니다. 더 이상 집에 사용자가 없으면 장치가 away-state를 표시합니다. away-mode로의 전환은 지원되지 않습니다.
 
-## Presence Detection
+## 재실 감지
 
-The `tado` device tracker is using the [Tado Smart Thermostat](https://www.tado.com/) and its support for person presence detection based on smartphone location by geofencing.
+`tado` 장치 추적기는 [Tado Smart Thermostat](https://www.tado.com/)와 지오펜싱(geofencing)을 통한 스마트폰 기반 위치 감지 지원을 사용하고 있습니다.
 
-This tracker uses the Tado API to determine if a mobile device is at home. It tracks all devices in your home that Tado knows about.
+이 추적기는 Tado API를 사용하여 모바일 장치가 집에 있는지 확인합니다. Tado가 알고있는 가정의 모든 장치를 추적합니다.
 
-To use the Tado platform in your installation, add the following to your `configuration.yaml` file:
+설치에서 Tado 플랫폼을 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry for Tado
@@ -84,14 +84,14 @@ home_id:
   type: integer
 {% endconfiguration %}
 
-After configuration, your device has to be at home at least once before showing up as *home* or *away*.
-Polling Tado API for presence information will happen at most once every 30 seconds.
+설정 후, 장치는 *home* 또는 *away*로 표시되기 전에 최소한 한 번은 집에 있어야합니다.
+Polling Tado Presence API는 최대 30 초마다 한 번씩 발생합니다.
 
-See the [device tracker integration page](/integrations/device_tracker/) for instructions how to configure the people to be tracked. Beware that the Tado (v2) API does not provide GPS location of devices, only a bearing, therefore Home Assistant only uses `home`/`not-home` status.
+추적할 사람을 설정하는 방법에 대한 지시 사항은 [device tracker integration page](/integrations/device_tracker/)를 참조하십시오. Tado (v2) API가 장치에 GPS 위치를 제공하지 않고 방향만 제공하는 Beado는 홈어시스턴트가 `home`/`not-home` 상태만 사용합니다.
 
-### Finding your `home_id`
+### `home_id` 찾기
 
-Find your `home_id` by browsing to `https://my.tado.com/api/v2/me?username=YOUR_USERNAME&password=YOUR_PASSWORD`. There you'll see something like the following:
+`https://my.tado.com/api/v2/me?username=YOUR_USERNAME&password=YOUR_PASSWORD`로 이동하여 `home_id`를 찾으십시오. 다음과 같은 것이 있을 것입니다 :
 
 ```json
 {
@@ -109,4 +109,4 @@ Find your `home_id` by browsing to `https://my.tado.com/api/v2/me?username=YOUR_
 }
 ```
 
-In this example `12345` is the `home_id` you'll need to configure.
+이 예에서 `12345`는 설정해야 할 `home_id`입니다.

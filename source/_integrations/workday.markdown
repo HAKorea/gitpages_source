@@ -11,16 +11,15 @@ ha_codeowners:
   - '@fabaff'
 ---
 
-The `workday` binary sensor indicates, whether the current day is a workday or not. It allows specifying, which days of the week counts as workdays and also
-uses the python module [holidays](https://pypi.python.org/pypi/holidays) to incorporate information about region-specific public holidays.
+`workday` 이진 센서는 현재 일이 근무일인지 여부를 나타냅니다. 요일로 계산할 요일을 지정할 수 있으며 Python 모듈 [holidays](https://pypi.python.org/pypi/holidays)을 사용하여 지역별 공휴일에 대한 정보를 연동할 수 있습니다.
 
-## Setup
+## 셋업
 
-Check the [country list](https://github.com/dr-prodigy/python-holidays#available-countries) for available province.
+사용 가능한 지역에 대해서는 [country list](https://github.com/dr-prodigy/python-holidays#available-countries)을 확인하십시오.
 
-## Configuration
+## 설정
 
-To enable the `workday` sensor in your installation, add the following to your `configuration.yaml` file:
+설치시 `workday` 센서를 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -65,21 +64,21 @@ add_holidays:
   type: list
 {% endconfiguration %}
 
-Days are specified as follows: `mon`, `tue`, `wed`, `thu`, `fri`, `sat`, `sun`.
-The keyword `holiday` is used for public holidays identified by the holidays module.
+일은 다음과 같이 지정됩니다: `mon`,`tue`,`wed`,`thu`,`fri`,`sat`,`sun`.
+키워드 `holiday`은 공휴일 모듈에 의해 식별된 공휴일에 사용됩니다.
 
 <div class='note warning'>
 
-If you use the sensor for Norway (`NO`) you need to wrap `NO` in quotes or write the name in full.
-Otherwise the value is evaluated as `false`.
-If you use the sensor for Canada (`CA`) with Ontario (`ON`) as `province:` then you need to wrap `ON` in quotes.
-Otherwise the value is evaluated as `true` (check the YAML documentation for further details) and the sensor will not work.
+노르웨이 (`NO`)에 센서를 사용하는 경우 `NO`를 따옴표로 묶거나 이름을 완전히 써야합니다.
+그렇지 않으면 값은 `false`로 평가됩니다.
+온타리오 (`ON`)가 있는 캐나다 (`CA`) 센서를 `province:`로 사용하는 경우 `ON`을 따옴표로 묶어야합니다.
+그렇지 않으면 값이 `true`로 평가되고 (자세한 내용은 YAML 설명서를 확인하십시오) 센서가 작동하지 않습니다.
 
 </div>
 
-## Full example
+## 전체 예제
 
-This examples excludes Saturdays, Sundays and holiday. Two custom holidays are added.
+이 예는 토요일, 일요일 및 공휴일을 제외합니다. 두 개의 사용자 정의 휴일이 추가됩니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -93,9 +92,9 @@ binary_sensor:
       - '2018-12-31'
 ```
 
-## Automation example
+## 자동화 예제
 
-Example usage for automation:
+자동화 사용법 예 :
 
 ```yaml
 automation:
@@ -114,6 +113,6 @@ automation:
 
 <div class='note'>
 
-Please remember that [as explained here](/docs/configuration/devices/) you can only have a single `automation:` entry. Add the automation to your existing automations.
+[as explained here](/docs/configuration/devices/) 하나의 `automation:`항목만 가질 수 있습니다. 기존 자동화에 자동화를 추가하십시오.
 
 </div>

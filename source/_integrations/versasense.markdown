@@ -13,9 +13,9 @@ ha_codeowners:
   - '@flamm3blemuff1n'
 ---
 
-The `VersaSense` integration supports the VersaSense Edge Gateway. The gateway is able to control hubs and their peripherals (sensors and actuators) in the mesh network.
+`VersaSense` 통합구성요소는 VersaSense Edge Gateway를 지원합니다. 게이트웨이는 메시 네트워크에서 허브와 주변 장치 (센서 및 액추에이터)를 제어 할 수 있습니다.
 
-## Configuration
+## 설정
 
 ```yaml
 # Example configuration.yaml entry
@@ -30,11 +30,11 @@ host:
   type: string
 {% endconfiguration %}
 
-## Supported hardware
+## 지원되는 하드웨어
 
-All Versasense gateways with software version >= 1.0.2.10
+소프트웨어 버전 >= 1.0.2.10 인 모든 Versasense 게이트웨이
 
-The integration is tested with following peripherals and devices:
+다음 주변 장치 및 장치로 테스트되었습니다.
 
 - S03 S04: Temperature and Humidity sensor
 - S06: Barometric Pressure sensor

@@ -10,7 +10,7 @@ ha_release: 0.54
 `mqtt` vacuum 통합구성요소로 MQTT를 쓸 수 있는 로봇청소기를 제어할 수 있습니다.
 `legacy` 및 `state`라는 두 가지 가능한 메시지 스키마가 있습니다. 
 `legacy`는 더 이상 사용되지 않으며 향후 언젠가 제거될 수 있으므로 새로 설치시에는 `state` 스키마를 사용해야합니다.
-로봇청소기 상태는 추천하는 상위 vacuum 엔티티인 `StateVacuumDevice`로 표시되므로 `state` 스키마를 추천합니다.
+로봇청소기 state는 추천하는 상위 vacuum 엔티티인 `StateVacuumDevice`로 표시되므로 `state` 스키마를 추천합니다.
 
 이 문서에는 3 개의 섹션이 있습니다. 예제가 있는 `legacy` vacuum에 대한 설정, 예제에 대한 `state` vacuum에 대한 설정 및 두 스키마에 대해 동일한 예가 있는 합쳐진 섹션입니다.
 
@@ -458,7 +458,7 @@ MQTT payload:
 }
 ```
 
-상태는 홈어시스턴트가 지원하는 vacuum 상태중 하나여야합니다.
+state는 홈어시스턴트가 지원하는 vacuum state중 하나여야합니다.
 
 - cleaning,
 - docked,
@@ -470,7 +470,7 @@ MQTT payload:
 ## Shared MQTT Protocol
 
 이 연동의 설정에는 다음과 같은 MQTT 프로토콜이 필요합니다.
-이러한 서비스는 레거시 및 상태 vacuum 모두에서 동일합니다.
+이러한 서비스는 legacy 및 state vacuum 모두에서 동일합니다.
 
 ### Set Fan Speed
 

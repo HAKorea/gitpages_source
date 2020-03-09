@@ -14,9 +14,9 @@ ha_release: pre 0.7
 ha_iot_class: Cloud Polling
 ---
 
-Home Assistant has support to integrate your [Verisure](https://www.verisure.com/) devices.
+Home Assistant는 [Verisure](https://www.verisure.com/) 장치 연동을 지원합니다.
 
-There is currently support for the following device types within Home Assistant:
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - Alarm
 - Camera
@@ -25,9 +25,9 @@ There is currently support for the following device types within Home Assistant:
 - Lock
 - Binary Sensor (Door & Window)
 
-## Configuration
+## 설정
 
-To integrate Verisure with Home Assistant, add the following section to your `configuration.yaml` file:
+Verisure를 Home Assistant와 연동하려면 `configuration.yaml` 파일에 다음 섹션을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -95,13 +95,13 @@ giid:
   type: string
 {% endconfiguration %}
 
-## Alarm Control Panel
+## 경보 제어판
 
-The Verisure alarm control panel platform allows you to control your [Verisure](https://www.verisure.com/) Alarms.
+Verisure 경보 제어판 플랫폼을 사용하면 [Verisure](https://www.verisure.com/) 경보를 제어 할 수 있습니다.
 
-The requirement is that you have setup your Verisure hub first, with the instruction above.
+위 지침에 따라 Verisure 허브를 먼저 설정해야합니다.
 
-The `changed_by` attribute enables one to be able to take different actions depending on who armed/disarmed the alarm in [automation](/getting-started/automation/).
+`changed_by` 속성은 [automation](/getting-started/automation/)에서 알람을 armed/disarmed 한 사람에 따라 다른 작업을 수행 할 수 있습니다.
 
 ```yaml
 automation:
@@ -118,7 +118,7 @@ automation:
             by {{ trigger.to_state.attributes.changed_by }}{% endraw %}
 ```
 
-## Services
+## 서비스
 
 | Service | Description |
 | ------- | ----------- |

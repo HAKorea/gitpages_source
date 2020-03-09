@@ -1,5 +1,5 @@
 ---
-title: Aruba ClearPass
+title: 아루바 클리어패스(Aruba ClearPass)
 description: Instructions on how to integrate Aruba ClearPass into Home Assistant.
 logo: aruba.png
 ha_category:
@@ -8,19 +8,20 @@ ha_release: '0.90'
 ha_iot_class: Local Polling
 ---
 
-This platform allows you to detect presence by looking at connected devices to [Aruba Clearpass](https://www.arubanetworks.com/products/security/network-access-control/).
+이 플랫폼을 사용하면 [Aruba Clearpass](https://www.arubanetworks.com/products/security/network-access-control/)에 연결된 장치를 보고 현재 상태를 감지 할 수 있습니다.
 
-Supported platforms (tested):
+지원 플랫폼 (tested):
 
 - Aruba ClearPass 6.7.5
 
 <div class='note warning'>
 
-You must first create an API client [here](https://www.arubanetworks.com/techdocs/ClearPass/6.6/Guest/Content/AdministrationTasks1/CreateEditAPIclient.htm).
+먼저 [여기](https://www.arubanetworks.com/techdocs/ClearPass/6.6/Guest/Content/AdministrationTasks1/CreateEditAPIclient.htm)에서 API 클라이언트를 작성해야합니다.
 
 </div>
 
 To use this device tracker in your installation, add the following to your `configuration.yaml` file:
+본 장치 추적기를 설치시 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -46,4 +47,4 @@ api_key:
   type: string
 {% endconfiguration %}
 
-See the [device tracker integration page](/integrations/device_tracker/) for instructions on how to configure the people to be tracked.
+추적할 사람을 설정하는 방법에 대한 지침은 [device tracker integration page](/integrations/device_tracker/)를 참조하십시오.

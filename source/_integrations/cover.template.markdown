@@ -1,5 +1,5 @@
 ---
-title: "탬플릿 개폐장치"
+title: "Template 커버(Cover)"
 description: "Instructions on how to integrate Template Covers into Home Assistant."
 ha_category:
   - Cover
@@ -9,7 +9,7 @@ logo: home-assistant.png
 ha_quality_scale: internal
 ---
 
-`template` 플랫폼은 통합구성요소들을 결합한 커버를 만들 수 있고, Cover(개폐장치)의 열기, 닫기, 중지, 위치 및 기울기 명령 각각에 대해 스크립트를 실행하거나 서비스를 호출 할 수 있습니다.
+`template` 플랫폼은 통합구성요소들을 결합한 커버를 만들 수 있고, 커버(Cover)의 열기, 닫기, 중지, 위치 및 기울기 명령 각각에 대해 스크립트를 실행하거나 서비스를 호출 할 수 있습니다.
 
 ## 설정
 

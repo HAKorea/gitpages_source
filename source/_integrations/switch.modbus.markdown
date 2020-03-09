@@ -8,11 +8,11 @@ ha_release: pre 0.7
 ha_iot_class: Local Push
 ---
 
-The `modbus` switch platform allows you to control [Modbus](http://www.modbus.org/) coils or registers.
+`modbus` 스위치 플랫폼을 사용하면 [Modbus](http://www.modbus.org/) coils 또는 registers를 제어 할 수 있습니다.
 
-## Configuration
+## 설정
 
-To use your Modbus switches in your installation, add the following to your `configuration.yaml` file:
+설치에서 Modbus 스위치를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -115,11 +115,11 @@ register:
       type: integer
 {% endconfiguration %}
 
-It's possible to change the default 30 seconds scan interval for the switch state updates as shown in the [Platform options](/docs/configuration/platform_options/#scan-interval) documentation.
+[Platform options](/docs/configuration/platform_options/#scan-interval) 설명서에 표시된 대로 스위치 상태 업데이트에 대한 기본 30 초 스캔 간격을 변경할 수 있습니다.
 
-### Full example
+### 전체 설정 사례
 
-Example a temperature sensor with a 10 seconds scan interval:
+스캔 간격이 10 초인 온도 센서의 예 :
 
 ```yaml
 switch:

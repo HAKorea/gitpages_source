@@ -8,15 +8,14 @@ ha_release: 0.81
 ha_iot_class: Cloud Polling
 ---
 
-The `thermoworks_smoke` sensor platform pulls data for your [ThermoWorks Smoke Thermometer](https://www.thermoworks.com/Smoke).
-This requires a [Smoke WiFi Gateway](https://www.thermoworks.com/Smoke-Gateway) with an internet connection.
+`thermoworks_smoke` 센서 플랫폼은 [ThermoWorks Smoke Thermometer](https://www.thermoworks.com/Smoke)의 데이터를 가져옵니다.
+인터넷에 연결된 [Smoke WiFi Gateway](https://www.thermoworks.com/Smoke-Gateway)가 필요합니다.
 
-You will need to have previously registered your smoke to your account via the mobile app and provide
-the email and password you used to in the configuration for this sensor in order to connect and pull your data.
+데이터를 연결하고 가져 오려면 모바일 앱을 통해 장치를 계정에 미리 등록하고이 센서의 설정에 사용한 이메일 및 비밀번호를 제공해야합니다.
 
-## Configuration
+## 설정
 
-To add the sensors to your installation, add the following to your `configuration.yaml` file:
+설치에 센서를 추가하려면`configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -45,13 +44,13 @@ exclude:
   type: list
 {% endconfiguration %}
 
-## Examples
+## 사례
 
-This section includes some examples of how to use this sensor.
+본 섹션에는 이 센서를 사용하는 방법에 대한 몇 가지 예가 포함되어 있습니다.
 
-### Only Probe 1
+### Probe 1만
 
-This will show only Probe 1 with min and max data.
+최소 및 최대 데이터가 있는 Probe 1 만 표시됩니다.
 
 {% raw %}
 ```yaml
@@ -67,9 +66,9 @@ sensor:
 ```
 {% endraw %}
 
-### Ignore a Device
+### 장치 무시
 
-This will exclude a device from creating sensors. You would replace `"00:00:00:00:00:00"` with your device's serial number.
+이는 센서를 생성하는 장치를 제외시킵니다. `"00:00:00:00:00:00"`를 기기의 일련 번호로 바꿉니다.
 
 {% raw %}
 ```yaml
@@ -83,10 +82,10 @@ sensor:
 ```
 {% endraw %}
 
-### Notify when Probe 1 goes above a certain temperature
+### Probe 1이 특정 온도를 초과 할 때 알림
 
-This will use an automation to trigger a notification when Probe 1 goes above a temperature stored in an input_number variable.
-By default, your smoke is named "My Smoke" in the app. If you have changed it you will need to change the sensor name from `my_smoke_probe_1` to `your_name_probe_1`.
+자동화를 사용하여 Probe 1이 input_number 변수에 저장된 온도 이상으로 올라간 경우 알림을 트리거합니다.
+기본적으로 앱에서 장치 이름은 "My Smoke"입니다. 변경한 경우 센서 이름을 `my_smoke_probe_1`에서 `your_name_probe_1`로 변경해야합니다.
 
 {% raw %}
 ```yaml

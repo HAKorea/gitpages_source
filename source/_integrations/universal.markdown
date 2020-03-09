@@ -8,11 +8,11 @@ ha_release: 0.11
 ha_quality_scale: internal
 ---
 
-Universal Media Players combine multiple existing entities in Home Assistant into one media player entity. This is used for creating a single entity that controls an entire media center.
+Universal Media Player는 Home Assistant의 여러 기존 엔티티를 하나의 미디어 플레이어 엔티티로 결합합니다. 전체 미디어 센터를 제어하는 ​​단일 엔터티를 만드는 데 사용됩니다.
 
-Multiple media player entities can be controlled from an universal media player. Additionally, the universal media player allows volume and power commands to be re-routed to other entities in Home Assistant. This allows the power and volume to control external devices like a television or audio receiver.
+Universal 미디어 플레이어에서 여러 미디어 플레이어 개체를 제어할 수 있습니다. 또한 Universal 미디어 플레이어를 사용하면 볼륨 및 전원 명령을 홈어시스턴트의 다른 엔티티로 다시 라우팅 할 수 있습니다. 이를 통해 전원 및 볼륨이 있는 텔레비전 또는 오디오 수신기와 같은 외부 장치를 제어 할 수 있습니다.
 
-A Universal Media Player is created in `configuration.yaml` as follows.
+`configuration.yaml`에서 다음과 같이 Universal Media Player가 생성됩니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -66,21 +66,21 @@ attributes:
   type: string
 {% endconfiguration %}
 
-The Universal Media Player will primarily imitate one of its `children`. The Universal Media Player will control the first child on the list that is active (not idle/off). The Universal Media Player will also inherit its state from the first active child if a `state_template` is not provided. Entities in the `children:` list must be media players, but the state template can contain any entity.
+Universal Media Player는 주로 `children` 중 하나를 모방합니다. Universal Media Player는 활성화 된 (not idle/off) 목록의 첫 번째 child을 제어합니다. 유니버설 미디어 플레이어는 또한 `state_template`이 제공되지 않으면 첫 번째 활성 child에서 상태를 상속합니다. `children:` 목록의 엔티티는 미디어 플레이어 여야하지만 상태 템플릿은 어떤 엔티티도 포함할 수 있습니다.
 
-It is recommended that the command `turn_on`, the command `turn_off`, and the attribute `state` all be provided together. The `state` attribute indicates if the media player is on or off. If `state` indicates the media player is off, this status will take precedence over the states of the children. If all the children are idle/off and `state` is on, the Universal Media Player's state will be on.
+`turn_on` 명령, `turn_off` 명령 및 `state` 속성은 모두 함께 제공하는 것이 좋습니다. `state` 속성은 미디어 플레이어가 켜져 있는지 꺼져 있는지를 나타냅니다. `state`는 미디어 플레이어가 꺼져 있음을 나타내는 경우, 이 상태는 child의 상태보다 우선합니다. 모든 child가 idle/off 이고 상태가 켜져 있으면 Universal Media Player의 상태가 켜집니다.
 
-It is also recommended that the command `volume_up`, the command `volume_down`, the command `volume_mute`, and the attribute `is_volume_muted` all be provided together. The attribute `is_volume_muted` should return either True or the on state when the volume is muted. The `volume_mute` service should toggle the mute setting.
+`volume_up` 명령, `vol_down` 명령, `volume_mute` 명령 및 `_is_volume_muted` 속성을 모두 함께 제공하는 것이 좋습니다. `is_volume_muted` 속성은 볼륨이 음소거되면 True 또는 on 상태를 반환해야합니다. `volume_mute` 서비스는 음소거 설정을 토글합니다.
 
-When providing `select_source` as a command, it is recommended to also provide the attributes `source`, and `source_list`. The `source` attribute is the currently select source, while the `source_list` attribute is a list of all available sources.
+`select_source`를 명령으로 제공할 때, `source` 및 `source_list` 속성도 제공하는 것이 좋습니다. `source` 속성은 현재 선택된 소스이고, `source_list` 속성은 사용 가능한 모든 소스의 목록입니다.
 
-## Usage examples
+## 사용법 예시
 
-### Chromecast & Kodi control with switches
+### 스위치가 있는 Chromecast 및 Kodi 제어
 
-In this example, a switch is available to control the power of the television. Switches are also available to turn the volume up, turn the volume down, and mute the audio. These could be command line switches or any other entity in Home Assistant. The `turn_on` and `turn_off` commands will be redirected to the television, and the volume commands will be redirected to an audio receiver. The `select_source` command will be passed directly to an A/V receiver.
+본 예에서는 텔레비전의 전원을 제어하는 ​​스위치를 사용할 수 있습니다. 볼륨을 높이고 볼륨을 낮추고 오디오를 음소거하는 스위치도 사용할 수 있습니다. 이들은 command line 스위치 또는 Home Assistant의 다른 엔티티일 수 있습니다. `turn_on` 및 `turn_off` 명령은 텔레비전으로 리디렉션되고 볼륨 명령은 오디오 수신기로 리디렉션됩니다. `select_source` 명령은 A/V 수신기로 직접 전달됩니다.
 
-The children are a Chromecast and a Kodi player. If the Chromecast is playing, the Universal Media Player will reflect its status. If the Chromecast is idle and Kodi is playing, the universal media player will change to reflect its status.
+children은 Chromecast와 Kodi 플레이어입니다. Chromecast가 재생중인 경우 Universal Media Player는 해당 상태를 반영합니다. Chromecast가 idle 상태이고 Kodi가 재생중인 경우 universal 미디어 플레이어는 상태를 반영하도록 변경됩니다.
 
 {% raw %}
 
@@ -135,13 +135,13 @@ media_player:
 
 #### Kodi CEC-TV control
 
-In this example, a [Kodi Media Player](/integrations/kodi) runs in a CEC capable device (OSMC/OpenElec running in a Raspberry Pi 24/7, for example), and, with the JSON-CEC Kodi addon installed, it can turn on and off the attached TV.
+이 예에서 [Kodi Media Player](/integrations/kodi)는 CEC 가능 장치 (예: Raspberry Pi 24/7에서 실행되는 OSMC/OpenElec)에서 실행되며 JSON-CEC Kodi 애드온이 설치된 연결된 TV를 켜고 끌 수 있습니다.
 
-We store the state of the attached TV in a hidden [input boolean](/integrations/input_boolean/), so we can differentiate the TV being on or off, while Kodi is always 'idle', and use the universal media player to render its state with a template. We can hide the Kodi Media Player too, and only show the universal one, which now can differentiate between the 'idle' and the 'off' state (being the second when it is idle and the TV is off).
+연결된 TV의 상태를 숨겨진 [input boolean](/integrations/input_boolean/)에 저장하므로 Kodi가 항상 'idle'인 동안 TV를 켜거나 끄고 universal 미디어 플레이어를 사용하여 상태를 템플릿으로 렌더링합니다.  Kodi Media Player도 숨길 수 있으며 universal만 표시합니다. 이제는 'idle'상태와 'off'상태를 구분할 수 있습니다. (몇 초가 지나가면 idle일 때 TV는 꺼집니다).
 
-Because the input boolean used to store the TV state is only changing when using the Home Assistant `turn_on` and `turn_off` actions, and Kodi could be controlled by so many ways, we also define some automations to update this Input Boolean when needed.
+TV 상태를 저장하는데 사용되는 input boolean은 홈어시스턴트 `turn_on` 및 `turn_off` 액션을 사용할 때만 변경되므로 Kodi는 여러 가지 방법으로 제어 할 수 있으므로 필요할 때 이 input boolean을 업데이트하기 위한 자동화도 정의합니다.
 
-The complete configuration is:
+완전한 설정은 다음과 같습니다. :
 
 {% raw %}
 

@@ -8,14 +8,15 @@ ha_release: 0.12
 ---
 
 The `twitter` notification platform uses [Twitter](https://twitter.com) to deliver notifications from Home Assistant.
+`twitter` 알림 플랫폼은 [Twitter](https://twitter.com)를 사용하여 Home Assistant에서 알림을 전달합니다.
 
-## Setup
+## 셋업
 
-Make sure you have a developer account registered with Twitter, then go to [Twitter Apps](https://apps.twitter.com/app/new) and create an application. If you don't have a developer account you need to apply for one, it can take some time to get approved. Visit "Keys and Access Tokens" of the application to get the details (Consumer Key, Consumer Secret, Access Token and Access Token Secret which needs to be generated). 
+Twitter에 등록된 개발자 계정이 있는지 확인한 다음 [Twitter Apps](https://apps.twitter.com/app/new)로 이동하여 응용 프로그램을 만드십시오. 개발자 계정이 없는 경우 신청해야하며 승인을 받는데 시간이 걸릴 수 있습니다. 자세한 내용을 보려면 "Keys and Access Tokens"을 방문하십시오 (Consumer Key, Consumer Secret, Access Token 및 Access Token Secret을 만드십시오).
 
-## Configuration
+## 설정
 
-To add Twitter to your installation, add the following to your `configuration.yaml` file:
+설치에 Twitter를 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -56,4 +57,4 @@ username:
   type: string
 {% endconfiguration %}
 
-To use notifications, please see the [getting started with automation page](/getting-started/automation/).
+알림을 사용하려면 [getting started with automation page](/getting-started/automation/)를 참조하십시오.

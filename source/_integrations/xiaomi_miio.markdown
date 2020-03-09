@@ -11,11 +11,11 @@ ha_codeowners:
   - '@syssi'
 ---
 
-The `xiaomi_miio` device tracker platform is observing your Xiaomi Mi WiFi Repeater 2 and reporting all associated WiFi clients.
+`xiaomi_miio` 장치 추적기 플랫폼은 Xiaomi Mi WiFi Repeater 2를 관찰하고 관련된 모든 WiFi 클라이언트를 보고합니다.
 
-Please follow the instructions on [Retrieving the Access Token](/integrations/vacuum.xiaomi_miio/#retrieving-the-access-token) to get the API token.
+API 토큰을 얻으려면 [Retrieving the Access Token](/integrations/vacuum.xiaomi_miio/#retrieving-the-access-token)의 지침을 따르십시오.
 
-To add a Xiaomi Mi WiFi Repeater device tracker to your installation, add the following to your `configuration.yaml` file:
+Xiaomi Mi WiFi Repeater 장치 추적기를 설치에 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 device_tracker:

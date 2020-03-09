@@ -7,14 +7,14 @@ ha_category:
 ha_release: 0.32
 ---
 
-The `thingspeak` integrations makes Home Assistant communicate with the [ThingSpeak API](https://thingspeak.com/).
-For now, it records exactly one entity at once, which is great for testing purposes. For long-time storage you should rely on the [InfluxDB component](/integrations/influxdb/).
+`thingspeak` 통합구성요소는 홈어시스턴트가 [ThingSpeak API](https://thingspeak.com/)와 통신하게합니다.
+지금은 정확히 한번에 하나의 엔티티를 기록하므로 테스트 목적으로 유용합니다. 장기 저장소의 경우 [InfluxDB component](/integrations/influxdb/)에 의존해야합니다.
 
-## Configuration
+## 설정
 
-You will have to create a [new channel](https://thingspeak.com/channels/new) on ThingSpeak and grab your Write API Key from the "API Keys" tab of the channel you want to use.
+ThingSpeak에서 [new channel](https://thingspeak.com/channels/new)을 생성하고 사용하려는 채널의 "API Keys"탭에서 Write API Key를 가져와야합니다.
 
-To setup the ThingSpeak integration in your installation, add the following to your `configuration.yaml` file:
+설치시 ThingSpeak 통합을 설정하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

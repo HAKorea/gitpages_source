@@ -11,10 +11,9 @@ ha_codeowners:
   - '@fabaff'
 ---
 
-The `thethingsnetwork` integration allows one to interact with the [The Things Network](https://www.thethingsnetwork.org). This community-driven and open network supports [LoRaWAN](https://www.lora-alliance.org/) for long range (~5 to 15km) communication with a low bandwidth (51 bytes/message). [Gateways](https://www.thethingsnetwork.org/docs/gateways/) transfers the received data from the sensors to the The Things Network.
+`thethingsnetwork` 통합구성요소를 통해 [The Things Network](https://www.thethingsnetwork.org)와 상호 작용할 수 있습니다. 이 커뮤니티 중심의 개방형 네트워크는 [LoRaWAN](https://www.lora-alliance.org/)을 지원하여 저대역폭 (51 바이트/메시지)으로 장거리 ( ~ 5 ~ 15km) 통신을 지원합니다. [Gateways](https://www.thethingsnetwork.org/docs/gateways/)는 센서에서 수신된 데이터를 Things 네트워크로 전송합니다.
 
-
-The Things network support various integrations to make the data available:
+Things 네트워크는 데이터를 사용할 수 있도록 다양한 연동을 지원합니다.
 
 | The Things Network Integration | Home Assistant platform |
 |---|---|
@@ -22,31 +21,31 @@ The Things network support various integrations to make the data available:
 | [Storage](https://www.thethingsnetwork.org/docs/applications/storage/) | [`thethingsnetwork`](#sensor) |
 | [HTTP](https://www.thethingsnetwork.org/docs/applications/http/) | |
 
-There is currently support for the following device types within Home Assistant:
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - [Sensor](#sensor)
 
-## Setup
+## 셋업
 
-Visit the [The Things Network Console](https://console.thethingsnetwork.org/) website, log in with your The Things Network credentials, choose your application from **Applications**.
+[The Things Network Console](https://console.thethingsnetwork.org/) 웹 사이트를 방문하여 Things  네트워크 자격 증명(credentials)으로 로그인한 다음 **Applications**에서 Applications을 선택하십시오.
 
-The **Application ID** is used to identify the scope of your data.
+**Application ID**는 데이터 범위(scope)를 식별하는데 사용됩니다.
 
 <p class='img'>
 <img src='/images/integrations/thethingsnetwork/applications.png' />
-Application overview
+Application 개요
 </p>
 
-You need an access key to be able to read the data from your application.
+Application에서 데이터를 읽으려면 액세스키가 필요합니다.
 
 <p class='img'>
 <img src='/images/integrations/thethingsnetwork/access_key.png' />
 Access keys
 </p>
 
-## Configuration
+## 설정
 
-To enable this component, add the following lines to your `configuration.yaml`:
+이 컴포넌트를 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -68,13 +67,13 @@ access_key:
 
 ## Sensor
 
-The `thethingsnetwork` sensor platform allows you to get data from a [The Things Network Storage Integration](https://www.thethingsnetwork.org/docs/applications/storage/).
+`thethingsnetwork` 센서 플랫폼을 사용하면 [The Things Network Storage Integration](https://www.thethingsnetwork.org/docs/applications/storage/)에서 데이터를 얻을 수 있습니다.
 
-This platform requires that the [The Things Network component](#configuration) is set up and the [The Things Network Storage Integration](https://www.thethingsnetwork.org/docs/applications/storage/) as well.
+이 플랫폼에서는 [The Things Network component](#configuration) 및 [The Things Network Storage Integration](https://www.thethingsnetwork.org/docs/applications/storage/)도 설정해야합니다.
 
-### Prerequisites
+### 전제 조건
 
-Visit the [The Things Network Console](https://console.thethingsnetwork.org/) website, log in with your The Things Network credentials, choose your application from **Applications** and go to **Integrations**.
+[The Things Network Console](https://console.thethingsnetwork.org/) 웹 사이트를 방문하여 The Things Network 자격 증명으로 로그인한 다음 **Applications**에서 Applications을 선택하고 **Integrations**으로 이동하십시오.
 
 Add a new integration.
 
@@ -111,9 +110,9 @@ Select **Devices** to get the ID of your device that you want to use.
 Devices overview
 </p>
 
-### Configuration
+### 설정
 
-To enable this platform, add the following lines to your `configuration.yaml`:
+이 플랫폼을 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry

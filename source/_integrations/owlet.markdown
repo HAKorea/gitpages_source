@@ -12,11 +12,11 @@ ha_codeowners:
   - '@oblogic7'
 ---
 
-[Owlet Care](https://owletcare.com/) baby monitors check your baby's oxygen level and heart rate while sleeping.
+[Owlet Care](https://owletcare.com/) 베이비 모니터는 수면 중에 아기의 산소 수준과 심박수를 확인합니다.
 
-Configuring this integration will enable tracking of heart rate, oxygen level, motion and base station connection status. Battery status is available as an attribute on oxygen and heart rate sensors.
+이 연동을 설정하면 심박수, 산소 수준, 동작 및 연결 상태를 추적할 수 있습니다. 배터리 상태는 산소 및 심박수 센서의 속성으로 제공됩니다.
 
-This integration enables the following platforms automatically:
+본 통합구성요소는 다음 플랫폼을 자동으로 활성화합니다.
 
 #### Binary Sensors
 
@@ -28,7 +28,7 @@ This integration enables the following platforms automatically:
 - Heart rate
 - Oxygen level
 
-### Configuration
+### 설정
 
 ```yaml
 # Example configuration.yaml entry

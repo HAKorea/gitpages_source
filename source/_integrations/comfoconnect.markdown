@@ -1,5 +1,5 @@
 ---
-title: Zehnder ComfoAir Q
+title: 전열교환기(Zehnder ComfoAir Q)
 description: Instructions on how to integrate Zehnder ComfoAir Q350/450/600 ventilation systems into Home Assistant.
 logo: zehnder.png
 ha_category:

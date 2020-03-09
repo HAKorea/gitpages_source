@@ -7,16 +7,16 @@ ha_category:
 ha_release: 0.54
 ---
 
-The `mqtt` vacuum integration allows you to control your MQTT-enabled vacuum.
-There are two possible message schemas - `legacy` and `state`.
-New installations should use the `state` schema as `legacy` is deprecated and might be removed someday in the future.
-The `state` schema is preferred because the vacuum will then be represented as a `StateVacuumDevice` which is the preferred parent vacuum entity.
+`mqtt` vacuum 통합구성요소로 MQTT를 쓸 수 있는 로봇청소기를 제어할 수 있습니다.
+`legacy` 및 `state`라는 두 가지 가능한 메시지 스키마가 있습니다. 
+`legacy`는 더 이상 사용되지 않으며 향후 언젠가 제거될 수 있으므로 새로 설치시에는 `state` 스키마를 사용해야합니다.
+로봇청소기 상태는 추천하는 상위 vacuum 엔티티인 `StateVacuumDevice`로 표시되므로 `state` 스키마를 추천합니다.
 
-This documentation has 3 sections. Config for `legacy` vacuum with examples, config for `state` vacuum with examples and shared section with examples which are the same for both schemas.
+이 문서에는 3 개의 섹션이 있습니다. 예제가 있는 `legacy` vacuum에 대한 설정, 예제에 대한 `state` vacuum에 대한 설정 및 두 스키마에 대해 동일한 예가 있는 합쳐진 섹션입니다.
 
-## Configuration
+## 설정
 
-To add your MQTT vacuum to your installation, add the following to your `configuration.yaml` file:
+MQTT vacuum을 설치에 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -24,9 +24,9 @@ vacuum:
   - platform: mqtt
 ```
 
-## Legacy Configuration
+## Legacy 설정
 
-Legacy MQTT vacuum configuration section.
+Legacy MQTT vacuum 설정 섹션.
 
 {% configuration %}
 name:
@@ -177,7 +177,7 @@ json_attributes_template:
   type: template
 {% endconfiguration %}
 
-### Legacy configuration example
+### Legacy 설정 사례
 
 {% raw %}
 ```yaml
@@ -222,7 +222,7 @@ vacuum:
 
 ## Legacy MQTT Protocol
 
-The above configuration for this integration expects an MQTT protocol like the following.
+이 통합구성요소에 대한 위의 설정에는 다음과 같은 MQTT 프로토콜이 필요합니다.
 
 ### Legacy Basic Commands
 
@@ -255,9 +255,9 @@ MQTT payload:
 }
 ```
 
-## State Configuration
+## State 설정
 
-State MQTT vacuum configuration section.
+State MQTT vacuum 설정 섹션.
 
 {% configuration %}
 name:
@@ -359,7 +359,7 @@ json_attributes_topic:
   type: string
 {% endconfiguration %}
 
-### State configuration example
+### State 설정 사례
 
 {% raw %}
 ```yaml
@@ -393,7 +393,7 @@ vacuum:
 
 ## State MQTT Protocol
 
-The above configuration for this integration expects an MQTT protocol like the following.
+이 통합구성요소에 대한 위의 설정은 다음과 같은 MQTT 프로토콜이 필요합니다.
 
 ### State Basic Commands
 
@@ -410,14 +410,14 @@ Possible MQTT payloads:
 
 ### Send Custom Command
 
-Vacuum send_command allows three parameters:
+Vacuum send_command는 세 가지 매개 변수를 허용합니다.
 
 - entity_id
 - command
 - params - optional
 
-If params are not provided it sends command as payload to MQTT send_command topic.
-If params are provided service sends json as payload with such structure:
+매개 변수가 제공되지 않으면 명령을 페이로드로 MQTT send_command topic에 보냅니다.
+매개 변수가 제공되면 서비스는 다음과 같은 구조로 json을 페이로드로 보냅니다.
 
 ```json
 {
@@ -426,7 +426,7 @@ If params are provided service sends json as payload with such structure:
 }
 ```
 
-Service trigger example:
+서비스 트리거 예 : 
 
 ```yaml
 - alias: Push command based on sensor
@@ -444,7 +444,7 @@ Service trigger example:
 
 MQTT topic: `vacuum/send_command`
 
-### Status/Sensor Updates
+### Status/Sensor 업데이트
 
 MQTT topic: `vacuum/state`
 
@@ -458,7 +458,7 @@ MQTT payload:
 }
 ```
 
-State has to be one of vacuum states supported by Home Assistant:
+상태는 홈어시스턴트가 지원하는 vacuum 상태중 하나여야합니다.
 
 - cleaning,
 - docked,
@@ -469,8 +469,8 @@ State has to be one of vacuum states supported by Home Assistant:
 
 ## Shared MQTT Protocol
 
-The configuration for this integration expects an MQTT protocol like the following.
-These services are identical for both - legacy and state vacuum.
+이 연동의 설정에는 다음과 같은 MQTT 프로토콜이 필요합니다.
+이러한 서비스는 레거시 및 상태 vacuum 모두에서 동일합니다.
 
 ### Set Fan Speed
 
@@ -485,14 +485,14 @@ Possible MQTT payloads:
 
 ### Send Custom Command
 
-Vacuum send_command allows three parameters:
+Vacuum send_command는 세 가지 매개 변수를 허용합니다 :
 
 - entity_id
 - command
 - params - optional
 
-If params are not provided it sends command as payload to MQTT send_command topic.
-If params are provided service sends json as payload with such structure:
+매개 변수가 제공되지 않으면 명령을 페이로드로 MQTT send_command topic에 보냅니다.
+매개 변수가 제공되면 서비스는 다음과 같은 구조로 json을 페이로드로 보냅니다.
 
 ```json
 {
@@ -501,7 +501,7 @@ If params are provided service sends json as payload with such structure:
 }
 ```
 
-Service trigger example:
+서비스 트리거 사례:
 
 ```yaml
 - alias: Push command based on sensor
@@ -519,11 +519,12 @@ Service trigger example:
 
 MQTT topic: `vacuum/send_command`
 
-### Usage with cloudless Xiaomi vacuums
+### cloudless Xiaomi vacuums 사용하기
 
-This integration is supported by the cloud-free Xiaomi Vacuum Webinterface [Valetudo](https://github.com/Hypfer/Valetudo).
+이 연동은 클라우드가 없는 Xiaomi Vacuum Webinterface [Valetudo](https://github.com/Hypfer/Valetudo)에서 지원합니다.
 
-### Retrofitting non-wifi vacuums
+### 비와이 파이 vacumm 장치 개조
 
-- Retrofitting your old Roomba with an ESP8266. [This repo](https://github.com/johnboiles/esp-roomba-mqtt) provides MQTT client firmware.
-- If you own a non-wifi Neato, you can refer to [this repo](https://github.com/jeroenterheerdt/neato-serial) that uses a Raspberry Pi to retrofit an old Neato.
+- ESP8266으로 기존 Roomba를 개조하십시오. [This repo](https://github.com/johnboiles/esp-roomba-mqtt)는 MQTT 클라이언트 펌웨어를 제공합니다.
+
+- Wi-Fi가 아닌 Neato를 소유한 경우 Raspberry Pi를 사용하여 오래된 Neato를 개조하는 [this repo](https://github.com/jeroenterheerdt/neato-serial)를 참조할 수 있습니다.

@@ -1,5 +1,5 @@
 ---
-title: Asterisk Voicemail
+title: Asterisk 보이스메일
 description: Instructions on how to integrate your existing Asterisk voicemail within Home Assistant.
 logo: asterisk.png
 ha_category:
@@ -8,15 +8,15 @@ ha_iot_class: Local Push
 ha_release: 0.51
 ---
 
-The `asterisk_mbox` Asterisk Voicemail integration for Home Assistant allows you to view, listen to, and delete voicemails from an Asterisk voicemail mailbox. The integration includes a panel on the frontend that provides caller-id and speech-to-text transcription (using Google's API) of messages in addition to playback and message deletion. There is also an included sensor that indicates of the number of available messages. There is no requirement that the Asterisk PBX and Home Assistant are running on the same machine.
+홈어시스턴트를 위한 `asterisk_mbox` Asterisk 음성 메일 통합 기능을 사용하면 Asterisk 음성 메일 사서함에서 음성 메일을 보고 듣고 삭제할 수 있습니다. 통합구성요소에는 프런트 엔드에 패널이 포함되어 있으며 재생 및 메시지 삭제 외에도 발신자 ID 및 (Google의 API를 사용하여) 텍스트 음성 변환을 제공합니다.사용 가능한 메시지 수를 나타내는 센서도 포함되어 있습니다. Asterisk PBX와 Home Assistant가 동일한 시스템에서 실행될 필요는 없습니다.
 
-To enable the component, a configuration is required in both Home Assistant as well as on the Asterisk server.
+구성 요소를 사용하려면 Asterisk 서버뿐만 아니라 Home Assistant에서도 설정이 필요합니다.
 
-First follow the [Asterisk PBX configuration guide](/docs/asterisk_mbox/) to setup the necessary server on the Asterisk PBX server (this is needed even if Asterisk and Home Assistant are running on the same server)
+먼저 [Asterisk PBX configuration guide](/docs/asterisk_mbox/)에 따라 Asterisk PBX 서버에 필요한 서버를 설정하십시오 (Asterisk와 Home Assistant가 동일한 서버에서 실행되는 경우에도 필요함)
 
-## Configuration
+## 설정
 
-Once that is complete, add the following entry `configuration.yaml` file:
+완료되면 다음 항목 `configuration.yaml` 파일을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -26,7 +26,7 @@ asterisk_mbox:
   port: ASTERISK_PBX_SERVER_PORT
 ```
 
-This will add a new 'Mailbox' side-panel, as well as a sensor to indicate # of messages available.
+새 'Mailbox' 측면 패널과 사용 가능한 메시지 수를 나타내는 센서가 추가됩니다.
 
 {% configuration %}
 password:
@@ -44,5 +44,5 @@ port:
 {% endconfiguration %}
 
 <div class='note warning'>
-Communication between the Asterisk PBX server and the Home Assistant server is password-protected, but the data transmission is not encrypted. It is recommended to only use this integration when communication is contained within a local area network.
+Asterisk PBX 서버와 Home Assistant 서버 간의 통신은 비밀번호로 보호되지만 데이터 전송은 암호화되지 않습니다. 통신이 근거리 통신망 내에 포함 된 경우에만 이 통합구성요소를 사용하는 것이 좋습니다.
 </div>

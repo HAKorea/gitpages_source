@@ -1,5 +1,5 @@
 ---
-title: UpCloud
+title: 업클라우드(UpCloud)
 description: Instructions on how to integrate UpCloud within Home Assistant.
 ha_category:
   - System Monitor
@@ -12,20 +12,20 @@ ha_codeowners:
   - '@scop'
 ---
 
-The `upcloud` integration allows you to access the information about your [UpCloud](https://upcloud.com/) servers from Home Assistant.
+`upcloud` 통합구성요소를 통해 Home Assistant에서 [UpCloud](https://upcloud.com/) 서버에 대한 정보에 액세스 할 수 있습니다.
 
-There is currently support for the following device types within Home Assistant:
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - [Binary Sensor](#binary-sensor)
 - [Switch](#switch)
 
-## Setup
+## 셋업
 
-Set up your API user credentials in your [UpCloud control panel](https://hub.upcloud.com/).
+[UpCloud control panel](https://hub.upcloud.com/)에서 API 자격 증명을 설정하십시오.
 
-## Configuration
+## 설정
 
-To integrate your UpCloud servers with Home Assistant, add the following section to your `configuration.yaml` file:
+UpCloud 서버를 Home Assistant와 연동하려면 `configuration.yaml` 파일에 다음 섹션을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -52,9 +52,9 @@ scan_interval:
 
 ## Binary Sensor
 
-The `upcloud` binary sensor platform allows you to monitor your UpCloud servers.
+`upcloud` 바이너리 센서 플랫폼을 사용하면 UpCloud 서버를 모니터링 할 수 있습니다.
 
-To use your UpCloud servers, you first have to set up your [UpCloud hub](#configuration) and then add the following to your `configuration.yaml` file:
+UpCloud 서버를 사용하려면 먼저 [UpCloud hub](#configuration)를 설정한 다음 `configuration.yaml` 파일에 다음을 추가해야합니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -74,9 +74,9 @@ servers:
 
 ## Switch
 
-The `upcloud` switch platform allows you to control (start/stop) your UpCloud servers.
+`upcloud` 스위치 플랫폼을 사용하면 UpCloud 서버를 제어 (start/stop) 할 수 있습니다.
 
-To use your UpCloud servers, you first have to set up your [UpCloud hub](#configuration) and then add the following to your `configuration.yaml` file:
+UpCloud 서버를 사용하려면 먼저 [UpCloud hub](#configuration)를 설정 한 다음 `configuration.yaml` 파일에 다음을 추가해야합니다.
 
 ```yaml
 # Example configuration.yaml entry

@@ -1,5 +1,5 @@
 ---
-title: Updater
+title: 업데이터(Updater)
 description: Detecting when Home Assistant updates are available.
 logo: home-assistant.png
 ha_category:
@@ -10,19 +10,19 @@ ha_codeowners:
   - '@home-assistant/core'
 ---
 
-The `updater` binary sensor will check daily for new releases. The state will be "on" when an update is available. Otherwise, the state will be "off". The newer version, as well as the link to the release notes, are attributes of the updater. As [Hass.io](/hassio/) has its own schedule for release it doesn't make sense to use this binary sensor on Hass.io.
+`updater` 바이너리 센서는 매일 새로운 릴리스를 확인합니다. 업데이트가 가능하면 상태가 "on"이 됩니다. 그렇지 않으면 상태가 "off"가 됩니다. 최신 버전과 릴리스 정보에 대한 링크는 Updater의 속성입니다. [Hass.io](/hassio/)에는 자체 출시 일정이 있으므로 **Hass.io에서 이 센서를 사용하는 것은 의미가 없습니다.**
 
-The updater integration will also collect basic information about the running Home Assistant instance and its environment. The information includes the current Home Assistant version, the time zone, Python version and operating system information. No identifiable information (i.e., IP address, GPS coordinates, etc.) will ever be collected. If you are concerned about your privacy, you are welcome to scrutinize the Python [source code](https://github.com/home-assistant/home-assistant/tree/dev/homeassistant/components/updater).
+updater 통합구성요소는 실행중인 Home Assistant 인스턴스 및 해당 환경에 대한 기본 정보도 수집합니다. 이 정보에는 현재 홈어시스턴트 버전, 시간대, Python 버전 및 운영 체제 정보가 포함됩니다. 식별 가능한 정보 (예: IP 주소, GPS 좌표 등)는 수집되지 않습니다. 개인 정보가 걱정된다면 Python [source code](https://github.com/home-assistant/home-assistant/tree/dev/homeassistant/components/updater)를 면밀히 조사해보십시오.
 
 <div class='note'>
 
-The `updater` binary sensor will wait one hour after startup until it performs the first update. For this period it will be in the state `unavailable`. After that it will check once a day for new releases.
+`updater` 바이너리 센서는 시작 후 첫 번째 업데이트를 수행 할 때까지 1 시간 동안 기다립니다. 이 기간 동안 `unavailable` 상태가됩니다. 그런 다음 하루에 한 번 새로운 릴리스를 확인합니다.
 
 </div>
 
-## Configuration
+## 설정
 
-This integration is by default enabled, unless you've disabled or removed the [`default_config:`](https://www.home-assistant.io/integrations/default_config/) line from your configuration. If that is the case, the following example shows you how to enable this integration manually:
+본 통합구성요소는 설정에서 [`default_config:`](https://www.home-assistant.io/integrations/default_config/) 행을 비활성화하거나 제거하지 않은 한 기본적으로 활성화되어 있습니다. 이 경우 다음 예는 이 연동을 수동으로 활성화하는 방법을 보여줍니다.
 
 ```yaml
 updater:
@@ -41,9 +41,9 @@ include_used_components:
   default: false
 {% endconfiguration %}
 
-For further information about the Updater's data, please check the [detailed overview](/docs/backend/updater/). If you choose not to share any information when checking for updates, you can set `reporting: false`.
+Updater의 데이터에 대한 자세한 내용은 [detailed overview](/docs/backend/updater/)를 확인하십시오. 업데이트를 확인할 때 정보를 공유하지 않기로 선택한 경우 `reporting: false`를 설정할 수 있습니다.
 
-It is possible to report the integrations that you are using to the Home Assistant developers. This will help them focus on improving the popular ones. To enable this option, you have to add `include_used_components: true`.
+사용중인 연동상황을 Home Assistant 개발자에게보고 할 수 있습니다. 이것은 그들이 관심있는 것들을 개선하는데 집중할 수 있도록 도와 줄 것입니다. 이 옵션을 활성화하려면 `include_used_components: true`를 추가해야합니다.
 
 ```json
 "components": [
@@ -60,9 +60,9 @@ It is possible to report the integrations that you are using to the Home Assista
 ]
 ```
 
-## Notification
+## 알림(Notification)
 
-For an added bonus, an automation integration can be created to send a message with a notifier when that state of this component's entity changes.
+보너스를 추가하기 위해 이 구성 요소 엔티티의 상태가 변경될 때 notifier와 함께 메시지를 보내도록 자동화 연동을 작성할 수 있습니다.
 
 {% raw %}
 ```yaml

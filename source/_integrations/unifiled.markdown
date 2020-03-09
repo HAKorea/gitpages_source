@@ -10,13 +10,13 @@ ha_codeowners:
   - '@florisvdk'
 ---
 
-[UniFi LED](https://unifi-led.ui.com/) by [Ubiquiti Networks, inc.](https://www.ubnt.com/) is a system of controller managed led light panels and dimmers.
+[Ubiquiti Networks, Inc.](https://www.ubnt.com/)의 [UniFi LED](https://unifi-led.ui.com/)는 LED 조명 패널과 디머에 의해 제어되는 컨트롤러 시스템입니다.
 
-There is currently support for the following device type within Home Assistant:
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - [Light](#light)
 
-## Configuration
+## 설정
 
 ```yaml
 # Example configuration.yaml entry
@@ -52,4 +52,4 @@ password:
 
 ## Light
 
-The light panels output state and brightness are synchronized with Home Assistant.
+조명 패널 출력 상태와 밝기는 홈어시스턴트와 동기화됩니다.

@@ -1,5 +1,5 @@
 ---
-title: Aurora ABB Solar PV
+title: (태양광인버터)Aurora ABB Solar PV
 description: Instructions on how to integrate an Aurora ABB Powerone solar inverter within Home Assistant.
 logo: powerone.png
 ha_category:
@@ -11,22 +11,17 @@ ha_codeowners:
   - '@davet2001'
 ---
 
-This implements a direct RS485 connection to a solar inverter in the 
-PVI-3.0/3.6/4.2-TL-OUTD ABB series, and may work on others.
-The inverter was formerly made by PowerOne who got taken over by ABB.
+이는 PVI-3.0/3.6/4.2-TL-OUTD ABB 시리즈에서 태양광 인버터에 대한 직접 RS485 연결을 구현하며 다른 장치에서도 작동할 수 있습니다. 인버터는 이전에 ABB에 의해 인수된 PowerOne에 의해 만들어졌습니다.
 
-The TCP/IP method of communicating with inverters is supported by the 
-Python library, but not by this implementation in this integration.
+인버터와 통신하는 TCP/IP 방법은 Python 라이브러리에서 지원하지만 이 통합구성요소에서 구현시 지원되지 않습니다.
 
-This integration provides a single sensor which reports the live power output
-in watts.
+이 통합구성요소는 실시간 전력 출력(와트)을 보고하는 단일 센서를 제공합니다.
 
-Note the PV inverter will be unresponsive to communications when in darkness, 
-so the value 'unknown' will be displayed during the night.
+어둠 속에서는 PV 인버터가 통신에 응답하지 않으므로 밤 동안 'unknown'값이 표시됩니다.
 
-## Configuration
+## 설정
 
-Add the following to your `configuration.yaml` file:
+`configuration.yaml` 파일에 다음을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry

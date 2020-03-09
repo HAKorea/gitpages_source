@@ -8,9 +8,9 @@ ha_iot_class: Local Polling
 ha_release: 0.59
 ---
 
-This platform allows you to detect presence by looking at devices connected to a [UniFi AP](https://www.ubnt.com/products/#unifi). This device tracker differs form [Ubiquiti Unifi WAP](/integrations/unifi) because it doesn't require the Unifi controller software.
+이 플랫폼을 사용하면 [UniFi AP](https://www.ubnt.com/products/#unifi)에 연결된 장치를 보고 현재 상태를 감지할 수 있습니다. 이 장치 추적기는 Unifi 컨트롤러 소프트웨어가 필요하지 않기 때문에 [Ubiquiti Unifi WAP](/integrations/unifi)와 다릅니다.
 
-To use this device tracker in your installation, add the following to your `configuration.yaml` file:
+이 장치 추적기를 설치에 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -36,4 +36,4 @@ password:
   type: string
 {% endconfiguration %}
 
-See the [device tracker integration page](/integrations/device_tracker/) for instructions how to configure the people to be tracked.
+추적할 사람을 설정하는 방법에 대한 지시 사항은 [device tracker integration page](/integrations/device_tracker/)를 참조하십시오.

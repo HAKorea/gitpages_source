@@ -10,11 +10,11 @@ ha_codeowners:
   - '@flowolf'
 ---
 
-The `xmpp` notification platform allows you to deliver notifications from Home Assistant to a [Jabber (XMPP)](https://xmpp.org/) account.
+`xmpp` 알림 플랫폼을 통해 Home Assistant에서 [Jabber (XMPP)](https://xmpp.org/) 계정으로 알림을 전달할 수 있습니다.
 
-## Configuration
+## 설정
 
-To enable Jabber notifications in your installation, add the following to your `configuration.yaml` file:
+설치에서 Jabber 알림을 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -67,22 +67,22 @@ room:
 
 <div class='note'>
 
-  Pre Home Assistant 0.81 `sleekxmpp` was used to connect to XMPP servers. `sleekxmpp` as of version 1.3.2, does not support > TLS v1. If you are running your own XMPP server (e.g., Prosody, ejabberd) make sure to allow using TLS v1.
+  Pre Home Assistant 0.81 `sleekxmpp`가 XMPP 서버에 연결하는데 사용되었습니다. 1.3.2 버전의 `sleekxmpp`는 > TLS v1을 지원하지 않습니다. 자체 XMPP 서버 (예: Prosody, ejabberd)를 실행중인 경우 TLS v1 사용을 허용해야합니다.
 
   Home Assistant after 0.81 uses `slixmpp`, which also supports TLS v1.1 and TLS v1.2.
+  0.81 이후의 홈어시스턴트는`slixmpp`를 사용하며 TLS v1.1 및 TLS v1.2도 지원합니다.
 
 </div>
 
-All Jabber IDs (JID) must include the domain. Make sure that the password matches the account provided as sender.
+모든 Jabber ID (JID)는 도메인을 포함해야합니다. 비밀번호가 발신자로 제공된 계정과 일치하는지 확인하십시오.
 
-You can send text messages and images as well as other files through Jabber.
+Jabber를 통해 다른 파일뿐만 아니라 문자 메시지 및 이미지를 보낼 수 있습니다.
 
-### Jabber Text Message
+### Jabber 텍스트 메시지
 
-Here are some examples on how to set up a script, that can be run from an automation.
+다음은 자동화에서 실행할 수있는 스크립트를 설정하는 방법에 대한 예입니다.
 
-Number 1 shows a classical, text-only message. The Title is optional, although if omitted,
-`Home-Assistant` will be set. To keep it empty set it to `""`.
+숫자 1은 고전적인 텍스트 전용 메시지입니다. 제목은 선택 사항이지만 생략하면 `Home-Assistant`가 설정됩니다. 비워 두려면 `""`로 설정하십시오.
 
 ```yaml
 # Example script.yaml entry
@@ -95,20 +95,19 @@ Number 1 shows a classical, text-only message. The Title is optional, although i
         message: "My funny or witty message"
 ```
 
-### Jabber Image Message
+### Jabber 이미지 메시지
 
-You can send images or files from locally stored files or remote web locations via Jabber's HTTP Upload feature.
-To send files and images, your jabber server must support [XEP_0363](https://xmpp.org/extensions/xep-0363.html).
+Jabber의 HTTP 업로드 기능을 통해 로컬에 저장된 파일 또는 원격 웹 위치에서 이미지 또는 파일을 보낼 수 있습니다. 
+파일 및 이미지를 보내려면 Jabber 서버가 [XEP_0363](https://xmpp.org/extensions/xep-0363.html)을 지원해야합니다.
 
 <div class='note'>
 
-Be aware that images are uploaded onto the Jabber server of your provider. They reside there un-encrypted and could be accessed by the server admins. Usually images are deleted after a few days.<br>
+이미지는 제공 업체의 Jabber 서버에 업로드됩니다. 암호화되지 않은 상태로 상주하며 서버 관리자가 액세스 할 수 있습니다. 일반적으로 이미지는 며칠 후에 삭제됩니다.<br>
 <br>
-Home-Assistant supports TLS encryption to ensure transport encryption. TLS is enforced by default. You can disable it  with the [`tls`](#tls) flag -- which is not recommended.
-
+홈 어시스턴트는 전송 암호화를 보장하기 위해 TLS 암호화를 지원합니다. TLS는 기본적으로 적용됩니다. [`tls`](#tls) 플래그를 사용하여 비활성화 할 수 있으나 권장하지 않습니다.
 </div>
 
-Number 2 sends only an image, retrieved from the URL. The TLS connection to get the image is also not verified (use with caution).
+숫자 2는 URL에서 검색한 이미지 만 보냅니다. 이미지를 얻기위한 TLS 연결도 확인되지 않습니다 (주의해서 사용하십시오).
 
 ```yaml
 # Example script.yaml entry
@@ -124,7 +123,7 @@ Number 2 sends only an image, retrieved from the URL. The TLS connection to get 
           verify: false
 ```
 
-Number 3 sends an image from a local path.
+숫자 3은 로컬 경로에서 이미지를 보냅니다.
 
 ```yaml
 # Example script.yaml entry
@@ -139,10 +138,10 @@ Number 3 sends an image from a local path.
           path: "/home/homeassistant/super_view.jpg"
 ```
 
-### Jabber File Message
+### Jabber 파일 메시지
 
 
-Number 4 sends a text-file, retrieved from Github, renamed to `Hass_Cheatsheet.txt` to be viewable on a mobile Android device, as most don't offer any application to view `.md` files. Optionally you can add a timeout for the HTTP upload in seconds.
+4 번은 Github에서 가져온 텍스트 파일을 `Hass_Cheatsheet.txt`로 이름을 바꾸어 모바일 안드로이드 기기에서 볼 수 있도록 이름을 바꿉니다. 대부분 `.md`파일을 볼 수 있는 응용 프로그램은 없습니다. 선택적으로 HTTP 업로드 시간 초과를 초 단위로 추가 할 수 있습니다.
 
 ```yaml      
 # Example script.yaml entry
@@ -159,9 +158,9 @@ Number 4 sends a text-file, retrieved from Github, renamed to `Hass_Cheatsheet.t
           timeout: 10
 ```
 
-### Templating
+### 템플레이팅
 
-Number 5 sends an image retrieved from a URL, and an additional text message with `title` and `message`.
+숫자 5는 URL에서 검색된 이미지와 `title`과 `message`가 포함된 추가 문자 메시지를 보냅니다.
 
 ```yaml
 # Example script.yaml entry
@@ -176,7 +175,7 @@ Number 5 sends an image retrieved from a URL, and an additional text message wit
           url: "https://github.com/home-assistant/home-assistant.io/raw/next/source/images/favicon-192x192.png"
 ```
 
-Number 6 sends an image from a templated URL.
+번호 6은 템플릿 URL에서 이미지를 보냅니다.
 
 ```yaml
 # Example script.yaml entry
@@ -191,6 +190,6 @@ Number 6 sends an image from a templated URL.
           url_template: "https://www.foto-webcam.eu/webcam/dornbirn/{% raw %}{{ now().year }}/{{ '%02d' % now().month }}/{{ '%02d' % now().day }}/{{ '%02d' % now().hour }}{{ (now().minute + 58) % 60 // 10}}{% endraw %}0_hd.jpg"
 ```
 
-The possible source of a file is prioritized and only one will be picked up. `url_template` has the hightest priority; next is `url` then `path_template` and finally if none of them are defined `path` would be used. `path` will be used to eliminate file extension guessing for unknown URL downloads. Only the file extension will be left, as Home Assistant changes the filename to a random string for added privacy.
+파일의 가능한 소스가 우선 순위를 가지며 하나만 선택됩니다. `url_template`이 가장 높은 우선 순위를 가지고 있습니다. 다음은 `url`,`path_template` 그리고 마지막으로 아무것도 정의되지 않으면 `path`가 사용됩니다. `path`는 알 수없는 URL 다운로드에 대한 파일 확장자 추측을 제거하는 데 사용됩니다. 홈 어시스턴트는 추가된 개인 정보 보호를 위해 파일 이름을 임의의 문자열로 변경하므로 파일 확장자만 남습니다.
 
-To find out more about notifications, please see the [getting started with automation page](/getting-started/automation/).
+알림에 대한 자세한 내용은 [getting started with automation page](/getting-started/automation/)를 참조하십시오.

@@ -1,5 +1,5 @@
 ---
-title: Aladdin Connect
+title: 차고문(Aladdin Connect)
 description: Instructions how to integrate Genie Aladdin Connect garage door covers into Home Assistant.
 logo: aladdin_connect.png
 ha_category:
@@ -8,15 +8,15 @@ ha_release: 0.75
 ha_iot_class: Cloud Polling
 ---
 
-The `aladdin_connect` cover platform lets you control Genie Aladdin Connect garage doors through Home Assistant.
+`aladdin_connect` 커버 플랫폼을 사용하면 Home Assistant를 통해 Genie Aladdin Connect 차고문을 제어 할 수 있습니다.
 
 <div class='note'>
-Only doors that are owned by your Aladdin Connect account will be available. Doors that your account has been granted shared access to are not yet supported.
+Aladdin Connect 계정이 소유한 문만 사용할 수 있습니다. 귀하의 계정에 공유 액세스 권한이 부여된 출입문은 아직 지원되지 않습니다.
 </div>
 
-## Configuration
+## 설정
 
-To use your Aladdin Connect cover in your installation, add the following to your `configuration.yaml` file:
+설치에서 Aladdin Connect 커버를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

@@ -1,5 +1,5 @@
 ---
-title: Airly
+title: 폴란드대기질정보(Airly)
 description: Instructions on how to integrate Airly within Home Assistant.
 logo: airly.png
 ha_category:

@@ -1,5 +1,5 @@
 ---
-title: ADS
+title: 빌딩자동화시스템(ADS)
 description: Connect Home Assistant to TwinCAT devices via the ADS interface
 logo: beckhoff.png
 ha_category:
@@ -13,9 +13,9 @@ ha_release: '0.60'
 ha_iot_class: Local Push
 ---
 
-The ADS (automation device specification) describes a device-independent and fieldbus independent interface for communication between [Beckhoff](https://www.beckhoff.com/) automation devices running [TwinCAT](https://www.beckhoff.hu/english.asp?twincat/default.htm) and other devices implementing this interface.
+ADS는 [TwinCAT](https://www.beckhoff.hu/english.asp?twincat/default.htm)을 실행하는 [Beckhoff](https://www.beckhoff.com/) 자동화 장치와 이 인터페이스를 구현하는 다른 장치 간의 통신을 위한 device-independent이고 fieldbus independent 인터페이스를 말합니다.
 
-There is currently support for the following device types within Home Assistant:
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - [Binary Sensor](#binary-sensor)
 - [Light](#light)
@@ -23,9 +23,9 @@ There is currently support for the following device types within Home Assistant:
 - [Switch](#switch)
 - [Cover](#cover)
 
-## Configuration
+## 설정
 
-To enable ADS, add the following lines to your `configuration.yaml` file:
+ADS를 활성화하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -49,9 +49,9 @@ ip_address:
   type: string
 {% endconfiguration %}
 
-## Service
+## 서비스
 
-The ADS integration will register the service `write_by_name` allowing you to write a value to a variable on your ADS device.
+ADS 통합구성요소는 `write_by_name` 서비스를 등록하여 ADS 장치의 변수에 값을 쓸 수 있습니다.
 
 ```json
 {
@@ -61,18 +61,17 @@ The ADS integration will register the service `write_by_name` allowing you to wr
 }
 ```
 
-Service parameters:
+서비스 매개 변수 :
 
-- **adsvar**: Name of the variable on the ADS device. To access global variables on *TwinCAT2* use a prepending dot `.myvariable`, for TwinCAT3 use `GBL.myvariable`.
-- **adstype**: Specify the type of the variable. Use one of the following: `int`, `byte`, `uint`, `bool`
-- **value**: The value that will be written in the variable.
+- **adsvar**: ADS 장치의 변수 이름 *TwinCAT2*에서 전역 변수에 액세스하려면 앞에 붙는 점 `.myvariable`을 사용하고 TwinCAT3의 경우 `GBL.myvariable`을 사용하십시오.
+- **adstype**: 변수의 유형을 지정하십시오. 다음 중 하나를 사용하십시오 :`int`, `byte`, `uint`, `bool`
+- **value**: 변수에 쓰여질 값.
 
 ## Binary Sensor
 
-The `ads` binary sensor platform can be used to monitor a boolean value on your ADS device.
+`ads` 이진 센서 플랫폼을 사용하여 ADS 장치에서 boolean 값을 모니터링 할 수 있습니다.
 
-To use your ADS device, you first have to set up your [ADS hub](#configuration) and then add the following to your `configuration.yaml`
-file:
+ADS 장치를 사용하려면 먼저 [ADS hub](#configuration)를 설정한 다음 `configuration.yaml` 파일에 다음을 추가해야합니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -98,10 +97,9 @@ device_class:
 
 ## Light
 
-The `ads` light platform allows you to control your connecte ADS lights.
+`ads` 조명 플랫폼을 사용하면 connecte ADS 조명을 제어할 수 있습니다.
 
-To use your ADS device, you first have to set up your [ADS hub](#configuration) and then add the following to your `configuration.yaml`
-file:
+ADS 장치를 사용하려면 먼저 [ADS hub](#configuration)를 설정 한 다음 `configuration.yaml` 파일에 다음을 추가해야합니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -128,10 +126,9 @@ name:
 
 ## Sensor
 
-The `ads` sensor platform allows reading the value of a numeric variable on your ADS device. The variable can be of type *INT*, *UINT*,  *BYTE*, *DINT* or *UDINT*.
+`ads` 센서 플랫폼을 사용하면 ADS 장치의 숫자 변수 값을 읽을 수 있습니다. 변수는 *INT*, *UINT*, *BYTE*, *DINT* 또는 *UDINT* 유형일 수 있습니다.
 
-To use your ADS device, you first have to set up your [ADS hub](#configuration) and then add the following to your `configuration.yaml`
-file:
+ADS 장치를 사용하려면 먼저 [ADS hub](#configuration)를 설정한 다음 `configuration.yaml` 파일에 다음을 추가해야합니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -164,13 +161,13 @@ factor:
 {% endconfiguration %}
 
 The *factor* can be used to implement fixed decimals. E.g., set *factor* to 100 if you want to display a fixed decimal value with two decimals. A variable value of `123` will be displayed as `1.23`.
+*factor*는 고정 소수점을 구현하는 데 사용할 수 있습니다. 예를 들어, 소수점 이하 두 자리로 고정 소수점 값을 표시하려면 *factor*를 100으로 설정하십시오. `123`의 변수값은 `1.23`으로 표시됩니다.
 
 ## Switch
 
-The `ads` switch platform accesses a boolean variable on the connected ADS device. The variable is identified by its name.
+`ads` 스위치 플랫폼은 연결된 ADS 장치의 boolean 변수에 액세스합니다. 변수는 이름으로 식별됩니다.
 
-To use your ADS device, you first have to set up your [ADS hub](#configuration) and then add the following to your `configuration.yaml`
-file:
+ADS 장치를 사용하려면 먼저 [ADS hub](#configuration)를 설정한 다음 `configuration.yaml` 파일에 다음을 추가해야합니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -192,10 +189,9 @@ name:
 
 ## Cover
 
-The `ads` cover platform allows you to control your connected ADS covers.
+`ads` 커버 플랫폼을 사용하면 연결된 ADS 커버를 제어할 수 있습니다.
 
-To use your ADS device, you first have to set up your [ADS hub](#configuration) and then add the following to your `configuration.yaml`
-file:
+ADS 장치를 사용하려면 먼저 [ADS hub](#configuration)를 설정한 다음 `configuration.yaml` 파일에 다음을 추가해야합니다.
 
 ```yaml
 # Example configuration.yaml entry

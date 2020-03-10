@@ -1,5 +1,5 @@
 ---
-title: Gogogate2
+title: 차고문(Gogogate2)
 description: Instructions on how to integrate Gogogate2-Enabled garage door covers into Home Assistant.
 logo: gogogate2.png
 ha_category:
@@ -8,11 +8,11 @@ ha_release: 0.67
 ha_iot_class: Local Polling
 ---
 
-The `gogogate2` cover platform lets you control Gogogate2-Enabled garage doors through Home Assistant. Device names in Home Assistant are generated based on the names defined in your Gogogate2 mobile app.
+`gogogate2` 커버 플랫폼을 사용하면 홈어시스턴트를 통해 Gogogate2 지원 차고문을 제어 할 수 있습니다. 홈 어시스턴트의 장치 이름은 Gogogate2 모바일 앱에 정의된 이름을 기반으로 생성됩니다.
 
-## Configuration
+## 설정
 
-To use your Gogogate2 cover in your installation, add the following to your `configuration.yaml` file:
+설치시 Gogogate2 커버를 사용하려면`configuration.yaml` 파일에 다음을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry

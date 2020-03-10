@@ -1,5 +1,5 @@
 ---
-title: Insteon
+title: 인스테온(Insteon)
 description: Instructions on how to set up an Insteon Modem (PLM or Hub) locally within Home Assistant.
 logo: insteon.png
 ha_category:
@@ -14,9 +14,9 @@ ha_iot_class: Local Push
 ha_release: 0.39
 ---
 
-This integration adds "local push" support for INSTEON Modems allowing linked INSTEON devices to be used within Home Assistant.
+이 연동 기능으로 INSTEON 모뎀에 대한 "local push"지원이 추가되어 연결된 INSTEON 장치를 Home Assistant 내에서 사용할 수 있습니다.
 
-There is currently support for the following device types within Home Assistant:
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - Binary Sensor
 - Cover
@@ -25,7 +25,7 @@ There is currently support for the following device types within Home Assistant:
 - Sensor
 - Switch
 
-Device support is provided by the underlying [insteonplm] package. It is known to work with the [2413U] USB and [2412S] RS242 flavors of PLM and the [2448A7] USB stick. It has also been tested to work with the [2242] and [2245] Hubs.
+장치 지원은 기본 [insteonplm] 패키지에 의해 제공됩니다. PLM의 [2413U] USB 및 [2412S] RS242 플레이버 및 [2448A7] USB 스틱과 함께 작동하는 것으로 알려져 있습니다. 또한 [2242] 및 [2245] 허브와 함께 작동하도록 테스트되었습니다.
 
 [insteonplm]: https://github.com/nugget/python-insteonplm
 [2413U]: https://www.insteon.com/powerlinc-modem-usb
@@ -34,9 +34,9 @@ Device support is provided by the underlying [insteonplm] package. It is known t
 [2245]: https://www.insteon.com/insteon-hub/
 [2242]: https://www.insteon.com/support-knowledgebase/2014/9/26/insteon-hub-owners-manual
 
-### INSTEON Modem configuration
+### INSTEON 모뎀 설정
 
-To set up an INSTEON Powerline Modem (PLM) device such as the [2413U], use the following configuration:
+[2413U]와 같은 INSTEON Powerline Modem (PLM) 장치를 설정하려면 다음 설정을 사용하십시오.
 
 ```yaml
 # PLM configuration variables
@@ -44,7 +44,7 @@ insteon:
   port: SERIAL_PORT
 ```
 
-To set up an INSTEON Hub model [2245], use the following configuration:
+INSTEON Hub 모델 [2245]를 설정하려면 다음 설정을 사용하십시오.
 
 ```yaml
 # Hub 2245 configuration variables
@@ -56,7 +56,7 @@ insteon:
   hub_version: 2
 ```
 
-To set up an INSTEON Hub model [2242], use the following configuration:
+INSTEON Hub 모델 [2242]을 설정하려면 다음 설정을 사용하십시오.
 
 ```yaml
 # Hub 2242 configuration variables
@@ -65,7 +65,7 @@ insteon:
   hub_version: 1
 ```
 
-Additional configuration items are available:
+추가 설정 아이템들을 사용할 수 있습니다.
 
 ```yaml
 insteon:
@@ -173,15 +173,15 @@ x10_all_lights_off:
   type: string
 {% endconfiguration %}
 
-### Autodiscovery
+### 장치 자동검색
 
-The first time autodiscovery runs, the duration may require up to 20 seconds per device. Subsequent startups will occur much quicker using cached device information. If a device is not recognized during autodiscovery, you can add the device to the **device_override** configuration.
+자동 검색이 처음 실행될 때 기간은 장치 당 최대 20 초가 필요할 수 있습니다. 캐시된 장치 정보를 사용하면 이후의 시작이 훨씬 빨라집니다. 자동 검색 중에 장치가 인식되지 않으면 장치를 **device_override** 설정에 추가 할 수 있습니다.
 
-In order for a device to be discovered, it must be linked to the INSTEON Modem as either a responder or a controller.
+장치를 검색하려면 응답기(responder) 또는 컨트롤러로 INSTEON 모뎀에 연결되어 있어야합니다.
 
-### Linking Devices to the INSTEON Modem
+### 장치를 INSTEON 모뎀에 장치 연결
 
-In order for any two Insteon devices to talk with one another, they must be linked. For an overview of device linking, please read the Insteon page on [understanding linking]. The Insteon Modem module supports All-Linking through [Development Tools] service calls. The following services are available:
+두 개의 Insteon 장치가 서로 통신하려면 장치가 연결되어 있어야합니다. 장치 연결에 대한 개요는 [understanding linking]의 Insteon 페이지를 참조하십시오. Insteon Modem 모듈은 [Development Tools] 서비스 호출을 통한 All-Linking을 지원합니다. 다음과 같은 서비스를 이용할 수 있습니다 :
 
 - **insteon.add_all_link**: Puts the Insteon Modem (IM) into All-Linking mode. The IM can be set as a controller or a responder. If the IM is a controller, put the IM into linking mode then press the SET button on the device. If the IM is a responder, press the SET button on the device then put the IM into linking mode.
 - **insteon.delete_all_link**: Tells the Insteon Modem (IM) to remove an All-Link record from the All-Link Database of the IM and a device. Once the IM is set to delete the link, press the SET button on the corresponding device to complete the process.
@@ -189,7 +189,7 @@ In order for any two Insteon devices to talk with one another, they must be link
 - **insteon.print_all_link_database**: Print the All-Link Database for a device. Requires that the All-Link Database is loaded first.
 - **insteon.print_im_all_link_database**: Print the All-Link Database for the INSTEON Modem (IM).
 
-If you are looking for more advanced options, you can use the [insteonplm_interactive] command line tool that is distributed with the [insteonplm] Python module. Please see the documentation on the [insteonplm] GitHub site. Alternatively, you can download [HouseLinc] which runs on any Windows PC, or you can use [Insteon Terminal] which is open source and runs on most platforms. SmartHome no longer supports HouseLinc, but it still works. Insteon Terminal is a very useful tool but please read the disclaimers carefully, they are important.
+고급 옵션을 찾고 있다면 [insteonplm] Python 모듈과 함께 배포된 [insteonplm_interactive] Command line tool을 사용할 수 있습니다. [insteonplm] GitHub 사이트의 설명서를 참조하십시오. 또는 모든 Windows PC에서 실행되는 [HouseLinc]를 다운로드하거나 오픈 소스이고 대부분의 플랫폼에서 실행되는 [Insteon Terminal]을 사용할 수 있습니다. SmartHome은 더 이상 HouseLinc을 지원하지 않지만 여전히 작동합니다. Insteon Terminal은 매우 유용한 도구이지만 면책 조항을 주의 깊게 읽으십시오. 중요합니다.
 
 [understanding linking]: https://www.insteon.com/support-knowledgebase/2015/1/28/understanding-linking
 [Development Tools]: /docs/tools/dev-tools/
@@ -199,22 +199,22 @@ If you are looking for more advanced options, you can use the [insteonplm_intera
 
 ### Customization
 
-The only configuration item that is necessary is the PLM port or Hub IP address, username and password so that Home Assistant can connect to the INSTEON Modem. This will expose all the supported INSTEON devices which exist in the modem’s ALL-Link database. However, devices will only be shown by their INSTEON hex address (e.g., “1A.2B.3C”) which can be a bit unwieldy. As you link and unlink devices using the ‘Set’ buttons, they’ll be added and removed from Home Assistant automatically.
+홈어시스턴트가 INSTEON 모뎀에 연결하려면 PLM 포트 또는 허브 IP 주소, 사용자 이름 및 비밀번호만 있으면됩니다. 모뎀의 ALL-Link 데이터베이스에 있는 지원되는 모든 INSTEON 장치가 노출됩니다. 그러나 장치는 INSTEON 16진 주소 (예 :“1A.2B.3C”)로만 표시되며 이는 다소 다루기 힘들 수 있습니다. ‘Set’ 버튼을 사용하여 기기를 연결 및 연결을 해제하면 기기가 홈어시스턴트에서 자동으로 추가 및 제거됩니다.
 
-You can use the normal Home Assistant [device customization] section of your configuration to assign friendly names and special icons to your devices. This is especially useful for setting device_class on your binary_sensor INSTEON devices.
+설정의 일반 홈어시스턴트 [device customization] 섹션을 사용하여 친숙한 이름과 특수 아이콘을 장치에 할당할 수 있습니다. binary_sensor INSTEON 장치에서 device_class를 설정하는 데 특히 유용합니다.
 
 [device customization]: /getting-started/customizing-devices/
 
-### Device Overrides
+### 장치 재정의
 
-INSTEON devices are added to Home Assistant using the platform(s) that make the most sense given the model and features of the hardware. The features of the INSTEON devices are built into the Home Assistant platform. Changing the platform is not recommended.
+INSTEON 장치는 하드웨어의 모델 및 기능에 따라 가장 적합한 플랫폼을 사용하여 Home Assistant에 추가됩니다. INSTEON 장치의 기능은 Home Assistant 플랫폼에 내장되어 있습니다. 플랫폼을 변경하지 않는 것이 좋습니다.
 
-There are two primary uses for the **device_override** feature:
+**device_override** 기능에는 두 가지 주요 용도가 있습니다.
 
-- Devices that do not respond during autodiscovery. This is common for battery operated devices.
-- Devices that have not been fully developed. This allows an unknown device to be mapped to a device that operates similarly to another device.
+- 자동 검색 중에 응답하지 않는 장치. 이는 배터리로 작동되는 장치에선 일반적입니다.
+- 완전히 개발되지 않은 장치. 이를 통해 알 수 없는 장치를 다른 장치와 유사하게 작동하는 장치에 매핑 할 수 있습니다.
 
-### Example Configuration with Options
+### 옵션 설정을 한 설정 예시
 
 ```yaml
 # Full example of Insteon configuration with customizations and overrides
@@ -235,9 +235,9 @@ insteon:
       subcat: 0x11
 ```
 
-### What NOT to do
+### 하지 말아야 할 것 
 
-Insteon Modem is a top-level integration and device discovery will identify the Home Assistant platform the device belongs in. As such, do not declare Insteon devices in other platforms. For example, this configuration will NOT work:
+Insteon Modem은 최상위 통합구성요소이며 장치 검색은 장치가 속한 Home Assistant 플랫폼을 식별합니다. 따라서 다른 플랫폼에서 Insteon 장치를 선언하지 마십시오. 예를 들어 이 설정은 작동하지 않습니다.
 
 ```yaml
 light:
@@ -245,9 +245,9 @@ light:
     address: 1a2b3c
 ```
 
-### INSTEON Scenes
+### INSTEON 장면 (Scenes)
 
-Trigger an INSTEON scene on or off is done via automations. Two services are provided to support this feature:
+INSTEON 장면 트리거링은 자동화를 통해 수행됩니다. 이 기능을 지원하기 위해 두 가지 서비스가 제공됩니다.
 
 - **insteon.scene_on**
   - **group**: (required) The INSTEON scene number to trigger.
@@ -264,9 +264,9 @@ automation:
         group: 25
 ```
 
-### Events and Mini-Remotes
+### Events 와 Mini-Remotes
 
-Mini-Remote devices do not appear as Home Assistant entities, they generate events. The following events are available:
+Mini-Remote 장치는 홈어시스턴트 엔티티로 나타나지 않고 이벤트를 생성합니다. 다음과 같은 이벤트가 있습니다 :
 
 - **insteon.button_on**
   - **address**: (required) The Insteon device address in lower case without dots (e.g., 1a2b3c)
@@ -275,7 +275,7 @@ Mini-Remote devices do not appear as Home Assistant entities, they generate even
   - **address**: (required) The Insteon device address in lower case without dots (e.g., 1a2b3c)
   - **button**: (Optional) The button id in lower case. For a 4-button remote the values are a to d. For an 8 button remote the values are `a` to `h`. For a one-button remote this field is not used.
 
-This allows the mini-remotes to be configured as triggers for automations. Here is an example of how to use these events for automations:
+이를 통해 mini-remotes를 자동화하기 위한 트리거로 설정 할 수 있습니다. 다음은 이러한 이벤트를 자동화에 사용하는 방법의 예입니다.
 
 ```yaml
 automation:
@@ -313,12 +313,12 @@ automation:
         entity_id: light.some_light
 ```
 
-### Known Issues with the INSTEON Hub
+### INSTEON Hub에 알려진 이슈들
 
-The INSTEON Hub has three known issues that are inherent to the design of the Hub:
+INSTEON Hub에는 허브 디자인에 지속되어온 세 가지 알려진 이슈가 있습니다.
 
-1. If you see multiple error messages in the log file stating the Hub connection is closed, and reconnection has failed, this generally requires the Hub to be restarted to reconnect.
+1. 로그 파일에 허브 연결이 닫혔으며 다시 연결에 실패했다는 오류 메시지가 여러 개 표시되면 일반적으로 허브를 다시 시작하여 다시 연결해야합니다.
 
-2. You cannot use both Home Assistant and the INSTEON app. If you do, the changes made in the app will not appear in Home Assistant. Changes made in Home Assistant will appear in the app after a period of time, however.
+2. Home Assistant와 INSTEON 앱을 모두 사용할 수 없습니다. 그렇게하면 앱에서 변경 한 내용이 Home Assistant에 나타나지 않습니다. 그러나 일정 기간이 지나면 Home Assistant에서 변경 한 내용이 앱에 나타납니다.
 
-3. The Hub response times can be very slow. This is due to the Hub polling devices frequently. Since only one INSTEON message can be broadcast at a time, messages to and from Home Assistant can be delayed.
+3. 허브 응답 시간이 매우 느릴 수 있습니다. 이는 허브 폴링 장치가 자주 있기 때문입니다. 한 번에 하나의 INSTEON 메시지 만 브로드 캐스트 할 수 있으므로 Home Assistant와 주고받는 메시지가 지연될 수 있습니다.

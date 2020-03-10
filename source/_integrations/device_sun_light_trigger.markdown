@@ -1,5 +1,5 @@
 ---
-title: 재실 기반 조명
+title: 재실 기반 조명(Presence-based Lights)
 description: Instructions on how to automate your lights with Home Assistant.
 logo: home-assistant.png
 ha_category:

@@ -1,5 +1,5 @@
 ---
-title: De Lijn
+title: 벨기에교통서비스(De Lijn)
 description: Instructions on how to integrate De Lijn (Flemish public transport company) departure times into Home Assistant.
 ha_release: 0.97
 ha_category:

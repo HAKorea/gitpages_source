@@ -1,5 +1,5 @@
 ---
-title: Fronius
+title: 태양광인버터(Fronius)
 description: Instructions on how to connect your Fronius Inverter to Home Assistant.
 ha_category:
   - Energy
@@ -11,11 +11,11 @@ ha_codeowners:
   - '@nielstron'
 ---
 
-The `fronius` sensor polls a [Fronius](https://www.fronius.com/) solar inverter, battery system or smart meter and present the values as sensors in Home Assistant.
+`fronius` 센서는 [Fronius](https://www.fronius.com/) 태양광 인버터, 배터리 시스템 또는 스마트 미터를 폴링하고 그 값을 Home Assistant에서 센서로 표시합니다.
 
-## Configuration
+## 설정
 
-To enable this sensor, add the following lines to your `configuration.yaml` file:
+이 센서를 활성화하려면`configuration.yaml` 파일에 다음 줄을 추가하십시오 :
 
 ```yaml
 sensor:
@@ -50,14 +50,14 @@ monitored_conditions:
       default: "\"1\" for inverters and \"0\" for other devices such as storages in compliance with Fronius Specs"
 {% endconfiguration %}
 
-## Monitored data
+## 데이터 모니터
 
-Each sensor type chosen as monitored condition adds a set of sensors to Home Assistant.
+모니터가 되게 하는 조건으로 선택된 각 센서 유형은 센서 세트를 Home Assistant에 추가합니다.
 
 - `power_flow`
 
-    Cumulative data such as the energy produced in the current day or year and overall produced energy.
-    Also, live values such as:
+    현재 일 또는 연도에 생산된 에너지 및 생산된 전체 에너지와 같은 누적 데이터.
+    또한 실시간 값들은 다음과 같습니다. : 
     
     - Power fed to the grid (if positive) or taken from the grid (if negative).
     - Power load as a generator (if positive) or consumer (if negative).
@@ -68,30 +68,27 @@ Each sensor type chosen as monitored condition adds a set of sensors to Home Ass
 
 - `inverter`
 
-    Cumulative data such as the energy produced in the current day or year and overall produced energy.
-    Also, live values about AC/DC power, current, voltage and frequency.
-    The data is only shown when choosing device scope.
+    현재 일 또는 연도에 생산 된 에너지 및 생산 된 전체 에너지와 같은 누적 데이터.
+    또한 AC/DC power, current, voltage, frequency에 대한 실시간 값입니다.
+    데이터는 장치 범위를 선택할 때만 표시됩니다.
 
 - `meter`
 
-    Detailed information about power, current and voltage, if supported split among the phases.
-    The data is only shown when choosing device scope.
-    
+    상(phase)에서 지원되는 경우  power, current, voltage에 대한 자세한 정보.
+    데이터는 장치 범위를 선택할 때만 표시됩니다.
+
 - `storage`
 
-    Detailed information about current, voltage, state, cycle count, capacity and more about installed batteries.
+    설치된 배터리에 대한 current, voltage, state, cycle count, capacity 등에 대한 자세한 정보
 
-Note that some data (like photovoltaic production) is only provided by the Fronius device when non-zero.
-The corresponding sensors are added to Home Assistant as entities as soon as they are available.
-This means for example that when Home Assistant is started at night,
-there might be no sensor providing photovoltaic related data.
-This does not need to be problematic as the values will be added on sunrise,
-when the Fronius devices begins providing the needed data.
+일부 데이터 (예: 태양광 생산)는 0이 아닌 경우에만 Fronius 장치에서 제공합니다.
+해당 센서는 사용 가능한 즉시 홈어시스턴트에 엔티티로 추가됩니다.
+예를 들어 야간에 홈어시스턴트를 시작하면, 태양광 관련 데이터를 제공하는 센서가 없을 수 있습니다.
+Fronius 장치가 필요한 데이터를 제공하기 시작할 때, 일출시에 값이 추가되므로 문제가 되지 않습니다.
 
-## Examples
+## 사례
 
-When including more of the components that one Fronius device offers, 
-a list of sensors that are to be integrated can be given like below.
+하나의 Fronius 장치가 제공하는 구성 요소를 더 포함 할 때 통합된 센서 목록은 아래와 같이 제공 될 수 있습니다.
 
 ```yaml
 sensor:

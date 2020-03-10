@@ -1,5 +1,5 @@
 ---
-title: NextBus
+title: 미국 대중교통정보시스템(NextBus)
 description: Instructions on how to use public transit data from Nextbus in Home Assistant.
 logo: train.png
 ha_category:

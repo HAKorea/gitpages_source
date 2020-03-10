@@ -1,5 +1,5 @@
 ---
-title: NMBS
+title: 벨기에 철도정보시스템(NMBS)
 description: Instructions on how to integrate timetable data for traveling on the NMBS Belgian Railway within Home Assistant.
 logo: sncb_nmbs.gif
 ha_category:

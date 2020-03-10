@@ -1,5 +1,5 @@
 ---
-title: Yandex Transport
+title: 러시아 교통정보(Yandex Transport)
 description: Instructions on how to set up Yandex transport with Home Assistant.
 logo: yandex.png
 ha_category:

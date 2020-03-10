@@ -1,5 +1,5 @@
 ---
-title: Transports Metropolitans de Barcelona
+title: 스페인 바르셀로나 교통정보(Transports Metropolitans de Barcelona)
 description: Instructions on how to integrate TMB iBus sensor within Home Assistant.
 logo: tmb.png
 ha_category:

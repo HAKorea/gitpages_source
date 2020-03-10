@@ -1,5 +1,5 @@
 ---
-title: MVG
+title: 독일뮌헨지하철정보(MVG)
 description: Instructions on how to integrate Munich public transport departure times into Home Assistant.
 logo: mvg.png
 ha_category:

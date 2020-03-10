@@ -1,5 +1,5 @@
 ---
-title: Trafikverket Train
+title: 스웨덴 기차정보(Trafikverket Train)
 description: Instructions how to integrate Trafikverket Train within Home Assistant.
 logo: trafikverket.png
 ha_category:

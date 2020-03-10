@@ -1,5 +1,5 @@
 ---
-title: Nederlandse Spoorwegen (NS)
+title: 네덜란드열차정보(Nederlandse Spoorwegen (NS))
 description: Instructions on how to integrate timetable data for traveling by train in the Netherlands within Home Assistant.
 logo: nederlandse_spoorwegen.png
 ha_category:

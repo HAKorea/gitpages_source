@@ -1,5 +1,5 @@
 ---
-title: Trafikverket Weather Station
+title: 스웨덴 기상청(Trafikverket Weather Station)
 description: Instructions how to integrate Trafikverket WeatherStation within Home Assistant.
 logo: trafikverket.png
 ha_category:

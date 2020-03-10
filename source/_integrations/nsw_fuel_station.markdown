@@ -1,5 +1,5 @@
 ---
-title: NSW Fuel Station Price
+title: 호주 유가확인 서비스(NSW Fuel Station Price)
 description: Instructions on how to integrate NSW fuel station prices into Home Assistant.
 logo: fuelcheck.png
 ha_category:

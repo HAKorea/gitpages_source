@@ -1,5 +1,5 @@
 ---
-title: OASA Telematics
+title: 그리스 아테네 대중교통정보(OASA Telematics)
 description: Instructions on how to integrate bus and trolley arrival data for Greek OASA Telematics within Home Assistant.
 logo: oasa.png
 ha_category:

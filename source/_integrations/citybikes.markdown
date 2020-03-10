@@ -1,5 +1,5 @@
 ---
-title: 글로벌공유자전거(CityBikes)
+title: 글로벌 공유자전거(CityBikes)
 description: Instructions on how to integrate data from the CityBikes API into Home Assistant.
 logo: citybikes.png
 ha_category:

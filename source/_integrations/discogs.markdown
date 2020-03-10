@@ -1,5 +1,5 @@
 ---
-title: Discogs
+title: 음반거래소(Discogs)
 description: Instructions on how to set up Discogs sensors within Home Assistant.
 ha_category:
   - Multimedia
@@ -10,16 +10,16 @@ ha_codeowners:
   - '@thibmaek'
 ---
 
-The `discogs` platform allows you to see the current amount of records in your [Discogs](https://www.discogs.com) collection.
+`discogs` 플랫폼을 사용하면 [Discogs](https://www.discogs.com) 컬렉션의 현재 레코드 수를 볼 수 있습니다.
 
-## Setup
+## 셋업
 
-First, you'll need to get a personal access token from your Discogs account.
-You can generate a token from your profile's [Developer settings](https://www.discogs.com/settings/developers).
+먼저, Discogs 계정에서 개인 액세스 토큰을 받아야합니다.
+프로필의 [Developer settings](https://www.discogs.com/settings/developers)에서 토큰을 생성 할 수 있습니다.
 
-## Configuration
+## 설정
 
-To enable this sensor, add the following lines to your `configuration.yaml`:
+이 센서를 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -28,7 +28,7 @@ sensor:
     token: YOUR_TOKEN
 ```
 
-The monitored conditions can create a sensor which displays the amount of records currently in your collection and/or wantlist, and an option to pick a random record from your collection.
+모니터링되는 조건은 현재 컬렉션 및/또는 원하는 목록에 있는 레코드 수를 표시하는 센서 및 컬렉션에서 임의의 레코드를 선택하는 옵션을 만들 수 있습니다.
 
 {% configuration %}
 token:

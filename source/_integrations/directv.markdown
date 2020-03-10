@@ -1,5 +1,5 @@
 ---
-title: DirecTV
+title: 다이렉TV(DirecTV)
 description: Instructions on how to integrate DirecTV receivers into Home Assistant.
 logo: directv.png
 ha_category:

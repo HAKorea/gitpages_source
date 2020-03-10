@@ -1,5 +1,5 @@
 ---
-title: AVM FRITZ!Box
+title: 독일통신사(AVM FRITZ!Box)
 description: Instructions on how to integrate the AVM Fritzbox Smart Home components.
 logo: avm.png
 ha_category:

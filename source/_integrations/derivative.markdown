@@ -1,5 +1,5 @@
 ---
-title: Derivative
+title: 변화율(Derivative)
 description: Instructions on how to integrate Derivative Sensor into Home Assistant.
 ha_category:
   - Utility
@@ -12,12 +12,12 @@ ha_codeowners:
   - '@afaucogney'
 ---
 
-The `derivative` platform creates a sensor that estimates the derivative of the values provided by a source sensor.
-Derivative sensors are updated upon changes of the **source**.
+`derivative` 플랫폼은 source 센서가 제공한 값의 변화율을 추정하는 센서를 생성합니다. 
+Derivative 센서는 **source** 변경시 업데이트됩니다.
 
-## Configuration
+## 설정
 
-To enable Derivative Sensor in your installation, add the following to your `configuration.yaml` file:
+설치에서 Derivative 센서를 ​​활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -62,13 +62,14 @@ time_window:
   type: time
 {% endconfiguration %}
 
-## Temperature example
+## 온도 변화율 사례
 
-For example, you have a temperature sensor `sensor.temperature` that outputs a value every few seconds, but rounds to the nearest half number.
-That means that two consecutive output values might be the same (so the derivative is `Δy/Δx=0` because `Δy=0` !)
-However, the temperature might actually be changing over time.
-In order to capture this, you should use a `time_window`, such that immediate jumps don't result in high derivatives and that after the next sensor update, the derivatives doesn't vanish to zero.
-An example configuration that uses `time_window` is
+예를 들어, 몇 초마다 값을 출력하지만 가장 가까운 반값으로 반올림하는 온도 센서 `sensor.temperature`가 있습니다.
+이는 두 개의 연속 출력값이 동일 할 수 있음을 의미합니다 (따라서 미분은 `Δy=0`이기 때문에 `Δy/Δx=0`입니다).
+그러나 실제로 온도는 시간이 지남에 따라 변할 수 있습니다.
+이를 캡처하려면 `time_window`를 사용해야합니다, 즉각적인 피크값들은 높은 변화율의 결과로 나오지 않도록 하게 하고, 다음 센서 업데이트시 변화율이 0으로 나오지 않습니다. 
+
+`time_window`를 사용하는 예제 설정은
 
 ```yaml
 sensor:

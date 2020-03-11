@@ -1,5 +1,5 @@
 ---
-title: TrackR
+title: 트랙알(TrackR)
 description: Instructions on how to use TrackR to track devices in Home Assistant.
 logo: trackr.png
 ha_release: 0.36
@@ -8,11 +8,11 @@ ha_category:
 ha_iot_class: Cloud Polling
 ---
 
-The `trackr` platform allows you to detect presence using [TrackR](https://www.thetrackr.com/) devices.
+`trackr` 플랫폼에서는 [TrackR](https://www.thetrackr.com/) 장치를 사용하여 재실을 감지 할 수 있습니다.
 
-The official TrackR mobile app handles the tracking of the TrackR devices using your phones Bluetooth and GPS.
+공식 TrackR 모바일 앱은 휴대폰의 Bluetooth 및 GPS를 사용하여 TrackR 장치의 추적을 처리합니다.
 
-To integrate TrackR in Home Assistant, add the following section to your `configuration.yaml` file:
+Home Assistant에 TrackR을 연동하려면 `configuration.yaml` 파일에 다음 섹션을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

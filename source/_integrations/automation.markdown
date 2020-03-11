@@ -10,7 +10,7 @@ ha_codeowners:
   - '@home-assistant/core'
 ---
 
-자세한 내용은 [docs 섹션] (/ docs / automation /)을 참조하십시오
+자세한 내용은 [docs 섹션](/docs/automation/)을 참조하십시오
 자동화 통합 사용 방법에 대한 설명서.
 
 <p class='img'>

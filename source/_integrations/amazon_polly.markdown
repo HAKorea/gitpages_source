@@ -1,5 +1,5 @@
 ---
-title: Amazon Polly
+title: 아마존 Polly
 description: Instructions on how to setup Amazon Polly with Home Assistant.
 logo: polly.png
 ha_category:

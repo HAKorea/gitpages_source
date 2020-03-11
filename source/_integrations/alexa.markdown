@@ -1,5 +1,5 @@
 ---
-title: Amazon Alexa
+title: 아마존 알렉사
 description: Instructions on how to connect Alexa/Amazon Echo to Home Assistant.
 logo: amazon-alexa.png
 ha_category:

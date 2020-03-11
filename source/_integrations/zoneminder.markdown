@@ -1,5 +1,5 @@
 ---
-title: ZoneMinder
+title: 오픈소스 CCTV허브(ZoneMinder)
 description: How to integrate ZoneMinder into Home Assistant.
 logo: zoneminder.png
 ha_category:
@@ -14,16 +14,16 @@ ha_codeowners:
   - '@rohankapoorcom'
 ---
 
-The `zoneminder` integration sets up Home Assistant with your [ZoneMinder](https://www.zoneminder.com) instance.
+`zoneminder` 통합구성요소는 [ZoneMinder](https://www.zoneminder.com) 인스턴스와 홈어시스턴트를 셋업합니다.
 
-There is currently support for the following device types within Home Assistant:
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - [Binary Sensor](#binary-sensor)
 - [Camera](#camera)
 - [Sensor](#sensor)
 - [Switch](#switch)
 
-## Configuration
+## 설정
 
 ```yaml
 # Example configuration.yaml entry
@@ -66,7 +66,7 @@ password:
   type: string
 {% endconfiguration %}
 
-### Full configuration
+### 전체 설정
 
 ```yaml
 # Example configuration.yaml entry
@@ -80,16 +80,16 @@ zoneminder:
     password: YOUR_PASSWORD
 ```
 
-### Service
+### 서비스
 
-Once loaded, the `zoneminder` platform will expose a service (`set_run_state`) that can be used to change the current run state of ZoneMinder.
+일단 `zoneminder` 플랫폼은 ZoneMinder의 현재 실행 상태를 변경하는데 사용할 수 있는 서비스 (`set_run_state`)를 보여줍니다.
 
 | Service data attribute | Optional | Description                       |
 |:-----------------------|:---------|:----------------------------------|
 | `id`                   | no       | Host of the ZoneMinder instance.  |
 | `name`                 | no       | Name of the new run state to set. |
 
-For example, if your ZoneMinder instance was configured with a run state called "Home", you could write an [automation](/getting-started/automation/) that changes ZoneMinder to the "Home" run state by including the following [action](/getting-started/automation-action/):
+예를 들어, ZoneMinder 인스턴스가 "Home"이라는 실행 상태로 설정된 경우 이어지는 [action](/getting-started/automation-action/)을 포함하여 ZoneMinder를 "Home"실행 상태로 변경하는 [automation](/getting-started/automation/)을 작성할 수 있습니다. 
 
  ```yaml
 action:
@@ -101,17 +101,17 @@ action:
 
 ## Binary Sensor
 
-The `zoneminder` binary sensor platform lets you monitor the availability of your [ZoneMinder](https://www.zoneminder.com) install.
+`zoneminder` 바이너리 센서 플랫폼을 사용하면 [ZoneMinder](https://www.zoneminder.com) 설치의 가용성을 모니터링 할 수 있습니다.
 
-Each binary_sensor created will be named after the hostname used when configuring the [ZoneMinder component](/integrations/zoneminder/).
+생성된 각 binary_sensor는 [ZoneMinder component](/integrations/zoneminder/)를 설정할 때 사용된 호스트 이름을 따라 이름이 지정됩니다.
 
 ## Camera
 
-The `zoneminder` camera platform lets you monitor the current stream of your [ZoneMinder](https://www.zoneminder.com) cameras.
+`zoneminder` 카메라 플랫폼을 사용하면 [ZoneMinder](https://www.zoneminder.com) 카메라의 현재 스트림을 모니터링 할 수 있습니다.
 
-### Configuration
+### 설정
 
-To set it up, add the following information to your `configuration.yaml` file:
+셋업하려면 `configuration.yaml` 파일에 다음 정보를 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -121,9 +121,9 @@ camera:
 
 ## Sensor
 
-The `zoneminder` sensor platform lets you monitor the current state of your [ZoneMinder](https://www.zoneminder.com) install including the number of events, the current state of the cameras and ZoneMinder's current run state.
+`zoneminder` 센서 플랫폼을 사용하면 이벤트 수, 카메라의 현재 상태 및 ZoneMinder의 현재 실행 상태를 포함하여 [ZoneMinder](https://www.zoneminder.com) 설치의 현재 상태를 모니터링 할 수 있습니다.
 
-To set it up, add the following information to your `configuration.yaml` file:
+셋업하려면 `configuration.yaml` 파일에 다음 정보를 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -157,15 +157,15 @@ monitored_conditions:
 
 ## Switch
 
-The `zoneminder` switch platform allows you to toggle the current function of all cameras attached to your [ZoneMinder](https://www.zoneminder.com) instance.
+`zoneminder` 스위치 플랫폼을 사용하면 [ZoneMinder](https://www.zoneminder.com) 인스턴스에 연결된 모든 카메라의 현재 기능을 토글 할 수 있습니다.
 
 <div class='note'>
 
-You must have the [ZoneMinder component](/integrations/zoneminder/) configured to use this and if ZoneMinder authentication is enabled the account specified in the integration configuration must have "Edit" permission for "System".
+이를 사용하도록 [ZoneMinder component](/integrations/zoneminder/)가 설정되어 있어야하며 ZoneMinder 인증이 활성화 된 경우 연동 설정에 지정된 계정에는 "System"에 대한 "Edit" 권한이 있어야합니다.
 
 </div>
 
-To enable this switch, add the following lines to your `configuration.yaml` file:
+이 스위치를 활성화하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -187,5 +187,5 @@ command_off:
 {% endconfiguration %}
 
 <div class='note'>
-The default functions installed by ZoneMinder are: None, Monitor, Modect, Record, Mocord, Nodect.
+ZoneMinder에 의해 설치되는 기본 기능은 None, Monitor, Modect, Record, Mocord, Nodect입니다.
 </div>

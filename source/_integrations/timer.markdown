@@ -1,5 +1,5 @@
 ---
-title: 타이머
+title: 타이머(timer)
 description: Instructions on how to integrate timers into Home Assistant.
 logo: home-assistant.png
 ha_category:

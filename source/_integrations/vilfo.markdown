@@ -1,5 +1,5 @@
 ---
-title: Vilfo Router
+title: VPN 라우터(Vilfo Router)
 description: Instructions on how to integrate a Vilfo Router into Home Assistant.
 logo: vilfo.png
 ha_release: '0.106'
@@ -13,22 +13,22 @@ ha_codeowners:
   - '@ManneW'
 ---
 
-The `Vilfo Router` integration allows you to observe the state of your [Vilfo Router](https://www.vilfo.com) from Home Assistant.
+`Vilfo Router` 연동을 통해 Home Assistant에서 [Vilfo Router](https://www.vilfo.com)의 상태를 관찰 할 수 있습니다.
 
-It currently supports reporting the current load of the device in percent and the current uptime measured in minutes.
+현재 장치의 현재 부하를 백분율로 보고하고 현재 가동 시간을 분 단위로보고하는 기능을 지원합니다.
 
-## Configuration
+## 설정
 
-The integration can be added using the UI. Go to **Configuration** >> **Integrations** and click the `+` sign button and select **Vilfo Router** from the list.
+UI를 사용하여 연동을 추가 할 수 있습니다. **설정** >> **통합구성요소**으로 이동하여 `+`기호 버튼을 클릭하고 목록에서 **Vilfo Router**를 선택하십시오.
 
-To configure the integration you will need the hostname or IP of your router (`admin.vilfo.com` is the default hostname) as well as an API access token.
+연동을 설정하려면 API 액세스 토큰뿐만 아니라 라우터의 호스트 이름 또는 IP (`admin.vilfo.com`이 기본 호스트 이름임)가 필요합니다.
 
-### Obtaining an access token
+### 액세스 토큰 얻기
 
-The access token for the API can be obtained through the Vilfo web-UI in the pane named "general". Visit [the official API documentation](https://www.vilfo.com/apidocs/#header-authorization) for more information on how to find your token.
+API의 액세스 토큰은 "general"이라는 이름의 창에서 Vilfo 웹 UI를 통해 얻을 수 있습니다. 토큰을 찾는 방법에 대한 자세한 내용은 [the official API documentation](https://www.vilfo.com/apidocs/#header-authorization)를 방문하십시오.
 
 <div class="note warning">
 
-In version 1.0.13 of the Vilfo firmware, access tokens are invalidated when a new login to the web UI is made. To prevent web UI logins from interfering with the API calls, you can create a separate user solely for API purposes and use its access token.
+Vilfo 펌웨어 버전 1.0.13에서는 웹 UI에 새로 로그인하면 액세스 토큰이 무효화됩니다. 웹 UI 로그인이 API 호출을 방해하지 않도록 API 목적으로 만 별도의 사용자를 작성하고 해당 액세스 토큰을 사용할 수 있습니다.
 
 </div>

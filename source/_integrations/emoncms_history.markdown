@@ -1,5 +1,5 @@
 ---
-title: Emoncms History
+title: 오픈소스비쥬얼로거(Emoncms History)
 description: Instructions on how to integrate Emoncms history into Home Assistant.
 logo: emoncms.png
 ha_category:
@@ -7,9 +7,9 @@ ha_category:
 ha_release: 0.31
 ---
 
-The `emoncms_history` integration makes it possible to transfer details collected with Home Assistant to [Emoncms.org](https://emoncms.org/) or your local running Emoncms instance. It will send the data to a specific input node on Emoncms with the entity IDs as a key. Afterwards you can create feeds and dashboards in Emoncms with the collected data.
+`emoncms_history` 통합구성요소을 통해 홈 어시스턴트로 수집 한 세부 정보를 [Emoncms.org](https://emoncms.org/) 또는 로컬 실행중인 Emoncms 인스턴스로 전송할 수 있습니다. 엔터티 ID를 키로 사용하여 Emoncms의 특정 입력 노드로 데이터를 보냅니다. 그 후 수집된 데이터를 사용하여 Emoncms에서 피드 및 대시 보드를 생성 할 수 있습니다.
 
-To use the `emoncms_history` integration in your installation, add the following to your `configuration.yaml` file:
+설치시 `emoncms_history` 통합구성요소를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

@@ -1,5 +1,5 @@
 ---
-title: Washington State Department of Transportation (WSDOT)
+title: 미국 워싱턴 교통부(WSDOT)
 description: Instructions on how to integrate WSDOT data into your home.
 logo: wsdot.png
 ha_category:

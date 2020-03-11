@@ -1,5 +1,5 @@
 ---
-title: EBox
+title: 캐나다 방송통신회사(EBox)
 description: Instructions on how to integrate EBox data usage within Home Assistant.
 logo: ebox.png
 ha_category:

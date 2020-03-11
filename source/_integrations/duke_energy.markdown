@@ -1,5 +1,5 @@
 ---
-title: Duke Energy
+title: 미국 에너지측정(Duke Energy)
 description: Instructions on how to set Duke Energy smart meter sensors within Home Assistant.
 logo: duke_energy.png
 ha_category:

@@ -1,5 +1,5 @@
 ---
-title: ebusd
+title: 커스텀난방시스템(ebusd)
 description: The ebusd integration allows the integration between eBUS heating system and Home Assistant.
 ha_category:
   - Sensor
@@ -7,11 +7,11 @@ ha_iot_class: Local Polling
 ha_release: 0.88
 ---
 
-Integration between [ebusd](https://github.com/john30/ebusd/) daemon for communication with eBUS heating systems, and Home Assistant using sensor component.
+eBUS 히팅 시스템과 통신하기 위한 [ebusd](https://github.com/john30/ebusd/) 데몬과 센서 구성 요소를 사용하는 홈어시스턴트의 통합구성요소.
 
-## Configuration
+## 설정
 
-Enable the sensor by adding the following to your `configuration.yaml` file:
+`configuration.yaml` 파일에 다음을 추가하여 센서를 활성화하십시오.
 
 ```yaml
 # Example configuration.yaml entry

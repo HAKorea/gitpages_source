@@ -1,5 +1,5 @@
 ---
-title: Deluge
+title: 토렌트클라이언트(Deluge)
 description: Instructions on how to integrate Deluge within Home Assistant.
 logo: deluge.png
 ha_category:
@@ -10,16 +10,15 @@ ha_release: 0.57
 ha_iot_class: Local Polling
 ---
 
-There is currently support for the following device types within Home Assistant:
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - [Sensor](#sensor)
 - [Switch](#switch)
 
 ## Sensor
 
-The `deluge` platform allows you to monitor your downloads with [Deluge](https://deluge-torrent.org/) from within Home Assistant and setup automation based on the information.
 
-To enable this sensor, add the following lines to your `configuration.yaml`:
+이 센서를 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -72,9 +71,9 @@ monitored_variables:
 
 ## Switch
 
-The `deluge` switch platform allows you to control your [Deluge](https://deluge-torrent.org/) client from within Home Assistant. The platform enables you switch all your torrents in pause, and then unpause them all.
+`deluge` 스위치 플랫폼을 사용하면 Home Assistant 내에서 [Deluge](https://deluge-torrent.org/) 클라이언트를 제어할 수 있습니다. 이 플랫폼을 사용하면 모든 토렌트를 일시중지한 다음 모두 다시시작할 수 있습니다.
 
-To add Deluge to your installation, add the following to your `configuration.yaml` file:
+설치에 Deluge를 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

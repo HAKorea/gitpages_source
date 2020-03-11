@@ -9,10 +9,8 @@ ha_codeowners:
   - '@fbradyirl'
 ---
 
-This is a presence detection scanner for [Cisco](https://www.cisco.com) Mobility Express wireless controllers.
 [Cisco](https://www.cisco.com) Mobility Express 무선 컨트롤러의 재실 감지 스캐너입니다.
 
-To use this device tracker in your installation, add the following to your `configuration.yaml` file:
 이 장치 추적기를 설치에 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
@@ -49,5 +47,4 @@ verify_ssl:
   type: boolean
 {% endconfiguration %}
 
-See the [device tracker integration page](/integrations/device_tracker/) for instructions how to configure the people to be tracked.
 추적할 사람을 설정하는 방법에 대한 지침은 [device tracker integration page](/integrations/device_tracker/)를 참조하십시오.

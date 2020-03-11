@@ -1,5 +1,5 @@
 ---
-title: Buienradar
+title: 네덜란드 기상관측(Buienradar)
 description: Instructions on how to integrate buienradar.nl weather within Home Assistant.
 logo: buienradar.png
 ha_category:

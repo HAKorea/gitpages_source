@@ -1,5 +1,5 @@
 ---
-title: Brottsplatskartan
+title: 스웨덴 지역범죄정보(Brottsplatskartan)
 description: Instructions on how to integrate brottsplatskartan.se into Home Assistant.
 ha_category:
   - Social

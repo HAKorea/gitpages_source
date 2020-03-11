@@ -8,7 +8,7 @@ ha_release: 0.14
 ha_iot_class: Local Polling
 ---
 
-`command_line` 은 플랫폼이 위, 아래, 멈출 때 특정 명령을 내리는 플랫폼입니다. Command Line에서 제어할 수있는 모든 유형의 Cover를 Home Assistant에 통합 할 수 있습니다.
+`command_line` 은 플랫폼이 위, 아래, 멈출 때 특정 명령을 내리는 플랫폼입니다. Command Line에서 제어할 수있는 모든 유형의 Cover를 Home Assistant에 연동할 수 있습니다.
 
 설치에서 Command Line Cover를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 

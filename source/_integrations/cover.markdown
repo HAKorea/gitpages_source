@@ -10,7 +10,7 @@ ha_codeowners:
   - '@home-assistant/core'
 ---
 
-홈어시스턴트는 롤러 셔터, 블라인드 및 차고 문과 같은 개폐형 장치를 제어하기위한 인터페이스를 제공 할 수 있습니다.
+홈어시스턴트는 롤러 셔터, 블라인드 및 차고 문과 같은 커버(Cover) 장치를 제어하기위한 인터페이스를 제공 할 수 있습니다.
 
 ## Device Class
 
@@ -27,23 +27,23 @@ ha_codeowners:
 - **shutter**: 셔터의 제어, 실내 혹은 실외의 창문셔터처럼 가림막이 열림 닫힘도 되지만, 빛을 가리기 위한 일부 틸트 기능도 하는 장치. 
 - **window**: 열리고 닫히거나 기울어 질 수있는 실제 창의 제어.
 
-## Services
+## 서비스
 
-### Cover control services
+### Cover 제어 서비스
 
-Available services: `cover.open_cover`, `cover.close_cover`, `cover.stop_cover`, `cover.toggle`, `cover.open_cover_tilt`, `cover.close_cover_tilt`, `cover.stop_cover_tilt`, `cover.toggle_tilt`
-
-| Service data attribute | Optional | Description |
-| ---------------------- | -------- | ----------- |
-| `entity_id` | yes | `entity_id`'를 나타내는  문자열 또는 문자열 목록입니다. 이외에 모든 개폐장치를 대상으로 합니다. 
-
-### Service `cover.set_cover_position`
-
-Set cover position of one or multiple covers.
+사용가능한 서비스: `cover.open_cover`, `cover.close_cover`, `cover.stop_cover`, `cover.toggle`, `cover.open_cover_tilt`, `cover.close_cover_tilt`, `cover.stop_cover_tilt`, `cover.toggle_tilt`
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
-| `entity_id` | yes | `entity_id`'를 나타내는  문자열 또는 문자열 목록입니다. 이외에 모든 개폐장치를 대상으로 합니다. 
+| `entity_id` | yes | `entity_id`'를 나타내는  문자열 또는 문자열 목록입니다. 이외에 모든 커버를 대상으로 합니다. 
+
+### `cover.set_cover_position` 서비스
+
+하나 또는 여러 개의 Cover 위치를 설정하십시오.
+
+| Service data attribute | Optional | Description |
+| ---------------------- | -------- | ----------- |
+| `entity_id` | yes | `entity_id`'를 나타내는  문자열 또는 문자열 목록입니다. 이외에 모든 커버를 대상으로 합니다. 
 | `position` | no | 0에서 100 사이의 정수
 
 #### Automation example 
@@ -60,13 +60,13 @@ automation:
         position: 50
 ```
 
-### Service `cover.set_cover_tilt_position`
+### `cover.set_cover_tilt_position` 서비스
 
 하나 또는 여러 개의 덮개의 기울기 위치를 설정하십시오.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
-| `entity_id` | yes | `entity_id`'를 나타내는  문자열 또는 문자열 목록입니다. 이외에 모든 개폐장치를 대상으로 합니다. 
+| `entity_id` | yes | `entity_id`'를 나타내는  문자열 또는 문자열 목록입니다. 이외에 모든 커버를 대상으로 합니다. 
 | `tilt_position` | no | 0에서 100 사이의 정수
 
 #### 자동화 예시 

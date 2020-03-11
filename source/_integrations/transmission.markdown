@@ -1,5 +1,5 @@
 ---
-title: Transmission
+title: 트랜스미션(Transmission)
 description: Instructions on how to integrate Transmission within Home Assistant.
 logo: transmission.png
 ha_category:
@@ -14,27 +14,27 @@ ha_codeowners:
   - '@JPHutchins'
 ---
 
-The `transmission` integration allows you to monitor your downloads with [Transmission](https://www.transmissionbt.com/) from within Home Assistant and setup automation based on the information.
+`transmission` 연동을 통해 홈어시스턴트에서  [Transmission](https://www.transmissionbt.com/)을 통해 다운로드를 모니터링하고 정보를 기반으로 자동화를 설정할 수 있습니다.
 
-## Setup
+## 셋업
 
-To use the monitoring, your transmission client needs to allow remote access. If you are running the graphical transmission client (transmission-gtk) go to **Edit** -> **Preferences** and choose the tab **Remote**. Check **Allow remote access**, enter your username and your password, and uncheck the network restriction as needed.
+모니터링을 사용하려면 전송 클라이언트가 원격 액세스를 허용해야합니다. 그래픽 전송 클라이언트 (transmission-gtk)를 실행중인 경우 **Edit** -> **Preferences** 으로 이동하여 **Remote** 탭을 선택하십시오. **Allow remote access***을 선택하고 사용자 이름과 비밀번호를 입력한 다음 필요에 따라 네트워크 제한을 해제하십시오.
 
 <p class='img'>
   <img src='{{site_root}}/images/integrations/transmission/transmission_perf.png' />
 </p>
 
-If everything is set up correctly, the details will show up in the frontend.
+모든 것이 올바르게 설정되면 세부 정보가 프론트 엔드에 나타납니다.
 
 <p class='img'>
   <img src='{{site_root}}/images/integrations/transmission/transmission.png' />
 </p>
 
-## Configuration
+## 설정
 
-Set up the integration through **Configuration** -> **Integrations** -> **Transmission**. For legacy support old transmission configuration is imported and set up as new integration. Make sure to remove `monitored_condiditions` as they are now automatically added to Home Assistant
+**설정** -> **통합구성요소**-> **Transmission**을 통해 연동을 설정하십시오. 레거시 지원을 위해 이전 전송 설정을 가져 와서 새로운 통합구성요소로 설정합니다. `monitored_condiditions` 는 이제 홈어시스턴트에 자동으로 추가되므로 제거하십시오
 
-To enable this sensor, add the following lines to your `configuration.yaml`:
+이 센서를 활성화하려면`configuration.yaml`에 다음 줄을 추가하십시오 :
 
 ```yaml
 transmission:
@@ -69,9 +69,9 @@ scan_interval:
   type: integer
 {% endconfiguration %}
   
-## Integration Entities
+## 통합구성요소 엔티티들
 
-The Transmission Integration will add the following sensors and switches.
+Transmission 통합구성요소는 다음 센서 및 스위치를 추가합니다.
 
 Sensors:
 - transmission_current_status: The status of your Transmission daemon.
@@ -88,18 +88,18 @@ Switches:
 - transmission_turtle_mode: A switch to enable turtle mode.
 
 
-## Event Automation
+## 이벤트 자동화
 
-The Transmission integration is continuously monitoring the status of torrents in the target client. Once a torrent is started or completed, an event is triggered on the Home Assistant Bus, which allows to implement any kind of automation.
+Transmission 통합구성요소는 대상 클라이언트의 토렌트 상태를 지속적으로 모니터링합니다. 토렌트가 시작되거나 완료되면 홈어시스턴트 버스에서 이벤트가 트리거되어 모든 종류의 자동화를 구현할 수 있습니다.
 
-Possible events are:
+가능한 이벤트는 다음과 같습니다. : 
 
 - transmission_downloaded_torrent
 - transmission_started_torrent
 
-Inside of the event, there is the name of the torrent that is started or completed, as it is seen in the Transmission User Interface.
+이벤트 내부에는 전송 사용자 인터페이스에서 볼 수 있듯이 시작되거나 완료된 토렌트 이름이 있습니다.
 
-Example of configuration of an automation with completed torrents:
+토렌트가 완성된 자동화 설정의 예 :
 
 {% raw %}
 ```yaml
@@ -115,11 +115,11 @@ Example of configuration of an automation with completed torrents:
 ```
 {% endraw %}
 
-## Services
+## 서비스
 
-### Service `add_torrent`
+### `add_torrent` 서비스
 
-Adds a new torrent to download. It can either be a URL (http, https or ftp), magnet link or a local file (make sure that the path is [white listed](/docs/configuration/basic/#whitelist_external_dirs)).
+다운로드 할 새 토렌트를 추가합니다. URL (http, https 또는 ftp), magnet 링크 또는 로컬 파일일 수 있습니다 (경로가 [white listed](/docs/configuration/basic/#whitelist_external_dirs)인지 확인).
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
@@ -127,11 +127,11 @@ Adds a new torrent to download. It can either be a URL (http, https or ftp), mag
 | `torrent` | no | Torrent to download
 
 
-## Templating
+## 템플레이팅(Templating)
 
 ### Sensor `started_torrents`
 
-The state attribute `torrent_info` contains information about the torrents that are currently downloading. You can see this information in **Developer Tools** -> **States** -> `sensor.transmission_started_torrents` -> **Attributes**, or by adding a Markdown Card to Lovelace.
+state 속성 `torrent_info`는 현재 다운로드중인 토렌트에 대한 정보를 포함합니다. **개발자 도구**-> **state** -> `sensor.transmission_started_torrents` -> **Attributes**에서 혹은 마크 다운 카드를 Lovelace에 추가하여 이 정보를 볼 수 있습니다.
 
 {% raw %}
 ```yaml

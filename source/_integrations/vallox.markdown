@@ -1,5 +1,5 @@
 ---
-title: Valloxs
+title: 전열교환기(Valloxs)
 description: Instructions on how to integrate Vallox ventilation units into Home Assistant.
 logo: vallox.png
 ha_category:

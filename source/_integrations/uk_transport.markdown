@@ -1,5 +1,5 @@
 ---
-title: UK Transport
+title: 영국교통정보(UK Transport)
 description: Display the current status of UK train and bus departures.
 logo: train.png
 ha_category:

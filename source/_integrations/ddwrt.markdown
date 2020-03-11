@@ -1,5 +1,5 @@
 ---
-title: DD-WRT
+title: 오픈소스라우터(DD-WRT)
 description: Instructions on how to integrate DD-WRT based routers into Home Assistant.
 logo: ddwrt.png
 ha_category:
@@ -7,9 +7,9 @@ ha_category:
 ha_release: pre 0.7
 ---
 
-This platform offers presence detection by looking at connected devices to a [DD-WRT](https://dd-wrt.com/) based router.
+이 플랫폼은 연결된 장치를 [DD-WRT](https://dd-wrt.com/)기반 라우터로 보고 재실 감지 기능을 제공합니다.
 
-To use a DD-WRT router in your installation, add the following to your `configuration.yaml` file:
+설치시 DD-WRT 라우터를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -50,5 +50,5 @@ wireless_only:
   default: true
 {% endconfiguration %}
 
-By default Home Assistant pulls information about connected devices from DD-WRT every 5 seconds.
-See the [device tracker integration page](/integrations/device_tracker/) for instructions how to configure the people to be tracked.
+기본적으로 Home Assistant는 5 초마다 DD-WRT에서 연결된 장치에 대한 정보를 가져옵니다.
+추적할 사람을 설정하는 방법에 대한 지침은 [device tracker integration page](/integrations/device_tracker/)를 참조하십시오.

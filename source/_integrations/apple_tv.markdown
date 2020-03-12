@@ -21,6 +21,9 @@ ha_release: 0.49
 현재이 기능을 사용하려면 홈 공유가 활성화되어 있어야합니다. Home Assistant와 장치의 페어링 지원은 이후 릴리스에서 지원됩니다.
 </div>
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/WIjyerTfQMw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+
 ## 설정
 
 이 구성 요소를 사용하려면 먼저 일부 시스템 라이브러리와 컴파일러를 설치해야합니다. 데비안 또는 이와 유사한 시스템의 경우 다음을 충족해야합니다.

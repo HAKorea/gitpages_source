@@ -24,6 +24,9 @@ device_tracker:
   - platform: bluetooth_tracker
 ```
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/whGuasU9wEw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+
 {% configuration %}
 request_rssi:
   description: 추적된 각 장치의 "수신된 신호 강도 표시"(RSSI)에 대한 요청을 수행.

@@ -19,6 +19,8 @@ ha_release: 0.49
 - Camera
 - Sensor
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/DHH0S2j6uBU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## 설정
 
 설치시 카메라를 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.

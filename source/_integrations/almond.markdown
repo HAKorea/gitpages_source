@@ -22,6 +22,9 @@ ha_codeowners:
 
 <a href='/images/integrations/almond/almond-architecture.svg'><img src='/images/integrations/almond/almond-architecture.svg' alt='Architectural overview of how all pieces fit together.' style='border: 0;box-shadow: none;'></a>
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/vmNp2RTGY6Q?start=385" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+
 ## 설치
 
 ### Hass.io 설치

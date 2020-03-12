@@ -23,6 +23,8 @@ MJPEG 카메라로 설정되고 모든 설정은 Home Assistant 내부의 스위
 - Sensor
 - Switch
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/eo55kn64C6M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## 셋업 (Setup)
 
 [the IP Webcam app](https://play.google.com/store/apps/details?id=com.pas.webcam)을 다운로드하고 앱을 시작하십시오. 'Start Server'을 누르면 전화기에서 비디오 스트리밍이 시작되고 장치의 IP 주소가 화면에 표시됩니다. 

@@ -10,6 +10,8 @@ ha_release: 0.33
 
 `google` 캘린더 플랫폼을 사용하면 [Google Calendars](https://calendar.google.com)에 연결하고 Binary 센서를 생성 할 수 있습니다. 생성된 센서는 캘린더의 이벤트를 기준으로 또는 일치하는 이벤트에 대해서만 트리거 할 수 있습니다. 이 통합구성요소를 처음 설정하면 config 디렉토리에 새 구성 파일 `google_calendars.yaml`이 생성되며 여기에는 모든 캘린더에 대한 정보가 포함됩니다. 또한 Google 캘린더에서 이벤트를 추가할 수 있습니다.
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/OEzpG-iDDlA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## 전제 조건
 
 [Google Developers Console](https://console.developers.google.com/start/api?id=calendar)에서 Client ID 및 Client 비밀번호 생성

@@ -12,6 +12,8 @@ ha_codeowners:
 
 Integrates [Ambiclimate](https://ambiclimate.com/) Air Conditioning controller into Home Assistant.
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/HnhSGdNM7UI" frameborder="0" allowfullscreen></iframe>
+
 You must create an application [here](https://api.ambiclimate.com/clients) to obtain a `client_id` and `client_secret`.
 The `callback url` should be configured as your Home Assistant `base_url` + `/api/ambiclimate`, e.g. `https://example.com/api/ambiclimate`.
 

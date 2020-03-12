@@ -22,6 +22,8 @@ Community API 키는 12 개월 동안 유효하며 이후 만료됩니다. 그�
 
 </div>
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/5wMMUuBUJlk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## 설정
 
 플랫폼을 활성화하고 위도/경도를 통해 데이터를 수집하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오.

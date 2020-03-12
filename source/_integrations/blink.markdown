@@ -16,6 +16,8 @@ ha_codeowners:
 
 `blink` 통합구성요소를 통해 [Blink](https://blinkforhome.com/) 카메라 및 보안 시스템에서 카메라 이미지 및 모션 이벤트를 볼 수 있습니다.
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/yjSH0aJDi1Q?start=855" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## 셋업
 
 이 모듈을 사용하려면 Blink 로그인 정보 (일반적으로 전자메일주소인 사용자 이름 및 암호)가 필요합니다.

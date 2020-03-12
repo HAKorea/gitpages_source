@@ -14,6 +14,7 @@ ha_release: 0.53
 
 - **Notifications** - 홈어시스턴트에서 [Mycroft AI](https://mycroft.ai/)로 알림을 전달할 수 있습니다.
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/inkBNhzOGTU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## 설정
 

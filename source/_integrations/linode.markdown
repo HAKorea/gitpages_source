@@ -1,5 +1,5 @@
 ---
-title: Linode
+title: 린노드(Linode)
 description: Instructions on how to set up Linode within Home Assistant.
 ha_category:
   - System Monitor
@@ -10,16 +10,16 @@ ha_release: 0.57
 ha_iot_class: Cloud Polling
 ---
 
-The `linode` integration allows you to access the information about your [Linode](https://linode.com) systems from Home Assistant.
+`linode` 통합구성요소를 통해 Home Assistant에서 [Linode](https://linode.com) 시스템에 대한 정보에 액세스 할 수 있습니다.
 
-There is currently support for the following device types within Home Assistant:
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - [Binary Sensor](#binary-sensor)
 - [Switch](#switch)
 
-## Setup
+## 셋업
 
-Obtain your oAuth2 Access Token from Linode account.
+Linode 계정에서 oAuth2 액세스 토큰을 받으십시오.
 
 - <http://cloud.linode.com>
 - Log in
@@ -27,9 +27,9 @@ Obtain your oAuth2 Access Token from Linode account.
 - Create a Personal Access Token,
 - Assigned scope (Please choose the least possible access required.)
 
-## Configuration
+## 설정
 
-To integrate Linode with Home Assistant, add the following section to your `configuration.yaml` file:
+Linode를 Home Assistant와 연동하려면 `configuration.yaml` 파일에 다음 섹션을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -46,9 +46,9 @@ linode:
 
 ## Binary Sensor
 
-The `linode` binary sensor platform allows you to monitor your Linode nodes.
+`linode` 이진 센서 플랫폼을 사용하면 Linode 노드를 모니터링 할 수 있습니다.
 
-Add the following to your `configuration.yaml` file:
+`configuration.yaml` 파일에 다음을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -68,8 +68,10 @@ nodes:
 ## Switch
 
 The `linode` switch platform allows you to turn your Linode nodes on and off.
+`linode` 스위치 플랫폼을 사용하면 Linode 노드를 켜거나 끌 수 있습니다.
 
 Add the following to your `configuration.yaml` file:
+`configuration.yaml` 파일에 다음을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry

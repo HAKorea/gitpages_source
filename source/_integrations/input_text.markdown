@@ -8,7 +8,7 @@ ha_release: 0.53
 ha_quality_scale: internal
 ha_codeowners:
   - '@home-assistant/core'
----`
+---
 
 `input_text` 통합구성요소를 통해 사용자는 프론트 엔드를 통해 제어 할 수 있고 자동화 조건 내에서 사용할 수있는 값을 정의할 수 있습니다. 텍스트 상자에 저장된 값을 변경하면 상태 이벤트가 생성됩니다. 이러한 상태 이벤트는 `automation` 트리거로도 사용할 수 있습니다. 암호 모드 (가려진 텍스트)로 설정할 수도 있습니다.
 
@@ -116,7 +116,7 @@ input_select:
 input_text:
   bedroom:
     name: Brightness
-    
+
 automation:
   - alias: Bedroom Light - Custom
     trigger:

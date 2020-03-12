@@ -19,7 +19,7 @@ ha_codeowners:
 
 이 플랫폼을 성공적으로 구현하려면 Home Assistant 호스트가 여러개의 동시 읽기를 수행 할 수 있어야합니다. 동시 홈어시스턴트 사용자마다 10 초마다 카메라에 연결됩니다. 이는 일반적으로 문제가 되지 않습니다.
 
-## 장치 준비 
+## 장치 준비
 
 ### 대체 펌웨어 설치
 
@@ -45,7 +45,7 @@ Raspbian 사용자 : 플랫폼에 ffmpeg 지원을 설치하는 것을 잊지 �
 
 <div class='note warning'>
 
-일부 대체 Yi 펌웨어는 실험용 RTSP 서버를 활성화하여 다른 홈어시스턴트 카메라 플랫폼을 통해 카메라에 연결할 수 있습니다. 그러나 이 RTSP 서버는 가장 유용한 Yi Home 앱을 사용하는 기능을 비활성화시킵니다. 홈어시스턴트 호환성과 기본 앱을 모두 유지하기 위해 이 플랫폼은 FTP를 통해 비디오를 검색하는 것이 좋습니다. 
+일부 대체 Yi 펌웨어는 실험용 RTSP 서버를 활성화하여 다른 홈어시스턴트 카메라 플랫폼을 통해 카메라에 연결할 수 있습니다. 그러나 이 RTSP 서버는 가장 유용한 Yi Home 앱을 사용하는 기능을 비활성화시킵니다. 홈어시스턴트 호환성과 기본 앱을 모두 유지하기 위해 이 플랫폼은 FTP를 통해 비디오를 검색하는 것이 좋습니다.
 
 </div>
 
@@ -72,19 +72,24 @@ camera:
 
 {% configuration %}
 name:
+  description: A human-friendly name for the camera.
   required: true
   type: string
 host:
+  description: The IP address or hostname of the camera.
   required: true
   type: string
 password:
+  description: The password for the FTP server running on the camera. Can be any string as the current firmware doesn't allow setting FTP passwords.
   required: true
   type: string
 path:
+  description: The path to the raw MP4 files.
   required: false
   type: string
   default: /media/mmcblk0p1/record
 username:
+  description: The user that can access the FTP server.
   required: false
   type: string
   default: root

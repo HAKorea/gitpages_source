@@ -1,5 +1,3 @@
-
-
 ---
 title: Nissan Leaf(전기자동차)
 description: Instructions for how to integrate Nissan Leaf(s) into Home Assistant.

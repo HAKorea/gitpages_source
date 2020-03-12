@@ -1,5 +1,5 @@
 ---
-title: 하이크비전
+title: 하이크비전(Hikvision)
 description: Instructions on how to integrate Hikvision camera switches into Home Assistant.
 logo: hikvision.png
 ha_category:

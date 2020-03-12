@@ -13,20 +13,19 @@ ha_codeowners:
 
 <div class='note'>
 
-HTML5 push notifications **do not** work on iOS.
 iOS에서는 HTML5 푸시 알림이 작동하지 **않습니다.**
 
 </div>
 
 <div class='note warning'>
 
-The GCM configuration option is deprecated and stopped working in May 2019, see [https://developers.google.com/cloud-messaging/faq](https://developers.google.com/cloud-messaging/faq). If you are installing this platform for the first time, follow the VAPID configuration steps. To migrate your current installation from GCM to VAPID configuration, follow the instructions below. You can skip the first 3 steps and continue in step 4 with your existing project. You will also need to delete `html5_push_registrations.conf` and [re-enable the notifications in your browser](#setting-up-your-browser).
+GCM 구성 옵션은 더 이상 사용되지 않으며 2019 년 5 월 작동이 중지되었습니다. [https://developers.google.com/cloud-messaging/faq](https://developers.google.com/cloud-messaging/faq)를 참조하십시오. 이 플랫폼을 처음 설치하는 경우 VAPID 설정 단계를 수행하십시오. 현재 설치를 GCM에서 VAPID 구성으로 마이그레이션하려면 아래 지침을 따르십시오. 처음 3 단계를 건너 뛰고 4 단계에서 기존 프로젝트를 계속 진행할 수 있습니다. 또한 html5_push_registrations.conf를 삭제하고 [re-enable the notifications in your browser](#setting-up-your-browser)해야합니다.
 
 </div>
 
-## Configuration
+## 설정
 
-To enable this platform, add the following lines to your `configuration.yaml` file:
+이 플랫폼을 활성화하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -78,30 +77,30 @@ gcm_sender_id:
   type: string
 {% endconfiguration %}
 
-### Requirements
+### 요구 사항
 
-The `html5` platform can only function if all of the following requirements are met:
+`html5` 플랫폼은 다음 요구 사항이 모두 충족되는 경우에만 작동할 수 있습니다.
 
-* You are using Chrome and/or Firefox on any desktop platform, ChromeOS or Android.
-* Your Home Assistant instance is accessible from outside your network over HTTPS or can perform an alternative [Domain Name Verification Method](https://support.google.com/webmasters/answer/9008080#domain_name_verification) on the domain used by Home Assistant.
-* If using a proxy, HTTP basic authentication must be off for registering or unregistering for push notifications. It can be re-enabled afterwards.
-* If you don't run Hass.io: `pywebpush` must be installed. `libffi-dev`, `libpython-dev` and `libssl-dev` must be installed prior to `pywebpush` (i.e. `pywebpush` probably won't automatically install).
-* You have configured SSL/TLS for your Home Assistant. It doesn't need to be configured in Home Assistant though, e.g., you can be running [NGINX](/ecosystem/nginx/) in front of Home Assistant and this will still work. The certificate must be trustworthy (i.e. not self signed).
-* You are willing to accept the notification permission in your browser.
+* 모든 데스크톱 플랫폼, ChromeOS 또는 Android에서 Chrome 및/또는 Firefox를 사용하고 있습니다.
+* 홈어시스턴트 인스턴스는 HTTPS를 통해 네트워크 외부에서 액세스할 수 있거나 홈어시스턴트가 사용하는 도메인에서 대체 [Domain Name Verification Method](https://support.google.com/webmasters/answer/9008080#domain_name_verification)을 수행 할 수 있습니다.
+* 프록시를 사용하는 경우 푸시 알림을 등록하거나 등록 취소하려면 HTTP 기본 인증을 해제해야합니다. 나중에 다시 활성화 할 수 있습니다.
+* Hass.io를 실행하지 않으면 `pywebpush`가 설치되어 있어야합니다. `libffi-dev`,`libpython-dev` 및 `libssl-dev`는 `pywebpush`보다 먼저 설치해야합니다 (즉, `pywebpush`는 자동으로 설치되지 않습니다).
+* Home Assistant에 SSL/TLS를 구성했습니다. 예를 들어 홈어시스턴트 앞에서 [NGINX](/ecosystem/nginx/)를 실행할 수 있지만 홈어시스턴트에서 설정할 필요는 없습니다. 인증서는 신뢰할 수 있어야합니다 (즉, 자체 서명하지 않아야 함).
+* 브라우저에서 알림 권한을 기꺼이 수락합니다.
 
-### Configuring the platform
+### 플랫폼 설정
 
-1. Make sure you can access your Home Assistant installation from outside your network over HTTPS ([see docs](/docs/configuration/remote/)) or can perform an alternative [Domain Name Verification Method](https://support.google.com/webmasters/answer/9008080#domain_name_verification) on the domain used by Home Assistant.
-2. Create a new project at [https://console.cloud.google.com/home/dashboard](https://console.cloud.google.com/home/dashboard), this project will be imported into Firebase later (alternatively, the project can also be created during step 4).
-3. Go to [https://console.cloud.google.com/apis/credentials/domainverification](https://console.cloud.google.com/apis/credentials/domainverification) and verify your domain via Google Webmaster Central / Search Console - [see below](#verify-your-domain).
-4. With the domain verified, go to [https://console.firebase.google.com](https://console.firebase.google.com), select import Google project and select the project you created.
-5. Then, click the cogwheel on top left and select "Project settings".
-6. Select 'Cloud Messaging' tab.
-7. Generate a new key pair under the Web configuration listing at the bottom of the page. To view the private key click the three dots to the right and 'Show private key'.
+1. HTTPS ([see docs](/docs/configuration/remote/))를 통해 네트워크 외부에서 Home Assistant 설치에 액세스하거나 Home Assistant가 사용하는 도메인에서 다른 [Domain Name Verification Method](https://support.google.com/webmasters/answer/9008080#domain_name_verification)을 수행 할 수 있는지 확인하십시오.
+2. [https://console.cloud.google.com/home/dashboard](https://console.cloud.google.com/home/dashboard)에서 새 프로젝트를 만듭니다. 이 프로젝트는 나중에 Firebase로 가져옵니다. (또는 4 단계에서 프로젝트를 만들 수도 있습니다)
+3. [https://console.cloud.google.com/apis/credentials/domainverification](https://console.cloud.google.com/apis/credentials/domainverification)으로 이동하여 Google Webmaster Central /  Search Console을 통해 도메인을 확인합니다 - [see below](#verify-your-domain)
+4. 도메인이 확인되면 [https://console.firebase.google.com](https://console.firebase.google.com)으로 이동하여 Google 프로젝트 가져 오기를 선택하고 생성한 프로젝트를 선택하십시오.
+5. 그런 다음 왼쪽 상단의 톱니 바퀴를 클릭하고 "Project settings"을 선택하십시오.
+6. 'Cloud Messaging '탭'을 선택하십시오.
+7. 페이지 하단의 웹 설정 목록에서 새 키 페어를 생성하십시오. 개인 키를 보려면 오른쪽에있는 세 개의 점과 'Show private key'를 클릭하십시오. 
 
-### Setting up your browser
+### 브라우저 설정
 
-Assuming you have already configured the platform:
+이미 플랫폼을 설정했다고 가정합니다.
 
 1. Open Home Assistant in Chrome or Firefox.
 2. Load profile page by clicking on the badge next to the Home Assistant title in the sidebar. Assuming you have met all the [requirements](#requirements) above then you should see a new slider for Push Notifications. If the slider is greyed out, ensure you are viewing Home Assistant via its external HTTPS address. If the slider is not visible, ensure you are not in the user configuration (Sidebar, Configuration, Users, View User).
@@ -112,9 +111,9 @@ Assuming you have already configured the platform:
 
 **Note:** If you aren't prompted for a device name when enabling notifications, open the `html5_push_registrations.conf` file in your configuration directory. You will see a new entry for the browser you just added. Rename it from `unnamed device` to a name of your choice, which will make it easier to identify later. _Do not change anything else in this file!_ You need to restart Home Assistant after making any changes to the file.
 
-### Testing
+### 테스트하기
 
-Assuming the previous test completed successfully and your browser was registered, you can test the notification as follows:
+이전 테스트가 성공적으로 완료되고 브라우저가 등록되었다고 가정하면 다음과 같이 알림을 테스트 할 수 있습니다.
 
 1. Open Home Assistant in Chrome or Firefox.
 2. Open the sidebar and click the Services button at the bottom (shaped like a remote control), located below the Developer Tools.
@@ -122,14 +121,13 @@ Assuming the previous test completed successfully and your browser was registere
 4. In the Service Data text box enter: `{"message":"hello world"}`, then press the CALL SERVICE button.
 5. If everything worked you should see a popup notification.
 
-### Usage
+### 사용법
 
-The `html5` platform accepts a standard notify payload. However, there are also some special features built in which you can control in the payload.
+`html5` 플랫폼은 표준 통지 페이로드(standard notify payload)를 수용합니다. 그러나 페이로드에서 제어 할 수 있는 특수 기능도 내장되어 있습니다.
 
+#### 액션(Actions)
 
-#### Actions
-
-Chrome supports notification actions, which are configurable buttons that arrive with the notification and can cause actions on Home Assistant to happen when pressed. You can send up to 2 actions.
+Chrome은 알림과 함께 제공되는 설정 가능한 버튼인 알림 액션을 지원하며, 이를 누르면 Home Assistant에서 액션이 발생할 수 있습니다. 최대 2 개의 액션을 보낼 수 있습니다.
 
 ```yaml
 message: Anne has arrived home
@@ -142,9 +140,9 @@ data:
       title: Open door
 ```
 
-#### Data
+#### 데이터
 
-Any parameters that you pass in the notify payload that aren't valid for use in the HTML5 notification (`actions`, `badge`, `body`, `dir`, `icon`, `image`, `lang`, `renotify`, `requireInteraction`, `tag`, `timestamp`, `vibrate`, `priority`, `ttl`) will be sent back to you in the [callback events](#automating-notification-events).
+HTML5 알림에 사용할 수 없는 알림 페이로드에 전달하는 모든 매개 변수 (`actions`, `badge`, `body`, `dir`, `icon`, `image`, `lang`, ` renotify`, `requireInteraction`, `tag`, `timestamp`, `vibrate`,`priority`, `ttl`)는 [callback events](#automating-notification-events)에 다시 전송됩니다.
 
 ```yaml
 title: Front door
@@ -153,9 +151,10 @@ data:
   my-custom-parameter: front-door-open
 ```
 
-#### Tag
+#### 태그(Tag)
 
-By default, every notification sent has a randomly generated UUID (v4) set as its _tag_ or unique identifier. The tag is unique to the notification, _not_ to a specific target. If you pass your own tag in the notify payload you can replace the notification by sending another notification with the same tag. You can provide a `tag` like so:
+기본적으로 전송된 모든 알림(notification)에는 임의로 생성 된 UUID (v4)가 _tag_ 또는 고유 식별자로 설정되어 있습니다. 
+태그는 특정 대상이 _아닌_ 알림에 대해 고유합니다. 알림 페이로드에 고유 태그를 전달하면 동일한 태그로 다른 알림를 보내서 알림를 교체할 수 있습니다. 다음과 같이 '태그'를 제공할 수 있습니다.
 
 ```yaml
 title: Front door
@@ -164,7 +163,7 @@ data:
   tag: front-door-notification
 ```
 
-Example of adding a tag to your notification. This won't create new notification if there already exists one with the same tag.
+알림에 태그를 추가하는 예. 동일한 태그가 있는 알림이 이미 있으면 새 알림을 만들지 않습니다.
 
 {% raw %}
 ```yaml
@@ -182,9 +181,9 @@ Example of adding a tag to your notification. This won't create new notification
 ```
 {% endraw %}
 
-#### Targets
+#### 대상(Targets)
 
-If you do not provide a `target` parameter in the notify payload a notification will be sent to all registered targets as listed in `html5_push_registrations.conf`. You can provide a `target` parameter like so:
+알림 페이로드에 `target` 매개 변수를 제공하지 않으면 `html5_push_registrations.conf`에 나열된 모든 등록된 대상으로 알림이 전송됩니다. 다음과 같이 `target` 매개 변수를 제공할 수 있습니다.
 
 ```yaml
 title: Front door
@@ -192,7 +191,7 @@ message: The front door is open
 target: unnamed device
 ```
 
-`target` can also be a string array of targets like so:
+`target`은 다음과 같이 대상의 문자열 배열이 될 수도 있습니다.
 
 ```yaml
 title: Front door
@@ -202,13 +201,13 @@ target:
   - unnamed device 2
 ```
 
-#### Overrides
+#### 재정의(Overrides)
 
-You can pass any of the parameters listed [here](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/showNotification#Parameters) in the `data` dictionary. Please note, Chrome specifies that the maximum size for an icon is 320px by 320px, the maximum `badge` size is 96px by 96px and the maximum icon size for an action button is 128px by 128px.
+`data` 사전(dictionary)에서 [here](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/showNotification#Parameters)에 나열된 매개 변수를 전달할 수 있습니다. Chrome은 아이콘의 최대 크기가 320x320 픽셀이고 최대 `badge` 크기는 96x96 픽셀이며 작업 버튼의 최대 아이콘 크기는 128x128 픽셀임을 지정합니다.
 
 #### URL
 
-You can provide a URL to open when the notification is clicked by putting `url` in the data dictionary like so:
+다음과 같이 데이터 사전(dictionary)에 url을 넣어 알림을 클릭할 때 열고자하는 URL을 제공할 수 있습니다.
 
 ```yaml
 title: Front door
@@ -217,13 +216,13 @@ data:
   url: https://google.com
 ```
 
-If no URL or actions are provided, interacting with a notification will open your Home Assistant in the browser. You can use relative URLs to refer to Home Assistant, i.e. `/map` would turn into `https://192.168.1.2:8123/map`.
+URL이나 작업이 제공되지 않으면 알림과 상호작용하면 브라우저에서 홈어시스턴트가 열립니다. 상대 URL을 사용하여 홈어시스턴트를 참조할 수 있습니다. 즉, `/map`은 `https://192.168.1.2:8123/map`으로 바뀝니다.
 
 #### TTL and Priority
 
-Newer Android versions introduced stronger battery optimization, so notifications by default are delivered only when phone is awake.
-Options TTL and priority tries to help users solve those problems. Default value of TTL is `86400s` and priority is `normal`.
-You can set priority to either `normal` or `high`. TTL is any integer value.
+최신 Android 버전에서는 보다 강력한 배터리 최적화 기능이 도입되었으므로 기본적으로 알림은 전화가 활성화 된 경우에만 전달됩니다.
+옵션 TTL 및 priority는 사용자가 이러한 문제를 해결하도록 도와줍니다. TTL의 기본값은 `86400s`이고 priority는 `normal`입니다.
+우선 순위를 `normal` 혹은 `high`으로 설정할 수 있습니다. TTL은 임의의 integer 값입니다.
 
 ```yaml
 title: Front door
@@ -233,9 +232,10 @@ data:
   priority: high
 ```
 
-### Dismiss
+### 해제(Dismiss)
 
 You can dismiss notifications by using service html5.dismiss like so:
+다음과 같이 service html5.dismiss를 사용하여 알림을 해제할 수 있습니다.
 
 ```json
 {
@@ -247,13 +247,17 @@ You can dismiss notifications by using service html5.dismiss like so:
 ```
 
 If no target is provided, it dismisses for all.
+대상이 제공되지 않으면 모두 해제됩니다.
 If no tag is provided, it dismisses all notifications.
+태그가 제공되지 않으면 모든 알림이 해제됩니다.
 
-### Automating notification events
+### 알림 이벤트 자동화
 
 During the lifespan of a single push notification, Home Assistant will emit a few different events to the event bus which you can use to write automations against.
+단일 푸시 알림의 수명 동안 홈어시스턴트는 자동화를 작성하는 데 사용할 수 있는 몇 가지 다른 이벤트를 이벤트 버스로 생성합니다.
 
 Common event payload parameters are:
+일반적인 이벤트 페이로드 매개 변수는 다음과 같습니다. :
 
 | Parameter | Description                                                                                                                                                                                                                                                    |
 |-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -264,11 +268,12 @@ Common event payload parameters are:
 | `type`    | The type of event callback received. Can be `received`, `clicked` or `closed`.                                                                                                                                                                                 |
 
 You can use the `target` parameter to write automations against a single `target`. For more granularity, use `action` and `target` together to write automations which will do specific things based on what target clicked an action.
+`target` 매개 변수를 사용하여 단일 `target` 에 대한 자동화를 작성할 수 있습니다. 세분성을 높이려면 `action`과 `target`을 함께 사용하여 대상이 어떤 액션을 클릭했는지에 따라 특정 작업을 수행하는 자동화를 작성하십시오.
 
-#### received event
+#### 받은 이벤트(received event)
 
-You will receive an event named `html5_notification.received` when the
-notification is received on the device.
+You will receive an event named `html5_notification.received` when the notification is received on the device.
+장치에서 알림을 받으면 `html5_notification.received`라는 이벤트가 나타납니다.
 
 ```yaml
 - alias: HTML5 push notification received and displayed on device
@@ -280,6 +285,7 @@ notification is received on the device.
 #### clicked event
 
 You will receive an event named `html5_notification.clicked` when the notification or a notification action button is clicked. The action button clicked is available as `action` in the `event_data`.
+알림 또는 알림 액션 버튼을 클릭하면 `html5_notification.clicked`라는 이벤트가 나타납니다. 클릭한 액션 버튼은 `event_data`에서 `action`으로 이용 가능합니다.
 
 ```yaml
 - alias: HTML5 push notification clicked
@@ -299,9 +305,10 @@ or
       action: open_door
 ```
 
-#### closed event
+#### 닫힌 이벤트(closed event)
 
 You will receive an event named `html5_notification.closed` when the notification is closed.
+알림이 닫히면 `html5_notification.closed`라는 이벤트가 나타납니다.
 
 ```yaml
 - alias: HTML5 push notification clicked
@@ -310,11 +317,13 @@ You will receive an event named `html5_notification.closed` when the notificatio
     event_type: html5_notification.closed
 ```
 
-### Making notifications work with NGINX proxy
+### NGINX 프록시로 알림 작동하게 하기
 
 If you use [NGINX](/ecosystem/nginx/) as a proxy with authentication in front of your Home Assistant instance, you may have trouble with receiving events back to Home Assistant. It's because of authentication token that cannot be passed through the proxy.
+[NGINX](/ecosystem/nginx/)를 Home Assistant 인스턴스 앞에서 인증된 프록시로 사용하는 경우 Home Assistant로 이벤트를 다시받는데 문제가 있을 수 있습니다. 프록시를 통해 전달할 수 없는 인증 토큰 때문입니다.
 
 To solve the issue put additional location into your nginx site's configuration:
+이 문제를 해결하려면 nginx 사이트 설정에 추가 위치를 두십시오.
 
 ```bash
 location /api/notify.html5/callback {
@@ -327,17 +336,20 @@ location /api/notify.html5/callback {
 ```
 
 This rule check if request have `Authorization` HTTP header and bypass the htpasswd (if you use one).
+이 규칙은 요청에 `Authorization` HTTP 헤더가 있는지 확인하고 htpasswd를 무시합니다 (사용하는 경우).
 
 If you still have the problem, even with mentioned rule, try to add this code:
+언급된 규칙으로도 여전히 문제가 있는 경우 다음 코드를 추가하십시오.
 
 ```bash
     proxy_set_header Authorization $http_authorization;
     proxy_pass_header Authorization;
 ```
 
-#### Verify your domain
+#### 도메인 확인(Verify your domain)
 
 If you need to verify domain ownership with Google Webmaster Central/Search Console while configuring this component, follow these steps:
+이 구성 요소를 구성하는 동안 Google Webmaster Central/Search Console을 사용하여 도메인 소유권을 확인해야하는 경우 다음 단계를 따르십시오.
 
 1. Enter your domain and add `/local` at the end, e.g., `https://example.com:8123/local`
 2. Select HTML file verification and download the google*.html file.

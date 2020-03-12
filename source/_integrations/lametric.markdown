@@ -1,5 +1,5 @@
 ---
-title: LaMetric
+title: 고급LED시계(LaMetric)
 description: Instructions on how to integrate LaMetric with Home Assistant.
 logo: lametric.png
 ha_category:
@@ -10,13 +10,15 @@ ha_codeowners:
   - '@robbiet480'
 ---
 
-[LaMetric Time](https://lametric.com/) is a smart clock that can be used to access applications, listen to web radio and display notifications.
+[LaMetric Time](https://lametric.com/)은 응용 프로그램에 액세스하고 웹 라디오를 듣고 알림을 표시하는 데 사용할 수있는 스마트 시계입니다.
 
-There is currently support for the following device types within Home Assistant:
+<iframe width="700" height="437" src="https://www.youtube.com/embed/8J86MIBfAvo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - [Notify](#notifications)
 
-The LaMetric Time can only be accessed by authorized applications. Therefore, each application that wants to access the LaMetric time needs to be registered at the LaMetric Developer web page. Sign Up and login to the developer web page. Click the Create button in the upper right corner, then select Notification App and click Create again. Enter an app name, a description and a redirect URL. Finally, click Save to create the application. For the newly created app you will obtain a client id and a client secret that is required in the following configuration.
+LaMetric Time은 승인된 응용 프로그램에서만 액세스 할 수 있습니다. 따라서 LaMetric 시간에 액세스하려는 각 응용 프로그램은 LaMetric Developer 웹페이지에서 등록해야합니다. 개발자 웹페이지에 가입하고 로그인하십시오. 오른쪽 상단에서 생성 버튼을 클릭한 다음 알림 앱을 선택하고 생성을 다시 클릭하십시오. 앱 이름, 설명 및 리디렉션 URL을 입력하십시오. 마지막으로 저장을 클릭하여 응용 프로그램을 만듭니다. 새로 만든 앱의 경우 다음 설정에 필요한 클라이언트 ID와 클라이언트 암호를 얻습니다.
 
 ```yaml
 # configuration.yaml example
@@ -25,10 +27,10 @@ lametric:
   client_secret: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-## Setup Steps
+## 셋업 단계
 
-LaMetric needs an OAuth2 `client_id` and `client_secret` from the LaMetric developer portal to use it with Home Assistant.
-These are the steps to take:
+LaMetric은 Home Assistant와 함께 사용하려면 LaMetric 개발자 포털의 OAuth2 `client_id` 및 `client_secret`이 필요합니다.
+다음 단계를 수행하십시오.
 
 1. Log in with your LaMetric device account to [developer.lametric.com](https://developer.lametric.com).
 2. Hit the Create button and choose [Notification](https://developer.lametric.com/applications/createsource).
@@ -42,11 +44,11 @@ These are the steps to take:
 5. Set up some notifications in Home Assistant by following the instructions on the [Lametric Notify](/integrations/lametric) page.
 6. Save all configuration files and restart Home Assistant.
 
-## Notifications
+## 알림(Notifications)
 
-The `lametric` notification platform allows to send notification to a LaMetric device. It needs the LaMetric platform to be configured first.
+`lametric` 알림 플랫폼을 통해 LaMetric 장치에 알림을 보낼 수 있습니다. LaMetric 플랫폼을 먼저 설정해야합니다.
 
-To enable LaMetric notifications in your installation, add the following to your `configuration.yaml` file:
+설치에서 LaMetric 알림을 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -84,9 +86,9 @@ priority:
 
 Check out the list of all icons at [https://developer.lametric.com/icons](https://developer.lametric.com/icons). Note that icons always begin with "i" while animations begin with "a". This is part of the name, you can't just use the number!
 
-## Examples
+## 사례
 
-### Full configuration example
+### 전체 설정 사례
 
 ```yaml
 # Example configuration.yaml entry
@@ -99,9 +101,9 @@ notify:
   priority: info
 ```
 
-### Changing sounds and icons
+### 소리 및 아이콘 변경
 
-To add a notification sound, icon, cycles, or priority override, it has to be done via service data.
+알림 sound, icon, cycles 혹은 priority override를 추가하려면 서비스 데이터를 통해 수행해야합니다.
 
 ```yaml
 - alias: "Send notification on arrival at school"
@@ -121,9 +123,9 @@ To add a notification sound, icon, cycles, or priority override, it has to be do
         priority: 'critical'
 ```
 
-### Only notify specific device
+### 특정 기기에만 알리기
 
-If you have more than one La Metric device, you can specify which will receive the message by adding `target:` to the service data:
+La Metric 장치가 둘 이상있는 경우 서비스 데이터에 `target :`을 추가하여 메시지를 받을 장치를 지정할 수 있습니다. :
 
 ```yaml
   action:
@@ -136,4 +138,4 @@ If you have more than one La Metric device, you can specify which will receive t
         icon: 'i51'
  ```
 
- If target is not specified, all LaMetric devices will be notified.
+target을 지정하지 않으면 모든 LaMetric 장치에 알립니다.

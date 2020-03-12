@@ -1,5 +1,5 @@
 ---
-title: ComEd Hourly Pricing
+title: 미국 일리노이 전력측정(ComEd Hourly Pricing)
 description: Instructions on how to set up the ComEd Hourly Pricing sensor in Home Assistant.
 logo: comed.png
 ha_category:

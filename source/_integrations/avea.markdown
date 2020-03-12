@@ -1,5 +1,5 @@
 ---
-title: Elgato Avea
+title: 엘가토 Avea
 description: Instructions on how to integrate Elgato Avea with Home Assistant.
 logo: avea.png
 ha_category:
@@ -10,11 +10,11 @@ ha_codeowners:
   - '@pattyland'
 ---
 
-[Elgato Avea](https://www.elgato.com/en/news/elgato-avea-transform-your-home) is a Bluetooth light bulb that is no longer supported by the manufacturer. The `avea` integration allows you to control all your Avea bulbs with Home Assistant.
+[Elgato Avea](https://www.elgato.com/en/news/elgato-avea-transform-your-home)는 제조업체에서 더 이상 지원하지 않는 Bluetooth 전구입니다. `avea` 통합구성요소를 통해 Home Assistant로 모든 Avea 전구를 제어할 수 있습니다.
 
-### Configuration
+### 설정
 
-To enable Avea, add the following lines to your `configuration.yaml` file:
+Avea를 활성화하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry

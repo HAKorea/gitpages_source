@@ -1,5 +1,5 @@
 ---
-title: Coinbase
+title: 코인베이스(Coinbase)
 description: Instructions for how to add Coinbase sensors to Home Assistant.
 logo: coinbase.png
 ha_category:
@@ -9,13 +9,13 @@ ha_release: 0.61
 ha_iot_class: Cloud Polling
 ---
 
-The `coinbase` integration lets you access account balances and exchange rates from [coinbase](https://coinbase.com).
+`coinbase` 통합구성요소를 통해 [coinbase](https://coinbase.com)에서 계정 잔액 및 환율에 액세스 할 수 있습니다.
 
-You will need to obtain an API key from coinbase's [developer site](https://www.coinbase.com/settings/api) to use this component. You need to give read access to `wallet:accounts` in order for the integration to access relevant data.
+이 구성 요소를 사용하려면 코인베이스의 [개발자 사이트](https://www.coinbase.com/settings/api)에서 API 키를 얻어야합니다. 통합구성요소가 관련 데이터에 액세스하려면 `wallet:accounts`에 대한 읽기 권한을 부여해야합니다.
 
-## Configuration
+## 설정
 
-To set it up, add the following information to your `configuration.yaml` file:
+설정하려면 `configuration.yaml` 파일에 다음 정보를 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -44,11 +44,11 @@ exchange_rate_currencies:
   type: list
 {% endconfiguration %}
 
-Possible currencies are codes that conform to the ISO 4217 standard where possible. Currencies which have or had no representation in ISO 4217 may use a custom code (e.g. BTC). A list of values can be obtained via https://api.coinbase.com/v2/currencies, for more information visit [the Coinbase API documentation](https://developers.coinbase.com/api/v2#get-currencies).
+가능한 통화는 가능한 경우 ISO 4217 표준을 따르는 코드입니다. ISO 4217에서 표현이 있거나 없는 통화는 사용자 정의 코드 (예: BTC)를 사용할 수 있습니다. https://api.coinbase.com/v2/currencies를 통해 값 목록을 얻을 수 있습니다. 자세한 내용은 [the Coinbase API documentation](https://developers.coinbase.com/api/v2#get-currencies)를 방문하십시오.
 
-## Full configuration example
+## 전체 설정 사례
 
-A full configuration sample including optional variables:
+선택적 변수를 포함한 전체 설정 샘플 :
 
 ```yaml
 # Example configuration.yaml entry

@@ -1,5 +1,5 @@
 ---
-title: "Amazon Alexa Smart Home Skill"
+title: "아마존 알렉사 Smart Home Skill"
 description: "Instructions on how to build Smart Home skill to connect Amazon Alexa with Home Assistant."
 logo: amazon-alexa.png
 ha_category:

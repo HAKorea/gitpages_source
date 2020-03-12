@@ -8,11 +8,11 @@ ha_release: 0.7.6
 ha_iot_class: Local Polling
 ---
 
-The `rest` switch platform allows you to control a given endpoint that supports a [RESTful API](https://en.wikipedia.org/wiki/Representational_state_transfer). The switch can get the state via GET and set the state via POST on a given REST resource.
+`rest` 스위치 플랫폼을 사용하면 [RESTful API](https://en.wikipedia.org/wiki/Representational_state_transfer)를 지원하는 지정된 엔드 포인트를 제어할 수 있습니다. 스위치는 GET을 통해 상태를 얻고 주어진 REST 리소스에서 POST를 통해 상태를 설정할 수 있습니다.
 
-## Configuration
+## 설정
 
-To enable this switch, add the following lines to your `configuration.yaml` file:
+이 스위치를 활성화하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -76,13 +76,14 @@ verify_ssl:
 
 <div class='note warning'>
 Make sure that the URL matches exactly your endpoint or resource.
+URL이 엔드 포인트 또는 리소스와 정확히 일치하는지 확인하십시오.
 </div>
 
-## Example
+## 사례
 
-### Switch with templated value
+### 템플릿 값을 응용한 Switch
 
-This example shows a switch that uses a [template](/topics/templating/) to allow Home Assistant to determine its state. In this example, the REST endpoint returns this JSON response with true indicating the switch is on.
+이 예는 [template](/topics/templating/)을 사용하여 Home Assistant가 상태를 확인할 수있는 스위치를 보여줍니다. 이 예제에서 REST 엔드 포인트는 스위치가 켜져 있음을 나타내는 `true`로 이 JSON 응답을 리턴합니다.
 
 ```json
 {"is_active": "true"}
@@ -102,4 +103,4 @@ switch:
 ```
 {% endraw %}
 
-`body_on` and `body_off` can also depend on the state of the system. For example, to enable a remote temperature sensor tracking on a radio thermostat, one has to send the current value of the remote temperature sensor. This can be achieved by using the template `{% raw %}'{"rem_temp":{{states('sensor.bedroom_temp')}}}'{% endraw %}`.
+`body_on` 및 `body_off`도 시스템 상태에 따라 달라질 수 있습니다. 예를 들어, 무선 온도 조절기에서 원격 온도 센서 추적을 사용하려면 원격 온도 센서의 현재 값을 보내야합니다. `{% raw %}'{"rem_temp":{{states('sensor.bedroom_temp')}}}'{% endraw %}` 템플릿을 사용하면됩니다.

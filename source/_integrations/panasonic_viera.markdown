@@ -8,9 +8,9 @@ ha_release: 0.17
 ha_iot_class: Local Polling
 ---
 
-The `panasonic_viera` platform allows you to control a Panasonic Viera TV.
+`panasonic_viera` 플랫폼을 사용하면 Panasonic Viera TV를 제어할 수 있습니다.
 
-Currently known supported models:
+현재 알려진 지원 모델 :
 
 - TC-P65VT30
 - TX-32AS520E
@@ -29,13 +29,13 @@ Currently known supported models:
 - TX-42AS650
 - TX55ASW654
 
-If your model is not on the list then give it a test, if everything works correctly then add it to the list on [GitHub](https://github.com/home-assistant/home-assistant.io/blob/current/source/_integrations/panasonic_viera.markdown).
+모델이 목록에없는 경우 테스트를 수행하고 모든 것이 올바르게 작동하면 [GitHub](https://github.com/home-assistant/home-assistant.io/blob/current/source/_integrations/panasonic_viera.markdown)의 목록에 추가하십시오
 
-Some Panasonic Viera TVs allow Home Assistant to turn them on, if you specify the MAC address with `mac:`.
+`mac:` 으로 MAC 주소를 지정하면 일부 Panasonic Viera TV에서 Home Assistant로 TV를 켤 수 있습니다.
 
-Note that your TV has to reside in the same network as your Home Assistant instance for this platform to work. If you have multiple network interfaces on your Home Assistant instance, you may need to specify the `broadcast_address`.
+이 플랫폼이 작동하려면 TV가 홈어시스턴트 인스턴스와 동일한 네트워크에 있어야합니다. Home Assistant 인스턴스에 여러개의 네트워크 인터페이스가 있는 경우 `broadcast_address`를 지정해야합니다.
 
-To add a TV to your installation, add the following to your `configuration.yaml` file:
+TV를 설치시 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -75,9 +75,9 @@ name:
   type: string
 {% endconfiguration %}
 
-### Example `play_media` script
+### `play_media` 스크립트 예제
 
-The `play_media` function can be used to open web pages and other media types (images, movies) in the TV web browser.
+`play_media` 기능은 TV 웹브라우저에서 웹페이지 및 기타 미디어 유형 (이미지, 동영상)을 여는데 사용할 수 있습니다.
 
 ```yaml
 # Example play_media script that can be triggered when someone is detected at the door

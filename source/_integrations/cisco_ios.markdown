@@ -1,5 +1,5 @@
 ---
-title: Cisco IOS
+title: 시스코 IOS
 description: Instructions on how to integrate Cisco IOS routers into Home Assistant.
 logo: cisco.png
 ha_category:
@@ -9,15 +9,15 @@ ha_codeowners:
   - '@fbradyirl'
 ---
 
-This is a presence detection scanner for [Cisco](https://www.cisco.com/) IOS devices.
+[Cisco](https://www.cisco.com/) IOS 장치의 재실 감지 스캐너입니다.
 
 <div class='note warning'>
-This device tracker needs SSH to be enabled on the router.
+이 장치 추적기는 라우터에서 SSH를 활성화해야합니다.
 </div>
 
-Before using this scanner it is recommended that you lower the ARP cache timeout on your router, as Cisco IOS normally comes with a 4 hour default ARP cache timeout.
+Cisco IOS에는 일반적으로 4 시간 기본 ARP 캐시 시간 초과가 제공되므로 이 스캐너를 사용하기 전에 라우터에서 ARP 캐시 시간 초과를 낮추는 것이 좋습니다.
 
-For example, the following commands will lower the timeout to 2 minutes on Vlan1:
+예를 들어 다음 명령은 Vlan1에서 시간 초과를 2 분으로 줄입니다.
 
 ```bash
 # 1. use this command to see what Vlan your devices are on
@@ -41,11 +41,11 @@ copy running-config startup-config
 
 <div class='note warning'>
 
-If you have a very large number of devices on your VLan (+1000), then you may want to adjust the ARP cache timeout to suit your needs. See [this discussion](https://supportforums.cisco.com/discussion/10169296/arp-timeout) to learn more.
+VLan (+1000)에 매우 많은 수의 장치가 있는 경우 필요에 따라 ARP 캐시 시간 초과를 조정해야 할 수 있습니다. 자세한 내용은 [this discussion](https://supportforums.cisco.com/discussion/10169296/arp-timeout)을 참조하십시오.
 
 </div>
 
-To use this device tracker in your installation, add the following to your `configuration.yaml` file:
+이 장치 추적기를 설치에 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -71,4 +71,4 @@ password:
   type: string
 {% endconfiguration %}
 
-See the [device tracker integration page](/integrations/device_tracker/) for instructions how to configure the people to be tracked.
+추적할 사람을 설정하는 방법에 대한 지침은 [device tracker integration page](/integrations/device_tracker/)를 참조하십시오.

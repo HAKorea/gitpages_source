@@ -1,5 +1,5 @@
 ---
-title: GeoNet NZ Quakes
+title: 뉴질랜드 지진 모니터(GeoNet NZ Quakes)
 description: Instructions on how to integrate the GeoNet New Zealand Quakes feed into Home Assistant.
 logo: geonet-nz.png
 ha_category:

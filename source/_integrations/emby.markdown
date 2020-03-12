@@ -1,5 +1,5 @@
 ---
-title: Emby
+title: 엠비(Emby)
 description: Instructions on how to integrate Emby into Home Assistant.
 logo: emby.png
 ha_category:
@@ -10,9 +10,9 @@ ha_codeowners:
   - '@mezz64'
 ---
 
-The `emby` platform allows you to control a [Emby](https://emby.media/) multimedia system from Home Assistant.
+`emby` 플랫폼을 사용하면 Home Assistant에서 [Emby](https://emby.media/) 멀티미디어 시스템을 제어할 수 있습니다.
 
-To add Emby to your installation, add the following to your `configuration.yaml` file:
+Emby를 설치에 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

@@ -1,5 +1,5 @@
 ---
-title: Blink 보안
+title: Blink 보안 카메라
 description: Instructions for how to integrate Blink camera/security system within Home Assistant.
 logo: blink.png
 ha_category:

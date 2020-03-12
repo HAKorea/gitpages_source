@@ -1,5 +1,5 @@
 ---
-title: Arcam FMJ Receivers
+title: Arcam FMJ 리시버
 description: Instructions on how to integrate Arcam FMJ Receivers into Home Assistant.
 logo: arcam.svg
 ha_category: Media Player
@@ -9,18 +9,18 @@ ha_codeowners:
   - '@elupus'
 ---
 
-The `arcam_fmj` integration allows you to control [Arcam FMJ Receveivers](https://www.arcam.co.uk/range/fmj.htm) from Home Assistant.
+`arcam_fmj` 통합구성요소를 통해 Home Assistant에서 [Arcam FMJ Receveivers](https://www.arcam.co.uk/range/fmj.htm)를 제어할 수 있습니다.
 
-Supported devices:
+지원 장치 : 
 
 - AVR 380
 - AVR 450
 - AVR 750
 - Likely other AVRs
 
-## Configuration
+## 설정
 
-To add an Arcam FMJ to your installation, add the following to your `configuration.yaml` file:
+Arcam FMJ를 설치에 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Minimal example configuration.yaml entry
@@ -32,7 +32,6 @@ arcam_fmj:
 
 {% configuration %}
 host:
-  description: IP address or hostname of the device.
   required: true
   type: string
 port:
@@ -81,22 +80,18 @@ media_player:
             packet: JgAYADodHTo6Oh0dHR0dHR0dHR06Oh0dHQALZw0FAAAAAAAAAAAAAAAAAAA=
 ```
 
-## Power state
+## 전원 상태
 
-Arcam FMJ receivers turn off their network port when in standby, the component will try to
-reconnect to the receiver every 5 seconds. This mean powering on the first zone is not
-possible over the builtin network connection. Two options for complete power control
-exists: IR or Serial gateway.
+Arcam FMJ 수신기는 대기 상태일 때 네트워크 포트를 끄면 구성 요소가 5 초마다 수신기에 다시 연결을 시도합니다. 이는 내장 네트워크 연결을 통해 첫 번째 영역(zone)의 전원을 켤 수 없음을 의미합니다. 완벽한 전력 제어를 위한 두 가지 옵션이 있습니다. : IR 또는 Serial 게이트웨이.
 
 ### IR command
 
-Use an IR blaster to send a command to turn the device on using these discrete codes:
+다음과 같은 discrete 코드를 사용하여 장치를 켜도록 명령을 보내려면 IR 블래스터를 사용하십시오.
 
  - Zone 1: Protocol: NEC1 Device: 16 Function: 123
  - Zone 2: Protocol: NEC1 Device: 23 Function: 123
 
-### Serial Port to network gateway
+### Serial 포트에서 network gateway로 
 
-Use a network to a serial port gateway to connect to the serial port of the
-receiver. The serial port is always available and can power on the device.
-This is the most reliable communication method as well.
+네트워크를 serial 포트 게이트웨이에 사용하여 수신기의 serial 포트에 연결하십시오. serial 포트는 항상 사용 가능하며 장치의 전원을 켤 수 있습니다.
+이는 가장 안정적인 통신 방법이기도합니다.

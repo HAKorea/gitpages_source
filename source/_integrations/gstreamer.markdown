@@ -1,5 +1,5 @@
 ---
-title: GStreamer
+title: 지스트리머(GStreamer)
 description: Instructions on how to integrate Gstreamer into Home Assistant.
 ha_category:
   - Media Player
@@ -8,9 +8,9 @@ ha_release: 0.39
 ha_iot_class: Local Push
 ---
 
-The `gstreamer` platform allows you to play audio via a [gstreamer](https://gstreamer.freedesktop.org/) pipeline. Practically, this means you can play audio directly on the computer running Home Assistant. It is particularly suited for playing TTS. Advanced users can specify a pipeline to transform the audio stream and/or redirect it elsewhere.
+`gstreamer` 플랫폼을 사용하면 [gstreamer](https://gstreamer.freedesktop.org/) 파이프 라인을 통해 오디오를 재생할 수 있습니다. 실제로 이는 홈 어시스턴트를 실행하는 컴퓨터에서 직접 오디오를 재생할 수 있음을 의미합니다. 특히 TTS 재생에 적합합니다. 고급 사용자는 파이프 라인을 지정하여 오디오 스트림을 변환하거나 다른 곳으로 리디렉션 할 수 있습니다.
 
-To add a `gstreamer` media player to your installation, add the following to your `configuration.yaml` file:
+`gstreamer` 미디어 플레이어를 설치에 추가하려면 configuration.yaml 파일에 다음을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -29,11 +29,11 @@ pipeline:
   type: string
 {% endconfiguration %}
 
-Only the `music` media type is supported.
+`music` 미디어 유형만 지원됩니다.
 
-## Setup
+## 셋업
 
-And then install the following system dependencies:
+그런 다음, 다음의 시스템 종속성을 설치하십시오.
 
 Debian/Ubuntu/Rasbian:
 
@@ -51,25 +51,25 @@ sudo yum install -y python-gstreamer1 gstreamer1-plugins-good \
     gstreamer1-plugins-ugly
 ```
 
-For Fedora replace `yum` with `dnf`.
+Fedora에선 `yum` 를 `dnf`로 바꿉니다.
 
-If you're running Home Assistant in a virtual environment, you'll need to symlink the system Python's `gi` module into your virtual environment:
+가상 환경에서 Home Assistant를 실행중인 경우 시스템 Python의 `gi` 모듈을 가상 환경에 심볼릭 링크해야합니다. 
 
 ```bash
 ln -s /path/to/your/installation/of/gi /path/to/your/venv/lib/python3.4/site-packages
 ```
 
-On a Raspberry Pi, you may need to add the Home Assistant user to the `audio` group:
+라즈베리 파이에서 홈어시스턴트 사용자를 `audio` 그룹에 추가해야 할 수도 있습니다 :
 
 ```bash
 sudo usermod -a -G audio <ha_user>
 ```
 
-## Example Usage
+## 사용법 예제
 
-### Using with TTS
+### TTS 사용하기
 
-To play TTS on your local computer (for example, if you have speakers attached to your Raspberry Pi:
+로컬 컴퓨터에서 TTS를 재생하려면 (예 : Raspberry Pi에 스피커가 연결된 경우)
 
 ```yaml
 media_player:
@@ -84,9 +84,9 @@ script:
           message: "example text-to-speech message"
 ```
 
-### Using with Snapcast
+### Snapcast 사용하기
 
-To play to a named pipe for consumption by Snapcast:
+Snapcast가 소비할 명명된 파이프를 재생하려면 :
 
 ```yaml
 media_player:

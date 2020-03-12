@@ -7,11 +7,11 @@ ha_category:
 ha_release: 0.36
 ---
 
-The `xiaomi` platform offers presence detection by looking at connected devices to a [Xiaomi](http://miwifi.com) router.
+`xiaomi` 플랫폼은 [Xiaomi](http://miwifi.com) 라우터에 연결된 장치를 보고 재실 감지 기능을 제공합니다.
 
-## Setup
+## 셋업
 
-To use an Xiaomi router in your installation, add the following to your `configuration.yaml` file:
+설치에서 Xiaomi 라우터를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -37,12 +37,11 @@ password:
   type: string
 {% endconfiguration %}
 
-See the [device tracker integration page](/integrations/device_tracker/) for instructions how to configure the people to be tracked.
+추적할 사람을 설정하는 방법에 대한 지침은 [device tracker integration page](/integrations/device_tracker/)를 참조하십시오.
 
-### Compatibility test
+### 호환성 테스트
 
-To ensure that your router is compatible, navigate to `http://YOUR_ROUTER_IP/api/misystem/devicelist`.
-You should see a listing of the device currently connected to your router.
+라우터가 호환되는지 확인하려면 `http://YOUR_ROUTER_IP/api/misystem/devicelist`로 이동하십시오.
+현재 라우터에 연결된 장치 목록이 나타납니다.
 
-However, some users report that even when the previous URL does not work, they have been able to integrate their Mi Router 3 in Home Assistant. E.g., some users with the Mi Router 3 and firmware version 2.10.46 Stable have integrated their routers successfully and an alternative URL to test integration with is `http://YOUR_ROUTER_IP/cgi-bin/luci/api/misystem/devicelist`. Navigating to this page should show the `{"code":401,"msg":"Invalid token"}` message.
-
+그러나 일부 사용자는 이전 URL이 작동하지 않더라도 홈 라우터에 Mi Router 3을 연동할 수 있다고보고합니다. 예를 들어 Mi Router 3 및 펌웨어 버전 2.10.46 Stable을 사용하는 일부 사용자는 라우터를 성공적으로 연동했을 것이며 연동을 테스트하기위한 대체 URL은 `http://YOUR_ROUTER_IP/cgi-bin/luci/api/misystem/devicelist`입니다. 이 페이지로 이동하면 `{"code":401,"msg":"Invalid token"}` 메시지가 표시됩니다.

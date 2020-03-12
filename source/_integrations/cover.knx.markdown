@@ -1,5 +1,5 @@
 ---
-title: "KNX Cover"
+title: "KNX 커버(Cover)"
 description: "Instructions on how to integrate KNX covers with Home Assistant."
 logo: knx.png
 ha_category:
@@ -10,13 +10,13 @@ ha_iot_class: Local Push
 
 <div class='note'>
 
-The `knx` integration must be configured correctly to use this integration, see [KNX Integration](/integrations/knx).
+이 통합구성요소를 사용하려면 `knx` 연동을 올바르게 구성해야합니다. [KNX Integration](/integrations/knx)을 참조하십시오.
 
 </div>
 
-The `knx` cover platform is used as an interface to KNX covers.
+`knx` 커버(Cover) 플랫폼은 KNX 커버에 대한 인터페이스로 사용됩니다.
 
-To use your KNX covers in your installation, add the following to your `configuration.yaml` file:
+설치에서 KNX 커버를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

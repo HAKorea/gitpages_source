@@ -1,5 +1,5 @@
 ---
-title: Transport NSW
+title: 호주 교통정보서비스(Transport NSW)
 description: Instructions on how to integrate timetable data for Transport NSW (Australia) within Home Assistant.
 logo: transport_nsw.png
 ha_category:

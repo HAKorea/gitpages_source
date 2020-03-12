@@ -11,6 +11,10 @@ ha_codeowners:
   - '@raman325'
 ---
 
+Vizio SmartCast 장치는 **설정** -> **통합구성요소** -> **Vizio SmartCast** 로 쉽게 설정 가능합니다. 
+
+이하는 참조로만 보도록 하십시오. 
+
 The `vizio` integration allows you to control [SmartCast](https://www.vizio.com/smartcast-app)-compatible TVs and sound bars (2016+ models).
 
 ## Find your device

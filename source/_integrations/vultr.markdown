@@ -1,5 +1,5 @@
 ---
-title: Vultr
+title: Vultr 서버
 description: Instructions on how to integrate Vultr within Home Assistant.
 ha_category:
   - System Monitor
@@ -11,23 +11,23 @@ logo: vultr.png
 ha_iot_class: Cloud Polling
 ---
 
-The `vultr` integration allows you to access information about and interact with your [Vultr](https://www.vultr.com) subscriptions (Virtual Private Servers) from Home Assistant.
+`vultr` 통합구성요소를 통해 Home Assistant에서 [Vultr](https://www.vultr.com) 구독 (Virtual Private Servers)에 대한 정보에 액세스하고 상호 작용할 수 있습니다.
 
-There is currently support for the following device types within Home Assistant:
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - [Binary Sensor](#binary-sensor)
 - [Sensor](#sensor)
 - [Switch](#switch)
 
-## Configuration
+## 설정
 
-Obtain your API key from your [Vultr Account](https://my.vultr.com/settings/#settingsapi).
+[Vultr 계정](https://my.vultr.com/settings/#settingsapi)에서 API 키를 얻습니다.
 
 <div class='note'>
-Ensure you allow the public IP of Home Assistant under the Access Control heading.
+액세스 제어 표제(heading) 아래에서 홈어시스턴트의 공용 IP를 허용하십시오.
 </div>
 
-To integrate your Vultr subscriptions with Home Assistant, add the following section to your `configuration.yaml` file:
+Vultr 구독을 Home Assistant와 연동하려면 `configuration.yaml` 파일에 다음 섹션을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -44,19 +44,19 @@ api_key:
 
 ## Binary sensor
 
-The `vultr` binary sensor platform allows you to monitor your [Vultr](https://www.vultr.com/) subscription to see if it is powered on or not.
+`vultr` 이진 센서 플랫폼을 사용하면 [Vultr](https://www.vultr.com/) 구독을 모니터링하여 전원이 켜져 있는지 여부를 확인할 수 있습니다.
 
-### Configuration
+### 설정
 
-To use this binary sensor, you first have to set up your Vultr hub.
+이 바이너리 센서를 사용하려면 먼저 Vultr 허브를 설정해야합니다.
 
 <div class='note'>
 
-The following examples assume a subscription that has an ID of `123456` and a label of `Web Server`
+다음 예는 ID가 `123456`이고 레이블이 `Web Server`인 구독을 가정합니다.
 
 </div>
 
-Minimal `configuration.yaml` (produces `binary_sensor.vultr_web_server`):
+최소 `configuration.yaml` (`binary_sensor.vultr_web_server` 생성) :
 
 ```yaml
 # Example configuration.yaml entry
@@ -77,9 +77,9 @@ name:
   type: string
 {% endconfiguration %}
 
-### Full example
+### 전체 사례
 
-Full `configuration.yaml` (produces `binary_sensor.totally_awesome_server`):
+전체 `configuration.yaml` (`binary_sensor.totally_awesome_server` 생성):
 
 ```yaml
 binary_sensor:
@@ -90,17 +90,17 @@ binary_sensor:
 
 ## Sensor
 
-The `vultr` sensor platform will allow you to view current bandwidth usage and pending charges against your [Vultr](https://www.vultr.com/) subscription.
+`vultr` 센서 플랫폼을 사용하면 [Vultr](https://www.vultr.com/) 구독에 대한 현재 대역폭 사용량 및  요금을 볼 수 있습니다.
 
-To use this sensor, you must set up your Vultr hub.
+이 센서를 사용하려면 Vultr 허브를 설정해야합니다.
 
 <div class='note'>
 
-The following examples assume a subscription that has an ID of `123456` and a label of `Web Server`
+다음 예는 ID가 `123456`이고 레이블이 `Web Server`인 구독을 가정합니다.
 
 </div>
 
-Minimal `configuration.yaml` (produces `sensor.vultr_web_server_current_bandwidth_used` and `sensor.vultr_web_server_pending_charges`):
+최소 `configuration.yaml` (`sensor.vultr_web_server_current_bandwidth_used` 및 `sensor.vultr_web_server_pending_charges` 생성):
 
 ```yaml
 sensor:
@@ -142,7 +142,7 @@ sensor:
       - pending_charges
 ```
 
-Custom `configuration.yaml` with only one condition monitored (produces `sensor.web_server_bandwidth`):
+사용자정의 `configuration.yaml` 단 한개의 조건만 모니터 가능 (`sensor.web_server_bandwidth` 생성):
 
 ```yaml
 sensor:
@@ -155,13 +155,13 @@ sensor:
 
 ## Switch
 
-The `vultr` switch platform allows you to control (start/stop) your [Vultr](https://www.vultr.com/) subscription.
+`vultr` 스위치 플랫폼을 사용하면 [Vultr](https://www.vultr.com/) 가입을 제어 (시작/중지) 할 수 있습니다.
 
-To control your Vultr subscription, you first have to set up your Vultr hub.
+Vultr 구독을 제어하려면 먼저 Vultr 허브를 설정해야합니다.
 
-### Configuration
+### 설정
 
-Minimal `configuration.yaml` (produces `switch.vultr_web_server`):
+최소 `configuration.yaml` (`switch.vultr_web_server` 생성):
 
 ```yaml
 # Example configuration.yaml entry
@@ -182,9 +182,9 @@ name:
   type: string
 {% endconfiguration %}
 
-### Additional Examples
+### 추가 사례
 
-Full example that produces `switch.amazing_server`, assuming a subscription that has an ID of `123456` and a label of `Web Server`:
+ID가 `123456`이고 레이블이 `Web Server` 인 구독을 가정한 `switch.amazing_server`를 생성하는 전체 예제 :
 
 ```yaml
 # Example configuration.yaml entry

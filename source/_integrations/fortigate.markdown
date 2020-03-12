@@ -1,5 +1,5 @@
 ---
-title: FortiGate
+title: 방화벽(FortiGate)
 description: Instructions on how to integrate FortiGate Firewalls into Home Assistant.
 logo: fortinet.jpg
 ha_category:
@@ -10,11 +10,11 @@ ha_codeowners:
   - '@kifeo'
 ---
 
-This is a FortiGate presence sensor based on device detection of the FortiGate API
+FortiGate API의 장치 감지를 기반으로하는 FortiGate 재실 센서입니다.
 
-## FortiGate set up
+## FortiGate 셋업
 
-Configure the FortiGate with a USERNAME API user and assign its minimum rights profile:
+USERNAME API 사용자로 FortiGate를 설정하고 최소 권한 프로파일을 지정하십시오.
 
 ```text
 config system accprofile
@@ -37,9 +37,9 @@ config system api-user
 end
 ```
 
-## Configuration
+## 설정
 
-Add the following to your `configuration.yaml` file:
+`configuration.yaml` 파일에 다음을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -68,9 +68,9 @@ devices:
   type: string
 {% endconfiguration %}
 
-## Errors
+## 에러들
 
-If the rights of the profile are not sufficient, you will get the following error:
+프로필의 권한이 충분하지 않으면 다음 오류가 발생합니다.
 
 ```txt
 ERROR (MainThread) [homeassistant.core] Error doing job: Task exception was never retrieved

@@ -1,5 +1,5 @@
 ---
-title: "KNX Climate"
+title: 온습도조절기(KNX Climate)
 description: "Instructions on how to integrate KNX thermostats with Home Assistant."
 logo: knx.png
 ha_category:
@@ -10,13 +10,13 @@ ha_iot_class: Local Push
 
 <div class='note'>
   
-The `knx` integration must be configured correctly to use this integration, see [KNX Integration](/integrations/knx).
+이 통합구성요소를 사용하려면 `knx` 연동을 올바르게 설정해야합니다. [KNX Integration](/integrations/knx)을 참조하십시오.
 
 </div>
 
-The `knx` climate platform is used as an interface to KNX thermostats and room controllers.
+`knx` climate 플랫폼은 KNX 온도 조절기 및 실내 컨트롤러에 대한 인터페이스로 사용됩니다.
 
-To use your KNX thermostats in your installation, add the following lines to your `configuration.yaml` file:
+KNX 온도 조절기를 사용하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -31,7 +31,7 @@ climate:
      operation_mode_state_address: '5/1/6'
 ```
 
-Alternatively, if your device has dedicated binary group addresses for frost/night/comfort mode:
+또는 장치에 frost/night/comfort 모드 전용 이진(binary) 그룹 주소가 있는 경우 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -48,9 +48,8 @@ climate:
     operation_mode_state_address: '5/1/8'
 ```
 
-If your device doesn't support setpoint_shift calculations (i.e. if you don't provide a `setpoint_shift_address` value) please set the `min_temp` and `max_temp`
-attributes of the climate device to avoid issues with exceeding valid temperature values in the frontend. Please do also make sure to add the `target_temperature_address`
-to the config in this case.:
+장치가 setpoint_shift 계산을 지원하지 않는 경우 (즉, `setpoint_shift_address` 값을 제공하지 않는 경우) Climate 장치의 `min_temp` 및 `max_temp` 속성을 설정하여 프런트 엔드에서 유효한 온도값을 초과하는 문제를 피하십시오. 이 경우에도 `target_temperature_address`를 설정에 추가하십시오 :
+
 
 ```yaml
 # Example configuration.yaml entry
@@ -68,10 +67,11 @@ climate:
     max_temp: 32.0
 ```
 
-`operation_mode_frost_protection_address` / `operation_mode_night_address` / `operation_mode_comfort_address` are not necessary if `operation_mode_address` is specified.
-If the actor doesn't support explicit state communication objects the *_state_address can be configured with the same group address as the writeable *_address. The Read-Flag for the *_state_address communication object has to be set in ETS to support initial reading eg. when starting home-assistant.
+`operation_mode_frost_protection_address` / `operation_mode_night_address` / `operation_mode_comfort_address`는 `operation_mode_address`가 지정된 경우 필요하지 않습니다.
+actor가 명시적 상태 통신 오브젝트(explicit state communication objects)를 지원하지 않는 경우 *_state_address는 쓰기 가능한 *_address와 동일한 그룹 주소로 설정될 수 있습니다. 초기 읽기를 지원하기 위해 *_state_address 통신 객체(communication object)에 대한 읽기플래그(Read-Flag)가 ETS에 설정되어야 합니다. 예를들어 홈어시스턴트를 시작할 때.
 
-The following values are valid for the `hvac_mode` attribute:
+
+다음 값은 `hvac_mode` 속성에 유효합니다.
 
 - Off (maps internally to HVAC_MODE_OFF within Home Assistant)
 - Auto (maps internally to HVAC_MODE_AUTO within Home Assistant)
@@ -80,7 +80,7 @@ The following values are valid for the `hvac_mode` attribute:
 - Fan only (maps internally to HVAC_MODE_FAN_ONLY within Home Assistant)
 - Dry (maps internally to HVAC_MODE_DRY within Home Assistant)
 
-The following presets are valid for the `preset_mode` attribute:
+다음 사전 설정은 `preset_mode` 속성에 유효합니다.
 
 - Comfort (maps internally to PRESET_COMFORT within Home Assistant)
 - Standby (maps internally to PRESET_AWAY within Home Assistant)

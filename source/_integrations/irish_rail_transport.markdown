@@ -1,5 +1,5 @@
 ---
-title: Irish Rail Transport
+title: 아일랜드 철도교통서비스(Irish Rail Transport)
 description: Instructions on how to integrate timetable data for traveling on Irish Rail within Home Assistant.
 logo: irishrail.png
 ha_category:
@@ -11,6 +11,7 @@ ha_codeowners:
 ---
 
 The `irish_rail_transport` sensor will give you the time until the next two departures (within 90 minutes) from an Irish Rail station using the RTPI information.
+`irish_rail_transport` 센서는 RTPI 정보를 사용하여 아일랜드 철도역에서 다음 2 번 출발 (90 분 이내) 할 때까지의 시간을 제공합니다.
 
 A station name is the full station name as specified on the Irish Rail search site, for example, `Tara Street` or `Dublin Connolly`.
 

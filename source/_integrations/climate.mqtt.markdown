@@ -1,5 +1,5 @@
 ---
-title: "MQTT HVAC"
+title: "온습도조절기(MQTT HVAC)"
 description: "Instructions on how to integrate MQTT HVAC into Home Assistant."
 logo: mqtt.png
 ha_category:
@@ -8,11 +8,11 @@ ha_release: 0.55
 ha_iot_class: Local Polling
 ---
 
-The `mqtt` climate platform lets you control your MQTT enabled HVAC devices.
+`mqtt` climate 플랫폼을 사용하면 MQTT 지원 HVAC 장치를 제어 할 수 있습니다.
 
-## Configuration
+## 설정
 
-To enable this climate platform in your installation, first add the following to your `configuration.yaml` file:
+설치시 이 climate 플랫폼을 활성화하려면 먼저 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -294,13 +294,13 @@ device:
 
 #### Optimistic mode
 
-If a property works in *optimistic mode* (when the corresponding state topic is not set), Home Assistant will assume that any state changes published to the command topics did work and change the internal state of the entity immediately after publishing to the command topic. If it does not work in optimistic mode, the internal state of the entity is only updated when the requested update is confirmed by the device through the state topic.
+속성이 *optimistic mode*에서 작동하는 경우 (해당 state topic이 설정되지 않은 경우) 홈어시스턴트는 command topic에 게시된 모든 상태 변경이 작동한 것으로 가정하고 command topic에 게시한 직후 엔티티의 내부 상태를 변경합니다. optimistic mode에서 작동하지 않으면 요청된 업데이트가 state topic를 통해 장치에 의해 확인된 경우에만 엔티티의 내부 상태가 업데이트됩니다.
 
-#### Using Templates
+#### 템플릿 사용하기
 
-For all `*_state_topic`s, a template can be specified that will be used to render the incoming payloads on these topics. Also, a default template that applies to all state topis can be specified as `value_template`. This can be useful if you received payloads are e.g., in JSON format. Since in JSON, a quoted string (e.g., `"foo"`) is just a string, this can also be used for unquoting.
+모든 `*_state_topic`의 경우, 이 topic에서 들어오는 페이로드를 렌더링하는데 사용될 템플리트를 지정할 수 있습니다. 또한 모든 state topic에 적용되는 기본 템플릿은 `value_template`으로 지정할 수 있습니다. payload를 받은 경우 (예: JSON 형식)에 유용합니다. JSON에서 따옴표 붙은 문자열 (예: `"foo"`)은 문자열 일 뿐이므로 따옴표를 없에도 사용할 수 있습니다. 
 
-Say you receive the operation mode `"auto"` via your `mode_state_topic`, but the mode is actually called just `auto`, here's what you could do:
+`mode_state_topic`을 통해 operation 모드 `"auto"`를 받았지만 실제로 모드는 그냥 auto라고합니다. 여기서 수행할 수 있는 작업은 다음과 같습니다.
 
 {% raw %}
 ```yaml
@@ -317,12 +317,11 @@ climate:
 ```
 {% endraw %}
 
-This will parse the incoming `"auto"` as JSON, resulting in `auto`. Obviously, in this case you could also just set `value_template: {% raw %}"{{ value_json }}"{% endraw %}`.
+들어오는 `"auto"`를 JSON으로 파싱하여 `auto`가됩니다. 분명히 이 경우  `value_template: {% raw %}"{{ value_json }}"{% endraw %}`를 설정할 수도 있습니다.
 
+### 사례
 
-### Example
-
-A full configuration example looks like the one below.
+전체 설정 예는 다음과 같습니다.
 
 ```yaml
 # Full example configuration.yaml entry

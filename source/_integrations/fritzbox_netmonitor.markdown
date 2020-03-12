@@ -1,5 +1,5 @@
 ---
-title: AVM FRITZ!Box Net Monitor
+title: 독일통신사(AVM FRITZ!Box Net Monitor)
 description: Instructions on how to integrate an AVM FRITZ!Box monitor into Home Assistant.
 logo: avm.png
 ha_category:

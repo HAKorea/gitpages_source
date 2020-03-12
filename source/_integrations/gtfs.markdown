@@ -1,5 +1,5 @@
 ---
-title: General Transit Feed Specification (GTFS)
+title: 구글 운송 피드 스펙 (GTFS)
 description: Instructions on how to use public transit open data in Home Assistant.
 logo: train.png
 ha_category:
@@ -10,29 +10,29 @@ ha_codeowners:
   - '@robbiet480'
 ---
 
-The `gtfs` sensor will give you the next departure time and associated data from your public transit station/stop. The data comes from your chosen public transit authority and is formatted as [General Transit Feed Specification](https://developers.google.com/transit/gtfs/) data, commonly known as GTFS.
+`gtfs` 센서는 다음 출발 시간과 대중 교통 정류장/정류장의 관련 데이터를 제공합니다. 데이터는 선택한 대중 교통 기관에서 제공하며 일반적으로 GTFS라고 알려진 [General Transit Feed Specification](https://developers.google.com/transit/gtfs/)데이터 형식으로되어 있습니다.
 
-You need to find a valid GTFS data set, which you can usually find just by searching the internet. Most public transit authorities have GTFS available somewhere, as Google requires public transit authorities to provide the data if they wish to appear on Google Maps. You may also be able to find data at [TransitFeeds](https://transitfeeds.com/feeds).
+인터넷을 검색하면 찾을 수있는 유효한 GTFS 데이터 세트를 찾아야합니다. 대부분의 대중 교통 기관은 GTFS를 이용할 수 있으며 Google은 대중 교통 기관이 Google지도에 표시하려는 경우 데이터를 제공하도록 요구합니다. [TransitFeeds](https://transitfeeds.com/feeds)에서 데이터를 찾을 수도 있습니다.
 
-Here are some examples:
+다음은 몇 가지 예입니다.
 
-- [Bay Area Rapid Transit (BART)](https://www.bart.gov/schedules/developers/gtfs) - The light rail system for the San Francisco Bay Area.
-- [Metropolitan Transit Authority of New York City (MTA)](http://web.mta.info/developers/) - Provides separate data feeds for subway, bus, LIRR and Metro-North of the greater New York City metropolitan region.
-- [Official Timetable Switzerland](https://opentransportdata.swiss/en/dataset/timetable-2019-gtfs) - The official timetable data for Switzerland in 2019.
+- [Bay Area Rapid Transit (BART)](https://www.bart.gov/schedules/developers/gtfs) - 샌프란시스코 베이 지역 경전철 시스템.
+- [Metropolitan Transit Authority of New York City (MTA)](http://web.mta.info/developers/) - 뉴욕시 대도시 지역의 지하철, 버스, LIRR 및 Metro-North에 대해 별도의 데이터 피드를 제공합니다.
+- [Official Timetable Switzerland](https://opentransportdata.swiss/en/dataset/timetable-2019-gtfs) - 2019 년 스위스 공식 시간표 데이터
 
-You need to download a GTFS ZIP file and put it into a folder named `gtfs` in your configuration directory. For ease of use, it is suggested that you rename the file to just the agency/data source name (i.e. `bart.zip` instead of `google_transit_20160328_v1.zip`). You can also unzip and place a folder in the `gtfs` folder.
+GTFS ZIP 파일을 다운로드하여 설정 디렉토리의 `gtfs` 폴더에 넣으십시오. 사용하기 쉽도록 파일 이름을 agency/data 소스 이름 (예 : `google_transit_20160328_v1.zip` 대신 `bart.zip`)으로 바꾸는 것이 좋습니다. `gtfs` 폴더에 폴더의 압축을 풀고 배치할 수도 있습니다.
 
-The data will be converted into a queryable format and saved as a SQLite3 database alongside the source data. The sensor will check for the existence of this SQLite3 data at every startup and will re-import the ZIP/Folder if none is found.
+데이터는 쿼리 가능한 형식으로 변환 되어 소스 데이터와 함께 SQLite3 데이터베이스로 저장됩니다. 센서는 시작할 때마다이 SQLite3 데이터가 있는지 확인하고 ZIP/폴더가 없으면 다시 가져옵니다.
 
-To update the data, delete the SQLite3 file and restart Home Assistant.
+데이터를 업데이트하려면 SQLite3 파일을 삭제하고 Home Assistant를 다시 시작하십시오.
 
-To find your stop ID, open the `stops.txt` file inside the ZIP file/unzipped folder. The format of the ID is different for every transit agency but will be the first "column" (meaning the string before the first comma) in a row.
+stop ID를 찾으려면 ZIP file/unzipped 된 폴더에서 `stops.txt` 파일을 여십시오. ID의 형식은 모든 대중 교통 기관마다 다르지만 행에서 첫 번째 "column"(첫 번째 쉼표 앞의 문자열을 의미)이됩니다.
 
-The sensor attributes will contain all related information for the specific trip, such as agency information, origin and destination stop information, origin and destination stop time and the route information.
+센서 속성에는 agency 정보, 출발지 및 목적지 정류장 정보, 출발지 및 목적지 정류장 시간 및 경로 정보와 같은 특정 여행에 대한 모든 관련 정보가 포함됩니다.
 
-Your mileage may vary depending on the transit agency used. Most agencies respect the GTFS format but some will do weird things like adding extra columns or using different data formatting. If you have any data specific issues, please report them to the [PyGTFS](https://github.com/jarondl/pygtfs) project, which is what the GTFS sensor uses to parse data.
+마일리지는 사용중인 환승 기관에 따라 다를 수 있습니다. 대부분의 대행사는 GTFS 형식을 존중하지만 일부는 열을 추가하거나 다른 데이터 형식을 사용하는 등 이상한 일을 합니다. 데이터 관련 문제가 있는 경우 GTFS 센서가 데이터를 파싱하는 데 사용하는 [PyGTFS](https://github.com/jarondl/pygtfs) 프로젝트에 보고하십시오.
 
-**Please note**: This is a _static_ data source. Currently, there is no GTFS Realtime support in this sensor due to issues surrounding parsing the protocol buffer format in Python 3. Once those issues have been fixed Realtime support will be added. Once added, the sensor will check for any delays and advisories and report them in the sensor as needed.
+**Please note** : 이는 _static_ 데이터 소스입니다. 현재 이 센서에서는 Python 3의 프로토콜 버퍼 형식 파싱과 관련된 문제로 인해 GTFS 실시간 지원이 없습니다. 이러한 문제가 해결되면 실시간 지원이 추가됩니다. 센서가 추가되면 지연 및 권고 사항을 확인하고 필요에 따라 센서에 보고합니다.
 
 ```yaml
 # Example configuration.yaml entry

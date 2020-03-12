@@ -1,5 +1,5 @@
 ---
-title: "MySensors Device Tracker"
+title: 마이센서즈 장치 추적기(MySensors Device Tracker)
 description: "Instructions on how to use MySensors to track devices in Home Assistant."
 logo: mysensors.png
 ha_category:
@@ -10,10 +10,12 @@ ha_iot_class: Local Push
 ---
 
 Integrates MySensors device trackers into Home Assistant. See the [main component] for configuration instructions.
+MySensors 장치 추적기를 Home Assistant에 연동합니다. 설정 지침은 [main component]를 참조하십시오.
 
 The following sensor types are supported:
+다음과 같은 센서 유형이 지원됩니다.
 
-##### MySensors version 2.0 and higher
+##### MySensors 버전 2.0 혹은 그 이상
 
 S_TYPE             | V_TYPE
 -------------------|---------------------------------------
@@ -21,7 +23,7 @@ S_GPS             | V_POSITION
 
 For more information, visit the [serial api] of MySensors.
 
-### MySensors 2.x example sketch
+### MySensors 2.x 예제 스케치
 
 ```cpp
 /**

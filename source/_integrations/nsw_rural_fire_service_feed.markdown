@@ -1,5 +1,5 @@
 ---
-title: NSW Rural Fire Service Incidents
+title: 호주 지역 화재확인 서비스(NSW Rural Fire Service Incidents)
 description: Instructions on how to integrate the NSW Rural Fire Service Incidents feed into Home Assistant.
 logo: nsw-rural-fire-service.png
 ha_category:

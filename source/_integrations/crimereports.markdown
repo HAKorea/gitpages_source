@@ -1,5 +1,5 @@
 ---
-title: Crime Reports
+title: 미국범죄정보(Crime Reports)
 description: Instructions on how to integrate CrimeReports.com into Home Assistant.
 ha_category:
   - Social

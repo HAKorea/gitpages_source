@@ -1,5 +1,5 @@
 ---
-title: Suez Water
+title: 프랑스 수도세 정보(Suez Water)
 description: Instructions on how to integrate Suez Water daily data within Home Assistant.
 logo: suez.png
 ha_release: 0.97

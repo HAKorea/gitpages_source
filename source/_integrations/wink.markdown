@@ -1,5 +1,5 @@
 ---
-title: Wink
+title: 윙크(Wink)
 description: Instructions on how to set up the Wink hub within Home Assistant.
 logo: wink.png
 ha_category:
@@ -20,15 +20,15 @@ ha_iot_class: Cloud Polling
 ha_release: pre 0.7
 ---
 
-[Wink](https://www.wink.com/) is a home automation hub that can control a whole wide range of devices on the market. Or, as they say in their own words:
+[Wink](https://www.wink.com/)는 시중에서 판매되는 광범위한 장치를 제어할 수 있는 홈오토메이션 허브입니다. 또는 제조사가 자신들에 대해 말하는 것처럼 :
 
 <blockquote>
-  Wink offers one, quick and simple way to connect people with the products they rely on every day in their home.
+  윙크는 집에서 매일 도움을 주는 IOT기기와 사람들을 연결하는 빠르고 쉬운 방법을 제공합니다. !!
 </blockquote>
 
-Home Assistant integrates with the Wink API and automatically sets up any switches, lights, locks, fans, climate devices (thermostats, air conditioners, and water heaters), covers, sensors, alarms, and sirens.
+Home Assistant는 Wink API와 연동되어 switches, lights, locks, fans, climate devices (thermostats, air conditioners, water heaters), covers, sensors, alarms, and sirens을 자동으로 설정합니다.
 
-There is currently support for the following device types within Home Assistant:
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - [Alarm](#alarm-control-panel)
 - [Binary Sensor](#binary-sensor)
@@ -42,19 +42,19 @@ There is currently support for the following device types within Home Assistant:
 - [Switch](#switch)
 - [Water heater](#water-heater)
 
-## Authenticate using [developer.wink.com](https://developer.wink.com)
+## [developer.wink.com](https://developer.wink.com)를 사용한 인증
 
-You need to set up a developer account with Wink. This process can take a few days to get approved.
+Wink를 사용하여 개발자 계정을 설정해야합니다. 이 프로세스는 승인을 받는데 며칠이 걸릴 수 있습니다.
 
-Wink requests three pieces of information from the user when they sign up for a developer account.
+윙크는 개발자 계정에 가입할 때 사용자에게 세 가지 정보를 요청합니다.
 
-1. `Name:` This can be anything, for example, "Home Assistant"
-2. `Website:` The external address of your Home Assistant instance. If not externally accessible you can use your email address.
-3. `Redirect URI:` This should be `http://192.168.1.5:8123/auth/wink/callback` replacing the IP with the internal IP of your Home Assistant box.
+1. `Name:` 원하는 이름을 넣어도 되지만, 예를 들어 "Home Assistant"라고 써도 됩니다.
+2. `Website:` Home Assistant 인스턴스의 외부 주소입니다. 외부에서 액세스 할 수 없는 경우 이메일 주소를 사용할 수 있습니다.
+3. `Redirect URI:` IP를 홈어시스턴트 박스의 내부 IP로 바꾸는 `http://192.168.1.5:8123/auth/wink/callback` 이어야합니다.
 
-No settings are required in the `configuration.yaml` other than `wink:`. 
+`wink` 이외의 `configuration.yaml`에는 설정이 필요하지 않습니다 :
 
-After adding `wink:` to your `configuration.yaml` and restarting Home Assistant you will see a persistent notification on the frontend with a `CONFIGURE` button that will guide you through the setup via the frontend configurator.
+`wink:`를 `configuration.yaml`에 추가하고 홈어시스턴트를 다시 시작하면 프론트 엔드 Configurator를 통해 설정을 안내하는 `CONFIGURE` 버튼이 있는 프론트 엔드에 지속적인 알림이 표시됩니다.
 
 <div class='note'>
 When using the configurator make sure the initial setup is performed on the same local network as the Home Assistant server, if not from the same box Home Assistant is running on. This will allow for authentication redirects to happen correctly.
@@ -66,7 +66,7 @@ wink:
 
 ## Full oauth authentication (legacy)
 
-This should be used for users that obtained their client_id and client_secret via email from Wink support prior to [developer.wink.com's](https://developer.wink.com) existence.
+이는 [developer.wink.com's](https://developer.wink.com)의 Wink Support 이메일을 통해 client_id 및 client_secret을 얻은 사용자들이 사용할 수 있습니다. 
 
 ```yaml
 wink:
@@ -76,7 +76,7 @@ wink:
   client_secret: YOUR_WINK_CLIENT_SECRET
 ```
 
-Please pay attention that the required entries are only needed for legacy OAuth access.
+필수 항목은 legacy OAuth access에만 필요합니다.
 
 {% configuration %}
 email:
@@ -102,19 +102,19 @@ local_control:
   default: false
 {% endconfiguration %}
 
-Local control:
+로컬 제어:
 
-- Wink's local control API isn't officially documented and therefore could be broken by a hub update. For these reasons `local_control` defaults to `false`.
-- Using local control doesn't appear to make commands any quicker, but does function in an internet/Wink outage.
-- Local control is also only available for the Wink hub v1 and v2, not the Wink relay.
-- Local control isn't used during the start-up of Home Assistant; this means initial setup requires an active internet connection.
-- Local control requests are first sent to the controlling hub. If a request fails, that request will attempt to go online.
+- Wink의 로컬 제어 API는 공식적으로 문서화되어있지 않으므로 허브 업데이트로 인해 손상될 수 있습니다. 이러한 이유로 `local_control`의 기본값은 `false`입니다.
+- 로컬 제어를 사용하면 명령이 더 빨라지지는 않지만 Wink가 인터넷과 상관없이 작동합니다.
+- 로컬 제어는 Wink 릴레이가 아닌 Wink 허브 v1 및 v2에서만 사용할 수 있습니다.
+- 홈어시스턴트 시작시에는 로컬 제어가 사용되지 않습니다. 즉, 초기 설정에는 인터넷 연결이 필요합니다.
+- 로컬 제어 요청은 먼저 제어 허브로 전송됩니다. 요청이 실패하면 해당 요청은 온라인 상태가됩니다.
 
 <div class='note'>
 
-It is possible for the hub to get into a bad state where it stops accepting local control request. If this happens, you will notice requests taking significantly longer as they are redirected online. This doesn't happen often, but when it does, it appears to be resolved by rebooting the hub.
+허브가 로컬 제어 요청 수락을 중지하는 잘못된 상태가 될 수 있습니다. 이 경우 온라인으로 리디렉션될 때 요청이 훨씬 오래 걸린다는 것을 알 수 있습니다. 자주 발생하지는 않지만 허브를 재부팅하면 문제가 해결 된 것으로 보입니다.
 
-The following error will be logged if the hub is rejecting local requests.
+허브가 로컬 요청을 거부하면 다음 오류가 기록됩니다.
 
 ```txt
 Error sending local control request. Sending request online
@@ -122,27 +122,27 @@ Error sending local control request. Sending request online
 
 </div>
 
-## Service `refresh_state_from_wink`
+## `refresh_state_from_wink` 서비스
 
-The Wink integration only obtains the device states from the Wink API once, during startup. All updates after that are pushed via a third party called PubNub. On rare occasions where an update isn't pushed device states can be out of sync.
+Wink 통합구성요소는 시작하는 동안 Wink API에서 한 번만 장치 상태를 가져옵니다. 그 이후의 모든 업데이트는 PubNub라는 타사(third party)를 통해 푸시됩니다. 드물지만 업데이트가 푸시되지 않는 경우 장치 상태가 동기화되지 않을 수 있습니다.
 
-You can use the service wink/refresh_state_from_wink to pull the most recent state from the Wink API for all devices. If `local_control` is set to `true` states will be pulled from the devices controlling hub, not the online API.
+wink/refresh_state_from_wink 서비스를 사용하여 모든 장치의 Wink API에서 최신 상태를 가져올 수 있습니다. `local_control`이 `true`로 설정되면 온라인 API가 아닌 장치 제어 허브에서 상태를 가져옵니다.
 
-## Service `pull_newly_added_devices_from_wink`
+## `pull_newly_added_devices_from_wink` 서비스
 
-You can use the service wink/add_new_devices to pull any newly paired Wink devices to an already running instance of Home-Assistant. Any new devices will also be added if Home-Assistant is restarted.
+wink/add_new_devices 서비스를 사용하여 새로 페어링된 Wink 장치를 이미 실행중인 Home-Assistant 인스턴스로 가져올 수 있습니다. 홈어시스턴트를 다시 시작하면 새 장치도 추가됩니다.
 
-## Service `delete_wink_device`
+## `delete_wink_device` 서비스
 
-You can use the service wink/delete_wink_device to remove/unpair a device from Wink.
+wink/delete_wink_device 서비스를 사용하여 Wink에서 장치를 remove/unpair 할 수 있습니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
 | `entity_id` | no | String that points at the `entity_id` of device to delete.
 
-## Service `pair_new_device`
+## `pair_new_device` 서비스
 
-You can use the service wink/pair_new_device to pair a new device to your Wink hub/relay
+wink/pair_new_device 서비스를 사용하여 새 장치를 Wink hub/relay에 페어링할 수 있습니다
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
@@ -151,12 +151,12 @@ You can use the service wink/pair_new_device to pair a new device to your Wink h
 | `kidde_radio_code` | conditional | A string of 8 1s and 0s one for each dip switch on the kidde device left --> right = 1 --> 8 (Required if pairing_mode = kidde)
 
 <div class='note'>
-Calling service wink/pull_newly_added_wink_devices after a device is paired will add that new device to Home Assistant. The device will also show up on the next restart of Home Assistant.
+장치가 페어링된 후 서비스 wink/pull_newly_added_wink_devices를 호출하면 새 장치가 홈어시스턴트에 추가됩니다. 다음에 홈어시스턴트를 다시 시작할 때 장치가 나타납니다.
 </div>
 
-## Service `rename_wink_device`
+## `rename_wink_device` 서비스
 
-You can use the service wink/rename_wink_device to change the name of a device.
+wink/rename_wink_device 서비스를 사용하여 장치 이름을 변경할 수 있습니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
@@ -164,29 +164,29 @@ You can use the service wink/rename_wink_device to change the name of a device.
 | `name` | no | The name to change it to.
 
 <div class='note'>
-Home Assistant entity_ids for Wink devices are based on the Wink device's name. Calling this service will not change the entity_id of the device until Home Assistant is restarted.
+Wink 장치의 홈어시스턴트 entity_id는 Wink 장치의 이름을 기반으로합니다. 이 서비스를 호출해도 Home Assistant가 다시 시작될 때까지 장치의 entity_id가 변경되지 않습니다.
 </div>
 
 <div class='note'>
-The Wink hub, by default, can only be accessed via the cloud. This means it requires an active internet connection and you will experience delays when controlling and updating devices (~3s).
+Wink 허브는 기본적으로 클라우드를 통해서만 액세스 할 수 있습니다. 즉, 인터넷에 연결되어 있어야하며 장치를 제어하고 업데이트 할 때 지연이 발생합니다 (~ 3 초).
 </div>
 
-## Custom Wink devices and their services
+## 커스텀 Wink 장치 및 서비스
 
 - GoControl siren and strobe
 - Dome siren/chime/strobe
 - Quirky Nimbus (Legacy device) These can no longer be officially added to your Wink account
 
-### Service `set_siren_auto_shutoff`
+### `set_siren_auto_shutoff` 서비스
 
-You can use the service wink/set_siren_auto_shutoff to set how long the siren will sound before shutting off.
+wink/set_siren_auto_shutoff 서비스를 사용하여 종료전에 사이렌이 울리는 시간을 설정할 수 있습니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
 | `auto_shutoff` | no | Int. One of [None, -1, 30, 60, 120] (None and -1 are forever. Use None for gocontrol, and -1 for Dome)
 | `entity_id` | yes | String or list of strings that point at `entity_id`s of siren.
 
-Example:
+예시:
 
 ```yaml
 script:
@@ -198,19 +198,19 @@ script:
 ```
 
 <div class='note'>
-The following services only work with the Dome siren/chime.
+다음 서비스는 Dome siren/chime에서만 작동합니다.
 </div>
 
-### Service `set_chime_volume`
+### `set_chime_volume` 서비스
 
-You can use the service wink/set_chime_volume to set the volume for the chime on your Dome siren/chime.
+wink/set_chime_volume 서비스를 사용하여 Dome siren/chime에서 chime의 볼륨을 설정할 수 있습니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
 | `volume` | no | String. One of ["low", "medium", "high"]
 | `entity_id` | yes | String or list of strings that point at `entity_id`s of the siren/chime.
 
-Example:
+예시:
 
 ```yaml
 script:
@@ -221,16 +221,16 @@ script:
           volume: "low"
 ```
 
-### Service `set_siren_volume`
+### `set_siren_volume` 서비스
 
-You can use the service wink/set_chime_volume to set the volume for the chime on your Dome siren/chime.
+wink/set_chime_volume 서비스를 사용하여 Dome Dome siren/chime에서 chime의 볼륨을 설정할 수 있습니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
 | `volume` | no | String. One of ["low", "medium", "high"]
 | `entity_id` | yes | String or list of strings that point at `entity_id`s of siren/chime.
 
-Example:
+예시:
 
 ```yaml
 script:
@@ -241,16 +241,16 @@ script:
           volume: "low"
 ```
 
-### Service `enable_chime`
+### `enable_chime` 서비스
 
-You can use the service wink/enable_chime to set the tone and enable the chime on your Dome siren/chime.
+wink/enable_chime 서비스를 사용하여 tone을 설정하고 Dome siren/chime에서 chime을 활성화할 수 있습니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
 | `tone` | no | String. One of ["doorbell", "fur_elise", "doorbell_extended", "alert", "william_tell", "rondo_alla_turca", "police_siren", "evacuation", "beep_beep", "beep", "inactive"]
 | `entity_id` | yes | String or list of strings that point at `entity_id`s of siren/chime.
 
-Example:
+예시:
 
 ```yaml
 script:
@@ -261,16 +261,16 @@ script:
           tone: "doorbell"
 ```
 
-### Service `set_siren_tone`
+### `set_siren_tone` 서비스
 
-You can use the service wink/set_siren_tone to set the tone on your Dome siren. This tone will be used the next time the siren is executed.
+wink/set_siren_tone 서비스를 사용하여 Dome siren의 tone을 설정할 수 있습니다. 이 tone은 다음에 siren이 실행될 때 사용됩니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
 | `tone` | no | String. One of ["doorbell", "fur_elise", "doorbell_extended", "alert", "william_tell", "rondo_alla_turca", "police_siren", "evacuation", "beep_beep", "beep"]
 | `entity_id` | yes | String or list of strings that point at `entity_id`s of siren/chime.
 
-Example:
+예시:
 
 ```yaml
 script:
@@ -281,16 +281,16 @@ script:
           tone: "alert"
 ```
 
-### Service `set_siren_strobe_enabled`
+### `set_siren_strobe_enabled` 서비스
 
-You can use the service wink/set_siren_strobe_enabled to enable or disable the strobe when the siren is executed.
+wink/set_siren_strobe_enabled 서비스를 사용하여 siren이 실행될 때 strobe를 활성화 또는 비활성화 할 수 있습니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
 | `enabled` | no | Boolean. True or False.
 | `entity_id` | yes | String or list of strings that point at `entity_id`s of siren/chime.
 
-Example:
+예시:
 
 ```yaml
 script:
@@ -301,16 +301,16 @@ script:
           enabled: false
 ```
 
-### Service `set_chime_strobe_enabled`
+### `set_chime_strobe_enabled` 서비스
 
-You can use the service wink/set_chime_strobe_enabled to enable or disable the strobe when the chime is executed.
+wink/set_chime_strobe_enabled 서비스를 사용하여 chime이 실행될 때 strobe를 활성화 또는 비활성화 할 수 있습니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
 | `enabled` | no | Boolean. True or False.
 | `entity_id` | yes | String or list of strings that point at `entity_id`s of chime/chime.
 
-Example:
+예시:
 
 ```yaml
 script:
@@ -321,9 +321,9 @@ script:
           enabled: false
 ```
 
-### Service `set_nimbus_dial_state`
+### `set_nimbus_dial_state` 서비스
 
-You can use the service wink/set_nimbus_dial_state to update an individual dial's value/position and its labels
+wink/set_nimbus_dial_state 서비스를 사용하여 개별 dial의 value/position 및 label을 업데이트 할 수 있습니다
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
@@ -331,7 +331,7 @@ You can use the service wink/set_nimbus_dial_state to update an individual dial'
 | `value` | no | A number, should be between the dials min and max value (See set_nimbus_dial_configuration below)
 | `labels` | yes | A list of strings the first being the value set on the dial's face and the second being the value on the dial face when the Nimbus is pressed
 
-Example:
+예시:
 
 ```yaml
 script:
@@ -346,9 +346,9 @@ script:
             - "150"
 ```
 
-### Service `set_nimbus_dial_configuration`
+### `set_nimbus_dial_configuration` 서비스
 
-You can use the service wink/set_nimbus_dial_configuration to update an individual dial's configuration.
+wink/set_nimbus_dial_configuration 서비스를 사용하여 개별 dial의 설정을 업데이트 할 수 있습니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
@@ -361,7 +361,7 @@ You can use the service wink/set_nimbus_dial_configuration to update an individu
 | `min_position` | yes | A number generally [0-360], the minimum position for the dial's hand.
 | `max_value` | yes | A number generally [0-360], the maximum position for the dial's hand.
 
-Example:
+예시:
 
 ```yaml
 script:
@@ -373,27 +373,27 @@ script:
           rotation: 'ccw'
 ```
 
-## Alarm Control Panel
+## 경보 제어판 
 
-The Wink alarm platform allows you to control your [Wink](https://www.wink.com/) Canary all-in-one security camera.
+Wink 경보 플랫폼을 사용하면 [Wink](https://www.wink.com/) Canary all-in-one security camera를 제어 할 수 있습니다.
 
-The requirement is that you have setup [Wink](/integrations/wink/) from above.
+요구 사항은 위에서 [Wink](/integrations/wink/)를 설정해야합니다.
 
-### Supported devices
+### 지원 장치
 
 - Canary all-in-one security camera
 
 <div class='note'>
-The above devices are confirmed to work, but others may work as well.
+위의 장치는 작동하는 것으로 확인되었지만 다른 장치도 작동 할 수 있습니다.
 </div>
 
 ## Binary Sensor
 
-The Wink binary sensor platform allows you to get data from your [Wink](https://www.wink.com/) binary sensors.
+Wink Binary Sensor 플랫폼을 사용하면 [Wink](https://www.wink.com/) Binary Sensor에서 데이터를 가져올 수 있습니다.
 
-The requirement is that you have setup [Wink](/integrations/wink/) from above.
+요구 사항은 위에서 [Wink](/integrations/wink/)를 설정해야합니다.
 
-### Supported Binary sensor devices
+### 지원 Binary sensor 장치
 
 - Smoke and CO detectors (No Wink hub required for Nest)
 - Window/Door sensors
@@ -408,16 +408,16 @@ The requirement is that you have setup [Wink](/integrations/wink/) from above.
 - Dropcam sensors
 
 <div class='note'>
-The above devices are confirmed to work, but others may work as well.
+위의 장치는 작동하는 것으로 확인되었지만 다른 장치도 작동할 수 있습니다.
 </div>
 
 ## Climate
 
-The Wink climate platform allows you to get data from your [Wink](https://www.wink.com/) thermostats and air conditioners.
+Wink Climate 플랫폼을 사용하면 [Wink](https://www.wink.com/) thermostats 및 air conditioners에서 데이터를 얻을 수 있습니다.
 
-The requirement is that you have setup [Wink](/integrations/wink/) from above.
+요구 사항은 위에서 [Wink](/integrations/wink/)를 설정해야합니다.
 
-### Supported climate devices
+### 지원 climate 장치
 
 - Nest (No Wink hub required)
 - Ecobee (No Wink hub required)
@@ -428,18 +428,18 @@ The requirement is that you have setup [Wink](/integrations/wink/) from above.
 - Quirky Aros window AC unit
 
 <div class='note'>
-The above devices are confirmed to work, but others may work as well.
+위의 장치는 작동하는 것으로 확인되었지만 다른 장치도 작동 할 수 있습니다.
 </div>
 
 ## Cover
 
-Wink Cover garage door functionality varies on the product. Home Assistant can open, close, and view state of GoControl/Linear openers. For Chamberlain MyQ-enabled openers, Home Assistant is limited to show current state (open or closed) only using this Wink cover. This restriction was imposed by Chamberlain for third party control. Wink suggests that MyQ customers should contact Chamberlain directly to inquire about expanding permissions.
+Wink Cover garage door 기능은 제품에 따라 다릅니다. 홈어시스턴트는 GoControl/Linear opener의 상태를 열고 닫고 볼 수 있습니다. Chamberlain MyQ-enabled openers의 경우 홈어시스턴트는이 Wink Cover를 사용하는 경우에만 현재 상태 (open 혹은 closed)를 표시하도록 제한됩니다. 이 제한은 Chamberlain에 의해 제3자 통제로 맡겨져 있습니다. 윙크는 MyQ 고객이 권한 추가에 대해 Chamberlain에 직접 문의하고 제안해야 합니다. 
 
-The [MyQ Cover](/integrations/myq) does provide full functionality for opening and closing Chamberlain MyQ-enabled garage doors. If installed along with the Wink Component, a duplicate garage door entity may exist. In that case, the semi-functional Wink garage door entity can be hidden via customize.yaml.
+[MyQ Cover](/integrations/myq)는 MyQ-enabled garage doors을 열고 닫을 수 있는 모든 기능을 제공합니다. Wink Component와 함께 설치하면 garage doors 엔터티가 중복될 수 있습니다. 이 경우 semi-functional Wink garage doors 엔터티는 customize.yaml을 통해 숨길 수 있습니다.
 
-The requirement is that you have setup [Wink](/integrations/wink/) from above.
+요구 사항은 위에서 [Wink](/integrations/wink/)를 설정해야합니다.
 
-### Supported cover devices
+### 지원 cover 장치
 
 - Bali window treatments
 - Lutron shades
@@ -448,31 +448,31 @@ The requirement is that you have setup [Wink](/integrations/wink/) from above.
 - Chamberlain MyQ (Limited functionality) (No Wink hub required)
 
 <div class='note'>
-The above devices are confirmed to work, but others may work as well.
+위의 장치는 작동하는 것으로 확인되었지만 다른 장치도 작동 할 수 있습니다.
 </div>
 
 ## Fan
 
-The Wink fan platform allows you to control your [Wink](https://www.wink.com/) fans.
+Wink Fan 플랫폼을 사용하면 [Wink](https://www.wink.com/) Fan을 제어 할 수 있습니다.
 
-The requirement is that you have setup [Wink](/integrations/wink/) from above.
+요구 사항은 위에서 [Wink](/integrations/wink/)를 설정해야합니다.
 
-### Supported fan devices
+### 지원 fan 장치
 
 - Home Decorator Wink-enabled Gardinier ceiling fan
 - Hampton Bay ceiling fan module
 
 <div class='note'>
-The above devices are confirmed to work, but others may work as well.
+위의 장치는 작동하는 것으로 확인되었지만 다른 장치도 작동 할 수 있습니다.
 </div>
 
 ## Light
 
-The `wink` light platform allows you to use your [Wink](https://www.wink.com/) lights.
+`wink` Light 플랫폼을 사용하면 [Wink](https://www.wink.com/) Light를 사용할 수 있습니다.
 
-The requirement is that you have setup [Wink](/integrations/wink/) from above.
+요구 사항은 위에서 [Wink](/integrations/wink/)를 설정해야합니다.
 
-### Supported light devices
+### 지원 light 장치
 
 - Z-wave switches with dimming
 - Hue
@@ -481,16 +481,16 @@ The requirement is that you have setup [Wink](/integrations/wink/) from above.
 - Wink light groups (User created groups of lights)
 
 <div class='note'>
-The above devices are confirmed to work, but others may work as well.
+위의 장치는 작동하는 것으로 확인되었지만 다른 장치도 작동할 수 있습니다.
 </div>
 
 ## Lock
 
-The Wink lock platform allows you to control your [Wink](https://www.wink.com/) locks.
+Wink Lock 플랫폼을 사용하면 [Wink](https://www.wink.com/) Lock을 제어 할 수 있습니다.
 
-The requirement is that you have setup [Wink](/integrations/wink/) from above.
+요구 사항은 위에서 [Wink](/integrations/wink/)를 설정해야합니다.
 
-### Supported lock devices
+### 지원 lock 장치
 
 - Kwikset
 - Schlage
@@ -498,19 +498,19 @@ The requirement is that you have setup [Wink](/integrations/wink/) from above.
 - Generic Z-wave
 
 <div class='note'>
-The following services have only been confirmed on Schlage locks.
+다음 서비스는 Schlage lock에서만 확인되었습니다.
 </div>
 
-### Service `set_lock_alarm_mode`
+### `set_lock_alarm_mode` 서비스
 
-You can use the service wink/set_lock_alarm_mode to set the alarm mode of your lock.
+wink/set_lock_alarm_mode 서비스를 사용하여 lock alarm mode를 설정할 수 있습니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
 | `mode` | no | String one of tamper, activity, or forced_entry
 | `entity_id` | yes | String or list of strings that point at `entity_id`s of locks.
 
-Example:
+예시:
 
 ```yaml
 script:
@@ -521,16 +521,16 @@ script:
           mode: "tamper"
 ```
 
-### Service `set_lock_alarm_sensitivity`
+### `set_lock_alarm_sensitivity` 서비스
 
-You can use the service wink/set_lock_alarm_sensitivity to set the alarm sensitivity of your lock.
+wink/set_lock_alarm_sensitivity 서비스를 사용하여 lock의 alarm sensitivity를 설정할 수 있습니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
 | `sensitivity` | no | String one of low, medium_low, medium, medium_high, high.
 | `entity_id` | yes | String or list of strings that point at `entity_id`s of locks.
 
-Example:
+예시:
 
 ```yaml
 script:
@@ -541,16 +541,16 @@ script:
           sensitivity: "high"
 ```
 
-### Service `set_lock_alarm_state`
+### `set_lock_alarm_state` 서비스
 
-You can use the service wink/set_lock_alarm_state to set the alarm state of your lock.
+wink/set_lock_alarm_state 서비스를 사용하여 lock alarm state를 설정할 수 있습니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
 | `enabled` | no | Boolean enabled or disabled, true or false
 | `entity_id` | yes | String or list of strings that point at `entity_id`s of locks.
 
-Example:
+예시:
 
 ```yaml
 script:
@@ -561,16 +561,16 @@ script:
           enabled: false
 ```
 
-### Service `set_lock_beeper_state`
+### `set_lock_beeper_state` 서비스
 
-You can use the service wink/set_lock_beeper_state to set the beeper state of your lock.
+wink/set_lock_beeper_state 서비스를 사용하여 lock 신호음 상태를 설정할 수 있습니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
 | `enabled` | no | Boolean enabled or disabled, true or false
 | `entity_id` | yes | String or list of strings that point at `entity_id`s of locks.
 
-Example:
+예시:
 
 ```yaml
 script:
@@ -581,16 +581,16 @@ script:
           enabled: false
 ```
 
-### Service `set_lock_vacation_mode`
+### `set_lock_vacation_mode` 서비스
 
-You can use the service wink/set_lock_vacation_mode to set the vacation mode of your lock.
+wink/set_lock_vacation_mode 서비스를 사용하여 lock의 vacation mode를 설정할 수 있습니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
 | `enabled` | no | Boolean enabled or disabled, true or false
 | `entity_id` | yes | String or list of strings that point at `entity_id`s of locks.
 
-Example:
+예시:
 
 ```yaml
 script:
@@ -601,9 +601,9 @@ script:
           enabled: false
 ```
 
-### Service `add_new_lock_key_code`
+### `add_new_lock_key_code` 서비스
 
-You can use the service wink/add_new_lock_key_code to add a new user code to your Wink lock.
+wink/add_new_lock_key_code 서비스를 사용하여 Wink lock에 new user code를 추가할 수 있습니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
@@ -612,20 +612,20 @@ You can use the service wink/add_new_lock_key_code to add a new user code to you
 | `code` | no | The new code. Must match length of existing codes.
 
 <div class='note'>
-Calling service wink/pull_newly_added_wink_devices will add the new key code to Home Assistant. The device will also show up on the next restart of Home Assistant.
+wink/pull_newly_added_wink_devices 서비스를 호출하면 new key code가 홈어시스턴트에 추가됩니다. 다음에 홈어시스턴트를 다시 시작할 때 장치가 나타납니다.
 </div>
 
 <div class='note'>
-If supported by your lock, a binary sensor will be created for each user key code you have defined. These key codes will turn on when the code is entered and automatically turn off after a few seconds.
+lock 장치가 지원하는 경우 정의한 각 user key code마다 binary sensor가 생성됩니다. 이 key code는 해당 code를 입력하면 켜지고 몇 초 후에 자동으로 꺼집니다.
 </div>
 
 ## Sensor
 
-The Wink sensor platform allows you to get data from your [Wink](https://www.wink.com/) sensors.
+Wink Sensor 플랫폼을 사용하면 [Wink](https://www.wink.com/) Sensor에서 데이터를 얻을 수 있습니다.
 
-The requirement is that you have setup [Wink](/integrations/wink/) from above.
+요구 사항은 위에서 [Wink](/integrations/wink/)를 설정해야합니다.
 
-### Supported sensor devices
+### 지원 sensor 장치
 
 - Wink Relay temperature, proximity, and humidity
 - Wink Spotter temperature, humidity, and brightness (No Wink hub required)
@@ -636,16 +636,16 @@ The requirement is that you have setup [Wink](/integrations/wink/) from above.
 - Quirky refuel propane tank monitor (No Wink hub required)
 
 <div class='note'>
-The above devices are confirmed to work, but others may work as well.
+위의 장치는 작동하는 것으로 확인되었지만 다른 장치도 작동 할 수 있습니다.
 </div>
 
 ## Switch
 
-The Wink switch platform allows you to control your [Wink](https://www.wink.com/) switches.
+Wink Switch 플랫폼을 사용하면 [Wink](https://www.wink.com/) Switch를 제어할 수 있습니다.
 
-The requirement is that you have set up [Wink](/integrations/wink/) from above.
+요구 사항은 위에서 [Wink](/integrations/wink/)를 설정해야한다는 것입니다.
 
-## Supported switch devices
+## 지원 switch 장치
 
 - Wink Pivot power genius (No Wink hub required)
 - non-dimming Z-wave in-wall switches (dimming switches show up as lights)
@@ -656,16 +656,15 @@ The requirement is that you have set up [Wink](/integrations/wink/) from above.
 
 ## Water heater
 
-The Wink water heater platform allows you to get data from your [Wink](https://www.wink.com/) Water Heaters.
+Wink water heater 플랫폼을 사용하면 [Wink](https://www.wink.com/) water heater에서 데이터를 얻을 수 있습니다.
 
-The requirement is that you have set up [Wink](/integrations/wink/) from above.
+요구 사항은 위에서 [Wink](/integrations/wink/)를 설정해야한다는 것입니다.
 
-## Supported water heaters
+## 지원하는 water heaters
 
 - Rheem Econet water heaters (No Wink hub required)
 
 <div class='note'>
 
-Wink water heaters use to live under the `climate` platform prior to release 0.81.
-
+Wink water heaters는 홈어시스턴트 0.81을 이전 버전은 `climate` 플랫폼으로 사용합니다.
 </div>

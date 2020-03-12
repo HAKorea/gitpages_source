@@ -1,5 +1,5 @@
 ---
-title: Emulated Roku
+title: Roku 에뮬레이트
 description: Instructions on how to set up Emulated Roku within Home Assistant.
 logo: home-assistant.png
 ha_category:
@@ -9,30 +9,30 @@ ha_iot_class: Local Push
 ha_config_flow: true
 ---
 
-This integration integrates an emulated Roku API into Home Assistant,
-so remotes such as Harmony and Android apps can connect to it through WiFi as if it were a Roku player.
-Home Assistant will see key presses and app launches as Events, which you can use as triggers for automations.
 Multiple Roku servers may be started if you run out of buttons by specifying multiple server entries.
+이 통합구성요소는 에뮬레이트 된 Roku API를 Home Assistant에 연동하므로 Harmony 및 Android 앱과 같은 원격 장치는 마치 Roku 플레이어인 것처럼 WiFi를 통해 연결할 수 있습니다.
+홈어시스턴트는 키의 눌림(presses) 및 앱실행을 이벤트로 보고 자동화의 트리거로 사용할 수 있습니다.
+Multiple Roku servers may be started if you run out of buttons by specifying multiple server entries.
+여러 서버 항목을 지정하여 단추(buttons)가 부족하면 여러 Roku 서버가 시작될 수 있습니다.
 
 <div class='note'>
 
-Windows is not supported because Home Assistant uses `ProactorEventLoop` which does not support UDP sockets.
+홈어시스턴트는 UDP 소켓을 지원하지 않는 `ProactorEventLoop`을 사용하므로 Windows가 지원되지 않습니다.
 
 </div>
 
 <div class='note warning'>
 
-This integration opens an unauthenticated API on the host, allowing anything on the local network to access
-your Home Assistant instance through the automations you create with emulated Roku as the trigger.
-Using a proxy with whitelisted IP addresses is recommended. (set `advertise_ip` to the proxy's IP or DNS name)
+이 통합구성요소는 호스트에서 인증되지 않은 API를 열어 에뮬레이트된 Roku를 트리거로 사용하여 생성한 자동화를 통해 로컬 네트워크의 모든 항목이 Home Assistant 인스턴스에 액세스 할 수 있도록합니다. 
+허용된 IP 주소와 함께 프록시를 사용하는 것이 좋습니다. (`advertise_ip`를 프록시의 IP 또는 DNS 이름으로 설정)
 
 </div>
 
-## Configuration
+## 설정
 
-The integration is configurable through the frontend. (**Configuration** -> **Integrations** -> **Emulated Roku**)
+프런트 엔드를 통해 통합구성요소를 설정할 수 있습니다. (**설정**-> **통합구성요소**-> **Emulated Roku**)
 
-If you wish to configure advanced options, you can add the following entry in `configuration.yaml`.
+고급 옵션을 구성하려면 `configuration.yaml`에 다음 항목을 추가 할 수 있습니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -70,13 +70,13 @@ upnp_bind_multicast:
   default: true
 {% endconfiguration %}
 
-After starting up, you can check if the emulated Roku is reachable at the specified ports on your Home Assistant instance (eg.: `http://192.168.1.101:8060/`).
+시작한 후 에뮬레이트 된 Roku가 Home Assistant 인스턴스의 지정된 포트에 도달 할 수 있는지 확인할 수 있습니다 (예: `http://192.168.1.101:8060/`).
 
 ## Events
 
-### Event `roku_command`
+### `roku_command` 이벤트
 
-All Roku commands are sent as `roku_command` events.
+모든 Roku commands는 `roku_command` events로 전송됩니다.
 
 Field | Description
 ----- | -----------
@@ -103,9 +103,9 @@ Available key codes |
 `Search`
 `Enter`
 
-## Automations
+## 자동화
 
-The following is an example implementation of an automation:
+다음은 자동화 구현 예입니다.
 ```yaml
 # Example automation
 - id: amp_volume_up
@@ -122,11 +122,10 @@ The following is an example implementation of an automation:
     entity_id: media_player.amplifier
 ```
 
-## Troubleshooting
+## 문제 해결 
 
-If you change your advertised IP or ports, you will have to re-add the emulated Roku in your app.
-When using Harmony, the app should auto-discover any changes via UPnP discovery (if `name` is unchanged) once it detects that the device is unreachable.
-Alternatively, you can trigger the 'Fix' page by pressing a button on the unreachable device's remote in the app and wait ~10 seconds, then click 'Fix it'.
+광고된 IP 또는 포트를 변경하면 앱에서 에뮬레이트 된 Roku를 다시 추가해야합니다.
+하모니를 사용할 때 장치에 도달할 수 없는 것으로 감지되면 앱은 UPnP 검색(`name`이 변경되지 않은 경우)을 통해 변경 사항을 자동으로 검색해야합니다. 또는 앱에서 연결할 수 없는 장치의 리모컨에 있는 버튼을 눌러 'Fix' 페이지를 트리거하고 10 초 정도 기다린 다음 'Fix it'을 클릭하십시오.
 
 Known limitations:
 * Some Android remotes send key up/down events instead of key presses.

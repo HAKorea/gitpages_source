@@ -7,24 +7,23 @@ ha_category:
 ha_release: 0.53
 ---
 
-Add [Tank Utility](https://www.tankutility.com/) propane tank monitors to Home Assistant.
+[Tank Utility](https://www.tankutility.com/) 프로판 탱크 모니터를 홈어시스턴트에 추가하십시오.
 
-## Setup
+## 셋업
 
 ### Authentication
 
-Authentication for the Tank Utility API is performed with the same email and password credentials used at [https://app.tankutility.com](https://app.tankutility.com).
+Tank Utility API에 대한 인증은 [https://app.tankutility.com](https://app.tankutility.com)에 사용 된 것과 동일한 이메일 및 비밀번호 자격 증명(credentials)으로 수행됩니다.
 
-### Devices
+### 장치
 
-Each item in the list of devices is a 24 character string. These values can be found by clicking on the **Usage Reports** link at the bottom of the graph on the [Tank Utility devices page](https://app.tankutility.com/#/devices).
+장치 목록의 각 항목은 24 자 문자열입니다. 이 값은 [Tank Utility devices page](https://app.tankutility.com/#/devices)의 그래프 하단에있는 **Usage Reports** 링크를 클릭하면 찾을 수 있습니다.
 
-The device item value is the last segment of the URL path, e.g., the URL
-[https://app.tankutility.com/#/reports/000000000000000000000000](https://app.tankutility.com/#/reports/000000000000000000000000) would indicate `000000000000000000000000` as a device value.
+장치 item 값은 URL 경로의 마지막 세그먼트입니다 (예 : URL [https://app.tankutility.com/#/reports/000000000000000000000000](https://app.tankutility.com/#/reports/000000000000000000000000)는 `000000000000000000000000`을 장치 값으로 나타냅니다.
 
-## Configuration
+## 설정
 
-To enable the component, add the following lines to your `configuration.yaml` file:
+컴포넌트를 활성화하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry

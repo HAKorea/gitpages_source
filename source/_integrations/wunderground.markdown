@@ -1,5 +1,5 @@
 ---
-title: Weather Underground (WUnderground)
+title: 웨더 언더그라운드 (WUnderground)
 description: Instructions on how to integrate Weather Underground (WUnderground) Weather within Home Assistant.
 logo: wunderground.png
 ha_category:
@@ -8,19 +8,19 @@ ha_release: 0.27
 ha_iot_class: Cloud Polling
 ---
 
-The `wunderground` platform uses [Weather Underground](https://www.wunderground.com/) as a source for current weather information.
+`wunderground` 플랫폼은 현재 날씨 정보의 출처로 [Weather Underground](https://www.wunderground.com/)를 사용합니다.
 
 <div class='note warning'>
 
-Obtain a WUnderground API key [here](https://www.wunderground.com/weather/api). They no longer offer free API keys, and all keys must be paid for. At this time existing free keys will continue to work, but will be disabled Dec 31, 2018, except you own a personal weather station and provide your data to WU (PWS Uploader). As of Sept 6, 2018 Weather Underground states they are declaring the [End of Service for the Weather Underground API](https://apicommunity.wunderground.com/weatherapi/topics/end-of-service-for-the-weather-underground-api). They say they will develop new plans for non-commercial users. No timeline for this has been announced.
+WUnderground API 키 [here](https://www.wunderground.com/weather/api)서 받아오십시오. 더 이상 무료 API 키를 제공하지 않으며 모든키는 비용을 지불해야합니다. 현재 기존의 무료키는 계속 작동하지만 개인 기상 관측소를 소유하고 데이터를 WU (PWS 업로더)에 제공하는 경우를 제외하고 2018 년 12 월 31 일에 비활성화됩니다. 2018 년 9 월 6 일 현재 Weather Underground는 [End of Service for the Weather Underground API](https://apicommunity.wunderground.com/weatherapi/topics/end-of-service-for-the-weather-underground-api)를 선언한다고 밝혔습니다. 그들은 비상업적 사용자를 위한 새로운 계획을 개발할 것이라고 말합니다. 이에 대한 일정은 발표되지 않았습니다.
 
-Please consider this when using the following information.
+다음 정보를 사용할 때 이를 고려하십시오.
 
 </div>
 
-Configuration
+설정
 
-To add Wunderground to your installation, add the following to your `configuration.yaml` file:
+설치에 Wunderground를 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -180,25 +180,23 @@ monitored_conditions:
       description: Text summary of current wind conditions
 {% endconfiguration %}
 
-All the conditions listed above will be updated every 5 minutes.
+위에 나열된 모든 조건은 5 분마다 업데이트됩니다.
 
 ## Forecasts
 
 ### 12 hour forecasts
 
-Monitored conditions marked above with <a name="12h">[12h]</a> are 12 hour forecasts. To get a forecast for different period/daytime replace the `_1d_` part of the sensor name.  e.g., `weather_2n` will give you forecast for tomorrow night. Valid values for day are `1` to `4` and valid values for daytime are `d` or `n`.
+위에서 <a name="12h">[12h]</a>로 표시된 모니터링된 상태는 10 시간입니다. 다른 period/daytime에 대한 예측을 얻으려면 센서 이름의 `_1d_` 부분을 바꾸십시오. 예를 들어 `weather_2n`은 내일 밤 예보를 제공합니다. day의 유효 값은 `1`~`4`이고 daytime의 유효 값은 `d` 또는 `n`입니다.
 
 ### Daily forecasts
 
-Conditions above marked with <a name="1d">[1d]</a> are daily forecasts. To get forecast for different day, replace the number
-in `_1d_` part of the sensor name. Valid values are from `1` to `4`.
+위의 <a name="1d">[1d]</a>로 표시된 조건은 일일 예측입니다. 다른 날을 예측하려면 센서 이름의 `_1d_` 부분에있는 숫자를 바꾸십시오. 유효한 값은 `1`에서 `4`입니다.
 
 ### Hourly forecasts
 
-Conditions marked with <a name="1h">[1h]</a> are hourly forecasts. To get forecast for different hour, replace the number
-in the `_1h_` part of the sensor name with `1` to `36`. e.g., `weather_24h` will give you weather in 24 hours.
+<a name="1h">[1h]</a>로 표시된 조건은 시간별 예측입니다. 다른 시간을 예측하려면 센서 이름의 `_1h_` 부분에있는 숫자를 `1`에서 `36`으로 바꾸십시오. 예를 들어 `weather_24h`는 24 시간 안에 날씨를 알려줍니다.
 
-## Additional examples
+## 추가 예시들
 
 ### Daily forecast
 
@@ -270,13 +268,13 @@ group:
 ![Weather overview](/images/screenshots/wunderground_weather_overview.png)
 
 <div class='note warning'>
-Note: While the platform is called “wunderground” the sensors will show up in Home Assistant as “PWS” (eg: sensor.pws_weather).
+Note: 플랫폼을 "Wunderground"라고 부르는 동안 센서는 Home Assistant에서 "PWS"로 표시됩니다 (예 : sensor.pws_weather).
 </div>
 
-Note that the Weather Underground sensor is added to the entity_registry, so second and subsequent Personal Weather Station ID (pws_id) will have their monitored conditions suffixed with an index number e.g.
+Weather Underground 센서가 entity_registry에 추가되므로 두 번째 이후의 개인 기상 관측소 ID (pws_id)는 모니터링 되는 조건에 색인 번호가 붙습니다. 다음 예 : 
 
 ```yaml
 - sensor.pws_weather_1d_metric_2
 ```
 
-Additional details about the API are available [here](https://www.wunderground.com/weather/api/d/docs).
+API에 대한 추가 세부 사항이 있습니다. [여기](https://www.wunderground.com/weather/api/d/docs).

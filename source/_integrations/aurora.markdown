@@ -1,5 +1,5 @@
 ---
-title: Aurora
+title: 오로라예측(Aurora)
 description: Know when auroras might be visible at your location
 ha_category:
   - Environment

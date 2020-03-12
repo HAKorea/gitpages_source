@@ -1,5 +1,5 @@
 ---
-title: Arlo 보안
+title: Arlo 보안 카메라 
 description: Instructions on how to integrate your Netgear Arlo cameras within Home Assistant.
 logo: arlo.png
 ha_category:

@@ -10,9 +10,9 @@ ha_codeowners:
   - '@fabaff'
 ---
 
-The `bitcoin` sensor platform displays various details about the [Bitcoin](https://bitcoin.org) network.
+비트 코인 센서 플랫폼은 [Bitcoin](https://bitcoin.org) 네트워크에 대한 다양한 세부 사항을 표시합니다.
 
-To add the Bitcoin sensor to your installation, add a selection of the available display options to your `configuration.yaml` file:
+비트 코인 센서를 설치에 추가하려면, 사용 가능한 디스플레이 옵션을 `configuration.yaml` 파일에 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry

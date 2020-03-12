@@ -30,7 +30,7 @@ ha_codeowners:
 4. Zigbee2mqtt의 [Add-on](https://github.com/danielwelch/hassio-zigbee2mqtt/tree/master/zigbee2mqtt) 링크
 
 -----------------------------------------------------------------------------------------------------------------------------
-ZHA 연동 방식 이하 차후 번역 예정
+이하 ZHA 번역 내용
 
 Home Assistant 용 [Zigbee Home Automation](https://zigbee.org/zigbee-for-developers/applicationstandards/zigbeehomeautomation/) 통합구성요소를 사용하면 [zigpy](https://github.com/zigpy/zigpy) 와 호환되는 사용 가능한 Zigbee 무선 모듈 중 하나를 사용하여 여러 기성품 Zigbee 장치를 Home Assistant에 연결할 수 있습니다 (Zigbee 스택을 구현하는 오픈 소스 Python 라이브러리, 각기 다른 제조업체와 Zigbee 라디오 모듈을 연결 할 수있는 별도의 라이브러리에 의존합니다.)
 

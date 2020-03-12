@@ -1,5 +1,5 @@
 ---
-title: CUPS
+title: 유닉스프린터시스템(CUPS)
 description: Instructions on how to integrate CUPS sensors into Home Assistant.
 logo: cups.png
 ha_category:
@@ -10,21 +10,21 @@ ha_codeowners:
   - '@fabaff'
 ---
 
-The `cups` sensor platform is using the open source printing system [CUPS](https://www.cups.org/) to show details about your printers, including the ink levels. It can obtain the informations using a CUPS server or communicating directly with the printer with the Internet Printing Protocol.
+`cups` 센서 플랫폼은 오픈 소스 인쇄 시스템 [CUPS](https://www.cups.org/)을 사용하여 잉크 잔량을 포함한 프린터에 대한 세부 정보를 표시합니다. CUPS 서버를 사용하거나 인터넷 인쇄 프로토콜을 사용하여 프린터와 직접 통신하여 정보를 얻을 수 있습니다.
 
-## Setup
+## 셋업
 
-You will need to install the `python3-dev` or `python3-devel` package and the development files for CUPS (`libcups2-dev` or`cups-devel`) on your system manually (e.g., `sudo apt-get install python3-dev libcups2-dev` or `sudo dnf -y install python3-devel cups-devel`) along with a compiler (`gcc`). This integration doesn't work out-of-the-box in a container-based setup.
+`python3-dev` 또는 `python3-devel` 패키지와 CUPS 개발 파일(`libcups2-dev` 또는 `cups-devel`)을 시스템에 컴파일러 (`gcc`)와 함께 수동으로 설치해야합니다. (예 :`sudo apt-get install python3-dev libcups2-dev` or `sudo dnf -y install python3-devel cups-devel`) 이 통합구성요소는 컨테이너 기반 설정에서 기본적으로 작동하지 않습니다.
 
-To set up the sensor the "Queue Name" of the printer is needed. The fastest way to get it, is to visit the CUPS web interface at "http://[IP ADDRESS PRINT SERVER]:631" and go to "Printers".
+센서를 설정하려면 프린터의 "Queue Name"이 필요합니다. 가장 빠른 방법은 CUPS 웹인터페이스 "http://[IP ADDRESS PRINT SERVER]:631"을 방문하여 "Printers"로 이동하는 것입니다.
 
 <p class='img'>
   <img src='{{site_root}}/images/screenshots/cups-sensor.png' />
 </p>
 
-## Configuration
+## 설정
 
-To enable the CUPS sensor, add the following lines to your `configuration.yaml`:
+CUPS 센서를 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -57,9 +57,9 @@ is_cups_server:
   default: true
 {% endconfiguration %}
 
-## Examples
+## 예시
 
-Default configuration for an IPP printer:
+IPP 프린터의 기본 구성 :
 
 ```yaml
 # Example configuration.yaml entry for an IPP printer

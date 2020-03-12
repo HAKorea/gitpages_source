@@ -1,5 +1,5 @@
 ---
-title: Emoncms
+title: 오픈소스비쥬얼로거(Emoncms)
 description: Instructions on how to integrate Emoncms feeds as sensors into Home Assistant.
 logo: emoncms.png
 ha_category:
@@ -8,9 +8,9 @@ ha_release: 0.29
 ha_iot_class: Local Polling
 ---
 
-The `emoncms` sensor platform creates sensors for the feeds available in your local or cloud based version of [Emoncms](https://emoncms.org).
+`emoncms` 센서 플랫폼은 로컬 또는 클라우드 기반 버전의 [Emoncms](https://emoncms.org)에서 제공되는 피드용 센서를 만듭니다.
 
-To enable this sensor, add the following lines to your `configuration.yaml`, it will list all feeds as a sensor:
+이 센서를 활성화하려면 `configuration.yaml`에 다음 줄을 추가하면 모든 피드가 센서로 표시됩니다.
 
 ```yaml
 # Example configuration.yaml entry using cloud based Emoncms

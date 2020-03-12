@@ -9,11 +9,11 @@ ha_release: 0.49
 ha_quality_scale: internal
 ---
 
-The `otp` sensor generates One-Time Passwords according to [RFC6238](https://tools.ietf.org/html/rfc6238) that is compatible with most OTP generators available, including Google Authenticator. You can use this when building custom security solutions and want to use "rolling codes", that change every 30 seconds.
+`otp` 센서는 Google OTP를 포함하여 사용 가능한 대부분의 OTP 생성기와 호환되는 [RFC6238](https://tools.ietf.org/html/rfc6238)에 따라 일회용 암호를 생성합니다. 사용자 지정 보안 솔루션을 구축할 때 이를 사용할 수 있으며 30 초마다 변경되는 "rolling codes"를 사용할 수 있습니다.
 
-## Configuration
+## 설정
 
-To enable the OTP sensor, add the following lines to your `configuration.yaml`:
+OTP 센서를 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -34,9 +34,9 @@ token:
   type: string
 {% endconfiguration %}
 
-## Generating a token
+## 토큰 생성하기
 
-A simple way to generate a `token` for a new sensor is to run this snippet of python code in your Home Assistant virtual environment:
+새 센서에 대해 `token`을 생성하는 간단한 방법은 Home Assistant 가상 환경에서이 Python 코드 스니펫을 실행하는 것입니다.
 
 ```shell
 $ pip3 install pyotp
@@ -44,15 +44,15 @@ $ python3 -c 'import pyotp; print("Token:", pyotp.random_base32())'
 Token: IHEDPEBEVA2WVHB7
 ```
 
-To run in a Docker container:
+Docker 컨테이너에서 실행하려면 : 
 
 ```shell
 $ docker exec -it home-assistant python -c 'import pyotp; print("Token:", pyotp.random_base32())'
 Token: IHEDPEBEVA2WVHB7
 ```
 
-Copy and paste the token into your Home Assistant configuration and add it to your OTP generator. Verify that they generate the same code.
+토큰을 복사하여 Home Assistant 설정에 붙여 넣고 OTP 생성기에 추가하십시오. 이들이 동일한 코드를 생성하는지 확인하십시오.
 
 <div class='note warning'>
-It is vital that your system clock is correct both on your Home Assistant server and on your OTP generator device (e.g., your phone). If not, the generated codes will not match! Make sure NTP is running and syncing your time correctly before creating an issue.
+홈어시스턴트 서버와 OTP 장치 생성기 (예: 전화기) 모두에서 시스템 시계가 정확해야합니다. 그렇지 않으면 생성된 코드가 일치하지 않습니다! 문제를 만들기 전에 NTP가 실행되고 시간을 올바르게 동기화하고 있는지 확인하십시오.
 </div>

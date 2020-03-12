@@ -10,7 +10,6 @@ ha_codeowners:
   - '@fabaff'
 ---
 
-The `cpuspeed` sensor platform to allow you to monitor the current CPU speed.
 현재 CPU 속도를 모니터링 할 수있는 `cpuspeed` 센서 플랫폼.
 
 <div class='note warning'>

@@ -1,5 +1,5 @@
 ---
-title: "Amazon Alexa Custom Skill"
+title: "아마존 알렉사 Custom Skill"
 description: "Instructions on how to build your Alexa/Amazon Echo custom commands to connect with Home Assistant."
 logo: amazon-alexa.png
 ha_category:

@@ -1,5 +1,5 @@
 ---
-title: Entur
+title: 노르웨이 교통정보서비스(Entur)
 description: Instructions for how to set up monitoring of public transport departures in Norway.
 logo: entur.svg
 ha_category:

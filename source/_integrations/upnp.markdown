@@ -12,19 +12,20 @@ ha_codeowners:
   - '@robbiet480'
 ---
 
-The `upnp` integration enables you to collect network statistics from your router such as bytes in/out and packets in/out. This information is provided by the [UPnP](https://en.wikipedia.org/wiki/Universal_Plug_and_Play)/[Internet Gateway Device (IGD) Protocol](https://en.wikipedia.org/wiki/Internet_Gateway_Device_Protocol) if enabled on your router.
+`upnp` 통합구성요소를 사용하면 bytes in/out 및 packets in/out과 같은 라우터에서 네트워크 통계를 수집 할 수 있습니다. 이 정보는 [UPnP](https://en.wikipedia.org/wiki/Universal_Plug_and_Play)/ [Internet Gateway Device (IGD) Protocol](https://en.wikipedia.org/wiki/Internet_Gateway_Device_Protocol)에서 제공합니다. 라우터에서 활성화하십시오.
 
-The IGD can automatically create port forwarding mappings on your router for Home Assistant, exposing your installation to the internet. The mapping will never automatically expire. Upon stopping Home Assistant, the mapping will be removed from your router.
+IGD는 라우터에 홈어시스턴트 용 포트 전달 맵핑(port forwarding mappings)을 자동으로 작성하여 설치를 인터넷에 노출시킵니다. 매핑은 자동으로 만료되지 않습니다. 홈어시스턴트를 중지하면 라우터에서 매핑이 제거됩니다.
 
-There is currently support for the following device types within Home Assistant:
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
-- **Sensor** - Allows to get the network statistics from your router such as bytes in/out and packets in/out.
+- **Sensor** - bytes in/out 및 packets in/out과 같은 라우터에서 네트워크 통계를 가져올 수 있습니다.
 
 Please note that UPnP or NAT-PMP needs to be enabled on your router for this integration to work.
+본 통합구성요소가 작동하려면 라우터에서 UPnP 또는 NAT-PMP를 활성화해야합니다.
 
-## Configuration
+## 설정
 
-To integrate this into Home Assistant, add the following section to your `configuration.yaml` file:
+이를 홈어시스턴트로 연동하려면 `configuration.yaml` 파일에 다음 섹션을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry with custom external portal
@@ -35,7 +36,7 @@ upnp:
     8080: 8080
 ```
 
-With the default settings only the sensors are added for statistics. If you wish to have port mapping done through IGD, add the option **port_mapping** and **ports**.
+기본 설정을 사용하면 통계에 센서만 추가됩니다. IGD를 통해 포트 매핑을 수행하려면 **port_mapping** 및 **ports** 옵션을 추가하십시오.
 
 {% configuration %}
 port_mapping:
@@ -60,9 +61,9 @@ ports:
   default: Open same port on external router as that Home Assistant runs locally and forwards it.
 {% endconfiguration %}
 
-## Troubleshooting
+## 문제 해결
 
-If Home Assistant is not able to discover UPnP sensors, it may be because the local IP address was not auto-detected correctly. To prevent this, you may add the `local_ip` option to your UPnP configuration:
+홈어시스턴트가 UPnP 센서를 감지할 수 없는 경우 로컬 IP 주소가 올바르게 자동 감지되지 않았기 때문일 수 있습니다. 이를 막기 위해 UPnP 설정에 `local_ip` 옵션을 추가할 수 있습니다 :
 
 ```yaml
 # Example configuration.yaml with UPnP sensors enabled and local_ip set

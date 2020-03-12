@@ -1,5 +1,5 @@
 ---
-title: Zentralanstalt für Meteorologie und Geodynamik (ZAMG)
+title: 오스트리아 기상청(ZAMG)
 description: Instructions on how to integrate ZAMG within Home Assistant.
 logo: zamg.png
 ha_category:

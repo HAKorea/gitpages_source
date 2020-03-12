@@ -3,6 +3,8 @@ title: "Hass.io 설치"
 description: "Instructions on how to install Hass.io."
 ---
 
+**참고** : 더 상세한 설치기는 [HA 네이버카페 설치가이드](https://cafe.naver.com/ArticleList.nhn?search.clubid=29860180&search.menuid=7&search.boardtype=L)를 참고하세요.  
+
 Hass.io를 설치하는 과정을 단계별로 따라하세요.
 
 1. 적합한 설치 파일을 다운 받으세요:

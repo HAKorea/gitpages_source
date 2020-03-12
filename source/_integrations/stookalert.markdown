@@ -1,5 +1,5 @@
 ---
-title: RIVM Stookalert
+title: 네덜란드 환경경보정보(RIVM Stookalert)
 description: Instructions on how to use Stookalert data within Home Assistant
 logo: stookalert.png
 ha_category:

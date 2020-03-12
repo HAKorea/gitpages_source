@@ -1,5 +1,5 @@
 ---
-title: Abode
+title: 아보드(Abode)
 description: Instructions on integrating Abode home security with Home Assistant.
 logo: abode.jpg
 ha_category:
@@ -19,24 +19,24 @@ ha_codeowners:
   - '@shred86'
 ---
 
-The `abode` integration will allow users to integrate their Abode Home Security systems into Home Assistant and use its alarm system and sensors to automate their homes.
+`abode` 통합구성요소를 통해 사용자는 Abode Home Security 시스템을 Home Assistant에 연동하고 경보 시스템과 센서를 사용하여 집안을 자동화 할 수 있습니다.
 
-Please visit the [Abode website](https://goabode.com/) for further information about Abode Security.
+Abode Security에 대한 자세한 내용은 [Abode website](https://goabode.com/)를 방문하십시오.
 
-There is currently support for the following device types within Home Assistant:
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
-- **Alarm Control Panel**: Reports on the current alarm status and can be used to arm and disarm the system.
-- [**Binary Sensor**](/integrations/abode/#binary-sensor): Reports on `Quick Actions`, `Door Contacts`, `Connectivity` sensors (remotes, keypads, and status indicators), `Moisture` sensors, and `Motion` or `Occupancy` sensors. Also lists all Abode `Quick Actions` that are set up. You can trigger these quick actions by passing the `entity_id` of your quick action binary sensor to the [trigger_quick_action service](/integrations/abode/#trigger_quick_action).
-- **Camera**: Reports on `Camera` devices and will download and show the latest captured still image.
-- **Cover**: Reports on `Secure Barriers` and can be used to open and close the cover.
-- **Lock**: Reports on `Door Locks` and can be used to lock and unlock the door.
-- [**Light**](/integrations/abode/#light): Reports on `Dimmer` lights and can be used to dim or turn the light on and off.
-- [**Switch**](/integrations/abode/#switch): Reports on `Power Switch` devices and can be used to turn the power switch on and off. Also reports on `Automations` set up in the Abode system and allows you to activate or deactivate them (does not work with Abode's CUE automations).
-- **Sensor**: Reports on `Temperature`, `Humidity`, and `Light` sensors.
+- **Alarm Control Panel**: 현재 경보 상태를 보고하고 시스템을 설정 및 해제하는데 사용할 수 있습니다.
+- [**Binary Sensor**](/integrations/abode/#binary-sensor): `Quick Actions`, `Door Contacts`, `Connectivity` 센서 (원격조정, 키패드 및 상태 표시기), `Moisture` 센서 및 `Motion` 또는 `Occupancy` 센서에 대해 보고입니다. 또한 세팅된 모든 Abode `Quick Actions`도 리스트합니다. quick actions 이진 센서의 `entity_id`를 [trigger_quick_action service](/integrations/abode/#trigger_quick_action)에 전달하여 이러한 quick actions를 트리거할 수 있습니다.
+- **Camera**: `Camera` 장치에 대해 보고하고 최신 캡처된 스틸 이미지를 다운로드하여 표시합니다.
+- **Cover**: `Secure Barriers`에 대한 보고이며 커버를 열고 닫는 데 사용할 수 있습니다.
+- **Lock**: `Door Locks`에 대한 보고이며 문을 lock/unlock 하는 데 사용할 수 있습니다.
+- [**Light**](/integrations/abode/#light): `Dimmer` 조명에 대해 보고하며 조명을 켜거나 끄는 데 사용할 수 있습니다.
+- [**Switch**](/integrations/abode/#switch): `Power Switch` 장치에 대해 보고하며 전원 스위치를 켜고 끄는 데 사용할 수 있습니다. 또한 Abode 시스템에 설정된 `Automations`에 대한 보고를 통해 이를 활성화 또는 비활성화 할 수 있습니다 (Abode의 CUE 자동화에서는 작동하지 않음).
+- **Sensor**: `Temperature`, `Humidity`, `Light`에 대해 보고합니다.
 
-## Configuration
+## 설정
 
-To use Abode devices in your installation, add your Abode account from the integrations page. Two-factor authentication must be disabled on your Abode account. Alternatively, Abode can be configured by adding the following `abode` section to your `configuration.yaml` file:
+설치에서 Abode 장치를 사용하려면 통합구성요소 페이지에서 Abode 계정을 추가하십시오. Abode 계정에서 2 단계 인증을 비활성화해야합니다. 또는 다음 `abode` 섹션을`configuration.yaml` 파일에 추가하여 Abode를 설정할 수 있습니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -65,8 +65,8 @@ polling:
 
 ## Events
 
-There are a number of events that can be triggered from Abode.
-They are grouped into the below events:
+Abode에서 트리거 할 수 있는 많은 이벤트가 있습니다.
+다음과 같은 이벤트로 그룹화됩니다.
 
 - **abode_alarm**: Fired when an alarm event is triggered from Abode. This includes Smoke, CO, Panic, and Burglar alarms.
 - **abode_alarm_end**: Fired when an alarm end event is triggered from Abode.
@@ -80,7 +80,7 @@ They are grouped into the below events:
 - **abode_device**: Fired for device changes/additions/deletions.
 - **abode_automation_edit**: Fired for changes to automations.
 
-All events have the fields:
+모든 이벤트에는 다음과 같은 필드가 있습니다.
 
 Field | Description
 ----- | -----------
@@ -97,33 +97,31 @@ Field | Description
 `date` | The date of the event in the format `MM/DD/YYYY`.
 `time` | The time of the event in the format `HH:MM AM`.
 
-There is a unique list of known event_codes that can be found
-[here](https://github.com/MisterWil/abodepy/files/1262019/timeline_events.txt).
+알려진 event_codes의 고유 목록이 [여기](https://github.com/MisterWil/abodepy/files/1262019/timeline_events.txt)있습니다. 
 
-## Services
+## 서비스
 
-### Service `change_setting`
+### `change_setting` 서비스
 
-Change settings on your Abode system.
-For a full list of settings and valid values, consult the
-[AbodePy settings section](https://github.com/MisterWil/abodepy/blob/master/README.rst#settings).
+Abode 시스템의 설정을 변경하십시오.
+설정 및 유효한 값의 전체 목록을 보려면 [AbodePy settings section](https://github.com/MisterWil/abodepy/blob/master/README.rst#settings)을 참조하십시오. 
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
 | `setting` | No | The setting you wish to change.
 | `value` | No | The value you wish to change the setting to.
 
-### Service `capture_image`
+### `capture_image` 서비스
 
-Request a new still image from your Abode IR camera.
+Abode IR 카메라에 새로운 정지 이미지를 요청하십시오.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
 | `entity_id` | No | String or list of strings that point at `entity_id`s of Abode cameras.
 
-### Service `trigger_quick_action`
+### `trigger_quick_action` 서비스
 
-Trigger a quick action automation on your Abode system.
+Abode 시스템에서 quick action 자동화를 시작하십시오.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |

@@ -1,5 +1,5 @@
 ---
-title: Channels
+title: TV채널녹화(Channels)
 description: Instructions on how to integrate Channels into Home Assistant.
 logo: channels.png
 ha_category:

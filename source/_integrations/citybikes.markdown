@@ -1,5 +1,5 @@
 ---
-title: CityBikes
+title: 글로벌 공유자전거(CityBikes)
 description: Instructions on how to integrate data from the CityBikes API into Home Assistant.
 logo: citybikes.png
 ha_category:
@@ -7,11 +7,12 @@ ha_category:
 ha_release: 0.49
 ---
 
-The `citybikes` sensor platform monitors bike availability at bike sharing stations in a chosen area. The data is provided by [CityBikes](https://citybik.es/#about), which supports bike sharing systems all around the world.
+`citybikes` 센서 플랫폼은 선택한 지역의 자전거 공유 스테이션에서 자전거가 사용가능한지 모니터링합니다. 이 데이터는 전세계 자전거 공유 시스템을 지원하는 [CityBikes](https://citybik.es/#about)에서 제공합니다.
 
-## Configuration
+## 설정
 
 To enable it, add the following lines to your `configuration.yaml`:
+이를 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry (using radius)
@@ -50,9 +51,9 @@ stations:
 {% endconfiguration %}
 
 
-## Example
+## 사례
 
-Additional configuration samples:
+추가 설정 샘플 :
 
 ```yaml
 # Example configuration.yaml entry (using a list of stations)

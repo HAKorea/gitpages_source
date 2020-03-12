@@ -1,5 +1,5 @@
 ---
-title: Dlib Face Identify
+title: Dlib 안면 식별
 description: Instructions on how to integrate Dlib Face Identify into Home Assistant.
 logo: dlib.png
 ha_category:
@@ -7,11 +7,11 @@ ha_category:
 ha_release: 0.44
 ---
 
-The `dlib_face_identify` image processing platform allows you to use the [Dlib](http://www.dlib.net/) through Home Assistant. This platform allow you to identify persons on camera and fire an event with identify persons.
+`dlib_face_identify` 이미지 처리 플랫폼은 Home Assistant를 통해 [Dlib](http://www.dlib.net/)를 사용할 수있게합니다. 이 플랫폼을 사용하면 카메라에서 인물을 식별하고 인물을 식별하여 이벤트를 시작할 수 있습니다.
 
-For using the result inside an automation rule, take a look at the [integration](/integrations/image_processing/) page.
+자동화 규칙 내에서 결과를 사용하려면 [integration](/integrations/image_processing/) 페이지를 보십시오.
 
-### Configuration Home Assistant
+### 설정
 
 ```yaml
 # Example configuration.yaml entry
@@ -51,6 +51,6 @@ confidence:
 
 <div class='note'>
 
-If the platform fails to load because it could not install its requirement, install cmake: `sudo apt-get install cmake`.
+플랫폼이 요구 사항을 설치할 수 없어서 로드에 실패하면, cmake를 설치하십시오: `sudo apt-get install cmake`.
 
 </div>

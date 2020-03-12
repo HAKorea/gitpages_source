@@ -11,11 +11,11 @@ ha_codeowners:
   - '@benleb'
 ---
 
-The `surepetcare` component allows you to get information on your Sure Petcare Connect Pet or Cat Flap.
+`surepetcare` 구성 요소를 사용하면 Sure Petcare Connect Pet 또는 Cat Flap에 대한 정보를 얻을 수 있습니다.
 
-## Configuration
+## 설정
 
-To add a flap and pet, add the following to your `configuration.yaml` file:
+Flap 과 pet을 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -83,6 +83,6 @@ surepetcare:
     type: device_class
 {% endconfiguration %}
 
-## Getting the IDs of your household, flaps and pets
+## flaps 와 pets의 집안 ID 얻어내기
 
-For now, please use the [sp_cli.py](https://github.com/rcastberg/sure_petcare/blob/master/sp_cli.py) from [@rcastberg](https://github.com/rcastberg) to fetch the IDs from the Sure Petcare API. With default setting, the IDs will be written as JSON to `~/.surepet.cache`.
+지금은 [@rcastberg](https://github.com/rcastberg)의 [sp_cli.py](https://github.com/rcastberg/sure_petcare/blob/master/sp_cli.py)를 사용하여 가져 오십시오. Sure Petcare API의 ID 기본 설정에서 ID는 JSON으로 `~ / .surepet.cache`에 기록됩니다.

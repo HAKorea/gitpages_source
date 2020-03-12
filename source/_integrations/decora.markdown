@@ -1,5 +1,5 @@
 ---
-title: Leviton Decora
+title: 레비톤 데코라(Leviton Decora)
 description: Instructions on how to setup Leviton Decora Bluetooth dimmers within Home Assistant.
 ha_category:
   - Light
@@ -8,11 +8,11 @@ logo: leviton.png
 ha_release: 0.37
 ---
 
-Support for the Decora Bluetooth dimmer switch [Leviton](https://www.leviton.com/en/products/residential/dimmers/automation-smart-home/decora-digital-with-bluetooth-dimmers#t=Products&sort=%40wcs_site_tree_rank%20ascending&layout=card).
+Decora Bluetooth dimmer 스위치 지원 [Leviton](https://www.leviton.com/en/products/residential/dimmers/automation-smart-home/decora-digital-with-bluetooth-dimmers#t=Products&sort=%40wcs_site_tree_rank%20ascending&layout=card)
 
-The API key can be obtained by downloading [this git repository](https://github.com/mjg59/python-decora) and running the `read_key.py` script with the Bluetooth address of the switch as the first argument. Hold the switch in the off position until the green status LED starts flashing before running the script. The output is the API key.
+API 키는 [this git repository](https://github.com/mjg59/python-decora)를 다운로드하고 스위치의 Bluetooth 주소를 첫 번째 인수로 사용하여 `read_key.py` 스크립트를 실행하여 얻을 수 있습니다. 스크립트를 실행하기 전에 녹색 상태 LED가 깜박일때까지 스위치를 꺼짐 위치로 유지하십시오. output은 API 키입니다.
 
-To enable these lights, add the following lines to your `configuration.yaml` file:
+이 조명을 활성화하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -47,7 +47,7 @@ devices:
 
 <div class='note'>
 
-If you get an error looking like this:
+다음과 같은 오류가 발생하면 :
 
 ```txt
 Jun 20 19:41:18 androlapin hass[29588]: ERROR:homeassistant.components.light:Error while setting up platform decora

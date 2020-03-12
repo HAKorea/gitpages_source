@@ -1,5 +1,5 @@
 ---
-title: Rejseplanen
+title: 덴마크 여행대중교통정보(Rejseplanen)
 description: Instructions on how to integrate timetable data for Danish Rejseplanen within Home Assistant.
 logo: rejseplanen.png
 ha_category:

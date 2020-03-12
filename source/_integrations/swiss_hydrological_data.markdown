@@ -1,5 +1,5 @@
 ---
-title: Swiss Hydrological Data
+title: 스위스 수자원 정보(Swiss Hydrological Data)
 description: Instructions on how to integrate hydrological data of Swiss waters within Home Assistant.
 logo: swiss-hydrological-data.png
 ha_category:

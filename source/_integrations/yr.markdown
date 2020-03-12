@@ -1,5 +1,5 @@
 ---
-title: Yr
+title: 노르웨이 기상 센서(Yr)
 description: Instructions on how to integrate Yr.no within Home Assistant.
 logo: yr.png
 ha_category:
@@ -10,12 +10,9 @@ ha_codeowners:
   - '@danielhiversen'
 ---
 
-The `yr` platform uses [YR.no](https://www.yr.no/) as a source for current
-meteorological data for your location. The weather forecast is delivered by the
-Norwegian Meteorological Institute and the NRK.
+`yr` 플랫폼은 [YR.no](https://www.yr.no/)를 현재 위치의 현재 기상 데이터 소스로 사용합니다. 일기 예보는 노르웨이 기상 연구소와 NRK에서 제공합니다.
 
-To add YR to your installation,
-add the following to your `configuration.yaml` file:
+설치에 YR을 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

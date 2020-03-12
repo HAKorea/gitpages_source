@@ -10,9 +10,9 @@ ha_codeowners:
   - '@andrey-git'
 ---
 
-Integrates [Sensibo](https://sensibo.com) Air Conditioning controller into Home Assistant.
+[Sensibo](https://sensibo.com) 에어컨 컨트롤러를 홈어시스턴트에 연동합니다.
 
-To enable this platform, add the following lines to your `configuration.yaml` file:
+이 플랫폼을 활성화하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -33,9 +33,7 @@ id:
 {% endconfiguration %}
 
 <div class="note">
-If you create the API key using a dedicated user (and not your main user),
-then in the Sensibo app log you will be able to distinguish between actions
-done in the app and actions done by Home Assistant.
+ 서브 사용자(메인 사용자가 아닌)를 사용하여 API 키를 생성하면 Sensibo 앱 로그에서 앱에서 수행한 작업과 Home Assistant에서 수행한 작업을 구별 할 수 있습니다.
 </div>
 
 ### Full config example
@@ -48,9 +46,9 @@ climate:
       - id2
 ```
 
-### Adding a quick switch example
+### Quick Switch 추가 예제
 
-If you want a "Quick Switch" to turn your AC On / Off, you can do that using the following `Switch Template`:
+"Quick Switch"로 AC를 켜거나 끄려면 다음 `Switch Template`을 사용하여 AC를 켜거나 끌 수 있습니다.
 
 {% raw %}
 ```yaml

@@ -8,20 +8,20 @@ ha_release: 0.13
 ha_iot_class: Local Polling
 ---
 
-The `uvc` camera platform allows you to integrate [UniFi Video Camera (UVC)](https://www.ubnt.com/products/#unifivideo) into Home Assistant.
+`uvc` 카메라 플랫폼을 사용하면 [UniFi Video Camera (UVC)](https://www.ubnt.com/products/#unifivideo)를 Home Assistant에 연동할 수 있습니다.
 
-The platform connects to the Unifi NVR software and automatically discovers/adds any camera connected to the NVR.
+이 플랫폼은 Unifi NVR 소프트웨어에 연결되며 NVR에 연결된 모든 카메라를 자동으로 감지/추가합니다.
 
-### Setup
+### 셋업
 
-It is recommended that you create a new user for this platform in the NVR software and only give the user the permissions it need to operate.
+NVR 소프트웨어에서 이 플랫폼에 대한 새 사용자를 생성하고 사용자에게 필요한 권한만 부여하는 것이 좋습니다.
 
 - The API key is found in `User` -> `My account` -> `API Access` in the NVR software.
 - The camera password is found in `Settings` -> `Camera Settings` -> `Camera Password` in the NVR software.
 
-### Configuration
+### 설정
 
-To enable, add the following to your `configuration.yaml` file:
+활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -58,5 +58,5 @@ ssl:
 {% endconfiguration %}
 
 <div class='note'>
-When using an API_KEY to access cameras controlled by Ubiquiti's NVR Software, the associated user account MUST have at least Administrator privileges within the NVR Software in order for new cameras to be added into Home Assistant. Once the entities have been created in Home Assistant, privileges for the user account can be lowered.
+API_KEY를 사용하여 Ubiquiti의 NVR 소프트웨어로 제어되는 카메라에 액세스하는 경우 새 카메라를 홈 어시스턴트에 추가하려면 관련 사용자 계정에 NVR 소프트웨어 내에서 최소한 관리자 권한이 있어야합니다. Home Assistant에서 엔티티가 작성되면 사용자 계정에 대한 권한을 낮출 수 있습니다.
 </div>

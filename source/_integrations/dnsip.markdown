@@ -8,16 +8,17 @@ ha_iot_class: Cloud Polling
 ha_release: '0.40'
 ---
 
-The `dnsip` sensor will expose an IP address, fetched via DNS resolution, as its value. There are two operational modes:
+`dnsip` 센서는 DNS 확인을 통해 가져온 IP 주소를 값으로 노출합니다. 두 가지 작동 모드가 있습니다.
 
-1. When you enable the sensor with minimal configuration, it will query the [OpenDNS](https://www.opendns.com/) nameservers with the hostname `myip.opendns.com`, which will resolve to your external/public IP address.
-2. If you specify a `hostname`, a regular DNS lookup will be performed, providing you the IP the hostname resolves to.
+1. 최소 설정으로 센서를 활성화하면 호스트 이름이 `myip.opendns.com`인 [OpenDNS](https://www.opendns.com/) 네임 서버를 쿼리하여 external/public IP 주소로 확인합니다. .
 
-You may also override the nameserver that is being used by setting the `resolver` parameter to any nameserver you like.
+2. `hostname`을 지정하면 호스트 이름을 확인하는 IP를 제공하여 정기적인 DNS 조회가 수행됩니다.
 
-## Configuration
+`resolver` 매개 변수를 원하는 네임 서버로 설정하여 사용중인 네임 서버를 덮어쓸 수도 있습니다.
 
-To enable this sensor, add the following lines to your `configuration.yaml` file:
+## 설정
+
+이 센서를 활성화하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -58,7 +59,7 @@ scan_interval:
   type: integer
 {% endconfiguration %}
 
-## Extended example
+## 확장 예시
 
 ```yaml
 # Example configuration.yaml entry

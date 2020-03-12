@@ -1,5 +1,5 @@
 ---
-title: London Underground
+title: 영국 런던 지하철(London Underground)
 description: Display the current status of London underground & overground lines within Home Assistant.
 logo: london_underground.png
 ha_category:

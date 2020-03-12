@@ -7,23 +7,18 @@ ha_category:
 ha_release: 0.72
 ---
 
-The `watson_iot` integration enables you to link the devices in Home Assistant
-with an [IBM Watson IoT Platform instance](https://www.ibm.com/us-en/marketplace/internet-of-things-cloud).
+`watson_iot` 연동을 통해 Home Assistant의 디바이스를 [IBM Watson IoT Platform instance](https://www.ibm.com/us-en/marketplace/internet-of-things-cloud)와 연결할 수 있습니다.
 
-## Configuration
+## 설정
 
-To use this component, you first need to register a gateway device type and then
-a gateway device in your IoT platform instance. For instructions on how to do
-this check the [official documentation](https://cloud.ibm.com/docs/services/IoT?topic=iot-platform-getting-started#IoT_connectGateway)
-which provides the details on doing this. After you register the gateway device
-for your Home Assistant instance you'll need four pieces of information:
+이 구성 요소를 사용하려면 먼저 게이트웨이 디바이스 유형을 등록한 다음 IoT 플랫폼 인스턴스에 게이트웨이 디바이스를 등록해야합니다. 이를 확인하는 방법에 대한 지침인 [official documentation](https://cloud.ibm.com/docs/services/IoT?topic=iot-platform-getting-started#IoT_connectGateway)는 이 작업에 대한 세부 정보를 제공합니다. Home Assistant 인스턴스에 대한 게이트웨이 장치를 등록한 후에는 네 가지 정보가 필요합니다. :
 
 - Organization ID
 - Gateway device Type
 - Gateway device ID
 - Authentication Token
 
-With this basic information you can configure the component:
+이 기본 정보를 사용하여 구성 요소를 설정할 수 있습니다.
 
 ```yaml
 # Example configuration.yaml entry:

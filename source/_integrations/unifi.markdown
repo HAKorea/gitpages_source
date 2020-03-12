@@ -14,22 +14,22 @@ ha_codeowners:
   - '@kane610'
 ---
 
-[UniFi](https://unifi-sdn.ubnt.com/) by [Ubiquiti Networks, inc.](https://www.ubnt.com/) is a software that binds gateways, switches and wireless access points together with one graphical front end.
+[Ubiquiti Networks, Inc.](https://www.ubnt.com/)의 [UniFi](https://unifi-sdn.ubnt.com/)는 게이트웨이, 스위치 및 무선 액세스 포인트를 하나의 그래픽 프론트 엔드와 결합하는 소프트웨어입니다.
 
-There is currently support for the following device types within Home Assistant:
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - [Presence Detection](#presence-detection)
 - [Switch](#switch)
 
-## Configuration
+## 설정
 
-Home Assistant offers UniFi integration through **Configuration** -> **Integrations** -> **UniFi Controller**.
+Home Assistant는 **설정**-> **통합구성요소**-> **UniFi 컨트롤러**를 통해 UniFi 연동을 제공합니다.
 
-Enter `host address`, `user name` and `password` and then continue to select which `site` you want to connect to Home Assistant. The user needs administrator privileges in order to control POE switches.
+`host address`, `user name`, `password`를 입력한 다음 홈어시스턴트에 연결할 사이트를 계속 선택하십시오. POE 스위치를 제어하려면 사용자에게 관리자 권한이 필요합니다.
 
-### Extra configuration for device tracker
+### 장치 추적기의 추가 설정
 
-You can augment the behavior of UniFi device tracker by adding
+다음을 추가하여 UniFi 장치 추적기의 동작을 보강할 수 있습니다
 
 ```yaml
 # Example configuration.yaml entry
@@ -85,43 +85,43 @@ ssid_filter:
   default: None
 {% endconfiguration %}
 
-### Configuring Users
+### 사용자들 설정하기
 
-The UniFi controller allows you to create multiple users on it besides the main administrator. If all you want to use is the device tracker then it is recommended that you create a limited user that has `read-only` permissions for the Unifi device tracker. If you want blocking of network access or POE control as well you would need to have 'admin' permissions.
+UniFi 컨트롤러를 사용하면 기본 관리자 외에 여러 사용자를 만들 수 있습니다. 장치 추적기만 사용하려면 Unifi 장치 추적기에 대해 `read-only` 권한(permissions)이 있는 제한된 사용자를 만드는 것이 좋습니다. 네트워크 액세스 또는 POE 제어를 차단하려면 'admin' 권한이 있어야합니다.
 
-### Conflicts with MQTT
+### MQTT와의 충돌
 
-The Unifi controller can either be a dedicated hardware device (UniFi's cloud key), or as software any Linux system. If you run the Unifi controller on the same operating system as Home Assistant there may be conflicts in ports if you have the MQTT integration as well.
+Unifi 컨트롤러는 전용 하드웨어 장치 (UniFi's cloud key)이거나 어떤 Linux 시스템의 소프트웨어 일 수 있습니다. Home Assistant와 동일한 운영 체제에서 Unifi 컨트롤러를 실행하는 경우 MQTT 연동이있는 경우 포트에서 충돌이 발생할 수 있습니다.
 
-It is recommended that you run the Unifi controller in a dedicated virtual machine to avoid that situation.
+이러한 상황을 피하려면 전용 가상 머신에서 Unifi 컨트롤러를 실행하는 것이 좋습니다.
 
-## Presence detection
+## 재실 감지
 
-This platform allows you to detect presence by looking at devices connected to a [Ubiquiti](https://ubnt.com/) [UniFi](https://www.ubnt.com/enterprise/#unifi) controller.
+이 플랫폼을 사용하면 [Ubiquiti](https://ubnt.com/) [UniFi](https://www.ubnt.com/enterprise/#unifi) 컨트롤러에 연결된 장치를보고 존재를 감지할 수 있습니다.
 
-### Troubleshooting and Time Synchronization
+### 문제 해결 및 시간 동기화
 
-Presence detection depends on accurate time configuration between Home Assistant and the UniFi controller.
+재실 감지는 Home Assistant와 UniFi 컨트롤러 간의 정확한 시간 설정에 따라 다릅니다.
 
-If Home Assistant and the UniFi controller are running on separate machines or VMs ensure that all clocks are synchronized. Failing to have synchronized clocks will lead to Home Assistant failing to mark a device as home.
+홈어시스턴트와 UniFi 컨트롤러가 별도의 시스템 또는 VM에서 실행중인 경우 모든 시계가 동기화되었는지 확인하십시오. 시계를 동기화하지 못하면 홈어시스턴트가 장치를 Home으로 표시하지 못하게됩니다.
 
-[Related Issue](https://github.com/home-assistant/home-assistant/issues/10507)
+[관련 이슈](https://github.com/home-assistant/home-assistant/issues/10507)
 
 ## Switch
 
-### Block network access for clients
+### 클라이언트의 네트워크 액세스 차단
 
-Allow control of network access to clients configured in the `configuration.yaml` file by adding a list of the MAC addresses. Items in this list will have a Home Assistant switch created, using the Unifi Device name, allowing for blocking and unblocking.
+MAC 주소 목록을 추가하여 `configuration.yaml` 파일에 설정된 클라이언트에 대한 네트워크 액세스를 제어 할 수 있습니다. 이 목록의 항목에는 Unifi 장치 이름을 사용하여 차단 및 차단해제를 할 수 있는 Home Assistant 스위치가 있습니다.
 
-### Control clients powered by POE
+### POE가 제공하는 클라이언트 제어
 
-Entities appear automatically for each connected POE client. If no POE client device is in operation, no entity will be visible. Note: Unifi infrastructure devices such as access points and other switches are not (yet) supported, even if they are powered over ethernet themselves.
+연결된 각 POE 클라이언트에 대해 엔티티가 자동으로 나타납니다. POE 클라이언트 장치가 작동하지 않으면 엔티티가 표시되지 않습니다. 참고 : 액세스 포인트 및 기타 스위치와 같은 Unifi 인프라 장치는 이더넷 자체에서 전원이 공급되더라도 (아직) 지원되지 않습니다.
 
-Note that POE control actually configures the network port of the switch which the client is connected to.
+POE 제어는 실제로 클라이언트가 연결된 스위치의 네트워크 포트를 설정합니다.
 
-## Debugging integration
+## 연동 디버깅
 
-If you have problems with UniFi or the integration you can add debug prints to the log.
+UniFi 또는 연동에 문제가있는 경우 로그에 디버그 출력을 추가 할 수 있습니다.
 
 ```yaml
 logger:

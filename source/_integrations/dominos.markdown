@@ -1,5 +1,5 @@
 ---
-title: Dominos Pizza
+title: 미국 배달(Dominos Pizza)
 description: Instructions on how to setup Dominos Pizza ordering within Home Assistant.
 logo: dominos.png
 ha_category:

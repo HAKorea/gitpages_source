@@ -1,5 +1,5 @@
 ---
-title: Alarm.com
+title: 알람닷컴(Alarm.com)
 description: Instructions on how to integrate Alarm.com into Home Assistant.
 logo: alarmdotcom.png
 ha_category:
@@ -7,11 +7,11 @@ ha_category:
 ha_release: 0.11
 ---
 
-The `alarmdotcom` platform is consuming the information provided by [Alarm.com](https://www.alarm.com/).
+`alarmdotcom` 플랫폼은 [Alarm.com](https://www.alarm.com/)에서 제공하는 정보를 사용합니다.
 
-## Configuration
+## 설정
 
-To enable this, add the following lines to your `configuration.yaml`:
+이를 가능하게하려면 `configuration.yaml`에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -42,5 +42,5 @@ code:
 {% endconfiguration %}
 
 <div class='note warning'>
-  Please make sure that your alarm.com language is set to English before open any issue.
+  문제를 확인하기 전에 alarm.com 언어가 영어로 설정되어 있는지 확인하십시오.
 </div>

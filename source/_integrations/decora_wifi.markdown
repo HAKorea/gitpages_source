@@ -1,5 +1,5 @@
 ---
-title: Leviton Decora Wi-Fi
+title: 레비톤 데코라 Wifi (Leviton Decora Wi-Fi)
 description: Instructions on how to setup Leviton Decora Smart Wi-Fi switches/dimmers within Home Assistant.
 ha_category:
   - Light
@@ -8,14 +8,14 @@ logo: leviton.png
 ha_release: 0.51
 ---
 
-Support for [Leviton Decora Wi-Fi](https://www.leviton.com/en/products/lighting-controls/decora-smart-with-wifi) dimmers/switches via the MyLeviton API.
+MyLeviton API를 통한 [Leviton Decora Wi-Fi](https://www.leviton.com/en/products/lighting-controls/decora-smart-with-wifi) dimmers/switches 지원.
 
-Supported devices (tested):
+지원 장치 (tested):
 
 - [DW6HD1-BZ](https://www.leviton.com/en/products/dw6hd-1bz) (Decora Smart Wi-Fi 600W Dimmer)
 - [DW15S-1BZ](https://www.leviton.com/en/products/dw15s-1bz) (Decora Smart Wi-Fi 15A Switch)
 
-To enable these lights, add the following lines to your `configuration.yaml` file:
+이 라이트를 활성화하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

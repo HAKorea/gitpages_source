@@ -1,5 +1,5 @@
 ---
-title: 아파치 카프카(Apache Kafka)
+title: 분산데이터스트리밍(Apache Kafka)
 description: Send data and events to Apache Kafka.
 logo: apache_kafka.png
 ha_category:

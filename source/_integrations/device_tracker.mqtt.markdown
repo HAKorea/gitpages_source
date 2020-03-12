@@ -1,5 +1,5 @@
 ---
-title: "MQTT Device Tracker"
+title: "MQTT 장치 추적기(MQTT Device Tracker)"
 description: "Instructions on how to use MQTT to track devices in Home Assistant."
 logo: mqtt.png
 ha_category:
@@ -9,11 +9,11 @@ ha_release: 0.7.3
 ---
 
 
-The `mqtt` device tracker platform allows you to detect presence by monitoring an MQTT topic for new locations. To use this platform, you specify a unique topic for each device.
+`mqtt` 장치 추적기 플랫폼을 사용하면 새 위치에 대한 MQTT topic을 모니터링하여 현재 상태를 감지 할 수 있습니다. 이 플랫폼을 사용하려면 각 장치마다 고유한 topic를 지정하십시오.
 
-## Configuration
+## 설정
 
-To use this device tracker in your installation, add the following to your `configuration.yaml` file:
+이 장치 추적기를 설치에 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -49,7 +49,7 @@ source_type:
   type: string
 {% endconfiguration %}
 
-## Complete example configuration
+## 완전한 설정 예
 
 ```yaml
 # Complete configuration.yaml entry
@@ -63,9 +63,9 @@ device_tracker:
   source_type: bluetooth
 ```
 
-## Usage
+## 사용법
 
-Example JSON you can publish to the topic (e.g., via mqtt.publish service):
+topic에 publish 할수 있는 JSON 사례 (예: mqtt.publish 서비스를 통해) :
 
 ```json
 {

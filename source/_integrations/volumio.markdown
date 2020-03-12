@@ -1,5 +1,5 @@
 ---
-title: Volumio
+title: 볼류미오(Volumio)
 description: How to set up the Volumio media player platform
 logo: volumio.png
 ha_category:
@@ -7,11 +7,11 @@ ha_category:
 ha_release: 0.41
 ---
 
-The `Volumio` platform allows you to control a [Volumio](https://volumio.org/) media player from Home Assistant.
+`Volumio` 플랫폼을 사용하면 Home Assistant에서 [Volumio](https://volumio.org/) 미디어 플레이어를 제어할 수 있습니다.
 
-The preferred way to set up the Volumio platform is by enabling the [discovery component](/integrations/discovery/).
+Volumio 플랫폼을 설정하는 바람직한 방법은 [discovery component](/integrations/discovery/)를 활성화하는 것입니다.
 
-In case the discovery does not work, or you need specific configuration variables, you can add the following to your `configuration.yaml` file:
+검색이 작동하지 않거나 특정 설정 변수가 필요한 경우 `configuration.yaml` 파일에 다음을 추가 할 수 있습니다.
 
 ```yaml
 # Example configuration.yaml entry

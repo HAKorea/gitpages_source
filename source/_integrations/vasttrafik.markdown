@@ -1,5 +1,5 @@
 ---
-title: Västtrafik
+title: 스웨덴 대중교통정보(Västtrafik)
 description: Instructions on how to integrate timetable data for traveling in Sweden within Home Assistant.
 logo: vasttrafik.png
 ha_category:

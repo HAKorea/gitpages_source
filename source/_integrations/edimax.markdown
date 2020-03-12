@@ -1,5 +1,5 @@
 ---
-title: Edimax
+title: 에디맥스(Edimax)
 description: Instructions on how to integrate Edimax switches into Home Assistant.
 logo: edimax.png
 ha_category:
@@ -7,9 +7,9 @@ ha_category:
 ha_release: pre 0.7
 ---
 
-This `edimax` switch platform allows you to control the state of your [Edimax](https://www.edimax.com/edimax/merchandise/merchandise_list/data/edimax/global/home_automation_smart_plug/) switches.
+이 `edimax` 스위치 플랫폼을 사용하면 [Edimax](https://www.edimax.com/edimax/merchandise/merchandise_list/data/edimax/global/home_automation_smart_plug/) 스위치의 상태를 제어할 수 있습니다.
 
-To use your Edimax switch in your installation, add the following to your `configuration.yaml` file:
+설치시 Edimax 스위치를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -40,9 +40,9 @@ name:
   type: string
 {% endconfiguration %}
 
-## Power consumption sensor
+## 소비 전력 센서
 
-Starting with [version 2 of the firmware](https://www.edimax.com/edimax/download/download/data/edimax/global/download/), the Edimax switches can also report the current and accumulated daily power consumption in their state objects. Use a [template sensor](/integrations/template) to extract their values:
+[version 2 of the firmware](https://www.edimax.com/edimax/download/download/data/edimax/global/download/)부터 Edimax 스위치는 상태 개체에서 현재 및 누적 일일 전력 소비량을 보고 할 수도 있습니다. [template sensor](/integrations/template)를 사용하여 값을 추출하십시오. 
 
 {% raw %}
 ```yaml
@@ -60,4 +60,4 @@ Starting with [version 2 of the firmware](https://www.edimax.com/edimax/download
 ```
 {% endraw %}
 
-Note that if the smart plug is off, these states report the string `None`. By using a `replace()` in the template, these sensors report purely numerical values.
+스마트 플러그가 꺼져 있으면 이 상태는 문자열 `None`을 보고합니다. 템플릿에서 `replace ()`를 사용하여 이 센서는 순수한 숫자 값을 보고합니다.

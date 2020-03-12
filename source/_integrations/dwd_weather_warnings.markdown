@@ -1,5 +1,5 @@
 ---
-title: Deutsche Wetter Dienst (DWD) Weather Warnings
+title: 독일 기상청(Deutsche Wetter Dienst (DWD) Weather Warnings)
 description: Instructions on how to integrate Deutsche Wetter Dienst weather warnings into Home Assistant.
 ha_category:
   - Weather

@@ -1,5 +1,5 @@
 ---
-title: GIOŚ
+title: 폴란드 대기질 서비스(GIOŚ)
 description: Instructions on how to integrate GIOŚ (Polish Chief Inspectorate Of Environmental Protection) air quality service into Home Assistant.
 logo: gios.png
 ha_category:

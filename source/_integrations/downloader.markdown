@@ -1,5 +1,5 @@
 ---
-title: 다운로더
+title: 다운로더(downloader)
 description: Instructions on how to setup the downloader integration with Home Assistant.
 logo: home-assistant.png
 ha_category:
@@ -8,9 +8,9 @@ ha_release: pre 0.7
 ha_quality_scale: internal
 ---
 
-The `downloader` integration provides a service to download files. It will raise an error and not continue to set itself up when the download directory does not exist. The directory needs to be writable for the user that is running Home Assistant.
+`downloader` 통합구성요소는 파일을 다운로드하는 서비스를 제공합니다. 다운로드 디렉토리가 존재하지 않으면 오류가 발생하고 자체적으로 설정되지 않습니다. 홈어시스턴트를 실행중인 사용자의 디렉토리는 쓰기 가능해야합니다.
 
-To enable it, add the following lines to your `configuration.yaml` file:
+이를 활성화하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -25,9 +25,9 @@ download_dir:
   type: string
 {% endconfiguration %}
 
-### Use the service
+### 서비스 사용
 
-Go to the "Developer Tools", then to "Call Service", and choose `downloader/download_file` from the list of available services. Fill the "Service Data" field as shown in the example below and hit "CALL SERVICE".
+"개발자 도구"로 이동한 다음 "Call Service"로 이동하여 사용 가능한 서비스 목록에서 `downloader/download_file`을 선택하십시오. 아래 예에 표시된대로 "Service Data" 필드를 채우고 "CALL SERVICE"를 누르십시오.
 
 ```json
 {"url":"http://domain.tld/path/to/file"}
@@ -42,19 +42,19 @@ This will download the file from the given URL.
 | `filename`             |      yes | Determine the filename.                        |
 | `overwrite`            |      yes | Whether to overwrite the file or not, defaults to `false`. |
 
-### Download Status Events
+### Download 상태 이벤트
 
-When a download finished successfully, Home Assistant will emit a 'downloader_download_completed' event to the event bus which you can use to write automations against.
-In case download failed another event 'downloader_download_failed' is emitted to indicate that the download did not complete successfully.
+다운로드가 성공적으로 완료되면 Home Assistant는 자동화를 작성하는 데 사용할 수 있는 'downloader_download_completed'이벤트를 이벤트 버스로 보냅니다.
+다운로드에 실패한 경우 다운로드가 성공적으로 완료되지 않았음을 나타내는 다른 이벤트 'downloader_download_failed'가 발생합니다.
 
-Along with the event the following payload parameters are available:
+이벤트와 함께 다음 페이로드 매개 변수를 사용할 수 있습니다.
 
 | Parameter | Description                                                                                                                                                                                                                                                    |
 |-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `url`  | The `url` that was requested.|                                                                                                                                      
 | `filename`    | The `name` of the file that was being downloaded.|
 
-#### Example Automation:
+#### 자동화 사례 :
 
 ```yaml
 - alias: Download Failed Notification

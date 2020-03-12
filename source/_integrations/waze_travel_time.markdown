@@ -8,13 +8,13 @@ ha_iot_class: Cloud Polling
 ha_release: 0.67
 ---
 
-The `waze_travel_time` sensor provides travel time from the [Waze](https://www.waze.com/).
+`waze_travel_time` 센서는 [Waze](https://www.waze.com/)에서 이동 시간을 제공합니다.
 
-Unit system is by default set to the metric system.
+단위 시스템은 기본적으로 미터법으로 설정되어 있습니다.
 
-## Configuration
+## 설정
 
-To use this sensor in your installation, add the following `sensor` section to your `configuration.yaml` file:
+설치시 이 센서를 사용하려면 다음 `sensor` 섹션을 configuration.yaml 파일에 추가하십시오.
 
 ```yaml
 # Example entry for configuration.yaml
@@ -81,13 +81,13 @@ avoid_subscription_roads:
   default: false
 {% endconfiguration %}
 
-When using the `avoid_toll_roads`, `avoid_subscription_roads` and `avoid_ferries` options be aware that Waze will sometimes still route you over toll roads or ferries if a valid vignette/subscription is assumed. Default behaviour is that Waze will route you over roads having subscription options, so best is to set both `avoid_toll_roads` and `avoid_subscription_roads` or `avoid_ferries` if needed and experiment to ensure the desired outcome. 
+`avoid_toll_roads`, `avoid_subscription_roads` 및 `avoid_ferries` 옵션을 사용할 때 유효한 vignette/subscription을 가정할 경우 Waze가 유료 도로나 페리를 통해 경로를 안내하는 경우가 있습니다. 기본 동작은 Waze가 subscription 옵션으로 도로를 안내하는 것입니다. 가장 좋은 방법은 `avoid_toll_roads` 와 `avoid_subscription_roads` 또는 `avoid_ferries`를 설정하고 원하는 결과를 얻기 위해 실험하는 것입니다.
 
-## Example using dynamic destination
+## 동적 목적지를 사용하는 예
 
-Using the flexible option to set a sensor value to the `destination`, you can setup a single Waze integration that will calculate travel time to multiple optional locations on demand.
+유연한 옵션을 사용하여 센서값을 `destination`로 설정하면 필요에 따라 여러 선택적 위치까지의 이동 시간을 계산하는 단일 Waze 연동을 설정할 수 있습니다.
 
-In the following example, the `Input Select` is converted into an address which is used to modify the destination for Waze route calculation from `device_tracker.myphone` location (It takes a few minutes for the value to update due to the interval of Waze data fetching).
+다음 예에서 `Input Select`은 `device_tracker.myphone` 위치에서 Waze 경로 계산 목적지를 수정하는데 사용되는 주소로 변환됩니다. (Waze 데이터 페치 간격으로 인해 값이 업데이트되는데 몇 분이 걸립니다.)
 
 {% raw %}
 ```yaml
@@ -147,8 +147,6 @@ sensor:
 ```
 {% endraw %}
 
-## Using the live map in an iFrame
+## iFrame에서 라이브 맵 사용
 
-If you plan to use [Waze's live map](https://developers.google.com/waze/iframe/)
-in Lovelace [iframe](/lovelace/iframe/) then use
-[https://embed.waze.com/iframe](https://embed.waze.com/iframe) and not the live map URL itself.
+Lovelace [iframe](/lovelace/iframe/)에서 [Waze's live map](https://developers.google.com/waze/iframe/)을 사용하려면 라이브 맵 URL 자체가 아닌 [https://embed.waze.com/iframe](https://embed.waze.com/iframe)를 사용하십시오.

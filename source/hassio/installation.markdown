@@ -97,6 +97,10 @@ hassio ha update --version=0.XX.X
 
 ## 다른 방법: 일반적인 리눅스 컴퓨터에 설치
 
+HA 네이버카페 까꿍TM님의 라즈베리파이에 도커환경에서 Hassio 설치하기 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/W2-MgYE6FA4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 능숙한 유저라면 [리눅스 서버 또는 버추얼 머신][Linux]에 Hass.io를 설치할 수 있습니다. 아래 제시한 방법은 우분투와 Arch 리눅스에서 테스트 했습니다만 다른 리눅스 배포판에서도 비슷하게 설치할 수 있습니다.
 
 Hass.io를 실행하기 위한 패키지들을 시스템에 따라 조금씩 다를 수 있습니다.
@@ -209,6 +213,7 @@ curl -sL "https://raw.githubusercontent.com/home-assistant/hassio-installer/mast
 
 HA 네이버카페 멀더요원님의 [시놀로지 NAS에 Hassio 설치하기](https://cafe.naver.com/koreassistant/95)를 참고하십시오. 
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/QdBYUbj0B5Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 [balenaEtcher]: https://www.balena.io/etcher
 [Virtual Appliance]: https://github.com/home-assistant/hassos/blob/dev/Documentation/boards/ova.md

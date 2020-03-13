@@ -1,5 +1,5 @@
 ---
-title: Openuv(세계자외선오존데이터)
+title: 세계자외선오존데이터(Openuv)
 description: Instructions on how to integrate OpenUV within Home Assistant.
 logo: openuv.jpg
 ha_category:
@@ -12,6 +12,8 @@ ha_config_flow: true
 ha_codeowners:
   - '@bachya'
 ---
+
+<iframe width="690" height="437" src="https://www.youtube.com/embed/_5uLx83s10w?list=PLWlpiQXaMerTyzl_Pe1PEloZTj9MoU5cl" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The `openuv` integration displays UV and Ozone data from [openuv.io](https://www.openuv.io/).
 

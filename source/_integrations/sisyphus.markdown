@@ -10,6 +10,8 @@ ha_release: 0.75
 ha_iot_class: Local Push
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/45g2SJkYX38" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 The [Sisyphus](https://sisyphus-industries.com/) integration for Home Assistant allows you to observe and control your Sisyphus Kinetic Art Table.
 
 There is currently support for the following device types within Home Assistant:

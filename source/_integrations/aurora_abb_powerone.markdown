@@ -1,5 +1,5 @@
 ---
-title: (태양광인버터)Aurora ABB Solar PV
+title: 태양광인버터(Aurora ABB Solar PV)
 description: Instructions on how to integrate an Aurora ABB Powerone solar inverter within Home Assistant.
 logo: powerone.png
 ha_category:

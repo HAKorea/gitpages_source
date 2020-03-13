@@ -1,5 +1,5 @@
 ---
-title: (랙전용전원스위치)ATEN Rack PDU
+title: 랙전용전원스위치(ATEN Rack PDU)
 description: Instructions on how to integrate ATEN Rack PDUs into Home Assistant.
 logo: aten.png
 ha_category:

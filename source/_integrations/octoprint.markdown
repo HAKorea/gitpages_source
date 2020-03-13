@@ -1,5 +1,5 @@
 ---
-title: OctoPrint(3D프린터)
+title: 3D프린터 관리(OctoPrint)
 description: Instructions on how to setup the OctoPrint in Home Assistant.
 logo: octoprint.png
 ha_category:

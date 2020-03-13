@@ -11,6 +11,8 @@ ha_codeowners:
   - '@rohankapoorcom'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/kV3NBzz2Afw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 The `speedtestdotnet` integration uses the [Speedtest.net](https://speedtest.net/) web service to measure network bandwidth performance.
 
 Enabling this integration will automatically create Speedtest.net sensors for the monitored conditions (below).

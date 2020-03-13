@@ -1,5 +1,5 @@
 ---
-title: LIFX 웹 사이트에서 API 토큰을 만듭니다. 클라우드
+title: LIFX Cloud
 description: Instructions on using native LIFX scenes with Home Assistant.
 logo: lifx.png
 ha_category:

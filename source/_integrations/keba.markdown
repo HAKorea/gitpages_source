@@ -1,5 +1,5 @@
 ---
-title: Keba Charging Station(전기차충전소)
+title: 전기차충전소(Keba Charging Station)
 description: Instructions on how to setup your Keba charging station with Home Assistant.
 logo: keba.png
 ha_category:

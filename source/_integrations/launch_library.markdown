@@ -1,5 +1,5 @@
 ---
-title: Launch Library(우주도전정보)
+title: 우주도전정보(Launch Library)
 description: Instructions on how to integrate space launch information within Home Assistant.
 logo: rocket.png
 ha_category:
@@ -9,6 +9,8 @@ ha_release: 0.83
 ha_codeowners:
   - '@ludeeus'
 ---
+
+<iframe width="690" height="437" src="https://www.youtube.com/embed/vMoOdgGJv4I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The `launch_library` sensor will provide you with information about the next planned space launch.
 

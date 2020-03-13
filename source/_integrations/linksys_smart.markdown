@@ -1,5 +1,5 @@
 ---
-title: 링크시스 스마트 Wi-Fi
+title: 링크시스 스마트 Wifi(Linksys Smart Wifi)
 description: Instructions on how to integrate Linksys Smart Wifi Router into Home Assistant.
 ha_category:
   - Presence Detection

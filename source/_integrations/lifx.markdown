@@ -9,6 +9,8 @@ ha_release: 0.81
 ha_config_flow: true
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/TXjSIOPo9LU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `lifx` 통합구성요소를 통해 [LIFX](https://www.lifx.com)를 Home Assistant에 연동할 수 있습니다.
 
 _lifx 통합은 Windows를 지원하지 않습니다. `lifx_legacy` 라이트 플랫폼 (기본 기능 지원)을 대신 사용할 수 있습니다 ._

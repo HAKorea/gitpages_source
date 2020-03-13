@@ -1,5 +1,5 @@
 ---
-title: Logentries(보안로그)
+title: 보안로그(Logentries)
 description: Send events to Logentries.
 logo: logentries.png
 ha_category:

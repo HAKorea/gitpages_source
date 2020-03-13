@@ -7,6 +7,8 @@ ha_category:
 ha_release: 0.31
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/qNUU3vBffvc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `apns` 플랫폼은 APNS (Apple Push Notification Service)를 사용하여 Home Assistant에서 알림을 전달합니다.
 
 ## 셋업

@@ -1,5 +1,5 @@
 ---
-title: 마인크래프트 서버
+title: 마인크래프트 서버(Minecraft Server)
 description: Instructions on how to integrate a Minecraft server into Home Assistant.
 logo: minecraft.png
 ha_release: 0.106
@@ -12,6 +12,8 @@ ha_config_flow: true
 ha_codeowners:
   - '@elmurato'
 ---
+
+<iframe width="690" height="437" src="https://www.youtube.com/embed/eUZLqgVF7tk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Minecraft 서버를 통해 플레이어는 온라인 또는 다른 플레이어와의 로컬 네트워크를 통해 [Mojang AB](https://www.mojang.com)의 샌드 박스 비디오 게임 [Minecraft](https://www.minecraft.net)을 재생할 수 있습니다. `Minecraft Server` 통합구성요소를 통해 Home Assistant 내의 Minecraft 서버 (Java 에디션)에서 정보를 검색 할 수 있습니다.
 

@@ -1,5 +1,5 @@
 ---
-title: 곰팡이 표시기
+title: 곰팡이 표시기(Mold Indicator)
 description: How to use the mold growth indication integration in Home Assistant
 logo: home-assistant.png
 ha_category:
@@ -8,6 +8,8 @@ ha_release: '0.20'
 ha_iot_class: Local Polling
 ha_quality_scale: internal
 ---
+
+<iframe width="690" height="437" src="https://www.youtube.com/embed/8KwRPF5NoI8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 곰팡이 표시기(Mold Indicator) 센서 통합구성요소는 2 개의 온도 센서와 습도 센서의 정보를 조합하여 가정에서 곰팡이가 생길 수 있음을 나타냅니다. 환기 및 단열이 불량한 경우 실내 습도로 인해 창문이나 벽처럼 차가운 표면에 응결이 발생할 수 있습니다. 차가운 표면 근처의 응축 또는 상대 습도가 높으면 곰팡이가 생길 위험이 높아집니다. 이 센서 통합구성요소는 실내에서 사전 교정 된 임계점 (가장 추운 표면)의 온도를 추정하고 해당 지점에서 공기의 상대 습도를 계산합니다. 센서 값이 약 70 % 이상 상승하면 곰팡이가 생길 수 있으며 실내를 환기시켜야합니다. 100 %에서는 공기 습도가 임계점에서 응축됩니다.
 

@@ -7,6 +7,8 @@ ha_category:
 ha_release: 0.36
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/0DXHAU223E8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 The `iss` platform uses the
 [Open Notify API](http://open-notify.org/Open-Notify-API/ISS-Location-Now/)
 to let you know if the station is above your home location.

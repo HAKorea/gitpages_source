@@ -11,6 +11,8 @@ ha_codeowners:
   - '@fabaff'
 ---
 
+<iframe width="690" height="485" src="https://www.youtube.com/embed/m9qIqq104as" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `influxdb` 통합구성요소를 통해 모든 상태 변경을 외부 [InfluxDB](https://influxdb.com/) 데이터베이스로 전송할 수 있습니다. nfluxDB 데이터베이스 설정 방법은 [공식 설치 문서](https://docs.influxdata.com/influxdb/v1.7/introduction/installation/)를 참조하십시오. 혹은 Hass.io를 사용하는 경우 [Add-on 추가 기능](https://community.home-assistant.io/t/community-hass-io-add-on-influxdb/54491)이 있습니다. 가장 쉬운 방법으로 Add-on 추가를 추천합니다. 
 
 현재 홈 어시스턴트에는 다음과 같은 장치 유형이 지원됩니다. :

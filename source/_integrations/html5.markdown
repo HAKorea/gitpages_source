@@ -9,6 +9,8 @@ ha_codeowners:
   - '@robbiet480'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/x7Ahk3G4EaM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `html5` 알림 플랫폼을 사용하면 세계 어디에 있든 Chrome 또는 Firefox에 푸시 알림을 받을 수 있습니다. `html5`는 안드로이드에서 크롬과 파이어 폭스도 지원하는데, 이는 네이티브 앱 없이도 네이티브 앱과 같은 연동을 가능하게 합니다.
 
 <div class='note'>

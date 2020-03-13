@@ -1,5 +1,5 @@
 ---
-title: 미디어 플레이어
+title: 미디어 플레이어(Media Player)
 description: Instructions on how to setup your media players with Home Assistant.
 logo: home-assistant.png
 ha_category:

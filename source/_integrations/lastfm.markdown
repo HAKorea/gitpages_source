@@ -1,5 +1,5 @@
 ---
-title: Last.fm(음악취향분석)
+title: 음악취향분석(Last.fm)
 description: Instructions on how to integrate Last.fm sensors into Home Assistant.
 logo: lastfm.png
 ha_category:

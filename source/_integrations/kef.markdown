@@ -1,5 +1,5 @@
 ---
-title: KEF(고급오디오)
+title: 고급오디오(KEF)
 description: Instructions on how to integrate KEF Speakers into Home Assistant.
 logo: kef.png
 ha_category:

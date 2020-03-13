@@ -1,5 +1,5 @@
 ---
-title: Microsoft 페이스
+title: MS 얼굴(Microsoft face)
 description: Instructions on how to integrate Microsoft Face integration into Home Assistant.
 logo: microsoft.png
 ha_category:

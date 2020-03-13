@@ -12,6 +12,8 @@ ha_codeowners:
   - '@home-assistant/core'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/NjKK5ab0-Kk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 MQTT (일명 MQ Telemetry Transport)는 TCP / IP 외에 머신 대 머신 또는 "Internet of Things" 연결 프로토콜입니다. 초경량 publish/subscribe 전송을 허용합니다.
 
 MQTT 및 Home Assistant를 작동시키기위한 첫 번째 단계는 [broker](/docs/mqtt/broker)를 선택하는 것 입니다.

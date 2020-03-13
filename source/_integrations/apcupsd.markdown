@@ -10,6 +10,8 @@ ha_release: 0.13
 ha_iot_class: Local Polling
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/rIK2U8I3cxk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 [APCUPSd](http://www.apcupsd.org/) 상태 정보는 APC 장치에 [NIS(Network Information Server)](http://www.apcupsd.org/manual/manual.html#nis-server-client-configuration-using-the-net-driver)가 구성된 경우 홈어시스턴트에 연동될 수 있습니다. 
 
 현재 홈 어시스턴트에는 다음과 같은 장치 유형이 지원됩니다. 

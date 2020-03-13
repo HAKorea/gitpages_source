@@ -10,6 +10,8 @@ ha_codeowners:
   - '@skgsergio'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/ifkI8RT5R_c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `foscam` 플랫폼을 사용하면 홈어시스턴트에서 [Foscam](https://www.foscam.com) IP 카메라의 라이브 스트림을 볼 수 있습니다.
 
 ## 설정

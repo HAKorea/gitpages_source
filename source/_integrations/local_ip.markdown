@@ -1,5 +1,5 @@
 ---
-title: 로컬 IP 주소
+title: 로컬 IP주소(Local IP Address)
 description: Instructions on how to integrate the Local IP Address sensor into Home Assistant.
 logo: home-assistant.png
 ha_category:

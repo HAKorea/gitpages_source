@@ -1,5 +1,5 @@
 ---
-title: Microsoft 안면 인식
+title: MS 얼굴인식(Microsoft Face Detect)
 description: Instructions on how to integrate Microsoft Face Detect into Home Assistant.
 logo: microsoft.png
 ha_category:

@@ -1,5 +1,5 @@
 ---
-title: 스위치봇
+title: 스위치봇(Switchbot)
 description: Instructions on how to set up Switchbot switches.
 logo: switchbot.png
 ha_category:

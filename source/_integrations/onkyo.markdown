@@ -1,5 +1,5 @@
 ---
-title: 온쿄
+title: 온쿄(Onkyo)
 description: Instructions on how to integrate Onkyo and some Pioneer receivers into Home Assistant.
 logo: onkyo.png
 ha_category:

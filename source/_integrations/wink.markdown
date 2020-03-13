@@ -20,6 +20,8 @@ ha_iot_class: Cloud Polling
 ha_release: pre 0.7
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/9ax5ml0YC2s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 [Wink](https://www.wink.com/)는 시중에서 판매되는 광범위한 장치를 제어할 수 있는 홈오토메이션 허브입니다. 또는 제조사가 자신들에 대해 말하는 것처럼 :
 
 <blockquote>

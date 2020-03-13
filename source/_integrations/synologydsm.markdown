@@ -1,5 +1,5 @@
 ---
-title: 시놀로지DSM
+title: 시놀로지 DSM(Synology DSM)
 description: Instructions on how to integrate the SynologyDSM sensor within Home Assistant.
 logo: synology.png
 ha_category:
@@ -7,6 +7,8 @@ ha_category:
 ha_release: 0.32
 ha_iot_class: Local Polling
 ---
+
+<iframe width="690" height="437" src="https://www.youtube.com/embed/CHrw7l4lJYY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 `synologydsm` 센서 플랫폼을 사용하면 [Synology NAS](https://www.synology.com)에서 다양한 통계를 얻을 수 있습니다.
 

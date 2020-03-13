@@ -9,6 +9,8 @@ ha_release: 0.49
 ha_iot_class: Local Push
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/PtiX4TcdDSg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `wake_on_lan` 통합구성요소를 통해 _magic packet_ 을 [Wake on LAN](https://en.wikipedia.org/wiki/Wake-on-LAN) 지원 장치로 전송하여 장치를 켤 수 있습니다.
 
 현재 홈 어시스턴트에는 다음과 같은 장치 유형이 지원됩니다 :

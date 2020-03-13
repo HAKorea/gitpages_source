@@ -11,6 +11,8 @@ ha_codeowners:
   - '@zewelor'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/om-F9tUxeMQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `yeelight` 통합구성요소로 Home Assistant를 사용하여 Yeelight Wifi 전구를 제어할 수 있습니다. Yeelight 설정 방법에는 수동 또는 자동의 두 가지 방법이 있습니다.
 
 현재 홈 어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.

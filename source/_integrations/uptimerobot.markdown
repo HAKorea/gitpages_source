@@ -10,6 +10,8 @@ ha_codeowners:
   - '@ludeeus'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/TPHukV9GV4I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `uptimerobot` 바이너리 센서 플랫폼을 사용하면 [Uptime Robot](https://uptimerobot.com)의 계정에서 모든 모니터의 상태를 확인할 수 있습니다
 
 ## 설정

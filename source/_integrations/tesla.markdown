@@ -1,5 +1,5 @@
 ---
-title: 테슬라
+title: 테슬라(Tesla)
 description: Instructions on how to integrate Tesla car into Home Assistant.
 logo: tesla.png
 ha_category:
@@ -17,6 +17,8 @@ ha_codeowners:
   - '@zabuldon'
   - '@alandtse'
 ---
+
+<iframe width="690" height="437" src="https://www.youtube.com/embed/l1YROYQUS5s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 `Tesla` 통합구성요소는 [Tesla](https://auth.tesla.com/login) 클라우드 서비스와의 연동을 제공하고 재실 상태 감지와 충전기 상태 및 온도와 같은 센서를 제공합니다.
 

@@ -7,6 +7,8 @@ ha_category:
 ha_release: 0.41
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/UAFF88-3yak" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `Volumio` 플랫폼을 사용하면 Home Assistant에서 [Volumio](https://volumio.org/) 미디어 플레이어를 제어할 수 있습니다.
 
 Volumio 플랫폼을 설정하는 바람직한 방법은 [discovery component](/integrations/discovery/)를 활성화하는 것입니다.

@@ -8,6 +8,8 @@ ha_release: 0.72
 ha_iot_class: Local Polling
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/OqUI1GHc4As" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `Xiaomi` 카메라 플랫폼은 홈어시스턴트에서 샤오미 카메라를 활용할 수 있습니다
 
 이 플랫폼을 성공적으로 구현하려면 Home Assistant 호스트가 여러개 카메라를 동시에 읽을 수 있어야합니다. 동시에 접속한 홈 어시스턴트 사용자마다 10 초마다 카메라에 연결됩니다. 이것은 일반적으로 문제가 되진 않습니다. 

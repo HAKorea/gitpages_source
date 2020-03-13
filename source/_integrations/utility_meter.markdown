@@ -11,6 +11,8 @@ ha_codeowners:
   - '@dgomes'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/qw0bk4wZCZY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `utility meter` 통합구성요소는 다양한 유틸리티 (예: 에너지, 가스, 물, 난방)의 소비를 추적하는 기능을 제공합니다.
 
 사용자 관점에서 유틸리티 미터는 청구 목적으로 주기적(일반적으로 월 단위)으로 작동합니다. 이 센서는 소스 센서값을 추적하여 설정된 주기에 따라 측정값을 자동으로 재설정합니다. 재설정시 속성은 이전 측정값을 저장하여 비교 작업을 위한 운영 비교(예를 들어 "이 달에 더 많거나 적게 썼는가?") 또는 청구 추정(예를 들어, 과금된 단위량당 계량된 값을 곱하는 센서 템플릿을 통해) 방법을 제공합니다. 

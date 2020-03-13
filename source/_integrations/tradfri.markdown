@@ -15,6 +15,8 @@ ha_codeowners:
   - '@ggravlingen'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/dkgFk8km4dk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 현재 이케아 TRADFRI 제품은 별도의 [지그비 게이트웨이](https://www.ikea.com/ca/en/p/tradfri-gateway-white-00337813/) 가 필요합니다. 허나 Zigbee2mqtt 활용시 한개의 허브로 동작시킬 수 있습니다. 이에 이케아 통합구성요소에 임시로 Zigbee2mqtt 연동 방식을 올려둡니다. 
 
 그중에서 **현재 가장 많이 쓰는 통신방식은 Zigbee 제품**임으로 [Zigbee2mqtt 설치방법](https://hakorea.github.io/integrations/zha/)를 통해 이케아 TRADFRI 제품군들을 설치하시길 권장합니다. 

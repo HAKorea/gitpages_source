@@ -8,6 +8,8 @@ ha_release: 0.56
 ha_config_flow: true
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/fcL4fPhlVVc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `dialogflow` 통합구성요소는 [Dialogflow](https://dialogflow.com/)의 [webhook](https://dialogflow.com/docs/fulfillment#webhook)통합구성요소와 함께 사용되도록 설계되었습니다. 사용자와 대화가 끝나면 Dialogflow는 웹후크에 액션과 매개 변수를 보냅니다.
 
 DialogFlow에서 메시지를 수신하려면 웹에서 홈어시스턴트 인스턴스에 액세스 할 수 있어야하고 ([Hass.io instructions](/addons/duckdns/)) HTTP 통합([docs](/integrations/http/#base_url))을 위해 `base_url`을 설정해야합니다. 서버가 응답하지 않거나 너무 오래 걸리면 (5 초 이상) Dialogflow가 대체 응답을 반환합니다.

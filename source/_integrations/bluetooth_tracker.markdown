@@ -8,7 +8,12 @@ ha_iot_class: Local Polling
 ha_release: 0.18
 ---
 
-이 추적기는 부팅시 새 장치를 검색하고 `interval_seconds` 값을 기준으로 Bluetooth 장치를 정기적으로 추적 합니다. 장치를 서로 페어링 할 필요는 없습니다! 발견 된 장치는 `known_devices.yaml`에 장치 MAC 주소의 접두사로 'bt_'와 함께 저장됩니다.
+<iframe width="690" height="437" src="https://www.youtube.com/embed/A2JaMiIXW9Q?start=426" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+
+이 추적기는 부팅시 새 장치를 검색하고 `interval_seconds` 값을 기준으로 Bluetooth 장치를 정기적으로 추적 합니다. 장치를 서로 페어링 할 필요는 없습니다! 
+
+발견된 장치는 `known_devices.yaml`에 장치 MAC 주소의 접두사로 'bt_'와 함께 저장됩니다.
 
 이 플랫폼에는 pybluez가 설치되어 있어야합니다. 데비안 기반 설치에서 다음을 실행합니다. 
 

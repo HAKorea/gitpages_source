@@ -8,6 +8,8 @@ ha_release: 0.7
 ha_quality_scale: internal
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/GlaS24QQjTs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 카메라 연동을 통해 Home Assistant에서 IP 카메라를 사용할 수 있습니다.
 
 ### 스트리밍 비디오

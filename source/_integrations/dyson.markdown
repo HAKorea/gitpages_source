@@ -11,6 +11,8 @@ ha_iot_class: Cloud Polling
 ha_release: 0.47
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/8HT_W28OzaY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `dyson` 통합구성요소는 모든 [Dyson](https://www.dyson.com) 관련 플랫폼을 연동하기위한 주요 통합구성요소입니다.
 
 현재 홈 어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.

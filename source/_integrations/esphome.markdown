@@ -12,6 +12,8 @@ ha_codeowners:
   - '@OttoWinter'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/soKuma8DJWQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 [ESPHome](https://esphome.io) 장치를 통합구성요소로 사용할 시에는 [native ESPHome API](https://esphome.io/components/api.html)로 완벽하게 직접 연결됩니다. 
 
 ### ESPHOME의 특징 ### 

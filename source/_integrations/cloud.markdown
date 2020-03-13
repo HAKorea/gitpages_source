@@ -10,6 +10,8 @@ ha_codeowners:
   - '@home-assistant/cloud'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/tXjihKy7uvQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Home Assistant Cloud를 사용하면 로컬 Home Assistant를 Amazon Alexa 및 Google Assistant와 같은 다양한 클라우드 서비스와 빠르게 통합 할 수 있습니다. [Learn more.](/cloud)
 
 ## 설정

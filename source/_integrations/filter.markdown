@@ -111,10 +111,9 @@ filters:
 
 ### Low-pass
 
-The Low-pass filter (`lowpass`) is one of signal processing most common filters, as it smooths data by shortcutting peaks and valleys.
+Low-pass 필터 (`lowpass`)는 peaks와 valleys를 단축하여 데이터를 부드럽게하기 때문에 가장 일반적인 필터를 처리하는 신호 중 하나입니다.
 
-
-The included Low-pass filter is very basic and is based on [exponential smoothing](https://en.wikipedia.org/wiki/Exponential_smoothing), in which the previous data point is weighted with the new data point.
+포함된 Low-pass 필터는 매우 기본적이며 [exponential smoothing](https://en.wikipedia.org/wiki/Exponential_smoothing)를 기반으로 하며, 이전 데이터 포인트에 새 데이터 포인트가 가중됩니다.
 
 ```python
 B = 1.0 / time_constant
@@ -122,13 +121,13 @@ A = 1.0 - B
 LowPass(state) = A * previous_state + B * state
 ```
 
-The returned value is rounded to the number of decimals defined in (`precision`).
+반환값은 (`precision`)에 정의된 소수로 반올림됩니다.
 
 ### Outlier
 
-The Outlier filter (`outlier`) is a basic Band-pass filter, as it cuts out any value outside a specific range.
+Outlier 필터 (`outlier`)는 특정범위 밖의 값을 잘라내기 때문에 기본 Band-pass 필터입니다.
 
-The included Outlier filter will discard any value beyond a band centered on the median of the previous values, replacing it with the median value of the previous values. If inside the band, the
+포함된 Outlier 필터는 이전값의 중앙값을 중심으로하는 대역(band)을 넘어서서 값을 버리고 이전 값의 중간 값으로 대체합니다. 대역안 안에 있으면 다음과 같습니다. 
 
 ```python
 distance = abs(state - median(previous_states))
@@ -141,35 +140,35 @@ else:
 
 ### Throttle
 
-The Throttle filter (`throttle`) will only update the state of the sensor for the first state in the window. This means the filter will skip all other values.
+Throttle 필터 (`throttle`)는 window의 첫 번째 상태에 대한 센서 상태만 업데이트합니다. 이는 필터가 다른 모든 값을 건너 뛰는 것을 의미합니다.
 
-To adjust the rate you need to set the window_size. To throttle a sensor down to 10%, the `window_size` should be set to 10, for 50% should be set to 2.
+비율을 조정하려면 window_size를 설정해야합니다. 센서를 10 %로 낮추려면 `window_size`를 10으로 설정해야하며 50 %는 2로 설정해야합니다.
 
-This filter is relevant when you have a sensor which produces states at a very high-rate, which you might want to throttle down for storing or visualization purposes.
+이 필터는 매우 빠른 속도로 상태를 생성하는 센서가 있을 때 적합하며, 저장 또는 시각화 목적으로 조절할 수 있습니다.
 
 ### Time Throttle
 
-The Time Throttle filter (`time_throttle`) will only update the state of the sensor for the first state in the window. This means the filter will skip all other values.
+Time Throttle 필터 (`time_throttle`)는 window의 첫 번째 상태에 대한 센서 상태만 업데이트합니다. 이는 필터가 다른 모든 값을 건너 뛰는 것을 의미합니다.
 
-To adjust the rate you need to set the window_size. To throttle a sensor down to 1 value per minute, the `window_size` should be set to 00:01.
+비율을 조정하려면 window_size를 설정해야합니다. 센서를 분당 1의 값으로 낮추려면 `window_size`를 00:01로 설정해야합니다.
 
-This filter is relevant when you have a sensor which produces states at a very high inconstant rate, which you might want to throttle down to some constant rate for storing or visualization purposes.
+이 필터는 매우 일정한 속도로 상태를 생성하는 센서가 있는 경우에 적합하며, 저장 또는 시각화 목적으로 일정한 속도로 조절할 수 있습니다.
 
 ### Time Simple Moving Average
 
-The Time SMA filter (`time_simple_moving_average`) is based on the paper [Algorithms for Unevenly Spaced Time Series: Moving Averages and Other Rolling Operators](http://www.eckner.com/papers/Algorithms%20for%20Unevenly%20Spaced%20Time%20Series.pdf) by Andreas Eckner.
+Time SMA 필터(`time_simple_moving_average`)는 Andreas Eckner의 [Algorithms for Unevenly Spaced Time Series: Moving Averages and Other Rolling Operators](http://www.eckner.com/papers/Algorithms%20for%20Unevenly%20Spaced%20Time%20Series.pdf)에 대한 논문을 기반으로합니다.
 
-The paper defines three types/versions of the Simple Moving Average (SMA): *last*, *next* and *linear*. Currently only *last* is implemented.
+이 논문은 SMA(Simple Moving Average)의 세 가지 유형/버전 : (*last*, *next* 및 *linear*)을 정의합니다. 현재 *last* 만 구현되었습니다.
 
-Theta, as described in the paper, is the `window_size` parameter, and can be expressed using time notation (e.g., 00:05 for a five minutes time window).
+논문에 기술된 바와 같이, Theta는 `window_size` 파라미터이며, 시간 표기법 (예를 들어, 5 분 시간 윈도우의 경우 00:05)을 사용하여 표현될 수있다.
 
 ### Range
 
 
-The Range filter (`range`) restricts incoming data to a range specified by a lower and upper bound.
+Range 필터(`range`)는 들어오는 데이터를 하한과 상한으로 지정된 범위로 제한합니다.
 
-All values greater then the upper bound are replaced by the upper bound and all values lower than the lower bound are replaced by the lower bound.
-Per default there are neither upper nor lower bound.
+상한(upper bound)보다 큰 모든 값은 상한으로 대체되고 하한(lower bound)보다 낮은 모든 값은 하한으로 대체됩니다.
+기본적으로 상한 또는 하한이 없습니다.
 
 ```python
 if new_state > upper_bound:

@@ -1,5 +1,5 @@
 ---
-title: 달
+title: 달(Moon)
 description: Instructions on how to integrate the moon sensor into Home Assistant.
 logo: home-assistant.png
 ha_category:

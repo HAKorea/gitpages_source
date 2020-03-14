@@ -1,5 +1,5 @@
 ---
-title: ONVIF(표준네트워크비디오)
+title: 표준네트워크비디오(ONVIF)
 description: Instructions on how to integrate a ONVIF camera within Home Assistant.
 logo: onvif.png
 ha_category:

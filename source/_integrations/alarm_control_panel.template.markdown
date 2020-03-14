@@ -1,5 +1,5 @@
 ---
-title: "템플릿 경보 판넬"
+title: 템플릿 경보 판넬(Template Alarm Control Panel)
 description: "Instructions on how to integrate Template Alarm Control Panels into Home Assistant."
 ha_category: 
   - Alarm

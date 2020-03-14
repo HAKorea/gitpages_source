@@ -1,5 +1,5 @@
 ---
-title: Openuv(세계자외선오존데이터)
+title: 세계자외선오존데이터(Openuv)
 description: Instructions on how to integrate OpenUV within Home Assistant.
 logo: openuv.jpg
 ha_category:
@@ -13,46 +13,36 @@ ha_codeowners:
   - '@bachya'
 ---
 
-The `openuv` integration displays UV and Ozone data from [openuv.io](https://www.openuv.io/).
+<iframe width="690" height="437" src="https://www.youtube.com/embed/_5uLx83s10w?list=PLWlpiQXaMerTyzl_Pe1PEloZTj9MoU5cl" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Generating an API Key
+`openuv` 통합구성요소는 [openuv.io](https://www.openuv.io/)의 UV 및 오존 데이터를 표시합니다.
 
-To generate an API key,
+## API 키 만들기
+
+API 키 만들기,
 [simply log in to the OpenUV website](https://www.openuv.io/auth/google).
 
 <div class='note warning'>
 
-Beginning February 1, 2019, the "Limited" plan (which is what new users are
-given by default) is limited to 50 API requests per day. Because different
-API plans and locations will have different requirements, the `openuv`
-component does not automatically query the API for new data after it initially
-loads. To request new data, the `update_data` service may be used.
+2019 년 2 월 1 일부터 "Limited" 플랜 (기본적으로 새로운 사용자에게 제공되는 플랜)은 하루에 50 건의 API 요청으로 제한됩니다. API 계획과 지역마다 요구 사항이 다르기 때문에 `openuv` 구성 요소는 API가 처음 로드된 후 새 데이터를 자동으로 쿼리하지 않습니다. 새로운 데이터를 요청하기 위해 `update_data` 서비스가 사용될 수 있습니다.
 
 </div>
 
 <div class='note warning'>
 
-Each use of the `update_data` service will consume 1 or 2 API calls, depending
-on which monitored conditions are configured.
+`update_data` 서비스를 사용할 때마다 모니터링 되는 조건이 설정되는 것에 따라 1 또는 2 개의 API 호출이 소비됩니다.
 
-If the OpenUV integration is configured through the Home Assistant UI (via the
-`Configuration >> Integrations` panel), each service call will consume 2 API
-calls from the daily quota.
+OpenUV 통합구성요소가 홈어시스턴트 UI를 통해 ( `설정 >> 통합구성요소` 패널을 통해) 설정된 경우 각 서비스 호출은 일일 할당량에서 2 개의 API 호출을 소비합니다.
 
-If the OpenUV integration is configured via `configuration.yaml`, service calls
-will consume 2 API calls if `monitored_conditions` contains both
-`uv_protection_window` and any other condition; any other scenarios will only
-consume 1 API call.
+`configuration.yaml`을 통해 OpenUV 연동이 설정된 경우, `monitored_conditions`에 `uv_protection_window`와 다른 조건이 모두 포함되어 있으면 서비스 호출에서 2 개의 API 호출이 소비됩니다. 다른 시나리오는 1 회의 API 호출만 소비합니다.
 
-Ensure that you understand these specifications when calling the `update_data`
-service.
+`update_data` 서비스를 호출할 때 이러한 스펙을 이해해야합니다.
 
 </div>
 
-## Configuration
+## 설정
 
-To retrieve data from OpenUV, add the following to your `configuration.yaml`
-file:
+OpenUV에서 데이터를 검색하려면 `configuration.yaml`에 다음 파일을 추가하십시오. :
 
 ```yaml
 openuv:
@@ -110,15 +100,11 @@ sensors:
           description: The approximate exposure time for skin type VI.
 {% endconfiguration %}
 
-The approximate number of minutes of a particular skin type can be exposed to
-the sun before burning/tanning starts is based on the
-[Fitzpatrick scale](https://en.wikipedia.org/wiki/Fitzpatrick_scale).
+burning/tanning을 시작하기 전에 [Fitzpatrick scale](https://en.wikipedia.org/wiki/Fitzpatrick_scale)에 근거해서 특정 피부 타입에 따라 태양에 노출될 수 있는 대략적인 시간 (분) 나타납니다. 
 
-## Full Configuration Example
+## 전체 설정 사례
 
-To configure additional functionality, add configuration options beneath a
-`binary_sensor` and/or `sensor` key within the `openuv` section of the
-`configuration.yaml` file as below:
+추가 기능을 설정하려면 다음과 같이 `configuration.yaml` 파일의 `openuv` 섹션에 있는 `binary_sensor` 및/또는 `sensor` 키 아래에 설정 옵션을 추가하십시오.
 
 ```yaml
 openuv:
@@ -141,29 +127,26 @@ openuv:
 ```
 
 <div class='note warning'>
-The above guidelines constitute estimates and are intended to help informed
-decision making. They should not replace analysis, advice or diagnosis from a
-trained medical professional.
+위의 지침은 추정치를 구성하며 정보에 근거한 의사 결정을 돕기위한 것입니다. 숙련된 의료 전문가의 분석, 조언 또는 진단을 대체해서는 안됩니다.
 </div>
 
-## Services
+## 서비스
 
 ### `openuv.update_data`
 
-Perform an on-demand update of OpenUV data.
+주문형 OpenUV 데이터 업데이트를 수행하십시오.
 
 ### `openuv.update_uv_index_data`
 
-Perform an on-demand update of OpenUV sensor data including current UV index, but not the `uv_protection_window`, saving an API call over `update_data`.
+`uv_protection_window`가 아닌 현재 UV 인덱스를 포함한 OpenUV 센서 데이터의 주문형 업데이트를 수행하여 update_data에 대한 API 호출을 저장합니다.
 
 ### `openuv.update_protection_data`
 
-Perform an on-demand update of OpenUV `uv_protection_window` data, but not the sensors, saving an API call.
+센서 호출이 아닌 OpenUV `uv_protection_window` 데이터의 주문형 업데이트를 수행하여 API 호출을 저장하십시오.
 
-## Examples of Updating Data
+## 업데이트되고 있는 데이터의 사례
 
-One method to retrieve data every 30 minutes and still leave plenty of API key
-usage is to only retrieve data during the daytime:
+30 분마다 데이터를 검색하고 여전히 많은 API 키 사용량을 남기는 한 가지 방법은 낮 동안만 데이터를 검색하는 것입니다.
 
 ```yaml
 automation:
@@ -182,7 +165,7 @@ automation:
       service: openuv.update_data
 ```
 
-Update only the sensors every 20 minutes while the sun is at least 10 degrees above the horizon:
+태양이 수평선 위로 10도 이상인 동안 20 분마다 센서만 업데이트하십시오.
 
 ```yaml
 automation:
@@ -199,7 +182,7 @@ automation:
       service: openuv.update_uv_index_data
 ```
 
-Update the protection window once a day:
+하루에 한 번 protection window를 업데이트하십시오. : 
 ```yaml
 automation:
   - alias: Update OpenUV protection window once a day
@@ -210,9 +193,7 @@ automation:
       service: openuv.update_protection_data
 ```
 
-Another method (useful when monitoring locations other than the Home Assistant latitude
-and longitude, in locations where there is a large amount of sunlight per day,
-etc.) might be to simply query the API less often:
+또 다른 방법 (하루에 햇빛이 많은 장소 등에서 홈어시스턴트 위도와 경도 이외의 위치를 ​​모니터링 할 때 유용함)은 API를 덜 자주 쿼리하는 것입니다.
 
 ```yaml
 automation:

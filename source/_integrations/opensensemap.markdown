@@ -1,5 +1,5 @@
 ---
-title: openSenseMap(지도기반 공기질 데이터)
+title: 오픈공기질데이터(openSenseMap)
 description: Instructions on how to setup openSenseMap sensors in Home Assistant.
 logo: opensensemap.png
 ha_category:

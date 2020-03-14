@@ -10,6 +10,8 @@ ha_codeowners:
   - '@bachya'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/k9UsPNP0Oic?list=PLWlpiQXaMerTyzl_Pe1PEloZTj9MoU5cl" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 The `wwlln` integration displays lightning strike information from the
 [World Wide Lightning Location Network (WWLLN)](https://wwlln.net/).
 

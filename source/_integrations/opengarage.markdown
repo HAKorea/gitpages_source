@@ -1,11 +1,13 @@
 ---
-title: OpenGarage(오픈소스차고문)
+title: 오픈소스차고문(OpenGarage)
 description: Instructions on how to integrate OpenGarage.io covers within Home Assistant.
 logo: opengarage.png
 ha_category:
   - DIY
 ha_release: 0.44
 ---
+
+<iframe width="690" height="437" src="https://www.youtube.com/embed/HpwEa_48-Cw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The `opengarage` cover platform lets you control the open-source [OpenGarage.io](https://opengarage.io/) device through Home Assistant.
 

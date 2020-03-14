@@ -8,15 +8,19 @@ ha_release: 0.69
 ha_iot_class: Cloud Polling
 ---
 
-The `socialblade` sensor platform allows you to monitor a YouTube channels subscriber count and total views count. The sensor retrieves data from the [Social Blade website](https://socialblade.com).
+<iframe width="690" height="437" src="https://www.youtube.com/embed/Hb0ks2fcpbo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Setup
+The `socialblade` sensor platform allows you to monitor a YouTube channels subscriber count and total views count. The sensor retrieves data from the [Social Blade website](https://socialblade.com).
+`socialblade` 센서 플랫폼을 사용하면 YouTube 채널 가입자수와 총조회수를 모니터링 할 수 있습니다. 센서는 [Social Blade website](https://socialblade.com)에서 데이터를 검색합니다.
+
+## 셋업
 
 To get the YouTube channel ID, search for and select the channel on the [Social Blade website](https://socialblade.com). The channel ID will be at the end of the Social Blade URL: `https://socialblade.com/youtube/channel/{channel_id}`
+YouTube 채널 ID를 얻으려면 [Social Blade website](https://socialblade.com)에서 채널을 검색하여 선택하십시오. 채널 ID는 소셜 블레이드 URL 끝에 있습니다 : `https://socialblade.com/youtube/channel/{channel_id}`
 
-## Configuration
+## 설정
 
-To enable the sensor, add the following lines to your `configuration.yaml` file:
+센서를 활성화하려면 `configuration.yaml` 파일에 다음 라인을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry

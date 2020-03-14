@@ -8,6 +8,8 @@ ha_release: '0.40'
 ha_config_flow: true
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/JCjzEKdlezk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 The `twilio` integration enables the sending of notifications via SMS and the creation of calls with [Twilio](https://twilio.com).
 
 A free trial account is available at [Twilio](https://twilio.com) website providing free calls to verified phone numbers.

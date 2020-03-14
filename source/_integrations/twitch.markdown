@@ -8,6 +8,8 @@ ha_release: '0.10'
 ha_iot_class: Cloud Polling
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/bgMnZzFCKiw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `twitch` 플랫폼을 사용하면 Home Assistant 내에서 [Twitch](https://www.twitch.tv/) 채널 상태를 모니터링하고 정보를 기반으로 자동화를 설정할 수 있습니다.
 
 ## 셋업

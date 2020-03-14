@@ -19,6 +19,8 @@ ha_codeowners:
 - [Sensor](#sensor)
 - [Switch](#switch)
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/CEwuMh80CSA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Remote
 
 `broadlink` 원격 플랫폼은 Broadlink 원격 제어 장치와 상호 작용할 수 있습니다.

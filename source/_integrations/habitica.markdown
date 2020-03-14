@@ -9,6 +9,8 @@ ha_release: 0.78
 ha_iot_class: Cloud Polling
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/Al6QgbOdMqI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 이 통합구성요소를 통해 Habitica 프로필을 모니터링하고 관리 할 수 ​​있습니다. 이 통합구성요소는 [Habitica 's API](https://habitica.com/apidoc/)를 홈어시스턴트 서비스로 노출시킵니다. 여러 사용자를 지원하며 홈어시스턴트를 사용하여 습관 및 일상적인 작업을 확인하거나 마법을 캐스팅 할 수 있습니다.
 
 현재 홈 어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.

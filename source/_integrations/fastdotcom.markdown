@@ -11,6 +11,8 @@ ha_codeowners:
   - '@rohankapoorcom'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/qtNoo4W5dSc?list=PLWlpiQXaMerTyzl_Pe1PEloZTj9MoU5cl" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `fastdotcom` 통합구성요소는 [Fast.com](https://fast.com/) 웹서비스를 사용하여 네트워크 대역폭 성능을 측정합니다.
 
 <div class='note'>

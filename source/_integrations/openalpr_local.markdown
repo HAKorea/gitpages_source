@@ -1,5 +1,5 @@
 ---
-title: OpenALPR Local(차량번호판인식)
+title: 차량번호판인식(OpenALPR Local)
 description: Instructions on how to integrate licences plates with OpenALPR local into Home Assistant.
 logo: openalpr.png
 ha_category:

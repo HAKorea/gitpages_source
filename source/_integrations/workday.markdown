@@ -11,6 +11,8 @@ ha_codeowners:
   - '@fabaff'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/MQJvwuwz3Ig" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `workday` 이진 센서는 현재 일이 근무일인지 여부를 나타냅니다. 요일로 계산할 요일을 지정할 수 있으며 Python 모듈 [holidays](https://pypi.python.org/pypi/holidays)을 사용하여 지역별 공휴일에 대한 정보를 연동할 수 있습니다.
 
 ## 셋업

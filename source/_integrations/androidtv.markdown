@@ -26,6 +26,9 @@ Fire TV 장치의 지침은 다음과 같습니다.
   - From the main (Launcher) screen, select Settings.
   - Select My Fire TV > About > Network.
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/m4kDsy36x5U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+
 ## 설정 
 
 ```yaml

@@ -8,11 +8,11 @@ ha_iot_class: Local Polling
 ha_release: 0.17
 ---
 
-The `rpi_camera` platform allows you to integrate the Raspberry Pi camera into Home Assistant. This integration uses the application [`raspistill`](https://www.raspberrypi.org/documentation/usage/camera/raspicam/raspistill.md) to store the image from camera.
+`rpi_camera` 플랫폼을 사용하면 Raspberry Pi 카메라를 Home Assistant에 연동할 수 있습니다. 이 통합구성요소는 애플리케이션 [`raspistill`](https://www.raspberrypi.org/documentation/usage/camera/raspicam/raspistill.md)을 사용하여 카메라의 이미지를 저장합니다.
 
-## Configuration
+## 설정
 
-To enable this camera in your installation, add the following to your `configuration.yaml` file:
+설치시 이 카메라를 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -68,4 +68,4 @@ file_path:
   default: A temporary file is used.
 {% endconfiguration %}
 
-The given **file_path** must be an existing file because the camera platform setup performs a writeable check on it. Also, keep in mind that the path should be [whitelisted](/docs/configuration/basic/).
+카메라 플랫폼 설정에서 쓰기 가능한 검사를 수행하므로 지정된 **file_path**는 기존 파일이어야합니다. 또한 경로는 [whitelisted](/docs/configuration/basic/)이어야합니다.

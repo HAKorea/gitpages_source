@@ -3,6 +3,8 @@ title: "Lovelace YAML 모드(직접 편집 모드)"
 description: "Advanced users can switch on YAML mode for editing the Lovelace UI."
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/n5xMtONydEo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 UI 대신 YAML로 작성하여 Home Assistant 인터페이스를 사용자 정의 할 수 있습니다. 이렇게하려면 `configuration.yaml`에 다음 내용을 추가하여 Lovelace 통합을 yaml 모드로 설정하십시오.  
 
 ```yaml

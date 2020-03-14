@@ -7,7 +7,7 @@ ha_category:
 ha_release: 0.43
 ---
 
-The `lifx_cloud` scene platform allows you to activate the scenes that LIFX smartphone apps store in the LIFX cloud.
+`lifx_cloud` 장면(scene) 플랫폼을 사용하면 LIFX 클라우드에 LIFX 스마트폰 앱이 저장한 장면을 활성화 할 수 있습니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -16,7 +16,7 @@ scene:
     token: YOUR_LIFX_TOKEN
 ```
 
-You can then activate each scene with its name from the smartphone app:
+그런 다음 스마트폰 앱에서 각 장면의 이름을 활성화 할 수 있습니다.
 
 ```yaml
   - service: scene.turn_on
@@ -35,9 +35,9 @@ timeout:
   type: integer
 {% endconfiguration %}
 
-### Getting an API token
+### API 토큰 받기
 
-You create your API token on the LIFX website:
+LIFX 웹 사이트에서 API 토큰을 만듭니다. :
 1. Sign in to the [LIFX Cloud](https://cloud.lifx.com/)
 2. Click on your e-mail address and select _Personal Access Tokens_
 3. Now click _Generate New Token_

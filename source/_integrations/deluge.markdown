@@ -10,6 +10,8 @@ ha_release: 0.57
 ha_iot_class: Local Polling
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/cqvyPHq0gmg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - [Sensor](#sensor)

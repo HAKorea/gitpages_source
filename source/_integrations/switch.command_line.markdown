@@ -1,5 +1,5 @@
 ---
-title: "컴맨드 라인 스위치"
+title: "컴맨드 라인 스위치(Command Line Switch)"
 description: "Instructions on how to have switches call command line commands."
 logo: command_line.png
 ha_category:

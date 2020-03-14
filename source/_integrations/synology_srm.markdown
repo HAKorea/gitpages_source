@@ -1,5 +1,5 @@
 ---
-title: 시놀로지 SRM
+title: 시놀로지 SRM(Synology SRM)
 description: Instructions on how to integrate Synology SRM routers into Home Assistant.
 logo: synology.png
 ha_category:

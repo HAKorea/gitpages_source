@@ -1,5 +1,5 @@
 ---
-title: Enedis Linky
+title: 프랑스 전력측정플랫폼(Enedis Linky)
 description: Instructions on how to integrate Linky consumption data within Home Assistant.
 logo: enedis.png
 ha_release: 0.79

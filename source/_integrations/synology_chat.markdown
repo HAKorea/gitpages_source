@@ -1,5 +1,5 @@
 ---
-title: 시놀로지 Chat
+title: 시놀로지 Chat(Synology Chat)
 description: Instructions on how to add a Synology Chat Bot notifications to Home Assistant.
 ha_release: 0.65
 logo: synology.png

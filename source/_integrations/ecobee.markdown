@@ -16,6 +16,8 @@ ha_codeowners:
   - '@marthoc'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/wMT4TABxa7Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `ecobee` 통합구성요소를 통해 [ecobee](https://ecobee.com)온도 조절기의 센서 데이터를 제어하고 볼 수 있습니다.
 
 ## 예비 단계

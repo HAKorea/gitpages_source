@@ -8,6 +8,8 @@ ha_iot_class: Local Polling
 ha_release: 0.82
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/iKQC4oCvSXU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `tensorflow` 이미지 처리 플랫폼을 사용하면 [TensorFlow](https://www.tensorflow.org/)를 사용하여 카메라 이미지의 객체를 감지하고 인식 할 수 있습니다. 개체의 상태는 감지된 개체의 수이며 인식된 개체는 수량과 함께 `summary` 속성에 나열됩니다. `matches` 속성은 인식에 대한 신뢰도 `score`와 각 탐지 범주에 대한 객체의 경계 `box`를 제공합니다.
 
 <div class='note warning'>

@@ -11,6 +11,8 @@ ha_release: 0.64
 ha_iot_class: Cloud Polling
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/S7swBqdr8lk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `august` 통합구성요소를 통해 [August](https://august.com/) 장치를 Home Assistant에 연동할 수 있습니다.
 
 현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.

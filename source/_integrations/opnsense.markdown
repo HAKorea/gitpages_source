@@ -1,5 +1,5 @@
 ---
-title: OPNSense(오픈소스방화벽)
+title: 오픈소스방화벽(OPNSense)
 description: Instructions on how to configure OPNsense integration
 logo: opnsense.png
 ha_category:

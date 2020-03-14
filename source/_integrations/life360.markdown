@@ -1,5 +1,5 @@
 ---
-title: Life360 위치추적기
+title: 위치추적기(Life360)
 description: Instructions how to use Life360 to track devices in Home Assistant.
 logo: life360.png
 ha_release: 0.95
@@ -10,6 +10,8 @@ ha_iot_class: Cloud Polling
 ha_codeowners:
   - '@pnbruckner'
 ---
+
+<iframe width="690" height="437" src="https://www.youtube.com/embed/lPDpd5OcisM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 `life360` 통합구성요소로 [Life360](https://www.life360.com/)의 [unofficial API](#disclaimer)를 사용하여 현재 상태를 감지 할 수 있습니다.
 

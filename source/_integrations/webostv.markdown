@@ -11,6 +11,8 @@ ha_codeowners:
   - '@bendavid'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/f0i2R1cMWBg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 The `webostv` platform allows you to control a [LG](https://www.lg.com/) webOS Smart TV.
 이 webostv플랫폼을 사용하면 [LG](https://www.lg.com/) webOS 스마트 TV 를 제어 할 수 있습니다 .
 

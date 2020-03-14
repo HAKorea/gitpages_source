@@ -1,5 +1,5 @@
 ---
-title: Kaiterra(공기측정기)
+title: 공기측정기(Kaiterra)
 description: Instructions on how to integrate your Kaiterra device into Home Assistant.
 logo: kaiterra.svg
 ha_iot_class: Cloud Polling

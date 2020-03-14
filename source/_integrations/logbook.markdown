@@ -1,5 +1,5 @@
 ---
-title: 로그북
+title: 로그북(logbook)
 description: Instructions on how to enable the logbook integration for Home Assistant.
 logo: logbook.png
 ha_category:

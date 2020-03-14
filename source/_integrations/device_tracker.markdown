@@ -8,6 +8,8 @@ ha_release: 0.7
 ha_quality_scale: internal
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/whGuasU9wEw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 device_tracker를 사용하면 Home Assistant에서 장치를 추적 할 수 있습니다. 이것은 무선 라우터를 쿼리하거나 응용 프로그램이 위치 정보를 푸시하도록하여 설정할 수 있습니다.
 
 ## device_tracker 플랫폼 설정

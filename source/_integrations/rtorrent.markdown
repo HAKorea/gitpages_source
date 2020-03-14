@@ -1,5 +1,5 @@
 ---
-title: rTorrent
+title: 알토렌트(rTorrent)
 description: Instructions on how to integrate rtorrent sensors within Home Assistant.
 logo: rtorrent.png
 ha_category:
@@ -8,9 +8,9 @@ ha_release: 0.81
 ha_iot_class: Local Polling
 ---
 
-The `rtorrent` platform allows you to monitor your downloads with [rtorrent](https://rakshasa.github.io/rtorrent/) from within Home Assistant and setup automations based on the information.
+`rtorrent` 플랫폼을 사용하면 Home Assistant 내에서 [rtorrent](https://rakshasa.github.io/rtorrent/) 및 정보를 기반으로 설정 자동화를 통해 다운로드를 모니터링 할 수 있습니다.
 
-To enable this sensor, add the following lines to your `configuration.yaml`:
+이 센서를 `configuration.yaml`에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -23,11 +23,11 @@ sensor:
       - 'upload_speed'
 ```
 
-This sensor requires the rtorrent XMLRPC API exposed on an HTTP interface.
-Note that for security reasons, simply using the SCGI interface (default `localhost:5000`) of rtorrent won't work.
-The [official reference](https://github.com/rakshasa/rtorrent/wiki/RPC-Setup-XMLRPC) describes how to set up that HTTP interface.
+이 센서에는 HTTP 인터페이스에 노출 된 rtorrent XMLRPC API가 필요합니다.
+보안상의 이유로 rtorrent의 SCGI 인터페이스 (기본 `localhost:5000`)를 사용하는 것만으로는 작동하지 않습니다. 
 
 Alternatively, the [arch-rtorrentvpn](https://github.com/binhex/arch-rtorrentvpn) container can be used with `url` set to `http://admin:rutorrent@127.0.0.1:9080/RPC2`.
+[official reference](https://github.com/rakshasa/rtorrent/wiki/RPC-Setup-XMLRPC)는 해당 HTTP 인터페이스를 설정하는 방법을 설명합니다.
 
 {% configuration %}
 url:

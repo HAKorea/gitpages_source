@@ -9,6 +9,8 @@ ha_codeowners:
   - '@rolfberkenbosch'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/U_bDXha6mwk?list=PLWlpiQXaMerTyzl_Pe1PEloZTj9MoU5cl" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 The `MeteoAlarm` platform allows one to watch for weather alerts in europe from [MeteoAlarm](https://www.meteoalarm.eu) (EUMETNET). To use this binary sensor, you need the two digits of your country and the province name from  [MeteoAlarm](https://www.meteoalarm.eu). Please note that you need to write the exact details from the website with capitals.
 
 The binary sensor state shows if applicable the warning message. The details are available as attribute.

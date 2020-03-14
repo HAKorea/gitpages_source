@@ -1,5 +1,5 @@
 ---
-title: 키보드
+title: 키보드(Keyboard)
 description: Instructions on how to simulate key presses with Home Assistant.
 logo: keyboard.png
 ha_category:

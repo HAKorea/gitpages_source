@@ -1,5 +1,5 @@
 ---
-title: NAD(명품오디오리시버)
+title: 명품오디오리시버(NAD)
 description: Instructions on how to integrate NAD receivers into Home Assistant.
 logo: nad.png
 ha_category:

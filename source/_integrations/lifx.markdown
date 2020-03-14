@@ -9,21 +9,23 @@ ha_release: 0.81
 ha_config_flow: true
 ---
 
-The `lifx` integration allows you to integrate your [LIFX](https://www.lifx.com) into Home Assistant.
+<iframe width="690" height="437" src="https://www.youtube.com/embed/TXjSIOPo9LU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-_Please note, the `lifx` integration does not support Windows. The `lifx_legacy` light platform (supporting basic functionality) can be used instead._
+`lifx` 통합구성요소를 통해 [LIFX](https://www.lifx.com)를 Home Assistant에 연동할 수 있습니다.
 
-You can configure the LIFX integration by going to the integrations page inside the config panel.
+_lifx 통합은 Windows를 지원하지 않습니다. `lifx_legacy` 라이트 플랫폼 (기본 기능 지원)을 대신 사용할 수 있습니다 ._
+
+설정 패널 내부의 **통합구성요소 페이지**로 이동하여 LIFX 연동을 설정할 수 있습니다.
 
 ## Set state
 
-The LIFX bulbs allow a change of color and brightness even when they are turned off. This way you can control the light during the day so its settings are correct when events for turning on are received, for example from motion detectors or external buttons.
+LIFX 전구는 꺼져 있어도 색상과 밝기를 변경할 수 있습니다. 이렇게하면 낮 동안 조명을 제어하여 동작 탐지기나 외부 버튼 등을 켜는 이벤트가 수신될 때 설정이 정확히 반영됩니다.
 
-The normal `light.turn_on` call cannot be used for this because it always turns the power on. Thus, LIFX has its own service call that allows color changes without affecting the current power state.
+정상적인 `light.turn_on` 호출은 항상 전원을 켜기 때문에 사용할 수 없습니다. 따라서 LIFX에는 현재 전원 상태에 영향을 주지 않고 색상을 변경할 수 있는 자체 서비스 호출이 있습니다.
 
-### Service `lifx.set_state`
+### `lifx.set_state` 서비스
 
-Change the light to a new state.
+조명을 새로운 상태로 변경하십시오.
 
 | Service data attribute | Description |
 | ---------------------- | ----------- |
@@ -34,9 +36,9 @@ Change the light to a new state.
 | `power` | Turn the light on (`True`) or off (`False`). Leave out to keep the power as it is.
 | `...` | Use `color_name`, `brightness` etc. from [`light.turn_on`]({{site_root}}/integrations/light/#service-lightturn_on) to specify the new state.
 
-## Light effects
+## 조명 효과
 
-The LIFX platform supports several light effects. You can start these effects with default options by using the `effect` attribute of the normal [`light.turn_on`]({{site_root}}/integrations/light/#service-lightturn_on) service, for example like this:
+LIFX 플랫폼은 여러 가지 조명 효과를 지원합니다. 일반 [`light.turn_on`]({{site_root}}/integrations/light/#service-lightturn_on) 서비스의 `effect` 속성을 사용하여 기본 옵션으로 이러한 효과를 시작할 수 있습니다. 예를 들면 다음과 같습니다.
 ```yaml
 automation:
   - alias: ...
@@ -49,7 +51,7 @@ automation:
           effect: lifx_effect_pulse
 ```
 
-However, if you want to fully control a light effect, you have to use its dedicated service call, like this:
+그러나 조명 효과를 완전히 제어하려면 다음과 같이 전용 서비스 요청을 사용해야합니다.
 ```yaml
 script:
   colorloop_start:
@@ -64,11 +66,11 @@ script:
           change: 35
 ```
 
-The available light effects and their options are listed below.
+사용 가능한 조명 효과 및 옵션은 다음과 같습니다.
 
-### Service `lifx.effect_pulse`
+### `lifx.effect_pulse` 서비스
 
-Run a flash effect by changing to a color and then back.
+색상을 변경한 다음 다시 플래시 효과를 실행하십시오.
 
 | Service data attribute | Description |
 | ---------------------- | ----------- |
@@ -81,9 +83,9 @@ Run a flash effect by changing to a color and then back.
 | `mode` | The way to change between colors. Valid modes: `blink` (default - direct transition to new color for 'period' time with original color between cycles), `breathe` (color fade transition to new color and back to original), `ping` (short pulse of new color), `strobe` (light turns off between color changes), `solid`(light does not return to original color between cycles).
 | `power_on` | Set this to False to skip the effect on lights that are turned off (defaults to True).
 
-### Service `lifx.effect_colorloop`
+### `lifx.effect_colorloop` 서비스
 
-Run an effect with colors looping around the color wheel. All participating lights will coordinate to keep similar (but not identical) colors.
+color wheel 주변으로 색상이 반복되는 효과를 실행합니다. 모든 여기 참가한 라이트는 유사한 (완전히 일치하지 않지만) 색상을 유지하도록 조정됩니다.
 
 | Service data attribute | Description |
 | ---------------------- | ----------- |
@@ -95,18 +97,18 @@ Run an effect with colors looping around the color wheel. All participating ligh
 | `spread` | Maximum color difference between participating lights, in degrees on a color wheel (ranges from 0 to 359).
 | `power_on` | Set this to False to skip the effect on lights that are turned off (defaults to True).
 
-### Service `lifx.effect_stop`
+### `lifx.effect_stop` 서비스
 
-Run an effect that does nothing, thereby stopping any other effect that might be running.
+아무 것도하지 않는 효과를 실행하면 실행중인 다른 효과가 중지됩니다.
 
 | Service data attribute | Description |
 | ---------------------- | ----------- |
 | `entity_id` | String or list of strings that point at `entity_id`s of lights. Else targets all.
 
 
-## Advanced configuration
+## 고급 설정
 
-There are some manual configuration options available. These are only needed with unusual network setups where automatic configuration does not find your LIFX devices.
+사용 가능한 일부 수동 설정 옵션이 있습니다. 자동 설정에서 LIFX 장치를 찾지 못하는 비정상적인 네트워크 설정에서만 필요합니다.
 
 ```yaml
 # Example configuration.yaml entry

@@ -8,6 +8,8 @@ ha_release: 0.7.6
 ha_iot_class: Local Polling
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/E99-17XyyUg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `rest` 스위치 플랫폼을 사용하면 [RESTful API](https://en.wikipedia.org/wiki/Representational_state_transfer)를 지원하는 지정된 엔드 포인트를 제어할 수 있습니다. 스위치는 GET을 통해 상태를 얻고 주어진 REST 리소스에서 POST를 통해 상태를 설정할 수 있습니다.
 
 ## 설정

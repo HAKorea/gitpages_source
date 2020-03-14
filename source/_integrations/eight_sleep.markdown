@@ -12,6 +12,8 @@ ha_codeowners:
   - '@mezz64'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/4WjyYL88olA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `eight_sleep` 통합구성요소를 통해 Home Assistant는 [Eight Sleep](https://eightsleep.com/) 스마트 커버 또는 매트리스에서 데이터를 가져올 수 있습니다.
 
 현재 홈 어시스턴트에서 다음 장치 유형이 지원됩니다.

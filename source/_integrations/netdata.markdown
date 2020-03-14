@@ -10,6 +10,8 @@ ha_codeowners:
   - '@fabaff'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/8w_yh657ENk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 The `netdata` sensor platform allows you to display information collected by [Netdata](https://my-netdata.io/).
 
 ## Setup

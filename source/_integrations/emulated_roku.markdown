@@ -9,10 +9,8 @@ ha_iot_class: Local Push
 ha_config_flow: true
 ---
 
-Multiple Roku servers may be started if you run out of buttons by specifying multiple server entries.
 이 통합구성요소는 에뮬레이트 된 Roku API를 Home Assistant에 연동하므로 Harmony 및 Android 앱과 같은 원격 장치는 마치 Roku 플레이어인 것처럼 WiFi를 통해 연결할 수 있습니다.
 홈어시스턴트는 키의 눌림(presses) 및 앱실행을 이벤트로 보고 자동화의 트리거로 사용할 수 있습니다.
-Multiple Roku servers may be started if you run out of buttons by specifying multiple server entries.
 여러 서버 항목을 지정하여 단추(buttons)가 부족하면 여러 Roku 서버가 시작될 수 있습니다.
 
 <div class='note'>

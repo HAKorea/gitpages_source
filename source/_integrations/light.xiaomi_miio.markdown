@@ -1,5 +1,5 @@
 ---
-title: "샤오미 필립스 조명"
+title: 샤오미 필립스 조명(Xiaomi Philips Light)
 description: "Instructions on how to integrate your Xiaomi Philips Lights within Home Assistant."
 logo: philips.png
 ha_category:

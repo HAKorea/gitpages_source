@@ -12,6 +12,8 @@ ha_codeowners:
   - '@oblogic7'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/jcTo9HP65uU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `doorbird` 구현을 통해 [DoorBird](https://www.doorbird.com/) 장치를 Home Assistant에 연동할 수 있습니다.
 
 현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.

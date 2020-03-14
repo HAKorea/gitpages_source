@@ -10,6 +10,8 @@ ha_iot_class: Local Polling
 ha_release: 0.86
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/iEveqz6br3Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 [Roku](https://www.roku.com/) 통합구성요소는 Roku 연동을 허용하며, [discovery component](/integrations/discovery/)를 활성화하면 자동으로 검색됩니다.
 
 현재 홈어시스턴트에는 다음 장치 유형이 지원됩니다.

@@ -1,11 +1,13 @@
 ---
-title: 텔레그램
+title: 텔레그램(Telegram)
 description: Instructions on how to add Telegram notifications to Home Assistant.
 logo: telegram.png
 ha_category:
   - Notifications
 ha_release: 0.7.5
 ---
+
+<iframe width="690" height="437" src="https://www.youtube.com/embed/qskqdjUZcRY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 `telegram` 플랫폼은 [Telegram](https://web.telegram.org)을 사용하여 Home Assistant에서 Android 장치, Windows 전화 또는 iOS 장치로 알림을 전달합니다.
 

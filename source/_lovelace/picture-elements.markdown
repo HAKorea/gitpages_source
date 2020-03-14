@@ -8,6 +8,8 @@ Picture elements 카드는 가장 다양한 유형의 카드 중 하나입니다
 
 좌표를 기준으로 한 이미지 위에 이 카드를 사용하면 아이콘이나 텍스트, 심지어 서비스까지 배치할 수 있습니다! 평면도(floorplan)를 그려보세요! [picture-glance](/lovelace/picture-glance/)로 어떤 제한도 없이 그려보세요 !
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/LsFUwqb-6As" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 <p class='img'>
   <img src='/images/lovelace/lovelace_picture_elements.gif' alt='A functional floorplan powered by picture elements'>
   Picture Elements로 구현된 기능적인 평면도(floorplan)

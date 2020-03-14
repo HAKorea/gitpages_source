@@ -1,5 +1,5 @@
 ---
-title: 키보드 Remote
+title: 키보드 리모트(Keyboard Remote)
 description: Instructions on how to use a keyboard to remote control Home Assistant.
 logo: keyboard.png
 ha_category:

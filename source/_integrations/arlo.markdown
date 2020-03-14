@@ -10,6 +10,7 @@ ha_category:
 ha_release: 0.46
 ha_iot_class: Cloud Polling
 ---
+<iframe width="690" height="437" src="https://www.youtube.com/embed/aUbv1wHOxzU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 이 `arlo` 구현을 통해 [Arlo](https://arlo.netgear.com/) 장치를 Home Assistant에 연동할 수 있습니다 .
 

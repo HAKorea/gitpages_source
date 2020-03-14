@@ -1,5 +1,5 @@
 ---
-title: Lightwave
+title: 영국 스마트홈 전문회사(Lightwave)
 description: Instructions on how to integrate Lightwave devices with Home Assistant.
 logo: lightwave.png
 ha_category:

@@ -10,6 +10,8 @@ ha_iot_class: Local Polling
 ha_config_flow: true
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/4KMJDOWa_ao" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 홈어시스턴트에서 설정 - 통합구성요소로 이동하여 Cast 통합구성요소를 추가하여 사용할 수 있습니다.
 
 ## Home Assistant Cast

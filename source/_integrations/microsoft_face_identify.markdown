@@ -1,5 +1,5 @@
 ---
-title: Microsoft 안면 식별
+title: MS 얼굴식별(Microsoft Face Identify)
 description: Instructions on how to integrate Microsoft Face Identify into Home Assistant.
 logo: microsoft.png
 ha_category:

@@ -1,5 +1,5 @@
 ---
-title: 깃허브
+title: 깃허브(Github)
 description: How to integrate the GitHub sensor into Home Assistant.
 logo: github.png
 ha_category:

@@ -1,5 +1,5 @@
 ---
-title: 마이크로소프트 Teams
+title: Microsoft Teams
 description: Instructions on how to send a notification to a Microsoft Teams channel.
 logo: msteams.jpg
 ha_category:

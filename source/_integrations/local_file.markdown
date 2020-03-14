@@ -1,5 +1,5 @@
 ---
-title: 로컬 파일
+title: 로컬 파일(Local File)
 description: Instructions how to use Local File as a Camera within Home Assistant.
 logo: file.png
 ha_category:

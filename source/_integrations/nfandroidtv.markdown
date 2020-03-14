@@ -7,6 +7,8 @@ ha_category:
 ha_release: 0.32
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/zgm9kK93CKw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 [Notifications for Android TV](https://play.google.com/store/apps/details?id=de.cyberdream.androidtv.notifications.google) 및 [Notifications for FireTV](https://play.google.com/store/apps/details?id=de.cyberdream.firenotifications.google) 알림 플랫폼. 이 플랫폼을 사용하여 Android TV 장치에 알림을 보낼 수 있습니다. 메시지 내용이 포함된 오버레이가 설정 가능한 시간 (초) 동안 나타난 다음 다시 사라집니다. 이미지 전송(예 : 보안 캠)도 지원됩니다.
 
 알림은 Android TV 장치의 전체 범위에 있습니다. 실행중인 응용 프로그램에 관계없이 표시됩니다.

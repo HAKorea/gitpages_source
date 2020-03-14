@@ -1,5 +1,5 @@
 ---
-title: Person 추적
+title: (퍼슨)Person
 description: Instructions on how to set up people tracking within Home Assistant.
 logo: home-assistant.png
 ha_category:

@@ -1,5 +1,5 @@
 ---
-title: 로지 써클
+title: 로지 써클(Logi Circle)
 description: Instructions on how to integrate your Logi Circle cameras within Home Assistant.
 logo: logi_circle.png
 ha_category:

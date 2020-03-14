@@ -1,5 +1,5 @@
 ---
-title: LG Soundbars(엘지사운드바)
+title: 엘지 사운드바(LG Soundbars)
 description: Instructions on how to integrate LG Soundbars into Home Assistant.
 logo: lg.png
 ha_category:

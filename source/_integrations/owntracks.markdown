@@ -1,5 +1,5 @@
 ---
-title: OwnTracks
+title: 오운트랙(OwnTracks)
 description: Instructions on how to use Owntracks to track devices in Home Assistant.
 logo: owntracks.png
 ha_category:

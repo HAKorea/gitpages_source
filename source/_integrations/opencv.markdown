@@ -1,5 +1,5 @@
 ---
-title: OpenCV(오픈소스이미지프로세싱)
+title: 오픈소스이미지프로세싱(OpenCV)
 description: Instructions on how to integrate OpenCV image processing into Home Assistant.
 logo: opencv.png
 ha_category:

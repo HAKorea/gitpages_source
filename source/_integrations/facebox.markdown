@@ -7,6 +7,8 @@ ha_category:
 ha_release: 0.7
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/k7u97Pm2tT4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `facebox` 이미지 처리 플랫폼을 사용하면 [Facebox](https://machinebox.io/docs/facebox)를 사용하여 카메라 이미지에서 얼굴을 감지하고 인식할 수 있습니다. 엔티티의 상태는 감지된 얼굴의 수이며 인식된 얼굴은 `matched_faces` 속성에 나열됩니다. 인식된 각 얼굴에 대해 `image_processing.detect_face` 이벤트가 발생하며 이벤트 `data`는 해당 인식의 `confidence`을 제공하며, 사람의 `name`, 사진과 매치되어 연관된 `image_id`, 이미지에 얼굴을 포함한 `bounding_box`, `entity_id` 프로세싱이 수행됩니다.  
 
 ## 셋업

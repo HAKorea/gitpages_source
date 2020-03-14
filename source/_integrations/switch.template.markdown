@@ -1,5 +1,5 @@
 ---
-title: "템플릿 스위치"
+title: 템플릿 스위치(Template Switch)
 description: "Instructions on how to integrate Template Switches into Home Assistant."
 ha_category:
   - Switch

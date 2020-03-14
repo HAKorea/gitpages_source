@@ -1,5 +1,5 @@
 ---
-title: "조명 스위치"
+title: 조명 스위치(Light Switch)
 description: "Instructions on how to set up a light switch within Home Assistant."
 ha_category:
   - Light

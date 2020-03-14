@@ -31,6 +31,8 @@ device_tracker:
   - platform: bluetooth_le_tracker
 ```
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/oBkahrDfUFE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 {% configuration %}
 track_new_devices:
   description: 새로 검색된 장치가 기본적으로 추적되는 경우

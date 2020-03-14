@@ -1,5 +1,5 @@
 ---
-title: Nmap 추적기
+title: Nmap 추적기(nmap Tracker)
 description: Instructions on how to integrate Nmap into Home Assistant.
 logo: nmap.png
 ha_category:

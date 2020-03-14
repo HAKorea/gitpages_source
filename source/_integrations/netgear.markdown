@@ -1,5 +1,5 @@
 ---
-title: 넷기어
+title: Netgear
 description: Instructions on how to integrate Netgear routers into Home Assistant.
 logo: netgear.png
 ha_category:

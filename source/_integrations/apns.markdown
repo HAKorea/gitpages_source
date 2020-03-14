@@ -7,11 +7,16 @@ ha_category:
 ha_release: 0.31
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/qNUU3vBffvc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `apns` 플랫폼은 APNS (Apple Push Notification Service)를 사용하여 Home Assistant에서 알림을 전달합니다.
 
 ## 셋업
 
 APNS 서비스를 사용하려면 Apple 개발자 계정이 필요하며 푸시 알림을 수신하려면 앱을 만들어야합니다. 자세한 내용은 Apple 개발자 설명서를 참조하십시오.
+
+<iframe width="690" height="437" src="https://www.youtube.com/embed/qNUU3vBffvc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
 
 ## 설정
 

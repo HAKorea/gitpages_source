@@ -1,5 +1,5 @@
 ---
-title: 시놀로지
+title: 시놀로지(Synology)
 description: Instructions on how to integrate Synology Surveillance Station cameras within Home Assistant.
 logo: synology.png
 ha_category:
@@ -7,6 +7,8 @@ ha_category:
 ha_release: 0.31
 ha_iot_class: Local Polling
 ---
+
+<iframe width="690" height="437" src="https://www.youtube.com/embed/GmpP52yG0S8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 `synology` 카메라 플랫폼을 사용하면 Home Assistant에서 [Synology](https://www.synology.com/) Surveillance Station 기반 IP 카메라의 라이브 스트림을 볼 수 있습니다.
 

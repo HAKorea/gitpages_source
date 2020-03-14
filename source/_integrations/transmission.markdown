@@ -14,6 +14,8 @@ ha_codeowners:
   - '@JPHutchins'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/2bBoHjqCEa8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `transmission` 연동을 통해 홈어시스턴트에서  [Transmission](https://www.transmissionbt.com/)을 통해 다운로드를 모니터링하고 정보를 기반으로 자동화를 설정할 수 있습니다.
 
 ## 셋업

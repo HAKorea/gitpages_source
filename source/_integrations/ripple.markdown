@@ -8,9 +8,9 @@ ha_release: 0.47
 ha_iot_class: Cloud Polling
 ---
 
-The `ripple` sensor platform displays Ripple wallet balances from [Ripple.com](https://ripple.com).
+`ripple` 센서 플랫폼은 [Ripple.com](https://ripple.com)의 Ripple 지갑 잔액을 표시합니다.
 
-To add the Ripple sensor to your installation, specify a ripple address to watch in the `configuration.yaml` file:
+Ripple 센서를 설치에 추가하려면 `configuration.yaml` 파일에서 볼 Ripple 주소를 지정하십시오.
 
 ```yaml
 # Example configuration.yaml entry

@@ -1,5 +1,5 @@
 ---
-title: Open Exchange Rates(개방형환률정보)
+title: 오픈환률정보(Open Exchange Rates)
 description: Instructions on how to integrate exchange rates from https://openexchangerates.org within Home Assistant.
 ha_category:
   - Finance

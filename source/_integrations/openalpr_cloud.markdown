@@ -1,5 +1,5 @@
 ---
-title: OpenALPR Cloud(차량번호판인식)
+title: 차량번호판인식(OpenALPR Cloud)
 description: Instructions on how to integrate licences plates with OpenALPR cloud into Home Assistant.
 logo: openalpr.png
 ha_category:

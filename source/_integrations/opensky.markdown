@@ -1,5 +1,5 @@
 ---
-title: OpenSky Network(세계항공기추적)
+title: 세계항공기추적(OpenSky Network)
 description: Instructions on how to integrate OpenSky Network into Home Assistant.
 logo: opensky.png
 ha_category:

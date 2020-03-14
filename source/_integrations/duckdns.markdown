@@ -7,6 +7,8 @@ ha_category:
 ha_release: 0.55
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/A5CMD0FDOOM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 DuckDNS 통합구성요소로 DuckDNS 기록을 최신 상태로 유지할 수 있습니다. DuckDNS는 무료 동적 DNS 서비스로 `duckdns.org`의 하위 도메인으로 당산의 컴퓨터(홈어시스턴트)를 지정할 수 있습니다.
 
 ## 설정

@@ -9,7 +9,7 @@ ha_iot_class: Cloud Polling
 
 `volvooncall` 통합구성요소는 [Volvo On Call](https://www.volvocars.com/intl/why-volvo/human-innovation/future-of-driving/connectivity/volvo-on-call) 클라우드와의 통합을 제공합니다 서비스, 존재 감지, 주행 거리계 및 연료 레벨과 같은 센서를 제공합니다.
 
-혹시 우리나라에서 지원되는지 볼보 사용자분들께서는 확인 부탁드립니다. 
+혹시 우리나라에서 지원되는지 볼보 사용자분들께서는 확인 부탁드립니다.
 
 ## 설정
 
@@ -48,12 +48,15 @@ username:
   required: true
   type: string
 password:
+  description: The password for your given Volvo On Call account.
   required: true
   type: string
 region:
+  description: The region where the Volvo is registered. Needs to be set for users in North America or China.
   required: false
   type: string
 service_url:
+  description: The service URL to use for Volvo On Call. Normally not necessary to specify.
   required: false
   type: string
 mutable:
@@ -62,6 +65,7 @@ mutable:
   default: true
   type: boolean
 name:
+  description: "Make it possible to provide a name for the vehicles. Note: Use all lower case letters when inputing your VIN number."
   required: false
   type: string
 resources:
@@ -69,6 +73,7 @@ resources:
   required: false
   type: list
 scandinavian_miles:
+  description: If set to true, Scandinavian miles ("mil") are used for distances and fuel range.
   required: false
   type: boolean
   default: false

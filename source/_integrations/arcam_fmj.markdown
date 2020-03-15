@@ -11,7 +11,7 @@ ha_codeowners:
 
 `arcam_fmj` 통합구성요소를 통해 Home Assistant에서 [Arcam FMJ Receveivers](https://www.arcam.co.uk/range/fmj.htm)를 제어할 수 있습니다.
 
-지원 장치 : 
+지원 장치 :
 
 - AVR 380
 - AVR 450
@@ -32,6 +32,7 @@ arcam_fmj:
 
 {% configuration %}
 host:
+  description: IP address or hostname of the device.
   required: true
   type: string
 port:
@@ -91,7 +92,7 @@ Arcam FMJ 수신기는 대기 상태일 때 네트워크 포트를 끄면 구성
  - Zone 1: Protocol: NEC1 Device: 16 Function: 123
  - Zone 2: Protocol: NEC1 Device: 23 Function: 123
 
-### Serial 포트에서 network gateway로 
+### Serial 포트에서 network gateway로
 
 네트워크를 serial 포트 게이트웨이에 사용하여 수신기의 serial 포트에 연결하십시오. serial 포트는 항상 사용 가능하며 장치의 전원을 켤 수 있습니다.
 이는 가장 안정적인 통신 방법이기도합니다.

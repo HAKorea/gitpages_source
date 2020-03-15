@@ -12,6 +12,8 @@ ha_codeowners:
   - '@fabaff'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/vHZLCahai4Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `digital_ocean` 통합구성요소를 통해 Home Assistant에서 [Digital Ocean](https://www.digitalocean.com/) droplets 정보에 액세스 할 수 있습니다.
 
 현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.

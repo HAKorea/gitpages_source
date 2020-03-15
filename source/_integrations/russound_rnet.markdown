@@ -8,6 +8,8 @@ ha_release: 0.25
 ha_iot_class: Local Polling
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/n3sbCfeM984" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `russound_rnet` 플랫폼을 사용하면 RNET 프로토콜을 사용하는 Russound 장치를 제어할 수 있습니다.
 
 이는 6 개의 구역(zone)과 6 개의 소스(source)가 있는 Russound CAV6.6 장치에 처음 테스트되었습니다. Russound CAA66에서도 작동하지만 null-modem 케이블을 사용해야합니다.

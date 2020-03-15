@@ -1,5 +1,5 @@
 ---
-title: 파일 크기
+title: 파일 크기(File Size)
 description: Component for monitoring the size of a file.
 logo: file.png
 ha_category:

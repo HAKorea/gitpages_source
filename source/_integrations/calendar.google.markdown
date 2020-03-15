@@ -1,5 +1,5 @@
 ---
-title: "구글 캘린더 이벤트"
+title: 구글 캘린더 이벤트(Google Calendar Event)
 description: "Instructions on how to use Google Calendars in Home Assistant."
 logo: google_calendar.png
 ha_category:

@@ -1,5 +1,5 @@
 ---
-title: 인증서 만료
+title: 인증서 만료(Certificate Expiry)
 description: Instructions on how to set up HTTPS (SSL) certificate expiry sensors within Home Assistant.
 logo: home-assistant.png
 ha_category:

@@ -1,5 +1,5 @@
 ---
-title: 유비쿼티 UniFi LED
+title: 유비쿼티 LED(Ubiquiti UniFi LED)
 description: Instructions on how to configure the UniFi LED integration with UniFi LED Controller by Ubiquiti.
 logo: ubiquiti.png
 ha_category:

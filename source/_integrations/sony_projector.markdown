@@ -1,5 +1,5 @@
 ---
-title: 소니 프로젝터
+title: 소니 프로젝터(Sony Projector)
 description: Instructions on how to integrate Sony Projector switches into Home Assistant.
 logo: sony.png
 ha_category:

@@ -1,5 +1,5 @@
 ---
-title: 소니 플레이스테이션 4
+title: 플레이스테이션 4(Sony Playstation 4)
 description: Instructions on how to integrate a Sony PlayStation 4 into Home Assistant.
 logo: ps4.png
 ha_category:

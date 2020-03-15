@@ -1,5 +1,5 @@
 ---
-title: 엡슨 Workforce
+title: 엡슨 Workforce(Epson Workforce)
 description: Instructions on how to integrate Epson Workforce Printer into Home Assistant.
 logo: epson.png
 ha_category:

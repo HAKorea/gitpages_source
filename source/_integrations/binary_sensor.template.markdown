@@ -1,5 +1,5 @@
 ---
-title: "템플릿 이진 센서"
+title: 템플릿 이진 센서(Template Binary Sensor)
 description: "Instructions on how to integrate Template Binary Sensors into Home Assistant."
 ha_category:
   - Binary Sensor

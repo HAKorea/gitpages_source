@@ -1,5 +1,5 @@
 ---
-title: 시스코 IOS
+title: 시스코 IOS(Cisco IOS)
 description: Instructions on how to integrate Cisco IOS routers into Home Assistant.
 logo: cisco.png
 ha_category:

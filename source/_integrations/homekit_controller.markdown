@@ -1,5 +1,5 @@
 ---
-title: 홈킷 콘트롤러
+title: 홈킷 콘트롤러(HomeKit Controller)
 description: Instructions for how to integrate your HomeKit devices within Home Assistant.
 logo: apple-homekit.png
 ha_category:

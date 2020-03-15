@@ -1,5 +1,5 @@
 ---
-title: 삼성 스마트 TV
+title: 삼성 스마트 TV(Samsung Smart TV)
 description: Instructions on how to integrate a Samsung Smart TV into Home Assistant.
 logo: samsung.png
 ha_category:

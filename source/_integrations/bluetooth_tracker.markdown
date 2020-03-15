@@ -1,5 +1,5 @@
 ---
-title: 블루투스 트래커
+title: 블루투스 추적기(Bluetooth Tracker)
 description: Instructions for integrating Bluetooth tracking within Home Assistant.
 logo: bluetooth.png
 ha_category:

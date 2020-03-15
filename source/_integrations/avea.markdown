@@ -1,5 +1,5 @@
 ---
-title: 엘가토 Avea
+title: 엘가토 Avea(Elgato Avea)
 description: Instructions on how to integrate Elgato Avea with Home Assistant.
 logo: avea.png
 ha_category:

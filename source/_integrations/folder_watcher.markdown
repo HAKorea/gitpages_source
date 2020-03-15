@@ -1,5 +1,5 @@
 ---
-title: 폴더 감시
+title: 폴더 감시(Folder Watch)
 description: Component for monitoring changes within the filesystem.
 logo: home-assistant.png
 ha_category:

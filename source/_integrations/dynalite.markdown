@@ -1,5 +1,5 @@
 ---
-title: 필립스 Dynalite
+title: 필립스 다이나라이트(Philips Dynalite)
 description: Instructions on setting up Philips Dynalite within Home Assistant.
 logo: dynalite.png
 ha_category:

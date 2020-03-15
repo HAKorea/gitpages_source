@@ -1,5 +1,5 @@
 ---
-title: 샤프 Aquos TV
+title: 샤프 TV(Sharp Aquos TV)
 description: Instructions on how to integrate a Sharp Aquos TV into Home Assistant.
 logo: sharp_aquos.png
 ha_category:

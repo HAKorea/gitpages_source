@@ -1,5 +1,5 @@
 ---
-title: 블루투스 LE Tracker
+title: 블루투스 LE 추적기(bluetooth LE Tracker)
 description: Instructions for integrating bluetooth low-energy tracking within Home Assistant.
 logo: bluetooth.png
 ha_category:

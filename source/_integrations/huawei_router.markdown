@@ -1,5 +1,5 @@
 ---
-title: Huawei 라우터
+title: 화웨이 라우터(Huawei Router)
 description: Instructions on how to integrate Huawei Routers into Home Assistant.
 logo: huawei.svg
 ha_category:

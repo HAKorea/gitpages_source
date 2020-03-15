@@ -1,5 +1,5 @@
 ---
-title: 엘가토 Key Light
+title: 엘가토 Key Light(Elgato Key Light)
 description: Instructions on how to integrate an Elgato Key Light with Home Assistant.
 logo: elgato.jpg
 ha_category:

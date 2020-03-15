@@ -1,5 +1,5 @@
 ---
-title: 카메라
+title: 카메라(Camera)
 description: Instructions on how to integrate cameras within Home Assistant.
 logo: home-assistant.png
 ha_category:

@@ -1,5 +1,5 @@
 ---
-title: 소니 브라비아 TV
+title: 소니 TV(Sony Bravia TV)
 description: Instructions on how to integrate a Sony Bravia TV into Home Assistant.
 logo: bravia.png
 ha_category:

@@ -1,5 +1,5 @@
 ---
-title: 삼성 패밀리 허브 냉장고 카메라
+title: 삼성 냉장고 카메라(Samsung Family Hub)
 description: Instructions on how to integrate Samsung Family Hub refrigerator cameras within Home Assistant.
 logo: familyhub.png
 ha_category:

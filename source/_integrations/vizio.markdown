@@ -1,5 +1,5 @@
 ---
-title: 비지오 스마트캐스트 TV
+title: 비지오 TV(Vizio SmartCast TV)
 description: Instructions on how to integrate Vizio SmartCast TVs and sound bars into Home Assistant.
 logo: vizio-smartcast.png
 ha_category:

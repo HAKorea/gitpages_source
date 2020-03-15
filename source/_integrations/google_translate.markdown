@@ -1,5 +1,5 @@
 ---
-title: 구글 번역 TTS
+title: 구글 번역 TTS(Google Translate TTS)
 description: Instructions on how to setup Google Translate Text-to-Speech with Home Assistant.
 logo: google.png
 ha_category:

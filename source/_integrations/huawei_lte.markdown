@@ -1,5 +1,5 @@
 ---
-title: Huawei LTE(LTE 라우터)
+title: 화웨이 LTE(Huawei LTE)
 description: Instructions on how to integrate Huawei LTE router and modem devices with Home Assistant.
 logo: huawei.svg
 ha_category:

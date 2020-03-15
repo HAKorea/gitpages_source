@@ -1,5 +1,5 @@
 ---
-title: 로지텍 Squeezebox
+title: 로지텍 스퀴즈박스(Logitech Squeezebox)
 description: Instructions on how to integrate a Logitech Squeezebox player into Home Assistant.
 logo: squeezebox.png
 ha_category:

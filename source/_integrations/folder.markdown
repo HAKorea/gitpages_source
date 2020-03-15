@@ -1,5 +1,5 @@
 ---
-title: 폴더
+title: 폴더(Folder)
 description: Sensor for monitoring the contents of a folder.
 logo: file.png
 ha_category:

@@ -1,5 +1,5 @@
 ---
-title: 아두이노
+title: 아두이노(Arduino)
 description: Instructions on how to setup an Arduino boards within Home Assistant.
 logo: arduino.png
 ha_category:

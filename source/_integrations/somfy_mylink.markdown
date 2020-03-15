@@ -1,5 +1,5 @@
 ---
-title: 솜피 MyLink
+title: 솜피 MyLink(Somfy Mylink)
 description: Instructions on how to integrate Somfy MyLink devices with Home Assistant.
 logo: tahoma.png
 ha_category:

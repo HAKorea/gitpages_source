@@ -1,5 +1,5 @@
 ---
-title: 시스코 Mobility Express
+title: 시스코 모바일(Cisco Mobility Express)
 description: Instructions on how to integrate Cisco Mobility Express wireless controllers into Home Assistant.
 logo: cisco.png
 ha_category:

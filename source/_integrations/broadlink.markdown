@@ -1,5 +1,5 @@
 ---
-title: 브로드링크
+title: 브로드링크(Broadlink)
 description: Instructions on how to integrate Broadlink within Home Assistant.
 logo: broadlink.png
 ha_category:

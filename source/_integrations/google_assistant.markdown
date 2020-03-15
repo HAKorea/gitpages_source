@@ -1,5 +1,5 @@
 ---
-title: 구글 어시스턴트
+title: 구글 어시스턴트(Google Assistant)
 description: Setup for Google Assistant integration
 logo: google-assistant.png
 ha_category:

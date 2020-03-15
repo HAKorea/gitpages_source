@@ -1,5 +1,5 @@
 ---
-title: 보세 사운드터치(Bose Soundtouch)
+title: 보스 사운드터치(Bose Soundtouch)
 description: Instructions on how to integrate Bose Soundtouch devices into Home Assistant.
 logo: soundtouch.png
 ha_category:

@@ -1,5 +1,5 @@
 ---
-title: 벨킨 WeMo
+title: 벨킨 위모(Belkin Wemo)
 description: Instructions on how to integrate Belkin WeMo devices into Home Assistant.
 logo: belkin_wemo.png
 ha_category:

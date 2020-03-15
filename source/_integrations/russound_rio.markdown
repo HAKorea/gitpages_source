@@ -1,5 +1,5 @@
 ---
-title: 러스사운드 RIO
+title: 러스사운드 RIO(Russound RIO)
 description: Instructions on how to integrate Russound RIO devices into Home Assistant.
 logo: russound.png
 ha_category:

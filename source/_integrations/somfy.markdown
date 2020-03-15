@@ -1,5 +1,5 @@
 ---
-title: 솜피 Open API
+title: 솜피 Open API(Somfy Open API)
 description: Instructions on how to set up the Somfy hub within Home Assistant.
 logo: somfy.png
 ha_category:

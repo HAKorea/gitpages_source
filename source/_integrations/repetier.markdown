@@ -11,14 +11,14 @@ ha_codeowners:
   - '@MTrab'
 ---
 
-[Repetier-Server](https://www.repetier-server.com/) is a 3D printer/CNC server, able to control multiple devices on the same server.
-This integration handles the main integration to the server.
+[Repetier-Server](https://www.repetier-server.com/)는 동일한 서버에서 여러 장치를 제어 할 수 있는 3D 프린터/CNC 서버입니다.
+이 통합구성요소는 서버에 대한 기본 연동을 처리합니다.
 
-There is currently support for the following device types within Home Assistant:
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - Sensor
 
-## Configuration
+## 설정
 
 ```yaml
 repetier:
@@ -71,7 +71,7 @@ repetier:
               description: Estimated job end timestamp.
 {% endconfiguration %}
 
-Example with multiple Repetier Servers:
+여러 Repetier 서버가 있는 예 :
 
 ```yaml
 repetier:
@@ -86,7 +86,7 @@ repetier:
     port: 3344
 ```
 
-If the Repetier-Server host is equipped with a web camera it is possible to add this as well.
+Repetier 서버 호스트에 웹카메라가 장착되어 있으면 이를 추가할 수 도 있습니다.
 
 ```yaml
 camera:
@@ -96,9 +96,9 @@ camera:
     mjpeg_url: http://YOUR_REPETIER_HOST_IP:8080/?action=stream
 ```
 
-### Retrieve API-key
+### API 키 구하기
 
-To generate the needed API-key do the following:
+필요한 API 키를 생성하려면 다음을 수행하십시오.
 
 * Go to your Repetier Server web-console
 * Push the settings icon (the gear icon)

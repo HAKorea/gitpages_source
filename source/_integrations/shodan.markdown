@@ -10,6 +10,8 @@ ha_codeowners:
   - '@fabaff'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/oDkg1zz6xlw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `shodan` 센서 플랫폼은 [Shodan](https://www.shodan.io/) 쿼리 결과의 총계를 표시합니다.
 
 로그인하거나 "My Account" 페이지에서 오른쪽 상단 모서리에 있는 "Show API Key"를 사용하여 API 키를 검색하십시오.

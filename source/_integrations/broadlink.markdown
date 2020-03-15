@@ -13,13 +13,13 @@ ha_codeowners:
   - '@felipediel'
 ---
 
-현재 홈 어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.:
+<iframe width="690" height="437" src="https://www.youtube.com/embed/CEwuMh80CSA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.:
 
 - [Remote](#remote)
 - [Sensor](#sensor)
 - [Switch](#switch)
-
-<iframe width="690" height="437" src="https://www.youtube.com/embed/CEwuMh80CSA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Remote
 
@@ -60,7 +60,7 @@ name:
   
 ### 명령어 학습
 
-`remote.learn_command` 서비스를 사용하여 새로운 명령을 익히십시오..
+`remote.learn_command` 서비스를 사용하여 새로운 명령을 익히십시오.
 
 | Service data attribute | Optional | Description                               |
 | ---------------------- | -------- | ----------------------------------------- |
@@ -102,7 +102,7 @@ script:
 
 예 3 : 토글 명령 배우기
 
-`alternative` 플래그는 TV를 켜고 끌 수있는 전원 버튼과 같은 여러 버튼에 동일한 버튼을 사용하는 명령을 캡처하는 데 유용합니다.
+`alternative` 플래그는 TV를 켜고 끌 수 있는 전원 버튼과 같은 여러 버튼에 동일한 버튼을 사용하는 명령을 캡처하는 데 유용합니다.
 
 ```yaml
 script:

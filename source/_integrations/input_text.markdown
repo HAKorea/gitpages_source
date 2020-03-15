@@ -1,5 +1,5 @@
 ---
-title: Input Text(문자입력)
+title: 문자입력(Input Text)
 description: Instructions on how to integrate the Input Text integration into Home Assistant.
 logo: home-assistant.png
 ha_category:

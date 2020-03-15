@@ -1,5 +1,5 @@
 ---
-title: Mill(히터)
+title: Mill 히터
 description: Instructions on how to integrate Mill heater into Home Assistant.
 logo: mill.png
 ha_category:

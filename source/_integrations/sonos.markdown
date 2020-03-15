@@ -1,5 +1,5 @@
 ---
-title: Sonos(소노스)
+title: 소노스(Sonos)
 description: Instructions on how to integrate Sonos devices into Home Assistant.
 logo: sonos.png
 ha_category:

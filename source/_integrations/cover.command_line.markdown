@@ -1,5 +1,5 @@
 ---
-title: "Command Line 커버(Cover)"
+title: 컴맨드 라인 커버(Command Line Cover)
 description: "How to control a cover with the command line."
 logo: command_line.png
 ha_category:

@@ -1,5 +1,5 @@
 ---
-title: "MQTT Vacuum"
+title: MQTT 로봇청소기(MQTT Vacuum)
 description: "Instructions on how to integrate your MQTT enabled Vacuum within Home Assistant."
 logo: mqtt.png
 ha_category:

@@ -1,5 +1,5 @@
 ---
-title: Media 캡처도구(media extractor)
+title: 미디어 캡처(media extractor)
 description: Instructions on how to integrate the Media Extractor into Home Assistant.
 logo: home-assistant.png
 ha_category:

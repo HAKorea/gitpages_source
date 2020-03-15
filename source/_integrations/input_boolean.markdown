@@ -1,5 +1,5 @@
 ---
-title: Input Boolean(이진입력)
+title: 이진입력(Input Boolean)
 description: Instructions on how to integrate the Input Boolean integration into Home Assistant.
 logo: home-assistant.png
 ha_category:

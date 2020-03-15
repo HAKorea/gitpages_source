@@ -1,5 +1,5 @@
 ---
-title: myChevrolet(쉐보레차량관리)
+title: 쉐보레차량관리(myChevrolet)
 description: Instructions on how to integrate Chevy Bolt car into Home Assistant.
 logo: chevy.png
 ha_category:

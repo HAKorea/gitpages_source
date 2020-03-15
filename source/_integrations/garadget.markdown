@@ -1,5 +1,5 @@
 ---
-title: Garadget(차고문제어)
+title: 차고문(Garadget)
 description: Instructions on how to integrate Garadget covers within Home Assistant.
 logo: garadget.png
 ha_category:

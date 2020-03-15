@@ -1,5 +1,5 @@
 ---
-title: Mastodon(오픈소스소셜)
+title: 오픈소스소셜(Mastodon)
 description: Instructions on how to add Instapush notifications to Home Assistant.
 logo: mastodon.png
 ha_category:

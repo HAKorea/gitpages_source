@@ -1,5 +1,5 @@
 ---
-title: Mycroft(AI스피커)
+title: AI스피커(Mycroft)
 description: Instructions on how to setup Mycroft AI within Home Assistant.
 logo: mycroft.png
 ha_category:

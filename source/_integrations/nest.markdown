@@ -1,5 +1,5 @@
 ---
-title: Nest(네스트)
+title: 네스트(Nest)
 description: Instructions on how to integrate Nest into Home Assistant.
 logo: nest.png
 ha_category:

@@ -1,5 +1,5 @@
 ---
-title: Fail2Ban(로그인감시)
+title: 로그인감시(Fail2Ban)
 description: Instructions on how to integrate a fail2ban sensor into Home Assistant.
 ha_category:
   - Network

@@ -1,5 +1,5 @@
 ---
-title: Fast.com(인터넷속도측정)
+title: 인터넷속도측정(Fast.com)
 description: How to integrate Fast.com within Home Assistant.
 logo: fastdotcom.png
 ha_category:

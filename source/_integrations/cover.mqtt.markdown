@@ -1,5 +1,5 @@
 ---
-title: "MQTT 커버(Cover)"
+title: "MQTT 커버(MQTT Cover)"
 description: "Instructions on how to integrate MQTT covers into Home Assistant."
 logo: mqtt.png
 ha_category:

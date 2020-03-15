@@ -1,5 +1,5 @@
 ---
-title: flume(수도관리)
+title: 수도관리(flume)
 description: Documentation about the flume sensor.
 logo: flume.jpg
 ha_category:

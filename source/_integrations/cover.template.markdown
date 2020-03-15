@@ -1,5 +1,5 @@
 ---
-title: "Template 커버(Cover)"
+title: "템플릿 커버(Template Cover)"
 description: "Instructions on how to integrate Template Covers into Home Assistant."
 ha_category:
   - Cover

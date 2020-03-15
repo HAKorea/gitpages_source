@@ -1,5 +1,5 @@
 ---
-title: "MQTT 이진 센서"
+title: "MQTT 이진 센서(MQTT Binary Sensor)"
 description: "Instructions on how to integrate MQTT binary sensors within Home Assistant."
 logo: mqtt.png
 ha_category:

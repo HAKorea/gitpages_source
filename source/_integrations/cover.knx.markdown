@@ -1,5 +1,5 @@
 ---
-title: "KNX 커버(Cover)"
+title: "KNX 커버(KNX Cover)"
 description: "Instructions on how to integrate KNX covers with Home Assistant."
 logo: knx.png
 ha_category:

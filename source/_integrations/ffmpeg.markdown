@@ -1,5 +1,5 @@
 ---
-title: FFmpeg(이미지프로세싱)
+title: FFmpeg
 description: Instructions on how to integrate FFmpeg within Home Assistant.
 logo: ffmpeg.png
 ha_category:

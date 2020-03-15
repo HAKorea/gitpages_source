@@ -46,7 +46,6 @@ services:
 
 ## 사례
 
-An example on how to use it in an automation:
 자동화에서 사용하는 방법에 대한 예 :
 
 {% raw %}

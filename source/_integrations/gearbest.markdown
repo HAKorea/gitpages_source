@@ -10,9 +10,9 @@ ha_codeowners:
   - '@HerrHofrat'
 ---
 
-The `gearbest` sensor will track the price of a product from [Gearbest](https://www.gearbest.com). This information can be used in, e.g., automations to notify you when a price drops. The update interval for every item is currently set to 2 hours.
+`gearbest` 센서는 [Gearbest](https://www.gearbest.com)에서 제품 가격을 추적합니다. 이 정보는 예를 들어 자동화에서 사용되어 가격이 떨어지면 알려줍니다. 모든 항목의 업데이트 간격은 현재 2 시간으로 설정되어 있습니다.
 
-To enable this sensor, add the following lines to your `configuration.yaml` file:
+이 센서를 활성화하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -51,7 +51,7 @@ items:
       type: string
 {% endconfiguration %}
 
-### Extended example
+### 확장 사례
 
 ```yaml
 # Example configuration.yaml entry

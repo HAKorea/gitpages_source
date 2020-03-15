@@ -1,5 +1,5 @@
 ---
-title: 명품오디오리시버(NAD)
+title: 오디오리시버(NAD)
 description: Instructions on how to integrate NAD receivers into Home Assistant.
 logo: nad.png
 ha_category:
@@ -7,6 +7,8 @@ ha_category:
 ha_release: 0.36
 ha_iot_class: Local Polling
 ---
+
+<iframe width="690" height="437" src="https://www.youtube.com/embed/9bKxXVG5aO0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 `nad` 플랫폼을 사용하면 Home Assistant의 RS232, TCP 및 Telnet을 통해 [NAD 수신기](https://nadelectronics.com/)를 제어할 수 있습니다.
 

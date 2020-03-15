@@ -10,19 +10,21 @@ ha_release: '0.60'
 ha_iot_class: Cloud Polling
 ---
 
-The `canary` integration allows you to integrate your [Canary](https://canary.is) devices in Home Assistant.
+<iframe width="690" height="437" src="https://www.youtube.com/embed/zt837RPaWNw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-There is currently support for the following device types within Home Assistant:
+`canary` 통합구성요소를 사용하면 [Canary](https://canary.is) 장치를 Home Assistant에 연동할 수 있습니다.
+
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - Alarm
 - [Camera](#camera)
 - [Sensor](#sensor)
 
-## Configuration
+## 설정
 
-You will need your Canary login information (username, usually your email address, and password) to use this module.
+이 모듈을 사용하려면 Canary 로그인 정보 (사용자 이름, 일반적으로 이메일 주소 및 비밀번호)가 필요합니다.
 
-To set it up, add the following to your `configuration.yaml` file:
+설정하려면 `configuration.yaml` 파일에 다음을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -47,7 +49,7 @@ timeout:
   default: 10
 {% endconfiguration %}
 
-Once loaded, your front end will have the following integrations:
+일단 로드되면 프론트 엔드는 다음과 같이 연동됩니다.
 
 - A camera image triggered by motion for each camera.
 - An alarm control panel for each location.
@@ -55,15 +57,15 @@ Once loaded, your front end will have the following integrations:
 - A sensor per camera that reports humidity.
 - A sensor per camera that reports air quality.
 
-## Camera
+## 카메라
 
-The `canary` camera platform allows you to watch the live stream of your [Canary](https://canary.is) camera in Home Assistant. This requires the [`ffmpeg` integration](/integrations/ffmpeg/) to be already configured.
+`canary` 카메라 플랫폼을 사용하면 Home Assistant에서 [Canary](https://canary.is) 카메라의 라이브 스트림을 볼 수 있습니다. 이를 위해서는 [`ffmpeg` integration](/integrations/ffmpeg/)가 이미 설정되어 있어야합니다.
 
-Once you have [Canary integration](/integrations/canary/) setup, your [Canary](https://canary.is) camera(s) should show up automatically.
+[Canary integration](/integrations/canary/) 설정이 완료되면 [Canary](https://canary.is) 카메라가 자동으로 표시됩니다.
 
-## Configuration
+## 설정
 
-You can add the following to your `configuration.yaml` file to configure `canary` camera with optional settings:
+`configuration.yaml` 파일에 다음을 추가하여 옵션 설정으로 `canary` 카메라를 설정할 수 있습니다.
 
 ```yaml
 camera:
@@ -79,11 +81,11 @@ ffmpeg_arguments:
 
 ## Sensor
 
-The `canary` sensor platform allows you to integrate the sensors of your [Canary](https://canary.is) devices in Home Assistant.
+`canary` 센서 플랫폼을 사용하면 [Canary](https://canary.is) 장치의 센서를 Home Assistant에 연동할 수 있습니다.
 
-To add `canary` sensors to your installation, follow instructions above.
+설비에 `canary` 센서를 추가하려면 위의 지침을 따르십시오.
 
-Once loaded, you will see following sensors:
+로드되면 다음 센서가 표시됩니다.
 
 - A sensor per camera that reports temperature.
 - A sensor per camera that reports humidity.

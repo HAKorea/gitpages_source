@@ -8,6 +8,8 @@ ha_release: 0.34
 ha_iot_class: Local Polling
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/GoWRsaS54JM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `soundtouch` 플랫폼을 통해 Home Assistant에서 [Bose Soundtouch](https://www.soundtouch.com/) 스피커를 제어 할 수 있습니다 .
 
 기본적으로 홈 어시스턴트에서 제공하는 자동 검색을 지원하므로 `configuration.yaml`에 추가할 필요가 없습니다 

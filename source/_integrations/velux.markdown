@@ -11,6 +11,8 @@ ha_codeowners:
   - '@Julius2342'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/0Yv8gcFaJL0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Home Assistant의 [Velux](https://www.velux.com/) 연동을 통해 Velux KLF 200 인터페이스에 연결하여 창 및 블라인드와 같은 [io-homecontrol](http://www.io-homecontrol.com) 장치를 제어 할 수 있습니다. 이 모듈을 사용하면 KLF 200 내에서 설정된 장면(scene)을 시작할 수 있습니다.
 
 KLF 200 장치에는 2.0.0.0 이상의 펌웨어 버전이 필요합니다. 펌웨어 이미지는 [here](https://www.velux.com/api/klf200)에서 얻을 수 있으며 KLF 200의 웹 인터페이스를 통해 가져왔을 수 있습니다.

@@ -14,6 +14,8 @@ ha_release: pre 0.7
 ha_iot_class: Cloud Polling
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/DV-UUrra214" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Home Assistant는 [Verisure](https://www.verisure.com/) 장치 연동을 지원합니다.
 
 현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.

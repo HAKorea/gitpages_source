@@ -8,6 +8,8 @@ ha_release: 0.81
 ha_iot_class: Cloud Polling
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/am7O1V1hJk8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `thermoworks_smoke` 센서 플랫폼은 [ThermoWorks Smoke Thermometer](https://www.thermoworks.com/Smoke)의 데이터를 가져옵니다.
 인터넷에 연결된 [Smoke WiFi Gateway](https://www.thermoworks.com/Smoke-Gateway)가 필요합니다.
 

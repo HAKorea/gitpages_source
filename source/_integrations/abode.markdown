@@ -19,6 +19,8 @@ ha_codeowners:
   - '@shred86'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/S5NcbONhyBI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `abode` 통합구성요소를 통해 사용자는 Abode Home Security 시스템을 Home Assistant에 연동하고 경보 시스템과 센서를 사용하여 집안을 자동화 할 수 있습니다.
 
 Abode Security에 대한 자세한 내용은 [Abode website](https://goabode.com/)를 방문하십시오.

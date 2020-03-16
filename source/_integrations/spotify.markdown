@@ -8,19 +8,18 @@ ha_release: 0.43
 ha_iot_class: Cloud Polling
 ---
 
-The `spotify` media player platform allows you to control
-[Spotify](https://www.spotify.com/) playback from Home Assistant.
+`spotify` 미디어 플레이어 플랫폼을 사용하면 Home Assistant에서 [Spotify](https://www.spotify.com/) 재생을 제어할 수 있습니다.
 
-## Prerequisites
+## 전제조건
 
 - Spotify account
 - Spotify application, properly configured (see below)
 
 <div class='note'>
-Controlling the Spotify integration (pause, play, next, etc.) requires a Premium account. If you do not have a Premium account, the integration in the frontend will not show the controls.
+Spotify 통합구성요소(pause, play, next 등)를 제어하려면 프리미엄 계정이 필요합니다. 프리미엄 계정이 없는 경우 프런트 엔드 연동에 컨트롤이 표시되지 않습니다.
 </div>
 
-To create the required Spotify application:
+필요한 Spotify 응용 프로그램을 만들려면 : 
 
 - Login to [Spotify Developer](https://developer.spotify.com)
 - Visit the [My Applications](https://developer.spotify.com/my-applications/#!/applications) page
@@ -37,10 +36,9 @@ To create the required Spotify application:
 
 If you are using an externally accessible address you will likely also need to set the `base_url` attribute of the [HTTP Component](/integrations/http/). This should be set using the same base URL as the redirect URI, e.g., if you used a domain name (not local IP) in the redirect, then use the same domain name in your `base_url`.
 
-## Configuration
+## 설정
 
-To add Spotify to your installation,
-add the following to your `configuration.yaml` file:
+Spotify를 설치에 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -78,21 +76,19 @@ name:
   default: Spotify
 {% endconfiguration %}
 
-## Setup
+## 셋업
 
-After the prerequisites and configuration are complete, restart Home Assistant.
-Under notifications a **Spotify** configurator element will be available. Click on "Link Spotify account" and follow the instructions to
-authorize Home Assistant to access your Spotify account. A Spotify media player
-will then appear. If you are prompted to download a file after completing
-authorization, discard the download. It is not needed.
+전제 조건 및 설정이 완료되면 Home Assistant를 다시 시작하십시오.
+Under notifications a **Spotify** configurator element will be available. 
+알림에서 **Spotify** 설정 요소를 사용할 수 있습니다.
+"Link Spotify account"을 클릭하고 지침에 따라 Home Assistant에 Spotify 계정에 대한 액세스 권한을 부여하십시오.
+Spotify 미디어 플레이어가 나타납니다. 인증을 완료한 후 파일을 다운로드하라는 메시지가 표시되면 다운로드를 폐기하십시오. 필요하지 않습니다.
 
 ## Sources
-The sources are based on if you have streamed to these devices before in
-Spotify. If you don't have any sources, then simply stream from your phone to
-another device in your house: Bluetooth, echo, etc. Once you do, the sources will
-show up in the Spotify developer console as a device to cast/stream to. 
-Go to https://developer.spotify.com and login. Click on "Console" in top menu and then "Player" in the left menu. Select 	"/v1/me/player/devices" in the list. Then click "Get token", accept the terms and click "Try it". Your active Spotify devices will then be listed in the right panel, beneath the curl-line (for example, "name": "Web Player (Chrome)").  
-These names can then be used in for example an input selector:
+
+소스는 Spotify에서 이러한 장치로 스트리밍한 경우를 기준으로합니다. 소스가 없는 경우 전화기에서 집안의 다른 장치 (Bluetooth, echo 등)로 스트리밍하면 됩니다. 일단 소스를 전송하면 Spotify 개발자 콘솔에 전송/스트리밍할 장치로 소스가 표시됩니다. 
+https://developer.spotify.com으로 이동하여 로그인하십시오. 상단 메뉴에서 "Console"을 클릭한 다음 왼쪽 메뉴에서 "Player"를 클릭하십시오. 목록에서 "/v1/me/player/devices"를 선택하십시오. 그런 다음 "Get token"를 클릭하고 약관에 동의 한 후 "Try it"를 클릭하십시오. 그러면 활성화된 Spotify 장치가 컬 라인 아래 오른쪽 패널에 나열됩니다 (예: "name": "Web Player (Chrome)").
+이러한 이름은 예를 들어 입력 선택기에서 사용할 수 있습니다. : 
 
 ```yaml
   spotify_source:
@@ -102,22 +98,18 @@ These names can then be used in for example an input selector:
       - Web Player (Chrome)
 ```
 
-The devices won't show up in the dev-console as sources unless they are powered on as well.
+장치는 전원이 켜져 있지 않으면 dev-console에 소스로 표시되지 않습니다.
 
 ## URI Links For Playlists/Etc.
-You can send playlists to spotify via the `"media_content_type": "playlist"` and something like (depending on your content ID)
-`"media_content_id": "spotify:user:spotify:playlist:37i9dQZF1DWSkkUxEhrBdF"`
-which are part of the
-[media_player.play_media](/integrations/media_player/#service-media_playerplay_media)
-service. You can test this from the services
-control panel in the Home Assistant frontend.
+[media_player.play_media](/integrations/media_player/#service-media_playerplay_media) 서비스의 일부인 `"media_content_type": "playlist"` 및 `"media_content_id": spotify:user:spotify:playlist:37i9dQZF1DWSkkUxEhrBdF"`(컨텐츠 ID에 따라 다름)와 같은 항목을 통해 재생 목록을 보내서 확인할 수 있습니다. 홈어시스턴트 프론트 엔드의 서비스 제어판에서 이를 테스트 할 수 있습니다.
 
-## Services
-Extra services besides the default ones in component [Media Player component](/integrations/media_player/).
 
-### Service `play_playlist`
+## 서비스
+[Media Player component](/integrations/media_player/) 구성요소의 기본 서비스 외에 추가 서비스.
 
-Play a Spotify playlist with an option to start on a random position of the playlist.
+### `play_playlist` 서비스
+
+재생 목록의 임의 위치에서 시작하는 옵션으로 Spotify 재생 목록을 재생하십시오.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
@@ -125,10 +117,9 @@ Play a Spotify playlist with an option to start on a random position of the play
 | `random_song`          | yes      | True to select random song at start, False to start from beginning.
 
 
-The above playlist example is a URI link to the "Reggae Infusions" playlist.
-[This support document from Spotify](https://support.spotify.com/us/article/sharing-music/)
-explains how to get this URI value to use for playlists in the Spotify component.
+위 재생 목록 예는 "Reggae Infusions" 재생 목록에 대한 URI 링크입니다.
+[This support document from Spotify](https://support.spotify.com/us/article/sharing-music/)는 이 URI 값을 Spotify 구성 요소의 재생 목록에 사용하는 방법을 설명합니다.
 
-## Unsupported Devices
+## 미지원 기기들
 
-- **Sonos**: Although Sonos is a Spotify Connect device, it is not supported by the official Spotify API.
+- **Sonos**: Sonos는 Spotify Connect 장치이지만 공식 Spotify API에서는 지원되지 않습니다.

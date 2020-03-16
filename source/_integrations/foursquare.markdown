@@ -10,6 +10,8 @@ ha_codeowners:
   - '@robbiet480'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/2kX5Pr9OE6Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `foursquare` 통합구성요소는 Foursquare [Real-Time API](https://developer.foursquare.com/overview/realtime)에서 푸시(push)를 받고 Swarm에서 사용자를 체크인하는 서비스를 허용합니다.
 
 ```yaml

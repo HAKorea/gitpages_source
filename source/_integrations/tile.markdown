@@ -10,6 +10,8 @@ ha_codeowners:
   - '@bachya'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/skD3m1fjmxE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `tile` 플랫폼을 통해 Home Assistant는 [Tile® Bluetooth 추적기](https://www.thetileapp.com)를 활용할 수 있습니다. 공식 Tile 모바일 앱은 모바일 장치의 Bluetooth 및 GPS를 사용하여 Tile 장치의 실제 추적을 처리합니다.
 
 Tile을 Home Assistant에 통합하려면 `configuration.yaml` 파일에 다음 섹션을 추가하십시오.

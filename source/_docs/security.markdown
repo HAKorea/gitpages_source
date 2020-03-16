@@ -25,12 +25,11 @@ description: "홈 어시스턴트의 보안성."
 
 ## SSH
 
-The SSH connection for [디버깅](https://developers.home-assistant.io/docs/en/hassio_debugging.html) on port 22222 is not enabled by default and can only be used with keys. 
 [디버깅](https://developers.home-assistant.io/docs/en/hassio_debugging.html)을 위한 SSH 연결(포트 22222)은 기본적으로 비활성화되어 있습니다. 그리고 키 인증으로만 쓸 수 있습니다.
 
 [SSH server add-on](/addons/ssh/)으로 SSH를 사용할 경우 설정과 보안에 대한 책임은 사용자에게 있습니다.
 
 ## 소스 코드
 
-자원의 부족으로 인해 우리는 모든 의존성을 검토하고 악의적인 행동, 정보의 유출 또는 GDPR 준수 여부를 검사할 수 없습니다. 그러나 우리는 의존성의 발전에 깊은 관심을 가지고 있으며 업스트림 개발자와 긴밀히 협력하려고 노력합니다.
+자원의 부족으로 인해 우리는 모든 의존성을 검토하거나 악의적인 행동, 정보의 유출 또는 GDPR 준수 여부를 검사할 수 없습니다. 그러나 우리는 의존성의 발전에 깊은 관심을 가지고 있으며 업스트림 개발자와 긴밀히 협력하려고 노력합니다.
 

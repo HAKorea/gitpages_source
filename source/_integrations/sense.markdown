@@ -1,5 +1,5 @@
 ---
-title: 센스(Sense)
+title: 전력측정기(Sense)
 description: Instructions on how to integrate Sense within Home Assistant.
 logo: sense.png
 ha_category:
@@ -12,16 +12,18 @@ ha_codeowners:
   - '@kbickar'
 ---
 
-Integrate your [Sense](https://sense.com) meter information into Home Assistant.
+<iframe width="690" height="437" src="https://www.youtube.com/embed/5RyDxZLA8b8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-There is currently support for the following device types within Home Assistant:
+[Sense](https://sense.com) 미터 정보를 Home Assistant에 연동하십시오.
+
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - Binary Sensor
 - Sensor
 
-## Configuration
+## 설정
 
-To enable this sensor in your installation, add the following to your `configuration.yaml` file:
+설치시 이 센서를 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -45,9 +47,9 @@ timeout:
   type: integer
 {% endconfiguration %}
 
-Sensors are added for both usage and production with the following names:
+다음 이름으로 사용량 및 생산량용 센서가 추가됩니다.
 
-- **Active Usage/Production**: Current active power usage/production in Watts. Updated every 60 seconds.
-- **Daily/Weekly/Monthly Usage/Production**: Daily/Weekly/Monthly power usage/production in kWh. Updated every 5 minutes.
+- **Active Usage/Production**: 와트단위의 현재 유효 전력사용량/생산량. 60 초마다 업데이트됩니다.
+- **Daily/Weekly/Monthly Usage/Production**: kWh 단위의 일일/주간/월간 전력사용량 및 생산량. 5분마다 업데이트됩니다.
 
-Binary sensors are created for each of the devices detected by your Sense monitor to show their power state.
+Sense 모니터에서 감지된 각 장치에 대해 이진 센서가 만들어져 전원 상태를 표시합니다.

@@ -7,19 +7,19 @@ ha_category:
 ha_release: 0.81
 ---
 
-With the `route53` integration can you keep your AWS Route53 DNS records up to date.
+`route53` 통합구성요소로 AWS Route53 DNS 레코드를 최신 상태로 유지할 수 있습니다.
 
-The integration will run every hour, but can also be started manually by using the service `route53.update_records` under services.
+연동은 1 시간마다 실행되지만 서비스들 중에서 `route53.update_records` 서비스를 사용하여 수동으로 시작할 수도 있습니다.
 
-Please note that this platform uses the API from [ipify.org](https://www.ipify.org/) to set the public IP address.
+이 플랫폼은 [ipify.org](https://www.ipify.org/)의 API를 사용하여 공개 IP 주소를 설정합니다.
 
-## Setup
+## 셋업
 
-You will need to configure your AWS Account with a suitable IAM policy and API keys for this to function.
+이 기능이 작동하려면 적절한 IAM 정책 및 API 키를 사용하여 AWS 계정을 설정해야합니다.
 
-If you are familiar with this process, you can skip the next section and head directly to the configuration section.
+이 프로세스에 익숙하면 다음 섹션을 건너 뛰고 설정 섹션으로 직접 이동할 수 있습니다.
 
-On the AWS side, you need to do the following;
+AWS 측에서는 다음을 수행해야합니다.
 
 1. Create a suitable zone for a domain that you own and manage in Route53, the domain `home.yourdomain.com` is used as an example.
 
@@ -28,6 +28,7 @@ On the AWS side, you need to do the following;
 3. Create an IAM Policy that provides update and query access to this domain explicitly and has no other permissions to the AWS account.
 
 Here is an IAM Policy sample, don't forget to update your Zone ID on the Resource line.
+다음은 IAM 정책 샘플입니다. 리소스(Resource) 라인에서 영역(Zone) ID를 업데이트하는 것을 잊지 마십시오.
 
 ```json
 {
@@ -57,9 +58,9 @@ Here is an IAM Policy sample, don't forget to update your Zone ID on the Resourc
 
 5. Under the security credentials tab for the `homeassistant` user, create a set of access keys for placement in the integration definition YAML.
 
-## Configuration
+## 설정
 
-To use the integration in your installation, add the following to your `configuration.yaml` file:
+설치에서 본 통합구성요소를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -102,8 +103,8 @@ ttl:
   default: 300
 {% endconfiguration %}
 
-## Services
+## 서비스
 
-### Service `route53.update_records`
+### `route53.update_records` 서비스
 
-Use this service to manually trigger an update of the DNS records.
+이 서비스를 사용하여 DNS 레코드 업데이트를 수동으로 트리거하십시오.

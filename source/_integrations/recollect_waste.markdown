@@ -1,5 +1,5 @@
 ---
-title: ReCollect Waste
+title: 미국 쓰레기재활용서비스(ReCollect Waste)
 description: Instructions on how to set up Recollect Waste sensor within Home Assistant.
 logo: recollect-waste.png
 ha_category:

@@ -13,15 +13,15 @@ ha_codeowners:
 
 <div class='note warning'>
   
-  The free Sentry account allows 5000 events per month. Depending on the amount of events sent to Sentry you will either have to upgrade your Sentry account or have a period without data flowing from Home Assistant to Sentry.
+  무료 Sentry 계정은 매월 5000 개의 이벤트를 허용합니다. Sentry로 전송되는 이벤트의 양에 따라 Sentry 계정을 업그레이드하거나 홈어시스턴트에서 Sentry로 데이터가 흐르지 않는 기간이 있어야합니다.
   
 </div>
 
-The `sentry` integration integrates with [Sentry](https://sentry.io/) to capture both logged errors as well as unhandled exceptions in Home Assistant.
+`sentry` 통합구성요소는 [Sentry](https://sentry.io/)와 연동되어 홈어시스턴트에서 처리되지 않은 예외뿐만 아니라 기록된 오류를 모두 캡처합니다.
 
-## Configuration
+## 설정
 
-To use the `sentry` integration in your installation, add the following to your `configuration.yaml` file:
+설치에서 `sentry` 통합구성요소를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -40,7 +40,7 @@ environment:
   type: string
 {% endconfiguration %}
 
-### Getting the DSN
+### DSN 받기
 
 Follow these steps to get the DSN:
 - Go to **Projects**.

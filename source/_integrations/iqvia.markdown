@@ -1,5 +1,5 @@
 ---
-title: IQVIA(지역질병정보)
+title: 지역질병정보(IQVIA)
 description: Instructions on how to use IQVIA data within Home Assistant
 logo: iqvia.png
 ha_category:

@@ -1,5 +1,5 @@
 ---
-title: Instituto Português do Mar e Atmosfera (IPMA)
+title: 포르투갈 해양 대기 연구소(IPMA)
 description: Instructions on how to integrate Instituto Português do Mar e Atmosfera weather conditions into Home Assistant.
 logo: ipma.png
 ha_category:

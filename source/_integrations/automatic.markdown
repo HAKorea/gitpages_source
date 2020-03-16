@@ -10,6 +10,8 @@ ha_codeowners:
   - '@armills'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/_AyXNeRbpRk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `automatic` 장치 추적기 플랫폼은 [Automatic](https://automatic.com/) 클라우드 서비스에서 차량 정보를 검색하여 현재 상태를 감지합니다.
 
 ## 셋업

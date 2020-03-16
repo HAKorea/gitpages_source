@@ -10,6 +10,8 @@ ha_codeowners:
   - '@robmarkcole'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/oukYfp417c0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 [Sighthound Cloud](https://www.sighthound.com/products/cloud)를 사용하여 카메라 이미지에서 사람을 감지합니다. Sighthound Developer Tier (비 상업용 무료)를 사용하면 매월 5000 개의 이미지를 처리​​할 수 ​​있습니다. 한 달에 더 많은 처리가 필요한 경우 프로덕션 계정 (기본 또는 Pro 계정)에 가입해야합니다.
 
 이 통합은 엔티티의 상태가 이미지에서 감지된 사람들의 수인 이미지 처리 엔티티를 추가합니다. 감지된 각 사람에 대해 `sighthound.person_detected` 이벤트가 시작됩니다. 이벤트 데이터는 이벤트를 발생시키는 이미지 처리 엔티티의 entity_id 및 검출된 사람 주위의 경계 박스를 포함합니다.

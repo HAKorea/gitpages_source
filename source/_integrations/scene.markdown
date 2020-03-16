@@ -1,5 +1,5 @@
 ---
-title: 장면(Scenes)
+title: 장면(씬,Scenes)
 description: Instructions on how to setup scenes within Home Assistant.
 logo: home-assistant.png
 ha_category:
@@ -9,6 +9,8 @@ ha_quality_scale: internal
 ha_codeowners:
   - '@home-assistant/core'
 ---
+
+<iframe width="690" height="437" src="https://www.youtube.com/embed/U3_b7GAsh3Y?start=1538" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 특정 엔티티가 원하는 상태를 설정하는 장면(scene)을 만들 수 있습니다. 예를 들어 장면에서 조명 A를 켜고 조명 B를 밝게 빨간색으로 지정하도록 할 수 있습니다.
 

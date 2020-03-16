@@ -1,5 +1,5 @@
 ---
-title: 유비쿼티 UniFi
+title: 유비쿼티(Ubiquiti Unifi)
 description: Instructions on how to configure UniFi integration with UniFi Controller by Ubiquiti.
 logo: ubiquiti.png
 ha_category:

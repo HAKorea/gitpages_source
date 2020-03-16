@@ -7,6 +7,9 @@ ha_category:
 ha_release: 0.45
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/YHmCQ5GVeTk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 `datadog` 통합구성요소는 [Datadog Agent](https://docs.datadoghq.com/guides/basic_agent_usage/)를 사용하여 모든 상태 변경을 [Datadog](https://www.datadoghq.com/)로 보냅니다.
 
 Datadog을 사용하면 데이터를 분석, 모니터링, 상호 참조 및 경고 할 수 있습니다. 통계 이상을 탐지하고 실시간으로 여러 소스에 걸친 그래프를 보고 [Slack](https://slack.com/intl/en-kr/)에 중요한 경고를 보내는 등의 작업을 수행 할 수 있습니다.

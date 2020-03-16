@@ -1,5 +1,5 @@
 ---
-title: HTML5 푸시 알림
+title: HTML5 푸시 알림(HTML5 Push Notification)
 description: Instructions on how to use the HTML5 push notifications platform from Home Assistant.
 logo: html5.png
 ha_category:

@@ -1,5 +1,5 @@
 ---
-title: Foobot(공기측정기)
+title: 공기측정기(Foobot)
 description: Instructions on how to setup Foobot Air Quality sensor in Home Assistant.
 logo: foobot.png
 ha_category:

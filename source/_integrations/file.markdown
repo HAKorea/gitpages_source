@@ -1,5 +1,5 @@
 ---
-title: 파일
+title: 파일(File)
 description: Instructions on how to integrate sensors which read from files into Home Assistant.
 logo: file.png
 ha_category:

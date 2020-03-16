@@ -1,5 +1,5 @@
 ---
-title: "RESTful Switch"
+title: "RESTful 스위치"
 description: "Instructions on how to integrate REST switches into Home Assistant."
 logo: restful.png
 ha_category:

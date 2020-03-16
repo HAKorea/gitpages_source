@@ -1,5 +1,5 @@
 ---
-title: "Command Line Notify"
+title: 컴맨드 라인 알림(Command Line Notify)
 description: "Instructions on how to add command line notifications to Home Assistant."
 logo: command_line.png
 ha_category:

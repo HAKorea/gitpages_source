@@ -8,6 +8,8 @@ ha_release: pre 0.7
 ha_iot_class: Cloud Polling
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/uVpkgjqmvcI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 [Efergy](https://efergy.com) 미터 정보를 Home Assistant에 통합하십시오.
 
 ## 셋업

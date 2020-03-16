@@ -1,5 +1,5 @@
 ---
-title: Facebox(페이스박스)
+title: 페이스박스(Facebox)
 description: Detect and recognize faces with Facebox.
 logo: machine-box.png
 ha_category:

@@ -1,5 +1,5 @@
 ---
-title: "FFmpeg 카메라"
+title: FFmpeg 카메라(FFmpeg Camera)
 description: "Instructions on how to integrate a video feed via FFmpeg as a camera within Home Assistant."
 logo: ffmpeg.png
 ha_category:

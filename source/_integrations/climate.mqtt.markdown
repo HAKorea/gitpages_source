@@ -1,5 +1,5 @@
 ---
-title: "온습도조절기(MQTT HVAC)"
+title: "MQTT 온습도조절기(MQTT HVAC)"
 description: "Instructions on how to integrate MQTT HVAC into Home Assistant."
 logo: mqtt.png
 ha_category:

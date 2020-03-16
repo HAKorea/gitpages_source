@@ -7,7 +7,8 @@ logo: linksys.png
 ha_release: 0.48
 ---
 
-The `linksys_smart` platform offers presence detection by looking at connected devices to a Linksys Smart Wifi based router.
+
+
 `linksys_smart플랫폼`은 Linksys Smart Wifi 기반 라우터에 연결된 장치를 보고 재실 감지 기능을 제공합니다.
 
 테스트한 라우터 :

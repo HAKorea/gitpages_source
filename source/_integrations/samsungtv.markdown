@@ -1,5 +1,5 @@
 ---
-title: 삼성 스마트 TV
+title: 삼성 스마트 TV(Samsung Smart TV)
 description: Instructions on how to integrate a Samsung Smart TV into Home Assistant.
 logo: samsung.png
 ha_category:
@@ -9,6 +9,8 @@ ha_iot_class: Local Polling
 ha_codeowners:
   - '@escoand'
 ---
+
+<iframe width="690" height="437" src="https://www.youtube.com/embed/jlovenp2apg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 `samsungtv` 플랫폼을 사용하면 [Samsung Smart TV](https://www.samsung.com/uk/tvs/all-tvs/)를 제어 할 수 있습니다.
 

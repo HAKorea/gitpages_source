@@ -12,20 +12,20 @@ ha_iot_class: Local Polling
 
 <iframe width="690" height="437" src="https://www.youtube.com/embed/LCFdcDvUjcg?list=PLWlpiQXaMerTyzl_Pe1PEloZTj9MoU5cl" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-[OctoPrint](https://octoprint.org/) is a web interface for your 3D printer. This is the main integration to integrate OctoPrint sensors.
+[OctoPrint](https://octoprint.org/)는 3D 프린터를 위한 웹인터페이스입니다. 이는 OctoPrint 센서를 연동하기위한 주요 통합구성요소입니다.
 
-There is currently support for the following device types within Home Assistant:
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - [Binary Sensor](#binary-sensor)
 - [Sensor](#sensor)
 
 <div class='note'>
-You must have the <a href="#configuration">OctoPrint component</a> configured (below) to use the sensor and binary sensor. After configuring that component, the sensors and binary sensors automatically appear.
+센서 및 이진 센서를 사용하려면 <a href="#configuration">OctoPrint 구성 요소</a>가 아래에 설정되어 있어야합니다. 해당 구성 요소를 설정하면 센서와 이진 센서가 자동으로 나타납니다.
 </div>
 
-## Configuration
+## 설정
 
-To get started with the OctoPrint API, please follow the directions on their [site](https://docs.octoprint.org/en/master/api/general.html). Once OctoPrint is configured you will need to add your API key and host to your `configuration.yaml`.
+OctoPrint API를 시작하려면 [site](https://docs.octoprint.org/en/master/api/general.html)의 지시 사항을 따르십시오. OctoPrint가 설정되면 API 키와 호스트를 `configuration.yaml`에 추가해야합니다.
 
 ```yaml
 octoprint:
@@ -110,11 +110,11 @@ binary_sensors:
 
 <div class='note'>
 
-If you are tracking temperature it is recommended to set `bed` and/or `number_of_tools` in your octoprint configuration. This will allow the octoprint sensors to load if the printer is offline during Home Assistant startup.
+온도를 추적하는 경우 octoprint 설정에서 `bed` 및/또는 `number_of_tools`를 설정하는 것이 좋습니다. 홈어시스턴트 시작중에 프린터가 오프라인인 경우 octoprint 센서를 로드할 수 있습니다.
 
 </div>
 
-Example with multiple printers:
+여러 프린터를 사용한 예 :
 
 ```yaml
 octoprint:
@@ -132,7 +132,7 @@ octoprint:
     number_of_tools: 1
 ```
 
-If the OctoPrint host is equipped with a web camera it is possible to add this as well.
+OctoPrint 호스트에 웹카메라가 장착되어 있으면 이를 추가 할 수도 있습니다.
 
 ```yaml
 camera:
@@ -144,9 +144,9 @@ camera:
 
 ## Binary Sensor
 
-The `octoprint` binary sensor platform let you monitor if your 3D printer is printing or if there was a printing error.
+`octoprint` 이진 센서 플랫폼을 사용하면 3D 프린터가 인쇄중인지 또는 인쇄오류가 있는지 모니터링 할 수 있습니다.
 
-To set it up, add the following information to your `configuration.yaml` file:
+설정하려면 `configuration.yaml` 파일에 다음 정보를 추가하십시오 :
 
 ```yaml
 binary_sensor:
@@ -175,4 +175,4 @@ name:
 
 ## Sensor
 
-The `octoprint` sensor platform let you monitor various states of your 3D printer and its print jobs.
+`octoprint` 센서 플랫폼을 사용하면 3D 프린터의 다양한 상태와 인쇄 작업을 모니터링 할 수 있습니다.

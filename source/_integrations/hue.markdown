@@ -1,5 +1,5 @@
 ---
-title: 필립스 Hue
+title: 필립스 휴(Philips Hue)
 description: Instructions on setting up Philips Hue within Home Assistant.
 logo: philips_hue.png
 ha_category:

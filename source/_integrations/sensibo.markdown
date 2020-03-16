@@ -10,6 +10,8 @@ ha_codeowners:
   - '@andrey-git'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/azPxDpb0prM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 [Sensibo](https://sensibo.com) 에어컨 컨트롤러를 홈어시스턴트에 연동합니다.
 
 이 플랫폼을 활성화하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오 :

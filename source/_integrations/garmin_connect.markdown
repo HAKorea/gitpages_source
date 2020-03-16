@@ -1,5 +1,5 @@
 ---
-title: 가민 컨넥트
+title: 가민 컨넥트(Garmin Connect)
 description: Instructions on how to configure the Garmin Connect integration for Home Assistant.
 logo: garmin_connect.png
 ha_category:

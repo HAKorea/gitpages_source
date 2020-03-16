@@ -1,5 +1,5 @@
 ---
-title: 하만 카돈 AVR
+title: 하만 카돈(Harman Kardon AVR)
 description: Instructions on how to integrate Harman Kardon AVR Network Receivers into Home Assistant.
 logo: harman_kardon.png
 ha_category:

@@ -1,5 +1,5 @@
 ---
-title: Mi Flora(샤오미 식물재배)
+title: 샤오미 식물재배(Mi Flora)
 description: Instructions on how to integrate MiFlora BLE plant sensor with Home Assistant.
 logo: miflora.png
 ha_category:

@@ -1,5 +1,5 @@
 ---
-title: 엡슨
+title: 엡슨(Epson)
 description: Instructions on how to integrate Epson projector into Home Assistant.
 logo: epson.png
 ha_category:

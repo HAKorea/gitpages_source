@@ -1,5 +1,5 @@
 ---
-title: Magicseaweed(세계해변서핑정보)
+title: 세계해변서핑정보(Magicseaweed)
 description: How to integrate Magicseaweed within Home Assistant.
 logo: magicseaweed.png
 ha_category:

@@ -15,9 +15,6 @@ ha_release: 0.31
 
 APNS 서비스를 사용하려면 Apple 개발자 계정이 필요하며 푸시 알림을 수신하려면 앱을 만들어야합니다. 자세한 내용은 Apple 개발자 설명서를 참조하십시오.
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/qNUU3vBffvc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
-
 ## 설정
 
 APNS 알림을 사용하려면 `configuration.yaml`에 다음 행을 추가하십시오  :

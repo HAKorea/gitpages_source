@@ -10,6 +10,8 @@ ha_codeowners:
   - '@etsinko'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/n3sbCfeM984" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `monoprice` 플랫폼을 사용하면 직렬 연결을 사용하여 [Monoprice 6-Zone Amplifier](https://www.monoprice.com/product?p_id=10761)를 제어할 수 있습니다.
 
 Monoprice 장치를 설치에 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.

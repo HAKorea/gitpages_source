@@ -1,5 +1,5 @@
 ---
-title: 구글 지도 이동 시간
+title: 구글 지도 이동 시간(Google Maps travel time)
 description: Instructions on how to add Google Maps travel time to Home Assistant.
 logo: google_maps.png
 ha_category:
@@ -9,6 +9,7 @@ ha_release: 0.19
 ha_codeowners:
   - '@robbiet480'
 ---
+<iframe width="690" height="437" src="https://www.youtube.com/embed/DdMmEbKp4_o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 `google_travel_time` 센서는 [Google Distance Matrix API](https://developers.google.com/maps/documentation/distance-matrix/)에서 이동 시간을 제공합니다.
 

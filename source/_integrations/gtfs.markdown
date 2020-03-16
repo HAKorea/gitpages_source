@@ -10,6 +10,8 @@ ha_codeowners:
   - '@robbiet480'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/xFJ4Q6MB8A8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `gtfs` 센서는 다음 출발 시간과 대중 교통 정류장/정류장의 관련 데이터를 제공합니다. 데이터는 선택한 대중 교통 기관에서 제공하며 일반적으로 GTFS라고 알려진 [General Transit Feed Specification](https://developers.google.com/transit/gtfs/)데이터 형식으로되어 있습니다.
 
 인터넷을 검색하면 찾을 수있는 유효한 GTFS 데이터 세트를 찾아야합니다. 대부분의 대중 교통 기관은 GTFS를 이용할 수 있으며 Google은 대중 교통 기관이 Google지도에 표시하려는 경우 데이터를 제공하도록 요구합니다. [TransitFeeds](https://transitfeeds.com/feeds)에서 데이터를 찾을 수도 있습니다.

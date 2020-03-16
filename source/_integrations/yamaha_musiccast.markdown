@@ -1,5 +1,5 @@
 ---
-title: 야마하 MusicCast
+title: Yamaha MusicCast
 description: Instructions on how to integrate Yamaha MusicCast Receivers into Home Assistant.
 logo: yamaha.png
 ha_category:
@@ -8,6 +8,8 @@ ha_release: 0.53
 ha_codeowners:
   - '@jalmeroth'
 ---
+
+<iframe width="690" height="437" src="https://www.youtube.com/embed/NIHZxNjeEg0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 `yamaha_musiccast` 플랫폼을 사용하면 Home Assistant에서 [Yamaha MusicCast Receivers](https://usa.yamaha.com/products/audio_visual/hifi_components/index.html)를 제어할 수 있습니다.
 

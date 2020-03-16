@@ -1,5 +1,5 @@
 ---
-title: 소니 플레이스테이션 4
+title: 플레이스테이션 4(Sony Playstation 4)
 description: Instructions on how to integrate a Sony PlayStation 4 into Home Assistant.
 logo: ps4.png
 ha_category:
@@ -10,6 +10,9 @@ ha_iot_class: Local Polling
 ha_codeowners:
   - '@ktnrg45'
 ---
+
+<iframe width="690" height="437" src="https://www.youtube.com/embed/Yl_xymBz_6c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+유튜브 시청시 자막을 한글로 변환해서 보시길 권장합니다. 
 
 `ps4` 통합구성요소로 [Sony PlayStation 4 console](https://www.playstation.com/en-us/explore/ps4/)을 제어할 수 있습니다
 

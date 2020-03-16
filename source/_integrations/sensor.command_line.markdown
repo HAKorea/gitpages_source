@@ -1,5 +1,5 @@
 ---
-title: "컴맨드 라인 센서"
+title: 컴맨드 라인 센서(Command Line Sensor)
 description: "Instructions on how to integrate command line sensors into Home Assistant."
 logo: command_line.png
 ha_category:
@@ -9,11 +9,11 @@ ha_iot_class: Local Polling
 ---
 
 
-The `command_line` sensor platform that issues specific commands to get data. This might become our most powerful platform as it allows anyone to integrate any type of sensor into Home Assistant that can get data from the command line.
+데이터를 얻기 위해 특정 명령을 실행하는 `command_line` 센서 플랫폼. 모든 유형의 센서를 command line에서 데이터를 가져올 수 있는 Home Assistant에 연동할 수 있으므로 가장 강력한 플랫폼이 될 수 있습니다.
 
-## Configuration
+## 설정
 
-To enable it, add the following lines to your `configuration.yaml`:
+이를 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -55,19 +55,19 @@ json_attributes:
   type: [string, list]
 {% endconfiguration %}
 
-## Examples
+## 사례
 
-In this section you find some real-life examples of how to use this sensor.
+이 섹션에는이 센서를 사용하는 방법에 대한 실제 예가 나와 있습니다.
 
-### Hard drive temperature
+### 하드 드라이브 온도
 
-There are several ways to get the temperature of your hard drive. A simple solution is to use [hddtemp](https://savannah.nongnu.org/projects/hddtemp/).
+하드 드라이브의 온도를 얻는 방법에는 여러 가지가 있습니다. 간단한 해결책은 [hddtemp](https://savannah.nongnu.org/projects/hddtemp/)를 사용하는 것입니다.
 
 ```bash
 $ hddtemp -n /dev/sda
 ```
 
-To use this information, the entry for a command-line sensor in the `configuration.yaml` file will look like this.
+이 정보를 사용하기 위해 `configuration.yaml` 파일의 command-line 센서에 대한 항목은 다음과 같습니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -79,9 +79,9 @@ sensor:
     unit_of_measurement: "°C"
 ```
 
-### CPU temperature
+### CPU 온도
 
-Thanks to the [`proc`](https://en.wikipedia.org/wiki/Procfs) file system, various details about a system can be retrieved. Here the CPU temperature is of interest. Add something similar to your `configuration.yaml` file:
+[`proc`](https://en.wikipedia.org/wiki/Procfs) 파일 시스템 덕분에 시스템에 대한 다양한 세부 정보를 검색 할 수 있습니다. 여기서 CPU 온도가 중요합니다. `configuration.yaml` 파일과 비슷한 것을 추가하십시오 :
 
 {% raw %}
 ```yaml
@@ -96,9 +96,9 @@ sensor:
 ```
 {% endraw %}
 
-### Monitoring failed login attempts on Home Assistant
+### 홈어시스턴트에서 실패한 로그인 시도 모니터링
 
-If you'd like to know how many failed login attempts are made to Home Assistant, add the following to your `configuration.yaml` file:
+홈어시스턴트에 실패한 로그인 시도 횟수를 알고 싶다면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -108,7 +108,7 @@ sensor:
     command: "grep -c 'Login attempt' /home/hass/.homeassistant/home-assistant.log"
 ```
 
-Make sure to configure the [logger component](/integrations/logger) to monitor the [http component](/integrations/http/) at least the `warning` level.
+적어도 `warning` 레벨에서 [http component](/integrations/http/)를 모니터하도록 [logger component](/integrations/logger)를 설정하십시오.
 
 ```yaml
 # Example working logger settings that works
@@ -118,9 +118,9 @@ logger:
     homeassistant.components.http: warning
 ```
 
-### Details about the upstream Home Assistant release
+### 업스트림 홈어시스턴트 릴리스에 대한 세부 사항 
 
-You can see directly in the frontend (**Developer tools** -> **About**) what release of Home Assistant you are running. The Home Assistant releases are available on the [Python Package Index](https://pypi.python.org/pypi). This makes it possible to get the current release.
+실행중인 Home Assistant의 릴리스를 프론트 엔드 (**개발자 도구** -> **About**)에서 직접 확인할 수 있습니다. Home Assistant 릴리스는 [Python Package Index](https://pypi.python.org/pypi)에서 제공됩니다. 이를 통해 현재 릴리스를 얻을 수 있습니다.
 
 ```yaml
 sensor:
@@ -129,9 +129,9 @@ sensor:
     name: HA release
 ```
 
-### Read value out of a remote text file
+### 원격 텍스트 파일에서 값 읽기 
 
-If you own a devices which are storing values in text files which are accessible over HTTP then you can use the same approach as shown in the previous section. Instead of looking at the JSON response we directly grab the sensor's value.
+HTTP를 통해 액세스 할 수 있는 텍스트 파일에 값을 저장하는 장치를 소유한 경우 이전 섹션에 표시된 것과 동일한 방법을 사용할 수 있습니다. JSON 응답을 보는 대신 센서 값을 직접 가져옵니다.
 
 ```yaml
 sensor:
@@ -140,17 +140,17 @@ sensor:
     name: File value
 ```
 
-### Use an external script
+### 외부 스크립트 사용 
 
-The example is doing the same as the [aREST sensor](/integrations/arest#sensor) but with an external Python script. It should give you an idea about interfacing with devices which are exposing a RESTful API.
+예는 [aREST sensor](/integrations/arest#sensor)와 동일하지만 외부 Python 스크립트를 사용합니다. RESTful API를 노출하는 장치와의 인터페이스에 대한 아이디어를 제공해야합니다.
 
-The one-line script to retrieve a value is shown below. Of course would it be possible to use this directly in the `configuration.yaml` file but need extra care about the quotation marks.
+값을 검색하는 한 줄 스크립트는 다음과 같습니다. 물론 `configuration.yaml` 파일에서 직접 사용할 수도 있지만 따옴표에 대해서는 특별한 주의가 필요합니다.
 
 ```bash
 $ python3 -c "import requests; print(requests.get('http://10.0.0.48/analog/2').json()['return_value'])"
 ```
 
-The script (saved as `arest-value.py`) that is used looks like the example below.
+사용되는 스크립트(`arest-value.py`로 저장)는 아래 예제와 같습니다.
 
 ```python
 #!/usr/bin/python3
@@ -160,7 +160,7 @@ response = get("http://10.0.0.48/analog/2")
 print(response.json()["return_value"])
 ```
 
-To use the script you need to add something like the following to your `configuration.yaml` file.
+스크립트를 사용하려면 `configuration.yaml` 파일에 다음과 같은 것을 추가해야합니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -170,9 +170,9 @@ sensor:
     command: "python3 /path/to/script/arest-value.py"
 ```
 
-### Usage of templating in `command:`
+### `command:` 에서 템플릿의 사용법
 
-[Templates](/docs/configuration/templating/) are supported in the `command:` configuration variable. This could be used if you want to include the state of a specific sensor as an argument to your external script.
+[Templates](/docs/configuration/templating/)은 `command:` 설정 변수에서 지원됩니다. 특정 센서의 상태를 외부 스크립트에 대한 인수로 포함하려는 경우 사용할 수 있습니다.
 
 {% raw %}
 ```yaml
@@ -186,9 +186,9 @@ sensor:
 {% endraw %}
 
 
-### Usage of JSON attributes in command output
+### command output에서 ​​JSON 속성 사용
 
-The example shows how you can retrieve multiple values with one sensor (where the additional are attributes) by using `value_json` and `json_attributes`.
+이 예는 `value_json` 및 `json_attributes`를 사용하여 하나의 센서(추가가 속성 인 경우)로 여러 값을 검색하는 방법을 보여줍니다.
 
 {% raw %}
 ```yaml

@@ -1,5 +1,5 @@
 ---
-title: 삼성 SyncThru 프린터
+title: 삼성 프린터(Samsung SyncThru Printer)
 description: Instructions on how to integrate a Samsung printer providing SyncThru within Home Assistant.
 logo: samsung.png
 ha_category:

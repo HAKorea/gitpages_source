@@ -1,5 +1,5 @@
 ---
-title: GeoRSS(지도 RSS)
+title: 지도 RSS(GeoRSS)
 description: Instructions on how to set up GeoRSS sensors within Home Assistant.
 logo: rss.png
 ha_category:

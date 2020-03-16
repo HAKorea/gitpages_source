@@ -1,5 +1,5 @@
 ---
-title: 홈어시스턴트 모바일 앱 지원
+title: 홈어시스턴트 모바일앱(HA Mobile App Support)
 description: The Mobile App integration allows a generic platform for integrating with mobile apps.
 logo: home-assistant.png
 ha_category:

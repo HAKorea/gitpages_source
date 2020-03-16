@@ -1,5 +1,5 @@
 ---
-title: 보세 사운드터치(Bose Soundtouch)
+title: 보스 사운드터치(Bose Soundtouch)
 description: Instructions on how to integrate Bose Soundtouch devices into Home Assistant.
 logo: soundtouch.png
 ha_category:
@@ -7,6 +7,8 @@ ha_category:
 ha_release: 0.34
 ha_iot_class: Local Polling
 ---
+
+<iframe width="690" height="437" src="https://www.youtube.com/embed/GoWRsaS54JM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 `soundtouch` 플랫폼을 통해 Home Assistant에서 [Bose Soundtouch](https://www.soundtouch.com/) 스피커를 제어 할 수 있습니다 .
 

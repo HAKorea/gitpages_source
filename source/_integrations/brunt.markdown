@@ -1,5 +1,5 @@
 ---
-title: 브런트 Blind Engine
+title: 브런트 블라인드(Brunt Blind Engine)
 description: Instructions on how to set up Brunt Blind Engine within Home Assistant.
 logo: brunt.png
 ha_category:

@@ -1,5 +1,5 @@
 ---
-title: Geofency(아이폰위치추적)
+title: 아이폰위치추적(Geofency)
 description: Instructions for how to use Geofency to track devices in Home Assistant.
 logo: geofency.png
 ha_category:

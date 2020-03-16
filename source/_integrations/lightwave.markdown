@@ -10,6 +10,8 @@ ha_release: 0.84
 ha_iot_class: Assumed State
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/k0EVgsX9sUo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 The `lightwave` integration links Home Assistant with your Lightwave WiFi link for controlling Lightwave lights and switches.
 
 This integration uses the official API published by Lightwave on their website [https://api.lightwaverf.com/](https://api.lightwaverf.com/).

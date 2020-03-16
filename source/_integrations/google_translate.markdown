@@ -1,5 +1,5 @@
 ---
-title: 구글 번역 TTS
+title: 구글 번역 TTS(Google Translate TTS)
 description: Instructions on how to setup Google Translate Text-to-Speech with Home Assistant.
 logo: google.png
 ha_category:
@@ -56,3 +56,10 @@ SSL 인증서 또는 Docker를 사용하는 경우, `base_url` 설정 변수를 
 http:
   base_url: https://example.duckdns.org
 ```
+
+## 한국어 구글 TTS 설정 및 거실 환경 듣기 
+
+네이버 ST카페의 [라라라이이이님이 설정한 설정기](https://cafe.naver.com/stsmarthome/17295)를 링크합니다. 
+
+
+

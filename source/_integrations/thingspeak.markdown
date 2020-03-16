@@ -7,6 +7,8 @@ ha_category:
 ha_release: 0.32
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/y5PoByl4LgA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `thingspeak` 통합구성요소는 홈어시스턴트가 [ThingSpeak API](https://thingspeak.com/)와 통신하게합니다.
 지금은 정확히 한번에 하나의 엔티티를 기록하므로 테스트 목적으로 유용합니다. 장기 저장소의 경우 [InfluxDB component](/integrations/influxdb/)에 의존해야합니다.
 

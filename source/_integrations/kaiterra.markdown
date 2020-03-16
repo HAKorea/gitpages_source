@@ -10,6 +10,8 @@ ha_codeowners:
   - '@Michsior14'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/ppZ-72iJ2Lc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `kaiterra` 통합구성요소를 통해 [Kaiterra REST API](https://www.kaiterra.com/dev/)를 사용하여 Laser Egg 또는 Sensedge 장치의 판독값을 볼 수 있습니다.
 
 통합을 사용하려면 [Kaiterra dashboard](https://dashboard.kaiterra.cn/)에 가입하여 API 키를 얻어야합니다. 장치를 등록하고 `Settings -> Profile -> Developer` 에서 키를 만듭니다.

@@ -1,5 +1,5 @@
 ---
-title: WLED(LED 스트립)
+title: LED 스트립(WLED)
 description: Instructions on how to integrate WLED with Home Assistant.
 logo: wled.png
 ha_category:

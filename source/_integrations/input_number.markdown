@@ -1,5 +1,5 @@
 ---
-title: Input Number(숫자입력)
+title: 숫자입력(Input Number)
 description: Instructions on how to integrate the Input Number integration into Home Assistant.
 logo: home-assistant.png
 ha_category:

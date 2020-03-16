@@ -11,16 +11,18 @@ ha_codeowners:
   - '@bachya'
 ---
 
-The `simplisafe` integration integrates [SimpliSafe home security](https://simplisafe.com) (V2 and V3) systems into Home Assistant. Multiple SimpliSafe accounts can be accommodated.
+<iframe width="690" height="437" src="https://www.youtube.com/embed/FV6603-j27k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-There is currently support for the following device types within Home Assistant:
+`simplisafe` 통합구성요소는 [SimpliSafe home security](https://simplisafe.com) (V2 및 V3) 시스템을 Home Assistant에 연동합니다. 여러 개의 SimpliSafe 계정을 수용할 수 있습니다.
 
-- **Alarm Control Panel**: reports on the current alarm status and can be used to arm and disarm the system.
-- **Lock**: Reports on `Door Locks` and can be used to lock and unlock a lock.
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
-## Configuration
+- **Alarm Control Panel**: 현재 경보 상태를 보고하고 시스템을 arm 및 disarm하는데 사용할 수 있습니다.
+- **Lock**: `Door Locks`에 대해 보고하며 lock을 lock 및 unlock하는 데 사용할 수 있습니다.
 
-To enable this component, add the following lines to your `configuration.yaml`:
+## 설정
+
+이 구성요소를 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -45,15 +47,13 @@ code:
   type: string
 {% endconfiguration %}
 
-## Services
+## 서비스
 
-Note that the `system_id` parameter required by the below service calls can be discovered
-by looking at the device state attributes for the integration's `alarm_control_panel`
-entity.
+아래의 서비스 호출에 필요한 `system_id` 매개 변수는 연동한 `alarm_control_panel` 엔티티에 대한 장치 상태 속성을 보면 알 수 있습니다.
 
 ### `simplisafe.remove_pin`
 
-Remove a SimpliSafe PIN (by label or PIN value).
+SimpliSafe PIN을 제거하십시오 (label 또는 PIN 값 기준).
 
 | Service Data Attribute    | Optional | Description                                 |
 |---------------------------|----------|---------------------------------------------|
@@ -62,7 +62,7 @@ Remove a SimpliSafe PIN (by label or PIN value).
 
 ### `simplisafe.set_pin`
 
-Set a SimpliSafe PIN.
+SimpliSafe PIN을 설정하십시오.
 
 | Service Data Attribute    | Optional | Description                                 |
 |---------------------------|----------|---------------------------------------------|
@@ -72,9 +72,9 @@ Set a SimpliSafe PIN.
 
 ### `simplisafe.system_properties`
 
-Set one or more system properties.
+하나 이상의 시스템 속성을 설정하십시오.
 
-For any property denoting a volume, the following values should be used:
+볼륨을 나타내는 모든 속성에는 다음값을 사용해야합니다.
 
 * Off: `0`
 * Low: `1`

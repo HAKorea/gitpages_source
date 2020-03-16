@@ -1,5 +1,5 @@
 ---
-title: 러스사운드 RNET
+title: 러스사운드 RNET(Russound RNET)
 description: Instructions on how to integrate Russound RNET devices into Home Assistant.
 logo: russound.png
 ha_category:

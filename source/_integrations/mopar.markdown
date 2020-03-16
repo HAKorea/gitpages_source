@@ -1,5 +1,5 @@
 ---
-title: Mopar(FCA그룹 차량유지보수)
+title: FCA그룹 차량관리(Mopar)
 description: Instructions on how to integrate Mopar vehicles into Home Assistant.
 logo: mopar.png
 ha_category:

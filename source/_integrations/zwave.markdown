@@ -20,6 +20,10 @@ ha_codeowners:
   - '@home-assistant/z-wave'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/BrZhsSpv3BY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+자막을 한글 혹은 영어로 변경하여 시청을 권장합니다. 
+
 Home Assistant의 [Z-Wave](https://www.z-wave.com/) 통합구성요소를 통해 연결된 Z-Wave 장치를 관찰하고 제어할 수 있습니다. Z-Wave 컴포넌트 사용 및 설정 방법에 대한 자세한 문서는 [Z-Wave getting started section](/docs/z-wave/)을 참조하십시오.
 
 현재 홈 어시스턴트에서 다음 장치 유형이 지원됩니다.

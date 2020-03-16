@@ -1,5 +1,5 @@
 ---
-title: 벨킨 WeMo
+title: 벨킨 위모(Belkin Wemo)
 description: Instructions on how to integrate Belkin WeMo devices into Home Assistant.
 logo: belkin_wemo.png
 ha_category:
@@ -13,6 +13,8 @@ ha_config_flow: true
 ha_codeowners:
   - '@sqldiablo'
 ---
+
+<iframe width="690" height="437" src="https://www.youtube.com/embed/k9NOTXwfrtk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 `wemo`는 다양한 [Belkin WeMo](https://www.belkin.com/us/Products/home-automation/c/wemo-home-automation/) 장치들을 Home Assistant와 연동하기 위한 주요 통합구성요소입니다.
 

@@ -1,5 +1,5 @@
 ---
-title: 구글 클라우드 플랫폼
+title: 구글 클라우드 플랫폼(Google Cloud Platform)
 description: Google Cloud Platform integration.
 logo: google_cloud.png
 ha_category: Text-to-speech

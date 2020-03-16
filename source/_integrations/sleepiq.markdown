@@ -10,6 +10,8 @@ ha_release: 0.29
 ha_iot_class: Local Polling
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/RzPSe61o3Bc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 SleepIQ 구현을 통해 [SleepIQ by SleepNumber](https://www.sleepnumber.com/sleepiq-sleep-tracker)의 센서 데이터를 볼 수 있습니다
 
 ## 셋업

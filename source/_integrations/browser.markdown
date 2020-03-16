@@ -1,5 +1,5 @@
 ---
-title: 브라우저
+title: 브라우저(Browser)
 description: Instructions on how to setup the browser integration with Home Assistant.
 logo: home-assistant.png
 ha_category:

@@ -1,5 +1,5 @@
 ---
-title: 브라더 프린터
+title: 브라더 프린터(Brother printer)
 description: Instructions on how to integrate a Brother printer into Home Assistant.
 logo: brother.png
 ha_category:

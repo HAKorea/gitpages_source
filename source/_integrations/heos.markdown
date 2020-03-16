@@ -11,6 +11,8 @@ ha_codeowners:
   - '@andrewsayre'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/ck6UGL8G7Cs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 HEOS 통합구성요소는 스피커, 앰프 및 수신기 (Denon 및 Marantz)와 같은 [HEOS](http://heosbydenon.denon.com) 가능 제품에 대한 지원을 Home Assistant에 추가합니다. 현재 기능은 다음과 같습니다.
 
 - 각 장치는 미디어 플레이어 엔티티로 표시됩니다

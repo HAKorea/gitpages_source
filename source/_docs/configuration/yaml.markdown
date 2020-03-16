@@ -4,6 +4,8 @@ description: "Details about YAML to configure Home Assistant."
 redirect_from: /getting-started/yaml/
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/cdLNKUoMc6c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 홈어시스턴트는 설정에 [YAML](https://yaml.org/) 문법을 사용합니다. YAML은 익숙해지기까지 다소 시간이 걸리지 만 복잡한 구성을 표현할 수있는 능력이 있습니다.
 
 홈어시스턴트에서 통합구성요소를 사용하려는 통합의 경우 `configuration.yaml` 파일에 코드를 추가 하여 설정을 합니다. 이는 특히 UI를 통해 구성 할 수 없는 연동 시 적용됩니다. 

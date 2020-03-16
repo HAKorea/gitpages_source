@@ -1,5 +1,5 @@
 ---
-title: 솜피 MyLink
+title: 솜피 MyLink(Somfy Mylink)
 description: Instructions on how to integrate Somfy MyLink devices with Home Assistant.
 logo: tahoma.png
 ha_category:
@@ -8,6 +8,8 @@ ha_category:
 ha_release: 0.92
 ha_iot_class: Assumed State
 ---
+
+<iframe width="690" height="437" src="https://www.youtube.com/embed/xQpCy8BbrjY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 `Somfy MyLink` 통합구성요소는 `Synergy` API를 사용하는 호환 가능한 Somfy MyLink 허브에 대한 인터페이스로 사용됩니다. Somfy MyLink 플랫폼에서 홈 어시스턴트로 Cover를 추가 할 수 있습니다.
 

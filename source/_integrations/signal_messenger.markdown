@@ -1,5 +1,5 @@
 ---
-title: 시그널 메신저(Signal Messenger)
+title: 보안 메신저(Signal Messenger)
 description: Instructions on how to integrate Signal Messenger within Home Assistant.
 logo: signal_messenger.png
 ha_category:
@@ -8,6 +8,8 @@ ha_release: 0.104
 ha_codeowners:
   - '@bbernhard'
 ---
+
+<iframe width="690" height="437" src="https://www.youtube.com/embed/46ozjP-R2-E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 `signal_messenger` 통합구성요소는 [Signal Messenger REST API](https://github.com/bbernhard/signal-cli-rest-api)를 사용하여 Home Assistant에서 Android 또는 iOS 장치로 알림을 전달합니다.
 

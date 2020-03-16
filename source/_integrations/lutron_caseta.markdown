@@ -13,6 +13,8 @@ ha_release: 0.41
 ha_iot_class: Local Polling
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/9pnuFY-FDb4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 [Lutron](http://www.lutron.com/)은 미국 조명 제어 회사입니다. 여기에는 light switches, dimmers, occupancy sensors, HVAC controls 등을 관리하는 여러 홈자동화 장치 라인이 있습니다. 홈어시스턴트의 `lutron_caseta` 통합구성요소는 dimmers, switches, shades의 [Caseta](https://www.casetawireless.com/) 제품 라인을 위해 Lutron Caseta Smart Bridge와 통신하는 역할을 합니다.
 
 이 통합은구성요소는 [Caseta](https://www.casetawireless.com/) 제품군만 지원합니다. Smart Bridge (L-BDG2-WH) 및 Smart Bridge PRO (L-BDGPRO2-WH) 모델이 모두 지원됩니다. RadioRA 2 제품군의 경우 [Lutron component](/integrations/lutron/)를 참조하십시오.

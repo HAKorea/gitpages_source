@@ -1,5 +1,5 @@
 ---
-title: Input Datetime(시간입력)
+title: 시간입력(Input Datetime)
 description: Instructions on how to integrate the Input Datetime integration into Home Assistant.
 logo: home-assistant.png
 ha_category:

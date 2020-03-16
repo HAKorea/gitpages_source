@@ -1,5 +1,5 @@
 ---
-title: 야마하 Network Receivers
+title: Yamaha Network Receivers
 description: Instructions on how to integrate Yamaha Network Receivers into Home Assistant.
 logo: yamaha.png
 ha_category:

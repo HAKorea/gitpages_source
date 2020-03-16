@@ -1,5 +1,5 @@
 ---
-title: Ecobee(에코비)
+title: 에코비(Ecobee)
 description: Instructions for how to integrate ecobee thermostats and sensors within Home Assistant.
 logo: ecobee.png
 ha_category:

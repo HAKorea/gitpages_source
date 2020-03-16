@@ -1,5 +1,5 @@
 ---
-title: 필립스 TV
+title: 필립스 TV(Philips TV)
 description: Instructions on how to add Philips TVs to Home Assistant.
 logo: philips.png
 ha_category:

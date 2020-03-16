@@ -14,6 +14,8 @@ ha_iot_class: Local Push
 ha_release: 0.39
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/W_BDn-BUaD4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 이 연동 기능으로 INSTEON 모뎀에 대한 "local push"지원이 추가되어 연결된 INSTEON 장치를 Home Assistant 내에서 사용할 수 있습니다.
 
 현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.

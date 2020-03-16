@@ -1,5 +1,5 @@
 ---
-title: Intent Script(의도 스크립트)
+title: 의도 스크립트(Intent Script)
 description: Instructions on how to setup scripts to run on intents.
 logo: home-assistant.png
 ha_category:

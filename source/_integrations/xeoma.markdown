@@ -8,6 +8,8 @@ ha_iot_class: Local Polling
 ha_release: 0.62
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/udsRxmlfJv4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `Xeoma` 카메라 플랫폼을 사용하면 [Xeoma](https://felenasoft.com/xeoma) 비디오 감시 서버에서 비디오 피드를 볼 수 있습니다.
 
 ## 설정

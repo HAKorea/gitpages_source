@@ -12,6 +12,8 @@ ha_codeowners:
   - '@balloob'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/vmNp2RTGY6Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 [Almond](https://almond.stanford.edu/)는 [Stanford Open Virtual Assistant Lab](https://oval.cs.stanford.edu/)의 개인 정보 보호를 하는 가상 오픈소스 어시스턴트입니다. 무엇보다도 자연어를 사용하여 홈어시스턴트를 제어할 수 있습니다. 일단 설치되면, 오른쪽 상단의 마이크 아이콘을 통해 Lovelace에서 사용할 수 있습니다.
 
 아몬드는 세 부분으로 구성됩니다.
@@ -21,9 +23,6 @@ ha_codeowners:
 - Thingpedia: Thingtalk 프로그램의 빌딩 블록(building blocks)을 제공하는 기술.
 
 <a href='/images/integrations/almond/almond-architecture.svg'><img src='/images/integrations/almond/almond-architecture.svg' alt='Architectural overview of how all pieces fit together.' style='border: 0;box-shadow: none;'></a>
-
-<iframe width="690" height="437" src="https://www.youtube.com/embed/vmNp2RTGY6Q?start=385" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
 
 ## 설치
 

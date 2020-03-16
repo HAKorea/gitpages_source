@@ -12,6 +12,8 @@ ha_release: '0.40'
 ha_iot_class: Local Polling
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/eo55kn64C6M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `android_ip_webcam` 통합구성요소는 모든 Android 폰 또는 태블릿을 여러 보기 옵션이있는 네트워크 카메라로 쓸 수 있습니다.
 
 MJPEG 카메라로 설정되고 모든 설정은 Home Assistant 내부의 스위치로 설정됩니다. 센서를 노출시킬 수도 있습니다. 스마트폰이 여러 개인 경우 목록 내 모든 옵션을 사용할 수 있습니다.
@@ -23,7 +25,6 @@ MJPEG 카메라로 설정되고 모든 설정은 Home Assistant 내부의 스위
 - Sensor
 - Switch
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/eo55kn64C6M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## 셋업 (Setup)
 

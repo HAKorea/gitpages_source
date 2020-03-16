@@ -10,6 +10,9 @@ ha_codeowners:
   - '@JeffLIrion'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/m4kDsy36x5U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+
 `androidtv` 플랫폼을 사용하면 Android TV 장치 또는 [Amazon Fire TV](https://www.amazon.com/b/?node=8521791011)장치를 제어 할 수 있습니다.
 
 ## 장치 준비
@@ -26,8 +29,6 @@ Fire TV 장치의 지침은 다음과 같습니다.
   - From the main (Launcher) screen, select Settings.
   - Select My Fire TV > About > Network.
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/m4kDsy36x5U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
 
 ## 설정 
 

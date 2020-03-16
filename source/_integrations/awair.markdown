@@ -10,9 +10,13 @@ ha_codeowners:
   - '@danielsjf'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/QLA5B0yiuMQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `awair` 센서 플랫폼은 [Awair device(s)](https://getawair.com) 데이터를 연동 시킵니다.
 
 Awair API에 대한 액세스를 요청하고 [Developer Console](https://developer.getawair.com/)에서 액세스 토큰을 확보해야합니다 .
+
+*Note* : Awair 제품을 **로컬로 연결하는 방식**는 HA카페의 크리틱님의 [설정기](https://cafe.naver.com/koreassistant/729)를 참조하십시오. 
 
 ## 플랫폼 설정
 

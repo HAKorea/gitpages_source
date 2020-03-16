@@ -9,6 +9,8 @@ ha_codeowners:
   - '@fbradyirl'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/0O-k5Ku6P7o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `cisco_webex_teams` 알림 플랫폼을 사용하면 홈어시스턴트에서 [Cisco Webex Teams](https://www.webex.com/team-collaboration.html)(이전의 Cisco Spark)로 풍부한 알림을 전달할 수 있습니다.
 
 이 알림 플랫폼을 사용하려면 앱(bot) 토큰이 필요합니다. 토큰을 얻으려면 [Cisco Webex for Developers](https://developer.webex.com/)를 방문하십시오.

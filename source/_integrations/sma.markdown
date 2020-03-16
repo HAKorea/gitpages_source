@@ -10,6 +10,8 @@ ha_codeowners:
   - '@kellerza'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/4DXhWbYrasQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 The `sma` sensor will poll a [SMA](http://www.sma-solar.com/) [(US)](https://www.sma-america.com/) solar inverter and present the values as sensors (or attributes of sensors) in Home Assistant.
 
 This sensor uses the web interface and to use it, you have to be able to connect to the solar inverter from your favorite web browser.

@@ -13,6 +13,8 @@ ha_codeowners:
 ha_quality_scale: platinum
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/OkZHgBS_ZLU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 [Elgato Key Light](https://www.elgato.com/en/gaming/key-light)는 고급 스튜디오 조명의 기준을 제시합니다. 80 개의 LED를 사용하면 2500 루멘을 대량으로 방출할 수 있으며 색온도도 변경할 수 있습니다.
 
 LED 표시 등 패널은 특별히 제작되었으며 스트리머 및 콘텐츠 제작자를 위해 설계되었으며 대부분 YouTube 및 Twitch와 같은 플랫폼에서 작동합니다.

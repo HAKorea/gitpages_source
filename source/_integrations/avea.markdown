@@ -10,6 +10,8 @@ ha_codeowners:
   - '@pattyland'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/C2-DJrcN0fc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 [Elgato Avea](https://www.elgato.com/en/news/elgato-avea-transform-your-home)는 제조업체에서 더 이상 지원하지 않는 Bluetooth 전구입니다. `avea` 통합구성요소를 통해 Home Assistant로 모든 Avea 전구를 제어할 수 있습니다.
 
 ### 설정

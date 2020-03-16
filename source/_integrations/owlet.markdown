@@ -12,6 +12,8 @@ ha_codeowners:
   - '@oblogic7'
 ---
 
+<iframe width="690" height="409" src="https://www.youtube.com/embed/TrfA6HrYajk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 [Owlet Care](https://owletcare.com/) 베이비 모니터는 수면 중에 아기의 산소 수준과 심박수를 확인합니다.
 
 이 연동을 설정하면 심박수, 산소 수준, 동작 및 연결 상태를 추적할 수 있습니다. 배터리 상태는 산소 및 심박수 센서의 속성으로 제공됩니다.

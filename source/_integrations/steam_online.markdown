@@ -8,17 +8,17 @@ ha_iot_class: Cloud Polling
 ha_release: 0.14
 ---
 
-The `steam` sensor platform will allow you to track the online status of public [Steam](https://steamcommunity.com) accounts.
+`steam`센서 플랫폼을 사용하면 [Steam](https://steamcommunity.com) 계정의 온라인 상태를 추적할 수 있습니다.
 
-## Setup
+## 셋업
 
-You need a [free API key](https://steamcommunity.com/dev/apikey) to use the platform.
+플랫폼을 사용하려면 [free API key](https://steamcommunity.com/dev/apikey)가 필요합니다.
 
-To find an account's 64-bit SteamID on profiles without a custom URL you can check the URL of the profile page, the long string of numbers at the end is the 64-bit SteamID. If the profile has a custom URL you will have to copy the URL into [STEAMID I/O](https://steamid.io/) to find the 64-bit SteamID.
+사용자 정의 URL이 없는 프로파일에서 계정의 64 비트 SteamID를 찾으려면 프로파일 페이지의 URL을 확인할 수 있습니다. 끝에 있는 긴 문자열은 64 비트 SteamID입니다. 프로필에 사용자 지정 URL이 있으면 URL을 [STEAMID I/O](https://steamid.io/)에 복사하여 64 비트 SteamID를 찾아야합니다.
 
-## Configuration
+## 설정
 
-To use Steam in your installation, add the following to your `configuration.yaml` file:
+설치에서 Steam을 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -46,9 +46,9 @@ accounts:
       type: string
 {% endconfiguration %}
 
-## Examples
+## 사례 
 
-If you want to add the accounts to a group for example you will have to use:
+예를 들어 계정을 그룹에 추가하려면 다음을 사용해야합니다.
 
 ```yaml
 # Example configuration.yaml entry

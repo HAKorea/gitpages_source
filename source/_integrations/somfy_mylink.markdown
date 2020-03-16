@@ -9,6 +9,8 @@ ha_release: 0.92
 ha_iot_class: Assumed State
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/xQpCy8BbrjY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `Somfy MyLink` 통합구성요소는 `Synergy` API를 사용하는 호환 가능한 Somfy MyLink 허브에 대한 인터페이스로 사용됩니다. Somfy MyLink 플랫폼에서 홈 어시스턴트로 Cover를 추가 할 수 있습니다.
 
 설치시 호환되는 `Somfy MyLink` 장치를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.

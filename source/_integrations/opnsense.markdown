@@ -10,7 +10,7 @@ ha_codeowners:
   - '@mtreinish'
 ---
 
-[OPNsense] (https://opnsense.org/)는 오픈 소스 HardenedBSD 기반 방화벽 및 라우팅 플랫폼입니다. 현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
+[OPNsense](https://opnsense.org/)는 오픈 소스 HardenedBSD 기반 방화벽 및 라우팅 플랫폼입니다. 현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - [Presence Detection](#presence-detection)
 

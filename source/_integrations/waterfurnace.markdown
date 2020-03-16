@@ -8,6 +8,8 @@ ha_release: 0.62
 ha_iot_class: Cloud Polling
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/sbiq_yd-znM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `waterfurnace` 통합구성요소는 WaterFurnace Symphony 웹 사이트의 WebSocket과 통신하여 시스템의 많은 센서를 보여줍니다. 공식 API는 아니지만 Symphony 웹 사이트가 기반으로하는 것과 동일한 백엔드이며 안정적이어야합니다.
 
 제공되는 센서는 다음과 같습니다. :

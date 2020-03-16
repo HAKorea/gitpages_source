@@ -8,11 +8,13 @@ ha_release: '0.10'
 ha_iot_class: Cloud Polling
 ---
 
-`토크` 플랫폼을 사용하면 토크 모바일 애플리케이션을 통해 Bluetooth OBD2 스틱에서 릴레이 된 [Torque](https://torque-bhp.com/) 데이터를 모니터링 할 수 있습니다.
+<iframe width="690" height="437" src="https://www.youtube.com/embed/JIa0nsrQXI0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+`Torque` 플랫폼을 사용하면 Torque 모바일 애플리케이션을 통해 Bluetooth OBD2 스틱에서 릴레이된 [Torque](https://torque-bhp.com/) 데이터를 모니터링 할 수 있습니다.
 
 ## 셋업
 
-설치시 토크 센서를 사용하려면 Torque 모바일 애플리케이션과 Home Assistant를 모두 설정해야합니다.
+설치시 Torque 센서를 사용하려면 Torque 모바일 애플리케이션과 Home Assistant를 모두 설정해야합니다.
 
 ### Torque 앱
 

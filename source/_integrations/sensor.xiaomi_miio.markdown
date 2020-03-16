@@ -8,9 +8,9 @@ ha_iot_class: Local Polling
 ha_release: 0.66
 ---
 
-The `xiaomi_miio` sensor platform is observing your Xiaomi Mi Air Quality Monitor (PM2.5) and reporting the air quality index.
+`xiaomi_miio` 센서 플랫폼은 Xiaomi Mi Air Quality Monitor (PM2.5)를 관찰하고 대기질 지수를보고합니다.
 
-Currently, the supported features are:
+현재 지원되는 기능은 다음과 같습니다. : 
 
 - Air Quality Index (AQI)
 - Attributes
@@ -19,11 +19,11 @@ Currently, the supported features are:
   - battery
   - time_stat
 
-Please follow the instructions on [Retrieving the Access Token](/integrations/vacuum.xiaomi_miio/#retrieving-the-access-token) to get the API token.
+API 토큰을 얻으려면 [Retrieving the Access Token](/integrations/vacuum.xiaomi_miio/#retrieving-the-access-token)의 지침을 따르십시오.
 
-## Configuration
+## 설정
 
-To add a Xiaomi Mi Air Quality Monitor to your installation, add the following to your `configuration.yaml` file:
+Xiaomi Mi Air Quality Monitor를 설치에 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

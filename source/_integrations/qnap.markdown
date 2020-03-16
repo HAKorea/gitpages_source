@@ -10,11 +10,11 @@ ha_codeowners:
   - '@colinodell'
 ---
 
-This `qnap` sensor allows getting various statistics from your [QNAP NAS](https://www.qnap.com/en-us/).
+`qnap` 센서는 [QNAP NAS](https://www.qnap.com/en-us/)에서 다양한 통계를 가져올 수 있습니다.
 
-## Configuration
+## 설정
 
-To use the `qnap` sensor in your installation, add the following to your `configuration.yaml` file:
+설치에서 `qnap` 센서를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -116,13 +116,13 @@ monitored_conditions:
       description: Displays the used space of the volume as a percentage (creates a new entry for each volume).
 {% endconfiguration %}
 
-### Self-signed certificates
+### 자체 서명된 인증서(Self-signed certificates)
 
-If your QNAP device uses self-signed certificates, set the `verify_ssl` option to `false`.
+QNAP 장치가 자체 서명된 인증서를 사용하는 경우 `verify_ssl` 옵션을 `false`로 설정하십시오.
 
-### QNAP device support:
+### QNAP 장치 지원:
 
-This integration has been tested on the following devices:
+이 통합구성요소는 다음 장치에서 테스트되었습니다.
 
 - TS-259 Pro+ (QTS 4.2.6)
 - TS-410 (QTS 4.2.3)

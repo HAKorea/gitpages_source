@@ -7,13 +7,13 @@ ha_category:
 ha_release: 0.87
 ---
 
-The `qrcode` image processing platform enables QR code recognition from cameras.
+`qrcode` 이미지 처리 플랫폼을 사용하면 카메라에서 QR코드를 인식할 수 있습니다.
 
-To get this running, please install `zbar-tools` (Ubuntu 18.04)
+이를 실행하려면 `zbar-tools`를 설치하십시오 (Ubuntu 18.04)
 
-## Configuration
+## 설정
 
-To enable this, add the following lines to your `configuration.yaml` file:
+이를 가능하게하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry

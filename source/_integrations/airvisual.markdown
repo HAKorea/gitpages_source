@@ -10,7 +10,7 @@ ha_codeowners:
   - '@bachya'
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/5wMMUuBUJlk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="692" height="388" src="https://www.youtube.com/embed/5wMMUuBUJlk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 `airvisual` 센서 플랫폼은 대기질 데이터에 대한 [AirVisual](https://airvisual.com/) API를 쿼리합니다. 위도/경도 또는 도시/주/국가를 통해 데이터를 수집 할 수 있습니다. 결과 정보는 대기질 지수(AQI), 인간 친화적 대기질 레벨 및 해당 지역의 주요 오염 물질에 대한 센서를 생성합니다. [U.S. and Chinese air quality standards](https://www.clm.com/publication.cfm?ID=366) 둘 중 하나에 맞는 센서를 만들 수 있습니다.
 

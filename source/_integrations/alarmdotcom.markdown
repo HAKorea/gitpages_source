@@ -7,7 +7,7 @@ ha_category:
 ha_release: 0.11
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/J-B0eMcdEB4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="692" height="388" src="https://www.youtube.com/embed/J-B0eMcdEB4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 `alarmdotcom` 플랫폼은 [Alarm.com](https://www.alarm.com/)에서 제공하는 정보를 사용합니다.
 

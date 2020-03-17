@@ -8,7 +8,7 @@ ha_release: 0.75
 ha_iot_class: Cloud Polling
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/FSny-b9_D_U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+<iframe width="692" height="388" src="https://www.youtube.com/embed/FSny-b9_D_U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
 
 `aladdin_connect` 커버 플랫폼을 사용하면 Home Assistant를 통해 Genie Aladdin Connect 차고문을 제어 할 수 있습니다.

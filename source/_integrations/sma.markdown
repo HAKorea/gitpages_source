@@ -10,15 +10,16 @@ ha_codeowners:
   - '@kellerza'
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/4DXhWbYrasQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="692" height="388" src="https://www.youtube.com/embed/RWR4zTNiv_Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The `sma` sensor will poll a [SMA](http://www.sma-solar.com/) [(US)](https://www.sma-america.com/) solar inverter and present the values as sensors (or attributes of sensors) in Home Assistant.
+`sma` 센서는 [SMA](http://www.sma-solar.com/) [(US)](https://www.sma-america.com/) 태양광 인버터를 폴링하고 그 값을 Home Assistant에서 센서(또는 센서의 속성)로 표시합니다.
 
-This sensor uses the web interface and to use it, you have to be able to connect to the solar inverter from your favorite web browser.
+이 센서는 웹 인터페이스를 사용하고 이를 사용하려면 자주 사용하는 웹 브라우저에서 태양광 인버터에 연결할 수 있어야합니다.
 
-## Configuration
+## 설정
 
-To enable this sensor, add the following lines to your `configuration.yaml` file:
+이 센서를 활성화하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry (http)
@@ -101,7 +102,7 @@ custom:
 
 ## Sensors
 
-Sensors available in the library:
+라이브러리에서 사용 가능한 센서 :
 
 | name         | Unit | Description   |
 |--------------|------|:-------------------------------------------|
@@ -122,7 +123,7 @@ Sensors available in the library:
 | voltage_l2 | V | Voltage for phase 3. |
 | status     |  | Status of the solar plant. |
 
-The SMA WebConnect module supports a wide variety of sensors, and not all these have been mapped in the `pysma` library. Custom sensors can be defined by using the `custom` section of the configuration. You will need: A sensor name (no spaces), the SMA sensor key and the unit.
+SMA WebConnect 모듈은 다양한 센서를 지원하며 모든 센서가 `pysma` 라이브러리에 매핑된 것은 아닙니다. 사용자 정의 센서는 설정의 `custom` 섹션을 사용하여 정의할 수 있습니다. sensor name(공백 없음), SMA sensor key 및 unit가 필요합니다.
 
 Example:
 
@@ -134,4 +135,4 @@ Example:
          factor: 1000
 ```
 
-Over time more sensors will be added as standard sensors to the [pysma library](https://github.com/kellerza/pysma/blob/master/pysma/__init__.py#L100). Feel free to submit additional sensors on that repository.
+시간이 지남에 따라 더 많은 센서가 [pysma library](https://github.com/kellerza/pysma/blob/master/pysma/__init__.py#L100)에 표준 센서로 추가됩니다. 해당 저장소에 추가 센서를 언제든지 제출해주십시오. 

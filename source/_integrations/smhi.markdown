@@ -1,5 +1,5 @@
 ---
-title: SMHI
+title: 스웨덴 기상수력연구소(SMHI)
 description: Instructions on how to integrate SMHI forecasts within Home Assistant.
 logo: smhi.png
 ha_category:

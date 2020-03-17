@@ -1,5 +1,5 @@
 ---
-title: SMTP
+title: 메일알림(SMTP)
 description: Instructions on how to add e-mail notifications to Home Assistant.
 logo: smtp.png
 ha_category:
@@ -9,9 +9,11 @@ ha_codeowners:
   - '@fabaff'
 ---
 
-The `smtp` platform allows you to deliver notifications from Home Assistant to an e-mail recipient.
+<iframe width="690" height="388" src="https://www.youtube.com/embed/je8PyfILgLk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-To enable notification by e-mail in your installation, add the following to your `configuration.yaml` file:
+`smtp` 플랫폼을 사용하면 홈어시스턴트에서 이메일 수신자에게 알림을 전달할 수 있습니다.
+
+설치시 전자 우편으로 알림을 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -76,6 +78,7 @@ debug:
 {% endconfiguration %}
 
 A sample configuration entry for Google Mail.
+Google Mail의 샘플 설정 항목
 
 ```yaml
 # Example configuration.yaml entry
@@ -95,9 +98,9 @@ notify:
     sender_name: My Home Assistant
 ```
 
-Keep in mind that Google has some extra layers of protection which need special attention (Hint: 'Less secure apps'). If you have 2-step verification enabled on your Google account, you'll need to use [an application-specific password](https://support.google.com/mail/answer/185833?hl=en).
+Google에는 특별한 주의가 필요한 추가 보호 계층이 있습니다 (힌트: 'Less secure apps'). Google 계정에서 2 단계 인증을 사용하도록 설정한 경우 [an application-specific password](https://support.google.com/mail/answer/185833?hl=en)를 사용해야합니다.
 
-To use the SMTP notification, refer to it in an automation or script like in this example:
+SMTP 알림을 사용하려면 다음 예와 같이 자동화 또는 스크립트에서 SMTP 알림을 참조하십시오.
 
 ```yaml
   burglar:
@@ -116,9 +119,9 @@ To use the SMTP notification, refer to it in an automation or script like in thi
                     - /home/pi/snapshot2.jpg
 ```
 
-The optional `images` field adds in-line image attachments to the email. This sends a text/HTML multi-part message instead of the plain text default.
+선택적인 `images` 필드는 이메일에 인라인 이미지 첨부 파일을 추가합니다. 일반 텍스트 기본값 대신 텍스트/HTML 멀티 파트(multi-part) 메시지를 보냅니다.
 
-The optional `html` field makes a custom text/HTML multi-part message, allowing total freedom for sending rich html emails. In them, if you need to attach images, you can pass both arguments (`html` and `images`), the attachments will be joined with the basename of the images, so they can be included in the html page with `src="cid:image_name.ext"`.
+선택적인 `html` 필드는 커스텀 텍스트/HTML 멀티 파트 메시지를 만들어 풍부한 HTML 이메일을 자유롭게 보낼 수 있습니다. 이미지를 첨부해야하는 경우, 인수(`html` 및 `images`)를 모두 전달할 수 있으며, 첨부 파일은 이미지의 기본 이름과 결합되므로 `src="cid:image_name.ext"`를 사용하여 html 페이지에 포함시킬 수 있습니다.
 
 ```yaml
   burglar:
@@ -183,15 +186,14 @@ The optional `html` field makes a custom text/HTML multi-part message, allowing 
                 </html>
 
 ```
-Obviously, this kind of complex html email reporting is done much more conveniently using Jinja2 templating from an [AppDaemon app](/docs/ecosystem/appdaemon/tutorial/), for example.
+분명히 이런 종류의 복잡한 HTML 이메일 보고는 예를 들어 [AppDaemon app](/docs/ecosystem/appdaemon/tutorial/)같은 에서 Jinja2 템플릿을 사용하여 훨씬 더 편리하게 수행됩니다.
 
-This platform is fragile and not able to catch all exceptions in a smart way because of the large number of possible configuration combinations.
+이 플랫폼은 취약하며 가능한 많은 설정 조합으로 인해 모든 예외사항들을 현명하게 잡아내기 어려울 수 있습니다.
 
-A combination that will work properly is port 587 and STARTTLS. It's recommended to enable STARTTLS, if possible.
+올바르게 작동하는 조합은 포트 587과 STARTTLS입니다. 가능하면 STARTTLS를 활성화하는 것이 좋습니다.
 
-Keep in mind that if the password contains a colon, it needs to be wrapped in apostrophes in the `configuration.yaml` file.
+암호에 콜론이 포함되어 있으면 `configuration.yaml` 파일에서 아포스트로피로 묶어야합니다.
 
-For Google Mail (smtp.gmail.com) an additional step in the setup process is needed. Google has some extra layers of protection
-which need special attention. By default, the usage by external applications, especially scripts, is limited. Visit the [Less secure apps](https://www.google.com/settings/security/lesssecureapps) page and enable it.
+Google Mail (smtp.gmail.com)의 경우 설정 프로세스의 추가 단계가 필요합니다. Google에는 특별한 주의가 필요한 추가 보호 계층이 있습니다. 기본적으로 외부 응용 프로그램, 특히 스크립트의 사용은 제한됩니다. [Less secure apps](https://www.google.com/settings/security/lesssecureapps) 페이지를 방문하여 활성화하십시오.
 
-To use notifications, please see the [getting started with automation page](/getting-started/automation/).
+알림을 사용하려면 [getting started with automation page](/getting-started/automation/)를 참조하십시오.

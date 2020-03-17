@@ -1,5 +1,5 @@
 ---
-title: Slide 커튼
+title: 슬라이드 커튼(Slide Curtain)
 description: Instructions on how to integrate the Innovation in Motion Slide covers with Home Assistant.
 logo: slide.png
 ha_category:
@@ -11,9 +11,12 @@ ha_codeowners:
   - '@ualex73'
 ---
 
-The `slide` implementation allows you to integrate your [slide.store](https://slide.store/) devices in Home Assistant using the [official API](https://documenter.getpostman.com/view/6223391/S1Lu2pSf?version=latest).
+<iframe width="692" height="388" src="https://www.youtube.com/embed/fcofNbbm1OQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-### Configuration
+`slide` 구현을 통해 [official API](https://documenter.getpostman.com/view/6223391/S1Lu2pSf?version=latest)를 사용하여 홈어시스턴트에서 [slide.store](https://slide.store/) 장치를 연동할 수 있습니다.
+
+
+### 설정
 
 ```yaml
 # Example configuration.yaml entry

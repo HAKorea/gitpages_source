@@ -8,6 +8,8 @@ ha_release: 0.66
 ha_iot_class: Cloud Polling
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/DCuYVf1ii3A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `foobot` 센서 플랫폼은 [Foobot device(s)](https://foobot.io/features/)에서 공기측정 데이터를 가져옵니다
 
 이 센서에는 API 토큰이 필요합니다. [Foobot API 사이트](https://api.foobot.io/apidoc/index.html)에서 구하십시오.

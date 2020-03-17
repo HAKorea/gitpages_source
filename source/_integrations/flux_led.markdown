@@ -13,7 +13,7 @@ ha_release: 0.25
 `flux_led`는 라이트 플랫폼으로서 홈어시스턴트에 연동됩니다. 전구와 컨트롤러의 여러 브랜드는 동일한 프로토콜을 사용하며 HF-LPB100 칩셋을 공통으로 사용합니다. MagicHome 앱으로 장치를 제어 할 수 있으면 전구나 컨트롤러 (예: WiFi LED 컨트롤러)가 작동 할 가능성이 높습니다.
 전구의 예:
 
-*Note* : 해당 제품들의 일부 Wifi 제품들은 [ESPHOME](https://hakorea.github.io/integrations/esphome/), [TASMOTA](https://tasmota.github.io/docs/#/installation/)와 같은 방식으로 변환하여 좀 더 다양한 기능을 활용할 수 있습니다. 
+*Note* : 해당 제품들의 일부 Wifi 제품들은 [ESPHOME](https://hakorea.github.io/integrations/esphome/), [TASMOTA](https://tasmota.github.io/docs/#/installation/)와 같은 방식으로 변환시 좀 더 다양한 기능을 활용할 수 있습니다. 
 
 - [Flux Smart Lighting](https://www.fluxsmartlighting.com/)
 - [Flux WiFi Smart LED Light Bulb4](https://amzn.to/2X0dVwu)

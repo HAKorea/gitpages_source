@@ -10,6 +10,8 @@ ha_codeowners:
   - '@kifeo'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/klUBuhmbcj4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 FortiGate API의 장치 감지를 기반으로하는 FortiGate 재실 센서입니다.
 
 ## FortiGate 셋업

@@ -1,5 +1,5 @@
 ---
-title: "샤오미 공기 청정기"
+title: "샤오미 공기청정기 및 가습기"
 description: "Instructions on how to integrate your Xiaomi Air Purifier and Xiaomi Air Humidifier within Home Assistant."
 logo: xiaomi.png
 ha_category:
@@ -7,6 +7,8 @@ ha_category:
 ha_iot_class: Local Polling
 ha_release: 0.57
 ---
+
+<iframe width="690" height="437" src="https://www.youtube.com/embed/vKUJs1IOnTk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The `xiaomi_miio` fan 플랫폼을 사용하면 샤오미 공기 청정기, 공기 가습기와 공기 정화기를 제어 할 수 있습니다.
 

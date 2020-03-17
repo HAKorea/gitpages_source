@@ -1,5 +1,5 @@
 ---
-title: Fido
+title: 캐나다 통신사(Fido)
 description: Instructions on how to integrate Fido data usage within Home Assistant.
 logo: fido.png
 ha_category:

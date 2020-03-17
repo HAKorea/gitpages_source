@@ -1,5 +1,5 @@
 ---
-title: Flux LED/MagicLight
+title: 플럭스LED/매직라이트(Flux LED/MagicLight)
 description: Instructions on how to setup Flux led/MagicLight within Home Assistant.
 logo: magic_light.png
 ha_category:
@@ -8,24 +8,26 @@ ha_iot_class: Local Polling
 ha_release: 0.25
 ---
 
-The `flux_led` support is integrated into Home Assistant as a light platform. Several brands of both bulbs and controllers use the same protocol and they have the HF-LPB100 chipset in common. The chances are high that your bulb or controller (eg. WiFi LED CONTROLLER) will work if you can control the device with the MagicHome app.
+<iframe width="690" height="437" src="https://www.youtube.com/embed/EqZtinzD6yM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Example of bulbs:
+`flux_led`는 라이트 플랫폼으로서 홈어시스턴트에 연동됩니다. 전구와 컨트롤러의 여러 브랜드는 동일한 프로토콜을 사용하며 HF-LPB100 칩셋을 공통으로 사용합니다. MagicHome 앱으로 장치를 제어 할 수 있으면 전구나 컨트롤러 (예: WiFi LED 컨트롤러)가 작동 할 가능성이 높습니다.
+전구의 예:
+
+*Note* : 해당 제품들의 일부 Wifi 제품들은 [ESPHOME](https://hakorea.github.io/integrations/esphome/), [TASMOTA](https://tasmota.github.io/docs/#/installation/)와 같은 방식으로 변환하여 좀 더 다양한 기능을 활용할 수 있습니다. 
 
 - [Flux Smart Lighting](https://www.fluxsmartlighting.com/)
 - [Flux WiFi Smart LED Light Bulb4](https://amzn.to/2X0dVwu)
 - [WIFI smart LED light Bulb1](https://amzn.to/2J2fksr)
 
-Examples of controllers:
+컨트롤러의 예:
 
 - [Ledenet WiFi RGBW Controller](https://amzn.to/2WZKXNa)
 - [SUPERNIGHT WiFi Wireless LED Smart Controller](https://amzn.to/2WURx7w)
 
 
-### Configuration Details
+### 상세 설정
 
-
-To enable those lights, add the following lines to your `configuration.yaml` file:
+이러한 조명을 활성화하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -80,15 +82,16 @@ devices:
 
 <div class='note'>
 
-Depending on your controller or bulb type, there are two ways to configure brightness.
-The integration defaults to rgbw. If your device has a separate white channel, you do not need to specify anything else; changing the white value will adjust the brightness of white channel keeping rgb color constant. However, if your device does not have a separate white channel, you will need to set the mode to rgb. In this mode, the device will keep the same color, and adjust the rgb values to dim or brighten the color.
+컨트롤러 또는 전구 유형에 따라 밝기를 설정하는 두 가지 방법이 있습니다. 
+통합구성요소의 기본값은 rgbw입니다. 장치에 별도의 흰색 채널이 있는 경우 다른 것을 지정할 필요가 없습니다. 흰색값을 변경하면 RGB 색상을 일정하게 유지하면서 흰색 채널의 밝기가 조정됩니다. 그러나 장치에 별도의 흰색 채널이 없는 경우 모드를 rgb로 설정해야합니다. 이 모드에서 장치는 동일한 색상을 유지하고 RGB 값을 조정하여 색상을 어둡게하거나 밝게합니다.
 
 </div>
 
 
-### Example configuration
+### 설정 예시
 
 Will automatically search and add all lights on start up:
+시작시 모든 조명을 자동으로 검색하고 추가합니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -97,7 +100,7 @@ light:
     automatic_add: true
 ```
 
-Will add two lights with given name and create an automation rule to randomly set color each 45 seconds:
+주어진 이름으로 두 개의 조명을 추가하고 45 초마다 무작위로 색상을 설정하는 자동화 규칙을 만듭니다.
 
 ```yaml
 light:
@@ -121,7 +124,7 @@ automation:
       effect: random
 ```
 
-Will add a light without the white mode:
+white 모드없이 조명을 추가합니다 :
 
 ```yaml
     192.168.1.10:
@@ -129,7 +132,7 @@ Will add a light without the white mode:
       mode: "rgb"
 ```
 
-Will add a light with rgb+white mode (default). White and RGB channels can be adjusted independently using a slider and color picker respectively.
+rgb + white 모드로 조명을 추가합니다 (기본값). 슬라이더와 색상 선택기를 사용하여 흰색 및 RGB 채널을 독립적으로 조정할 수 있습니다.
 
 ```yaml
     192.168.1.10:
@@ -137,7 +140,7 @@ Will add a light with rgb+white mode (default). White and RGB channels can be ad
       mode: "rgbw"
 ```
 
-Will add a light with white mode only. This is useful when only W channel is connected to an RGBW controller and allows the white level to be controlled via brightness value.
+white 모드의 조명만 추가합니다. W 채널만 RGBW 컨트롤러에 연결되어 있고 밝기 값을 통해 화이트 레벨을 제어할 수있는 경우에 유용합니다.
 
 ```yaml
     192.168.1.10:
@@ -145,7 +148,7 @@ Will add a light with white mode only. This is useful when only W channel is con
       mode: "w"
 ```
 
-Some devices such as the Ledenet RGBW controller use a slightly different protocol for communicating the brightness to each color channel. If your device is only turning on or off but not changing color or brightness try adding the LEDENET protocol.
+Ledenet RGBW 컨트롤러와 같은 일부 장치는 밝기를 각 색상 채널에 전달하기 위해 약간 다른 프로토콜을 사용합니다. 장치가 켜지거나 꺼지고 색상이나 밝기가 변하지 않는 경우 LEDENET 프로토콜을 추가하십시오.
 
 ```yaml
 light:
@@ -156,9 +159,9 @@ light:
         protocol: 'ledenet'
 ```
 
-### Effects
+### 효과
 
-The Flux Led light offers a number of effects which are not included in other lighting packages. These can be selected from the front-end, or sent in the effect field of the `light.turn_on` command.
+Flux Led 조명은 다른 조명 패키지에 포함되지 않은 많은 효과를 제공합니다. 이것들을 프론트 엔드에서 선택하거나 `light.turn_on` 명령의 효과 필드로 보낼 수 있습니다.
 
 | Effect Name                                                                                                  | Description                                                        |
 |--------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------|
@@ -173,7 +176,7 @@ The Flux Led light offers a number of effects which are not included in other li
 | `random`                                                                                                     | Chooses a random color by selecting random values for R, G, and B. |
 | `custom`                                                                                                     | Custom effect (if defined, see below).                             |
 
-Users can define their own custom effect. It consists of three parameters: a list of 1 to 16 colors, speed and type of transition. The controller will transition between the colors in a loop, with sepcified transition and speed. Here is an example of a custom effect that will quickly flash red, yellow, green, cyan, blue, magenta in a loop:
+사용자는 자신만의 효과를 정의할 수 있습니다. 1 ~ 16 개의 색상 목록, 속도 및 전환 유형의 세 가지 매개 변수로 구성됩니다. 컨트롤러는 전환 및 속도가 세분화된 루프에서 색상을 변경할 수 있습니다. 다음은 루프에서 빨강, 노랑, 녹색, 시안, 파랑, 마젠타가 빠르게 깜박이는 사용자 정의 효과의 예입니다.
 
 ```yaml
 light:

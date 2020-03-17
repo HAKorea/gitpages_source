@@ -65,3 +65,6 @@ hide_github_edit: true
 * Owntracks Recorder for Hassio (owntracks4hassio)
 
 * 구글 어시스턴트 웹서버 애드온
+
+* [자이 ezvill 월패드용 js](https://cafe.naver.com/koreassistant/959)
+* [코맥스 소켓지원 애드온](https://cafe.naver.com/koreassistant/733)

@@ -1,5 +1,5 @@
 ---
-title: 안드로이드 TV
+title: 안드로이드 TV(Android TV)
 description: Instructions on how to integrate Android TV and Fire TV devices into Home Assistant.
 logo: androidtv.png
 ha_category:

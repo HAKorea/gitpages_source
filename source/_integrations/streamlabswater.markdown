@@ -1,5 +1,5 @@
 ---
-title: 스트림랩스(StreamLabs)
+title: 유량관리시스템(StreamLabs)
 description: Instructions on how to integrate Streamlabs Water devices with Home Assistant.
 logo: streamlabswater.png
 ha_category:
@@ -9,18 +9,20 @@ ha_release: '0.95'
 ha_iot_class: Cloud Polling
 ---
 
-The `Streamlabs Water` integration platform is used to interact with [Streamlabs water monitoring devices](https://www.streamlabswater.com/) in order to retrieve usage information and manage the away mode of the device. The [Streamlabs Water API](https://developer.streamlabswater.com) is used to retrieve daily, monthly, and yearly water usage along with the current away mode.
+<iframe width="690" height="437" src="https://www.youtube.com/embed/ZkYEeiv3lHE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-There is currently support for the following device types within Home Assistant:
+`Streamlabs Water` 통합구성요소 플랫폼은 사용 정보를 검색하고 장치의 자리 비움 모드를 관리하기 위해 [Streamlabs water monitoring devices](https://www.streamlabswater.com/)와 상호작용하는데 사용됩니다. [Streamlabs Water API](https://developer.streamlabswater.com)는 현재 자리 비움 모드와 함께 매일, 매월 및 매년 물사용량을 검색하는 데 사용됩니다.
+
+현재 홈어시스턴트에는 다음 장치 유형이 지원됩니다.
 
 - Binary Sensor
 - Sensor
 
-In preparation for using this integration you will need to request an API key following the instructions in the [Streamlabs API Getting Started Section](https://developer.streamlabswater.com/docs/getting-started.html). Be sure to request an API key and not an OAuth token.
+이 통합구성요소를 사용하려면 [Streamlabs API 시작하기 섹션](https://developer.streamlabswater.com/docs/getting-started.html)의 지침에 따라 API 키를 요청해야합니다. OAuth 토큰이 아닌 API 키를 요청하십시오.
 
-## Configuration
+## 설정
 
-Add the following to your `configuration.yaml` file:
+`configuration.yaml` 파일에 다음을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -39,9 +41,9 @@ location_id:
   type: string
 {% endconfiguration %}
 
-## Service `set_away_mode`
+## `set_away_mode` 서비스
 
-You can use the service `streamlabswater.set_away_mode` to set the mode to `home` or `away`. The away mode will only be changed for the configured location.
+`streamlabswater.set_away_mode` 서비스를 사용하여 모드를 `home` 또는 `away`로 설정할 수 있습니다. 자리 비움 모드는 설정된 위치에 대해서만 변경됩니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |

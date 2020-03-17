@@ -10,6 +10,8 @@ ha_codeowners:
   - '@ttroy50'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/S3ycnNtIK4I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 The `ephember` climate platform lets you control [EPH Controls](https://emberapp.ephcontrols.com/) thermostats. The module only works if you have a WiFi gateway to control your EPH system and an account on the EMBER app.
 
 To set it up, add the following information to your `configuration.yaml` file:

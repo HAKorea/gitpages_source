@@ -10,6 +10,8 @@ ha_codeowners:
   - '@rytilahti'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/xdVsIUbqBPY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 The `eq3btsmart` climate platform allows you to integrate EQ3 Bluetooth Smart Thermostats.
 
 The current functionality allows setting the temperature as well as controlling the supported modes with help of [python-eq3bt](https://github.com/rytilahti/python-eq3bt) library.

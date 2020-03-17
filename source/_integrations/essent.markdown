@@ -1,5 +1,5 @@
 ---
-title: Essent
+title: 네덜란드 에너지측정(Essent)
 description: Instructions on how to integrate Essent within Home Assistant.
 logo: essent.png
 ha_category:

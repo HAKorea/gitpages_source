@@ -1,5 +1,5 @@
 ---
-title: Bbox
+title: 프랑스 통신사 라우터(Bbox)
 description: Instructions on how to integrate Bouygues Bbox routers into Home Assistant.
 logo: bbox.png
 ha_category:

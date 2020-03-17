@@ -1,5 +1,5 @@
 ---
-title: eufy
+title: 이퓨(eufy)
 description: Instructions on how to integrate Eufy devices into Home Assistant.
 logo: eufy.png
 ha_category:
@@ -10,14 +10,19 @@ ha_release: 0.68
 ha_iot_class: Local Polling
 ---
 
-The `eufy` integration is the main integration to integrate various [eufy](https://www.eufylife.com/) devices with Home Assistant.
+우리나라는 **eufy 로봇청소기**만 와디즈에서 펀딩을 받아 판매했습니다. 
+해당 로봇청소기를 홈어시스턴트에 연동하려면, [여기](https://github.com/mitchellrj/eufy_robovac)를 참조해서 커스텀 컴포넌트를 설치하십시오. 
 
-There is currently support for the following device types within Home Assistant:
+<iframe width="690" height="437" src="https://www.youtube.com/embed/NYalEpeqJTk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+`eufy` 통합구성요소는 다양한 [eufy](https://www.eufylife.com/) 장치를 Home Assistant와 연동하기위한 메인 통합구성요소입니다.
+
+현재 홈어시스턴트에는 다음 장치 유형이 지원됩니다.
 
 - Light
 - Switch
 
-Supported devices will be discovered after the `eufy` integration is configured:
+`eufy` 통합구성요소가 설정된 후 지원되는 장치가 발견됩니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -26,7 +31,7 @@ eufy:
   password: PASSWORD
 ```
 
-where username and password are the ones configured in the EufyHome app. Alternately, Eufy devices that are not discoverable can be statically configured.
+여기서 username 및 password는 EufyHome 앱에서 설정한 것입니다. 또는 검색할 수 없는 Eufy 장치를 정적으로 설정할 수 있습니다.
 
 ```yaml
 eufy:
@@ -41,7 +46,7 @@ eufy:
       name: Smart Switch
 ```
 
-`access_token can be obtained by running:
+`access_token`은 다음을 실행하여 얻을 수 있습니다 : 
 
 ```bash
 $ curl -H "Content-Type: application/json" \
@@ -49,11 +54,11 @@ $ curl -H "Content-Type: application/json" \
    https://home-api.eufylife.com/v1/user/email/login
 ```
 
-replacing USERNAME and PASSWORD with the Eufy username and password. This will give an `access_token`. Then run:
+USERNAME 및 PASSWORD를 Eufy 사용자 이름 및 비밀번호로 바꿉니다. 이는 `access_token`을 줄 것입니다. 그런 후 다음을 실행하십시오.
 
 ```bash
 $ curl -H token:TOKEN -H category:Home \
    https://home-api.eufylife.com/v1/device/list/devices-and-groups
 ```
 
-replacing TOKEN with the `access_token` from the previous command. This will provide the local_code for each device.
+이전 명령에서 TOKEN을 `access_token`으로 바꿉니다. 이는 각 장치에 대한 local_code를 제공합니다.

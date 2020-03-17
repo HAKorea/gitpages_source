@@ -1,5 +1,5 @@
 ---
-title: Enphase Envoy
+title: 에너지관리통합솔루션(Enphase Envoy)
 description: Instructions on how to setup Enphase Envoy with Home Assistant.
 logo: enphase-logo.svg
 ha_category:
@@ -8,11 +8,13 @@ ha_release: 0.76
 ha_iot_class: Local Polling
 ---
 
-A sensor platform for the [Enphase Envoy](https://enphase.com/en-us/products-and-services/envoy-and-combiner) solar energy gateway. Works with older models that only have production metrics (ie. Envoy-C) and newer models that offer both production and consumption metrics (ie. Envoy-S).
+<iframe width="690" height="437" src="https://www.youtube.com/embed/-zm0NMKW7k4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Configuration
+[Enphase Envoy](https://enphase.com/en-us/products-and-services/envoy-and-combiner) 태양 에너지 게이트웨이용 센서 플랫폼. 에너지 생산 지표(예: Envoy-C)만있는 구형 모델 및 생산 및 소비 지표 (예: Envoy-S)를 모두 제공하는 최신 모델과 호환됩니다.
 
-To enable this sensor, add the following lines to your `configuration.yaml` file:
+## 설정
+
+이 센서를 활성화하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -62,7 +64,7 @@ monitored_conditions:
       description: The power in W being produced by each micro-inverter. This will create a separate sensor for each micro-inverter you have installed. These sensors will only update about every 15 minutes, this is a limitation of the Enphase Envoy API.
 {% endconfiguration %}
 
-### Full example
+### 전체 사례
 
 ```yaml
 # Example configuration.yaml entry, limiting the metrics to production only

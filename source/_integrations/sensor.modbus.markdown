@@ -8,11 +8,11 @@ ha_release: pre 0.7
 ha_iot_class: Local Push
 ---
 
-The `modbus` sensor allows you to gather data from [Modbus](http://www.modbus.org/) registers.
+`modbus` 센서를 사용하면 [Modbus](http://www.modbus.org/) 레지스터에서 데이터를 수집할 수 있습니다.
 
-## Configuration
+## 설정
 
-To use your Modbus sensors in your installation, add the following to your `configuration.yaml` file:
+Modbus 센서를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -114,17 +114,17 @@ registers:
       type: string
 {% endconfiguration %}
 
-It's possible to change the default 30 seconds scan interval for the sensor updates as shown in the [Platform options](/docs/configuration/platform_options/#scan-interval) documentation.
+[Platform options](/docs/configuration/platform_options/#scan-interval) 설명서에 표시된대로 센서 업데이트에 대한 기본 30 초 스캔 간격을 변경할 수 있습니다.
 
 <div class='note'>
 
-If you specify scale or offset as floating point values, double precision floating point arithmetic will be used to calculate final value. This can cause loss of precision for values that are larger than 2^53.
+스케일(scale) 또는 오프셋(offset)을 부동 소수점 값으로 지정하면 배정도 부동 소수점 산술(double precision floating point arithmetic)이 최종값을 계산하는 데 사용됩니다. 이로 인해 2^53보다 큰 값의 정밀도가 손실될 수 있습니다.
 
 </div>
 
-### Full example
+### 전체 사례
 
-Example a temperature sensor with a 10 seconds scan interval:
+스캔 간격이 10 초인 온도 센서의 예 :
 
 ```yaml
 sensor:

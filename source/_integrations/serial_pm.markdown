@@ -1,5 +1,5 @@
 ---
-title: Serial Particulate Matter
+title: 시리얼미세먼지측정기(Serial Particulate Matter)
 description: Instructions on how to integrate particulate matter (dust) sensors with Home Assistant.
 logo: serial_pm.png
 ha_category:

@@ -9,11 +9,11 @@ ha_iot_class: Local Push
 ha_quality_scale: internal
 ---
 
-The `websocket_api` sensor platform shows how many clients are connected to the stream API.
+`websocket_api` 센서 플랫폼은 stream API에 연결된 클라이언트 수를 보여줍니다.
 
-## Configuration
+## 설정
 
-To add the connected clients to your installation, add the following to your `configuration.yaml` file:
+연결된 클라이언트를 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -21,6 +21,6 @@ sensor:
   - platform: websocket_api
 ```
 
-### Note
+### 참고
 
-This replaces the previous `api_streams` sensor.
+이는 이전의 `api_streams` 센서를 대체합니다.

@@ -9,7 +9,7 @@ ha_codeowners:
   - '@fabaff'
 ---
 
-<iframe width="690" height="388" src="https://www.youtube.com/embed/je8PyfILgLk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="692" height="388" src="https://www.youtube.com/embed/je8PyfILgLk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 `smtp` 플랫폼을 사용하면 홈어시스턴트에서 이메일 수신자에게 알림을 전달할 수 있습니다.
 

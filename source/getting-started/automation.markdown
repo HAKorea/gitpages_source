@@ -48,6 +48,7 @@ entity_id: all
 
 자동화에 대해 더 궁금하시다면:
 
+- [레이군님의 자동화 강좌](https://cafe.naver.com/stsmarthome/12455)
 - [트리거](/docs/automation/trigger/)
 - [조건](/docs/automation/condition/)
 - [동작](/docs/automation/action/)

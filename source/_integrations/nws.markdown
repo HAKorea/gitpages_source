@@ -1,5 +1,5 @@
 ---
-title: National Weather Service (NWS)
+title: 미국 기상청 (NWS)
 description: Instructions on how to integrate National Weather Service data within Home Assistant.
 logo: nws.png
 ha_category: Weather

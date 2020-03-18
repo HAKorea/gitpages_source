@@ -1,5 +1,5 @@
 ---
-title: Meteorologisk institutt (Met.no)
+title: 노르웨이 기상청 (Met.no)
 description: Instructions on how to integrate Met.no within Home Assistant.
 logo: metno.png
 ha_category:

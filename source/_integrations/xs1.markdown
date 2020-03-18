@@ -1,5 +1,5 @@
 ---
-title: EZcontrol XS1
+title: DIY스마트홈(EZcontrol XS1)
 description: Instructions on how to integrate an XS1 Gateway within Home Assistant.
 logo: xs1.jpg
 ha_category:

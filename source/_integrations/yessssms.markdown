@@ -1,5 +1,5 @@
 ---
-title: yesss! SMS
+title: 오스트리아 통신사(yesss! SMS)
 description: Instructions on how to add Yesss-SMS notifications to Home Assistant.
 logo: yesssat.png
 ha_category:

@@ -1,5 +1,5 @@
 ---
-title: ZhongHong
+title: 중국 온도조절기(ZhongHong)
 description: Instructions on how to integrate ZhongHong Support thermostats within Home Assistant.
 logo: zhong_hong.png
 ha_category:

@@ -1,5 +1,5 @@
 ---
-title: Velbus
+title: 스마트홈 통합플랫폼(Velbus)
 description: Access and control your Velbus devices.
 logo: velbus.png
 ha_category:
@@ -15,6 +15,8 @@ ha_config_flow: true
 ha_codeowners:
   - '@cereal2nd'
 ---
+
+<iframe width="690" height="437" src="https://www.youtube.com/embed/21-smUSBsHk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The `velbus` integration is used to control [Velbus](https://www.velbus.eu/?lang=en) modules. It supports the Velbus USB, Velbus serial and a TCP/IP gateway.
 

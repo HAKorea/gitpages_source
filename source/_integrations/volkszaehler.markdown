@@ -1,5 +1,5 @@
 ---
-title: Volkszaehler
+title: 오픈소스지능형계량기(Volkszaehler)
 description: Instructions on how to integrate Volkszaehler sensors into Home Assistant.
 logo: volkszaehler.png
 ha_category:

@@ -1,5 +1,5 @@
 ---
-title: Heyu X10
+title: DIY스마트홈(Heyu X10)
 description: Instructions on how to setup X10 devices within Home Assistant.
 logo: x10.gif
 ha_category:
@@ -7,6 +7,8 @@ ha_category:
 ha_iot_class: Local Polling
 ha_release: 0.25
 ---
+
+<iframe width="690" height="388" src="https://www.youtube.com/embed/WuAXJWEAjgA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The `x10` light platform allows you to control your X10 based lights with Home Assistant.
 

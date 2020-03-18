@@ -8,11 +8,11 @@ ha_release: 0.7
 ha_iot_class: Configurable
 ---
 
-This `mqtt` sensor platform uses the MQTT message payload as the sensor value. If messages in this `state_topic` are published with *RETAIN* flag, the sensor will receive an instant update with last known value. Otherwise, the initial state will be undefined.
+이 mqtt 센서 플랫폼은 MQTT 메시지 payload를 센서값으로 사용합니다. 이 'state_topic'의 메시지가 *RETAIN* 플래그와 함께 게시되면 센서는 마지막으로 알려진 값으로 즉시 업데이트를 받습니다. 그렇지 않으면 초기 상태가 정의되지 않습니다.
 
-## Configuration
+## 설정
 
-To use your MQTT sensor in your installation, add the following to your `configuration.yaml` file:
+MQTT 센서를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -124,11 +124,11 @@ device:
       type: string
 {% endconfiguration %}
 
-## Examples
+## 사례
 
-In this section you find some real-life examples of how to use this sensor.
+본 섹션에는 이 센서를 사용하는 방법에 대한 실제 예가 나와 있습니다.
 
-### JSON attributes topic configuration
+### JSON 속성 topic 설정
 
 The example sensor below shows a configuration example which uses a JSON dict: `{"ClientName": <string>, "IP": <string>, "MAC": <string>, "RSSI": <string>, "HostName": <string>, "ConnectedSSID": <string>}` in a separate topic `home/sensor1/attributes` to add extra attributes. It also makes use of the `availability` topic. Extra attributes will be displayed in the frontend and can also be extracted in [Templates](/docs/configuration/templating/#attributes). For example, to extract the `ClientName` attribute from the sensor below, use a template similar to: {% raw %}`{{ state_attr('sensor.bs_rssi', 'ClientName') }}`{% endraw %}.
 
@@ -148,7 +148,7 @@ sensor:
 ```
 {% endraw %}
 
-### JSON attributes template configuration
+### JSON 속성 템플릿 설정
 
 The example sensor below shows a configuration example which uses a JSON dict: `{"Timer1":{"Arm": <status>, "Time": <time>}, "Timer2":{"Arm": <status>, "Time": <time>}}` on topic `tele/sonoff/sensor` with a template to add `Timer1.Arm` and `Timer1.Time` as extra attributes.  Extra attributes will be displayed in the frontend and can also be extracted in [Templates](/docs/configuration/templating/#attributes). For example, to extract the `Arm` attribute from the sensor below, use a template similar to: {% raw %}`{{ state_attr('sensor.timer1', 'Arm') }}`{% endraw %}.
 
@@ -171,17 +171,18 @@ sensor:
 ```
 {% endraw %}
 
-The state and the attributes of the sensor by design do not update in a synchronous manner if they share the same MQTT topic. Temporal mismatches between the state and the attribute data may occur if both the state and the attributes are changed simultaneously by the same MQTT message. An automation that triggers on any state change of the sensor will also trigger both on the change of the state or a change of the attributes. Such automations will be triggered twice if both the state and the attributes change. Please use a [MQTT trigger](/docs/automation/trigger/#mqtt-trigger) and process the JSON in the automation directly via the {% raw %}`{{ trigger.payload_json }}`{% endraw %} [trigger data](/docs/automation/templating/#mqtt) for automations that must synchronously handle multiple JSON values within the same MQTT message.
+설계상 센서의 상태 및 속성은 동일한 MQTT topic을 공유하는 경우 동기 방식으로 업데이트되지 않습니다. 상태와 속성이 동일한 MQTT 메시지에 의해 동시에 변경되면 상태와 속성 데이터 사이의 시간 불일치가 발생할 수 있습니다. 센서의 상태 변경시 트리거되는 자동화는 상태 변경 또는 속성 변경시 모두 트리거됩니다. 상태와 속성이 모두 변경되면 이러한 자동화가 두 번 트리거됩니다.
+[MQTT trigger](/docs/automation/trigger/#mqtt-trigger)를 사용하고 동일한 MQTT 메시지 내에서 여러 JSON 값을 동기적으로 처리해야하는 자동화를 위해 {% raw %}`{{ trigger.payload_json }}`{% endraw %}[trigger data](/docs/automation/templating/#mqtt)를 통해 자동화에서 JSON을 직접 처리하십시오.
 
-### Get battery level
+### 밧데리 레벨 받기
 
-If you are using the [OwnTracks](/integrations/owntracks) and enable the reporting of the battery level then you can use a MQTT sensor to keep track of your battery. A regular MQTT message from OwnTracks looks like this:
+[OwnTracks](/integrations/owntracks)를 사용하고 배터리 잔량보고를 활성화 한 경우 MQTT 센서를 사용하여 배터리를 추적할 수 있습니다. OwnTracks의 일반 MQTT 메시지는 다음과 같습니다.
 
 ```bash
 owntracks/tablet/tablet {"_type":"location","lon":7.21,"t":"u","batt":92,"tst":144995643,"tid":"ta","acc":27,"lat":46.12}
 ```
 
-Thus the trick is extracting the battery level from the payload.
+따라서 트릭(trick)은 payload에서 배터리 레벨을 추출하는 것입니다.
 
 {% raw %}
 ```yaml
@@ -195,9 +196,9 @@ sensor:
 ```
 {% endraw %}
 
-### Get temperature and humidity
+### 온습도 받기
 
-If you are using a DHT sensor and a NodeMCU board (esp8266), you can retrieve temperature and humidity with a MQTT sensor. A code example can be found [here](https://github.com/mertenats/open-home-automation/tree/master/ha_mqtt_sensor_dht22). A regular MQTT message from this example looks like this:
+DHT 센서와 NodeMCU 보드 (esp8266)를 사용하는 경우 MQTT 센서로 온도 및 습도를 검색 할 수 있습니다. [here](https://github.com/mertenats/open-home-automation/tree/master/ha_mqtt_sensor_dht22)에서 코드 예제를 찾을 수 있습니다. 이 예제의 일반 MQTT 메시지는 다음과 같습니다.
 
 ```json
 office/sensor1
@@ -207,7 +208,7 @@ office/sensor1
   }
 ```
 
-Then use this configuration example to extract the data from the payload:
+그런 다음이 설정 예제를 사용하여 payload에서 데이터를 추출하십시오.
 
 {% raw %}
 ```yaml
@@ -226,16 +227,16 @@ sensor:
 ```
 {% endraw %}
 
-### Get sensor value from a device with ESPEasy
+### ESPEasy를 사용하여 장치에서 센서값 받기
 
-Assuming that you have flashed your ESP8266 unit with [ESPEasy](https://github.com/letscontrolit/ESPEasy). Under "Config" set a name ("Unit Name:") for your device (here it's "bathroom"). A "Controller" for MQTT with the protocol "OpenHAB MQTT" is present and the entries ("Controller Subscribe:" and "Controller Publish:") are adjusted to match your needs. In this example the topics are prefixed with "home". Please keep in mind that the ESPEasy default topics start with a `/` and only contain the name when writing your entry for the `configuration.yaml` file.
+[ESPEasy](https://github.com/letscontrolit/ESPEasy)를 사용하여 ESP8266 장치를 플래시했다고 가정합니다. "Config"에서 장치의 이름 ("Unit Name:")을 설정하십시오 (여기서는 "bathroom"). "OpenHAB MQTT" 프로토콜을 사용하는 MQTT 용 "Controller"가 있으며 항목("Controller Subscribe:" 및 "Controller Publish:")이 상황에 맞게 조정됩니다. 이 예에서 topic은 "home"으로 시작합니다. ESPEasy 기본 topic은 `/`로 시작하고 `configuration.yaml` 파일에 대한 항목을 작성할 때만 이름을 포함합니다.
 
 - **Controller Subscribe**: `home/%sysname%/#` (instead of `/%sysname%/#`)
 - **Controller Publish**: `home/%sysname%/%tskname%/%valname%` (instead of `/%sysname%/%tskname%/%valname%`)
 
-Also, add a sensor in the "Devices" tap with the name "analog" and "brightness" as value.
+또한 "Devices"탭에서 이름이 "analog" 및 "brightness"인 값으로 센서를 추가하십시오.
 
-As soon as the unit is online, you will get the state of the sensor.
+장치가 온라인 상태가 되면 센서 상태를 얻게됩니다.
 
 ```bash
 home/bathroom/status Connected
@@ -243,7 +244,7 @@ home/bathroom/status Connected
 home/bathroom/analog/brightness 290.00
 ```
 
-The configuration will look like the example below:
+설정은 아래 예와 같습니다.
 
 {% raw %}
 ```yaml

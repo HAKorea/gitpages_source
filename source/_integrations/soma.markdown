@@ -1,5 +1,5 @@
 ---
-title: Soma Connect
+title: 스마트블라인드(Soma Connect)
 description: Instructions on how to set up the Soma Connect within Home Assistant.
 logo: soma.png
 ha_category:
@@ -11,15 +11,18 @@ ha_codeowners:
   - '@ratsept'
 ---
 
-The Soma integration will allow users to integrate their Soma Smarthome devices into Home Assistant using the Soma Connect hub.
+<iframe width="690" height="437" src="https://www.youtube.com/embed/rUWimvBEeZc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-You can build a Soma Connect yourself if you have a spare Raspberry Pi. You just need to follow the [ official instructions](https://somasmarthome.zendesk.com/hc/en-us/articles/360035521234-Install-SOMA-Connect-software-on-SOMA-Connect-Raspberry-Pi). After you have the SD card plug in the Pi and use an ethernet cable or [set up WiFI](https://somasmarthome.zendesk.com/hc/en-us/articles/360026210333-Configuring-Wi-Fi-access). Then find the IP address by checking your routers DHCP table (we will work on this step).
+Soma 통합구성요소를 통해 사용자는 Soma Connect 허브를 사용하여 Soma Smarthome 장치를 Home Assistant에 연동할 수 있습니다.
 
-The Connect will automatically find all your Smartshade devices in range and expose them through this integration and through Home Kit. This integration will only enumerate new shades when it is first set up. If you add shades after that you just need to restart Home Assistant or reconfigure this integration. Soma Connect will automatically discover new shades as they appear and expose them.
+여분의 Raspberry Pi가 있는 경우 Soma Connect를 직접 구축 할 수 있습니다. [ official instructions](https://somasmarthome.zendesk.com/hc/en-us/articles/360035521234-Install-SOMA-Connect-software-on-SOMA-Connect-Raspberry-Pi)을 따라가기만 하면 됩니다. 
+SD 카드를 라즈베리파이에 연결 한 후 이더넷 케이블 또는 [set up WiFI](https://somasmarthome.zendesk.com/hc/en-us/articles/360026210333-Configuring-Wi-Fi-access)을 사용하십시오. 그런 다음 라우터의 DHCP 테이블을 확인하여 IP 주소를 찾으십시오 (이 단계에서 작업 가능).
 
-To actually move the shades you have to first set them up according to the instructions that come with them.
+Connect는 범위 내의 모든 Smartshade 장치를 자동으로 찾아 이 통합구성요소 및 Home Kit를 통해 노출합니다. 이 통합구성요소는 처음 설정될 때 새 shade만 열거합니다. 그 후에 shade를 추가하면 Home Assistant를 다시 시작하거나 이 통합구성요소를 다시 설정하면됩니다. 새로운 shade가 자동으로 감지되어 노출됨에 따라 Soma Connect에 자동으로 생성됩니다. 
 
-## Configuration
+실제로 shades을 이동하려면 먼저 함께 제공되는 지침에 따라 shades을 설정해야합니다.
+
+## 설정
 
 ```yaml
 # Example configuration.yaml entry

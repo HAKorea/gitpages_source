@@ -13,21 +13,21 @@ ha_codeowners:
 
 <iframe width="690" height="437" src="https://www.youtube.com/embed/kV3NBzz2Afw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-The `speedtestdotnet` integration uses the [Speedtest.net](https://speedtest.net/) web service to measure network bandwidth performance.
+`speedtestdotnet` 통합구성요소는 [Speedtest.net](https://speedtest.net/) 웹 서비스를 사용하여 네트워크 대역폭 성능을 측정합니다.
 
-Enabling this integration will automatically create Speedtest.net sensors for the monitored conditions (below).
+이 통합구성요소를 활성화하면 모니터링된 조건(아래)에 대한 Speedtest.net 센서가 자동으로 생성됩니다.
 
-By default, a speed test will be run every hour. The user can change the update frequency in the configuration by defining the `scan_interval` for a speed test to run.
+기본적으로 속도 테스트는 1시간마다 실행됩니다. 사용자는 속도 테스트를 실행하기 위해 `scan_interval`을 정의하여 설정에서 업데이트 빈도를 변경할 수 있습니다.
 
-Most Speedtest.net servers require TCP port 8080 outbound to function. Without this port open you may experience significant delays or no results at all. See note on their [help page](https://www.speedtest.net/help).
+대부분의 Speedtest.net 서버가 작동하려면 TCP 포트 8080 아웃 바운드가 필요합니다. 이 포트를 열지 않으면 상당한 지연이 발생하거나 결과가 전혀 나타나지 않을 수 있습니다. [help page](https://www.speedtest.net/help)에 있는 참고 사항을 참조하십시오.
 
-## Configuration
+## 설정
 
-For the `server_id` check the list of [available servers](http://www.speedtestserver.com).
+`server_id`의 경우 [available servers](http://www.speedtestserver.com)목록을 확인하십시오.
 
-To add Speedtest.net sensors to your installation, add the following to your `configuration.yaml` file:
+Speedtest.net 센서를 설치에 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
-Once per hour, on the hour (default):
+시간당 한 번 (기본값) :
 
 ```yaml
 # Example configuration.yaml entry
@@ -63,7 +63,7 @@ manual:
   default: false
 {% endconfiguration %}
 
-### Time period dictionary example
+### 주기에 따른 사전(dictionary) 사례
 
 ```yaml
 scan_interval:
@@ -75,27 +75,26 @@ scan_interval:
   milliseconds: 0
 ```
 
-### Service
+### 서비스
 
-Once loaded, the `speedtestdotnet` integration will expose a service (`speedtestdotnet.speedtest`) that can be called to run a Speedtest.net speed test on demand. This service takes no parameters. This can be useful if you have enabled manual mode.
+일단 `speedtestdotnet` 통합구성요소는 필요할 때 Speedtest.net 속도 테스트를 실행하기 위해 호출  수있는 서비스 (`speedtestdotnet.speedtest`)를 노출합니다. 이 서비스에는 매개 변수가 없습니다. 수동 모드를 활성화한 경우 활용할 수 있습니다.
 
 ```yaml
 action:
   service: speedtestdotnet.speedtest
 ```
 
-This integration uses [speedtest-cli](https://github.com/sivel/speedtest-cli) to gather network performance data from Speedtest.net.
-Please be aware of the potential [inconsistencies](https://github.com/sivel/speedtest-cli#inconsistency) that this integration may display.
+이 통합구성요소는 [speedtest-cli](https://github.com/sivel/speedtest-cli)를 사용하여 Speedtest.net에서 네트워크 성능 데이터를 수집합니다.
+이 통합구성요소가 표시할 수있는 잠재적인 [inconsistencies](https://github.com/sivel/speedtest-cli#inconsistency)에 유의하십시오.
+홈어시스턴트가 처음 시작되면 속도 테스트 센서의 값이 `Unknown` 으로 표시됩니다. `speedtestdotnet.speedtest` 서비스를 사용하여 수동 속도 테스트를 실행하고 데이터를 채우거나 정기적으로 예약된 다음 테스트를 기다릴 수 있습니다. 수동 모드를 켜서 예약된 속도 테스트를 비활성화 할 수 있습니다.
 
-When Home Assistant first starts up, the values of the speed test sensors will show as `Unknown`. You can use the service `speedtestdotnet.speedtest` to run a manual speed test and populate the data or just wait for the next regularly scheduled test. You can turn on manual mode to disable the scheduled speed tests.
+## 사례
 
-## Examples
+이 섹션에서는이 구성 요소를 사용하는 방법에 대한 실제 예를 제공합니다.
 
-In this section you will find some real-life examples of how to use this component.
+### 주기적으로 실행
 
-### Run periodically
-
-Every half hour of every day:
+매일 30 분마다 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -108,7 +107,7 @@ speedtestdotnet:
     - upload
 ```
 
-### Using as a trigger in an automation
+### 자동화에서 트리거로 사용
 
 {% raw %}
 ```yaml
@@ -130,10 +129,10 @@ automation:
 ```
 {% endraw %}
 
-## Notes
+## 참고사항
 
-- When running on Raspberry Pi the maximum speed is limited by the LAN adapter. The Raspberry Pi 3+ models come with a Gigabit LAN adapter which supports a [maximum throughput](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/) of 300 Mbit/s.
-- Running this integration can have negative effects on the system's performance as it requires a fair amount of memory.
-- Entries under `monitored_conditions` only control which entities are available in Home Assistant, they do not disable conditions from running.
-- If run frequently, this integration has the ability to use a considerable amount of data. Frequent updates should be avoided on bandwidth-capped connections.
-- While the speedtest is running your network capacity is fully utilized. This may have a negative effect on other devices using the network such as gaming consoles or streaming boxes.
+- Raspberry Pi에서 실행할 때 최대 속도는 LAN 어댑터에 의해 제한됩니다. Raspberry Pi 3+ 모델은 300Mbit/s의 [maximum throughput](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/)을 지원하는 기가비트 LAN 어댑터와 함께 제공됩니다.
+- 이 통합구성요소를 실행하면 상당한 양의 메모리가 필요하므로 시스템 성능에 부정적인 영향을 줄 수 있습니다.
+- `monitored_conditions` 아래의 항목은 Home Assistant에서 사용할 수있는 엔티티 만 제어하며 실행시 조건들을 비활성화하지 않습니다.
+- 자주 실행하는 경우이 통합구성요소에는 상당한 양의 데이터를 사용할 수 있습니다. 대역폭 제한 연결시엔 자주 업데이트하지 않아야합니다.
+- 속도 테스트가 실행되는 동안 네트워크 용량이 전부 활용됩니다. 이는 게임 콘솔이나 스트리밍 박스와 같은 네트워크를 사용하는 다른 장치에 부정적인 영향을 줄 수 있습니다.

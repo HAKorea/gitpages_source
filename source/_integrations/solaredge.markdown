@@ -9,20 +9,22 @@ ha_iot_class: Cloud Polling
 ha_config_flow: true
 ---
 
-The `solaredge` platform uses the [SolarEdge Monitoring API](https://www.solaredge.com/sites/default/files/se_monitoring_api.pdf) to allow you to get details from your SolarEdge solar power setup and integrate these in your Home Assistant installation.
+<iframe width="690" height="437" src="https://www.youtube.com/embed/BjtL_vIkyNg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+`solaredge` 플랫폼은 [SolarEdge Monitoring API](https://www.solaredge.com/sites/default/files/se_monitoring_api.pdf)를 사용하여 SolarEdge 태양광 전력 설정에서 세부 정보를 가져와 Home Assistant 설치시 연동할 수 있습니다.
 
 <div class='note'>
 
-The SolarEdge Monitoring API has a daily rate limit of 300 requests. In order to stay under this limit, and alow for some additional requests, the `solaredge` platform will update the site overview every 10 minutes.
+SolarEdge Monitoring API의 일일 요청 속도는 300 회입니다. 이 한계를 지키고 일부 추가 요청을 줄이기 위해 `solaredge` 플랫폼은 10 분마다 사이트 Overview를 업데이트합니다.
 
 </div>
 
-## Configuration
+## 설정
 
-There are 2 options in configuring the SolarEdge integration:
+SolarEdge 통합구성요소 설정에는 두 가지 옵션이 있습니다.
 
-- Via the Home Assistant user interface where it will let you enter the port string to connect to the Velbus bus.
-- Via the Home Assistant `configuration.yaml` file.
+- 홈어시스턴트 사용자 인터페이스를 통해 포트 문자열을 입력하여 Velbus 버스에 연결할 수 있습니다. 
+- 홈어시스턴트 `configuration.yaml` 파일을 통해.
 
 {% raw %}
 ```yaml
@@ -49,9 +51,9 @@ name:
   type: string
 {% endconfiguration %}
 
-## Full configuration example
+## 전체 설정 사례
 
-In case you would like to convert the values for example to kWh instead of the default Wh, you can use the [template platform](/integrations/template).
+예를 들어 기본값 Wh 대신 kWh로 값을 변환하려는 경우 [template platform](/integrations/template)을 사용할 수 있습니다.
 
 {% raw %}
 ```yaml

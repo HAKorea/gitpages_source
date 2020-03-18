@@ -1,5 +1,5 @@
 ---
-title: Sense HAT
+title: 라즈베리파이 확장(Sense HAT)
 description: Instructions on how to setup Sense HAT LED lights within Home Assistant.
 logo: sense-hat.png
 ha_category:
@@ -9,6 +9,8 @@ ha_category:
 ha_iot_class: Assumed State
 ha_release: 0.44
 ---
+
+<iframe width="690" height="437" src="https://www.youtube.com/embed/lnp6jo2XOU8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 There is currently support for the following device types within Home Assistant:
 

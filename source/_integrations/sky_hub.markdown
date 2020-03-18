@@ -1,5 +1,5 @@
 ---
-title: Sky Hub
+title: 유럽방송통신사 라우터(Sky Hub)
 description: Instructions on how to integrate Sky Hub routers into Home Assistant.
 logo: sky.png
 ha_category:

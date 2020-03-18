@@ -9,14 +9,13 @@ ha_codeowners:
   - '@dgomes'
 ---
 
-The `sql` sensor platform enables you to use values from an [SQL](https://en.wikipedia.org/wiki/SQL) database supported by the [sqlalchemy](https://www.sqlalchemy.org) library, to populate a sensor state (and attributes).
-This can be used to present statistics about Home Assistant sensors if used with the `recorder` integration database. It can also be used with an external data source.
+`sql` 센서 플랫폼을 사용하면 [sqlalchemy](https://www.sqlalchemy.org) 라이브러리가 지원하는 [SQL](https://en.wikipedia.org/wiki/SQL) 데이터베이스의 값을 사용하여 센서 상태 (및 속성)를 채울 수 있습니다. `recorder` 통합구성요소 데이터베이스와 함께 사용되는 경우 홈어시스턴트 센서에 대한 통계를 제공하는 데 사용할 수 있습니다. 외부 데이터 소스와 함께 사용할 수도 있습니다.
 
-## Configuration
+## 설정
 
-To configure this sensor, you need to define the sensor connection variables and a list of queries to your `configuration.yaml` file. A sensor will be created for each query:
+이 센서를 설정하려면 센서 연결 변수와 `configuration.yaml` 파일에 대한 쿼리 목록을 정의해야합니다. 각 쿼리마다 센서가 생성됩니다. :
 
-To enable it, add the following lines to your `configuration.yaml`:
+이를 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오 :
 
 {% raw %}
 ```yaml
@@ -63,13 +62,13 @@ queries:
       type: template
 {% endconfiguration %}
 
-## Examples
+## 예시
 
-In this section, you find some real-life examples of how to use this sensor.
+본 섹션에서는 이 센서를 사용하는 방법에 대한 실제 예를 제공합니다.
 
-### Current state of an entity
+### 엔터티의 현재 상태
 
-This example shows the previously *recorded* state of the sensor `sensor.temperature_in`.
+이 예제는 센서 `sensor.temperature_in`의 이전 *recorded* 상태를 보여줍니다.
 
 ```yaml
 sensor:
@@ -78,7 +77,7 @@ sensor:
     unit_of_measurement: '°C'
 ```
 
-The query will look like this:
+쿼리는 다음과 같습니다. :
 
 ```sql
 SELECT * FROM states WHERE entity_id = 'sensor.temperature_in' ORDER BY state_id DESC LIMIT 1;
@@ -96,19 +95,19 @@ sensor:
 ```
 {% endraw %}
 
-Note that the SQL sensor state corresponds to the last row of the SQL result set.
+SQL 센서 상태는 SQL result set의 마지막 row에 해당합니다.
 
-### Previous state of an entity
+### 엔터티의 이전 상태
 
-This example only works with *binary_sensors*:
+이 예제는 *binary_sensors* 에서만 작동합니다.
 
 ```sql
 SELECT * FROM states WHERE entity_id = 'binary_sensor.xyz789' GROUP BY state ORDER BY last_changed DESC LIMIT 1;
 ```
 
-### Database size
+### 데이터베이스 크기
 
-#### Database size in Postgres
+#### Postgres의 데이터베이스 크기
 
 {% raw %}
 ```yaml
@@ -125,7 +124,7 @@ sensor:
 
 #### MariaDB/MySQL
 
-Change `table_schema="hass"` to the name that you use as the database name, to ensure that your sensor will work properly.
+센서가 올바르게 작동하도록 `table_schema="hass"`를 데이터베이스 이름으로 사용하는 이름으로 변경하십시오.
 
 {% raw %}
 ```yaml

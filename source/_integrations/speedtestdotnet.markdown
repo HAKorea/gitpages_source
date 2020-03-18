@@ -1,5 +1,5 @@
 ---
-title: 스피드테스트닷넷(Speedtest.net)
+title: 네트워크속도테스트(Speedtest.net)
 description: How to integrate Speedtest.net within Home Assistant.
 logo: speedtest.png
 ha_category:

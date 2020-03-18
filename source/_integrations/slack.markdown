@@ -1,5 +1,5 @@
 ---
-title: Slack
+title: 협업시스템(Slack)
 description: Instructions on how to add Slack notifications to Home Assistant.
 logo: slack.png
 ha_category:
@@ -7,9 +7,11 @@ ha_category:
 ha_release: pre 0.7
 ---
 
-The `slack` platform allows you to deliver notifications from Home Assistant to [Slack](https://slack.com/).
+<iframe width="692" height="388" src="https://www.youtube.com/embed/6c7_TpPUpL0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Setup
+`slack` 플랫폼을 통해 Home Assistant에서 [Slack](https://slack.com/)으로 알림을 전달할 수 있습니다.
+
+## 셋업
 
 ### Bot posting as you
 
@@ -21,18 +23,18 @@ The `slack` platform allows you to deliver notifications from Home Assistant to 
 
 <div class='note'>
 
-There is an app credential Verification Token on the Basic Settings of your app. This is **not** the API key you want.
+앱의 기본 설정에 앱 자격 증명 확인 토큰(credential Verification Token)이 있습니다. 이는 여기에 필요한 API 키가 **아닙니다.**
 
 </div>
 
 ### Bot posting as its own user
-It is also possible to use Slack bots as users. Just create a new bot at https://[YOUR_TEAM].slack.com/apps/build/custom-integration and use the provided token for that. You can add an icon from the frontend for Home Assistant and give the bot a meaningful name.
+Slack bot을 사용자로 사용할 수도 있습니다. https://[YOUR_TEAM].slack.com/apps/build/custom-integration 에서 new bot을 생성하고 제공된 토큰을 사용하십시오. 홈어시스턴트의 프론트 엔드에서 아이콘을 추가하고 bot에게 의미있는 이름을 지정할 수 있습니다.
 
-Don't forget to invite the bot to the room where you want to get the notifications.
+알림을 받으려는 방에 bot을 초대하는 것을 잊지 마십시오.
 
-## Configuration
+## 설정
 
-To enable the Slack notification in your installation, add the following to your `configuration.yaml` file:
+설치시 slack 알림을 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -68,9 +70,9 @@ icon:
   type: string
 {% endconfiguration %}
 
-### Slack service data
+### Slack 서비스 데이터
 
-The following attributes can be placed inside `data` for extended functionality.
+확장된 기능을 위해 다음 속성을 `data` 안에 배치할 수 있습니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
@@ -82,7 +84,7 @@ The following attributes can be placed inside `data` for extended functionality.
 | `auth`                 |      yes | If set to `digest` HTTP-Digest-Authentication is used. If missing HTTP-BASIC-Authentication is used. Is placed inside `file`.
 | `attachments`          |      yes | Array of [Slack attachments](https://api.slack.com/docs/message-attachments). See [the attachment documentation](https://api.slack.com/docs/message-attachments) for how to format. *NOTE*: if using `attachments`, they are shown **in addition** to `message`
 
-Example for posting file from URL:
+URL에서 파일을 게시하는 예 :
 
 ```json
 {
@@ -100,7 +102,7 @@ Example for posting file from URL:
 }
 ```
 
-Example for posting file from local path:
+로컬 경로에서 파일을 게시하는 예 :
 
 ```json
 {
@@ -114,9 +116,9 @@ Example for posting file from local path:
 }
 ```
 
-Please note that `path` is validated against the `whitelist_external_dirs` in the `configuration.yaml`.
+`path`는 `configuration.yaml`의 `whitelist_external_dirs`에 대해 검증된다는 걸 알아두십시오.
 
-Example for posting formatted attachment:
+포맷이 지정된 첨부 파일을 게시하는 예 :
 
 ```json
 {
@@ -132,6 +134,6 @@ Example for posting formatted attachment:
 }
 ```
 
-Please note that both `message` is a required key, but is always shown, so use an empty (`""`) string for `message` if you don't want the extra text.
+`message`는 필수키이지만 항상 표시되므로 여분의 텍스트를 원하지 않으면 `message`에 빈 문자열 (`""`)을 사용하십시오.
 
-To use notifications, please see the [getting started with automation page](/getting-started/automation/).
+알림을 사용하려면 [getting started with automation page](/getting-started/automation/)를 참조하십시오.

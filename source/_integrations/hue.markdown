@@ -14,6 +14,8 @@ ha_codeowners:
   - "@balloob"
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/X4SPukZKQ0o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 필립스 Hue 제품군은 Wifi, Bluetooth, Zigbee 3가지 통신방식의 제품들이 존재합니다. 
 
 그중에서 **현재 가장 많이 쓰는 통신방식은 Zigbee 제품**임으로 [Zigbee2mqtt 설치방법](https://hakorea.github.io/integrations/zha/)를 통해 필립스 Hue 제품군들을 설치하시길 권장합니다. 

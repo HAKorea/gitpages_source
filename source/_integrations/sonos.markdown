@@ -10,6 +10,8 @@ ha_iot_class: Local Push
 ha_config_flow: true
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/H2qIRgzLwDU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `sonos` 통합구성요소를 통해 Home Assistant에서 [Sonos](https://www.sonos.com) 무선 스피커를 제어 할 수 있습니다. IKEA Symfonisk 스피커와도 작동합니다.
 
 설정 패널 내부의 통합구성요소 페이지로 이동하여 Sonos 통합구성요소를 설정할 수 있습니다.

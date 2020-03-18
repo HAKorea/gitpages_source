@@ -11,22 +11,24 @@ ha_category:
 ha_iot_class: Local Push
 ---
 
-The `smappee` integration adds support for the [Smappee](https://www.smappee.com/) controller for energy monitoring and Comport plug switches.
+<iframe width="690" height="437" src="https://www.youtube.com/embed/ewIIZ4f2iMk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-There is currently support for the following device types within Home Assistant:
+`smappee` 통합구성요소는 에너지 모니터링 및 Comport 플러그 스위치를 위한 [Smappee](https://www.smappee.com/) 컨트롤러에 대한 지원을 추가합니다.
+
+현재 홈어시스턴트에는 다음 장치 유형이 지원됩니다.
 
 - Sensor
 - Switch
 
-Will be automatically added when you connect to the Smappee controller.
+Smappee 컨트롤러에 연결하면 자동으로 추가됩니다.
 
-The smappee integration gets information from [Smappee API](https://smappee.atlassian.net/wiki/spaces/DEVAPI/overview). Note: their cloud API now requires a subscription fee of €2.50 per month for Smappee Energy/Solar or €3 per month for Smappee Plus.
+smappee 통합구성요소는 [Smappee API](https://smappee.atlassian.net/wiki/spaces/DEVAPI/overview)에서 정보를 얻습니다. 참고: 클라우드 API는 이제 Smappee Energy/Solar의 경우 월 €2.50 또는 Smappee Plus의 경우 월 €3의 구독 요금이 필요합니다.
 
-## Configuration
+## 설정
 
-Info on how to get API access is described in the [smappy wiki](https://github.com/EnergieID/smappy/wiki).
+API 액세스를 얻는 방법에 대한 정보는 [smappy wiki](https://github.com/EnergieID/smappy/wiki)에 설명되어 있습니다.
 
-To use the `smappee` integration in your installation, add the following to your `configuration.yaml` file:
+설치에서 `smappee` 통합구성요소를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

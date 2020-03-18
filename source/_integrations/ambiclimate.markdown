@@ -1,5 +1,5 @@
 ---
-title: Ambiclimate
+title: AI에어컨관리(Ambiclimate)
 description: Instructions on how to integrate Ambiclimate A/C controller into Home Assistant.
 logo: ambiclimate.png
 ha_category: Climate
@@ -10,14 +10,14 @@ ha_codeowners:
   - '@danielhiversen'
 ---
 
-Integrates [Ambiclimate](https://ambiclimate.com/) Air Conditioning controller into Home Assistant.
-
 <iframe width="690" height="437" src="https://www.youtube.com/embed/HnhSGdNM7UI" frameborder="0" allowfullscreen></iframe>
 
-You must create an application [here](https://api.ambiclimate.com/clients) to obtain a `client_id` and `client_secret`.
-The `callback url` should be configured as your Home Assistant `base_url` + `/api/ambiclimate`, e.g. `https://example.com/api/ambiclimate`.
+[Ambiclimate](https://ambiclimate.com/) 에어컨 컨트롤러를 홈어시스턴트에 연동합니다.
 
-To enable this platform, add the following lines to your `configuration.yaml` file:
+`client_id` 및 `client_secret`을 얻으려면 [here](https://api.ambiclimate.com/clients) 응용 프로그램을 만들어야합니다.
+콜백 URL은 홈어시스턴트 `base_url` + `/api/ambiclimate`로 설정해야합니다. 예를 들어 `https://example.com/api/ambiclimate`
+
+이 플랫폼을 활성화하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -26,7 +26,7 @@ ambiclimate:
   client_secret: CLIENT_SECRET
 ```
 
-Restart Home Assistant. Then, go to the frontend and authorize Ambiclimate.
+홈어시스턴트를 다시 시작하십시오. 그런 다음 프론트 엔드로 이동하여 Ambiclimate를 승인하십시오.
 
 {% configuration %}
 client_id:
@@ -39,11 +39,11 @@ client_secret:
   type: string
 {% endconfiguration %}
 
-Note that you have to select manual mode from the Ambiclimate app to be able to control the A/C from Home Assistant.
+홈어시스턴트에서 A/C를 제어하려면 Ambiclimate 앱에서 수동 모드를 선택해야합니다.
 
-## Component services
+## Component 서비스
 
-Enable comfort mode on your AC:
+AC에서 comfort 모드를 활성화하십시오. : 
 
 `climate.set_comfort_mode`
 
@@ -51,7 +51,7 @@ Enable comfort mode on your AC:
 | ---------------------- | -------- | ----------- |
 | `Name` | yes | String with device name.
 
-Send feedback for comfort mode:
+comfort 모드에 대한 의견 보내기 :
 
 `climate.send_comfort_feedback`
 
@@ -60,7 +60,7 @@ Send feedback for comfort mode:
 | `Name` | yes | String with device name.
 | `value` | yes | Send any of the following comfort values: too_hot, too_warm, bit_warm, comfortable, bit_cold, too_cold, freezing
 
-Enable temperature mode on your AC:
+AC에서 temperature 모드를 활성화하십시오.
 
 `climate.set_temperature_mode`
 

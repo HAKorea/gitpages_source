@@ -1,5 +1,5 @@
 ---
-title: BeagleBone Black GPIO
+title: 비글본 블랙(BeagleBone Black GPIO)
 description: Instructions on how to integrate the GPIO capability of a BeagleBone Black into Home Assistant.
 logo: beaglebone-black.png
 ha_category:
@@ -10,16 +10,18 @@ ha_release: 0.36
 ha_iot_class: Local Push
 ---
 
-The `bbb_gpio` integration is the base for all [BeagleBone Black](https://beagleboard.org/black) related GPIO platforms in Home Assistant.
-There is no setup needed for the integration itself.
+<iframe width="690" height="485" src="https://www.youtube.com/embed/UIw14y82KIo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+`bbb_gpio` 통합구성요소는 Home Assistant의 모든 [BeagleBone Black](https://beagleboard.org/black) 관련 GPIO 플랫폼을 사용할 수 있습니다.
+연동 자체에 필요한 설정이 없습니다.
 
 ## Binary Sensor
 
-The `bbb_gpio` binary sensor platform allows you to read sensor values of the GPIOs of your [BeagleBone Black](https://beagleboard.org/black).
+`bbb_gpio` 이진 센서 플랫폼을 사용하면 [BeagleBone Black](https://beagleboard.org/black)의 GPIO 센서값을 읽을 수 있습니다.
 
-## Configuration
+## 설정
 
-To use your BeagleBone Black's GPIO in your installation, add the following to your `configuration.yaml` file:
+설치에서 BeagleBone Black의 GPIO를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -64,15 +66,15 @@ pins:
           default: UP
 {% endconfiguration %}
 
-For more details about the GPIO layout, visit the [article](https://elinux.org/Beagleboard:BeagleBoneBlack) about the BeagleBone Black.
+GPIO 레이아웃에 대한 자세한 내용은 BeagleBone Black에 관한 [article](https://elinux.org/Beagleboard:BeagleBoneBlack)을 방문하십시오.
 
 ## Switch
 
-The `bbb_gpio` switch platform allows you to control the GPIOs of your [BeagleBone Black](https://beagleboard.org/black).
+`bbb_gpio` 스위치 플랫폼을 사용하면 [BeagleBone Black](https://beagleboard.org/black)의 GPIO를 제어 할 수 있습니다.
 
-## Configuration
+## 설정
 
-To use your BeagleBone Black's GPIO in your installation, add the following to your `configuration.yaml` file:
+설치에서 BeagleBone Black의 GPIO를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -112,4 +114,4 @@ pins:
           type: boolean
 {% endconfiguration %}
 
-For more details about the GPIO layout, visit the [article](https://elinux.org/Beagleboard:BeagleBoneBlack) about the BeagleBone Black.
+GPIO 레이아웃에 대한 자세한 내용은 BeagleBone Black에 관한 [article](https://elinux.org/Beagleboard:BeagleBoneBlack)을 방문하십시오.

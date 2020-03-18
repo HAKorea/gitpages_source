@@ -11,6 +11,8 @@ ha_codeowners:
   - '@bachya'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/5DA1uzROM9w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `Ambient Weather Station` 통합구성요소는 [Ambient Weather](https://ambientweather.net)에서 개인 기상 관측소를 통해 현지 날씨 정보를 검색합니다.
 
 ## 셋업

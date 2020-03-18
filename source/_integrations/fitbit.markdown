@@ -10,6 +10,8 @@ ha_codeowners:
   - '@robbiet480'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/pcoU7k1TFIs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Fitbit 센서를 사용하면 [Fitbit](https://fitbit.com/)에서 홈어시스턴트로 데이터를 노출 할 수 있습니다.
 
 `configuration.yaml` 파일에 다음을 추가하여 센서를 활성화하십시오.

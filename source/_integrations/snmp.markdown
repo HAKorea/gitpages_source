@@ -1,5 +1,5 @@
 ---
-title: SNMP
+title: 장치상태확인(SNMP)
 description: Instructions on how to integrate SNMP into Home Assistant.
 logo: network-snmp.png
 ha_category:
@@ -11,21 +11,23 @@ ha_iot_class: Local Polling
 ha_release: 0.57
 ---
 
-A lot of WiFi access points and WiFi routers support the Simple Network Management Protocol (SNMP). This is a standardized method for monitoring/manageing network connected devices. SNMP uses a tree-like hierarchy where each node is an object. Many of these objects contain (live) lists of instances and metrics, like network interfaces, disks and WiFi registrations.
+<iframe width="692" height="388" src="https://www.youtube.com/embed/II1iu_JSW_U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-There is currently support for the following device types within Home Assistant:
+많은 WiFi 액세스 포인트와 WiFi 라우터는 SNMP(Simple Network Management Protocol)를 지원합니다. 네트워크 연결 장치를 모니터링/관리하는 표준화 된 방법입니다. SNMP는 각 노드가 객체인 트리와 같은 계층을 사용합니다. 이러한 많은 개체에는 네트워크 인터페이스, 디스크 및 WiFi 등록과 같은 인스턴스(instances) 및 메트릭(metrics) 목록이 포함되어 있습니다.
+
+현재 홈어시스턴트에는 다음 장치 유형이 지원됩니다.
 
 - [Presence Detection](#precense-detection)
 - [Sensor](#sensor)
 - [Switch](#switch)
 
 <div class='note warning'>
-This device tracker needs SNMP to be enabled on the router. It could be that you need to install the SNMP support manually.
+이 장치 추적기는 라우터에서 SNMP를 활성화해야합니다. SNMP 지원을 수동으로 설치해야 할 수도 있습니다.
 </div>
 
-## Presence Detection
+## 재실 감지
 
-The following OID examples pull the current MAC Address table from a router. This reflects all recent devices seen on the network. However, since devices are not removed until they time out, this is less effective for [device tracker integration page](/integrations/device_tracker/) than desirable. It is recommended to use [Ping](/integrations/ping) or [Nmap](/integrations/nmap_tracker) instead.
+다음 OID 예제는 라우터에서 현재 MAC 주소 테이블을 가져옵니다. 이것은 네트워크에서 본 모든 최근 장치를 반영합니다. 그러나 시간이 초과될 때까지 장치가 제거되지 않기 때문에 [device tracker integration page](/integrations/device_tracker/)에는 바람직하지 않습니다. 대신 [Ping](/integrations/ping) or [Nmap](/integrations/nmap_tracker)를 사용하는 것이 좋습니다.
 
 | Brand | Device/Firmware | OID |
 | --- | --- | --- |
@@ -45,7 +47,7 @@ The following OID examples pull the current MAC Address table from a router. Thi
 | TP-Link | Archer VR600 | `1.3.6.1.2.1.3.1.1.2` |
 | Ubiquiti | Edgerouter Lite v1.9.0 | `1.3.6.1.2.1.4.22.1.2` |
 
-To use the SNMP version 1 or 2c platform in your installation, add the following to your `configuration.yaml` file:
+설치시 SNMP 버전 1 또는 2c 플랫폼을 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry for SNMP version 1 or 2c
@@ -56,7 +58,7 @@ device_tracker:
     baseoid: 1.3.6.1.4.1.14988.1.1.1.2.1.1
 ```
 
-If you want to use encryption, you must enable SNMP version 3 by adding `auth_key` and `priv_key` variables and enabling SNMP version 3 on your router. Currently only SHA1 is supported for authentication and AES for encryption. Example of SNMPv3 configuration:
+암호화를 사용하려면 `auth_key` 및 `priv_key` 변수를 추가하고 라우터에서 SNMP 버전 3을 활성화하여 SNMP 버전 3을 활성화해야합니다. 현재 인증에는 SHA1만, 암호화에는 AES만 지원됩니다. SNMPv3 구성의 예 :
 
 ```yaml
 # Example configuration.yaml entry for SNMP version 3
@@ -92,13 +94,13 @@ priv_key:
   type: string
 {% endconfiguration %}
 
-See the [device tracker integration page](/integrations/device_tracker/) for instructions how to configure the people to be tracked.
+추적할 사람을 설정하는 방법에 대한 지침은 [device tracker integration page](/integrations/device_tracker/)를 참조하십시오.
 
 ## Sensor
 
-The `snmp` sensor platform displays information available through the [Simple Network Management Protocol (SNMP)](https://en.wikipedia.org/wiki/Simple_Network_Management_Protocol). SNMP uses a tree-like hierarchy where each node is an object, and is mainly supported by network-oriented devices such as routers, modems and printers.
+`snmp` 센서 플랫폼은 [Simple Network Management Protocol (SNMP)](https://en.wikipedia.org/wiki/Simple_Network_Management_Protocol)를 통해 사용 가능한 정보를 표시합니다. SNMP는 각 노드가 개체인 트리와 같은 계층을 사용하며 주로 라우터, 모뎀 및 프린터와 같은 네트워크 지향 장치에서 지원됩니다.
 
-To enable this sensor in your installation, add the following to your `configuration.yaml` file:
+설치시 이 센서를 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -181,7 +183,7 @@ default_value:
   type: string
 {% endconfiguration %}
 
-Valid values for `auth_protocol`:
+`auth_protocol`의 유효한 값 :
 
 - **none**
 - **hmac-md5**
@@ -191,7 +193,7 @@ Valid values for `auth_protocol`:
 - **hmac256-sha384**
 - **hmac384-sha512**
 
-Valid values for `priv_protocol`:
+`priv_protocol`의 유효한 값 :
 
 - **none**
 - **des**
@@ -200,28 +202,28 @@ Valid values for `priv_protocol`:
 - **aes-cfb-192**
 - **aes-cfb-256**
 
-### Finding OIDs
+### OIDs 찾기
 
-OIDs may vary on different systems because they are vendor-specific. Besides the device's manual, the [OID Repository](http://www.oid-info.com/) is a good place to start if you are looking for OIDs. As an example, the following OIDs are for the load of a Linux system.
+OID는 공급 업체별로 다르므로 시스템마다 다를 수 있습니다. 설명서 외에도 [OID Repository](http://www.oid-info.com/)는 OID를 찾는 경우 시작하기에 좋은 장소입니다. 예를 들어, 다음 OID는 Linux 시스템로드를 위한 것입니다.
 
 - 1 minute Load: `1.3.6.1.4.1.2021.10.1.3.1`
 - 5 minute Load: `1.3.6.1.4.1.2021.10.1.3.2`
 - 15 minute Load: `1.3.6.1.4.1.2021.10.1.3.3`
 
-There is a large amount of tools available to work with SNMP. `snmpwalk` let you easily retrieve the value of an OID.
+SNMP 작업에 사용할 수있는 많은 도구가 있습니다. `snmpwalk`를 사용하면 OID 값을 쉽게 검색할 수 있습니다.
 
 ```bash
 $ snmpwalk -Os -c public -v 2c 192.168.1.32 1.3.6.1.4.1.2021.10.1.3.1
 laLoad.1 = STRING: 0.19
 ```
 
-### Examples
+### 사례
 
-#### Printer uptime minutes
+#### 프린터 가동 시간
 
-According to the most common SNMP standard, the uptime of a device is accessible under OID `1.3.6.1.2.1.1.3.0`. The value represented using a format called `TimeTicks`, in units of hundredths of a second.
+가장 일반적인 SNMP 표준에 따르면 장치의 가동 시간은 OID `1.3.6.1.2.1.1.3.0`에서 액세스 할 수 있습니다. 이 값은 `TimeTicks`라는 형식을 사용하여 100 분의 1 초 단위로 나타냅니다.
 
-To create a sensor that displays the uptime for your printer in minutes, you can use this configuration:
+프린터 가동 시간을 분 단위로 표시하는 센서를 만들려면 다음 설정을 사용할 수 있습니다.
 
 {% raw %}
 ```yaml
@@ -237,17 +239,17 @@ sensor:
 ```
 {% endraw %}
 
-The `accept_errors` option will allow the sensor to work even if the printer is not on when Home Assistant is first started: the sensor will just display a `-` instead of a minute count.
+`accept_errors` 옵션은 홈어시스턴트가 처음 시작될 때 프린터가 켜져 있지 않아도 센서가 작동 할 수 있도록합니다. 센서는 분 단위 대신 `-` 만 표시합니다.
 
-The `value_template` option converts the original value to minutes.
+`value_template` 옵션은 원래 값을 분으로 변환합니다.
 
 ## Switch
 
-The `snmp` switch platform allows you to control SNMP-enabled equipment.
+`snmp` 스위치 플랫폼을 사용하면 SNMP 가능 장비를 제어할 수 있습니다.
 
-Currently, only SNMP OIDs that accept integer values are supported. SNMP v1, v2c and v3 are supported.
+현재 정수값을 허용하는 SNMP OID 만 지원됩니다. SNMP v1, v2c 및 v3이 지원됩니다.
 
-To use an SNMP switch in your installation:
+SNMP 스위치를 사용하려면
 
 ```yaml
 # Example configuration.yaml entry:
@@ -331,9 +333,9 @@ command_payload_off:
   type: string
 {% endconfiguration %}
 
-You should check with your device's vendor to find out the correct BaseOID and what values turn the switch on and off.
+올바른 BaseOID와 스위치를 켜고 끄는 값은 장치 공급 업체에 문의하십시오.
 
-Valid values for `auth_protocol`:
+`auth_protocol`의 유효한 값 :
 
 - **none**
 - **hmac-md5**
@@ -343,7 +345,7 @@ Valid values for `auth_protocol`:
 - **hmac256-sha384**
 - **hmac384-sha512**
 
-Valid values for `priv_protocol`:
+`priv_protocol`의 유효한 값 :
 
 - **none**
 - **des**
@@ -352,7 +354,7 @@ Valid values for `priv_protocol`:
 - **aes-cfb-192**
 - **aes-cfb-256**
 
-Complete examples:
+완전한 예 :
 
 ```yaml
 switch:

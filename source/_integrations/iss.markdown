@@ -1,5 +1,5 @@
 ---
-title: International Space Station (ISS)
+title: 국제 우주 정거장(ISS)
 description: Know if or when ISS will be above your home location
 logo: nasa.png
 ha_category:
@@ -9,18 +9,14 @@ ha_release: 0.36
 
 <iframe width="690" height="437" src="https://www.youtube.com/embed/0DXHAU223E8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-The `iss` platform uses the
-[Open Notify API](http://open-notify.org/Open-Notify-API/ISS-Location-Now/)
-to let you know if the station is above your home location.
-This means that ISS is 10° above the horizon of your home.
+`iss` 플랫폼은 [Open Notify API](http://open-notify.org/Open-Notify-API/ISS-Location-Now/)를 사용하여 스테이션이 우리집의 위에 위치해있는지 알려줍니다.
+이는 ISS가 집의 수평선 위로 10도 위에 있다는 것을 의미합니다.
 
-You can check in the attributes of the sensor to see the timestamp for the next
-rise of the station, its current coordinates, and the number of people in space.
+센서의 속성을 확인하여 스테이션의 다음 상승(rise)에 대한 타임 스탬프, 현재 좌표 및 공간에 있는 인원수를 확인할 수 있습니다.
 
-## Configuration
+## 설정
 
-To add ISS binary sensor to your installation,
-add the following to your `configuration.yaml` file:
+설치에 ISS 바이너리 센서를 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -43,15 +39,14 @@ show_on_map:
 
 <div class='note warning'>
 
-If you set `show_on_map: true` then the location attributes are named `latitude` and `longitude`.
-The default name of the location attributes is `lat` and `long` to avoid showing them on the map.
+`show_on_map: true`를 설정하면 위치 속성의 이름은 `latitude` 와 `longitude`입니다.
+위치 속성의 기본 이름은 맵에 표시되지 않도록 `lat` 및 `long`입니다.
 
 </div>
 
-### Show position on map with camera platform
+### 카메라 플랫폼으로 지도에 위치 표시
 
-The [generic camera platform](/integrations/mjpeg) offers
-the possibility to show the location of the ISS on OpenStreetMap.
+[generic camera platform](/integrations/mjpeg)은 OpenStreetMap에서 ISS의 위치를 ​​보여줄 수 있는 가능성을 제공합니다.
 
 {% raw %}
 ```yaml

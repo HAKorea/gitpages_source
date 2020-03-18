@@ -8,10 +8,8 @@ ha_release: 0.72
 ha_iot_class: Local Polling
 ---
 
-Assistant.
-이 `epson` 플랫폼을 사용하면 Home Assistant에서 Epson 프로젝터를 제어할 수 있습니다.
+`epson` 플랫폼을 사용하면 Home Assistant에서 Epson 프로젝터를 제어할 수 있습니다.
 
-add the following to your `configuration.yaml` file:
 Epson을 추가하려면 `configuration.yaml` 파일에 다음을 추가 하십시오. : 
 
 ```yaml

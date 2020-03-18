@@ -12,22 +12,24 @@ ha_codeowners:
   - '@scheric'
 ---
 
-The `solaredge_local` platform uses the local API available on some SolarEdge Inverters to allow you to get details from your SolarEdge solar power setup and integrate these into your Home Assistant installation.
+<iframe width="690" height="437" src="https://www.youtube.com/embed/BjtL_vIkyNg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Only specific models support the local API. The local API is available on inverters that do not have an LCD character screen. You can also  check the datasheets if in the section "Additional Features", sub-section "Inverter Commissioning" is present the following line "With the SetApp mobile application using built-in Wi-Fi access point for local connection". These inverters also have a part number that ends with a 4. For example: SEXXK-XXXXXBXX4 or SEXXXXH-XXXXXBXX4
+`solaredge_local` 플랫폼은 일부 SolarEdge 인버터에서 사용 가능한 로컬 API를 사용하여 SolarEdge 태양광 설정에서 세부 정보를 가져와 Home Assistant에 연동할 수 있습니다.
 
-You can check if the local API works by finding the IP address of your inverter and visiting it in a browser. If it supports the local API, you'll see a HTML page with the SolarEdge logo and a "Commissioning" menu. 
+특정 모델만 로컬 API를 지원합니다. 로컬 API는 LCD 문자 화면이 없는 인버터에서 사용할 수 있습니다. "Additional Features" 섹션에서 "Inverter Commissioning"하위 섹션에 "With the SetApp mobile application using built-in Wi-Fi access point for local connection" 섹션이 있는 경우 데이터 시트를 확인할 수 있습니다. 이 인버터에는 또한 4로 끝나는 부품 번호가 있습니다. (예: SEXXK-XXXXXBXX4 또는 SEXXXXH-XXXXXBXX4)
+
+인버터의 IP 주소를 찾아 브라우저에서 로컬 API가 작동하는지 확인할 수 있습니다. 로컬 API를 지원하는 경우 SolarEdge 로고가 있는 HTML 페이지와 "Commissioning" 메뉴가 나타납니다.
 
 <div class='note'>
   
-If your inverter does not support the local API, you can use the [cloud based version](/integrations/solaredge/)
+인버터가 로컬 API를 지원하지 않는 경우 [cloud based version](/integrations/solaredge/)을 사용할 수 있습니다
 
 </div>
 
 
-## Configuration
+## 설정
 
-To use the SolarEdge sensors in your installation, add the following to your configuration.yaml file:
+SolarEdge 센서를 사용하려면 configuration.yaml 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -48,9 +50,9 @@ name:
   type: string
 {% endconfiguration %}
 
-### Full configuration sample
+### 전체 설정 샘플
 
-A full configuration entry would look like the sample below.
+전체 설정 항목은 아래 샘플과 같습니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -60,7 +62,7 @@ sensor:
     ip_address: 192.168.1.123
 ```
 
-In case you would like to convert the values for example to kWh instead of the default Wh, you can use the [template platform](/integrations/template).
+예를 들어 기본값 Wh 대신 kWh로 값을 변환하려는 경우 [template platform](/integrations/template)을 사용할 수 있습니다.
 
 {% raw %}
 ```yaml

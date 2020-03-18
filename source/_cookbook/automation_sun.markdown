@@ -23,7 +23,7 @@ automation:
 
 #### 기상시간에 맞춰 자연스런 조명 연출하기 
 
-_필립스 Hue와 LIFX는 현재 전환을 지원하는 유일한 경량 플랫폼입니다._
+_필립스 Hue와 LIFX는 현재 transition을 지원하는 유일한 조명 플랫폼입니다._
 
 ```yaml
 automation:
@@ -40,7 +40,7 @@ automation:
 
 #### 태양 일출/일몰 알림 보내기
 
-태양 상태가 변경되면 [PushBullet](/integrations/pushbullet) 을 통해 알림을 보냅니다 .
+태양 상태가 변경되면 [PushBullet](/integrations/pushbullet)을 통해 알림을 보냅니다 .
 
 ```yaml
 automation:
@@ -66,7 +66,7 @@ automation:
 
 #### 태양 고도에 따른 조명 및 블라인드 자동화
 
-태양 기반 자동화는 시간 기반 오프셋(offset)을 사용하는 것보다 계절이 더 잘 변하기 때문에 일몰/일출의 오프셋에 대처하는 것이 낫습니다.
+태양 기반 자동화는 시간 기반 오프셋(offset)을 사용하는 것보다 계절에따라 더 잘 변하기 때문에 일몰/일출의 오프셋에 대처하는 것이 낫습니다.
 
 ```yaml
 - alias: 'Turn a few lights on when the sun gets dim'

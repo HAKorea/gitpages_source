@@ -26,7 +26,7 @@ ha_codeowners:
 
 왜 Zigbee2mqtt가 사용하기 좋은 장치인지는 [Zigbee 허브는 한개로 충분하다](https://cafe.naver.com/koreassistant/505)를 참조하십시오.
 
-1. Zigbee2mqtt 장치 CC2531 USB Stick [펌웨어](https://www.zigbee2mqtt.io/getting_started/flashing_the_cc2531.html) 작업하기 
+1. Zigbee2mqtt 장치 CC2531 USB Stick [펌웨어](https://cafe.naver.com/koreassistant/211) 작업하기 
 2. Zigbee2mqtt의 [설치 방법](https://cafe.naver.com/koreassistant/216) 
 3. Zigbee2mqtt의 [지원 장치](https://www.zigbee2mqtt.io/information/supported_devices.html) 및 페어링 방법
 4. Zigbee2mqtt의 [Add-on](https://github.com/danielwelch/hassio-zigbee2mqtt/tree/master/zigbee2mqtt) 링크

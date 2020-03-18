@@ -5,6 +5,8 @@ description: "Instructions to get Home Assistant configured."
 
 지금까지의 첫만남 과정은 공간의 이름을 설정하고 위치를 정하는 등 홈어시스턴트의 초기설정을 맛보는 것이였습니다. 첫만남이 끝나면 설정했던 옵션들을 왼쪽 메뉴의 설정(Configuration)을 클릭하고 UI를 통해 변경할 수 있습니다. 또는 `configuration.yaml` 파일을 직접 편집하여 홈어시스턴트 환경 설정을 진행 할 수 있습니다. 이번 과정은 파일을 직접 편집하는 것에 대해 설명합니다.
 
+또한 [**레이군님의 홈어시스턴트에 대한 기본적인 이해**](https://cafe.naver.com/stsmarthome/10204)를 정독해보시길 강력히 추천드립니다. 
+
 <div class='note'>
 
 아래 과정은 홈어시스턴트를 Hass.io로 설치한 경우에 해당합니다. 만일 다른 방법으로 설치했다면 [이 곳](/docs/configuration/)을 참고하세요.

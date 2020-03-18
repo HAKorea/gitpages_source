@@ -9,10 +9,8 @@ ha_release: 0.84
 ha_iot_class: Local Push
 ---
 
-The [HLK-SW16](http://www.hlktech.net/product_detail.php?ProId=48) by [Hi-Link](http://www.hlktech.net/) is a simple networkable 16 port relay device.
 [Hi-Link](http://www.hlktech.net/)의 [HLK-SW16](http://www.hlktech.net/product_detail.php?ProId=48)은 심플한 네트워크 가능 16 포트 릴레이입니다.
 
-To enable it, add the following lines to your `configuration.yaml`:
 이를 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오 :
 
 ```yaml

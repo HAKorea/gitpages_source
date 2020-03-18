@@ -1,5 +1,5 @@
 ---
-title: Flock
+title: 협업도구(Flock)
 description: Instructions on how to add Flock notifications to Home Assistant.
 logo: flock.png
 ha_category:
@@ -9,25 +9,27 @@ ha_codeowners:
   - '@fabaff'
 ---
 
-The `flock` platform uses [Flock.com](https://flock.com) to deliver notifications from Home Assistant.
+<iframe width="690" height="437" src="https://www.youtube.com/embed/hIymRucpNSk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Setup
+`flock` 플랫폼은 [Flock.com](https://flock.com)을 사용하여 Home Assistant에서 알림을 전달합니다.
 
-Go to the [Flock.com Admin website](https://admin.flock.com/#!/webhooks) and create a new "Incoming Webhooks". Choose a channel to send the notifications from Home Assistant to, specify a name and press *Save and Generate URL*.
+## 셋업
+
+[Flock.com Admin website](https://admin.flock.com/#!/webhooks)로 이동하여 새 "Incoming Webhooks"를 만듭니다. Home Assistant에서 알림을 보낼 채널을 선택하고 이름을 지정한 후 *Save and Generate URL* 을 누르십시오.
 
 <p class='img'>
   <img src='{{site_root}}/images/integrations/flock/flock-webhook.png' />
 </p> 
 
-You will need the last part of the URL which is the `access_token` for your room.
+room의 `access_token`인 URL의 마지막 부분이 필요합니다.
 
 <p class='img'>
   <img src='{{site_root}}/images/integrations/flock/new-webhook.png' />
 </p> 
 
-## Configuration
+## 설정
 
-To add Flock notifications to your installation, add the following to your `configuration.yaml` file:
+설치에 Flock 알림을 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -49,4 +51,4 @@ access_token:
   type: string
 {% endconfiguration %}
 
-To use notifications, please see the [getting started with automation page](/getting-started/automation/).
+알림을 사용하려면 [getting started with automation page](/getting-started/automation/)를 참조하십시오.

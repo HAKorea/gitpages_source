@@ -7,6 +7,8 @@ ha_release: 0.39
 logo: noaa.png
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/Erbw6G2aCxQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 The `aurora` platform uses the [NOAA aurora forecast](https://www.swpc.noaa.gov/products/aurora-30-minute-forecast) service to let you know if an aurora might be visible at your home location in the next 30 minutes, based off of current solar flare activity.
 
 This service gives a number 0-100 representing the current likelihood of visible auroras at your latitude/longitude. By default this sensor is set up to trigger when the reported likelihood for your location is > 75. It updates every 5 minutes.

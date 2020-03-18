@@ -11,19 +11,19 @@ ha_codeowners:
   - '@rohankapoorcom'
 ---
 
-The `iperf3` sensor integration allows you to measure network bandwidth performance against a private or public [Iperf3](https://software.es.net/iperf/index.html) server.
+`iperf3` 센서 연동을 통해 private 또는 public [Iperf3](https://software.es.net/iperf/index.html) 서버에 대한 네트워크 대역폭 성능을 측정할 수 있습니다.
 
-Enabling this integration will automatically create the Iperf3 sensors for the monitored conditions (below). By default, it will run every hour. The user can change the update frequency in the config by defining the `scan_interval` for a Iperf3 test to run.
+이 통합구성요소를 활성화하면 모니터링된 조건(아래)에 대한 Iperf3 센서가 자동으로 생성됩니다. 기본적으로 매시간 실행됩니다. 사용자는 Iperf3 테스트를 실행할 `scan_interval`을 정의하여 설정에서 업데이트 빈도를 변경할 수 있습니다.
 
-## Setup
+## 셋업
 
-This integration requires the `iperf3` command to be installed on your OS. Please, refer to the [official Iperf3 documentation](https://software.es.net/iperf/obtaining.html) for installation instructions.
+본 연동을 위해서는 OS에 `iperf3` 명령이 설치되어 있어야합니다. 설치 지침은 [official Iperf3 documentation](https://software.es.net/iperf/obtaining.html)를 참조하십시오.
 
-## Configuration
+## 설정
 
-To add the `iperf3` sensor to your installation, add the following to your `configuration.yaml` file:
+`iperf3` 센서를 설치에 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
-Once per hour, on the hour (default):
+시간당 한 번, 시간 (기본값) :
 
 ```yaml
 # Example configuration.yaml entry
@@ -98,22 +98,22 @@ scan_interval:
   milliseconds: 0
 ```
 
-You can find a list of public Iperf3 servers [here](https://iperf.fr/iperf-servers.php). You can also start your own Iperf3 server using the [mlabbe/iperf3's](https://hub.docker.com/r/mlabbe/iperf3/) docker image or just refer to your `iperf3` command's man page.
+public Iperf3 서버 목록은 [here](https://iperf.fr/iperf-servers.php)에서 찾을 수 있습니다. [mlabbe/iperf3's](https://hub.docker.com/r/mlabbe/iperf3/) 도커 이미지를 사용하여 자체 Iperf3 서버를 시작하거나 `iperf3` 명령의 매뉴얼 페이지를 참조할 수도 있습니다.
 
-The frequency when the test will be automatically triggered can be adjusted by setting the value `scan_interval` in seconds.
+`scan_interval` 값을 초단위로 설정하여 테스트가 자동으로 트리거되는 빈도를 조정할 수 있습니다.
 
-Parallel streams can help in some situations. As TCP attempts to be fair and conservative, you may consider increasing the `parallel` attribute. Use this value with careful and refer to Iperf3 man page for more information.
+병렬 스트림은 일부 상황에서 도움이 될 수 있습니다. TCP가 공정하고 보수적일 때 `parallel` 속성을 높이는 것을 고려할 수 있습니다. 이 값을 신중하게 사용하고 자세한 내용은 Iperf3 매뉴얼 페이지를 참조하십시오.
 
-You can use the service `sensor.iperf3_update` to trigger a manual speed test for all sensors. Iperf3 has its own service call that allow to perform a speed test on a particular entity.
+`sensor.iperf3_update` 서비스를 사용하여 모든 센서에 대해 수동 속도 테스트를 시작할 수 있습니다. Iperf3에는 특정 엔티티에 대한 속도 테스트를 수행할 수있는 자체 서비스 호출이 있습니다.
 
-### Service
+### 서비스
 
-Once loaded, the `iperf3` integration will expose a service (`iperf3.speedtest`) that can be called to run a speed test on demand. This can be useful if you have enabled manual mode.
+`iperf3` 통합구성요소는 일단 로드되면 요청시 속도 테스트를 실행하기 위해 호출할 수 있는 서비스(`ipepe3.speedtest`)를 노출합니다. 수동 모드를 활성화한 경우 유용할 수 있습니다.
 
 | Service data attribute | Description |
 | `host` | String that point at a configured `host` from configuration.yaml. Otherwise, tests will be run against all configured hosts.
 
-Example Service data:
+서비스 데이터 예 :
 
 ```json
 {"host": "192.168.0.121"}
@@ -121,4 +121,4 @@ Example Service data:
 
 ## Notes
 
-- When running on Raspberry Pi, just note that the maximum speed is limited by its 100 Mbit/s LAN adapter.
+- Raspberry Pi에서 실행할 때 최대속도는 100Mbit/s로서 LAN 어댑터에 의해 제한됩니다.

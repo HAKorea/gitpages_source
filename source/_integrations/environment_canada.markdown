@@ -1,5 +1,5 @@
 ---
-title: Environment Canada
+title: 캐나다 환경정보(Environment Canada)
 description: Weather data from Environment Canada.
 logo: environment_canada.png
 ha_category:

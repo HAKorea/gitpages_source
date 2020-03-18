@@ -1,5 +1,5 @@
 ---
-title: Snapcast
+title: 오픈소스멀티오디오(Snapcast)
 description: Instructions on how to integrate Snapcast into Home Assistant.
 logo: snapcast.png
 ha_category:

@@ -9,6 +9,8 @@ ha_codeowners:
   - '@robbiet480'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/JCjzEKdlezk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 The `twilio` notification platform enables sending notifications via SMS, powered by [Twilio](https://twilio.com).
 
 The requirement is that you have setup [Twilio](/integrations/twilio/).

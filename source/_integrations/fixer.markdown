@@ -1,5 +1,5 @@
 ---
-title: Fixer
+title: 실시간환율(Fixer)
 description: Instructions on how to integrate exchange rates from Fixer.io within Home Assistant.
 ha_category:
   - Finance
@@ -10,17 +10,19 @@ ha_codeowners:
   - '@fabaff'
 ---
 
-The `fixer` sensor will show you the current exchange rate from [Fixer.io](https://fixer.io/) which is using data from the [European Central Bank (ECB)](https://www.ecb.europa.eu).
+<iframe width="690" height="437" src="https://www.youtube.com/embed/u1zb4dHthss" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-To get an overview about the available [currencies](https://fixer.io/symbols).
+`fixer` 센서는  [European Central Bank (ECB)](https://www.ecb.europa.eu)의 데이터를 사용하는 [Fixer.io](https://fixer.io/)의 현재 환율을 표시합니다.
 
-## Setup
+사용 가능한 [currencies](https://fixer.io/symbols)를 살펴보십시오. 
 
-You need to create an [API key](https://fixer.io/product). There is a rate limit of 1000 calls per month.
+## 셋업
 
-## Configuration
+[API key](https://fixer.io/product)를 만들어야합니다. 한 달에 1000 콜의 제한이 있습니다.
 
-To enable this sensor, add the following lines to your `configuration.yaml` file:
+## 설정
+
+이 센서를 활성화하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -46,4 +48,4 @@ name:
   default: Exchange rate
 {% endconfiguration %}
 
-Details about the API are available in the [Fixer.io documentation](https://fixer.io/documentation).
+API에 대한 자세한 내용은 [Fixer.io documentation](https://fixer.io/documentation)에서 확인할 수 있습니다.

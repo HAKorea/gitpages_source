@@ -9,11 +9,11 @@ ha_iot_class: Local Push
 ha_release: 0.11
 ---
 
-Integrates MySensors switches into Home Assistant. See the [main component] for configuration instructions.
+MySensors 스위치를 Home Assistant에 연동합니다. 설정 지침은 [main component]를 참조하십시오.
 
-## Supported actuator types
+## 지원되는 액추에이터 유형
 
-The following actuator types are supported:
+다음과 같은 액추에이터 유형이 지원됩니다.
 
 ### MySensors version 1.4 and higher
 
@@ -44,19 +44,21 @@ S_TYPE          | V_TYPE
 ----------------|---------
 S_WATER_QUALITY | V_STATUS
 
-All V_TYPES for each S_TYPE above are required to activate the actuator for the platform. Use either V_LIGHT or V_STATUS depending on library version for cases where that V_TYPE is required.
+플랫폼의 액추에이터를 활성화하려면 위의 각 S_TYPE에 대한 모든 V_TYPES가 필요합니다. 해당 V_TYPE이 필요한 경우 라이브러리 버전에 따라 V_LIGHT 또는 V_STATUS를 사용하십시오.
 
 For more information, visit the [serial api] of MySensors.
+자세한 내용은 MySensors의 [serial api]를 방문하십시오.
 
-## Services
+## 서비스
 
-The MySensors switch platform exposes a service to change an IR code attribute for an IR switch device and turn the switch on. The IR switch will automatically be turned off after being turned on, if `optimistic` is set to `true` in the [config](/integrations/mysensors/#configuration) for the MySensors component. This will simulate a push button on a remote. If `optimistic` is `false`, the MySensors device will have to report its updated state to reset the switch. See the [example sketch](#ir-switch-sketch) for the IR switch below.
+MySensors 스위치 플랫폼은 IR 스위치 장치의 IR 코드 속성을 변경하고 스위치를 켜는 서비스를 제공합니다. 
+MySensors 구성 요소의 [config](/integrations/mysensors/#configuration)에서 `optimistic` 이 `true`로 설정되어 있으면 IR 스위치가 켜진 후 자동으로 꺼집니다. 리모컨의 푸시 버튼을 시뮬레이션합니다. `optimistic`이 `false`인 경우 MySensors 장치는 스위치를 재설정하기 위해 업데이트 된 상태를 보고해야합니다. 아래 IR 스위치에 대한  [example sketch](#ir-switch-sketch)를 참조하십시오.
 
 | Service | Description |
 | ------- | ----------- |
 | mysensors.send_ir_code | Set an IR code as a state attribute for a MySensors IR device switch and turn the switch on.|
 
-The service can be used as part of an automation script. For example:
+이 서비스는 자동화 스크립트의 일부로 사용할 수 있습니다. 예를 들면 다음과 같습니다.
 
 ```yaml
 # Example configuration.yaml automation entry
@@ -82,7 +84,7 @@ automation:
         V_IR_SEND: '0xC288'  # the IR code to send
 ```
 
-## Example sketches
+## sketches 예시
 
 ### Switch sketch
 

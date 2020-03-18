@@ -7,6 +7,8 @@ ha_category:
 ha_release: 0.53
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/a2q4V_SjUTY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 [Tank Utility](https://www.tankutility.com/) 프로판 탱크 모니터를 홈어시스턴트에 추가하십시오.
 
 ## 셋업

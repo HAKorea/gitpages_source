@@ -1,5 +1,5 @@
 ---
-title: Snips(Sonos가 인수)
+title: AI스피커(Snips)
 description: Instructions on how to integrate Snips within Home Assistant.
 logo: snips.png
 ha_category:
@@ -9,7 +9,7 @@ ha_release: 0.48
 
 <div class='note warning'>
   
-The Snips Console no longer available due to acquisition by Sonos. For more details, read the [announcement on the Snips forum](https://forum.snips.ai/t/important-message-regarding-the-snips-console/4145).
+Sonos의 인수로 인해 Snips Console을 더이상 사용할 수 없습니다. 자세한 내용은 [announcement on the Snips forum](https://forum.snips.ai/t/important-message-regarding-the-snips-console/4145)를 읽으십시오.
 
 </div>
 

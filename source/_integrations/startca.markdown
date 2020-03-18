@@ -1,5 +1,5 @@
 ---
-title: Start.ca
+title: 영국 통신사(Start.ca)
 description: Instructions on how to integrate Start.ca data usage within Home Assistant.
 logo: startca.png
 ha_category:
@@ -7,6 +7,8 @@ ha_category:
 ha_release: 0.64
 ha_iot_class: Cloud Polling
 ---
+
+<iframe width="690" height="440" src="https://www.youtube.com/embed/eTr-346Do7E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Integrate your [Start.ca](https://www.start.ca/) account information into Home Assistant.
 

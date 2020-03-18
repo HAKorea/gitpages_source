@@ -1,5 +1,5 @@
 ---
-title: StatsD
+title: 통계데몬(StatsD)
 description: Record events in StatsD.
 logo: statsd.png
 ha_category:
@@ -7,9 +7,9 @@ ha_category:
 ha_release: 0.12
 ---
 
-The `statsd` integration makes it possible to transfer all state changes to an external [StatsD](https://github.com/etsy/statsd) instance.
+`statsd` 통합구성요소로 모든 상태 변경을 외부 [StatsD](https://github.com/etsy/statsd) 인스턴스로 전송할 수 있습니다.
 
-To use the `statsd` integration in your installation, add the following to your `configuration.yaml` file:
+`statsd` 통합구성요소를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -60,4 +60,4 @@ statsd:
     heating: 10
 ```
 
-StatsD supports various [backends](https://github.com/etsy/statsd/blob/master/docs/backend.md).
+StatsD는 다양한 [backends](https://github.com/etsy/statsd/blob/master/docs/backend.md)를 지원합니다

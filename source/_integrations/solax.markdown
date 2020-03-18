@@ -1,5 +1,5 @@
 ---
-title: SolaX Power
+title: 태양광인버터(SolaX Power)
 description: Instructions on how to integrate Solax sensor within Home Assistant.
 logo: solax-logo.png
 ha_category:
@@ -11,11 +11,13 @@ ha_codeowners:
   - '@squishykid'
 ---
 
-The `solax` integration connects home-assistant to Solax solar power inverters. Solax inverters may be connected to a home Wi-Fi network and expose a REST API. This integration retrieves information such as photovoltaic power production, battery levels and power, and how much power is being fed back into the grid.
+<iframe width="690" height="437" src="https://www.youtube.com/embed/a9TY16j_Kk4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Configuration
+`solax` 통합구성요소는 홈어시스턴트를 Solax 태양광 인버터에 연결합니다. Solax 인버터는 홈 Wi-Fi 네트워크에 연결되어 REST API를 노출할 수 있습니다. 이 연동은 태양광 발전, 배터리 수준 및 전력, 그리드에 얼마나 많은 전력이 공급되는지와 같은 정보를 검색합니다.
 
-To use the Solax sensors in your installation, add the following to your configuration.yaml file:
+## 설정
+
+Solax 센서를 사용하려면 configuration.yaml 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -36,9 +38,9 @@ port:
   description: The port number
 {% endconfiguration %}
 
-### Optional template sensor
+### 선택적 템플릿 센서 
 
-If you would like to convert the values from multiple panels or view the total power the house is using, you can use the [template platform](/integrations/template).
+여러 패널의 값을 변환하거나 집에서 사용중인 총 전력을 보려면 [template platform](/integrations/template)을 사용할 수 있습니다.
 
 {% raw %}
 ```yaml
@@ -59,10 +61,9 @@ sensors:
 
 ### Note
 
-Inverter models with newer firmware (and also those using devices like PocketWifi) no longer expose an API when connected to your wireless network, they do however continue to expose it on their own broadcasted SSID. To use this sensor in this case it is necessary to set up a reverse proxy with something like Nginx and use a raspberry pi (or similar) with two network connections (one being wifi that connects to the inverters SSID).
+최신 펌웨어가 포함된 인버터 모델(PocketWifi와 같은 장치를 사용하는 인버터 모델)은 무선 네트워크에 연결할 때 더 이상 API를 노출시키지 않지만 자체 브로드 캐스트 SSID에 계속 노출시킵니다. 이 경우이 센서를 사용하려면 Nginx와 같은 것으로 리버스 프록시를 설정하고 두 개의 네트워크 연결 (하나는 인버터 SSID에 연결되는 wifi)로 라즈베리파이(또는 유사한 호스트)를 사용해야합니다.
 
-
-Example Nginx configuration
+Nginx 설정 예
 
 ```text
 location / {

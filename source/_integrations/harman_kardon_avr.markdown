@@ -8,7 +8,6 @@ ha_iot_class: Local Polling
 ha_release: 0.85
 ---
 
-The `harman_kardon_avr` platform allows you to control Harman Kardon Network Receivers from Home Assistant.
 `harman_kardon_avr` 플랫폼을 사용하면 Home Assistant에서 Harman Kardon 네트워크 수신기를 제어 할 수 있습니다.
 
 지원되는 장치 :
@@ -16,7 +15,7 @@ The `harman_kardon_avr` platform allows you to control Harman Kardon Network Rec
 - Harman Kardon AVR-151S
 - Other Harman Kardon AVR receivers (untested)
 
-Harman Kardon Network Receiver를 추가하려면 `configuration.yaml` 파일에 다음을 추가 하십시오.
+Harman Kardon 네트워크 수신기를 추가하려면 `configuration.yaml` 파일에 다음을 추가 하십시오.
 
 ```yaml
 # Example configuration.yaml entry

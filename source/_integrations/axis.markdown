@@ -13,9 +13,11 @@ ha_codeowners:
   - '@kane610'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/LoiVGkyCkWg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 [Axis Communications](https://www.axis.com/) 장치는 감시 카메라, 스피커, 액세스 제어 및 기타 보안 관련 네트워크 연결 하드웨어입니다. 이벤트 API는 펌웨어 5.50 이상에서 작동합니다.
 
-홈 어시스턴트는 네트워크에서 자신의 존재를 자동으로 감지합니다.
+홈어시스턴트는 네트워크에서 Axis 카메라를 자동으로 감지합니다.
 
 ## 설정
 

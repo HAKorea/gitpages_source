@@ -10,15 +10,17 @@ ha_codeowners:
   - '@ChrisMandich'
 ---
 
-The `flume` sensor will show you the current [flume](https://portal.flumetech.com/) status for the given Device ID.
+<iframe width="690" height="437" src="https://www.youtube.com/embed/tXsxCLkJD_o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Flume monitors the real-time status of your home water meter. Allowing the end-user to detect small leaks, gain real-time information on household water consumption, set water goals and budgets, and receive push notifications when suspicious water activities occur. 
+`flume` 센서는 주어진 장치 ID에 대한 현재 [flume](https://portal.flumetech.com/) 상태를 보여줍니다.
 
-## Configuration
+Flume은 가정용 수도 미터기의 실시간 상태를 모니터링합니다. 사용자가 작은 누수를 감지하고 가정의 물 소비량에 대한 실시간 정보를 얻고, 물의 사용 목표 및 예산을 설정하고, 의심스러운 물의 활동이 발생하면 푸시 알림을 받을 수 있습니다.
 
-You can find your Client ID and Client Secret under "API Access" on the [settings page](https://portal.flumetech.com/#settings). 
+## 설정
 
-To enable the flume sensor, add the following lines to your `configuration.yaml` file:
+[settings page](https://portal.flumetech.com/#settings)의 "API Access"에서 Client ID와 Client 비밀정보를 확인할 수 있습니다.
+
+flume 센서를 활성화하려면 `configuration.yaml` 파일에 다음 라인을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -55,9 +57,9 @@ name:
   type: string
 {% endconfiguration %}
 
-# Configuration for Binary Sensor
+# Binary Sensor 설정
 
-The following YAML creates a binary sensor. This requires the default sensor to be configured successfully.
+다음 YAML은 Binary Sensor를 만듭니다. 기본 센서를 성공적으로 설정해야합니다.
 
 {% raw %}
 

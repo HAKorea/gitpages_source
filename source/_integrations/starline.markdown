@@ -1,5 +1,5 @@
 ---
-title: StarLine
+title: 러시아 차량관리플랫폼(StarLine)
 description: Instructions on how to setup your StarLine account with Home Assistant.
 logo: starline.png
 ha_category:
@@ -15,6 +15,8 @@ ha_config_flow: true
 ha_codeowners:
   - '@anonym-tsk'
 ---
+
+<iframe width="690" height="440" src="https://www.youtube.com/embed/ZCnI3OIaRTI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The `starline` integration lets you retrieve data of your StarLine security system from the StarLine portal. You will need a working StarLine account.
 

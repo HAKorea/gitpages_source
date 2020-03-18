@@ -1,5 +1,5 @@
 ---
-title: Swisscom Internet-Box
+title: 스위스 통신사(Swisscom Internet-Box)
 description: Instructions on how to integrate Swisscom Internet-Box into Home Assistant.
 logo: swisscom.png
 ha_category:

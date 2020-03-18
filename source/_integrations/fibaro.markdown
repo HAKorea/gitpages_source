@@ -15,6 +15,8 @@ ha_release: 0.83
 ha_iot_class: Local Push
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/K35uFXoa5c0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 [Fibaro](https://fibaro.com/) 허브는 주로 Z-Wave 장치에 연결되는 컨트롤러입니다.
 
 현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.

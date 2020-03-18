@@ -1,5 +1,5 @@
 ---
-title: FinTS
+title: 독일 계좌정보(FinTS)
 description: Instructions on how to use the FinTS sensor.
 ha_category:
   - Finance

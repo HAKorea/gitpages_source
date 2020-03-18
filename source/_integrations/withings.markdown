@@ -12,6 +12,8 @@ ha_codeowners:
   - '@vangorra'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/e5Cem5oahho" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `withings` 센서 플랫폼은 [Withings](https://www.withings.com)에서 생산 된 다양한 건강 제품의 데이터를 가져옵니다.
 
 ## 셋업

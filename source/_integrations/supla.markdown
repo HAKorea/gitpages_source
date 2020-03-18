@@ -1,5 +1,5 @@
 ---
-title: Supla
+title: ESP오픈소스스마트홈(Supla)
 description: Instructions for integration with Supla Cloud's Web API
 logo: supla.png
 ha_release: 0.92
@@ -11,15 +11,18 @@ ha_codeowners:
   - '@mwegrzynek'
 ---
 
-The [Supla](https://supla.org/) is an Open Source home automation system for ESP8266 based devices. It has its own set of protocols, it's own firmware and commercially available devices (produced for example by [Zamel](https://supla.zamel.pl/))
+<iframe width="690" height="440" src="https://www.youtube.com/embed/LrV9-Q2ha-o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Currently only covers (shutters in Supla's lingo) and switches are supported, but, thanks to comprehensive and universal REST API, it's pretty easy to add more.
+[Supla](https://supla.org/)는 ESP8266 기반 장치를 위한 오픈 소스 홈오토메이션 시스템입니다. 자체 프로토콜 세트, 자체 펌웨어 및 [Zamel](https://supla.zamel.pl/)과 같은 상용 장치를 가지고 있습니다.
 
-Right now it's impossible to add single devices -- all of them are discovered from Supla Cloud's servers or yours.
 
-## Configuration
+현재는 Cover(Supla의 링고의 셔터)만 지원하고 스위치는 지원되지만 포괄적이고 보편적인 REST API 덕분에 더 쉽게 추가 할 수 있습니다.
 
-To use Supla devices in your installation, add the following to your `configuration.yaml`:
+지금은 단일 장치를 추가 할 수 없습니다. -- 모든 장치는 Supla Cloud 서버 또는 귀하의 장치에서 발견됩니다.
+
+## 설정
+
+설비에서 Supla 장치를 사용하려면 `configuration.yaml`에 다음을 추가하십시오.
 
 ```yaml
 supla:

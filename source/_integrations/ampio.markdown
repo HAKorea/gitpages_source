@@ -1,5 +1,5 @@
 ---
-title: Ampio Smart Smog System
+title: 폴란드 스모그시스템(Ampio Smart Smog System)
 description: Instructions on how to setup Ampio Smog sensors in Home Assistant.
 logo: ampio_smog.png
 ha_category:

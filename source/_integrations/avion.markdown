@@ -1,5 +1,5 @@
 ---
-title: Avi-on
+title: 블루투스 조명(Avi-on)
 description: Instructions on how to setup GE Avi-on Bluetooth dimmers within Home Assistant.
 ha_category:
   - Light
@@ -8,11 +8,13 @@ logo: avi-on.png
 ha_release: 0.37
 ---
 
-Support for the Avi-on Bluetooth dimmer switch [Avi-On](https://avi-on.com/).
+<iframe width="690" height="437" src="https://www.youtube.com/embed/5eJ4ZBeRrT8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Setup
+Avi-on Bluetooth dimmer 스위치 [Avi-On](https://avi-on.com/) 설정 방법
 
-If you want to add your devices manually (like in the example below) then you need to get the API key. The API key can be obtained by executing the following command:
+## 셋업
+
+장치를 수동으로 추가하려면 (아래 예와 같이) API 키를 가져와야합니다. API 키는 다음 명령을 실행하여 얻을 수 있습니다.
 
 ```bash
 $ curl -X POST -H "Content-Type: application/json" \
@@ -20,11 +22,12 @@ $ curl -X POST -H "Content-Type: application/json" \
     https://admin.avi-on.com/api/sessions | jq
 ```
 
-with the email and password fields replaced with those used when registering the device via the mobile app. The pass phrase field of the output should be used as the API key in the configuration.
+이메일 및 비밀번호 필드를 모바일 앱을 통해 장치를 등록할 때 사용된 것으로 입력합니다. 결과값의 암호문구 필드는 설정에서 API 키로 사용되어야합니다.
 
-## Configuration
+## 설정
 
 To enable these lights, add the following lines to your `configuration.yaml` file:
+이 조명을 활성화하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -32,7 +35,7 @@ light:
   - platform: avion
 ```
 
-There are two ways to configure this component: username & password, or list of devices. You must choose one.
+이 구성 요소를 설정하는 두 가지 방법이 있습니다 : 사용자 이름 및 비밀번호 또는 장치 목록. 하나를 선택해야합니다.
 
 {% configuration %}
 username:
@@ -62,9 +65,9 @@ devices:
       type: string
 {% endconfiguration %}
 
-## Full example
+## 전체 사례
 
-If username and password are not supplied, devices must be configured manually like so:
+사용자 이름과 비밀번호를 제공하지 않으면 다음과 같이 장치를 수동으로 설정해야합니다.
 
 ```yaml
 # Manual device configuration.yaml entry
@@ -76,7 +79,7 @@ light:
         api_key: YOUR_API_KEY
 ```
 
-For independent control of multiple devices, you must specify each device's ID (integer starting with 1). Each switch's ID can be guessed or detected from the Avi-On API.
+여러 장치를 독립적으로 제어하려면 각 장치의 ID (1부터 시작하는 정수)를 지정해야합니다. 각 스위치의 ID는 Avi-On API에서 추측해내거나 감지할 수 있습니다.
 
 ```yaml
 # Manual device configuration.yaml entry

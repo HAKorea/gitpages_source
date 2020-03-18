@@ -1,5 +1,5 @@
 ---
-title: Enviro pHAT
+title: 라즈베리파이 멀티센서(Enviro pHAT)
 description: Instructions on how to integrate the Enviro pHAT within Home Assistant.
 logo: raspberry-pi.png
 ha_category:

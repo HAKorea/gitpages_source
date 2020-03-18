@@ -9,6 +9,8 @@ ha_codeowners:
   - '@bachya'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/waw0XXNX-uQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `apache_kafka` 통합구성요소는 모든 상태 변경을 [Apache Kafka](https://kafka.apache.org/) topic으로 보냅니다.
 
 Apache Kafka는 데이터 스트림을 읽고 쓸 수있는 실시간 데이터 파이프 라인(real-time data pipeline)입니다. 분산된 복제된 fault-tolerant 클러스터에 데이터를 안전하게 저장합니다.

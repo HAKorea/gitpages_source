@@ -8,6 +8,8 @@ ha_release: 0.76
 ha_iot_class: Local Polling
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/uQfbgsuY7RY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `pjlink` 플랫폼을 사용하면 [PJLink protocol](https://pjlink.jbmia.or.jp/english/index.html)을 지원하는 프로젝터 인 Home Assistant에서 제어 할 수 있습니다.
 
 ## 설정

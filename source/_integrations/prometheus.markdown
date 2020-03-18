@@ -7,6 +7,8 @@ ha_category:
 ha_release: 0.49
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/wtna51BLYMc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 The `prometheus` integration exposes metrics in a format which [Prometheus](https://prometheus.io/) can read.
 
 ## Configuration

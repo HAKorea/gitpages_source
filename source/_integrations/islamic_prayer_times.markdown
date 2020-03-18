@@ -1,5 +1,5 @@
 ---
-title: Islamic Prayer Times
+title: 이슬람 기도시간(Islamic Prayer Times)
 description: Instructions on how to integrate the Islamic Prayer Times sensor within Home Assistant.
 ha_category:
   - Sensor

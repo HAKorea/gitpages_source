@@ -11,6 +11,8 @@ ha_codeowners:
   - '@robbiet480'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/EfUEyNXrMT8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 모바일 앱 통합구성요소를 통해 홈어시스턴트 모바일 앱은 홈어시스턴트와 쉽게 연동할 수 있습니다.
 
 홈어시스턴트와 연동하여 모바일 응용 프로그램을 사용하려는 경우이 통합구성요소를 사용하는 것이 좋습니다..

@@ -9,6 +9,8 @@ ha_codeowners:
   - '@robbiet480'
 ---
 
+<iframe width="690" height="437" src="https://www.youtube.com/embed/JCjzEKdlezk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 The `twilio_call` notification platform enables sending notifications via Voice, powered by [Twilio](https://twilio.com).
 Passed message will be read by Text-To-Speech service.
 

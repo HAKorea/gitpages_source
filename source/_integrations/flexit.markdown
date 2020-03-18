@@ -1,5 +1,5 @@
 ---
-title: Flexit
+title: 스웨덴 냉난방기기(Flexit)
 description: Instructions on how to integrate Flexit A/C unit into Home Assistant.
 logo: flexit.png
 ha_category:

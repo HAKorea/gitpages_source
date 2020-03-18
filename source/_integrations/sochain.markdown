@@ -1,5 +1,5 @@
 ---
-title: SoChain
+title: 가상화폐(SoChain)
 description: Instructions on how to integrate chain.so data within Home Assistant.
 logo: sochain.png
 ha_category:

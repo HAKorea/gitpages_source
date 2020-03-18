@@ -10,6 +10,8 @@ ha_codeowners:
   - '@home-assistant/core'
 ---
 
+<iframe width="692" height="388" src="https://www.youtube.com/embed/SQOJwWQgUno" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `persistent_notification` 통합구성요소는 사용자에 의해 해제해야하는 프론트 엔드에 필수 알림을 표시하는 데 사용할 수 있습니다.
 
 <p class='img'>
@@ -18,7 +20,6 @@ ha_codeowners:
 
 ### 서비스
 
-The service `persistent_notification.create` takes in `message`, `title`, and `notification_id`.
 `persistent_notification.create` 서비스는 `message`, `title`, `notification_id`를 받습니다.
 
 | Service data attribute | Optional | Description |

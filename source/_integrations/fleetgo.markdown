@@ -1,5 +1,5 @@
 ---
-title: FleetGO
+title: 차량관리시스템(FleetGO)
 description: Instructions on how to use a FleetGO as a device tracker.
 logo: fleetgo.png
 ha_category:
@@ -8,15 +8,17 @@ ha_iot_class: Cloud Polling
 ha_release: 0.76
 ---
 
-The `fleetgo` device tracker platform allows you to integrate your vehicles equipped with [FleetGO](https://fleetgo.com) hardware into Home Assistant. It allows you to see certain details about your vehicle, but also shows your vehicle on the map.
+<iframe width="690" height="414" src="https://www.youtube.com/embed/MX--wCghpqE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Setup
+`fleetgo` 장치 추적기 플랫폼을 사용하면 [FleetGO](https://fleetgo.com) 하드웨어가 장착된 차량을 Home Assistant에 연동할 수 있습니다. 이는 당신의 차량에 대한 특정 세부 사항을 보고 지도에 차량까지 보여줍니다.
 
-To use this component, you need an **API key** and **API secret**, which can be requested by contacting [info@fleetgo.com](mailto:info@fleetgo.com?subject=API%20Key).
+## 셋업
 
-## Configuration
+이 구성 요소를 사용하려면 [info@fleetgo.com](mailto:info@fleetgo.com?subject=API%20Key)에 문의하여 요청할 수 있는 **API key** 및 **API secret**이 필요합니다. .
 
-To use this device tracker in your installation, add the following to your `configuration.yaml` file:
+## 설정
+
+이 장치 추적기를 설치시 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -53,9 +55,9 @@ include:
   type: list
 {% endconfiguration %}
 
-See the [device tracker integration page](/integrations/device_tracker/) for instructions on how to configure the people to be tracked.
+추적할 사람을 설정하는 방법에 대한 지침은 [device tracker integration page](/integrations/device_tracker/)를 참조하십시오.
 
-## Available attributes
+## 사용가능한 속성 
 
 | Attribute           | Description                                                                                                                        |
 | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
@@ -79,4 +81,4 @@ See the [device tracker integration page](/integrations/device_tracker/) for ins
 | current_address     | Object with address information the device is currently on. This resolves to the closest address to the coordinates of the device. |
 
 
-[1] Only available on certain cars and hardware revisions.
+[1] 특정 자동차 및 하드웨어 개정판에서만 사용 가능합니다.

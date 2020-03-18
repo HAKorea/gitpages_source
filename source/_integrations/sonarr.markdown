@@ -1,5 +1,5 @@
 ---
-title: Sonarr
+title: 컨텐츠리스트자동화(Sonarr)
 description: Instructions on how to integrate Sonarr sensors with Home Assistant
 logo: sonarr.png
 ha_category:
@@ -8,11 +8,13 @@ ha_release: 0.34
 ha_iot_class: Local Polling
 ---
 
-This `sonarr` sensor platform pulls data from a given [Sonarr](https://sonarr.tv/) instance.
+<iframe width="690" height="437" src="https://www.youtube.com/embed/0Pm-qOSKvyo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Configuration
+이 `sonarr` 센서 플랫폼은 주어진 [Sonarr](https://sonarr.tv/) 인스턴스에서 데이터를 가져옵니다.
 
-To use your Sonarr sensor in your installation, add the following to your `configuration.yaml` file:
+## 설정
+
+설치에서 Sonarr 센서를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -80,11 +82,11 @@ ssl:
   default: false
 {% endconfiguration %}
 
-## Examples
+## 사례
 
-In this section you find some real-life examples of how to use this sensor.
+본 섹션에는 이 센서를 사용하는 방법에 대한 실제 예가 나와 있습니다.
 
-### Get Episodes airing in next 2 days
+### 다음 2 일 동안 방송되는 에피소드를 가져오기
 
 ```yaml
 # Example configuration.yaml entry
@@ -97,9 +99,9 @@ sensor:
     days: 2
 ```
 
-### Enable SSL
+### SSL 활성화
 
-SSL may run on a different port than the default (8989). The SSL port can be bound to any port in Sonarr, so it should be set in the config here (unless it is changed to 8989). See the [Sonarr site](https://github.com/Sonarr/Sonarr/wiki/SSL) for details on SSL in Sonarr.
+SSL은 기본값 (8989)과 다른 포트에서 실행될 수 있습니다. SSL 포트는 Sonarr의 모든 포트에 바인딩될 수 있으므로 별도로 설정되야합니다 (8989로 변경되지 않은 경우). Sonarr의 SSL에 대한 자세한 내용은 [Sonarr site](https://github.com/Sonarr/Sonarr/wiki/SSL)를 참조하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -114,7 +116,7 @@ sensor:
     ssl: true
 ```
 
-### Get disk space for all storage locations
+### 모든 저장 위치에 디스크 공간 확보
 
 ```yaml
 # Example configuration.yaml entry
@@ -126,9 +128,9 @@ sensor:
       - diskspace
 ```
 
-### Get disk space for listed storage locations
+### 리스트된 저장 위치에 디스크 공간 확보
 
-The storage locations Sonarr returns are in the system page and in some cases this can list duplicates if sub paths are mounted separately. By listing paths to include, you can choose what data is reported by the sensor.
+Sonarr가 반환하는 저장 위치는 시스템 페이지에 있으며 하위 경로가 별도로 마운트 된 경우 중복되게 나열될 수 있습니다. 포함할 경로를 나열하여 센서가 보고할 데이터를 선택할 수 있습니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -142,11 +144,11 @@ sensor:
       - /tank/plex
 ```
 
-### Get disk space in different unit
+### 다른 단위로 디스크 공간 확보
 
-The Sonarr API returns available space in bytes, but this sensor will default to reporting it in GB to make the number more manageable. This can be overridden if your storage needs require a different unit. All units from bytes (B) to yottabytes (YB) are supported.
+Sonarr API는 사용 가능한 공간을 바이트 단위로 반환하지만 이 센서는 기본적으로 GB 단위로 보고하여 숫자를 보다 관리하기 쉽게 만듭니다. 스토리지에 다른 장치가 필요한 경우 이를 대체할 수 있습니다. 바이트(B)에서 요타 바이트(YB)까지 모든 단위가 지원됩니다.
 
-*This calculation is done using base 2 math, and may differ from systems calculating using base 10 math.*
+*이 계산은 base 2 math을 사용하여 수행되며 base 10 math을 사용하여 계산하는 시스템과 다를 수 있습니다.*
 
 ```yaml
 # Example configuration.yaml entry

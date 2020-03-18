@@ -1,5 +1,5 @@
 ---
-title: 타두(Tado)
+title: 온도조절기(Tado)
 description: Instructions on how to integrate Tado devices with Home Assistant.
 logo: tado.png
 ha_category:
@@ -25,7 +25,7 @@ ha_codeowners:
 
 ## 설정
 
-설치에서 tado 온도 조절기를 사용하려면`configuration.yaml` 파일에 다음을 추가하십시오.
+설치에서 tado 온도 조절기를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

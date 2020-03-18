@@ -1,5 +1,5 @@
 ---
-title: Taps Aff
+title: 영국 날씨별 복장추천(Taps Aff)
 description: Instructions on how to use the Taps Aff binary sensor in Home Assistant.
 logo: tapsaff.png
 ha_category:

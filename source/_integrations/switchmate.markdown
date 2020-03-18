@@ -1,5 +1,5 @@
 ---
-title: Switchmate SimplySmart Home
+title: 탈착형스마트스위치(Switchmate SimplySmart Home)
 description: Instructions on how to set up Switchmate switches.
 logo: switchmate-logo-rgb.png
 ha_category:
@@ -9,6 +9,8 @@ ha_iot_class: Local Polling
 ha_codeowners:
   - '@danielhiversen'
 ---
+
+<iframe width="690" height="437" src="https://www.youtube.com/embed/_8Ofx6kTGmA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 This `Switchmate` switch platform allows you to control Switchmate [devices]( https://www.mysimplysmarthome.com/products/switchmate-switches/).
 

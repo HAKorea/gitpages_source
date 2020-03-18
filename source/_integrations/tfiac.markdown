@@ -1,5 +1,5 @@
 ---
-title: Tfiac
+title: 에어컨통합플랫폼(Tfiac)
 description: Instructions on how to integrate Tfiac AC devices with Home Assistant.
 logo: tfiac.png
 ha_category:

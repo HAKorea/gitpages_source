@@ -10,7 +10,8 @@ ha_codeowners:
   - '@ludeeus'
 ---
 
-The `tautulli` sensor platform will monitor activity on a given [Tautulli Server][tautulli]. It will create a sensor that shows the number of currently active streams as the state. If you click the sensor for more details it will show you more statistics, the following stats are available by default:
+<iframe width="690" height="437" src="https://www.youtube.com/embed/zwEd4Mnt2Kg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `tautulli` 센서 플랫폼은 주어진 [Tautulli Server][tautulli]의 활동을 모니터링합니다. 현재 활성 스트림 수를 상태로 표시하는 센서를 만듭니다. 자세한 내용을 보려면 센서를 클릭하면 더 많은 통계가 표시되며 기본적으로 다음 통계를 사용할 수 있습니다.
 
 - LAN bandwidth
@@ -24,17 +25,14 @@ The `tautulli` sensor platform will monitor activity on a given [Tautulli Server
 - Transcode count
 - WAN bandwidth
 
-More user statistics can be added with the `monitored_conditions` configuration option, this will add one attribute per user in addition to the users current `activity`.
 `monitored_conditions` 설정 옵션으로 더 많은 사용자 통계를 추가 할 수 있습니다. 이것은 사용자의 현재 `activity` 외에도 사용자 당 하나의 속성을 추가합니다.
 
 ## 셋업
 
-To find your `api_key` open the Tautulli web interface and navigate to `Settings` and then to `Web interface`, the `api_key` will be at the bottom of that page.
 `api_key`를 찾으려면 Tautulli 웹인터페이스를 열고 `settings`으로 이동 한 다음 `Web interface`로 이동하면 `api_key`가 해당 페이지의 맨 아래에 있습니다.
 
 ## 설정
 
-If you want to enable this sensor, add the following lines to your `configuration.yaml`:
 이 센서를 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오 :
 
 ```yaml

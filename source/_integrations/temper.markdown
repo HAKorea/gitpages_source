@@ -1,5 +1,5 @@
 ---
-title: TEMPer
+title: 초정밀온도계(TEMPer)
 description: Instructions on how to integrate TEMPer sensors into Home Assistant.
 ha_category:
   - DIY

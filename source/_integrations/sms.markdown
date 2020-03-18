@@ -1,5 +1,5 @@
 ---
-title: SMS notifications via GSM-modem
+title: GSM 문자 알림(SMS notifications via GSM-modem)
 description: SMS notification via GSM modem.
 icon: gammu.png
 ha_category:

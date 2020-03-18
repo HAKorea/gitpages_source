@@ -1,5 +1,5 @@
 ---
-title: TellStick
+title: 유럽 스마트홈플랫폼(TellStick)
 description: Instructions on how to integrate your TellStick into Home Assistant.
 logo: telldus_tellstick.png
 ha_release: pre 0.7

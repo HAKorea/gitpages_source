@@ -1,5 +1,5 @@
 ---
-title: Thinking Cleaner
+title: 로봇청소기 IOT화 시스템(Thinking Cleaner)
 description: Instructions on how to integrate a ThinkingCleaner within Home Assistant.
 logo: thinkingcleaner.png
 ha_category:

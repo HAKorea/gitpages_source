@@ -1,5 +1,5 @@
 ---
-title: Intergas InComfort/Intouch Lan2RF gateway
+title: 난방시스템(Intergas InComfort/Intouch Lan2RF gateway)
 description: Instructions on how to integrate an Intergas Lan2RF gateway with Home Assistant.
 logo: incomfort.png
 ha_category:
@@ -12,6 +12,8 @@ ha_iot_class: Local Polling
 ha_codeowners:
   - '@zxdavb'
 ---
+
+<iframe width="690" height="388" src="https://www.youtube.com/embed/nMs_jEikSxQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The `incomfort` integration links Home Assistant with your Intergas Lan2RF gateway, including the boiler and any room thermostats attached to it.
 

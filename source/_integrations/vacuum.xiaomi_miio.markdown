@@ -1,5 +1,5 @@
 ---
-title: "샤오미 Mi Robot Vacuum"
+title: "샤오미 로봇청소기 Mi Robot Vacuum"
 description: "Instructions on how to integrate your Xiaomi Mi Robot Vacuum within Home Assistant."
 logo: xiaomi.png
 ha_category:

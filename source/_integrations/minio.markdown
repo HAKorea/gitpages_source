@@ -1,5 +1,5 @@
 ---
-title: 미니오(Minio)
+title: 클라우드스토리지(Minio)
 description: Integration for interacting with Minio object storage.
 logo: minio.png
 ha_category: Utility

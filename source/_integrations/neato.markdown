@@ -1,5 +1,5 @@
 ---
-title: 로봇청소기(Neato Botvac)
+title: 니토 로봇청소기(Neato Botvac)
 description: Instructions on how to integrate your Neato within Home Assistant.
 logo: neato.png
 ha_category:
@@ -14,6 +14,8 @@ ha_codeowners:
   - '@dshokouhi'
   - '@Santobert'
 ---
+
+<iframe width="690" height="388" src="https://www.youtube.com/embed/E7du1zlmotg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 `neato` 통합구성요소로 [Neato Botvac Connected Robots](https://www.neatorobotics.com/robot-vacuum/botvac-connected-series/)를 제어할 수 있습니다.
 

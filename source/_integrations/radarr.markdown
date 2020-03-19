@@ -1,11 +1,13 @@
 ---
-title: Radarr
+title: 레이다(Radarr)
 description: Instructions on how to integrate Radarr sensors with Home Assistant
 logo: radarr.png
 ha_category:
   - Downloading
 ha_release: 0.47
 ---
+
+<iframe width="690" height="388" src="https://www.youtube.com/embed/HM7qGJNMat4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 This `radarr` sensor platform pulls data from a given [Radarr](https://radarr.video/) instance.
 

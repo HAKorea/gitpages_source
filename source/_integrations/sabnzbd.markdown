@@ -1,5 +1,5 @@
 ---
-title: SABnzbd
+title: 바이너리유즈넷관리(SABnzbd)
 description: Instructions on how to integrate SABnzbd with Home Assistant.
 logo: sabnzbd.png
 ha_category:

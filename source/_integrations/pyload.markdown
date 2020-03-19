@@ -1,5 +1,5 @@
 ---
-title: pyLoad
+title: 파이선모니터링(pyLoad)
 description: Instructions on how to integrate pyLoad download sensor within Home Assistant.
 logo: pyload.png
 ha_category:

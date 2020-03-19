@@ -1,5 +1,5 @@
 ---
-title: Hook
+title: RF브릿지(Hook)
 description: Instructions on how to integrate the Hook Smart Home Hub into Home Assistant.
 logo: hook.png
 ha_category:

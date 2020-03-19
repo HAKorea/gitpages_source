@@ -8,7 +8,7 @@ ha_category:
   - Hub
   - Sensor
   - Weather
-ha_codeowners:ㄴ
+ha_codeowners:
   - '@victorcerutti'
   - '@oncleben31'
 ---

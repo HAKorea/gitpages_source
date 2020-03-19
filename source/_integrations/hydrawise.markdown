@@ -1,5 +1,5 @@
 ---
-title: Hunter Hydrawise
+title: 헌터 하이드라와이즈(Hunter Hydrawise)
 description: Instructions on how to integrate your Hunter Hydrawise Wi-Fi irrigation control system within Home Assistant.
 logo: hydrawise_logo.png
 ha_category:
@@ -11,17 +11,19 @@ ha_release: 0.71
 ha_iot_class: Cloud Polling
 ---
 
-The `hydrawise` integration allows you to integrate your [Hunter Hydrawise](https://hydrawise.com) Wi-Fi irrigation controller system in Home Assistant.
+<iframe width="690" height="388" src="https://www.youtube.com/embed/z2UtOoHIzoM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-There is currently support for the following device types within Home Assistant:
+`hydrawise` 통합구성요소를 통해 [Hunter Hydrawise](https://hydrawise.com) Wi-Fi 관개 컨트롤러 시스템을 Home Assistant에 연동할 수 있습니다.
+
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다. : 
 
 - [Binary Sensor](#binary-sensor)
 - [Sensor](#sensor)
 - [Switch](#switch)
 
-## Configuration
+## 설정
 
-To enable it, add the following to your `configuration.yaml` file:
+이를 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -41,11 +43,11 @@ scan_interval:
   default: 30
 {% endconfiguration %}
 
-To get your API access token log into your [Hydrawise account](https://app.hydrawise.com/config/login) and in the 'My Account Details' section under Account Settings click 'Generate API Key'. Enter that key in your configuration file as the `API_KEY`.
+API 액세스 토큰을 [Hydrawise account](https://app.hydrawise.com/config/login)에 로그인하고 계정 설정의 'My Account Details'섹션에서 'Generate API Key'을 클릭하십시오. 설정 파일에 해당 키를 `API_KEY`로 입력하십시오.
 
 ## Binary Sensor
 
-Once you have enabled the `hydrawise` component, add the following to your `configuration.yaml` file:
+hydrawise 컴포넌트를 활성화 한 후 `configuration.yaml` 파일에 다음을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -70,7 +72,7 @@ monitored_conditions:
 
 ## Sensor
 
-Once you have enabled the `hydrawise` component, add the following to your `configuration.yaml` file:
+hydrawise 컴포넌트를 활성화 한 후 `configuration.yaml` 파일에 다음을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -93,7 +95,7 @@ monitored_conditions:
 
 ## Switch
 
-Once you have enabled the `hydrawise` component, add the following to your `configuration.yaml` file:
+`hydrawise` 컴포넌트를 활성화 한 후 `configuration.yaml` 파일에 다음을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -121,9 +123,9 @@ monitored_conditions:
 
 ### Switch Operation
 
-When `auto_watering` is `on` the irrigation zone will follow the Smart Watering schedule set through the Hydrawise [mobile or web app](https://www.hydrawise.com). When the `auto_watering` switch is `off` the zone's Smart Watering schedule is suspended for 1 year.
+`auto_watering`이 `on`인 경우 관개 구역은 Hydrawise [mobile or web app](https://www.hydrawise.com)을 통해 설정된 Smart Watering 일정을 따릅니다. `auto_watering` 스위치가 `off`이면 해당 구역의 Smart Watering 일정이 1 년 동안 일시 중지됩니다.
 
-When `manual_watering` is `on` the zone will run for the amount of time set by `watering_minutes`.
+`manual_watering`이 `on`인 경우 구역(zone)은 `watering_minutes`에 설정된 시간 동안 실행됩니다.
 
 ```yaml
 # An example that enables all the switches, and sets the manual watering time to 20 minutes.

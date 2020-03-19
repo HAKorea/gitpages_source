@@ -1,5 +1,5 @@
 ---
-title: Notion
+title: 노션(Notion)
 description: How to integrate Notion kits within Home Assistant.
 logo: notion.png
 ha_category:
@@ -12,6 +12,8 @@ ha_config_flow: true
 ha_codeowners:
   - '@bachya'
 ---
+
+<iframe width="690" height="388" src="https://www.youtube.com/embed/D--VKkI7Om4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The `Notion` component retrieves data from [Notion](https://getnotion.com) wireless
 home monitoring sensor kits.

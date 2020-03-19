@@ -1,5 +1,5 @@
 ---
-title: Melissa
+title: 멜리사(Melissa)
 description: Instructions on how to integrate Melissa Climate into Home Assistant.
 logo: mclimate.png
 ha_category:
@@ -10,6 +10,8 @@ ha_iot_class: Cloud Polling
 ha_codeowners:
   - '@kennedyshead'
 ---
+
+<iframe width="690" height="388" src="https://www.youtube.com/embed/yHGHRH6tzNc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The `melissa` integration is the main integration to connect to a [Melissa Climate](https://seemelissa.com/) A/C control.
 

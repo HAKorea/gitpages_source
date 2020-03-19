@@ -1,5 +1,5 @@
 ---
-title: Heatmiser
+title: 히트마이저(Heatmiser)
 description: Instructions on how to integrate Heatmiser thermostats within Home Assistant.
 logo: heatmiser.png
 ha_category:
@@ -9,6 +9,8 @@ ha_iot_class: Local Polling
 ha_codeowners:
   - '@andylockran'
 ---
+
+<iframe width="690" height="388" src="https://www.youtube.com/embed/uak9FGzSEpU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The `heatmiser` climate platform let you control [Heatmiser DT/DT-E/PRT/PRT-E](https://www.heatmisershop.co.uk/room-thermostats/) thermostats from Heatmiser. The module itself is currently setup to work over a RS232 -> RS485 converter, therefore it connects over IP.
 

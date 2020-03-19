@@ -1,5 +1,5 @@
 ---
-title: N26
+title: 독일 은행계좌관리(N26)
 description: Instructions on how to integrate N26 integration within Home Assistant.
 logo: n26.png
 ha_category:
@@ -9,6 +9,8 @@ ha_category:
 ha_release: 0.92
 ha_iot_class: Cloud Polling
 ---
+
+<iframe width="690" height="388" src="https://www.youtube.com/embed/P9UcQfxGbTc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The [N26](https://n26.com) integration for Home Assistant allows you to track your N26 account.
 

@@ -1,5 +1,5 @@
 ---
-title: PulseAudio Loopback
+title: 오픈오디오서버(PulseAudio Loopback)
 description: Instructions on how to use Pulseaudio loopback modules to build a flexible whole-home audio system.
 logo: pulseaudio.png
 ha_category:

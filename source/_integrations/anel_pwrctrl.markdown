@@ -1,5 +1,5 @@
 ---
-title: Anel NET-PwrCtrl
+title: 네트워크전원스위치(Anel NET-PwrCtrl)
 description: Instructions on how to integrate ANEL PwrCtrl switches within Home Assistant.
 logo: anel.png
 ha_category:
@@ -8,13 +8,15 @@ ha_iot_class: Local Polling
 ha_release: '0.30'
 ---
 
-The `anel_pwrctrl` switch platform allows you to control [ANEL PwrCtrl](https://anel-elektronik.de/SITE/produkte/produkte.htm) devices.
+<iframe width="690" height="388" src="https://www.youtube.com/embed/9DFLwBoC5NA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Supported devices (tested):
+`anel_pwrctrl` 스위치 플랫폼을 통해 [ANEL PwrCtrl](https://anel-elektronik.de/SITE/produkte/produkte.htm) 장치를 제어 할 수 있습니다.
+
+지원되는 장치 (테스트됨) :
 
 - PwrCtrl HUT
 
-To add this platform to your installation, add the following to your `configuration.yaml` file:
+이 플랫폼을 설치에 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -52,6 +54,6 @@ password:
 
 <div class="note">
 
-If no **host** is given the platform will try to auto-discover all devices on the network, that are listening on the given **port_recv**.
+**host**가 제공되지 않으면 플랫폼은 네트워크의 모든 장치를 지정된 **port_recv**에서 수신 대기중인 자동 검색을 시도합니다.
 
 </div>

@@ -14,7 +14,7 @@ ha_codeowners:
   - '@bdurrer'
 ---
 
-<iframe width="690" height="238" src="https://www.youtube.com/embed/YKYo6ns1i4o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="690" height="388" src="https://www.youtube.com/embed/YKYo6ns1i4o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 [EnOcean] (https://en.wikipedia.org/wiki/EnOcean) 표준은 여러 공급 업체에서 지원합니다. 
 다양한 종류의 스위치와 센서가 있으며 일반적으로 energy harvesting을 사용하여 배터리가 필요하지 않은 전력을 얻습니다.

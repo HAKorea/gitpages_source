@@ -8,6 +8,8 @@ logo: lagute.png
 ha_release: 0.71
 ---
 
+<iframe width="690" height="388" src="https://www.youtube.com/embed/V1RUpiEeGDk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 The `lw12wifi` light platform supports Lagute LW-12 Wifi LED controller.
 
 ## Configuration

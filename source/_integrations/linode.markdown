@@ -10,6 +10,8 @@ ha_release: 0.57
 ha_iot_class: Cloud Polling
 ---
 
+<iframe width="690" height="388" src="https://www.youtube.com/embed/gdzXNF2NYLc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `linode` 통합구성요소를 통해 Home Assistant에서 [Linode](https://linode.com) 시스템에 대한 정보에 액세스 할 수 있습니다.
 
 현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
@@ -67,10 +69,8 @@ nodes:
 
 ## Switch
 
-The `linode` switch platform allows you to turn your Linode nodes on and off.
 `linode` 스위치 플랫폼을 사용하면 Linode 노드를 켜거나 끌 수 있습니다.
 
-Add the following to your `configuration.yaml` file:
 `configuration.yaml` 파일에 다음을 추가하십시오 :
 
 ```yaml

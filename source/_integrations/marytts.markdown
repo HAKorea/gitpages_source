@@ -1,5 +1,5 @@
 ---
-title: MaryTTS
+title: 오픈TTS(MaryTTS)
 description: Instructions on how to setup MaryTTS with Home Assistant.
 logo: marytts.png
 ha_category:
@@ -7,11 +7,11 @@ ha_category:
 ha_release: 0.43
 ---
 
-The `marytts` text-to-speech platform uses [MaryTTS](http://mary.dfki.de/) Text-to-Speech engine to read a text with natural sounding voices.
+`marytts` 텍스트 음성 변환 플랫폼은 [MaryTTS](http://mary.dfki.de/) 텍스트 음성 변환 엔진을 사용하여 자연스러운 소리의 음성으로 텍스트를 읽습니다.
 
-## Configuration
+## 설정
 
-To enable text-to-speech with MaryTTS, add the following lines to your `configuration.yaml`:
+MaryTTS로 텍스트 음성 변환을 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -47,11 +47,11 @@ language:
   default: "`en-US`"
 {% endconfiguration %}
 
-See [documentation](http://mary.dfki.de/documentation/index.html) for details.
+자세한 것은 [documentation](http://mary.dfki.de/documentation/index.html)를 참조하십니오.
 
-## Full configuration example
+## 전체 설정 사례
 
-A full configuration sample including optional variables:
+선택적 변수를 포함한 전체 설정 샘플 :
 
 ```yaml
 # Example configuration.yaml entry

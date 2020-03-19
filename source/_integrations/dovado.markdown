@@ -10,6 +10,8 @@ ha_release: 0.87
 ha_iot_class: Local Polling
 ---
 
+<iframe width="690" height="388" src="https://www.youtube.com/embed/8XDc5xNf7L4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 The `dovado` integration manages communication with the [Dovado](https://www.dovado.com/) router.
 
 There is currently support for the following device types within Home Assistant:

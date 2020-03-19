@@ -1,5 +1,5 @@
 ---
-title: Google Wifi
+title: 구글 와이파이(Google Wifi)
 description: Instructions on how to integrate Google Wifi/OnHub routers into Home Assistant.
 ha_category:
   - System Monitor
@@ -8,11 +8,13 @@ ha_iot_class: Local Polling
 ha_release: '0.50'
 ---
 
-The `google_wifi` sensor platform is displaying the exposed status of a [Google Wifi](https://madeby.google.com/wifi/) (or OnHub) router.
+<iframe width="690" height="388" src="https://www.youtube.com/embed/z4EswXzXqz8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-The sensor is able to report network status, up-time, current IP address and firmware versions.
+`google_wifi` 센서 플랫폼에 [Google Wifi](https://madeby.google.com/wifi/) (또는 OnHub) 라우터의 노출 상태가 표시됩니다.
 
-To enable this sensor, add the following lines to your `configuration.yaml` file:
+센서는 네트워크 상태, 가동 시간, 현재 IP 주소 및 펌웨어 버전을 보고 할 수 있습니다.
+
+이 센서를 활성화하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry

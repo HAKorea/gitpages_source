@@ -1,5 +1,5 @@
 ---
-title: Network UPS Tools (NUT)
+title: 네트워크 전력관리(Network UPS Tools (NUT))
 description: Instructions on how to set up NUT sensors within Home Assistant.
 logo: nut.png
 ha_category:
@@ -8,11 +8,11 @@ ha_iot_class: Local Polling
 ha_release: 0.34
 ---
 
-The `nut` sensor platform allows you to monitor a UPS (battery backup) by using data from a [NUT](https://networkupstools.org/) (Network UPS Tools) server.
+`nut` 센서 플랫폼을 사용하면 [NUT](https://networkupstools.org/)(Network UPS Tools) 서버의 데이터를 사용하여 UPS (배터리 백업)를 모니터링 할 수 있습니다.
 
-## Configuration
+## 설정
 
-To use this sensor platform, you need to add the following to your `configuration.yaml` file:
+이 센서 플랫폼을 사용하려면 `configuration.yaml` 파일에 다음을 추가해야합니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -62,9 +62,9 @@ sensor:
     type: list
 {% endconfiguration %}
 
-## Example
+## 사례
 
-Given the following example output from NUT (your variables may differ):
+NUT에서 다음과 같은 출력 예가 제공되면 변수가 다를 수 있습니다.
 
 ```yaml
 $ upsc ups_name@192.168.11.5
@@ -103,7 +103,7 @@ output.voltage: 121.50
 output.voltage.nominal: 120
 ```
 
-Use the values from the left hand column. Support is included for most values with 'ups', 'battery', 'input' and 'output' prefixes.
+왼쪽 열의 값을 사용하십시오. 'ups', 'battery', 'input', 'output' 접두사가 있는 대부분의 값에 대한 지원이 포함됩니다.
 
 ```yaml
 sensor:
@@ -121,9 +121,9 @@ sensor:
       - battery.runtime
 ```
 
-## UPS Status - human-readable version
+## UPS 상태 - human-readable version
 
-An additional virtual sensor type `ups.status.display` is available translating the UPS status value retrieved from `ups.status` into a human-readable version.
+`ups.status` 에서 검색된 UPS 상태 값을 human-readable version으로 변환하는 추가 가상 센서 유형 `ups.status.display`를 사용할 수 있습니다.
 
 ```yaml
 sensor:

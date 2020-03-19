@@ -1,5 +1,5 @@
 ---
-title: TekSavvy
+title: 캐나다 통신회사(TekSavvy)
 description: Instructions on how to integrate TekSavvy data usage within Home Assistant.
 logo: teksavvy.png
 ha_category:

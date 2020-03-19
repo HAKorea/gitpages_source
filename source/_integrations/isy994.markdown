@@ -1,5 +1,5 @@
 ---
-title: Universal Devices ISY994
+title: 스마트홈통합플랫폼(Universal Devices ISY994)
 description: Instructions on how to setup the ISY994 controller within Home Assistant.
 logo: universal_devices.png
 ha_category:
@@ -14,6 +14,8 @@ ha_category:
 ha_release: 0.28
 ha_iot_class: Local Push
 ---
+
+<iframe width="690" height="388" src="https://www.youtube.com/embed/QQKLJDU1JM8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The ISY994 is a home automation controller that is capable of controlling Insteon and X10 devices. Some models of the ISY994 can even control Z-Wave devices.
 The ISY994 controller is manufactured by [Universal Devices](https://www.universal-devices.com/smarthome).

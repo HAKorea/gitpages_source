@@ -1,5 +1,5 @@
 ---
-title: RainMachine
+title: 레인머신(RainMachine)
 description: Instructions on how to integrate RainMachine units within Home Assistant.
 logo: rainmachine.png
 ha_category:
@@ -14,17 +14,19 @@ ha_codeowners:
   - '@bachya'
 ---
 
-The `rainmachine` integration is the main integration to integrate all platforms related to [RainMachine smart Wi-Fi sprinkler controllers](https://www.rainmachine.com/).
+<iframe width="690" height="388" src="https://www.youtube.com/embed/Q0afxjfgPKs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-There is currently support for the following device types within Home Assistant:
+`rainmachine` 통합구성요소는 [RainMachine smart Wi-Fi sprinkler controllers](https://www.rainmachine.com/)와 관련된 모든 플랫폼을 연동하기 위한 주요 통합구성요소입니다.
+
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다. :
 
 - Binary Sensor
 - Sensor
 - [Switch](#switch)
 
-## Base Configuration
+## 기본 설정
 
-To connect to your RainMachine device, add the following to your `configuration.yaml` file:
+RainMachine 장치에 연결하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 rainmachine:
@@ -33,7 +35,7 @@ rainmachine:
       password: YOUR_PASSWORD
 ```
 
-To configure additional functionality, add configuration options beneath a `binary_sensor`, `sensor`, and/or `switches` key within the `rainmachine` sections of `configuration.yaml` as below:
+추가 기능을 설정하려면 다음과 같이 `configuration.yaml`의 `rainmachine` 섹션에서 `binary_sensor`, `sensor` 및/또는 `switches` 키 아래에 설정 옵션을 추가하십시오.
 
 ```yaml
 rainmachine:
@@ -104,12 +106,12 @@ switches:
       default: 600
 {% endconfiguration %}
 
-## Services
+## 서비스
 
 ### `rainmachine.disable_program`
 
-Disable a RainMachine program. This will mark the program switch as
-`Unavailable` in the UI.
+RainMachine 프로그램을 비활성화하십시오. 이는 프로그램 스위치가
+UI에서 `Unavailable` 임을 나타냅니다.
 
 | Service Data Attribute    | Optional | Description             |
 |---------------------------|----------|-------------------------|
@@ -117,8 +119,8 @@ Disable a RainMachine program. This will mark the program switch as
 
 ### `rainmachine.disable_zone`
 
-Disable a RainMachine zone. This will mark the zone switch as
-`Unavailable` in the UI.
+RainMachine 영역을 비활성화하십시오. 이는 프로그램 스위치가
+UI에서 `Unavailable` 임을 나타냅니다.
 
 | Service Data Attribute    | Optional | Description             |
 |---------------------------|----------|-------------------------|
@@ -126,7 +128,7 @@ Disable a RainMachine zone. This will mark the zone switch as
 
 ### `rainmachine.enable_program`
 
-Enable a RainMachine program.
+RainMachine 프로그램을 활성화하십시오.
 
 | Service Data Attribute    | Optional | Description             |
 |---------------------------|----------|-------------------------|
@@ -134,7 +136,7 @@ Enable a RainMachine program.
 
 ### `rainmachine.enable_zone`
 
-Enable a RainMachine zone.
+RainMachine 영역을 활성화하십시오.
 
 | Service Data Attribute    | Optional | Description             |
 |---------------------------|----------|-------------------------|
@@ -142,7 +144,7 @@ Enable a RainMachine zone.
 
 ### `rainmachine.pause_watering`
 
-Pause all watering activities for a number of seconds.
+몇 초 동안 모든 급수 활동을 일시 중지하십시오.
 
 | Service Data Attribute    | Optional | Description                    |
 |---------------------------|----------|--------------------------------|
@@ -150,7 +152,7 @@ Pause all watering activities for a number of seconds.
 
 ### `rainmachine.start_program`
 
-Start a RainMachine program.
+RainMachine 프로그램을 시작하십시오.
 
 | Service Data Attribute    | Optional | Description          |
 |---------------------------|----------|----------------------|
@@ -158,7 +160,7 @@ Start a RainMachine program.
 
 ### `rainmachine.start_zone`
 
-Start a RainMachine zone for a set number of seconds.
+RainMachine 영역을 설정된 시간 (초) 동안 시작하십시오.
 
 | Service Data Attribute    | Optional | Description                                          |
 |---------------------------|----------|------------------------------------------------------|
@@ -167,11 +169,11 @@ Start a RainMachine zone for a set number of seconds.
 
 ### `rainmachine.stop_all`
 
-Stop all watering activities.
+모든 급수 활동을 중지하십시오.
 
 ### `rainmachine.stop_program`
 
-Stop a RainMachine program.
+RainMachine 프로그램을 중지하십시오.
 
 | Service Data Attribute    | Optional | Description          |
 |---------------------------|----------|----------------------|
@@ -179,7 +181,7 @@ Stop a RainMachine program.
 
 ### `rainmachine.stop_zone`
 
-Stop a RainMachine zone.
+RainMachine 영역을 중지하십시오.
 
 | Service Data Attribute    | Optional | Description          |
 |---------------------------|----------|----------------------|
@@ -187,17 +189,17 @@ Stop a RainMachine zone.
 
 ### `rainmachine.unpause_watering`
 
-Unpause all watering activities.
+모든 급수 활동을 일시 중지하십시오.
 
 ## Switch
 
-The `rainmachine` switch platform allows you to control programs and zones within a [RainMachine smart Wi-Fi sprinkler controller](https://www.rainmachine.com/).
+`rainmachine` 스위치 플랫폼을 사용하면 [RainMachine smart Wi-Fi sprinkler controller](https://www.rainmachine.com/) 내에서 프로그램 및 구역을 제어할 수 있습니다.
 
-### Controlling Your Device
+### 장치 제어하기
 
-After Home Assistant loads, new switches will be added for every enabled program and zone. These work as expected:
+홈어시스턴트가 로드되면 모든 활성화된 프로그램 및 영역에 대해 새 스위치가 추가됩니다. 이들은 예상대로 작동합니다.
 
 - Program On/Off: starts/stops a program
 - Zone On/Off: starts/stops a zone (using the `zone_run_time` parameter to determine how long to run for)
 
-Programs and zones are linked. While a program is running, you will see both the program and zone switches turned on; turning either one off will turn the other one off (just like in the web app).
+프로그램과 영역이 연결되어 있습니다. 프로그램이 실행되는 동안 프로그램 및 영역 스위치가 켜져 있습니다. 둘 중 하나를 끄면 다른 하나가 꺼집니다 (웹 앱에서처럼).

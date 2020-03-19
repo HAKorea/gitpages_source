@@ -1,5 +1,5 @@
 ---
-title: Etekcity VeSync
+title: 스마트홈플랫폼(Etekcity VeSync)
 description: Instructions on how to set up Etekcity VeSync switches and outlets within Home Assistant.
 logo: vesync.png
 ha_category:
@@ -10,6 +10,8 @@ ha_codeowners:
   - '@markperdue'
   - '@webdjoe'
 ---
+
+<iframe width="690" height="388" src="https://www.youtube.com/embed/CohoDAdOXVw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The `vesync` integration enables you to control Etekcity smart switches and outlets connected to the VeSync App.
 

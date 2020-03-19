@@ -1,5 +1,5 @@
 ---
-title: QwikSwitch QSUSB
+title: 조명플랫폼(QwikSwitch QSUSB)
 description: Instructions on how to integrate the QwikSwitch QSUSB Hub into Home Assistant.
 logo: qwikswitch.png
 ha_category:
@@ -12,6 +12,8 @@ ha_release: '0.20'
 ha_codeowners:
   - '@kellerza'
 ---
+
+<iframe width="690" height="388" src="https://www.youtube.com/embed/dZpY5E4_f84" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The `qwikswitch` integration is the main integration to integrate various [QwikSwitch](https://www.qwikswitch.co.za/) devices with Home Assistant. The integration requires the QSUSB Modem device and connects to the QS Mobile application.
 

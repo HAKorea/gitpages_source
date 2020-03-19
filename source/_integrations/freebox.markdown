@@ -1,5 +1,5 @@
 ---
-title: Freebox
+title: 프랑스 방송통신사(Freebox)
 description: Instructions on how to integrate Freebox routers into Home Assistant.
 logo: freebox.svg
 ha_category:
@@ -12,6 +12,8 @@ ha_iot_class: Local Polling
 ha_codeowners:
   - '@snoof85'
 ---
+
+<iframe width="690" height="388" src="https://www.youtube.com/embed/zK7MEGNWAkU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The `freebox` integration allows you to observe and control [Freebox router](https://www.free.fr/).
 

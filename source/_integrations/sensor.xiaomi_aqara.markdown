@@ -8,6 +8,6 @@ ha_release: "0.50"
 ha_iot_class: Local Push
 ---
 
-The `xiaomi aqara` sensor platform allows you to get data from your [Xiaomi](https://www.mi.com/en/) sensors.
+`xiaomi aqara` 센서 플랫폼을 사용하면 [Xiaomi](https://www.mi.com/en/) 센서에서 데이터를 얻을 수 있습니다.
 
-The requirement is that you have setup [Xiaomi aqara](/integrations/xiaomi_aqara/).
+기본 요구 사항은 [Xiaomi aqara](/integrations/xiaomi_aqara/)를 설정해야합니다.

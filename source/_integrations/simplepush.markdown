@@ -1,5 +1,5 @@
 ---
-title: Simplepush
+title: 단순알림(Simplepush)
 description: Instructions on how to add Simplepush notifications to Home Assistant.
 logo: simplepush.png
 ha_category:
@@ -7,9 +7,11 @@ ha_category:
 ha_release: 0.29
 ---
 
-The `simplepush` platform uses [Simplepush](https://simplepush.io/) to delivery notifications from Home Assistant to your Android device. Unlike similar apps the Simplepush app requires no registration.
+<iframe width="690" height="437" src="https://www.youtube.com/embed/hZ671C1VSB4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-To add Simplepush to your installation, add the following to your `configuration.yaml` file:
+`simplepush` 플랫폼은 [Simplepush](https://simplepush.io/)를 사용하여 Home Assistant에서 Android 장치로 알림을 전달합니다. 유사한 앱과 달리 Simplepush 앱은 등록이 필요하지 않습니다.
+
+설치에 Simplepush를 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -42,10 +44,10 @@ notify:
     type: string
 {% endconfiguration %}
 
-To test if the service works, just send a message with `curl` from the command-line.
+서비스가 작동하는지 테스트하려면 명령 줄에서 `curl` 메시지를 보내십시오.
 
 ```bash
 $ curl 'https://api.simplepush.io/send/device_key/title/message'
 ```
 
-To use notifications, please see the [getting started with automation page](/getting-started/automation/).
+알림을 사용하려면 [getting started with automation page](/getting-started/automation/)를 참조하십시오.

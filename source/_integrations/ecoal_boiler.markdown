@@ -1,11 +1,13 @@
 ---
-title: eSterownik eCoal.pl Boiler
+title: 폴란드 난방(eSterownik eCoal.pl Boiler)
 description: Instructions on how to integrate eSterownik.pl eCoal.pl controller into Home Assistant.
 ha_category:
   - Water Heater
 ha_release: 0.87
 ha_iot_class: Local Polling
 ---
+
+<iframe width="690" height="388" src="https://www.youtube.com/embed/wvfdPChGLOU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The `ecoal_boiler` integration is the base for pumps and sensors managed by [esterownik.pl eCoal boiler controller](https://esterownik.pl/nasze-produkty/ecoal).
 

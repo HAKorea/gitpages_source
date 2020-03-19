@@ -1,5 +1,5 @@
 ---
-title: Ziggo Mediabox XL
+title: 네덜란드 셋톱박스(Ziggo Mediabox XL)
 description: Instructions on how to integrate the Ziggo Mediabox XL into Home Assistant.
 logo: ziggo.png
 ha_category:

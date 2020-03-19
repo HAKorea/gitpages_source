@@ -10,18 +10,17 @@ ha_iot_class: Local Push
 
 <div class='note'>
   
-The `knx` integration must be configured correctly to use this integration, see [KNX Integration](/integrations/knx).
+이 통합구성요소를 사용하려면 `knx` 통합구성요소를 올바르게 설정해야합니다.[KNX Integration](/integrations/knx)을 참조하십시오.
 
 </div>
 
-The `knx` sensor platform allows you to monitor [KNX](https://www.knx.org/) sensors. 
+`knx` 센서 플랫폼을 사용하면 [KNX](https://www.knx.org/) 센서를 모니터링 할 수 있습니다.
 
-Sensors are read-only. To write to the knx-bus configure an exposure [KNX Integration - Expose](/integrations/knx/#exposing-sensor-values-or-time-to-knx-bus).
+센서는 읽기 전용입니다. knx-bus에 쓰려면 노출을 설정하십시오. [KNX Integration-Expose](/integrations/knx/#exposing-sensor-values-or-time-to-knx-bus)
 
+## 설정
 
-## Configuration
-
-To use your KNX sensor in your installation, add the following lines to your `configuration.yaml` file:
+KNX 센서를 사용하려면 `configuration.yaml` 파일에 다음 라인을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -104,7 +103,7 @@ type:
 | 16.000  | string             | 14           |                |
 | 17.001  | scene_number       | 1            |                |
 
-## Full example
+## 전체 사례
 
 ```yaml
 # Example configuration.yaml entry

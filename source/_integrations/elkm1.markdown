@@ -1,5 +1,5 @@
 ---
-title: Elk-M1 Control
+title: 스마트홈플랫폼(Elk-M1 Control)
 description: Instructions to setup the Elk-M1 controller.
 logo: elkproducts.png
 ha_release: 0.81
@@ -13,6 +13,8 @@ ha_category:
   - Switch
 ha_iot_class: Local Push
 ---
+
+<iframe width="690" height="388" src="https://www.youtube.com/embed/QZv33JO6tZA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The Elk-M1 is a home security and automation controller that is capable of alarm control panel functions and automation.
 

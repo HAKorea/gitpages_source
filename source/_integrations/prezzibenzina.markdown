@@ -1,5 +1,5 @@
 ---
-title: Prezzi Benzina
+title: 이탈리아 유가정보(Prezzi Benzina)
 description: Instructions on how to integrate PrezziBenzina sensors within Home Assistant.
 logo: prezzibenzina.png
 ha_category:

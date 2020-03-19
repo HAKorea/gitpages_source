@@ -1,5 +1,5 @@
 ---
-title: London Air
+title: 영국 런던 대기정보(London Air)
 description: Display the current status of London air quality by area and pollution type.
 logo: waqi.png
 ha_category:

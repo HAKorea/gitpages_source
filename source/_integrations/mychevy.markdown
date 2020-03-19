@@ -8,6 +8,8 @@ ha_release: 0.62
 ha_iot_class: Cloud Polling
 ---
 
+<iframe width="690" height="388" src="https://www.youtube.com/embed/1tVOzsOUo9o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `mychevy` 통합은 웹 사이트에서 사용하는 자바 스크립트 API (2018 년 12 월 기준)를 사용하여 [my.chevrolet] (https://my.chevrolet.com) 웹 사이트와 통신합니다. MyChevy 웹 사이트는 불안정하고 (인터페이스가 다소 변경 될 수 있음) 알려져 있으며 상당한 중단이 있습니다. 따라서이 구성 요소 사용에 주의하십시오.
 
 이 통합구성요소는 다음 플랫폼을 제공합니다.

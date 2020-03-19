@@ -1,5 +1,5 @@
 ---
-title: 아이로봇 룸바(irobot Roomba)
+title: 룸바 로봇청소기(irobot Roomba)
 description: Instructions on how to integrate your Wi-Fi enabled Roomba within Home Assistant.
 logo: irobot_roomba.png
 ha_category:

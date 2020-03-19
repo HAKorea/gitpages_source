@@ -1,5 +1,5 @@
 ---
-title: NZBGet
+title: 유즈넷관리(NZBGet)
 description: Instructions on how to integrate NZBGet within Home Assistant.
 ha_category:
   - Downloading
@@ -9,6 +9,8 @@ ha_release: 0.17
 ha_codeowners:
   - '@chriscla'
 ---
+
+<iframe width="690" height="388" src="https://www.youtube.com/embed/lxQAZZ7iqQw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The `nzbget` platform will allow you to monitor and control your downloads with [NZBGet](https://nzbget.net/) from within Home Assistant and setup automation based on the information.
 

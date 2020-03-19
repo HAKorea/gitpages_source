@@ -1,5 +1,5 @@
 ---
-title: 에코백스 로봇 청소기(Ecovacs Vacuum)
+title: 에코백스 로봇청소기(Ecovacs Vacuum)
 description: Instructions on how to integrate Ecovacs vacuums within Home Assistant.
 logo: ecovacs.png
 ha_category:

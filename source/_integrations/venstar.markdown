@@ -1,5 +1,5 @@
 ---
-title: Venstar
+title: 온도조절기(Venstar)
 description: Instructions for how to integrate Venstar WiFi thermostats within Home Assistant.
 logo: venstar.png
 ha_category:
@@ -7,6 +7,8 @@ ha_category:
 ha_release: 0.62
 ha_iot_class: Local Polling
 ---
+
+<iframe width="690" height="388" src="https://www.youtube.com/embed/dVUQlqeGf6I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The `venstar` climate platform allows you to control [Venstar](https://www.venstar.com/) thermostats from Home Assistant.
 Venstar thermostats feature a local API that allows for automation without the need for their Skyport cloud service.

@@ -1,5 +1,5 @@
 ---
-title: Kankun
+title: 칸쿤(Kankun)
 description: Instructions for the Kankun SP3 Wifi switch
 ha_category:
   - Switch
@@ -7,15 +7,14 @@ ha_release: 0.36
 ha_iot_class: Local Polling
 ---
 
-The `kankun` switch platform allows you to toggle customized Kankun SP3 Wifi switches. Switches are
-modified to include the [json.cgi](https://github.com/homedash/kankun-json/blob/master/cgi-bin/json.cgi)
-script to provide an HTTP API. Details of the necessary modifications can be found
-[here](http://www.homeautomationforgeeks.com/openhab_http.shtml#kankun) (be sure to install the JSON version
-of the script as linked above).
+<iframe width="690" height="388" src="https://www.youtube.com/embed/eIQriVOy2l8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Configuration
+`kankun` 스위치 플랫폼을 사용하면 맞춤형 Kankun SP3 Wifi 스위치를 토글할 수 있습니다. HTTP API를 제공하기 위해 [json.cgi](https://github.com/homedash/kankun-json/blob/master/cgi-bin/json.cgi) 스크립트를 포함하도록 스위치가 수정되었습니다. 
+필요한 수정에 대한 자세한 내용은 [here](http://www.homeautomationforgeeks.com/openhab_http.shtml#kankun)를 참조하십시오. (위의 링크대로 스크립트의 JSON 버전을 설치하십시오)
 
-To enable it, add the following lines to your `configuration.yaml`:
+## 설정
+
+이를 활성화하려면`configuration.yaml`에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry

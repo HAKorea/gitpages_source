@@ -1,5 +1,5 @@
 ---
-title: Hive
+title: 스마트홈플랫폼(Hive)
 description: Instructions on how to integrate Hive devices with Home Assistant.
 logo: hive.png
 ha_category:
@@ -16,6 +16,8 @@ ha_codeowners:
   - '@Rendili'
   - '@KJonline'
 ---
+
+<iframe width="690" height="388" src="https://www.youtube.com/embed/GKbVsmr4J-g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The `hive` integration is the main integration to set up and integrate all supported Hive devices. Once configured with the minimum required details it will detect and add all Hive devices into Home Assistant, including support for multi-zone heating.
 

@@ -1,5 +1,5 @@
 ---
-title: 탱크 유틸리티(Tank Utility)
+title: 가스측정기(Tank Utility)
 description: How to integrate Tank Utility sensors within Home Assistant.
 logo: tank_utility.png
 ha_category:

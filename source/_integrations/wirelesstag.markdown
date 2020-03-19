@@ -1,5 +1,5 @@
 ---
-title: Wireless Sensor Tags
+title: 스마트홈플랫폼(Wireless Sensor Tags)
 description: Instructions on how to integrate your Wireless Tags sensors within Home Assistant.
 logo: wirelesstag.png
 ha_category:
@@ -10,6 +10,8 @@ ha_category:
 ha_iot_class: Cloud Polling and Local Push
 ha_release: 0.68
 ---
+
+<iframe width="690" height="388" src="https://www.youtube.com/embed/e9Ts9V0CBLA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The `wirelesstag` implementation allows you to integrate your [wirelesstag.net](https://wirelesstag.net/) sensors tags in Home Assistant.
 

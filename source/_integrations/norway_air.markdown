@@ -1,5 +1,5 @@
 ---
-title: Om Luftkvalitet i Norge (Norway Air)
+title: 노르웨이 기상청 정보(Norway Air)
 description: Display the current status of Norway air quality.
 logo: metno.png
 ha_category:

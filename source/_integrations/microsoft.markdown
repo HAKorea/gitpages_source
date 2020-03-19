@@ -1,5 +1,5 @@
 ---
-title: Microsoft Text-to-Speech (TTS)
+title: MS 텍스트음성전환(Microsoft Text-to-Speech)
 description: Instructions on how to set up Microsoft Text-to-Speech with Home Assistant.
 logo: microsoft.png
 ha_category:
@@ -7,12 +7,14 @@ ha_category:
 ha_release: 0.57
 ---
 
-The `microsoft` text-to-speech platform uses [Microsoft Text-to-Speech engine](https://docs.microsoft.com/en-us/azure/cognitive-services/speech/home) to read a text with natural sounding voices. This integration uses an API that is part of the Cognitive Services offering and is known as the Bing Speech API.
-You will need an API key, which is free. You can use your [Azure subscription](https://azure.microsoft.com) or get an API key on the [Cognitive Services site](https://azure.microsoft.com/en-us/try/cognitive-services/).
+<iframe width="690" height="388" src="https://www.youtube.com/embed/auJJrHgG9Mc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Configuration
+`Microsoft` 텍스트 음성 변환 플랫폼은 [Microsoft Text-to-Speech engine](https://docs.microsoft.com/en-us/azure/cognitive-services/speech/home)을 사용하여 자연스러운 소리가 나는 텍스트를 읽습니다. 이 통합구성요소는 Cognitive Services 오퍼링의 일부이며 Bing Speech API로 알려진 API를 사용합니다. 
+무료 API 키가 필요합니다. [Azure subscription](https://azure.microsoft.com)을 사용하거나 [Cognitive Services site](https://azure.microsoft.com/en-us/try/cognitive-services/)에서 API 키를 얻을 수 있습니다.
 
-To enable text-to-speech with Microsoft, add the following lines to your `configuration.yaml`:
+## 설정
+
+Microsoft로 텍스트 음성 변환을 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -68,9 +70,9 @@ region:
 {% endconfiguration %}
 
   
-## Full configuration example
+## 전체 설정 사례
 
-A full configuration sample including optional variables:
+선택적 변수를 포함한 전체 설정 샘플 :
 
 ```yaml
 # Example configuration.yaml entry

@@ -1,5 +1,5 @@
 ---
-title: Volkszaehler
+title: 오픈지능형계량기(Volkszaehler)
 description: Instructions on how to integrate Volkszaehler sensors into Home Assistant.
 logo: volkszaehler.png
 ha_category:
@@ -8,11 +8,11 @@ ha_iot_class: Local Polling
 ha_release: 0.78
 ---
 
-The `volkszaehler` sensor platform is consuming the system information provided by the [Volkszaehler](https://wiki.volkszaehler.org/) API.
+`volkszaehler` 센서 플랫폼은 [Volkszaehler](https://wiki.volkszaehler.org/) API에서 제공하는 시스템 정보를 사용합니다.
 
-## Configuration
+## 설정
 
-To enable the Volkszaehler sensor, add the following lines to your `configuration.yaml`:
+Volkszaehler 센서를 활성화하려면 `configuration.yaml`에 다음 라인을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -57,7 +57,7 @@ monitored_conditions:
       description: The minimum power.
 {% endconfiguration %}
 
-## Full examples
+## 전체 설정
 
 ```yaml
 # Example configuration.yaml entry

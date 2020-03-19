@@ -1,5 +1,5 @@
 ---
-title: Rain Bird
+title: 레인 버드(Rain Bird)
 description: Instructions on how to integrate your Rain Bird LNK WiFi Module within Home Assistant.
 logo: rainbird.png
 ha_category:
@@ -12,16 +12,18 @@ ha_codeowners:
   - '@konikvranik'
 ---
 
-This `rainbird` integration allows interacting with [LNK WiFi](https://www.rainbird.com/products/lnk-wifi-module) module of the Rain Bird Irrigation system in Home Assistant.
+<iframe width="690" height="388" src="https://www.youtube.com/embed/ZUBykEJOpeE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-There is currently support for the following device types within Home Assistant:
+`rainbird` 통합구성요소를 통해 Home Assistant의 Rain Bird 관개 시스템의 [LNK WiFi](https://www.rainbird.com/products/lnk-wifi-module) 모듈과 상호 작용할 수 있습니다.
+
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다. :
 
 - [Sensor](#sensor)
 - [Switch](#switch)
 
-## Configuration
+## 설정
 
-To enable it, add the following to your `configuration.yaml` file:
+이를 활성화하려면`configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -65,7 +67,7 @@ zones:
 {% endconfiguration %}
 
 
-More complex configuration using all possible features could look like this example:
+가능한 모든 기능을 사용하는 보다 복잡한 설정은 다음 예와 같습니다.
 ```yaml
 # Example configuration.yaml entry
 rainbird:
@@ -92,30 +94,30 @@ rainbird:
         trigger_time: 0:05
 ```
 <div class='note'>
-Please note that due to the implementation of the API within the LNK Module, there is a concurrency issue. For example, the Rain Bird app will give connection issues (like already a connection active).
+LNK 모듈 내에서 API를 구현하기 때문에 동시성 문제가 있습니다. 예를 들어 Rain Bird 앱은 연결 문제(예: 이미 연결이 활성화 된 상태)를 나타낼 수 있습니다.
 </div>
 
 ## Sensor
 
-This `rainbird` sensor allows interacting with [LNK WiFi](https://www.rainbird.com/products/lnk-wifi-module) module of the Rain Bird Irrigation system in Home Assistant.
+이 `rainbird` 센서는 Home Assistant의 Rain Bird 관개 시스템의 [LNK WiFi](https://www.rainbird.com/products/lnk-wifi-module) 모듈과 상호 작용할 수 있습니다.
 
 The integration adds `rainsensor` and `raindelay` sensors and their `binary_sensor` alternatives.
 
 ## Switch
 
-This `rainbird` switch platform allows interacting with [LNK WiFi](https://www.rainbird.com/products/lnk-wifi-module) module of the Rain Bird Irrigation system in Home Assistant.
+이 `rainbird` 스위치 플랫폼은 Home Assistant의 Rain Bird 관개 시스템의 [LNK WiFi](https://www.rainbird.com/products/lnk-wifi-module) 모듈과 상호 작용할 수 있습니다.
 
-Switches are automatically added for all available zones of configured controllers.
+설정된 컨트롤러의 모든 가용 영역에 스위치가 자동으로 추가됩니다.
 
-## Services
+## 서비스
 
-The Rain Bird switch platform exposes a service to start a single irrigation for a given duration.
+Rain Bird 스위치 플랫폼은 지정된 기간 동안 단일(single) 관개를 시작하는 서비스를 제공합니다.
 
 | Service | Description |
 | ------- | ----------- |
 | rainbird.start_irrigation | Set a duration state attribute for a switch and turn the irrigation on.|
 
-The service can be used as part of an automation script. For example:
+이 서비스는 자동화 스크립트의 일부로 사용할 수 있습니다. 예를 들면 다음과 같습니다.
 
 ```yaml
 # Example configuration.yaml automation entry

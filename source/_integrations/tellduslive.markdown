@@ -1,5 +1,5 @@
 ---
-title: Telldus Live
+title: 유럽 스마트홈플랫폼(Telldus Live)
 description: Instructions on how to integrate Telldus Live into Home Assistant.
 logo: tellduslive.svg
 ha_category:
@@ -16,6 +16,8 @@ ha_quality_scale: gold
 ha_codeowners:
   - '@fredrike'
 ---
+
+<iframe width="690" height="437" src="https://www.youtube.com/embed/wedwOQuMQbM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The `tellduslive` integration let you connect to [Telldus Live](https://live.telldus.com). It's cloud platform that connects to your Tellstick Net or Tellstick ZNet connected gear at home.
 

@@ -1,5 +1,5 @@
 ---
-title: World Wide Lightning Location Network (WWLLN)
+title: 세계 번개 위치 네트워크(WWLLN)
 description: Instructions on how to integrate WWLLN within Home Assistant.
 logo: wwlln.jpg
 ha_category: Geolocation

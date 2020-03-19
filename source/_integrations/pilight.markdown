@@ -1,5 +1,5 @@
 ---
-title: Pilight
+title: 라즈베리파이조명(Pilight)
 description: Instructions on how to setup Pilight within Home Assistant.
 logo: pilight.png
 ha_category:
@@ -12,6 +12,8 @@ ha_iot_class: Local Push
 ha_codeowners:
   - '@trekky12'
 ---
+
+<iframe width="690" height="388" src="https://www.youtube.com/embed/ohJMUAsssQw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 [Pilight](https://www.pilight.org/) is a modular and open source solution to communicate with 433 MHz devices and runs on various small form factor computers. A lot of common [protocols](https://manual.pilight.org/protocols/index.html) are already available.
 

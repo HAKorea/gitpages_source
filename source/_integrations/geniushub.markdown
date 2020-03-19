@@ -1,5 +1,5 @@
 ---
-title: Genius Hub
+title: 스마트홈플랫폼(Genius Hub)
 description: Instructions on how to integrate a Genius Hub with Home Assistant.
 logo: geniushub.png
 ha_category:
@@ -13,6 +13,8 @@ ha_iot_class: Local Polling
 ha_codeowners:
   - '@zxdavb'
 ---
+
+<iframe width="690" height="388" src="https://www.youtube.com/embed/eooc6_AyFnU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The `geniushub` integration links Home Assistant with your Genius Hub CH/DHW system, including its zones, devices, and issues.
 

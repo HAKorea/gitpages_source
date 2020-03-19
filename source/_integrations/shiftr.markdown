@@ -1,5 +1,5 @@
 ---
-title: shiftr.io
+title: IOT기기실시간연결도(shiftr.io)
 description: Transfer events to Shiftr.io.
 logo: shiftr.png
 ha_category:
@@ -9,13 +9,15 @@ ha_codeowners:
   - '@fabaff'
 ---
 
-The `shiftr` integration makes it possible to transfer details collected with Home Assistant to [Shiftr.io](https://shiftr.io) and visualize the flow of the information. Keep in mind that your details will be public!
+<iframe width="690" height="609" src="https://www.youtube.com/embed/hGicZsBHo9s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Configuration
+`shiftr` 통합구성요소로 홈어시스턴트로 수집한 세부 정보를 [Shiftr.io](https://shiftr.io)로 전송하고 정보의 흐름을 시각화 할 수 있습니다. 귀하의 세부 정보는 공개됩니다!
 
-Create a new [namespace](https://shiftr.io/new) and generate a new token. You will need to use `Key (Username)` and `Secret (Password)` to setup the component.
+## 설정
 
-To use the `shiftr` integration in your installation, add the following to your `configuration.yaml` file:
+새로운 [namespace](https://shiftr.io/new)를 생성하고 새로운 토큰을 생성하십시오. 컴포넌트를 설정하려면 `Key (Username)` 및 `Secret (Password)`를 사용해야합니다.
+
+설치시 `shiftr` 통합구성요소를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

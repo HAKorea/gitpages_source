@@ -1,5 +1,5 @@
 ---
-title: Météo-France
+title: 프랑스 기상청(Météo-France)
 description: Instructions on how to integrate Météo-France within Home Assistant.
 logo: meteo-france.png
 ha_release: 0.89

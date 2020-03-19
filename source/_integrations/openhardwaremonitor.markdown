@@ -1,5 +1,5 @@
 ---
-title: Open Hardware Monitor
+title: 오픈하드웨어모니터(Open Hardware Monitor)
 description: Instructions on how to integrate Open Hardware Monitor within Home Assistant.
 logo: openhardwaremonitor.png
 ha_category:
@@ -8,13 +8,13 @@ ha_release: 0.48
 ha_iot_class: Local Polling
 ---
 
-The `openhardwaremonitor` platform uses your [Open Hardware Monitor](https://openhardwaremonitor.org/) installation as a source for sensors that will display system information.
+`openhardwaremonitor` 플랫폼은 [Open Hardware Monitor](https://openhardwaremonitor.org/) 설치를 시스템 정보를 표시할 센서의 소스로 사용합니다.
 
-## Setup
+## 셋업
 
-OpenHardwareMonitor must be running on the host, with "Remote web server" active. You also need to open inbound port (TCP 8085) on the host..
+"Remote web server"가 활성화 된 상태에서 OpenHardwareMonitor가 호스트에서 실행 중이어야 합니다. 호스트에서 인바운드 포트 (TCP 8085)도 열어야합니다.
 
-To open port (on Windows):
+포트를 열려면 (Windows) :
 
 1. Navigate to Control Panel, System and Security and Windows Firewall.
 2. Select **Advanced settings** and highlight **Inbound Rules** in the left pane.
@@ -25,16 +25,16 @@ To open port (on Windows):
 7. Select the network type as you see fit and click Next.
 8. Name the rule and click Finish.
 
-To open port with `firewalld` (Linux):
+`firewalld`로 포트를 열려면 (Linux) :
 
 ```bash
 sudo firewall-cmd --permanent --add-port=8085/tcp
 sudo firewall-cmd --reload
 ```
 
-## Configuration
+## 설정
 
-To add Open Hardware Monitor to your installation, add the following to your `configuration.yaml` file:
+Open Hardware Monitor를 설치에 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

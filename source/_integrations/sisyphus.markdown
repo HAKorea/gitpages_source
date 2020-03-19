@@ -10,25 +10,25 @@ ha_release: 0.75
 ha_iot_class: Local Push
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/45g2SJkYX38" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="690" height="437" src="https://www.youtube.com/embed/2rxHZwpxCk0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-The [Sisyphus](https://sisyphus-industries.com/) integration for Home Assistant allows you to observe and control your Sisyphus Kinetic Art Table.
+홈어시스턴트를 위한 [Sisyphus](https://sisyphus-industries.com/) 연동으로 Sisyphus Kinetic Art Table을 관찰하고 제어할 수 있습니다.
 
-There is currently support for the following device types within Home Assistant:
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다. : 
 
-- **Light** - Can be used to sleep/wake the table or adjust the brightness of the table light.
-- **Media Player** - Can be used to sleep/wake the table, play/pause, move between tracks, or toggle shuffle on and off. The "volume" control adjusts the table's speed.
+- **Light** - 테이블을 잠자거나 깨우거나 테이블 조명의 밝기를 조정하는 데 사용할 수 있습니다.
+- **Media Player** - 테이블을 잠자기/깨우기, 재생/일시 정지, 트랙 간 이동 또는 셔플 켜기/끄기를 전환하는데 사용할 수 있습니다. "볼륨" 컨트롤은 테이블의 속도를 조정합니다.
 
-The Light and Media players will be automatically added for each of your Sisyphus tables, if the Sisyphus integration is configured.
+Sisyphus 통합구성요소가 설정된 경우 라이트 및 미디어 플레이어가 각 Sisyphus 테이블에 자동으로 추가됩니다.
 
-There are two ways to configure this component. For the automatic discovery of your table(s), simply add the following to your `configuration.yaml`:
+이 구성 요소를 구성하는 두 가지 방법이 있습니다. 테이블을 자동으로 검색하려면 `configuration.yaml`에 다음을 추가하십시오.
 
 ```yaml
 # This will auto-detect all Sisyphus tables on your local network.
 sisyphus:
 ```
 
-Auto-detection can be a little slow, so if your table has a fixed IP address or hostname, you may add a list of tables in your `configuration.yaml`. For example:
+자동 감지는 약간 느릴 수 있으므로 테이블에 고정 IP 주소 또는 호스트 이름이 있으면 `configuration.yaml`에 테이블 목록을 추가 할 수 있습니다. 예를 들어 :
 
 ```yaml
 # This will skip auto-detection and add only the listed tables

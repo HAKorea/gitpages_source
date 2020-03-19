@@ -1,5 +1,5 @@
 ---
-title: Openweathermap
+title: 오픈기상지도(Openweathermap)
 description: Instructions on how to integrate OpenWeatherMap within Home Assistant.
 logo: openweathermap.png
 ha_category:
@@ -11,18 +11,20 @@ ha_codeowners:
   - '@fabaff'
 ---
 
-The `openweathermap` weather platform uses [OpenWeatherMap](https://openweathermap.org/) as a source for current meteorological data for your location.
+<iframe width="690" height="388" src="https://www.youtube.com/embed/ccTAedW2KPg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-There is currently support for the following device types within Home Assistant:
+`openweathermap` 기상 플랫폼은 [OpenWeatherMap](https://openweathermap.org/)를 현재 위치의 현재 기상 데이터 소스로 사용합니다.
+
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - [Sensor](#sensor)
 - [Weather](#weather)
 
-You need an API key which is free but requires a [registration](https://home.openweathermap.org/users/sign_up).
+무료이지만 [등록](https://home.openweathermap.org/users/sign_up)이 필요한 API 키가 필요합니다.
 
 ## Weather
 
-To add OpenWeatherMap to your installation, add the following to your `configuration.yaml` file:
+OpenWeatherMap을 설치에 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -60,15 +62,15 @@ longitude:
 
 <div class='note'>
 
-This platform is an alternative to the [`openweathermap`](/integrations/openweathermap#sensor) sensor.
+이 플랫폼은 [`openweathermap`](/integrations/openweathermap#sensor) 센서의 대안입니다.
 
 </div>
 
 ## Sensor
 
-The `openweathermap` platform uses [OpenWeatherMap](https://openweathermap.org/) as a source for current meteorological data for your location. The `forecast` will show you the condition in 3h.
+`openweathermap` 플랫폼은 [OpenWeatherMap](https://openweathermap.org/)를 현재 위치의 현재 기상 데이터 소스로 사용합니다. `forecast`는 3 시간 안에 상태를 보여줄 것입니다.
 
-To add OpenWeatherMap sensor to your installation, add the following to your `configuration.yaml` file:
+OpenWeatherMap 센서를 설치에 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -126,4 +128,4 @@ monitored_conditions:
       description: The current weather condition code.
 {% endconfiguration %}
 
-Details about the API are available in the [OpenWeatherMap documentation](https://openweathermap.org/api).
+API에 대한 자세한 내용은 [OpenWeatherMap documentation](https://openweathermap.org/api)에서 확인할 수 있습니다.

@@ -1,5 +1,5 @@
 ---
-title: Queensland Bushfire Alert
+title: 호주 퀸즈랜드 산불정보(Queensland Bushfire Alert)
 description: Instructions on how to integrate the Queensland Bushfire Alert feed into Home Assistant.
 logo: geo_location.png
 ha_category: Geolocation

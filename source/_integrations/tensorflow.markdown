@@ -1,5 +1,5 @@
 ---
-title: 텐서플로우(TensorFlow)
+title: AI플랫폼(TensorFlow)
 description: Detect and recognize objects with TensorFlow.
 logo: tensorflow.png
 ha_category:

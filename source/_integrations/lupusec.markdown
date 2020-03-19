@@ -1,5 +1,5 @@
 ---
-title: Lupus Electronics LUPUSEC
+title: 독일 스마트홈플랫폼(Lupus Electronics LUPUSEC)
 description: Instructions on integrating Lupusec home security with Home Assistant.
 logo: lupusec.png
 ha_category:
@@ -12,6 +12,8 @@ ha_iot_class: Local Polling
 ha_codeowners:
   - '@majuss'
 ---
+
+<iframe width="690" height="388" src="https://www.youtube.com/embed/0VKqEfwbQT4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The `lupusec` integration allows the user to integrate their Lupusec alarm control panel and ultimately all connected sensors and other devices. For more information about the LUPUS-Electronics security system please visit their [website](https://www.lupus-electronics.de).
 

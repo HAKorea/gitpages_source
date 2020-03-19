@@ -8,6 +8,8 @@ ha_iot_class: Cloud Polling
 ha_release: 0.67
 ---
 
+<iframe width="690" height="388" src="https://www.youtube.com/embed/DdMmEbKp4_o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `waze_travel_time` 센서는 [Waze](https://www.waze.com/)에서 이동 시간을 제공합니다.
 
 단위 시스템은 기본적으로 미터법으로 설정되어 있습니다.

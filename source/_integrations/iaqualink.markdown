@@ -1,5 +1,5 @@
 ---
-title: Jandy iAqualink
+title: 수영장스파관리(Jandy iAqualink)
 description: Instructions on how to configure Jandy iAqualink integration.
 logo: iaqualink.png
 ha_category:
@@ -14,6 +14,8 @@ ha_config_flow: true
 ha_codeowners:
   - '@flz'
 ---
+
+<iframe width="690" height="388" src="https://www.youtube.com/embed/m3YoKtztICw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 [iAqualink](https://www.iaqualink.com/) by [Jandy](https://www.jandy.com/) allows you to control your pool anytime, anywhere.
 

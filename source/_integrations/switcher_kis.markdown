@@ -1,5 +1,5 @@
 ---
-title: Switcher
+title: 이스라엘 보일러관리(Switcher)
 description: Controlling your Switcher V2 Water Heater.
 logo: switcher_boiler.png
 ha_category:

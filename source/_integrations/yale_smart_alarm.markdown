@@ -7,6 +7,8 @@ ha_category:
 ha_release: 0.78
 ---
 
+<iframe width="690" height="388" src="https://www.youtube.com/embed/wfFX5gBhi8o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 The `yale_smart_alarm` platform provides connectivity with the Yale Smart Alarm systems and Smart Hub through Yale's API.
 
 This platform supports the following services: `alarm_arm_away`, `alarm_arm_home`, `alarm_arm_night` (duplicate of home) and `alarm_disarm`.

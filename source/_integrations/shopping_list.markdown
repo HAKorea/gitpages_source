@@ -1,5 +1,5 @@
 ---
-title: Shopping List
+title: 쇼핑리스트(Shopping List)
 description: Instructions on how to integrate a Shopping list into Home Assistant using Intent.
 logo: home-assistant.png
 ha_category:

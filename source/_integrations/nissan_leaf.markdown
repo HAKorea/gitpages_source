@@ -1,5 +1,5 @@
 ---
-title: Nissan Leaf
+title: 니싼 리프(Nissan Leaf)
 description: Instructions for how to integrate Nissan Leaf(s) into Home Assistant.
 logo: nissan.png
 ha_category:
@@ -9,6 +9,8 @@ ha_iot_class: Cloud Polling
 ha_codeowners:
   - '@filcole'
 ---
+
+<iframe width="690" height="388" src="https://www.youtube.com/embed/CWX28fTKUPk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The `nissan_leaf` integration offers integration with the [NissanConnect EV](https://youplus.nissan.co.uk/GB/en/YouPlus/ConnectedServices.html) cloud service. NissanConnect EV was previously known as Nissan Carwings. It offers:
 

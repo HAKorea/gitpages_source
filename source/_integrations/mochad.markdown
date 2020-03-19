@@ -1,5 +1,5 @@
 ---
-title: Mochad
+title: 오픈스마트홈데몬(Mochad)
 description: Instructions on how to integrate Mochad into Home Assistant.
 ha_category:
   - Hub

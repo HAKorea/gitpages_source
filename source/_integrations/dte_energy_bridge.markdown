@@ -1,5 +1,5 @@
 ---
-title: DTE Energy Bridge
+title: 에너지측정서비스(DTE Energy Bridge)
 description: Instructions on how to setup DTE Energy Bridge with Home Assistant.
 logo: dte_energy.png
 ha_category:
@@ -7,6 +7,8 @@ ha_category:
 ha_release: 0.21
 ha_iot_class: Local Polling
 ---
+
+<iframe width="690" height="388" src="https://www.youtube.com/embed/L9gWpcCjsGs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 A sensor platform for the [DTE](https://www.newlook.dteenergy.com/) Energy Bridge. To find out which version of the DTE Energy Bridge sensor you have, find the status LED on your box.
 

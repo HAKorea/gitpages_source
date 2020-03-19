@@ -1,5 +1,5 @@
 ---
-title: IHC Controller
+title: 스마트홈플랫폼(IHC Controller)
 description: Instructions on how to integrate the IHC integrations with Home Assistant
 logo: ihc.png
 ha_category:
@@ -11,6 +11,8 @@ ha_category:
 ha_release: 0.62
 ha_iot_class: Local Push
 ---
+
+<iframe width="690" height="388" src="https://www.youtube.com/embed/AjPoHm0CMCU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 IHC Controller integration for Home Assistant allows you to connect the LK IHC controller to Home Assistant. The controller is sold under other names in different countries - "ELKO Living system" in Sweden and Norway.
 

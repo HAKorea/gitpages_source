@@ -1,5 +1,5 @@
 ---
-title: Integration - Riemann sum integral
+title: 리만합(Integration - Riemann sum)
 description: Instructions on how to integrate Integration Sensor into Home Assistant.
 ha_category:
   - Utility
@@ -12,11 +12,11 @@ ha_codeowners:
   - '@dgomes'
 ---
 
-The `integration` platform provides the [Riemann sum](https://en.wikipedia.org/wiki/Riemann_sum) of the values provided by a source sensor. The Riemann sum is an approximation of an **integral** by a finite sum. The integration sensors is updated upon changes of the **source**. Fast sampling source sensors provide better results. In this implementation, the default is the Trapezoidal method, but Left and Right methods can optionally be used.
+`integration` 플랫폼은 소스 센서가 제공한 값의 [Riemann sum](https://en.wikipedia.org/wiki/Riemann_sum)을 제공합니다. Riemann sum은 finite sum에 의한 **integral**의 근사치입니다. **source**가 변경되면 integration 센서가 업데이트됩니다. 빠른 샘플링 소스 센서로 더 나은 결과 제공합니다. 이 구현에서 기본값은 사다리꼴(Trapezoidal) 방법이지만 왼쪽 및 오른쪽(Left and Righ) 방법을 선택적으로 사용할 수 있습니다.
 
-## Configuration
+## 설정
 
-To enable Integration Sensor in your installation, add the following to your `configuration.yaml` file:
+설치시 Integration 센서를 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -61,13 +61,13 @@ method:
   default: trapezoidal
 {% endconfiguration %}
 
-In case you have an appliance which produces spikey consumption (like an on/off electrical boiler) you should opt for the `left` method to get accurate readings. If `unit` is set then `unit_prefix` and `unit_time` are ignored.
+온/오프 전기 보일러와 같이 소비량이 많은 기기가 있는 경우 정확한 판독값을 얻으려면 `left` 방법을 선택해야합니다. `unit`이 설정되면 `unit_prefix`와 `unit_time`은 무시됩니다.
 
 ## Energy
 
-An `integration` sensor is quite useful in energy billing scenarios since energy is generally billed in kWh and many sensors provide power in W (Watts).
+`integration` 센서는 에너지가 일반적으로 kWh로 청구되고 많은 센서가 W(Watts)로 전력을 공급하기 때문에 에너지 청구 시나리오에서 매우 유용합니다.
 
-If you have a sensor that provides you with power readings in Watts (uses W as `unit_of_measurement`), then you can use the `integration` sensor to track how much energy is being spent. Take the next configuration as an example:
+Watts 단위의 전력 측정값을 제공하는 센서가 있는 경우 (W를 `unit_of_measurement`로 사용), `integration` 센서를 사용하여 소비되는 에너지 량을 추적할 수 있습니다. 다음 설정을 예로 들어 보겠습니다.
 
 ```yaml
 sensor:
@@ -78,4 +78,4 @@ sensor:
     round: 2
 ```
 
-This configuration will provide you with `sensor.energy_spent` who will have your energy in kWh.
+이 설정은 에너지를 kWh 단위로 `sensor.energy_spent`를 제공합니다.

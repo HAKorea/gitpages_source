@@ -8,17 +8,17 @@ ha_release: 0.27
 ha_iot_class: Configurable
 ---
 
-The `mqtt` fan platform lets you control your MQTT enabled fans.
+`mqtt` 팬(fan) 플랫폼을 사용하면 MQTT 지원 팬을 제어할 수 있습니다.
 
-## Configuration
+## 설정
 
-In an ideal scenario, the MQTT device will have a `state_topic` to publish state changes. If these messages are published with a `RETAIN` flag, the MQTT fan will receive an instant state update after subscription and will start with the correct state. Otherwise, the initial state of the fan will be `false` / `off`.
+이상적인 시나리오에서 MQTT 디바이스에는 상태 변경 사항을 publish하는 `state_topic`이 있습니다.  이러한 메시지가 `RETAIN` 플래그와 함께 공개되면 MQTT 팬은 subscription 후 즉시 상태 업데이트를 수신하고 변경된 상태로 시작합니다. 그렇지 않으면 팬의 초기 상태는 `false` / `off`입니다.
 
-When a `state_topic` is not available, the fan will work in optimistic mode. In this mode, the fan will immediately change state after every command. Otherwise, the fan will wait for state confirmation from the device (message from `state_topic`).
+`state_topic`을 사용할 수 없으면 팬은 optimistic 모드에서 작동합니다. 이 모드에서 팬은 모든 명령 후 즉시 상태를 변경합니다. 그렇지 않으면 팬은 장치에서 상태 확인을 기다립니다 (`state_topic`의 메시지).
 
-Optimistic mode can be forced even if a `state_topic` is available. Try to enable it if you are experiencing incorrect fan operation.
+`state_topic`이 사용 가능하더라도 Optimistic 모드를 강제할 수 있습니다. 팬이 잘못 작동하면 활성화하십시오.
 
-To enable MQTT fans in your installation, add the following to your `configuration.yaml` file:
+설치에서 MQTT 팬을 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -182,17 +182,17 @@ device:
 
 <div class='note warning'>
 
-Make sure that your topics match exactly. `some-topic/` and `some-topic` are different topics.
+topics가 정확히 일치하는지 확인하십시오. `some-topic/`과 `some-topic`은 다른 topic입니다.
 
 </div>
 
-## Examples
+## 사례
 
-In this section you find some real-life examples of how to use this fan.
+이 섹션에는 이 팬을 사용하는 방법에 대한 실제 예가 나와 있습니다.
 
-### Full configuration
+### 전체 설정
 
-The example below shows a full configuration for a MQTT fan.
+아래 예는 MQTT 팬의 전체 설정을 보여줍니다.
 
 ```yaml
 # Example configuration.yaml entry

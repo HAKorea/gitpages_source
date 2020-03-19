@@ -14,6 +14,8 @@ ha_codeowners:
   - '@gerard33'
 ---
 
+<iframe width="690" height="388" src="https://www.youtube.com/embed/BrZT2hkKgLo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `bmw_connected_drive` 통합구성요소를 통해 BMW 커넥티드 드라이브 포털에서 BMW 차량의 데이터를 검색 할 수 있습니다. 작동하려면 BMW Connected Drive 계정과 Connected Drive 지원 차량이 있어야합니다.
 
 `bmw_connected_drive` 통합구성요소는 (최근) 미니 차량과도 작동합니다. 작동하려면 Mini Connected 계정과 Mini Connected 지원 차량이 있어야 작동합니다.

@@ -1,5 +1,5 @@
 ---
-title: Melnor RainCloud
+title: 멜노어 레인클라우드(Melnor RainCloud)
 description: Instructions on how to integrate your Melnor Raincloud sprinkler system within Home Assistant.
 logo: raincloud.jpg
 ha_category:
@@ -13,17 +13,19 @@ ha_codeowners:
   - '@vanstinator'
 ---
 
-The `raincloud` integration allows you to integrate your [Melnor RainCloud](https://wifiaquatimer.com) sprinkler system in Home Assistant.
+<iframe width="690" height="388" src="https://www.youtube.com/embed/zPHy5okxnTk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-There is currently support for the following device types within Home Assistant:
+`raincloud` 통합구성요소를 통해 [Melnor RainCloud](https://wifiaquatimer.com) 스프링클러 시스템을 Home Assistant에 연동할 수 있습니다.
+
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다. : 
 
 - [Binary Sensor](#binary-sensor)
 - [Sensor](#sensor)
 - [Switch](#switch)
 
-## Configuration
+## 설정
 
-To enable it, add the following to your `configuration.yaml` file:
+이를 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -45,7 +47,7 @@ password:
 
 ## Binary Sensor
 
-Once you have enabled the [Raincloud component](#configuration), add the following to your `configuration.yaml` file:
+[Raincloud component](#configuration)를 활성화하고 난 후 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -68,7 +70,7 @@ monitored_conditions:
 
 ## Sensor
 
-Once you have enabled the [Raincloud component](#configuration), add the following to your `configuration.yaml` file:
+[Raincloud component](#configuration)를 활성화하고 난 후 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -95,7 +97,7 @@ monitored_conditions:
 
 ## Switch
 
-Once you have enabled the [Raincloud component](#configuration), add the following to your `configuration.yaml` file:
+[Raincloud component](#configuration)를 활성화하고 난 후 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

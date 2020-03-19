@@ -1,5 +1,5 @@
 ---
-title: SCSGate
+title: DIY스마트홈(SCSGate)
 description: Instructions on how to integrate SCSGate into Home Assistant.
 logo: bus_scs.png
 ha_category:

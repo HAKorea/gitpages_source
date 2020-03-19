@@ -1,5 +1,5 @@
 ---
-title: 스마트홈 통합플랫폼(Velbus)
+title: 스마트홈플랫폼(Velbus)
 description: Access and control your Velbus devices.
 logo: velbus.png
 ha_category:

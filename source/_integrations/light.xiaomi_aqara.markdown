@@ -1,5 +1,5 @@
 ---
-title: "Xiaomi Light"
+title: "샤오미 Light"
 description: "Instructions on how to setup the Xiaomi light within Home Assistant."
 logo: xiaomi.png
 ha_category:

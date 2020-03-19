@@ -1,5 +1,5 @@
 ---
-title: Raspihats
+title: 라즈베리파이 확장킷(Raspihats)
 description: Instructions on how to integrate Raspihats add-on boards for Raspberry Pi into Home Assistant.
 logo: raspihats.png
 ha_category:

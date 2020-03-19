@@ -1,5 +1,5 @@
 ---
-title: RaspyRFM
+title: 라즈베리파이 RF모듈(RaspyRFM)
 description: Instructions on how to integrate RaspyRFM switches into Home Assistant.
 logo: seegelsysteme.png
 ha_category:

@@ -1,5 +1,5 @@
 ---
-title: AlarmDecoder
+title: 경보장치연동기기(AlarmDecoder)
 description: Instructions on how to integrate a DSC/Honeywell alarm panel with Home Assistant using an AlarmDecoder device.
 logo: alarmdecoder.png
 ha_category:
@@ -9,6 +9,8 @@ ha_category:
 ha_release: 0.43
 ha_iot_class: Local Push
 ---
+
+<iframe width="690" height="388" src="https://www.youtube.com/embed/P1oNDp-Sx8c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The `alarmdecoder` integration will allow Home Assistant users who own either a DSC or Honeywell alarm panel to leverage their alarm system and its sensors to provide Home Assistant with rich information about their homes. Connectivity between Home Assistant and the alarm panel is accomplished through a device produced by Nu Tech Software Solutions, known as the AlarmDecoder. The AlarmDecoder devices provide a serial, TCP/IP socket or USB interface to the alarm panel, where it emulates an alarm keypad.
 

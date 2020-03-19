@@ -1,11 +1,13 @@
 ---
-title: NOAA Tides
+title: 미국 해양대기청 조류(NOAA Tides)
 description: Instructions to add NOAA Tide information to Home Assistant.
 ha_category:
   - Environment
 ha_release: 0.75
 logo: noaa.png
 ---
+
+<iframe width="690" height="388" src="https://www.youtube.com/embed/EBBnYBiY1rc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The `noaa_tides` sensor platform uses details from [NOAA Tides and Currents](https://tidesandcurrents.noaa.gov/api/) to provide information about the prediction for the tides for any location in the United States.
 

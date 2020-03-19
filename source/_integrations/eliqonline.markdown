@@ -1,5 +1,5 @@
 ---
-title: Eliqonline
+title: 전력측정서비스(Eliqonline)
 description: Instructions on how to integrate Eliqonline devices within Home Assistant.
 logo: eliq.png
 ha_category:
@@ -7,6 +7,8 @@ ha_category:
 ha_release: '0.10'
 ha_iot_class: Cloud Polling
 ---
+
+<iframe width="690" height="388" src="https://www.youtube.com/embed/xsGO5ORpVF4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Integrate your [ELIQ Online](https://eliq.io/) smart meter information into Home Assistant. To get an [access token](https://my.eliq.io/user/settings/api) and the [Channel ID](https://my.eliq.io/user/settings/locations), log in to your account.
 

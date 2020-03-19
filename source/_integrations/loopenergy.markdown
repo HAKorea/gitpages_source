@@ -1,5 +1,5 @@
 ---
-title: Loop Energy
+title: 루프 에너지(Loop Energy)
 description: Instructions on how to integrate Loop Energy devices within Home Assistant.
 logo: loop.png
 ha_category:
@@ -7,6 +7,8 @@ ha_category:
 ha_release: 0.17
 ha_iot_class: Cloud Push
 ---
+
+<iframe width="690" height="388" src="https://www.youtube.com/embed/6mVA23m6_GU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Integrate your [Loop Energy](https://www.your-loop.com/) meter information into Home Assistant. To use this sensor you need the client serial number and secret keys for your devices.
 

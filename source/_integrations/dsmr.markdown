@@ -1,5 +1,5 @@
 ---
-title: 네덜린드 전력미터기(DSMR Slimme Meter)
+title: 네덜란드 전력측정기(DSMR Slimme Meter)
 description: Instructions on how to integrate DSMR Smartmeter within Home Assistant.
 logo: netbeheernederland.jpg
 ha_category:

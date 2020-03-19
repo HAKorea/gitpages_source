@@ -11,6 +11,8 @@ ha_codeowners:
   - '@gtdiehl'
 ---
 
+<iframe width="690" height="388" src="https://www.youtube.com/embed/0DWHoyT59cI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 A `sensor` platform for the [Rainforest Eagle-200](https://rainforestautomation.com/rfa-z114-eagle-200/) energy gateway.
 
 ## Configuration

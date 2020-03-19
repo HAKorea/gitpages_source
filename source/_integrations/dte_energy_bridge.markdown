@@ -1,5 +1,5 @@
 ---
-title: DTE Energy Bridge
+title: 에너지측정서비스(DTE Energy Bridge)
 description: Instructions on how to setup DTE Energy Bridge with Home Assistant.
 logo: dte_energy.png
 ha_category:

@@ -1,5 +1,5 @@
 ---
-title: SAJ Solar Inverter
+title: 태양광인버터(SAJ Solar Inverter)
 description: Instructions on how to connect your SAJ Solar Inverter to Home Assistant.
 ha_category:
   - Energy
@@ -9,6 +9,8 @@ ha_release: '0.100'
 ha_codeowners:
   - '@fredericvl'
 ---
+
+<iframe width="690" height="388" src="https://www.youtube.com/embed/FOowMWZig18" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The `saj` sensor will poll a [SAJ](https://www.saj-electric.com/) solar inverter and present the values as sensors in Home Assistant.
 

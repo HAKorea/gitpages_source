@@ -1,5 +1,5 @@
 ---
-title: Luftdaten
+title: 유럽 사용자연합 대기정보(Luftdaten)
 description: Instructions on how to setup Luftdaten sensors in Home Assistant.
 logo: luftdaten.png
 ha_category:
@@ -12,6 +12,8 @@ ha_quality_scale: gold
 ha_codeowners:
   - '@fabaff'
 ---
+
+<iframe width="690" height="388" src="https://www.youtube.com/embed/83nSjiInZ3U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The `luftdaten` integration will query the open data API of [luftdaten.info](https://luftdaten.info/) to monitor air quality and other weather data from a specific (self build) sensor station.
 

@@ -11,6 +11,8 @@ ha_codeowners:
   - '@nielstron'
 ---
 
+<iframe width="690" height="388" src="https://www.youtube.com/embed/JhHAtVu_eT8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `fronius` 센서는 [Fronius](https://www.fronius.com/) 태양광 인버터, 배터리 시스템 또는 스마트 미터를 폴링하고 그 값을 Home Assistant에서 센서로 표시합니다.
 
 ## 설정

@@ -8,11 +8,11 @@ ha_iot_class: Cloud Push
 logo: mythic_beasts.png
 ---
 
-With the `mythicbeastsdns` integration you can automatically update your dynamic DNS entry at [Mythic Beasts](https://www.mythic-beasts.com/).
+`mythicbeastsdns` 통합구성요소를 통해 [Mythic Beasts](https://www.mythic-beasts.com/)에서 동적 DNS 항목을 자동으로 업데이트 할 수 있습니다.
 
-## Configuration
+## 설정
 
-To use the integration in your installation, add the following to your `configuration.yaml` file:
+설치시 통합구성요소를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

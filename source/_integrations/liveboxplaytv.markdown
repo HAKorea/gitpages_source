@@ -1,5 +1,5 @@
 ---
-title: Orange Livebox Play TV
+title: 프랑스 셋톱박스(Orange Livebox Play TV)
 description: Instructions on how to integrate a Livebox Play TV appliance into Home Assistant.
 logo: orange.png
 ha_category:

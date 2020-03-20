@@ -11,12 +11,12 @@ ha_codeowners:
 
 <iframe width="690" height="437" src="https://www.youtube.com/embed/JCjzEKdlezk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-The `twilio_call` notification platform enables sending notifications via Voice, powered by [Twilio](https://twilio.com).
-Passed message will be read by Text-To-Speech service.
+`twilio_call` 알림 플랫폼은 [Twilio](https://twilio.com)에서 제공하는 음성을 통해 알림을 보낼 수 있습니다.
+전달된 메시지는 TTS (텍스트 음성 변환) 서비스에서 읽습니다.
 
-The requirement is that you have setup [Twilio](/integrations/twilio/).
+요구 사항은 [Twilio](/integrations/twilio/)를 설정해야합니다.
 
-To use this notification platform in your installation, add the following to your `configuration.yaml` file:
+설치시 이 알림 플랫폼을 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -40,7 +40,7 @@ name:
 
 ### Usage
 
-Twilio is a notify platform and thus can be controlled by calling the notify service [as described here](/integrations/notify/). It will send a notification to all E.164 phone numbers in the notification **target**. See the notes above regarding the `from_number` configuration variable for information about formatting phone numbers.
+Twilio는 알림 플랫폼이므로 알림 서비스 [as described here](/integrations/notify/)를 호출하여 제어 할 수 있습니다. 알림 **target**의 모든 E.164 전화 번호로 알림을 보냅니다. `from_number`에 대해서는 위의 참고 사항을 참조하십시오
 
 ```yaml
 # Example automation notification entry

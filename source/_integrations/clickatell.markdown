@@ -7,11 +7,13 @@ ha_category:
 ha_release: 0.56
 ---
 
-The `clickatell` platform uses [Clickatell](https://clickatell.com) to deliver SMS notifications from Home Assistant.
+<iframe width="690" height="388" src="https://www.youtube.com/embed/gi5HYaaShXY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+`clickatell` 플랫폼은 [Clickatell](https://clickatell.com)을 사용하여 Home Assistant에서 SMS 알림을 전달합니다.
 
 ## Setup
 
-Go to your [Clickatell SMS Platform Portal](https://portal.clickatell.com/#/) section and create a new SMS integration. There are three screens of information required to create an integration. Please ensure the following:
+[Clickatell SMS Platform Portal](https://portal.clickatell.com/#/) 섹션으로 이동하여 새 SMS 연동작업을 작성하십시오. 연동작업을 작성하는 데 필요한 세 가지 정보 화면이 있습니다. 다음을 확인하십시오 :
 
 1. Give the new Integration an identification name.
 2. Ensure it is set for 'production' use.
@@ -20,9 +22,9 @@ Go to your [Clickatell SMS Platform Portal](https://portal.clickatell.com/#/) se
 5. Be aware of the international number format option as this impacts the structure of the phone numbers you provide.
 6. Once you have completed entering your details an API key is generated. Copy the API key.
 
-## Configuration
+## 설정
 
-To add Clickatell to your installation, add the following to your Home Assistant `configuration.yaml` file:
+Clickatell을 설치에 추가하려면 Home Assistant `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -49,4 +51,4 @@ recipient:
   type: string
 {% endconfiguration %}
 
-To use notifications, please see the [getting started with automation page](/getting-started/automation/).
+알림을 사용하려면 [getting started with automation page](/getting-started/automation/)를 참조하십시오.

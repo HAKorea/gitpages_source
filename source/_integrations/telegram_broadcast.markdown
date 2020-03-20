@@ -1,5 +1,5 @@
 ---
-title: "텔레그램 방송"
+title: "텔레그램 Broadcast"
 description: "Telegram support to send messages only"
 logo: telegram.png
 ha_category:

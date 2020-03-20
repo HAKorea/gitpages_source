@@ -8,11 +8,13 @@ ha_iot_class: Local Polling
 ha_release: 0.34
 ---
 
-The `dunehd` media player platform allows you to control a [Dune HD media player](https://dune-hd.com/eng/products/full_hd_media_players) from Home Assistant. Support is based on the official [IP protocol](https://dune-hd.com/support/ip_control/dune_ip_control_overview.txt) published by Dune.
+<iframe width="690" height="388" src="https://www.youtube.com/embed/cWatz70P_pg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Devices with firmware 110127_2105_beta or above are supported. Some functions may depend on the version of the protocol (volume / mute control is only available with version 2 onwards).
+`dunehd` 미디어 플레이어 플랫폼을 사용하면 Home Assistant에서 [Dune HD media player](https://dune-hd.com/eng/products/full_hd_media_players)를 제어할 수 있습니다. 지원사항은 Dune이 게시한 공식 [IP protocol](https://dune-hd.com/support/ip_control/dune_ip_control_overview.txt)을 기반으로합니다.
 
-To add a Dune HD player to your installation, add the following to your `configuration.yaml` file:
+펌웨어가 110127_2105_beta 이상인 장치가 지원됩니다. 일부 기능은 프로토콜 버전에 따라 다를 수 있습니다 (볼륨/음소거 제어는 버전 2 이상에서만 사용 가능).
+
+Dune HD 플레이어를 설치에 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

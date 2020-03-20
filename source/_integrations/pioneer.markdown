@@ -8,9 +8,11 @@ ha_release: 0.19
 ha_iot_class: Local Polling
 ---
 
-The `pioneer` platform allows you to control Pioneer Network Receivers. Please note, however, that the more recent Pioneer models work with [Onkyo](/integrations/onkyo) platform instead.
+<iframe width="690" height="388" src="https://www.youtube.com/embed/SyHCDhrr70g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-To add a Pioneer receiver to your installation, add the following to your `configuration.yaml` file:
+`pioneer` 플랫폼을 사용하면 Pioneer 네트워크 리시버를 제어할 수 있습니다. 그러나 최신 Pioneer 모델은 [Onkyo](/integrations/onkyo) 플랫폼과 함께 작동합니다.
+
+Pioneer 리시버를 설치에 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -45,16 +47,16 @@ sources:
   type: list
 {% endconfiguration %}
 
-Notes:
+참고 :
 
-- Some Pioneer AVRs use the port 23 default and some are reported to use 8102.
-- `timeout` is a socket level option and should only be configured if you know what you are doing.
+- 일부 파이오니어 AVR은 기본 포트 23을 사용하고 일부는 8102를 사용하는 것으로 보고됩니다.
+- `timeout`은 소켓 레벨 옵션이며 무엇을 하고 있는지 아는 경우에만 설정해야합니다.
 
-### Source codes
+### 입력 코드들(Source codes)
 
-Under these lines, you can find some sample `sources` lists per receiver model. Here we use the source names as shown on the remote as key for each code. However these are for display purposes only, so you could rename inputs to better match your set-up (e.g. `HDMI: '19'` to `Kodi: '19'`.
+이 라인들 아래에서, 리시버 모델당 샘플 `sources` 목록을 찾을 수 있습니다. 여기서는 각 코드의 키(key)로 리모컨에 표시된 입력 이름을 사용합니다. 그러나 이는 표시 목적으로만 사용되므로 설정에 더 잘 맞도록 입력의 이름을 바꿀 수 있습니다 (예: `HDMI: '19'`~ `Kodi: '19'`).
 
-Codes must be defined as strings (between single or double quotation marks) so that `05` is not implicitly transformed to `5`, which wouldn't be valid source code.
+`05`가 절대적으로 `5`로 변환되지 않도록 유효한 소스 코드가 아닌 코드는 문자열 (작은 따옴표 또는 큰 따옴표 사이)로 정의되어야합니다.
 
 #### VSX-921
 

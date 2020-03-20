@@ -10,6 +10,8 @@ ha_codeowners:
   - '@mezz64'
 ---
 
+<iframe width="690" height="388" src="https://www.youtube.com/embed/mPR-vR5ZbRg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `emby` 플랫폼을 사용하면 Home Assistant에서 [Emby](https://emby.media/) 멀티미디어 시스템을 제어할 수 있습니다.
 
 Emby를 설치에 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.

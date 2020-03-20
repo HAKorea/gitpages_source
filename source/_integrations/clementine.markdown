@@ -8,9 +8,11 @@ ha_release: 0.39
 ha_iot_class: Local Polling
 ---
 
-The `clementine` platform allows you to control a [Clementine Music Player](https://www.clementine-player.org).
+<iframe width="690" height="388" src="https://www.youtube.com/embed/si85LRnecwc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-To add a Clementine Player to your Home Assistant installation, add the following to your `configuration.yaml` file:
+`clementine` 플랫폼을 사용하면 [Clementine Music Player](https://www.clementine-player.org)를 제어할 수 있습니다.
+
+Clementine Player를 Home Assistant 설치에 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -40,8 +42,8 @@ name:
   type: string
 {% endconfiguration %}
 
-Remember that Clementine must be configured to accept connections through its network remote control protocol.
+Clementine은 네트워크 원격 제어 프로토콜을 통한 연결을 허용하도록 설정되어야합니다.
 
-You can configure this through Clementine  `Tools > Preferences > Network remote control` configuration menu. Enable `Use network remote control` and configure the other options for your use case.
+Clementine `Tools > Preferences > Network remote control` 설정 메뉴를 통해 이를 설정할 수 있습니다. `Use network remote control`을 활성화하고 사용 사례에 대한 다른 옵션을 설정하십시오.
 
-This integration does not implement the `play_media` service so you cannot add tracks to the playlist.
+이 통합구성요소는 `play_media` 서비스를 구현하지 않으므로 재생 목록에 트랙을 추가할 수 없습니다.

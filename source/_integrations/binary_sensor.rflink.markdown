@@ -8,17 +8,19 @@ ha_iot_class: Local Push
 ha_release: 0.81
 ---
 
-The `rflink` integration supports devices that use [RFLink gateway firmware](http://www.nemcon.nl/blog2/), for example the [Nodo RFLink Gateway](https://www.nodo-shop.nl/nl/21-rflink-gateway). RFLink gateway is an Arduino firmware that allows two-way communication with a multitude of RF wireless devices using cheap hardware (Arduino + transceiver).
+<iframe width="690" height="388" src="https://www.youtube.com/embed/yR_o82oZADQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-First, you have to set up your [RFLink hub](/integrations/rflink/).
+`rflink` 통합구성요소는 [RFLink 게이트웨이 펌웨어](http://www.nemcon.nl/blog2/)를 사용하는 장치, 예를 들어 [Nodo RFLink Gateway](https://www.nodo-shop.nl/nl/21-rflink-gateway). RFLink 게이트웨이는 저렴한 하드웨어 (Arduino + 트랜시버)를 사용하여 여러 RF 무선 장치와 양방향 통신을 가능하게하는 Arduino 펌웨어입니다.
 
-The RFLink integration does not know the difference between a `binary_sensor`, a `switch` and a `light`. Therefore all switchable devices are automatically added as `light` by default.
+먼저 [RFLink 허브](/integrations/rflink/)를 설정해야합니다.
 
-RFLink binary_sensor/switch/light ID's are composed of: protocol, id, switch/channel. For example: `newkaku_0000c6c2_1`.
+RFLink 통합구성요소는 `binary_sensor`, `switch`, `light`의 차이점을 모릅니다. 따라서 모든 전환 가능한 장치는 기본적으로 자동으로 `light`으로 추가됩니다.
 
-Once the ID of a binary sensor is known, it can be used to configure it as a binary sensor type in Home Assistant, for example, to hide it or configure a nice name.
+RFLink binary_sensor/switch/light ID는 protocol, id, switch/channel로 구성됩니다. 예: `newkaku_0000c6c2_1`.
 
-Configuring a device as a binary sensor:
+이진 센서의 ID를 알고 나면 Home Assistant에서 이진 센서 유형으로 설정하여 이를 숨기거나 더 좋은 이름을 설정할 수 있습니다.
+
+이진 센서로 장치 설정 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -63,17 +65,18 @@ devices:
           default: false
 {% endconfiguration %}
 
-### Sensor state
+### 센서 상태
 
-Initially, the state of a binary sensor is unknown. When a sensor update is received, the state is known and will be shown in the frontend.
+처음에는 이진 센서의 상태를 알 수 없습니다. 센서 업데이트가 수신되면 상태를 알 수 있으며 프런트 엔드에 표시됩니다.
 
-### Device support
+### 장치 지원
 
 See [device support](/integrations/rflink/#device-support)
+[device support](/integrations/rflink/#device-support) 참조
 
-### Additional configuration examples
+### 추가 설정 사례
 
-Multiple sensors with custom name and device class and set off_delay
+사용자 정의 이름 및 장치 클래스(Device Class)와 off_delay를 가진 다중 센서
 
 ```yaml
 # Example configuration.yaml entry

@@ -7,12 +7,12 @@ ha_category:
 ha_release: 0.7.5
 ---
 
-The `rfxtrx` platform support switches that communicate in the frequency range of 433.92 MHz.
+`rfxtrx` 플랫폼은 433.92 MHz의 주파수 범위에서 통신하는 스위치를 지원합니다.
 
-## Configuration
+## 설정
 
-First you have to set up your [rfxtrx hub](/integrations/rfxtrx/).
-The easiest way to find your switches is to add this to your `configuration.yaml`:
+먼저 [rfxtrx hub](/integrations/rfxtrx/)를 설정해야합니다.
+스위치를 찾는 가장 쉬운 방법은 이것을 `configuration.yaml`에 추가하는 것입니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -21,15 +21,15 @@ switch:
   automatic_add: true
 ```
 
-Launch your Home Assistant and go to the website.
-Push your remote and your device should be added:
+홈어시스턴트를 시작하고 웹 사이트로 이동하십시오.
+리모컨을 누르면 장치가 추가되어야합니다.
 
 <p class='img'>
 <img src='/images/integrations/rfxtrx/switch.png' />
 </p>
 
-Here the name is `0b11000102ef9f210010f70` and you can verify that it works from the frontend.
-Then you should update your configuration to:
+여기서 이름은 `0b11000102ef9f210010f70`이며 프런트 엔드에서 작동하는지 확인할 수 있습니다.
+그런 다음 설정을 다음과 같이 업데이트해야합니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -68,18 +68,18 @@ signal_repetitions:
 
 <div class='note warning'>
 
-This integration and the [rfxtrx binary sensor](/integrations/binary_sensor.rfxtrx/) can steal each other's devices when setting the `automatic_add` configuration parameter to `true`. Set `automatic_add` only when you have some devices to add to your installation, otherwise leave it to `false`.
+이 통합구성요소 및 [rfxtrx 이진 센서](/integrations/binary_sensor.rfxtrx/)는 `automatic_add` 설정 매개 변수를 `true`로 설정할 때 서로의 장치를 가져갈 수 있습니다. 설치에 추가할 장치가 있는 경우에만 `automatic_add`를 설정하고 그렇지 않으면 `false`로 두십시오.
 
 </div>
 
 <div class='note warning'>
-If a device ID consists of only numbers, please make sure to surround it with quotes.
-This is a known limitation in YAML, because the device ID will be interpreted as a number otherwise.
+device ID가 숫자로만 구성되어 있으면 따옴표로 묶어야합니다.
+device ID는 숫자로 해석되므로 YAML의 알려진 제한 사항입니다.
 </div>
 
-Generate codes:
+코드 생성 :
 
-If you need to generate codes for switches you can use a template (useful for example COCO switches).
+스위치 코드(switch code)를 생성해야하는 경우 템플릿을 사용할 수 있습니다 (COCO 스위치의 경우 유용합니다.).
 
 - Go to home-assistant-IP:8123/dev-template
 - Use this code to generate a code:
@@ -88,14 +88,14 @@ If you need to generate codes for switches you can use a template (useful for ex
 {% raw %}0b11000{{ range(100,700) | random | int }}bc0cfe0{{ range(0,10) | random | int }}010f70{% endraw %}
 ```
 
-- Use this code to add a new switch in your configuration.yaml
-- Launch your Home Assistant and go to the website.
-- Enable learning mode on your switch (i.e. push learn button or plug it in a wall socket)
-- Toggle your new switch in the Home Assistant interface
+- 이 코드를 사용하여 설정에 새 스위치를 추가하십시오.
+- 홈어시스턴트를 시작하고 웹 사이트로 이동하십시오.
+- 스위치에서 학습 모드를 활성화합니다 (예: 학습 버튼을 누르거나 벽면 콘센트에 연결)
+- 홈어시스턴트 인터페이스에서 새 스위치 토글
 
-## Examples
+## 사례
 
-Basic configuration with 3 devices:
+3 개의 장치를 사용한 기본 설정 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -113,7 +113,7 @@ switch:
       fire_event: true
 ```
 
-Light hallway if doorbell is pressed (when is sun down):
+초인종을 눌렀을 때의 hallway에 조명을 켜십시오. (햇빛이 비칠 때) :
 
 ```yaml
 # Example configuration.yaml entry
@@ -147,7 +147,7 @@ automation:
         entity_id: switch.hall
 ```
 
-Use remote to enable scene (using event_data):
+리모컨을 사용하여 장면을 활성화하십시오 (event_data 사용) : 
 
 ```yaml
 # Example configuration.yaml entry

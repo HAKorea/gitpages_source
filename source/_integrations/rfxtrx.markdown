@@ -9,9 +9,11 @@ ha_codeowners:
   - '@danielhiversen'
 ---
 
-The `rfxtrx` integration supports RFXtrx devices by [RFXCOM](http://www.rfxcom.com), which communicate in the frequency range of 433.92 MHz.
+<iframe width="690" height="388" src="https://www.youtube.com/embed/zcjNvSMG-hg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-To enable RFXtrx in your installation, add the following to your `configuration.yaml` file:
+`rfxtrx` 통합구성요소는 433.92 MHz의 주파수 범위에서 통신하는 [RFXCOM](http://www.rfxcom.com)에 의해 RFXtrx 장치를 지원합니다.
+
+설치에서 RFXtrx를 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry for local serial device
@@ -19,7 +21,7 @@ rfxtrx:
   device: /dev/ttyUSB0
 ```
 
-OR
+혹은
 
 ```yaml
 # Example configuration.yaml entry for TCP connected device using ser2net
@@ -53,13 +55,13 @@ dummy:
   type: boolean
 {% endconfiguration %}
 
-## Supported protocols
+## 지원되는 protocols
 
-Not all protocols as advertised are enabled on the initial setup of your transceiver. Enabling all protocols is not recommended either. Your 433.92 product not showing in the logs? Visit the RFXtrx website to [download RFXmgmr](http://www.rfxcom.com/epages/78165469.sf/nl_NL/?ObjectPath=/Shops/78165469/Categories/Downloads) and enable the required protocol.
+알려진대로 모든 protocol이 트랜시버의 초기 설정에서 활성화되는 것은 아닙니다. 모든 protocol을 활성화하는 것은 권장되지 않습니다. 433.92 제품이 로그에 표시되지 않습니까? RFXtrx 웹 사이트를 방문하여 [RFXmgmr 다운로드](http://www.rfxcom.com/epages/78165469.sf/nl_NL/?ObjectPath=/Shops/78165469/Categories/Downloads)를 하고 필요한 프로토콜을 활성화하십시오.
 
 ### ser2net
 
-You can host your device on another computer by setting up ser2net and example configuration for ser2net looks like this and then using host/port in your Home Assistant config.
+ser2net을 설정하고 ser2net의 설정 예를 다음과 같이 설정 한 다음 Home Assistant 설정에서 host/port를 사용하여 다른 컴퓨터에서 장치를 호스트 할 수 있습니다.
 
 ```text
 50000:raw:0:/dev/ttyUSB0:38400 8DATABITS NONE 1STOPBIT

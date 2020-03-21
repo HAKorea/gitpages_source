@@ -8,11 +8,11 @@ ha_release: 0.7.5
 ha_iot_class: Assumed State
 ---
 
-The `rfxtrx` platform support lights that communicate in the frequency range of 433.92 MHz.
+`rfxtrx` 플랫폼은 433.92 MHz의 주파수 범위에서 통신하는 조명을 지원합니다.
 
-First you have to set up your [rfxtrx hub](/integrations/rfxtrx/).
+먼저 [rfxtrx hub](/integrations/rfxtrx/)를 설정해야합니다.
 
-The easiest way to find your lights is to add this to your `configuration.yaml`:
+조명을 찾는 가장 쉬운 방법은 이것을 `configuration.yaml`에 추가하는 것입니다.
 
 ```yaml
 light:
@@ -20,13 +20,13 @@ light:
     automatic_add: true
 ```
 
-Launch your Home Assistant and go the website. Push your remote and your device should be added:
+홈어시스턴트를 시작하고 웹 사이트로 이동하십시오. 리모컨을 누르면 장치가 추가되어야합니다.
 
 <p class='img'>
 <img src='/images/integrations/rfxtrx/switch.png' />
 </p>
 
-Here the name is `0b11000102ef9f210010f70` and you can verify that it works from the frontend. Then you should update your configuration to:
+여기서 이름은 `0b11000102ef9f210010f70`이며 프런트 엔드에서 작동하는지 확인할 수 있습니다. 그런 다음 설정을 다음과 같이 업데이트해야합니다.
 
 ```yaml
 light:
@@ -36,7 +36,7 @@ light:
       name: device_name
 ```
 
-Example configuration:
+설정 사례 : 
 
 ```yaml
 # Example configuration.yaml entry
@@ -76,6 +76,6 @@ signal_repetitions:
 {% endconfiguration %}
 
 <div class='note warning'>
-If a device ID consists of only numbers, please make sure to surround it with quotes.
-This is a known limitation in YAML, because the device ID will be interpreted as a number otherwise.
+device ID가 숫자로만 구성되어 있으면 따옴표로 묶어야합니다.
+device ID는 숫자로 해석되므로 YAML의 알려진 제한 사항입니다.
 </div>

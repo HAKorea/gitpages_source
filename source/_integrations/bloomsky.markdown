@@ -11,6 +11,8 @@ ha_release: 0.14
 ha_iot_class: Cloud Polling
 ---
 
+<iframe width="690" height="388" src="https://www.youtube.com/embed/Ays1ZTY4M10" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `bloomsky` 통합구성요소를 통해 [BloomSky](https://www.bloomsky.com/) 기상 관측소에 액세스 할 수 있습니다.
 
 현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.

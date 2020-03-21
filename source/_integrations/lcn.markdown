@@ -1,5 +1,5 @@
 ---
-title: 로컬 컨트롤 네트워크(LCN)
+title: 유럽 빌딩자동화시스템(LCN)
 description: Instructions on how to integrate LCN components with Home Assistant.
 logo: lcn.png
 ha_category:

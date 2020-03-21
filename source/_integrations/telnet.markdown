@@ -7,9 +7,9 @@ ha_release: 0.54
 ha_iot_class: Local Polling
 ---
 
-The `telnet` switch platform allows you to control devices with telnet commands.
+`telnet` 스위치 플랫폼을 사용하면 텔넷 명령으로 장치를 제어할 수 있습니다.
 
-To enable this switch, add the following lines to your `configuration.yaml` file:
+이 스위치를 활성화하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오 :
 
 {% raw %}
 ```yaml

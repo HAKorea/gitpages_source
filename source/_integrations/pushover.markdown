@@ -1,5 +1,5 @@
 ---
-title: Pushover
+title: 푸시오버(Pushover)
 description: Instructions on how to add Pushover notifications to Home Assistant.
 logo: pushover.png
 ha_category:
@@ -7,13 +7,15 @@ ha_category:
 ha_release: pre 0.7
 ---
 
-The [Pushover service](https://pushover.net/) is a platform for the notify component. This allows integrations to send messages to the user using Pushover.
+<iframe width="690" height="388" src="https://www.youtube.com/embed/zYrDOHn-CkA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Configuration
+[Pushover service](https://pushover.net/)는 알림 구성 요소를 위한 플랫폼입니다. 이를 통해 통합구성요소는 푸시오버를 사용하여 사용자에게 메시지를 보낼 수 있습니다.
 
-In order to get an API key you need to [register an application](https://pushover.net/apps/clone/home_assistant) on the Pushover website. Your Pushover user key can be found on the [Pushover dashboard](https://pushover.net/dashboard).
+## 설정
 
-To use Pushover notifications, add the following to your `configuration.yaml` file:
+API 키를 얻으려면 Pushover 웹 사이트에서 [register an application](https://pushover.net/apps/clone/home_assistant)이 필요합니다. 푸시오버 사용자 키는 [Pushover dashboard](https://pushover.net/dashboard)에서 찾을 수 있습니다.
+
+푸시오버 알림을 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -54,15 +56,15 @@ Example Automation:
           attachment: "http://example.com/image.png"
 ```
 
-Component specific values in the nested `data` section are optional.
+중첩된 `data` 섹션의 구성 요소 별 값은 선택사항입니다.
 
-Image attachments can be added using the `attachment` parameter, which can either be a valid URL for an image (ex: `http://example.com/image.png`) or a local file reference (ex: `/tmp/image.png`).
+`attachment` 매개 변수를 사용하여 이미지 첨부 파일을 추가 할 수 있습니다. 이 매개 변수는 이미지의 유효한 URL (예: `http://example.com/image.png`) 또는 로컬 파일 레퍼런스(예: `/tmp/image.png`)입니다.
 
-To use notifications, please see the [getting started with automation page](/getting-started/automation/).
+알림을 사용하려면 [getting started with automation page](/getting-started/automation/)를 참조하십시오.
 
-When sending a notification, optional parameters can also be set as per the pushover [API documentation](https://pushover.net/api).
+알림을 보낼 때 푸시오버 [API documentation](https://pushover.net/api)에 따라 선택적 매개 변수를 설정할 수도 있습니다.
 
-Example notification triggered from the Alexa integration for an intents is shown below which also uses [Automation Templating](/getting-started/automation-templating/) for the message:
+인텐트(intent)에 대해 Alexa 통합구성요소에서 트리거된 알림 예는 다음과 같이 메시지에 [Automation Templating](/getting-started/automation-templating/)을 사용합니다. : 
 
 {% raw %}
 

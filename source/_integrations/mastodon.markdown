@@ -9,15 +9,17 @@ ha_codeowners:
   - '@fabaff'
 ---
 
-The `mastodon` platform uses [Mastodon](https://joinmastodon.org/) to deliver notifications from Home Assistant.
+<iframe width="690" height="388" src="https://www.youtube.com/embed/IPSbNdBmWKE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-### Setup
+`mastodon` 플랫폼은 [Mastodon](https://joinmastodon.org/)을 사용하여 Home Assistant에서 알림을 전달합니다.
 
-Go to **Preferences** in the Mastodon web interface, then to **Development** and create a new application.
+### 셋업
 
-### Configuration
+Mastodon 웹 인터페이스에서 **Preferences**으로 이동 한 다음 **Development**으로 이동하여 새 애플리케이션을 작성하십시오.
 
-To add Mastodon to your installation, add the following to your `configuration.yaml` file:
+### 설정
+
+Mastodon을 설치시 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -49,4 +51,4 @@ base_url:
   default: https://mastodon.social
 {% endconfiguration %}
 
-To use notifications, please see the [getting started with automation page](/getting-started/automation/).
+알림을 사용하려면 [getting started with automation page](/getting-started/automation/)를 참조하십시오.

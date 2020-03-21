@@ -9,15 +9,15 @@ ha_release: 0.63
 
 <div class='note'>
   
-The `knx` integration must be configured correctly to use this integration, see [KNX Integration](/integrations/knx).
+이 통합구성요소를 사용하려면 `knx` 연동을 올바르게 설정해야합니다. [KNX Integration](/integrations/knx)을 참조하십시오.
 
 </div>
 
-The `knx` scenes platform allows you to trigger [KNX](https://www.knx.org/) scenes.
+`knx` scenes 플랫폼을 사용하면 [KNX](https://www.knx.org/) 장면(씬)을 트리거할 수 있습니다.
 
-## Configuration
+## 설정
 
-To use your KNX scence in your installation, add the following to your `configuration.yaml` file:
+설치에서 KNX scene을 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

@@ -8,6 +8,8 @@ ha_release: 0.63
 ha_iot_class: Local Polling
 ---
 
+<iframe width="690" height="388" src="https://www.youtube.com/embed/Y1rg0tXAqbI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `xiaomi miio` 원격 플랫폼을 사용하면 Xiaomi IR Remote 에서 적외선 리모콘 신호을 보낼 수 있습니다.
 
 ## Setup

@@ -1,5 +1,5 @@
 ---
-title: "OpenWRT"
+title: 오픈소스라우터(OpenWRT)
 description: "Instructions on how to integrate OpenWRT routers into Home Assistant."
 logo: openwrt.png
 ha_category:

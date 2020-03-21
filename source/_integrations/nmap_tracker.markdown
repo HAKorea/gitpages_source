@@ -7,6 +7,8 @@ ha_category:
 ha_release: 0.7
 ---
 
+<iframe width="690" height="388" src="https://www.youtube.com/embed/9XlgyZORKiY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 라우터 기반 장치 추적의 대안으로 Nmap을 사용하여 장치의 네트워크를 직접 검색 할 수 있습니다. 스캔 할 IP 주소는 네트워크 접두사 표기법 (`192.168.1.1/24`) 및 범위 표기법 (`192.168.1.1-255`)을 포함하여 Nmap이 이해하는 모든 형식으로 지정할 수 있습니다
 
 <div class='note'>

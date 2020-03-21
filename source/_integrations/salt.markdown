@@ -1,5 +1,5 @@
 ---
-title: Salt Fiber Box
+title: 스위스 통신사 라우터(Salt Fiber Box)
 description: Instructions on how to integrate Salt Fiber Box router into Home Assistant.
 logo: salt.png
 ha_category:

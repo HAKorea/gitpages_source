@@ -1,5 +1,5 @@
 ---
-title: OpenWrt (ubus)
+title: 오픈소스라우터(OpenWrt ubus)
 description: Instructions on how to integrate OpenWRT routers into Home Assistant.
 logo: openwrt.png
 ha_category:

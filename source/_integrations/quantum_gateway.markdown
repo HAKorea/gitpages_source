@@ -1,5 +1,5 @@
 ---
-title: Quantum Gateway
+title: 미국 Verizon 라우터(Quantum Gateway)
 description: Instructions on how to integrate Quantum Gateways into Home Assistant.
 ha_category:
   - Presence Detection

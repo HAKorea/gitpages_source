@@ -1,5 +1,5 @@
 ---
-title: Thomson
+title: 톰슨(Thomson)
 description: Instructions on how to integrate Thomson routers into Home Assistant.
 logo: technicolor.png
 ha_category:

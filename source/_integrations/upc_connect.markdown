@@ -1,5 +1,5 @@
 ---
-title: UPC Connect Box
+title: 유럽 통신사라우터(UPC Connect Box)
 description: Instructions on how to integrate UPC ConnectBox into Home Assistant.
 logo: upc.png
 ha_category:

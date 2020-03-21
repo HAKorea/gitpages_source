@@ -13,7 +13,6 @@ ha_iot_class: Local Polling
 
 Home Assistant용 TP-Link LTE 통합구성요소를 통해 현재 TL-MR6400 (펌웨어 1.4.0)으로만 테스트된 TP-Link LTE 라우터를 관찰하고 제어할 수 있습니다.
 
-The integration provides a notification service that will send an SMS.
 통합구성요소는 SMS를 보낼 알림 서비스를 제공합니다.
 
 ## 설정

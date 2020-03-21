@@ -1,5 +1,5 @@
 ---
-title: BT Home Hub 5
+title: 영국 통신사 라우터(BT Home Hub 5)
 description: Instructions on how to integrate BT Home Hub 5 router into Home Assistant.
 logo: bt.png
 ha_category:

@@ -1,5 +1,5 @@
 ---
-title: PostNL
+title: 네덜란드 배송추적(PostNL)
 description: Instructions on how to set up PostNL sensors within Home Assistant.
 logo: postnl.png
 ha_category:

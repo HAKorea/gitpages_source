@@ -1,5 +1,5 @@
 ---
-title: BT Smart Hub
+title: 영국 통신사 라우터(BT Smart Hub)
 description: Instructions on how to integrate BT Smart Hub router into Home Assistant.
 logo: bt.png
 ha_category:

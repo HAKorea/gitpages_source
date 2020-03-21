@@ -1,5 +1,5 @@
 ---
-title: Xfinity Gateway
+title: 미국 통신사 라우터(Xfinity Gateway)
 description: Instructions on how to integrate Xfinity Gateways into Home Assistant.
 ha_category:
   - Presence Detection

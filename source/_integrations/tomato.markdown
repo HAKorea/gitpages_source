@@ -1,11 +1,13 @@
 ---
-title: Tomato
+title: 오픈소스라우터(Tomato)
 description: Instructions on how to integrate Tomato routers into Home Assistant.
 logo: tomato.png
 ha_category:
   - Presence Detection
 ha_release: pre 0.7
 ---
+
+<iframe width="776" height="437" src="https://www.youtube.com/embed/1UkoZ-YQz7c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The `tomato` platform requires an extra config variable called `http_id`. The
 value can be obtained by logging in to the Tomato admin interface and search for

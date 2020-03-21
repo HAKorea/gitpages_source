@@ -8,11 +8,11 @@ ha_iot_class: Cloud Push
 ha_release: 0.25
 ---
 
-The `imap_email_content` integration will read emails from an IMAP email server and report them as a state change within Home Assistant. This is useful if you have a device that only reports its state via email.
+`imap_email_content` 통합구성요소는 IMAP 이메일 서버에서 이메일을 읽고 Home Assistant 내에서 상태 변경으로 보고합니다. 전자 메일을 통해서만 상태를 보고하는 장치가 있는 경우 유용합니다.
 
-## Configuration
+## 설정
 
-To enable this sensor, add the following lines to your `configuration.yaml` file:
+이 센서를 활성화하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -73,9 +73,9 @@ value_template:
       description: The date and time the email was sent.
 {% endconfiguration %}
 
-## Example
+## 사례
 
-The following example shows the usage of the IMAP email content sensor to scan the subject of an email for text, in this case, an email from the APC SmartConnect service which tells whether the UPS is running on battery or not.
+다음 예는 IMAP 이메일 컨텐츠 센서를 사용하여 이메일의 주제를 텍스트로 스캔하는 경우 (이 경우 APC SmartConnect 서비스의 이메일을 사용하여 UPS가 배터리로 실행 중인지 여부를 알려줍니다)를 보여줍니다.
 
 {% raw %}
 ```yaml
@@ -97,4 +97,4 @@ sensor:
 ```
 {% endraw %}
 
-The same template structure can scan the date, body or sender for matching text before setting the state of the sensor.
+동일한 템플릿 구조는 센서의 상태를 설정하기 전에 날짜, 본문 또는 발신자가 일치하는 텍스트를 스캔 할 수 있습니다.

@@ -1,5 +1,5 @@
 ---
-title: Google Domains
+title: 구글 도메인(Google Domains)
 description: Keep your computer registered with the Google Domains dynamic DNS.
 logo: google_domains.png
 ha_category:
@@ -7,11 +7,11 @@ ha_category:
 ha_release: 0.57
 ---
 
-With the Google Domains integration you can keep your Google Domains record up to date.
+Google Domains 통합구성요소를 사용하면 Google Domains 레코드를 최신 상태로 유지할 수 있습니다.
 
-## Configuration
+## 설정
 
-To use the integration in your installation, add the following to your `configuration.yaml` file:
+설치시 통합구성요소를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

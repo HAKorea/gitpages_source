@@ -8,9 +8,11 @@ ha_release: 0.39
 ha_iot_class: Local Polling
 ---
 
-The `openhome` platform allows you to connect an [Openhome Compliant Renderer](http://openhome.org/) to Home Assistant such as a [Linn Products Ltd](https://www.linn.co.uk) HiFi streamer. It will allow you to control media playback, volume, source and see the current playing item. Openhome devices should be discovered by using the [the discovery component](/integrations/discovery/), their device names are taken from the name of the room configured on the device.
+<iframe width="690" height="388" src="https://www.youtube.com/embed/ykxCh16cZgI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-### Example configuration.yaml entry
+`openhome` 플랫폼을 사용하면 [Openhome Compliant Renderer](http://openhome.org/)로 [Linn Products Ltd](https://www.linn.co.uk) HiFi 스트리머 장비에 Home Assistant를 연결할 수 있습니다. 미디어 재생, 볼륨, 소스를 제어하고 현재 재생중인 항목을 볼 수 있습니다. Openhome 장치는 [the discovery component](/integrations/discovery/)를 사용하여 검색해야합니다. 장치 이름은 장치에 설정된 room 이름에서 가져옵니다.
+
+### configuration.yaml 항목 예시
 
 ```yaml
 discovery:
@@ -18,7 +20,7 @@ media_player:
   - platform: openhome
 ```
 
-### Example local audio playback action
+### 로컬 오디오 재생 동작 예시
 
 ```yaml
 action:
@@ -30,7 +32,7 @@ action:
       media_content_type: music
 ```
 
-### Example web stream playback action
+### 웹 스트림 재생 동작 예시
 
 ```yaml
   - service: media_player.play_media

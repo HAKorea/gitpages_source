@@ -1,5 +1,5 @@
 ---
-title: Netgear LTE
+title: 넷기어 LTE(Netgear LTE)
 description: Instructions on how to integrate your Netgear LTE modem within Home Assistant.
 logo: netgear.png
 ha_release: 0.72
@@ -11,26 +11,28 @@ ha_category:
 ha_iot_class: Local Polling
 ---
 
-The Netgear LTE integration for Home Assistant allows you to observe and control [Netgear LTE modems](https://www.netgear.com/home/products/mobile-broadband/lte-modems/default.aspx).
+<iframe width="690" height="388" src="https://www.youtube.com/embed/KCrGikV9w3g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-There is currently support for the following device types within Home Assistant:
+Home Assistant 용 Netgear LTE 통합구성요소로 [Netgear LTE 모뎀](https://www.netgear.com/home/products/mobile-broadband/lte-modems/default.aspx)을 관찰하고 제어할 수 있습니다.
+
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다. :
 
 - Notifications
 - Sensors
 - Binary Sensors
 
-The integration supports sending notifications with SMS, reporting incoming SMS with events and reporting the modem and connection state in a number of sensors and binary sensors.
+이 통합구성요소는 SMS로 알림 전송, 이벤트로 수신 SMS보고 및 여러 센서 및 이진 센서에서 모뎀 및 연결 상태보고를 지원합니다.
 
 <div class='note'>
 
-Splitting of long SMS messages is not supported so notifications can contain a maximum of 70 characters. Simple messages using the reduced GSM-7 alphabet can contain up to 160 characters. Most emojis are not supported.
+긴 SMS 메시지 분할은 지원되지 않으므로 알림에 최대 70자를 사용할 수 있습니다. 축소된 GSM-7 알파벳을 사용하는 간단한 메시지는 최대 160자를 포함 할 수 있습니다. 대부분의 이모티콘이 지원되지 않습니다.
 
 </div>
 
 
-## Configuration
+## 설정
 
-To enable the integration, add the following lines to your `configuration.yaml` file:
+연동을 가능하게하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -129,11 +131,11 @@ binary_sensor:
           description: The current roaming state.
 {% endconfiguration %}
 
-## Events
+## 이벤트
 
-### Event `netgear_lte_sms`
+### `netgear_lte_sms` 이벤트
 
-Messages arriving in the modem inbox are sent as events of type `netgear_lte_sms` with the following content.
+모뎀의 inbox에 도착한 메시지는 다음 내용과 함께 'netgear_lte_sms' 유형의 이벤트로 전송됩니다.
 
 | Event data attribute | Description                              |
 | -------------------- | ---------------------------------------- |
@@ -142,36 +144,36 @@ Messages arriving in the modem inbox are sent as events of type `netgear_lte_sms
 | `from`               | The sender of the message.
 | `message`            | The SMS message content.
 
-## Services
+## 서비스
 
-### Service `netgear_lte.connect_lte`
+### `netgear_lte.connect_lte` 서비스
 
-This service asks the modem to establish its LTE connection, useful if the modem does not autoconnect.
+이 서비스는 모뎀이 자동 연결되지 않은 경우 유용한 LTE 연결 설정을 모뎀에 요청합니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
 | `host`                 | yes      | The modem that should connect (optional when just one modem is configured).
 
-### Service `netgear_lte.disconnect_lte`
+### `netgear_lte.disconnect_lte` 서비스
 
-This service asks the modem to close its LTE connection.
+이 서비스는 모뎀이 LTE 연결을 닫도록 요청합니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
 | `host`                 | yes      | The modem that should disconnect (optional when just one modem is configured).
 
-### Service `netgear_lte.delete_sms`
+### `netgear_lte.delete_sms` 서비스
 
-The integration makes a service available to delete messages from the modem inbox. This can be used to clean up after incoming SMS events.
+통합구성요소는 모뎀의 inbox에서 메시지를 삭제하는 서비스를 제공합니다. 수신 SMS 이벤트 후 정리하는데 사용할 수 있습니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
 | `host`                 | yes      | The modem that should have a message deleted (optional when just one modem is configured).
 | `sms_id`               | no       | Integer or list of integers with inbox IDs of messages to delete.
 
-### Service `netgear_lte.set_option`
+### `netgear_lte.set_option` 서비스
 
-This service can set modem configuration options (otherwise available in the modem web UI).
+이 서비스는 모뎀 설정 옵션 (모뎀 웹 UI에서 사용 가능)을 설정할 수 있습니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
@@ -179,9 +181,9 @@ This service can set modem configuration options (otherwise available in the mod
 | `autoconnect`          | yes      | Autoconnect value: `never`/`home`/`always`, with `home` meaning "not roaming".
 | `failover`             | yes      | Failover mode: `wire` (wired connection only), `mobile` (mobile connection only), `auto` (wired connection with failover to mobile connection).
 
-## Examples
+## 사례
 
-The following automation example processes incoming SMS messages with the [Conversation](/integrations/conversation/) integration and then deletes the message from the inbox.
+다음 자동화 예제는 [Conversation](/integrations/conversation/) 연동으로 수신 SMS 메시지를 처리​​한 다음 받은 편지함(inbox)에서 메시지를 삭제합니다.
 
 {% raw %}
 ```yaml

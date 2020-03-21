@@ -1,5 +1,5 @@
 ---
-title: Media Player Classic Home Cinema (MPC-HC)
+title: 미디어 플레이어 클래식 홈시네마 (MPC-HC)
 description: Instructions on how to integrate MPC-HC into Home Assistant.
 logo: mpchc.png
 ha_category:
@@ -8,23 +8,23 @@ ha_release: 0.25
 ha_iot_class: Local Polling
 ---
 
-The `mpchc` platform allows you to connect a [Media Player Classic Home Cinema](https://mpc-hc.org/) to Home Assistant. It will allow you to see the current playing item, and respond to changes in the player's state.
+`mpchc` 플랫폼을 사용하면 [Media Player Classic 홈 시네마](https://mpc-hc.org/)를 홈어시스턴트에 연결할 수 있습니다. 현재 재생중인 항목을 보고 플레이어 상태의 변화에 ​​응답할 수 있습니다.
 
-For this integration to function, you will need to enable the Web Interface in the MPC-HC options dialog.
+이 연동 기능이 작동하려면 MPC-HC 옵션 대화 상자에서 웹인터페이스를 활성화해야합니다.
 
 <p class='img'>
   <img src='{{site_root}}/images/screenshots/mpc-hc.png' />
 </p>
 
-If the server running Home Assistant is not the same device that is running MPC-HC, you will need to ensure that the *allow access from localhost only* option is not set.
+홈어시스턴트를 실행하는 서버가 MPC-HC를 실행하는 동일한 디바이스가 아닌 경우, *allow access from localhost only* 옵션이 설정되지 않았는지 확인해야합니다.
 
 <div class='note warning'>
 
-The MPC-HC web interface is highly insecure, and allows remote clients full player control file-system access without authentication. Never allow access to the Web UI from outside of your trusted network, and if possible [use a proxy script to restrict control or redact sensitive information](https://github.com/abcminiuser/mpc-hc-webui-proxy).
+MPC-HC 웹 인터페이스는 안전하지 않으며 원격 클라이언트가 인증없이 파일 시스템 액세스를 완전히 제어 할 수 있습니다. 신뢰할 수있는 네트워크 외부에서 웹 UI에 대한 액세스를 허용하지 말고 가능한 경우 [프록시 스크립트를 사용하여 중요한 정보를 제어하거나 수정하십시오](https://github.com/abcminiuser/mpc-hc-webui-proxy).
 
 </div>
 
-To add MPC-HC to your installation, add the following to your `configuration.yaml` file:
+MPC-HC를 설치시 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

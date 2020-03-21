@@ -1,5 +1,5 @@
 ---
-title: Unitymedia Horizon HD Recorder
+title: 독일 PVR(Unitymedia Horizon HD Recorder)
 description: Instructions how to integrate the Unitymedia Horizon HD Recorder into Home Assistant.
 logo: unitymedia.png
 ha_category:

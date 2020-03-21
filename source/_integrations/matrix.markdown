@@ -1,5 +1,5 @@
 ---
-title: Matrix
+title: 메트릭스(Matrix)
 description: Matrix chatbot support
 logo: matrix.png
 ha_category:
@@ -10,13 +10,15 @@ ha_codeowners:
   - '@tinloaf'
 ---
 
-This integration allows you to send messages to matrix rooms, as well as to react to messages in matrix rooms. Reacting to commands is accomplished by firing an event when one of the configured commands is triggered.
+<iframe width="690" height="388" src="https://www.youtube.com/embed/jr2mXSKq3B4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-There is currently support for the following device types within Home Assistant:
+이 통합구성요소를 통해 매트릭스 rooms에 메시지를 보낼뿐만 아니라 매트릭스 rooms에 메시지를 보낼 수 있습니다. 설정된 명령 중 하나가 트리거 될 때 이벤트를 발생시켜 명령에 반응합니다.
+
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - [Notifications](#notifications)
 
-## Configuration
+## 설정
 
 ```yaml
 # Example configuration.yaml entry
@@ -79,15 +81,15 @@ commands:
       default: empty
 {% endconfiguration %}
 
-### Event Data
+### 이벤트 데이터
 
-If a command is triggered, a `matrix_command` event is fired. The event contains the name of the command in the `name` field.
+명령이 트리거되면 `matrix_command` 이벤트가 시작됩니다. 이벤트는 `name` 필드에 명령 이름을 포함합니다.
 
-If the command is a word command, the `data` field contains a list of the command's arguments, i.e., everything that stood behind the word, split at spaces. If the command is an expression command, the `data` field contains the [group dictionary](https://docs.python.org/3.6/library/re.html?highlight=re#re.match.groupdict) of the regular expression that matched the message.
+명령어가 단어(word) 명령어인 경우 `data` 필드에는 명령어의 인수 목록, 즉 단어 뒤에 있는 모든 항목이 공백으로 나뉩니다. 명령이 표현식(expression) 명령인 경우, `data` 필드는 메시지와 일치하는 정규식의 [group dictionary](https://docs.python.org/3.6/library/re.html?highlight=re#re.match.groupdict)를 포함합니다.
 
-### Comprehensive Configuration Example
+### 종합적인 설정 예
 
-This example also uses the [matrix `notify` platform](#notifications).
+이 예제는 [matrix `notify` platform](#notifications)도 사용합니다.
 
 {% raw %}
 ```yaml
@@ -136,16 +138,16 @@ automation:
 ```
 {% endraw %}
 
-This configuration will:
+이 설정은 다음과 같습니다. : 
 
-- Listen for "!testword" in the room "#someothertest:matrix.org" (and *only*) there. If such a message is encountered, it will answer with "It looks like you wrote !testword" into the "#hasstest:matrix.org" channel.
-- Listen in both rooms for any message matching "My name is <any string>" and answer with "Hello <the string>" into "#hasstest:matrix.org".
+- "#someothertest:matrix.org"(*이것만*) room에서 "!testword"를 들어보십시오. 이러한 메시지가 나타나면 "#hasstest:matrix.org" 채널에 "It looks like you wrote !testword" 라는 메시지가 표시됩니다.
+- "My name is <any string>"과 일치하는 메시지가 있는지 두 room에서 듣고 "Hello <the string>"으로 "#hasstest:matrix.org"로 응답하십시오.
 
-## Notifications
+## 알림(Notifications)
 
-The `matrix` platform allows you to deliver notifications from Home Assistant to a [Matrix](https://matrix.org/) room. Rooms can be both direct as well as group chats.
+`matrix` 플랫폼을 사용하면 Home Assistant에서 [Matrix](https://matrix.org/) Rooms로 알림을 전달할 수 있습니다. Rooms은 그룹 채팅뿐만 아니라 직접 대화도 가능합니다.
 
-To enable Matrix notifications in your installation, you first need to configure the [Matrix component](#configuration). Then, add the following to your `configuration.yaml` file:
+설치에서 매트릭스 알림을 사용하려면 먼저 [Matrix component](#configuration)를 설정해야합니다. 그런 다음 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -167,6 +169,6 @@ default_room:
   type: string
 {% endconfiguration %}
 
-The target room has to be precreated, the room id can be obtained from the rooms settings dialog. Rooms by default have a canonical id of the form `"!<randomid>:homeserver.tld"`, but can also be allocated aliases like `"#roomname:homeserver.tld"`. Make sure to use quotes around the room id or alias to escape special characters (`!`, and `#`) in YAML. The notifying account may need to be invited to the room, depending on the individual rooms policies.
+대상(Target) room을 미리 만들어야하며, room 설정 대화 상자에서 room ID를 얻을 수 있습니다. 기본적으로 room은 `"!<randomid>:homeserver.tld"` 형식의 canonical ID를 갖지만 `"#roomname:homeserver.tld"`와 같은 별칭(aliases)을 할당할 수도 있습니다. YAML에서 특수 문자 (`!`,`#`)를 이스케이프하려면 room ID 또는 별명(aliases)을 따옴표로 묶어야합니다. 개별 rooms 정책에 따라 알림 계정을 rooms에 초대해야 할 수도 있습니다.
 
-To use notifications, please see the [getting started with automation page](/getting-started/automation/).
+알림을 사용하려면 [getting started with automation page](/getting-started/automation/)를 참조하십시오.

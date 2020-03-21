@@ -1,5 +1,5 @@
 ---
-title: Tikteck
+title: 틱텍(Tikteck)
 description: Instructions on how to setup Tikteck LED bulbs within Home Assistant.
 ha_category:
   - Light
@@ -7,6 +7,8 @@ ha_iot_class: Local Polling
 logo: tikteck.png
 ha_release: 0.36
 ---
+
+<iframe width="690" height="388" src="https://www.youtube.com/embed/ks3dYfADx94" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Support for the Bluetooth smart bulb from [Tikteck](https://www.tikteck.com/). To enable these lights, add the following lines to your `configuration.yaml` file:
 

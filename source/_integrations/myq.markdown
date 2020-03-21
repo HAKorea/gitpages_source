@@ -1,5 +1,5 @@
 ---
-title: MyQ
+title: 마이큐(MyQ)
 description: Instructions on how to integrate MyQ-Enabled garage door covers into Home Assistant.
 logo: myq.png
 ha_category:
@@ -7,6 +7,8 @@ ha_category:
 ha_release: 0.39
 ha_iot_class: Cloud Polling
 ---
+
+<iframe width="690" height="388" src="https://www.youtube.com/embed/XIsLOTE8amU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The `myq` cover platform lets you control MyQ-Enabled garage doors through Home Assistant. Device names in Home Assistant are generated based on the names defined in your MyQ Device mobile app.
 

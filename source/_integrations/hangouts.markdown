@@ -1,5 +1,5 @@
 ---
-title: Google Hangouts
+title: 구글 행아웃(Google Hangouts)
 description: Hangouts chatbot support
 logo: hangouts.png
 ha_category:
@@ -9,30 +9,30 @@ ha_release: 0.77
 ha_config_flow: true
 ---
 
-This integration allows you to send messages to [Google Hangouts](https://hangouts.google.com) conversations, as well as to react to messages in conversations. Reacting to commands is accomplished by firing an event when one of the configured commands is triggered. Home Assistant will impersonate a Smartisan YQ603 phone which will then show up in your Google devices.
+이 연동을 통해 [Google 행 아웃](https://hangouts.google.com) 대화에 메시지를 보내고 대화의 메시지에 반응 할 수 있습니다. 설정된 명령중 하나가 트리거될 때 이벤트를 발생시켜 명령에 반응합니다. 홈어시스턴트는 Smartisan YQ603 전화를 가장하여 Google 기기에 표시됩니다.
 
-There is currently support for the following device types within Home Assistant:
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - [Notifications](#notifications)
 
-## Setup the integration via the frontend
+## 프론트 엔드를 통한 연동 설정
 
-Menu: *Configuration* -> *Integrations*
+Menu: *설정* -> *통합구성요소*
 
 Configure the integration:
 * Enter your **Google Mail Address** and **Password**
 * In the authentication form there is an Optional Field: **Authorization Code** which should only be used if you get an invalid login error with email and password (see note below for details).
 * If you secured your account with 2-factor authentication you will be asked for a 2-factor authentication token.
 
-## Manual Authentication
+## 수동 인증
 
-If you are sure your email and password are correct, but the integration says the login is invalid then you would need to use the manual authentication method.
+이메일과 비밀번호가 정확하지만 통합구성요소에서 로그인이 유효하지 않다고 표시되면 수동 인증 방법을 사용해야합니다.
 
-To use the manual method, first you would need to obtain an authorization code (see <a href="#steps-to-obtain-authorization-code">instructions below</a> for details).
+수동 방법을 사용하려면 먼저 인증 코드를 얻어야합니다 (자세한 내용은 <a href="#steps-to-obtain-authorization-code">instructions below</a> 참조).
 
-Once the code is obtained fill in the form with your email, password and the authorization code to complete authentication.
+코드를 받으면 이메일, 비밀번호 및 인증 코드로 양식을 작성하여 인증을 완료하십시오.
 
-### Steps to obtain Authorization Code:
+### 인증 코드를 얻는 단계 :
 
 1. To obtain your authorization code, open [this URL](https://accounts.google.com/o/oauth2/programmatic_auth?scope=https%3A%2F%2Fwww.google.com%2Faccounts%2FOAuthLogin+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&client_id=936475272427.apps.googleusercontent.com&device_name=hangups) in your browser.
 2. Log into your Google account normally.
@@ -46,14 +46,14 @@ To obtain the `oauth_code` cookie value using Chrome or Firefox, follow the step
 * In the cookie list, double click on the value for the `oauth_code` cookie to select it, and copy the value. This is the authorization code
 
 <div class='note'>
-You can't write messages to yourself or get notifications in a group, if "you" write the message. The best way is to create a new Google Hangouts account for this integration.<br>
+"you" 메시지를 작성하면 자신에게 메시지를 쓰거나 그룹에서 알림을 받을 수 없습니다. 가장 좋은 방법은 이 연동을 위해 새 Google 행아웃 계정을 만드는 것입니다.<br>
 <br>
-If you secured your account with 2-factor authentication: Only verification by app or SMS are supported. There is no support for verification by prompt on your phone.<br>
+2 단계 인증으로 계정을 보호한 경우 : 앱 또는 SMS를 통한 인증만 지원됩니다. 휴대 전화에서 프롬프트로 확인을 지원하지 않습니다.<br>
 <br>
-The manual authentication work-around is a result of unofficial support for using bots in hangouts from Google.
+수동 인증 해결 방법은 Google 행아웃에서 봇을 비공식적으로 지원한 결과입니다.
 </div>
 
-The authentication token will be generated and stored internally.
+인증 토큰이 생성되어 내부적으로 저장됩니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -122,11 +122,11 @@ error_suppressed_conversations:
       type: string
 {% endconfiguration %}
 
-The conversations has to be precreated, the conversation id can be obtained from the `hangouts.conversations` entity. Make sure to use quotes around the conversation id or alias to escape special characters (`!`, and `#`) in YAML.
+대화(conversations)는 미리 작성해야하며, conversation ID는 `hangouts.conversations` 엔티티에서 얻을 수 있습니다. conversations ID 또는 별명(alias)을 따옴표로 묶어 YAML에서 특수 문자 (`!`, `#`)를 이스케이프하십시오.
 
-The intent `HangoutsHelp` is part of the integration and return a list of all sentences the integration unterstand in this conversation.
+`HangoutsHelp` 의도(intent)는 연동작업의 일부이며 연동작업에서 이해할 수 없는 모든 문장의 목록을 이 대화에서 반환합니다.
 
-## Adding sentences
+## 문장 추가 
 
 {% raw %}
 
@@ -153,16 +153,16 @@ intent_script:
 
 {% endraw %}
 
-This configuration will:
+이 설정은 다음과 같습니다. :
 
-- Toggle the light in the given location in a specific conversation.
-- Return the conversations the bot know.
+- 특정 대화에서 특정 위치의 조명을 토글합니다.
+- 봇이 알고 있는 대화를 반환하십시오.
 
-## Adding advanced custom sentences
+## 고급 사용자 정의 문장 추가
 
-Sentences can contain slots (marked with curly braces: `{name}`) and optional words (marked with square brackets: `[the]`). The values of slots will be passed on to the intent and are available inside the templates.
+문장에는 슬롯 (중괄호: `{name}`)과 선택적 단어 (대괄호: `[the]`)가 포함될 수 있습니다. 슬롯값은 의도(intent)로 전달되며 템플릿 내에서 사용할 수 있습니다.
 
-The following configuration can handle the following sentences:
+다음 설정은 다음 문장을 처리 할 수 ​​있습니다.
 
 - Change the lights to red
 - Change the lights to green
@@ -196,19 +196,19 @@ intent_script:
 
 {% endraw %}
 
-## Services
+## 서비스
 
-### Service `hangouts.update`
+### `hangouts.update` 서비스
 
-Updates the list of conversations.
+대화 목록을 업데이트합니다.
 
 | Service data attribute | Optional | Description                                      |
 |------------------------|----------|--------------------------------------------------|
 |                        |          |                                                  |
 
-### Service `hangouts.send_message`
+### `hangouts.send_message` 서비스
 
-Sends a message to the given conversations.
+주어진 대화에 메시지를 보냅니다.
 
 | Service data attribute | Optional | Description                                      |
 |------------------------|----------|--------------------------------------------------|
@@ -216,19 +216,19 @@ Sends a message to the given conversations.
 | message                | List of message segments, only the "text" field is required in every segment. [Required] | [{"text":"test", "is_bold": false, "is_italic": false, "is_strikethrough": false, "is_underline": false, "parse_str": false, "link_target": "http://google.com"}, ...] |
 | data                   | Extra options | {"image_file": "path"} / {"image_url": "url"} |
 
-### Service `hangouts.reconnect`
+### `hangouts.reconnect` 서비스
 
-Reconnects the hangouts bot.
+행아웃 봇을 다시 연결합니다.
 
 | Service data attribute | Optional | Description                                      |
 |------------------------|----------|--------------------------------------------------|
 |                        |          |                                                  |
 
-## Advanced
+## 고급
 
-### Automatic reconnect after IP change
+### IP 변경후 자동 재연결
 
-The hangouts integration can't detect if your IP address changes, so it can't automatic reconnect to the Google servers. This is a workaround for this problem.
+행아웃 연동에서 IP 주소 변경 여부를 감지할 수 없으므로 Google 서버에 자동으로 다시 연결할 수 없습니다. 이 문제에 대한 해결 방법입니다.
 
 {% raw %}
 
@@ -256,11 +256,11 @@ automation:
 
 {% endraw %}
 
-## Notifications
+## 알림(Notifications)
 
-The `hangouts` platform allows you to deliver notifications from Home Assistant to [Google Hangouts](https://hangouts.google.com/) conversations. Conversations can be both direct as well as group chats.
+`hangouts` 플랫폼을 사용하면 홈어시스턴트에서 [Google Hangouts](https://hangouts.google.com/) 대화에 알림을 전달할 수 있습니다. 대화는 그룹 채팅뿐만 아니라 직접 대화도 가능합니다.
 
-To enable Hangouts notifications in your installation, you first need to configure the Hangouts component. Then, add the following to your `configuration.yaml` file:
+설치에서 행아웃 알림을 사용하려면 먼저 행아웃 구성 요소를 설정해야합니다. 그런 다음 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry  
@@ -288,9 +288,9 @@ default_conversations:
       type: string
 {% endconfiguration %}
 
-### Finding the conversation ID
+### conversation ID 찾기
 
-The conversations has to be precreated, the conversation id can be obtained from the `hangouts.conversations` entity, this can be found in with the states developer tool that is shown as this icon <img src='/images/screenshots/developer-tool-states-icon.png' class='no-shadow' height='38' /> in the side bar. Using your web browsers search tool to find the `hangouts.conversations` entity. You will find something like below.
+대화(conversation)는 미리 작성해야하며, conversation ID는 `hangouts.conversations` 엔티티에서 얻을 수 있으며, 사이드 바에서 이 아이콘 <img src='/images/screenshots/developer-tool-states-icon.png' class='no-shadow' height='38' />로 표시되는 상태 개발자 도구에서 찾을 수 있습니다. 웹 브라우저 검색 도구를 사용하여 `hangouts.conversations` 엔티티를 찾으십시오. 아래와 같은 것을 찾을 수 있습니다.
 
 ```json
 0: {
@@ -303,6 +303,6 @@ The conversations has to be precreated, the conversation id can be obtained from
 }
 ```
 
-This may have more if the account is in multiple hangout conversations, for configuring the bot to be in a conversation you will need the ID that would be where `<Hangout ID>` is in that example. Make sure to use quotes around the conversation id or alias to escape special characters (`!`, and `#`) in YAML.
+계정이 여러 행아웃 대화에 있는 경우 더 많을 수 있습니다. 봇이 대화에 있도록 설정하려면 예에서 `<Hangout ID>`가 있는 ID가 필요합니다. conversation ID 또는 별명(alias)을 따옴표로 묶어 YAML에서 특수 문자 (`!`, `#`)를 이스케이프하십시오.
 
-To use notifications, please see the [getting started with automation page](/getting-started/automation/).
+알림을 사용하려면 [getting started with automation page](/getting-started/automation/)를 참조하십시오.

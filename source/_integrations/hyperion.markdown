@@ -1,5 +1,5 @@
 ---
-title: Hyperion
+title: 오픈소스조명(Hyperion)
 description: Instructions on how to integrate Hyperion into Home Assistant.
 logo: hyperion.png
 ha_category:

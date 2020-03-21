@@ -1,5 +1,5 @@
 ---
-title: Pushsafer
+title: 푸쉬세이퍼(Pushsafer)
 description: Instructions on how to add Pushsafer notifications to Home Assistant.
 logo: pushsafer.png
 ha_category:
@@ -7,11 +7,13 @@ ha_category:
 ha_release: 0.39
 ---
 
-The [Pushsafer service](https://www.pushsafer.com/) is a platform for the notify component. This allows you to send messages to the user using Pushsafer.
+<iframe width="690" height="388" src="https://www.youtube.com/embed/VAl7sFK92tQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-In order to get a private or alias key you need to go to the [Pushsafer website](https://www.pushsafer.com) and register.
+[Pushsafer 서비스](https://www.pushsafer.com/)는 알림 구성 요소를 위한 플랫폼입니다. 이를 통해 Pushsafer를 사용하여 사용자에게 메시지를 보낼 수 있습니다.
 
-To use Pushsafer notifications, add the following to your `configuration.yaml` file:
+개인(private) 또는 별칭(alias) 키를 얻으려면 [Pushsafer 웹 사이트](https://www.pushsafer.com)로 이동하여 등록해야합니다.
+
+Pushsafer 알림을 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -33,9 +35,9 @@ private_key:
   type: string
 {% endconfiguration %}
 
-### Examples
+### 사례
 
-Message to two devices with formatted text.
+텍스트 형식의 두 장치에게 메시지. 
 
 ```yaml
 action:
@@ -53,7 +55,7 @@ action:
       time2live: "0"
 ```
 
-Message to one device with formatted text and image from an external URL.
+외부 URL에서 형식화 된 텍스트 및 이미지가 있는 하나의 장치에게 메시지
 
 ```yaml
 action:
@@ -73,7 +75,7 @@ action:
         url: "https://www.home-assistant.io/images/integrations/alexa/alexa-512x512.png"
 ```
 
-Message to two devices and one device group with formatted text and local image.
+형식화된 텍스트 및 로컬 이미지가 있는 두 개의 장치 및 하나의 장치 그룹에 대한 메시지
 
 ```yaml
 action:
@@ -98,8 +100,8 @@ action:
         path: "C:\\Users\\Kevin\\AppData\\Roaming\\.homeassistant\\image-760-testimage.jpg"
 ```
 
-To customize your push-notification you can take a look at the [Pushsafer API description](https://www.pushsafer.com/en/pushapi).
+푸시 알림을 사용자 정의하려면 [Pushsafer API 설명](https://www.pushsafer.com/en/pushapi)을 살펴보십시오.
 
-When setting up the application you can use this [icon](/images/favicon-192x192.png).
+응용 프로그램을 설정할 때 이 [icon](/images/favicon-192x192.png)를 사용할 수 있습니다.
 
-To use notifications, please see the [getting started with automation page](/getting-started/automation/).
+알림을 사용하려면 [getting started with automation page](/getting-started/automation/)를 참조하십시오.

@@ -8,10 +8,10 @@ ha_iot_class: Local Polling
 ha_release: 0.7
 ---
 
-The `rfxtrx` platform support sensors that communicate in the frequency range of 433.92 MHz.
+`rfxtrx` 플랫폼은 433.92 MHz의 주파수 범위에서 통신하는 센서를 지원합니다.
 
-First you have to set up your [rfxtrx hub](/integrations/rfxtrx/).
-The easiest way to find your sensors is to add this to your `configuration.yaml`:
+먼저 [rfxtrx hub](/integrations/rfxtrx/)를 설정해야합니다.
+센서를 찾는 가장 쉬운 방법은 이를 `configuration.yaml`에 추가하는 것입니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -20,14 +20,13 @@ sensor:
   automatic_add: true
 ```
 
-Then when the sensor emits a signal it will be automatically added:
+그런 다음 센서가 신호를 방출하면 자동으로 추가됩니다. : 
 
 <p class='img'>
 <img src='/images/integrations/rfxtrx/sensor.png' />
 </p>
 
-Here the name is `0a52080000301004d240259` or `0a52080000301004d240259_temperature` and you can verify that it works from the frontend.
-Then you should update your configuration to (_temperature is not needed):
+여기서 이름은 `0a52080000301004d240259` 또는 `0a52080000301004d240259_temperature`이며 프런트 엔드에서 작동하는지 확인할 수 있습니다. 그런 다음 설정을 다음과 같이(_temperature가 필요하지 않음)으로 업데이트해야합니다. : 
 
 ```yaml
 # Example configuration.yaml entry
@@ -38,7 +37,7 @@ sensor:
       name: device_name
 ```
 
-If you want to display several data types from one sensor:
+하나의 센서에서 여러 데이터 유형을 표시하려는 경우 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -52,7 +51,7 @@ sensor:
        - Temperature
 ```
 
-Only these data_type are valid:
+이 data_type들만 유효합니다. : 
 
 - *Temperature*, *Temperature2*
 - *Humidity*
@@ -77,7 +76,7 @@ Only these data_type are valid:
 - *Battery numeric*
 - *Rssi numeric*
 
-Example configuration:
+설정 사례 : 
 
 ```yaml
 # Example configuration.yaml entry
@@ -122,6 +121,6 @@ automatic_add:
 {% endconfiguration %}
 
 <div class='note warning'>
-If a device ID consists of only numbers, please make sure to surround it with quotes.
-This is a known limitation in YAML, because the device ID will be interpreted as a number otherwise.
+device ID가 숫자로만 구성되어 있으면 따옴표로 묶어야합니다.
+device ID는 숫자로 해석되므로 YAML의 알려진 제한 사항입니다.
 </div>

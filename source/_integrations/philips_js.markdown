@@ -10,9 +10,9 @@ ha_codeowners:
   - '@elupus'
 ---
 
-The `philips_js` platform allows you to control Philips TVs which expose the [jointSPACE](http://jointspace.sourceforge.net/) JSON-API. Instructions on how to activate the API and if your model is supported can be found [here](http://jointspace.sourceforge.net/download.html). Note that not all listed, jointSPACE-enabled devices won't have JSON-interface running on port 1925. This is true at least for some models before year 2011.
+`philips_js` 플랫폼을 사용하면 [jointSPACE](http://jointspace.sourceforge.net/) JSON-API를 노출시키는 Philips TV를 제어할 수 있습니다. API 활성화 방법 및 모델 지원 여부에 대한 지침은 [여기](http://jointspace.sourceforge.net/download.html)를 참조하십시오. jointSPACE-enabled 디바이스가 모두 포트 1925에서 JSON 인터페이스를 실행하는 것은 아닙니다. 이것은 2011 년 이전의 일부 모델에는 해당됩니다.
 
-To add your TV to your installation, add the following to your `configuration.yaml` file:
+TV를 설치시 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -44,7 +44,7 @@ api_version:
 {% endconfiguration %}
 
 <div class='note'>
-When using api_version: 5 changing sources switches tv channels. Additionally this allows setting the volume level.
+api_version 사용시: 5 개의 입력 변경으로 TV 채널이 전환됩니다. 또한 볼륨 레벨을 설정할 수 있습니다.
 </div>
 
 ```yaml

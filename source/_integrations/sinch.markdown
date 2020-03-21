@@ -1,5 +1,5 @@
 ---
-title: Sinch SMS
+title: 신치 SMS(Sinch SMS)
 description: Instructions on how to add Sinch notifications to Home Assistant.
 logo: sinch.png
 ha_category:
@@ -9,15 +9,17 @@ ha_codeowners:
   - '@bendikrb'
 ---
 
-The `sinch` platform uses [Sinch](https://www.sinch.com/products/messaging/sms/) to deliver notifications from Home Assistant.
+<iframe width="690" height="388" src="https://www.youtube.com/embed/P2OCfXsSIU0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Prerequisites
+`sinch` 플랫폼은 [Sinch](https://www.sinch.com/products/messaging/sms/)를 사용하여 Home Assistant에서 알림을 전달합니다.
 
-Go to your [Sinch Dashboard](https://dashboard.sinch.com/sms/api/rest) and click "Add new REST API". You should now be able to obtain your `service_plan_id` and `api_key`.
+## 전제 조건
 
-## Configuration
+[Sinch Dashboard](https://dashboard.sinch.com/sms/api/rest)로 이동하여 "Add new REST API"를 클릭하십시오. 이제 `service_plan_id`와`api_key`를 얻을 수 있습니다.
 
-To add Sinch to your installation, add the following to your Home Assistant `configuration.yaml` file:
+## 설정
+
+설치시 Sinch를 추가하려면 Home Assistant `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -53,7 +55,7 @@ sender:
 
 To use notifications, please see the [getting started with automation page](/getting-started/automation/).
 
-### Full configuration example
+### 전체 설정 예시
 
 ```yaml
 # Example configuration.yaml entry

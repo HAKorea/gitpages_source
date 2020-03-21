@@ -7,15 +7,16 @@ ha_category:
 ha_release: 0.56
 ---
 
-With the `namecheapdns` integration you can automatically update your dynamic DNS entry at [namecheapdns](https://www.namecheap.com/store/domains/freedns/).
+`namecheapdns` 통합구성요소를 사용하면 [namecheapdns](https://www.namecheap.com/store/domains/freedns/)에서 동적 DNS 항목을 자동으로 업데이트 할 수 있습니다.
 
 <div class='note warning'>
 Namecheap only supports IPv4 addresses to update.
+Namecheap은 업데이트 할 IPv4 주소만 지원합니다.
 </div>
 
-## Configuration
+## 설정
 
-To use the integration in your installation, add the following to your `configuration.yaml` file:
+설치시 통합구성요소를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

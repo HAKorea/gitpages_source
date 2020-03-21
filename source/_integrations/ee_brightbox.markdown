@@ -1,5 +1,5 @@
 ---
-title: EE Bright Box
+title: 영국 통신사 라우터(EE Bright Box)
 description: Instructions on how to integrate EE Bright Box router into Home Assistant.
 logo: ee.png
 ha_category:

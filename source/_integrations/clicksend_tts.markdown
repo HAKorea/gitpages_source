@@ -1,5 +1,5 @@
 ---
-title: ClickSend TTS
+title: 클릭센드 TTS(ClickSend TTS)
 description: Instructions on how to add ClickSend text-to-speech (TTS) notifications to Home Assistant.
 logo: clicksend.png
 ha_category:
@@ -7,11 +7,11 @@ ha_category:
 ha_release: 0.55
 ---
 
-The `clicksend_tts` platform uses [ClickSend](https://clicksend.com) to deliver text-to-speech (TTS) notifications from Home Assistant.
+`clicksend_tts` 플랫폼은 [ClickSend](https://clicksend.com)를 사용하여 Home Assistant에서 TTS (text-to-speech) 알림을 전달합니다.
 
-Go to your [ClickSend Dashboard](https://dashboard.clicksend.com) section and create your new project. After creating your project, you should now be able to obtain your `username` and `api_key`.
+[ClickSend Dashboard](https://dashboard.clicksend.com) 섹션으로 이동하여 새 프로젝트를 작성하십시오. 프로젝트를 만든 후에는 `username`과 `api_key`를 얻을 수 있습니다.
 
-To add ClickSend to your installation, add the following to your Home Assistant `configuration.yaml` file:
+ClickSend를 설치에 추가하려면 Home Assistant `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 notify:
@@ -55,4 +55,4 @@ voice:
   type: string
 {% endconfiguration %}
 
-To use notifications, please see the [getting started with automation page](/getting-started/automation/).
+알림을 사용하려면 [getting started with automation page](/getting-started/automation/)를 참조하십시오.

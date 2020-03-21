@@ -1,5 +1,5 @@
 ---
-title: Dovado
+title: 스웨덴 라우터회사(Dovado)
 description: How to integrate Dovado within Home Assistant.
 ha_category:
   - System Monitor

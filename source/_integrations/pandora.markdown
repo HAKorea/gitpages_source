@@ -1,5 +1,5 @@
 ---
-title: Pandora
+title: 판도라(Pandora)
 description: Instructions on how to integrate Pandora radio into Home Assistant.
 logo: pandora.png
 ha_category:
@@ -7,6 +7,8 @@ ha_category:
 ha_release: 0.22
 ha_iot_class: Local Polling
 ---
+
+<iframe width="690" height="388" src="https://www.youtube.com/embed/4mH1oTMuXEE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 If you have a Pandora account, you can control it from Home Assistant with this media player.
 

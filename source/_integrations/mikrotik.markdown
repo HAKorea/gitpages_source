@@ -1,5 +1,5 @@
 ---
-title: MikroTik
+title: 네트워크회사(MikroTik)
 description: Instructions on how to integrate MikroTik/RouterOS based devices into Home Assistant.
 logo: mikrotik.png
 ha_category:
@@ -8,31 +8,32 @@ ha_category:
 ha_release: 0.44
 ---
 
-The `mikrotik` platform offers presence detection by looking at connected devices to a [MikroTik RouterOS](https://mikrotik.com) based router.
+<iframe width="690" height="388" src="https://www.youtube.com/embed/4qP0gO8mi6k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-There is currently support for the following device types within Home Assistant:
+`mikrotik` 플랫폼은 연결된 장치를 [MikroTik RouterOS](https://mikrotik.com) 기반 라우터로 보고 재실 감지 기능을 제공합니다.
+
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - Presence Detection
 
-## Configuring `mikrotik` hub
+## `mikrotik` 허브 설정
 
-You have to enable accessing the RouterOS API on your router to use this platform.
+이 플랫폼을 사용하려면 라우터에서 RouterOS API에 액세스 할 수 있어야합니다.
 
-Terminal:
+터미널 :
 
 ```bash
 /ip service
 set api disabled=no port=8728
 ```
 
-Web Frontend:
+웹프론트엔드:
 
 Go to **IP** -> **Services** -> **api** and enable it.
 
-Make sure that port 8728 or the port you choose is accessible from your network.
+네트워크에서 포트 8728 또는 선택한 포트에 액세스 할 수 있는지 확인하십시오.
 
-
-To use a MikroTik router in your installation, add the following to your `configuration.yaml` file:
+설비에서 MikroTik 라우터를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -84,14 +85,14 @@ arp_ping:
 
 <div class='note info'>
 
-  As of version 6.43 of RouterOS Mikrotik introduced a new login method (`plain`) in addition to the old login method (`token`). With Version 6.45.1 the old `token` login method got deprecated.
-  In order to support both login mechanisms, the new config option `login_method` has been introduced.
+  RouterOS의 버전 6.43부터 Mikrotik은 이전 로그인 방법 (`token`) 외에 새로운 로그인 방법 (`plain`)을 도입했습니다. 버전 6.45.1에서는 이전 `token` 로그인 방법이 더 이상 사용되지 않습니다.
+  두 로그인 메커니즘을 모두 지원하기 위해 새로운 설정 옵션인 `login_method`가 도입되었습니다.
 
 </div>
 
-## Use a certificate
+## 인증서 사용
 
-To use SSL to connect to the API (via `api-ssl` instead of `api` service) further configuration is required at RouterOS side. You have to upload or generate a certificate and configure `api-ssl` service to use it. Here is an example of a self-signed certificate:
+SSL을 사용하여 API에 연결하려면 (`api` 서비스 대신 `api-ssl` 을 통해) RouterOS 측에서 추가 설정이 필요합니다. 인증서를 업로드하거나 생성하고 이를 사용하려면 `api-ssl` 서비스를 설정해야합니다. 다음은 자체 서명 인증서의 예입니다.
 
 ```bash
 /certificate add common-name="Self signed demo certificate for API" days-valid=3650 name="Self signed demo certificate for API" key-usage=digital-signature,key-encipherment,tls-server,key-cert-sign,crl-sign
@@ -100,17 +101,17 @@ To use SSL to connect to the API (via `api-ssl` instead of `api` service) furthe
 /ip service enable api-ssl
 ```
 
-Then add `ssl: true` to `mikrotik` device tracker entry in your `configuration.yaml` file.
+그런 다음 `configuration.yaml` 파일의 `mikrotik` 장치 추적기 항목에 `ssl: true`를 추가하십시오.
 
-If everything is working fine you can disable the pure `api` service in RouterOS:
+모든 것이 제대로 작동하면 RouterOS에서 순수한 `api` 서비스를 비활성화 할 수 있습니다 :
 
 ```bash
 /ip service disable api
 ```
 
-## The user privileges in RouterOS
+## RouterOS의 사용자 권한
 
-To use this device tracker you need restricted privileges only. To enhance the security of your MikroTik device create a "read only" user who is able to connect to API  and perform ping test only:
+이 장치 추적기를 사용하려면 제한된 권한만 필요합니다. MikroTik 장치의 보안을 강화하려면 API에 연결하고 ping 테스트만 수행 할 수 있는 "read only"사용자를 작성하십시오.
 
 ```bash
 /user group add name=homeassistant policy=read,api,!local,!telnet,!ssh,!ftp,!reboot,!write,!policy,test,!winbox,!password,!web,!sniff,!sensitive,!romon,!dude,!tikapp
@@ -118,7 +119,7 @@ To use this device tracker you need restricted privileges only. To enhance the s
 /user set password="YOUR_PASSWORD" homeassistant
 ```
 
-## Using the additional configuration to the `mikrotik` entry in your `configuration.yaml` file:
+## `configuration.yaml` 파일의 `mikrotik` 항목에 추가 설정 사용 :
 
 ```yaml
 mikrotik:
@@ -139,4 +140,4 @@ mikrotik:
     track_devices: true
 ```
 
-See the [device tracker integration page](/integrations/device_tracker/) for instructions on how to configure the people to be tracked.
+추적할 사람을 설정하는 방법에 대한 지침은 [device tracker integration page](/integrations/device_tracker/)를 참조하십시오.

@@ -7,15 +7,17 @@ ha_category:
 ha_release: 0.27
 ---
 
-The `rfxtrx` platform supports Siemens/LightwaveRF and RFY roller shutters that communicate in the frequency range of 433.92 MHz.
+<iframe width="690" height="388" src="https://www.youtube.com/embed/37P9VTqE9Qk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-First you have to set up your [rfxtrx hub](/integrations/rfxtrx/).
+`rfxtrx` 플랫폼은 433.92 MHz의 주파수 범위에서 통신하는 Siemens/LightwaveRF 및 RFY 롤러 셔터를 지원합니다.
 
-### Configuration
+먼저 [rfxtrx hub](/integrations/rfxtrx/)를 설정해야합니다.
+
+### 설정
 
 ##### Siemens/LightwaveRF
 
-The easiest way to find your roller shutters is to add this to your `configuration.yaml`:
+롤러 셔터를 찾는 가장 쉬운 방법은 이것을 `configuration.yaml`에 추가하는 것입니다.
 
 ```yaml
 cover:
@@ -23,9 +25,9 @@ cover:
     automatic_add: true
 ```
 
-Launch your homeassistant and go the website (e.g `http://localhost:8123`). Push your remote and your device should be added.
+홈어시스턴트를 시작하고 웹 사이트로 이동하십시오 (예: `http://localhost:8123`). 리모컨을 누르면 장치가 추가되어야합니다.
 
-Once added it will show an ID (e.g `0b11000102ef9f210010f70`) and you can verify that it works from the frontend. Then you should update your configuration to:
+추가되면 ID(예: `0b11000102ef9f210010f70`)가 표시되고 프런트 엔드에서 작동하는지 확인할 수 있습니다. 그런 다음 설정을 다음과 같이 업데이트해야합니다. : 
 
 ```yaml
 cover:
@@ -37,11 +39,11 @@ cover:
 
 ##### RFY
 
-The [RFXtrx433e](http://www.rfxcom.com/RFXtrx433E-USB-43392MHz-Transceiver/en) is required for RFY support, however it does not support receive for the RFY protocol - as such devices cannot be automatically added. Instead, configure the device in the [rfxmngr](http://www.rfxcom.com/downloads.htm) tool. Make a note of the assigned ID and Unit Code and then add a device to the configuration with the following id `071a0000[id][unit_code]`. E.g., if the id was `0a` `00` `01`, and the unit code was `01` then the fully qualified id would be `071a00000a000101`, if you set your id/code to single digit in the rfxmngr, e.g., id: `1` `02` `04` and unit code: `1` you will need to add `0` before, so `102031` becomes `071a000001020301`.
+RFY 지원항목에는 [RFXtrx433e](http://www.rfxcom.com/RFXtrx433E-USB-43392MHz-Transceiver/en)가 필요하지만 RFY 프로토콜 수신은 지원하지 않습니다. - 이러한 장치는 자동으로 추가할 수 없습니다. 대신 [rfxmngr](http://www.rfxcom.com/downloads.htm) 도구에서 장치를 설정하십시오. 할당된 ID 및 Unit Code를 기록한 후 다음 ID가 `071a0000[id][unit_code]`인 설정에 장치를 추가하십시오. 예를 들어, id가 `0a``00``01`이고 Unit Code가 `01`인 경우, rfxmngr에서 id/code를 단일 숫자로 설정하면 정규화된 id는 `071a00000a000101`입니다. 예를들어 id: `1``02``04`, unit code: `1`이면 전에 `0`을 추가해야하므로 `102031`은 `071a000001020301`이 됩니다.
 
 ##### Common
 
-Example configuration:
+설정 사례 : 
 
 ```yaml
 # Example configuration.yaml entry
@@ -83,6 +85,6 @@ signal_repetitions:
 {% endconfiguration %}
 
 <div class='note warning'>
-If a device ID consists of only numbers, please make sure to surround it with quotes.
-This is a known limitation in YAML, because the device ID will be interpreted as a number otherwise.
+device ID가 숫자로만 구성되어 있으면 따옴표로 묶어야합니다.
+device ID는 숫자로 해석되므로 YAML의 알려진 제한 사항입니다.
 </div>

@@ -1,5 +1,5 @@
 ---
-title: KWB Easyfire
+title: 유럽 통합난방회사(KWB Easyfire)
 description: Instructions on how to integrate the KWB Easyfire sensor into Home Assistant.
 logo: kwb.png
 ha_category:
@@ -7,6 +7,8 @@ ha_category:
 ha_iot_class: Local Polling
 ha_release: '0.40'
 ---
+
+<iframe width="690" height="388" src="https://www.youtube.com/embed/KANj4ELGmsw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The `kwb` integration integrates the sensors of KWB Easyfire pellet central heating units with the Comfort3 controller (https://www.kwb.net/produkte/) into Home Assistant.
 

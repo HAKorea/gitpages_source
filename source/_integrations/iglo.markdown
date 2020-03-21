@@ -1,5 +1,5 @@
 ---
-title: iGlo
+title: 아이글로(iGlo)
 description: Instructions on how to integrate iGlo lights into Home Assistant.
 logo: iglo.png
 ha_category:
@@ -7,6 +7,8 @@ ha_category:
 ha_iot_class: Local Polling
 ha_release: 0.61
 ---
+
+<iframe width="690" height="388" src="https://www.youtube.com/embed/oHTS9ji_v-s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The `iglo` platform allows you to integrate your [iGlo Lights](https://www.youtube.com/watch?v=oHTS9ji_v-s) into Home Assistant.
 

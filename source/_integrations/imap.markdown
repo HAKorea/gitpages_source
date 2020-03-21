@@ -8,11 +8,11 @@ ha_release: 0.25
 ha_iot_class: Cloud Push
 ---
 
-The `imap` integration is observing your [IMAP server](https://en.wikipedia.org/wiki/Internet_Message_Access_Protocol) and reporting the amount of unread emails.
+`imap` 통합구성요소는 [IMAP server](https://en.wikipedia.org/wiki/Internet_Message_Access_Protocol)를 관찰하고 읽지 않은 이메일의 양을 보고합니다.
 
-## Configuration
+## 설정
 
-To enable this sensor, add the following lines to your `configuration.yaml` file:
+이 센서를 활성화하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -62,15 +62,16 @@ charset:
   type: string
 {% endconfiguration %}
 
-### Configuring IMAP Searches
+### IMAP 검색 설정
 
-By default, this integration will count unread emails. By configuring the search string, you can count other results, for example:
+기본적으로 이 통구성요소는 읽지 않은 이메일을 계산합니다. 검색 문자열을 설정하면 다음과 같은 다른 결과를 계산할 수 있습니다.
 
-* `ALL` to count all emails in a folder
-* `FROM`, `TO`, `SUBJECT` to find emails in a folder (see [IMAP RFC for all standard options](https://tools.ietf.org/html/rfc3501#section-6.4.4))
-* [Gmail's IMAP extensions](https://developers.google.com/gmail/imap/imap-extensions) allow raw Gmail searches, like `X-GM-RAW "in: inbox older_than:7d"` to show emails older than one week in your inbox. Note that raw Gmail searches will ignore your folder configuration and search all emails in your account!
+* `ALL` 폴더의 모든 이메일을 계산
+* `FROM`, `TO`, `SUBJECT` 폴더에서 이메일을 찾기 ([IMAP RFC for all standard options](https://tools.ietf.org/html/rfc3501#section-6.4.4) 참조)
+* [Gmail's IMAP extensions](https://developers.google.com/gmail/imap/imap-extensions)은 `X-GM-RAW "in: inbox older_than:7d"` 와 같은 raw Gmail 검색을 통해 받은 편지함에 1 주일이 지난 이메일을 표시할 수 있습니다. raw Gmail 검색은 폴더 설정을 무시하고 계정의 모든 이메일을 검색합니다. ! 
 
-#### Full configuration sample with search
+
+#### 검색이 가능한 전체 설정 샘플
 
 ```yaml
 # Example configuration.yaml entry for gmail

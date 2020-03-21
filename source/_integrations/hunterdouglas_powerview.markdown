@@ -1,5 +1,5 @@
 ---
-title: Hunter Douglas PowerView
+title: 블라인드전문회사(Hunter Douglas PowerView)
 description: Instructions on how to setup Hunter Douglas PowerView scenes within Home Assistant.
 logo: hunter-douglas-powerview.png
 ha_category:
@@ -7,9 +7,11 @@ ha_category:
 ha_release: 0.15
 ---
 
-Implements the [Hunter Douglas PowerView](https://www.hunterdouglas.com/operating-systems/powerview-motorization/support) platform scene control. It queries the PowerView Hub and Home Assistant displays them as scenes.
+<iframe width="690" height="388" src="https://www.youtube.com/embed/b6YwgWDCWBA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Scenes can be activated using the service `scene.turn_on`.
+[Hunter Douglas PowerView](https://www.hunterdouglas.com/operating-systems/powerview-motorization/support) 플랫폼 장면(씬) 제어를 구현합니다. PowerView Hub를 쿼리하고 홈어시스턴트가 장면(씬)으로 표시합니다.
+
+장면(씬)은 `scene.turn_on` 서비스를 사용하여 활성화 할 수 있습니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -25,7 +27,7 @@ address:
   type: string
 {% endconfiguration %}
 
-## Example Automations
+## 자동화 사례
 
 ``` yaml
 - alias: "blinds closed at night"

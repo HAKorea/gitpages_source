@@ -14,8 +14,6 @@ ha_codeowners:
 
 [LaMetric Time](https://lametric.com/)은 응용 프로그램에 액세스하고 웹 라디오를 듣고 알림을 표시하는 데 사용할 수있는 스마트 시계입니다.
 
-<iframe width="700" height="437" src="https://www.youtube.com/embed/8J86MIBfAvo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - [Notify](#notifications)

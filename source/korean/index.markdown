@@ -50,9 +50,22 @@ hide_github_edit: true
 * [기상청 동네예보](https://github.com/miumida/local_weather_rss) - miumida
 * [세차 센서 제작](https://cafe.naver.com/koreassistant/809) - 검은별31
 
+### Wallpad 
+* [월패드 RS485 관련 설명](https://cafe.naver.com/koreassistant/605) - 까꿍TM 
+* [코콤 월패드 제어 python 버전](https://github.com/GuGu927/RS485) - 랜이
+* [트루월드 버전 코콤 월패드 Nodejs V2](https://cafe.naver.com/koreassistant/601) - 트루월드
+* [자이 ezvill 월패드용 js](https://cafe.naver.com/koreassistant/959) - 싱아하
+* [코맥스 소켓지원 애드온](https://cafe.naver.com/koreassistant/733) - 사람
+* [월패드 연동 ESPHOME RS485 컴포넌트](https://cafe.naver.com/stsmarthome/12973) - 깡스
+
+* [제이슨님의 유니버셜 월패드 애드온 연동 사용기](https://cafe.naver.com/koreassistant/579) - 민쇼
+* [깡스님의 ESPHOME 월패드 애드온 연동 사용기](https://cafe.naver.com/koreassistant/581) - 까꿍TM
+
 ### Others
 * [Lotto 6/45](https://github.com/miumida/lotto645) - miumida
-* [코콤 월패드 제어 python 버전](https://github.com/GuGu927/RS485) - 랜이
+
+
+
 
 ### 애드온
 * [국내 애드온 repository](https://github.com/HAKorea/addons) - 아래 애드온은 본 통합 저장소를 HA의 supervisor > Addon Store에 등록하면 애드온 카드가 나타납니다.<br><br>
@@ -64,7 +77,9 @@ hide_github_edit: true
 
 * Owntracks Recorder for Hassio (owntracks4hassio)
 
-* 구글 어시스턴트 웹서버 애드온
+* 구글 어시스턴트 웹서버 애드온<br><br><br>
 
-* [자이 ezvill 월패드용 js](https://cafe.naver.com/koreassistant/959)
-* [코맥스 소켓지원 애드온](https://cafe.naver.com/koreassistant/733)
+* [ESPHOME rs485 전용 깡스님 애드온 repository](https://github.com/greays/hassio) - 아래 애드온은 본 통합 저장소를 HA의 supervisor > Addon Store에 등록하면 애드온 카드가 나타납니다.
+
+* esphome-rs485 : ESPHOME rs485를 제작하기 위한 커스텀 컴포넌트 
+

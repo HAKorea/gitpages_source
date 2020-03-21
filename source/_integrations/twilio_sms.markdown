@@ -11,11 +11,11 @@ ha_codeowners:
 
 <iframe width="690" height="437" src="https://www.youtube.com/embed/JCjzEKdlezk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-The `twilio` notification platform enables sending notifications via SMS, powered by [Twilio](https://twilio.com).
+`twilio` 알림 플랫폼은 SMS를 통해 [Twilio](https://twilio.com)를 통해 알림을 보낼 수 있습니다.
 
-The requirement is that you have setup [Twilio](/integrations/twilio/).
+요구 사항은 [Twilio](/integrations/twilio/)를 설정해야합니다.
 
-To use this notification platform in your installation, add the following to your `configuration.yaml` file:
+설치시 이 알림 플랫폼을 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

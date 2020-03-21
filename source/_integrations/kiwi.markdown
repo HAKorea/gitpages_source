@@ -1,5 +1,5 @@
 ---
-title: KIWI
+title: 키위(KIWI)
 description: Instructions on how to integrate KIWI Smart Lock and Smart Entry.
 logo: kiwi.png
 ha_category:
@@ -7,6 +7,8 @@ ha_category:
 ha_release: 0.72
 ha_iot_class: Cloud Polling
 ---
+
+<iframe width="690" height="388" src="https://www.youtube.com/embed/i0WzJvAq7wQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The `KIWI` platform allows you to open your KIWI Smart Locks and Smart Entry Devices.
 All you need to get started is a KIWI account. Register at [the KIWI website](https://kiwi.ki/login/).

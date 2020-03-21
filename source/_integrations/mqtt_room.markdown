@@ -8,11 +8,13 @@ ha_release: 0.27
 ha_iot_class: Configurable
 ---
 
-The `mqtt_room` sensor platform allows you to detect the indoor location of devices using MQTT clients.
+<iframe width="690" height="388" src="https://www.youtube.com/embed/A57jFYDzOto" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Configuration
+`mqtt_room` 센서 플랫폼을 사용하면 MQTT 클라이언트를 사용하여 장치의 실내 위치를 감지 할 수 있습니다.
 
-To use this device tracker in your installation, add the following to your `configuration.yaml` file:
+## 설정
+
+이 장치 추적기를 설치에 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -47,9 +49,9 @@ away_timeout:
   type: integer
 {% endconfiguration %}
 
-## Usage
+## 사용법
 
-Example JSON that should be published to the room topics:
+room topics에 publish해야하는 JSON 예 :
 
 ```json
 {
@@ -59,11 +61,10 @@ Example JSON that should be published to the room topics:
 }
 ```
 
-### Setting up clients
+### 클라이언트 세팅하기 
 
-This integration works with any software that is sending data in the given format. Each client should post the discovered devices in its own subtopic of the configured topic.
-Instead of developing your own application, you can also use any of these already existing clients:
+이 연동은 주어진 형식으로 데이터를 전송하는 모든 소프트웨어와 작동합니다. 각 클라이언트는 검색된 장치를 설정된 topic의 자체 하위 topic에 게시(post)해야합니다. :
 
-- [**room-assistant**](https://github.com/mKeRix/room-assistant): looks for Bluetooth LE beacons, based on Node.js
-- [**Happy Bubbles Presence Server**](https://github.com/happy-bubbles/presence): presence detection server for Happy Bubbles BLE-scanning devices, based on Go
-- [**ESP32-MQTT-room**](https://jptrsn.github.io/ESP32-mqtt-room/): runs on an ESP32, and looks for Bluetooth LE devices, based on C++/Arduino
+- [**room-assistant**](https://github.com/mKeRix/room-assistant): Node.js를 기반으로 블루투스 LE 비콘을 찾습니다.
+- [**Happy Bubbles Presence Server**](https://github.com/happy-bubbles/presence): Go를 기반으로하는 Happy Bubbles BLE 스캔 장치의 재실 감지 서버
+- [**ESP32-MQTT-room**](https://jptrsn.github.io/ESP32-mqtt-room/): ESP32에서 실행되며 C ++/Arduino를 기반으로 Bluetooth LE 장치를 찾습니다.

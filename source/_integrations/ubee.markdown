@@ -1,5 +1,5 @@
 ---
-title: Ubee Router
+title: 라우터회사(Ubee Router)
 description: Instructions on how to integrate Ubee routers into Home Assistant.
 logo: ubee.png
 ha_category:

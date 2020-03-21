@@ -8,11 +8,11 @@ ha_iot_class: Configurable
 ha_release: 0.44
 ---
 
-The `mqtt_json` device tracker platform allows you to detect presence by monitoring an MQTT topic for new locations. To use this platform, you specify a unique topic for each device.
+`mqtt_json` 장치 추적기 플랫폼을 사용하면 새 위치에 대한 MQTT topic을 모니터링하여 현재 상태를 감지 할 수 있습니다. 이 플랫폼을 사용하려면 각 장치마다 고유한 topic을 지정하십시오.
 
-## Configuration
+## 설정
 
-To use this device tracker in your installation, add the following to your `configuration.yaml` file:
+이 장치 추적기를 설치에 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -34,9 +34,9 @@ qos:
   type: string
 {% endconfiguration %}
 
-## Usage
+## 사용법
 
-This platform receives JSON formatted payloads containing GPS information, for example:
+이 플랫폼은 GPS 정보가 포함 된 JSON 형식의 페이로드를 수신합니다 (예 :
 
 ```json
 {"longitude": 1.0,"gps_accuracy": 60,"latitude": 2.0,"battery_level": 99.9}

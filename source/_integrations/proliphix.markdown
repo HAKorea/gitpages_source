@@ -1,5 +1,5 @@
 ---
-title: Proliphix
+title: 프로리픽스(Proliphix)
 description: Instructions on how to integrate Proliphix thermostats within Home Assistant.
 logo: proliphix.png
 ha_category:

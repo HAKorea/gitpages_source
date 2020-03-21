@@ -11,6 +11,8 @@ ha_codeowners:
   - '@bannhead'
 ---
 
+<iframe width="690" height="388" src="https://www.youtube.com/embed/j8KqQp0ppQ4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 The Hisense AEH-W4A1 is a WiFi module used to give WiFi connectivity to some Hisense ACs and rebranded models (Smart Cool, Beko and others).
 
 Later AC models use other WiFi modules (like AEH-W4B1 and AEH-W4E1) that are not compatible or otherwise tested with this integration.

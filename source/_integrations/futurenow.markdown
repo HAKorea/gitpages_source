@@ -1,11 +1,13 @@
 ---
-title: P5 FutureNow
+title: P5 퓨처나우(P5 FutureNow)
 description: Instructions on how to set up P5 FutureNow relay/dimmer units as lights within Home Assistant.
 logo: p5.png
 ha_category:
   - Light
 ha_release: 0.75
 ---
+
+<iframe width="690" height="388" src="https://www.youtube.com/embed/aZL_27wyqFk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The `futurenow` light platform allows you to use [P5](https://www.p5.hu/) FutureNow relay/dimmer units as lights. Currently supported units: 
 * [FutureNow FNIP-6x2AD](https://www.p5.hu/index.php/products/ethernet-modules/265-fnip-6x2ad) dimmer unit (outputs only)

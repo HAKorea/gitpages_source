@@ -7,15 +7,17 @@ ha_category:
 ha_release: 0.14
 ---
 
-The `sendgrid` notification platform sends email notifications via [SendGrid](https://sendgrid.com/), a proven cloud-based email platform.
+<iframe width="690" height="388" src="https://www.youtube.com/embed/-Q-Aa8ggbIg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Setup
+`sendgrid` 알림 플랫폼은 검증된 클라우드 기반 이메일 플랫폼인 [SendGrid](https://sendgrid.com/)를 통해 이메일 알림을 보냅니다.
 
-You need an [API key](https://app.sendgrid.com/settings/api_keys) from SendGrid.
+## 셋업
 
-## Configuration
+SendGrid의 [API 키](https://app.sendgrid.com/settings/api_keys)가 필요합니다.
 
-To enable notification emails via SendGrid in your installation, add the following to your `configuration.yaml` file:
+## 설정
+
+설치시 SendGrid를 통해 알림 이메일을 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -51,4 +53,4 @@ recipient:
   type: string
 {% endconfiguration %}
 
-To use notifications, please see the [getting started with automation page](/getting-started/automation/).
+알림을 사용하려면 [getting started with automation page](/getting-started/automation/)를 참조하십시오.

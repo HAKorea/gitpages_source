@@ -1,5 +1,5 @@
 ---
-title: Mailgun
+title: 메일건(Mailgun)
 description: Instructions on how to add Mailgun mail notifications to Home Assistant.
 logo: mailgun.png
 ha_category:
@@ -8,17 +8,20 @@ ha_release: 0.38
 ha_config_flow: true
 ---
 
-To be able to receive webhooks from Mailgun, your Home Assistant instance needs to be accessible from the web ([Hass.io instructions](/addons/duckdns/)) and you need to have the `base_url` configured for the HTTP integration ([docs](/integrations/http/#base_url)).
+<iframe width="690" height="388" src="https://www.youtube.com/embed/BmEj3EBo0vg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-To set it up, go to the integrations page in the configuration screen and find Mailgun. Click on configure. Follow the instructions on the screen to configure Mailgun.
+Mailgun에서 웹 후크를 수신하려면 웹에서 홈어시스턴트 인스턴스에 액세스할 수 있어야하고 ([Hass.io instructions](/addons/duckdns/)) HTTP 연동([docs](/integrations/http/#base_url))을 위해 `base_url`을 설정해야합니다.
 
-You will get a URL of the following format: `https://<home-assistant-domain>/api/webhook/9940e99a26fae4dcf6fe0a478124b6b58b578ea4c55c9a584beb1c9f5057bb91`. To receive webhooks from Mailgun, you need to provide that url as a callback URL in the Webhooks tab of the Mailgun Control Panel.
+설정하려면 설정 화면의 통합구성요소 페이지로 이동하여 Mailgun을 찾으십시오. 설정을 클릭하십시오. 화면의 지시 사항에 따라 Mailgun을 설정하십시오.
 
-There is currently support for the following device types within Home Assistant:
+다음 형식의 URL이 제공됩니다.: `https://<home-assistant-domain>/api/webhook/9940e99a26fae4dcf6fe0a478124b6b58b578ea4c55c9a584beb1c9f5057bb91`. 
+Mailgun에서 웹 후크를 수신하려면 Mailgun 제어판의 Webhook 탭에서 해당 URL을 콜백 URL로 제공해야합니다.
+
+현재홈 어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - [Notifications](#notifications).
 
-## Configuration
+## 설정
 
 ```yaml
 # Example configuration.yaml entry
@@ -43,9 +46,9 @@ sandbox:
   type: boolean
 {% endconfiguration %}
 
-Events coming in from Mailgun will be available as events in Home Assistant and are fired as `mailgun_message_received`. The [data specified by Mailgun](https://documentation.mailgun.com/en/latest/api-events.html#event-structure) will be available as the event data. You can use this event to trigger automations.
+Mailgun에서 들어오는 이벤트는 Home Assistant에서 이벤트로 사용할 수 있으며 `mailgun_message_received` 로 시작됩니다. [Mailgun에서 지정한 데이터](https://documentation.mailgun.com/en/latest/api-events.html#event-structure)가 이벤트 데이터로 사용 가능합니다. 이 이벤트를 사용하여 자동화를 트리거 할 수 있습니다.
 
-You can then consume that information with the following automation:
+그런 후 다음 자동화를 통해 해당 정보를 사용할 수 있습니다.
 
 ```yaml
 automation:
@@ -59,11 +62,11 @@ automation:
     entity_id: light.office
 ```
 
-## Notifications
+## 알림(Notifications)
 
-The Mailgun notification service allows you to send emails via Mailgun's REST API. It requires the [Mailgun component](#configuration) to be set up.
+Mailgun 알림 서비스를 사용하면 Mailgun의 REST API를 통해 이메일을 보낼 수 있습니다. [Mailgun 구성 요소](#configuration)를 설정해야합니다.
 
-### Notifications configuration
+### 알림 설정
 
 ```yaml
 # Example configuration.yaml entry
@@ -98,9 +101,9 @@ sender:
   type: string
 {% endconfiguration %}
 
-### Example automation
+### 자동화 사례
 
-The following automation reacts to an event by sending out an email with two attachments.
+다음 자동화는 두 개의 첨부 파일이 포함된 이메일을 발송하여 이벤트에 반응합니다.
 
 ```yaml
 # Example automation using Mailgun notifications

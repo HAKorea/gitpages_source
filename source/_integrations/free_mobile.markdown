@@ -1,5 +1,5 @@
 ---
-title: Free Mobile
+title: 프랑스 통신사(Free Mobile)
 description: Instructions on how to add user notifications to Home Assistant.
 logo: free_mobile.png
 ha_category:

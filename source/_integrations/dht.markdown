@@ -8,6 +8,8 @@ logo: dht.png
 ha_iot_class: Local Polling
 ---
 
+<iframe width="690" height="388" src="https://www.youtube.com/embed/GsG1OClojOk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 `dht` 센서 플랫폼을 사용하면 DHT11, DHT22 또는 AM2302 장치에서 현재 온도와 습도를 얻을 수 있습니다.
 
 ## 설정

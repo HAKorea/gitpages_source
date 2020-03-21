@@ -1,5 +1,5 @@
 ---
-title: Google Pub/Sub
+title: 구글 퍼브서브(Google Pub/Sub)
 description: Setup for Google Pub/Sub integration
 logo: google-pubsub.png
 ha_category:

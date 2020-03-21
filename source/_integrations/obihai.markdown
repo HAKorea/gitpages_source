@@ -1,5 +1,5 @@
 ---
-title: Obihai
+title: VOIP 전화기(Obihai)
 description: Instructions on how to integrate your Obihai device into Home Assistant.
 logo: obitalk.png
 ha_iot_class: Local Polling
@@ -9,6 +9,8 @@ ha_release: 0.99
 ha_codeowners:
   - '@dshokouhi'
 ---
+
+<iframe width="690" height="388" src="https://www.youtube.com/embed/ka7PvQKUbzo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The `obihai` integration allows you to view the call status for your [Obihai devices](https://www.obitalk.com/info/products#home_section).
 

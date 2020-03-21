@@ -1,5 +1,5 @@
 ---
-title: ROVA
+title: 네덜란드 폐기물수거회사(ROVA)
 description: Instructions on how to integrate ROVA sensor within Home Assistant.
 logo: rova.jpg
 ha_category:

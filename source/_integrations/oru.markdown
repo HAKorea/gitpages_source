@@ -1,5 +1,5 @@
 ---
-title: Orange and Rockland Utility (ORU)
+title: 미국 에너지회사(Orange and Rockland Utility) 
 description: Instructions on how to integrate the Orange and Rockland Utility real-time energy usage sensor within Home Assistant.
 logo: oru.png
 ha_release: 0.101

@@ -1,5 +1,5 @@
 ---
-title: Ombi
+title: 옴비(Ombi)
 description: Instructions on how to set up the Ombi integration in Home Assistant.
 logo: ombi.png
 ha_category:

@@ -1,5 +1,5 @@
 ---
-title: Microsoft Teams
+title: MS 팀즈(Microsoft Teams)
 description: Instructions on how to send a notification to a Microsoft Teams channel.
 logo: msteams.jpg
 ha_category:
@@ -8,6 +8,8 @@ ha_release: 0.101
 ha_codeowners:
   - '@peroyvind'
 ---
+
+<iframe width="690" height="388" src="https://www.youtube.com/embed/OiWebwPCFaI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 `Microsoft Teams` 플랫폼을 사용하면 Home Assistant에서 [Microsoft Teams](https://products.office.com/en-us/microsoft-teams/group-chat-software)의 팀 채널로 알림을 보낼 수 있습니다.
 

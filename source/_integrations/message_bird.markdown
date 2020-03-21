@@ -1,5 +1,5 @@
 ---
-title: MessageBird
+title: 메신저연동(MessageBird)
 description: Instructions on how to add user notifications to Home Assistant.
 logo: message_bird.png
 ha_category:
@@ -7,15 +7,17 @@ ha_category:
 ha_release: 0.16
 ---
 
-The `MessageBird` notification platform sends notifications as SMS messages using [MessageBird](https://www.messagebird.com/) to your mobile phone.
+<iframe width="690" height="388" src="https://www.youtube.com/embed/V7eUf2UsO4Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Setup
+`MessageBird` 알림 플랫폼은 [MessageBird](https://www.messagebird.com/)를 사용하여 SMS 메시지로 알림을 휴대폰으로 보냅니다.
 
-Go to https://www.messagebird.com/ to retrieve your API key.
+## 셋업
 
-## Configuration
+API 키를 검색하려면 https://www.messagebird.com/으로 이동하십시오.
 
-To enable MessageBird notifications in your installation, add the following to your `configuration.yaml` file:
+## 설정
+
+설치시 MessageBird 알림을 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -42,11 +44,11 @@ sender:
   type: string
 {% endconfiguration %}
 
-### Usage
+### 사용법
 
-MessageBird is a notify platform and thus can be controlled by calling the notify service [as described here](/integrations/notify/). It will send a notification to the specified mobile phone number(s).
+MessageBird는 알림 플랫폼이므로 알림 서비스 [as described here](/integrations/notify/)를 호출하여 제어할 수 있습니다. 지정된 휴대폰 번호로 알림을 보냅니다.
 
-#### Example service payload
+#### 서비스 페이로드 사례
 
 ```json
 {

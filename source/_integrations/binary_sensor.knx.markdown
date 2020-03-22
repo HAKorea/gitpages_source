@@ -1,5 +1,5 @@
 ---
-title: "KNX 이진 센서"
+title: KNX 이진 센서(KNX Binary Sensor)
 description: "Instructions on how to setup the KNX binary sensors within Home Assistant."
 logo: knx.png
 ha_category:

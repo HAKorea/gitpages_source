@@ -8,7 +8,9 @@ ha_release: 0.48
 ha_iot_class: Local Push
 ---
 
-<iframe width="690" height="388" src="https://www.youtube.com/embed/FsWQ0-Yi_pQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/FsWQ0-Yi_pQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `bme280` 센서 플랫폼을 사용하면 [I2c](https://en.wikipedia.org/wiki/I²C) 버스 (SDA, SCL 핀)를 통해 연결된 [Bosch BME280 Environmental sensor](https://cdn-shop.adafruit.com/datasheets/BST-BME280_DS001-10.pdf)의 온도, 습도 및 압력 값을 읽을 수 있습니다. 데이터 시트에 설명된 센서의 모든 작동 모드를 사용할 수 있습니다.
 

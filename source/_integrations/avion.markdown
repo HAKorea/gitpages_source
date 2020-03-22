@@ -8,7 +8,9 @@ logo: avi-on.png
 ha_release: 0.37
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/5eJ4ZBeRrT8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/5eJ4ZBeRrT8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 Avi-on Bluetooth dimmer 스위치 [Avi-On](https://avi-on.com/) 설정 방법
 

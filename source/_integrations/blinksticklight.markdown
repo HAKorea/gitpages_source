@@ -8,7 +8,9 @@ ha_release: 0.7.5
 ha_iot_class: Local Polling
 ---
 
-<iframe width="690" height="388" src="https://www.youtube.com/embed/cjmDbKk3ajk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/cjmDbKk3ajk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `blinkstick` 플랫폼을 사용하면 Home Assistant 내에서 [Blinkstick](https://www.blinkstick.com/) 조명을 제어 할 수 있습니다.
 

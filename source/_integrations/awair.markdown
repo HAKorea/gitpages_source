@@ -10,7 +10,9 @@ ha_codeowners:
   - '@danielsjf'
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/QLA5B0yiuMQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/QLA5B0yiuMQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `awair` 센서 플랫폼은 [Awair device(s)](https://getawair.com) 데이터를 연동 시킵니다.
 
@@ -28,7 +30,7 @@ sensor:
     access_token: ACCESS_TOKEN
 ```
 
-Awair API에는 엄격한 사용 할당량이 있습니다. 계정에서 기기를 검색하는 API 방법은 24 시간당 6 건으로 제한됩니다. 이 할당량을 초과 한 경우 선택적으로 호출을 무시하도록 장치 정보를 설정에 추가 할 수 있습니다.:
+Awair API에는 엄격한 사용 할당량이 있습니다. 계정에서 기기를 검색하는 API 방법은 24 시간당 6 건으로 제한됩니다. 이 할당량을 초과한 경우 선택적으로 호출을 무시하도록 장치 정보를 설정에 추가 할 수 있습니다.:
 
 ```yaml
 sensor:
@@ -44,7 +46,7 @@ access_token:
   required: true
   type: string
 devices:
-  description: API 검색에 의존하지 않고 수동으로 장치를 구성하기위한 선택 옵션입니다.
+  description: API 검색에 의존하지 않고 수동으로 장치를 설정하기위한 선택 옵션입니다.
   required: false
   type: list
   keys:

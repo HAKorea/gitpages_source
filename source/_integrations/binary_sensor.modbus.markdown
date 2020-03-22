@@ -1,5 +1,5 @@
 ---
-title: "Modbus 이진 센서"
+title: Modbus Binary Sensor(Modbus 이진 센서)
 description: "Instructions on how to set up Modbus binary sensors within Home Assistant."
 logo: modbus.png
 ha_category:

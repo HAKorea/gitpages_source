@@ -8,8 +8,9 @@ ha_iot_class: Local Polling
 ha_release: 0.18
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/A2JaMiIXW9Q?start=426" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/A2JaMiIXW9Q?start=426" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 이 추적기는 부팅시 새 장치를 검색하고 `interval_seconds` 값을 기준으로 Bluetooth 장치를 정기적으로 추적 합니다. 장치를 서로 페어링 할 필요는 없습니다! 
 

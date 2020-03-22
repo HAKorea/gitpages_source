@@ -13,7 +13,9 @@ ha_codeowners:
   - '@felipediel'
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/CEwuMh80CSA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/CEwuMh80CSA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.:
 
@@ -64,13 +66,13 @@ name:
 
 | Service data attribute | Optional | Description                               |
 | ---------------------- | -------- | ----------------------------------------- |
-| `entity_id`            | no       | 리모컨의 ID입니다.                         |
-| `device`               | no       | 제어 할 장치의 이름입니다.                  |
+| `entity_id`            | no       | 리모컨의 ID.                         |
+| `device`               | no       | 제어할 장치의 이름.                  |
 | `command`              | no       | 배울 명령의 이름.                          |
-| `alternative`          | yes      | 명령을 토글 여부.                          |
+| `alternative`          | yes      | 명령의 토글 여부.                          |
 | `timeout`              | yes      | 각 명령을 익히는 시간 (초).                |
 
-예 1 : 단일 명령 배우기
+예 1: 단일 명령 배우기
 
 ```yaml
 script:
@@ -83,7 +85,7 @@ script:
           command: mute
 ```
 
-예 2 : 일련 명령 학습
+예 2: 일련 명령 학습
 
 ```yaml
 script:
@@ -100,9 +102,9 @@ script:
             - volume down
 ```
 
-예 3 : 토글 명령 배우기
+예 3: 토글 명령 배우기
 
-`alternative` 플래그는 TV를 켜고 끌 수 있는 전원 버튼과 같은 여러 버튼에 동일한 버튼을 사용하는 명령을 캡처하는 데 유용합니다.
+`alternative` 플래그는 TV를 켜고 끌 수 있는 전원 버튼과 같은 여러 버튼에 동일한 버튼을 사용하는 명령을 캡처하는데 유용합니다.
 
 ```yaml
 script:
@@ -116,7 +118,7 @@ script:
           alternative: True
 ```
 
-위의 예에서 power 명령에 대해 두 개의 코드가 캡처되며 명령이 호출 될 때마다 교차로 전송됩니다.
+위의 예에서 power 명령에 대해 두 개의 코드가 캡처되며 명령이 호출될 때마다 교차로 전송됩니다.
 
 ### 명령어 전송
 
@@ -124,13 +126,13 @@ script:
 
 | Service data attribute | Optional | Description                                          |
 | ---------------------- | -------- | ---------------------------------------------------- |
-| `entity_id`            | no       | 리모컨의 ID입니다.                                    |
-| `device`               | no       | 제어 할 장치의 이름입니다.                             |
+| `entity_id`            | no       | 리모컨의 ID.                                    |
+| `device`               | no       | 제어할 장치의 이름.                             |
 | `command`              | no       | 전송할 명령의 이름.                                   |
-| `num_repeats`          | yes      | 명령을 반복 할 횟수입니다.                             |
+| `num_repeats`          | yes      | 명령을 반복할 횟수.                             |
 | `delay_secs`           | yes      | 한 명령과 다른 명령 사이의 간격 (초).                   |
 
-예 1 : 단일 명령 보내기
+예 1: 단일 명령 보내기
 
 ```yaml
 script:
@@ -143,7 +145,7 @@ script:
           command: mute
 ```
 
-예 2 : 명령을 반복적으로 전송
+예 2: 명령을 반복적으로 전송
 
 ```yaml
 script:
@@ -157,7 +159,7 @@ script:
           num_repeats: 20
 ```
 
-예 3 : 명령 시퀀스 전송
+예 3: 명령 시퀀스 전송
 
 ```yaml
 script:
@@ -174,7 +176,7 @@ script:
 
 ## Sensor
 
-The `broadlink` 센서 플랫폼은 브로드링크 RM2와 A1 E-air 제품에서 데이터를 모니터링 할 수 있습니다. 현재 클라우드 API는 지원되지 않습니다.
+`broadlink` 센서 플랫폼은 브로드링크 RM2와 A1 E-air 제품에서 데이터를 모니터링 할 수 있습니다. 현재 클라우드 API는 지원되지 않습니다.
 
 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오 :
 
@@ -190,11 +192,11 @@ sensor:
 
 {% configuration %}
 host:
-  description: 연결할 호스트 이름 / IP 주소입니다.
+  description: 연결할 호스트 이름 / IP 주소.
   required: true
   type: string
 mac:
-  description: "장치 MAC 주소. 다음 형식을 사용하십시오: `AA:BB:CC:DD:EE:FF`."
+  description: "장치의 MAC 주소. 다음 형식을 사용하십시오: `AA:BB:CC:DD:EE:FF`."
   required: true
   type: string
 name:
@@ -203,7 +205,7 @@ name:
   default: Broadlink sensor
   type: string
 scan_interval:
-  description: 센서에서 데이터를 가져 오는 시간 (초)입니다.
+  description: 센서에서 데이터를 가져 오는 시간 (초).
   required: false
   default: 300
   type: integer
@@ -269,7 +271,7 @@ pycrypto 라이브러리를 사용할 수 있어야합니다.  일반적인 Wind
 
 이 문제를 해결하는 가장 빠른 방법은 [https://github.com/sfbahr/PyCrypto-Wheels](https://github.com/sfbahr/PyCrypto-Wheels)에서 사전 빌드 된 바이너리를 사용하는 방법입니다. 
 
-시스템에 맞는 64 비트 또는 32 비트 바이너리를 가져 오십시오. 전체 명령 행은 64 비트 시스템의 경우 다음 샘플과 유사합니다.:
+시스템에 맞는 64 비트 또는 32 비트 바이너리를 가져오십시오. 전체 명령 행은 64 비트 시스템의 경우 다음 샘플과 유사합니다.:
 
 ```bash
 pip install --use-wheel --no-index --find-links=https://github.com/sfbahr/PyCrypto-Wheels/raw/master/pycrypto-2.6.1-cp35-none-win_amd64.whl pycrypto
@@ -277,7 +279,7 @@ pip install --use-wheel --no-index --find-links=https://github.com/sfbahr/PyCryp
 
 ## Switch
 
-`Broadlink` 스위치 플랫폼을 사용하면 Broadlink [devices](https://www.ibroadlink.com/).를 제어할 수 있습니다. 
+`Broadlink` 스위치 플랫폼을 사용하면 Broadlink [devices](https://www.ibroadlink.com/)를 제어할 수 있습니다. 
 
 ### 설정
 
@@ -293,7 +295,7 @@ switch:
 
 {% configuration %}
 host:
-  description: 연결할 호스트 이름 / IP 주소입니다..
+  description: 연결할 호스트 이름 / IP 주소.
   required: true
   type: string
 mac:
@@ -310,7 +312,7 @@ retry:
   type: integer
   default: 2
 friendly_name:
-  description: 프런트 엔드에 스위치를 표시하는데 사용되는 이름입니다.
+  description: 프런트 엔드에 스위치를 표시하는데 사용되는 이름.
   required: false
   type: string
 type:
@@ -318,7 +320,7 @@ type:
   required: true
   type: string
 switches:
-  description: 모든 스위치를 포함하는 배열입니다.
+  description: 모든 스위치를 포함하는 배열.
   required: false
   type: map
   keys:
@@ -336,11 +338,11 @@ switches:
           required: true
           type: string
         friendly_name:
-          description: 프런트 엔드에 스위치를 표시하는 데 사용되는 이름입니다.
+          description: 프런트 엔드에 스위치를 표시하는데 사용되는 이름.
           required: false
           type: string
 slots:
-  description: MP1 파워 스트립의 4 개 슬롯의 이름. 별도로 설정하지 않은 경우 슬롯 이름은 `switch's friendly_name + 'slot {slot_index}'`. 입니다.  예) 'MP1 slot 1'
+  description: "MP1 파워 스트립의 4 개 슬롯의 이름. 별도로 설정하지 않은 경우 슬롯 이름은 `switch's friendly_name + 'slot {slot_index}'`. 입니다.  예: 'MP1 slot 1'"
   required: false
   type: map
   keys:
@@ -362,7 +364,7 @@ slots:
       type: string
 {% endconfiguration %}
 
-Windows에 설치하는 방법에 대한 정보는 [here](/integrations/broadlink#sensor#microsoft-windows-installation)를 참조하십시오.
+Windows에 설치하는 방법에 대한 정보는 [여기](/integrations/broadlink#sensor#microsoft-windows-installation)를 참조하십시오.
 
 ### IR/RF 패킷을 습득하는 방법
 
@@ -428,7 +430,7 @@ switch:
     friendly_name: 'Humidifier'
 ```
 
-`mp1`의 설정예:
+`mp1`의 설정 예:
 
 ```yaml
 switch:
@@ -446,9 +448,9 @@ switch:
       slot_4: 'Speaker slot'
 ```
 
-### Service `broadlink.send`
+### `broadlink.send` 서비스
 
-`broadlink.send` 를 사용하면 각 명령에 스위치 엔터티를 할당 할 필요없이 IR 패킷을 직접 보낼 수 있습니다 .
+`broadlink.send` 를 사용하면 각 명령에 스위치 엔터티를 할당할 필요없이 IR 패킷을 직접 보낼 수 있습니다 .
 
 | Service data attribute | Optional | Description                                             |
 | ---------------------- | -------- | ------------------------------------------------------- |
@@ -471,21 +473,21 @@ script:
 
 ### E-Control remotes 사용시
 
-E-Control 앱에서 리모컨을 이미 익힌 경우, 이 방법을 사용하여 홈 어시스턴트로 원격복사 할 수 있습니다.
+E-Control 앱에서 리모컨을 이미 익힌 경우, 이 방법을 사용하여 홈어시스턴트로 원격복사 할 수 있습니다.
 
-먼저 E-Control의 홈 어시스턴트에 추가하려는 모든 리모컨을 얻거나 배우십시오.
+먼저 E-Control의 홈어시스턴트에 추가하려는 모든 리모컨을 얻거나 배우십시오.
 
 1. 다운로드
 
-    [여기](https://github.com/NightRang3r/Broadlink-e-control-db-dump)서 스크립트를 다운로드 받으세요.
+    [여기](https://github.com/NightRang3r/Broadlink-e-control-db-dump)서 스크립트를 다운로드 받으십시오.
 
 2. 앱에서 데이터를 가져오기
 
-    모바일 장치에서 E-Control 앱을 엽니 다. 왼쪽 메뉴에서 "공유"를 선택한 다음 "WLAN의 다른 전화기와 공유"를 선택하십시오. 스크립트에 필요한 파일을 생성합니다.
+    모바일 장치에서 E-Control 앱을 엽니다. 왼쪽 메뉴에서 "공유"를 선택한 다음 "WLAN의 다른 전화기와 공유"를 선택하십시오. 스크립트에 필요한 파일을 생성합니다.
 
-3. Android 기기에서 데이터 가져 오기
+3. Android 기기에서 데이터 가져오기
 
-    Android 기기를 컴퓨터에 연결하고 SD 카드 / 외부 저장 폴더“/ broadlink / newremote / SharedData /”를 찾습니다. 다음 파일을 가져 와서이 스크립트와 같은 폴더에 넣어야합니다.:
+    Android 기기를 컴퓨터에 연결하고 SD card/External Storage folder의 “/broadlink/newremote/SharedData/”를 찾습니다. 다음 파일을 가져와서 이 스크립트와 같은 폴더에 넣어야합니다.:
 
     jsonSubIr
     jsonButton
@@ -493,11 +495,11 @@ E-Control 앱에서 리모컨을 이미 익힌 경우, 이 방법을 사용하�
 
 4. 설치 요구 사항
 
-    `pip install simplejson` 실행. 스크립트를 실행하는 데 사용할 동일한 Python 버전으로 simplejson을 설치해야합니다. 다시 설치를 시도하고 “요구 사항이 이미 충족되었습니다” 라는 메시지가 표시되면 현재 버전이 설치되어 있는지 확인할 수 있습니다.
+    `pip install simplejson` 실행. 스크립트를 실행하는 데 사용할 동일한 Python 버전으로 simplejson을 설치해야합니다. 다시 설치를 시도하고 “Requirement already satisfied” 라는 메시지가 표시되면 현재 버전이 설치되어 있는지 확인할 수 있습니다.
 
 5. 장치에서 데이터를 가져 오기
 
-   다운로드 한 폴더로 이동하여 `python getBroadlinkSharedData.py`를 실행하십시오. 화면의 단계를 따르십시오. 참고 :이 스크립트는 Python 2.7에서만 테스트되었습니다.
+   다운로드한 폴더로 이동하여 `python getBroadlinkSharedData.py`를 실행하십시오. 화면의 단계를 따르십시오. 참고: 이 스크립트는 Python 2.7에서만 테스트되었습니다.
 
 6. python-broadlink 라이브러리를 설치:
 
@@ -509,31 +511,31 @@ E-Control 앱에서 리모컨을 이미 익힌 경우, 이 방법을 사용하�
 
 7. 코드 테스트 하기 
 
-    테스트 장치에서 얻은 코드를 테스트하려면 이미 다운로드 한 `sendcode` 스크립트를 사용하십시오.
+    테스트 장치에서 얻은 코드를 테스트하려면 이미 다운로드한 `sendcode` 스크립트를 사용하십시오.
     RM Pro IP 주소 및 MAC 주소와 HEX 형식의 코드를 사용하여 스크립트를 편집해야합니다.
-    스크립트를 실행할 때 메시지를받을 때 코드가 작동한다는 것을 알게됩니다.
+    스크립트를 실행할 때 메시지를 받을 때 코드가 작동한다는 것을 알게됩니다.
     코드가 전송되었습니다… 모든 코드가 작동하는 것은 아닙니다.
 
 8. 16 진수 코드를 base64로 변환
 
-    [이것](https://tomeko.net/online_tools/hex_to_base64.php?lang=en1)의 도구를 사용 하여 16 진 코드를 base64로 변환하여 Home Assistant와 함께 사용하십시오.
+    [이것](https://tomeko.net/online_tools/hex_to_base64.php?lang=en1)의 도구를 사용하여 16 진 코드를 base64로 변환하여 Home Assistant와 함께 사용하십시오.
 
 ### IOS와 WINDOWS를 사용하여 코드 얻기
 
-1. E-Control 앱을 사용하여 모든 적합한 리모콘에서 코드를 학습하십시오.  리모컨에 따라 버튼 및 / 또는 리모컨에 유용한 이름을 추가하십시오. 결국 이 프로세스를 한 번만 실행하면 Home Assistant로 빠르게 가져갈 수 있습니다. 햄버거 아이콘으로 이동하여 앱에서 파일을 덤프하고 `share and select`를 선택한 후 `Share to other phones on WLAN`을 선택하십시오.
+1. E-Control 앱을 사용하여 모든 적합한 리모콘에서 코드를 학습하십시오.  리모컨에 따라 버튼 및/또는 리모컨에 유용한 이름을 추가하십시오. 결국 이 프로세스를 한 번만 실행하면 Home Assistant로 빠르게 가져갈 수 있습니다. 햄버거 아이콘으로 이동하여 앱에서 파일을 덤프하고 `share and select`를 선택한 후 `Share to other phones on WLAN`을 선택하십시오.
 
 2. 설치 요구 사항
 
    - Windows PC에 Python 2.7을 다운로드하여 설치하십시오.
-   - `pip install simplejson` 실행. 스크립트를 실행하는 데 사용할 동일한 Python 버전으로 simplejson을 설치해야합니다. 다시 설치를 시도하고“요구 사항이 이미 충족되었습니다”라는 메시지가 표시되면 현재 버전이 설치되어 있는지 확인할 수 있습니다.
-   - [iBackup Viewer](https://www.imactools.com/iphonebackupviewer/)를 다운로드하여 설치하십시오 ..
-   - [이것](https://github.com/NightRang3r/Broadlink-e-control-db-dump)을 github에서 다운로드하십시오. Windows의 \ Python27 경로에 배치하십시오. 다운로드의 getBroadlinkSharedData.py가이 디렉토리에 있는지 확인하십시오.
+   - `pip install simplejson` 실행. 스크립트를 실행하는데 사용할 동일한 Python 버전으로 simplejson을 설치해야합니다. 다시 설치를 시도하고 “Requirement already satisfied” 라는 메시지가 표시되면 현재 버전이 설치되어 있는지 확인할 수 있습니다.
+   - [iBackup Viewer](https://www.imactools.com/iphonebackupviewer/)를 다운로드하여 설치하십시오.
+   - [이것](https://github.com/NightRang3r/Broadlink-e-control-db-dump)을 github에서 다운로드하십시오. Windows의 \Python27 경로에 배치하십시오. 다운로드의 getBroadlinkSharedData.py가 이 디렉토리에 있는지 확인하십시오.
 
 3. iPhone을 Windows PC에 연결하고 iTunes를 열고 암호화되지 않은 장치 백업을 만듭니다.
 
-4. iBackup 뷰어를 열고 작성한 iOS 백업을 선택하십시오. 앱 아이콘으로 이동 한 다음 e-control.app를 찾을 때까지 스크롤하여 선택하십시오.  jsonButton, jsonIrCode 및 jsonSublr 파일을 선택하고 추출하십시오. 그것들은 Documents/SharedData 섹션에 있습니다. 이것을 getBroadlinkSharedData.py와 같은 위치에 두십시오.
+4. iBackup 뷰어를 열고 작성한 iOS 백업을 선택하십시오. 앱 아이콘으로 이동한 다음 e-control.app를 찾을 때까지 스크롤하여 선택하십시오.  jsonButton, jsonIrCode 및 jsonSublr 파일을 선택하고 추출하십시오. 그것들은 Documents/SharedData 섹션에 있습니다. 이것을 getBroadlinkSharedData.py와 같은 위치에 두십시오.
 
-5. 이제 명령 프롬프트를 열고 위에서 언급한 파일이있는 디렉토리 (예 : C:\Python27)로 이동하십시오. 이제 python getBroadlinkSharedData.py 명령을 실행하면 다음과 같은 내용이 표시됩니다.:
+5. 이제 명령 프롬프트를 열고 위에서 언급한 파일이있는 디렉토리 (예: C:\Python27)로 이동하십시오. 이제 python getBroadlinkSharedData.py 명령을 실행하면 다음과 같은 내용이 표시됩니다.:
 
     ```bash
     C:\Python27>python getBroadlinkSharedData.py
@@ -556,7 +558,7 @@ E-Control 앱에서 리모컨을 이미 익힌 경우, 이 방법을 사용하�
     ID: 17 | Name: New RF Remote
     ```
 
-   추출하려는 원격 ID를 선택하십시오.:
+   추출하려는 원격ID를 선택하십시오.:
 
     ```bash
     Select accessory ID: 5
@@ -564,14 +566,14 @@ E-Control 앱에서 리모컨을 이미 익힌 경우, 이 방법을 사용하�
     [+] Dumping codes to TV.txt
     ```
 
-6. 이제 같은 디렉토리에서 선택한 `.txt`의 리모콘의 이름을 가진 파일이 있어야합니다. 이를 열어 보면 Home Assistant에 필요한 Base64 코드가 있습니다. 이러한 코드가 올바르게 작동하도록하려면 config.yaml 파일의 코드 끝에 `==`를 추가해야 합니다. (또는 스위치가있는 위치에).
+6. 이제 같은 디렉토리에서 선택한 `.txt`의 리모콘의 이름을 가진 파일이 있어야합니다. 이를 열어 보면 Home Assistant에 필요한 Base64 코드가 있습니다. 이러한 코드가 올바르게 작동하도록하려면 config.yaml 파일의 코드 끝에 `==`를 추가해야 합니다. (또는 스위치가 있는 위치에).
 
 ### BROADLINK MANAGER로 코드를 얻기 위해 WINDOWS 사용
 
 1. [여기](https://sourceforge.net/projects/broadlink-manager/) SourceForge 링크에서 Broadlink Manager를 설치.
-2. 응용 프로그램을 열고 “스캔” 을 눌러 broadlink 장치를 활성화하십시오.
+2. 응용 프로그램을 열고 “scan” 을 눌러 broadlink 장치를 활성화하십시오.
 3. “Learn New Command”를 누르고 화면의 지시 사항을 따르십시오.
-4. "OnRawData Base64"는 홈 어시스턴트와 함께 사용되는 값입니다.
+4. "OnRawData Base64"는 홈어시스턴트와 함께 사용되는 값입니다.
 
 
 ### NODE-RED를 사용하여 코드 얻기

@@ -8,11 +8,13 @@ ha_release: 0.51
 ha_iot_class: Local Polling
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/BcHIngIOlLo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/BcHIngIOlLo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
-`bluesound` 플랫폼을 사용하면 Home Assistant의 [Bluesound](https://www.bluesound.com/) HiFi 무선 스피커 및 오디오 통합을 제어 할 수 있습니다.
+`bluesound` 플랫폼을 사용하면 Home Assistant의 [Bluesound](https://www.bluesound.com/) HiFi 무선 스피커 및 오디오 통합구성요소를 제어할 수 있습니다.
 
-새 장치를 자동으로 검색하려면 `configuration.yaml` 파일에서 `discovery:` 가 있는지 확인하십시오. 설치에 Bluesound 장치를 수동으로 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
+새 장치를 자동으로 검색하려면 `configuration.yaml` 파일에서 `discovery:` 가 있는지 확인하십시오. Bluesound 장치를 수동으로 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml
@@ -33,7 +35,7 @@ hosts:
       required: true
       type: string
     name:
-      description: 프런트 엔드에 사용 된 장치의 이름.
+      description: 프런트 엔드에 사용된 장치의 이름.
       required: false
       type: string
     port:

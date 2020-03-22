@@ -12,13 +12,13 @@ ha_config_flow: true
 
 <iframe width="690" height="437" src="https://www.youtube.com/embed/H2qIRgzLwDU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-`sonos` 통합구성요소를 통해 Home Assistant에서 [Sonos](https://www.sonos.com) 무선 스피커를 제어 할 수 있습니다. IKEA Symfonisk 스피커와도 작동합니다.
+`sonos` 통합구성요소를 통해 Home Assistant에서 [Sonos](https://www.sonos.com) 무선 스피커를 제어할 수 있습니다. IKEA Symfonisk 스피커와도 작동합니다.
 
 설정 패널 내부의 통합구성요소 페이지로 이동하여 Sonos 통합구성요소를 설정할 수 있습니다.
 
 ## 서비스
 
-Sonos 통합은 다양한 맞춤형 서비스를 제공합니다.
+Sonos 통합구성요소는 다양한 맞춤형 서비스를 제공합니다.
 
 ### `sonos.snapshot` 서비스
 
@@ -73,7 +73,7 @@ Sonos 통합은 다양한 맞춤형 서비스를 제공합니다.
 
 ### `sonos.set_sleep_timer` 서비스
 
-일정 시간이 지나면 볼륨을 0으로 줄임으로써 스피커를 끄는 타이머를 설정합니다. 팁 : sleep_time 값을 0으로 설정하면 스피커가 즉시 볼륨을 낮추기 시작합니다.
+일정 시간이 지나면 볼륨을 0으로 줄임으로써 스피커를 끄는 타이머를 설정합니다. 팁: sleep_time 값을 0으로 설정하면 스피커가 즉시 볼륨을 낮추기 시작합니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
@@ -117,7 +117,7 @@ Night Sound 및 Speech Enhancement 모드는 Sonos Playbar 및 Sonos Beam과 같
 
 Sonos 대기열 재생을 시작합니다.
 
-대기열 재생을 강제로 시작하면 다른 스트림 (예 : 라디오)에서 대기열 재생으로 전환 할 수 있습니다.
+대기열 재생을 강제로 시작하면 다른 스트림 (예: 라디오)에서 대기열 재생으로 전환할 수 있습니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
@@ -126,9 +126,9 @@ Sonos 대기열 재생을 시작합니다.
 
 ## 고급 사용
 
-고급 사용을 위해 사용 가능한 일부 수동 설정 옵션이 있습니다. 이들은 일반적으로 Home Assistant와 Sonos가 동일한 서브넷에 있지 않은 복잡한 네트워크 설정이있는 경우에만 필요합니다.
+고급 사용을 위해 사용 가능한 일부 수동 설정 옵션이 있습니다. 이들은 일반적으로 Home Assistant와 Sonos가 동일한 서브넷에 있지 않은 복잡한 네트워크 설정이 있는 경우에만 필요합니다.
 
-Sonos IP 주소를 지정하여 자동 검색을 비활성화 할 수 있습니다. :
+Sonos IP 주소를 지정하여 자동 검색을 비활성화할 수 있습니다. :
 
 
 ```yaml
@@ -141,7 +141,7 @@ sonos:
       - 192.0.2.27
 ```
 
-Home Assistant 서버에 여러 IP 주소가 있는 경우 Sonos 자동 검색에 사용해야 하는 IP 주소를 제공 할 수 있습니다. 기본적으로 모든 주소를 시도해야 하므로 이는 거의 필요하지 않습니다.
+Home Assistant 서버에 여러 IP 주소가 있는 경우 Sonos 자동 검색에 사용해야 하는 IP 주소를 제공할 수 있습니다. 기본적으로 모든 주소를 시도해야 하므로 이는 거의 필요하지 않습니다.
 
 ```yaml
 # Example configuration.yaml entry using Sonos discovery on a specific interface
@@ -150,7 +150,7 @@ sonos:
     interface_addr: 192.0.2.1
 ```
 
-Sonos 스피커는 (TCP 포트 1400을 사용하여) 변경 이벤트를 전달하기 위해 홈어시스턴트에 다시 연결을 시도합니다. Docker 옵션 `--net=host`를 사용하는 _not_ 와 같은 NAT 시나리오에서 도움이 될 수 있습니다.
+Sonos 스피커는 (TCP 포트 1400을 사용하여) 변경 이벤트를 전달하기 위해 홈어시스턴트에 다시 연결을 시도합니다. Docker 옵션 `--net=host` 를 사용하지 _않는_ 경우의 NAT 시나리오에서 도움이 될 수 있습니다.
 
 ```yaml
 # Example configuration.yaml entry modifying the advertised host address

@@ -12,6 +12,10 @@ ha_codeowners:
   - '@fabaff'
 ---
 
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/3e6GMI4Szwk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 [Arduino](https://www.arduino.cc/) 디바이스 제품군은 주로 ATmega328 칩을 기반으로하는 마이크로 컨트롤러 보드입니다. 디지털 입력/출력 핀 (PWM출력으로 사용 가능), 아날로그 입력 및 USB 연결이 제공됩니다.
 
 장비는 보드의 [유형](https://www.arduino.cc/en/Main/Products)에 따라 다릅니다. 가장 일반적인 것은 Arduino Uno와 Arduino Leonardo이며 14 개의 디지털 입력/출력 핀과 6개의 아날로그 입력 핀이 있습니다.
@@ -20,7 +24,7 @@ ha_codeowners:
 
 `arduino` 통합구성요소는 USB를 통해  어시스턴트 호스트에 직접 연결된 보드를 사용할 수 있도록 설계되었습니다.
 
-현재 홈 어시스턴트에서 다음 장치 유형이 지원됩니다. : 
+현재 홈어시스턴트에서 다음 장치 유형이 지원됩니다. : 
 
 - [Sensor](#sensor)
 - [Switch](#switch)
@@ -29,7 +33,7 @@ ha_codeowners:
 
 보드에 [Firmata firmware](https://github.com/firmata/)가 있어야합니다. `StandardFirmata` 스케치를 보드에 업로드하십시오. 자세한 내용은 [Arduino documentation](https://www.arduino.cc/en/Main/Howto)를 참조하십시오.
 
-Arduino 보드를 Home Assistant와 통합하려면 `configuration.yaml` 파일에 다음 섹션을 추가하십시오. 
+Arduino 보드를 Home Assistant와 연동하려면 `configuration.yaml` 파일에 다음 섹션을 추가하십시오. 
 
 ```yaml
 # Example configuration.yaml entry
@@ -119,7 +123,7 @@ switch:
 
 {% configuration %}
 pins:
-  description: 사용할 핀 목록..
+  description: 사용할 핀 목록.
   required: true
   type: map
   keys:

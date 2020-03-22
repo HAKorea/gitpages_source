@@ -10,8 +10,9 @@ ha_codeowners:
   - '@home-assistant/core'
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/sVqyDtEjudk?start=903" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/sVqyDtEjudk?start=903" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 자세한 내용은 [docs 섹션](/docs/automation/)을 참조하십시오
 자동화 통합 사용 방법에 대한 설명서.

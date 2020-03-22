@@ -8,20 +8,24 @@ ha_iot_class: Local Push
 ha_release: 0.37
 ---
 
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/8bClV1MUqcQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 [Anthem]의 현재 및 최신 A/V 수신기 및 프로세서는 모두 IP 기반 네트워크 제어를 지원합니다. 이 홈어시스턴트 플랫폼은 네트워크에서 이러한 수신기에 대한 적절한 "로컬 푸시"지원을 추가합니다.
 
 ## 지원 모델
 
-* [MRX 520](https://www.anthemav.com/products-current/series=mrx-series-gen3/model=mrx-520/page=overview), [MRX 720](https://www.anthemav.com/products-current/collection=performance/model=mrx-720/page=overview), [MRX 1120](https://www.anthemav.com/products-current/collection=performance/model=mrx-1120/page=overview), and [AVM 60](https://www.anthemav.com/products-current/model=avm-60/page=overview)
+* [MRX 520](https://www.anthemav.com/products-current/series=mrx-series-gen3/model=mrx-520/page=overview), [MRX 720](https://www.anthemav.com/products-current/collection=performance/model=mrx-720/page=overview), [MRX 1120](https://www.anthemav.com/products-current/collection=performance/model=mrx-1120/page=overview), [AVM 60](https://www.anthemav.com/products-current/model=avm-60/page=overview)
 * [MRX 310](https://www.anthemav.com/products-archived/type=av-receiver/model=mrx-310/page=overview), [MRX 510](https://www.anthemav.com/products-archived/series=mrx-series/model=mrx-510/page=overview), [MRX 710](https://www.anthemav.com/products-archived/type=av-receiver/model=mrx-710/page=overview)
 
-Support is provided through the Python [anthemav] module. Older, RS-232 serial-based units like the [D2v](https://www.anthemav.com/products-current/type=av-processor/model=d2v-3d/page=overview) use a different protocol entirely and are not currently supported.
+해당 지원은 Python [anthemav] 모듈을 통해 제공됩니다. [D2v](https://www.anthemav.com/products-current/type=av-processor/model=d2v-3d/page=overview)와 같은 이전의 RS-232 직렬 기반 장치는 완전히 다른 프로토콜을 사용하며 현재 지원되지 않습니다.
 
 [Anthem]:	https://www.anthemav.com/
 [anthemav]: https://github.com/nugget/python-anthemav
 
 
-Anthem A / V 수신기를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
+Anthem A/V 수신기를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

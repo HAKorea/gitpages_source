@@ -9,6 +9,10 @@ ha_codeowners:
   - '@mtdcr'
 ---
 
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/L9G1YFwyTjQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 `aten_pe` 통합구성요소를 통해 Home Assistant에서 [ATEN Rack PDUs](https://www.aten.com/eu/en/products/energy-intelligence-pduupsracks/rack-pdu/)를 제어 할 수 있습니다.
 
 이를 사용하려면 PDU에서 SNMP를 활성화해야합니다. 자격 증명(credentials)을 도청하지 못하도록 SNMPv3을 사용하는 것이 좋습니다.

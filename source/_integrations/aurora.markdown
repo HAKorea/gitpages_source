@@ -7,7 +7,9 @@ ha_release: 0.39
 logo: noaa.png
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/Erbw6G2aCxQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/Erbw6G2aCxQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 The `aurora` platform uses the [NOAA aurora forecast](https://www.swpc.noaa.gov/products/aurora-30-minute-forecast) service to let you know if an aurora might be visible at your home location in the next 30 minutes, based off of current solar flare activity.
 

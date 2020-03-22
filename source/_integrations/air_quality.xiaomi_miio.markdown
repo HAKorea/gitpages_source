@@ -8,7 +8,11 @@ ha_iot_class: Local Polling
 ha_release: 0.102
 ---
 
-`xiaomi_miio` 센서 플랫폼은 샤오미 미 공기질 모니터를 관찰하고 공기 품질 값을 보고합니다. 
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/Ef_b2XJfYT4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+`xiaomi_miio` 센서 플랫폼은 샤오미 미 공기질 모니터를 관찰하고 공기 품질값을 보고합니다. 
 
 현재 지원되는 기능은 다음과 같습니다.
 
@@ -17,7 +21,7 @@ ha_release: 0.102
   - carbon_dioxide_equivalent : CO2 수치 
   - total_volatile_organic_compounds : TVOC 수치 
 
-API 토큰을 얻으려면 [Retrieving the Access Token](/integrations/vacuum.xiaomi_miio/#retrieving-the-access-token)에 대한 지시 사항을 따르십시오 .
+API 토큰을 얻으려면 [Retrieving the Access Token](/integrations/vacuum.xiaomi_miio/#retrieving-the-access-token)에 대한 지시 사항을 따르십시오.
 
 ## 설정 
 
@@ -44,5 +48,5 @@ name:
   description: miio 장치의 이름
   required: false
   type: string
-  default: Xiaomi Miio 대기 질 모니터
+  default: Xiaomi Miio 대기질 모니터
 {% endconfiguration %}

@@ -7,6 +7,10 @@ ha_category:
 ha_release: "0.10"
 ---
 
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/5hDEwnqQqT0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 ## I want to build custom commands to use with Echo
 
 The built-in Alexa integration allows you to integrate Home Assistant into Alexa/Amazon Echo. This integration will allow you to query information and call services within Home Assistant by using your voice. Home Assistant offers no built-in sentences but offers a framework for you to define your own.

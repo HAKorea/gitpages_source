@@ -10,6 +10,10 @@ ha_codeowners:
   - '@fabaff'
 ---
 
+<div class='videoWrapper'>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/339AfkUQ67o" frameborder="0" allowfullscreen></iframe>
+</div>
+
 `alpha_vantage` 센서 플랫폼은 [Alpha Vantage](https://www.alphavantage.co)를 사용하여 주식 시장을 모니터링합니다. 이 플랫폼은 환율에 대한 세부 정보도 제공합니다.
 
 

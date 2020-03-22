@@ -7,6 +7,10 @@ ha_category:
 ha_release: "0.54"
 ---
 
+<div class='videoWrapper'>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Y4i989zwQlc" frameborder="0" allowfullscreen></iframe>
+</div>
+
 ## Amazon Alexa Smart Home
 
 While the Skills API described above allows for arbitrary intents, all

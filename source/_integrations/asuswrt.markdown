@@ -12,7 +12,7 @@ ha_codeowners:
   - '@kennedyshead'
 ---
 
-`asuswrt` 통합구성요소는 [ASUSWRT](https://event.asus.com/2013/nw/ASUSWRT/) 기반 라우터에 연결하기위한 주요 통합입니다.
+`asuswrt` 통합구성요소는 [ASUSWRT](https://event.asus.com/2013/nw/ASUSWRT/) 기반 라우터에 연결하기위한 주요 통합구성요소입니다.
 
 현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 

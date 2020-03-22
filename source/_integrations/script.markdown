@@ -10,6 +10,10 @@ ha_codeowners:
   - '@home-assistant/core'
 ---
 
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/sVqyDtEjudk?start=903" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 `script` 통합구성요소는 사용자가 동작(action)의 시퀀스(sequence)가 홈어시스턴트에 의해 실행되도록 지정할 수 있습니다. 스크립트를 켤 때 실행됩니다. 스크립트 통합구성요소는 각 스크립트에 대한 엔티티를 작성하고 서비스를 통해 제어 할 수 있도록합니다.
 
 ## 설정 

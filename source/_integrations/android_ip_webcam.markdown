@@ -12,7 +12,9 @@ ha_release: '0.40'
 ha_iot_class: Local Polling
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/eo55kn64C6M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/eo55kn64C6M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `android_ip_webcam` 통합구성요소는 모든 Android 폰 또는 태블릿을 여러 보기 옵션이있는 네트워크 카메라로 쓸 수 있습니다.
 

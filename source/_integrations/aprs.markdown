@@ -9,7 +9,9 @@ ha_codeowners:
   - '@PhilRW'
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/8-9_8HVkvgc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/8-9_8HVkvgc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `aprs` [(Automatic Packet Reporting System)](https://en.wikipedia.org/wiki/Automatic_Packet_Reporting_System) 장치 추적기 통합구성요소는 아마추어 무선 장치 추적을 위한 네트워크인 [APRS-IS](http://aprs-is.net/)에 연결됩니다 
 

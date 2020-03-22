@@ -11,6 +11,10 @@ ha_codeowners:
   - '@ochlocracy'
 ---
 
+<div class='videoWrapper'>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PhWpnc-Pvko" frameborder="0" allowfullscreen></iframe>
+</div>
+
 ## Automatic setup via Home Assistant Cloud
 
 With [Home Assistant Cloud](/cloud/), you can connect your Home Assistant instance in a few simple clicks to Amazon Alexa. With Home Assistant Cloud, you don't have to deal with dynamic DNS, SSL certificates, or opening ports on your router. Just log in via the user interface and a secure connection with the cloud will be established. Home Assistant Cloud requires a paid subscription after a 30-day free trial.

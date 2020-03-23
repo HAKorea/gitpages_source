@@ -8,9 +8,9 @@ ha_release: 0.76
 ha_iot_class: Local Push
 ---
 
-`dlna_dmr` 플랫폼을 사용하면 DLNA 지원 TV 또는 라디오와 같은 [DLNA Digital Media Renderer](https://www.dlna.org/)를 제어 할 수 있습니다
+`dlna_dmr` 플랫폼을 사용하면 DLNA 지원 TV 또는 라디오와 같은 [DLNA Digital Media Renderer](https://www.dlna.org/)를 제어할 수 있습니다
 
-삼성 TV와 같은 일부 장치는 재생에 사용되는 소스에 대해 다소 까다롭습니다. TTS 서비스는 이러한 장치와 함께 작동하지 않을 수 있습니다. play_media 서비스가 작동하지 않으면 DLNA/DMS (예: [MiniDLNA](https://sourceforge.net/projects/minidlna/))에서 재생 해보십시오.
+삼성 TV와 같은 일부 장치는 재생에 사용되는 소스에 대해 다소 까다롭습니다. TTS 서비스는 이러한 장치와 함께 작동하지 않을 수 있습니다. play_media 서비스가 작동하지 않으면 DLNA/DMS (예: [MiniDLNA](https://sourceforge.net/projects/minidlna/))에서 재생해보십시오.
 
 ## 설정
 
@@ -25,7 +25,7 @@ media_player:
 
 {% configuration %}
 url:
-  description: "장치 설명. `.xml` 파일의 URL입니다 (예 : `http://192.168.0.10:9197/description.xml`)"
+  description: "장치 설명. `.xml` 파일의 URL (예 : `http://192.168.0.10:9197/description.xml`)"
   required: true
   type: string
 listen_ip:
@@ -38,7 +38,7 @@ listen_port:
   default: 8301
   type: integer
 name:
-  description: "기기에 부여하려는 이름입니다. (예: TV living room.)"
+  description: "기기에 부여하려는 이름. (예: TV living room.)"
   required: false
   type: string
 callback_url_override:

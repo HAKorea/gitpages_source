@@ -9,6 +9,10 @@ ha_codeowners:
   - '@ludeeus'
 ---
 
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/T47T_mG7YbU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 `cloudflare` 통합구성요소를 사용하면 Cloudflare 레코드를 최신 상태로 유지할 수 있습니다.
 
 연동은 1 시간마다 실행되지만 서비스 아래의 `cloudflare.update_records` 서비스를 사용하여 수동으로 시작할 수도 있습니다.

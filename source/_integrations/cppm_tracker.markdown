@@ -8,6 +8,10 @@ ha_release: '0.90'
 ha_iot_class: Local Polling
 ---
 
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/8FFy_EtaMLo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 이 플랫폼을 사용하면 [Aruba Clearpass](https://www.arubanetworks.com/products/security/network-access-control/)에 연결된 장치를 보고 현재 상태를 감지 할 수 있습니다.
 
 지원 플랫폼 (tested):
@@ -20,7 +24,6 @@ ha_iot_class: Local Polling
 
 </div>
 
-To use this device tracker in your installation, add the following to your `configuration.yaml` file:
 본 장치 추적기를 설치시 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml

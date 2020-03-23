@@ -10,9 +10,11 @@ ha_codeowners:
   - '@eavanvalkenburg'
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/vgSkIsUgc8M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/vgSkIsUgc8M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
-`brunt` 플랫폼은 [Brunt](https://www.brunt.co)에 의해 블라인드 엔진을 제어할 수 있습니다 . 이 센서를 사용하려면 Brunt 앱 계정이 필요합니다. 계정에 등록 된 모든 Brunt Blind 장치는 Brunt 앱을 통해 이름이 지정된 홈어시스턴트에 자동으로 추가됩니다.
+`brunt` 플랫폼은 [Brunt](https://www.brunt.co)에 의해 블라인드 엔진을 제어할 수 있습니다. 이 센서를 사용하려면 Brunt 앱 계정이 필요합니다. 계정에 등록된 모든 Brunt Blind 장치는 Brunt 앱을 통해 이름이 지정된 홈어시스턴트에 자동으로 추가됩니다.
 
 ## 설정
 

@@ -43,7 +43,7 @@ Philips Hue의 경우 사용자의 일부 설정이 필요합니다.
 
 <div class='note'>
 
-Zeroconf 검색 가능 통합구성요소 [Axis](/integrations/axis/)/[ESPHome](/integrations/esphome/)/[HomeKit](/integrations/homekit_controller/)/[Tradfri](/integrations/tradfri/)는 [zeroconf](/integrations/zeroconf) 통합구성요소를 사용 하여 검색을 하도록 마이그레이션되었습니다.
+Zeroconf 검색 가능 통합구성요소 [Axis](/integrations/axis/)/[ESPHome](/integrations/esphome/)/[HomeKit](/integrations/homekit_controller/)/[Tradfri](/integrations/tradfri/)는 [zeroconf](/integrations/zeroconf) 통합구성요소를 사용하여 검색을 하도록 마이그레이션되었습니다.
 
 </div>
 
@@ -61,11 +61,11 @@ discovery:
 
 {% configuration discovery %}
 ignore:
-  description: 사용하지 않는 기기. `discovery` 로 자동 설정되지 못하게하는 기능입니다.
+  description: 사용하지 않는 기기. `discovery` 로 자동 설정되지 못하게하는 기능.
   required: false
   type: list
 enable:
-  description: 추가할 기기. `discovery`로 기본검색이 되게하고 해당 리스트만 플랫폼에서 나타나지 않도록 설정하는 기능입니다.
+  description: 추가할 기기. `discovery`로 기본검색이 되게하고 해당 리스트만 플랫폼에서 나타나지 않도록 설정하는 기능.
   required: false
   type: list
 {% endconfiguration %}
@@ -106,21 +106,21 @@ enable에 유효한 값은 다음과 같습니다:
 
  * `dlna_dmr`: DLNA DMR 지원 장치
 
-## Troubleshooting
+## 문제 해결
 
 ### UPnP
 
-홈 어시스턴트는 uPnP 검색이 작동하도록 장치와 동일한 네트워크에 있어야합니다.
+홈어시스턴트는 uPnP 검색이 작동하도록 장치와 동일한 네트워크에 있어야합니다.
 Home Assistant가 [Docker container](/docs/installation/docker/)에서 실행되는 경우 `--net=host`를 사용하여 해당 호스트를 네트워크에 배치하십시오.
 
 ### Windows
 
 #### 64-bit Python
-현재 64 비트 버전의 Python 및 Windows에서이 통합을 실행 하는 데 <a href='https://bitbucket.org/al45tair/netifaces/issues/17/dll-fails-to-load-windows-81-64bit'>known issue</a>가 있습니다.
+현재 64 비트 버전의 Python 및 Windows에서 이 통합을 실행하는 데 <a href='https://bitbucket.org/al45tair/netifaces/issues/17/dll-fails-to-load-windows-81-64bit'>known issue</a>가 있습니다.
 
 ### could not install dependency netdisco
 
-`Not initializing discovery because could not install dependency netdisco==0.6.1`를 로그에서 확인했다면, `python3-dev` 혹은 `python3-devel` 패키지를 시스템에 수동을 설치해야합니다. 예) `sudo apt-get install python3-dev` 혹은 `sudo dnf -y install python3-devel`. 이후 Home Assistant를 다시 시작하면 discovery가 작동합니다. 여전히 오류가 발생하면 gcc시스템에서 사용 가능한 컴파일러 (`gcc`) 가 있는지 확인하십시오.
+`Not initializing discovery because could not install dependency netdisco==0.6.1`를 로그에서 확인했다면, `python3-dev` 혹은 `python3-devel` 패키지를 시스템에 수동을 설치해야합니다. 예: `sudo apt-get install python3-dev` 혹은 `sudo dnf -y install python3-devel`. 이후 Home Assistant를 다시 시작하면 discovery가 작동합니다. 여전히 오류가 발생하면 gcc시스템에서 사용 가능한 컴파일러 (`gcc`) 가 있는지 확인하십시오.
 
 ### DSM and Synology
 

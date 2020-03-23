@@ -9,9 +9,9 @@ ha_release: "0.30"
 ha_iot_class: Local Push
 ---
 
-Integrates MySensors covers into Home Assistant. See the [main component] for configuration instructions.
+MySensors 커버(Cover)를 Home Assistant에 연동합니다. 설정 지침은 [main component]를 참조하십시오.
 
-The following actuator types are supported:
+다음과 같은 액추에이터 유형이 지원됩니다.
 
 ##### MySensors version 1.4
 
@@ -25,11 +25,11 @@ S_TYPE  | V_TYPE
 --------|-------------------------------------------------
 S_COVER | V_UP, V_DOWN, V_STOP, [V_PERCENTAGE or V_STATUS]
 
-All V_TYPES above are required. Use V_PERCENTAGE (or V_DIMMER) if you know the exact position of the cover in percent, use V_STATUS (or V_LIGHT) if you don't.
+위의 모든 V_TYPES가 필요합니다. 커버의 정확한 위치를 백분율로 알고 있으면 V_PERCENTAGE (또는 V_DIMMER)를 사용하고, 그렇지 않으면 V_STATUS (또는 V_LIGHT)를 사용하십시오.
 
-For more information, visit the [serial api] of MySensors.
+자세한 내용은 MySensors의 [serial api]를 방문하십시오.
 
-### Example sketch
+### sketch 사례
 
 ```cpp
 /*

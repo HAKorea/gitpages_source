@@ -10,8 +10,10 @@ ha_iot_class: Local Push
 ---
 
 Integrates MySensors HVAC into Home Assistant. See the [main component] for configuration instructions.
+MySensors HVAC를 Home Assistant에 연동합니다. 설정 지침은 [main component]를 참조하십시오.
 
 The following actuator types are supported:
+다음과 같은 액추에이터 유형이 지원됩니다.
 
 ##### MySensors version 1.5 and higher
 
@@ -29,16 +31,20 @@ HVAC_MODE_AUTO       | AutoChangeOver
 HVAC_MODE_OFF        | Off
 
 Currently humidity, away_mode, aux_heat, swing_mode is not supported. This will be included in later versions as feasible.
+현재 humidity, away_mode, aux_heat, swing_mode는 지원되지 않습니다. 이것은 가능한 최신 버전에 포함됩니다.
 
-Set the target temperature using V_HVAC_SETPOINT_HEAT in Heat mode, and V_HVAC_SETPOINT_COOL in Cool Mode. In case of any Auto Change Over mode you can use V_HVAC_SETPOINT_HEAT as well as V_HVAC_SETPOINT_COOL to set the both the low bound and the high bound temperature of the device.
+Heat mode에서는 V_HVAC_SETPOINT_HEAT를, Cool Mode에서는 V_HVAC_SETPOINT_COOL을 사용하여 목표 온도를 설정하십시오. Auto Change Over mode의 경우 V_HVAC_SETPOINT_HEAT와 V_HVAC_SETPOINT_COOL을 사용하여 장치의 하한 및 상한 온도를 모두 설정할 수 있습니다.
 
 You can use V_HVAC_SPEED to control the Speed setting of the Fan in the HVAC.
+V_HVAC_SPEED를 사용하여 HVAC에서 팬의 속도설정을 제어할 수 있습니다.
 
 You can use V_TEMP to send the current temperature from the node to Home Assistant.
+V_TEMP를 사용하여 현재 온도를 노드에서 홈어시스턴트로 보낼 수 있습니다.
 
 For more information, visit the [serial api] of MySensors.
+자세한 내용은 MySensors의 [serial api]를 방문하십시오.
 
-### Example sketch for MySensors 2.x
+### sketch 사례 (MySensors 2.x)
 
 ```cpp
 /*
@@ -183,7 +189,7 @@ void sendHeatpumpCommand() {
 }
 ```
 
-### Example sketch for MySensors 1.x
+### sketch 사례(MySensors 1.x)
 
 ```cpp
 /*

@@ -7,7 +7,9 @@ ha_category:
 ha_release: 0.27
 ---
 
-<iframe width="690" height="388" src="https://www.youtube.com/embed/37P9VTqE9Qk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/37P9VTqE9Qk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `rfxtrx` 플랫폼은 433.92 MHz의 주파수 범위에서 통신하는 Siemens/LightwaveRF 및 RFY 롤러 셔터를 지원합니다.
 

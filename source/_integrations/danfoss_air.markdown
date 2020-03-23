@@ -1,5 +1,5 @@
 ---
-title: 전열교환기(Danfoss Air)
+title: 공조시스템(Danfoss Air)
 description: How to integrate Danfoss Air HRV in Home Assistant.
 ha_category:
   - Climate
@@ -10,6 +10,10 @@ ha_release: 0.87
 logo: danfoss_air.png
 ha_iot_class: Local Polling
 ---
+
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/5x8q_Jg1sec" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `danfoss_air` 통합구성요소를 통해 Danfoss Air HRV 장치의 정보에 액세스 할 수 있습니다.
 

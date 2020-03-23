@@ -10,13 +10,16 @@ ha_iot_class: Local Polling
 ha_config_flow: true
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/4KMJDOWa_ao" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/4KMJDOWa_ao" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 
 홈어시스턴트에서 설정 - 통합구성요소로 이동하여 Cast 통합구성요소를 추가하여 사용할 수 있습니다.
 
 ## Home Assistant Cast
 
-홈 어시스턴트에는 Chromecast 기기에 홈 어시스턴트 UI를 표시하는 고유한 전송 애플리케이션이 있습니다.  [Cast entity row](/lovelace/entities/#cast)를 Lovelace UI에 추가하여 사용하거나 `cast.show_lovelace_view` service 를 호출해서 사용할 수 있습니다. 해당 service 는 Cast 장치의 entity 와 Lovelace 화면의 경로를 통해서 view로 화면에 노출 시킬 수 있습니다. [views documentation](/lovelace/views/#path)에서 제시하였듯이 `path`는 각 view 화면을 위한 Lovelace YAML에서 정의되어야 합니다.  
+홈어시스턴트에는 Chromecast 기기에 홈 어시스턴트 UI를 표시하는 고유한 전송 애플리케이션이 있습니다.  [Cast entity row](/lovelace/entities/#cast)를 Lovelace UI에 추가하여 사용하거나 `cast.show_lovelace_view` service 를 호출해서 사용할 수 있습니다. 해당 service 는 Cast 장치의 entity 와 Lovelace 화면의 경로를 통해서 view로 화면에 노출 시킬 수 있습니다. [views documentation](/lovelace/views/#path)에서 제시하였듯이 `path`는 각 view 화면을 위한 Lovelace YAML에서 정의되어야 합니다.  
 
 
 ```json

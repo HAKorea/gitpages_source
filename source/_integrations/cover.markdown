@@ -10,11 +10,15 @@ ha_codeowners:
   - '@home-assistant/core'
 ---
 
-홈어시스턴트는 롤러 셔터, 블라인드 및 차고 문과 같은 커버(Cover) 장치를 제어하기위한 인터페이스를 제공 할 수 있습니다.
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/nrUu21NXrx0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
-## Device Class
+홈어시스턴트는 롤러 셔터, 블라인드 및 차고문과 같은 커버(Cover) 장치를 제어하기위한 인터페이스를 제공할 수 있습니다.
 
-프런트 엔드에 이러한 센서가 표시되는 방식은 [customize section](/docs/configuration/customizing-devices/). 에서 수정할 수 있습니다 . 다음 장치 클래스가 지원됩니다. :
+## 장치 클래스(Device Class)
+
+프런트 엔드에 이러한 센서가 표시되는 방식은 [customize section](/docs/configuration/customizing-devices/)에서 수정할 수 있습니다. 다음 장치 클래스가 지원됩니다. :
 
 - **None**: 일반 장치. 기본값이며 설정할 필요가 없습니다.
 - **awning**: 외부 개폐식 창문, 문 또는 천막과 같은 장치를 제어합니다.
@@ -35,18 +39,18 @@ ha_codeowners:
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
-| `entity_id` | yes | `entity_id`'를 나타내는  문자열 또는 문자열 목록입니다. 이외에 모든 커버를 대상으로 합니다. 
+| `entity_id` | yes | `entity_id`를 나타내는 문자열 또는 문자열 목록입니다. 이외에 모든 커버를 대상으로 합니다. 
 
 ### `cover.set_cover_position` 서비스
 
-하나 또는 여러 개의 Cover 위치를 설정하십시오.
+하나 또는 여러 개의 커버 위치를 설정하십시오.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
-| `entity_id` | yes | `entity_id`'를 나타내는  문자열 또는 문자열 목록입니다. 이외에 모든 커버를 대상으로 합니다. 
+| `entity_id` | yes | `entity_id`를 나타내는 문자열 또는 문자열 목록입니다. 이외에 모든 커버를 대상으로 합니다. 
 | `position` | no | 0에서 100 사이의 정수
 
-#### Automation example 
+#### 자동화 사례 
 
 ```yaml
 automation:
@@ -62,14 +66,14 @@ automation:
 
 ### `cover.set_cover_tilt_position` 서비스
 
-하나 또는 여러 개의 덮개의 기울기 위치를 설정하십시오.
+하나 또는 여러 개의 커버의 기울기 위치를 설정하십시오.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
-| `entity_id` | yes | `entity_id`'를 나타내는  문자열 또는 문자열 목록입니다. 이외에 모든 커버를 대상으로 합니다. 
+| `entity_id` | yes | `entity_id`'를 나타내는 문자열 또는 문자열 목록입니다. 이외에 모든 커버를 대상으로 합니다. 
 | `tilt_position` | no | 0에서 100 사이의 정수
 
-#### 자동화 예시 
+#### 자동화 사례 
 
 ```yaml
 automation:

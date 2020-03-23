@@ -9,6 +9,10 @@ ha_release: 0.61
 ha_iot_class: Cloud Polling
 ---
 
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/HQaegigv6jU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 `coinbase` 통합구성요소를 통해 [coinbase](https://coinbase.com)에서 계정 잔액 및 환율에 액세스 할 수 있습니다.
 
 이 구성 요소를 사용하려면 코인베이스의 [개발자 사이트](https://www.coinbase.com/settings/api)에서 API 키를 얻어야합니다. 통합구성요소가 관련 데이터에 액세스하려면 `wallet:accounts`에 대한 읽기 권한을 부여해야합니다.

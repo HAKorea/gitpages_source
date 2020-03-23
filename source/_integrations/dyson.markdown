@@ -11,11 +11,13 @@ ha_iot_class: Cloud Polling
 ha_release: 0.47
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/8HT_W28OzaY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/8HT_W28OzaY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `dyson` 통합구성요소는 모든 [Dyson](https://www.dyson.com) 관련 플랫폼을 연동하기위한 주요 통합구성요소입니다.
 
-현재 홈 어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - Climate
 - Fan
@@ -54,7 +56,7 @@ language:
   required: true
   type: string
 devices:
-  description: 장치 목록..
+  description: 장치 목록.
   required:  false
   type: map
   keys:
@@ -68,7 +70,7 @@ devices:
       type: string
 {% endconfiguration %}
 
-`devices` 목록은 선택 사항이지만 검색이 작동하지 않을 경우 제공해야합니다. (로그의 경고 및 Home Assistant 웹 인터페이스에서 장치를 사용할 수 없음).
+`devices` 목록은 선택사항이지만 검색이 작동하지 않을 경우 제공해야합니다. (로그의 경고 및 Home Assistant 웹 인터페이스에서 장치를 사용할 수 없음).
 
 <div class='note warning'>
 
@@ -96,7 +98,7 @@ $ nmap -p 1883 192.168.0.0/24 --open
 
 ## vacumm 
 
-`dyson` vacumm 플랫폼을 사용하면 Dyson 360 Eye 로봇 진공을 제어 할 수 있습니다.
+`dyson` vacumm 플랫폼을 사용하면 Dyson 360 Eye 로봇청소기를 제어할 수 있습니다.
 
 ### Component 서비스 
 
@@ -113,7 +115,7 @@ $ nmap -p 1883 192.168.0.0/24 --open
 
 ## Climate 
 
-`dyson` Climate 플랫폼을 사용하면 Dyson Pure Hot+Cool Fan thermal를 제어 할 수 있습니다. 팬(fan) 기능을 제어하려면 이 페이지의 Dyson 팬 부분을 참조하십시오.
+`dyson` Climate 플랫폼을 사용하면 Dyson Pure Hot+Cool Fan thermal를 제어할 수 있습니다. 팬(fan) 기능을 제어하려면 이 페이지의 Dyson 팬 부분을 참조하십시오.
 
 ### Component 서비스
 
@@ -156,7 +158,7 @@ $ nmap -p 1883 192.168.0.0/24 --open
 
 ## Air Quality
 
-`dyson` 대기 질 플랫폼은 다음과 같은 레벨을 제공합니다.
+`dyson` Air Quality 플랫폼은 다음과 같은 Level을 제공합니다.
 
 - Particulate matter 2.5 (<= 2.5 μm) level.
 - Particulate matter 10 (<= 10 μm) level.
@@ -164,7 +166,7 @@ $ nmap -p 1883 192.168.0.0/24 --open
 - NO2 (이산화질소) level.
 - VOC (휘발성 유기 화합물) level.
 
-참고 : 현재 2018 년 다이슨 팬만 지원됩니다 (TP04 및 DP04).
+참고: 현재 2018 년 다이슨 팬만 지원됩니다 (TP04 및 DP04).
 
 ### 지원되는 팬 장치
 

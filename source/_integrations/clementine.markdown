@@ -8,11 +8,13 @@ ha_release: 0.39
 ha_iot_class: Local Polling
 ---
 
-<iframe width="690" height="388" src="https://www.youtube.com/embed/si85LRnecwc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/si85LRnecwc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `clementine` 플랫폼을 사용하면 [Clementine Music Player](https://www.clementine-player.org)를 제어할 수 있습니다.
 
-Clementine Player를 Home Assistant 설치에 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
+Clementine Player를 Home Assistant에 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

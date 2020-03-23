@@ -8,13 +8,15 @@ ha_release: 0.56
 ha_config_flow: true
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/fcL4fPhlVVc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/fcL4fPhlVVc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `dialogflow` 통합구성요소는 [Dialogflow](https://dialogflow.com/)의 [webhook](https://dialogflow.com/docs/fulfillment#webhook)통합구성요소와 함께 사용되도록 설계되었습니다. 사용자와 대화가 끝나면 Dialogflow는 웹후크에 액션과 매개 변수를 보냅니다.
 
-DialogFlow에서 메시지를 수신하려면 웹에서 홈어시스턴트 인스턴스에 액세스 할 수 있어야하고 ([Hass.io instructions](/addons/duckdns/)) HTTP 통합([docs](/integrations/http/#base_url))을 위해 `base_url`을 설정해야합니다. 서버가 응답하지 않거나 너무 오래 걸리면 (5 초 이상) Dialogflow가 대체 응답을 반환합니다.
+DialogFlow에서 메시지를 수신하려면 웹에서 홈어시스턴트 인스턴스에 액세스 할 수 있어야하고 ([Hass.io instructions](/addons/duckdns/))으로 HTTP 연동([docs](/integrations/http/#base_url))을 위해 `base_url`을 설정해야합니다. 서버가 응답하지 않거나 너무 오래 걸리면 (5 초 이상) Dialogflow가 대체 응답을 반환합니다.
 
-Dialogflow는 많은 유명한 messaging, virtual assistant 및 IoT 플랫폼과 [연동](https://dialogflow.com/docs/integrations/) 할 수 있습니다.
+Dialogflow는 많은 유명한 messaging, virtual assistant 및 IoT 플랫폼과 [연동](https://dialogflow.com/docs/integrations/)할 수 있습니다.
 
 Dialogflow를 사용하면 다음과 같은 대화를 쉽게 만들 수 있습니다. :
 
@@ -55,7 +57,7 @@ _Bot: Turning on kitchen light_
 
 <div class='note warning'>
 
-  V1 API는 2019년 10월 23일부터 더 이상 사용되지 않습니다. V1 API를 계속 사용중인 경우 V2 API를 사용하도록 Dialogflow에서 설정을 변경하는 것이 좋습니다. V2 API로 업그레이드 한 후 yaml 설정을 변경할 필요가 없습니다. [here](https://console.dialogflow.com/)서 코그 단추를 클릭하여 V2 API로 변경 한 후 V2 API 를 선택하십시오. 
+  V1 API는 2019년 10월 23일부터 더 이상 사용되지 않습니다. V1 API를 계속 사용중인 경우 V2 API를 사용하도록 Dialogflow에서 설정을 변경하는 것이 좋습니다. V2 API로 업그레이드 한 후 yaml 설정을 변경할 필요가 없습니다. [here](https://console.dialogflow.com/)서 코그 단추를 클릭하여 V2 API로 변경한 후 V2 API 를 선택하십시오. 
 
 </div>
 

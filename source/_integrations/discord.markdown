@@ -7,7 +7,9 @@ ha_category:
 ha_release: 0.37
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/MVsGulvjEOo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/MVsGulvjEOo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 [Discord service](https://discordapp.com/)는 알림 구성 요소를 위한 플랫폼입니다. 이를 통해 통합구성요소는 Discord를 사용하여 사용자에게 메시지를 보낼 수 있습니다.
 
@@ -55,9 +57,9 @@ token:
   <img src='{{site_root}}/images/screenshots/discord-auth.png' />
 </p>
 
-"Authorized"라는 확인 메시지가 표시 될 때까지 기다립니다.
+"Authorized"라는 확인 메시지가 표시될 때까지 기다립니다.
 
-봇이 서버에 추가되면 봇을 작동시키려는 채널의 채널 ID를 얻습니다.   Discord 응용 프로그램에서 **Settings** > **Appearance** > **Check developer mode** 으로 이동하십시오.
+봇이 서버에 추가되면 봇을 작동시키려는 채널의 채널 ID를 얻습니다. Discord 응용 프로그램에서 **Settings** > **Appearance** > **Check developer mode** 으로 이동하십시오.
 
 <p class='img'>
   <img src='{{site_root}}/images/screenshots/discord-api.png' />
@@ -65,7 +67,7 @@ token:
 
 채널 이름을 마우스 오른쪽 단추로 클릭하고 채널 ID를 복사하십시오. (**Copy ID**).
 
-이 채널 ID는 알림 서비스를 호출 할 때 대상으로 사용해야합니다. 여러 서버에서 여러 채널 ID를 지정할 수 있습니다.
+이 채널 ID는 알림 서비스를 호출할 때 대상으로 사용해야합니다. 여러 서버에서 여러 채널 ID를 지정할 수 있습니다.
 
 #### Service Call 사례 
 

@@ -7,8 +7,9 @@ ha_category:
 ha_release: 0.45
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/YHmCQ5GVeTk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/YHmCQ5GVeTk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `datadog` 통합구성요소는 [Datadog Agent](https://docs.datadoghq.com/guides/basic_agent_usage/)를 사용하여 모든 상태 변경을 [Datadog](https://www.datadoghq.com/)로 보냅니다.
 

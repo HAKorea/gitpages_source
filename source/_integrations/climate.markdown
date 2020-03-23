@@ -8,21 +8,25 @@ ha_release: 0.19
 ha_quality_scale: internal
 ---
 
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/beSIUfOL7io" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 Climate 통합구성요소를 통해 HVAC (가열, 환기 및 공기 조절) 장치 및 온도 조절기를 제어하고 모니터링 할 수 있습니다.
 
 ## 서비스
 
-### Climate control services
+### Climate 제어 서비스
 
 제공 서비스: `climate.set_aux_heat`, `climate.set_preset_mode`, `climate.set_temperature`, `climate.set_humidity`, `climate.set_fan_mode`, `climate.set_hvac_mode`, `climate.set_swing_mode`, `climate.turn_on`, `climate.turn_off`
 
 <div class='note'>
 
-플랫폼에 따라 모든 Climate Service가 제공되는 것은 아닙니다. 홈어시스턴트의 <img src='/images/screenshots/developer-tool-services-icon.png' alt='service developer tool icon' class="no-shadow" height="38" /> **Services**에서 체크해서 사용할 수있는 서비스를 확인해야합니다 
+플랫폼에 따라 모든 Climate Service가 제공되는 것은 아닙니다. 홈어시스턴트의 <img src='/images/screenshots/developer-tool-services-icon.png' alt='service developer tool icon' class="no-shadow" height="38" /> **Services**에서 체크해서 사용할 수 있는 서비스를 확인해야합니다 
 
 </div>
 
-### Service `climate.set_aux_heat`
+### `climate.set_aux_heat` 서비스
 
 climate 장치용 보조 히터 켜기 / 끄기
 
@@ -45,9 +49,9 @@ automation:
         aux_heat: true
 ```
 
-### Service `climate.set_preset_mode`
+### `climate.set_preset_mode` 서비스
 
-Climate 장치에 대한 사전 설정 모드를 설정하십시오. Away mode 는 Climate 장치가 에너지를 절약하도록 설정된 상황을 반영하는 온도로 목표 온도를 변경합니다. 이것은 "vacation mode" 를 에뮬레이션하는 데 사용할 수 있습니다.
+Climate 장치에 대한 사전설정 모드를 설정하십시오. Away mode 는 Climate 장치가 에너지를 절약하도록 설정된 상황을 반영하는 온도로 목표 온도를 변경합니다. 이것은 "vacation mode" 를 에뮬레이션하는 데 사용할 수 있습니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
@@ -68,7 +72,7 @@ automation:
         preset_mode: 'eco'
 ```
 
-### Service `climate.set_temperature`
+### `climate.set_temperature` 서비스
 
 Climate 장치의 목표 온도 설정
 
@@ -111,7 +115,7 @@ automation:
         hvac_mode: heat_cool
 ```
 
-### Service `climate.set_humidity`
+### `climate.set_humidity` 서비스
 
 Climate 장치의 목표 습도 설정
 
@@ -134,7 +138,7 @@ automation:
         humidity: 60
 ```
 
-### Service `climate.set_fan_mode`
+### `climate.set_fan_mode` 서비스
 
 Climate 장치의 팬 작동 설정
 
@@ -157,7 +161,7 @@ automation:
         fan_mode: 'On Low'
 ```
 
-### Service `climate.set_hvac_mode`
+### `climate.set_hvac_mode` 서비스
 
 Climate 장치의 HVAC 모드 설정
 
@@ -180,7 +184,7 @@ automation:
         hvac_mode: heat
 ```
 
-### Service `climate.set_swing_mode`
+### `climate.set_swing_mode` 서비스
 
 Climate 장치의 스윙 작동 모드 설정
 
@@ -203,7 +207,7 @@ automation:
         swing_mode: 1
 ```
 
-### Service `climate.turn_on`
+### `climate.turn_on` 서비스
 
 Climate 장치를 켭니다. Climate 장치가 꺼져있는 경우에만 지원됩니다.
 
@@ -211,7 +215,7 @@ Climate 장치를 켭니다. Climate 장치가 꺼져있는 경우에만 지원�
 | ---------------------- | -------- | ----------- |
 | `entity_id` | yes | 제어할 climate 장치의 entity ID를 정의하는 문자열 또는 문자열 목록입니다. 모든 Climate 장치를 대상으로 하려면, `all`을 사용하십시오.
 
-### Service `climate.turn_off`
+### `climate.turn_off` 서비스
 
 Climate 장치를 끕니다. Climate 장치에 hvac 모드가 off인 경우만 지원됩니다.
 

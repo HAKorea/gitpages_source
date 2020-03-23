@@ -17,7 +17,10 @@ ha_quality_scale: platinum
 ha_codeowners:
   - '@kane610'
 ---
-<iframe width="690" height="437" src="https://www.youtube.com/embed/LeuHpBdwmag?start=634" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/LeuHpBdwmag?start=634" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 [dresden elektronik](https://www.dresden-elektronik.de)의 [deCONZ](https://www.dresden-elektronik.de/funk/software/deconz.html)는 ConBee/RaspBee Zigbee 게이트웨이와 통신하고 게이트웨이에 연결된 Zigbee 장치를 보여주는 소프트웨어입니다.
 

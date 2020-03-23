@@ -9,7 +9,9 @@ ha_codeowners:
   - '@fbradyirl'
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/0O-k5Ku6P7o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/0O-k5Ku6P7o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `cisco_webex_teams` 알림 플랫폼을 사용하면 홈어시스턴트에서 [Cisco Webex Teams](https://www.webex.com/team-collaboration.html)(이전의 Cisco Spark)로 풍부한 알림을 전달할 수 있습니다.
 
@@ -38,13 +40,13 @@ notify:
 
 ## 서식있는 텍스트 형식만들기
 
-Webex Teams 클라이언트는 허용된 html 태그 세트를 통해 서식있는 텍스트를 렌더링 할 수 있습니다.
+Webex Teams 클라이언트는 허용된 html 태그 세트를 통해 서식있는 텍스트를 렌더링할 수 있습니다.
 
 예를 들어 다음과 같이 읽기 쉬운 방식으로 세부 정보를 표시하도록 자동화를 설정할 수 있습니다. :
 
 <p class='img'>
 <img src='/images/integrations/cisco_webex_teams/rich_formatting.png' />
-Rich text as displayed in the macOS client. macOS 클라이언트에 표시되는 서식있는 텍스트
+macOS 클라이언트에 표시되는 서식있는(Rich) 텍스트
 </p>
 
 위 스크린 샷의 자동화는 다음과 같습니다.

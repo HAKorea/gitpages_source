@@ -8,7 +8,10 @@ ha_release: 0.7
 ha_quality_scale: internal
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/GlaS24QQjTs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/GlaS24QQjTs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 
 카메라 연동을 통해 Home Assistant에서 IP 카메라를 사용할 수 있습니다.
 
@@ -16,7 +19,7 @@ ha_quality_scale: internal
 
 카메라가 이를 지원하고, [`stream`](/integrations/stream) 연동이 설정된 경우, 카메라를 프런트 엔드 및 지원되는 미디어 플레이어에서 스트리밍 할 수 있습니다.
  
-이 옵션은 스트림을 활성 상태로 유지하고 Home Assistant 시작시 피드를 사전에 로드합니다. 이로 인해 프런트 엔드에서 스트림을 열 때 뿐만 아니라 `play_stream` 서비스 또는 Google Assistant 연동 사용 시 대기 시간이 줄어 듭니다. 그러나 컴퓨터에서 더 많은 리소스를 사용하므로 이 기능을 사용하려는 경우 CPU 사용량을 확인하는 것이 좋습니다.
+이 옵션은 스트림을 활성 상태로 유지하고 Home Assistant 시작시 피드를 사전에 로드합니다. 이로 인해 프런트 엔드에서 스트림을 열 때 뿐만 아니라 `play_stream` 서비스 또는 Google Assistant 연동 사용시 대기 시간이 줄어 듭니다. 그러나 컴퓨터에서 더 많은 리소스를 사용하므로 이 기능을 사용하려는 경우 CPU 사용량을 확인하는 것이 좋습니다.
 
 <p class='img'>
   <img src='/images/integrations/camera/preload-stream.png' alt='Screenshot showing Preload Stream option in Home Assistant front end.'>
@@ -24,36 +27,36 @@ ha_quality_scale: internal
 </p>
 
 
-### Services
+### 서비스
 
-`camera` 플랫폼이 로드되면 다양한 작업을 수행하기 위해 호출 할 수 있는 서비스가 나타납니다.
+`camera` 플랫폼이 로드되면 다양한 작업을 수행하기 위해 호출할 수 있는 서비스가 나타납니다.
 
-제공 서비스 : `enable_motion_detection`, `disable_motion_detection`, `play_stream`, `record`, `snapshot`, `turn_off`과`turn_on`.
+제공 서비스 : `enable_motion_detection`, `disable_motion_detection`, `play_stream`, `record`, `snapshot`, `turn_off` 과 `turn_on`.
 
-#### Service `enable_motion_detection`
+#### `enable_motion_detection` 서비스
 
-카메라에서 동작 감지를 활성화합니다.
-
-| Service data attribute | Optional | Description |
-| ---------------------- | -------- | ----------- |
-| `entity_id`            |     yes  | 모션 감지를 가능하게하는 엔티티의 이름입니다 (예 : `camera.living_room_camera`.) |
-
-#### Service `disable_motion_detection`
-
-카메라에서 동작 감지를 비활성화합니다.
+카메라에서 모션 감지를 활성화합니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
-| `entity_id`            |     yes  | 모션 감지를 비활성화 할 엔티티의 이름입니다  (예 : `camera.living_room_camera`.) |
+| `entity_id`            |     yes  | 모션 감지를 가능하게하는 엔티티의 이름 (예 : `camera.living_room_camera`.) |
 
-#### Service `play_stream`
+#### `disable_motion_detection` 서비스
+
+카메라에서 모션 감지를 비활성화합니다.
+
+| Service data attribute | Optional | Description |
+| ---------------------- | -------- | ----------- |
+| `entity_id`            |     yes  | 모션 감지를 비활성화 할 엔티티의 이름  (예 : `camera.living_room_camera`.) |
+
+#### `play_stream` 서비스
 
 카메라에서 선택한 미디어 플레이어로 라이브 스트림을 재생합니다. 사전에 [`stream`](/integrations/stream) 통합구성요소가 설정되어야 합니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
-| `entity_id`            |      no  | 스트림을 가져올 엔티티의 이름입니다 (예:`camera.living_room_camera`.) |
-| `media_player`         |      no  | 스트림을 재생할 미디어 플레이어의 이름입니다 (예:`media_player.living_room_tv`.) |
+| `entity_id`            |      no  | 스트림을 가져올 엔티티의 이름 (예:`camera.living_room_camera`.) |
+| `media_player`         |      no  | 스트림을 재생할 미디어 플레이어의 이름 (예:`media_player.living_room_tv`.) |
 | `format`               |      yes | 특정 `media_player`와 `stream` 통합구성요소에서 지원되는 스트림. Default: `hls` |
 
 예를 들어 자동화에서 다음 작업을 수행하면 `hls` 라이브 스트림이 chromecast로 전송됩니다.
@@ -66,7 +69,7 @@ action:
     media_player: media_player.chromecast
 ```
 
-#### Service `record`
+#### `record` 서비스
 
 카메라 스트림에서 녹화를 `.mp4` 로 만듭니다. `stream` 통합구성요소가 사전에 설정되어야 합니다.
 
@@ -81,7 +84,7 @@ action:
 
 `filename`의 경로는 `whitelist_external_dirs`에  `configuration.yaml` 파일에서 [`homeassistant:`](/docs/configuration/basic/) 섹션에 속한 entry가 되어야 합니다. 
 
-예를 들어, 자동화에서 다음 작업을 수행하면 “yourcamera ”에서 녹화 된 후 타임스탬프가 기록된 파일 이름으로 / tmp에 저장됩니다.
+예를 들어, 자동화에서 다음 작업을 수행하면 “yourcamera” 에서 녹화된 후 타임스탬프가 기록된 파일 이름으로 /tmp에 저장됩니다.
 
 {% raw %}
 ```yaml
@@ -93,18 +96,18 @@ action:
 ```
 {% endraw %}
 
-#### Service `snapshot`
+#### `snapshot` 서비스
 
-카메라에서 스냅 샷을 찍습니다.
+카메라에서 스냅샷을 찍습니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
-| `entity_id`            |      no  | 예를 들어에서 스냅 샷을 생성 할 엔티티의 이름은 `camera.living_room_camera`입니다. |
+| `entity_id`            |      no  | 예를 들어에서 스냅샷을 생성할 엔티티의 이름은 `camera.living_room_camera`입니다. |
 | `filename`             |      no  | 파일 이름의 템플릿. 변수는 `entity_id`, 예) {% raw %}`/tmp/snapshot_{{ entity_id }}`{% endraw %}. |
 
 `filename`의 경로는 `whitelist_external_dirs`에  `configuration.yaml` 파일에서 [`homeassistant:`](/docs/configuration/basic/) 섹션에 속한 entry가 되어야 합니다. 
 
-예를 들어, 자동화에서 다음 작업을 수행하면 “yourcamera ”에서 녹화 된 후 타임스탬프가 기록된 파일 이름으로 / tmp에 저장됩니다.
+예를 들어, 자동화에서 다음 작업을 수행하면 “yourcamera”에서 녹화된 후 타임스탬프가 기록된 파일 이름으로 /tmp에 저장됩니다.
 
 {% raw %}
 ```yaml
@@ -116,17 +119,17 @@ action:
 ```
 {% endraw %}
 
-#### Service `turn_off`
+#### `turn_off` 서비스
 
-카메라를 끕니다. 모든 카메라 모델이이 서비스를 지원하는 것은 아닙니다. 개별 카메라 페이지를 참조하십시오.
+카메라를 끕니다. 모든 카메라 모델이 이 서비스를 지원하는 것은 아닙니다. 개별 카메라 페이지를 참조하십시오.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
 | `entity_id`            |     yes  | Name(s) of entities to turn off, e.g., `camera.living_room_camera`. |
 
-#### Service `turn_on`
+#### `turn_on` 서비스
 
-카메라를 켭니다. 모든 카메라 모델이이 서비스를 지원하는 것은 아닙니다. 개별 카메라 페이지를 참조하십시오.
+카메라를 켭니다. 모든 카메라 모델이 이 서비스를 지원하는 것은 아닙니다. 개별 카메라 페이지를 참조하십시오.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |

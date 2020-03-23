@@ -7,7 +7,9 @@ ha_category:
 ha_release: 0.48
 ---
 
-<iframe width="690" height="388" src="https://www.youtube.com/embed/puuK07yPbsw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/puuK07yPbsw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `clicksend` 플랫폼은 [ClickSend](https://clicksend.com)를 사용하여 Home Assistant에서 알림을 전달합니다.
 

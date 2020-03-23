@@ -8,9 +8,11 @@ ha_iot_class: Cloud Polling
 ha_release: 0.33
 ---
 
-`google` 캘린더 플랫폼을 사용하면 [Google Calendars](https://calendar.google.com)에 연결하고 Binary 센서를 생성 할 수 있습니다. 생성된 센서는 캘린더의 이벤트를 기준으로 또는 일치하는 이벤트에 대해서만 트리거 할 수 있습니다. 이 통합구성요소를 처음 설정하면 config 디렉토리에 새 구성 파일 `google_calendars.yaml`이 생성되며 여기에는 모든 캘린더에 대한 정보가 포함됩니다. 또한 Google 캘린더에서 이벤트를 추가할 수 있습니다.
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/OEzpG-iDDlA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/OEzpG-iDDlA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+`google` 캘린더 플랫폼을 사용하면 [Google Calendars](https://calendar.google.com)에 연결하고 Binary 센서를 생성할 수 있습니다. 생성된 센서는 캘린더의 이벤트를 기준으로 또는 일치하는 이벤트에 대해서만 트리거 할 수 있습니다. 이 통합구성요소를 처음 설정하면 config 디렉토리에 새 설정 파일 `google_calendars.yaml`이 생성되며 여기에는 모든 캘린더에 대한 정보가 포함됩니다. 또한 Google 캘린더에서 이벤트를 추가할 수 있습니다.
 
 ## 전제 조건
 
@@ -26,7 +28,7 @@ ha_release: 0.33
 1. Copy the client ID and client secret from the page that follows into a text editor temporarily as you will need to put these in your `configuration.yaml` file.
 1. Click on the menu item, Library, then search for "Google Calendar API" and enable it (if it isn't already enabled automatically through this process).
 
-나중에이 애플리케이션의 OAuth에 "Google Calendar API "보다 더 많은 범위(scope)를 추가하려면 홈어시스턴트 프로파일에서 토큰 파일을 삭제해야합니다. 더 많은 API 액세스를 추가하기 위해 다시 인증하면 새로 고침 토큰이 손실됩니다. Google 서비스에 따라 다른 인증을 사용하는 것이 좋습니다.
+나중에 이 애플리케이션의 OAuth에 "Google Calendar API" 보다 더 많은 범위(scope)를 추가하려면 홈어시스턴트 프로파일에서 토큰 파일을 삭제해야합니다. 더 많은 API 액세스를 추가하기 위해 다시 인증하면 새로 고침 토큰이 손실됩니다. Google 서비스에 따라 다른 인증을 사용하는 것이 좋습니다.
 
 ## 설정 
 
@@ -41,11 +43,11 @@ google:
 
 {% configuration %}
 client_id:
-  description: 전제조건 단계에서 생성한 Clinet ID를 사용하십시오..
+  description: 전제조건 단계에서 생성한 Clinet ID를 사용하십시오.
   required: true
   type: string
 client_secret:
-  description: 전제 조건 단계에서 생성 한 Client 비밀번호를 사용하십시오..
+  description: 전제조건 단계에서 생성한 Client 비밀번호를 사용하십시오.
   required: true
   type: string
 track_new_calendar:
@@ -56,7 +58,7 @@ track_new_calendar:
   default: true
 {% endconfiguration %}
 
-다음에 Home Assistant를 실행하거나 다시 시작하면 새 알림 (왼쪽 아래 모서리에있는 작은 벨 아이콘)이 나타납니다. 해당 알림을 클릭하면 링크와 인증 코드가 표시됩니다. 해당 링크를 클릭하면 알림에 있는 코드를 입력해야하는 Google 웹 사이트가 열립니다. 그러면 인증된 계정이 읽을 수 있는 모든 Google 캘린더에 홈어시스턴트 서비스에 대한 읽기 전용 액세스 권한이 부여됩니다.
+다음에 Home Assistant를 실행하거나 다시 시작하면 새 알림 (왼쪽 아래 모서리에있는 작은벨 아이콘)이 나타납니다. 해당 알림을 클릭하면 링크와 인증 코드가 표시됩니다. 해당 링크를 클릭하면 알림에 있는 코드를 입력해야하는 Google 웹 사이트가 열립니다. 그러면 인증된 계정이 읽을 수 있는 모든 Google 캘린더에 홈어시스턴트 서비스에 대한 읽기 전용 액세스 권한이 부여됩니다.
 
 ## 캘린더 설정 
 
@@ -90,7 +92,7 @@ cal_id:
   type: string
   default: "**DO NOT CHANGE THE DEFAULT VALUE**"
 entities:
-  description: 네, 달력에 여러 개의 센서를 사용할 수 있습니다!
+  description: 달력에 여러개의 센서를 사용할 수 있습니다!
   required: true
   type: list
   keys:
@@ -133,7 +135,7 @@ entities:
 이로서 우리는 Binary 센서 `calendar.test_unimportant` 와 `calendar.test_important`를 가질수 있습니다. 이 센서는 각각에 대해 설정된 검색 값과 일치하는 동일한 캘린더의 이벤트를 기반으로 자신을 켜거나 끕니다.
 이벤트를 필터링하지 않고 항상 사용가능한 다음 이벤트를 표시하는 센서 `calendar.test_everything` 이 있습니다.
 
-그러나 모든 이벤트를 기반으로 전환(toggle)하기를 원한다면 어떻게해야합니까?
+그러나 모든 이벤트를 기반으로 토글하기를 원한다면 어떻게해야합니까?
 단지 *search* 매개 변수를 생략하면 됩니다. 
 
 <div class='note warning'>

@@ -298,7 +298,7 @@ device:
 
 #### 템플릿 사용하기
 
-모든 `*_state_topic`의 경우, 이 topic에서 들어오는 페이로드를 렌더링하는데 사용될 템플리트를 지정할 수 있습니다. 또한 모든 state topic에 적용되는 기본 템플릿은 `value_template`으로 지정할 수 있습니다. payload를 받은 경우 (예: JSON 형식)에 유용합니다. JSON에서 따옴표 붙은 문자열 (예: `"foo"`)은 문자열 일 뿐이므로 따옴표를 없에도 사용할 수 있습니다. 
+모든 `*_state_topic`의 경우, 이 topic에서 들어오는 페이로드를 렌더링하는데 사용될 템플릿을 지정할 수 있습니다. 또한 모든 state topic에 적용되는 기본 템플릿은 `value_template`으로 지정할 수 있습니다. 페이로드를 받은 경우 (예: JSON 형식)에 유용합니다. JSON에서 따옴표 붙은 문자열 (예: `"foo"`)은 문자열 일 뿐이므로 따옴표를 없에도 사용할 수 있습니다. 
 
 `mode_state_topic`을 통해 operation 모드 `"auto"`를 받았지만 실제로 모드는 그냥 auto라고합니다. 여기서 수행할 수 있는 작업은 다음과 같습니다.
 
@@ -317,7 +317,7 @@ climate:
 ```
 {% endraw %}
 
-들어오는 `"auto"`를 JSON으로 파싱하여 `auto`가됩니다. 분명히 이 경우  `value_template: {% raw %}"{{ value_json }}"{% endraw %}`를 설정할 수도 있습니다.
+들어오는 `"auto"`를 JSON으로 파싱하여 `auto`가 됩니다. 분명히 이 경우  `value_template: {% raw %}"{{ value_json }}"{% endraw %}`를 설정할 수도 있습니다.
 
 ### 사례
 

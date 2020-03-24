@@ -7,7 +7,9 @@ ha_category:
 ha_release: 0.56
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="388" src="https://www.youtube.com/embed/IzJ11kvM-P8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `rocketchat` 알림 플랫폼을 사용하면 Home Assistant에서 [Rocket.Chat](https://rocket.chat/) 인스턴스로 메시지를 보낼 수 있습니다.
 

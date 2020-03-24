@@ -11,7 +11,9 @@ ha_iot_class: Cloud Polling and Local Push
 ha_release: 0.68
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="388" src="https://www.youtube.com/embed/e9Ts9V0CBLA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 The `wirelesstag` implementation allows you to integrate your [wirelesstag.net](https://wirelesstag.net/) sensors tags in Home Assistant.
 

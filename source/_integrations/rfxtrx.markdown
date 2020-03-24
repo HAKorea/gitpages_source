@@ -9,7 +9,9 @@ ha_codeowners:
   - '@danielhiversen'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="388" src="https://www.youtube.com/embed/zcjNvSMG-hg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `rfxtrx` 통합구성요소는 433.92 MHz의 주파수 범위에서 통신하는 [RFXCOM](http://www.rfxcom.com)에 의해 RFXtrx 장치를 지원합니다.
 

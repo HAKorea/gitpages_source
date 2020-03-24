@@ -11,7 +11,9 @@ ha_codeowners:
   - '@pnbruckner'
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/lPDpd5OcisM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/lPDpd5OcisM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `life360` 통합구성요소로 [Life360](https://www.life360.com/)의 [unofficial API](#disclaimer)를 사용하여 현재 상태를 감지 할 수 있습니다.
 

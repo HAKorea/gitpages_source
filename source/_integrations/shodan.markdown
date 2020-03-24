@@ -10,7 +10,9 @@ ha_codeowners:
   - '@fabaff'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/oDkg1zz6xlw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `shodan` 센서 플랫폼은 [Shodan](https://www.shodan.io/) 쿼리 결과의 총계를 표시합니다.
 

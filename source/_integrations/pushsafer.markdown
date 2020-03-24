@@ -7,7 +7,9 @@ ha_category:
 ha_release: 0.39
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="388" src="https://www.youtube.com/embed/VAl7sFK92tQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 [Pushsafer 서비스](https://www.pushsafer.com/)는 알림 구성 요소를 위한 플랫폼입니다. 이를 통해 Pushsafer를 사용하여 사용자에게 메시지를 보낼 수 있습니다.
 

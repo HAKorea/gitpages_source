@@ -8,7 +8,9 @@ ha_release: 0.69
 ha_iot_class: Cloud Polling
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/Hb0ks2fcpbo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `socialblade` 센서 플랫폼을 사용하면 YouTube 채널 가입자수와 총조회수를 모니터링 할 수 있습니다. 센서는 [Social Blade website](https://socialblade.com)에서 데이터를 검색합니다.
 

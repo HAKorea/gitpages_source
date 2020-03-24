@@ -8,7 +8,9 @@ ha_release: 0.72
 ha_iot_class: Local Polling
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/OqUI1GHc4As" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `Xiaomi` 카메라 플랫폼은 홈어시스턴트에서 샤오미 카메라를 활용할 수 있습니다
 

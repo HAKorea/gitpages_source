@@ -8,7 +8,9 @@ ha_release: '0.60'
 ha_iot_class: Cloud Polling
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="388" src="https://www.youtube.com/embed/a14QGa8Pi_o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `ue_radio` 플랫폼을 사용하면 Home Assistant에서 [Logitech UE Smart Radio](https://www.uesmartradio.com)를 제어할 수 있습니다. 이를 통해 UE Smart Radio 업데이트로 업데이트된 Logitech UE Smart Radio 및 Logitech Squeezebox Radio를 모두 제어할 수 있습니다.
 

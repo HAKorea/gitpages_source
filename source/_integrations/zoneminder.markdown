@@ -14,7 +14,9 @@ ha_codeowners:
   - '@rohankapoorcom'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/D3pjZKO5eIE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `zoneminder` 통합구성요소는 [ZoneMinder](https://www.zoneminder.com) 인스턴스와 홈어시스턴트를 셋업합니다.
 

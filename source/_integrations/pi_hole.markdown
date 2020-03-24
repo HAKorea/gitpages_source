@@ -11,7 +11,9 @@ ha_codeowners:
   - '@johnluetke'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="399" src="https://www.youtube.com/embed/I3des9ver1o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `pi_hole` 통합구성요소를 통해 통계를 검색하고 [Pi-hole](https://pi-hole.net/) 시스템과 상호 작용할 수 있습니다.
 

@@ -8,7 +8,9 @@ ha_iot_class: Local Polling
 ha_release: 0.67
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/o41emqmX6ds" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 ### 설정 샘플
 

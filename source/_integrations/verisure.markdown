@@ -14,7 +14,9 @@ ha_release: pre 0.7
 ha_iot_class: Cloud Polling
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/DV-UUrra214" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 Home Assistant는 [Verisure](https://www.verisure.com/) 장치 연동을 지원합니다.
 

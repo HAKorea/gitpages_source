@@ -9,7 +9,9 @@ ha_category:
 ha_iot_class: Local Polling
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/UXMrE4c0l_k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 Home Assistant용 TP-Link LTE 통합구성요소를 통해 현재 TL-MR6400 (펌웨어 1.4.0)으로만 테스트된 TP-Link LTE 라우터를 관찰하고 제어할 수 있습니다.
 

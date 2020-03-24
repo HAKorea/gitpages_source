@@ -10,7 +10,9 @@ ha_codeowners:
   - '@rytilahti'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/xtTnFYGyNbc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `songpal` 플랫폼을 사용하면 홈어시스턴트의 사운드 바, AV 리시버 및 무선 스피커와 같은 Sony의 Songpal("[Audio Control API](https://developer.sony.com/develop/audio-control-api/)") 호환 장치를 제어 할 수 있습니다.
 

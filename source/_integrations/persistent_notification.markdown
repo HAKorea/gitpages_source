@@ -10,7 +10,9 @@ ha_codeowners:
   - '@home-assistant/core'
 ---
 
+<div class='videoWrapper'>
 <iframe width="692" height="388" src="https://www.youtube.com/embed/SQOJwWQgUno" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `persistent_notification` 통합구성요소는 사용자에 의해 해제해야하는 프론트 엔드에 필수 알림을 표시하는 데 사용할 수 있습니다.
 

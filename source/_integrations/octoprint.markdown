@@ -10,7 +10,9 @@ ha_release: 0.19
 ha_iot_class: Local Polling
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/LCFdcDvUjcg?list=PLWlpiQXaMerTyzl_Pe1PEloZTj9MoU5cl" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 [OctoPrint](https://octoprint.org/)는 3D 프린터를 위한 웹인터페이스입니다. 이는 OctoPrint 센서를 연동하기위한 주요 통합구성요소입니다.
 

@@ -8,13 +8,13 @@ ha_release: 0.7.4
 ha_config_flow: true
 ---
 
-[OwnTracks](https://owntracks.org/)는 아이폰과 안드로이드에서 위치정보를 트래킹하여 홈어시스턴트와 연동하는 오픈소스입니다. 설정 화면에서 통합구성요소로 간단히 추가할 수 있습니다.
-
-기본 통합 설정은 HTTP 프로토콜을 통해 OwnTracks가 보내는 메시지를 수신합니다. 그리고 홈어시스턴트의 MQTT 서버 설정을 한 다음 MQTT 프로토콜로 메시지를 수신하는 것도 가능합니다.
-
 <div class='videoWrapper'>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/UieAQ8sC6GY" frameborder="0" allowfullscreen></iframe>
 </div>
+
+[OwnTracks](https://owntracks.org/)는 아이폰과 안드로이드에서 위치정보를 트래킹하여 홈어시스턴트와 연동하는 오픈소스입니다. 설정 화면에서 통합구성요소로 간단히 추가할 수 있습니다.
+
+기본 통합 설정은 HTTP 프로토콜을 통해 OwnTracks가 보내는 메시지를 수신합니다. 그리고 홈어시스턴트의 MQTT 서버 설정을 한 다음 MQTT 프로토콜로 메시지를 수신하는 것도 가능합니다.
 
 ## 설정
 

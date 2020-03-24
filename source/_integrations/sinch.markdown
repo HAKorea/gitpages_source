@@ -9,7 +9,9 @@ ha_codeowners:
   - '@bendikrb'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="388" src="https://www.youtube.com/embed/P2OCfXsSIU0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `sinch` 플랫폼은 [Sinch](https://www.sinch.com/products/messaging/sms/)를 사용하여 Home Assistant에서 알림을 전달합니다.
 

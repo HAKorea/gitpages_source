@@ -7,7 +7,9 @@ ha_category:
 ha_release: 0.42
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="388" src="https://www.youtube.com/embed/QD3Chtb3RCE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 The `totalconnect` platform provides connectivity with the Honeywell TotalConnect alarm systems used by many alarm companies.
 

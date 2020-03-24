@@ -10,7 +10,9 @@ ha_release: 0.75
 ha_iot_class: Local Push
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/2rxHZwpxCk0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 홈어시스턴트를 위한 [Sisyphus](https://sisyphus-industries.com/) 연동으로 Sisyphus Kinetic Art Table을 관찰하고 제어할 수 있습니다.
 

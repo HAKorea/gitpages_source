@@ -10,7 +10,9 @@ ha_codeowners:
   - '@Ernst79'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/eMXbTN2X4Ek" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `solarlog` 통합구성요소는 [Solar-Log PV monitoring systems](https://www.solar-log.com/)의 개방형 JSON 인터페이스를 사용하여 Solar-Log 장치에서 세부 정보를 가져와 이를 Home Assistant에 연동할 수 있습니다.
 

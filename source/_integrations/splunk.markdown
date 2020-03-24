@@ -7,7 +7,9 @@ ha_category:
 ha_release: 0.13
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/oGuHDEuTU9E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `splunk` 통합은 Splunk의 HTTP 이벤트 콜렉터(HEC) 기능을 사용하여 모든 상태 변경을 외부 [Splunk](https://splunk.com/) 데이터베이스에 기록할 수있게합니다.
 이것을 단독으로 사용하거나 Splunk의 홈어시스턴트 [app](https://github.com/miniconfig/splunk-homeassistant)와 함께 사용할 수 있습니다.

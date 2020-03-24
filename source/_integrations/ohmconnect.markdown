@@ -10,7 +10,9 @@ ha_codeowners:
   - '@robbiet480'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="388" src="https://www.youtube.com/embed/JZbjBCXGJac" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 The `ohmconnect` sensor will show you the current [OhmConnect](https://www.ohmconnect.com/) status for the given OhmConnect ID.
 

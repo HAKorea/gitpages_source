@@ -13,7 +13,9 @@ ha_release: 0.56
 ha_iot_class: Cloud Polling
 ---
 
+<div class='videoWrapper'>
 <iframe width="692" height="388" src="https://www.youtube.com/embed/ARQsMkjUYgs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `skybell` 구현을 통해 [Skybell.com](http://www.skybell.com/) 초인종을 Home Assistant에 통합할 수 있습니다.
 

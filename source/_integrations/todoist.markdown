@@ -10,7 +10,9 @@ ha_codeowners:
   - '@boralyl'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/b390o1Qj-I8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 이 플랫폼을 사용하면 [Todoist Projects](https://todoist.com)에 연결하고 이진 센서를 생성할 수 있습니다. 각 개별 프로젝트마다 다른 센서가 생성되거나 설정한 기준과 일치하는 "custom" 프로젝트를 지정할 수 있습니다 (아래에서 자세히 설명). 이 센서는 해당 프로젝트로 인해 작업이 있는 경우 `on` 또는 프로젝트의 모든 작업이 완료되었거나 프로젝트에 전혀 작업이 없는 경우 `off`가 됩니다.
 

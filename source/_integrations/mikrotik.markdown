@@ -8,7 +8,9 @@ ha_category:
 ha_release: 0.44
 ---
 
-<iframe width="690" height="388" src="https://www.youtube.com/embed/4qP0gO8mi6k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/4qP0gO8mi6k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `mikrotik` 플랫폼은 연결된 장치를 [MikroTik RouterOS](https://mikrotik.com) 기반 라우터로 보고 재실 감지 기능을 제공합니다.
 

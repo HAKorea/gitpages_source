@@ -11,7 +11,9 @@ ha_codeowners:
   - '@ludeeus'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/F6EPwLjFdcA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `Traccar`는 추적시 GPS를 사용하며 1500 가지가 넘는 다양한 유형의 장치를 지원합니다. 하나의 옵션은 `webhook`을 통해 스마트폰에서 [Traccar Client](https://www.traccar.org/client/) 앱을 추적하는 것입니다. 다른 옵션은 Hass.io addon으로도 제공되는 기존 [Traccar Server](https://www.traccar.org/server/) 설치에 연결하는 것입니다.
 

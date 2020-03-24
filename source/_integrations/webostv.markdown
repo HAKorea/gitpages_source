@@ -11,24 +11,25 @@ ha_codeowners:
   - '@bendavid'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/f0i2R1cMWBg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
-The `webostv` platform allows you to control a [LG](https://www.lg.com/) webOS Smart TV.
 이 webostv플랫폼을 사용하면 [LG](https://www.lg.com/) webOS 스마트 TV 를 제어 할 수 있습니다 .
 
-현재 홈 어시스턴트에는 다음과 같은 장치 유형이 지원됩니다. :
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다. :
 
 
 - [미디어플레이어](#media-player)
 - [알림](#notifications)
 
-TV [instructions](https://www.lg.com/uk/support/product-help/CT00008334-1437131798537-others)의 *네트워크* 설정 에서 *LG Connect 앱* 기능 을 활성화해서 시작 하십시오 .
+TV [instructions](https://www.lg.com/uk/support/product-help/CT00008334-1437131798537-others)의 *네트워크* 설정 에서 *LG Connect 앱* 기능을 활성화해서 시작 하십시오 .
 
 기본 설정이 configuration.yaml파일에 추가되면 프런트 엔드의 **알림**섹션에 페어링 정보가 표시되어야합니다. 지침에 따라 TV에서 페어링 요청을 수락하십시오.
 
-페어링 정보는 `webostv.conf` Home Assistant 구성 디렉토리 의 구성 파일 에 저장됩니다 . 이 과정은 나중에 TV의 IP 주소가 변경 될 경우 IP 주소에 설정에 주의하십시오.
+페어링 정보는 `webostv.conf` Home Assistant 설정 디렉토리의 설정 파일에 저장됩니다 . 이 과정은 나중에 TV의 IP 주소가 변경 될 경우 IP 주소에 설정에 주의하십시오.
 
-## 설정 (Configuration)
+## 설정
 
 TV를 설치에 추가하려면 `configuration.yaml`파일에 다음을 추가 하십시오. :
 
@@ -51,7 +52,7 @@ turn_on_action:
   required: false
   type: string
 customize:
-  description: 사용자 정의 할 옵션 목록.
+  description: 사용자 정의할 옵션 목록.
   required: false
   type: map
   keys:
@@ -61,7 +62,7 @@ customize:
       type: list
 {% endconfiguration %}
 
-### 전체 설정 예시 (Full configuration example)
+### 전체 설정 예시
 
 전체 설정 예는 아래 샘플과 같습니다. :
 
@@ -89,7 +90,7 @@ notify:
 장치의 `name :`에서 `[]`를 사용하지 마십시오.
 
 
-### 다수의 TV 사용 (Using multiple TVs)
+### 다수의 TV 사용 
 
 이 통합구성요소로 다수의 TV를 사용할 수도 있습니다.
 
@@ -129,13 +130,13 @@ media_player:
 notify:
 ```
 
-장치 전원을 켜기위한 다른 모든 [actions](/docs/automation/action/)을 설정 할 수 있습니다.
+장치 전원을 켜기위한 다른 모든 [actions](/docs/automation/action/)을 설정할 수 있습니다.
 
 ## Sources
 
 현재 TV에 설정된 사용 가능한 소스의 전체 목록을 얻으려면 webOS TV를 설정하고 전원을 켠 상태에서 **개발자 도구**> **상태**에서 `media_player.name`을 찾아 `source_list :`의 각 줄의 나타난 입력(소스)들을 기억해두고 `source:`에  해당 입력을 배치시켜 사용하십시오.
 
-## play_media 서비스를 통한 채널 변경 (Change channel through play_media service)
+## play_media 서비스를 통한 채널 변경
 
 `play_media` 서비스는 스크립트에서 지정된 TV 채널로 전환하는 데 사용될 수 있습니다. `media_content_id` 매개 변수에 따라 가장 일치하는 채널을 선택합니다. : 
 

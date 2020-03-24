@@ -9,7 +9,9 @@ ha_codeowners:
   - '@robbiet480'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/JCjzEKdlezk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `twilio_call` 알림 플랫폼은 [Twilio](https://twilio.com)에서 제공하는 음성을 통해 알림을 보낼 수 있습니다.
 전달된 메시지는 TTS (텍스트 음성 변환) 서비스에서 읽습니다.

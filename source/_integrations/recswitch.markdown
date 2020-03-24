@@ -8,7 +8,9 @@ ha_category:
 ha_iot_class: Local Polling
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="388" src="https://www.youtube.com/embed/kgf8a2oFrHk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `recswitch` 스위치 플랫폼을 사용하면 Ankuoo Rec Switch 장치를 제어할 수 있습니다.
 

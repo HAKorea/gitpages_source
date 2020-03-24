@@ -1,5 +1,5 @@
 ---
-title: iframe 패널
+title: 아이프레임 패널(iframe Panel)
 description: Instructions on how to add iFrames in the frontend of Home Assistant.
 logo: home-assistant.png
 ha_category:

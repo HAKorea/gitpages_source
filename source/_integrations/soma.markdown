@@ -11,7 +11,9 @@ ha_codeowners:
   - '@ratsept'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/rUWimvBEeZc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 Soma 통합구성요소를 통해 사용자는 Soma Connect 허브를 사용하여 Soma Smarthome 장치를 Home Assistant에 연동할 수 있습니다.
 

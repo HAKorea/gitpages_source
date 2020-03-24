@@ -9,7 +9,9 @@ ha_iot_class: Cloud Polling
 ha_config_flow: true
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/BjtL_vIkyNg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `solaredge` 플랫폼은 [SolarEdge Monitoring API](https://www.solaredge.com/sites/default/files/se_monitoring_api.pdf)를 사용하여 SolarEdge 태양광 전력 설정에서 세부 정보를 가져와 Home Assistant 설치시 연동할 수 있습니다.
 

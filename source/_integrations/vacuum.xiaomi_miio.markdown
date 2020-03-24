@@ -8,9 +8,9 @@ ha_release: 0.51
 ha_iot_class: Local Polling
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/5-IslDGfzAQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<br><br>
-
+</div>
 
 `xiaomi_miio` 진공청소기 플랫폼을 사용하면 [Xiaomi Mi Robot Vacuum](https://www.mi.com/roomrobot/)의 상태를 제어 할 수 있습니다
 

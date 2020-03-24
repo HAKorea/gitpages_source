@@ -11,7 +11,9 @@ ha_codeowners:
   - '@z0mbieprocess'
 ---
 
+<div class='videoWrapper'>
 <iframe width="692" height="388" src="https://www.youtube.com/embed/4Jzt1-vL5Wc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `smarty` 연동을 통해 Home Assistant에서 Salda [Smarty](http://www.salda.lt/en/products/category/compact-counter-flow-units) 환기 장치를 제어 할 수 있습니다. 로컬 네트워크에 연결하려면 [MB-GATEWAY](http://www.salda.lt/en/products/item/5637227077) 또는 이와 유사한 것이 필요합니다.
 

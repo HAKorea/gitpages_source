@@ -8,7 +8,9 @@ ha_release: 0.21
 ha_iot_class: Local Push
 ---
 
-<iframe width="690" height="388" src="https://www.youtube.com/embed/7vmzQ8bWwmo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https:/https://www.youtube.com/embed/7vmzQ8bWwmo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 [LIRC](http://www.lirc.org/) integration for Home Assistant allows you to receive signals from an infrared remote control and control actions based on the buttons you press. You can use them to set scenes or trigger any other [automation](/integrations/automation/).
 

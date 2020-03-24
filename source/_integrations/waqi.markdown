@@ -10,7 +10,9 @@ ha_codeowners:
   - '@andrey-git'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/E2kfUJ6pkH4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `waqi` 센서 플랫폼은 [World Air Quality Index](https://aqicn.org/city/beijing/) 서비스를 쿼리하여 특정 위치 세트에 대한 AQI 값을 확인합니다. 결과 색인은 센서 출력으로 홈 어시스턴트에 추가됩니다. 
 

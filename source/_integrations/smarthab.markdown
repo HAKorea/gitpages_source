@@ -12,7 +12,9 @@ ha_codeowners:
   - '@outadoc'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/w-OKm24If28" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 집에 [SmartHab](https://www.smarthab.fr/en/home/) 장치가 장착되어 있고 앱 기반 서비스에 액세스 할 수 있는 경우 Home Assistant 용 SmartHab 통합구성요소를 통해 조명 및 셔터를 제어 할 수 있습니다.
 

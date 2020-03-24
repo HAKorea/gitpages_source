@@ -8,7 +8,9 @@ ha_release: 0.34
 ha_iot_class: Local Polling
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/0Pm-qOSKvyo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 이 `sonarr` 센서 플랫폼은 주어진 [Sonarr](https://sonarr.tv/) 인스턴스에서 데이터를 가져옵니다.
 

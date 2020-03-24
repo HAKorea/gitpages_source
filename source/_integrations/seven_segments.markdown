@@ -9,7 +9,9 @@ og_image: /images/screenshots/ssocr.png
 ha_iot_class: Local Polling
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/zC09cLe3zIw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `seven_segments` 이미지 처리 플랫폼을 사용하면 Home Assistant를 통해 실제 7 개의 세그먼트 디스플레이를 읽을 수 있습니다. [`ssocr`](https://www.unix-ag.uni-kl.de/~auerswal/ssocr/)은 [camera](/integrations/camera/)에 의해 관찰되는 디스플레이에 표시된 값을 추출하는데 사용됩니다. 
 

@@ -10,7 +10,9 @@ ha_codeowners:
   - '@robmarkcole'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/oukYfp417c0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 [Sighthound Cloud](https://www.sighthound.com/products/cloud)를 사용하여 카메라 이미지에서 사람을 감지합니다. Sighthound Developer Tier (비 상업용 무료)를 사용하면 매월 5000 개의 이미지를 처리​​할 수 ​​있습니다. 한 달에 더 많은 처리가 필요한 경우 프로덕션 계정 (기본 또는 Pro 계정)에 가입해야합니다.
 

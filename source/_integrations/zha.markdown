@@ -20,7 +20,9 @@ ha_codeowners:
   - '@adminiuga'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/9InA6kc6r9s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 홈어시스턴트에서 Zigbee 장치를 다루는 방법은 아래 ZHA(Zigbee Home Automation)로 통합하여 다루는 방법이 있기는 하지만, 널리 쓰고 있지는 않습니다. 현재 가장 사용자층에서 많이 쓰는 방식은 Hass.io add-on에서 지원하는 현존 Zigbee 허브중 가장 많은 108개회사의 554개 장치를 지원하는 [Zigbee2mqtt](https://www.zigbee2mqtt.io/) 를 사용하는 방법이 현재 가장 널리 쓰이고 있는 방법입니다. 
 

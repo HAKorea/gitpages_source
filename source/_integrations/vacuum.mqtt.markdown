@@ -7,7 +7,9 @@ ha_category:
 ha_release: 0.54
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/t2NgA8qYcFI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `mqtt` vacuum 통합구성요소로 MQTT를 쓸 수 있는 로봇청소기를 제어할 수 있습니다.
 `legacy` 및 `state`라는 두 가지 가능한 메시지 스키마가 있습니다. 

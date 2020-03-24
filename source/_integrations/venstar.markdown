@@ -8,7 +8,9 @@ ha_release: 0.62
 ha_iot_class: Local Polling
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="388" src="https://www.youtube.com/embed/dVUQlqeGf6I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 The `venstar` climate platform allows you to control [Venstar](https://www.venstar.com/) thermostats from Home Assistant.
 Venstar thermostats feature a local API that allows for automation without the need for their Skyport cloud service.

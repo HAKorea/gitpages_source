@@ -10,7 +10,9 @@ ha_codeowners:
   - '@andrey-git'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/azPxDpb0prM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 [Sensibo](https://sensibo.com) 에어컨 컨트롤러를 홈어시스턴트에 연동합니다.
 

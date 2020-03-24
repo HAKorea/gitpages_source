@@ -7,7 +7,9 @@ ha_category:
 ha_release: 0.7.5
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/qskqdjUZcRY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `telegram` 플랫폼은 [Telegram](https://web.telegram.org)을 사용하여 Home Assistant에서 Android 장치, Windows 전화 또는 iOS 장치로 알림을 전달합니다.
 

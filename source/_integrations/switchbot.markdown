@@ -10,7 +10,9 @@ ha_codeowners:
   - '@danielhiversen'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/jYYVih2uNmM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `switchbot` 스위치 플랫폼을 사용하면 Switchbot [devices](https://www.switch-bot.com/)를 제어할 수 있습니다.
 

@@ -7,7 +7,9 @@ ha_category:
 ha_release: 0.14
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="388" src="https://www.youtube.com/embed/-Q-Aa8ggbIg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `sendgrid` 알림 플랫폼은 검증된 클라우드 기반 이메일 플랫폼인 [SendGrid](https://sendgrid.com/)를 통해 이메일 알림을 보냅니다.
 

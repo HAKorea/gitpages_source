@@ -12,7 +12,9 @@ ha_codeowners:
   - '@scheric'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/BjtL_vIkyNg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `solaredge_local` 플랫폼은 일부 SolarEdge 인버터에서 사용 가능한 로컬 API를 사용하여 SolarEdge 태양광 설정에서 세부 정보를 가져와 Home Assistant에 연동할 수 있습니다.
 

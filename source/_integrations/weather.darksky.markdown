@@ -9,7 +9,9 @@ ha_release: 0.61
 ha_iot_class: Cloud Polling
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/rxqSG7o5N6Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
  `darksky` 플랫폼은 [Dark Sky](https://darksky.net/) 웹서비스를 사용자 위치의 기상 데이터 소스로 사용합니다.
 

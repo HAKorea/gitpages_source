@@ -8,7 +8,9 @@ ha_release: 0.34
 ha_iot_class: Local Polling
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/GoWRsaS54JM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `soundtouch` 플랫폼을 통해 Home Assistant에서 [Bose Soundtouch](https://www.soundtouch.com/) 스피커를 제어 할 수 있습니다 .
 

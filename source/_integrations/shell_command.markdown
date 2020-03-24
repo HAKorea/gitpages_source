@@ -1,5 +1,5 @@
 ---
-title: Shell 명령
+title: 쉘 명령(Shell Command)
 description: Instructions on how to integrate Shell commands into Home Assistant.
 ha_category:
   - Automation

@@ -10,7 +10,9 @@ ha_codeowners:
   - '@ludeeus'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/zwEd4Mnt2Kg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `tautulli` 센서 플랫폼은 주어진 [Tautulli Server][tautulli]의 활동을 모니터링합니다. 현재 활성 스트림 수를 상태로 표시하는 센서를 만듭니다. 자세한 내용을 보려면 센서를 클릭하면 더 많은 통계가 표시되며 기본적으로 다음 통계를 사용할 수 있습니다.
 

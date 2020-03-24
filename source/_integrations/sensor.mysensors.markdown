@@ -9,12 +9,10 @@ ha_iot_class: Local Push
 ha_release: 0.7
 ---
 
-Integrates MySensors sensors into Home Assistant. See the [main component] for configuration instructions.
 MySensors 센서를 Home Assistant에 연동합니다. 설정 지침은 [main component]를 참조하십시오.
 
 ## 지원되는 센서 유형
 
-The following sensor types are supported:
 다음과 같은 센서 유형이 지원됩니다.
 
 ### MySensors version 1.4 and higher
@@ -62,13 +60,10 @@ S_WATER_QUALITY | V_TEMP, V_PH, V_ORP, V_EC
 
 ## Custom 측정 단위
 
-Some sensor value types are not specific for a certain sensor type. These do not have a default unit of measurement in Home Assistant. For example, the V_LEVEL type can be used for different sensor types, dust, sound, vibration etc.
 일부 센서값 유형은 특정 센서 유형에 따라 다릅니다. Home Assistant에는 기본 측정 단위가 없습니다. 예를 들어, V_LEVEL 유형은 다양한 센서 유형 dust, sound, vibration 등에 사용할 수 있습니다.
 
-By using V_UNIT_PREFIX, it's possible to set a custom unit for any sensor. The string value that is sent for V_UNIT_PREFIX will be used in preference to any other unit of measurement, for the defined sensors. V_UNIT_PREFIX can't be used as a stand-alone sensor value type. Sending a supported value type and value from the tables above is also required. V_UNIT_PREFIX is available with MySensors version 1.5 and later.
 V_UNIT_PREFIX를 사용하면 모든 센서에 대해 사용자 지정 단위를 설정할 수 있습니다. V_UNIT_PREFIX에 대해 전송된 문자열 값은 정의된 센서에 대해 다른 측정 단위보다 우선적으로 사용됩니다. V_UNIT_PREFIX는 독립형 센서값 유형으로 사용할 수 없습니다. 위의 표에서 지원되는 값의 유형, 값을 보내야합니다. V_UNIT_PREFIX는 MySensors 버전 1.5 이상에서 사용 가능합니다.
 
-For more information, visit the [serial api] of MySensors.
 자세한 내용은 MySensors의 [serial api]를 방문하십시오.
 
 ## sketches 사례

@@ -11,7 +11,9 @@ ha_codeowners:
   - '@rohankapoorcom'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/kV3NBzz2Afw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `speedtestdotnet` 통합구성요소는 [Speedtest.net](https://speedtest.net/) 웹 서비스를 사용하여 네트워크 대역폭 성능을 측정합니다.
 

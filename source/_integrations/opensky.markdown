@@ -8,7 +8,9 @@ ha_release: 0.43
 ha_iot_class: Cloud Polling
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/dCX298FDky4?list=PLWlpiQXaMerTyzl_Pe1PEloZTj9MoU5cl" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `opensky` 센서를 사용하면 특정 지역의 비행을 추적할 수 있습니다. [OpenSky Network](https://opensky-network.org/) 공개 API의 크라우드 소싱 데이터를 사용합니다. 항공편이 정의된 지역으로 들어오고 나갈 때 홈어시스턴트 이벤트도 시작합니다.
 

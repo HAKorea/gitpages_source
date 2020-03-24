@@ -8,7 +8,9 @@ ha_release: 0.22
 ha_iot_class: Local Polling
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="388" src="https://www.youtube.com/embed/4mH1oTMuXEE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 If you have a Pandora account, you can control it from Home Assistant with this media player.
 

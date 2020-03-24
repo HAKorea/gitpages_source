@@ -12,7 +12,9 @@ ha_codeowners:
   - '@evanjd'
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/gLuCCAnr34A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/gLuCCAnr34A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `logi_circle` 구현을 통해 [Logi Circle](https://circle.logi.com/) 카메라를 Home Assistant에 연동할 수 있습니다. Logi Circle을 연결하려면 [sign up for API access](#requesting-api-access)하고 `client_id`, `client_secret`, `api_key`를 가져와야합니다.
 

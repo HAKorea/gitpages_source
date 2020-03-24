@@ -10,7 +10,9 @@ ha_iot_class: Assumed State
 ha_release: 0.44
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/lnp6jo2XOU8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 There is currently support for the following device types within Home Assistant:
 

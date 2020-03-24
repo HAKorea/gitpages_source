@@ -16,7 +16,9 @@ ha_codeowners:
   - '@balloob'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/fAqfqQZiQlE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `ring` 구현을 통해 [Ring.com](https://ring.com/) 장치를 Home Assistant에 통합 할 수 있습니다.
 

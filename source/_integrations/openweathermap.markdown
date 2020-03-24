@@ -11,7 +11,9 @@ ha_codeowners:
   - '@fabaff'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="388" src="https://www.youtube.com/embed/ccTAedW2KPg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `openweathermap` 기상 플랫폼은 [OpenWeatherMap](https://openweathermap.org/)를 현재 위치의 현재 기상 데이터 소스로 사용합니다.
 

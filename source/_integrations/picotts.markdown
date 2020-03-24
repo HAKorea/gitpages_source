@@ -7,7 +7,9 @@ ha_category:
 ha_release: 0.36
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="388" src="https://www.youtube.com/embed/bBVCpHLBctc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `picotts` 텍스트 음성 변환 플랫폼은 오프라인 피코 텍스트 음성 변환 엔진을 사용하여 자연스러운 소리의 음성으로 텍스트를 읽습니다. 
 이를 위해서는 시스템에 pico tts 라이브러리를 설치해야합니다. 일반적으로 데비안에서는 `sudo apt-get install libttspico-utils`

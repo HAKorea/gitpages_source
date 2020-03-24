@@ -10,7 +10,9 @@ ha_codeowners:
   - '@danielhiversen'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/hPravhfg9ao" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `yr` 플랫폼은 [YR.no](https://www.yr.no/)를 현재 위치의 현재 기상 데이터 소스로 사용합니다. 일기 예보는 노르웨이 기상 연구소와 NRK에서 제공합니다.
 

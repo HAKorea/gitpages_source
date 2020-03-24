@@ -11,7 +11,9 @@ ha_iot_class: Local Polling
 ha_release: 0.57
 ---
 
+<div class='videoWrapper'>
 <iframe width="692" height="388" src="https://www.youtube.com/embed/II1iu_JSW_U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 많은 WiFi 액세스 포인트와 WiFi 라우터는 SNMP(Simple Network Management Protocol)를 지원합니다. 네트워크 연결 장치를 모니터링/관리하는 표준화 된 방법입니다. SNMP는 각 노드가 객체인 트리와 같은 계층을 사용합니다. 이러한 많은 개체에는 네트워크 인터페이스, 디스크 및 WiFi 등록과 같은 인스턴스(instances) 및 메트릭(metrics) 목록이 포함되어 있습니다.
 

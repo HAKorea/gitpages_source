@@ -11,7 +11,9 @@ ha_category:
 ha_iot_class: Local Push
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/ewIIZ4f2iMk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `smappee` 통합구성요소는 에너지 모니터링 및 Comport 플러그 스위치를 위한 [Smappee](https://www.smappee.com/) 컨트롤러에 대한 지원을 추가합니다.
 

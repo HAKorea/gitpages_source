@@ -12,7 +12,9 @@ ha_codeowners:
   - '@oblogic7'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="409" src="https://www.youtube.com/embed/TrfA6HrYajk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 [Owlet Care](https://owletcare.com/) 베이비 모니터는 수면 중에 아기의 산소 수준과 심박수를 확인합니다.
 

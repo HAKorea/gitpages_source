@@ -8,7 +8,9 @@ logo: plum.png
 ha_release: 0.85
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="388" src="https://www.youtube.com/embed/Gp2tOQWvwIU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 Configurable/Dimmable WiFi Lightswitch
 - Cloud registered, Local API communication (both RESTful and TCP pushed events)

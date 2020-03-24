@@ -16,7 +16,9 @@ ha_codeowners:
   - '@anonym-tsk'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="440" src="https://www.youtube.com/embed/ZCnI3OIaRTI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 The `starline` integration lets you retrieve data of your StarLine security system from the StarLine portal. You will need a working StarLine account.
 

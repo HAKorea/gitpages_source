@@ -8,7 +8,9 @@ ha_release: 0.38
 ha_config_flow: true
 ---
 
-<iframe width="690" height="388" src="https://www.youtube.com/embed/BmEj3EBo0vg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/BmEj3EBo0vg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 Mailgun에서 웹 후크를 수신하려면 웹에서 홈어시스턴트 인스턴스에 액세스할 수 있어야하고 ([Hass.io instructions](/addons/duckdns/)) HTTP 연동([docs](/integrations/http/#base_url))을 위해 `base_url`을 설정해야합니다.
 

@@ -10,7 +10,9 @@ ha_iot_class: Cloud Push
 ha_release: 0.73
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="388" src="https://www.youtube.com/embed/qwYOxToNePM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `rachio` 플랫폼을 사용하면 [Rachio irrigation system](https://rachio.com/)을 제어 할 수 있습니다.
 

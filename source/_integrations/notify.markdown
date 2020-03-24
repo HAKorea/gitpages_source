@@ -10,7 +10,9 @@ ha_codeowners:
   - '@home-assistant/core'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/WxvXQ8ShbEU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `notify` 통합구성요소로 다양한 플랫폼에 notification을 보낼 수 있습니다. 이를 사용하려면 하나 이상의 notification 대상인 notify를 설정해야합니다. [integrations list](/integrations/#notifications) 사용 사례에 맞는 알림 대상을 확인하십시오.
 

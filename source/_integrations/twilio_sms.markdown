@@ -9,7 +9,9 @@ ha_codeowners:
   - '@robbiet480'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/JCjzEKdlezk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `twilio` 알림 플랫폼은 SMS를 통해 [Twilio](https://twilio.com)를 통해 알림을 보낼 수 있습니다.
 

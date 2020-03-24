@@ -8,7 +8,9 @@ ha_release: 0.27
 ha_iot_class: Configurable
 ---
 
-<iframe width="690" height="388" src="https://www.youtube.com/embed/A57jFYDzOto" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/A57jFYDzOto" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `mqtt_room` 센서 플랫폼을 사용하면 MQTT 클라이언트를 사용하여 장치의 실내 위치를 감지 할 수 있습니다.
 

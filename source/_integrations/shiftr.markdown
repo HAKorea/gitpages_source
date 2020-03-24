@@ -9,7 +9,9 @@ ha_codeowners:
   - '@fabaff'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="609" src="https://www.youtube.com/embed/hGicZsBHo9s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `shiftr` 통합구성요소로 홈어시스턴트로 수집한 세부 정보를 [Shiftr.io](https://shiftr.io)로 전송하고 정보의 흐름을 시각화 할 수 있습니다. 귀하의 세부 정보는 공개됩니다!
 

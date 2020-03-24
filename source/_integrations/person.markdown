@@ -8,7 +8,9 @@ ha_release: 0.88
 ha_quality_scale: internal
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/A2JaMiIXW9Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 Person 통합구성요소를 통해 [device tracker](/integrations/device_tracker/) 엔터티를 하나 이상의 Person 엔터티에 연결할 수 있습니다. 연결된 장치 추적기의 상태 업데이트는 Person 상태를 설정합니다. 여러 장치 추적기를 사용하는 경우 Person 상태는 다음 순서로 결정됩니다.
 

@@ -13,7 +13,9 @@ ha_codeowners:
   - '@michaelarnauts'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/fokYFEWo4HA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `tado` 통합구성요소 플랫폼은 [my.tado.com](https://my.tado.com/) 웹 사이트의 인터페이스로 사용됩니다.
 

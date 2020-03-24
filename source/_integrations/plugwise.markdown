@@ -11,7 +11,9 @@ ha_codeowners:
   - '@bouwew'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="388" src="https://www.youtube.com/embed/WZnrY25-eNg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 This enables [Plugwise](https://plugwise.com) [Anna](https://www.plugwise.com/en_US/products/anna) thermostats to be integrated. This integration talks locally to your **Smile** interface, and you will need its password and IP address.
 

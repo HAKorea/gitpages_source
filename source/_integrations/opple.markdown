@@ -8,7 +8,9 @@ ha_release: '0.80'
 ha_iot_class: Local Polling
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/npWKc7gzgdo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `opple` light 플랫폼을 사용하면 Opple 스마트 조명의 상태를 제어할 수 있습니다.
 

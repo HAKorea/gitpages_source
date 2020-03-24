@@ -8,7 +8,9 @@ ha_release: 0.43
 ha_iot_class: Cloud Polling
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/j4aZFjAylMY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `spotify` 미디어 플레이어 플랫폼을 사용하면 Home Assistant에서 [Spotify](https://www.spotify.com/) 재생을 제어할 수 있습니다.
 

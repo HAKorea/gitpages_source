@@ -7,7 +7,9 @@ ha_category:
 ha_release: '0.60'
 ---
 
-<iframe width="690" height="388" src="https://www.youtube.com/embed/nqzDHz1CaL4?list=PLTVCI_tE32rQ2zIWR0IlWiTnpS0KbhwEZ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/nqzDHz1CaL4?list=PLTVCI_tE32rQ2zIWR0IlWiTnpS0KbhwEZ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 Meraki AP를 장치 추적기로 사용하십시오. Meraki는 네트워크뿐만 아니라 모든 장치를 볼 수 있습니다.
 

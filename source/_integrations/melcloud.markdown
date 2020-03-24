@@ -11,7 +11,9 @@ ha_codeowners:
   - '@vilppuvuorinen'
 ---
 
-<iframe width="690" height="388" src="https://www.youtube.com/embed/hTTQK2ZSdis" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/hTTQK2ZSdis" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 The `melcloud` integration integrates Mitsubishi Electric's [MELCloud](https://www.melcloud.com/) enabled devices into Home Assistant.
 

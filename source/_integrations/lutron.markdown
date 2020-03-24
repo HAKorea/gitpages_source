@@ -14,7 +14,9 @@ ha_codeowners:
   - '@JonGilmore'
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/wu3eSloNVKI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/wu3eSloNVKI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 [Lutron](http://www.lutron.com/)은 미국 조명 제어 회사입니다. 여기에는 전등 switches/dimmers, occupancy 센서, HVAC 제어 등을 관리하는 여러 홈자동화 장치 라인이 있습니다. 홈어시스턴트의 `lutron` 통합구성요소는 이러한 시스템의 기본 허브와 통신하는 역할을합니다.
 

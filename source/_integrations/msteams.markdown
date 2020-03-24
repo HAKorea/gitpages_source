@@ -9,7 +9,9 @@ ha_codeowners:
   - '@peroyvind'
 ---
 
-<iframe width="690" height="388" src="https://www.youtube.com/embed/OiWebwPCFaI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/OiWebwPCFaI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `Microsoft Teams` 플랫폼을 사용하면 Home Assistant에서 [Microsoft Teams](https://products.office.com/en-us/microsoft-teams/group-chat-software)의 팀 채널로 알림을 보낼 수 있습니다.
 

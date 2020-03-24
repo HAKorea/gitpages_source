@@ -9,7 +9,9 @@ ha_codeowners:
   - '@pschmitt'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/dTzBa0UhQo0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `roomba` 통합구성요소를 통해 [iRobot Roomba](https://www.irobot.com/For-the-Home/Vacuuming/Roomba.aspx) vacuum을 제어 할 수 있습니다.
 

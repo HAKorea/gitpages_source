@@ -11,7 +11,9 @@ ha_codeowners:
   - '@benleb'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/jjOqzXCwDec" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `surepetcare` 구성 요소를 사용하면 Sure Petcare Connect Pet 또는 Cat Flap에 대한 정보를 얻을 수 있습니다.
 

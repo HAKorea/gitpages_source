@@ -11,7 +11,9 @@ ha_codeowners:
   - '@squishykid'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/a9TY16j_Kk4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `solax` 통합구성요소는 홈어시스턴트를 Solax 태양광 인버터에 연결합니다. Solax 인버터는 홈 Wi-Fi 네트워크에 연결되어 REST API를 노출할 수 있습니다. 이 연동은 태양광 발전, 배터리 수준 및 전력, 그리드에 얼마나 많은 전력이 공급되는지와 같은 정보를 검색합니다.
 

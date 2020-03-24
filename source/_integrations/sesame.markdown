@@ -8,7 +8,9 @@ ha_iot_class: Cloud Polling
 ha_release: 0.47
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/M2fYzlsJW68" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `seame` 플랫폼을 사용하면 CANDY HOUSE, Inc.의 [Sesame](https://candyhouse.co/) 스마트 잠금 장치를 제어할 수 있습니다.
 

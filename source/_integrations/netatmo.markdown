@@ -14,7 +14,9 @@ ha_release: '0.20'
 ha_iot_class: Cloud Polling
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/fcL4fPhlVVc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `netatmo` 통합 플랫폼은 모든 Netatmo 관련 플랫폼을 연동하는 주요 통합구성요소입니다.
 

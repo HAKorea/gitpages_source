@@ -12,7 +12,9 @@ ha_codeowners:
   - '@konikvranik'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="388" src="https://www.youtube.com/embed/ZUBykEJOpeE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `rainbird` 통합구성요소를 통해 Home Assistant의 Rain Bird 관개 시스템의 [LNK WiFi](https://www.rainbird.com/products/lnk-wifi-module) 모듈과 상호 작용할 수 있습니다.
 

@@ -10,7 +10,9 @@ ha_codeowners:
   - '@escoand'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/jlovenp2apg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `samsungtv` 플랫폼을 사용하면 [Samsung Smart TV](https://www.samsung.com/uk/tvs/all-tvs/)를 제어 할 수 있습니다.
 

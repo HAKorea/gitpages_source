@@ -8,7 +8,9 @@ ha_iot_class: Local Polling
 ha_release: 0.24
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="520" src="https://www.youtube.com/embed/mZht_dZMQhQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 The `netio` switch platform allows you to control your [Netio](https://www.netio-products.com/en/overview/) Netio4, Netio4 All, and Netio 230B. These are smart outlets controllable through Ethernet and/or WiFi that reports consumptions (Netio4all).
 

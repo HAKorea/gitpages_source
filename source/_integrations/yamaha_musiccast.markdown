@@ -9,7 +9,9 @@ ha_codeowners:
   - '@jalmeroth'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/NIHZxNjeEg0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `yamaha_musiccast` 플랫폼을 사용하면 Home Assistant에서 [Yamaha MusicCast Receivers](https://usa.yamaha.com/products/audio_visual/hifi_components/index.html)를 제어할 수 있습니다.
 

@@ -7,7 +7,9 @@ ha_category:
 ha_release: 0.47
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="388" src="https://www.youtube.com/embed/HM7qGJNMat4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 This `radarr` sensor platform pulls data from a given [Radarr](https://radarr.video/) instance.
 

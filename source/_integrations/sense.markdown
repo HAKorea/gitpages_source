@@ -12,7 +12,9 @@ ha_codeowners:
   - '@kbickar'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/5RyDxZLA8b8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 [Sense](https://sense.com) 미터 정보를 Home Assistant에 연동하십시오.
 

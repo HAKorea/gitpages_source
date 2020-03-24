@@ -11,7 +11,9 @@ ha_codeowners:
   - '@mwegrzynek'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="440" src="https://www.youtube.com/embed/LrV9-Q2ha-o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 [Supla](https://supla.org/)는 ESP8266 기반 장치를 위한 오픈 소스 홈오토메이션 시스템입니다. 자체 프로토콜 세트, 자체 펌웨어 및 [Zamel](https://supla.zamel.pl/)과 같은 상용 장치를 가지고 있습니다.
 

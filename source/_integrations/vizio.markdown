@@ -11,7 +11,9 @@ ha_codeowners:
   - '@raman325'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="388" src="https://www.youtube.com/embed/n1KNQfmgI8A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 Vizio SmartCast 장치는 **설정** -> **통합구성요소** -> **Vizio SmartCast** 로 쉽게 설정 가능합니다. 
 

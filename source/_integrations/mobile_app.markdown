@@ -11,7 +11,9 @@ ha_codeowners:
   - '@robbiet480'
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/EfUEyNXrMT8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/EfUEyNXrMT8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 모바일 앱 통합구성요소를 통해 홈어시스턴트 모바일 앱은 홈어시스턴트와 쉽게 연동할 수 있습니다.
 

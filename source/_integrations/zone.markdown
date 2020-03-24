@@ -11,7 +11,9 @@ ha_codeowners:
   - '@home-assistant/core'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/wVjKiIs2WNM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 구역(zone)을 사용하면 지구상의 특정 지역을 지정할 수 있습니다 (현재). 장치 추적기가 장치가 구역 내에 있는 것을 발견하면 상태는 해당 구역에서 이름을 가져옵니다. 구역은 자동화 설정 내에서 [trigger](/getting-started/automation-trigger/#zone-trigger) 또는 [condition](/getting-started/automation-condition/#zone-condition)으로 사용할 수도 있습니다.
 

@@ -8,14 +8,15 @@ ha_iot_class: Local Polling
 ha_release: 0.44
 ---
 
-The `envirophat` sensor platform allows you to display information collected by an [Enviro pHAT](https://shop.pimoroni.com/products/enviro-phat) add-on board for the Raspberry Pi. The board features a wide range of sensors, such as:
+`envirophat` 센서 플랫폼을 사용하면 Raspberry Pi 용 [Enviro pHAT](https://shop.pimoroni.com/products/enviro-phat) 애드온 보드에서 수집한 정보를 표시 할 수 있습니다. 이 보드에는 다음과 같은 다양한 센서가 있습니다.
+
 
 - BMP280 temperature/pressure sensor
 - TCS3472 light and RGB color sensor with two LEDs for illumination
 - LSM303D accelerometer/magnetometer sensor
 - ADS1015 4-channel 3.3v, analog to digital sensor (ADC)
 
-To add this platform to your installation, add the following to your `configuration.yaml` file:
+이 플랫폼을 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry,

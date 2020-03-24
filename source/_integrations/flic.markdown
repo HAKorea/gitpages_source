@@ -8,7 +8,9 @@ ha_iot_class: Local Push
 ha_release: 0.35
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/-Y7Rm6OcCMY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/-Y7Rm6OcCMY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `flic` 플랫폼을 사용하면 [flic](https://flic.io) 스마트 버튼에서 클릭 이벤트를 수신할 수 있습니다.
 
@@ -59,7 +61,7 @@ timeout:
 
 #### Discovery
 
-검색이 활성화된 경우 새 버튼을 7 초 이상 눌러 추가 할 수 있습니다. 이 버튼은 파일 서비스와 페어링되어 홈어시스턴트에 추가됩니다. 그렇지 않으면 수동으로 파일 서비스와 페어링해야합니다. 홈어시스턴트 플랫폼은 새 버튼을 검색하지 않고 이미 페어링된 버튼에만 연결합니다.
+검색이 활성화된 경우 새 버튼을 7 초 이상 눌러 추가할 수 있습니다. 이 버튼은 파일 서비스와 페어링되어 홈어시스턴트에 추가됩니다. 그렇지 않으면 수동으로 파일 서비스와 페어링해야합니다. 홈어시스턴트 플랫폼은 새 버튼을 검색하지 않고 이미 페어링된 버튼에만 연결합니다.
 
 #### Timeout
 
@@ -86,9 +88,9 @@ automation:
 
 이벤트 데이터:
 
-- **button_name**: 이벤트를 트리거 한 버튼의 이름.
+- **button_name**: 이벤트를 트리거한 버튼의 이름.
 - **button_address**: 이벤트를 트리거한 버튼의 Bluetooth 주소.
-- **click_type**: 클릭 유형. 가능한 값은 `single`,`double` 및 `hold`.
+- **click_type**: 클릭 유형. 가능한 값은 `single`, `double`, `hold`.
 - **queued_time**: 이 이벤트가 버튼에서 큐에 대기한 시간(초)입니다.
 
 버튼 클릭을 감지하고 디버깅하는데 도움이 되도록 이 버튼을 사용하면 모든 버튼의 클릭 유형에 대한 알림을 보내는 자동화 기능을 사용할 수 있습니다. 이 예에서는 [HTML5 push notification platform](/integrations/html5)을 사용합니다. 알림 설정에 대한 자세한 내용은 [notification integration page](/integrations/notify/)를 방문하십시오.

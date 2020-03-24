@@ -9,7 +9,9 @@ ha_iot_class: Cloud Push
 ha_config_flow: true
 ---
 
-<iframe width="690" height="388" src="https://www.youtube.com/embed/bZE10qMHcXA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/bZE10qMHcXA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 이 통합구성요소는 [GPSLogger](https://gpslogger.app/) 와의 연동을 설정합니다. GPSLogger는 사용자가 Home Assistant에서 위치를 업데이트 할 수 있는 Android용 오픈 소스 앱입니다.
 

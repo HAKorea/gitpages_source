@@ -7,7 +7,9 @@ ha_category:
 ha_release: 0.36
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/0DXHAU223E8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/0DXHAU223E8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `iss` 플랫폼은 [Open Notify API](http://open-notify.org/Open-Notify-API/ISS-Location-Now/)를 사용하여 스테이션이 우리집의 위에 위치해있는지 알려줍니다.
 이는 ISS가 집의 수평선 위로 10도 위에 있다는 것을 의미합니다.

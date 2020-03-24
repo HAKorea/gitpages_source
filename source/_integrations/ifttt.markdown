@@ -10,7 +10,9 @@ ha_release: 0.8
 ha_config_flow: true
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/pQpz_Ms8tiU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/pQpz_Ms8tiU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 [IFTTT](https://ifttt.com) 는 사용자가 소위 "애플릿"이라는 간단한 조건문 체인을 만들 수있는 웹 서비스입니다. IFTTT 구성 요소를 사용하면 **Webhooks** 서비스 (이전의 **Maker** 채널)를 통해 애플릿을 트리거 할 수 있습니다 
 

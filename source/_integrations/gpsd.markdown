@@ -10,7 +10,9 @@ ha_codeowners:
   - '@fabaff'
 ---
 
-<iframe width="690" height="388" src="https://www.youtube.com/embed/A1zmhxcUOxw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/A1zmhxcUOxw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `gpsd` 통합구성요소는 [gpsd](http://catb.org/gpsd/)에서 수집한 GPS 정보와 GPS 수신기를 사용합니다.
 

@@ -7,7 +7,9 @@ ha_release: 0.64
 logo: apple-homekit.png
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/m46HUBhZoDQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/m46HUBhZoDQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `homekit` 통합구성요소는 애플의 홈앱과 Siri에서 제어할 수 있도록 애플 HomeKit에 홈어시스턴트에서 entity들을 전달할 수 있습니다. 나중에 문제를 해결하기 위해 아래 나열된 [고려 사항](#consideration)을 읽었는지 확인하십시오. 그러나 문제가 발생하면 [문제해결](#troubleshooting) 섹션을 확인 하십시오. 
 

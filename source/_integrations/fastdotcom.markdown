@@ -11,23 +11,25 @@ ha_codeowners:
   - '@rohankapoorcom'
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/qtNoo4W5dSc?list=PLWlpiQXaMerTyzl_Pe1PEloZTj9MoU5cl" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/qtNoo4W5dSc?list=PLWlpiQXaMerTyzl_Pe1PEloZTj9MoU5cl" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `fastdotcom` 통합구성요소는 [Fast.com](https://fast.com/) 웹서비스를 사용하여 네트워크 대역폭 성능을 측정합니다.
 
 <div class='note'>
 
-현재 fast.com은 다운로드 대역폭 측정 만 지원합니다. Ping 및 업로드와 같은 다른 대역폭 메트릭(Metric)을 측정하려면 [speedtest](/integrations/speedtestdotnet) 구성 요소를 사용하십시오.
+현재 fast.com은 다운로드 대역폭 측정만 지원합니다. Ping 및 업로드와 같은 다른 대역폭 메트릭(Metric)을 측정하려면 [speedtest](/integrations/speedtestdotnet) 구성 요소를 사용하십시오.
 
 </div>
 
 이 통합구성요소를 활성화하면 Fast.com 센서가 자동으로 생성됩니다.
 
-기본적으로 속도 테스트는 1 시간마다 실행됩니다. 사용자는 속도 테스트를 실행하기 위해 `scan_interval`을 정의하여 구성에서 업데이트 빈도를 변경할 수 있습니다
+기본적으로 속도 테스트는 1 시간마다 실행됩니다. 사용자는 속도 테스트를 실행하기 위해 `scan_interval`을 정의하여 설정에서 업데이트 빈도를 변경할 수 있습니다
 
 ## 설정
 
-설치에 Fast.com을 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
+Fast.com을 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 시간당 한 번, 시간 (기본값) :
 
@@ -70,14 +72,14 @@ scan_interval:
 
 ### 서비스
 
-`fastdotcom` 통합구성요소는 일단 로드되면 요청시 Fast.com 속도 테스트를 실행하기 위해 호출할 수있는 서비스 (`fastfastcom.speedtest`)를 노출합니다. 이 서비스에는 매개 변수가 없습니다. 수동 모드를 활성화 한 경우 유용할 수 있습니다.
+`fastdotcom` 통합구성요소는 일단 로드되면 요청시 Fast.com 속도 테스트를 실행하기 위해 호출할 수 있는 서비스 (`fastfastcom.speedtest`)를 노출합니다. 이 서비스에는 매개 변수가 없습니다. 수동 모드를 활성화한 경우 유용할 수 있습니다.
 
 ```yaml
 action:
   service: fastdotcom.speedtest
 ```
 
-## Notes
+## 참고사항
 
 - Raspberry Pi 3 이상에서 실행하는 경우 최대 속도는 100Mbit/s LAN 어댑터에 의해 제한됩니다.
 - 센서는 15 초 테스트 동안 최대 측정 속도를 반환합니다.

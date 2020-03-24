@@ -8,12 +8,14 @@ ha_iot_class: Local Polling
 ha_release: 0.25
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/EqZtinzD6yM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/EqZtinzD6yM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
-`flux_led`는 라이트 플랫폼으로서 홈어시스턴트에 연동됩니다. 전구와 컨트롤러의 여러 브랜드는 동일한 프로토콜을 사용하며 HF-LPB100 칩셋을 공통으로 사용합니다. MagicHome 앱으로 장치를 제어 할 수 있으면 전구나 컨트롤러 (예: WiFi LED 컨트롤러)가 작동 할 가능성이 높습니다.
+`flux_led`는 라이트 플랫폼으로서 홈어시스턴트에 연동됩니다. 전구와 컨트롤러의 여러 브랜드는 동일한 프로토콜을 사용하며 HF-LPB100 칩셋을 공통으로 사용합니다. MagicHome 앱으로 장치를 제어 할 수 있으면 전구나 컨트롤러 (예: WiFi LED 컨트롤러)가 작동할 가능성이 높습니다.
 전구의 예:
 
-*Note* : 해당 제품들의 일부 Wifi 제품들은 [ESPHOME](https://hakorea.github.io/integrations/esphome/), [TASMOTA](https://tasmota.github.io/docs/#/installation/)와 같은 방식으로 변환시 좀 더 다양한 기능을 활용할 수 있습니다. 
+*Note* : 해당 제품들의 일부 Wifi 제품들은 [ESPHOME](https://hakorea.github.io/integrations/esphome/), [TASMOTA](https://tasmota.github.io/docs/#/installation/)와 같은 방식으로 변환시 훨씬 다양한 기능을 활용할 수 있습니다. 
 
 - [Flux Smart Lighting](https://www.fluxsmartlighting.com/)
 - [Flux WiFi Smart LED Light Bulb4](https://amzn.to/2X0dVwu)
@@ -90,7 +92,6 @@ devices:
 
 ### 설정 예시
 
-Will automatically search and add all lights on start up:
 시작시 모든 조명을 자동으로 검색하고 추가합니다.
 
 ```yaml
@@ -140,7 +141,7 @@ rgb + white 모드로 조명을 추가합니다 (기본값). 슬라이더와 색
       mode: "rgbw"
 ```
 
-white 모드의 조명만 추가합니다. W 채널만 RGBW 컨트롤러에 연결되어 있고 밝기 값을 통해 화이트 레벨을 제어할 수있는 경우에 유용합니다.
+white 모드의 조명만 추가합니다. W 채널만 RGBW 컨트롤러에 연결되어 있고 밝기 값을 통해 화이트 레벨을 제어할 수 있는 경우에 유용합니다.
 
 ```yaml
     192.168.1.10:

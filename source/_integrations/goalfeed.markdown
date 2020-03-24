@@ -7,7 +7,9 @@ ha_category:
 ha_release: 0.63
 ---
 
-<iframe width="690" height="438" src="https://www.youtube.com/embed/lp-hJwIQoKg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/lp-hJwIQoKg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `goalfeed` 통합구성요소를 통해 Goalfeed 계정을 사용하여 NHL 또는 MLB 팀이 득점할 때마다 홈어시스턴트에서 이벤트를 트리거 할 수 있습니다.
 

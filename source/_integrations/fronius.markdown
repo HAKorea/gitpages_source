@@ -11,13 +11,15 @@ ha_codeowners:
   - '@nielstron'
 ---
 
-<iframe width="690" height="388" src="https://www.youtube.com/embed/JhHAtVu_eT8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/JhHAtVu_eT8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `fronius` 센서는 [Fronius](https://www.fronius.com/) 태양광 인버터, 배터리 시스템 또는 스마트 미터를 폴링하고 그 값을 Home Assistant에서 센서로 표시합니다.
 
 ## 설정
 
-이 센서를 활성화하려면`configuration.yaml` 파일에 다음 줄을 추가하십시오 :
+이 센서를 활성화하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오 :
 
 ```yaml
 sensor:
@@ -70,7 +72,7 @@ monitored_conditions:
 
 - `inverter`
 
-    현재 일 또는 연도에 생산 된 에너지 및 생산 된 전체 에너지와 같은 누적 데이터.
+    현재 일 또는 연도에 생산된 에너지 및 생산된 전체 에너지와 같은 누적 데이터.
     또한 AC/DC power, current, voltage, frequency에 대한 실시간 값입니다.
     데이터는 장치 범위를 선택할 때만 표시됩니다.
 
@@ -90,7 +92,7 @@ Fronius 장치가 필요한 데이터를 제공하기 시작할 때, 일출시�
 
 ## 사례
 
-하나의 Fronius 장치가 제공하는 구성 요소를 더 포함 할 때 통합된 센서 목록은 아래와 같이 제공 될 수 있습니다.
+하나의 Fronius 장치가 제공하는 구성 요소를 더 포함할 때 통합된 센서 목록은 아래와 같이 제공 될 수 있습니다.
 
 ```yaml
 sensor:

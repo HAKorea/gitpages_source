@@ -20,7 +20,7 @@ ha_quality_scale: internal
 
 ## 설정
 
-설치에서 Folder Watcher 통합을 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
+Folder Watcher 연동을 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 {% raw %}
 ```yaml

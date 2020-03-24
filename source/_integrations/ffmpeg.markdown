@@ -11,7 +11,7 @@ ha_release: 0.29
 
 <div class='note'>
 
-시스템 경로에`ffmpeg` 바이너리가 필요합니다. 데비안 8 또는 Raspbian (Jessie)에서는 [debian-backports](https://backports.debian.org/Instructions/)에서 설치할 수 있습니다. Raspberry Pi에서 [hardware acceleration](https://trac.ffmpeg.org/wiki/HWAccelIntro) 지원을 원한다면 직접 소스에서 빌드해야합니다. Windows 바이너리는 [FFmpeg] (http://www.ffmpeg.org/) 웹 사이트에서 제공됩니다.
+시스템 경로에 `ffmpeg` 바이너리가 필요합니다. 데비안 8 또는 Raspbian (Jessie)에서는 [debian-backports](https://backports.debian.org/Instructions/)에서 설치할 수 있습니다. Raspberry Pi에서 [hardware acceleration](https://trac.ffmpeg.org/wiki/HWAccelIntro) 지원을 원한다면 직접 소스에서 빌드해야합니다. Windows 바이너리는 [FFmpeg] (http://www.ffmpeg.org/) 웹 사이트에서 제공됩니다.
 </div>
 
 <div class='note'>
@@ -37,6 +37,7 @@ ffmpeg_bin:
 {% endconfiguration %}
 
 ### Raspbian Debian Jessie Lite 설치
+
 RPi의 Raspbian Debian Jessie Lite에서 바이너리를 가져오려면 다음을 수행해야합니다.
 
 ```bash

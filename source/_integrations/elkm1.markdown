@@ -14,7 +14,9 @@ ha_category:
 ha_iot_class: Local Push
 ---
 
-<iframe width="690" height="388" src="https://www.youtube.com/embed/QZv33JO6tZA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/QZv33JO6tZA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 The Elk-M1 is a home security and automation controller that is capable of alarm control panel functions and automation.
 

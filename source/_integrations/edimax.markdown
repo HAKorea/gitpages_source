@@ -7,6 +7,10 @@ ha_category:
 ha_release: pre 0.7
 ---
 
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/pWA_luALGi8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 이 `edimax` 스위치 플랫폼을 사용하면 [Edimax](https://www.edimax.com/edimax/merchandise/merchandise_list/data/edimax/global/home_automation_smart_plug/) 스위치의 상태를 제어할 수 있습니다.
 
 설치시 Edimax 스위치를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오 :
@@ -42,7 +46,7 @@ name:
 
 ## 소비 전력 센서
 
-[version 2 of the firmware](https://www.edimax.com/edimax/download/download/data/edimax/global/download/)부터 Edimax 스위치는 상태 개체에서 현재 및 누적 일일 전력 소비량을 보고 할 수도 있습니다. [template sensor](/integrations/template)를 사용하여 값을 추출하십시오. 
+[version 2 of the firmware](https://www.edimax.com/edimax/download/download/data/edimax/global/download/)부터 Edimax 스위치는 상태 개체에서 현재 및 누적 일일 전력 소비량을 보고할 수도 있습니다. [template sensor](/integrations/template)를 사용하여 값을 추출하십시오. 
 
 {% raw %}
 ```yaml

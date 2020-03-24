@@ -8,6 +8,10 @@ ha_release: 0.29
 ha_iot_class: Local Polling
 ---
 
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/mPR-vR5ZbRg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 `emoncms` 센서 플랫폼은 로컬 또는 클라우드 기반 버전의 [Emoncms](https://emoncms.org)에서 제공되는 피드용 센서를 만듭니다.
 
 이 센서를 활성화하려면 `configuration.yaml`에 다음 줄을 추가하면 모든 피드가 센서로 표시됩니다.

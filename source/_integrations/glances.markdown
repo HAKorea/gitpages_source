@@ -12,10 +12,11 @@ ha_codeowners:
   - '@engrbm87'
 ---
 
-<iframe width="690" height="485" src="https://www.youtube.com/embed/m9qIqq104as" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/m9qIqq104as" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 glances 통합구성요소는 기본적으로 [glance Addon](https://github.com/hassio-addons/addon-glances)이 지원됨으로 홈어시스턴트의 Supervisor -> DASHBOARD에서 `glance add-on` 을 찾아 설치합니다. 
-
 
 ------------------------------------------------------------------------------------------------------------------
 차후 번역 예정

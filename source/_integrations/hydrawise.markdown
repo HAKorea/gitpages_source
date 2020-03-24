@@ -11,7 +11,9 @@ ha_release: 0.71
 ha_iot_class: Cloud Polling
 ---
 
-<iframe width="690" height="388" src="https://www.youtube.com/embed/z2UtOoHIzoM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/z2UtOoHIzoM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `hydrawise` 통합구성요소를 통해 [Hunter Hydrawise](https://hydrawise.com) Wi-Fi 관개 컨트롤러 시스템을 Home Assistant에 연동할 수 있습니다.
 

@@ -9,7 +9,10 @@ ha_release: 0.19
 ha_codeowners:
   - '@robbiet480'
 ---
-<iframe width="690" height="437" src="https://www.youtube.com/embed/DdMmEbKp4_o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/DdMmEbKp4_o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `google_travel_time` 센서는 [Google Distance Matrix API](https://developers.google.com/maps/documentation/distance-matrix/)에서 이동 시간을 제공합니다.
 

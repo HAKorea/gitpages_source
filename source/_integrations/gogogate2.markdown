@@ -8,7 +8,9 @@ ha_release: 0.67
 ha_iot_class: Local Polling
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/u64zBLsoFcI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/u64zBLsoFcI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `gogogate2` 커버 플랫폼을 사용하면 홈어시스턴트를 통해 Gogogate2 지원 차고문을 제어할 수 있습니다. 홈어시스턴트의 장치 이름은 Gogogate2 모바일앱에 정의된 이름을 기반으로 생성됩니다.
 

@@ -7,7 +7,9 @@ ha_category:
 ha_release: 0.15
 ---
 
-<iframe width="690" height="388" src="https://www.youtube.com/embed/b6YwgWDCWBA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/b6YwgWDCWBA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 [Hunter Douglas PowerView](https://www.hunterdouglas.com/operating-systems/powerview-motorization/support) 플랫폼 장면(씬) 제어를 구현합니다. PowerView Hub를 쿼리하고 홈어시스턴트가 장면(씬)으로 표시합니다.
 

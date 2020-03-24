@@ -11,7 +11,9 @@ ha_codeowners:
   - '@eifinger'
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/fSkMLiTlQWc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/fSkMLiTlQWc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `here_travel_time` 센서는 [HERE Routing API](https://developer.here.com/documentation/routing/topics/introduction.html)에서 이동 시간을 제공합니다.
 

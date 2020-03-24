@@ -12,7 +12,9 @@ ha_codeowners:
   - '@OttoWinter'
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/soKuma8DJWQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/soKuma8DJWQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 [ESPHome](https://esphome.io) 장치를 통합구성요소로 사용할 시에는 [native ESPHome API](https://esphome.io/components/api.html)로 완벽하게 직접 연결됩니다. 
 
@@ -43,8 +45,8 @@ ha_codeowners:
 
 ### ESPHOME 활용 사례 ###
 
-[HA 네이버 카페 ESPHOME 게시판](https://cafe.naver.com/ArticleList.nhn?search.clubid=29860180&search.menuid=14&search.boardtype=L)을 보고 다른분들의 설정기를 따라해 보십시오. 초보자들도 쉽게 따라 할 수 있습니다.  
- 
+[HA 네이버 카페 ESPHOME 게시판](https://cafe.naver.com/ArticleList.nhn?search.clubid=29860180&search.menuid=14&search.boardtype=L) 및 [ST 네이버 카페 ESP 게시판](https://cafe.naver.com/ArticleList.nhn?search.clubid=29087792&search.menuid=117&search.boardtype=L)을 참조하여 다른분들의 설정기를 따라해 보십시오. 조금만 익숙해지면 초보자들도 쉽게 따라 할 수 있습니다.  
+
 
 ## 통합 구성요소(Integrations)를 통한 기기 추가 방법 
 

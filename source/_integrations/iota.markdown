@@ -9,7 +9,9 @@ ha_release: 0.62
 ha_iot_class: Cloud Polling
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/ivWqqfzunhI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/ivWqqfzunhI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 [IOTA](https://iota.org/)는 새로운 블록리스 분산 원장(blockless distributed ledger)으로 확장 가능하고 가벼우며 추가 비용없이 가치를 이전할 수 있습니다.
 

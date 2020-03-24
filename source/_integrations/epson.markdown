@@ -8,6 +8,10 @@ ha_release: 0.72
 ha_iot_class: Local Polling
 ---
 
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/jiGX9qclGtY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 `epson` 플랫폼을 사용하면 Home Assistant에서 Epson 프로젝터를 제어할 수 있습니다.
 
 Epson을 추가하려면 `configuration.yaml` 파일에 다음을 추가 하십시오. : 

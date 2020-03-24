@@ -15,7 +15,9 @@ ha_release: 0.83
 ha_iot_class: Local Push
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/K35uFXoa5c0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/K35uFXoa5c0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 [Fibaro](https://fibaro.com/) 허브는 주로 Z-Wave 장치에 연결되는 컨트롤러입니다.
 
@@ -69,12 +71,12 @@ password:
   required: true
   type: string
 plugins:
-  description: Netatmo 및 Sonos 장치 등과 같이 Fibaro HomeCenter에서 플러그인 장치를 가져올 지 여부
+  description: Netatmo 및 Sonos 장치 등과 같이 Fibaro HomeCenter에서 플러그인 장치를 가져올지 여부
   required: false
   type: boolean
   default: false
 device_config:
-  description: 장치 별 매개 변수 또는 동작 재정의(behaviour override)를 나열.
+  description: 장치별 매개 변수 또는 동작 재정의(behaviour override)를 나열.
   required: false
   type: list
   default: None
@@ -89,4 +91,4 @@ device_config:
 ### 자동화에서 Z-WAVE 장치 사용
 
 홈어시스턴트 자동화에서 Fibaro 컨트롤러로부터 Z-Wave 장치를 사용하려면 엔티티 ID가 필요합니다. 
-홈어시스턴트 UI에는 개발자 도구 섹션의 <img src='/images/screenshots/developer-tool-states-icon.png' alt='service developer tool icon' class="no-shadow" height="38" /> 아이콘 아래에 모든 엔티티가 있습니다. 속성에 'fibaro_id'가 포함 된 엔티티를 찾으면 왼쪽에 엔티티 ID가 있습니다.
+홈어시스턴트 UI에는 개발자 도구 섹션의 <img src='/images/screenshots/developer-tool-states-icon.png' alt='service developer tool icon' class="no-shadow" height="38" /> 아이콘 아래에 모든 엔티티가 있습니다. 속성에 'fibaro_id'가 포함된 엔티티를 찾으면 왼쪽에 엔티티 ID가 있습니다.

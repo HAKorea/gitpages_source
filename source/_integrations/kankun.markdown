@@ -7,7 +7,9 @@ ha_release: 0.36
 ha_iot_class: Local Polling
 ---
 
-<iframe width="690" height="388" src="https://www.youtube.com/embed/eIQriVOy2l8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/eIQriVOy2l8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `kankun` 스위치 플랫폼을 사용하면 맞춤형 Kankun SP3 Wifi 스위치를 토글할 수 있습니다. HTTP API를 제공하기 위해 [json.cgi](https://github.com/homedash/kankun-json/blob/master/cgi-bin/json.cgi) 스크립트를 포함하도록 스위치가 수정되었습니다. 
 필요한 수정에 대한 자세한 내용은 [here](http://www.homeautomationforgeeks.com/openhab_http.shtml#kankun)를 참조하십시오. (위의 링크대로 스크립트의 JSON 버전을 설치하십시오)

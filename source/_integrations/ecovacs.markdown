@@ -11,7 +11,9 @@ ha_codeowners:
   - '@OverloadUT'
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/hAweR1-2GeY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/hAweR1-2GeY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `ecovacs` 통합구성요소는 모든 [Ecovacs](https://www.ecovacs.com) (Deebot) vacuum(로봇청소기)을 연동하는 주요 통합구성요소입니다. 계정에서 vacuum을 감지하고 제어하려면 Ecovacs 계정 정보 (사용자 이름, 비밀번호)가 필요합니다.
 

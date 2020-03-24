@@ -10,6 +10,10 @@ ha_codeowners:
   - '@mezz64'
 ---
 
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/SV0wSEtDKlY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 Hikvision 바이너리 센서는 [Hikvision IP Camera or NVR](https://www.hikvision.com/)의 이벤트 스트림을 구문 분석하고 카메라/nvr 이벤트를 "off" 또는 "on" 상태로 보여줍니다. 
 
 플랫폼은 카메라/nvr 인터페이스 내에서 트리거로서 "Notify the surveillance center"로 설정된 ​​모든 센서를 Home Assistant에 자동으로 추가합니다.

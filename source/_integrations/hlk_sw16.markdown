@@ -1,5 +1,5 @@
 ---
-title: 하이링크(Hi-Link HLK-SW16)
+title: 16포트 릴레이 스위치(Hi-Link HLK-SW16)
 description: Instructions on how to integrate HLK-SW16 relay into Home Assistant.
 logo: hlktech.jpg
 ha_category:
@@ -8,6 +8,10 @@ ha_category:
 ha_release: 0.84
 ha_iot_class: Local Push
 ---
+
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/XlL_daHSGhA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 [Hi-Link](http://www.hlktech.net/)의 [HLK-SW16](http://www.hlktech.net/product_detail.php?ProId=48)은 심플한 네트워크 가능 16 포트 릴레이입니다.
 

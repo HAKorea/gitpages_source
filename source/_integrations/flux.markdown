@@ -35,7 +35,7 @@ lights:
   required: true
   type: list
 name:
-  description: 스위치를 표시 할 때 사용할 이름.
+  description: 스위치를 표시할 때 사용할 이름.
   required: false
   default: Flux
   type: string
@@ -58,7 +58,7 @@ sunset_colortemp:
   default: 3000
   type: integer
 stop_colortemp:
-  description: 마지막 색 온도.
+  description: 마지막 색온도.
   required: false
   default: 1900
   type: integer
@@ -67,12 +67,12 @@ brightness:
   required: false
   type: integer
 disable_brightness_adjust:
-  description: true이면 색온도 외에 밝기가 조정되지 않습니다..
+  description: true 이면 색온도 외에 밝기가 조정되지 않습니다..
   required: false
   type: boolean
   default: false
 mode:
-  description: 색 온도가 조명으로 전달되는 방법을 선택. 유효한 값은 `xy`, `mired`,`rgb`.
+  description: 색온도가 조명으로 전달되는 방법을 선택. 유효한 값은 `xy`, `mired`,`rgb`.
   required: false
   default: xy
   type: string

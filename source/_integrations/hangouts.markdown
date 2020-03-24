@@ -9,6 +9,10 @@ ha_release: 0.77
 ha_config_flow: true
 ---
 
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/Jy0Lcw7Y1hM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 이 연동을 통해 [Google 행 아웃](https://hangouts.google.com) 대화에 메시지를 보내고 대화의 메시지에 반응 할 수 있습니다. 설정된 명령중 하나가 트리거될 때 이벤트를 발생시켜 명령에 반응합니다. 홈어시스턴트는 Smartisan YQ603 전화를 가장하여 Google 기기에 표시됩니다.
 
 현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.

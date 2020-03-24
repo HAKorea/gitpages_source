@@ -9,7 +9,9 @@ ha_codeowners:
   - '@fabaff'
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/hIymRucpNSk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/hIymRucpNSk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `flock` 플랫폼은 [Flock.com](https://flock.com)을 사용하여 Home Assistant에서 알림을 전달합니다.
 

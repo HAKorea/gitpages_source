@@ -1,5 +1,5 @@
 ---
-title: Enigma2 (OpenWebif)
+title: Enigma2(OpenWebif)
 description: Instructions on how to integrate an Enigma2 based box running OpenWebif into Home Assistant.
 logo: openwebif.png
 ha_category:
@@ -10,7 +10,9 @@ ha_codeowners:
   - '@fbradyirl'
 ---
 
-<iframe width="690" height="388" src="https://www.youtube.com/embed/1VasQu_yoBo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/1VasQu_yoBo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `enigma2` 플랫폼을 사용하면 OpenWebif 플러그인이 설치된 [Enigma2](https://github.com/oe-alliance/oe-alliance-enigma2)를 실행하는 Linux 기반 셋톱 박스를 제어할 수 있습니다.
 

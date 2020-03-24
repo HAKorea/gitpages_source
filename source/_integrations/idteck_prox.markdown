@@ -8,7 +8,9 @@ ha_release: 0.85
 ha_iot_class: Local Push
 ---
 
-<iframe width="690" height="388" src="https://www.youtube.com/embed/yz4RXf_ABVc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/yz4RXf_ABVc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 [IDTECK] (http://www.idteck.com)는 ID 시스템을 사용하여 액세스를 제어하고 사용자를 식별합니다. 이 통합구성요소는 [Proximity Readers](http://www.idteck.com/en/products/proximity-reader-__-card-%26-tag-__125khz)(RFID 카드 리더)와 함께 작동합니다. 이 장치는 serial to ethernet converter (NPort)를 통해 Home Assistant에 연결됩니다.
 

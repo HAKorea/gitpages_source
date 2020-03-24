@@ -12,18 +12,20 @@ ha_codeowners:
   - '@mezz64'
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/4WjyYL88olA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/4WjyYL88olA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
-`eight_sleep` 통합구성요소를 통해 Home Assistant는 [Eight Sleep](https://eightsleep.com/) 스마트 커버 또는 매트리스에서 데이터를 가져올 수 있습니다.
+`eight_sleep` 통합구성요소를 통해 Home Assistant는 [Eight Sleep](https://eightsleep.com/) 스마트 침대커버 또는 매트리스에서 데이터를 가져올 수 있습니다.
 
-현재 홈 어시스턴트에서 다음 장치 유형이 지원됩니다.
+현재 홈어시스턴트에서 다음 장치 유형이 지원됩니다.
 
-- Binary Sensor - 홈어시스턴트를 통해 [Eight Sleep](https://eightsleep.com/) 커버/매트리스에 사람의 존재 상태를 관찰 할 수 있습니다.
-- Sensor - 여기에는 침대 상태 및 현재 및 이전 수면 세션의 결과가 포함됩니다.
+- Binary Sensor - 홈어시스턴트를 통해 [Eight Sleep](https://eightsleep.com/) 침대커버/매트리스에 사람의 존재 상태를 관찰할 수 있습니다.
+- Sensor - 여기에는 침대상태, 현재 그리고 이전수면 세션의 결과가 포함됩니다.
 
 ## 설정
 
-침대의 현재 상태와 수면 세션의 결과를 전달하기 위해 'Sensor' 플랫폼을 사용하고 침대에 당신의 존재를 나타내는 'Binary Sensor' 플랫폼을 사용하여 설정됩니다. 침대의 난방 수준과 지속 시간을 설정하는 서비스도 제공됩니다.
+침대의 현재상태와 수면세션의 결과를 전달하기 위해 'Sensor' 플랫폼을 사용하고 침대에 당신의 존재를 나타내는 'Binary Sensor' 플랫폼을 사용하여 설정됩니다. 침대의 난방 수준과 지속 시간을 설정하는 서비스도 제공됩니다.
 
 홈어시스턴트 구성 요소를 설정하기 전에 Eight Sleep 앱에 기록된 수면 세션이 2개 이상 있어야합니다.
 
@@ -69,7 +71,7 @@ Binary Sensors:
 
 ### `heat_set` 서비스
 
-eight_sleep / heat_set 서비스를 사용하여 침대의 목표 난방 수준과 난방 기간을 조정할 수 있습니다.
+eight_sleep/heat_set 서비스를 사용하여 침대의 목표 난방 수준과 난방 기간을 조정할 수 있습니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |

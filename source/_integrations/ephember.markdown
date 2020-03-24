@@ -1,5 +1,5 @@
 ---
-title: EPH Controls
+title: 온습도조절기(EPH Controls)
 description: Instructions on how to integrate EPH Controls EMBER thermostats within Home Assistant.
 logo: ephcontrolsember.png
 ha_category:
@@ -10,7 +10,9 @@ ha_codeowners:
   - '@ttroy50'
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/S3ycnNtIK4I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/S3ycnNtIK4I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 The `ephember` climate platform lets you control [EPH Controls](https://emberapp.ephcontrols.com/) thermostats. The module only works if you have a WiFi gateway to control your EPH system and an account on the EMBER app.
 

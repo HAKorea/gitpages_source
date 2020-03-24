@@ -1,5 +1,5 @@
 ---
-title: Joaoapps Join
+title: 조아앱스 조인(Joaoapps Join)
 description: Instructions for how to integrate the Join by Joaoapps service within Home Assistant.
 logo: joaoapps_join.png
 ha_category:
@@ -7,6 +7,10 @@ ha_category:
   - Notifications
 ha_release: 0.24
 ---
+
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/0AC6odBhUiA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `joaoapps_join` 통합구성요소는 [Join](https://joaoapps.com/join)의 서비스를 노출해 놓았습니다. 홈어시스턴트에서 Join 기능은 Join 구성 요소 및 Join notify 플랫폼의 두가지로 나뉩니다.
 알림 플랫폼을 통해 Join 장치에 메시지를 보낼 수 있으며, 구성 요소를 통해 Join이 제공하는 다른 특수 기능에 액세스 할 수 있습니다. 확실하지 않은 경우에는 이를 기반으로 하는 [API documentation](https://joaoapps.com/join/api/)을 참조하십시오.

@@ -10,8 +10,7 @@ ha_codeowners:
   - '@ThaStealth'
 ---
 
-`epson workforce` 플랫폼을 사용하면 Home Assistant에서 Epson Workforce 프린터의 잉크량을 모니터링 할 수 있습니다.
-
+`epson workforce` 플랫폼을 사용하면 Home Assistant에서 Epson Workforce 프린터의 잉크량을 모니터링할 수 있습니다.
 
 Epson Workforce를 설치에 추가하려면 `configuration.yaml` 파일에 다음을 추가 하십시오.
 
@@ -35,7 +34,7 @@ host:
   required: true
   type: string
 monitored_conditions:
-  description: 모니터 할 카트리지 색상.
+  description: 모니터할 카트리지 색상.
   required: true
   type: list
   keys:
@@ -55,7 +54,7 @@ monitored_conditions:
 
 지원되는 장치:
 
-- 잉크 카트리지 수준이 포함 된 HTTP 페이지를 게시하는 Epson Workforce 및 일부 EcoTank 프린터
+- 잉크 카트리지 레벨이 포함된 HTTP 페이지를 게시하는 Epson Workforce 및 일부 EcoTank 프린터
 
 테스트 된 장치:
 
@@ -65,5 +64,5 @@ monitored_conditions:
 - Epson EcoTank ET-77x0
 - Epson ET-2650
 
-To make this module work you need to connect your printer to your LAN.
-The best is to navigate to the status page of the printer to check if it shows the page with the ink levels on the URL http://<IP_ADDRESS>/PRESENTATION/HTML/TOP/PRTINFO.HTML
+이 모듈을 작동 시키려면 프린터를 LAN에 연결해야합니다.
+가장 좋은 방법은 프린터의 상태 페이지로 이동하여 URL http://<IP_ADDRESS>/PRESENTATION/HTML/TOP/PRTINFO.HTML에 잉크 잔량이 있는 페이지를 표시하는지 확인하는 것입니다.

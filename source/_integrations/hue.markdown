@@ -14,7 +14,9 @@ ha_codeowners:
   - "@balloob"
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/X4SPukZKQ0o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/X4SPukZKQ0o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 필립스 Hue 제품군은 Wifi, Bluetooth, Zigbee 3가지 통신방식의 제품들이 존재합니다. 
 

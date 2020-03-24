@@ -9,6 +9,10 @@ ha_codeowners:
   - '@fbradyirl'
 ---
 
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/SV0wSEtDKlY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 이 `hikvisioncam` 스위치 플랫폼을 사용하면 [Hikvision](https://www.hikvision.com/) 카메라에서 모션 감지 세팅으로 제어할 수 있습니다.
 
 <div class='note warning'>

@@ -1,5 +1,5 @@
 ---
-title: Egardia
+title: 스마트홈플랫폼(Egardia)
 description: Instructions on how to setup Egardia / Woonveilig within Home Assistant.
 logo: egardia.png
 ha_category:
@@ -12,7 +12,9 @@ ha_codeowners:
   - '@jeroenterheerdt'
 ---
 
-<iframe width="690" height="388" src="https://www.youtube.com/embed/1iNnlBI6t74" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/1iNnlBI6t74" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 The `egardia` platform enables the ability to control an [Egardia](https://egardia.com/)/[Woonveilig](https://woonveilig.nl) control panel. These alarm panels are known under different brand names across the world, including Woonveilig in the Netherlands. This was tested on the WL-1716, GATE-01, GATE-02 and GATE-03 versions of the Egardia/Woonveilig platform. Not only will you integrate your alarm control panel, supported sensors (door contacts at this moment) will be added automatically (hidden by default).
 

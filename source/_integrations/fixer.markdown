@@ -10,7 +10,9 @@ ha_codeowners:
   - '@fabaff'
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/u1zb4dHthss" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/u1zb4dHthss" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `fixer` 센서는  [European Central Bank (ECB)](https://www.ecb.europa.eu)의 데이터를 사용하는 [Fixer.io](https://fixer.io/)의 현재 환율을 표시합니다.
 

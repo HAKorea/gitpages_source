@@ -11,6 +11,10 @@ ha_codeowners:
 ha_config_flow: true
 ---
 
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/S0y-IGKR2lo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 Garmin Connect 센서를 사용하면 [Garmin Connect](https://connect.garmin.com) 에서 Home Assistant로 데이터를 노출 할 수 있습니다 .
 
 ## 설정

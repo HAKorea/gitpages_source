@@ -16,13 +16,15 @@ ha_codeowners:
   - '@marthoc'
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/wMT4TABxa7Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/wMT4TABxa7Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `ecobee` 통합구성요소를 통해 [ecobee](https://ecobee.com)온도 조절기의 센서 데이터를 제어하고 볼 수 있습니다.
 
 ## 예비 단계
 
-이 통합구성요소를 사용하려면 ecobee의 [개발자 사이트](https://www.ecobee.com/developers/)에서 API 키를 얻어야합니다. 열쇠를 얻으려면 온도조절기가 ecobee 웹 사이트에 등록되어 있어야합니다 (온도조절기를 설치하는 동안 이미했을 것입니다). 완료 한 후 다음 단계를 수행하십시오.
+이 통합구성요소를 사용하려면 ecobee의 [개발자 사이트](https://www.ecobee.com/developers/)에서 API 키를 얻어야합니다. 키(Key)를 얻으려면 온도조절기가 ecobee 웹 사이트에 등록되어 있어야합니다 (온도조절기를 설치하는 동안 이미했을 것입니다). 완료한 후 다음 단계를 수행하십시오.
 
 1. Click on the **Become a developer** link on the [developer site](https://www.ecobee.com/developers/).
 2. Log in with your ecobee credentials.
@@ -55,8 +57,7 @@ Home Assistant에서 에코비 통합구성요소를 설정하려면 **설정**>
 
 ### configuration.yaml에서 설정
 
-[`configuration.yaml`](/docs/configuration/)에서 이 통합구성요소를 초기에 설정하려면 다음과 같이 API 키
-(선택적 매개 변수 포함)를 추가하면됩니다.  (그러나 여전히 **통합구성요소** 메뉴를 통해 인증을 완료해야합니다.)
+[`configuration.yaml`](/docs/configuration/)에서 이 통합구성요소를 초기에 설정하려면 다음과 같이 API 키 (선택적 매개 변수 포함)를 추가하면됩니다.  (그러나 여전히 **통합구성요소** 메뉴를 통해 인증을 완료해야합니다.)
 
 ```yaml
 # Example configuration.yaml entry
@@ -81,9 +82,9 @@ api_key:
 
 이 통합구성요소로 Home Assistant를 처음 다시 실행하면 [ecobee consumer portal](https://www.ecobee.com/consumerportal/index.html)에서 인증해야 하는 PIN 코드가 제공됩니다. 사이드 바의 **My Apps** 섹션에서 **Add Application**를 클릭하면됩니다.
 
-PIN은 Ecobee 카드의 홈 어시스턴트 포털에서 찾을 수 있거나 States developer tool의 **configurator.ecobee** 에서 찾을 수 있습니다. 
+PIN은 Ecobee 카드의 홈어시스턴트 포털에서 찾을 수 있거나 States developer tool의 **configurator.ecobee** 에서 찾을 수 있습니다. 
 
-- 에코비 카드가 없다면, 카드가 보이지 않는 `default_view` 그룹을 사용하고 있을 수 있습니다. 이 문제를 해결하려면 `default_view` 섹션을 일시적으로 주석 처리하거나 `default_view`에 `configurator.ecobee` 통합구성요소를 추가하고 홈 어시스턴트를 다시 시작할 수 있습니다.
+- 에코비 카드가 없다면, 카드가 보이지 않는 `default_view` 그룹을 사용하고 있을 수 있습니다. 이 문제를 해결하려면 `default_view` 섹션을 일시적으로 주석 처리하거나 `default_view`에 `configurator.ecobee` 통합구성요소를 추가하고 홈어시스턴트를 다시 시작할 수 있습니다.
 
 에코비 사이트에서 PIN을 입력한 후 약 5분 정도 기다렸다가 에코비 팝업창의 맨 아래에있는 **I have authorized the app** 링크를 클릭하십시오. 모든 것이 올바르게 작동하면 Home Assistant를 다시 시작하여 모든 센서가 채워진 전체 에코비 카드를 보거나 개발자 도구의 센서 목록을 볼 수 있습니다. 이제 `default_view`를 다시 활성화하고 (비활성화해야 할 경우) 에코비 센서를 group 혹은/그리고 view 로 추가할 수 있습니다. 
 
@@ -166,7 +167,7 @@ _HVAC mode_ 는 에코비 온도조절기가 제공하는 현재 활성화된 �
 
 ### `ecobee.delete_vacation` 서비스
 
-선택한 ecobee 온도 조절기에서 휴가를 삭제하십시오.
+선택한 ecobee 온도 조절기에서 휴가(vacation)를 삭제하십시오.
 
 | Service data attribute | Optional | Description                                       |
 | ---------------------- | -------- | ------------------------------------------------- |

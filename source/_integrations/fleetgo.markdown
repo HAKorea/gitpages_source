@@ -8,13 +8,15 @@ ha_iot_class: Cloud Polling
 ha_release: 0.76
 ---
 
-<iframe width="690" height="414" src="https://www.youtube.com/embed/MX--wCghpqE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/MX--wCghpqE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `fleetgo` 장치 추적기 플랫폼을 사용하면 [FleetGO](https://fleetgo.com) 하드웨어가 장착된 차량을 Home Assistant에 연동할 수 있습니다. 이는 당신의 차량에 대한 특정 세부 사항을 보고 지도에 차량까지 보여줍니다.
 
 ## 셋업
 
-이 구성 요소를 사용하려면 [info@fleetgo.com](mailto:info@fleetgo.com?subject=API%20Key)에 문의하여 요청할 수 있는 **API key** 및 **API secret**이 필요합니다. .
+이 구성 요소를 사용하려면 [info@fleetgo.com](mailto:info@fleetgo.com?subject=API%20Key)에 문의하여 요청할 수 있는 **API key** 및 **API secret**이 필요합니다. 
 
 ## 설정
 

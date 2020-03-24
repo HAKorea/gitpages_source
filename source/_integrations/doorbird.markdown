@@ -13,7 +13,7 @@ ha_codeowners:
 ---
 
 <div class='videoWrapper'>
-<iframe width="776" height="437" src="https://www.youtube.com/embed/jcTo9HP65uU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/97ZuRBrOYaY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 `doorbird` 구현을 통해 [DoorBird](https://www.doorbird.com/) 장치를 Home Assistant에 연동할 수 있습니다.

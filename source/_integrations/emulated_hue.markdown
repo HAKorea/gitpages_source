@@ -1,5 +1,5 @@
 ---
-title: Emulated Hue
+title: Hue 에뮬레이트
 description: Instructions on how to emulate a Hue Bridge within Home Assistant.
 logo: home-assistant.png
 ha_category:

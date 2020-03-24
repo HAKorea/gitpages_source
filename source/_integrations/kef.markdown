@@ -10,7 +10,9 @@ ha_codeowners:
   - '@basnijholt'
 ---
 
-<iframe width="690" height="388" src="https://www.youtube.com/embed/VsNlDj1Ty5M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/VsNlDj1Ty5M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `kef` 플랫폼을 사용하면 Home Assistant에서 [KEF LS50 Wireless](https://international.kef.com/products/ls50-wireless) 및 [KEF LSX](https://international.kef.com/products/lsx) 스피커를 제어 할 수 있습니다.
 

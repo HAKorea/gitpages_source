@@ -8,7 +8,7 @@ logo: fail2ban.png
 ha_release: 0.57
 ---
 
-`fail2ban` 센서는 [fail2ban](https://www.fail2ban.org/wiki/index.php/Main_Page)에 의해 금지된 IP가 홈 어시스턴트 프론트 엔드에 표시되도록합니다.
+`fail2ban` 센서는 [fail2ban](https://www.fail2ban.org/wiki/index.php/Main_Page)에 의해 금지된 IP가 홈어시스턴트 프론트 엔드에 표시되도록합니다.
 
 <div class='note'>
 
@@ -158,7 +158,7 @@ server {
 }
 ```
 
-일단 nginx 설정에 추가되면, `X-Forwarded-For` 헤더를 파싱 할 수 있도록 Home Assistant `configuration.yaml`을 수정해야합니다. `http` 컴포넌트에 다음을 추가하면됩니다 :
+일단 nginx 설정에 추가되면, `X-Forwarded-For` 헤더를 파싱할 수 있도록 Home Assistant `configuration.yaml`을 수정해야합니다. `http` 컴포넌트에 다음을 추가하면됩니다 :
 
 ```yaml
 http:
@@ -169,7 +169,7 @@ http:
 
 #### fail2ban sensor 추가하기
 
-Docker에 대한 모든 것을 올바르게 설정 했으므로 다음과 같이 센서를 `configuration.yaml` 에 추가 할 수 있습니다.
+Docker에 대한 모든 것을 올바르게 설정했으므로 다음과 같이 센서를 `configuration.yaml` 에 추가할 수 있습니다.
 
 ```yaml
 sensor:
@@ -183,7 +183,7 @@ sensor:
 
 ### 다른 디버그 팁들
 
-이 단계를 수행 한 후에도 'fail2ban'센서가 작동하지 않는 경우 도움이 될 수있는 다른 단계는 다음과 같습니다.
+이 단계를 수행한 후에도 'fail2ban'센서가 작동하지 않는 경우 도움이 될 수있는 다른 단계는 다음과 같습니다.
 
 - Add `logencoding = utf-8` to the `[hass-iptables]` entry
 - Ensure the `failregex` you added to `filter.d/hass.local` matches the output within `home-assistant.log`

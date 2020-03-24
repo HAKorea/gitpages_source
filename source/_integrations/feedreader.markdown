@@ -1,5 +1,5 @@
 ---
-title: Feed 읽어오기
+title: Feed 읽어오기(Feed Reader)
 description: Instructions on how to integrate RSS feeds into Home Assistant.
 logo: rss.gif
 ha_category:
@@ -51,7 +51,7 @@ feedreader:
   max_entries: 5
 ```
 
-Feedreader 이벤트를 즉시 사용하여 자동화 작업을 트리거 할 수 있습니다. 다음예를 살펴보십시오. :
+Feedreader 이벤트를 즉시 사용하여 자동화 작업을 트리거 할 수 있습니다. 다음 예를 살펴보십시오. :
 
 ```yaml
 automation:

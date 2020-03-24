@@ -12,9 +12,13 @@ ha_codeowners:
 ha_config_flow: true
 ---
 
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/odgOY0Rt1sE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 Philips Dynalite 지원은 라이트 플랫폼을 구동 할 수있는 허브로 Home Assistant에 통합되어 있습니다.
 
-현재 홈 어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - Lights
 

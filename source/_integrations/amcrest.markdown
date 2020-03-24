@@ -11,7 +11,9 @@ ha_iot_class: Local Polling
 ha_release: 0.49
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/DHH0S2j6uBU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/DHH0S2j6uBU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `amcrest` 카메라 플랫폼을 사용하면 [Amcrest](https://amcrest.com/) IP 카메라를 Home Assistant에 연동할 수 있습니다.
 

@@ -9,7 +9,7 @@ logo: home-assistant.png
 ha_quality_scale: internal
 ---
 
-`group` 플랫폼은 하나에 여러 커버 요소를 결합하는 커버를 만들 수 있습니다.
+`group` 플랫폼은 하나에 여러 커버(Cover) 엔티티(entity)를 결합하는 커버를 만들 수 있습니다.
 
 설치시 `Cover Groups`을 사용하려면, `configuration.yaml` 파일에 다음을 추가 하십시오.:
 
@@ -29,7 +29,7 @@ cover:
     type: string
     default: "Cover Group"
   entities:
-    description: 제어하려는 모든 커버 entity의 목록입니다.
+    description: 제어하려는 모든 커버 엔티티의 목록입니다.
     required: true
     type: [string, list]
 {% endconfiguration %}

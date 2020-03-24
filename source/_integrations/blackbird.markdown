@@ -1,5 +1,5 @@
 ---
-title: 미디어 입력소스 스위치(Monoprice Blackbird Matrix Switch)
+title: 미디어 매트릭스 스위치(Monoprice Blackbird Matrix Switch)
 description: Instructions on how to integrate Monoprice Blackbird 4k 8x8 HDBaseT Matrix Switch into Home Assistant.
 logo: monoprice.svg
 ha_category:
@@ -8,9 +8,12 @@ ha_release: 0.68
 ha_iot_class: Local Polling
 ---
 
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/K8acu9zcNXs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 `blackbird` 플랫폼을 사용하면 직렬 연결을 사용하여 [Monoprice Blackbird Matrix Switch](https://www.monoprice.com/product?p_id=21819)를 제어할 수 있습니다.
 
-To add a Blackbird device to your installation, add the following to your `configuration.yaml` file:
 설치에 Blackbird 장치를 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml

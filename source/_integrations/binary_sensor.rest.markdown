@@ -1,5 +1,5 @@
 ---
-title: "RESTful 이진 센서"
+title: "RESTful Binary Sensor"
 description: "Instructions on how to integrate REST binary sensors into Home Assistant."
 logo: restful.png
 ha_category:

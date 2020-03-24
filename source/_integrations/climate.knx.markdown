@@ -8,6 +8,10 @@ ha_release: 0.25
 ha_iot_class: Local Push
 ---
 
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/1DZnTB49w64" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 <div class='note'>
   
 이 통합구성요소를 사용하려면 `knx` 연동을 올바르게 설정해야합니다. [KNX Integration](/integrations/knx)을 참조하십시오.
@@ -80,7 +84,7 @@ actor가 명시적 상태 통신 오브젝트(explicit state communication objec
 - Fan only (maps internally to HVAC_MODE_FAN_ONLY within Home Assistant)
 - Dry (maps internally to HVAC_MODE_DRY within Home Assistant)
 
-다음 사전 설정은 `preset_mode` 속성에 유효합니다.
+다음 사전설정(presets)은 `preset_mode` 속성에 유효합니다.
 
 - Comfort (maps internally to PRESET_COMFORT within Home Assistant)
 - Standby (maps internally to PRESET_AWAY within Home Assistant)

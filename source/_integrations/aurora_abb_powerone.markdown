@@ -11,7 +11,9 @@ ha_codeowners:
   - '@davet2001'
 ---
 
-<iframe width="690" height="388" src="https://www.youtube.com/embed/HwsoFVxujbY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/HwsoFVxujbY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 이는 PVI-3.0/3.6/4.2-TL-OUTD ABB 시리즈에서 태양광 인버터에 대한 직접 RS485 연결을 구현하며 다른 장치에서도 작동할 수 있습니다. 인버터는 이전에 ABB에 의해 인수된 PowerOne에 의해 만들어졌습니다.
 

@@ -9,7 +9,9 @@ ha_codeowners:
   - '@bachya'
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/waw0XXNX-uQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/waw0XXNX-uQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `apache_kafka` 통합구성요소는 모든 상태 변경을 [Apache Kafka](https://kafka.apache.org/) topic으로 보냅니다.
 

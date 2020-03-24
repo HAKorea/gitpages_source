@@ -9,6 +9,10 @@ ha_codeowners:
   - '@eavanvalkenburg'
 ---
 
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/AHS3qpyU8gw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 `Azure Event Hub` 통합구성요소를 통해 Home Assistant 이벤트 버스에 연결하여 [Azure Event Hub](https://azure.microsoft.com/en-us/services/event-hubs/) 또는 [Azure IoT Hub](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-messages-read-builtin)로 이벤트를 보낼 수 있습니다.
 
 ## 최초 셋업

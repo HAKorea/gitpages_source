@@ -8,6 +8,10 @@ ha_release: 0.35
 ha_iot_class: Local Polling
 ---
 
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/-AksUMaXtUU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 `aquostv` 플랫폼을 통해 [Sharp Aquos TV](http://www.sharp-world.com/aquos/en/index.html)를 제어할 수 있습니다.
 
 TV가 처음 연결되면 TV에서 홈어시스턴트를 수락하여 통신을 허용해야합니다.

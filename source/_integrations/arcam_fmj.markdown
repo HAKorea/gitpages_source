@@ -9,6 +9,10 @@ ha_codeowners:
   - '@elupus'
 ---
 
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/5cUe5ODnu5A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 `arcam_fmj` 통합구성요소를 통해 Home Assistant에서 [Arcam FMJ Receveivers](https://www.arcam.co.uk/range/fmj.htm)를 제어할 수 있습니다.
 
 지원 장치 :

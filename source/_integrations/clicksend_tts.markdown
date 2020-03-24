@@ -7,6 +7,10 @@ ha_category:
 ha_release: 0.55
 ---
 
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/puuK07yPbsw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 `clicksend_tts` 플랫폼은 [ClickSend](https://clicksend.com)를 사용하여 Home Assistant에서 TTS (text-to-speech) 알림을 전달합니다.
 
 [ClickSend Dashboard](https://dashboard.clicksend.com) 섹션으로 이동하여 새 프로젝트를 작성하십시오. 프로젝트를 만든 후에는 `username`과 `api_key`를 얻을 수 있습니다.

@@ -1,5 +1,5 @@
 ---
-title: Google Pub/Sub
+title: 구글 퍼브서브(Google Pub/Sub)
 description: Setup for Google Pub/Sub integration
 logo: google-pubsub.png
 ha_category:
@@ -7,24 +7,23 @@ ha_category:
 ha_release: 0.88
 ---
 
-The `google_pubsub` integration allows you to hook into the Home Assistant event bus and send events to [Google Cloud Pub/Sub](https://cloud.google.com/pubsub/docs/overview). The current [free tier](https://cloud.google.com/free/) of GCP should allow you to sync about 1 event every 2 seconds on average (2 million invocations per month).
+`google_pubsub` 통합구성요소를 통해 홈어시스턴트 이벤트 버스에 연결하여 [Google Cloud Pub/Sub](https://cloud.google.com/pubsub/docs/overview)로 이벤트를 보낼 수 있습니다. GCP의 현재 [free tier](https://cloud.google.com/free/)을 사용하면 평균 2 초마다 약 1 개의 이벤트를 동기화 할 수 있습니다 (한 달에 2백만 회 호출).
 
-## First time setup
+## 최초 셋업
 
-This assumes you already have a Google Cloud project. If you don't, please create one in the [Google Cloud Console](https://console.cloud.google.com/projectcreate)
+이미 Google Cloud 프로젝트가 있다고 가정합니다. 그렇지 않은 경우 [Google Cloud Console](https://console.cloud.google.com/projectcreate)에서 계정을 만드십시오.
 
-You need to create a Service Account key in the [Google Cloud API Console](https://console.cloud.google.com/apis/credentials/serviceaccountkey)
+[Google Cloud API Console](https://console.cloud.google.com/apis/credentials/serviceaccountkey)에서 서비스 계정 키를 만들어야합니다.
 - Choose a new "New Service Account", give it a name and leave the key type as JSON
 - Select the role: Pub/Sub Publisher 
 
-This will download the Service Account JSON key to your machine. Do NOT share this with anyone. Place this file in your Home Assistant config folder.
+서비스 계정 JSON 키가 컴퓨터에 다운로드 됩니다. 이것을 다른 사람과 공유하지 마십시오. 이 파일을 Home Assistant 설정 폴더에 넣으십시오.
 
-Next, create a Google Pub/Sub topic in the [Google Cloud API Console](https://console.cloud.google.com/cloudpubsub/topicList). The topic name will become something like `projects/project-198373/topics/topic-name`. Note the last part only (the name you chose): `topic-name`.
+그런 다음 [Google Cloud API Console](https://console.cloud.google.com/cloudpubsub/topicList)에서 Google Pub/Sub topic을 만듭니다. topic 이름은 `projects/project-198373/topics/topic-name`과 같은 이름이 됩니다. 마지막 부분(선택한 이름)인 `topic-name`만 주목하십시오.
 
+## 설정
 
-## Configuration
-
-Add the following lines to your `configuration.yaml` file:
+`configuration.yaml` 파일에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -71,9 +70,9 @@ filter:
 {% endconfiguration %}
 
 <div class='note warning'>
-  Not filtering domains or entities will send every event to Google PubSub, thus hitting the free tier limit very fast. Be sure to fill in this configuration parameter or have a paid subscription for Google Cloud.
+  도메인이나 엔티티를 필터링하지 않으면 모든 이벤트가 Google PubSub로 전송되므로 프리 티어 한도에 매우 빠르게 도달합니다. 이 설정 매개 변수를 작성하거나 Google Cloud에 유료 구독을 해야합니다.
 </div>
 
-### Saving the data using a Google Cloud Function
+### Google Cloud Function을 사용하여 데이터 저장
 
-To save your data automatically to BigQuery, follow the [instructions here](https://github.com/timvancann/home-assistant-pubsub-cloud-function). The current [free tier](https://cloud.google.com/free/) of GCP should allow to store up to 10GB of data.
+BigQuery에 자동으로 데이터를 저장하려면 [instructions here](https://github.com/timvancann/home-assistant-pubsub-cloud-function)을 따르십시오. GCP의 현재 [free tier](https://cloud.google.com/free/)는 최대 10GB의 데이터를 저장할 수 있어야합니다.

@@ -8,7 +8,9 @@ ha_iot_class: Local Push
 ha_release: 0.81
 ---
 
-<iframe width="690" height="388" src="https://www.youtube.com/embed/yR_o82oZADQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/yR_o82oZADQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `rflink` 통합구성요소는 [RFLink 게이트웨이 펌웨어](http://www.nemcon.nl/blog2/)를 사용하는 장치, 예를 들어 [Nodo RFLink Gateway](https://www.nodo-shop.nl/nl/21-rflink-gateway). RFLink 게이트웨이는 저렴한 하드웨어 (Arduino + 트랜시버)를 사용하여 여러 RF 무선 장치와 양방향 통신을 가능하게하는 Arduino 펌웨어입니다.
 

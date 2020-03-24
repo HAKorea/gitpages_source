@@ -7,7 +7,9 @@ ha_iot_class: Local Polling
 ha_release: 0.23
 ---
 
-<iframe width="690" height="388" src="https://www.youtube.com/embed/cGJZ5Cfaacg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/cGJZ5Cfaacg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `cmus` 플랫폼을 사용하면 홈어시스턴트의 원격 또는 로컬 컴퓨터에서 [cmus](https://cmus.github.io/) 뮤직 플레이어를 제어 할 수 있습니다.
 

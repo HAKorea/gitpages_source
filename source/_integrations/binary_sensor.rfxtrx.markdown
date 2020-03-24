@@ -7,7 +7,9 @@ ha_category:
 ha_release: 0.48
 ---
 
-<iframe width="690" height="388" src="https://www.youtube.com/embed/zcjNvSMG-hg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/zcjNvSMG-hg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `rfxtrx` 플랫폼은 433.92 MHz의 주파수 범위에서 통신하는 이진 센서를 지원합니다.
 rfxtrx 이진 센서 통합구성요소는 이를 지원합니다.

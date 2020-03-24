@@ -7,7 +7,7 @@ ha_category:
 ha_release: 0.44
 ---
 
-`dlib_face_identify` 이미지 처리 플랫폼은 Home Assistant를 통해 [Dlib](http://www.dlib.net/)를 사용할 수있게합니다. 이 플랫폼을 사용하면 카메라에서 인물을 식별하고 인물을 식별하여 이벤트를 시작할 수 있습니다.
+`dlib_face_identify` 이미지 처리 플랫폼은 Home Assistant를 통해 [Dlib](http://www.dlib.net/)를 사용할 수 있게합니다. 이 플랫폼을 사용하면 카메라에서 인물을 식별하고 해당 인물을 확인하여 이벤트를 시작할 수 있습니다.
 
 자동화 규칙 내에서 결과를 사용하려면 [integration](/integrations/image_processing/) 페이지를 보십시오.
 

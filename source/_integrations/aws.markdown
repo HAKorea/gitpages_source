@@ -10,6 +10,10 @@ ha_codeowners:
   - '@robbiet480'
 ---
 
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/C_JTPwKuLX0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 `aws` 통합구성요소는 [Amazon Web Services](https://aws.amazon.com/)와 상호 작용할 수있는 단일 장소를 제공합니다. 현재 [AWS SQS](https://aws.amazon.com/sqs/), [AWS SNS](https://aws.amazon.com/sns/)로 메시지를 보낼 수있는 알림 플랫폼을 제공합니다. 또는 [AWS Lambda](https://aws.amazon.com/lambda/) 함수를 호출하십시오.
 
 ## 셋업

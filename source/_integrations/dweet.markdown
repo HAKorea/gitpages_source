@@ -11,6 +11,10 @@ ha_codeowners:
   - '@fabaff'
 ---
 
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/Bb_HznYrShc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 `dweet` 통합구성요소를 통해 Home Assistant로 수집한 세부 정보를 [Dweet.io] (https://dweet.io/)로 전송하고 [freeboard.io](https://freeboard.io)로 시각화 할 수 있습니다. 단, 귀하의 정보는 공개될 것임을 명심하십시오!
 
 <p class='img'>
@@ -21,7 +25,7 @@ ha_codeowners:
 게시 간격은 1 초로 제한됩니다. 즉, 빠른 변경 사항을 놓칠 수도 있습니다.
 </div>
 
-현재 홈 어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - [Sensor](#sensor)
 
@@ -87,7 +91,7 @@ unit_of_measurement:
   description: 센서의 측정 단위를 정의합니다 (있는 경우).
   required: false
   type: string
-{% endconfiguration %}ㄴ
+{% endconfiguration %}
 
 ### 전체 설정 사례
 
@@ -107,7 +111,7 @@ sensor:
 
 ### Dweet.io와 상호 작용
 
-`curl`로 센서를 테스트하기 위해 명령 행에서 dweets을 쉽게 보낼 수 있습니다.
+`curl`로 센서를 테스트하기 위해 command line에서 dweets을 쉽게 보낼 수 있습니다.
 
 ```bash
 $ curl -H 'Content-Type: application/json' -d '{"temperature": 40, "humidity": 65}' https://dweet.io/dweet/for/ha-sensor

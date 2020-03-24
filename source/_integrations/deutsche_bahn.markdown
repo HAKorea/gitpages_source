@@ -1,5 +1,5 @@
 ---
-title: 독일기차서비스(Deutsche Bahn)
+title: 독일열차서비스(Deutsche Bahn)
 description: Instructions on how to integrate timetable data for traveling in Germany within Home Assistant.
 ha_category:
   - Transport

@@ -10,10 +10,11 @@ ha_codeowners:
   - '@JeffLIrion'
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/m4kDsy36x5U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/m4kDsy36x5U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
-`androidtv` 플랫폼을 사용하면 Android TV 장치 또는 [Amazon Fire TV](https://www.amazon.com/b/?node=8521791011)장치를 제어 할 수 있습니다.
+`androidtv` 플랫폼을 사용하면 Android TV 장치 또는 [Amazon Fire TV](https://www.amazon.com/b/?node=8521791011)장치를 제어할 수 있습니다.
 
 ## 장치 준비
 
@@ -191,7 +192,7 @@ Android TV 또는 Fire TV 장치 설정에 실패하면 ADB 연결에 문제가 
 
 5. 일부 Android TV 장치 (예: Android TV를 실행하는 Philips TV)는 Wi-Fi 인터페이스를 통한 초기 ADB 연결 요청만 수락합니다. TV가 유선 인 경우 WiFi에 연결하고 초기 연결을 다시 시도해야합니다. Wi-Fi를 통해 인증이 승인되면 유선 인터페이스를 통해 TV에 연결할 수도 있습니다.
 
-6. 장치가 WiFi를 끊어 ADB 연결을 끊고 Home Assistant에서 엔터티를 사용할 수 없는 경우 깨우기 잠금 유틸리티(such as [Wakelock](https://github.com/d4rken/wakelock-revamp))를 설치하여 이 문제가 발생하지 않도록 할 수 있습니다. 일부 사용자는 Xiaomi Mi Box 장치에서이 문제를보고했습니다.
+6. 장치가 WiFi를 끊어 ADB 연결을 끊고 Home Assistant에서 엔터티를 사용할 수 없는 경우 깨우기 잠금 유틸리티(such as [Wakelock](https://github.com/d4rken/wakelock-revamp))를 설치하여 이 문제가 발생하지 않도록 할 수 있습니다. 일부 사용자는 Xiaomi Mi Box 장치에서이 문제를 보고했습니다.
 
 7. 위에서 언급한 [Python ADB implementation](#1-python-adb-implementation) 접근 방식을 사용하는 경우 최신 장치에 문제가있을 수 있습니다. 이 경우 [ADB 서버](#2-adb-server) 방법을 대신 사용해야합니다.
 
@@ -276,11 +277,11 @@ action:
 
 ## 사용자 정의 상태 감지 (Custom State Detection)
 
-Android TV 통합은 Android TV / Fire TV 장치를 정기적으로 폴링하고 소수의 속성을 수집하여 작동합니다. 불행히도 모든 앱이 준수하는 기기의 상태를 결정하기위한 표준 API는 없습니다. 대신, 백엔드 `androidtv` 패키지는 상태를 판별하기 위해 수집하는 세 가지 특성을 사용합니다. : `audio_state`, `media_session_state`, `wake_lock_size`. 상태를 결정하는 올바른 로직은 현재 앱에 따라 다르며 백엔드 `androidtv` 패키지는 소수의 앱에 대해 앱별 상태 감지 로직을 구현합니다. 물론, 'androidtv'패키지의 각 앱마다 맞춤형 로직을 구현하는 것은 불가능합니다. 또한 올바른 상태 감지 로직은 장치 및 장치 설정에 따라 다를 수 있습니다.
+Android TV 통합은 Android TV / Fire TV 장치를 정기적으로 폴링하고 소수의 속성을 수집하여 작동합니다. 불행히도 모든 앱이 준수하는 기기의 상태를 결정하기 위한 표준 API는 없습니다. 대신, 백엔드 `androidtv` 패키지는 상태를 판별하기 위해 수집하는 세 가지 특성을 사용합니다. : `audio_state`, `media_session_state`, `wake_lock_size`. 상태를 결정하는 올바른 로직은 현재 앱에 따라 다르며 백엔드 `androidtv` 패키지는 소수의 앱에 대해 앱별 상태 감지 로직을 구현합니다. 물론, `androidtv` 패키지의 각 앱마다 맞춤형 로직을 구현하는 것은 불가능합니다. 또한 올바른 상태 감지 로직은 장치 및 장치 설정에 따라 다를 수 있습니다.
 
-이 문제에 대한 해결책은 `state_detection_rules` 설정 매개 변수로, 상태 감지에 대한 고유한 규칙을 제공 할 수 있습니다. 키는 앱ID이고 값은 순서대로 평가되는 규칙 목록입니다. 유효한 규칙은 다음과 같습니다. :
+이 문제에 대한 해결책은 `state_detection_rules` 설정 매개 변수로, 상태 감지에 대한 고유한 규칙을 제공할 수 있습니다. 키는 앱ID이고 값은 순서대로 평가되는 규칙 목록입니다. 유효한 규칙은 다음과 같습니다. :
 
-* `'standby'`, `'playing'`, `'paused'`, `'idle'`, 혹은 `'off'`
+* `'standby'`, `'playing'`, `'paused'`, `'idle'`, or `'off'`
   * If this is not a map, then this state will always be reported when this app is the current app
   * If this is a map, then its entries are conditions that will be checked.  If all of the conditions are true, then this state will be reported.  Valid conditions pertain to 3 properties (see the example configuration above):
     1. ``'media_session_state'``
@@ -289,4 +290,4 @@ Android TV 통합은 Android TV / Fire TV 장치를 정기적으로 폴링하고
 * `'media_session_state'` = try to use the `media_session_state` property to determine the state
 * `'audio_state'` = try to use the `audio_state` property to determine the state
 
-To determine what these rules should be, you can use the `androidtv.adb_command` service with the command `GET_PROPERTIES`, as described in the [androidtv.adb_command](#androidtvadb_command) section.
+이러한 규칙을 결정하려면 [androidtv.adb_command](#androidtvadb_command) 섹션에 설명 된대로 `GET_PROPERTIES` 명령과 함께 `androidtv.adb_command` 서비스를 사용할 수 있습니다.

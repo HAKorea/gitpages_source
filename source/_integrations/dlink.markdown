@@ -8,7 +8,9 @@ ha_iot_class: Local Polling
 ha_release: 0.14
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/N4VmCwVYdkA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/N4VmCwVYdkA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `dlink` 스위치 플랫폼을 사용하면 [D-Link Wi-Fi Smart Plugs](https://us.dlink.com/en/consumer/smart-plugs)의 상태를 제어할 수 있습니다
 

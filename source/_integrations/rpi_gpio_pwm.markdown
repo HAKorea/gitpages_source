@@ -8,13 +8,13 @@ ha_release: 0.43
 logo: raspberry-pi.png
 ---
 
-The `rpi_gpio_pwm` platform allows to control multiple lights using pulse-width modulation, for example led strips. It supports one-color, RGB and RGBW LEDs driven by GPIOs of a Raspberry Pi or a PCA9685 controller.
+`rpi_gpio_pwm` 플랫폼은 pulse-width 변조 (예: LED 스트립)를 사용하여 여러 조명을 제어할 수 있습니다. Raspberry Pi의 GPIO 또는 PCA9685 컨트롤러로 구동되는 단색, RGB 및 RGBW LED를 지원합니다.
 
-For controlling the GPIOs, the platform connects to the [pigpio-daemon](http://abyz.me.uk/rpi/pigpio/pigpiod.html), which must be running. On Raspbian Jessie 2016-05-10 or newer the `pigpio` library is already included. On other operating systems it needs to be installed first (see [installation instructions](https://github.com/soldag/python-pwmled#installation)).
+GPIO를 제어하기 위해 플랫폼은 실행중인 [pigpio-daemon](http://abyz.me.uk/rpi/pigpio/pigpiod.html)에 연결됩니다. Raspbian Jessie 2016-05-10 이상에는 `pigpio` 라이브러리가 이미 포함되어 있습니다. 다른 운영 체제에서는 먼저 설치해야합니다 ([installation instructions](https://github.com/soldag/python-pwmled#installation) 참조).
 
-## Configuration
+## 설정
 
-To enable this platform, add the following lines to your `configuration.yaml`:
+이 플랫폼을 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -61,13 +61,14 @@ leds:
       type: string
 {% endconfiguration %}
 
-## Examples
+## 사례
 
-In this section you find some real-life examples of how to use this sensor.
+이 섹션에는이 센서를 사용하는 방법에 대한 실제 예가 나와 있습니다.
 
-### RGB LED connected to PCA9685 controller
+### PCA9685 컨트롤러에 연결된 RGB LED 
 
 This example uses a [PCA9685 controller](https://www.nxp.com/products/interfaces/ic-bus-portfolio/ic-led-display-control/16-channel-12-bit-pwm-fm-plus-ic-bus-led-controller:PCA9685) to control a RGB LED.
+이 예에서는 [PCA9685 controller](https://www.nxp.com/products/interfaces/ic-bus-portfolio/ic-led-display-control/16-channel-12-bit-pwm-fm-plus-ic-bus-led-controller:PCA9685)를 사용하여 RGB LED를 제어합니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -80,9 +81,9 @@ light:
         type: rgb
 ```
 
-### RGBW LED connected to PCA9685 controller
+### PCA9685 컨트롤러에 연결된 RGBW LED
 
-This example uses a [PCA9685 controller](https://www.nxp.com/products/interfaces/ic-bus-portfolio/ic-led-display-control/16-channel-12-bit-pwm-fm-plus-ic-bus-led-controller:PCA9685) to interact with a RGBW LED.
+이 예는 [PCA9685 controller](https://www.nxp.com/products/interfaces/ic-bus-portfolio/ic-led-display-control/16-channel-12-bit-pwm-fm-plus-ic-bus-led-controller:PCA9685)를 사용하여 RGBW LED와 상호 작용합니다.
 
 ```yaml
 # Example configuration.yaml entry

@@ -7,7 +7,7 @@ ha_iot_class: Cloud Polling
 ha_release: '0.60'
 ---
 
-`caldav` 플랫폼을 사용하면 WebDav 캘린더에 연결하고 이진 센서를 생성할 수 있습니다. 개별 캘린더마다 다른 센서가 생성되거나 사용자가 정의한 기준과 일치하는 사용자 정의 캘린더를 지정할 수 있습니다 (자세한 내용은 아래 참조). 해당 일정에 진행중인 이벤트가있는 경우이 센서는 `on`이되고 이벤트가 늦은 시간에 있거나 이벤트가없는 경우 `off`가 됩니다.
+`caldav` 플랫폼을 사용하면 WebDav 캘린더에 연결하고 이진 센서를 생성할 수 있습니다. 개별 캘린더마다 다른 센서가 생성되거나 사용자가 정의한 기준과 일치하는 사용자 정의 캘린더를 지정할 수 있습니다 (자세한 내용은 아래 참조). 해당 일정에 진행중인 이벤트가 있는 경우이 센서는 `on`이 되고 이벤트가 늦은 시간에 있거나 이벤트가 없는 경우 `off`가 됩니다.
 WebDav 일정은 대략 15 분마다 업데이트됩니다.
 
 ### 전제 조건
@@ -22,7 +22,7 @@ $ sudo apt-get install libxml2-dev libxslt1-dev zlib1g-dev
 
 ### 기본 셋업
 
-홈어시스턴트에 WebDav 캘린더를 통합하려면 `configuration.yaml` 파일에 다음 섹션을 추가하십시오.
+홈어시스턴트에 WebDav 캘린더를 연동하려면 `configuration.yaml` 파일에 다음 섹션을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry for baikal
@@ -65,7 +65,7 @@ calendar:
         search: 'Warmup'
 ```
 
-이렇게하면 켈린더 이름 Agenda에 대해 "HomeOffice" 및 "WarmupFlat"이라는 두 가지 이진 센서가 만들어집니다. `search`에 지정된 정규식과 일치하는 진행중인 이벤트가있는 경우 해당 센서가 `on` 상태가됩니다. 사용자 정의 달력에서 하루 종일 지속되는 이벤트가 고려됩니다.
+이렇게하면 켈린더 이름 Agenda에 대해 "HomeOffice" 및 "WarmupFlat"이라는 두 가지 이진 센서가 만들어집니다. `search`에 지정된 정규식과 일치하는 진행중인 이벤트가 있는 경우 해당 센서가 `on` 상태가 됩니다. 사용자 정의 달력에서 하루 종일 지속되는 이벤트가 고려됩니다.
 
 맞춤 캘린더를 설정할 때 기본 캘린더는 더 이상 생성되지 않습니다.
 
@@ -112,7 +112,7 @@ custom_calendars:
 ### Sensor 속성
 
  - **offset_reached**: 이벤트 제목에 설정되고 파싱된 경우 분 단위의 제목 오프셋에 도달하면 on/off 됩니다. 따라서 매우 중요한 미팅 !!-10이라는 제목은 이벤트가 시작되기 10 분 전에 이 속성이 트리거되도록합니다.
- - **all_day**: 하루 종일 이벤트 인 경우 `True/False` 이벤트가 없으면 `False`가 됩니다.
+ - **all_day**: 하루 종일 이벤트인 경우 `True/False` 이벤트가 없으면 `False`가 됩니다.
  - **message**: `search` 값이 추출된 이벤트 제목입니다. 위의 `offset_reached` 예에서 메시지는 매우 중요한 회의로 설정됩니다.
  - **description**: 이벤트 설명.
  - **location**: 이벤트 위치.
@@ -121,7 +121,6 @@ custom_calendars:
 
 ### 사례
 
-All events of the calendars "private" and "holidays". Note that all day events are not included.
 캘린더의 모든 이벤트는 "private" 및 "holidays"입니다. 하루 종일 일정은 포함되지 않습니다.
 ```yaml
 # Example configuration.yaml entry for nextcloud
@@ -135,7 +134,7 @@ calendar:
       - holidays
 ```
 
-휴일이 아닌 경우 음악으로 기상알림을 자동화하는 기능의 전체 예
+휴일이 아닌 경우 음악으로 기상알림을 자동화하는 기능의 전체 예시
 전제 조건 : "Holiday"이 포함된 일정 관리 항목을 작성하는 "work"이라는 일정 관리가 있습니다.
 
 사용자 정의 캘린더 이름은 기본 캘린더 + 사용자 정의 캘린더의 이름으로 구성됩니다.

@@ -1,5 +1,5 @@
 ---
-title: Graphite
+title: 그라피트(Graphite)
 description: Instructions on how to record Home Assistant history in Graphite.
 logo: graphite.png
 ha_category:
@@ -7,9 +7,9 @@ ha_category:
 ha_release: 0.13
 ---
 
-The `graphite` integration records all events and state changes and feeds the data to a [graphite](http://graphite.wikidot.com/) instance.
+`graphite` 통합구성요소는 모든 이벤트와 상태 변경을 기록하고 데이터를 [graphite](http://graphite.wikidot.com/) 인스턴스에 제공합니다.
 
-To enable this component, add the following lines to your `configuration.yaml`:
+이 컴포넌트를 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry

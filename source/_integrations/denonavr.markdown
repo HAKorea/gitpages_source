@@ -8,6 +8,10 @@ ha_iot_class: Local Polling
 ha_release: 0.7.2
 ---
 
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/RoFArWvAh-g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 `denonavr` 플랫폼을 사용하면 Home Assistant에서 [Denon Network Receivers](https://www.denon.co.uk/chg/product/compactsystems/networkmusicsystems/ceolpiccolo)를 제어할 수 있습니다. 장치가 [Denon] 플랫폼에서 지원 될 수 있습니다.
 
 지원되는 장치:

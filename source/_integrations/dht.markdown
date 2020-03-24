@@ -8,11 +8,15 @@ logo: dht.png
 ha_iot_class: Local Polling
 ---
 
-The `dht` sensor platform allows you to get the current temperature and humidity from a DHT11, DHT22 or AM2302 device.
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/GsG1OClojOk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
-## Configuration
+`dht` 센서 플랫폼을 사용하면 DHT11, DHT22 또는 AM2302 장치에서 현재 온도와 습도를 얻을 수 있습니다.
 
-To use your DHTxx sensor in your installation, add the following to your `configuration.yaml` file:
+## 설정
+
+설치시 DHTxx 센서를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -60,11 +64,11 @@ humidity_offset:
   type: [integer, float]
 {% endconfiguration %}
 
-The name of the pin to which the sensor is connected has different names on different platforms. 'P8_11' for Beaglebone, '23' for Raspberry Pi.
+센서가 연결된 핀 이름은 플랫폼마다 이름이 다릅니다. 비글 본의 경우 'P8_11', 라즈베리 파이의 경우 '23'.
 
-### Example
+### 사례
 
-An example for a Raspberry Pi 3 with a DHT22 sensor connected to GPIO4 (pin 7):
+GPIO4 (PIN 7)에 연결된 DHT22 센서가 있는 Raspberry Pi 3의 예 :
 
 ```yaml
 sensor:

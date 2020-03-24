@@ -10,7 +10,7 @@ ha_codeowners:
   - '@home-assistant/core'
 ---
 
-`config` 통합구성요소는 홈 지원의 일부를 구성하는 프론트 엔드에서 패널을 표시하고 관리 할 수 있도록 설계되었습니다.
+`config` 통합구성요소는 홈어시스턴트의 일부를 설정하는 프론트 엔드에서 패널을 표시하고 관리할 수 있도록 설계되었습니다.
 
 [`default_config:`](https://www.home-assistant.io/integrations/default_config/) 설정을 configuration.yaml에서 비활성화하거나 제거하지 않은 경우 통합구성요소에서 기본으로 동작하게 되어있습니다. 이런 경우 다음 예는 통합구성요소를 수동으로 활성화하는 방법입니다. :
 
@@ -25,15 +25,15 @@ config:
 
 ### 사용자
 
-이 섹션에서는 Home Assistant 사용자를 관리 할 수 ​​있습니다.
+이 섹션에서는 Home Assistant 사용자를 관리할 수 ​​있습니다.
 
 ### 일반
 
-이 섹션에서는 Home Assistant 설치의 이름, 위치 및 단위 시스템을 관리 할 수 ​​있습니다.
+이 섹션에서는 Home Assistant 설치의 이름, 위치 및 단위 시스템을 관리할 수 ​​있습니다.
 
 ### 서버 제어
 
-이 섹션에서는 Home Assistant 내에서 Home Assistant를 제어 할 수 있습니다. 마우스 클릭 한 번으로 설정을 확인하고 the core, groups, scripts, automations 및 홈어시스턴트 프로세스를 다시로드 할 수 있습니다.
+이 섹션에서는 Home Assistant 내에서 Home Assistant를 제어할 수 있습니다. 마우스 클릭 한 번으로 설정을 확인하고 the core, groups, scripts, automations 및 홈어시스턴트 프로세스를 다시 로드 할 수 있습니다.
 
 <p class='img'>
   <img src='{{site_root}}/images/screenshots/server-management.png' />

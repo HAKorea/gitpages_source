@@ -10,8 +10,9 @@ ha_iot_class: Local Push
 ha_release: 0.49
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/WIjyerTfQMw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/WIjyerTfQMw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `apple_tv` 플랫폼을 사용하면 Apple TV (3세대 및 4세대)를 제어할 수 있습니다. 화살표 키와 같은 리모컨 버튼을 보내려면 [remote platform](/integrations/apple_tv#remote)을 참조하십시오 .
 

@@ -12,7 +12,7 @@ ha_quality_scale: internal
 
 ## 설정
 
-이 컴포넌트를 불러 오려면 `configuration.yaml`에 다음 줄을 추가하십시오 :
+이 컴포넌트를 불러오려면 `configuration.yaml`에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry

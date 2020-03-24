@@ -7,24 +7,24 @@ ha_category:
 ha_release: 0.55
 ---
 
-The `rflink` integration supports devices that use [RFLink gateway firmware](http://www.nemcon.nl/blog2/), for example the [Nodo RFLink Gateway](https://www.nodo-shop.nl/nl/21-rflink-gateway). RFLink gateway is an Arduino firmware that allows two-way communication with a multitude of RF wireless devices using cheap hardware (Arduino + transceiver).
+`rflink` 통합구성요소는 [RFLink 게이트웨이 펌웨어](http://www.nemcon.nl/blog2/)를 사용하는 장치 (예: [Nodo RFLink 게이트웨이](https://www.nodo-shop.nl/nl/21-rflink-gateway))를 지원합니다. RFLink 게이트웨이는 저렴한 하드웨어 (Arduino + 트랜시버)를 사용하여 여러 RF 무선 장치와 양방향 통신을 가능하게하는 Arduino 펌웨어입니다.
 
-First, you have to set up your [RFLink hub](/integrations/rflink/).
+먼저 [RFLink hub](/integrations/rflink/)를 설정해야합니다.
 
-After configuring the RFLink hub, covers will be automatically discovered and added. Except the Somfy RTS devices.
+RFLink 허브를 구성하면 커버가 자동으로 검색되어 추가됩니다. Somfy RTS 장치는 제외합니다.
 
-### Setting up a Somfy RTS device
+### Somfy RTS 장치 설정
 
-You have to add the Somfy RTS manually with the supplied RFlinkLoader (Windows only).
+제공된 RFlinkLoader를 사용하여 Somfy RTS를 수동으로 추가해야합니다 (Windows 만 해당).
 
-Press the Learn button on the original Somfy remote enter the following code within 3 seconds. Your blinds will go up and down shortly:
+원래 Somfy 리모컨의 Learn 버튼을 3 초 이내에 다음 코드를 입력하십시오. 블라인드는 곧 위아래로 움직입니다.
 
 ```text
 10;RTS;02FFFF;0412;3;PAIR;
 ```
 
-Your blinds will go up and down again. This means your RFLink is now paired with your RTS motor.
-To check this enter the following code again and see if there is a record.
+블라인드가 다시 위아래로 움직입니다. 이는 RFLink가 RTS 모터와 페어링되었음을 의미합니다.
+이를 확인하려면 다음 코드를 다시 입력하고 레코드가 있는지 확인하십시오.
 
 ```text
 10;RTSSHOW;
@@ -49,13 +49,13 @@ RTS Record: 14 Address: FFFFFF RC: FFFF
 RTS Record: 15 Address: FFFFFF RC: FFFF
 ```
 
-After configuring the RFLink Somfy RTS you have to add the cover to the `configuration.yaml` file like any other RFlink device.
+RFLink Somfy RTS를 설정한 후에는 다른 RFlink 장치와 마찬가지로 `configuration.yaml` 파일에 커버를 추가해야합니다.
 
-RFLink cover ID's are composed of: protocol, id, and gateway. For example: `RTS_0100F2_0`. 
+RFLink 커버 ID는 프로토콜, ID, 게이트웨이로 설정됩니다. 예를 들면 다음과 같습니다. : `RTS_0100F2_0`. 
 
-Once the ID of a cover is known, it can be used to configure the cover in Home Assistant, for example, to add it to a different group, hide it or set a nice name.
+커버의 ID를 알고 나면 홈어시스턴트에서 커버를 설정하는데 사용할 수 있습니다 (예 : 다른 그룹에 추가하거나 숨기거나 익숙한 이름을 설정).
 
-Configuring devices as a cover:
+장치를 커버로 설정 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -129,16 +129,16 @@ devices:
           type: string
 {% endconfiguration %}
 
-### Setting up a KAKU ASUN-650 device
+### KAKU ASUN-650 장치 설정
 
-In RFLink, the ON and DOWN command are used to close the cover and the OFF and UP command are used to open the cover. The KAKU (COCO) ASUN-650 works the other way around, it uses the ON command to open the cover and the OFF command to close the cover.
+RFLink에서 ON 및 DOWN 명령은 커버를 닫고 OFF 및 UP 명령은 커버를 열 때 사용됩니다. KAKU (COCO) ASUN-650은 반대로 작동하며, ON 명령을 사용하여 커버를 열고 OFF 명령을 사용하여 커버를 닫습니다.
 
-The RFLink cover device has a property named `type` that takes 2 values:
+RFLink 커버 장치에는 2 가지 값을 갖는 `type` 이라는 속성이 있습니다. :
 
 - `standard`: Do not invert the on/off commands sent to the RFLink device.
 - `inverted`: Invert the on/off commands sent to the RFLink device.
 
-The following configuration example shows how to use the `type` property:
+다음 설정 예제는 `type` 속성을 사용하는 방법을 보여줍니다 :
 
 ```yaml
 # Example configuration.yaml entry that shows how to
@@ -164,15 +164,15 @@ cover:
         name: non_kaku_not_inverted_by_default
 ```
 
-The configuration above shows that the `type` property may be omitted. When the ID starts with `newkaku`, the component will make sure that the on and off commands are inverted. When the ID does not start with `newkaku`, the on and off commands are not inverted. 
+위의 설정은 `type` 속성이 생략될 수 있음을 보여줍니다. ID가 `newkaku`로 시작하면 구성 요소는 on 및 off 명령이 반전되도록합니다. ID가 `newkaku`로 시작하지 않으면 on 및 off 명령이 반전되지 않습니다.
 
-### Device support
+### 지원 장치
 
-See [device support](/integrations/rflink/#device-support).
+[device support](/integrations/rflink/#device-support) 참조하십시오.
 
-### Additional configuration examples
+### 추가 설정 사례
 
-Multiple covers with custom names and aliases
+사용자 정의 이름 및 별명을 가진 여러 커버
 
 ```yaml
 # Example configuration.yaml entry

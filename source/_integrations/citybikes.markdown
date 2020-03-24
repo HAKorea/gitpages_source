@@ -7,13 +7,14 @@ ha_category:
 ha_release: 0.49
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/po85lER-qRo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/po85lER-qRo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `citybikes` 센서 플랫폼은 선택한 지역의 자전거 공유 스테이션에서 자전거가 사용가능한지 모니터링합니다. 이 데이터는 전세계 자전거 공유 시스템을 지원하는 [CityBikes](https://citybik.es/#about)에서 제공합니다.
 
 ## 설정
 
-To enable it, add the following lines to your `configuration.yaml`:
 이를 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오 :
 
 ```yaml

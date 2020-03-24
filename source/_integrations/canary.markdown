@@ -10,7 +10,9 @@ ha_release: '0.60'
 ha_iot_class: Cloud Polling
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/zt837RPaWNw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/zt837RPaWNw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `canary` 통합구성요소를 사용하면 [Canary](https://canary.is) 장치를 Home Assistant에 연동할 수 있습니다.
 
@@ -59,7 +61,7 @@ timeout:
 
 ## 카메라
 
-`canary` 카메라 플랫폼을 사용하면 Home Assistant에서 [Canary](https://canary.is) 카메라의 라이브 스트림을 볼 수 있습니다. 이를 위해서는 [`ffmpeg` integration](/integrations/ffmpeg/)가 이미 설정되어 있어야합니다.
+`canary` 카메라 플랫폼을 사용하면 Home Assistant에서 [Canary](https://canary.is) 카메라의 라이브 스트림을 볼 수 있습니다. 이를 위해서는 [`ffmpeg` integration](/integrations/ffmpeg/)이 이미 설정되어 있어야합니다.
 
 [Canary integration](/integrations/canary/) 설정이 완료되면 [Canary](https://canary.is) 카메라가 자동으로 표시됩니다.
 

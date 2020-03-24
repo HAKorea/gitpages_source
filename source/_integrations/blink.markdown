@@ -1,5 +1,5 @@
 ---
-title: Blink 보안 카메라
+title: 보안 카메라(Blink) 
 description: Instructions for how to integrate Blink camera/security system within Home Assistant.
 logo: blink.png
 ha_category:
@@ -14,9 +14,11 @@ ha_codeowners:
   - '@fronzbot'
 ---
 
-`blink` 통합구성요소를 통해 [Blink](https://blinkforhome.com/) 카메라 및 보안 시스템에서 카메라 이미지 및 모션 이벤트를 볼 수 있습니다.
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/yjSH0aJDi1Q?start=855" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/yjSH0aJDi1Q?start=855" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+`blink` 통합구성요소를 통해 [Blink](https://blinkforhome.com/) 카메라 및 보안 시스템에서 카메라 이미지 및 모션 이벤트를 볼 수 있습니다.
 
 ## 셋업
 

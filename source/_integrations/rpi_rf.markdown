@@ -8,14 +8,14 @@ ha_release: 0.19
 ha_iot_class: Assumed State
 ---
 
-The `rpi_rf` switch platform allows you to control devices over 433/315MHz LPD/SRD signals with generic low-cost GPIO RF modules on a [Raspberry Pi](https://www.raspberrypi.org/).
+`rpi_rf` 스위치 플랫폼을 사용하면 [Raspberry Pi](https://www.raspberrypi.org/)의 일반 저가형 GPIO RF 모듈로 433/315MHz LPD/SRD 신호를 통해 장치를 제어할 수 있습니다.
 
-Interoperable with codes sniffed via [the rpi-rf module](https://pypi.python.org/pypi/rpi-rf) or [rc-switch](https://github.com/sui77/rc-switch).
-For more info see the PyPi module description: [rpi-rf](https://pypi.python.org/pypi/rpi-rf).
+[rpi-rf 모듈](https://pypi.python.org/pypi/rpi-rf) 또는 [rc-switch](https://github.com/sui77/rc-switch)를 통해 스니핑된 코드와 상호 운용 가능 .
+자세한 내용은 PyPi 모듈 설명을 참조하십시오 : [rpi-rf](https://pypi.python.org/pypi/rpi-rf)
 
-## Configuration
+## 설정
 
-To enable, add the following to your `configuration.yaml`:
+활성화하려면 `configuration.yaml`에 다음을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry

@@ -11,15 +11,17 @@ ha_release: pre 0.7
 ha_iot_class: Local Push
 ---
 
-The `rpi_gpio` integration is the base for all related GPIO platforms in Home Assistant. There is no setup needed for the integration itself, for the platforms please check their corresponding pages.
+<iframe width="690" height="388" src="https://www.youtube.com/embed/wikJla6AilQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+`rpi_gpio` 통합구성요소는 Home Assistant의 모든 관련 GPIO 플랫폼의 기본입니다. 연동 자체에 필요한 설정이 없습니다. 플랫폼의 경우 해당 페이지를 확인하십시오.
 
 ## Binary Sensor
 
-The `rpi_gpio` binary sensor platform allows you to read sensor values of the GPIOs of your [Raspberry Pi](https://www.raspberrypi.org/).
+`rpi_gpio` 바이너리 센서 플랫폼을 사용하면 [Raspberry Pi](https://www.raspberrypi.org/)의 GPIO 센서 값을 읽을 수 있습니다.
 
-## Configuration
+## 설정
 
-To use your Raspberry Pi's GPIO in your installation, add the following to your `configuration.yaml` file:
+설치시 Raspberry Pi의 GPIO를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -59,22 +61,22 @@ pull_mode:
   default: "`UP`"
 {% endconfiguration %}
 
-For more details about the GPIO layout, visit the Wikipedia [article](https://en.wikipedia.org/wiki/Raspberry_Pi#GPIO_connector) about the Raspberry Pi.
+GPIO 레이아웃에 대한 자세한 내용은 Raspberry Pi에 대한 Wikipedia [article](https://en.wikipedia.org/wiki/Raspberry_Pi#GPIO_connector)를 방문하십시오.
 
 ## Cover
 
-The `rpi_gpio` cover platform allows you to use a Raspberry Pi to control your cover such as Garage doors.
+`rpi_gpio` 커버 플랫폼을 사용하면 Raspberry Pi를 사용하여 차고문과 같은 커버를 제어할 수 있습니다.
 
-It uses two pins on the Raspberry Pi.
+라즈베리파이에 2 개의 핀을 사용합니다.
 
-- The `state_pin` will detect if the cover is closed, and
-- the `relay_pin` will trigger the cover to open or close.
+- `state_pin`은 커버가 닫혀 있는지 감지합니다. 
+- `relay_pin`은 덮개가 열리거나 닫히도록 트리거합니다.
 
-Although you do not need Andrews Hilliday's software controller when you run Home Assistant, he has written clear instructions on how to hook your garage door and sensors up to your Raspberry Pi, which can be found [here](https://github.com/andrewshilliday/garage-door-controller#hardware-setup).
+홈어시스턴트를 실행할 때 Andrews Hilliday의 소프트웨어 컨트롤러는 필요하지 않지만 차고문과 센서를 Raspberry Pi에 연결하는 방법에 대한 명확한 지침을 [here](https://github.com/andrewshilliday/garage-door-controller#hardware-setup)에 작성했습니다. 
 
-## Configuration
+## 설정
 
-To enable Raspberry Pi Covers in your installation, add the following to your `configuration.yaml` file:
+설치에서 Raspberry Pi Covers를 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -125,7 +127,7 @@ covers:
       type: string
 {% endconfiguration %}
 
-## Full example
+## 전체 사례
 
 ```yaml
 # Example configuration.yaml entry
@@ -143,17 +145,17 @@ cover:
         name: 'Right door'
 ```
 
-## Remote Raspberry Pi Cover
+## 라즈베리파이 커버 리모콘
 
-If you don't have Home Assistant running on your Raspberry Pi and you want to use it as a remote cover instead, there is a project called [GarageQTPi](https://github.com/Jerrkawz/GarageQTPi) that will work remotely with the [MQTT Cover Component](/integrations/cover.mqtt/). Follow the Github instructions to install and configure GarageQTPi and once configured follow the Home Assistant instructions to configure the MQTT Cover.
+Raspberry Pi에서 Home Assistant를 실행하지 않고 대신 리모콘 커버로 사용하려는 경우 [MQTT Cover Component](/integrations/cover.mqtt/)와 원격으로 작동하는 [GarageQTPi](https://github.com/Jerrkawz/GarageQTPi)라는 프로젝트가 있습니다. Github 지침에 따라 GarageQTPi를 설치 및 세팅하고 일단 설정되면 홈어시스턴트 지침에 따라 MQTT Cover를 설정하십시오.
 
 ## Switch
 
-The `rpi_gpio` switch platform allows you to control the GPIOs of your [Raspberry Pi](https://www.raspberrypi.org/).
+`rpi_gpio` 스위치 플랫폼을 사용하면 [Raspberry Pi](https://www.raspberrypi.org/)의 GPIO를 제어할 수 있습니다.
 
-## Configuration
+## 설정
 
-To use your Raspberry Pi's GPIO in your installation, add the following to your `configuration.yaml` file:
+설치시 Raspberry Pi의 GPIO를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -181,14 +183,14 @@ invert_logic:
   type: boolean
 {% endconfiguration %}
 
-For more details about the GPIO layout, visit the Wikipedia [article](https://en.wikipedia.org/wiki/Raspberry_Pi#General_purpose_input-output_(GPIO)_connector) about the Raspberry Pi.
+GPIO 레이아웃에 대한 자세한 내용은 Raspberry Pi에 관한 Wikipedia [article](https://en.wikipedia.org/wiki/Raspberry_Pi#General_purpose_input-output_(GPIO)_connector)를 참조하십시오.
 
 <div class='note warning'>
-Note that a pin managed by Home Assistant is expected to be exclusive to Home Assistant.
+홈어시스턴트가 관리하는 핀은 홈어시스턴트 전용입니다.
 </div>
 
-A common question is what does Port refer to, this number is the actual GPIO #, not the pin #.
-For example, if you have a relay connected to pin 11 its GPIO # is 17.
+일반적인 질문은 포트가 무엇을 참조하는지입니다. 이 숫자는 핀 번호가 아닌 실제 GPIO # 입니다. 
+예를 들어, 핀 11에 연결된 릴레이가있는 경우 GPIO 번호는 17입니다.
 
 ```yaml
 # Example configuration.yaml entry

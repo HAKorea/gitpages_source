@@ -10,7 +10,9 @@ ha_release: 0.36
 ha_iot_class: Local Push
 ---
 
-<iframe width="690" height="485" src="https://www.youtube.com/embed/UIw14y82KIo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/UIw14y82KIo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `bbb_gpio` 통합구성요소는 Home Assistant의 모든 [BeagleBone Black](https://beagleboard.org/black) 관련 GPIO 플랫폼을 사용할 수 있습니다.
 연동 자체에 필요한 설정이 없습니다.

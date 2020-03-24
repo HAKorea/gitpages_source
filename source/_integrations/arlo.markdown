@@ -1,5 +1,5 @@
 ---
-title: Arlo 보안 카메라 
+title: 보안 카메라(Arlo)
 description: Instructions on how to integrate your Netgear Arlo cameras within Home Assistant.
 logo: arlo.png
 ha_category:
@@ -10,11 +10,14 @@ ha_category:
 ha_release: 0.46
 ha_iot_class: Cloud Polling
 ---
-<iframe width="690" height="437" src="https://www.youtube.com/embed/aUbv1wHOxzU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/aUbv1wHOxzU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 이 `arlo` 구현을 통해 [Arlo](https://arlo.netgear.com/) 장치를 Home Assistant에 연동할 수 있습니다 .
 
-현재 홈 어시스턴트에는 다음과 같은 장치 유형이 지원됩니다. :
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다. :
 
 
 - [Alarm](#alarm)

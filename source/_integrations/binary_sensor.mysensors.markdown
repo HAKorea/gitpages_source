@@ -9,9 +9,9 @@ ha_release: 0.14
 ha_iot_class: Local Push
 ---
 
-Integrates MySensors binary sensors into Home Assistant. See the [main component] for configuration instructions.
+MySensor 바이너리 센서를 Home Assistant에 연동합니다. 설정 지침은 [main component]를 참조하십시오.
 
-The following sensor types are supported:
+다음과 같은 센서 유형이 지원됩니다.
 
 #### MySensors version 1.4 and higher
 
@@ -32,8 +32,9 @@ S_VIBRATION    | V_TRIPPED
 S_MOISTURE     | V_TRIPPED
 
 For more information, visit the [serial api] of MySensors.
+자세한 내용은 MySensors의 [serial api]를 방문하십시오.
 
-### Example sketch
+### sketch 사례
 
 ```cpp
 /**

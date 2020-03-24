@@ -1,5 +1,5 @@
 ---
-title: Axis 보안 카메라
+title: 보안 카메라(Axis) 
 description: Integration between network devices from Axis Communications with Home Assistant.
 logo: axis.png
 ha_category:
@@ -13,7 +13,9 @@ ha_codeowners:
   - '@kane610'
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/LoiVGkyCkWg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/LoiVGkyCkWg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 [Axis Communications](https://www.axis.com/) 장치는 감시 카메라, 스피커, 액세스 제어 및 기타 보안 관련 네트워크 연결 하드웨어입니다. 이벤트 API는 펌웨어 5.50 이상에서 작동합니다.
 

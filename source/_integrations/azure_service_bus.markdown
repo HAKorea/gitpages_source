@@ -9,6 +9,10 @@ ha_codeowners:
   - '@hfurubotten'
 ---
 
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/AHS3qpyU8gw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 `Azure Service Bus` 통합구성요소를 통해 Home Assistant 내에서 [Azure Service Bus](https://azure.microsoft.com/en-us/services/service-bus/)로 메시지를 보낼 수 있습니다.
 
 ## 최초 셋업

@@ -1,5 +1,5 @@
 ---
-title: BlinkStick
+title: 블링크스틱(BlinkStick)
 description: Instructions on how to setup Blinkstick lights within Home Assistant.
 logo: blinkstick.png
 ha_category:
@@ -8,19 +8,23 @@ ha_release: 0.7.5
 ha_iot_class: Local Polling
 ---
 
-The `blinkstick` platform lets you control your [Blinkstick](https://www.blinkstick.com/) lights from within Home Assistant.
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/cjmDbKk3ajk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
-## Setup
+`blinkstick` 플랫폼을 사용하면 Home Assistant 내에서 [Blinkstick](https://www.blinkstick.com/) 조명을 제어 할 수 있습니다.
 
-To use your Blinkstick, you need to allow the access to the device for [non-root users](https://github.com/arvydas/blinkstick-python#permission-problems-in-linux-and-mac-os-x).
+## 셋업
+
+Blinkstick을 사용하려면 [non-root users](https://github.com/arvydas/blinkstick-python#permission-problems-in-linux-and-mac-os-x)의 장치에 대한 액세스를 허용해야합니다
 
 ```bash
 $ sudo blinkstick --add-udev-rule
 ```
 
-## Configuration
+## 설정
 
-To add a Blinkstick to your installation, add the following to your `configuration.yaml` file:
+Blinkstick을 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

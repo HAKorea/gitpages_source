@@ -7,6 +7,10 @@ ha_category:
 ha_release: 0.7
 ---
 
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/x2fu8o-0X1Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 이 플랫폼을 사용하면 연결된 장치를 [Aruba Instant](https://www.arubanetworks.com/products/networking/aruba-instant/) 장치에서 현재 보고 상태를 감지할 수 있습니다.
 
 지원되는 장치 (테스트 완료) :

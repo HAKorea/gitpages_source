@@ -12,7 +12,9 @@ ha_codeowners:
   - '@fabaff'
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/vHZLCahai4Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/vHZLCahai4Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `digital_ocean` 통합구성요소를 통해 Home Assistant에서 [Digital Ocean](https://www.digitalocean.com/) droplets 정보에 액세스 할 수 있습니다.
 
@@ -27,7 +29,7 @@ ha_codeowners:
 
 ## 설정
 
-Digital Ocean droplets을 Home Assistant와 통합하려면 `configuration.yaml` 파일에 다음 섹션을 추가하십시오.
+Digital Ocean droplets을 Home Assistant와 연동하려면 `configuration.yaml` 파일에 다음 섹션을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -48,7 +50,7 @@ access_token:
 
 ### 설정
 
-Digital Ocean droplets을 사용하려면 먼저 [Digital Ocean hub](/integrations/digital_ocean/)를 설정 한 다음 `configuration.yaml` 파일에 다음을 추가해야합니다.
+Digital Ocean droplets을 사용하려면 먼저 [Digital Ocean hub](/integrations/digital_ocean/)를 설정한 다음 `configuration.yaml` 파일에 다음을 추가해야합니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -72,7 +74,7 @@ droplets:
 
 ### 설정
 
-Digital Ocean droplets을 사용하려면 먼저 [Digital Ocean hub](/integrations/digital_ocean/)를 설정 한 다음 `configuration.yaml` 파일에 다음을 추가해야합니다.
+Digital Ocean droplets을 사용하려면 먼저 [Digital Ocean hub](/integrations/digital_ocean/)를 설정한 다음 `configuration.yaml` 파일에 다음을 추가해야합니다.
 
 ```yaml
 # Example configuration.yaml entry

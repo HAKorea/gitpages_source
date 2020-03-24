@@ -1,11 +1,14 @@
 ---
-title: "이마존 알렉사 Flash Briefing"
+title: "아마존 알렉사 Flash Briefing"
 description: "Instructions on how to create your Flash Briefing skills with Home Assistant."
 logo: amazon-alexa.png
 ha_category:
   - Voice
 ha_release: "0.31"
 ---
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/_uJeiYZubEA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 ## Flash Briefing 기술
 

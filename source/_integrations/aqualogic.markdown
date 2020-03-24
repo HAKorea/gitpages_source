@@ -9,7 +9,10 @@ ha_category:
 ha_release: '0.80'
 ha_iot_class: Local Push
 ---
-<iframe width="690" height="437" src="https://www.youtube.com/embed/QcaJlpVOJ8U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/QcaJlpVOJ8U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 AquaLogic 통합구성요소는 Hayward/Goldline AquaLogic/ProLogic 수영장 컨트롤러에 대한 연결을 제공합니다. 수영장 컨트롤러에 연결된 RS-485 이더넷 어댑터가 필요합니다.
 

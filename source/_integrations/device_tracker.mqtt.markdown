@@ -8,7 +8,6 @@ ha_iot_class: Configurable
 ha_release: 0.7.3
 ---
 
-
 `mqtt` 장치 추적기 플랫폼을 사용하면 새 위치에 대한 MQTT topic을 모니터링하여 현재 상태를 감지 할 수 있습니다. 이 플랫폼을 사용하려면 각 장치마다 고유한 topic를 지정하십시오.
 
 ## 설정

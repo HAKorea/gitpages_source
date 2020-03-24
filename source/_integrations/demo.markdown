@@ -35,7 +35,7 @@ ha_codeowners:
 - [Weather](/integrations/weather/) (`weather`)
 
 
-Home Assistant에서 데모 플랫폼을 통합하려면 `configuration.yaml` 파일에 다음 섹션을 추가 하십시오.
+Home Assistant에서 데모 플랫폼을 연동하려면 `configuration.yaml` 파일에 다음 섹션을 추가 하십시오.
 
 ```yaml
 # Example configuration.yaml entry

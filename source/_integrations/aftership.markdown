@@ -8,6 +8,10 @@ ha_release: 0.85
 ha_iot_class: Cloud Polling
 ---
 
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/5cdcq_Hxyao" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 `aftership` 플랫폼을 통해 전세계 490 개 이상의 택배를 지원하는 [AfterShip](https://www.aftership.com)을 통해 배송을 추적 할 수 있습니다. 한 달에 최대 100 개의 추적 패키지를 사용할 수 있으며, 그 이후에는 요금이 부과됩니다.
 
 센서값은 `Delivered` 상태가 아닌 패키지 수를 나타냅니다. 속성은 상태 당 패키지 갯수입니다.

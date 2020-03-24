@@ -8,12 +8,10 @@ ha_release: 0.68
 ha_iot_class: Local Polling
 ---
 
-
 `modbus` 온도 조절 장치를 사용하면 [Modbus](http://www.modbus.org/) 레지스터의 센서값 (현재 온도) 및 목표값 (대상 온도)을 사용할 수 있습니다.
 
 ## 설정
 
-To use your Modbus thermostat in your installation, add the following to your `configuration.yaml` file:
 설치에서 Modbus 온도 조절기를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml

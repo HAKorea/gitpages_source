@@ -7,6 +7,11 @@ ha_category:
 ha_iot_class: Local Polling
 ha_release: 0.27
 ---
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/J04PZJTwnnw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+블루투스 LE 추적기는 최근 ESPHOME과 연동하여 구성원이 **집안의 어느방에 있는지 확인할 수 있는 수준**까지 이르렀습니다. 위 유튜버가 러시아로 설명하고 있지만, 캡처와 그림으로 잘 표현하였고, 자막 번역을 통해 좀 더 상세한 내용을 살펴볼 수 있습니다. 
 
 이 추적기는 부팅시 및 일정한 간격으로 새 장치를 검색하고 interval_seconds 값을 기준으로 Bluetooth 저에너지 장치를 정기적으로 추적합니다. 장치를 서로 페어링 할 필요는 없습니다.
 
@@ -30,8 +35,6 @@ sudo apt install bluetooth
 device_tracker:
   - platform: bluetooth_le_tracker
 ```
-
-<iframe width="690" height="437" src="https://www.youtube.com/embed/oBkahrDfUFE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 {% configuration %}
 track_new_devices:

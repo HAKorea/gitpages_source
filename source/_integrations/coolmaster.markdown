@@ -11,7 +11,11 @@ ha_codeowners:
   - '@OnFreund'
 ---
 
-The `coolmaster` climate platform lets you control HVAC through [CoolMasterNet](https://coolautomation.com/products/coolmasternet/).
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/k86AHJaU-V8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+
 `coolmaster` climate 플랫폼은 [CoolMasterNet](https://coolautomation.com/products/coolmasternet/)을 통해 HVAC를 제어할 수 있습니다.
 
 ## 프론트엔드를 통한 설정

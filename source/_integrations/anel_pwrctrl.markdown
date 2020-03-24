@@ -8,7 +8,9 @@ ha_iot_class: Local Polling
 ha_release: '0.30'
 ---
 
-<iframe width="690" height="388" src="https://www.youtube.com/embed/9DFLwBoC5NA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/9DFLwBoC5NA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `anel_pwrctrl` 스위치 플랫폼을 통해 [ANEL PwrCtrl](https://anel-elektronik.de/SITE/produkte/produkte.htm) 장치를 제어 할 수 있습니다.
 

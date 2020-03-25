@@ -105,7 +105,7 @@ action:
 
 ## Binary Sensor
 
-`zoneminder` 바이너리 센서 플랫폼을 사용하면 [ZoneMinder](https://www.zoneminder.com) 설치의 가용성을 모니터링 할 수 있습니다.
+`zoneminder` 바이너리 센서 플랫폼을 사용하면 [ZoneMinder](https://www.zoneminder.com) 설치의 가용성을 모니터링할 수 있습니다.
 
 생성된 각 binary_sensor는 [ZoneMinder component](/integrations/zoneminder/)를 설정할 때 사용된 호스트 이름을 따라 이름이 지정됩니다.
 
@@ -161,11 +161,11 @@ monitored_conditions:
 
 ## Switch
 
-`zoneminder` 스위치 플랫폼을 사용하면 [ZoneMinder](https://www.zoneminder.com) 인스턴스에 연결된 모든 카메라의 현재 기능을 토글 할 수 있습니다.
+`zoneminder` 스위치 플랫폼을 사용하면 [ZoneMinder](https://www.zoneminder.com) 인스턴스에 연결된 모든 카메라의 현재 기능을 토글할 수 있습니다.
 
 <div class='note'>
 
-이를 사용하도록 [ZoneMinder component](/integrations/zoneminder/)가 설정되어 있어야하며 ZoneMinder 인증이 활성화 된 경우 연동 설정에 지정된 계정에는 "System"에 대한 "Edit" 권한이 있어야합니다.
+이를 사용하도록 [ZoneMinder component](/integrations/zoneminder/)가 설정되어 있어야하며 ZoneMinder 인증이 활성화된 경우 연동 설정에 지정된 계정에는 "System"에 대한 "Edit" 권한이 있어야합니다.
 
 </div>
 

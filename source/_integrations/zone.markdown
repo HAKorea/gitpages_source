@@ -54,7 +54,7 @@ longitude:
   required: true
   type: float
 radius:
-  description: 영역의 반경 (미터).
+  description: 구역의 반경 (미터).
   required: false
   type: integer
   default: 100
@@ -63,7 +63,7 @@ icon:
   required: false
   type: string
 passive:
-  description: 자동화에만 영역을 사용하고 프런트 엔드에서 숨기고 장치 추적기 이름에 영역을 사용하지 않습니다.
+  description: 자동화에만 구역을 사용하고 프런트 엔드에서 숨기고 장치 추적기 이름에 구역을 사용하지 않습니다.
   required: false
   type: boolean
   default: false
@@ -71,9 +71,9 @@ passive:
 
 특정 장소의 위도/경도를 찾으려면 [Google Maps](https://www.google.com/maps/) 혹은 [Bing Maps](https://www.bing.com/maps)를 사용할 수 있습니다. 마우스 오른쪽 버튼을 클릭하고 거기에서 좌표를 복사하거나 (Bing) "What is here?"를 클릭하십시오. (구글)
 
-## Home 구역 (zone)
+## Home Zone
 
-설정이 제공되지 않으면 `zone` 통합구성요소는 가정용 영역을 생성합니다. 이 구역은 `configuration.yaml` 파일에 제공된 위치를 사용하며 반경은 100 미터입니다. 이를 무시하려면 구역 설성을 작성하고 이름을 **'Home'**으로 지정하십시오.
+설정이 제공되지 않으면 `zone` 통합구성요소는 가정용 구역을 생성합니다. 이 구역은 `configuration.yaml` 파일에 제공된 위치를 사용하며 반경은 100 미터입니다. 이를 무시하려면 구역 설성을 작성하고 이름을 **'Home'**으로 지정하십시오.
 
 <div class='note'>
 
@@ -83,7 +83,7 @@ passive:
 
 ## Icons
 
-해당 구역에 사용할 아이콘을 선택하는 것이 좋습니다. [materialdesignicons.com](https://materialdesignicons.com/)에서 찾을 수있는 아이콘을 선택하고 이름 앞에 `mdi :`를 붙입니다. 예를 들어, `mdi : school`,`mdi : worker`,`mdi : home`,`mdi : cart` 또는`mdi : castle` 입니다.
+해당 구역에 사용할 아이콘을 선택하는 것이 좋습니다. [materialdesignicons.com](https://materialdesignicons.com/)에서 찾을 수있는 아이콘을 선택하고 이름 앞에 `mdi :`를 붙입니다. 예를 들어, `mdi : school`,`mdi : worker`,`mdi : home`,`mdi : cart` 또는 `mdi : castle` 입니다.
 
 ## State
 

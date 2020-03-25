@@ -50,7 +50,7 @@ longitude:
   type: float
   default: 홈어시스턴트 사용자의 초기 설정값 사용 
 units:
-  description: "단위 시스템을 수동으로 지정하십시오. 유효한 값은 다음과 같습니다: `auto`, `us`, `si`, `ca`, `uk` and `uk2`."
+  description: "단위 시스템을 수동으로 지정하십시오. 유효한 값은 다음과 같습니다: `auto`, `us`, `si`, `ca`, `uk`, `uk2`."
   required: false
   type: string
   default: "`si` if Home Assistant unit system is metric, `us` if imperial."

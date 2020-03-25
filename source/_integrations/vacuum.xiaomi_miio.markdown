@@ -12,7 +12,7 @@ ha_iot_class: Local Polling
 <iframe width="690" height="437" src="https://www.youtube.com/embed/5-IslDGfzAQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-`xiaomi_miio` 진공청소기 플랫폼을 사용하면 [Xiaomi Mi Robot Vacuum](https://www.mi.com/roomrobot/)의 상태를 제어 할 수 있습니다
+`xiaomi_miio` Vacuum(진공청소기) 플랫폼을 사용하면 [Xiaomi Mi Robot Vacuum](https://www.mi.com/roomrobot/)의 상태를 제어할 수 있습니다
 
 *Note* : **샤오미 2019 LDS 모델**은 [여기](https://github.com/nqkdev/home-assistant-vacuum-styj02ym?files=1)에서 custom component를 사용하십시오.  
 
@@ -33,7 +33,7 @@ ha_iot_class: Local Polling
 
 `configuration.yaml` 에서 사용할 API 토큰을 검색 하려면 [Retrieving the Access Token](/integrations/vacuum.xiaomi_miio/#retrieving-the-access-token) 을 따르십시오.
 
-설비에 진공을 추가하려면 `configuration.yaml`에 다음을 추가하십시오 :
+Vacumm 추가하려면 `configuration.yaml`에 다음을 추가하십시오 :
 
 ```yaml
 vacuum:
@@ -85,7 +85,7 @@ name:
 
 ### `xiaomi_miio.vacuum_remote_control_move` 서비스
 
-로봇을 원격 제어하십시오. `remote_control_start` 로 리모컨 모드에서 먼저 설정하십시오. 
+로봇을 원격 제어하십시오. `remote_control_start`로 리모컨 모드에서 먼저 설정하십시오. 
 
 | Service data attribute    | Optional | Description                                               |
 |---------------------------|----------|-----------------------------------------------------------|
@@ -107,13 +107,13 @@ name:
 
 ### `xiaomi_miio.vacuum_clean_zone` 서비스
 
-표시된 반복 횟수로 선택한 영역에서 청소 작업을 시작하십시오.
+표시된 반복 횟수로 선택한 구역에서 청소 작업을 시작하십시오.
 
 | Service data attribute    | Optional | Description                                           |
 |---------------------------|----------|-------------------------------------------------------|
 | `entity_id`               |       no | 특정 로봇에서만 작동                         |
 | `zone`                    |       no | 구역 목록. 각 구역은 4 개의 정수 값으로 구성된 배열입니다. 예시: [[23510,25311,25110,26361]] |
-| `repeats`                 |       no | 1에서 3 사이의 각 영역에 대한 청소 반복 횟수. |
+| `repeats`                 |       no | 1에서 3 사이의 각 구역에 대한 청소 반복 횟수. |
 
 `xiaomi_miio.vacuum_clean_zone` 사용예 :
 
@@ -137,7 +137,7 @@ automation:
 
 {% endraw %}
 
-인라인 영역이 있는 배열 :
+인라인 구역이 있는 배열 :
 {% raw %}
 
 ```yaml
@@ -245,7 +245,7 @@ Xiaomi 로봇 진공청소기의 WiFi 설정을 재설정 한 후 새로운 액�
 
 1. 시작하려면 기본 Android 기기에서 평소와 같이 최신 버전의 Mi Home으로 Robovac을 설정하십시오.
 2. 최신 Mi Home 앱을 사용하여 성공적으로 작동하고 라우터에서 진공청소기에 고정 IP를 제공하거나 LAN에서 수행하십시오.
-3. 루팅 된 Android 기기에 Mi Home의 `v5.4.54` 버전을 설치하고 로그인합니다 (두 개의 Mi Home 버전을 동시에 설치할 수 없음)
+3. 루팅된 Android 기기에 Mi Home의 `v5.4.54` 버전을 설치하고 로그인합니다 (두 개의 Mi Home 버전을 동시에 설치할 수 없음)
 4. 매번 같은 서버를 사용하고 있는지 확인하십시오
 5. 5.4.54를 사용하여 성공적인 작동을 보장하십시오 (locate는 좋은 간단한 테스트입니다)
 6. adb를 사용하여 루팅 된 전화에서 토큰을 추출합니다.
@@ -256,10 +256,10 @@ Xiaomi 로봇 진공청소기의 WiFi 설정을 재설정 한 후 새로운 액�
 
 1. Mi Home 앱으로 로봇을 설정하십시오. Xiaomi는 지역마다 다른 제품 이름을 사용하므로 올바른 지역을 선택하십시오. 새로운 RoboRock 앱은 현재 이 방법을 지원하지 않습니다.
 2. iTunes를 사용하여 암호화되지 않은 iPhone 백업을 생성하십시오. 
-3. [iBackup Viewer](https://www.imactools.com/iphonebackupviewer/)를 설치 하고 연 다음 백업을 여십시오.
+3. [iBackup Viewer](https://www.imactools.com/iphonebackupviewer/)를 설치하고 연 다음 백업을 여십시오.
 4. "Raw Data" 모듈을 Open 합니다.
 5. `com.xiaomi.mihome`로 이동하십시오 
-6. 다음과 같은 파일을 검색하십시오. : `123456789_mihome.sqlite` (참고 :`_mihome.sqlite`는 올바른 파일이 *아닙니다*. 보통 이 파일은 `Documents` 폴더에 있습니다.)
+6. 다음과 같은 파일을 검색하십시오. : `123456789_mihome.sqlite` (참고: `_mihome.sqlite`는 올바른 파일이 *아닙니다*. 보통 이 파일은 `Documents` 폴더에 있습니다.)
 7. 이 파일을 파일 시스템에 저장하십시오.
 8. [DB Browser for SQLite](https://sqlitebrowser.org/) 설치하십시오. 
 9. DB 브라우저를 열고 `.sqlite` 백업에서 저장 한 파일을 로드하십시오.
@@ -291,11 +291,11 @@ Xiaomi 로봇 진공청소기의 WiFi 설정을 재설정 한 후 새로운 액�
 8. DB 브라우저에서 `Browse Data` 탭을 선택하고 `devicerecord`라는 테이블로 전환하십시오
 9. 연결된 모든 장치 정보가 토큰과 함께 표시됩니다.
 
-### Miio 컴맨드 라인 도구 (Miio command line tool)
+### Miio command line tool
 
-진공 청소기가 Mi Home에 연결되기 전에 Miio를 사용해야합니다. 이미 앱에 연결 한 경우 앱을 삭제 한 다음 Vacuum이 생성하는 Ad-hoc Wi-Fi 네트워크에 가입해야합니다. 진공 상태가 이미 페어링 된 경우이 방법은 `???` 토큰으로만 반환될 수 있습니다.
+Vacuum(진공청소기)이 Mi Home에 연결되기 전에 Miio를 사용해야합니다. 이미 앱에 연결한 경우 앱을 삭제 한 다음 Vacuum이 생성하는 Ad-hoc Wi-Fi 네트워크에 가입해야합니다. Vacuum 상태가 이미 페어링된 경우 이 방법은 `???` 토큰으로만 반환될 수 있습니다.
 
-다음 명령을 사용하여 command line 도구를 설치할 수 있습니다. : 
+다음 명령을 사용하여 command line tool을 설치할 수 있습니다. : 
 
 ```bash
 npm install -g miio
@@ -307,7 +307,7 @@ npm install -g miio
 miio discover
 ```
 
-컴퓨터와 동일한 네트워크에 연결된 장치가 표시됩니다. 모든 장치가 응답하는데 1 ~ 2 분이 걸릴 수 있으므로 잠시 동안 실행하여 모든 장치에 도달 할 수 있도록 하십시오.
+컴퓨터와 동일한 네트워크에 연결된 장치가 표시됩니다. 모든 장치가 응답하는데 1 ~ 2 분이 걸릴 수 있으므로 잠시 동안 실행하여 모든 장치에 도달할 수 있도록 하십시오.
 
 이 명령은 각 장치를 다음 형식으로 출력합니다. : 
 
@@ -321,7 +321,7 @@ Support: At least basic
 
 정보 출력은 다음과 같습니다. : 
 
-- `Device ID` - 장치의 고유 식별자는 장치를 재설정해도 변경되지 않습니다..
+- `Device ID` - 장치의 고유 식별자는 장치를 재설정해도 변경되지 않습니다.
 - `Model ID`- 모델 ID가 결정될 수 있는 경우 모델 유형을 나타냅니다.
 - `Address` - 장치의 IP 주소
 - `Token` - 장치의 토큰 또는 자동으로 확인할 수 없는 경우 `???`.
@@ -342,9 +342,9 @@ vacuum_kitchen:
         params: [18]
 ```
 
-params가 룸번호를 지정하는 경우 여러 룸에 대해 params는 `[17,18]`처럼 지정할 수 있습니다
+params가 방번호를 지정하는 경우 여러 방에 대해 params는 `[17,18]`처럼 지정할 수 있습니다
 
-miio command-line 도구를 사용하여 유효한 회의실 번호를 검색 할 수 있습니다. 방 번호만 제공하고 방 이름은 제공하지 않습니다. 방 이름을 얻으려면 app_segment_clean 명령을 테스트하고 어떤 방을 청소하는지 확인할 수 있습니다.
+miio command-line 도구를 사용하여 유효한 방번호를 검색할 수 있습니다. 방번호만 제공하고 방 이름은 제공하지 않습니다. 방이름을 얻으려면 app_segment_clean 명령을 테스트하고 어떤 방을 청소하는지 확인할 수 있습니다.
 
 ```bash
 miio protocol call <ip of the vacuum> get_room_mapping
@@ -352,7 +352,7 @@ miio protocol call <ip of the vacuum> get_room_mapping
 
 ## 유지 보수 시간을 재설정하는 방법에 대한 예 (brushes, filter, sensors)
 
-진공청소기 엔티티는 브러시, 필터 및 센서를 청소하거나 교체해야 할 때의 속성값을 저장합니다 (`main_brush_left`,`side_brush_left`,`filter_left` 및`sensor_dirty_left`). 값은 시간 단위로 측정됩니다. 부품을 청소하거나 교체하면 해당 값을 진공으로 재설정 할 수 있습니다. 다음은 [`vacuum.send_command`](/integrations/vacuum/)를 사용하여 기본 브러시의 시간을 재설정하는 스크립트 예입니다. : 
+vacuum 엔티티는 브러시, 필터 및 센서를 청소하거나 교체해야 할 때의 속성값을 저장합니다 (`main_brush_left`,`side_brush_left`,`filter_left` 및`sensor_dirty_left`). 값은 시간 단위로 측정됩니다. 부품을 청소하거나 교체하면 해당 값을 vacuum에서 재설정할 수 있습니다. 다음은 [`vacuum.send_command`](/integrations/vacuum/)를 사용하여 기본 브러시의 시간을 재설정하는 스크립트 예입니다. : 
 
 ```yaml
 reset_main_brush_left:
@@ -377,15 +377,15 @@ reset_main_brush_left:
 
 1. [FloleVac](https://play.google.com/store/apps/details?id=de.flole.xiaomi) 다운로드
 2. Xiaomi 자격 증명으로 로그인
-3. 지도 열기 (진공 청소기와 동일한 네트워크에 있는지 확인)
+3. 지도 열기 (vacuum과 동일한 네트워크에 있는지 확인)
 4. “Zone cleanup”를 선택하고 청소하려는 구역 주위에 상자를 그립니다. 
-5. “Cleanup”을 길게 누르면 영역 좌표가 클립 보드에 복사됩니다.
+5. “Cleanup”을 길게 누르면 구역 좌표가 클립 보드에 복사됩니다.
 
 ### ROBOROCK 제어 센터 사용 (VALTUDO 펌웨어 필요)
 
-[RRCC](https://github.com/LazyT/rrcc)는 루팅된 진공청소기 및 루팅되지 않은 진공청소기 모두 지원하며 클라우드없이 로컬로 작동하는 Mi Home을 대체 할 수있는 모든 기능을 갖춘 대체품입니다. 루팅 된 펌웨어 [Valetudo](https://github.com/Hypfer/Valetudo) 를 설치 한 경우 진공청소기로 SSH를 설정하고 MQTT를 활성화하고 클라우드 요구 사항없이 맵 기능을 사용할 수 있습니다.
+[RRCC](https://github.com/LazyT/rrcc)는 루팅된 진공청소기 및 루팅되지 않은 vacuum 모두 지원하며 클라우드없이 로컬로 작동하는 Mi Home을 대체할 수있는 모든 기능을 갖춘 대체품입니다. 루팅된 펌웨어 [Valetudo](https://github.com/Hypfer/Valetudo)를 설치한 경우 vacuum으로 SSH를 설정하고 MQTT를 활성화하고 클라우드 요구 사항없이 맵기능을 사용할 수 있습니다.
 
-맵 편집기를 사용하면 영역 정리에 필요한 좌표를 얻을 수 있습니다. 다음은 영역 정리를위한 예제 스크립트입니다. :
+맵 편집기를 사용하면 영역 정리에 필요한 좌표를 얻을 수 있습니다. 다음은 영역 정리를 위한 예제 스크립트입니다. :
 
 ```yaml
 vacuum_kitchen:

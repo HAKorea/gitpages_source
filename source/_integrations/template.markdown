@@ -12,7 +12,7 @@ ha_codeowners:
   - '@tetienne'
 ---
 
-템플릿`template` 플랫폼은 엔티티들이 가진 값들을 별도의 센서로 만들 수 있는 방법이다
+`template` 플랫폼은 엔티티들이 가진 값들을 별도의 센서로 만들 수 있는 방법입니다. 
 
 ## Configuration
 

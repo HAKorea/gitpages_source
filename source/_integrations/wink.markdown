@@ -27,7 +27,7 @@ ha_release: pre 0.7
 [Wink](https://www.wink.com/)는 시중에서 판매되는 광범위한 장치를 제어할 수 있는 홈오토메이션 허브입니다. 또는 제조사가 자신들에 대해 말하는 것처럼 :
 
 <blockquote>
-  윙크는 집에서 매일 도움을 주는 IOT기기와 사람들을 연결하는 빠르고 쉬운 방법을 제공합니다. !!
+  윙크는 집에서 항상 도움을 주는 IOT기기와 사람들을 연결하는 빠르고 쉬운 방법을 제공합니다. !!
 </blockquote>
 
 Home Assistant는 Wink API와 연동되어 switches, lights, locks, fans, climate devices (thermostats, air conditioners, water heaters), covers, sensors, alarms, and sirens을 자동으로 설정합니다.
@@ -53,7 +53,7 @@ Wink를 사용하여 개발자 계정을 설정해야합니다. 이 프로세스
 윙크는 개발자 계정에 가입할 때 사용자에게 세 가지 정보를 요청합니다.
 
 1. `Name:` 원하는 이름을 넣어도 되지만, 예를 들어 "Home Assistant"라고 써도 됩니다.
-2. `Website:` Home Assistant 인스턴스의 외부 주소입니다. 외부에서 액세스 할 수 없는 경우 이메일 주소를 사용할 수 있습니다.
+2. `Website:` Home Assistant 인스턴스의 외부 주소입니다. 외부에서 액세스할 수 없는 경우 이메일 주소를 사용할 수 있습니다.
 3. `Redirect URI:` IP를 홈어시스턴트 박스의 내부 IP로 바꾸는 `http://192.168.1.5:8123/auth/wink/callback` 이어야합니다.
 
 `wink` 이외의 `configuration.yaml`에는 설정이 필요하지 않습니다 :
@@ -61,7 +61,7 @@ Wink를 사용하여 개발자 계정을 설정해야합니다. 이 프로세스
 `wink:`를 `configuration.yaml`에 추가하고 홈어시스턴트를 다시 시작하면 프론트 엔드 Configurator를 통해 설정을 안내하는 `CONFIGURE` 버튼이 있는 프론트 엔드에 지속적인 알림이 표시됩니다.
 
 <div class='note'>
-When using the configurator make sure the initial setup is performed on the same local network as the Home Assistant server, if not from the same box Home Assistant is running on. This will allow for authentication redirects to happen correctly.
+configurator를 사용하는 경우 홈어시스턴트가 실행중인 동일한 box가 아닌 경우 홈어시스턴트 서버와 동일한 로컬 네트워크에서 초기 설정을 수행해야합니다. 이를 통해 인증 리디렉션이 올바르게 수행될 수 있습니다.
 </div>
 
 ```yaml

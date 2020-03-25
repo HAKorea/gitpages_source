@@ -11,9 +11,9 @@ ha_release: 0.54
 <iframe width="690" height="437" src="https://www.youtube.com/embed/t2NgA8qYcFI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-`mqtt` vacuum 통합구성요소로 MQTT를 쓸 수 있는 로봇청소기를 제어할 수 있습니다.
-`legacy` 및 `state`라는 두 가지 가능한 메시지 스키마가 있습니다. 
-`legacy`는 더 이상 사용되지 않으며 향후 언젠가 제거될 수 있으므로 새로 설치시에는 `state` 스키마를 사용해야합니다.
+`mqtt` vacuum 통합구성요소로 MQTT를 쓸 수 있는 vacuum(로봇청소기)을 제어할 수 있습니다.
+`legacy`, `state`라는 두 가지 가능한 메시지 스키마가 있습니다. 
+`legacy`는 더이상 사용되지 않으며 향후 언젠가 제거될 수 있으므로 새로 설치시에는 `state` 스키마를 사용해야합니다.
 로봇청소기 state는 추천하는 상위 vacuum 엔티티인 `StateVacuumDevice`로 표시되므로 `state` 스키마를 추천합니다.
 
 이 문서에는 3 개의 섹션이 있습니다. 예제가 있는 `legacy` vacuum에 대한 설정, 예제에 대한 `state` vacuum에 대한 설정 및 두 스키마에 대해 동일한 예가 있는 합쳐진 섹션입니다.
@@ -527,7 +527,7 @@ MQTT topic: `vacuum/send_command`
 
 이 연동은 클라우드가 없는 Xiaomi Vacuum Webinterface [Valetudo](https://github.com/Hypfer/Valetudo)에서 지원합니다.
 
-### 비와이 파이 vacumm 장치 개조
+### Wifi가 없는 vacumm 장치 개조
 
 - ESP8266으로 기존 Roomba를 개조하십시오. [This repo](https://github.com/johnboiles/esp-roomba-mqtt)는 MQTT 클라이언트 펌웨어를 제공합니다.
 

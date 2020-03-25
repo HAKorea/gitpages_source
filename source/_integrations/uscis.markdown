@@ -1,5 +1,5 @@
 ---
-title: 미국 시민권 및 이민 서비스 (USCIS)
+title: 미국 시민권 및 이민서비스(USCIS)
 description: Instructions on how to set up USCIS within Home Assistant.
 logo: uscis.png
 ha_category:

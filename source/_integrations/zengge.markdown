@@ -8,7 +8,7 @@ ha_iot_class: Local Polling
 ha_release: 0.36
 ---
 
-`zengge` 플랫폼을 사용하면 [Zengge Bluetooth 전구](http://www.zengge.com/)를 Home Assistant에 통합할 수 있습니다.
+`zengge` 플랫폼을 사용하면 [Zengge Bluetooth 전구](http://www.zengge.com/)를 Home Assistant에 연동할 수 있습니다.
 
 ## 설정
 

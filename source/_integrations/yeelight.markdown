@@ -17,13 +17,13 @@ ha_codeowners:
 
 `yeelight` 통합구성요소로 Home Assistant를 사용하여 Yeelight Wifi 전구를 제어할 수 있습니다. Yeelight 설정 방법에는 수동 또는 자동의 두 가지 방법이 있습니다.
 
-현재 홈 어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
-- **Light** - 조명을 지원하기위한 yeelight 플랫폼.
-- **Sensor** - 센서 지원을 위한 yeelight 플랫폼. 천장 조명용으로 현재 야간 모드 센서만 있습니다.
+- **Light** - 조명을 지원하기 위한 yeelight 플랫폼.
+- **Sensor** - 센서 지원을 위한 yeelight 플랫폼. 천장 조명용으로 현재 야간 모드 센서가 있습니다.
 
 ### 설정 사례 (자동)
-조명이 WiFi 네트워크에 연결되고 홈 어시스턴트에서 감지 된 후, 발견 된 이름은 `Overview` 보기의 `Light` 섹션에 표시됩니다. `customize.yaml` 파일에 다음을 추가하십시오. 
+조명이 WiFi 네트워크에 연결되고 홈어시스턴트에서 감지된 후, 발견된 이름은 `Overview` 보기의 `Light` 섹션에 표시됩니다. `customize.yaml` 파일에 다음을 추가하십시오. 
 
 ```yaml
 # Example customize.yaml entry
@@ -96,7 +96,7 @@ custom_effects:
       required: true
       type: string
     flow_params:
-       description: 효과를위한 Flow params.
+       description: 효과를 위한 Flow params.
        required: true
        type: map
        keys:
@@ -113,19 +113,15 @@ custom_effects:
 
 #### 음악 모드  
 
-Per default the bulb limits the amount of requests per minute to 60, a limitation which can be bypassed by enabling the music mode. In music mode the bulb is commanded to connect back to a socket provided by the integration and it tries to keep the connection open, which may not be wanted in all use-cases.
 기본적으로 전구는 분당 요청 수를 60 개로 제한합니다. 이정도 제한은 음악 모드 활성화시 무시할 수 있습니다. 음악 모드에서 전구는 통합구성요소에서 제공하는 소켓에 다시 연결하라는 명령을 받고 연결을 열린 상태로 유지하려고 시도하지만 모든 사용 사례에서 원치 않을 수 있습니다.
-**Also note that bulbs in music mode will not update their state to "unavailable" if they are disconnected, which can cause delays in Home Assistant. Bulbs in music mode may also not react to commands from Home Assistant the first time if the connection is dropped. If you experience this issue, turn the light off and back on again in the frontend and everything will return to normal.**
 **또한 음악 모드의 전구는 연결이 끊어지면 상태를 "사용할 수 없음"으로 업데이트하지 않으므로 Home Assistant에서 지연이 발생할 수 있습니다. 연결이 끊어지면 음악 모드의 전구도 홈어시스턴트의 명령에 반응하지 않을 수 있습니다. 이 문제가 발생하면 프런트 엔드에서 표시등을 껐다가 다시 켜면 모든 것이 정상으로 돌아옵니다.** 
 
 ### 초기 셋업 
 
 <div class='note'>
 
-Home Assistant를 통해 조명을 제어하기 전에 Yeelight 앱([Android](https://play.google.com/store/apps/details?id=com.yeelight.cherry&hl=fr), [IOS](https://itunes.apple.com/us/app/yeelight/id977125608?mt=8) )을 사용하여 전구를 설정해야합니다. 
-벌브 속성에서 "LAN Control"(이전의 "개발자 모드")을 활성화해야합니다. LAN Control은 전구에 최신 펌웨어가 설치된 경우에만 사용할 수 있습니다. 전구를 연결 한 후 응용 프로그램에서 펌웨어를 업데이트 할 수 있습니다. 
-전구 IP를 확인하십시오 (라우터, 소프트웨어, 핑 사용).
-"LAN Control"를 활성화하는 방법에 대한 정보는 [here](https://www.yeelight.com/faqs/lan_control)에서 찾을 수 있습니다.
+Home Assistant를 통해 조명을 제어하기 전에 Yeelight 앱([Android](https://play.google.com/store/apps/details?id=com.yeelight.cherry&hl=fr), [IOS](https://itunes.apple.com/us/app/yeelight/id977125608?mt=8) )을 사용하여 전구를 설정해야합니다. 전구 속성에서 "LAN Control"(이전의 "개발자 모드")을 활성화해야합니다. LAN Control은 전구에 최신 펌웨어가 설치된 경우에만 사용할 수 있습니다. 전구를 연결한 후 응용 프로그램에서 펌웨어를 업데이트할 수 있습니다. 
+전구 IP를 확인하십시오 (라우터, 소프트웨어, 핑 사용). "LAN Control"를 활성화하는 방법에 대한 정보는 [여기](https://www.yeelight.com/faqs/lan_control)에서 찾을 수 있습니다.
 
 </div>
 
@@ -185,7 +181,7 @@ Home Assistant를 통해 조명을 제어하기 전에 Yeelight 앱([Android](ht
 | Service data attribute    | Optional | Description                                                                                 |
 |---------------------------|----------|---------------------------------------------------------------------------------------------|
 | `entity_id`               |       no | 특정 조명에서만 작동 lights.                                                              |
-| `rgb_color`               |       no | 조명하려는 RGB 색상을 나타내는 0에서 255 사이의 3 개의 정수를 포함하는 목록입니다. 대괄호 안에 RGB로 색상을 나타내는 세 개의 쉼표로 구분 된 정수.|
+| `rgb_color`               |       no | 조명하려는 RGB 색상을 나타내는 0에서 255 사이의 3 개의 정수를 포함하는 목록입니다. 대괄호 안에 RGB로 색상을 나타내는 세 개의 쉼표로 구분된 정수.|
 | `brightness`              |       no | 설정할 밝기 값 (1-100)..                                                        |
 
 ### `yeelight.set_hsv_scene` 서비스
@@ -210,13 +206,13 @@ Home Assistant를 통해 조명을 제어하기 전에 Yeelight 앱([Android](ht
 
 ### `yeelight.set_color_flow_scene` 서비스
 
-색상 flow을 시작합니다. 이 서비스와 [yeelight.start_flow](# service-yeelightstart_flow)의 차이점에 따라 이 서비스 호출은 다른 Yeelight API 호출을 사용합니다. 조명이 꺼져 있으면 켜집니다. 복잡한 flow 처리 등에는 펌웨어 차이가 있을 수 있습니다.
+색상 flow을 시작합니다. 이 서비스와 [yeelight.start_flow](#service-yeelightstart_flow)의 차이점에 따라 이 서비스 호출은 다른 Yeelight API 호출을 사용합니다. 조명이 꺼져 있으면 켜집니다. 복잡한 flow 처리 등에는 펌웨어 차이가 있을 수 있습니다.
 
 | Service data attribute    | Optional | Description                                                                                 |
 |---------------------------|----------|---------------------------------------------------------------------------------------------|
 | `entity_id`               |       no | 특정 조명에서만 작동.                                                              |
-| `count`                   |      yes | 이 flow를 실행하는 횟수입니다 (영원히 실행하려면 0)..                                    |
-| `action`                  |      yes | flow가 중지된 후 수행 할 액션. 예: 'recover', 'stay', 'off'. 기본값 'recover' |
+| `count`                   |      yes | 이 flow를 실행하는 횟수입니다 (영원히 실행하려면 0).                                    |
+| `action`                  |      yes | flow가 중지된 후 수행할 액션. 예: 'recover', 'stay', 'off'. 기본값 'recover' |
 | `transitions`             |       no | transitions 배열. [아래 예시](#custom-effects) .                                |
 
 ### `yeelight.set_auto_delay_off_scene` 서비스
@@ -227,15 +223,15 @@ Home Assistant를 통해 조명을 제어하기 전에 Yeelight 앱([Android](ht
 |---------------------------|----------|---------------------------------------------------------------------------------------------|
 | `entity_id`               |       no | 특정 조명에서만 작동                                                              |
 | `minutes`                 |       no | 조명을 자동으로 끄기 전에 대기하는 시간입니다.                             |
-| `brightness`              |       no | 설정할 밝기 값 (1-100)..                                                        |
+| `brightness`              |       no | 설정할 밝기 값 (1-100).                                                        |
 
 ## 예시
 
-이 섹션에서는이 조명을 사용하는 방법에 대한 실제 예제를 제공합니다.
+본 섹션에서는 이 조명을 사용하는 방법에 대한 실제 예제를 제공합니다.
 
 ### 전체 설정 
 
-이 예는 선택적 설정 옵션을 사용하는 방법을 보여줍니다.
+본 예는 선택적 설정 옵션을 사용하는 방법을 보여줍니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -248,9 +244,9 @@ yeelight:
       save_on_change: true
 ```
 
-### 여러 개의 전구 
+### 다수의 전구 
 
-이 예는 설정에 여러 벌브를 추가하는 방법을 보여줍니다.
+이 예는 설정에 여러 전구를 추가하는 방법을 보여줍니다.
 
 ```yaml
 yeelight:
@@ -263,15 +259,15 @@ yeelight:
 
 ### 커스텀 효과
 
-이 예제는 설정에서 사용자 정의 효과를 추가하는 방법을 보여줍니다. 효과를 켜려면 [light.turn_on](/integrations/light/#service-lightturn_on) 서비스를 사용할 수 있습니다 .
+이 예제는 설정에서 사용자 정의 효과를 추가하는 방법을 보여줍니다. 효과를 켜려면 [light.turn_on](/integrations/light/#service-lightturn_on) 서비스를 사용할 수 있습니다.
 
 `RGBTransition`, `HSVTransition`, `TemperatureTransition`, `SleepTransition`이 가능한 트랜지션입이다.
 
 배열 값은 다음과 같습니다. : 
 - RGBTransition : [빨강, 녹색, 파랑, 지속 시간, 밝기], 빨강 / 녹색 / 파랑이 0에서 255 사이의 정수이고, 지속 시간은 밀리 초 (최소 50)이고 최종 밝기는 0-100 (%)으로 전환됩니다.
 - HSV 전환 : [hue, saturation, duration, brightness] 색조는 0에서 359 사이의 정수, 채도 0 -100, 밀리 초 단위의 지속 시간 (최소 50) 및 최종 밝기 0-100 (%)
-- 온도 전환 : 온도가 1700에서 6500 사이의 최종 색 온도, 밀리 초 단위의 지속 시간 (최소 50) 및 0-100 (%)으로 전환하기위한 최종 밝기와 함께 [온도, 지속 시간, 밝기]
-- SleepTransition : 효과 시간 (밀리 초) 동안 지속 시간이 정수인 [duration] (최소 50)
+- 온도 전환 : 온도가 1700에서 6500 사이의 최종 색온도, 밀리 초 단위의 지속 시간 (최소 50) 및 0-100 (%)으로 전환하기위한 최종 밝기와 함께 [온도, 지속 시간, 밝기]
+- SleepTransition : 밀리 초(최소 50)의 효과 시간 동안 지속 기간이 정수인 [지속 시간].
 
 전환 및 예상되는 매개 변수에 대한 자세한 내용은 [python-yeelight documentation](https://yeelight.readthedocs.io/en/stable/flow.html) 설명서를 참조하십시오.
 

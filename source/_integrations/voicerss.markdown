@@ -58,4 +58,4 @@ tts:
     format: '8khz_8bit_mono'
 ```
 
-일부 media_players에는 특정 형식이 필요합니다. 예를 들어 Sonos에는 '44khz_16bit_stereo'형식이 필요합니다
+일부 media_players에는 특정 포맷이 필요합니다. 예를 들어 Sonos에는 '44khz_16bit_stereo' 포맷이 필요합니다

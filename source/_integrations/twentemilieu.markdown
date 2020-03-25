@@ -1,5 +1,5 @@
 ---
-title: 네덜란드 쓰레기 수거 정보(Twente Milieu)
+title: 네덜란드 쓰레기 수거정보(Twente Milieu)
 description: Instructions on how to integrate Twente Milieu with Home Assistant.
 logo: twentemilieu.png
 ha_category:

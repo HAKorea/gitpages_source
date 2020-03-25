@@ -12,7 +12,7 @@ ha_iot_class: Cloud Polling
 
 <div class='note warning'>
 
-WUnderground API 키 [here](https://www.wunderground.com/weather/api)서 받아오십시오. 더 이상 무료 API 키를 제공하지 않으며 모든키는 비용을 지불해야합니다. 현재 기존의 무료키는 계속 작동하지만 개인 기상 관측소를 소유하고 데이터를 WU (PWS 업로더)에 제공하는 경우를 제외하고 2018 년 12 월 31 일에 비활성화됩니다. 2018 년 9 월 6 일 현재 Weather Underground는 [End of Service for the Weather Underground API](https://apicommunity.wunderground.com/weatherapi/topics/end-of-service-for-the-weather-underground-api)를 선언한다고 밝혔습니다. 그들은 비상업적 사용자를 위한 새로운 계획을 개발할 것이라고 말합니다. 이에 대한 일정은 발표되지 않았습니다.
+WUnderground API 키를 [여기](https://www.wunderground.com/weather/api)서 받아오십시오. 더 이상 무료 API 키를 제공하지 않으며 모든키는 비용을 지불해야합니다. 현재 기존의 무료키는 계속 작동하지만 개인 기상 관측소를 소유하고 데이터를 WU (PWS 업로더)에 제공하는 경우를 제외하고 2018 년 12 월 31 일에 비활성화됩니다. 2018 년 9 월 6 일 현재 Weather Underground는 [End of Service for the Weather Underground API](https://apicommunity.wunderground.com/weatherapi/topics/end-of-service-for-the-weather-underground-api)를 선언한다고 밝혔습니다. 그들은 비상업적 사용자를 위한 새로운 계획을 개발할 것이라고 말합니다. 이에 대한 일정은 발표되지 않았습니다.
 
 다음 정보를 사용할 때 이를 고려하십시오.
 
@@ -182,23 +182,23 @@ monitored_conditions:
 
 위에 나열된 모든 조건은 5 분마다 업데이트됩니다.
 
-## Forecasts
+## 예보
 
-### 12 hour forecasts
+### 12 hour 예보
 
-위에서 <a name="12h">[12h]</a>로 표시된 모니터링된 상태는 10 시간입니다. 다른 period/daytime에 대한 예측을 얻으려면 센서 이름의 `_1d_` 부분을 바꾸십시오. 예를 들어 `weather_2n`은 내일 밤 예보를 제공합니다. day의 유효 값은 `1`~`4`이고 daytime의 유효 값은 `d` 또는 `n`입니다.
+위에서 <a name="12h">[12h]</a>로 표시된 모니터링된 상태는 10 시간입니다. 다른 period/daytime에 대한 예측을 얻으려면 센서 이름의 `_1d_` 부분을 바꾸십시오. 예를 들어 `weather_2n`은 내일 밤 예보를 제공합니다. day의 유효값은 `1`~`4`이고 daytime의 유효값은 `d` 또는 `n`입니다.
 
-### Daily forecasts
+### Daily 예보
 
-위의 <a name="1d">[1d]</a>로 표시된 조건은 일일 예측입니다. 다른 날을 예측하려면 센서 이름의 `_1d_` 부분에있는 숫자를 바꾸십시오. 유효한 값은 `1`에서 `4`입니다.
+위의 <a name="1d">[1d]</a>로 표시된 조건은 일일 예측입니다. 다른 날을 예측하려면 센서 이름의 `_1d_` 부분에있는 숫자를 바꾸십시오. 유효한 값은 `1` 에서 `4`입니다.
 
-### Hourly forecasts
+### Hourly 예보
 
 <a name="1h">[1h]</a>로 표시된 조건은 시간별 예측입니다. 다른 시간을 예측하려면 센서 이름의 `_1h_` 부분에있는 숫자를 `1`에서 `36`으로 바꾸십시오. 예를 들어 `weather_24h`는 24 시간 안에 날씨를 알려줍니다.
 
-## 추가 예시들
+## 추가 사례
 
-### Daily forecast
+### Daily 예보
 
 ```yaml
 sensor:
@@ -230,7 +230,7 @@ group:
 
 ![Daily Forecast](/images/screenshots/wunderground_daily_forecast.png)
 
-### Weather overview
+### 날씨 개요
 
 ```yaml
 sensor:
@@ -268,7 +268,7 @@ group:
 ![Weather overview](/images/screenshots/wunderground_weather_overview.png)
 
 <div class='note warning'>
-Note: 플랫폼을 "Wunderground"라고 부르는 동안 센서는 Home Assistant에서 "PWS"로 표시됩니다 (예 : sensor.pws_weather).
+Note: 플랫폼을 "Wunderground"라고 부르는 동안 센서는 Home Assistant에서 "PWS"로 표시됩니다 (예: sensor.pws_weather).
 </div>
 
 Weather Underground 센서가 entity_registry에 추가되므로 두 번째 이후의 개인 기상 관측소 ID (pws_id)는 모니터링 되는 조건에 색인 번호가 붙습니다. 다음 예 : 

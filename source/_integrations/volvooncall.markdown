@@ -11,7 +11,7 @@ ha_iot_class: Cloud Polling
 <iframe width="690" height="437" src="https://www.youtube.com/embed/xMfWSgJWy5w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-`volvooncall` 통합구성요소는 [Volvo On Call](https://www.volvocars.com/intl/why-volvo/human-innovation/future-of-driving/connectivity/volvo-on-call) 클라우드와의 통합을 제공합니다 서비스, 존재 감지, 주행 거리계 및 연료 레벨과 같은 센서를 제공합니다.
+`volvooncall` 통합구성요소는 [Volvo On Call](https://www.volvocars.com/intl/why-volvo/human-innovation/future-of-driving/connectivity/volvo-on-call) 클라우드와의 연동을 제공합니다 서비스, 존재 감지, 주행 거리계 및 연료 레벨과 같은 센서를 제공합니다.
 
 혹시 우리나라에서 지원되는지 볼보 사용자분들께서는 확인 부탁드립니다.
 

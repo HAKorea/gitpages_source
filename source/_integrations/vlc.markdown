@@ -8,7 +8,7 @@ ha_release: 0.35
 ha_iot_class: Local Polling
 ---
 
-`vlc` 플랫폼을 사용하면 [VLC 미디어 플레이어](https://www.videolan.org/vlc/index.html)를 제어 할 수 있습니다.
+`vlc` 플랫폼을 사용하면 [VLC 미디어 플레이어](https://www.videolan.org/vlc/index.html)를 제어할 수 있습니다.
 
 VLC 미디어 플레이어를 설치에 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
@@ -29,8 +29,7 @@ arguments:
   type: string
 {% endconfiguration %}
 
-Only the "music" media type is supported for now.
-현재는 "음악" 미디어 유형 만 지원됩니다.
+현재는 "music" 미디어 유형만 지원됩니다.
 
 이 서비스는 백그라운드 VLC 인스턴스를 제어하므로 Kodi 미디어 플레이어와 달리 데스크탑에서 시작된 VLC 인스턴스를 제어하는​​데 사용할 수 없습니다.
 
@@ -56,7 +55,7 @@ export VLC_PLUGIN_PATH=$VLC_PLUGIN_PATH:/Applications/VLC.app/Contents/MacOS/plu
 
 ##### Rasperry Pi의 추가 구성
 
-`homeassistant` 사용자를`audio` 그룹에 추가해야합니다.
+`homeassistant` 사용자를 `audio` 그룹에 추가해야합니다.
 
 ```bash
 sudo usermod -a -G audio homeassistant

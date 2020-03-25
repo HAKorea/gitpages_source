@@ -10,7 +10,7 @@ ha_codeowners:
   - '@rodripf'
 ---
 
-`vlc_telnet` 플랫폼에서는 내장된 텔넷 인터페이스를 사용하여 [VLC 미디어 플레이어](https://www.videolan.org/vlc/index.html)를 제어 할 수 있습니다.
+`vlc_telnet` 플랫폼에서는 내장된 텔넷 인터페이스를 사용하여 [VLC 미디어 플레이어](https://www.videolan.org/vlc/index.html)를 제어할 수 있습니다.
 
 VLC 미디어 플레이어를 설치에 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
@@ -45,7 +45,7 @@ port:
 
 현재는 "음악" 미디어 유형 만 지원됩니다.
 
-이 서비스는 텔넷 인터페이스가 활성화 된 네트워크의 VLC 플레이어 인스턴스를 제어합니다. VLC 플레이어에서 텔넷 인터페이스를 활성화하려면 [official VLC documentation](https://wiki.videolan.org/Documentation:Modules/telnet/)을 읽으십시오. 또한 VLC를 실행하는 장치에서 사용되는 포트에 대한 인바운드 연결을 허용하는 방화벽 규칙을 추가해야합니다.
+이 서비스는 텔넷 인터페이스가 활성화된 네트워크의 VLC 플레이어 인스턴스를 제어합니다. VLC 플레이어에서 텔넷 인터페이스를 활성화하려면 [official VLC documentation](https://wiki.videolan.org/Documentation:Modules/telnet/)을 읽으십시오. 또한 VLC를 실행하는 장치에서 사용되는 포트에 대한 인바운드 연결을 허용하는 방화벽 규칙을 추가해야합니다.
 
 ## 전체 설정
 

@@ -15,7 +15,7 @@ ha_release: 0.41
 
 Volumio 플랫폼을 설정하는 바람직한 방법은 [discovery component](/integrations/discovery/)를 활성화하는 것입니다.
 
-검색이 작동하지 않거나 특정 설정 변수가 필요한 경우 `configuration.yaml` 파일에 다음을 추가 할 수 있습니다.
+검색이 작동하지 않거나 특정 설정 변수가 필요한 경우 `configuration.yaml` 파일에 다음을 추가할 수 있습니다.
 
 ```yaml
 # Example configuration.yaml entry

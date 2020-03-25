@@ -20,7 +20,6 @@ ha_iot_class: Cloud Polling
 
 ## 설정
 
-To use Twitch with your installation, add the following to your `configuration.yaml` file:
 설치와 함께 Twitch를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml

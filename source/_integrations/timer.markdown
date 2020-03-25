@@ -48,7 +48,7 @@ timer:
       type: icon
 {% endconfiguration %}
 
-[materialdesignicons.com](https://materialdesignicons.com/)에서 타이머에 사용할 아이콘을 선택하고 이름 앞에 `mdi :`를 붙입니다. 예를 들어 `mdi : car`,`mdi : ambulance` 또는 `mdi : motorbike`
+[materialdesignicons.com](https://materialdesignicons.com/)에서 타이머에 사용할 아이콘을 선택하고 이름 앞에 `mdi:`를 붙입니다. 예를 들어 `mdi:car`,`mdi:ambulance` 또는 `mdi:motorbike`
 
 ## 이벤트 (Events)
 
@@ -102,7 +102,7 @@ timer:
 
 ### 서비스 사용하기 
 
-**Developer Tools** 에서 <img src='/images/screenshots/developer-tool-services-icon.png' alt='service developer tool icon' class="no-shadow" height="38" />**Services** 선택하십시오. **domain** 목록에서 **timer**를 선택하고 **service**를 선택한 다음 **service data** 필드에 아래 샘플과 같은 것을 입력하고 **CALL SERVICE**를 누르십시오.
+**개발자 도구** 에서 <img src='/images/screenshots/developer-tool-services-icon.png' alt='service developer tool icon' class="no-shadow" height="38" />**Services** 선택하십시오. **domain** 목록에서 **timer**를 선택하고 **service**를 선택한 다음 **service data** 필드에 아래 샘플과 같은 것을 입력하고 **CALL SERVICE**를 누르십시오.
 
 ```json
 {
@@ -110,7 +110,7 @@ timer:
 }
 ```
 
-## 사례 (Examples)
+## 사례 
 
 30 초 동안 `test`라는 타이머를 설정하십시오.
 
@@ -152,7 +152,7 @@ timer:
 
 ### 타이머를 수동으로 제어
 
-[`script`](/integrations/script/) 통합구성요소를 사용하면 타이머를 수동으로 제어 할 수 있습니다 (위의 타이머 구성 샘플 참조).
+[`script`](/integrations/script/) 통합구성요소를 사용하면 타이머를 수동으로 제어할 수 있습니다 (위의 타이머 설정 샘플 참조).
 
 ```yaml
 script:

@@ -12,15 +12,14 @@ ha_codeowners:
   - '@robbiet480'
 ---
 
-`upnp` 통합구성요소를 사용하면 bytes in/out 및 packets in/out과 같은 라우터에서 네트워크 통계를 수집 할 수 있습니다. 이 정보는 [UPnP](https://en.wikipedia.org/wiki/Universal_Plug_and_Play)/ [Internet Gateway Device (IGD) Protocol](https://en.wikipedia.org/wiki/Internet_Gateway_Device_Protocol)에서 제공합니다. 라우터에서 활성화하십시오.
+`upnp` 통합구성요소를 사용하면 bytes in/out 및 packets in/out과 같은 라우터에서 네트워크 통계를 수집할 수 있습니다. 이 정보는 [UPnP](https://en.wikipedia.org/wiki/Universal_Plug_and_Play)/ [Internet Gateway Device (IGD) Protocol](https://en.wikipedia.org/wiki/Internet_Gateway_Device_Protocol)에서 제공합니다. 라우터에서 활성화하십시오.
 
-IGD는 라우터에 홈어시스턴트 용 포트 전달 맵핑(port forwarding mappings)을 자동으로 작성하여 설치를 인터넷에 노출시킵니다. 매핑은 자동으로 만료되지 않습니다. 홈어시스턴트를 중지하면 라우터에서 매핑이 제거됩니다.
+IGD는 라우터에 홈어시스턴 용 포트 전달 맵핑(port forwarding mappings)을 자동으로 작성하여 설치를 인터넷에 노출시킵니다. 매핑은 자동으로 만료되지 않습니다. 홈어시스턴트를 중지하면 라우터에서 매핑이 제거됩니다.
 
 현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - **Sensor** - bytes in/out 및 packets in/out과 같은 라우터에서 네트워크 통계를 가져올 수 있습니다.
 
-Please note that UPnP or NAT-PMP needs to be enabled on your router for this integration to work.
 본 통합구성요소가 작동하려면 라우터에서 UPnP 또는 NAT-PMP를 활성화해야합니다.
 
 ## 설정

@@ -13,7 +13,7 @@ ha_quality_scale: internal
 
 ## 설정
 
-이 센서를 활성화하려면`configuration.yaml`에 다음 줄을 추가하십시오 :
+이 센서를 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -34,7 +34,7 @@ unit_of_measurement:
   default: days
 {% endconfiguration %}
 
-## Example
+## 사례
 
 ```yaml
 # Example with configuration variables

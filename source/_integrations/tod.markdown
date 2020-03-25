@@ -11,7 +11,8 @@ ha_quality_scale: internal
 
 `tod` 플랫폼은 현재 시간이 정의된 시간 범위 내에 있는지 확인하여 그 값을 얻을 바이너리 센서를 지원합니다.
 
-시간 범위는 절대 현지 시간으로 제공되거나 위치의 태양 위치를 기반으로 계산 된 `sunrise` 또는 `sunset` 키워드를 사용하여 제공 할 수 있습니다.
+시간 범위는 절대 현지 시간으로 제공되거나 해당 지역의 태양 위치를 기반으로 계산된 `sunrise` 또는 `sunset` 키워드를 사용하여 제공할 수 있습니다.
+설정에서 지역정보를 제공해야합니다.
 
 태양 위치기반 범위 외에도 음수 또는 양수 오프셋을 설정할 수 있습니다.
 
@@ -40,7 +41,7 @@ name:
   required: true
   type: string
 before:
-  description: 시간 범위 시작을 위한 절대 로컬 시간 값 또는 태양 이벤트.
+  description: 시간 범위 시작을 위한 절대 로컬 시간값 또는 태양 이벤트.
   required: true
   type: [string, time]
 before_offset:
@@ -48,7 +49,7 @@ before_offset:
   required: false
   type: time
 after:
-  description: 시간 범위 종료를위한 절대 로컬 시간 값 또는 태양 이벤트.
+  description: 시간 범위 종료를 위한 절대 로컬 시간값 또는 태양 이벤트.
   required: true
   type: [string, time]
 after_offset:
@@ -59,7 +60,7 @@ after_offset:
 
 ## 고려 사항 
 
-이 센서의 주요 목적은 `sun.sun` 통합구성요소 속성 을 참조하여 복잡한 템플릿을 생성하는 대신 간단한 시간 범위 정의를 사용하는 것입니다 .
+이 센서의 주요 목적은 `sun.sun` 통합구성요소 속성을 참조하여 복잡한 템플릿을 생성하는 대신 간단한 시간 범위 정의를 사용하는 것입니다 .
 
 이 조건에서 센서 상태는 ON입니다 `after` + `after_offset` <= `current time` < `before` + `before_offset`
 

@@ -10,9 +10,9 @@ ha_codeowners:
   - '@HarlemSquirrel'
 ---
 
-`vivotek` 카메라 플랫폼을 사용하면 Vivotek IP 카메라를 Home Assistant에 통합할 수 있습니다.
+`vivotek` 카메라 플랫폼을 사용하면 Vivotek IP 카메라를 Home Assistant에 연동할 수 있습니다.
 
-홈어시스턴트는 서버를 통해 이미지를 제공하므로 네트워크 외부에있는 동안 IP 카메라를 볼 수 있습니다. 
+홈어시스턴트는 서버를 통해 이미지를 제공하므로 네트워크 외부에 있는 동안 IP 카메라를 볼 수 있습니다. 
 엔드 포인트는 `/api/camera_proxy/camera.[name]`입니다.
 
 ## 설정
@@ -112,7 +112,7 @@ camera:
 | `media_player`         |      no  | Name of media player to play stream on, e.g., `media_player.living_room_tv`. |
 | `format`               |      yes | Stream format supported by `stream` integration and selected `media_player`. Default: `hls` |
 
-For example, the following action in an automation would send an `hls` live stream to your chromecast.
+예를 들어 자동화에서 다음 작업을 수행하면 `hls` 라이브 스트림이 Chromecast로 전송됩니다.
 
 ```yaml
 action:
@@ -132,7 +132,7 @@ action:
 
 #### `disable_motion_detection` 서비스
 
-카메라에서 동작 감지를 비활성화합니다. 현재 카메라에 설정된 첫 번째 이벤트가 비활성화됩니다.
+카메라에서 모션 감지를 비활성화합니다. 현재 카메라에 설정된 첫 번째 이벤트가 비활성화됩니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
@@ -147,7 +147,7 @@ action:
 | `entity_id`            |      no  | Name(s) of entities to create a snapshot from, e.g., `camera.front_door_camera`. |
 | `filename`             |      no  | Template of a file name. Variable is `entity_id`, e.g., {% raw %}`/tmp/snapshot_{{ entity_id }}`{% endraw %}. |
 
-`filename`의 경로 부분은 `configuration.yaml` 파일의 [`homeassistant :`](/docs/configuration/basic/) 섹션에있는 `whitelist_external_dirs`의 항목이어야합니다.
+`filename`의 경로 부분은 `configuration.yaml` 파일의 [`homeassistant :`](/docs/configuration/basic/) 섹션에 있는 `whitelist_external_dirs`의 항목이어야합니다.
 
 예를 들어 다음 작업은 "front_door_camera"에서 스냅샷을 찍어 타임 스탬프가 지정된 파일 이름으로 /tmp에 저장하는 자동화입니다.
 

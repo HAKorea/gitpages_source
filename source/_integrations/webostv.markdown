@@ -15,7 +15,7 @@ ha_codeowners:
 <iframe width="690" height="437" src="https://www.youtube.com/embed/f0i2R1cMWBg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-이 webostv플랫폼을 사용하면 [LG](https://www.lg.com/) webOS 스마트 TV 를 제어 할 수 있습니다 .
+webostv플랫폼을 사용하면 [LG](https://www.lg.com/) webOS 스마트 TV 를 제어할 수 있습니다 .
 
 현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다. :
 
@@ -23,11 +23,11 @@ ha_codeowners:
 - [미디어플레이어](#media-player)
 - [알림](#notifications)
 
-TV [instructions](https://www.lg.com/uk/support/product-help/CT00008334-1437131798537-others)의 *네트워크* 설정 에서 *LG Connect 앱* 기능을 활성화해서 시작 하십시오 .
+TV [instructions](https://www.lg.com/uk/support/product-help/CT00008334-1437131798537-others)의 *네트워크* 설정 에서 *LG Connect 앱* 기능을 활성화해서 시작하십시오 .
 
 기본 설정이 configuration.yaml파일에 추가되면 프런트 엔드의 **알림**섹션에 페어링 정보가 표시되어야합니다. 지침에 따라 TV에서 페어링 요청을 수락하십시오.
 
-페어링 정보는 `webostv.conf` Home Assistant 설정 디렉토리의 설정 파일에 저장됩니다 . 이 과정은 나중에 TV의 IP 주소가 변경 될 경우 IP 주소에 설정에 주의하십시오.
+페어링 정보는 `webostv.conf` Home Assistant 설정 디렉토리의 설정 파일에 저장됩니다 . 이 과정은 나중에 TV의 IP 주소가 변경될 경우 IP 주소에 설정에 주의하십시오.
 
 ## 설정
 
@@ -40,15 +40,15 @@ webostv:
 
 {% configuration %}
 host:
-  description: "LG webOS 스마트 TV의 IP 주소 예: `192.168.0.10`."
+  description: "LG webOS 스마트 TV의 IP 주소 (예: `192.168.0.10`)"
   required: true
   type: string
 name:
-  description: LG webOS 스마트 TV에 부여하려는 이름입니다.
+  description: LG webOS 스마트 TV에 부여하려는 이름.
   required: false
   type: string
 turn_on_action:
-  description: TV를 켜는 [action](/docs/automation/action/)을 정의합니다. 
+  description: TV를 켜는 [action](/docs/automation/action/)을 정의. 
   required: false
   type: string
 customize:

@@ -20,8 +20,7 @@ ha_codeowners:
 
 `wemo`는 다양한 [Belkin WeMo](https://www.belkin.com/us/Products/home-automation/c/wemo-home-automation/) 장치들을 Home Assistant와 연동하기 위한 주요 통합구성요소입니다.
 
-현재 홈 어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
-
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - Binary Sensor
 - Fan (Belkin WeMo (Holmes) Smart Humidifier)
@@ -53,7 +52,7 @@ wemo:
   discovery: true
 ```
 
-다른 방법으로, 검색할 수 없는 WeMo 장치를 정적으로 설정할 수 있습니다. 홈어시스턴트가 실행되는 곳 이외의 서브넷에 WeMo 장치가 있거나 VPN을 통해 원격 위치에있는 장치가 있는 경우 수동으로 설정해야합니다. 정적으로 구성된 장치는 자동 검색을 사용하거나 사용하지 않고 사용할 수 있습니다. 정적 설정의 예는 다음과 같습니다. :
+다른 방법으로, 검색할 수 없는 WeMo 장치를 정적으로 설정할 수 있습니다. 홈어시스턴트가 실행되는 곳 이외의 서브넷에 WeMo 장치가 있거나 VPN을 통해 원격 위치에있는 장치가 있는 경우 수동으로 설정해야합니다. 정적으로 설정된 장치는 자동 검색을 사용하던 안하던 사용할 수 있습니다. 정적 설정의 예는 다음과 같습니다. :
 
 ```yaml
 # Example configuration.yaml entry with automatic discovery disabled, and 2 statically configured devices
@@ -64,13 +63,13 @@ wemo:
     - 192.168.52.172
 ```
 
-고정 장치 항목을 사용하는 경우 WeMo 장치가 고정 IP 주소를 사용하도록 라우터 (또는 DHCP 서버를 실행하는 모든 것)를 설정할 수 있습니다. 이 기능에 대해서는 라우터 구성의 DHCP 섹션을 확인하십시오.
+고정 장치 항목을 사용하는 경우 WeMo 장치가 고정 IP 주소를 사용하도록 라우터 (또는 DHCP 서버를 실행하는 모든 것)를 설정할 수 있습니다. 이 기능에 대해서는 라우터 설정의 DHCP 섹션을 확인하십시오.
 
 장치가 작동하지 않고 대시 보드에서 "unavailable" 상태인 경우 WeMo 장치가 업데이트를 보내는 포트이므로 방화벽이 포트 8989에서 들어오는 요청을 차단하지 않는지 확인하십시오.
 
 ## 에뮬레이트된 장치 (Emulated devices)
 
-WeMo 장치를 에뮬레이트하는 다양한 소프트웨어는 종종 대체 포트를 사용합니다. 정적 구성에는 포트 값이 포함되어야합니다.
+WeMo 장치를 에뮬레이트하는 다양한 소프트웨어는 종종 대체 포트를 사용합니다. 정적 설정에는 포트 값이 포함되어야합니다.
 
 ```yaml
 # Example configuration.yaml entry with static device entries that include non-standard port numbers
@@ -82,26 +81,26 @@ wemo:
 
 ## Fan
 
-`wemo` 플랫폼을 사용하면 Home Assistant 내에서 Belkin WeMo 가습기를 제어 할 수 있습니다. 여기에는 [Holmes Smart Humidifier](https://www.holmesproducts.com/wemo-humidifier.html)지원이 포함됩니다
+`wemo` 플랫폼을 사용하면 Home Assistant 내에서 Belkin WeMo 가습기를 제어할 수 있습니다. 여기에는 [Holmes Smart Humidifier](https://www.holmesproducts.com/wemo-humidifier.html)지원이 포함됩니다
 
-`discovery` 통합구성요소가 활성화 된 경우 WeMo 장치가 자동으로 검색됩니다.
+`discovery` 통합구성요소가 활성화된 경우 WeMo 장치가 자동으로 검색됩니다.
 
 ### 속성 
 
-자동화 및 템플릿에 사용할 수있는 몇 가지 속성이 있습니다.
+자동화 및 템플릿에 사용할 수 있는 몇 가지 속성이 있습니다.
 
 | Attribute | Description |
 | --------- | ----------- |
 | `current_humidity` | 장치의 온보드 습도 센서에 의해 결정된 실내의 현재 상대 습도 백분율을 나타내는 정수.
-| `fan_mode` | WeMo 가습기에 의해 보고된 현재 팬 속도 세팅을 나타내는 문자열입니다.
+| `fan_mode` | WeMo 가습기에 의해 보고된 현재 팬 속도 세팅을 나타내는 문자열.
 | `filter_expired` | 필터가 만료되어 교체해야하는지 여부를 나타내는 boolean.
 | `filter_life` | 필터 사용 수명 (백분율).
-| `target_humidity` | 원하는 상대 습도 백분율을 나타내는 정수 (45, 50, 55, 60 및 100 인 장치의 습도 설정으로 제한됨).
+| `target_humidity` | 원하는 상대 습도 백분율을 나타내는 정수 (45, 50, 55, 60 , 100 인 장치의 습도 설정으로 제한됨).
 | `water level` | 수위가 good, low 또는 empty 여부를 나타내는 문자열입니다.
 
 ### 서비스
 
-가습기의 자동화 및 제어에 사용할 수있는 몇 가지 서비스가 있습니다.
+가습기의 자동화 및 제어에 사용할 수 있는 몇 가지 서비스가 있습니다.
 
 | Service | Description |
 | --------- | ----------- |
@@ -109,5 +108,6 @@ wemo:
 | `toggle` | 이 서비스를 호출하면 가습기가 켜짐 및 꺼짐 상태간에 전환됩니다.
 | `turn_off` | 이 서비스를 호출하면 가습기가 꺼집니다 (entity_id 필요).
 | `turn_on` | 이 서비스를 호출하면 가습기를 켜고 속도를 마지막으로 사용한 속도로 설정합니다 (기본값은 medium, entity_id가 필요함).
-| `wemo.set_humidity` | 이 서비스를 호출하면 장치에서 원하는 상대 습도 세팅이 설정됩니다 (entity_id는 습도를 설정하기위한 하나 이상의 엔티티의 필수 목록이며 target_humidity는 0에서 100 사이의 필수 부동 소수점 값입니다 (이 값은 반올림되어에 매핑 됨). WeMo 가습기에서 지원하는 45, 50, 55, 60 또는 100의 유효한 원하는 습도 설정 중 하나))
-| `wemo.reset_filter_life` | 이 서비스를 호출하면 가습기의 필터 수명이 100 %로 다시 설정됩니다 (entity_id는 필터 수명을 재설정하기위한 하나 이상의 엔티티의 필수 목록입니다). 가습기의 필터를 교체 할 때이 서비스에 문의하십시오.
+| `wemo.set_humidity` | 이 서비스를 호출하면 장치에서 원하는 상대 습도 세팅이 설정됩니다 (entity_id는 습도를 설정할 하나 이상의 엔티티의 필수 목록이고 target_humidity는 0에서 100 사이의 필수 float 값입니다. (이 값은 반올림되어 WeMo 가습기에서 지원하는 45, 50, 55, 60 또는 100의 유효한 원하는 습도 설정중 하나로 매핑됩니다.))
+| `wemo.reset_filter_life` | 이 서비스를 호출하면 가습기의 필터 수명이 100%로 다시 설정됩니다 (entity_id는 필터 수명을 재설정하기위한 하나 이상의 엔티티의 필수 목록입니다). 가습기의 필터를 교체할 때 이 서비스에 문의하십시오.
+

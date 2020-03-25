@@ -101,11 +101,11 @@ giid:
 
 ## 경보 제어판
 
-Verisure 경보 제어판 플랫폼을 사용하면 [Verisure](https://www.verisure.com/) 경보를 제어 할 수 있습니다.
+Verisure 경보 제어판 플랫폼을 사용하면 [Verisure](https://www.verisure.com/) 경보를 제어할 수 있습니다.
 
 위 지침에 따라 Verisure 허브를 먼저 설정해야합니다.
 
-`changed_by` 속성은 [automation](/getting-started/automation/)에서 알람을 armed/disarmed 한 사람에 따라 다른 작업을 수행 할 수 있습니다.
+`changed_by` 속성은 [automation](/getting-started/automation/)에서 알람을 armed/disarmed한 사람에 따라 다른 작업을 수행할 수 있습니다.
 
 ```yaml
 automation:

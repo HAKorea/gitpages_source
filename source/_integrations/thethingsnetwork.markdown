@@ -15,7 +15,7 @@ ha_codeowners:
 <iframe width="690" height="388" src="https://www.youtube.com/embed/Q2So47rLOqg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-`thethingsnetwork` 통합구성요소를 통해 [The Things Network](https://www.thethingsnetwork.org)와 상호 작용할 수 있습니다. 이 커뮤니티 중심의 개방형 네트워크는 [LoRaWAN](https://www.lora-alliance.org/)을 지원하여 저대역폭 (51 바이트/메시지)으로 장거리 ( ~ 5 ~ 15km) 통신을 지원합니다. [Gateways](https://www.thethingsnetwork.org/docs/gateways/)는 센서에서 수신된 데이터를 Things 네트워크로 전송합니다.
+`thethingsnetwork` 통합구성요소를 통해 [The Things Network](https://www.thethingsnetwork.org)와 상호 작용할 수 있습니다. 이 커뮤니티 중심의 개방형 네트워크는 [LoRaWAN](https://www.lora-alliance.org/)을 지원하여 저대역폭 (51 바이트/메시지)으로 장거리 (~ 5 ~ 15km) 통신을 지원합니다. [Gateways](https://www.thethingsnetwork.org/docs/gateways/)는 센서에서 수신된 데이터를 Things 네트워크로 전송합니다.
 
 Things 네트워크는 데이터를 사용할 수 있도록 다양한 연동을 지원합니다.
 
@@ -31,7 +31,7 @@ Things 네트워크는 데이터를 사용할 수 있도록 다양한 연동을 
 
 ## 셋업
 
-[The Things Network Console](https://console.thethingsnetwork.org/) 웹 사이트를 방문하여 Things  네트워크 자격 증명(credentials)으로 로그인한 다음 **Applications**에서 Applications을 선택하십시오.
+[The Things Network Console](https://console.thethingsnetwork.org/) 웹 사이트를 방문하여 Things 네트워크 자격 증명(credentials)으로 로그인한 다음 **Applications**에서 Applications을 선택하십시오.
 
 **Application ID**는 데이터 범위(scope)를 식별하는데 사용됩니다.
 

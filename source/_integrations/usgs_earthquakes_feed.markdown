@@ -1,5 +1,5 @@
 ---
-title: 미국 지질 조사 지진 위험 (USGS)
+title: 미국 지질조사 지진위험(USGS)
 description: Instructions on how to integrate the U.S. Geological Survey Earthquake Hazards Program Feed feed into Home Assistant.
 logo: us-geological-survey.png
 ha_category:

@@ -15,7 +15,7 @@ ha_iot_class: Cloud Polling
 `thermoworks_smoke` 센서 플랫폼은 [ThermoWorks Smoke Thermometer](https://www.thermoworks.com/Smoke)의 데이터를 가져옵니다.
 인터넷에 연결된 [Smoke WiFi Gateway](https://www.thermoworks.com/Smoke-Gateway)가 필요합니다.
 
-데이터를 연결하고 가져 오려면 모바일 앱을 통해 장치를 계정에 미리 등록하고이 센서의 설정에 사용한 이메일 및 비밀번호를 제공해야합니다.
+데이터를 연결하고 가져 오려면 모바일 앱을 통해 장치를 계정에 미리 등록하고 이 센서의 설정에 사용한 이메일 및 비밀번호를 제공해야합니다.
 
 ## 설정
 
@@ -86,7 +86,7 @@ sensor:
 ```
 {% endraw %}
 
-### Probe 1이 특정 온도를 초과 할 때 알림
+### Probe 1이 특정 온도를 초과할 때 알림
 
 자동화를 사용하여 Probe 1이 input_number 변수에 저장된 온도 이상으로 올라간 경우 알림을 트리거합니다.
 기본적으로 앱에서 장치 이름은 "My Smoke"입니다. 변경한 경우 센서 이름을 `my_smoke_probe_1`에서 `your_name_probe_1`로 변경해야합니다.

@@ -24,7 +24,7 @@ ha_codeowners:
 <iframe width="690" height="437" src="https://www.youtube.com/embed/9InA6kc6r9s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-홈어시스턴트에서 Zigbee 장치를 다루는 방법은 아래 ZHA(Zigbee Home Automation)로 통합하여 다루는 방법이 있기는 하지만, 널리 쓰고 있지는 않습니다. 현재 가장 사용자층에서 많이 쓰는 방식은 Hass.io add-on에서 지원하는 현존 Zigbee 허브중 가장 많은 108개회사의 554개 장치를 지원하는 [Zigbee2mqtt](https://www.zigbee2mqtt.io/) 를 사용하는 방법이 현재 가장 널리 쓰이고 있는 방법입니다. 
+홈어시스턴트에서 Zigbee 장치를 다루는 방법은 아래 ZHA(Zigbee Home Automation)로 통합하여 다루는 방법이 있기는 하지만, 가장 많이 쓰고 있지는 않습니다. 현재 가장 사용자층에서 많이 쓰는 방식은 Hass.io add-on에서 지원하는 현존 Zigbee 허브중 가장 많은 116개회사의 644개 장치를 지원하는 [Zigbee2mqtt](https://www.zigbee2mqtt.io/) 를 사용하는 방법이 현재 가장 널리 쓰이고 있는 방법입니다. 
 
 왜 Zigbee2mqtt가 사용하기 좋은 장치인지는 [Zigbee 허브는 한개로 충분하다](https://cafe.naver.com/koreassistant/505)를 참조하십시오.
 
@@ -34,7 +34,7 @@ ha_codeowners:
 4. Zigbee2mqtt의 [Add-on](https://github.com/danielwelch/hassio-zigbee2mqtt/tree/master/zigbee2mqtt) 링크
 
 -----------------------------------------------------------------------------------------------------------------------------
-이하 ZHA 번역 내용
+**이하 ZHA(Zigbee Home Automation) 번역 시작**
 
 Home Assistant 용 [Zigbee Home Automation](https://zigbee.org/zigbee-for-developers/applicationstandards/zigbeehomeautomation/) 통합구성요소를 사용하면 [zigpy](https://github.com/zigpy/zigpy) 와 호환되는 사용 가능한 Zigbee 무선 모듈 중 하나를 사용하여 여러 기성품 Zigbee 장치를 Home Assistant에 연결할 수 있습니다 (Zigbee 스택을 구현하는 오픈 소스 Python 라이브러리, 각기 다른 제조업체와 Zigbee 라디오 모듈을 연결 할 수있는 별도의 라이브러리에 의존합니다.)
 

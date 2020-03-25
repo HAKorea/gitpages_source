@@ -14,7 +14,7 @@ ha_iot_class: Local Polling
 
 `Xiaomi` 카메라 플랫폼은 홈어시스턴트에서 샤오미 카메라를 활용할 수 있습니다
 
-이 플랫폼을 성공적으로 구현하려면 Home Assistant 호스트가 여러개 카메라를 동시에 읽을 수 있어야합니다. 동시에 접속한 홈 어시스턴트 사용자마다 10 초마다 카메라에 연결됩니다. 이것은 일반적으로 문제가 되진 않습니다. 
+이 플랫폼을 성공적으로 구현하려면 Home Assistant 호스트가 여러개 카메라를 동시에 읽을 수 있어야합니다. 동시에 접속한 홈어시스턴트 사용자마다 10 초간격으로 카메라에 연결됩니다. 이는 일반적으로 문제가 되진 않습니다. 
 
 ## 장치 준비
 
@@ -28,7 +28,7 @@ ha_iot_class: Local Polling
 
 <div class='note warning'>
 
-현재 사용자 지정 펌웨어 버전 0.1.4-beta2가 가장 많이 지원됩니다. 이 버전보다 높은 펌웨어는 [Pure-FTPd](https://www.pureftpd.org/project/pure-ftpd) 를 사용하는데, 이는 FFmpeg가 비디오 파일을 올바르게 렌더링하지 못하게하는 버그가 있습니다.
+현재 사용자 지정 펌웨어 버전 0.1.4-beta2가 가장 많이 지원됩니다. 이 버전보다 높은 펌웨어는 [Pure-FTPd](https://www.pureftpd.org/project/pure-ftpd)를 사용하는데, 이는 FFmpeg가 비디오 파일을 올바르게 렌더링하지 못하게하는 버그가 있습니다.
 
 </div>
 
@@ -43,7 +43,7 @@ Yi 720p 및 Xiaofang Cameras에서 FTP를 통해 읽은 경우 카메라에서 �
 </div>
 
 <div class='note warning'>
-RTSP 서버를 활성화한 경우 다른 Home Assistant 카메라 플랫폼을 통해 카메라에 연결할 수 있습니다. 그러나이 RTSP 서버는 가장 유용한 Mi Home 앱을 사용하는 기능을 비활성화합니다. 홈어시스턴트 호환성과 기본앱을 모두 유지하기 위해이 플랫폼은 FTP를 통해 비디오를 검색합니다.
+RTSP 서버를 활성화한 경우 다른 Home Assistant 카메라 플랫폼을 통해 카메라에 연결할 수 있습니다. 그러나 이 RTSP 서버는 가장 유용한 Mi Home 앱을 사용하는 기능을 비활성화합니다. 홈어시스턴트 호환성과 기본앱을 모두 유지하기 위해 이 플랫폼은 FTP를 통해 비디오를 검색합니다.
 </div>
 
 ## 플랫폼 설정 
@@ -82,7 +82,7 @@ path:
   type: string
   default: /media/mmcblk0p1/record
 username:
-  description: FTP 서버에 액세스 할 수있는 사용자
+  description: FTP 서버에 액세스할 수 있는 사용자
   required: false
   type: string
   default: root
@@ -102,7 +102,7 @@ ffmpeg_arguments:
 
 [`ffmpeg` camera](/integrations/camera.ffmpeg/)가 지원하는 모든 옵션은 `ffmpeg_arguments` 설정 매개 변수를 통해 활용할 수 있습니다.
 
-특히 유용한 조정 중 하나는 비디오 크기를 변경하는 기능입니다.  Yi 비디오는 상당히 크기 때문에 (특히 1080p 카메라에서) 다음 설정을 통해 관리 가능한 크기로 줄일 수 있습니다.
+특히 유용한 조정 중 하나는 비디오 크기를 변경하는 기능입니다. Yi 비디오는 상당히 크기 때문에 (특히 1080p 카메라에서) 다음 설정을 통해 관리 가능한 크기로 줄일 수 있습니다.
 
 ```yaml
 camera:
@@ -114,9 +114,9 @@ camera:
     path: /home/camera/feed
     ffmpeg_arguments: '-vf scale=800:450'
 ```
-## 호스트이름 템플릿
+## 호스트 이름 템플릿
 
-호스트 이름/IP 주소는 값 또는 기존 엔티티 속성에서 제공 될 수 있습니다.
+호스트 이름/IP 주소는 값 또는 기존 엔티티 속성에서 제공될 수 있습니다.
 
 ```yaml
 camera:

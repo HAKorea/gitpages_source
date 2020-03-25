@@ -1,5 +1,5 @@
 ---
-title: TP-Link 카사 스마트
+title: 스마트홈플랫폼(TP-Link Casa Smart)
 description: Instructions on integrating TP-Link Smart Home Devices to Home Assistant.
 logo: tp-link.png
 ha_category:
@@ -17,20 +17,20 @@ ha_codeowners:
 <iframe width="690" height="437" src="https://www.youtube.com/embed/9ViLqLne7-4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-The `tplink` integration allows you to control your [TP-Link Smart Home Devices](https://www.tp-link.com/kasa-smart/) such as smart plugs and smart bulbs.
+`tplink` 통합구성요소를 통해 스마트 플러그 및 스마트 전구와 같은 [TP-Link Smart Home Devices](https://www.tp-link.com/kasa-smart/)를 제어할 수 있습니다.
 
-There is currently support for the following device types within Home Assistant:
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - **Light**
 - **Switch**
 
-In order to activate the support, you will have to enable the integration inside the config panel.
-The supported devices in your network are automatically discovered, but if you want to control devices residing in other networks you will need to configure them manually as shown below.
+지원을 활성화하려면 설정 패널 내부의 통합구성요소를 활성화해야합니다.
+네트워크에서 지원되는 장치는 자동으로 검색되지만 다른 네트워크에 상주하는 장치를 제어하려면 아래와 같이 수동으로 설정해야합니다.
 
-## Supported Devices
+## 지원 장치
 
-This integration supports devices that are controllable with the [KASA app](https://www.tp-link.com/us/kasa-smart/kasa.html).
-The following devices are known to work with this component.
+이 통합구성요소는 [KASA app](https://www.tp-link.com/us/kasa-smart/kasa.html)으로 제어 가능한 장치를 지원합니다.
+다음 장치가 이 구성 요소와 동작하는 것으로 알려져 있습니다.
 
 ### Plugs
 
@@ -64,7 +64,7 @@ The following devices are known to work with this component.
 - KL120
 - KL130
 
-## Configuration
+## 설정
 
 ```yaml
 # Example configuration.yaml
@@ -115,7 +115,7 @@ dimmer:
       type: string
 {% endconfiguration %}
 
-## Manual configuration example
+## 수동 설정 사례
 
 ```yaml
 # Example configuration.yaml entry with manually specified addresses
@@ -135,10 +135,10 @@ tplink:
     - host: 192.168.200.8
 ```
 
-## Extracting Energy Sensor data
+## 에너지 센서 데이터 추출
 
-In order to get the power consumption readings from a TP-Link HS110 device, you'll have to create a [template sensor](/integrations/switch.template/).
-In the example below, change all of the `my_tp_switch`'s to match your device's entity ID.
+TP-Link HS110 장치에서 전력 소비량 판독값을 얻으려면 [템플릿 센서](/integrations/switch.template/)를 만들어야합니다.
+아래 예에서 모든 `my_tp_switch`를 장치의 엔티티 ID와 일치하도록 변경하십시오.
 
 {% raw %}
 ```yaml

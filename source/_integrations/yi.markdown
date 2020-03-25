@@ -17,7 +17,7 @@ ha_codeowners:
 * Yi Dome
 * Yi 1080p Dome
 
-이 플랫폼을 성공적으로 구현하려면 Home Assistant 호스트가 여러개의 동시 읽기를 수행 할 수 있어야합니다. 동시 홈어시스턴트 사용자마다 10 초마다 카메라에 연결됩니다. 이는 일반적으로 문제가 되지 않습니다.
+이 플랫폼을 성공적으로 구현하려면 Home Assistant 호스트가 여러개의 동시 읽기를 수행할 수 있어야합니다. 동시 홈어시스턴트 사용자마다 10 초간격으로 카메라에 연결됩니다. 이는 일반적으로 문제가 되지 않습니다.
 
 ## 장치 준비
 
@@ -29,23 +29,23 @@ ha_codeowners:
 
 <div class='note warning'>
 
-현재, 커스텀 펌웨어 버전 0.1.4-beta2는 추가 수정없이 지원되는 최고 수준입니다. 이 버전보다 높은 펌웨어는 FFmpeg가 비디오 파일을 올바르게 렌더링하지 못하게하는 버그가 있는데 [Pure-FTPd] (https://www.pureftpd.org/project/pure-ftpd)를 사용합니다. 더 높은 펌웨어 버전을 사용하려면 [this workaround](https://github.com/shadow-1/yi-hack-v3/issues/129#issuecomment-361723075)을 따라 ftpd로 되돌려 야합니다.
+현재, 커스텀 펌웨어 버전 0.1.4-beta2는 추가 수정없이 지원되는 최고 수준입니다. 이 버전보다 높은 펌웨어는 FFmpeg가 비디오 파일을 올바르게 렌더링하지 못하게하는 버그가 있는데 [Pure-FTPd] (https://www.pureftpd.org/project/pure-ftpd)를 사용합니다. 더 높은 펌웨어 버전을 사용하려면 [this workaround](https://github.com/shadow-1/yi-hack-v3/issues/129#issuecomment-361723075)을 따라 ftpd로 되돌려야합니다.
 
 </div>
 
 <div class='note warning'>
 
-0.1.4-beta2보다 높은 버전을 사용한다면 `/home/yi-hack-v4` 디렉토리에 `/ tmp`에 대한 심볼릭 링크를 만들어 FTP 문제를 간단히 해결할 수 있습니다 (디렉토리 이름은 사용하는 버전). 예를 들어 SSH를 통해 Yi 카메라에 액세스하고 `ln -s /tmp tmp` 명령을 입력하십시오.
+0.1.4-beta2보다 높은 버전을 사용한다면 `/home/yi-hack-v4` 디렉토리에 `/tmp`에 대한 심볼릭 링크를 만들어 FTP 문제를 간단히 해결할 수 있습니다 (디렉토리 이름은 사용하는 버전). 예를 들어 SSH를 통해 Yi 카메라에 액세스하고 `ln -s /tmp tmp` 명령을 입력하십시오.
 
 </div>
 
 <div class='note warning'>
-Raspbian 사용자 : 플랫폼에 ffmpeg 지원을 설치하는 것을 잊지 마십시오. 그렇지 않으면 비디오가 표시되지 않습니다.
+Raspbian 사용자: 플랫폼에 ffmpeg 지원을 설치하는 것을 잊지 마십시오. 그렇지 않으면 비디오가 표시되지 않습니다.
 </div>
 
 <div class='note warning'>
 
-일부 대체 Yi 펌웨어는 실험용 RTSP 서버를 활성화하여 다른 홈어시스턴트 카메라 플랫폼을 통해 카메라에 연결할 수 있습니다. 그러나 이 RTSP 서버는 가장 유용한 Yi Home 앱을 사용하는 기능을 비활성화시킵니다. 홈어시스턴트 호환성과 기본 앱을 모두 유지하기 위해 이 플랫폼은 FTP를 통해 비디오를 검색하는 것이 좋습니다.
+일부 대체 Yi 펌웨어는 실험용 RTSP 서버를 활성화하여 다른 홈어시스턴트 카메라 플랫폼을 통해 카메라에 연결할 수 있습니다. 그러나 이 RTSP 서버는 가장 유용한 Yi Home 앱을 사용하는 기능을 비활성화시킵니다. 홈어시스턴트 호환성과 기본앱을 모두 유지하기 위해 이 플랫폼은 FTP를 통해 비디오를 검색하는 것이 좋습니다.
 
 </div>
 

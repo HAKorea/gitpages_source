@@ -11,7 +11,7 @@ ha_quality_scale: internal
 
 `template` 플랫폼은 구성 요소를 결합하는 스위치를 만듭니다. 
 
-예를 들어, 모터를 작동하는 토글 스위치가 있는 차고 문과 문이 열려 있는지 또는 닫혀 있는지 알 수 있는 센서가 있는 경우 차고 문이 열려 있는지 닫혀 있는지 알 수 있는 스위치로 이들을 결합 할 수 있습니다.
+예를 들어, 모터를 작동하는 토글 스위치가 있는 차고문과 문이 열려 있는지 또는 닫혀 있는지 알 수 있는 센서가 있는 경우 차고문이 열려 있는지 닫혀 있는지 알 수 있는 스위치로 이들을 결합할 수 있습니다.
 
 이를 통해 GUI를 단순화하고 자동화를보다 쉽게 ​​작성할 수 있습니다. 결합한 통합구성요소를 `hidden`으로 표시하여 자체적으로 나타나지 않도록 할 수 있습니다. 
 
@@ -59,7 +59,7 @@ switch:
         required: true
         type: template
       availability_template:
-        description: 컴포넌트의 `available` 상태를 가져 오도록 템플리트를 정의. 템플릿이 `true`를 반환하면 `available` 입니다. 템플릿이 다른 값을 반환하면 장치는 `unavailable`입니다. `availability_template`이 설정되어 있지 않으면 구성 요소는 항상 `available` 입니다.
+        description: 컴포넌트의 `available` 상태를 가져 오도록 템플릿을 정의. 템플릿이 `true`를 반환하면 `available` 입니다. 템플릿이 다른 값을 반환하면 장치는 `unavailable`입니다. `availability_template`이 설정되어 있지 않으면 구성 요소는 항상 `available` 입니다.
         required: false
         type: template
         default: true
@@ -83,7 +83,7 @@ switch:
 
 ## 고려사항 
 
-로드하는 데 추가시간이 더 걸리는 플랫폼의 상태를 사용하는 경우, 시작시 템플릿 표시등이 `unknown` 상태가 될 수 있습니다. 그러면 해당 플랫폼이 로드를 완료 할 때까지 로그 파일에 오류 메시지가 나타납니다. 
+로드하는데 추가시간이 더 걸리는 플랫폼의 상태를 사용하는 경우, 시작시 템플릿 표시등이 `unknown` 상태가 될 수 있습니다. 그러면 해당 플랫폼이 로드를 완료 할 때까지 로그 파일에 오류 메시지가 나타납니다. 
 템플릿에서 `is_state()` 함수를 사용하면 이런 상황을 피할 수 있습니다. 
 예를 들어, `true`/`false`를 반환하는 동등한 상황으로 {% raw %}`{{ states.switch.source.state == 'on' }}`{% endraw %}로 대체할 경우 절대 uknown 결과를 나타내지 않습니다. {% raw %}`{{ is_state('switch.source', 'on') }}`{% endraw %}
 

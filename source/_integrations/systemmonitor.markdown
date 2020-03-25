@@ -74,7 +74,7 @@ ifconfig -a | sed 's/[ \t].*//;/^$/d'
 
 ## 윈도우에 한함
 
-Microsoft Windows에서이 플랫폼을 실행할 때 일반적으로 기본 인터페이스의 이름은 `Local Area Connection`이며 설정은 다음과 같습니다.
+Microsoft Windows에서 이 플랫폼을 실행할 때 일반적으로 기본 인터페이스의 이름은 `Local Area Connection`이며 설정은 다음과 같습니다.
 
 ```yaml
 sensor:
@@ -84,7 +84,7 @@ sensor:
         arg: 'Local Area Connection'
 ```
 
-다른 인터페이스를 사용해야하는 경우 명령 행 프롬프트를 열고 `ipconfig`를 입력하여 모든 인터페이스 이름을 나열하십시오. 예를 들어 `ipconfig`의 무선 연결 출력은 다음과 같습니다.
+다른 인터페이스를 사용해야하는 경우 commad line 프롬프트를 열고 `ipconfig`를 입력하여 모든 인터페이스 이름을 나열하십시오. 예를 들어 `ipconfig`의 무선 연결 출력은 다음과 같습니다.
 
 ```bash
 Wireless LAN adapter Wireless Network Connection:

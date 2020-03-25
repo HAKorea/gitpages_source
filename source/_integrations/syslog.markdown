@@ -11,7 +11,7 @@ ha_codeowners:
 
 `syslog` 플랫폼을 사용하면 Home Assistant에서 로컬 syslog로 알림을 전달할 수 있습니다.
 
-설치에서 syslog 알림을 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
+설치시 syslog 알림을 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -66,6 +66,6 @@ priority:
 | local6    |         |           |
 | local7    |         |           |
 
-시설, 옵션 및 우선 순위에 대한 자세한 내용은 [wikipedia article](https://en.wikipedia.org/wiki/Syslog) 및 [RFC 3164](https://tools.ietf.org/html/rfc3164)를 참조하십시오. 
+facility, option, priority 에 대한 자세한 내용은 [wikipedia article](https://en.wikipedia.org/wiki/Syslog) 및 [RFC 3164](https://tools.ietf.org/html/rfc3164)를 참조하십시오. 
 
-알림을 사용하려면 [자동화 시작 페이지](/getting-started/automation/).를 참조하십시오.
+알림을 사용하려면 [자동화 시작 페이지](/getting-started/automation/)를 참조하십시오.

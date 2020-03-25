@@ -18,14 +18,14 @@ ha_release: 0.7.5
 요구 사항은 다음과 같습니다.
 
 - [Telegram bot](https://core.telegram.org/bots)이 필요합니다. 다음 [instructions](https://core.telegram.org/bots#6-botfather)에 따라 하나를 생성하고 봇에 대한 토큰을 받으십시오.
-- [Telegram bot in Home Assistant](/integrations/telegram_chatbot)을 설정하고 상호작용할 수있는 API 키 및 허용된 chat ID를 정의해야합니다. 
+- [Telegram bot in Home Assistant](/integrations/telegram_chatbot)을 설정하고 상호작용할 수 있는 API 키 및 허용된 chat ID를 정의해야합니다. 
 - 허용된 사용자의 `chat_id`
 
 **방법 1 :** [GetIDs bot](https://t.me/getidsbot)에 메시지를 보내면 `chat_id`를 얻을 수 있습니다.
 
 **방법 2 :** `chat_id`를 검색하려면 `https://api.telegram.org/botYOUR_API_TOKEN/getUpdates`를 방문하거나 봇에게 메시지를 **보낸 후** `$ curl -X GET https://api.telegram.org/botYOUR_API_TOKEN/getUpdates`를 사용하십시오. `YOUR_API_TOKEN`을 실제 토큰으로 바꾸십시오.
 
-결과 집합에는 `chat` 섹션에 chat ID가 `id` 로 포함됩니다.
+결과 집합에는 `chat` 섹션에 chat ID가 `id`로 포함됩니다.
 
 ```json
 {
@@ -54,7 +54,7 @@ ha_release: 0.7.5
 }
 ```
 
-**방법 3 :** chat ID를 직접받는 다른 방법은 아래에 설명되어 있습니다. 명령행에서 Python 인터프리터를 시작하십시오.
+**방법 3 :** chat ID를 직접받는 다른 방법은 아래에 설명되어 있습니다. Command line에서 Python 인터프리터를 시작하십시오.
 
 ```shell
 $ python3
@@ -66,12 +66,12 @@ $ python3
 ```
 
 <div class='note'>
-새 chat ID를 추가하려면 active configuaration을 비활성화하여 실제 ID 결과를 확인해야합니다, 그렇지 않으면 빈 결과 배열 만 표시될 수 있습니다.
+새 chat ID를 추가하려면 active configuaration을 비활성화하여 실제 ID 결과를 확인해야합니다, 그렇지 않으면 빈 결과 배열만 표시될 수 있습니다.
 </div>
 
 ## 설정 
 
-설치에서 텔레그램 알림을 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
+설치시 텔레그램 알림을 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry for the Telegram Bot
@@ -123,7 +123,7 @@ action:
 
 {% configuration %}
 title:
-  description: "'%title\n%message'로 구성됩니다."
+  description: "'%title\n%message'로 설정됩니다."
   required: false
   type: string
 message:
@@ -131,11 +131,11 @@ message:
   required: true
   type: string
 keyboard:
-  description: 사용자 정의 키보드를 만들기위한 쉼표로 구분된 명령행 목록
+  description: 사용자 정의 키보드를 만들기위한 쉼표로 구분된 command line 목록
   required: false
   type: list
 inline_keyboard:
-  description: 콜백 데이터가 연결된 버튼이있는 사용자 지정 인라인 키보드를 만들기 위해 쉼표로 구분된 명령행 목록.
+  description: 콜백 데이터가 연결된 버튼이 있는 사용자 지정 인라인 키보드를 만들기 위해 쉼표로 구분된 command line 목록.
   required: false
   type: list
 {% endconfiguration %}
@@ -162,11 +162,11 @@ action:
 
 {% configuration %}
 url:
-  description: 이미지의 원격 경로, 혹은 `file` 설정 옵션이 필요합니다.
+  description: 이미지의 원격 경로, 혹은 `file`. 설정 옵션이 필요합니다.
   required: true
   type: string
 file:
-  description: 이미지의 로컬 경로, 혹은 `url` 설정 옵션이 필요합니다.
+  description: 이미지의 로컬 경로, 혹은 `url`. 설정 옵션이 필요합니다.
   required: true
   type: string
 caption:
@@ -192,11 +192,11 @@ verify_ssl:
   default: true
   type: boolean
 keyboard:
-  description: 사용자 정의 키보드를 만들기 위한 쉼표로 구분된 명령행 목록.
+  description: 사용자 정의 키보드를 만들기 위한 쉼표로 구분된 command line 목록.
   required: false
   type: list
 inline_keyboard:
-  description: 콜백 데이터가 연결된 버튼이 있는 사용자 지정 인라인 키보드를 만들기 위해 쉼표로 구분된 명령행 목록.
+  description: 콜백 데이터가 연결된 버튼이 있는 사용자 지정 인라인 키보드를 만들기 위해 쉼표로 구분된 command line 목록.
   required: false
   type: list
 {% endconfiguration %}
@@ -238,11 +238,11 @@ action:
 
 {% configuration %}
 url:
-  description: 비디오의 원격 경로, 혹은 `file` 설정 옵션이 필요합니다.
+  description: 비디오의 원격 경로, 혹은 `file`. 설정 옵션이 필요합니다.
   required: true
   type: string
 file:
-  description: 비디오의 로컬 경로, 혹은 `url` 설정 옵션이 필요합니다.
+  description: 비디오의 로컬 경로, 혹은 `url`. 설정 옵션이 필요합니다.
   required: true
   type: string
 caption:
@@ -268,11 +268,11 @@ verify_ssl:
   default: true
   type: boolean
 keyboard:
-  description: 사용자 정의 키보드를 만들기위한 쉼표로 구분된 명령행 목록.
+  description: 사용자 정의 키보드를 만들기위한 쉼표로 구분된 command line 목록.
   required: false
   type: list
 inline_keyboard:
-  description: 콜백 데이터가 연결된 버튼이 있는 사용자 지정 인라인 키보드를 만들기 위해 쉼표로 구분된 명령행 목록.
+  description: 콜백 데이터가 연결된 버튼이 있는 사용자 지정 인라인 키보드를 만들기 위해 쉼표로 구분된 command line 목록.
   required: false
   type: list
 {% endconfiguration %}
@@ -297,11 +297,11 @@ action:
 
 {% configuration %}
 url:
-  description: 문서의 원격 경로, 혹은 `file` 설정 옵션이 필요합니다. 
+  description: 문서의 원격 경로, 혹은 `file`. 설정 옵션이 필요합니다. 
   required: true
   type: string
 file:
-  description: 문서의 로컬 경로, 혹은 `url` 설정 옵션이 필요합니다.
+  description: 문서의 로컬 경로, 혹은 `url`. 설정 옵션이 필요합니다.
   required: true
   type: string
 caption:
@@ -322,16 +322,16 @@ authentication:
   default: basic
   type: string
 verify_ssl:
-  description: 서버의 SSL 인증서 유효성 검증을 건너 뛰려면 false로 설정
+  description: 서버의 SSL 인증서 유효성 검증을 건너뛰려면 false로 설정
   required: false
   default: true
   type: boolean
 keyboard:
-  description: 사용자 정의 키보드를 만들기 위한 쉼표로 구분된 명령행 목록.
+  description: 사용자 정의 키보드를 만들기 위한 쉼표로 구분된 command line 목록.
   required: false
   type: list
 inline_keyboard:
-  description: 콜백 데이터가 연결된 버튼이 있는 사용자 지정 인라인 키보드를 만들기 위해 쉼표로 구분된 명령행 목록.
+  description: 콜백 데이터가 연결된 버튼이 있는 사용자 지정 인라인 키보드를 만들기 위해 쉼표로 구분된 command line 목록.
   required: false
   type: list
 {% endconfiguration %}
@@ -362,11 +362,11 @@ longitude:
   required: true
   type: float
 keyboard:
-  description: 사용자 정의 키보드를 만들기위한 쉼표로 구분된 명령행 목록
+  description: 사용자 정의 키보드를 만들기위한 쉼표로 구분된 command line 목록
   required: false
   type: list
 inline_keyboard:
-  description: 콜백 데이터가 연결된 버튼이 있는 사용자 지정 인라인 키보드를 만들기 위해 쉼표로 구분된 명령행 목록.
+  description: 콜백 데이터가 연결된 버튼이 있는 사용자 지정 인라인 키보드를 만들기 위해 쉼표로 구분된 command line 목록.
   required: false
   type: list
 {% endconfiguration %}

@@ -7,17 +7,17 @@ ha_category:
 ha_release: 0.38
 ---
 
-The `rflink` integration supports devices that use [RFLink gateway firmware](http://www.nemcon.nl/blog2/), for example, the [Nodo RFLink Gateway](https://www.nodo-shop.nl/nl/21-rflink-gateway). RFLink gateway is an Arduino firmware that allows two-way communication with a multitude of RF wireless devices using cheap hardware (Arduino + transceiver).
+`rflink` 통합구성요소는 [RFLink gateway firmware](http://www.nemcon.nl/blog2/)를 사용하는 장치 (예: [Nodo RFLink 게이트웨이](https://www.nodo-shop.nl/nl/21-rflink-gateway))를 지원합니다. RFLink 게이트웨이는 저렴한 하드웨어 (Arduino + 트랜시버)를 사용하여 여러 RF 무선 장치와 양방향 통신을 가능하게하는 Arduino 펌웨어입니다.
 
-First, you have to set up your [RFLink hub](/integrations/rflink/).
+먼저 [RFLink hub](/integrations/rflink/)를 설정해야합니다.
 
-The RFLink integration does not know the difference between a `switch`, a `binary_sensor` and a `light`. Therefore all switchable devices are automatically added as `light` by default.
+RFLink 통합구성요소는 `switch`, `binary_sensor` 및 `light`의 차이점을 모릅니다. 따라서 모든 전환 가능한 장치는 기본적으로 자동으로 `light`로 추가됩니다. 
 
-RFLink binary_sensor/switch/light ID's are composed of: protocol, id, switch/channel. For example: `newkaku_0000c6c2_1`.
+RFLink binary_sensor/switch/light ID는 protocol, id, switch/channel로 구성됩니다. (예: `newkaku_0000c6c2_1`)
 
-Once the ID of a switch is known, it can be used to configure it as a switch type in HA and, for example, to add it to a different group, hide it or configure a nice name.
+스위치의 ID를 알면 HA에서 스위치 유형으로 설정하고 예를 들어 다른 그룹에 추가하거나 숨기거나 멋진 이름을 설정하는데 사용할 수 있습니다.
 
-Configuring devices as switch :
+장치를 스위치로 설정 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -102,9 +102,9 @@ devices:
 
 ## Switch state
 
-Initially, the state of a switch is unknown. When the switch is turned on or off (via frontend or wireless remote) the state is known and will be shown in the frontend.
+처음에는 스위치 상태를 알 수 없습니다. 스위치가 켜지거나 꺼질 때 (프론트 엔드 또는 무선 리모트를 통해) 상태가 알려져 있으며 프론트 엔드에 표시됩니다.
 
-Sometimes a switch is controlled by multiple wireless remotes, each remote has its own code programmed in the switch. To allow tracking of the state when switched via other remotes add the corresponding remote codes as aliases:
+때때로 스위치는 여러 무선 리모컨으로 제어되며 각 리모컨에는 스위치에 자체 코드가 프로그래밍되어 있습니다. 다른 리모컨을 통해 스위치를 제어했을때 상태를 추적하려면 해당하는 원격 코드를 별명(aliases)으로 추가하십시오. : 
 
 ```yaml
 # Example configuration.yaml entry
@@ -118,15 +118,15 @@ switch:
           - kaku_000001_a
 ```
 
-Any on/off command from any alias ID updates the current state of the switch. However, when sending a command through the frontend only the primary ID is used.
+alias ID의 모든 on/off 명령은 스위치의 현재 상태를 업데이트합니다. 그러나 프런트 엔드를 통해 명령을 보낼 때는 primary ID 만 사용됩니다.
 
-## Device support
+## 장치 지원
 
-See [device support](/integrations/rflink/#device-support)
+[장치 지원](/integrations/rflink/#device-support) 참조하십시오. 
 
-### Additional configuration examples
+### 추가 설정 사례 
 
-Multiple switches with signal repetitions and custom names
+신호 반복 및 사용자 정의 이름을 가진 여러 스위치
 
 ```yaml
 # Example configuration.yaml entry

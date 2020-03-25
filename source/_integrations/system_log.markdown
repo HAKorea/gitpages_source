@@ -8,7 +8,7 @@ ha_release: 0.58
 ha_quality_scale: internal
 ---
 
-`system_log` 통합구성요소는 기록된 모든 오류 및 경고에 대한 정보를 Home Assistant에 저장합니다. 수집된 모든 정보는 프론트 엔드에서 직접 액세스 할 수 있으며 `개발자 도구` 아래의 `info` 섹션으로 이동하십시오. 로그 데이터로 Home Assistant에 과부하를 주지 않기 위해 마지막 50 개의 오류 및 경고만 저장됩니다. 이전 항목은 자동으로 로그에서 삭제됩니다. `max_entries` 매개 변수를 사용하여 저장된 로그 항목 수를 변경할 수 있습니다.
+`system_log` 통합구성요소는 기록된 모든 오류 및 경고에 대한 정보를 Home Assistant에 저장합니다. 수집된 모든 정보는 프론트 엔드에서 직접 액세스할 수 있으며 `개발자 도구` 아래의 `info` 섹션으로 이동하십시오. 로그 데이터로 Home Assistant에 과부하를 주지 않기 위해 마지막 50 개의 오류 및 경고만 저장됩니다. 이전 항목은 자동으로 로그에서 삭제됩니다. `max_entries` 매개 변수를 사용하여 저장된 로그 항목 수를 변경할 수 있습니다.
 
 ## 설정
 
@@ -71,7 +71,7 @@ Traceback (most recent call last):
 [...]
 ```
 
-메시지 ( "Unable to find integration system_healt"), source (`homeassistant.loader`) 및 level (`ERROR`)을 로그에서 쉽게 추출할 수 있습니다.  정확한 타임 스탬프가 나오고, stack trace가 있을 경우 또한 출력됩니다. 추가 출력이 존재하는 `google_map` 통합구성요소로 인한 또 다른 오류가 있습니다.
+메시지 ("Unable to find integration system_healt"), source (`homeassistant.loader`) 및 level (`ERROR`)을 로그에서 쉽게 추출할 수 있습니다.  정확한 타임 스탬프가 나오고, stack trace가 있을 경우 또한 출력됩니다. 추가 출력이 존재하는 `google_map` 통합구성요소로 인한 또 다른 오류가 있습니다.
 
 ## 사례 
 

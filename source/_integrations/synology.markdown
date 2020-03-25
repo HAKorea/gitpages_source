@@ -58,7 +58,7 @@ timeout:
   type: integer
   default: 5
 whitelist:
-  description: 추가 할 카메라의 목록이며 이름은 Surveillance Station과 동일해야합니다. 생략하면 모든 카메라가 추가됩니다..
+  description: 추가할 카메라의 목록이며 이름은 Surveillance Station과 동일해야합니다. 생략하면 모든 카메라가 추가됩니다..
   required: false
   type: list
 verify_ssl:

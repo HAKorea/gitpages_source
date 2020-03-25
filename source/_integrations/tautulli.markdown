@@ -27,11 +27,11 @@ ha_codeowners:
 - Transcode count
 - WAN bandwidth
 
-`monitored_conditions` 설정 옵션으로 더 많은 사용자 통계를 추가 할 수 있습니다. 이것은 사용자의 현재 `activity` 외에도 사용자 당 하나의 속성을 추가합니다.
+`monitored_conditions` 설정 옵션으로 더 많은 사용자 통계를 추가할 수 있습니다. 이는 사용자의 현재 `activity` 외에도 사용자 당 하나의 속성을 추가합니다.
 
 ## 셋업
 
-`api_key`를 찾으려면 Tautulli 웹인터페이스를 열고 `settings`으로 이동 한 다음 `Web interface`로 이동하면 `api_key`가 해당 페이지의 맨 아래에 있습니다.
+`api_key`를 찾으려면 Tautulli 웹인터페이스를 열고 `settings`으로 이동한 다음 `Web interface`로 이동하면 `api_key`가 해당 페이지의 맨 아래에 있습니다.
 
 ## 설정
 

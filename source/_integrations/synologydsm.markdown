@@ -38,7 +38,7 @@ name:
   default: Synology DSM
   type: string
 host:
-  description: 모니터링 할 Synology NAS의 IP 주소.
+  description: 모니터링할 Synology NAS의 IP 주소.
   required: true
   type: string
 port:
@@ -64,7 +64,7 @@ volumes:
   required: false
   type: list
 disks:
-  description: "모니터링할 디스크 배열. 모든 디스크가 기본값입니다. `sda`,`sdb` 등과 같은 디스크 이름 만 사용하십시오."
+  description: "모니터링할 디스크 배열. 모든 디스크가 기본값입니다. `sda`,`sdb` 등과 같은 디스크 이름만 사용하십시오."
   required: false
   type: list
 monitored_conditions:
@@ -95,7 +95,7 @@ monitored_conditions:
     memory_available_swap:
       description: 사용 가능한 스왑의 총 크기를 MB 단위로 표시.
     memory_available_real:
-      description: 사용 된 총 메모리 크기 (실제 메모리를 기준으로 함)를 MB 단위로 표시.
+      description: 사용된 총 메모리 크기 (실제 메모리를 기준으로 함)를 MB 단위로 표시.
     memory_total_swap:
       description: 실제 메모리의 총 크기를 MB 단위로 표시
     memory_total_real:
@@ -113,9 +113,9 @@ monitored_conditions:
     disk_status:
       description: 하드 디스크의 상태를 표시 (각 디스크에 대한 새 항목 생성).
     disk_exceed_bad_sector_thr:
-      description: 하드 디스크가 최대 불량 섹터 임계 값을 초과했는지 표시하기 위해 true / false를 표시합니다 (각 디스크에 대한 새 항목 생성).
+      description: 하드 디스크가 최대 불량 섹터 임계 값을 초과했는지 표시하기 위해 true/false를 표시합니다 (각 디스크에 대한 새 항목 생성).
     disk_below_remain_life_thr:
-      description: 하드 디스크가 남은 수명 임계 값 아래로 떨어졌는지 표시하기 위해 true / false를 표시 (각 디스크에 대한 새 항목 생성).
+      description: 하드 디스크가 남은 수명 임계값 아래로 떨어졌는지 표시하기 위해 true/false를 표시 (각 디스크에 대한 새 항목 생성).
     disk_temp:
       description: 하드 디스크의 온도를 표시합니다. (각 디스크에 대해 새 항목을 작성하고 unit_system을 사용하여 C 또는 F 로 표시).
     volume_status:
@@ -127,7 +127,7 @@ monitored_conditions:
     volume_size_used:
       description: 볼륨의 사용된 공간을 GB 단위로 표시 (각 볼륨에 대한 새 항목을 만듭니다).
     volume_percentage_used:
-      description: 볼륨에 사용 된 백분율을 GB 단위로 표시 (각 볼륨에 대한 새 항목을 만듭니다).
+      description: 볼륨에 사용된 백분율을 GB 단위로 표시 (각 볼륨에 대한 새 항목을 만듭니다).
     volume_disk_temp_avg:
       description: 볼륨에있는 모든 디스크의 평균 온도를 표시 (각 볼륨에 대한 새 항목을 만듭니다).
     volume_disk_temp_max:
@@ -135,16 +135,16 @@ monitored_conditions:
 {% endconfiguration %}
 
 <div class='note'>
-Home Assistant를 부팅한 후 센서가 표시되는 데 최대 15 분이 걸릴 수 있습니다. 이는 홈어시스턴트가 완전히 초기화 된 후 센서가 생성되기 때문입니다.
+Home Assistant를 부팅한 후 센서가 표시되는 데 최대 15 분이 걸릴 수 있습니다. 이는 홈어시스턴트가 완전히 초기화된 후 센서가 생성되기 때문입니다.
 </div>
 
 <div class='note warning'>
-이 센서는 최대 절전 모드 인 경우 Synology NAS를 깨웁니다.
+이 센서는 최대 절전 모드인 경우 Synology NAS를 깨웁니다.
 </div>
 
 <div class='note warning'>
 
-  `ssl :`를 `False`로 설정하면, *port* 도 명시적으로 **5000**으로 설정해야합니다. 
+  `ssl:`를 `False`로 설정하면, *port* 도 명시적으로 **5000**으로 설정해야합니다. 
 
 </div>
 
@@ -152,4 +152,4 @@ Home Assistant를 부팅한 후 센서가 표시되는 데 최대 15 분이 걸�
 
 Synology DSM API의 특성상 사용자에게 관리자 권한을 부여해야합니다. 이는 활용 정보가 핵심 모듈에 저장되어 있다는 사실과 관련이 있습니다.
 
-사용자를 만들 때 모든 위치 및 응용 프로그램에 대한 액세스를 거부 할 수 있습니다. 이렇게하면 사용자는 웹 인터페이스에 로그인하거나 Synology NAS의 파일을 볼 수 없습니다. 여전히 API를 사용하여 사용률 및 스토리지 정보를 읽을 수 있습니다.
+사용자를 만들 때 모든 위치 및 응용 프로그램에 대한 액세스를 거부할 수 있습니다. 이렇게하면 사용자는 웹 인터페이스에 로그인하거나 Synology NAS의 파일을 볼 수 없습니다. 여전히 API를 사용하여 사용률 및 스토리지 정보를 읽을 수 있습니다.

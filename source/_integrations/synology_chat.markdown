@@ -27,7 +27,7 @@ name:
   required: true
   type: string
 verify_ssl:
-  description: HTTPS resources에 대한 SSL/TLS 검증(verification)을 해제해야 하는 경우 (자체 서명 된 인증서 등).
+  description: HTTPS resources에 대한 SSL/TLS 검증(verification)을 해제해야 하는 경우 (자체 서명된 인증서 등).
   required: false
   type: boolean
   default: true

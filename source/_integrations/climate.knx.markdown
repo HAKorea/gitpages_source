@@ -18,9 +18,9 @@ ha_iot_class: Local Push
 
 </div>
 
-`knx` climate 플랫폼은 KNX 온도 조절기 및 실내 컨트롤러에 대한 인터페이스로 사용됩니다.
+`knx` climate 플랫폼은 KNX 온도조절기 및 실내 컨트롤러에 대한 인터페이스로 사용됩니다.
 
-KNX 온도 조절기를 사용하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오.
+KNX 온도조절기를 사용하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -71,7 +71,7 @@ climate:
     max_temp: 32.0
 ```
 
-`operation_mode_frost_protection_address` / `operation_mode_night_address` / `operation_mode_comfort_address`는 `operation_mode_address`가 지정된 경우 필요하지 않습니다.
+`operation_mode_frost_protection_address`/`operation_mode_night_address`/`operation_mode_comfort_address`는 `operation_mode_address`가 지정된 경우 필요하지 않습니다.
 actor가 명시적 상태 통신 오브젝트(explicit state communication objects)를 지원하지 않는 경우 *_state_address는 쓰기 가능한 *_address와 동일한 그룹 주소로 설정될 수 있습니다. 초기 읽기를 지원하기 위해 *_state_address 통신 객체(communication object)에 대한 읽기플래그(Read-Flag)가 ETS에 설정되어야 합니다. 예를들어 홈어시스턴트를 시작할 때.
 
 

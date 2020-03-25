@@ -31,7 +31,7 @@ sensor:
 
 {% configuration %}
 host:
-  description: 인증서를 검색 할 호스트 FQDN (또는 IP)입니다.
+  description: 인증서를 검색할 호스트 FQDN (또는 IP).
   required: true
   type: string
 port:
@@ -40,7 +40,7 @@ port:
   default: 443
   type: integer
 name:
-  description: 인증서의 이름입니다.
+  description: 인증서의 이름.
   required: false
   default: SSL Certificate Expiry
   type: string

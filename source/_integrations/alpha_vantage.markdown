@@ -16,7 +16,6 @@ ha_codeowners:
 
 `alpha_vantage` 센서 플랫폼은 [Alpha Vantage](https://www.alphavantage.co)를 사용하여 주식 시장을 모니터링합니다. 이 플랫폼은 환율에 대한 세부 정보도 제공합니다.
 
-
 `alpha_vantage` 플랫폼을 활성화하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오 :
 
 ```yaml

@@ -12,7 +12,7 @@ ha_iot_class: Local Polling
 <iframe width="776" height="437" src="https://www.youtube.com/embed/-zm0NMKW7k4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-[Enphase Envoy](https://enphase.com/en-us/products-and-services/envoy-and-combiner) 태양 에너지 게이트웨이용 센서 플랫폼. 에너지 생산 지표(예: Envoy-C)만있는 구형 모델 및 생산 및 소비 지표 (예: Envoy-S)를 모두 제공하는 최신 모델과 호환됩니다.
+[Enphase Envoy](https://enphase.com/en-us/products-and-services/envoy-and-combiner) 태양 에너지 게이트웨이용 센서 플랫폼. 에너지 생산 지표 (예: Envoy-C)만있는 구형 모델 및 생산 및 소비 지표 (예: Envoy-S)를 모두 제공하는 최신 모델과 호환됩니다.
 
 ## 설정
 

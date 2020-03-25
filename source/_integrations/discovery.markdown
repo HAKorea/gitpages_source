@@ -8,7 +8,7 @@ ha_release: 0.7
 ha_quality_scale: internal
 ---
 
-홈어시스턴트는 네트워크에서 [zeroconf](https://en.wikipedia.org/wiki/Zero-configuration_networking) / [mDNS](https://en.wikipedia.org/wiki/Multicast_DNS) 그리고 [uPnP](https://en.wikipedia.org/wiki/Universal_Plug_and_Play) 장치를 검색하고 자동으로 설정 할 수 있습니다. 현재 `discovery` 통합구성요소는 다음을 감지 할 수 있습니다:
+홈어시스턴트는 네트워크에서 [zeroconf](https://en.wikipedia.org/wiki/Zero-configuration_networking)/[mDNS](https://en.wikipedia.org/wiki/Multicast_DNS) 그리고 [uPnP](https://en.wikipedia.org/wiki/Universal_Plug_and_Play) 장치를 검색하고 자동으로 설정 할 수 있습니다. 현재 `discovery` 통합구성요소는 다음을 감지할 수 있습니다:
 
  * [Apple TV](/integrations/apple_tv/)
  * [Belkin WeMo switches](/integrations/wemo/)
@@ -116,11 +116,11 @@ Home Assistant가 [Docker container](/docs/installation/docker/)에서 실행되
 ### Windows
 
 #### 64-bit Python
-현재 64 비트 버전의 Python 및 Windows에서 이 통합을 실행하는 데 <a href='https://bitbucket.org/al45tair/netifaces/issues/17/dll-fails-to-load-windows-81-64bit'>known issue</a>가 있습니다.
+현재 64 비트 버전의 Python 및 Windows에서 이 연동을 실행하는 데 <a href='https://bitbucket.org/al45tair/netifaces/issues/17/dll-fails-to-load-windows-81-64bit'>known issue</a>가 있습니다.
 
 ### could not install dependency netdisco
 
-`Not initializing discovery because could not install dependency netdisco==0.6.1`를 로그에서 확인했다면, `python3-dev` 혹은 `python3-devel` 패키지를 시스템에 수동을 설치해야합니다. 예: `sudo apt-get install python3-dev` 혹은 `sudo dnf -y install python3-devel`. 이후 Home Assistant를 다시 시작하면 discovery가 작동합니다. 여전히 오류가 발생하면 gcc시스템에서 사용 가능한 컴파일러 (`gcc`) 가 있는지 확인하십시오.
+`Not initializing discovery because could not install dependency netdisco==0.6.1`를 로그에서 확인했다면, `python3-dev` 혹은 `python3-devel` 패키지를 시스템에 수동으로 설치해야합니다. 예: `sudo apt-get install python3-dev` 혹은 `sudo dnf -y install python3-devel`. 이후 Home Assistant를 다시 시작하면 discovery가 작동합니다. 여전히 오류가 발생하면 gcc시스템에서 사용 가능한 컴파일러(`gcc`)가 있는지 확인하십시오.
 
 ### DSM and Synology
 

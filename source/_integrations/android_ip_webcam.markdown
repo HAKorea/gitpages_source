@@ -16,7 +16,7 @@ ha_iot_class: Local Polling
 <iframe width="776" height="437" src="https://www.youtube.com/embed/eo55kn64C6M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-`android_ip_webcam` 통합구성요소는 모든 Android 폰 또는 태블릿을 여러 보기 옵션이있는 네트워크 카메라로 쓸 수 있습니다.
+`android_ip_webcam` 통합구성요소는 모든 Android 폰 또는 태블릿을 여러 보기 옵션이 있는 네트워크 카메라로 쓸 수 있습니다.
 
 MJPEG 카메라로 설정되고 모든 설정은 Home Assistant 내부의 스위치로 설정됩니다. 센서를 노출시킬 수도 있습니다. 스마트폰이 여러 개인 경우 목록 내 모든 옵션을 사용할 수 있습니다.
 
@@ -28,11 +28,11 @@ MJPEG 카메라로 설정되고 모든 설정은 Home Assistant 내부의 스위
 - Switch
 
 
-## 셋업 (Setup)
+## 셋업 
 
 [the IP Webcam app](https://play.google.com/store/apps/details?id=com.pas.webcam)을 다운로드하고 앱을 시작하십시오. 'Start Server'을 누르면 전화기에서 비디오 스트리밍이 시작되고 장치의 IP 주소가 화면에 표시됩니다. 
 
-## 설정 (Configuration)
+## 설정 
 
 컴포넌트를 설정하려면 `configuration.yaml` 파일에 다음 정보를 추가하십시오 :
 
@@ -71,7 +71,7 @@ scan_interval:
   default: 10
   type: integer
 sensors:
-  description: 프런트 엔드에 센서를 표시하기위한 조건입니다. 지원되는 센서 목록을 참조하십시오.
+  description: 프런트 엔드에 센서를 표시하기위한 조건. 지원되는 센서 목록을 참조하십시오.
   required: false
   type: list
   keys:
@@ -103,23 +103,23 @@ switches:
     exposure_lock:
       description: 노출 잠금 제어
     ffc:
-      description: 전면 카메라를 제어
+      description: 전면 카메라 제어
     focus:
-      description: 초점을 조절.
+      description: 초점 조절.
     gps_active:
-      description: GPS를 제어.
+      description: GPS 제어.
     night_vision:
-      description: 나이트 비전을 제어
+      description: 나이트 비전 제어
     overlay:
-      description: 오버레이를 제어.
+      description: 오버레이 제어.
     torch:
-      description: 토치를 제어.
+      description: 토치(조명) 제어.
     whitebalance_lock:
       description: 화이트 밸런스 잠금 장치를 제어.
     video_recording:
       description: 비디오 녹화를 제어.
 motion_sensor:
-  description: 만일 `auto_discovery`가 비활성화 된 경우 모션 센서 활성화
+  description: 만일 `auto_discovery`가 비활성화된 경우 모션 센서 활성화
   required: false
   type: boolean
   default: false
@@ -127,11 +127,11 @@ motion_sensor:
 
 <div class='note'>
 
-Home Assistant에서 센서 상태를 보려면 Android 앱에서 로깅을 활성화해야합니다 (`Data logging` > `Enable data logging`). 센서 상태는 활성화 될 때까지 `unknown`으로 유지됩니다.
+Home Assistant에서 센서 상태를 보려면 Android 앱에서 로깅을 활성화해야합니다 (`Data logging` > `Enable data logging`). 센서 상태는 활성화될 때까지 `unknown`으로 유지됩니다.
 
 </div>
 
-## Full example
+## 전체 사례
 
 ```yaml
 # Example configuration.yaml entry
@@ -169,9 +169,9 @@ android_ip_webcam:
 
 ## Binary Sensor
 
-`android_ip_webcam` 바이너리 센서 플랫폼을 사용하면 Home Assistant를 통해 [Android IP webcam](https://play.google.com/store/apps/details?id=com.pas.webcam) 센서의 모션 상태를 관찰 할 수 있습니다. 장치가 자동으로 설정됩니다.
+`android_ip_webcam` 바이너리 센서 플랫폼을 사용하면 Home Assistant를 통해 [Android IP webcam](https://play.google.com/store/apps/details?id=com.pas.webcam) 센서의 모션 상태를 관찰할 수 있습니다. 장치가 자동으로 설정됩니다.
 
-## Examples
+## 예제
 
 다음 스크립트를 사용하여 binary 모션 센서를 설정할 수도 있습니다. :
 
@@ -194,7 +194,7 @@ binary_sensor:
 
 ## 설정
 
-설치시 카메라 만 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
+설치시 카메라만 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -205,6 +205,6 @@ camera:
 
 ## 센서 
 
-`android_ip_webcam` 센서 플랫폼을 사용하면 Home Assistant를 통해 [Android IP webcam](https://play.google.com/store/apps/details?id=com.pas.webcam) 센서의 상태를 관찰 할 수 있습니다. 
+`android_ip_webcam` 센서 플랫폼을 사용하면 Home Assistant를 통해 [Android IP webcam](https://play.google.com/store/apps/details?id=com.pas.webcam) 센서의 상태를 관찰할 수 있습니다. 
 
 웹캠 서버에서 JSON 파일을 검사하여 자체 센서를 설정할 수 있습니다 : `http://IP:8080/sensors.json`

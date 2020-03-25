@@ -8,15 +8,15 @@ ha_release: pre 0.7
 ha_quality_scale: internal
 ---
 
-홈어시스턴트에는 `device_sun_light_trigger` 조명을 자동화하는 데 도움 이되는 내장 통합구성요소 기능이 있습니다. 
+홈어시스턴트에는 `device_sun_light_trigger` 조명을 자동화하는데 도움이 되는 내장 통합구성요소 기능이 있습니다. 
 
- * 해가지고 사람들이 집에있을 때 불빛이 희미 해집니다
- * 해가 진 후에 사람들이 집에 돌아 오면 불을 켭니다
+ * 해가 지고 사람들이 집에 있을 때 불빛이 희미 해집니다
+ * 해가 진 후에 사람들이 집에 돌아오면 불을 켭니다
  * 모든 사람들이 집을 떠날 때 불을 끄십시오
 
 이 통합구성요소를 위해서는 [sun](/integrations/sun/), [device_tracker](/integrations/device_tracker/), [person](/integrations/person/) 그리고 [light](/integrations/light/) 통합구성요소가 활성화 되어야합니다.
 
-이 연동을 가능하게하려면 configuration.yaml파일에 다음 행을 추가 하십시오.
+이 연동을 가능하게하려면 configuration.yaml 파일에 다음 행을 추가 하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -25,7 +25,7 @@ device_sun_light_trigger:
 
 {% configuration %}
 light_group:
-  description: 켜져 야 할 특정 조명/조명 그룹을 지정하십시오.
+  description: 켜져야 할 특정 조명/조명그룹을 지정하십시오.
   required: false
   type: string
 light_profile:
@@ -44,7 +44,7 @@ disable_turn_off:
   type: boolean
 {% endconfiguration %}
 
-전체 구성 예는 다음과 같습니다. :
+전체 설정 예는 다음과 같습니다. :
 
 ```yaml
 # Example configuration.yaml entry

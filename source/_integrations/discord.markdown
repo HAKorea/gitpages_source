@@ -18,9 +18,9 @@ ha_release: 0.37
 정보 섹션에서 **Client ID**와 나중에 봇의 (숨겨진)**Token**을 검색합니다.
 
 
-응용 프로그램을 설정할 때 이[icon](/images/favicon-192x192-full.png)을 사용할 수 있습니다.
+응용 프로그램을 설정할 때 이 [icon](/images/favicon-192x192-full.png)을 사용할 수 있습니다.
 
-Discord를 사용하려면`configuration.yaml` 파일에 다음을 추가하십시오.
+Discord를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -43,7 +43,7 @@ token:
 
 ### 봇 설정하기
 
-봇은 서버로 메시지를 보내거나 사용 가능한 로컬 이미지를 첨부 할 수 있습니다. 봇을 관리자인 서버에 추가하려면 [Discord My Apps page](https://discordapp.com/developers/applications/me)에서 봇의 세부 정보를 얻습니다.
+봇은 서버로 메시지를 보내거나 사용 가능한 로컬 이미지를 첨부할 수 있습니다. 봇을 관리자인 서버에 추가하려면 [Discord My Apps page](https://discordapp.com/developers/applications/me)에서 봇의 세부 정보를 얻습니다.
 
 <p class='img'>
   <img src='{{site_root}}/images/screenshots/discord-bot.png' />

@@ -10,11 +10,11 @@ ha_codeowners:
   - '@fabaff'
 ---
 
-현재 CPU 속도를 모니터링 할 수있는 `cpuspeed` 센서 플랫폼.
+현재 CPU 속도를 모니터링할 수있는 `cpuspeed` 센서 플랫폼.
 
 <div class='note warning'>
 
-  실제 CPU에 액세스해야하므로 Hass.io와 같은 컨테이너에서 이 센서를 사용할 수 없습니다. 또한 모든 ARM CPU 가 지원되는 것은 아닙니다 .
+  실제 CPU에 액세스해야하므로 Hass.io와 같은 컨테이너에서 이 센서를 사용할 수 없습니다. 또한 모든 ARM CPU 가 지원되는 것은 아닙니다.
 
 </div>
 

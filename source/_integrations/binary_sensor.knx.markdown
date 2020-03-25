@@ -16,7 +16,7 @@ ha_iot_class: Local Push
 
 `knx` 센서 플랫폼을 사용하면 [KNX](https://www.knx.org/) 이진 센서를 모니터링 할 수 있습니다.
 
-이진 센서는 읽기 전용입니다. knx-bus에 쓰려면 노출을 구성하십시오 [KNX Integration - Expose](/integrations/knx/#exposing-sensor-values-or-time-to-knx-bus).
+이진 센서는 읽기 전용입니다. knx-bus에 쓰려면 노출을 설정하십시오 [KNX Integration - Expose](/integrations/knx/#exposing-sensor-values-or-time-to-knx-bus).
 
 ## 설정
 

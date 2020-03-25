@@ -12,7 +12,7 @@ ha_quality_scale: internal
 <iframe width="776" height="437" src="https://www.youtube.com/embed/beSIUfOL7io" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-Climate 통합구성요소를 통해 HVAC (가열, 환기 및 공기 조절) 장치 및 온도 조절기를 제어하고 모니터링 할 수 있습니다.
+Climate 통합구성요소를 통해 HVAC (가열, 환기 및 공기조절) 장치 및 온도조절기를 제어하고 모니터링할 수 있습니다.
 
 ## 서비스
 
@@ -22,7 +22,7 @@ Climate 통합구성요소를 통해 HVAC (가열, 환기 및 공기 조절) 장
 
 <div class='note'>
 
-플랫폼에 따라 모든 Climate Service가 제공되는 것은 아닙니다. 홈어시스턴트의 <img src='/images/screenshots/developer-tool-services-icon.png' alt='service developer tool icon' class="no-shadow" height="38" /> **Services**에서 체크해서 사용할 수 있는 서비스를 확인해야합니다 
+플랫폼에 따라 모든 Climate 서비스가 제공되는 것은 아닙니다. 홈어시스턴트의 <img src='/images/screenshots/developer-tool-services-icon.png' alt='service developer tool icon' class="no-shadow" height="38" /> **Services**에서 체크해서 사용할 수 있는 서비스를 확인해야합니다 
 
 </div>
 
@@ -51,11 +51,11 @@ automation:
 
 ### `climate.set_preset_mode` 서비스
 
-Climate 장치에 대한 사전설정 모드를 설정하십시오. Away mode 는 Climate 장치가 에너지를 절약하도록 설정된 상황을 반영하는 온도로 목표 온도를 변경합니다. 이것은 "vacation mode" 를 에뮬레이션하는 데 사용할 수 있습니다.
+Climate 장치에 대한 사전설정 모드를 설정하십시오. Away mode는 Climate 장치가 에너지를 절약하도록 설정된 상황을 반영하는 온도로 목표 온도를 변경합니다. 이는 "vacation mode" 를 에뮬레이션하는 데 사용할 수 있습니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
-| `entity_id` | yes | 제어 할 climate 장치의 entity ID를 정의하는 문자열 또는 문자열 목록입니다. 모든 Climate 장치를 대상으로 하려면, `all`을 사용하십시오.
+| `entity_id` | yes | 제어할 climate 장치의 entity ID를 정의하는 문자열 또는 문자열 목록. 모든 Climate 장치를 대상으로 하려면, `all`을 사용하십시오.
 | `preset_mode` | no | 사전 설정 모드의 새로운 값.
 
 #### 자동화 예
@@ -74,11 +74,11 @@ automation:
 
 ### `climate.set_temperature` 서비스
 
-Climate 장치의 목표 온도 설정
+Climate 장치의 목표온도 설정
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
-| `entity_id` | yes | 제어할 climate 장치의 entity ID를 정의하는 문자열 또는 문자열 목록입니다. 모든 Climate 장치를 대상으로 하려면, `all`을 사용하십시오.
+| `entity_id` | yes | 제어할 climate 장치의 entity ID를 정의하는 문자열 또는 문자열 목록. 모든 Climate 장치를 대상으로 하려면, `all`을 사용하십시오.
 | `temperature` | no | Climate 장치의 새로운 목표 온도 (일반적으로 *setpoint*이라 함). `hvac_mode`가 `heat_cool`일 경우 사용하지마십시오.
 | `target_temp_high` | yes | Climate 장치가 허용하는 최고온도입니다. `hvac_mode`가 `heat_cool`인 경우 반드시 필요.
 | `target_temp_low` | yes | Climate 장치가 허용하는 최저온도입니다. `hvac_mode` 가 `heat_cool`인 경우 반드시 필요.
@@ -117,7 +117,7 @@ automation:
 
 ### `climate.set_humidity` 서비스
 
-Climate 장치의 목표 습도 설정
+Climate 장치의 목표습도 설정
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
@@ -144,7 +144,7 @@ Climate 장치의 팬 작동 설정
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
-| `entity_id` | yes | 제어할 climate 장치의 entity ID를 정의하는 문자열 또는 문자열 목록입니다. 모든 Climate 장치를 대상으로 하려면, `all`을 사용하십시오.
+| `entity_id` | yes | 제어할 climate 장치의 entity ID를 정의하는 문자열 또는 문자열 목록. 모든 Climate 장치를 대상으로 하려면, `all`을 사용하십시오.
 | `fan_mode` | no | fan mode의 새로운 값
 
 #### 자동화 예
@@ -167,7 +167,7 @@ Climate 장치의 HVAC 모드 설정
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
-| `entity_id` | yes | 제어할 climate 장치의 entity ID를 정의하는 문자열 또는 문자열 목록입니다. 모든 Climate 장치를 대상으로 하려면, `all`을 사용하십시오.
+| `entity_id` | yes | 제어할 climate 장치의 entity ID를 정의하는 문자열 또는 문자열 목록. 모든 Climate 장치를 대상으로 하려면, `all`을 사용하십시오.
 | `hvac_mode` | no | HVAC mode의 새로운 값.
 
 #### 자동화 예

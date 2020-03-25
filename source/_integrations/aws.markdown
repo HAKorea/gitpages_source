@@ -14,11 +14,11 @@ ha_codeowners:
 <iframe width="776" height="437" src="https://www.youtube.com/embed/C_JTPwKuLX0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-`aws` 통합구성요소는 [Amazon Web Services](https://aws.amazon.com/)와 상호 작용할 수있는 단일 장소를 제공합니다. 현재 [AWS SQS](https://aws.amazon.com/sqs/), [AWS SNS](https://aws.amazon.com/sns/)로 메시지를 보낼 수있는 알림 플랫폼을 제공합니다. 또는 [AWS Lambda](https://aws.amazon.com/lambda/) 함수를 호출하십시오.
+`aws` 통합구성요소는 [Amazon Web Services](https://aws.amazon.com/)와 상호 작용할 수 있는 단일 장소를 제공합니다. 현재 [AWS SQS](https://aws.amazon.com/sqs/), [AWS SNS](https://aws.amazon.com/sns/)로 메시지를 보낼 수 있는 알림 플랫폼을 제공합니다. 또는 [AWS Lambda](https://aws.amazon.com/lambda/) 함수를 호출하십시오.
 
 ## 셋업
 
-Amazon Web Services를 사용하려면 AWS 계정이 있어야합니다. 12 개월의 프리 티어 혜택으로 [여기](https://aws.amazon.com/free/)를 만드십시오. 첫 12 개월 동안에도 프리 티어에서 제공되는 것보다 더 많은 리소스를 사용하면 요금이 청구될 수 있습니다.
+Amazon Web Services를 사용하려면 AWS 계정이 있어야합니다. 12 개월의 프리 티어 혜택으로 [여기](https://aws.amazon.com/free/)서 만드십시오. 첫 12 개월 동안에도 프리 티어에서 제공되는 것보다 더 많은 리소스를 사용하면 요금이 청구될 수 있습니다.
 
 `aws` 컴포넌트에서 사용되는 `lambda`, `sns` 및 `sqs` 서비스는 모두 12 개월이 지난 후에도 모든 사용자에게 **Always Free** 등급을 제공합니다. 홈오토메이션의 일반적인 사용은 프리 티어 한도에 도달하지 않을 가능성이 높습니다. [Lambda 요금](https://aws.amazon.com/lambda/pricing/), [SNS 요금](https://aws.amazon.com/sns/pricing/) 및 [SQS 요금][SQS Pricing](https://aws.amazon.com/sqs/pricing/)에서 자세한 내용은 확인하십시오. 
 
@@ -107,7 +107,7 @@ context:
 
 ## Lambda Notify 사용법
 
-AWS Lambda는 알림 플랫폼이므로 `notify` 서비스 [as described here](/integrations/notify/)를 호출하여 제어 할 수 있습니다. 알림(notification) 페이로드에 지정된 모든 대상에 대해 Lambda를 호출합니다. 대상은 함수 이름, 전체 ARN ([Amazon Resource Name](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html)) 또는 일부분의 ARN으로 형식을 지정할 수 있습니다. 자세한 내용은 [botocore docs](https://botocore.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.invoke)를 참조하십시오.
+AWS Lambda는 알림 플랫폼이므로 `notify` 서비스 [as described here](/integrations/notify/)를 호출하여 제어할 수 있습니다. 알림(notification) 페이로드에 지정된 모든 대상에 대해 Lambda를 호출합니다. 대상은 함수 이름, 전체 ARN ([Amazon Resource Name](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html)) 또는 일부분의 ARN으로 형식을 지정할 수 있습니다. 자세한 내용은 [botocore docs](https://botocore.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.invoke)를 참조하십시오.
 
 Lambda 이벤트 페이로드에는 서비스 호출 페이로드에 전달된 모든 것이 포함됩니다. 다음은 Lambda로 전송 될 페이로드의 예입니다.
 
@@ -122,7 +122,6 @@ Lambda 이벤트 페이로드에는 서비스 호출 페이로드에 전달된 �
 }
 ```
 
-The context will look like this:
 컨텍스트는 다음과 같습니다.
 
 ```json
@@ -138,13 +137,13 @@ The context will look like this:
 
 AWS SNS는 알림 플랫폼이므로 `notify` 서비스[as described here](/integrations/notify/)를 호출하여 제어 할 수 있습니다. 알림 페이로드에 지정된 모든 대상에 메시지를 게시합니다. 대상은 SNS topic 또는 endpoint ARN([Amazon Resource Name](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html))이어야합니다. 자세한 내용은 [botocore docs](https://botocore.amazonaws.com/v1/documentation/api/latest/reference/services/sns.html#SNS.Client.publish)를 참조하십시오.
 
-존재하는 경우 SNS 주제(Subject)가 제목(title)으로 설정됩니다. 메시지를 제외한 페이로드의 모든 속성은 문자열화 된 메시지 속성으로 전송됩니다.
+존재하는 경우 SNS 주제(Subject)가 제목(title)으로 설정됩니다. 메시지를 제외한 페이로드의 모든 속성은 문자열화된 메시지 속성으로 전송됩니다.
 
 ### SNS within AWS 셋업하기
 
 - AWS 콘솔에 로그인하고 "Security and Identity"에서 "Identity & Access Management"를 선택하십시오.
 - 왼쪽에서 "Users"를 선택한 다음 "Create New Users"를 클릭하십시오. 여기에 이름을 입력 한 다음 "Create"를 클릭하십시오.
-- credentials를 다운로드하거나 화살표를 클릭하여 한 번 표시 할 수 있습니다.
+- credentials를 다운로드하거나 화살표를 클릭하여 한 번 표시할 수 있습니다.
 
 <div class='note warning'>
 다운로드하지 않으면 파일을 잃어 버리고 새 사용자를 다시 만들어야합니다.

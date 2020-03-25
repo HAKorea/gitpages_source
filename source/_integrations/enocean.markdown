@@ -23,7 +23,7 @@ ha_codeowners:
 
 `enocean` 통합구성요소는 이러한 장치 중 일부에 대한 지원을 추가합니다. 작동하려면 [USB300](https://www.enocean.com/en/enocean_modules/usb-300-oem/)과 같은 컨트롤러가 필요합니다.
 
-현재 홈 어시스턴트에서 다음 장치 유형이 지원됩니다.
+현재 홈어시스턴트에서 다음 장치 유형이 지원됩니다.
 
 - [Binary Sensor](#binary-sensor) - 벽 스위치
 - [Sensor](#sensor) - 파워 미터, 온도 센서, 습도 센서 및 창 핸들
@@ -95,7 +95,7 @@ name:
   type: string
   default: EnOcean binary sensor
 device_class:
-  description: 프런트 엔드에 표시되는 장치 상태 및 아이콘을 변경하여 [class of the device](/integrations/binary_sensor/) 를 세팅합니다.
+  description: 프런트 엔드에 표시되는 장치 상태 및 아이콘을 변경하여 [class of the device](/integrations/binary_sensor/)를 세팅합니다.
   required: false
   type: device_class
 {% endconfiguration %}
@@ -151,7 +151,7 @@ sender_id:
   required: true
   type: list
 name:
-  description: 프런트 엔드에서 Ligh의 식별자.
+  description: 프런트 엔드에서 Light의 식별자.
   required: false
   default: EnOcean Light
   type: string
@@ -304,9 +304,9 @@ sensor:
 
 ### Window handle
 
-현재 Somfy의 Hoppe SecuSignal 창 핸들(Window handle)이 성공적으로 테스트되었습니다. 그러나 EnOcean RPS telegram 사양 F6 10 00 (Hoppe AG)을 따르는 모든 기계식 창 핸들은 지원됩니다.
+현재 Somfy의 Hoppe SecuSignal Window handle이 성공적으로 테스트되었습니다. 한편 EnOcean RPS telegram spec F6 10 00 (Hoppe AG)을 따르는 모든 기계식 Window handle은 지원됩니다.
 
-창 핸들을 설정하려면 `configuration.yaml`에 다음 코드를 추가하십시오 
+Window handle을 설정하려면 `configuration.yaml`에 다음 코드를 추가하십시오 
 
 ```yaml
 # Example configuration.yaml entry for window handle EEP F6-10-00
@@ -319,7 +319,7 @@ sensor:
 
 설정에 선택적 매개 변수가 없습니다.
 
-창 핸들 센서는 다음 상태를 가질 수 있습니다.
+Window handle 센서는 다음 상태를 가질 수 있습니다.
 
 - **closed**: The window handle is in closed position (typically down, or 6 o'clock)
 - **open**: The window handle is in open position (typically left or right, or 3 o'clock or 9 o'clock)
@@ -340,7 +340,7 @@ switch:
 
 {% configuration %}
 id:
-  description: 장치의 ID. 이것은 4 바이트 길이.
+  description: 장치의 ID. 이는 4 바이트 길이.
   required: true
   type: list
 name:

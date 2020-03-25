@@ -14,16 +14,15 @@ ha_codeowners:
 <iframe width="776" height="437" src="https://www.youtube.com/embed/5wMMUuBUJlk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
+`airvisual` 센서 플랫폼은 대기질 데이터에 대한 [AirVisual](https://airvisual.com/) API를 쿼리합니다. 위도/경도 또는 도시/주/국가를 통해 데이터를 수집할 수 있습니다. 결과 정보는 대기질 지수(AQI), 인간 친화적 대기질 레벨 및 해당 지역의 주요 오염 물질에 대한 센서를 생성합니다. [U.S. and Chinese air quality standards](https://www.clm.com/publication.cfm?ID=366) 둘 중 하나에 맞는 센서를 만들 수 있습니다.
 
-`airvisual` 센서 플랫폼은 대기질 데이터에 대한 [AirVisual](https://airvisual.com/) API를 쿼리합니다. 위도/경도 또는 도시/주/국가를 통해 데이터를 수집 할 수 있습니다. 결과 정보는 대기질 지수(AQI), 인간 친화적 대기질 레벨 및 해당 지역의 주요 오염 물질에 대한 센서를 생성합니다. [U.S. and Chinese air quality standards](https://www.clm.com/publication.cfm?ID=366) 둘 중 하나에 맞는 센서를 만들 수 있습니다.
+이 플랫폼에는 AirVisual API 키가 필요합니다. [here](https://airvisual.com/api) 참조. 플랫폼은 "Community" 패키지를 사용하여 설계되었습니다. "Startup" 및 "Enterprise" 패키지 키는 계속 작동하지만 실제 결과는 다를 수 있습니다 (또는 전혀 작동하지 않을 수 있음).
 
-이 플랫폼에는 AirVisual API 키가 필요합니다. [here](https://airvisual.com/api) 참조. 플랫폼은 "Community" 패키지를 사용하여 설계되었습니다. "Startup " 및 "Enterprise" 패키지 키는 계속 작동하지만 실제 결과는 다를 수 있습니다 (또는 전혀 작동하지 않을 수 있음).
-
-Community API 키는 12 개월 동안 유효하며 이후 만료됩니다. 그런 다음 Airvisual 웹 사이트로 돌아가서 이전 키를 삭제하고 동일한 단계에 따라 새 키를 생성 한 다음 새 키로 설정을 업데이트해야 합니다.
+Community API 키는 12 개월 동안 유효하며 이후 만료됩니다. 그런 다음 Airvisual 웹 사이트로 돌아가서 이전 키를 삭제하고 동일한 단계에 따라 새 키를 생성한 다음 새 키로 설정을 업데이트해야 합니다.
 
 <div class='note warning'>
 
-"커뮤니티"API 키는 한 달에 10,000 건으로 제한됩니다. 버퍼를 남기기 위해 `airvisual` 플랫폼은 기본적으로 10 분(600 초)마다 API를 쿼리합니다. (`scan_interval 키`)를 통해 이를 너무 낮은 값으로 수정하면 API 키가 비활성화 될 수 있습니다.
+"Community" API 키는 한 달에 10,000 건으로 제한됩니다. 버퍼를 남기기 위해 `airvisual` 플랫폼은 기본적으로 10 분(600 초)마다 API를 쿼리합니다. (`scan_interval 키`)를 통해 이를 너무 낮은 값으로 수정하면 API 키가 비활성화 될 수 있습니다.
 
 </div>
 
@@ -58,17 +57,17 @@ scan_interval:
   type: integer
   default: 600
 latitude:
-  description: 모니터링 할 위치의 위도.
+  description: 모니터링할 위치의 위도.
   required: false
   type: string
   default: "The latitude defined under the `homeassistant` key in `configuration.yaml`."
 longitude:
-  description: 모니터링 할 위치의 경도.
+  description: 모니터링할 위치의 경도.
   required: false
   type: string
   default: "The longitude defined under the `homeassistant` key in `configuration.yaml`."
 city:
-  description: 모니터링 할 도시.
+  description: 모니터링할 도시.
   required: false
   type: string
 state:
@@ -130,7 +129,7 @@ sensor:
     country: brazil
 ```
 
-## Sensor 타입
+## Sensor 유형
 
 설정이 완료되면, 플랫폼은 설정된 각 대기질 표준에 대해 3 개의 센서를 만듭니다. :
 
@@ -158,7 +157,7 @@ AQI | Status | Description
 
 ### Main Pollutant
 
-- **Description:** 이 센서는 현재 값이 가장 높은 오염 물질을 표시합니다.
+- **Description:** 이 센서는 현재값이 가장 높은 오염 물질을 표시합니다.
 - **Sample Sensor Name:** `sensor.us_main_pollutant`
 - **Example Sensor Value:** `PM2.5`
 - **Explanation:**

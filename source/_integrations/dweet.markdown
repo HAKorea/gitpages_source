@@ -15,7 +15,7 @@ ha_codeowners:
 <iframe width="776" height="437" src="https://www.youtube.com/embed/Bb_HznYrShc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-`dweet` 통합구성요소를 통해 Home Assistant로 수집한 세부 정보를 [Dweet.io] (https://dweet.io/)로 전송하고 [freeboard.io](https://freeboard.io)로 시각화 할 수 있습니다. 단, 귀하의 정보는 공개될 것임을 명심하십시오!
+`dweet` 통합구성요소를 통해 Home Assistant로 수집한 세부 정보를 [Dweet.io](https://dweet.io/)로 전송하고 [freeboard.io](https://freeboard.io)로 시각화 할 수 있습니다. 단, 귀하의 정보는 공개될 것임을 명심하십시오!
 
 <p class='img'>
   <img src='{{site_root}}/images/screenshots/dweet-freeboard.png' />
@@ -31,7 +31,7 @@ ha_codeowners:
 
 ## 설정
 
-설치시 `dweet` 통합구성요소를 사용하려면`configuration.yaml` 파일에 다음을 추가하십시오.
+설치시 `dweet` 통합구성요소를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -83,12 +83,12 @@ value_template:
   required: true
   type: template
 name:
-  description: 프런트 엔드에서 장치 이름을 덮어 씁니다.
+  description: 프런트 엔드에서 장치 이름을 덮어씁니다.
   required: false
   default: Dweet.io Sensor
   type: string
 unit_of_measurement:
-  description: 센서의 측정 단위를 정의합니다 (있는 경우).
+  description: 센서의 측정 단위를 정의 (있는 경우).
   required: false
   type: string
 {% endconfiguration %}

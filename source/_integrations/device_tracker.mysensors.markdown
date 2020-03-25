@@ -19,7 +19,7 @@ S_TYPE             | V_TYPE
 -------------------|---------------------------------------
 S_GPS             | V_POSITION
 
-For more information, visit the [serial api] of MySensors.
+자세한 내용은 MySensors의 [serial api]를 방문하십시오.
 
 ### MySensors 2.x 예제 스케치
 

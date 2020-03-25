@@ -8,11 +8,11 @@ ha_release: 0.9
 ha_quality_scale: internal
 ---
 
-Binary sensors "디지털" 반환 값 (1 또는 0)을 가진 장치의 상태에 대한 정보를 수집합니다. 스위치, 접점, 핀 등일 수 있습니다. 이 센서들은 두 가지 상태만 있습니다 . : **0/off/low/closed/false** 와 **1/on/high/open/true**. 두 개의 상태 만 있다는 것을 알면 홈 어시스턴트는 기능에 따라 이러한 센서를 프론트 엔드에서 더 잘 표현할 수 있습니다.
+Binary sensors "디지털" 반환 값 (1 또는 0)을 가진 장치의 상태에 대한 정보를 수집합니다. 스위치, 접점, 핀 등일 수 있습니다. 이 센서들은 두 가지 상태만 있습니다 . : **0/off/low/closed/false** 와 **1/on/high/open/true**. 두 개의 상태 만 있다는 것을 알면 홈어시스턴트는 기능에 따라 이러한 센서를 프론트 엔드에서 더 잘 표현할 수 있습니다.
 
 ### Device Class
 
-T프런트 엔드에 이러한 센서가 표시되는 방식은 [customize section](/getting-started/customizing-devices/)에서 수정할 수 있습니다 .  binary sensors 에 대해 다음과 같은 장치 클래스를 지원합니다.:
+프런트 엔드에 이러한 센서가 표시되는 방식은 [customize section](/getting-started/customizing-devices/)에서 수정할 수 있습니다 .  binary sensors 에 대해 다음과 같은 장치 클래스를 지원합니다.:
 
 - **None**: 보통의 on/off. 이것이 기본값이며 별도 설정할 필요가 없습니다.
 - **battery**: `on` means low, `off` means normal

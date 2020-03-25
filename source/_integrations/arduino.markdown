@@ -22,7 +22,7 @@ ha_codeowners:
 
 사용할 수 있는 확장 기능(소위 [shields](https://www.arduino.cc/en/Main/ArduinoShields))이 다수 있습니다. 이러한 실드는 기존 커넥터에 꽂고 서로 쌓을 수 있습니다. 이를 통해 Arduino 보드의 기능을 확장할 수 있습니다.
 
-`arduino` 통합구성요소는 USB를 통해  어시스턴트 호스트에 직접 연결된 보드를 사용할 수 있도록 설계되었습니다.
+`arduino` 통합구성요소는 USB를 통해 홈어시스턴트 호스트에 직접 연결된 보드를 사용할 수 있도록 설계되었습니다.
 
 현재 홈어시스턴트에서 다음 장치 유형이 지원됩니다. : 
 
@@ -43,7 +43,7 @@ arduino:
 
 {% configuration %}
 port:
-  description: 보드가 홈어시스턴트 호스트에 연결된 포트입니다. 원래 Arduino를 사용하는 경우 포트이름은 `ttyACM*` 이며 그렇지 않으면 `ttyUSB *`입니다.
+  description: 보드가 홈어시스턴트 호스트에 연결된 포트입니다. 원래 Arduino를 사용하는 경우 포트이름은 `ttyACM*` 이며 그렇지 않으면 `ttyUSB*`입니다.
   required: true
   type: string
 {% endconfiguration %}
@@ -103,7 +103,7 @@ Arduino UNO의 6 개의 아날로그 핀은 A0에서 A5까지 번호가 매겨�
 
 ## 스위치
 
-`arduino` 스위치 플랫폼을 사용하면 [Arduino](https://www.arduino.cc/) 보드의 디지털 핀을 제어 할 수 있습니다. 
+`arduino` 스위치 플랫폼을 사용하면 [Arduino](https://www.arduino.cc/) 보드의 디지털 핀을 제어할 수 있습니다. 
 PWM (Arduino Uno의 핀 3, 5, 6, 9, 10 및 11)은 아직 지원되지 않습니다.
 
 홈어시스턴트로 Arduino 핀을 활성화하려면 `configuration.yaml` 파일에 다음 섹션을 추가하십시오
@@ -137,7 +137,7 @@ pins:
           type: string
           required: false
         initial:
-          description: 이 포트의 초기 값.
+          description: 이 포트의 초기값.
           type: boolean
           required: false
           default: false
@@ -148,4 +148,4 @@ pins:
           default: false
 {% endconfiguration %}
 
-Arduino UNO에서 디지털 핀의 번호는 0에서 13까지입니다. 사용 가능한 핀은 2 ~ 13입니다. 테스트 목적으로 핀 13을 사용할 수 있습니다. 핀과 함께 내부 LED를 제어 할 수 있기 때문입니다.
+Arduino UNO에서 디지털 핀의 번호는 0에서 13까지입니다. 사용 가능한 핀은 2 ~ 13입니다. 테스트 목적으로 핀 13을 사용할 수 있습니다. 핀과 함께 내부 LED를 제어할 수 있기 때문입니다.

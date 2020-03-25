@@ -12,7 +12,7 @@ ha_iot_class: Local Polling
 <iframe width="776" height="437" src="https://www.youtube.com/embed/8FFy_EtaMLo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-이 플랫폼을 사용하면 [Aruba Clearpass](https://www.arubanetworks.com/products/security/network-access-control/)에 연결된 장치를 보고 현재 상태를 감지 할 수 있습니다.
+이 플랫폼을 사용하면 [Aruba Clearpass](https://www.arubanetworks.com/products/security/network-access-control/)에 연결된 장치를 보고 현재 상태를 감지할 수 있습니다.
 
 지원 플랫폼 (tested):
 

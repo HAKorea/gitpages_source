@@ -33,7 +33,7 @@ config:
 
 ### 서버 제어
 
-이 섹션에서는 Home Assistant 내에서 Home Assistant를 제어할 수 있습니다. 마우스 클릭 한 번으로 설정을 확인하고 the core, groups, scripts, automations 및 홈어시스턴트 프로세스를 다시 로드 할 수 있습니다.
+이 섹션에서는 Home Assistant 내에서 Home Assistant를 제어할 수 있습니다. 마우스 클릭 한 번으로 설정을 확인하고 core, groups, scripts, automations 및 홈어시스턴트 프로세스를 다시 로드 할 수 있습니다.
 
 <p class='img'>
   <img src='{{site_root}}/images/screenshots/server-management.png' />
@@ -49,7 +49,7 @@ config:
 
 ### Area Registry
 
-이 섹션에서는 entity를 집안의 실제 영역으로 구성 할 수 있습니다.
+이 섹션에서는 entity를 집안의 실제 영역(Area)으로 설정할 수 있습니다.
 
 ### Automation
 
@@ -61,8 +61,8 @@ config:
 
 ### Z-Wave
 
-이 섹션에서는 Home Assistant 내에서 Z-Wave 네트워크 및 장치를 제어 할 수 있습니다. 장치 별 구성 변수를 변경하고 장치를 추가 및 제거 할 수 있습니다.
+이 섹션에서는 Home Assistant 내에서 Z-Wave 네트워크 및 장치를 제어할 수 있습니다. 장치별 설정 변수를 변경하고 장치를 추가 및 제거 할 수 있습니다.
 
 ### Customization
 
-이 섹션에서는 Home Assistant 내에서 entity를 사용자 정의 할 수 있습니다. 친숙한 이름을 설정하고 아이콘을 변경하며 엔터티를 숨기고 다른 속성을 수정하려면이 옵션을 사용하십시오.
+이 섹션에서는 Home Assistant 내에서 entity를 사용자 정의 할 수 있습니다. 친숙한 이름을 설정하고 아이콘을 변경하며 엔터티를 숨기고 다른 속성을 수정하려면 이 옵션을 사용하십시오.

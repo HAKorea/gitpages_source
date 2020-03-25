@@ -14,7 +14,7 @@ ha_iot_class: Cloud Polling
 
 `aftership` 플랫폼을 통해 전세계 490 개 이상의 택배를 지원하는 [AfterShip](https://www.aftership.com)을 통해 배송을 추적 할 수 있습니다. 한 달에 최대 100 개의 추적 패키지를 사용할 수 있으며, 그 이후에는 요금이 부과됩니다.
 
-센서값은 `Delivered` 상태가 아닌 패키지 수를 나타냅니다. 속성은 상태 당 패키지 갯수입니다.
+센서값은 `Delivered` 상태가 아닌 패키지 수를 나타냅니다. 속성은 상태당 패키지 갯수입니다.
 
 ## 셋업
 
@@ -48,7 +48,7 @@ api_key:
 
 ## `add_tracking` 서비스
 
- You can use the service `aftership.add_tracking` to add trackings to Aftership.
+ `afterafter.add_tracking` 서비스를 사용하여 Aftership에 추적을 추가할 수 있습니다.
 
 | Service data attribute | Required | Type | Description |
 | ---------------------- | -------- | -------- | ----------- |
@@ -58,7 +58,7 @@ api_key:
 
 ## `remove_tracking` 서비스
 
- You can use the service `aftership.remove_tracking` to remove trackings from Aftership.
+ `afterafter.remove_tracking` 서비스을 사용하여 Aftership에서 추적을 제거할 수 있습니다.
 
 | Service data attribute | Required | Type | Description |
 | ---------------------- | -------- | -------- | ----------- |
@@ -66,5 +66,5 @@ api_key:
 | `slug` | `True` | string | Carrier e.g. `fedex`
 
 <div class='note info'>
-이 통합구성요소는 AfterShip 공개 REST API에서 데이터를 검색하지만 이 연동과정은 AfterShip과 별다른 제휴관계는 없습니다.
+본 통합구성요소는 AfterShip 공개 REST API에서 데이터를 검색하지만 이 연동과정은 AfterShip과 별다른 제휴관계는 없습니다.
 </div>

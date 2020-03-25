@@ -147,4 +147,4 @@ room_id:
   type: string
 {% endconfiguration %}
 
-알림을 사용하려면 [getting started with automation page](/getting-started/automation/).를 참조하십시오.
+알림을 사용하려면 [getting started with automation page](/getting-started/automation/)를 참조하십시오.

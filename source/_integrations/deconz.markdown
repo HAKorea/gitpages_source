@@ -50,13 +50,13 @@ ha_codeowners:
 
 `configuration.yaml` 파일에 `discovery : `가 있으면 Home Assistant는 네트워크에서 deCONZ를 자동으로 감지합니다.
 
-API 키가 없는 경우 Philips Hue와 유사한 원 클릭 기능을 사용하여 deCONZ 용 API 키를 생성 할 수 있습니다. Phoscon 앱에서 **Settings** → **Gateway** → **Advanced** → **Authenticate app** 으로 이동 한 후 홈어시스턴트 프론트 엔드의 deCONZ 설정을 사용하여 API 키를 작성하십시오. deCONZ 설정을 마치면 설정 항목으로 저장됩니다.
+API 키가 없는 경우 Philips Hue와 유사한 원클릭 기능을 사용하여 deCONZ 용 API 키를 생성할 수 있습니다. Phoscon 앱에서 **Settings** → **Gateway** → **Advanced** → **Authenticate app** 으로 이동 한 후 홈어시스턴트 프론트 엔드의 deCONZ 설정을 사용하여 API 키를 작성하십시오. deCONZ 설정을 마치면 설정 항목으로 저장됩니다.
 
-통합구성요소 페이지로 이동하여 deCONZ를 수동으로 추가 할 수 있습니다.
+통합구성요소 페이지로 이동하여 deCONZ를 수동으로 추가할 수 있습니다.
 
 ## 디버깅 
 
-deCONZ 또는 연동에 문제가있는 경우 로그에 디버그 출력을 추가 할 수 있습니다.
+deCONZ 또는 연동에 문제가 있는 경우 로그에 디버그 출력을 추가할 수 있습니다.
 
 ```yaml
 logger:
@@ -84,7 +84,7 @@ logger:
 | `entity` | No | deCONZ에서 장치의 특정 홈어시스턴트 엔티티를 나타내는 문자열. |
 | `data` | No | 특정 데이터를 변경하려는 JSON 객체 데이터. |
 
-`entity` 또는 `field`가 제공되어야 합니다. 둘 다 존재하면 `field`는 특정`entity`에 해당하는 장치경로 아래의 하위 경로로 해석됩니다. :
+`entity` 또는 `field`가 제공되어야 합니다. 둘 다 존재하면 `field`는 특정 `entity`에 해당하는 장치경로 아래의 하위 경로로 해석됩니다. :
 
 ```json
 { "field": "/lights/1", "data": {"name": "light2"} }
@@ -106,11 +106,11 @@ logger:
 
 Home Assistants가 최근에 다시 시작된 후 deCONZ에 추가된 장치로 새로 고칩니다.
 
-참고 : 새 센서가 추가되면 deCONZ가 자동으로 Home Assistant에 신호를 보내지만 이 시점에서(deCONZ v2.05.35) 다른 장치를 추가할 경우 이 서비스를 사용하여 수동으로 추가하거나 홈 어시스턴트를 다시 시작해야합니다.
+참고: 새 센서가 추가되면 deCONZ가 자동으로 Home Assistant에 신호를 보내지만 이 시점에서(deCONZ v2.05.35) 다른 장치를 추가할 경우 이 서비스를 사용하여 수동으로 추가하거나 홈어시스턴트를 다시 시작해야합니다.
 
 ## 리모콘 장치
 
-원격 제어 (ZHASwitch 범주)는 일반 엔티티로 표시되지 않고  페이로드가 `id`와 `event`인 `deconz_event`라는 이벤트로 표시되고 Aqara Magic Cube의 경우 `gesture`로 나타납니다. Id는 deCONZ의 장치 이름이고 Event는 스위치의 순간 상태입니다. gesture는 90도 뒤집기, 180도 뒤집기, 시계 방향 및 시계 반대 방향 회전과 같은 Aqara Magic Cube 특정 이벤트에 사용됩니다. 그러나 deCONZ에 의해 보고된 sensor.device_name_battery_level 이라는 스위치의 배터리 수준을 표시하는 센서 엔티티가 작성됩니다. 
+원격 제어 (ZHASwitch 범주)는 일반 엔티티로 표시되지 않고 페이로드가 `id`와 `event`인 `deconz_event`라는 이벤트로 표시되고 Aqara Magic Cube의 경우 `gesture`로 나타납니다. Id는 deCONZ의 장치 이름이고 Event는 스위치의 순간 상태입니다. gesture는 90도 뒤집기, 180도 뒤집기, 시계 방향 및 시계 반대 방향 회전과 같은 Aqara Magic Cube 특정 이벤트에 사용됩니다. 그러나 deCONZ에 의해 보고된 sensor.device_name_battery_level 이라는 스위치의 배터리 레벨을 표시하는 센서 엔티티가 작성됩니다. 
 
 Typical values for switches, the event codes are 4 numbers where the first and last number are of interest here. 
 스위치의 일반적인 값인 이벤트 코드는 4개의 숫자입니다. 여기서 첫 번째 숫자와 마지막 숫자가 중요합니다.
@@ -122,11 +122,9 @@ Typical values for switches, the event codes are 4 numbers where the first and l
 | XXX2 | Button short release |
 | XXX3 | Button long release |
 
-Where for example on a Philips Hue Dimmer, 2001 would be holding the dim up button.
-예를 들어 Philips Hue Dimmer에서 2001은 dim up 버튼을 눌림을 의미합니다.
+예를 들어 Philips Hue Dimmer에서 2001은 dim up 버튼을 눌림(holding)을 의미합니다.
 
-For the IKEA Tradfri remote the first digit equals, 1 for the middle button, 2 for up, 3 for down, 4 for left, and 5 for right (e.g., "event: 1002" for middle button short release).
-IKEA Tradfri 리모컨의 첫 번째 숫자는 가운데 버튼의 경우 1, 위 버튼의 경우 2, 아래로의 경우 3, 최측의 경우 4, 왼쪽의 경우 5입니다 (예 : 가운데 버튼의 짧은 릴리스의 경우 "이벤트 : 1002").
+IKEA Tradfri 리모컨의 첫 번째 숫자는 가운데버튼 1, 위버튼 2, 아래버튼 3, 좌측버튼 4, 우측버튼 5입니다 (예: 가운데버튼의 짧은 릴리스의 경우 "event: 1002").
 
 Aqara Magic Cube의 특정 제스처는 : 
 
@@ -144,7 +142,7 @@ Aqara Magic Cube의 특정 제스처는 :
 
 ### 이벤트 찾기 (Finding your events)
 
-**개발자 도구->이벤트**로 이동하십시오 . **Listen to events** 섹션에서 `deconz_event`를 추가하고 **START LISTENING**을 누릅니다. deCONZ의 모든 이벤트가 표시되고 로그를 모니터링하는 동안 원격 버튼을 누르면 원하는 이벤트를 쉽게 찾을 수 있습니다.
+**개발자 도구 -> 이벤트**로 이동하십시오 . **Listen to events** 섹션에서 `deconz_event`를 추가하고 **START LISTENING**을 누릅니다. deCONZ의 모든 이벤트가 표시되고 로그를 모니터링하는 동안 원격 버튼을 누르면 원하는 이벤트를 쉽게 찾을 수 있습니다.
 
 ### 장치 트리거
 
@@ -167,13 +165,13 @@ Aqara Magic Cube의 특정 제스처는 :
 
 #### 새로운 장치 트리거에 대한 지원 요청
 
-추가 장치에 대한 지원을 요청하려면 장치 모델(디버그 로그에서 얻을 수 있음)과 동작 및 버튼 이벤트 매핑 (예 : Hue dimmer remote model “RWL021”, Short press on 1000)이 필요합니다.
+추가 장치에 대한 지원을 요청하려면 장치 모델(디버그 로그에서 얻을 수 있음)과 동작 및 버튼 이벤트 매핑 (예: Hue dimmer remote model “RWL021”, Short press on 1000)이 필요합니다.
 
 ## 사례
 
 ### YAML
 
-#### 무선 Dimmer의 input number를 통한 스텝업 및 스텝다운 
+#### 무선 Dimmer의 input number를 통한 스텝업과 스텝다운 
 {% raw %}
 
 ```yaml
@@ -282,7 +280,7 @@ class DeconzHelper(hass.Hass):
 
 {% endraw %}
 
-참고 : 하나의 이벤트가 전송되기 전에는 해당 이벤트가 표시되지 않습니다
+참고: 하나의 이벤트가 전송되기 전에는 해당 이벤트가 표시되지 않습니다
 
 #### Appdaemon 원격 템플릿
 
@@ -322,7 +320,7 @@ class RemoteControl(hass.Hass):
 
 #### Appdaemon 원격 템플릿
 
-[Teachingbirds](https://community.home-assistant.io/u/teachingbirds/summary)의 커뮤니티앱 . 이 앱은 Ikea Tradfri 리모컨을 사용하여 재생/일시정지, 볼륨 증가 및 감소, 다음 및 이전 트랙으로 Sonos 스피커를 제어합니다.
+[Teachingbirds](https://community.home-assistant.io/u/teachingbirds/summary)의 커뮤니티앱. 이 앱은 Ikea Tradfri 리모컨을 사용하여 재생/일시정지, 볼륨 증가 및 감소, 다음 및 이전 트랙으로 Sonos 스피커를 제어합니다.
 
 {% raw %}
 
@@ -389,7 +387,7 @@ class SonosRemote(hass.Hass):
 
 ### 검증된 Binary 센서 장치 
 
-- 개폐 감지
+- 커버(Cover) 감지
   - Xiaomi Smart Home Security Door & Window Contact Sensor
 - 재실 감지
   - IKEA Trådfri Motion Sensor
@@ -401,9 +399,9 @@ class SonosRemote(hass.Hass):
 
 ## Climate 
 
-설정 지침 은 [deCONZ main integration](/integrations/deconz/) 을 참조하십시오 .
+설정 지침은 [deCONZ main integration](/integrations/deconz/)을 참조하십시오 .
 
-Climate는 통상 온도 조절기를 나타냅니다.
+Climate는 통상 온도조절기를 나타냅니다.
 
 climate 플랫폼의 장치는 센서로 식별되므로 climate 장치인 "센서"를 정의하는 수동 선별 목록이 있습니다.
 
@@ -414,9 +412,9 @@ climate 플랫폼의 장치는 센서로 식별되므로 climate 장치인 "센�
 - Bitron Thermostat 902010/32
 - Eurotronic SPZB0001
 
-## Cover (개폐 장치)
+## Cover (커버)
 
-Cover는 환기 댐퍼 또는 스마트 창 덮개와 같은 장치입니다.
+Cover는 환기 댐퍼 또는 스마트 창 커버와 같은 장치입니다.
 
 Cover 플랫폼의 장치는 라이트로 식별되므로 어떤 "Light"가 Cover인지를 정의하는 수동으로 선별된 목록이 있습니다. 따라서 deCONZ(Phoscon App)에서 Cover 장치를 Light 장치로 추가합니다.
 
@@ -429,7 +427,7 @@ Cover 플랫폼의 장치는 라이트로 식별되므로 어떤 "Light"가 Cove
 
 ## 조명 (Light)
 
-`entity_id` 이름은 `light.device_name`이며, 여기서 `device_name`은 deCONZ에 정의되어 있습니다. deCONZ에서 생성 된 Light 그룹은 Home Assistant에서 `light.group_name_in_deconz`라는 Light로 생성되므로 사용자는 deCONZ에 대한 단일 API 호출만으로 Light 그룹을 제어 할 수 있습니다.
+`entity_id` 이름은 `light.device_name`이며, 여기서 `device_name`은 deCONZ에 정의되어 있습니다. deCONZ에서 생성된 Light 그룹은 Home Assistant에서 `light.group_name_in_deconz`라는 Light로 생성되므로 사용자는 deCONZ에 대한 단일 API 호출만으로 Light 그룹을 제어할 수 있습니다.
 
 ### 검증된 light 장치
 
@@ -453,7 +451,7 @@ Cover 플랫폼의 장치는 라이트로 식별되므로 어떤 "Light"가 Cove
 - Busch Jaeger ZigBee Light Link univ. relai (6711 U) with ZigBee Light Link control element 6735-84
 - Xiaomi Aqara Smart Led Bulb (white) E27 ZNLDP12LM 
 
-## 장면 (Scene)
+## 장면,씬 (Scene)
 
 `entity_id` 이름은`scene.group_scene_name`이 됩니다. 여기서 `group`은 장면(scene)이 속한 그룹이고 장면 이름, 그룹과 이름 모두 deCONZ에 정의되어 있습니다.
 
@@ -487,12 +485,12 @@ Cover 플랫폼의 장치는 라이트로 식별되므로 어떤 "Light"가 Cove
   - Xiaomi Smart Home Wireless Switch
 - 온도 센서
   - Xiaomi Temperature/Humidity Sensor
-- 개폐 센서
+- 커버 센서
   - Xiaomi Window / Door Sensor with Temperature
 
-### DECONZ 일광 센서 (daylights)
+### DECONZ 일광(daylights) 센서 
 
-deCONZ Daylight 센서는 버전 2.05.12 이후 deCONZ 소프트웨어에 내장된 특수 센서입니다. Home Assistant에는 sensor.daylight라는 센서로 표시됩니다. 센서의 상태 값은 일광 단계에 해당하는 문자열입니다 (아래 설명 은 deCONZ 구현의 기반이되는 https://github.com/mourner/suncalc 에서 가져옴).
+deCONZ Daylight 센서는 버전 2.05.12 이후 deCONZ 소프트웨어에 내장된 특수 센서입니다. Home Assistant에는 sensor.daylight라는 센서로 표시됩니다. 센서의 상태 값은 일광 단계에 해당하는 문자열입니다 (아래 설명은 deCONZ 구현의 기반이되는 https://github.com/mourner/suncalc 에서 가져옴).
 
 | Sensor State | Description |
 |--------------|-------------|
@@ -513,7 +511,7 @@ deCONZ Daylight 센서는 버전 2.05.12 이후 deCONZ 소프트웨어에 내장
 
 센서에는 "daylight" 라는 속성이 있는데, 센서 상태가 `golden_hour_1`, `solar_noon` 또는 `golden_hour_2`이면 `true`값을 가지며 그렇지 않으면 `false`입니다.
 
-이러한 상태는 자동화에서 트리거 (예 : 특정 일광 단계가 시작되거나 종료 될 때 트리거) 또는 조건 (예 : 특정 일광 단계에있는 경우에만 트리거)으로 사용될 수 있습니다.
+이러한 상태는 자동화에서 트리거 (예: 특정 일광 단계가 시작되거나 종료 될 때 트리거) 또는 조건 (예: 특정 일광 단계에있는 경우에만 트리거)으로 사용될 수 있습니다.
 
 ## 스위치
 

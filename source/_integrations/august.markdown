@@ -72,7 +72,7 @@ August Doorbell이 있는 경우 August 구성 요소를 활성화하면 다음 
 - Doorbell motion sensor
 - Doorbell online sensor
 
-DoorSense와 함께 August Smart Lock이있는 경우 August 구성 요소를 활성화하면 다음 센서가 표시됩니다.
+DoorSense와 함께 August Smart Lock이 있는 경우 August 구성 요소를 활성화하면 다음 센서가 표시됩니다.
 
 - Door sensor
 

@@ -17,7 +17,7 @@ ha_release: 0.49
 
 `amcrest` 카메라 플랫폼을 사용하면 [Amcrest](https://amcrest.com/) IP 카메라를 Home Assistant에 연동할 수 있습니다.
 
-현재 홈 어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - Binary Sensor
 - Camera
@@ -65,14 +65,14 @@ port:
 resolution:
   description: >
     이 매개 변수를 사용하면 카메라 해상도를 지정할 수 있습니다.
-    고해상도 (1080 / 720p)의 경우, `high` 옵션 지정.
-    VGA 해상도 (640x480p)의 경우, `low` 옵션 지정.
+    고해상도 (1080/720p)의 경우, `high` 옵션 지정.
+    VGA해상도 (640x480p)의 경우, `low` 옵션 지정.
   required: false
   type: string
   default: high
 stream_source:
   description: >
-    라이브 스트림의 데이터 소스. `mjpeg`는 카메라의 기본 MJPEG 스트림을 사용하고 `snapshot`은 카메라의 스냅샷 API를 사용하여 스틸 이미지에서 스트림을 만듭니다. RTSP 프로토콜을 통해 스트리밍을 생성하도록` rtsp` 옵션을 설정할 수도 있습니다.
+    라이브 스트림의 데이터 소스. `mjpeg`는 카메라의 기본 MJPEG 스트림을 사용하고 `snapshot`은 카메라의 스냅샷 API를 사용하여 스틸 이미지에서 스트림을 만듭니다. RTSP 프로토콜을 통해 스트리밍을 생성하도록 `rtsp` 옵션을 설정할 수도 있습니다.
   required: false
   type: string
   default: snapshot
@@ -84,7 +84,7 @@ ffmpeg_arguments:
   default: -pred 1
 authentication:
   description: >
-    **stream_source** 가 **mjpeg** 인 경우에만 사용할 인증 방법을 정의. 현재 *aiohttp*는 *basic* 만 지원.
+    **stream_source**가 **mjpeg**인 경우에만 사용할 인증 방법을 정의. 현재 *aiohttp*는 *basic* 만 지원.
   required: false
   type: string
   default: basic
@@ -114,13 +114,13 @@ sensors:
   default: None
   keys:
     sdcard:
-      description: 총공간과 사용된 공간을 보고하여 SD카드 사용량을 반환.
+      description: 총용량과 사용된 용량을 보고하여 SD카드 사용량을 반환.
     ptz_preset:
       description: >
         주어진 카메라에 설정된 PTZ 프리셋 위치 숫자를 반환합니다.
 control_light:
   description: >
-     오디오 또는 비디오 스트림이 활성화 된 경우 카메라의 라이트를 자동으로 제어하고 두 스트림 모두 비활성화된 경우 끄십시오.
+     오디오 또는 비디오 스트림이 활성화된 경우 카메라의 라이트를 자동으로 제어하고 두 스트림 모두 비활성화된 경우 끄십시오.
   required: false
   type: boolean
   default: true
@@ -128,7 +128,7 @@ control_light:
 
 최신 펌웨어의 Amcrest 카메라는 더 이상 MJPEG 인코딩으로 고화질(`high`) 비디오를 스트리밍 할 수 없습니다. 대신 저해상도(`low`) 스트림 또는 `snapshot` 스트림 소스를 사용해야 할 수도 있습니다. 품질이 너무 좋지 않으면 카메라 관리자에서 카메라의 `Frame Rate (FPS)`를 낮추고 `Bit Rate` 설정을 최대로 설정하십시오. *stream_source*를 **mjpeg**로 정의한 경우 카메라가 *Basic* HTTP 인증을 지원하는지 확인하십시오. 최신 Amcrest 펌웨어가 작동하지 않을 수 있으며 대신 **rtsp**가 권장됩니다.
 
-**Note:** `stream_source` 옵션을 `rtsp`로 설정 한 경우, [ffMPEG](/integrations/ffmpeg/) 문서에 언급된 단계를 따라 `ffmpeg`를 설치하십시오.
+**Note:** `stream_source` 옵션을 `rtsp`로 설정한 경우, [ffMPEG](/integrations/ffmpeg/) 문서에 언급된 단계를 따라 `ffmpeg`를 설치하십시오.
 
 ## 서비스
 
@@ -139,7 +139,7 @@ control_light:
 `enable_motion_recording`, `disable_motion_recording`,
 `enable_recording`, `disable_recording`,
 `goto_preset`, `set_color_bw`,
-`start_tour` and `stop_tour`
+`start_tour`, `stop_tour`
 
 #### `enable_audio`/`disable_audio` 서비스
 
@@ -147,7 +147,7 @@ control_light:
 
 Service data attribute | Optional | Description
 -|-|-
-`entity_id` | no | 엔티티의 이름, 예 :`camera.living_room_camera`
+`entity_id` | no | 엔티티의 이름, 예: `camera.living_room_camera`
 
 #### `enable_motion_recording`/`disable_motion_recording` 서비스
 
@@ -155,15 +155,15 @@ Service data attribute | Optional | Description
 
 Service data attribute | Optional | Description
 -|-|-
-`entity_id` | no | 엔티티의 이름, 예 :`camera.living_room_camera`.
+`entity_id` | no | 엔티티의 이름, 예: `camera.living_room_camera`.
 
 #### `enable_recording`/`disable_recording` 서비스
 
-이러한 서비스를 통해 카메라가 설정된 저장 위치에 지속적으로 녹화 할 수 있습니다.
+이러한 서비스를 통해 카메라가 설정된 저장 위치에 지속적으로 녹화할 수 있습니다.
 
 Service data attribute | Optional | Description
 -|-|-
-`entity_id` | no | 엔티티의 이름, 예 :`camera.living_room_camera`.
+`entity_id` | no | 엔티티의 이름, 예: `camera.living_room_camera`.
 
 #### `goto_preset` 서비스
 
@@ -171,7 +171,7 @@ Service data attribute | Optional | Description
 
 Service data attribute | Optional | Description
 -|-|-
-`entity_id` | no | 엔티티의 이름, 예 :`camera.living_room_camera`.
+`entity_id` | no | 엔티티의 이름, 예: `camera.living_room_camera`.
 `preset` | no | 1부터 시작하는 사전 설정 번호
 
 #### `set_color_bw` 서비스
@@ -180,8 +180,8 @@ Service data attribute | Optional | Description
 
 Service data attribute | Optional | Description
 -|-|-
-`entity_id` | no | 엔티티의 이름, 예 :`camera.living_room_camera`.
-`color_bw` | no | One of `auto`, `bw` or `color`.
+`entity_id` | no | 엔티티의 이름, 예: `camera.living_room_camera`.
+`color_bw` | no | `auto`, `bw` 혹은 `color` 중 하나.
 
 #### `start_tour`/`stop_tour` 서비스
 

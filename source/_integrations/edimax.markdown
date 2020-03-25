@@ -11,7 +11,7 @@ ha_release: pre 0.7
 <iframe width="776" height="437" src="https://www.youtube.com/embed/pWA_luALGi8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-이 `edimax` 스위치 플랫폼을 사용하면 [Edimax](https://www.edimax.com/edimax/merchandise/merchandise_list/data/edimax/global/home_automation_smart_plug/) 스위치의 상태를 제어할 수 있습니다.
+`edimax` 스위치 플랫폼을 사용하면 [Edimax](https://www.edimax.com/edimax/merchandise/merchandise_list/data/edimax/global/home_automation_smart_plug/) 스위치의 상태를 제어할 수 있습니다.
 
 설치시 Edimax 스위치를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오 :
 

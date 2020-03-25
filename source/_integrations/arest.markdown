@@ -21,8 +21,7 @@ ha_codeowners:
 
 ## Binary Sensor
 
-`arest` 바이너리 센서 플랫폼을 사용하면 [aREST] (https://arest.io/) RESTful 프레임 워크를 실행하는 장치
-(이더넷 / Wi-Fi 연결이있는 Arduinos, ESP8266 및 Raspberry Pi와 같은)에서 모든 데이터를 가져올 수 있습니다.
+`arest` 바이너리 센서 플랫폼을 사용하면 [aREST](https://arest.io/) RESTful 프레임워크를 실행하는 장치 (이더넷 / Wi-Fi 연결이있는 Arduinos, ESP8266 및 Raspberry Pi와 같은)에서 모든 데이터를 가져올 수 있습니다.
 
 설치시 aREST 이진 센서를 사용하려면 `configuration.yaml` 파일에 다음을 추가 하십시오. 
 
@@ -96,12 +95,12 @@ resource:
   required: true
   type: string
 name:
-  description: 장치 이름을 덮어 씁니다.
+  description: 장치 이름을 덮어씁니다.
   required: false
   default: aREST sensor
   type: string
 pins:
-  description: 모니터링 할 핀 목록. 아날로그 핀 은 핀 번호에 선행 **A** 가 필요합니다. 
+  description: 모니터링할 핀 목록. 아날로그 핀 은 핀 번호에 선행 **A** 가 필요합니다. 
   required: false
   type: list
   keys:
@@ -123,12 +122,12 @@ pins:
           required: false
           type: template
 monitored_variables:
-  description: 노출 된 변수 목록.
+  description: 노출된 변수 목록.
   required: false
   type: list
   keys:
     variable:
-      description: 모니터 할 변수의 이름.
+      description: 모니터할 변수의 이름.
       required: true
       type: list
       keys:
@@ -146,7 +145,7 @@ monitored_variables:
           type: template
 {% endconfiguration %}
 
-`monitored_variables` 배열의 변수는 장치의 응답으로 사용 가능해야 합니다. 이더넷 기능이있는 Arduino에 대한 스케치 (예 : [Ethernet](https://raw.githubusercontent.com/marcoschwartz/aREST/master/examples/Ethernet/Ethernet.ino)) 중 하나를 사용할 수 있습니다. 이 스케치에서는 endpoint 역할을 하는 두 가지 변수 (`온도` 및 `습도`)를 사용할 수 있습니다.
+`monitored_variables` 배열의 변수는 장치의 응답으로 사용 가능해야 합니다. 이더넷 기능이있는 Arduino에 대한 스케치 (예: [Ethernet](https://raw.githubusercontent.com/marcoschwartz/aREST/master/examples/Ethernet/Ethernet.ino)) 중 하나를 사용할 수 있습니다. 이 스케치에서는 endpoint 역할을 하는 두 가지 변수 (`온도`, `습도`)를 사용할 수 있습니다.
 
 엔드 포인트 중 하나에 액세스하면 (예를 들면 `http://192.168.1.10/temperature`) JSON 응답 내부의 값을 제공합니다.
 
@@ -154,7 +153,7 @@ monitored_variables:
 {"temperature": 23, "id": "sensor01", "name": "livingroom", "connected": true}
 ```
 
-루트는 모든 변수 및 현재 값과 일부 장치 세부 정보가 포함 된 JSON 응답을 제공합니다.
+루트는 모든 변수 및 현재 값과 일부 장치 세부 정보가 포함된 JSON 응답을 제공합니다.
 
 ```json
 {
@@ -176,9 +175,9 @@ monitored_variables:
 
 ## 스위치 (Switch)
 
-`arest` 스위치 플랫폼을 사용하면 [aREST](https://arest.io/) RESTful 프레임 워크를 실행하는 장치(이더넷 / Wi-Fi 연결이있는 Arduino 보드, ESP8266 기반 장치 및 Raspberry Pi와 같은)에서 핀을 토글 할 수 있습니다.
+`arest` 스위치 플랫폼을 사용하면 [aREST](https://arest.io/) RESTful 프레임 워크를 실행하는 장치(이더넷 / Wi-Fi 연결이있는 Arduino 보드, ESP8266 기반 장치 및 Raspberry Pi와 같은)에서 핀을 토글할 수 있습니다.
 
-설치시 핀이있는 aREST 지원 장치를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오. :
+설치시 핀이 있는 aREST 지원 장치를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오. :
 
 ```yaml
 # Example configuration.yaml entry
@@ -212,11 +211,11 @@ resource:
   required: true
   type: string
 name:
-  description: 장치 이름을 덮어 씀. 기본적으로 장치의 *name*이 사용됨.
+  description: 장치 이름을 덮어씀. 기본적으로 장치의 *name*이 사용됨.
   required: false
   type: string
 pins:
-  description: 사용 된 핀이 모두있는 배열.
+  description: 사용된 핀이 모두있는 배열.
   required: false
   type: map
   keys:
@@ -230,7 +229,7 @@ pins:
       type: boolean
       default: false
 functions:
-  description: 사용 된 모든 함수가있는 배열.
+  description: 사용된 모든 함수가있는 배열.
   required: false
   type: map
   keys:
@@ -240,7 +239,7 @@ functions:
       type: string
 {% endconfiguration %}
 
-웹 브라우저 또는 명령 행 도구를 사용하여 핀을 계속 전환 할 수 있습니다. URL `http://192.168.1.10/digital/8/1`을 사용하여 핀 8을 high/on으로 설정하면 JSON 응답이 피드백을 제공합니다.
+웹 브라우저 또는 Command line 도구를 사용하여 핀을 계속 전환할 수 있습니다. URL `http://192.168.1.10/digital/8/1`을 사용하여 핀 8을 high/on으로 설정하면 JSON 응답이 피드백을 제공합니다.
 
 ```json
 {"message": "Pin D8 set to 1", "id": "sensor02", "name": "livingroom", "connected": true}

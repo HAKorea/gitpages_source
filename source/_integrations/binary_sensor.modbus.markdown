@@ -8,7 +8,7 @@ ha_release: 0.28
 ha_iot_class: Local Push
 ---
 
-`modbus` 이진 센서를 사용하면 [Modbus](http://www.modbus.org/) coils 에서 데이터를 수집 할 수 있습니다.
+`modbus` 이진 센서를 사용하면 [Modbus](http://www.modbus.org/) coils 에서 데이터를 수집할 수 있습니다.
 
 ## 설정
 

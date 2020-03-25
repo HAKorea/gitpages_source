@@ -28,7 +28,6 @@ $ curl -X POST -H "Content-Type: application/json" \
 
 ## 설정
 
-To enable these lights, add the following lines to your `configuration.yaml` file:
 이 조명을 활성화하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오.
 
 ```yaml

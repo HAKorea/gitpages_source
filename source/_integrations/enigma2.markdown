@@ -20,7 +20,7 @@ ha_codeowners:
 
 Enigma2 장치는 [the discovery component](/integrations/discovery/)를 사용하여 자동으로 검색해야합니다.
 
-셋톱 박스를 설치에 수동으로 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
+셋톱 박스를 수동으로 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

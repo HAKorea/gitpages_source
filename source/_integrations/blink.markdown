@@ -82,14 +82,14 @@ mode:
 
 Home Assistant가 시작되면 `blink` 통합구성요소는 다음 플랫폼을 만듭니다. :
 
-- 모든 blink 시스템을 arm/disarm 하는 `alarm_control_panel`(주의 : `arm_arm_home`은 GUI의 옵션임에도 불구하고 구현되지 않았으며 실제로 아무것도하지 않습니다.)
+- 모든 blink 시스템을 arm/disarm 하는 `alarm_control_panel`(주의: `arm_arm_home`은 GUI의 옵션임에도 불구하고 구현되지 않았으며 실제로 아무것도하지 않습니다.)
 - blink 동기화 모듈에 연결된 각 카메라의 `camera`.
 - `monitored_conditions`에 나열된 모든 항목에 대한 카메라마다의 `sensor` (`configuration.yaml`에 지정된 항목이 없으면 기본적으로 모든 항목이 추가됩니다. )
 - `monitored_conditions`에 나열된 각 항목에 대한 `binary_sensor` (`configuration.yaml`에 지정된 항목이 없으면 기본적으로 모든 항목이 추가됩니다.)
 
 카메라는 배터리로 작동하므로 배터리를 너무 빨리 소모하지 않도록 API를 너무 많이 사용하지 않으면서 Blink의 서버를 혼란스럽게 하지 않도록 `scan_interval` 설정을 주의해서 수행해야합니다. `scan_interval`에 의한 조절을 무시하고 `trigger_camera` 서비스를 통해 카메라를 수동으로 업데이트 할 수 있습니다. 참고로, 모든 카메라 특정 센서는 카메라에서 새 이미지를 요청한 경우에만 폴링됩니다. 즉, 적시에 정확한 데이터를 제공하기 위해 이러한 센서를 사용하지 않는 것이 좋습니다. 
 
-각 카메라는 서로 다른 두 가지 상태를보고합니다. : 하나는 `sensor.blink_ <camera_name> _status`이고 다른 하나는 `binary_sensor.blink_ <camera_name> _motion_enabled`입니다. `motion_enabled` 속성은 **시스템이 실제로 arm되어 있는지에 관계없이** `camera`가 모션을 감지 할 준비가되었는지 보고합니다.
+각 카메라는 서로 다른 두 가지 상태를 보고합니다. : 하나는 `sensor.blink_ <camera_name> _status`이고 다른 하나는 `binary_sensor.blink_ <camera_name> _motion_enabled`입니다. `motion_enabled` 속성은 **시스템이 실제로 arm되어 있는지에 관계없이** `camera`가 모션을 감지할 준비가 되었는지 보고합니다.
 
 아래는 가능한 모든 항목을 보여주는 예입니다.
 
@@ -154,8 +154,7 @@ homeassistant:
 
 ### 사진 찍기 및 로컬 저장
 
-이 예제 스크립트는 Blink 앱에서 `My Camera` 라는 카메라로 사진을 찍는 방법을 보여줍니다 (
-이것은 반드시 홈어시스턴트의 친숙한 이름(friendly name)은 아닙니다). 사진을 찍은 후 이미지는 `/tmp/my_image.jpg`라는 로컬 디렉토리에 저장됩니다. 이 예는 [camera integration](/integrations/camera#service-snapshot)에 있는 서비스를 사용합니다.
+이 예제 스크립트는 Blink 앱에서 `My Camera` 라는 카메라로 사진을 찍는 방법을 보여줍니다 (이것은 반드시 홈어시스턴트의 친숙한 이름(friendly name)은 아닙니다). 사진을 찍은 후 이미지는 `/tmp/my_image.jpg`라는 로컬 디렉토리에 저장됩니다. 이 예는 [camera integration](/integrations/camera#service-snapshot)에 있는 서비스를 사용합니다.
 
 ```yaml
 alias: Blink Snap Picture
@@ -173,7 +172,7 @@ sequence:
 
 ### 부재중 Blink를 Arm 상태로
 
-이 예제 자동화는 blink 동기화 모듈을 활성화하여 모션 감지가 활성화 된 blink 카메라에서 움직임을 감지합니다. 기본적으로 Blink는 모든 카메라에서 모션 감지를 활성화하므로 앱에서 아무것도 변경하지 않으면 모든 설정이 완료됩니다. 개별 카메라에 대해 모션 감지를 수동으로 활성화하려면 [appropriate camera service](/integrations/camera#service-enable_motion_detection)를 사용할 수 있지만 동기화 모듈이 활성화된 경우에만 모션이 캡처됩니다.
+이 예제 자동화는 blink 동기화 모듈을 활성화하여 모션 감지가 활성화된 blink 카메라에서 움직임을 감지합니다. 기본적으로 Blink는 모든 카메라에서 모션 감지를 활성화하므로 앱에서 아무것도 변경하지 않으면 모든 설정이 완료됩니다. 개별 카메라에 대해 모션 감지를 수동으로 활성화하려면 [appropriate camera service](/integrations/camera#service-enable_motion_detection)를 사용할 수 있지만 동기화 모듈이 활성화된 경우에만 모션이 캡처됩니다.
 
 이 예에서는 blink 모듈의 이름이 `My Sync Module`이고 재실 감지를 위해 [device trackers](/integrations/device_tracker)가 설정되어 있다고 가정합니다.
 

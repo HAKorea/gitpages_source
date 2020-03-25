@@ -12,7 +12,7 @@ ha_iot_class: Local Polling
 
 ## 설정
 
-설치에서  digitalloggers 스위치를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
+설치시 digitalloggers 스위치를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

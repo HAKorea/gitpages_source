@@ -85,7 +85,7 @@ ffmpeg_arguments:
 
 `canary` 센서 플랫폼을 사용하면 [Canary](https://canary.is) 장치의 센서를 Home Assistant에 연동할 수 있습니다.
 
-설비에 `canary` 센서를 추가하려면 위의 지침을 따르십시오.
+`canary` 센서를 추가하려면 위의 지침을 따르십시오.
 
 로드되면 다음 센서가 표시됩니다.
 

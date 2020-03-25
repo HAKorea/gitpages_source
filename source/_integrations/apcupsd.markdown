@@ -14,7 +14,7 @@ ha_iot_class: Local Polling
 <iframe width="776" height="437" src="https://www.youtube.com/embed/rIK2U8I3cxk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-[APCUPSd](http://www.apcupsd.org/) 상태 정보는 APC 장치에 [NIS(Network Information Server)](http://www.apcupsd.org/manual/manual.html#nis-server-client-configuration-using-the-net-driver)가 구성된 경우 홈어시스턴트에 연동될 수 있습니다. 
+[APCUPSd](http://www.apcupsd.org/) 상태 정보는 APC 장치에 [NIS(Network Information Server)](http://www.apcupsd.org/manual/manual.html#nis-server-client-configuration-using-the-net-driver)가 설정된 경우 홈어시스턴트에 연동될 수 있습니다. 
 
 현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다. 
 
@@ -25,7 +25,7 @@ ha_iot_class: Local Polling
 
 Hass.io와의 연동을 사용하려면 [unofficial add-on](https://github.com/korylprince/hassio-apcupsd/)을 설치하십시오. 단, add-on을 공식 지원할 수는 없습니다.
 
-설치 후 Github 페이지의 지침에 따라 플러그인을 설정하십시오. 그런 다음 아래 통합 설정을 계속 따르십시오.
+설치 후 Github 페이지의 지침에 따라 플러그인을 설정하십시오. 그런 다음 아래 연동 설정을 계속 따르십시오.
 
 ## 설정
 
@@ -51,7 +51,7 @@ port:
 
 <div class='note'>
 
-Home Assistant 로그에 `ConnectionRefusedError: Connection refused` 오류가 표시되는 경우, 네트워크 정보 서버가 사용하는 [APCUPSd](http://www.apcupsd.org/) 설정 지시문이 모든 주소 [NISIP 0.0.0.0](http://www.apcupsd.org/manual/manual.html#configuration-directives-used-by-the-network-information-server)에서 연결을 허용하도록 설정되어 있는지 확인하십시오. 그렇지 않을 경우 로컬이 아닌 주소는 연결되지 않습니다. 이는 동일한 컴퓨터 또는 가상 컴퓨터에서 호스팅되는 경우에도 Docker에서 실행되는 Hass.io도 포함됩니다.
+`ConnectionRefusedError:Home Assistant` 로그에 Connection 거부 오류가 발생하면 Network Information Server에서 사용하는 [APCUPSd](http://www.apcupsd.org/) 설정 지시문이 모든 주소 [NISIP 0.0.0.0](http://www.apcupsd.org/manual/manual.html#configuration-directives-used-by-the-network-information-server)에서 연결을 허용하도록 설정되어 있는지 확인하십시오. 그렇지 않으면 로컬이 아닌 주소는 연결되지 않습니다.
 
  </div>
 
@@ -61,7 +61,7 @@ Home Assistant 로그에 `ConnectionRefusedError: Connection refused` 오류가 
 
 ### 설정
 
-이 센서를 활성화하려면 먼저 위의 apcupsd integration을 설정하고 `configuration.yaml` 파일에 다음 줄을 추가해야합니다.
+이 센서를 활성화하려면 먼저 위의 apcupsd 통합구성요소를 설정하고 `configuration.yaml` 파일에 다음 줄을 추가해야합니다.
 
 ```yaml
 # Example configuration.yaml entry

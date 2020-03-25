@@ -33,7 +33,7 @@ download_dir:
 {"url":"http://domain.tld/path/to/file"}
 ```
 
-This will download the file from the given URL.
+주어진 URL에서 파일을 다운로드합니다. 
 
 | Service data attribute | Optional | Description                                    |
 | ---------------------- | -------- | ---------------------------------------------- |
@@ -44,7 +44,7 @@ This will download the file from the given URL.
 
 ### Download 상태 이벤트
 
-다운로드가 성공적으로 완료되면 Home Assistant는 자동화를 작성하는 데 사용할 수 있는 'downloader_download_completed'이벤트를 이벤트 버스로 보냅니다.
+다운로드가 성공적으로 완료되면 Home Assistant는 자동화를 작성하는데 사용할 수 있는 'downloader_download_completed' 이벤트를 이벤트 버스로 보냅니다.
 다운로드에 실패한 경우 다운로드가 성공적으로 완료되지 않았음을 나타내는 다른 이벤트 'downloader_download_failed'가 발생합니다.
 
 이벤트와 함께 다음 페이로드 매개 변수를 사용할 수 있습니다.
@@ -54,7 +54,7 @@ This will download the file from the given URL.
 | `url`  | The `url` that was requested.|                                                                                                                                      
 | `filename`    | The `name` of the file that was being downloaded.|
 
-#### 자동화 사례 :
+#### 자동화 사례 
 
 ```yaml
 - alias: Download Failed Notification

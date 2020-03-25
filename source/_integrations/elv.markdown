@@ -13,7 +13,7 @@ ha_codeowners:
 
 ## 설정
 
-설비에서 PCA 301 스위치 또는 소켓을 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
+PCA 301 스위치 또는 소켓을 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

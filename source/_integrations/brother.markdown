@@ -17,7 +17,7 @@ ha_codeowners:
 
 ## 설정
 
-`Brother Printer`를 추가하려면 UI에서 **설정** >> **통합구성요소**로 이동하여 `+`기호가 있는 단추를 클릭하고 통합구성요소 목록에서 **Brother Printer**를 선택하십시오.
+`Brother Printer`를 추가하려면 UI에서 **설정** >> **통합구성요소**로 이동하여 `+` 기호가 있는 단추를 클릭하고 통합구성요소 목록에서 **Brother Printer**를 선택하십시오.
 
 <div class="note warning">
 

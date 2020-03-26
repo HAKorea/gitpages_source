@@ -10,14 +10,11 @@ ha_codeowners:
   - '@fabaff'
 ---
 
-`scrape` 센서 플랫폼은 웹사이트에서 정보를 스크랩합니다. 센서는 HTML 페이지를 로드하고 값을 검색하고 분리 할 수 있는 옵션을 제공합니다. 이는 [scrapy](https://scrapy.org/)와 같은 본격적인 웹 스크레이퍼가 아니기 때문에 간단한 웹 페이지에서만 작동하며 올바른 섹션을 얻는데 시간이 오래 걸릴 수 있습니다.
-
+`scrape` 센서 플랫폼은 웹사이트에서 정보를 스크랩합니다. 센서는 HTML 페이지를 로드하고 값을 검색하고 분리할 수 있는 옵션을 제공합니다. 이는 [scrapy](https://scrapy.org/)와 같은 본격적인 웹스크레이퍼가 아니기 때문에 간단한 웹페이지에서만 작동하며 올바른 섹션을 얻는데 시간이 오래 걸릴 수 있습니다.
 
 ### 한국형 스크랩 사례
 
 HA 네이버카페의 검은별31님이 제작하신 [우리나라 날씨의 세차센서 이용법](https://cafe.naver.com/koreassistant/809) 을 참조하십시오. 
-
-
 
 ---------------------------------------------------------------------------------------------------------
 
@@ -34,7 +31,7 @@ sensor:
 
 {% configuration %}
 resource:
-  description: 값이 포함 된 웹 사이트의 URL
+  description: 값이 포함된 웹 사이트의 URL
   required: true
   type: string
 select:
@@ -73,22 +70,22 @@ verify_ssl:
   type: boolean
   default: true
 username:
-  description: 웹 사이트에 액세스하기위한 사용자 이름.
+  description: 웹사이트에 액세스하기위한 사용자 이름.
   required: false
   type: string
 password:
-  description: 웹 사이트에 액세스하기위한 비밀번호.
+  description: 웹사이트에 액세스하기위한 비밀번호.
   required: false
   type: string
 headers:
-  description: 웹 요청에 사용할 헤더.
+  description: 웹요청에 사용할 헤더.
   required: false
   type: string
 {% endconfiguration %}
 
 ## 사례
 
-이 섹션에는이 센서를 사용하는 방법에 대한 실제 예가 나와 있습니다. 이 예에서는 [Jupyter notebook](https://nbviewer.jupyter.org/github/home-assistant/home-assistant-notebooks/blob/master/other/web-scraping.ipynb)을 사용하여 좀 더 통찰력을 얻을 수 있습니다.
+본 섹션에는 이 센서를 사용하는 방법에 대한 실제 예가 나와 있습니다. 이 예에서는 [Jupyter notebook](https://nbviewer.jupyter.org/github/home-assistant/home-assistant-notebooks/blob/master/other/web-scraping.ipynb)을 사용하여 좀 더 통찰력을 얻을 수 있습니다.
 
 ### Home Assistant
 
@@ -108,7 +105,7 @@ sensor:
 
 ### 사용가능한 구현들
 
-[Component overview](/integrations/) 페이지 에서 모든 구현(implementations)에 대한 카운터를 얻으십시오.
+[Component overview](/integrations/)페이지에서 모든 연동가능 통합구성요소를 대한 카운트해서 가져옵니다.
 
 {% raw %}
 ```yaml
@@ -139,7 +136,7 @@ sensor:
 
 ### IFTTT 상태
 
-자동화를 위해 [IFTTT](/integrations/ifttt/) 웹서비스를 많이 사용하고 [IFTTT 상태](https://status.ifttt.com/) 에 대해 궁금한 경우 프론트 엔드에서 IFTTT 현재 상태를 표시 할 수 있습니다. 
+자동화를 위해 [IFTTT](/integrations/ifttt/) 웹서비스를 많이 사용하고 [IFTTT 상태](https://status.ifttt.com/) 에 대해 궁금한 경우 프론트 엔드에서 IFTTT 현재 상태를 표시할 수 있습니다. 
 
 ```yaml
 # Example configuration.yaml entry
@@ -184,7 +181,7 @@ sensor:
 
 ### BOM 날씨
 
-사용자 에이전트 헤더(User Agent header)가 전송되지 않은 경우 호주 기상청 웹 사이트에서 오류를 반환합니다.
+사용자 에이전트 헤더(User Agent header)가 전송되지 않은 경우 호주 기상청 웹사이트에서 오류를 반환합니다.
 
 {% raw %}
 ```yaml

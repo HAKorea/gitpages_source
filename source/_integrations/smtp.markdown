@@ -79,7 +79,6 @@ debug:
   default: false
 {% endconfiguration %}
 
-A sample configuration entry for Google Mail.
 Google Mail의 샘플 설정 항목
 
 ```yaml

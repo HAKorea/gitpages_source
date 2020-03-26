@@ -35,21 +35,21 @@ ha_codeowners:
 3. 표시되는 지시사항에 따라 사용자 인증 정보를 생성하십시오. 필드가 있는 양식이 나타나면 이 단계가 완료된 것입니다.
 
 4. 필드를 채워 홈어시스턴트를 PlayStation 4에 페어링합니다. 
-- **Note:** 올바른 지역을 찾으려면 [Regions](#regions) 섹션을 참조하십시오.
+- **Note:** 자신의 지역을 찾으려면 [Regions](#regions) 섹션을 참조하십시오.
 
 ## 포트 액세스 권한 부여
 
-PlayStation 4 연동을 위해서는 특권 포트, 특히 UDP 포트 987 및 TCP 포트 997이 올바르게 작동해야합니다. 홈어시스턴트 인스턴스의 OS에 따라 특권 포트의 수동 사용을 허용해야 할 수도 있습니다.
+PlayStation 4 연동을 위해서는 privilege 포트, 특히 UDP 포트 987 및 TCP 포트 997이 올바르게 작동해야합니다. 홈어시스턴트 인스턴스의 OS에 따라 privilege 포트의 수동 사용을 허용해야 할 수도 있습니다.
 
 <div class='note warning'>
-  이를 수행하기 위해 <b>Home Assistant</b> 인스턴스 자체를 <b>root</b> 또는 <b>root/sudo 권한</b>으로 실행하지 마십시오 . 이로 인해 호스트 시스템에 보안 위험이 발생합니다.
+  이를 수행하기 위해 <b>Home Assistant</b> 인스턴스 자체를 <b>root</b> 또는 <b>root/sudo 권한</b>으로 실행하지 마십시오. 이로 인해 호스트 시스템에 보안 위험이 발생합니다.
 </div>
 
 Home Assistant를 실행하는 OS에 따라 이를 수행하는 다양한 방법이 있습니다. 특히 Home Assistant 인스턴스를 실행하는 *Python Interpreter* 는 언급된 포트에 액세스해야합니다.
 
 <div class='note'>
 
-Home Assistant 장치가 **HassOS**에서 **Hass.io**를 실행 중인 경우 추가 설정이 필요하지 않습니다.
+Home Assistant 장치가 **HassOS**에서 **Hass.io**를 실행중인 경우 추가 설정이 필요하지 않습니다.
 
 </div>
 
@@ -107,7 +107,7 @@ sudo setcap 'cap_net_bind_service=+ep' /usr/bin/python3.5
 
 ### 도커 
 
-When running Home Assistant using Docker, make sure that the Home Assistant container is discoverable by the PS4. This can be achieved by ensuring that the Home Assistant container uses the `host` network driver (by passing `--net=host` to the container when creating, or adding `network_mode: "host"` to your compose file when using `docker-compose`).
+Docker를 사용하여 Home Assistant를 실행중인 경우 PS4에서 Home Assistant 컨테이너를 검색할 수 있는지 확인하십시오. 이는 Home Assistant 컨테이너가 `host` 네트워크 드라이버를 사용하도록함으로써 달성될 수 있습니다. (docker-compose를 사용할 때 `--net=host`를 컨테이너에 전달하거나 `network_mode: "host"`를 compose 파일에 추가)
 
 ## 설정
 
@@ -144,9 +144,9 @@ PlayStation 4 통합구성요소는 현재 해당 지역의 [PlayStation Store](
   
 때때로 통합구성요소가 데이터를 전혀 얻지 못하거나 잘못된 데이터를 얻을 수 있습니다. 이 문제를 해결하기 위해 통합구성요소를 통한 텍스트 편집기를 통한 수동 편집이 가능합니다.
   
-### 서식 (Formatting)
+### Formatting
 
-통합구성요소는 PlayStation Store에서 데이터를 검색 할 때 `configuration.yaml` 파일이 있는 디렉토리와 동일한 디렉토리에 `.ps4-games.json` 이라는 JSON 파일에 저장합니다. 파일의 첫 번째 줄은 `{`이고 마지막 줄은 `}`입니다. 이 줄 사이에는 통합구성요소가 찾은 각 게임이나 앱에 대해 들여쓰기 된 항목이 있습니다. 다음 예와 표를 참조하십시오
+통합구성요소는 PlayStation Store에서 데이터를 검색할 때 `configuration.yaml` 파일이 있는 디렉토리와 동일한 디렉토리에 `.ps4-games.json` 이라는 JSON 파일에 저장합니다. 파일의 첫 번째 줄은 `{`이고 마지막 줄은 `}`입니다. 이 줄 사이에는 통합구성요소가 찾은 각 게임이나 앱에 대해 들여쓰기된 항목이 있습니다. 다음 예와 표를 참조하십시오
   
 ```json
 {
@@ -174,16 +174,16 @@ PlayStation 4 통합구성요소는 현재 해당 지역의 [PlayStation Store](
 
 예제의 데이터는 2 개의 항목을 보여줍니다.
 
-각 항목은 제목의 SKU ID (예: `CUSA00000`)로 시작하며 값이 `true` 또는 `false` 인 `locked`라는 필드를 갖습니다. 각 항목의 기본값은 `false` 입니다. `locked`가 `true`인 경우 통합구성요소는 해당 게임 또는 앱과 관련된 데이터를 덮어 쓰지 않습니다.
+각 항목은 제목의 SKU ID (예: `CUSA00000`)로 시작하며 값이 `true` 또는 `false`인 `locked`라는 필드를 갖습니다. 각 항목의 기본값은 `false`입니다. `locked`가 `true`인 경우 통합구성요소는 해당 게임 또는 앱과 관련된 데이터를 덮어쓰지 않습니다.
 
 `media_image_url` 값은 유효한 URL일 수 있습니다. 여기에는 홈어시스턴트 인스턴스의 `local directory`가 포함됩니다. 예제의 첫 번째 항목은 `config/www/` 디렉토리에 있는 `image.jpg`라는 파일로 연결됩니다.
   
 ### 텍스트 편집기로 편집
 <div class='note'>
-  계속하기 전에 <b>.ps4-games.json</b> 파일의 복사본을 백업하십시오. 포맷에 오류가 있으면 파일이 삭제 될 수 있습니다.
+  계속하기 전에 <b>.ps4-games.json</b> 파일의 복사본을 백업하십시오. 포맷에 오류가 있으면 파일이 삭제될 수 있습니다.
 </div>
 
-편집하려면 텍스트 편집기에서 파일을 열고 편집하려는 게임이나 앱을 찾은 다음 변경하려는 값을 편집 한 다음 파일을 저장하십시오. 다음에 콘솔에서 게임이나 앱을 플레이 할 때 변경 사항이 나타납니다.
+편집하려면 텍스트 편집기에서 파일을 열고 편집하려는 게임이나 앱을 찾은 다음 변경하려는 값을 편집한 다음 파일을 저장하십시오. 다음에 콘솔에서 게임이나 앱을 플레이할 때 변경 사항이 나타납니다.
 
 ## 서비스
 
@@ -198,7 +198,7 @@ PlayStation 4 통합구성요소는 현재 해당 지역의 [PlayStation Store](
 
 ### `send_command` 서비스
 
-PlayStation 4에서 버튼 누르기 에뮬레이션. PS4 Second Screen App에서 사용할 수있는 명령을 에뮬레이트합니다. 이것은 DualShock 4 컨트롤러 버튼과 혼동되지 않습니다.
+PlayStation 4에서 버튼 누르기 에뮬레이션. PS4 Second Screen App에서 사용할 수 있는 명령을 에뮬레이트합니다. 이것은 DualShock 4 컨트롤러 버튼과 혼동되지 않습니다.
 
 | Service data attribute | Optional | Example                      | Description                           |
 | ---------------------- | -------- | ---------------------------- | ------------------------------------- |
@@ -223,7 +223,7 @@ PlayStation 4에서 버튼 누르기 에뮬레이션. PS4 Second Screen App에�
 ## 문제 해결
 
 ### Cover Art 문제
-PS4에서 표지를 표시하지 않거나 잘못된 표지를 표시하는 게임/제목을 실행중인 경우 [here](https://github.com/ktnrg45/pyps4-2ndscreen/issues) 에 문제를 게시하십시오 .
+PS4에서 표지를 표시하지 않거나 잘못된 표지를 표시하는 게임/제목을 실행중인 경우 [여기](https://github.com/ktnrg45/pyps4-2ndscreen/issues)에 문제를 게시하십시오 .
 
 다음 정보를 반드시 포함하십시오 :
 - 국가정보

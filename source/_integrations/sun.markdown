@@ -12,14 +12,14 @@ ha_codeowners:
 
 Sun 통합구성요소는 태양이 수평선 위 또는 아래에 있는지 추적하기 위해 현재 위치를 사용합니다.
 태양은 자동화 내에서 다음과 같이 사용될 수 있습니다. 
-[새벽/황혼을 시뮬레이트하기위한 선택적 오프셋이있는 트리거][sun_trigger] 또는 [해가 이미 졌는지 혹은 떴는지 테스트하기위한 선택적 오프셋이있는 조건][sun_condition].
+[새벽/황혼을 시뮬레이트하기위한 선택적 오프셋이 있는 트리거][sun_trigger] 또는 [해가 이미 졌는지 혹은 떴는지 테스트하기위한 선택적 오프셋이 있는 조건][sun_condition].
 
 [sun_trigger]: /docs/automation/trigger/#sun-trigger
 [sun_condition]: /docs/scripts/conditions/#sun-condition
 
 ## 설정
 
-이 통합구성요소는 설정에서 [`default_config :`](https://www.home-assistant.io/integrations/default_config/) 행을 비활성화하거나 제거하지 않는 한 기본적으로 활성화됩니다. 다음 예는이 통합구성요소를 수동으로 활성화하는 방법을 보여줍니다.
+이 통합구성요소는 설정에서 [`default_config:`](https://www.home-assistant.io/integrations/default_config/) 행을 비활성화하거나 제거하지 않는한 기본적으로 활성화됩니다. 다음 예는 이 통합구성요소를 수동으로 활성화하는 방법을 보여줍니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -39,9 +39,10 @@ elevation:
 
 ## 구현 세부 사항
 
-태양의 이벤트 리스너는 태양이 뜨거나 오프셋으로 설정 될 때 서비스를 호출합니다.
+태양의 이벤트 리스너(listener)는 태양이 뜨거나 오프셋으로 설정될 때 서비스를 호출합니다.
 
-sun 이벤트에는 'sun' 유형, 호출 할 서비스, 어떤 이벤트 (일몰 또는 일출) 및 오프셋이 있어야합니다.
+sun 이벤트에는 어떤 서비스, 어떤 이벤트(일몰 또는 일출)를 호출할지와 오프셋(Offset)이 있는 'sun' 유형이 필요합니다. 
+
 
 ```json
 {

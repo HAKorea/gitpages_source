@@ -39,7 +39,7 @@ count:
   type: integer
   default: 5
 name:
-  description: 장치 이름을 덮어 씁니다..
+  description: 장치 이름을 덮어씁니다.
   required: false
   type: string
   default: Ping Binary sensor
@@ -69,7 +69,7 @@ Windows 시스템에서 실행될 때 왕복 시간 속성은 가장 가까운 �
 
 ## 존재 감지 (Presence Detection)
 
-`ping` 장치 추적기 플랫폼은 `ping`을 사용하여 ICMP 에코 요청을 전송하여 존재 감지를 제공합니다. 이는 장치가 방화벽을 실행 중이고 UDP 또는 TCP 패킷을 차단하지만 ICMP 요청 (Android 전화 등)에 응답 할 때 유용 할 수 있습니다. 호스트는 다른 서브넷에 있을 수 있으므로 이 트래커는 MAC 주소를 알 필요가 없습니다. 이것은 `arp`가 작동하지 않기 때문에 `nmap` 또는 다른 솔루션이 작동하지 않을 때 다른 서브넷에서 호스트를 감지하는 옵션입니다.
+`ping` 장치 추적기 플랫폼은 `ping`을 사용하여 ICMP 에코 요청을 전송하여 존재 감지를 제공합니다. 이는 장치가 방화벽을 실행중이고 UDP 또는 TCP 패킷을 차단하지만 ICMP 요청 (Android 전화 등)에 응답할 때 유용할 수 있습니다. 호스트는 다른 서브넷에 있을 수 있으므로 이 트래커는 MAC 주소를 알 필요가 없습니다. 이는 `arp`가 작동하지 않기 때문에 `nmap` 또는 다른 솔루션이 작동하지 않을 때 다른 서브넷에서 호스트를 감지하는 옵션입니다.
 
 <div class='note'>
   최신 스마트 폰은 일반적으로 유휴 상태일 때 WiFi를 끕니다. 이와 같은 간단한 추적기는 자체적으로 신뢰할 수 없습니다.

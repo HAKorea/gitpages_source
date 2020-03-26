@@ -8,13 +8,13 @@ ha_release: 0.47
 ha_quality_scale: internal
 ---
 
-이 통합구성요소를 통해 홈어시스턴트에서 서비스로 노출되는 Python 스크립트를 작성할 수 있습니다. `<config>/python_scripts/` 폴더에 생성 된 각 파이썬 파일은 서비스로 노출됩니다. 컨텐츠는 캐시되지 않으므로 쉽게 개발 가능합니다. : 파일을 편집하고 변경 사항을 저장하며 서비스를 호출 할 수 있습니다. 스크립트는 샌드 박스 환경에서 실행됩니다. 샌드 박스에서 다음 변수를 사용할 수 있습니다.
+이 통합구성요소를 통해 홈어시스턴트에서 서비스로 노출되는 Python 스크립트를 작성할 수 있습니다. `<config>/python_scripts/` 폴더에 생 된 각 파이썬 파일은 서비스로 노출됩니다. 컨텐츠는 캐시되지 않으므로 쉽게 개발 가능합니다. : 파일을 편집하고 변경 사항을 저장하며 서비스를 호출할 수 있습니다. 스크립트는 샌드박스 환경에서 실행됩니다. 샌드박스에서 다음 변수를 사용할 수 있습니다.
 
 | Name | Description |
 | ---- | ----------- |
-| `hass` | 홈 어시스턴트 객체. 액세스는 서비스 호출, 상태 설정/제거 및 실행 이벤트만 허용 [API reference][hass-api]
+| `hass` | 홈어시스턴트 객체. 액세스는 서비스 호출, 상태 설정/제거 및 실행 이벤트만 허용 [API reference][hass-api]
 | `data` | 데이터는 Python Script 서비스 호출로 전달.
-| `logger` | 로거(logger)는 메시지를 기록 할 수 있도록: `logger.info()`, `logger.warning()`, `logger.error()`. [API reference][logger-api]
+| `logger` | 로거(logger)는 메시지를 기록할 수 있도록: `logger.info()`, `logger.warning()`, `logger.error()`. [API reference][logger-api]
 
 [hass-api]: /developers/development_hass_object/
 [logger-api]: https://docs.python.org/3.7/library/logging.html#logger-objects
@@ -47,7 +47,7 @@ name: you
 ## 서비스 호출하기 (Calling Services)
 
 다음 예제는 `python_script` 에서 서비스를 호출하는 방법을 보여줍니다. 이 스크립트는 두가지 매개변수를 취함:
-`entity_id` (필수),`rgb_color` (선택 사항) 및 밝기 값을 '255'로 설정하여 `light.turn_on` 서비스를 호출합니다.
+`entity_id`(필수), `rgb_color`(선택 사항) 및 밝기값을 '255'로 설정하여 `light.turn_on` 서비스를 호출합니다.
 
 ```python
 # turn_on_light.py

@@ -37,7 +37,7 @@ id:
 {% endconfiguration %}
 
 <div class="note">
- 서브 사용자(메인 사용자가 아닌)를 사용하여 API 키를 생성하면 Sensibo 앱 로그에서 앱에서 수행한 작업과 Home Assistant에서 수행한 작업을 구별 할 수 있습니다.
+ 서브 사용자(메인 사용자가 아닌)를 사용하여 API 키를 생성하면 Sensibo 앱 로그에서 앱에서 수행한 작업과 Home Assistant에서 수행한 작업을 구별할 수 있습니다.
 </div>
 
 ### Full config example

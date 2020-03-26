@@ -15,14 +15,14 @@ ha_codeowners:
 <iframe width="692" height="388" src="https://www.youtube.com/embed/4Jzt1-vL5Wc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-`smarty` 연동을 통해 Home Assistant에서 Salda [Smarty](http://www.salda.lt/en/products/category/compact-counter-flow-units) 환기 장치를 제어 할 수 있습니다. 로컬 네트워크에 연결하려면 [MB-GATEWAY](http://www.salda.lt/en/products/item/5637227077) 또는 이와 유사한 것이 필요합니다.
+`smarty` 연동을 통해 Home Assistant에서 Salda [Smarty](http://www.salda.lt/en/products/category/compact-counter-flow-units) 환기 장치를 제어할 수 있습니다. 로컬 네트워크에 연결하려면 [MB-GATEWAY](http://www.salda.lt/en/products/item/5637227077) 또는 이와 유사한 것이 필요합니다.
 
 현재 홈어시스턴트에는 다음 장치 유형이 지원됩니다.
 
 - Fan
 - Sensor
 
-통합구성요소에는 환기 속도를 보고 제어 할 수있는 팬 플랫폼과 다음을 읽을 수있는 센서 플랫폼이 있습니다.
+통합구성요소에는 환기 속도를 보고 제어할 수있는 팬 플랫폼과 다음을 읽을 수있는 센서 플랫폼이 있습니다.
 
 - Outdoor air temperature
 - Extract air temperature

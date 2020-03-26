@@ -9,6 +9,10 @@ ha_iot_class: Local Push
 ha_release: 0.7
 ---
 
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/TBvGrB094Co" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 MySensors 센서를 Home Assistant에 연동합니다. 설정 지침은 [main component]를 참조하십시오.
 
 ## 지원되는 센서 유형

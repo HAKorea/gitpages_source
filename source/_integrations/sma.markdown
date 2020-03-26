@@ -14,7 +14,6 @@ ha_codeowners:
 <iframe width="692" height="388" src="https://www.youtube.com/embed/RWR4zTNiv_Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-The `sma` sensor will poll a [SMA](http://www.sma-solar.com/) [(US)](https://www.sma-america.com/) solar inverter and present the values as sensors (or attributes of sensors) in Home Assistant.
 `sma` 센서는 [SMA](http://www.sma-solar.com/) [(US)](https://www.sma-america.com/) 태양광 인버터를 폴링하고 그 값을 Home Assistant에서 센서(또는 센서의 속성)로 표시합니다.
 
 이 센서는 웹 인터페이스를 사용하고 이를 사용하려면 자주 사용하는 웹 브라우저에서 태양광 인버터에 연결할 수 있어야합니다.

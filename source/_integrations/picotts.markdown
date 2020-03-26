@@ -41,9 +41,9 @@ language:
   default: "`en-US`"
 {% endconfiguration %}
 
-## Full configuration example
+## 전체 설정 사례
 
-The configuration sample below shows how an entry can look like:
+아래 설정 샘플은 항목이 어떻게 표시되는지 보여줍니다.
 
 ```yaml
 # Example configuration.yaml entry

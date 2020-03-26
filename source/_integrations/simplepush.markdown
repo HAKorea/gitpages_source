@@ -46,7 +46,7 @@ notify:
     type: string
 {% endconfiguration %}
 
-서비스가 작동하는지 테스트하려면 명령 줄에서 `curl` 메시지를 보내십시오.
+서비스가 작동하는지 테스트하려면 command line에서 `curl` 메시지를 보내십시오.
 
 ```bash
 $ curl 'https://api.simplepush.io/send/device_key/title/message'

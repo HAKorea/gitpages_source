@@ -13,7 +13,7 @@ ha_codeowners:
 <iframe width="690" height="437" src="https://www.youtube.com/embed/dTzBa0UhQo0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-`roomba` 통합구성요소를 통해 [iRobot Roomba](https://www.irobot.com/For-the-Home/Vacuuming/Roomba.aspx) vacuum을 제어 할 수 있습니다.
+`roomba` 통합구성요소를 통해 [iRobot Roomba](https://www.irobot.com/For-the-Home/Vacuuming/Roomba.aspx) vacuum(로봇청소기)을 제어할 수 있습니다.
 
 <p class='img'>
 <img src='/images/screenshots/more-info-dialog-roomba.png' />

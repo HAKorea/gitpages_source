@@ -131,4 +131,4 @@ QNAP 장치가 자체 서명된 인증서를 사용하는 경우 `verify_ssl` �
 - TS-470 (QTS 4.2.2)
 - TS-639 (QTS 4.2.3)
 
-Other QNAP NAS devices using similar firmware should work fine. For more information about supported devices, or to report issues with your device, please visit the [qnapstats project](https://github.com/colinodell/python-qnapstats#device-support).
+유사한 펌웨어를 사용하는 다른 QNAP NAS 장치는 정상적으로 작동합니다. 지원되는 장치에 대한 자세한 내용을 보거나 장치 관련 문제를 보고하려면 [qnapstats 프로젝트](https://github.com/colinodell/python-qnapstats#device-support)를 방문하십시오.

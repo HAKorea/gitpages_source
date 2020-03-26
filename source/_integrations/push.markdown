@@ -18,7 +18,7 @@ ha_codeowners:
 
 ## motionEye와 연동
 
-`push` 카메라는 모션 데몬의 웹 프론트엔드 [motionEye](https://github.com/ccrisan/motioneye/wiki)와 함께 사용할 수 있습니다. motionEye는 일반적으로 움직임이 감지될 때 ***파일만***을 저장/기록하도록 설정됩니다. 이미지를 저장할 때마다 명령을 실행하는 후크를 제공합니다. 이 예제는 cURL과 함께 사용하여 모션 감지 이미지를 `push` 카메라로 전송합니다 (아래 예 참조).
+`push` 카메라는 모션 데몬의 웹프론트엔드 [motionEye](https://github.com/ccrisan/motioneye/wiki)와 함께 사용할 수 있습니다. motionEye는 일반적으로 움직임이 감지될 때 ***파일만***을 저장/기록하도록 설정됩니다. 이미지를 저장할 때마다 명령을 실행하는 후크를 제공합니다. 이 예제는 cURL과 함께 사용하여 모션 감지 이미지를 `push` 카메라로 전송합니다 (아래 예 참조).
 
 motionEye에서, **File Storage -> Run A Command** 아래 다음을 입력합니다. :
 ```bash
@@ -28,7 +28,7 @@ curl -X POST -F "image=@%f" http://my.hass.server.com:8123/api/webhoo\k/my_custo
 
 선택적으로 **Still Images -> Capture Mode**로 이동하여 **Motion Triggered**를 설정하여 모션 트리거 이미지만 저장하도록 motionEye를 설정하십시오. **Motion Detection**에서 환경 설정을 조정하십시오.
 
-이 설정에서는 다음과 같은 설정을 사용하여 마지막 모션 트리거 이벤트를 지속적으로 재생하도록 푸시 카메라를 구성 할 수 있습니다.
+이 설정에서는 다음과 같은 설정을 사용하여 마지막 모션 트리거 이벤트를 지속적으로 재생하도록 푸시 카메라를 설정할 수 있습니다.
 
 ```yaml
 camera:

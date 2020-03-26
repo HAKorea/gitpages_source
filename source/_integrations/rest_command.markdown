@@ -8,7 +8,7 @@ ha_release: 0.36
 ha_iot_class: Local Push
 ---
 
-이 통합구성요소는 정규 REST 명령을 서비스로 노출 할 수 있습니다. 서비스는 [script] 또는 [automation]에서 호출 할 수 있습니다.
+이 통합구성요소는 정규 REST 명령을 서비스로 노출할 수 있습니다. 서비스는 [script] 또는 [automation]에서 호출할 수 있습니다.
 
 [script]: /integrations/script/
 [automation]: /getting-started/automation/

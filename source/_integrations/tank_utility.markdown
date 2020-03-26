@@ -23,7 +23,7 @@ Tank Utility API에 대한 인증은 [https://app.tankutility.com](https://app.t
 
 장치 목록의 각 항목은 24 자 문자열입니다. 이 값은 [Tank Utility devices page](https://app.tankutility.com/#/devices)의 그래프 하단에있는 **Usage Reports** 링크를 클릭하면 찾을 수 있습니다.
 
-장치 item 값은 URL 경로의 마지막 세그먼트입니다 (예: URL [https://app.tankutility.com/#/reports/000000000000000000000000](https://app.tankutility.com/#/reports/000000000000000000000000)는 `000000000000000000000000`을 장치 값으로 나타냅니다.
+장치 item 값은 URL 경로의 마지막 세그먼트입니다 (예: URL [https://app.tankutility.com/#/reports/000000000000000000000000](https://app.tankutility.com/#/reports/000000000000000000000000)는 `000000000000000000000000`을 장치값으로 나타냅니다.
 
 ## 설정
 

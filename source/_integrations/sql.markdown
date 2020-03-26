@@ -9,7 +9,7 @@ ha_codeowners:
   - '@dgomes'
 ---
 
-`sql` 센서 플랫폼을 사용하면 [sqlalchemy](https://www.sqlalchemy.org) 라이브러리가 지원하는 [SQL](https://en.wikipedia.org/wiki/SQL) 데이터베이스의 값을 사용하여 센서 상태 (및 속성)를 채울 수 있습니다. `recorder` 통합구성요소 데이터베이스와 함께 사용되는 경우 홈어시스턴트 센서에 대한 통계를 제공하는 데 사용할 수 있습니다. 외부 데이터 소스와 함께 사용할 수도 있습니다.
+`sql` 센서 플랫폼을 사용하면 [sqlalchemy](https://www.sqlalchemy.org) 라이브러리가 지원하는 [SQL](https://en.wikipedia.org/wiki/SQL) 데이터베이스의 값을 사용하여 센서 상태(속성 포함)를 채울 수 있습니다. `recorder` 통합구성요소 데이터베이스와 함께 사용되는 경우 홈어시스턴트 센서에 대한 통계를 제공하는데 사용할 수 있습니다. 외부 데이터 소스와 함께 사용할 수도 있습니다.
 
 ## 설정
 

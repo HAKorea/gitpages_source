@@ -49,7 +49,7 @@ password:
 
 ## Binary Sensor
 
-[Raincloud component](#configuration)를 활성화하고 난 후 `configuration.yaml` 파일에 다음을 추가하십시오.
+[Raincloud component](#configuration)를 활성화한 뒤 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -72,7 +72,7 @@ monitored_conditions:
 
 ## Sensor
 
-[Raincloud component](#configuration)를 활성화하고 난 후 `configuration.yaml` 파일에 다음을 추가하십시오.
+[Raincloud component](#configuration)를 활성화한 뒤 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -99,7 +99,7 @@ monitored_conditions:
 
 ## Switch
 
-[Raincloud component](#configuration)를 활성화하고 난 후 `configuration.yaml` 파일에 다음을 추가하십시오.
+[Raincloud component](#configuration)를 활성화한 뒤 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

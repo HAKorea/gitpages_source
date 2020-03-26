@@ -8,9 +8,9 @@ ha_release: 0.58
 ha_iot_class: Local Polling
 ---
 
-The `pyload` platform allows you to monitor your downloads with [pyLoad](https://pyload.net/) from within Home Assistant and setup automation based on the information.
+`pyload` 플랫폼을 사용하면 Home Assistant 내에서 [pyLoad](https://pyload.net/)로 다운로드를 모니터링하고 정보를 기반으로 자동화를 설정할 수 있습니다.
 
-To enable this sensor, add the following lines to your `configuration.yaml`:
+이 센서를 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -49,7 +49,7 @@ ssl:
   default: false
 {% endconfiguration %}
 
-If everything is setup correctly, the download speed will show up in the frontend.
+모든 것이 올바르게 설정되면 다운로드 속도가 프론트 엔드에 나타납니다.
 
 <p class='img'>
   <img src='{{site_root}}/images/integrations/pyload/pyload_speed.png' />

@@ -25,7 +25,7 @@ ha_codeowners:
 
 1. SmartThings의 푸시 상태 업데이트로 SmartThings 장치 제어.
 2. SmartThings에서 변경될 때 entity가 자동으로 추가, 제거 또는 업데이트됩니다 (Home Assistant 다시 시작시).
-3. 프런트 엔드 설정에서 각각 고유한 연동방식으로 표시되는 여러 SmartThings 계정 및 위치 지원.
+3. 프런트엔드 설정에서 각각 고유한 연동방식으로 표시되는 여러 SmartThings 계정 및 위치 지원.
 4. 브로커, 브릿지 또는 추가 종속성(dependencies)이 없습니다.
 
 다음 단계별 가이드로 실제로 설정하는 방법을 확인하십시오! (v0.87에서 작업 ) :
@@ -52,7 +52,7 @@ Home Assistant Cloud (Nabu Casa)를 사용하는 경우 연동시 Cloud Hook가 
 ### Webhook
 
 1. [personal access token](https://account.smartthings.com/tokens) 삼성이나 SmartThings에 등록한 기존 계정 (자세한 내용은 아래 참조).
-2. SSL로 보안된 도메인 이름을 통한 [remote access](/docs/configuration/remote/) 를 위한 홈어시스턴트 설정 . *자체 서명 된 SSL 인증서는 SmartThings Cloud API에서 지원되지 않습니다.*
+2. SSL로 보안된 도메인 이름을 통한 [remote access](/docs/configuration/remote/)를 위한 홈어시스턴트 설정 . *자체 서명 된 SSL 인증서는 SmartThings Cloud API에서 지원되지 않습니다.*
 3. [`base_url` of the http integration](/integrations/http#base_url) 에서 홈어시스턴트가 인터넷연결이 사용 가능한 URL을 설정하십시오. SmartThings에는 `base_url` 표준 HTTPS 포트(443)를 사용하는 홈어시스턴트가 필요합니다 .
 
 ## 설치 순서
@@ -80,7 +80,7 @@ SmartThings 통합구성요소는 프런트 엔드를 통해서만 설정됩니�
 1. 홈어시스턴트 프론트 엔드에서 '설정'과 '통합구성요소'으로 이동하십시오. '새로운 통합구성요소 설정'에서 'SmartThings'를 찾아 '확인'을 클릭하십시오.
 2. 위에서 만든 개인 액세스 토큰을 입력하고 '제출'을 클릭하십시오
 3. 프롬프트가 표시되면 SmartApp을 설치하십시오.:
-    1. SmartThings Classic 모바일 앱을 엽니다. 'Automation'으로 이동하여 'SmartApps'탭을 선택하십시오.
+    1. SmartThings Classic 모바일앱을 엽니다. 'Automation'으로 이동하여 'SmartApps'탭을 선택하십시오.
     2. 'SmartApp 추가'를 클릭하고 맨 아래로 스크롤하여 'My Apps'을 선택한 다음 'Home Assistant'를 선택하십시오.
     3. 원한다면 이름을 변경하고 'Done'를 누르십시오
     4. 'Allow'을 눌러 앱을 승인하십시오.
@@ -88,7 +88,7 @@ SmartThings 통합구성요소는 프런트 엔드를 통해서만 설정됩니�
 
 <div class='note info'>
 
-고급 : SmartThings가 여러 위치에 있는 경우 각 위치를 Home Assistant에 연동할 수 있습니다. 위의 단계를 수행한 후 이후의 각 위치에 SmartApp을 설치하면 Home Assistant에 자동으로 추가됩니다. 위의 3 단계 (SmartApp 설치) 를 반복할 경우에 완료할 수 있습니다.
+고급: SmartThings가 여러 위치에 있는 경우 각 위치를 Home Assistant에 연동할 수 있습니다. 위의 단계를 수행한 후 이후의 각 위치에 SmartApp을 설치하면 Home Assistant에 자동으로 추가됩니다. 위의 3 단계 (SmartApp 설치) 를 반복할 경우에 완료할 수 있습니다.
 
 </div>
 
@@ -100,7 +100,7 @@ SmartThings 연동은 일부 장치 기능에 대한 이벤트를 트리거합�
 
 ### smartthings.button
 
-연동은 [button](https://smartthings.developer.samsung.com/develop/api-ref/capabilities.html#Button) 기능이 있는 장치가 작동될 때 이벤트를 트리거하며 Home Assistant 내에서 자동화를 트리거하는데 사용 할 수 있습니다. 아래는 데이터 페이로드의 예입니다.:
+연동은 [button](https://smartthings.developer.samsung.com/develop/api-ref/capabilities.html#Button) 기능이 있는 장치가 작동될 때 이벤트를 트리거하며 Home Assistant 내에서 자동화를 트리거하는데 사용할 수 있습니다. 아래는 데이터 페이로드의 예입니다.:
 
 ```json
 {
@@ -114,7 +114,7 @@ SmartThings 연동은 일부 장치 기능에 대한 이벤트를 트리거합�
 
 | 속성                       | 내용
 |---------------------------|------------------------------------------------------------------|
-`component_id`              | 이벤트를 트리거 한 기기와의 연동에 대해 설명합니다. `main`은 부모장치를 나타냅니다.  자식장치가 있는 기기의 경우 이 특성은 이벤트를 발생시킨 자식장치를 구분합니다.
+`component_id`              | 이벤트를 트리거한 기기와의 연동에 대해 설명합니다. `main`은 부모장치를 나타냅니다. 자식장치가 있는 기기의 경우 이 특성은 이벤트를 발생시킨 자식장치를 구분합니다.
 `device_id`                 | SmartThings에서 기기의 고유 ID입니다. 이는 홈어시스턴트 기기 레지스트리 혹은 [SmartThings Developer Workspace](https://smartthings.developer.samsung.com/workspace/)에 있습니다.
 `location_id`               | 기기가 속한 위치의 고유 ID입니다. 설정 항목 레지스트리 또는 [SmartThings Developer Workspace](https://smartthings.developer.samsung.com/workspace/)에서 찾을 수 있습니다.
 `value`                     | 버튼에서 수행된 작업을 설명합니다. 가능한 값 목록에 대해서는 [button](https://smartthings.developer.samsung.com/develop/api-ref/capabilities.html#Button) 기능을 참조하십시오 (일부 장치에서 모두 지원되는 것은 아님).
@@ -124,7 +124,7 @@ SmartThings 연동은 일부 장치 기능에 대한 이벤트를 트리거합�
 
 ## 플랫폼
 
-SmartThings는 장치를 일련의 [capabilities](https://smartthings.developer.samsung.com/develop/api-ref/capabilities.html) 으로 나타내고 SmartThings 연동은 기기를 Home Assistant의 entitiy 플랫폼에 매핑합니다.  단일 장치는 하나 이상의 플랫폼으로 표현 될 수 있습니다.
+SmartThings는 장치를 일련의 [capabilities](https://smartthings.developer.samsung.com/develop/api-ref/capabilities.html)으로 나타내고 SmartThings 연동은 기기를 Home Assistant의 entitiy 플랫폼에 매핑합니다.  단일 장치는 하나 이상의 플랫폼으로 표현될 수 있습니다.
 
 - [Binary Sensor](#binary-sensor)
 - [Climate](#climate)
@@ -136,7 +136,7 @@ SmartThings는 장치를 일련의 [capabilities](https://smartthings.developer.
 - [Scene](#scene)
 - [Switch](#switch)
 
-향후 추가 플랫폼 지원이 추가될 예정입니다.
+향후 이 이상의 플랫폼 지원도 추가될 예정입니다.
 
 ### Binary Sensor
 
@@ -155,7 +155,7 @@ SmartThings Binary Sensor 플랫폼을 사용하면 Binary Sensor 관련 기능�
 
 ### CLIMATE
 
-SmartThings Climate 플랫폼을 사용하면 에어컨 또는 온도조절기 관련 장치를 제어 할 수 있습니다.
+SmartThings Climate 플랫폼을 사용하면 에어컨 또는 온도조절기 관련 장치를 제어할 수 있습니다.
 
 #### Air Conditioners
 
@@ -187,7 +187,7 @@ SmartThings 온도조절장치를 Climate 플랫폼으로 나타내려면 "set a
 
 ### Cover
 
-SmartThings Cover 플랫폼을 사용하면 관련 기능이있는 커버(커튼 혹은 창고 도어)를 제어할 수 있습니다. 커버 플랫폼으로 장치를 나타내려면 아래 "set a"의 기능 중 하나가 있어야합니다.
+SmartThings Cover 플랫폼을 사용하면 관련 기능이 있는 커버(커튼 혹은 창고 도어)를 제어할 수 있습니다. 커버 플랫폼으로 장치를 나타내려면 아래 "set a"의 기능 중 하나가 있어야합니다.
 
 | Capability                          |Cover Features
 |-------------------------------------|--------------------------------------------|
@@ -207,7 +207,7 @@ SmartThings Fan 플랫폼을 사용하면 Fan 관련 기능이 있는 장치를 
 
 ### Light
 
-SmartThings Light 플랫폼을 사용하면 조명관련 기능이 있는 장치를 제어 할 수 있습니다.   SmartThings 장치를 Light 플랫폼으로 표시하려면 기능외에 아래 기능 중 하나 이상이 있어야합니다 [`switch`](https://smartthings.developer.samsung.com/develop/api-ref/capabilities.html#Switch).
+SmartThings Light 플랫폼을 사용하면 조명관련 기능이 있는 장치를 제어할 수 있습니다. SmartThings 장치를 Light 플랫폼으로 표시하려면 기능외에 아래 기능 중 하나 이상이 있어야합니다 [`switch`](https://smartthings.developer.samsung.com/develop/api-ref/capabilities.html#Switch).
 
 | Capability        |Light Features
 |-------------------|------------------------------------------------------------|
@@ -217,11 +217,11 @@ SmartThings Light 플랫폼을 사용하면 조명관련 기능이 있는 장치
 
 ### Lock
 
-SmartThings Lock 플랫폼을 사용하면 [`lock`](https://smartthings.developer.samsung.com/develop/api-ref/capabilities.html#Lock)은 현재 잠금 상태를 표시하고 잠금 및 잠금 해제 명령을 지원하는 기능이 있는 장치를 제어 할 수 있습니다 .
+SmartThings Lock 플랫폼을 사용하면 [`lock`](https://smartthings.developer.samsung.com/develop/api-ref/capabilities.html#Lock)은 현재 잠금 상태를 표시하고 잠금 및 잠금 해제 명령을 지원하는 기능이 있는 장치를 제어할 수 있습니다 .
 
 ### Sensor
 
-SmartThings Sensor 플랫폼을 사용하면 센서관련 기능이 있는 장치를 볼 수 있습니다. 장치가 지원하는 각 속성 (아래)에 대해 센서 entitiy가 생성됩니다.
+SmartThings Sensor 플랫폼을 사용하면 센서관련 기능이 있는 장치를 볼 수 있습니다. 장치가 지원하는 각 속성(아래)에 대해 센서 entitiy가 생성됩니다.
 
 | Capability        |Attributes     |
 |-------------------|---------------|
@@ -280,7 +280,7 @@ SmartThings Sensor 플랫폼을 사용하면 센서관련 기능이 있는 장�
 
 ### Scene
 
-SmartThings Scene 플랫폼을 사용하면 위치 내의 각 SmartThings Scene을 나타내는 Scene entity를 사용하여 SmartThings에 정의된 Scene을 활성화 할 수 있습니다.
+SmartThings Scene 플랫폼을 사용하면 위치 내의 각 SmartThings Scene을 나타내는 Scene entity를 사용하여 SmartThings에 정의된 Scene을 활성화할 수 있습니다.
 
 ### Switch
 
@@ -295,7 +295,7 @@ SmartThings Switch 플랫폼을 사용하면 [`switch`](https://smartthings.deve
 
 ### Setup
 
-통합을 설정하는 중에 다음 오류 메시지 중 하나가 표시되면 다음 단계를 수행하십시오 (Home Assistant 클라우드를 통해 연동된 경우에는 적용되지 않음).:
+연동을 설정하는 중에 다음 오류 메시지 중 하나가 표시되면 다음 단계를 수행하십시오 (Home Assistant 클라우드를 통해 연동된 경우에는 적용되지 않음).:
 
 - "SmartThings는 base_url에 설정된 엔드 포인트를 검증할 수 없습니다. 통합 요구 사항을 검토하십시오."
 - "SmartApp을 설정할 수 없습니다. 다시 시도하십시오."
@@ -329,11 +329,11 @@ SmartThings Switch 플랫폼을 사용하면 [`switch`](https://smartthings.deve
     {"pingData": {"challenge": "00000000-0000-0000-0000-000000000000"}}
     ```
 
-위의 점검 목록을 완료했지만 여전히 플랫폼을 설정할 수 없는 경우 SmartThings 연동을 위한 , [activate debug logging](#debugging)을 활성화 하고 [a new issue](https://github.com/home-assistant/home-assistant/issues)에서 실패 시점까지 로그 메시지를 포함시키십시오 . 
+위의 점검 목록을 완료했지만 여전히 플랫폼을 설정할 수 없는 경우 SmartThings 연동을 위한 , [activate debug logging](#debugging)을 활성화하고 [a new issue](https://github.com/home-assistant/home-assistant/issues)에서 실패 시점까지 로그 메시지를 포함시키십시오 . 
 
 ### Debugging
 
-SmartThings 연동은 log 레벨을 `debug`로 설정할 경우 수신된 푸시 업데이트, 발생한 이벤트 및 기타 메시지에 대한 추가 정보를 기록합니다.  `configuration.yaml` 아래에 다음을 추가하십시오:
+SmartThings 연동은 log 레벨을 `debug`로 설정할 경우 수신된 푸시 업데이트, 발생한 이벤트 및 기타 메시지에 대한 추가 정보를 기록합니다. `configuration.yaml` 아래에 다음을 추가하십시오:
 
 ```yaml
 logger:

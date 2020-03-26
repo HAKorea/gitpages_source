@@ -57,7 +57,7 @@ json_attributes:
 
 ## 사례
 
-이 섹션에는이 센서를 사용하는 방법에 대한 실제 예가 나와 있습니다.
+본 섹션에는 이 센서를 사용하는 방법에 대한 실제 예가 나와 있습니다.
 
 ### 하드 드라이브 온도
 
@@ -81,7 +81,7 @@ sensor:
 
 ### CPU 온도
 
-[`proc`](https://en.wikipedia.org/wiki/Procfs) 파일 시스템 덕분에 시스템에 대한 다양한 세부 정보를 검색 할 수 있습니다. 여기서 CPU 온도가 중요합니다. `configuration.yaml` 파일과 비슷한 것을 추가하십시오 :
+[`proc`](https://en.wikipedia.org/wiki/Procfs) 파일 시스템 덕분에 시스템에 대한 다양한 세부 정보를 검색할 수 있습니다. 여기서 CPU 온도가 중요합니다. `configuration.yaml` 파일과 비슷한 것을 추가하십시오 :
 
 {% raw %}
 ```yaml
@@ -131,7 +131,7 @@ sensor:
 
 ### 원격 텍스트 파일에서 값 읽기 
 
-HTTP를 통해 액세스 할 수 있는 텍스트 파일에 값을 저장하는 장치를 소유한 경우 이전 섹션에 표시된 것과 동일한 방법을 사용할 수 있습니다. JSON 응답을 보는 대신 센서 값을 직접 가져옵니다.
+HTTP를 통해 액세스할 수 있는 텍스트 파일에 값을 저장하는 장치를 소유한 경우 이전 섹션에 표시된 것과 동일한 방법을 사용할 수 있습니다. JSON 응답을 보는 대신 센서값을 직접 가져옵니다.
 
 ```yaml
 sensor:
@@ -144,7 +144,7 @@ sensor:
 
 예는 [aREST sensor](/integrations/arest#sensor)와 동일하지만 외부 Python 스크립트를 사용합니다. RESTful API를 노출하는 장치와의 인터페이스에 대한 아이디어를 제공해야합니다.
 
-값을 검색하는 한 줄 스크립트는 다음과 같습니다. 물론 `configuration.yaml` 파일에서 직접 사용할 수도 있지만 따옴표에 대해서는 특별한 주의가 필요합니다.
+값을 검색하는 한 줄짜리 스크립트는 다음과 같습니다. 물론 `configuration.yaml` 파일에서 직접 사용할 수도 있지만 따옴표에 대해서는 특별한 주의가 필요합니다.
 
 ```bash
 $ python3 -c "import requests; print(requests.get('http://10.0.0.48/analog/2').json()['return_value'])"
@@ -188,7 +188,7 @@ sensor:
 
 ### command output에서 ​​JSON 속성 사용
 
-이 예는 `value_json` 및 `json_attributes`를 사용하여 하나의 센서(추가가 속성 인 경우)로 여러 값을 검색하는 방법을 보여줍니다.
+이 예는 `value_json` 및 `json_attributes`를 사용하여 하나의 센서(추가가 속성인 경우)로 여러 값을 검색하는 방법을 보여줍니다.
 
 {% raw %}
 ```yaml

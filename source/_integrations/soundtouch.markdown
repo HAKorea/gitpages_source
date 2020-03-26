@@ -12,9 +12,9 @@ ha_iot_class: Local Polling
 <iframe width="690" height="437" src="https://www.youtube.com/embed/GoWRsaS54JM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-`soundtouch` 플랫폼을 통해 Home Assistant에서 [Bose Soundtouch](https://www.soundtouch.com/) 스피커를 제어 할 수 있습니다 .
+`soundtouch` 플랫폼을 통해 Home Assistant에서 [Bose Soundtouch](https://www.soundtouch.com/) 스피커를 제어할 수 있습니다 .
 
-기본적으로 홈 어시스턴트에서 제공하는 자동 검색을 지원하므로 `configuration.yaml`에 추가할 필요가 없습니다 
+기본적으로 홈어시스턴트에서 제공하는 자동 검색을 지원하므로 `configuration.yaml`에 추가할 필요가 없습니다 
 
 또는 `configuration.yaml` 파일에 다음을 추가 할 수 있습니다.
 
@@ -85,11 +85,11 @@ HTTP (HTTPS가 아닌) URL을 재생할 수도 있습니다. :
 
 홈어시스턴트가 HTTPS가 아닌 HTTP 로 설정된 경우에만 [Google Text-to-Speech](/integrations/google_translate) 또는 [Amazon Polly](/integrations/amazon_polly)와 같은 TTS services를 사용할 수 있습니다. (현재 장치에 한해, 펌웨어 업그레이드 예정)
 
-SSL로 인터넷에 Home Assistant 설치를 게시하려는 경우 해결 방법은 HTTPS 웹서버를 리버스 프록시 (예 : [nginx](/docs/ecosystem/nginx/))로 설정하고 Home Assistant 설정을 로컬 네트워크에서 HTTP로 구성하는 것입니다. 이렇게 하면 Soundtouch 장치는 로컬에서 HTTP의 TTS 파일에 액세스 할 수 있으며 인터넷의 설정은 HTTPS입니다.
+SSL로 인터넷에 Home Assistant 설치를 게시하려는 경우 해결 방법은 HTTPS 웹서버를 리버스 프록시(예: [nginx](/docs/ecosystem/nginx/))로 설정하고 Home Assistant 설정을 로컬 네트워크에서 HTTP로 설정하는 것입니다. 이렇게 하면 Soundtouch 장치는 로컬에서 HTTP의 TTS 파일에 액세스할 수 있으며 인터넷의 설정은 HTTPS입니다.
 
 ### `play_everywhere` 서비스
 
-마스터에서 멀티룸 (zone)을 만들고 다른 모든 장치 (슬레이브)에서 동일한 콘텐츠를 재생합니다
+마스터에서 멀티룸(zone)을 만들고 다른 모든 장치(슬레이브)에서 동일한 콘텐츠를 재생합니다
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
@@ -97,7 +97,7 @@ SSL로 인터넷에 Home Assistant 설치를 게시하려는 경우 해결 방�
 
 ### `create_zone` 서비스
 
-마스터에서 멀티룸 (zone)을 만들고 선택한 슬레이브에서 재생
+마스터에서 멀티룸(zone)을 만들고 선택한 슬레이브에서 재생
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |

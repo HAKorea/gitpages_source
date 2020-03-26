@@ -13,7 +13,7 @@ ha_iot_class: Cloud Polling
 <iframe width="690" height="437" src="https://www.youtube.com/embed/ZkYEeiv3lHE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-`Streamlabs Water` 통합구성요소 플랫폼은 사용 정보를 검색하고 장치의 자리 비움 모드를 관리하기 위해 [Streamlabs water monitoring devices](https://www.streamlabswater.com/)와 상호작용하는데 사용됩니다. [Streamlabs Water API](https://developer.streamlabswater.com)는 현재 자리 비움 모드와 함께 매일, 매월 및 매년 물사용량을 검색하는 데 사용됩니다.
+`Streamlabs Water` 통합구성요소 플랫폼은 사용 정보를 검색하고 장치의 자리 비움 모드를 관리하기 위해 [Streamlabs water monitoring devices](https://www.streamlabswater.com/)와 상호작용하는데 사용됩니다. [Streamlabs Water API](https://developer.streamlabswater.com)는 현재 자리 비움 모드와 함께 매일, 매월 및 매년 물사용량을 검색하는데 사용됩니다.
 
 현재 홈어시스턴트에는 다음 장치 유형이 지원됩니다.
 

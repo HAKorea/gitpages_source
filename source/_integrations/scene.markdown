@@ -1,5 +1,5 @@
 ---
-title: 장면(씬,Scenes)
+title: 씬(장면,Scenes)
 description: Instructions on how to setup scenes within Home Assistant.
 logo: home-assistant.png
 ha_category:
@@ -14,7 +14,7 @@ ha_codeowners:
 <iframe width="690" height="437" src="https://www.youtube.com/embed/U3_b7GAsh3Y?start=1538" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-특정 엔티티가 원하는 상태를 설정하는 장면(scene)을 만들 수 있습니다. 예를 들어 장면에서 조명 A를 켜고 조명 B를 밝게 빨간색으로 지정하도록 할 수 있습니다.
+특정 엔티티가 원하는 상태를 설정하는 씬(장면,scene)을 만들 수 있습니다. 예를 들어 씬에서 조명 A를 켜고 조명 B를 밝게 빨간색으로 지정하도록 할 수 있습니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -40,11 +40,11 @@ scene:
 
 {% configuration %}
 name:
-  description: 친숙한 장면 이름.
+  description: 친숙한 씬 이름.
   required: true
   type: string
 entities:
-  description: 제어 할 엔티티 및 원하는 상태.
+  description: 제어할 엔티티 및 원하는 상태.
   required: true
   type: list
 {% endconfiguration %}
@@ -54,7 +54,7 @@ entities:
 - 엔티티와 직접 `state`를 정의하십시오. 반드시 `state`를 정의해야합니다.
 - 속성으로 복잡한 상태를 정의하십시오. `developer-tools-> state` 에서 특정 엔티티에 사용 가능한 모든 속성을 볼 수 있습니다. 
 
-`scene.turn_on` 서비스를 사용하지 않고 장면을 활성화 할 수 있습니다 (scene.turn_off '서비스 없음').
+`scene.turn_on` 서비스를 사용하지 않고 씬을 활성화 할 수 있습니다 (scene.turn_off '서비스 없음').
 
 ```yaml
 # Example automation
@@ -69,9 +69,9 @@ automation:
     entity_id: scene.romantic
 ```
 
-## 장면을 정의하지 않고 적용
+## 씬을 정의하지 않고 적용
 
-`scene.apply` 서비스를 사용하면 설정을 통해 먼저 장면을 정의하지 않고도 장면을 적용 할 수 있습니다. 대신 서비스 데이터의 일부로 상태를 전달합니다. 데이터의 형식은 설정에서 `entities` 필드와 동일합니다.
+`scene.apply` 서비스를 사용하면 설정을 통해 먼저 씬을 정의하지 않고도 씬을 적용 할 수 있습니다. 대신 서비스 데이터의 일부로 상태를 전달합니다. 데이터의 형식은 설정에서 `entities` 필드와 동일합니다.
 
 ```yaml
 # Example automation
@@ -94,17 +94,17 @@ automation:
           source: HDMI 1
 ```
 
-## 장면 새로고침
+## 씬 새로고침
 
-장면 구성을 변경할 때마다 `scene.reload` 서비스를 호출 하여 장면을 다시로드 할 수 있습니다.
+씬 설정을 변경할 때마다 `scene.reload` 서비스를 호출하여 씬을 다시로드 할 수 있습니다.
 
-## 즉석에서 장면 만들기
+## 즉석에서 씬 만들기
 
-`scene.create`서비스 를 호출하여 별도 설정할 필요없이 새 장면을 만듭니다. 이 장면은 설정을 다시로드 한 후에 삭제됩니다.
+`scene.create` 서비스를 호출하여 별도 설정할 필요없이 새 씬을 만듭니다. 이 씬은 설정을 다시로드한 후에 삭제됩니다.
 
-공백 대신 밑줄로 소문자로 `scene_id`를 전달해야합니다. 장면을 구성 할 때와 같은 형식으로 엔티티를 지정할 수도 있습니다. `snapshot_entities` 매개 변수를 사용하여 현재 상태의 스냅샷을 작성할 수도 있습니다. 이 경우 스냅샷을 만들려는 모든 엔터티의 `entity_id`를 지정해야합니다. `entities`와 `snapshot_entities`는 결합 할 수 있지만 적어도 둘 중 하나를 사용해야합니다.
+공백 대신 밑줄로 소문자로 `scene_id`를 전달해야합니다. 씬을 설정할 때와 같은 형식으로 엔티티를 지정할 수도 있습니다. `snapshot_entities` 매개 변수를 사용하여 현재 상태의 스냅샷을 작성할 수도 있습니다. 이 경우 스냅샷을 만들려는 모든 엔터티의 `entity_id`를 지정해야합니다. `entities`와 `snapshot_entities`는 결합할 수 있지만 적어도 둘 중 하나를 사용해야합니다.
 
-장면이 이전에 `scene.create`에 의해 생성 된 경우 덮어 씁니다. YAML에서 장면을 만든 경우 로그 파일에 경고 만 표시됩니다. 
+씬이 이전에 `scene.create`에 의해 생성된 경우 덮어 씁니다. YAML에서 씬을 만든 경우 로그 파일에 경고만 표시됩니다. 
 
 ```yaml
 # Example automation using entities

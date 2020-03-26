@@ -46,9 +46,9 @@ action:
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
-| `notification_id`      |      no  | `notification_id`는 제거해야 할 알림을 식별하는 데 필요합니다.
+| `notification_id`      |      no  | `notification_id`는 제거해야 할 알림을 식별하는데 필요합니다.
 
-이 서비스를 사용하면 스크립트 또는 자동화로 알림을 제거 할 수 있습니다.
+이 서비스를 사용하면 스크립트 또는 자동화로 알림을 제거할 수 있습니다.
 
 ```yaml
 action:
@@ -97,7 +97,7 @@ message 속성은 [Markdown formatting syntax](https://daringfireball.net/projec
 
 <div class="note">
 
-  `/local/` in this context refers to the `.homeassistant/www/` folder.
+  이 문맥에서 `/local/`은 `.homeassistant/www/`폴더를 가리 킵니다.
 
 </div>
 

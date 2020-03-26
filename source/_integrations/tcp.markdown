@@ -9,16 +9,16 @@ ha_release: 0.14
 ha_iot_class: Local Polling
 ---
 
-The TCP integration allows the integration of some services for which a specific Home Assistant integration does not exist. If the service communicates over a TCP socket with a simple request/reply mechanism then the chances are that this integration will allow integration with it.
+TCP 통합구성요소를 통해 특정 Home Assistant 연동이 존재하지 않는 일부 서비스를 연동시킬 수 있습니다. 서비스가 간단한 요청/응답 메커니즘을 사용하여 TCP 소켓을 통해 통신하는 경우 이 통합구성요소로 연동할 수 있습니다.
 
-There is currently support for the following device types within Home Assistant:
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - [Binary Sensor](#binary-sensor)
 - [Sensor](#sensor)
 
 ## Sensor
 
-To enable the TCP sensor, add the following lines to your `configuration.yaml`:
+TCP 센서를 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -66,20 +66,20 @@ buffer_size:
   type: integer
 {% endconfiguration %}
 
-### Examples
+### 사례
 
-In this section you find some real-life examples of how to use this sensor.
+본 섹션에는 이 센서를 사용하는 방법에 대한 실제 예가 나와 있습니다.
 
 #### EBUSd
 
-The [EBUSd](https://github.com/john30/ebusd/wiki) service enables connection to an EBUS serial bus on some home heating/cooling systems. Using this service it is possible to extract various metrics which may be useful to have within Home Assistant. In order to use EBUSd, you connect to it using a TCP socket and send it a command. The service will respond with the value it has received from EBUS. On the command line, this would look something like:
+[EBUSd](https://github.com/john30/ebusd/wiki) 서비스를 통해 일부 가정집의 난방/냉각 시스템의 EBUS 직렬 버스에 연결할 수 있습니다. 이 서비스를 사용하면 홈어시스턴트에 유용한 다양한 메트릭(Metrics)을 추출할 수 있습니다. EBUSd를 사용하려면 TCP 소켓을 사용하여 EBUSd에 연결하고 명령을 보내십시오. 서비스는 EBUS로부터 받은 값으로 응답합니다. Commnad line에서 다음과 같이 보일 것입니다.
 
 ```bash
 $ echo "r WaterPressure" | nc 10.0.0.127 8888
 0.903;ok
 ```
 
-You will notice that the output from the service is not just a single value (it contains ";ok" as well). To grab the value we're interested in, we can use a Jinja2 template. The response received is injected into the template as the `value` variable. To use this value within Home Assistant, use the following configuration:
+서비스의 출력은 단일값이 아닙니다(";ok"도 포함합니다). 우리가 관심있는 값을 얻기 위해 Jinja2 템플릿을 사용할 수 있습니다. 수신된 응답은 템플릿에 `value` 변수로 주입됩니다. Home Assistant 내에서 이 값을 사용하려면 다음 설정을 사용하십시오.
 
 ```yaml
 sensor:
@@ -96,14 +96,14 @@ sensor:
 
 #### hddtemp
 
-The tool `hddtemp` collects the temperature of your hard disks.
+`hddtemp` 툴은 하드 디스크의 온도를 수집합니다.
 
 ```bash
 $ hddtemp
 /dev/sda: SAMSUNG MZMTE256HMHP-000L1: 39°C
 ```
 
-With `hddtemp -d` you can run the tool in TCP/IP daemon mode on port 7634 which enables you to get the data across the network.
+`hddtemp -d`를 사용하면 포트 7634에서 TCP/IP 데몬 모드로 도구를 실행하여 네트워크를 통해 데이터를 가져올 수 있습니다.
 
 ```bash
 $ telnet localhost 7634
@@ -113,7 +113,7 @@ Escape character is '^]'.
 |/dev/sda|SAMSUNG MZMTE256HMHP-000L1|38|C|Connection closed by foreign host.
 ```
 
-The entry for the `configuration.yaml` file for a `hddtemp` sensor could look like the example below.
+`hddtemp` 센서의 `configuration.yaml` 파일에 대한 항목은 아래 예와 유사합니다.
 
 ```yaml
 sensor:
@@ -130,9 +130,9 @@ sensor:
 
 ## Binary Sensor
 
-The TCP Binary Sensor is a type of [TCP Sensor](#sensor) which is either "off" or "on". In order to use this sensor type, in addition to the configuration for the TCP Sensor, you must supply a `value_on` value to represent what is returned when the device is turned on.
+TCP 바이너리 센서는 "off" 또는 "on"인 [TCP Sensor](#sensor) 유형입니다. 이 센서 유형을 사용하려면 TCP 센서 설정 외에도 장치를 켤 때 리턴되는 값을 표시하는 `value_on` 값을 제공해야합니다.
 
-To enable this sensor, add the following lines to your `configuration.yaml`:
+이 센서를 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry

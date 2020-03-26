@@ -89,4 +89,4 @@ surepetcare:
 
 ## flaps 와 pets의 집안 ID 얻어내기
 
-지금은 [@rcastberg](https://github.com/rcastberg)의 [sp_cli.py](https://github.com/rcastberg/sure_petcare/blob/master/sp_cli.py)를 사용하여 가져 오십시오. Sure Petcare API의 ID 기본 설정에서 ID는 JSON으로 `~ / .surepet.cache`에 기록됩니다.
+지금은 [@rcastberg](https://github.com/rcastberg)의 [sp_cli.py](https://github.com/rcastberg/sure_petcare/blob/master/sp_cli.py)를 사용하여 가져 오십시오. Sure Petcare API의 ID 기본 설정에서 ID는 JSON으로 `~/.surepet.cache`에 기록됩니다.

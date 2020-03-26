@@ -8,15 +8,15 @@ ha_release: 0.84
 ha_iot_class: Local Polling
 ---
 
-The `qbittorrent` platform allows you to monitor your downloads with [qBittorrent](https://www.qbittorrent.org/) from within Home Assistant and setup automations based on the information.
+`qbittorrent` 플랫폼을 사용하면 홈어시스턴트에서 [qBittorrent](https://www.qbittorrent.org/)로 다운로드를 모니터링하고 정보를 기반으로 자동화를 설정할 수 있습니다.
 
-## Setup
+## 셋업
 
-This sensor requires the qBittorrent Web UI enabled. The [official reference](https://github.com/qbittorrent/qBittorrent/wiki#webui-related) describes how to set up the Web UI.
+이 센서에는 qBittorrent 웹 UI가 활성화되어 있어야합니다. [공식 참조](https://github.com/qbittorrent/qBittorrent/wiki#webui-related)는 웹 UI를 설정하는 방법을 설명합니다.
 
-## Configuration
+## 설정
 
-To enable this sensor, add the following lines to your `configuration.yaml`:
+이 센서를 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry

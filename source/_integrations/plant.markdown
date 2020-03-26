@@ -10,11 +10,11 @@ ha_codeowners:
   - '@ChristianKuehnel'
 ---
 
-This`plant`component lets you merge moisture, conductivity, light intensity, temperature and battery level for a plant into a single UI element. It also supports setting minimum and maximum values for each measurement and will change its state to "problem" if it is not within those limits.
+이 `plant` 구성 요소를 사용하면 식물의 수분, 전도도, 광도, 온도 및 배터리 수준을 단일 UI 요소로 병합할 수 있습니다. 또한 각 측정에 대한 최소값과 최대 값 설정을 지원하며 해당 한계 내에 있지 않은 경우 상태를 "problem"로 변경합니다. 
 
-## Configuration
+## 설정
 
-To use your `plant` sensor in your installation, add the following to your `configuration.yaml` file:
+`plant` 센서를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -108,18 +108,20 @@ entity_id:
       type: integer
 {% endconfiguration %}
 
-## Examples
-### Using plain MQTT sensor to get the data
-This is a practical example that uses a multiple of `MQTT sensors` to supply the readings used by the `plant` sensor.
-Another good source of this data would be the [Mi Flora](/integrations/miflora) component.
+## 사례
 
-If the sensor data is within the min/max values the status will be `ok`, if not the status will be `problem`. You can use this to trigger a notification, if there is a problem with your plant. Of course you can only monitor attributes of your plant, where the sensor is configured and is providing the data.
+### 일반 MQTT 센서를 사용하여 데이터 가져 오기
 
-## Data Source
+이는 `plant` 센서가 사용하는 판독값을 제공하기 위해 다수의 `MQTT sensors`를 사용하는 실제 예입니다.
+이 데이터의 또 다른 좋은 소스는 [Mi Flora](/integrations/miflora) 구성 요소입니다.
 
-The main sources of the data will usually be a [MiFlora sensor](/integrations/miflora) or a [MQTT sensor](/integrations/sensor.mqtt/) receiving the data from a [PlantGateway](https://github.com/ChristianKuehnel/plantgateway).
+센서 데이터가 최소/최대값 내에있는 경우 상태는 `ok`이며, 그렇지 않으면 상태는 `problem`입니다. plant에 문제가있는 경우 이를 사용하여 알림을 트리거 할 수 있습니다. 물론 센서가 설정되고 데이터를 제공하는 시스템의 속성만 모니터링 할 수 있습니다.
 
-If you want to get the date via a PlantGateway, this is a typical configuration for the MQTT sensors:
+## 데이터 소스
+
+데이터의 주요 소스는 일반적으로 [PlantGateway](https://github.com/ChristianKuehnel/plantgateway)에서 데이터를 수신하는 [MiFlora sensor](/integrations/miflora) 또는 [MQTT sensor](/integrations/sensor.mqtt/)입니다.
+
+PlantGateway를 통해 데이터를 얻기위한 MQTT 센서의 일반적인 설정입니다.
 
 {% raw %}
 
@@ -169,4 +171,4 @@ sensor:
 
 {% endraw %}
 
-You have to replace the `state_topic` with the value that you configured in the PlantGateway. It also depends on the global configuration of your MQTT server.
+`state_topic`을 PlantGateway에서 설정한 값으로 바꿔야합니다. 또한 MQTT 서버의 글로벌 설정에 따라 다릅니다.

@@ -7,25 +7,29 @@ ha_category:
 ha_release: 0.38
 ---
 
-The `rflink` integration supports devices that use [RFLink gateway firmware](http://www.rflink.nl/blog2/download), for example, the [Nodo RFLink Gateway](https://www.nodo-shop.nl/nl/21-rflink-gateway). RFLink Gateway is an Arduino Mega firmware that allows two-way communication with a multitude of RF wireless devices using cheap hardware (Arduino + transceiver).
-
-The 433 MHz spectrum is used by many manufacturers mostly using their own protocol/standard and includes devices like: light switches, blinds, weather stations, alarms and various other sensors.
-
-RFLink Gateway supports a number of RF frequencies, using a wide range of low-cost hardware. [Their website](http://www.rflink.nl/blog2/) provides details for various RF transmitters, receivers and transceiver modules for 433MHz, 868MHz and 2.4 GHz.
-
-<div class='note'>
-Note: Versions later than R44 add support for Ikea Ansluta, Philips Living Colors Gen1 and MySensors devices.
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/dqjK-LWDwE4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-A complete list of devices supported by RFLink can be found [here](http://www.rflink.nl/blog2/devlist).
+`rflink` 통합구성요소는 [RFLink 게이트웨이 펌웨어](http://www.rflink.nl/blog2/download)를 사용하는 장치 (예: [Nodo RFLink Gateway](https://www.nodo-shop.nl/nl/21-rflink-gateway))를 지원합니다. RFLink 게이트웨이는 저렴한 하드웨어 (Arduino + 트랜시버)를 사용하여 여러 RF 무선 장치와 양방향 통신을 가능하게하는 Arduino Mega 펌웨어입니다.
 
-This integration is tested with the following hardware/software:
+433MHz 스펙트럼은 대부분 자체 제조업체의 프로토콜/표준을 사용하는 많은 제조업체에서 사용하며 조명 스위치, 블라인드, 기상 관측소, 경보 및 기타 다양한 센서와 같은 장치를 포함합니다.
+
+RFLink 게이트웨이는 광범위한 저비용 하드웨어를 사용하여 여러 RF 주파수를 지원합니다. [Their website](http://www.rflink.nl/blog2/)는 433MHz, 868MHz 및 2.4GHz를위한 다양한 RF 송신기, 수신기 및 송수신기 모듈에 대한 세부 정보를 제공합니다.
+
+<div class='note'>
+참고: R44 이후 버전은 Ikea Ansluta, Philips Living Colors Gen1 및 MySensors 장치에 대한 지원을 추가합니다.
+</div>
+
+RFLink가 지원하는 전체 장치 목록은 [여기](http://www.rflink.nl/blog2/devlist)에서 확인할 수 있습니다.
+
+이 통합구성요소는 다음 하드웨어/소프트웨어로 테스트되었습니다.
 
 - Nodo RFLink Gateway V1.4/RFLink R46
 
-## Configuration
+## 설정
 
-To enable RFLink in your installation, add the following to your `configuration.yaml` file:
+설치시 RFLink를 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -58,7 +62,7 @@ reconnect_interval:
   type: integer
 {% endconfiguration %}
 
-### Full example
+### 전체 사례
 ```yaml
 # Example configuration.yaml entry
 rflink:
@@ -71,26 +75,26 @@ rflink:
 
 ### TCP mode
 
-TCP mode allows you to connect to an RFLink device over a TCP/IP network. This is useful if placing the RFLink device next to the HA server is not optimal or desired (eg: bad reception).
+TCP 모드에서는 TCP/IP 네트워크를 통해 RFLink 장치에 연결할 수 있습니다. 이는 RF 서버 장치를 HA 서버 옆에 배치하는 것이 최적이거나 바람직하지 않은 경우에 유용합니다 (예: 수신 불량).
 
-To expose the USB/serial interface over TCP on a different host (Linux) the following command can be used:
+다른 호스트 (Linux)에서 TCP를 통해 USB/serial 인터페이스를 표시하려면 다음 명령을 사용할 수 있습니다.
 
 ```bash
 $ socat /dev/ttyACM0,b57600 TCP-LISTEN:1234,reuseaddr
 ```
 
-Other methods of exposing the serial interface over TCP are possible (eg: ESP8266 or using Arduino Wifi shield). Essentially the serial stream should be directly mapped to the TCP stream.
+TCP를 통해 serial 인터페이스를 노출하는 다른 방법이 가능합니다 (예: ESP8266 또는 Arduino Wifi shield 사용). 기본적으로 serial 스트림은 TCP 스트림에 직접 매핑되어야합니다.
 
-Tested with Wifi serial bridge [esp-link V2.2.3](https://github.com/jeelabs/esp-link/releases/tag/v2.2.3) running on a NodeMCU (ESP8266 Wifi module) with ESP8266 TXD0 (pin D10) and RXD0 (pin D9) connected to Arduino MEGA 2560 RX (Pin 2) and TX (Pin 3) respectively.
+Arduino MEGA 2560 RX (Pin 2) 및 TX (Pin 3)에 각각 연결된 ESP8266 TXD0 (Pin D10) 및 RXD0 (Pin D9)이 있는 NodeMCU(ESP8266 Wifi module)에서 실행되는 Wi-Fi 직렬 브리지 [esp-link V2.2.3](https://github.com/jeelabs/esp-link/releases/tag/v2.2.3)로 테스트되었습니다.
 
 <div class='note warning'>
 
-Due to different logic levels, a voltage level shifter is required between the 3.3V NodeMCU and 5V Arduino MEGA 2560 pins. The BSS138 bidirectional logic level converter has been tested for serial pins and the [link](https://www.aliexpress.com/item/8CH-IIC-I2C-Logic-Level-Converter-Bi-Directional-Module-DC-DC-5V-to-3-3V-Setp/32238089139.html) is recommended for the CC2500 transceiver (used for Ikea Ansluta and Philips Living Colors)
+로직 레벨이 다르기 때문에 3.3V NodeMCU와 5V Arduino MEGA 2560 PIN 사이에 전압 레벨 시프터(level shifter)가 필요합니다. BSS138 양방향 로직 레벨 컨버터는 serial pins에 대해 테스트되었으며 CC2500 트랜시버 (Ikea Ansluta 및 Philips Living Colors에 사용)에 [link](https://www.aliexpress.com/item/8CH-IIC-I2C-Logic-Level-Converter-Bi-Directional-Module-DC-DC-5V-to-3-3V-Setp/32238089139.html)가 권장됩니다. 
 
 </div>
 
 <div class='note'>
-When re-flashing the Arduino MEGA, disconnect the ESP8266 to avoid programming difficulties.
+Arduino MEGA를 다시 플래시할 때는 프로그래밍 문제를 피하기 위해 ESP8266을 분리하십시오.
 </div>
 
 ```yaml
@@ -100,10 +104,10 @@ rflink:
   port: 1234
 ```
 
-### Adding devices Automatically
+### 자동 장치 추가
 
-In order to have your devices discovered automatically, you need to add the following to the configuration.
-When pressing the button on the physical remote, RFLink detects the signal and the device should be added automatically to Home Assistant.
+장치가 자동으로 검색되도록 하려면 설정에 다음을 추가해야합니다. 
+물리적 리모콘의 버튼을 누르면 RFLink가 신호를 감지하고 장치가 홈어시스턴트에 자동으로 추가되어야합니다.
 
 ```yaml
 light:
@@ -115,14 +119,15 @@ sensor:
 ```
 
 [RFLink Switches](/integrations/switch.rflink/) and [RFLink Binary Sensors](/integrations/binary_sensor.rflink/) cannot be added automatically. 
+[RFLink Switches](/integrations/switch.rflink/) 및 [RFLink Binary Sensors](/integrations/binary_sensor.rflink/)는 자동으로 추가할 수 없습니다.
 
-The RFLink integration does not know the difference between a binary sensor, a switch and a light. Therefore all switchable devices are automatically added as light by default. However, once the ID of a switch is known, it can be used to configure it as a switch or a binary sensor type in Home Assistant, for example, to add it to a different group, hide it or configure a nice name.
+RFLink 통합구성요소는 이진 센서, 스위치 및 조명의 차이점을 모릅니다. 따라서 모든 전환가능한(switchable) 장치는 기본적으로 자동으로 조명으로 추가됩니다. 그러나 스위치의 ID를 알고 나면 Home Assistant에서 스위치나 이진 센서 유형으로 설정하는데 사용할 수 있습니다 (예: 다른 그룹에 추가하거나 숨기거나 친숙한 이름을 설정하는 등).
 
-### Ignoring devices
+### 장치 무시하기
 
-The RFLink platform can be configured to completely ignore a device on a platform level. This is useful when you have neighbors which also use 433 MHz technology.
+플랫폼 레벨에서 장치를 완전히 무시하도록 RFLink 플랫폼을 설정할 수 있습니다. 이것은 433MHz 기술을 사용하는 이웃이 있을 때 유용합니다.
 
-For example:
+사례 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -135,26 +140,26 @@ rflink:
     - kaku_1_*
 ```
 
-This configuration will ignore the button `1` of the `newkaku` device with ID `000001`, all devices of the `digitech` protocol and all switches of the `kaku` protocol device with codewheel ID `1`.
+이 설정은 ID가 `000001`인 `newkaku` 장치의 `1`버튼, `digitech` 프로토콜의 모든 장치 및 codewheel ID `1`의 `kaku` 프로토콜 장치의 모든 스위치를 무시합니다.
 
-### Device support
+### 지원 장치
 
-Even though a lot of devices are supported by RFLink, not all have been tested/implemented. If you have a device supported by RFLink but not by this integration please consider testing and adding support yourself.
+RFLink는 많은 장치를 지원하지만 모든 테스트/구현된 것은 아닙니다. RFLink에서 지원하지만 이 통합구성요소에서 지원하지 않는 장치가 있는 경우 직접 테스트하고 지원을 고려하십시오.
 
-### Device Incorrectly Identified
+### 장치가 잘못 식별되었을 때  
 
-If you find a device is recognized differently, with different protocols or the ON OFF is swapped or detected as two ON commands, it can  be overcome with the RFLink 'RF Signal Learning' mechanism from RFLink Rev 46 (11 March 2017). [Link to further detail.](http://www.rflink.nl/blog2/faq#RFFind)
+장치가 다른 프로토콜로 다르게 인식되거나 ON OFF가 두 개의 ON 명령으로 바뀌거나 감지되는 경우 RFLink Rev 46(2017년 3월 11일)의 RFLink 'RF 신호 학습' 메커니즘으로 극복할 수 있습니다. [Link to further detail.](http://www.rflink.nl/blog2/faq#RFFind)
 
-### Technical Overview
+### 기술 개요
 
 - The`rflink` Python module is an asyncio transport/protocol which is setup to fire a callback for every (valid/supported) packet received by the RFLink gateway.
 - This integration uses this callback to distribute 'rflink packet events' over [Home Assistant's event bus](/docs/configuration/events/) which can be subscribed to by entities/platform implementations.
 - The platform implementation takes care of creating new devices (if enabled) for unseen incoming packet ID's.
 - Device entities take care of matching to the packet ID, interpreting and performing actions based on the packet contents. Common entity logic is maintained in this main component.
 
-### Debug Logging
+### 디버그 로깅
 
-For debugging purposes or context when investigating issues you can enable debug logging for RFLink with the following config snippet:
+문제를 조사할 때 디버깅 목적 또는 컨텍스트를 위해 다음 설정 스니펫을 사용하여 RFLink에 대한 디버그 로깅을 사용할 수 있습니다.
 
 ```yaml
 logger:
@@ -164,7 +169,7 @@ logger:
     homeassistant.components.rflink: debug
 ```
 
-This will give you output looking like this:
+이렇게하면 다음과 같이 출력됩니다.
 
 ```bash
 17-03-07 20:12:05 DEBUG (MainThread) [rflink.protocol] received data: 20;00;Nod

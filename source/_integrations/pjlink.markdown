@@ -12,7 +12,7 @@ ha_iot_class: Local Polling
 <iframe width="690" height="437" src="https://www.youtube.com/embed/uQfbgsuY7RY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-`pjlink` 플랫폼을 사용하면 [PJLink protocol](https://pjlink.jbmia.or.jp/english/index.html)을 지원하는 프로젝터 인 Home Assistant에서 제어 할 수 있습니다.
+`pjlink` 플랫폼을 사용하면 [PJLink protocol](https://pjlink.jbmia.or.jp/english/index.html)을 지원하는 프로젝터 인 Home Assistant에서 제어할 수 있습니다.
 
 ## 설정
 
@@ -46,7 +46,7 @@ encoding:
   type: string
   default: utf-8
 password:
-  description: 프로젝터 인증을위한 비밀번호
+  description: 프로젝터 인증을 위한 비밀번호
   required: false
   type: string
 {% endconfiguration %}

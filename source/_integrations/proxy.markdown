@@ -6,7 +6,7 @@ ha_category:
 ha_release: 0.65
 ---
 
-`proxy` 카메라 플랫폼을 사용하면 사후처리 루틴을 통해 다른 카메라의 출력을 전달하고 사후처리된 출력으로 새 카메라를 생성 할 수 있습니다.
+`proxy` 카메라 플랫폼을 사용하면 사후처리 루틴을 통해 다른 카메라의 출력을 전달하고 사후처리된 출력으로 새 카메라를 생성할 수 있습니다.
 
 현재 사후처리는 이미지/MJPEG의 크기조정 및 혹은 자르기를 지원할 뿐만아니라 최대 화면 주사율을 제한합니다.
 
@@ -14,7 +14,7 @@ ha_release: 0.65
 
 ## 설정
 
-설치시이 카메라를 활성화하려면 먼저 홈어시스턴트에 기존 작동 카메라가 구성되어 있어야합니다. 다음으로 `configuration.yaml` 파일에 다음을 추가하십시오 :
+설치시 이 카메라를 활성화하려면 먼저 홈어시스턴트에 기존 작동 카메라가 구성되어 있어야합니다. 다음으로 `configuration.yaml` 파일에 다음을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -27,7 +27,7 @@ camera:
 
 {% configuration %}
 entity_id:
-  description: 후 처리 할 다른 홈 어시스턴트 카메라의 ID.
+  description: 후처리 할 다른 홈어시스턴트 카메라의 ID.
   required: true
   type: string
 name:

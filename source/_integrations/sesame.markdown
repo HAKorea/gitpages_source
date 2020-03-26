@@ -20,7 +20,7 @@ ha_release: 0.47
 
 또한 [my.candyhouse.co](https://my.candyhouse.co/#/credentials)에서 API 키를 생성해야합니다.
 
-위의 설정 중 하나를 사용하여 원격 액세스를 활성화하고 해당 잠금 설정에 대해 Sesame 앱에서 Integration - cloud 옵션을 활성화 한 경우 `configuration.yaml` 파일에 다음을 추가하십시오.
+위의 설정 중 하나를 사용하여 원격 액세스를 활성화하고 해당 잠금 설정에 대해 Sesame 앱에서 Integration - cloud 옵션을 활성화한 경우 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

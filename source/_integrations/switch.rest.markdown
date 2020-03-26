@@ -79,7 +79,6 @@ verify_ssl:
 {% endconfiguration %}
 
 <div class='note warning'>
-Make sure that the URL matches exactly your endpoint or resource.
 URL이 엔드 포인트 또는 리소스와 정확히 일치하는지 확인하십시오.
 </div>
 
@@ -87,7 +86,7 @@ URL이 엔드 포인트 또는 리소스와 정확히 일치하는지 확인하�
 
 ### 템플릿 값을 응용한 Switch
 
-이 예는 [template](/topics/templating/)을 사용하여 Home Assistant가 상태를 확인할 수있는 스위치를 보여줍니다. 이 예제에서 REST 엔드 포인트는 스위치가 켜져 있음을 나타내는 `true`로 이 JSON 응답을 리턴합니다.
+이 예는 [template](/topics/templating/)을 사용하여 Home Assistant가 상태를 확인할 수 있는 스위치를 보여줍니다. 이 예제에서 REST 엔드 포인트는 스위치가 켜져 있음을 나타내는 `true`로 이 JSON 응답을 리턴합니다.
 
 ```json
 {"is_active": "true"}

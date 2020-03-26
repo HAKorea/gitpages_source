@@ -103,7 +103,7 @@ LNK 모듈 내에서 API를 구현하기 때문에 동시성 문제가 있습니
 
 이 `rainbird` 센서는 Home Assistant의 Rain Bird 관개 시스템의 [LNK WiFi](https://www.rainbird.com/products/lnk-wifi-module) 모듈과 상호 작용할 수 있습니다.
 
-The integration adds `rainsensor` and `raindelay` sensors and their `binary_sensor` alternatives.
+이 통합구성요소는 `rainsensor`, `raindelay` 센서로 `binary_sensor` 를 대체합니다.
 
 ## Switch
 

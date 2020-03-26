@@ -8,7 +8,7 @@ ha_release: pre 0.7
 ha_iot_class: Local Polling
 ---
 
-`command_line` 스위치 플랫폼은 켜거나 끌 때 특정 명령을 실행합니다. 다른 스크립트 호출을 포함하여 command line 에서 제어 할 수있는 모든 유형의 스위치를 Home Assistant에 통합 할 수 있으므로 가장 강력한 플랫폼이 될 수 있습니다!
+`command_line` 스위치 플랫폼은 켜거나 끌 때 특정 명령을 실행합니다. 다른 스크립트 호출을 포함하여 command line 에서 제어할 수있는 모든 유형의 스위치를 Home Assistant에 통합할 수 있으므로 가장 강력한 플랫폼이 될 수 있습니다!
 
 이를 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오 :
 
@@ -59,10 +59,7 @@ switches:
 
 설정하면 `friendly_name`은 이전에 `object_id`("identifier") 대신 API 호출 및 백엔드 설정에 사용되었지만 [this behavior is changing](https://github.com/home-assistant/home-assistant/pull/4343)을 사용하여 `friendly_name`을 표시용으로만 만듭니다. 이를 통해 사용자는 API 및 설정 목적에 대한 독창성과 예측 가능성을 강조하는 `identifier`를 설정할 수 있지만 UI에는 여전히 `friendly_name`이 더 예쁘게 표시됩니다. 
 
-번역 의역 필요 
-
-As an additional benefit, if a user wanted to change the `friendly_name` / display name (e.g., from "Kitchen Lightswitch" to "Kitchen Switch" or "Living Room Light", or remove the `friendly_name` altogether), he or she could do so without needing to change existing automations or API calls.
-
+추가적인 이점으로, 사용자가 `friendly_name` / display name을 변경 (예: "Kitchen Lightswitch"에서 "Kitchen Switch" 또는 "Living Room Light"로 변경하거나 `friendly_name`을 모두 제거하려는 경우) 기존 자동화 또는 API 호출을 변경하지 않고도 그렇게 할 수 있습니다.
 
 예제는 아래의 aREST 장치를 참조하십시오.
 
@@ -88,11 +85,8 @@ switch:
       friendly_name: Kitchen Lightswitch
 ```
 
-번역 의역 필요 
-
-Given this example, in the UI one would see the `friendly_name` of "Kitchen Light". However, the `identifier` is `arest_pin_four`, making the `entity_id` `switch.arest_pin_four`, which is what one would use in [`automation`](/integrations/automation/) or in [API calls](/developers/).
-
-이 예제를 보면, UI에서 "Kitchen Light"의 "friendly_name"을 볼 수 있습니다. 그러나 `identifier`는 `arest_pin_four`이며 `entity_id` `switch.arest_pin_four`를 만들며, 이는 [`automation`](/integrations/automation/) 또는 [API calls](/developers/)에서 사용됩니다.
+이 예제에서 UI에서 "Kitchen Light"의 `friendly_name`을 볼 수 있습니다. 
+그러나 `identifier`는 `arest_pin_four`이며, `entity_id` `switch.arest_pin_four`를 만들어 [`automation`](/integrations/automation/) 또는 [API calls](/developers/)에서 사용됩니다. 
 
 ### 로컬 호스트 셧다운
 

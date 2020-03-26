@@ -11,7 +11,7 @@ ha_codeowners:
   - '@MTrab'
 ---
 
-[Repetier-Server](https://www.repetier-server.com/)는 동일한 서버에서 여러 장치를 제어 할 수 있는 3D 프린터/CNC 서버입니다.
+[Repetier-Server](https://www.repetier-server.com/)는 동일한 서버에서 여러 장치를 제어할 수 있는 3D 프린터/CNC 서버입니다.
 이 통합구성요소는 서버에 대한 기본 연동을 처리합니다.
 
 현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.

@@ -8,9 +8,9 @@ ha_release: pre 0.7
 ha_quality_scale: internal
 ---
 
-`recorder` 통합구성요소는 데이터베이스에 세부 사항을 저장하는 역할을 하며, 그런 다음 [`history` 통합구성요소](/integrations/history/).에 의해 처리됩니다.
+`recorder` 통합구성요소는 데이터베이스에 세부 사항을 저장하는 역할을 하며, 그런 다음 [`history` 통합구성요소](/integrations/history/)에 의해 처리됩니다.
 
-홈어시스턴트는 ORM (Object Relational Mapper)인 [SQLAlchemy](https://www.sqlalchemy.org/) 를 사용합니다. 이는 [MySQL](https://www.mysql.com/), [MariaDB](https://mariadb.org/), [PostgreSQL](https://www.postgresql.org/), 혹은 [MS SQL Server](https://www.microsoft.com/en-us/sql-server/)와 같이 SQLAlchemy가 지원하는 레코더에 **모든** SQL 백엔드를 사용할 수 있습니다. 
+홈어시스턴트는 ORM (Object Relational Mapper)인 [SQLAlchemy](https://www.sqlalchemy.org/)를 사용합니다. 이는 [MySQL](https://www.mysql.com/), [MariaDB](https://mariadb.org/), [PostgreSQL](https://www.postgresql.org/), 혹은 [MS SQL Server](https://www.microsoft.com/en-us/sql-server/)와 같이 SQLAlchemy가 지원하는 레코더에 **모든** SQL 백엔드를 사용할 수 있습니다. 
 
 기본 데이터베이스 엔진은 [SQLite](https://www.sqlite.org/) 이며 설정이 필요하지 않습니다. 데이터베이스는 Home Assistant 설정 디렉토리(`.homeassistant` 혹은 '/config/' Hass.io 경우)에 `home-assistant_v2.db`이름으로 저장됩니다. 
 
@@ -32,12 +32,12 @@ recorder:
       required: false
       type: string
     purge_keep_days:
-      description: 데이터기 제거된 후 레코드 데이터베이스에 보관할 히스토리 날짜수(기간)를 지정
+      description: 데이터가 제거된 후 레코드 데이터베이스에 보관할 히스토리 날짜수(기간)를 지정
       required: false
       default: 10
       type: integer
     purge_interval:
-      description: "제거 작업이 실행되는 빈도(기간). 예약된 제거가 누락 된 경우 (예 : 홈어시스턴트가 실행 중이 아닌 경우) 홈어시스턴트가 다시 시작된 후 일정이 재개됩니다. 제거 일정에 영향을 주지 않고 필요할 때 [service](#service-purge) 호출 `purge`를 사용할 수 있습니다. 이것이 '0'으로 설정되면 자동 제거(purge)가 비활성화됩니다."
+      description: "제거 작업이 실행되는 빈도(기간). 예약된 제거가 누락된 경우 (예: 홈어시스턴트가 실행 중이 아닌 경우) 홈어시스턴트가 다시 시작된 후 일정이 재개됩니다. 제거 일정에 영향을 주지 않고 필요할 때 [service](#service-purge) 호출 `purge`를 사용할 수 있습니다. 이것이 '0'으로 설정되면 자동 제거(purge)가 비활성화됩니다."
       required: false
       default: 1
       type: integer
@@ -55,7 +55,7 @@ recorder:
           required: false
           type: list
     include:
-      description: 레코딩에 포함할 통합구성요소 설정. 설정사 다른 모든 항목이 기록되지 않습니다..
+      description: 레코딩에 포함할 통합구성요소 설정. 설정시 다른 모든 항목이 기록되지 않습니다.
       required: false
       type: map
       keys:
@@ -115,7 +115,7 @@ recorder:
      - sensor.date
 ```
 
-히스토리에서 이벤트만 숨기려면 [`history` integration](/integrations/history/)을 살펴보십시오. [logbook](/integrations/logbook/)도 마찬가지입니다. 그러나 특정 이벤트에 대한 개인 정보 보호 문제가 있거나 기록이나 로그북에서 이벤트를 원하지 않는 경우 `recorder` 통합구성요소의 `exclude`/`include`옵션을 사용해야합니다. 이런 방식으로 데이터베이스에 조차 없는 경우에도 자주 기록되는 특정 이벤트 (예 :`sensor.last_boot`)를 제외하여 스토리지를 줄이고 데이터베이스를 작게 유지할 수 있습니다.
+히스토리에서 이벤트만 숨기려면 [`history` integration](/integrations/history/)을 살펴보십시오. [logbook](/integrations/logbook/)도 마찬가지입니다. 그러나 특정 이벤트에 대한 개인 정보 보호 문제가 있거나 기록이나 로그북에서 이벤트를 원하지 않는 경우 `recorder` 통합구성요소의 `exclude`/`include` 옵션을 사용해야합니다. 이런 방식으로 데이터베이스에 조차 없는 경우에도 자주 기록되는 특정 이벤트 (예: `sensor.last_boot`)를 제외하여 스토리지를 줄이고 데이터베이스를 작게 유지할 수 있습니다.
 
 ### `purge` 서비스
 
@@ -143,7 +143,7 @@ recorder:
 
 <div class='note'>
 
-MariaDB/MySQL을 설치하려면 ALTERNATE_PORT (타사 호스팅 제공 업체 또는 병렬 설치)를 SERVER_IP에 추가해야합니다 (예 : `mysql://user:password@SERVER_IP:ALTERNATE_PORT/DB_NAME?charset=utf8`).
+MariaDB/MySQL을 설치하려면 ALTERNATE_PORT (타사 호스팅 제공 업체 또는 병렬 설치)를 SERVER_IP에 추가해야합니다 (예: `mysql://user:password@SERVER_IP:ALTERNATE_PORT/DB_NAME?charset=utf8`).
 
 </div>
 
@@ -155,7 +155,7 @@ MariaDB/MySQL을 설치하려면 ALTERNATE_PORT (타사 호스팅 제공 업체 
 
 <div class='note'>
 
-데이터베이스가 `recorder` 인스턴스 (예 : `localhost`)와 동일한 호스트에 있는 경우 Unix Socket 연결은 항상 TCP보다 성능이 더 좋습니다. 
+데이터베이스가 `recorder` 인스턴스 (예: `localhost`)와 동일한 호스트에 있는 경우 Unix Socket 연결은 항상 TCP보다 성능이 더 좋습니다. 
 
 </div>
 
@@ -223,7 +223,7 @@ sudo apt-get install default-libmysqlclient-dev libssl-dev
 pip3 install mysqlclient
 ```
 
-종속성을 설치 한 후 데이터베이스를 수동으로 작성해야합니다. 시작하는 동안 Home Assistant는 `db_url`에 지정된 데이터베이스를 찾습니다. 데이터베이스가 존재하지 않으면 데이터베이스가 자동으로 작성되지 않습니다.
+종속성을 설치한 후 데이터베이스를 수동으로 작성해야합니다. 시작하는 동안 Home Assistant는 `db_url`에 지정된 데이터베이스를 찾습니다. 데이터베이스가 존재하지 않으면 데이터베이스가 자동으로 작성되지 않습니다.
 
 홈어시스턴트가 올바른 권한 레벨로 데이터베이스를 찾으면 모든 필수 테이블이 자동으로 작성되고 그에 따라 데이터가 채워집니다.
 

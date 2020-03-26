@@ -21,7 +21,7 @@ ha_release: 0.86
 - Media Player
 - Remote
 
-`roku` 통합구성요소는 `configuration.yaml`에 다음 줄을 추가하여 강제로 로드 할 수도 있습니다
+`roku` 통합구성요소는 `configuration.yaml`에 다음 줄을 추가하여 강제로 로드할 수도 있습니다
 
 ```yaml
 # Example configuration.yaml entry
@@ -40,7 +40,7 @@ host:
 
 ### `roku_scan` 서비스
 
-로컬 네트워크에서 Roku를 검색합니다. 발견된 모든 장치는 지속적 알림으로 표시됩니다.
+로컬 네트워크에서 Roku를 검색합니다. 발견된 모든 장치는 지속적 알림(persistent notification)으로 표시됩니다.
 
 ## Remote
 
@@ -106,7 +106,7 @@ POST http://YOUR_ROKU_IP:8060/launch/837?contentID=YOUR_YOUTUBE_VIDEOS_CONTENT_I
 
 자세한 내용은 [Roku dev 페이지](https://developer.roku.com/docs/developer-program/discovery/external-control-api.md)에서 확인할 수 있습니다.
 
-홈어시스턴트 (예 : 자동화)에서 이를 사용하려면 형식은 다음과 같습니다. ```source :```는 API 호출에서 발견한 appID 입니다.
+홈어시스턴트(예: 자동화)에서 이를 사용하려면 형식은 다음과 같습니다. ```source :```는 API 호출에서 발견한 appID 입니다.
 
 ```yaml
 action:

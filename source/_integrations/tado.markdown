@@ -27,7 +27,7 @@ ha_codeowners:
 
 ## 설정
 
-설치에서 tado 온도 조절기를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
+설치시 tado 온도조절기를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -52,9 +52,9 @@ fallback:
   default: true
 {% endconfiguration %}
 
-tado 온도조절기는 인터넷 연결 온도조절기입니다. [my.tado.com](https://my.tado.com/)에는 비공식 API가 있으며 이 웹 사이트는 현재 이 구성 요소에서 사용합니다.
+tado 온도조절기는 인터넷 연결 온도조절기입니다. [my.tado.com](https://my.tado.com/)에는 비공식 API가 있으며 이 웹사이트는 현재 해당 구성 요소에서 사용합니다.
 
-현재 온도, 설정 온도 및 현재 작동 모드를 나타내는 것을 지원합니다. 모드 전환도 지원됩니다. 더 이상 집에 사용자가 없으면 장치가 away-state를 표시합니다. away-mode로의 전환은 지원되지 않습니다.
+현재 온도, 설정 온도 및 현재 작동 모드를 나타내는 것을 지원합니다. 모드 전환도 지원됩니다. 더이상 집에 사용자가 없으면 장치가 away-state를 표시합니다. away-mode로의 전환은 지원되지 않습니다.
 
 ## 재실 감지
 

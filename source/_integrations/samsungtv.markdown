@@ -14,14 +14,14 @@ ha_codeowners:
 <iframe width="690" height="437" src="https://www.youtube.com/embed/jlovenp2apg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-`samsungtv` 플랫폼을 사용하면 [Samsung Smart TV](https://www.samsung.com/uk/tvs/all-tvs/)를 제어 할 수 있습니다.
+`samsungtv` 플랫폼을 사용하면 [Samsung Smart TV](https://www.samsung.com/uk/tvs/all-tvs/)를 제어할 수 있습니다.
 
 ### 셋업
 
 TV가 처음 연결되면 TV에서 홈어시스턴트를 수락하여 통신을 허용해야합니다.
 
 보통은 `discovery` 통합구성요소가 동작하는 상태이므로 자동으로 홈어시스턴트에 `삼성 TV`가 나타납니다. 
-하지만 `discovery`를 비활성화 시킨 상태에서 아래와 같은 UI에서 쉽게 셋업 가능합니다. 
+하지만 `discovery`를 비활성화시킨 상태에서 아래와 같은 UI에서 쉽게 셋업 가능합니다. 
 
 그럴 경우 홈어시스턴트 UI화면에서 **설정** -> **통합구성요소** -> **통합구성요소** **`+`** 추가를 선택하면 `삼성 TV`를 추가할 수 있습니다. 최근에는 별도 아래 설정을 하지 않더라도 한번에 연동할 수 있습니다. 
 

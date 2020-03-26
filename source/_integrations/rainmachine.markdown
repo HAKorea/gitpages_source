@@ -195,7 +195,7 @@ RainMachine 영역을 중지하십시오.
 
 ## Switch
 
-`rainmachine` 스위치 플랫폼을 사용하면 [RainMachine smart Wi-Fi sprinkler controller](https://www.rainmachine.com/) 내에서 프로그램 및 구역을 제어할 수 있습니다.
+`rainmachine` 스위치 플랫폼을 사용하면 [RainMachine smart Wi-Fi sprinkler controller](https://www.rainmachine.com/) 내에서 프로그램 및 영역을 제어할 수 있습니다.
 
 ### 장치 제어하기
 

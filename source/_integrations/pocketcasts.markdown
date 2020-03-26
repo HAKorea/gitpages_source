@@ -12,7 +12,7 @@ ha_iot_class: Cloud Polling
 <iframe width="690" height="388" src="https://www.youtube.com/embed/0vMsnU6S4k0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-`pocketcasts` 센서 플랫폼을 사용하면 [Pocket Casts](https://play.pocketcasts.com/)에서 좋아하는 Podcast 중 재생되지 않은 에피소드 수를 모니터링 할 수 있습니다.
+`pocketcasts` 센서 플랫폼을 사용하면 [Pocket Casts](https://play.pocketcasts.com/)에서 좋아하는 Podcast 중 재생되지 않은 에피소드 수를 모니터링할 수 있습니다.
 
 ## 설정
 

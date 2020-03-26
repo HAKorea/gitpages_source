@@ -11,10 +11,9 @@ ha_quality_scale: internal
 
 `history_stats` 센서 플랫폼은 [history](/integrations/history/)의 데이터를 사용하여 다른 통합구성요소에 대한 빠른 통계를 제공합니다.
 
-사용자 지정 기간 동안 통합구성요소가 특정 상태에 있었던 시간을 추적 할 수 있습니다.
+사용자 지정 기간 동안 통합구성요소가 특정 상태에 있었던 시간을 추적할 수 있습니다.
 
-추적 할 수 있는 예:
-
+추적할 수 있는 예:
 
 - 이번 주에 집에 있었던 시간
 - 어제 조명이 켜진 시간
@@ -53,12 +52,12 @@ name:
   default: unnamed statistics
   type: string
 type:
-  description: "센서의 종류 : `time`, `ratio`, 혹은 `count`."
+  description: "센서의 종류: `time`, `ratio`, 혹은 `count`."
   required: false
   default: time
   type: string
 start:
-  description: 측정 시작시기 (타임 스탬프 또는 날짜/시간)
+  description: 측정을 시작할 시기 (타임 스탬프 또는 날짜/시간)
   required: false
   type: template
 end:
@@ -73,18 +72,18 @@ duration:
 
 <div class='note'>
 
-  `start`,`end` 및 `duration`의 **정확하게 두가지**를 제공해야 합니다.
+  `start`,`end` 및 `duration`에서 **정확하게 두가지**를 제공해야 합니다.
 <br/>
-  `now ()` 또는 `as_timestamp ()`와 같은 [template extensions](/topics/templating/#home-assistant-template-extensions)를 사용하여 아래 예와 같이 동적 날짜를 처리 할 수 ​​있습니다.
+  `now ()` 또는 `as_timestamp ()`와 같은 [template extensions](/topics/templating/#home-assistant-template-extensions)를 사용하여 아래 예와 같이 동적 날짜를 처리할 수 ​​있습니다.
 
 </div>
 
 ## 센서 타입
 
-선택한 센서 유형에 따라 `history_stats` 통합구성요소에 다른 값이 표시 될 수 있습니다. :
+선택한 센서 유형에 따라 `history_stats` 통합구성요소에 다른 값이 표시될 수 있습니다. :
 
 - **time**: 추적 시간인 기본값 (시간)
-- **ratio**: 추적 시간을 기간의 길이로 나눈 값 (백분율)
+- **ratio**: 추적 시간을 기간의 길이로 나눈값 (백분율)
 - **count**: 추적한 통합구성요소가 추적한 상태로 몇 번이나 변경되었는지
 
 ## Period (기간)
@@ -120,13 +119,13 @@ duration:
 
 <div class='note'>
 
-  duration이 `recorder` 구성 요소에 의해 저장된 기록일 수(`purge_keep_days`)를 초과하는 경우, 기록 통계 센서는 전체 duration을 보는 데 필요한 모든 정보를 갖지 않습니다. 예를 들어, `purge_keep_days`가 7로 설정되면 duration이 30 일인 히스토리 통계 센서는 최근 7 일의 히스토리를 기반으로 한 값만 보고합니다.
+  duration이 `recorder` 구성 요소에 의해 저장된 기록일 수(`purge_keep_days`)를 초과하는 경우, History Stat 센서는 전체 duration을 보는데 필요한 모든 정보를 갖지 않습니다. 예를 들어, `purge_keep_days`가 7로 설정되면 duration이 30 일인 History Stat 센서는 최근 7 일의 History를 기반으로 한 값만 보고합니다.
 
 </div>
 
 ### 예시
 
-다음은 작업 할 수있는 period의 예와 `configuration.yaml`에 쓸 내용입니다.
+다음은 작업할 수 있는 period의 예와 `configuration.yaml`에 쓸 내용입니다.
 
 **오늘**: 현재 날짜의 00:00에 시작하여 지금 끝납니다.
 
@@ -159,7 +158,7 @@ duration:
 
 **이번주**: 지난 월요일 00:00에 시작하여 지금 끝납니다.
 
-여기서 지난 월요일은 오늘 현재 시간을 빼서 현재 요일의 86400 배를 뺀 것입니다 (86400은 하루의 초 수, 월요일은 0, 일요일은 6).
+여기서 지난 월요일은 *오늘* 현재 요일의 86400 배를 뺀 타임 스탬프입니다. (86400은 하루의 초 수, 월요일은 0, 일요일은 6).
 
 {% raw %}
 ```yaml
@@ -178,7 +177,7 @@ duration:
 ```
 {% endraw %}
 
-**모든 기록**은 타임 스탬프=0에서 시작하여 지금 끝납니다.
+**모든 기록**은 타임 스탬프 = 0에서 시작하여 지금 끝납니다.
 
 {% raw %}
 ```yaml

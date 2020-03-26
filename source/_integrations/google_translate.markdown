@@ -13,7 +13,7 @@ ha_codeowners:
 
 <div class='note'>
 
-0.92 릴리스 이후 `google`에서 `google_translate`로 이름이 바뀌 었습니다.  
+0.92 릴리스 이후 `google`에서 `google_translate`로 이름이 바뀌었습니다.  
 
 </div>
 
@@ -36,7 +36,7 @@ language:
 {% endconfiguration %}
 
 [complete list of supported languages](https://translate.google.com/intl/en_ALL/about/languages/) (Google 번역에서 "토크"기능이 활성화 된 언어)를 확인하고 허용된 값을 체크하세요. 
-언어 이름을 클릭 할 때 URL 끝에있는 2 digit language code 를 사용하십시오.
+언어 이름을 클릭 할 때 URL 끝에 있는 2 digit language code를 사용하십시오.
 
 ## 전체 설정의 예
 

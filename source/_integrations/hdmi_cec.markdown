@@ -8,7 +8,7 @@ ha_release: 0.23
 ha_iot_class: Local Push
 ---
 
-`hdmi_cec` 통합구성요소는 원하는 장치를 선택하고 모든 장치의 전원을 켜고 모든 장치를 대기로 설정하고 HDMI 장치의 스위치 엔티티를 생성 할 수있는 서비스를 제공합니다. 장치는 HDMI 포트 번호와 장치 이름을 연결하여 설정 파일에 정의됩니다. 사운드 바 및 AVR과 같은 추가 HDMI 포트를 제공하는 연결된 장치도 지원됩니다. CEC 지원 Home Assistant 장치의 관점에서 장치가 나열됩니다. CEC 지원 여부에 관계없이 연결된 모든 장치를 나열 할 수 있습니다. 장치의 HDMI 포트 번호가 CEC 실제 주소를 올바르게 매핑하는 것이 이상적입니다. 그렇지 않으면 `cec-client`(`libcec`패키지의 일부)를 사용하여 CEC 버스의 트래픽을 듣고 올바른 번호를 찾으십시오.
+`hdmi_cec` 통합구성요소는 원하는 장치를 선택하고 모든 장치의 전원을 켜고 모든 장치를 대기로 설정하고 HDMI 장치의 스위치 엔티티를 생성할 수 있는 서비스를 제공합니다. 장치는 HDMI 포트 번호와 장치 이름을 연결하여 설정 파일에 정의됩니다. 사운드바 및 AVR과 같은 추가 HDMI 포트를 제공하는 연결된 장치도 지원됩니다. CEC 지원 Home Assistant 장치의 관점에서 장치가 나열됩니다. CEC 지원 여부에 관계없이 연결된 모든 장치를 나열할 수 있습니다. 장치의 HDMI 포트 번호가 CEC 실제 주소를 올바르게 매핑하는 것이 이상적입니다. 그렇지 않으면 `cec-client`(`libcec`패키지의 일부)를 사용하여 CEC 버스의 트래픽을 듣고 올바른 번호를 찾으십시오.
 
 ## CEC 셋업
 
@@ -18,7 +18,7 @@ Home Assistant를 실행하는 컴퓨터는 CEC를 지원해야하며 물론 CEC
 
 ### libcec
 
-이 통합구성요소가 작동하려면 [libcec](https://github.com/Pulse-Eight/libcec)가 설치되어 있어야합니다. 링크에 제공된 환경에 맞는 설치 지침을 따르십시오. `libcec`는 기본적으로 파이썬 3 바인딩을 시스템 파이썬 모듈로 설치합니다. [Python virtual environment](/docs/installation/virtualenv/)에서 Home Assistant를 실행중인 경우 시스템 모듈을 심볼릭 링크로 연결하거나`--system-site-packages` 플래그를 사용하여 시스템 모듈에 액세스 할 수 있는지 확인하십시오.
+이 통합구성요소가 작동하려면 [libcec](https://github.com/Pulse-Eight/libcec)가 설치되어 있어야합니다. 링크에 제공된 환경에 맞는 설치 지침을 따르십시오. `libcec`는 기본적으로 파이썬 3 바인딩을 시스템 파이썬 모듈로 설치합니다. [Python virtual environment](/docs/installation/virtualenv/)에서 Home Assistant를 실행중인 경우 시스템 모듈을 심볼릭 링크로 연결하거나 `--system-site-packages` 플래그를 사용하여 시스템 모듈에 액세스할 수 있는지 확인하십시오.
 
 <div class='note'>
 
@@ -28,7 +28,7 @@ Home Assistant를 실행하는 컴퓨터는 CEC를 지원해야하며 물론 CEC
 
 #### 가상 환경으로의 심볼릭 링크
 
-_cec.so 파일을 포함하여`cec` 설치에 대한 심볼릭 링크를 만듭니다. 설치 방법이 다르면 cec의 위치가 다를 수 있습니다.
+_cec.so 파일을 포함하여 `cec` 설치에 대한 심볼릭 링크를 만듭니다. 설치 방법이 다르면 cec의 위치가 다를 수 있습니다.
 
 ```bash
 ln -s /path/to/your/installation/of/cec.py /path/to/your/venv/lib/python*/site-packages
@@ -47,24 +47,24 @@ ln -s /usr/local/lib/python*/dist-packages/_cec.so /srv/homeassistant/lib/python
 
 <div class='note'>
 
-`hdmi_cec :`를 심볼릭 링크하고 설정에 추가 한 후 로그에 다음과 같은 오류가 발생합니다, `* failed to open vchiq instance` 이럴 경우 Home Assistant가 실행하는 사용자 계정을 `video` Group에 추가해야합니다. Home Assistant 사용자 계정을 `video` 그룹에 추가하려면 다음 명령을 실행하십시오. `$ usermod -a -G 비디오 <hass_user_account>`
+`hdmi_cec:`를 심볼릭 링크하고 설정에 추가한 후 로그에 다음과 같은 오류가 발생합니다, `* failed to open vchiq instance` 이럴 경우 Home Assistant가 실행하는 사용자 계정을 `video` Group에 추가해야합니다. Home Assistant 사용자 계정을 `video` 그룹에 추가하려면 다음 명령을 실행하십시오. `$ usermod -a -G video <hass_user_account>`
 
 </div>
 
 ## 설치 테스트
 
-*  라즈베리 파이에 로그인
+*  라즈베리파이에 로그인
 
 ```bash
 ssh pi@your_raspberry_pi_ip
 ```
 
-*  명령 행에서 :
+*  command line에서 :
 
 ```bash
 echo scan | cec-client -s -d 1
 ```
-Note: 이 명령을 사용하려면 cec-utils 패키지를 설치해야합니다. 데비안 기반의 경우: ``sudo apt install cec-utils''``
+Note: 이 명령을 사용하려면 cec-utils 패키지를 설치해야합니다. 데비안 기반의 경우 : ``sudo apt install cec-utils''``
 
 *   버스에 있는 장치 목록을 제공합니다. 
 
@@ -119,9 +119,9 @@ hdmi_cec:
     3: BlueRay player
 ```
 
-하나의 스키마 만 선택하십시오. 두 가지 접근법을 혼합하는 것은 불가능합니다.
+하나의 스키마만 선택하십시오. 두 가지 접근법을 혼합하는 것은 불가능합니다.
 
-config에서 사용할 수있는 또 다른 옵션 `platform` 은 HDMI 장치의 기본 플랫폼을 지정하는 것입니다. "switch" 및 "media_player"가 지원됩니다. 스위치가 기본값입니다.
+config에서 사용할 수 있는 또 다른 옵션 `platform`은 HDMI 장치의 기본 플랫폼을 지정하는 것입니다. "switch" 및 "media_player"가 지원됩니다. 스위치가 기본값입니다.
 
 ```yaml
 hdmi_cec:
@@ -136,7 +136,7 @@ hdmi_cec:
     hdmi_cec.hdmi_5: media_player
 ```
 
-그리고 마지막 옵션은 `host`입니다. PyCEC는 TCP를 통한 CEC 명령 브리징을 지원합니다. HDMI 포트 (python -m pycec)가 있는 컴퓨터에서 pyCEC를 시작하면 다른 컴퓨터에서 홈어시스턴트를 실행하고 TCP를 통해 CEC에 연결할 수 있습니다. pyCEC 서버의 TCP 주소를 지정하십시오 :
+그리고 마지막 옵션은 `host`입니다. PyCEC는 TCP를 통한 CEC 명령 브리징을 지원합니다. HDMI 포트(python -m pycec)가 있는 컴퓨터에서 pyCEC를 시작하면 다른 컴퓨터에서 홈어시스턴트를 실행하고 TCP를 통해 CEC에 연결할 수 있습니다. pyCEC 서버의 TCP 주소를 지정하십시오 :
 
 ```yaml
 hdmi_cec:
@@ -148,7 +148,7 @@ hdmi_cec:
 
 ### 장치 선택
 
-config 또는 entity_id 또는 물리적 주소에서 장치 이름으로 `hdmi_cec.select_device` 서비스를 호출하여 선택하십시오. 예를 들면 다음과 같습니다.
+설정에서 장치 이름으로 혹은 entity_id 혹은 물리적 주소에서 `hdmi_cec.select_device` 서비스를 호출하여 선택하십시오. 예를 들면 다음과 같습니다. : 
 
 ```json
 {"device": "Chromecast"}
@@ -184,7 +184,7 @@ action:
 
 ### 대기 모드
 
-이 기능을 지원하는 모든 장치를 대기 모드로 두려면`hdmi_cec.standby` 서비스 (인수 없음)를 호출하십시오.
+이 기능을 지원하는 모든 장치를 대기 모드로 두려면 `hdmi_cec.standby` 서비스 (인수 없음)를 호출하십시오.
 
 위 예제를 사용한 자동화 작업은 다음과 같습니다.
 
@@ -198,13 +198,14 @@ action:
 다음 명령 중 하나를 사용하여 `hdmi_cec.volume` 서비스를 호출하십시오.
 
 #### 볼륨 늘리기
+
 볼륨을 세 번 늘리십시오. :
 
 ```json
 {"up": 3}
 ```
 
-릴리스가 호출 될 때까지 볼륨을 계속 늘리십시오. :
+릴리스가 호출될 때까지 볼륨을 계속 늘리십시오. :
 
 ```json
 {"up": "press"}
@@ -223,7 +224,7 @@ action:
 {"down": 3}
 ```
 
-릴리스가 호출 될 때까지 볼륨을 줄이십시오.:
+릴리스가 호출될 때까지 볼륨을 줄이십시오.:
 
 ```json
 {"down": "press"}

@@ -8,9 +8,9 @@ ha_release: 0.39
 ha_iot_class: Local Push
 ---
 
-`gstreamer` 플랫폼을 사용하면 [gstreamer](https://gstreamer.freedesktop.org/) 파이프 라인을 통해 오디오를 재생할 수 있습니다. 실제로 이는 홈 어시스턴트를 실행하는 컴퓨터에서 직접 오디오를 재생할 수 있음을 의미합니다. 특히 TTS 재생에 적합합니다. 고급 사용자는 파이프 라인을 지정하여 오디오 스트림을 변환하거나 다른 곳으로 리디렉션 할 수 있습니다.
+`gstreamer` 플랫폼을 사용하면 [gstreamer](https://gstreamer.freedesktop.org/) 파이프 라인을 통해 오디오를 재생할 수 있습니다. 실제로 이는 홈어시스턴트를 실행하는 컴퓨터에서 직접 오디오를 재생할 수 있음을 의미합니다. 특히 TTS 재생에 적합합니다. 고급 사용자는 파이프 라인을 지정하여 오디오 스트림을 변환하거나 다른 곳으로 리디렉션할 수 있습니다.
 
-`gstreamer` 미디어 플레이어를 설치에 추가하려면 configuration.yaml 파일에 다음을 추가하십시오 :
+`gstreamer` 미디어 플레이어를 추가하려면 configuration.yaml 파일에 다음을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -33,7 +33,7 @@ pipeline:
 
 ## 셋업
 
-그런 다음, 다음의 시스템 종속성을 설치하십시오.
+그런 후, 다음의 시스템 종속성을 설치하십시오.
 
 Debian/Ubuntu/Rasbian:
 
@@ -69,7 +69,7 @@ sudo usermod -a -G audio <ha_user>
 
 ### TTS 사용하기
 
-로컬 컴퓨터에서 TTS를 재생하려면 (예 : Raspberry Pi에 스피커가 연결된 경우)
+로컬 컴퓨터에서 TTS를 재생하려면 (예: Raspberry Pi에 스피커가 연결된 경우)
 
 ```yaml
 media_player:

@@ -39,7 +39,7 @@ default_reverse:
   type: boolean
   default: false
 entity_config:
-  description: "특정 Cover 엔터티에 대한 설정. 모든 하위 키들은 도메인에 해당하는 엔티티 ID입니다 (예 :`cover.bedroom_blinds`)."
+  description: "특정 Cover 엔터티에 대한 설정. 모든 하위 키들은 도메인에 해당하는 엔티티 ID입니다 (예: `cover.bedroom_blinds`)."
   required: false
   type: map
   keys:

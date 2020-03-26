@@ -10,11 +10,11 @@ ha_codeowners:
   - '@home-assistant/core'
 ---
 
-`history` 통합구성요소는 홈어시스턴트내에서 동작하고 있는 모든 것을 추적하고 사용자들이 이를 통해 탐색할 있습니다. 
-데이터를 저장 하는 `recorder` component에 따라 다르며 동일한 데이터베이스 세팅을 사용합니다.
-만일 기록에서 제외 된 항목이 있으면 해당 항목에 대한 기록을 사용할 수 없습니다.
+`history` 통합구성요소는 홈어시스턴트 내에서 동작하고 있는 모든 것을 추적하고 사용자들이 이를 통해 탐색할 수 있습니다. 
+데이터를 저장하는 `recorder` component에 따라 다르며 동일한 데이터베이스 세팅을 사용합니다.
+만일 기록에서 제외된 항목이 있으면 해당 항목에 대한 기록을 사용할 수 없습니다.
 
-configuration 에서 [`default_config:`](https://www.home-assistant.io/integrations/default_config/)를 비활성화하거나 제거하지 않은 경우 본 통합구성요소는 기본적으로 활성화됩니다. 
+설정에서 [`default_config:`](https://www.home-assistant.io/integrations/default_config/)를 비활성화하거나 제거하지 않은 경우 본 통합구성요소는 기본적으로 활성화됩니다. 
 이럴 경우 다음 예는 통합구성요소를 수동으로 활성화하는 방법입니다.:
 
 ```yaml
@@ -29,8 +29,8 @@ history:
 </p>
 
 <div class='note'>
-이벤트는 로컬 데이터베이스에 저장됩니다. 구글 그래프는 그래프를 그리는 데 사용됩니다.
-브라우저에서 그래프가 로컬로 100 % 생성된것이며,데이터는 언제든지 누구에게도 전송되지 않습니다. 
+이벤트는 로컬 데이터베이스에 저장됩니다. 구글 그래프는 그래프를 그리는데 사용됩니다.
+브라우저에서 그래프가 로컬로 100 % 생성된 것이며, 데이터는 언제든지 누구에게도 전송되지 않습니다. 
 </div>
 
 {% configuration %}
@@ -40,11 +40,11 @@ exclude:
   type: map
   keys:
     entities:
-      description: History에서 제외할 entitiy ID 목록.
+      description: History에서 제외할 엔티티 ID 목록.
       required: false
       type: list
     domains:
-      description: History에서 제외 할 도메인 목록.
+      description: History에서 제외할 도메인 목록.
       required: false
       type: list
 include:
@@ -53,7 +53,7 @@ include:
   type: map
   keys:
     entities:
-      description: History에서 포함할 entitiy ID 목록.
+      description: History에서 포함할 엔티티 ID 목록.
       required: false
       type: list
     domains:
@@ -62,8 +62,8 @@ include:
       type: list
 {% endconfiguration %}
 
-`include` 또는`exclude`이 설정에 없으면 해당 날짜에 History의 모든 entity (`hidden` entity들 혹은 `scenes`은 절대 나타나지 않습니다.)에 대한 그래프가 표시됩니다. 일부 entity들만 나타내게 하고싶다면 entity의 몇 가지 옵션이 있습니다. :
-domain과 entity를 `exclude` (소위 블랙리스트) 로 정의하십시오.  이것은 기본적으로 표시된 정보에 만족한다면 그냥 써도 되지만, 일부 entity 또는 domain을 제거하려는 경우에 편리합니다. 보통은 (`weblink`같은) 혹은 거의 변화가 없는 (`updater` 혹은 `automation`) 경우에 해당 합니다.
+`include` 또는 `exclude`이 설정에 없으면 해당 날짜에 History의 모든 엔티티 (`hidden` entity들 혹은 `scenes`은 절대 나타나지 않습니다.)에 대한 그래프가 표시됩니다. 일부 엔티티들만 나타내게 하고싶다면 엔티티의 몇 가지 옵션이 있습니다. :
+도메인과 엔티티를 `exclude`(소위 블랙리스트)로 정의하십시오. 이는 기본적으로 표시된 정보에 만족한다면 그냥 써도 되지만, 일부 엔티티 또는 도메인을 제거하려는 경우에 편리합니다. 보통은 (`weblink` 같은) 혹은 거의 변화가 없는 (`updater` 혹은 `automation`) 경우에 해당 합니다.
 
 ```yaml
 # Example configuration.yaml entry with exclude
@@ -78,7 +78,7 @@ history:
       - sensor.date
 ```
 
-`include` 설정(소위 whitelist)을 사용하여 domain과 entity들을 정의하십시오. 만일 시스템에 많은 entity들이 있고 `exclude` 리스트가 점점 더 커지면, domain이나 entity들을 `include`로 정의하는 것이 좋습니다. 
+`include` 설정(소위 whitelist)을 사용하여 도메인과 엔티티들을 정의하십시오. 만일 시스템에 많은 엔티티들이 있고 `exclude` 리스트가 점점 더 커지면, 도메인이나 엔티티들을 `include`로 정의하는 것이 좋습니다. 
 
 ```yaml
 # Example configuration.yaml entry with include
@@ -90,9 +90,9 @@ history:
       - media_player
 ```
 
-`include` 목록을 사용하여 표시 할 domain/entity들을 정의 하고 목록에서 일부를 `exclude` 목록을 써서 제외시키십시오. 
-예를 들어 `sensor` domain 을 포함시키지만 특정 sensor를 제외하려는 경우이 방법이 적합 합니다. 
-모든 센서 엔터티를 `include` `entities` 목록에 추가하는 대신 sensor domain을 포함시키고 관심없는 센서 엔터티를 제외시키면 됩니다. configuration 에서 `include` `entities` 설정된 순서대로 표시합니다. 그렇지 않으면 표시 순서는 임의대로 나타납니다.
+`include` 목록을 사용하여 표시할 엔티티/도메인들을 정의하고 목록에서 일부를 `exclude` 목록을 써서 제외시키십시오. 
+예를 들어 `sensor` 도메인을 포함시키지만 특정 센서를 제외하려는 경우 이 방법이 적합합니다. 
+모든 센서 엔터티를 `include` `entities` 목록에 추가하는 대신 센서 도메인을 포함시키고 관심없는 센서 엔터티를 제외시키면 됩니다. 설정에서 `include` `entities` 설정된 순서대로 표시합니다. 그렇지 않으면 표시 순서는 임의대로 나타납니다.
 
 ```yaml
 # Example configuration.yaml entry with include and exclude
@@ -108,7 +108,7 @@ history:
      - sensor.date
 ```
 
-Sensor 표시 순서가 포함 된 entity 목록에 나열된 방식을 따르도록하려면,
+센서 표시 순서가 포함된 엔티티 목록에 나열된 방식을 따르도록하려면,
 `use_include_order` flag를 true 로 설정할 수 있습니다.
 
 ```yaml
@@ -123,13 +123,13 @@ history:
 
 #### 구현 세부 사항
 
-`recoder` 통합구성요소가 다르게 설정되지 않는 한, history는 configuration 디렉토리 내의 `home-assistant_v2.db`로 SQLite 데이터베이스에 저장됩니다
+`recoder` 통합구성요소가 다르게 설정되지 않는 한, history는 설정 디렉토리 내의 `home-assistant_v2.db`로 SQLite 데이터베이스에 저장됩니다
 
  - events 테이블은 record 통합구성요소가 실행되는 동안 발생한 `time_changed`를 제외한 모든 event들 입니다.
  - states 테이블은 `state_changed` 이벤트의 값의 모든 `new_state`를 포함합니다. 
  - states 테이블 안에는 다음 내용이 있습니다. :
-   - `entity_id`: entity의 entity_id
-   - `state`: entity의 상태
+   - `entity_id`: 엔티티의 entity_id
+   - `state`: 엔티티의 상태
    - `attributes`: state attributes의 JSON
    - `last_changed`: state가 마지막으로 변경된 timestamp. 속성이 변경되면 state_changed 이벤트가 발생할 수 있습니다.
    - `last_updated`: 변경사항 timestamp (state, attributes)

@@ -30,7 +30,7 @@ switch:
 
 {% configuration %}
 host:
-  description: "Hikvision 카메라의 IP 주소 (예 : 192.168.1.32)"
+  description: "Hikvision 카메라의 IP 주소 (예: 192.168.1.32)"
   required: true
   type: string
 port:
@@ -44,7 +44,7 @@ name:
   default: Hikvision Camera Motion Detection
   type: string
 username:
-  description: Hikvision 카메라에 액세스하기 위한 사용자 이름
+  description: Hikvision 카메라에 액세스하기위한 사용자 이름
   required: false
   default: admin
   type: string

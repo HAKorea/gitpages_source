@@ -7,7 +7,7 @@ ha_category:
 ha_release: 0.88
 ---
 
-`google_pubsub` 통합구성요소를 통해 홈어시스턴트 이벤트 버스에 연결하여 [Google Cloud Pub/Sub](https://cloud.google.com/pubsub/docs/overview)로 이벤트를 보낼 수 있습니다. GCP의 현재 [free tier](https://cloud.google.com/free/)을 사용하면 평균 2 초마다 약 1 개의 이벤트를 동기화 할 수 있습니다 (한 달에 2백만 회 호출).
+`google_pubsub` 통합구성요소를 통해 홈어시스턴트 이벤트 버스에 연결하여 [Google Cloud Pub/Sub](https://cloud.google.com/pubsub/docs/overview)로 이벤트를 보낼 수 있습니다. GCP의 현재 [free tier](https://cloud.google.com/free/)을 사용하면 평균 2 초마다 약 1 개의 이벤트를 동기화 할 수 있습니다 (한 달에 2백만회 호출).
 
 ## 최초 셋업
 
@@ -17,7 +17,7 @@ ha_release: 0.88
 - Choose a new "New Service Account", give it a name and leave the key type as JSON
 - Select the role: Pub/Sub Publisher 
 
-서비스 계정 JSON 키가 컴퓨터에 다운로드 됩니다. 이것을 다른 사람과 공유하지 마십시오. 이 파일을 Home Assistant 설정 폴더에 넣으십시오.
+서비스 계정 JSON 키가 컴퓨터에 다운로드 됩니다. 이를 다른 사람과 공유하지 마십시오. 이 파일을 Home Assistant 설정 폴더에 넣으십시오.
 
 그런 다음 [Google Cloud API Console](https://console.cloud.google.com/cloudpubsub/topicList)에서 Google Pub/Sub topic을 만듭니다. topic 이름은 `projects/project-198373/topics/topic-name`과 같은 이름이 됩니다. 마지막 부분(선택한 이름)인 `topic-name`만 주목하십시오.
 

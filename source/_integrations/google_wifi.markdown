@@ -14,7 +14,7 @@ ha_release: '0.50'
 
 `google_wifi` 센서 플랫폼에 [Google Wifi](https://madeby.google.com/wifi/) (또는 OnHub) 라우터의 노출 상태가 표시됩니다.
 
-센서는 네트워크 상태, 가동 시간, 현재 IP 주소 및 펌웨어 버전을 보고 할 수 있습니다.
+센서는 네트워크 상태, 가동 시간, 현재 IP 주소 및 펌웨어 버전을 보고할 수 있습니다.
 
 이 센서를 활성화하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오 :
 

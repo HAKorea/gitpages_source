@@ -21,10 +21,10 @@ ha_codeowners:
 
 [here](https://developer.here.com/documentation/routing/topics/introduction.html?create=Freemium-Basic&keepState=true&step=account) 지침에 따라 API 키 (REST & XYZ HUB API/CLI)를 등록해야합니다. 
 
-HERE는 한 달에 250,000 건의 무료 거래가 포함 된 프리미엄 플랜을 제공합니다. 라우팅 API의 경우 하나의 트랜잭션은 하나의 요청과 하나의 시작점 (멀티 stop 없음)과 같습니다. 자세한 내용은 [here](https://developer.here.com/faqs#payment-subscription)를 참조하십시오.
+HERE는 한 달에 250,000 건의 무료 거래가 포함된 프리미엄 플랜을 제공합니다. 라우팅 API의 경우 하나의 트랜잭션은 하나의 요청과 하나의 시작점 (멀티 stop 없음)과 같습니다. 자세한 내용은 [여기](https://developer.here.com/faqs#payment-subscription)를 참조하십시오.
 
 해당 월의 무료 거래 한도를 초과하면 기본적으로 여기에서 계정이 비활성화됩니다. 
-[here](https://developer.here.com/faqs)에 설명 된대로 결제 세부 정보를 추가하여 계정을 다시 활성화 할 수 있습니다
+[여기](https://developer.here.com/faqs)에 설명된대로 결제 세부 정보를 추가하여 계정을 다시 활성화 할 수 있습니다
 
 ### app_code에서 api_key로 마이그레이션
 
@@ -55,7 +55,7 @@ origin_latitude:
   required: exclusive
   type: float
 origin_longitude:
-  description: "이동 거리 및 시간을 계산하기위한 시작 경도. origin_latitude와 함께 사용해야합니다. `origin_entity_id`와 함께 사용할 수 없습니다."
+  description: "이동 거리 및 시간을 계산하기 위한 시작 경도. origin_latitude와 함께 사용해야합니다. `origin_entity_id`와 함께 사용할 수 없습니다."
   required: exclusive
   type: float
 destination_latitude:
@@ -75,23 +75,23 @@ destination_entity_id:
   required: exclusive
   type: string
 name:
-  description: 센서에 표시 할 이름입니다. 기본값은 "HERE Travel Time" 입니다..
+  description: 센서에 표시할 이름입니다. 기본값은 "HERE Travel Time" 입니다.
   required: false
   type: string
   default: "HERE Travel Time"
 mode:
-  description: "`bicycle`, `car`, `pedestrian`, `publicTransport`, `publicTransportTimeTable` 혹은 `truck` 중에서 선택할 수 있습니다. 디폴트는 `car`입니다. 대중 교통의 경우 `publicTransportTimeTable`이 권장됩니다. 일반 모드 [here](https://developer.here.com/documentation/routing/topics/transport-modes.html) 및 공개 모드 [here](https://developer.here.com/documentation/routing/topics/public-transport-routing.html)에 대한 자세한 정보를 찾을 수 있습니다."
+  description: "`bicycle`, `car`, `pedestrian`, `publicTransport`, `publicTransportTimeTable` 혹은 `truck` 중에서 선택할 수 있습니다. 디폴트는 `car`입니다. 대중 교통의 경우 `publicTransportTimeTable`이 권장됩니다. 일반 모드 [여기참조](https://developer.here.com/documentation/routing/topics/transport-modes.html) 및 공개 모드 [여기참조](https://developer.here.com/documentation/routing/topics/public-transport-routing.html)에 대한 자세한 정보를 찾을 수 있습니다."
   required: false
   type: string
   default: "car"
 route_mode:
-  description: "`fastest` 또는 `shortest` 중에서 선택할 수 있습니다. 이것은 경로가 현재 교통 정보에 따라 가장 짧고 완전히 무시되는 트래픽 및 속도 제한인지 또는 가장 빠른 경로인지를 결정합니다. 기본값은 `fastest` 입니다"
+  description: "`fastest` 또는 `shortest` 중에서 선택할 수 있습니다. 이는 경로가 현재 교통 정보에 따라 가장 짧고 완전히 무시되는 트래픽 및 속도 제한인지 또는 가장 빠른 경로인지를 결정합니다. 기본값은 `fastest`입니다"
   required: false
   type: string
   default: "fastest"
 traffic_mode:
   description: "`true` 또는 `false` 중에서 선택할 수 있습니다. 
-현재 교통 상황을 고려할지 여부를 결정하십시오. 기본값은 `false` 입니다 "
+현재 교통 상황을 고려할지 여부를 결정하십시오. 기본값은 `false`입니다 "
   required: false
   type: boolean
   default: false
@@ -109,7 +109,7 @@ scan_interval:
 
 ## 동적 설정 (Dynamic Configuration)
 
-`device_tracker`, `zone`, `sensor` 및 `person` 유형의 엔티티를 추적하도록 추적을 설정할 수 있습니다. 엔티티가 출발지 또는 목적지에 배치되면 플랫폼이 업데이트 될 때 5 분마다 해당 엔티티의 최신 위치를 사용합니다.
+`device_tracker`, `zone`, `sensor` 및 `person` 유형의 엔티티를 추적하도록 추적을 설정할 수 있습니다. 엔티티가 출발지 또는 목적지에 배치되면 플랫폼이 업데이트될 때 5 분마다 해당 엔티티의 최신 위치를 사용합니다.
 
 ```yaml
 # Example entry for configuration.yaml
@@ -144,13 +144,13 @@ sensor:
 - **zone**
   - 경도 및 위도 속성을 사용합니다
 - **sensor**
-  - 상태가 영역 인 경우 영역 위치를 사용합니다
+  - 상태가 영역인 경우 영역 위치를 사용합니다
   - 다른 모든 상태는 HERE API로 직접 전달됩니다
     - 여기에는 *설정 변수* 에 나열된 모든 유효한 위치가 포함됩니다
 
 ## 자동화를 사용한 주문형 센서 업데이트
 
-`homeassistant.update_entity` 서비스를 사용하여 주문형 센서를 업데이트 할 수도 있습니다. 예를 들어, 평일 아침 2 분마다 `sensor.morning_commute`를 업데이트하려는 경우 다음 자동화를 사용할 수 있습니다.
+`homeassistant.update_entity` 서비스를 사용하여 주문형 센서를 업데이트할 수도 있습니다. 예를 들어, 평일 아침 2 분마다 `sensor.morning_commute`를 업데이트하려는 경우 다음 자동화를 사용할 수 있습니다.
 
 ```yaml
 automation:

@@ -9,13 +9,13 @@ ha_codeowners:
   - '@fabaff'
 ---
 
-This `gitter` sensor allows one to monitor a [Gitter.im](https://gitter.im) chatroom for unread messages.
+`gitter` 센서를 사용하면 읽지 않은 메시지가 있는지 [Gitter.im](https://gitter.im) 대화방을 모니터링할 수 있습니다.
 
-## Configuration
+## 설정
 
-Visit [Gitter Developer Apps](https://developer.gitter.im/apps) to retrieve your "Personal Access Token".
+"Personal Access Token"을 검색하려면 [Gitter Developer Apps](https://developer.gitter.im/apps)를 방문하십시오.
 
-To use a Gitter sensor in your installation, add the following to your `configuration.yaml` file:
+설치에서 Gitter 센서를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

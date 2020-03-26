@@ -10,9 +10,9 @@ ha_codeowners:
   - '@home-assistant/core'
 ---
 
-Groups을 통해 사용자는 여러 entity를 하나로 결합 할 수 있습니다.
+Groups을 통해 사용자는 여러 entity를 하나로 결합할 수 있습니다.
 
-**Developer Tools** 에서 **States** <img src='/images/screenshots/developer-tool-states-icon.png' class='no-shadow' height='38' /> 페이지를 확인하고 **Current entities:** 를 탐색합니다. : 사용할 수있는 모든 entities에 대한 목록이 나옵니다.
+**개발자 도구** 에서 **States** <img src='/images/screenshots/developer-tool-states-icon.png' class='no-shadow' height='38' /> 페이지를 확인하고 **Current entities:** 를 탐색합니다. : 사용할 수 있는 모든 entities에 대한 목록이 나옵니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -39,7 +39,7 @@ name:
   required: false
   type: string
 entities:
-  description: 배열 또는 쉼표로 구분 된 문자열, 그룹화 할 entity 목록.
+  description: 배열 또는 쉼표로 구분된 문자열, 그룹화할 entity 목록.
   required: true
   type: list
 all:

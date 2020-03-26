@@ -10,6 +10,10 @@ ha_codeowners:
   - '@home-assistant/cloud'
 ---
 
+<div class='videoWrapper'>
+<iframe width="1250" height="713" src="https://www.youtube.com/embed/MMtCzX6US9M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 `google_assistant` 통합구성요소는 스마트폰, 태블릿 또는 구글 홈의 구글 어시스턴트를 통해서 장치들을 제어할 수 있게 해줍니다.
 
 ## 홈어시스턴트 클라우드를 통한 자동 설정

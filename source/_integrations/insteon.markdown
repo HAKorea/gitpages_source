@@ -179,7 +179,7 @@ x10_all_lights_off:
 
 ### 장치 자동검색
 
-자동 검색이 처음 실행될 때 기간은 장치 당 최대 20 초가 필요할 수 있습니다. 캐시된 장치 정보를 사용하면 이후의 시작이 훨씬 빨라집니다. 자동 검색 중에 장치가 인식되지 않으면 장치를 **device_override** 설정에 추가 할 수 있습니다.
+자동 검색이 처음 실행될 때 기간은 장치당 최대 20 초가 필요할 수 있습니다. 캐시된 장치 정보를 사용하면 이후의 시작이 훨씬 빨라집니다. 자동 검색 중에 장치가 인식되지 않으면 장치를 **device_override** 설정에 추가할 수 있습니다.
 
 장치를 검색하려면 응답기(responder) 또는 컨트롤러로 INSTEON 모뎀에 연결되어 있어야합니다.
 
@@ -203,7 +203,7 @@ x10_all_lights_off:
 
 ### Customization
 
-홈어시스턴트가 INSTEON 모뎀에 연결하려면 PLM 포트 또는 허브 IP 주소, 사용자 이름 및 비밀번호만 있으면됩니다. 모뎀의 ALL-Link 데이터베이스에 있는 지원되는 모든 INSTEON 장치가 노출됩니다. 그러나 장치는 INSTEON 16진 주소 (예 :“1A.2B.3C”)로만 표시되며 이는 다소 다루기 힘들 수 있습니다. ‘Set’ 버튼을 사용하여 기기를 연결 및 연결을 해제하면 기기가 홈어시스턴트에서 자동으로 추가 및 제거됩니다.
+홈어시스턴트가 INSTEON 모뎀에 연결하려면 PLM 포트 또는 허브 IP 주소, 사용자 이름 및 비밀번호만 있으면됩니다. 모뎀의 ALL-Link 데이터베이스에 있는 지원되는 모든 INSTEON 장치가 노출됩니다. 그러나 장치는 INSTEON 16진 주소 (예: “1A.2B.3C”)로만 표시되며 이는 다소 다루기 힘들 수 있습니다. ‘Set’ 버튼을 사용하여 기기를 연결 및 연결을 해제하면 기기가 홈어시스턴트에서 자동으로 추가 및 제거됩니다.
 
 설정의 일반 홈어시스턴트 [device customization] 섹션을 사용하여 친숙한 이름과 특수 아이콘을 장치에 할당할 수 있습니다. binary_sensor INSTEON 장치에서 device_class를 설정하는 데 특히 유용합니다.
 
@@ -216,7 +216,7 @@ INSTEON 장치는 하드웨어의 모델 및 기능에 따라 가장 적합한 �
 **device_override** 기능에는 두 가지 주요 용도가 있습니다.
 
 - 자동 검색 중에 응답하지 않는 장치. 이는 배터리로 작동되는 장치에선 일반적입니다.
-- 완전히 개발되지 않은 장치. 이를 통해 알 수 없는 장치를 다른 장치와 유사하게 작동하는 장치에 매핑 할 수 있습니다.
+- 완전히 개발되지 않은 장치. 이를 통해 알 수 없는 장치를 다른 장치와 유사하게 작동하는 장치에 매핑할 수 있습니다.
 
 ### 옵션 설정을 한 설정 예시
 
@@ -249,9 +249,9 @@ light:
     address: 1a2b3c
 ```
 
-### INSTEON 장면 (Scenes)
+### INSTEON 씬(Scenes)
 
-INSTEON 장면 트리거링은 자동화를 통해 수행됩니다. 이 기능을 지원하기 위해 두 가지 서비스가 제공됩니다.
+INSTEON 씬 트리거링은 자동화를 통해 수행됩니다. 이 기능을 지원하기 위해 두 가지 서비스가 제공됩니다.
 
 - **insteon.scene_on**
   - **group**: (required) The INSTEON scene number to trigger.
@@ -279,7 +279,7 @@ Mini-Remote 장치는 홈어시스턴트 엔티티로 나타나지 않고 이벤
   - **address**: (required) The Insteon device address in lower case without dots (e.g., 1a2b3c)
   - **button**: (Optional) The button id in lower case. For a 4-button remote the values are a to d. For an 8 button remote the values are `a` to `h`. For a one-button remote this field is not used.
 
-이를 통해 mini-remotes를 자동화하기 위한 트리거로 설정 할 수 있습니다. 다음은 이러한 이벤트를 자동화에 사용하는 방법의 예입니다.
+이를 통해 mini-remotes를 자동화하기 위한 트리거로 설정할 수 있습니다. 다음은 이러한 이벤트를 자동화에 사용하는 방법의 예입니다.
 
 ```yaml
 automation:
@@ -323,6 +323,6 @@ INSTEON Hub에는 허브 디자인에 지속되어온 세 가지 알려진 이�
 
 1. 로그 파일에 허브 연결이 닫혔으며 다시 연결에 실패했다는 오류 메시지가 여러 개 표시되면 일반적으로 허브를 다시 시작하여 다시 연결해야합니다.
 
-2. Home Assistant와 INSTEON 앱을 모두 사용할 수 없습니다. 그렇게하면 앱에서 변경 한 내용이 Home Assistant에 나타나지 않습니다. 그러나 일정 기간이 지나면 Home Assistant에서 변경 한 내용이 앱에 나타납니다.
+2. Home Assistant와 INSTEON 앱을 모두 사용할 수 없습니다. 그렇게하면 앱에서 변경한 내용이 Home Assistant에 나타나지 않습니다. 그러나 일정 기간이 지나면 Home Assistant에서 변경한 내용이 앱에 나타납니다.
 
-3. 허브 응답 시간이 매우 느릴 수 있습니다. 이는 허브 폴링 장치가 자주 있기 때문입니다. 한 번에 하나의 INSTEON 메시지 만 브로드 캐스트 할 수 있으므로 Home Assistant와 주고받는 메시지가 지연될 수 있습니다.
+3. 허브 응답 시간이 매우 느릴 수 있습니다. 이는 허브 폴링 장치가 자주 있기 때문입니다. 한 번에 하나의 INSTEON 메시지만 브로드 캐스트 할 수 있으므로 Home Assistant와 주고받는 메시지가 지연될 수 있습니다.

@@ -10,7 +10,7 @@ ha_codeowners:
   - '@home-assistant/core'
 ---
 
-`input_text` 통합구성요소를 통해 사용자는 프론트 엔드를 통해 제어 할 수 있고 자동화 조건 내에서 사용할 수있는 값을 정의할 수 있습니다. 텍스트 상자에 저장된 값을 변경하면 상태 이벤트가 생성됩니다. 이러한 상태 이벤트는 `automation` 트리거로도 사용할 수 있습니다. 암호 모드 (가려진 텍스트)로 설정할 수도 있습니다.
+`input_text` 통합구성요소를 통해 사용자는 프론트 엔드를 통해 제어할 수 있고 자동화 조건 내에서 사용할 수있는 값을 정의할 수 있습니다. 텍스트 상자에 저장된 값을 변경하면 상태 이벤트가 생성됩니다. 이러한 상태 이벤트는 `automation` 트리거로도 사용할 수 있습니다. 암호 모드(가려진 텍스트)로 설정할 수도 있습니다.
 
 ```yaml
 # Example configuration.yaml entries
@@ -64,7 +64,7 @@ input_text:
         type: string
         default: empty
       mode:
-        description: "보통 `text` 또는 `password`를 지정할 수 있습니다. password 유형의 요소는 사용자가 안전하게 값을 입력 할 수 있는 방법을 제공합니다."
+        description: "보통 `text` 또는 `password`를 지정할 수 있습니다. password 유형의 요소는 사용자가 안전하게 값을 입력할 수 있는 방법을 제공합니다."
         required: false
         type: string
         default: text
@@ -81,9 +81,9 @@ input_text:
 
 ### 상태 복원
 
-`initial`에 유효한 값을 설정하면 이 통합구성요소는 상태가 해당 값으로 설정된 상태에서 시작됩니다. 그렇지 않으면, 홈어시스턴트 중지 이전의 상태를 복원합니다.
+`initial`에 유효한 값을 설정하면 이 통합구성요소는 상태가 해당값으로 설정된 상태에서 시작됩니다. 그렇지 않으면, 홈어시스턴트 중지 이전의 상태를 복원합니다.
 
-### 장면 (Scenes)
+### 씬(Scenes)
 
 [Scene](/integrations/scene/)에서 input_text의 상태를 설정하려면 :
 

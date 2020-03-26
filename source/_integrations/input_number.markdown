@@ -10,9 +10,9 @@ ha_codeowners:
   - '@home-assistant/core'
 ---
 
-`input_number` 통합구성요소를 통해 사용자는 프론트 엔드를 통해 제어할 수 있고 자동화 조건 내에서 사용할 수 있는 값을 정의할 수 있습니다. 프런트 엔드에는 슬라이더 또는 숫자 입력 상자가 표시 될 수 있습니다. 슬라이더 또는 숫자 입력 상자를 변경하면 상태 이벤트가 생성됩니다. 이러한 상태 이벤트는 `자동화` 트리거로도 사용할 수 있습니다.
+`input_number` 통합구성요소를 통해 사용자는 프론트 엔드를 통해 제어할 수 있고 자동화 조건 내에서 사용할 수 있는 값을 정의할 수 있습니다. 프런트 엔드에는 슬라이더 또는 숫자 입력 상자가 표시될 수 있습니다. 슬라이더 또는 숫자 입력 상자를 변경하면 상태 이벤트가 생성됩니다. 이러한 상태 이벤트는 `자동화` 트리거로도 사용할 수 있습니다.
 
-설치시 input number 를 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오 :
+설치시 input number를 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -56,7 +56,7 @@ input_number:
         type: float
         default: 종료시의 값
       step:
-        description: 슬라이더의 단계 값. 최소값은 `0.001`.
+        description: 슬라이더의 단계값. 최소값은 `0.001`.
         required: false
         type: float
         default: 1
@@ -82,17 +82,17 @@ input_number:
 | Service | Data | Description |
 | ------- | ---- | ----------- |
 | `decrement` | `entity_id(s)`<br>`area_id(s)` | 특정 `input_number` 엔티티의 값을 `step` 만큼 줄입니다.
-| `increment` | `entity_id(s)`<br>`area_id(s)` | 특정`input_number` 엔티티의 값을 `step` 만큼 늘립니다.
+| `increment` | `entity_id(s)`<br>`area_id(s)` | 특정 `input_number` 엔티티의 값을 `step` 만큼 늘립니다.
 | `reload` | | `input_number` 설정 리로드(reload) |
-| `set_value` | `value`<br>`entity_id(s)`<br>`area_id(s)` | 특정`input_number` 엔티티의 값을 설정. 
+| `set_value` | `value`<br>`entity_id(s)`<br>`area_id(s)` | 특정 `input_number` 엔티티의 값을 설정. 
 
 ### 상태 복원 (Restore State)
 
-`initial`에 유효한 값을 설정하면이 연동은 상태가 해당 값으로 설정된 상태에서 시작됩니다. 그렇지 않으면, 홈어시스턴트 중지 이전의 상태를 복원합니다.
+`initial`에 유효한 값을 설정하면 이 연동은 상태가 해당 값으로 설정된 상태에서 시작됩니다. 그렇지 않으면, 홈어시스턴트 중지 이전의 상태를 복원합니다.
 
-### Scenes
+### 씬 (Scenes)
 
-[Scene] (/ integrations / scene /)에서 input_number의 값을 설정 :
+[Scene](/integrations/scene/)에서 input_number의 값을 설정 :
 
 ```yaml
 # Example configuration.yaml entry

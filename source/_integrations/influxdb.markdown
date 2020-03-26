@@ -17,19 +17,19 @@ ha_codeowners:
 
 `influxdb` 통합구성요소를 통해 모든 상태 변경을 외부 [InfluxDB](https://influxdb.com/) 데이터베이스로 전송할 수 있습니다. nfluxDB 데이터베이스 설정 방법은 [공식 설치 문서](https://docs.influxdata.com/influxdb/v1.7/introduction/installation/)를 참조하십시오. 혹은 Hass.io를 사용하는 경우 [Add-on 추가 기능](https://community.home-assistant.io/t/community-hass-io-add-on-influxdb/54491)이 있습니다. 가장 쉬운 방법으로 Add-on 추가를 추천합니다. 
 
-현재 홈 어시스턴트에는 다음과 같은 장치 유형이 지원됩니다. :
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다. :
 
 - [Sensor](#sensor)
 
 <div class='note'>
 
-`influxdb` 데이터베이스 통합은 Home Assistant 데이터베이스와 병렬로 실행됩니다. 대체하지는 않습니다.
+`influxdb` 데이터베이스 연동은 Home Assistant 데이터베이스와 병렬로 실행됩니다. 대체하지는 않습니다.
 
 </div>
 
 ## 설정 
 
-기본 InfluxDB 설정은 인증을 강제하지 않습니다. Home Assistant가 실행중인 동일한 호스트에 InfluxDB를 설치했으며 설정을 변경하지 않은 경우`configuration.yaml` 파일에 다음을 추가하십시오.
+기본 InfluxDB 설정은 인증을 강제하지 않습니다. Home Assistant가 실행중인 동일한 호스트에 InfluxDB를 설치했으며 설정을 변경하지 않은 경우 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -51,7 +51,7 @@ port:
   default: 8086
 username:
   type: string
-  description: 데이터베이스 사용자의 사용자 이름. 사용자는 데이터베이스에 대한 읽기 / 쓰기 권한이 필요합니다
+  description: 데이터베이스 사용자의 사용자 이름. 사용자는 데이터베이스에 대한 읽기/쓰기 권한이 필요합니다
   required: false
 password:
   type: string
@@ -74,7 +74,7 @@ verify_ssl:
   default: true
 max_retries:
   type: integer
-  description: 데이터를 전송할 때 네트워크 오류가 있는 경우 연동이 재시도되도록 하려면 이 값을 설정하십시오..
+  description: 데이터를 전송할 때 네트워크 오류가 있는 경우 연동이 재시도되도록 하려면 이 값을 설정하십시오.
   required: false
   default: 0
 default_measurement:
@@ -88,16 +88,16 @@ override_measurement:
   required: false
 exclude:
   type: list
-  description:  nfluxDB에 기록에서 제외 할 통합구성요소를 설정.
+  description: InfluxDB에 기록에서 제외할 통합구성요소를 설정.
   required: false
   keys:
     entities:
       type: list
-      description:  InfluxDB에 기록에서 제외 할 엔티티 ID 목록
+      description: InfluxDB에 기록에서 제외할 엔티티 ID 목록
       required: false    
     domains:
       type: list
-      description:  InfluxDB에 기록에서 제외 할 도메인 목록.
+      description: InfluxDB에 기록에서 제외할 도메인 목록.
       required: false
 include:
   type: list
@@ -106,11 +106,11 @@ include:
   keys:
     entities:
       type: [string, list]
-      description:  InfluxDB에 기록하는 데 포함될 엔티티 ID 목록.
+      description:  InfluxDB에 기록하는데 포함될 엔티티 ID 목록.
       required: false    
     domains:
       type: [string, list]
-      description:  InfluxDB에 기록하는 데 포함될 도메인 목록.
+      description:  InfluxDB에 기록하는데 포함될 도메인 목록.
       required: false
 tags:
   type: [string, list]
@@ -118,35 +118,35 @@ tags:
   default: 0
 tags_attributes:
   type: [string, list]
-  description: InfluxDB에 필드가 아닌 태그로 보고되어야하는 속성 이름 목록. 예를 들어 `friendly_name` 으로 설정하면 ID뿐만 아니라 엔티티의 이름으로도 그룹화 할 수 있습니다.
+  description: InfluxDB에 필드가 아닌 태그로 보고되어야하는 속성 이름 목록. 예를 들어 `friendly_name`으로 설정하면 ID뿐만 아니라 엔티티의 이름으로도 그룹화할 수 있습니다.
   required: false
   default: 0
 component_config:
   type: string
   required: false
-  description: 이 속성은 구성 요소 특정 대체 값을 포함합니다. 형식은 [Customizing devices and services](/getting-started/customizing-devices/)를 참조하십시오.
+  description: 이 속성은 구성 요소 특정 대체값을 포함합니다. 형식은 [Customizing devices and services](/getting-started/customizing-devices/)를 참조하십시오.
   keys:
     override_measurement:
       type: string
-      description:  단위 또는 기본 측정 대신 사용할 측정 이름. 모든 데이터 포인트를 단일 측정에 저장합니다.
+      description: 단위 또는 기본 측정 대신 사용할 측정 이름. 모든 데이터 포인트를 단일 측정에 저장합니다.
       required: false
 component_config_domain:
   type: string
   required: false
-  description: 이 속성에는 도메인 별 통합구성요소 대체값이 포함됩니다. 형식은 [Customizing devices and services](/getting-started/customizing-devices/)를 참조하십시오.
+  description: 이 속성에는 도메인별 통합구성요소 대체값이 포함됩니다. 형식은 [Customizing devices and services](/getting-started/customizing-devices/)를 참조하십시오.
   keys:
     override_measurement:
       type: string
-      description:  단위 또는 기본 측정 대신 사용할 측정 이름. 모든 데이터 포인트를 단일 측정에 저장합니다.
+      description: 단위 또는 기본 측정 대신 사용할 측정 이름. 모든 데이터 포인트를 단일 측정에 저장합니다.
       required: false
 component_config_glob: 
   type: string
   required: false
-  description: 이 속성은 구성 요소 특정 대체 값을 포함합니다. 형식은 [Customizing devices and services](/getting-started/customizing-devices/)를 참조하십시오.
+  description: 이 속성은 구성 요소 특정 대체값을 포함합니다. 형식은 [Customizing devices and services](/getting-started/customizing-devices/)를 참조하십시오.
   keys:
     override_measurement:
       type: string
-      description:  단위 또는 기본 측정 대신 사용할 측정 이름. 모든 데이터 포인트를 단일 측정에 저장합니다.
+      description: 단위 또는 기본 측정 대신 사용할 측정 이름. 모든 데이터 포인트를 단일 측정에 저장합니다.
       required: false
 {% endconfiguration %}
 
@@ -183,9 +183,9 @@ influxdb:
 ## 센서 
 
 `influxdb` 센서를 사용하면 [InfluxDB](https://influxdb.com/) 데이터베이스의 값을 사용하여 센서 상태를 채울 수 있습니다. 
-`influxdb` 히스토리 구성 요소와 함께 사용되는 경우 home_assistant 센서에 대한 통계를 제공하는 데 사용할 수 있습니다. 외부 데이터 소스와 함께 사용할 수도 있습니다.
+`influxdb` 히스토리 구성 요소와 함께 사용되는 경우 home_assistant 센서에 대한 통계를 제공하는데 사용할 수 있습니다. 외부 데이터 소스와 함께 사용할 수도 있습니다.
 
-이 센서를 구성하려면 센서 연결 변수와 `configuration.yaml` 파일에 대한 쿼리 목록을 정의해야합니다. 각 쿼리마다 센서가 생성됩니다. :
+이 센서를 설정하려면 센서 연결 변수와 `configuration.yaml` 파일에 대한 쿼리 목록을 정의해야합니다. 각 쿼리마다 센서가 생성됩니다. :
 
 ```yaml
 # Example configuration.yaml entry
@@ -199,7 +199,7 @@ sensor:
 
 {% configuration %}
 host:
-  description: "데이터베이스 호스트의 IP 주소 (예 : 192.168.1.10)"
+  description: "데이터베이스 호스트의 IP 주소 (예: 192.168.1.10)"
   required: false
   default: localhost
   type: string
@@ -272,7 +272,7 @@ queries:
 
 ### 전체 설정
 
-아래 예제 구성 항목은 로컬 InfluxDB 인스턴스에 대한 두 가지 요청을 만듭니다. 하나는 데이터베이스`db1`에, 다른 하나는`db2`에 :
+아래 예제 설정 항목은 로컬 InfluxDB 인스턴스에 대한 두 가지 요청을 만듭니다. 하나는 데이터베이스 `db1`에, 다른 하나는 `db2`에 :
 
 - `select last(value) as value from "°C" where "name" = "foo"`
 - `select min(tmp) as value from "%" where "entity_id" = ''salon'' and time > now() - 1h`

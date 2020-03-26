@@ -20,7 +20,7 @@ ha_codeowners:
 
 필립스 Hue 제품군은 Wifi, Bluetooth, Zigbee 3가지 통신방식의 제품들이 존재합니다. 
 
-그중에서 **현재 가장 많이 쓰는 통신방식은 Zigbee 제품**임으로 [Zigbee2mqtt 설치방법](https://hakorea.github.io/integrations/zha/)를 통해 필립스 Hue 제품군들을 설치하시길 권장합니다. 
+그 중에서 **현재 가장 많이 쓰는 통신방식은 Zigbee 제품**임으로 [Zigbee2mqtt 설치방법](https://hakorea.github.io/integrations/zha/)를 통해 필립스 Hue 제품군들을 설치하시길 권장합니다. 
 
 zigbee2mqtt의 [필립스 Hue 장치들의 지원 목록](https://www.zigbee2mqtt.io/information/supported_devices.html#philips)을 참조하십시오. 
 
@@ -31,12 +31,12 @@ zigbee2mqtt의 [필립스 Hue 장치들의 지원 목록](https://www.zigbee2mqt
 
 Philips Hue support는 조명 및 센서 플랫폼을 구동할 수 있는 허브로 Home Assistant에 통합되어 있습니다. Philips Hue 플랫폼을 설정하는 기본 방법은 [discovery component](/integrations/discovery/)를 활성화하는 것입니다.
 
-현재 홈 어시스턴트에는 다음과 같은 장치 유형이 지원됩니다. : 
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다. : 
 
 - 조명
 - 모션 센서 (온도 및 조도 센서 포함)
 
-일단 사용자 정의 기본 보기가 있는 경우 상태 개발자 도구 ( < > )에서 `configurator.philips_hue`를 찾아 `configuration.yaml`의 그룹에 추가하십시오. 홈어시스턴트 대시보드에 설정화면이 표시되도록 홈어시스턴트를 다시 시작하십시오. 홈어시스턴트가 다시 시작되면 `configurator.philips_hue`를 찾아 클릭하여 시작 대화 상자를 여십시오. 이렇게하면 Hue 버튼을 눌러 홈어시스턴트에 Hue 브리지를 등록하라는 메시지가 표시됩니다. 완료되면 설정 엔터티는 더 이상 필요하지 않으며 `configuration.yaml`에 나타난 그룹에서 제거 할 수 있습니다.
+일단 사용자 정의 기본 보기가 있는 경우 상태 개발자 도구 ( < > )에서 `configurator.philips_hue`를 찾아 `configuration.yaml`의 그룹에 추가하십시오. 홈어시스턴트 대시보드에 설정화면이 표시되도록 홈어시스턴트를 다시 시작하십시오. 홈어시스턴트가 다시 시작되면 `configurator.philips_hue`를 찾아 클릭하여 시작 대화 상자를 여십시오. 이렇게하면 Hue 버튼을 눌러 홈어시스턴트에 Hue 브리지를 등록하라는 메시지가 표시됩니다. 완료되면 설정 엔터티는 더 이상 필요하지 않으며 `configuration.yaml`에 나타난 그룹에서 제거할 수 있습니다.
 
 Home Assistant에서 Hue 브리지를 설정하면 Home Assistant [configuration directory](/docs/configuration/)의 파일에 토큰을 기록합니다. 이 토큰은 Hue 브리지와의 통신을 인증합니다. 브리지의 IP 주소가 변경되면 홈어시스턴트에 다시 등록해야합니다. 이를 방지하기 위해 라우터에서 Hue 브리지의 DHCP 예약을 설정하여 항상 동일한 IP 주소를 갖도록 할 수 있습니다
 

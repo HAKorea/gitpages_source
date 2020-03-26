@@ -8,15 +8,15 @@ ha_release: 0.48
 ha_iot_class: Local Push
 ---
 
-The `htu21d` sensor platform allows you to read the temperature and humidity from a [HTU21D sensor](https://cdn-shop.adafruit.com/datasheets/1899_HTU21D.pdf) connected via [I2c](https://en.wikipedia.org/wiki/I²C) bus (SDA, SCL pins).
+htu21d 센서 플랫폼을 사용하면 [I2c](https://en.wikipedia.org/wiki/I²C) 버스 (SDA, SCL 핀)를 통해 연결된 [HTU21D 센서](https://cdn-shop.adafruit.com/datasheets/1899_HTU21D.pdf)에서 온도와 습도를 읽을 수 있습니다.
 
-Tested devices:
+테스트된 장치 :
 
 - [Raspberry Pi](https://www.raspberrypi.org/)
 
-## Configuration
+## 설정
 
-To use your HTU21D sensor in your installation, add the following to your `configuration.yaml` file:
+설치시 HTU21D 센서를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -37,9 +37,9 @@ i2c_bus:
   type: integer
 {% endconfiguration %}
 
-## Customizing the sensor data
+## 사용자 정의 센서 데이터 
 
-Give the values friendly names and icons, add the following to your `customize:` section.
+값에 친숙한 이름과 아이콘을 지정하고 `customize:` 섹션에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -52,7 +52,7 @@ customize:
     friendly_name: "Humidity"
 ```
 
-To create a group, add the following to your `groups` section.
+그룹을 만들려면 `groups` 섹션에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -64,9 +64,9 @@ group:
       - sensor.htu21d_sensor_humidity
 ```
 
-## Directions for installing smbus support on Raspberry Pi
+## Raspberry Pi에 smbus 지원 설치 지침
 
-Enable I2c interface with the Raspberry Pi configuration utility:
+Raspberry Pi 설정 유틸리티를 사용하여 I2c 인터페이스를 활성화하십시오.
 
 ```bash
 # pi user environment: Enable i2c interface
@@ -88,9 +88,9 @@ $ sudo addgroup homeassistant i2c
 $ sudo reboot
 ```
 
-### Check the i2c address of the sensor
+### 센서의 i2c 주소 확인
 
-After installing `i2c-tools`, a new utility is available to scan the addresses of the connected sensors:
+`i2c-tools`를 설치한 후, 연결된 센서의 주소를 스캔할 수 있는 새로운 유틸리티가 제공됩니다 :
 
 ```bash
 $ /usr/sbin/i2cdetect -y 1
@@ -109,4 +109,4 @@ It will output a table like this:
 70: -- -- -- -- -- -- -- 77
 ```
 
-So you can see the sensor is present at the **0x40** address (there are more i2c sensors in that Raspberry Pi).
+따라서 센서가 **0x40** 주소에 있음을 알 수 있습니다 (해당 라즈베리파이에는 i2c 센서가 더 있습니다).

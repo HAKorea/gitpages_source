@@ -14,20 +14,20 @@ ha_config_flow: true
 <iframe width="776" height="437" src="https://www.youtube.com/embed/pQpz_Ms8tiU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-[IFTTT](https://ifttt.com) 는 사용자가 소위 "애플릿"이라는 간단한 조건문 체인을 만들 수있는 웹 서비스입니다. IFTTT 구성 요소를 사용하면 **Webhooks** 서비스 (이전의 **Maker** 채널)를 통해 애플릿을 트리거 할 수 있습니다 
+[IFTTT](https://ifttt.com) 는 사용자가 소위 "애플릿"이라는 간단한 조건문 체인을 만들 수 있는 웹서비스입니다. IFTTT 구성 요소를 사용하면 **Webhooks** 서비스 (이전의 **Maker** 채널)를 통해 애플릿을 트리거할 수 있습니다 
 
 ## IFTTT에서 홈어시스턴트로 이벤트 보내기
 
-FTTT에서 이벤트를 수신하려면 웹에서 홈어시스턴트 인스턴스에 액세스 할 수 있어야하고 ([Hass.io instructions](/addons/duckdns/)), HTTP 통합을 위해 `base_url`을 구성해야합니다 (참고 : [docs](/integrations/http/#base_url)).
+FTTT에서 이벤트를 수신하려면 웹에서 홈어시스턴트 인스턴스에 액세스할 수 있어야하고 ([Hass.io instructions](/addons/duckdns/)), HTTP 연동을 위해 `base_url`을 설정해야합니다 (참고: [docs](/integrations/http/#base_url)).
 
 ### 통합 설정 (Setting up the integration)
 
-이를 설정하려면 설정 화면의 통합구성요소 페이지로 이동하여 IFTTT를 찾으십시오. 설정을 클릭하십시오. 화면의 지시 사항에 따라 IFTTT를 구성하십시오.
+이를 설정하려면 설정 화면의 통합구성요소 페이지로 이동하여 IFTTT를 찾으십시오. 설정을 클릭하십시오. 화면의 지시 사항에 따라 IFTTT를 설정하십시오.
 
 ### 수신 데이터 사용 (Using the incoming data)
 
 IFTTT에서 들어오는 이벤트는 홈어시스턴트 이벤트로 사용 가능하며 `ifttt_webhook_received`로 시작됩니다. 
-IFTTT에 지정된 데이터는 이벤트 데이터로 사용 가능합니다. 이 이벤트를 사용하여 자동화를 트리거 할 수 있습니다.
+IFTTT에 지정된 데이터는 이벤트 데이터로 사용 가능합니다. 이 이벤트를 사용하여 자동화를 트리거할 수 있습니다.
 
 예를 들어, IFTTT 웹 후크 본문을 다음과 같이 설정하십시오. :
 
@@ -35,7 +35,7 @@ IFTTT에 지정된 데이터는 이벤트 데이터로 사용 가능합니다. �
 { "action": "call_service", "service": "light.turn_on", "entity_id": "light.living_room" }
 ```
 
-그런 다음 다음 자동화를 통해 수신 정보를 이용해야합니다. :
+그런 후 다음 자동화를 통해 수신 정보를 이용해야합니다. :
 
 {% raw %}
 ```yaml
@@ -63,7 +63,7 @@ ifttt:
   key: YOUR_API_KEY
 ```
 
-`key`는 [Webhooks applet](https://ifttt.com/services/maker_webhooks/settings)의 **Settings**을 확인하여 얻을 수있는 API 키입니다. URL의 마지막 부분 (예 : https://maker.ifttt.com/use/MYAPIKEY)은 **My Applets** > **Webhooks** > **Settings**에서 찾을 수 있습니다.
+`key`는 [Webhooks applet](https://ifttt.com/services/maker_webhooks/settings)의 **Settings**을 확인하여 얻을 수 있는 API 키입니다. URL의 마지막 부분 (예: https://maker.ifttt.com/use/MYAPIKEY)은 **My Applets** > **Webhooks** > **Settings**에서 찾을 수 있습니다.
 
 
 <p class='img'>
@@ -79,7 +79,7 @@ Maker Channel의 property 화면
 
 ### 여러개의 IFTTT의 키 (Multiple IFTTT keys)
 
-여러 IFTTT 사용자가있는 경우 다음을 사용하여 여러 IFTTT 키를 지정할 수 있습니다. :
+여러 IFTTT 사용자가 있는 경우 다음을 사용하여 여러 IFTTT 키를 지정할 수 있습니다. :
 
 ```yaml
 # Example configuration.yaml entry
@@ -92,7 +92,7 @@ ifttt:
 
 ### 트리거 테스트 (Testing your trigger)
 
-**개발자 도구**를 사용하여 [Webhooks](https://ifttt.com/maker_webhooks) 트리거를 테스트 할 수 있습니다. 이렇게하려면 홈어시스턴트 사이드 바를 열고 개발자 도구를 클릭 한 다음 **서비스** 탭을 클릭하십시오. 그리고 다음 값을 입력하십시오 
+**개발자 도구**를 사용하여 [Webhooks](https://ifttt.com/maker_webhooks) 트리거를 테스트할 수 있습니다. 이렇게하려면 홈어시스턴트 사이드 바를 열고 개발자 도구를 클릭한 다음 **서비스** 탭을 클릭하십시오. 그리고 다음값을 입력하십시오 
 
 Field | Value
 ----- | -----
@@ -105,7 +105,7 @@ Service Data | `{"event": "EventName", "value1": "Hello World"}`
 다음 화면과 같이 'call service' 버튼을 클릭하십시오.
 </p>
 
-기본적으로 트리거는`configuration.yaml`에서 모든 API 키로 전송됩니다. 트리거를 특정 키로 보내려면 `target` 필드를 사용하십시오. : 
+기본적으로 트리거는 `configuration.yaml`에서 모든 API 키로 전송됩니다. 트리거를 특정 키로 보내려면 `target` 필드를 사용하십시오. : 
 
 Field | Value
 ----- | -----
@@ -113,7 +113,7 @@ domain | `ifttt`
 service | `trigger`
 Service Data | `{"event": "EventName", "value1": "Hello World", "target": "YOUR_KEY_NAME1"}`
 
-`target` 필드는 단일키 이름 또는 키 이름 목록을 포함 할 수 있습니다.
+`target` 필드는 단일키 이름 또는 키 이름 목록을 포함할 수 있습니다.
 
 ### 레시피 설정 (Setting up a recipe)
 
@@ -143,7 +143,7 @@ automation:
 ```
 {% endraw %}
 
-IFTTT는 스크립트와 `data_template`에서도 사용할 수 있습니다.  변수와 data_templates를 사용하여 자동화와 스크립트로 나눈 것이 위의 자동화입니다.
+IFTTT는 스크립트와 `data_template`에서도 사용할 수 있습니다. 변수와 data_templates를 사용하여 자동화와 스크립트로 나눈 것이 위의 자동화입니다.
 
 {% raw %}
 ```yaml

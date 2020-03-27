@@ -20,7 +20,7 @@ ha_iot_class: Cloud Polling
 
 `netatmo` 통합 플랫폼은 모든 Netatmo 관련 플랫폼을 연동하는 주요 통합구성요소입니다.
 
-현재 홈 어시스턴트에는 다음 장치 유형이 지원됩니다.
+현재 홈어시스턴트에는 다음 장치 유형이 지원됩니다.
 
 - [Binary Sensor](#binary-sensor)
 - [Camera](#camera)
@@ -59,13 +59,13 @@ API 자격 증명을 얻으려면 [Netatmo Developer Page](https://dev.netatmo.c
 <p class='img'>
 <img src='/images/screenshots/netatmo_create.png' />
 </p>
-양식을 작성해야하지만 두 개의 필드 만 필요합니다 : 이름과 설명. 무엇을 넣었는지는 중요하지 않습니다. 당신에게 맞는 것을 쓰십시오. 새 앱을 제출하려면 양식 하단에서 작성(create)을 클릭하십시오.
+양식을 작성해야하지만 두 개의 필드만 필요합니다 : 이름과 설명. 무엇을 넣었는지는 중요하지 않습니다. 당신에게 맞는 것을 쓰십시오. 새 앱을 제출하려면 양식 하단에서 작성(create)을 클릭하십시오.
 
 <p class='img'>
 <img src='/images/screenshots/netatmo_app.png' />
 </p>
 
-설정 예에서 위에 설명한대로 홈어시스턴트 설정 파일에 새 `client id` 및 `client id`을 복사하여 붙여넣을 수 있습니다.
+설정 예에서 위에 설명한대로 홈어시스턴트 설정 파일에 새 `client id`, `client id`을 복사하여 붙여넣을 수 있습니다.
 
 <p class='img'>
 <img src='/images/screenshots/netatmo_api.png' />
@@ -84,7 +84,7 @@ API 자격 증명을 얻으려면 [Netatmo Developer Page](https://dev.netatmo.c
 
 ## Climate
 
-`netatmo` 온도 조절기 플랫폼은 [Netatmo Smart Thermostat](https://www.netatmo.com/product/energy/thermostat) 온도 조절기에서 제공하는 정보를 사용합니다. 이 연동을 통해 현재 온도 및 설정지점(setpoint)을 볼 수 있습니다.
+`netatmo` 온도 조절기 플랫폼은 [Netatmo Smart Thermostat](https://www.netatmo.com/product/energy/thermostat) 온도조절기에서 제공하는 정보를 사용합니다. 이 연동을 통해 현재 온도와 설정지점(setpoint)을 볼 수 있습니다.
 
 ## Sensor
 

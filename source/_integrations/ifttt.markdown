@@ -63,7 +63,7 @@ ifttt:
   key: YOUR_API_KEY
 ```
 
-`key`는 [Webhooks applet](https://ifttt.com/services/maker_webhooks/settings)의 **Settings**을 확인하여 얻을 수 있는 API 키입니다. URL의 마지막 부분 (예: https://maker.ifttt.com/use/MYAPIKEY)은 **My Applets** > **Webhooks** > **Settings**에서 찾을 수 있습니다.
+`key`는 [Webhooks applet](https://ifttt.com/services/maker_webhooks/settings)의 **Settings**을 확인하여 얻을 수 있는 API 키입니다. URL의 마지막 부분 (예: https://maker.ifttt.com/use/MYAPIKEY) 은 **My Applets** > **Webhooks** > **Settings**에서 찾을 수 있습니다.
 
 
 <p class='img'>
@@ -178,4 +178,4 @@ IFTTT 채널 사용에 대한 추가 예는 아래에서 확인할 수 있습니
 
 Channel | Description
 ----- | -----
-[Manything](/integrations/ifttt.manything/) | 홈어시스턴트 AWAY 및 HOME 값을 기반으로 녹화를 켜고 끄는 것을 자동화합니다..
+[Manything](/integrations/ifttt.manything/) | 홈어시스턴트 AWAY 및 HOME 값을 기반으로 녹화를 켜고 끄는 것을 자동화합니다.

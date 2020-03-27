@@ -18,7 +18,7 @@ ha_config_flow: true
 
 ## Home Assistant Cast
 
-홈어시스턴트에는 Chromecast 기기에 홈 어시스턴트 UI를 표시하는 고유한 전송 애플리케이션이 있습니다.  [Cast entity row](/lovelace/entities/#cast)를 Lovelace UI에 추가하여 사용하거나 `cast.show_lovelace_view` service 를 호출해서 사용할 수 있습니다. 해당 service 는 Cast 장치의 entity와 Lovelace 화면의 경로를 통해서 view로 화면에 노출시킬 수 있습니다. [views documentation](/lovelace/views/#path)에서 제시하였듯이 `path`는 각 view 화면을 위한 Lovelace YAML에서 정의되어야 합니다.  
+홈어시스턴트에는 Chromecast 기기에 홈어시스턴트 UI를 표시하는 고유한 전송 애플리케이션이 있습니다. [Cast entity row](/lovelace/entities/#cast)를 Lovelace UI에 추가하여 사용하거나 `cast.show_lovelace_view` 서비스를 호출해서 사용할 수 있습니다. 해당 서비스는 Cast 장치의 entity와 Lovelace 화면의 경로를 통해서 view로 화면에 노출시킬 수 있습니다. [views documentation](/lovelace/views/#path)에서 제시하였듯이 `path`는 각 view 화면을 위한 Lovelace YAML에서 정의되어야 합니다.  
 
 
 ```json
@@ -28,11 +28,11 @@ ha_config_flow: true
 }
 ```
 
-홈어시스턴트 설치가 `https://` 를 경유하여 설치되어야 홈어시스턴트 캐스트를 통해 액세스 할 수 있습니다.  홈어시스턴트 Cloud를 사용하는 경우 별도의 작업을 수행할 필요가 없습니다. 그렇지 않으면 확실히 [the `http` integration](/integrations/http/)을 위한 `base_url`로 설정되어있는지 확인해야합니다.
+홈어시스턴트 설치가 `https://` 를 경유하여 설치되어야 홈어시스턴트 캐스트를 통해 액세스할 수 있습니다.  홈어시스턴트 Cloud를 사용하는 경우 별도의 작업을 수행할 필요가 없습니다. 그렇지 않으면 확실히 [`http` 통합구성요소](/integrations/http/)를 위한 `base_url`로 설정되어있는지 확인해야합니다.
 
 ## 고급 사용
 
-Cast 장치는 홈어시트턴트와 동일한 서브넷에있는 경우에만 검색할 수 있습니다. 그렇지 않은 경우 Cast 장치의 IP 주소를 직접 설정해야합니다:
+Cast 장치는 홈어시트턴트와 동일한 서브넷에 있는 경우에만 검색할 수 있습니다. 그렇지 않은 경우 Cast 장치의 IP 주소를 직접 설정해야합니다:
 
 ```yaml
 # Example configuration.yaml entry

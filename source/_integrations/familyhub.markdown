@@ -16,7 +16,7 @@ familyhub 플랫폼을 사용하면 홈어시스턴트에서 [Samsung Family Hub
 
 ## 설정 
 
-설치시 Family Hub 카메라를 활성화하려면 `configuration.yaml`파일에 다음을 추가 하십시오.
+설치시 Family Hub 카메라를 활성화하려면 `configuration.yaml`파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

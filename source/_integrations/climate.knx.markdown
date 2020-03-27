@@ -14,11 +14,11 @@ ha_iot_class: Local Push
 
 <div class='note'>
   
-이 통합구성요소를 사용하려면 `knx` 연동을 올바르게 설정해야합니다. [KNX Integration](/integrations/knx)을 참조하십시오.
+이 통합구성요소를 사용하려면 `knx` 연동을 올바르게 설정해야합니다. [KNX 통합구성요소](/integrations/knx)을 참조하십시오.
 
 </div>
 
-`knx` climate 플랫폼은 KNX 온도조절기 및 실내 컨트롤러에 대한 인터페이스로 사용됩니다.
+`knx` climate 플랫폼은 KNX 온도조절기, 실내 컨트롤러에 대한 인터페이스로 사용됩니다.
 
 KNX 온도조절기를 사용하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오.
 
@@ -52,7 +52,7 @@ climate:
     operation_mode_state_address: '5/1/8'
 ```
 
-장치가 setpoint_shift 계산을 지원하지 않는 경우 (즉, `setpoint_shift_address` 값을 제공하지 않는 경우) Climate 장치의 `min_temp` 및 `max_temp` 속성을 설정하여 프런트 엔드에서 유효한 온도값을 초과하는 문제를 피하십시오. 이 경우에도 `target_temperature_address`를 설정에 추가하십시오 :
+장치가 setpoint_shift 계산을 지원하지 않는 경우 (즉, `setpoint_shift_address` 값을 제공하지 않는 경우) Climate 장치의 `min_temp`, `max_temp` 속성을 설정하여 프런트 엔드에서 유효한 온도값을 초과하는 문제를 피하십시오. 이 경우에도 `target_temperature_address`를 설정에 추가하십시오 :
 
 
 ```yaml

@@ -17,7 +17,7 @@ ha_iot_class: Local Polling
 <div class='note'>
 
 Synology는 라이브 스트리밍 API를 비활성화했으며 Surveillance Station 버전 8.2.3-5828을 사용하는 경우 연동이 현재 중단되었습니다.  
-지원되지 않는 미리보기 수정 프로그램이 있습니다. (8.2.3-5829) - 수동업데이트 지침은 [here](https://www.vcloudinfo.com/2019/04/how-to-manually-upgrade-your-synology-surveillance-system-firmware.html)에서 찾을 수 있습니다.
+지원되지 않는 미리보기 수정 프로그램이 있습니다. (8.2.3-5829) - 수동업데이트 지침은 [여기](https://www.vcloudinfo.com/2019/04/how-to-manually-upgrade-your-synology-surveillance-system-firmware.html)에서 찾을 수 있습니다.
 
 </div>
 

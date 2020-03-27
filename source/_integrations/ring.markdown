@@ -63,7 +63,7 @@ password:
 
 ## Binary Sensor
 
-[Ring integration](/integrations/ring)을 활성화하면 이진 센서를 사용할 수 있습니다. 현재 이 제품은 초인종, 외부 차임 및 스틱업 카메라를 지원합니다.
+[Ring 통합구성요소](/integrations/ring)를 활성화하면 이진 센서를 사용할 수 있습니다. 현재 이 제품은 초인종, 외부 차임, 스틱업 카메라를 지원합니다.
 
 ## Camera
 
@@ -71,11 +71,11 @@ password:
 Ring 비디오를 다운로드하고 재생하려면 Ring Protect 계획이 필요합니다.
 </div>
 
-[Ring integration](/integrations/ring)을 활성화하면 카메라 플랫폼 사용을 시작할 수 있습니다. 현재는 초인종 및 스틱업 카메라를 지원합니다.
+[Ring 통합구성요소](/integrations/ring)를 활성화하면 카메라 플랫폼 사용을 시작할 수 있습니다. 현재는 초인종, 스틱업 카메라를 지원합니다.
 
 ## Ring Door Bell에서 캡처한 비디오 저장
 
-[downloader](/integrations/downloader)와 [automation](/integrations/automation) 또는 [python_script](/integrations/python_script)를 사용하여 Ring Door Bell에서 캡처한 최신 비디오를 로컬로 저장할 수 있습니다.
+[downloader](/integrations/downloader)와 [automation](/integrations/automation) 혹은 [python_script](/integrations/python_script)를 사용하여 Ring Door Bell에서 캡처한 최신 비디오를 로컬로 저장할 수 있습니다.
 먼저 `configuration.yaml`에 다음을 추가하여 설정에서 [downloader](/integrations/downloader) 통합구성요소를 활성화하십시오.
 
 ```yaml
@@ -124,12 +124,12 @@ hass.services.call("downloader", "download_file", data)
 
 ## Sensor
 
-[Ring integration](/integrations/ring)을 활성화하면 센서 플랫폼 사용을 시작할 수 있습니다. 현재 이 제품은 초인종, 외부 차임 및 스틱업 카메라를 지원합니다.
+[Ring 통합구성요소](/integrations/ring)를 활성화하면 센서 플랫폼 사용을 시작할 수 있습니다. 현재 이 제품은 초인종, 외부 차임, 스틱업 카메라를 지원합니다.
 
 ## Switch
 
-[Ring integration](/integrations/ring)을 활성화하면 스위치 플랫폼 사용을 시작할 수 있습니다. 사이렌은 자동으로 꺼지기 전에 30 초 동안만 켜집니다.
+[Ring 통합구성요소](/integrations/ring)를 활성화하면 스위치 플랫폼 사용을 시작할 수 있습니다. 사이렌은 자동으로 꺼지기 전에 30 초 동안만 켜집니다.
 
 ## Light
 
-[Ring integration](/integrations/ring)을 활성화하면 light 플랫폼 사용을 시작할 수 있습니다. 이렇게하면 조명을 지원하는 모든 카메라 (예: floodlight)에 조명이 추가됩니다.
+[Ring 통합구성요소](/integrations/ring)를 활성화하면 light 플랫폼 사용을 시작할 수 있습니다. 이렇게하면 조명을 지원하는 모든 카메라 (예: floodlight)에 조명이 추가됩니다.

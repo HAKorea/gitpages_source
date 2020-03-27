@@ -188,4 +188,4 @@ elements:
 
 ### 추가 CGI 명령
 
-CGI 명령을 지원하는 oscam 웹캠은 홈어시스턴트 ([Source](http://www.ipcamcontrol.net/files/Foscam%20IPCamera%20CGI%20User%20Guide-V1.0.4.pdf)에서 제어 할 수 있습니다). 이 작업을 수행하는 방법에 대한 예는 [Foscam IP Camera Pan, Tilt, Zoom Control](/cookbook/foscam_away_mode_PTZ/) Cookbook 항목을 참조하십시오.
+CGI 명령을 지원하는 oscam 웹캠은 홈어시스턴트 ([Source](http://www.ipcamcontrol.net/files/Foscam%20IPCamera%20CGI%20User%20Guide-V1.0.4.pdf)에서 제어할 수 있습니다). 이 작업을 수행하는 방법에 대한 예는 [Foscam IP Camera Pan, Tilt, Zoom Control](/cookbook/foscam_away_mode_PTZ/) Cookbook 항목을 참조하십시오.

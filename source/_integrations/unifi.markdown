@@ -15,7 +15,7 @@ ha_codeowners:
 ---
 
 <div class='videoWrapper'>
-<iframe width="690" height="437" src="https://www.youtube.com/embed/Z_6eDtWumsA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="690" height="437" src="https://www.youtube.com/embed/dqjH8SUkfFQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 [Ubiquiti Networks, Inc.](https://www.ubnt.com/)의 [UniFi](https://unifi-sdn.ubnt.com/)는 게이트웨이, 스위치 및 무선 액세스 포인트를 하나의 그래픽 프론트 엔드와 결합하는 소프트웨어입니다.

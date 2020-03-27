@@ -61,12 +61,12 @@ client_secret:
   required: true
   type: string
 api_key:
-  description: Logitech이 발행 한 API 키.
+  description: Logitech이 발행한 API 키.
   required: true
   type: string
 redirect_uri:
   description: > 
-    Home Assistant 인스턴스에 해당하는 리디렉션 URI입니다. Logitech에서 API 액세스를 요청할 때 지정된 경로 재 지정 URI 중 하나와 일치해야합니다.
+    Home Assistant 인스턴스에 해당하는 리디렉션 URI입니다. Logitech에서 API 액세스를 요청할 때 지정된 경로 재지정 URI 중 하나와 일치해야합니다.
   required: true
   type: string
 {% endconfiguration %}
@@ -75,13 +75,13 @@ redirect_uri:
 
 `logi_circle` 카메라 플랫폼을 사용하면 Home Assistant의 [Logi Circle](https://circle.logi.com/) 카메라 라이브 스트림에서 스틸 프레임을 볼 수 있습니다.
 
-Logi Circle 카메라는 `camera.turn_on` 및 `camera.turn_off` 서비스를 지원합니다. 이에 따라 카메라의 스트리밍 모드 속성이 설정되어 라이브 스트림을 사용할 수 있는지 여부와 활동 기록이 캡처되는지 여부를 제어합니다.
+Logi Circle 카메라는 `camera.turn_on`, `camera.turn_off` 서비스를 지원합니다. 이에 따라 카메라의 스트리밍 모드 속성이 설정되어 라이브 스트림을 사용할 수 있는지 여부와 활동 기록이 캡처되는지 여부를 제어합니다.
 
 ### 센서
 
-`logi_circle` 센서 플랫폼을 사용하면 Home Assistant의 [Logi Circle](https://circle.logi.com) 카메라에 연결된 센서를 모니터링 할 수 있습니다.
+`logi_circle` 센서 플랫폼을 사용하면 Home Assistant의 [Logi Circle](https://circle.logi.com) 카메라에 연결된 센서를 모니터링할 수 있습니다.
 
-설정할 센서를 사용자 정의하려면 다음 세팅으로 `configuration.yaml` 파일에서 Logi Circle 연동 설정으로 확장 할 수 있습니다.
+설정할 센서를 사용자 정의하려면 다음 세팅으로 `configuration.yaml` 파일에서 Logi Circle 연동 설정으로 확장할 수 있습니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -126,7 +126,7 @@ sensor:
 
 ## 서비스
 
-`logi_circle` 플랫폼은 Logi Circle 장치와 상호 작용하기 위한 3 가지 서비스를 제공합니다. 하나 이상의 엔티티 ID로 서비스를 호출할 때는 카메라 엔티티를 대상으로 해야합니다 (예 :`camera.living_room_camera`).
+`logi_circle` 플랫폼은 Logi Circle 장치와 상호 작용하기 위한 3 가지 서비스를 제공합니다. 하나 이상의 엔티티 ID로 서비스를 호출할 때는 카메라 엔티티를 대상으로 해야합니다 (예: `camera.living_room_camera`).
 
 ### `logi_circle.livestream_record` 서비스
 
@@ -144,7 +144,7 @@ sensor:
 
 카메라의 라이브 스트림에서 스냅샷을 찍습니다. 이는 Logi Circle의 API에서 새로운 이미지를 명시적으로 요청한다는 점에서 일반적인 [snapshot](/integrations/camera/#service-snapshot) 서비스와 다릅니다. 이렇게하면 수면 상태의 카메라가 강제로 깨어납니다.
 
-캐시된 스냅샷이 30초보다 오래된 경우에만 새 스냅샷이 생성됩니다. 연속해서 여러 스냅샷을 요청하면 동일한 이미지가 반환 될 수 있습니다. 마찬가지로, 적극적으로 스트리밍 중인 카메라에서 스냅샷을 요청하면 (즉, 최대 절전 상태가 아닌) 30초 이전의 캐시 된 이미지를 반환합니다.
+캐시된 스냅샷이 30초보다 오래된 경우에만 새 스냅샷이 생성됩니다. 연속해서 여러 스냅샷을 요청하면 동일한 이미지가 반환될 수 있습니다. 마찬가지로, 적극적으로 스트리밍 중인 카메라에서 스냅샷을 요청하면 (즉, 최대 절전 상태가 아닌) 30초 이전의 캐시된 이미지를 반환합니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |

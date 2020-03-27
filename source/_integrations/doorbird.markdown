@@ -127,11 +127,11 @@ doorbird:
 
 새 브라우저 창을 열고 `{Home Assistant URL}/api/doorbird/clear?token={DEVICE_TOKEN}`으로 이동하십시오. `{Home Assistant URL}`을 실행중인 인스턴스의 전체 경로(예: `localhost:8123`)로 바꾸십시오. `{DEVICE_TOKEN}`을 지우려는 장치의 설정에 지정된 토큰으로 바꾸십시오.
 <br><br>
-장치 이벤트를 지우려면 위의 설정 단계를 다시 수행해야합니다. DoorBird 장치와 함께 사용할 수 있는 다른 타사 응용 프로그램에도 영향을 줄 수 있습니다. 어떤식으로든 공식 모바일 앱을 중단되지 않으며 모바일 푸시 알림이 계속 작동합니다.
+장치 이벤트를 지우려면 위의 설정 단계를 다시 수행해야합니다. DoorBird 장치와 함께 사용할 수 있는 다른 타사 응용 프로그램에도 영향을 줄 수 있습니다. 어떤식으로든 공식 모바일 앱은 중단되지 않으며 모바일 푸시 알림이 계속 작동합니다.
 
 #### Event Data
 
-각 이벤트에는 이벤트를 트리거한 Doorbird 장치의 라이브 이미지 및 비디오 URL이 포함됩니다. 이 URL은 이벤트 데이터에서 찾을 수 있으며 자동화 액션에 유용할 수 있습니다. 예를 들어, 알림에서 `html5_viewer_url`을 사용하여 자동화를 트리거한 장치의 라이브 뷰에 직접 연결될 수 있습니다.
+각 이벤트에는 이벤트를 트리거한 Doorbird 장치의 라이브 이미지와 비디오 URL이 포함됩니다. 이 URL은 이벤트 데이터에서 찾을 수 있으며 자동화 액션에 유용할 수 있습니다. 예를 들어, 알림에서 `html5_viewer_url`을 사용하여 자동화를 트리거한 장치의 라이브 뷰에 직접 연결될 수 있습니다.
 
 `event_data`에서 다음 키를 사용할 수 있습니다.
 
@@ -147,7 +147,7 @@ doorbird:
 
 #### Schedules
 
-DoorBird 장치에 이벤트가 등록되면 Android 또는 iOS의 공식 DoorBird 앱을 사용하여 일정에 첨부해야합니다. 현재 초인종, 모션, 릴레이 및 RFID 이벤트 (지원되는 도어 버드 장치)에 대한 일정이 있습니다.
+DoorBird 장치에 이벤트가 등록되면 Android 또는 iOS의 공식 DoorBird 앱을 사용하여 일정에 첨부해야합니다. 현재 초인종, 모션, 릴레이, RFID 이벤트 (지원되는 DoorBird 장치)에 대한 일정이 있습니다.
 
 일정은 Doorbird 앱의 다음 영역(area) (Android 또는 IOS)으로 이동하여 찾을 수 있습니다.
 
@@ -177,7 +177,7 @@ Settings (cog icon) -> Administration -> LOGIN LOGIN (using your App Administrat
 
 ## Camera
 
-`doorbird` 구현을 통해 홈어시스턴트의 [DoorBird](https://www.doorbird.com/) 장치에서 라이브 비디오, 마지막 초인종 링 이미지 및 마지막 모션 센서 이미지를 볼 수 있습니다.
+`doorbird` 구현을 통해 홈어시스턴트의 [DoorBird](https://www.doorbird.com/) 장치에서 라이브 비디오, 마지막 초인종 링 이미지와 마지막 모션 센서 이미지를 볼 수 있습니다.
 
 ### 설정
 

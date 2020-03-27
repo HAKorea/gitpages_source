@@ -147,7 +147,7 @@ action:
 | `entity_id`            |      no  | Name(s) of entities to create a snapshot from, e.g., `camera.front_door_camera`. |
 | `filename`             |      no  | Template of a file name. Variable is `entity_id`, e.g., {% raw %}`/tmp/snapshot_{{ entity_id }}`{% endraw %}. |
 
-`filename`의 경로 부분은 `configuration.yaml` 파일의 [`homeassistant :`](/docs/configuration/basic/) 섹션에 있는 `whitelist_external_dirs`의 항목이어야합니다.
+`filename`의 경로 부분은 `configuration.yaml` 파일의 [`homeassistant:`](/docs/configuration/basic/) 섹션에 있는 `whitelist_external_dirs`의 항목이어야합니다.
 
 예를 들어 다음 작업은 "front_door_camera"에서 스냅샷을 찍어 타임 스탬프가 지정된 파일 이름으로 /tmp에 저장하는 자동화입니다.
 

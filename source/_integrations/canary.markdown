@@ -24,7 +24,7 @@ ha_iot_class: Cloud Polling
 
 ## 설정
 
-이 모듈을 사용하려면 Canary 로그인 정보 (사용자 이름, 일반적으로 이메일 주소 및 비밀번호)가 필요합니다.
+이 모듈을 사용하려면 Canary 로그인 정보 (사용자 이름, 일반적으로 이메일 주소, 비밀번호)가 필요합니다.
 
 설정하려면 `configuration.yaml` 파일에 다음을 추가하십시오 :
 
@@ -61,9 +61,9 @@ timeout:
 
 ## 카메라
 
-`canary` 카메라 플랫폼을 사용하면 Home Assistant에서 [Canary](https://canary.is) 카메라의 라이브 스트림을 볼 수 있습니다. 이를 위해서는 [`ffmpeg` integration](/integrations/ffmpeg/)이 이미 설정되어 있어야합니다.
+`canary` 카메라 플랫폼을 사용하면 Home Assistant에서 [Canary](https://canary.is) 카메라의 라이브 스트림을 볼 수 있습니다. 이를 위해서는 [`ffmpeg` 통합구성요소](/integrations/ffmpeg/)가 이미 설정되어 있어야합니다.
 
-[Canary integration](/integrations/canary/) 설정이 완료되면 [Canary](https://canary.is) 카메라가 자동으로 표시됩니다.
+[Canary 통합구성요소](/integrations/canary/) 설정이 완료되면 [Canary](https://canary.is) 카메라가 자동으로 표시됩니다.
 
 ## 설정
 

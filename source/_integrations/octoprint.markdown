@@ -22,7 +22,7 @@ ha_iot_class: Local Polling
 - [Sensor](#sensor)
 
 <div class='note'>
-센서 및 이진 센서를 사용하려면 <a href="#configuration">OctoPrint 구성 요소</a>가 아래에 설정되어 있어야합니다. 해당 구성 요소를 설정하면 센서와 이진 센서가 자동으로 나타납니다.
+센서와 이진 센서를 사용하려면 <a href="#configuration">OctoPrint 구성 요소</a>가 아래에 설정되어 있어야합니다. 해당 구성 요소를 설정하면 센서와 이진 센서가 자동으로 나타납니다.
 </div>
 
 ## 설정
@@ -134,7 +134,7 @@ octoprint:
     number_of_tools: 1
 ```
 
-OctoPrint 호스트에 웹카메라가 장착되어 있으면 이를 추가 할 수도 있습니다.
+OctoPrint 호스트에 웹카메라가 장착되어 있으면 이를 추가할 수도 있습니다.
 
 ```yaml
 camera:
@@ -177,4 +177,4 @@ name:
 
 ## Sensor
 
-`octoprint` 센서 플랫폼을 사용하면 3D 프린터의 다양한 상태와 인쇄 작업을 모니터링 할 수 있습니다.
+`octoprint` 센서 플랫폼을 사용하면 3D 프린터의 다양한 상태와 인쇄 작업을 모니터링할 수 있습니다.

@@ -60,7 +60,7 @@ ssl_key:
   required: false
   type: string
 cors_allowed_origins:
-  description: "[CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) 요청을 허용하는 원래 도메인 이름 목록입니다. 이를 활성화하면 목록에 있는 경우 `Access-Control-Allow-Origin` 헤더가 Origin 헤더로 설정되고 `Access-Control-Allow-Headers` 헤더는 `Origin, Accept, X-Requested-With Content-type, Authorization`로 설정됩니다. 정확한 출발지(Origin)를 제공해야합니다. 예로서 `https://www.home-assistant.io`는 `https://www.home-assistant.io`의 요청을 허용하지만 `http://www.home-assistant.io`의 요청을 허용하지 __않습니다__."
+  description: "[CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) 요청을 허용하는 Origin 도메인 이름 목록입니다. 이를 활성화하면 목록에 있는 경우 `Access-Control-Allow-Origin` 헤더가 Origin 헤더로 설정되고 `Access-Control-Allow-Headers` 헤더는 `Origin, Accept, X-Requested-With Content-type, Authorization`로 설정됩니다. 정확한 Origin을 제공해야합니다. 예로서 `https://www.home-assistant.io`는 `https://www.home-assistant.io`의 요청을 허용하지만 `http://www.home-assistant.io`의 요청을 허용하지 __않습니다__."
   required: false
   type: [string, list]
 use_x_forwarded_for:
@@ -69,7 +69,7 @@ use_x_forwarded_for:
   type: boolean
   default: false
 trusted_proxies:
-  description: "`X-Forwarded-For` 헤더를 설정할 수 있는 IP주소 또는 네트워크로 구성된 신뢰할 수 있는 프록시 목록. `use_x_forwarded_for`를 사용할 때는 소스에 관계없이 홈어시스턴트에 대한 모든 요청이 리버스 프록시 IP주소에서 도착하기 때문에 필요합니다. 따라서 리버스 프록시 시나리오에서 이 옵션은 주의해서 설정해야합니다."
+  description: "`X-Forwarded-For` 헤더를 설정할 수 있는 IP주소 또는 네트워크로 설정된 신뢰할 수 있는 프록시 목록. `use_x_forwarded_for`를 사용할 때는 소스에 관계없이 홈어시스턴트에 대한 모든 요청이 리버스 프록시 IP주소에서 도착하기 때문에 필요합니다. 따라서 리버스 프록시 시나리오에서 이 옵션은 주의해서 설정해야합니다."
   required: false
   type: [string, list]
 trusted_networks:
@@ -87,7 +87,7 @@ login_attempts_threshold:
   type: integer
   default: -1
 ssl_profile:
-  description: 사용할 [Mozilla SSL 프로파일](https://wiki.mozilla.org/Security/Server_Side_TLS). SSL 핸드 셰이크 오류를 일으키는 연동이 발생하는 경우에만 써보십시오. 
+  description: 사용할 [Mozilla SSL 프로파일](https://wiki.mozilla.org/Security/Server_Side_TLS). SSL hand shake 오류를 일으키는 연동이 발생하는 경우에만 써보십시오. 
   required: false
   type: string
   default: modern
@@ -125,7 +125,7 @@ http:
 
 `http` 통합구성요소 외에도 [REST API](/developer/rest_api/), [Python API](/developer/python_api/), [WebSocket API](/developer/websocket_api/)를 사용할 수 있습니다.
 
-`http` 플랫폼은 홈어시스턴트 주변에서 사용되는 용어의 의미에서 실제 플랫폼이 아닙니다. 홈어시스턴트의 [REST API](/developer/rest_api/)는 HTTP를 통해 메시지를 보내고 받습니다.
+`http` 플랫폼은 홈어시스턴트에선 엄밀한 용어의 의미에선 실제 플랫폼이 아닙니다. 홈어시스턴트의 [REST API](/developer/rest_api/)는 HTTP를 통해 메시지를 보내고 받습니다.
 
 ## HTTP sensors
 

@@ -8,7 +8,7 @@ ha_release: 0.7
 ha_quality_scale: internal
 ---
 
-홈어시스턴트는 네트워크에서 [zeroconf](https://en.wikipedia.org/wiki/Zero-configuration_networking)/[mDNS](https://en.wikipedia.org/wiki/Multicast_DNS) 그리고 [uPnP](https://en.wikipedia.org/wiki/Universal_Plug_and_Play) 장치를 검색하고 자동으로 설정 할 수 있습니다. 현재 `discovery` 통합구성요소는 다음을 감지할 수 있습니다:
+홈어시스턴트는 네트워크에서 [zeroconf](https://en.wikipedia.org/wiki/Zero-configuration_networking)/[mDNS](https://en.wikipedia.org/wiki/Multicast_DNS) 그리고 [uPnP](https://en.wikipedia.org/wiki/Universal_Plug_and_Play) 장치를 검색하고 자동으로 설정할 수 있습니다. 현재 `discovery` 통합구성요소는 다음을 감지할 수 있습니다:
 
  * [Apple TV](/integrations/apple_tv/)
  * [Belkin WeMo switches](/integrations/wemo/)
@@ -38,7 +38,7 @@ ha_quality_scale: internal
  * [Yeelight Sunflower bulb](/integrations/yeelightsunflower/)
  * [Xiaomi Gateway (Aqara)](/integrations/xiaomi_aqara/)
 
-Google Chromecast 및 Belkin WeMo 스위치를 자동으로 추가 할 수 있습니다.
+Google Chromecast, Belkin WeMo 스위치를 자동으로 추가할 수 있습니다.
 Philips Hue의 경우 사용자의 일부 설정이 필요합니다.
 
 <div class='note'>
@@ -116,7 +116,7 @@ Home Assistant가 [Docker container](/docs/installation/docker/)에서 실행되
 ### Windows
 
 #### 64-bit Python
-현재 64 비트 버전의 Python 및 Windows에서 이 연동을 실행하는 데 <a href='https://bitbucket.org/al45tair/netifaces/issues/17/dll-fails-to-load-windows-81-64bit'>known issue</a>가 있습니다.
+현재 64 비트 버전의 Python을 Windows에서 이 연동을 실행하는데 <a href='https://bitbucket.org/al45tair/netifaces/issues/17/dll-fails-to-load-windows-81-64bit'>known issue</a>가 있습니다.
 
 ### could not install dependency netdisco
 

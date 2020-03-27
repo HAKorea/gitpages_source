@@ -9,7 +9,7 @@ ha_release: 0.18
 
 매시간 피드를 폴링하고 새로운 항목을 이벤트 버스로 보내는 RSS/Atom 피드 리더를 추가하십시오.
 
-RSS 피드를 사용하려면 `configuration.yaml` 파일에 다음을 추가 하십시오.
+RSS 피드를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -31,13 +31,13 @@ feedreader:
     default: 1 hour
     type: time
   max_entries:
-    description: 각 피드에서 추출 할 최대 항목 수.
+    description: 각 피드에서 추출할 최대 항목 수.
     required: false
     default: 20
     type: integer
 {% endconfiguration %}
 
-다음 설정 예는 업데이트 간격 및 최대 항목 수를 설정하는 방법을 보여줍니다.
+다음 설정 예는 업데이트 간격과 최대 항목 수를 설정하는 방법을 보여줍니다.
 
 ```yaml
 # Example configuration.yaml entry with optional parameters
@@ -51,7 +51,7 @@ feedreader:
   max_entries: 5
 ```
 
-Feedreader 이벤트를 즉시 사용하여 자동화 작업을 트리거 할 수 있습니다. 다음 예를 살펴보십시오. :
+Feedreader 이벤트를 즉시 사용하여 자동화 작업을 트리거할 수 있습니다. 다음 예를 살펴보십시오. :
 
 ```yaml
 automation:

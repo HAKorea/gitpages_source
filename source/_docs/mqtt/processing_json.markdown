@@ -4,7 +4,7 @@ description: "Instructions on how to process the MQTT payload."
 logo: mqtt.png
 ---
 
-MQTT [switch](/integrations/switch.mqtt/) 및 [sensor](/integrations/sensor.mqtt/) 플랫폼은 MQTT 메시지를 통한 JSON 처리 및 JSONPath를 사용하여 구문 분석을 지원합니다. JSONPath를 사용하면 JSON에서 사용할 값이 있는 위치를 지정할 수 있습니다. 다음 예제는 항상 `100` 값을 반환합니다
+MQTT [switch](/integrations/switch.mqtt/)와 [sensor](/integrations/sensor.mqtt/) 플랫폼은 MQTT 메시지를 통한 JSON 처리와 JSONPath를 사용하여 구문 분석을 지원합니다. JSONPath를 사용하면 JSON에서 사용할 값이 있는 위치를 지정할 수 있습니다. 다음 예제는 항상 `100` 값을 반환합니다
 
 | JSONPath query | JSON |
 | -------------- | ---- |
@@ -12,14 +12,14 @@ MQTT [switch](/integrations/switch.mqtt/) 및 [sensor](/integrations/sensor.mqtt
 | `somekey[0]` | `{ 'somekey': [100] }`
 | `somekey[0].value` | `{ 'somekey': [ { value: 100 } ] }`
 
-이를 사용하려면 다음 키를 추가하십시오  `configuration.yaml`:
+이를 사용하려면 다음 키를 추가하십시오. `configuration.yaml`:
 
 ```yaml
 switch:
   platform: mqtt
   state_format: 'json:somekey[0].value'
 ```
-값 템플릿을 사용하여 JSON 값을 추출 할 수도 있습니다. :
+value template을 사용하여 JSON 값을 추출할 수도 있습니다. :
 
 ```yaml
 switch:

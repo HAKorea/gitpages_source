@@ -4,7 +4,9 @@ description: "Instructions on how to setup MQTT Discovery within Home Assistant.
 logo: mqtt.png
 ---
 
-MQTT 장치를 발견하면 Home Assistant 측에서 최소한의 설정으로 MQTT 장치를 사용할 수 있습니다.  설정은 장치 자체와 장치가 사용하는 topic에서 수행됩니다. [HTTP binary sensor](/integrations/http/#binary-sensor) 와 [HTTP sensor](/integrations/http/#sensor)가 비슷합니다. 장치가 다시 연결되는 경우 여러 개의 동일한 항목에 연결되는 것을 방지하려면, 고유 한 식별자가 필요합니다. 장치 측에는 두 부분이 필요합니다. : 필요한 장치 유형 및 고유 식별자가 포함 된 설정 topic 및 장치 유형이 없는 장치 설정. **의역 필요**
+MQTT 장치를 발견하면 Home Assistant 측에서 최소한의 설정으로 MQTT 장치를 사용할 수 있습니다. 설정은 장치 자체와 장치가 사용하는 topic에서 수행됩니다. [HTTP binary sensor](/integrations/http/#binary-sensor)와 [HTTP sensor](/integrations/http/#sensor)가 비슷합니다. 
+
+장치가 다시 연결되는 경우 여러 개의 동일한 항목에 연결되는 것을 방지하려면, 고유한 식별자가 필요합니다. 장치측에는 두 부분이 필요합니다. : 필요한 장치 유형과 고유 식별자를 포함하는 설정 topic 그리고 장치 유형이 없는 나머지 장치 설정
 
 MQTT discovery 지원 장치 :
 
@@ -44,7 +46,7 @@ discovery_prefix:
 
 <div class='note'>
 
-[embedded MQTT broker](/docs/mqtt/broker#embedded-broker) 재시작 시에 어떤 메시지들도 저장하지 않습니다. 임베드 된 MQTT 브로커를 사용하는 경우 디바이스가 표시되도록 모든 홈어시스턴트가 재시작 된 후 MQTT 감지 메시지를 보내야합니다.
+[embedded MQTT broker](/docs/mqtt/broker#embedded-broker) 재시작 시에 어떤 메시지들도 저장하지 않습니다. 임베드된 MQTT 브로커를 사용하는 경우 디바이스가 표시되도록 모든 홈어시스턴트가 재시작된 후 MQTT 감지 메시지를 보내야합니다.
 
 </div>
 
@@ -54,9 +56,9 @@ discovery topic은 특정 형식을 따라야합니다. :
 <discovery_prefix>/<component>/[<node_id>/]<object_id>/config
 ```
 
-- `<component>`: 지원되는 MQTT 구성 요소 중 하나입니다. (예 `binary_sensor`).
-- `<node_id>` (*선택사항*):  topic를 제공하는 노드의 ID이며, 이는 홈어시스턴트에서 사용되지 않지만 MQTT topic를 설정하는 데 사용될 수 있습니다.
-- `<object_id>`: 장치의 ID입니다. 이것은 각 장치에 대해 별도의 topic을 허용하기위한 것이며 `entity_id`에는 사용될 수 없습니다.
+- `<component>`: 지원되는 MQTT 구성요소 중 하나입니다. (예: `binary_sensor`).
+- `<node_id>` (*선택사항*):  topic를 제공하는 노드의 ID이며, 이는 홈어시스턴트에서 사용되지 않지만 MQTT topic를 설정하는데 사용될 수 있습니다.
+- `<object_id>`: 장치의 ID입니다. 이는 각 장치에 대해 별도의 topic을 허용하기위한 것이며 `entity_id`에는 사용될 수 없습니다.
 
 페이로드는 JSON dictionay이어야하며 새 장치가 추가되면 `configuration.yaml`에서 특정 항목처럼 체크됩니다. 이는 누락된 변수가 플랫폼의 기본값으로 채워짐을 의미합니다. *요구된* 모든 설정 변수들은 초기 payload에 나타나야하며, `/config`로 보냅니다. 
 
@@ -66,14 +68,14 @@ discovery topic은 특정 형식을 따라야합니다. :
 <discovery_prefix>/<component>/[<node_id>/]<object_id>/state
 ```
 
-자동 설정 `state_topic` 은 더 이상 사용되지 않으며 이후 버전의 홈어시스턴트에서 제거 될 수 있습니다.
+자동 설정 `state_topic` 은 더이상 사용되지 않으며 이후 버전의 홈어시스턴트에서 제거될 수 있습니다.
 
 비어있는 payload는 이전에 검색된 장치를 삭제합니다.
 
 `<discovery_prefix>/+/<node_id>/+/set`와 같은 하나의 wildcard topic을 사용함으로서 클라이언트 자체 (명령) topic을 subscribe 하기위해 클라이언트에서 `<node_id>` 레벨을 사용할 수 있습니다.   
 
-동일한 topic이 여러 번 사용될 때 메모리를 보존하기 위해 페이로드에 기본topic `~`로 정의할 수 있습니다. 
-만일 `~`가 값의 시작 혹은 끝에서 나타날 경우, `_topic`으로 끝나는 설정 변수 값에서, `~`는 기본topic으로 교체됩니다.  
+동일한 topic이 여러번 사용될 때 메모리를 보존하기 위해 페이로드에 기본 topic `~`로 정의할 수 있습니다. 
+만일 `~`가 값의 시작 혹은 끝에서 나타날 경우, `_topic`으로 끝나는 설정 변수 값에서, `~`는 기본 topic으로 교체됩니다.  
 
 디스커버리 페이로드의 설정 변수 이름은 메모리가 제한된 장치에서 디스커버리 메시지를 보낼 때 메모리를 절약하기 위해 줄여서 쓸 수 있습니다.
 
@@ -222,7 +224,7 @@ discovery topic은 특정 형식을 따라야합니다. :
     'sw':                  'sw_version',
 ```
 
-### 지원되는 다른 것들 (Support by third-party tools)
+### 지원되는 써드파티 툴 (Support by third-party tools)
 
 다음 소프트웨어는 MQTT Discovery을 기본적으로 지원합니다.:
 
@@ -237,9 +239,9 @@ discovery topic은 특정 형식을 따라야합니다. :
 
 ### 사례 
 
-#### Motion 감지 (binary sensor)
+#### 모션 감지 (binary sensor)
 
-정원에서 binary 센서로 나타낼 수 있는 Motion 감지 장치는 설정값을 JSON 페이로드로 topic설정에 보냅니다. `config`에 대한 첫번째 message 이후, state topic으로 전송된 MQTT 메시지는 홈어시스턴트에서 상태를 업데이트합니다. 
+정원에서 binary 센서로 나타낼 수 있는 모션 감지 장치는 설정값을 JSON 페이로드로 topic설정에 보냅니다. `config`에 대한 첫번째 message 이후, state topic으로 전송된 MQTT 메시지는 홈어시스턴트에서 상태를 업데이트합니다. 
 
 - Configuration topic: `homeassistant/binary_sensor/garden/config`
 - State topic: `homeassistant/binary_sensor/garden/state`
@@ -274,7 +276,7 @@ $ mosquitto_pub -h 127.0.0.1 -p 1883 -t "homeassistant/binary_sensor/garden/conf
 
 #### 스위치 (Switches)
 
-스위치 설정은 비슷하지만 [MQTT switch documentation](/integrations/switch.mqtt/)에 언급 된대로 `command_topic`이 필요합니다. 
+스위치 설정은 비슷하지만 [MQTT switch documentation](/integrations/switch.mqtt/)에 언급된대로 `command_topic`이 필요합니다. 
 
 - Configuration topic: `homeassistant/switch/irrigation/config`
 - State topic: `homeassistant/switch/irrigation/state`
@@ -293,7 +295,7 @@ $ mosquitto_pub -h 127.0.0.1 -p 1883 -t "homeassistant/switch/irrigation/set" -m
 
 #### topic 이름 줄임말(약어)
 
-페이로드 길이를 줄이기 위해 topic prefix 및 축약된 설정 변수 이름을 사용하여 스위치 설정.
+페이로드 길이를 줄이기 위해 topic prefix와 축약된 설정 변수 이름을 사용하여 스위치 설정.
 
 - Configuration topic: `homeassistant/switch/irrigation/config`
 - Command topic: `homeassistant/switch/irrigation/set`

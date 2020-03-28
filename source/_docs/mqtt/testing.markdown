@@ -4,13 +4,13 @@ description: "Instructions on how to test your MQTT setup."
 logo: mqtt.png
 ---
 
-`mosquitto` 브로커 패키지는 command-line tool들 (`*-clients` 패키지 등) MQTT 메시지를 보내고 받기 위해 번들로 제공됩니다. 다른 대안으로는 HBMQTT에서 제공하는 [hbmqtt_pub](http://hbmqtt.readthedocs.org/en/latest/references/hbmqtt_pub.html) 그리고 [hbmqtt_sub](http://hbmqtt.readthedocs.org/en/latest/references/hbmqtt_sub.html) 가 있습니다. localhost에서 실행중인 브로커로 테스트 메시지를 보내려면 아래 예를 확인하십시오 : 
+`mosquitto` 브로커 패키지는 command-line tool들 (`*-clients` 패키지 등) MQTT 메시지를 보내고 받기 위해 번들로 제공됩니다. 다른 대안으로는 HBMQTT에서 제공하는 [hbmqtt_pub](http://hbmqtt.readthedocs.org/en/latest/references/hbmqtt_pub.html) 그리고 [hbmqtt_sub](http://hbmqtt.readthedocs.org/en/latest/references/hbmqtt_sub.html)가 있습니다. localhost에서 실행중인 브로커로 테스트 메시지를 보내려면 아래 예를 확인하십시오 : 
 
 ```bash
 $ mosquitto_pub -h 127.0.0.1 -t home-assistant/switch/1/on -m "Switch is ON"
 ```
 
-임베드된 MQTT 브로커를 사용중인 경우, MQTT 프로토콜 버전 및 [broker credentials](/docs/mqtt/broker#embedded-broker)을 추가해야하므로 명령이 약간 다르게 보입니다 .
+임베드된 MQTT 브로커를 사용중인 경우, MQTT 프로토콜 버전과 [broker credentials](/docs/mqtt/broker#embedded-broker)을 추가해야하므로 명령이 약간 다르게 보입니다.
 
 ```bash
 $ mosquitto_pub -V mqttv311 -u homeassistant -P <broker password> -t "hello" -m world

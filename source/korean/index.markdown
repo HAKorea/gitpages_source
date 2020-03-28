@@ -68,18 +68,19 @@ hide_github_edit: true
 
 
 ### 애드온
-* [국내 애드온 repository](https://github.com/HAKorea/addons) - 아래 애드온은 본 통합 저장소를 HA의 supervisor > Addon Store에 등록하면 애드온 카드가 나타납니다.<br><br>
-* Kocom Wallpad Controller with RS485 (kocomRS485) - 코콤
+* [국내 애드온 repository](https://github.com/HAKorea/addons) - 아래 애드온은 본 통합 저장소를 HA의 supervisor > Addon Store에 등록하면 애드온 카드가 나타납니다.
 
-* Universal Wallpad Controller with RS485 (wallpad) - 코맥스, 대림, 삼성
+    * Kocom Wallpad Controller with RS485 (kocomRS485) - 코콤
+    * Universal Wallpad Controller with RS485 (wallpad) - 코맥스, 대림, 삼성
+    * USB Video Connector Addon with Motion Server (motion4hassio)
+    * Owntracks Recorder for Hassio (owntracks4hassio)
+    * 구글 어시스턴트 웹서버 애드온
 
-* USB Video Connector Addon with Motion Server (motion4hassio)
+* [ESPHOME rs485 월패드 애드온 repository](https://github.com/greays/hassio) - 아래 애드온은 본 통합 저장소를 HA의 supervisor > Addon Store에 등록하면 애드온 카드가 나타납니다.
 
-* Owntracks Recorder for Hassio (owntracks4hassio)
+    * esphome-rs485 : [깡스님의 ESPHOME rs485 월패드를 제작](https://cafe.naver.com/stsmarthome/12973)하기 위한 ESPHOME 전용 애드온입니다.  
 
-* 구글 어시스턴트 웹서버 애드온<br><br><br>
+* [Youtube 플레이어 애드온 repository](https://github.com/miumida/redis) - 아래 애드온은 본 통합 저장소를 HA의 supervisor > Addon Store에 등록하면 애드온 카드가 나타납니다.
 
-* [ESPHOME rs485 전용 깡스님 애드온 repository](https://github.com/greays/hassio) - 아래 애드온은 본 통합 저장소를 HA의 supervisor > Addon Store에 등록하면 애드온 카드가 나타납니다.
-
-* esphome-rs485 : ESPHOME rs485를 제작하기 위한 커스텀 컴포넌트 
-
+    * redis : [밍밍1님 Youtube 플레이 리스트 아이디어](https://cafe.naver.com/koreassistant/1001)를 애드온으로 제작했습니다. 
+    

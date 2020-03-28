@@ -19,4 +19,4 @@ Home Assistant 0.52에서 첫 번째 버전의 스크립트 편집기를 소개�
 script: !include scripts.yaml
 ```
 
-`script:` 는 `scripts.yaml`로 편집 가능 하도록 이동해야 합니다.
+`script:`는 `scripts.yaml`로 편집 가능 하도록 이동해야 합니다.

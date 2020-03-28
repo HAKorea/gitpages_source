@@ -87,9 +87,9 @@ automation:
 
 ```
 
-#### 장면 (Scene)
+#### 씬(Scene)
 
-위의 자동화를 통해 호출 된 장면은 다음과 같습니다.
+위의 자동화를 통해 호출된 씬은 다음과 같습니다.
 
 ```yaml
 # here's the scene that gets called. Lights in

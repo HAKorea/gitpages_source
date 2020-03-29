@@ -8,7 +8,7 @@ ha_iot_class: Local Polling
 ha_release: 0.53
 ---
 
-`xiaomi_miio` 플랫폼을 사용하면 Xiaomi Philips LED Ball Lamp, Xiaomi Philips Zhirui LED Bulb E14 Candle Lamp, Xiaomi Philips Zhirui Downlight, Xiaomi Philips LED Ceiling Lamp, Xiaomi Philips Eyecare Lamp 2, Xiaomi Philips Moonlight Bedside Lamp, Philips Zhirui Desk Lamp의 상태를 제어 할 수 있습니다 
+`xiaomi_miio` 플랫폼을 사용하면 Xiaomi Philips LED Ball Lamp, Xiaomi Philips Zhirui LED Bulb E14 Candle Lamp, Xiaomi Philips Zhirui Downlight, Xiaomi Philips LED Ceiling Lamp, Xiaomi Philips Eyecare Lamp 2, Xiaomi Philips Moonlight Bedside Lamp, Philips Zhirui Desk Lamp의 상태를 제어할 수 있습니다 
 
 ## 제품 특색 
 
@@ -98,7 +98,7 @@ ha_release: 0.53
 
 `configuration.yaml` 파일에서 API 토큰을 사용하려면 [Retrieving the Access Token](/integrations/vacuum.xiaomi_miio/#retrieving-the-access-token)의 지침을 따르십시오.
 
-설치에 Xiaomi Philips Light를 추가하려면 configuration.yaml 파일에 다음을 추가하십시오.
+설치시 Xiaomi Philips Light를 추가하려면 configuration.yaml 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entries
@@ -125,7 +125,7 @@ name:
   type: string
   default: Xiaomi Philips Light
 model:
-  description: 조명의 이름. 유효한 값들은 `philips.light.sread1`, `philips.light.ceiling`, `philips.light.zyceiling`, `philips.light.moonlight`, `philips.light.bulb`, `philips.light.candle`, `philips.light.candle2`, `philips.light.mono1`, `philips.light.downlight`. 이 설정은 장치 모델 감지를 우회하는 데 사용할 수 있으며 장치를 제대로 사용할 수 없는 경우 권장됩니다.
+  description: 조명의 이름. 유효한 값들은 `philips.light.sread1`, `philips.light.ceiling`, `philips.light.zyceiling`, `philips.light.moonlight`, `philips.light.bulb`, `philips.light.candle`, `philips.light.candle2`, `philips.light.mono1`, `philips.light.downlight`. 이 설정은 장치 모델 감지를 우회하는데 사용할 수 있으며 장치를 제대로 사용할 수 없는 경우 권장됩니다.
   required: false
   type: string
 {% endconfiguration %}
@@ -134,7 +134,7 @@ model:
 
 ### `xiaomi_miio.light_set_scene` 서비스
 
-사용 가능한 4 가지 고정 장면(scenes) 중 하나를 설정하십시오.
+사용 가능한 4 가지 고정 씬(scenes) 중 하나를 설정하십시오.
 
 | Service data attribute    | Optional | Description                                           |
 |---------------------------|----------|-------------------------------------------------------|
@@ -148,7 +148,7 @@ model:
 | Service data attribute    | Optional | Description                                           |
 |---------------------------|----------|-------------------------------------------------------|
 | `entity_id`               |       no | 특정 Xiaomi miIO 조명 엔티티에서만 작동.      |
-| `time_period`             |       no | Time period for the delayed turn off.                 |
+| `time_period`             |       no | 지연된 꺼짐 시간.                 |
 
 ### `xiaomi_miio.light_reminder_on` (Eyecare Smart Lamp 2 only) 서비스
 

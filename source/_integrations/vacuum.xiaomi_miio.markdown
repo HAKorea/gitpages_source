@@ -12,7 +12,7 @@ ha_iot_class: Local Polling
 <iframe width="690" height="437" src="https://www.youtube.com/embed/5-IslDGfzAQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-`xiaomi_miio` Vacuum(진공청소기) 플랫폼을 사용하면 [Xiaomi Mi Robot Vacuum](https://www.mi.com/roomrobot/)의 상태를 제어할 수 있습니다
+`xiaomi_miio` vacuum(진공청소기) 플랫폼을 사용하면 [Xiaomi Mi Robot Vacuum](https://www.mi.com/roomrobot/)의 상태를 제어할 수 있습니다
 
 *Note* : **샤오미 2019 LDS 모델**은 [여기](https://github.com/nqkdev/home-assistant-vacuum-styj02ym?files=1)에서 custom component를 사용하십시오.  
 
@@ -31,7 +31,7 @@ ha_iot_class: Local Polling
 
 ## 설정
 
-`configuration.yaml` 에서 사용할 API 토큰을 검색 하려면 [Retrieving the Access Token](/integrations/vacuum.xiaomi_miio/#retrieving-the-access-token) 을 따르십시오.
+`configuration.yaml` 에서 사용할 API 토큰을 검색하려면 [Retrieving the Access Token](/integrations/vacuum.xiaomi_miio/#retrieving-the-access-token)을 따르십시오.
 
 Vacumm 추가하려면 `configuration.yaml`에 다음을 추가하십시오 :
 

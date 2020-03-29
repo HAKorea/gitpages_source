@@ -41,7 +41,7 @@ vacuum:
         required: false
         type: template
       battery_level_template:
-        description: "vacuum 상태의 배터리 수준을 얻기위한 템플릿을 정의. 유효한 값은 `0` 및 `100` 사이의 숫자 입니다."
+        description: "vacuum 상태의 배터리 수준을 얻기위한 템플릿을 정의. 유효한 값은 `0` ~ `100` 사이의 숫자입니다."
         required: false
         type: template
       fan_speed_template:
@@ -49,7 +49,7 @@ vacuum:
         required: false
         type: template
       availability_template:
-        description: 컴포넌트의 `available` 상태를 받아오는 템플릿을 정의. 템플릿이 `true`를 반환하면 기기는 `available` 상태이고 다른 값을 반환하면 `unavailable` 상태로 템플릿을 작성해야 함. `availability_template`을 작성하지 않으면 컴포넌트의 `available` 상태는 항상 'true'입니다.
+        description: 컴포넌트의 `available` 상태를 받아오는 템플릿을 정의. 템플릿이 `true`를 반환하면 기기는 `available` 상태이고 다른값을 반환하면 `unavailable` 상태로 템플릿을 작성해야 함. `availability_template`을 작성하지 않으면 컴포넌트의 `available` 상태는 항상 'true'입니다.
         required: false
         type: template
         default: true

@@ -268,7 +268,7 @@ group:
 ![Weather overview](/images/screenshots/wunderground_weather_overview.png)
 
 <div class='note warning'>
-Note: 플랫폼을 "Wunderground"라고 부르는 동안 센서는 Home Assistant에서 "PWS"로 표시됩니다 (예: sensor.pws_weather).
+Note: 플랫폼이 "Wunderground"라고 호출되는 동안 센서는 Home Assistant에서 "PWS"로 표시됩니다 (예: sensor.pws_weather).
 </div>
 
 Weather Underground 센서가 entity_registry에 추가되므로 두 번째 이후의 개인 기상 관측소 ID (pws_id)는 모니터링 되는 조건에 색인 번호가 붙습니다. 다음 예 : 

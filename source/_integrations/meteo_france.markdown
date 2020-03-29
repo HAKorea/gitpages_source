@@ -13,6 +13,10 @@ ha_codeowners:
   - '@oncleben31'
 ---
 
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/EfH3QxOe6NA?list=PLT86PoJFs8KTl6iS2pxPZZXAXy-_3zABd" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 The `meteo_france` integration uses the [Météo-France](http://www.meteofrance.com/) web service as a source for meteorological data for your location. The location is based on the `city` configured in your `configuration.yaml` file.
 
 There is currently support for the following device types within Home Assistant:

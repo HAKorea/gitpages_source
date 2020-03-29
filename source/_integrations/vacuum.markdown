@@ -1,14 +1,14 @@
 ---
-title: Vacuum
+title: 로봇청소기(Vacuum)
 description: Instructions on how to setup and use vacuum's in Home Assistant.
 ha_release: 0.51
 ---
 
-The `vacuum` integration enables the ability to control home cleaning robots within Home Assistant.
+`vacuum` 통합구성요소로 Home Assistant 내에서 가정용 로봇 청소기를 제어할 수 있습니다.
 
-## Configuration
+## 설정
 
-To use this integration in your installation, add a `vacuum` platform to your `configuration.yaml` file, like the [Xiaomi](/integrations/vacuum.xiaomi_miio/).
+설치시 이 통합구성요소를 사용하려면 [Xiaomi](/integrations/vacuum.xiaomi_miio/)와 같이 `vacuum` 플랫폼을 `configuration.yaml` 파일에 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -18,96 +18,96 @@ vacuum:
     host: 192.168.1.2
 ```
 
-### Component services
+### 구성요소 서비스
 
-Available services: `turn_on`, `turn_off`, `start_pause`, `start`, `pause`, `stop`, `return_to_base`, `locate`, `clean_spot`, `set_fanspeed` and `send_command`.
+사용가능한 서비스 : `turn_on`, `turn_off`, `start_pause`, `start`, `pause`, `stop`, `return_to_base`, `locate`, `clean_spot`, `set_fanspeed`, `send_command`.
 
-Before calling one of these services, make sure your vacuum platform supports it.
+이러한 서비스 중 하나를 호출하기 전에 vacuum 플랫폼이 이를 지원하는지 확인하십시오.
 
-#### Service `vacuum.turn_on`
+#### `vacuum.turn_on` 서비스
 
-Start a new cleaning task. For the Xiaomi Vacuum and Neato use `vacuum.start` instead.
-
-| Service data attribute    | Optional | Description                                           |
-|---------------------------|----------|-------------------------------------------------------|
-| `entity_id`               |      yes | Only act on specific vacuum. Else targets all.        |
-
-#### Service `vacuum.turn_off`
-
-Stop the current cleaning task and return to the dock. For the Xiaomi Vacuum and Neato use `vacuum.stop` instead.
+새로운 청소 작업을 시작하십시오. Xiaomi Vacuum과 Neato의 경우 `vacuum.start`를 대신 사용하십시오.
 
 | Service data attribute    | Optional | Description                                           |
 |---------------------------|----------|-------------------------------------------------------|
 | `entity_id`               |      yes | Only act on specific vacuum. Else targets all.        |
 
-#### Service `vacuum.start_pause`
+#### `vacuum.turn_off` 서비스
 
-Start, pause or resume a cleaning task.
-
-| Service data attribute    | Optional | Description                                           |
-|---------------------------|----------|-------------------------------------------------------|
-| `entity_id`               |      yes | Only act on specific vacuum. Else targets all.        |
-
-#### Service `vacuum.start`
-
-Start or resume a cleaning task.
+현재 청소 작업을 중지하고 dock으로 돌아갑니다. Xiaomi Vacuum과 Neato의 경우 `vacuum.stop`을 대신 사용하십시오.
 
 | Service data attribute    | Optional | Description                                           |
 |---------------------------|----------|-------------------------------------------------------|
 | `entity_id`               |      yes | Only act on specific vacuum. Else targets all.        |
 
-#### Service `vacuum.pause`
+#### `vacuum.start_pause` 서비스
 
-Pause a cleaning task.
-
-| Service data attribute    | Optional | Description                                           |
-|---------------------------|----------|-------------------------------------------------------|
-| `entity_id`               |      yes | Only act on specific vacuum. Else targets all.        |
-
-#### Service `vacuum.stop`
-
-Stop the current activity of the vacuum.
+청소 작업을 시작, 일시중지 또는 다시시작하십시오.
 
 | Service data attribute    | Optional | Description                                           |
 |---------------------------|----------|-------------------------------------------------------|
 | `entity_id`               |      yes | Only act on specific vacuum. Else targets all.        |
 
-#### Service `vacuum.return_to_base`
+#### `vacuum.start` 서비스
 
-Tell the vacuum to return home.
-
-| Service data attribute    | Optional | Description                                           |
-|---------------------------|----------|-------------------------------------------------------|
-| `entity_id`               |      yes | Only act on specific vacuum. Else targets all.        |
-
-#### Service `vacuum.locate`
-
-Locate the vacuum cleaner robot.
+청소 작업을 시작하거나 다시시작하십시오.
 
 | Service data attribute    | Optional | Description                                           |
 |---------------------------|----------|-------------------------------------------------------|
 | `entity_id`               |      yes | Only act on specific vacuum. Else targets all.        |
 
-#### Service `vacuum.clean_spot`
+#### `vacuum.pause` 서비스
 
-Tell the vacuum cleaner to do a spot clean-up.
+청소 작업을 일시중지하십시오.
 
 | Service data attribute    | Optional | Description                                           |
 |---------------------------|----------|-------------------------------------------------------|
 | `entity_id`               |      yes | Only act on specific vacuum. Else targets all.        |
 
-#### Service `vacuum.set_fan_speed`
+#### `vacuum.stop` 서비스
 
-Set the fan speed of the vacuum. The `fanspeed` can be a label, as `balanced` or `turbo`, or be a number; it depends on the `vacuum` platform.
+vacuum의 현재 활동을 중지하십시오.
+
+| Service data attribute    | Optional | Description                                           |
+|---------------------------|----------|-------------------------------------------------------|
+| `entity_id`               |      yes | Only act on specific vacuum. Else targets all.        |
+
+#### `vacuum.return_to_base` 서비스
+
+vacuum을 집으로 돌아가라고합니다.
+
+| Service data attribute    | Optional | Description                                           |
+|---------------------------|----------|-------------------------------------------------------|
+| `entity_id`               |      yes | Only act on specific vacuum. Else targets all.        |
+
+#### `vacuum.locate` 서비스
+
+vacuum(로봇청소기)을 찾으십시오.
+
+| Service data attribute    | Optional | Description                                           |
+|---------------------------|----------|-------------------------------------------------------|
+| `entity_id`               |      yes | Only act on specific vacuum. Else targets all.        |
+
+#### `vacuum.clean_spot` 서비스
+
+vacuum에 특정 장소를 청소하도록 지시하십시오.
+
+| Service data attribute    | Optional | Description                                           |
+|---------------------------|----------|-------------------------------------------------------|
+| `entity_id`               |      yes | Only act on specific vacuum. Else targets all.        |
+
+#### `vacuum.set_fan_speed` 서비스
+
+vacuum의 팬 속도를 설정하십시오. `fanspeed`는 `balanced` 또는 `turbo`와 같은 레이블이거나 숫자일 수 있습니다. `vacuum` 플랫폼에 따라 다릅니다.
 
 | Service data attribute    | Optional | Description                                           |
 |---------------------------|----------|-------------------------------------------------------|
 | `entity_id`               |      yes | Only act on specific vacuum. Else targets all.        |
 | `fan_speed`               |       no | Platform dependent vacuum cleaner fan speed, with speed steps, like 'medium', or by percentage, between 0 and 100. |
 
-#### Service `vacuum.send_command`
+#### `vacuum.send_command` 서비스
 
-Send a platform-specific command to the vacuum cleaner.
+플랫폼별 명령을 vacuum으로 보냅니다.
 
 | Service data attribute    | Optional | Description                                           |
 |---------------------------|----------|-------------------------------------------------------|

@@ -12,9 +12,9 @@ ha_release: 0.53
 <iframe width="690" height="437" src="https://www.youtube.com/embed/inkBNhzOGTU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-[Mycroft](https://mycroft.ai)는 Home Assistant에서 Mycroft로 알림 등을 보낼 수있는 오픈 소스 음성 도우미입니다.
+[Mycroft](https://mycroft.ai)는 Home Assistant에서 Mycroft로 알림 등을 보낼 수 있는 오픈소스 음성 도우미입니다.
 
-현재 홈 어시스턴트에는 다음 장치 유형이 지원됩니다.
+현재 홈어시스턴트에는 다음 장치 유형이 지원됩니다.
 
 - **Notifications** - 홈어시스턴트에서 [Mycroft AI](https://mycroft.ai/)로 알림을 전달할 수 있습니다.
 

@@ -29,7 +29,7 @@ ha_iot_class: Cloud Polling
 
 ## 설정
 
-Netatmo 구성 요소를 활성화하려면 `configuration.yaml`에 다음 행을 추가하십시오.
+Netatmo 구성요소를 활성화하려면 `configuration.yaml`에 다음 행을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -75,7 +75,7 @@ API 자격 증명을 얻으려면 [Netatmo Developer Page](https://dev.netatmo.c
 
 이 연동을 통해 카메라에서 가장 최신 이벤트를 볼 수 있습니다.
 
-여러 대의 카메라를 사용할 수 있는 경우 모니터링 되는 각 조건은 각 카메라에 대한 특정 센서를 생성합니다
+여러 대의 카메라를 사용할 수 있는 경우 모니터링되는 각 조건은 각 카메라에 대한 특정 센서를 생성합니다
 
 ## Camera
 
@@ -84,7 +84,7 @@ API 자격 증명을 얻으려면 [Netatmo Developer Page](https://dev.netatmo.c
 
 ## Climate
 
-`netatmo` 온도 조절기 플랫폼은 [Netatmo Smart Thermostat](https://www.netatmo.com/product/energy/thermostat) 온도조절기에서 제공하는 정보를 사용합니다. 이 연동을 통해 현재 온도와 설정지점(setpoint)을 볼 수 있습니다.
+`netatmo` 온도조절기 플랫폼은 [Netatmo Smart Thermostat](https://www.netatmo.com/product/energy/thermostat) 온도조절기에서 제공하는 정보를 사용합니다. 이 연동을 통해 현재 온도와 설정지점(setpoint)을 볼 수 있습니다.
 
 ## Sensor
 

@@ -30,15 +30,15 @@ Spotify 통합구성요소(pause, play, next 등)를 제어하려면 프리미�
 - Select **Create An App**. Enter any name and description. Once your application is created, view it and copy your **Client ID** and **Client Secret**, which are used in the Home Assistant configuration file.
 - Add a **Redirect URI** in one of the following forms:
 
- If you are not using SSL:
+ SSL을 사용하지 않는 경우 :
   `http://<your_home_assistant_url_or_local_ip>/api/spotify`
 
- If you are using SSL:
+ SSL을 사용하는 경우 :
   `https://<your_home_assistant_url_or_local_ip>/api/spotify`
 
-- Click **Save** after adding the URI.
+- URI를 추가 한 후 **Save**을 클릭하십시오.
 
-If you are using an externally accessible address you will likely also need to set the `base_url` attribute of the [HTTP Component](/integrations/http/). This should be set using the same base URL as the redirect URI, e.g., if you used a domain name (not local IP) in the redirect, then use the same domain name in your `base_url`.
+외부에서 접근 가능한 주소를 사용하는 경우 [HTTP 구성 요소](/integrations/http/)의 `base_url` 속성도 설정해야합니다. 경로 redirect URI와 동일한 base URL을 사용하여 설정해야합니다. 예를 들어, 경로 redirect에 (로컬 IP가 아닌) 도메인 이름을 사용한 경우 `base_url`에 동일한 도메인 이름을 사용하십시오.
 
 ## 설정
 
@@ -90,7 +90,7 @@ Spotify 미디어 플레이어가 나타납니다. 인증을 완료한 후 파�
 ## Sources
 
 소스는 Spotify에서 이러한 장치로 스트리밍한 경우를 기준으로합니다. 소스가 없는 경우 전화기에서 집안의 다른 장치 (Bluetooth, echo 등)로 스트리밍하면 됩니다. 일단 소스를 전송하면 Spotify 개발자 콘솔에 전송/스트리밍할 장치로 소스가 표시됩니다. 
-https://developer.spotify.com으로 이동하여 로그인하십시오. 상단 메뉴에서 "Console"을 클릭한 다음 왼쪽 메뉴에서 "Player"를 클릭하십시오. 목록에서 "/v1/me/player/devices"를 선택하십시오. 그런 다음 "Get token"를 클릭하고 약관에 동의 한 후 "Try it"를 클릭하십시오. 그러면 활성화된 Spotify 장치가 컬 라인 아래 오른쪽 패널에 나열됩니다 (예: "name": "Web Player (Chrome)").
+https://developer.spotify.com 로 이동하여 로그인하십시오. 상단 메뉴에서 "Console"을 클릭한 다음 왼쪽 메뉴에서 "Player"를 클릭하십시오. 목록에서 "/v1/me/player/devices"를 선택하십시오. 그런 다음 "Get token"를 클릭하고 약관에 동의 한 후 "Try it"를 클릭하십시오. 그러면 활성화된 Spotify 장치가 컬 라인 아래 오른쪽 패널에 나열됩니다 (예: "name": "Web Player (Chrome)").
 이러한 이름은 예를 들어 입력 선택기에서 사용할 수 있습니다. : 
 
 ```yaml

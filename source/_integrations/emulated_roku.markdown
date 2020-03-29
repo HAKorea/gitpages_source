@@ -8,11 +8,14 @@ ha_release: 0.86
 ha_iot_class: Local Push
 ha_config_flow: true
 ---
-<iframe width="690" height="437" src="https://www.youtube.com/embed/GxePiWUQHy8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-유튜브 자막을 영어 혹은 한글을 추천합니다.  
+
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/GxePiWUQHy8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 이 통합구성요소는 에뮬레이트 된 Roku API를 Home Assistant에 연동하므로 Harmony 및 Android 앱과 같은 원격 장치는 마치 Roku 플레이어인 것처럼 WiFi를 통해 연결할 수 있습니다.
 홈어시스턴트는 키의 눌림(presses) 및 앱실행을 이벤트로 보고 자동화의 트리거로 사용할 수 있습니다.
-여러 서버 항목을 지정하여 단추(buttons)가 부족하면 여러 Roku 서버가 시작될 수 있습니다.
+여러 서버 항목을 지정하여 버튼(buttons)이 부족하면 여러 Roku 서버가 시작될 수 있습니다.
 
 <div class='note'>
 
@@ -29,9 +32,9 @@ ha_config_flow: true
 
 ## 설정
 
-프런트 엔드를 통해 통합구성요소를 설정할 수 있습니다. (**설정**-> **통합구성요소**-> **Emulated Roku**)
+프런트 엔드를 통해 통합구성요소를 설정할 수 있습니다. (**설정** -> **통합구성요소** -> **Emulated Roku**)
 
-고급 옵션을 구성하려면 `configuration.yaml`에 다음 항목을 추가 할 수 있습니다.
+고급 옵션을 설정하려면 `configuration.yaml`에 다음 항목을 추가 할 수 있습니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -69,7 +72,7 @@ upnp_bind_multicast:
   default: true
 {% endconfiguration %}
 
-시작한 후 에뮬레이트 된 Roku가 Home Assistant 인스턴스의 지정된 포트에 도달 할 수 있는지 확인할 수 있습니다 (예: `http://192.168.1.101:8060/`).
+시작한 후 에뮬레이트 된 Roku가 Home Assistant 인스턴스의 지정된 포트에 도달할 수 있는지 확인할 수 있습니다 (예: `http://192.168.1.101:8060/`).
 
 ## Events
 
@@ -105,6 +108,7 @@ Available key codes |
 ## 자동화
 
 다음은 자동화 구현 예입니다.
+
 ```yaml
 # Example automation
 - id: amp_volume_up
@@ -123,7 +127,7 @@ Available key codes |
 
 ## 문제 해결 
 
-광고된 IP 또는 포트를 변경하면 앱에서 에뮬레이트 된 Roku를 다시 추가해야합니다.
+이미 알려진 IP 또는 포트를 변경하면 앱에서 에뮬레이트된 Roku를 다시 추가해야합니다.
 하모니를 사용할 때 장치에 도달할 수 없는 것으로 감지되면 앱은 UPnP 검색(`name`이 변경되지 않은 경우)을 통해 변경 사항을 자동으로 검색해야합니다. 또는 앱에서 연결할 수 없는 장치의 리모컨에 있는 버튼을 눌러 'Fix' 페이지를 트리거하고 10 초 정도 기다린 다음 'Fix it'을 클릭하십시오.
 
 Known limitations:

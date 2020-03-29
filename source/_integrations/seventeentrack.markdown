@@ -10,9 +10,11 @@ ha_codeowners:
   - '@bachya'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/niWKm7GVygU?list=PLWlpiQXaMerTyzl_Pe1PEloZTj9MoU5cl" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
-`seventeentrack` 센서 플랫폼을 통해 사용자는 [17track.net](https://www.17track.net/en) 에 묶인 패키지 데이터를 얻을 수 있습니다. 플랫폼은 현재 상태 (예: "운송중")의 패키지 수와 계정 내의 각 패키지에 대한 개별 센서를 표시하는 요약 센서를 모두 생성합니다.
+`seventeentrack` 센서 플랫폼을 통해 사용자는 [17track.net](https://www.17track.net/en)에 묶인 패키지 데이터를 얻을 수 있습니다. 플랫폼은 현재 상태 (예: "운송중")의 패키지 수와 계정내의 각 패키지에 대한 개별 센서를 표시하는 요약 센서를 모두 생성합니다.
 
 <div class='note warning'>
 

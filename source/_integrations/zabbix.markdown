@@ -9,7 +9,9 @@ ha_release: 0.37
 ha_iot_class: Local Polling
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="421" src="https://www.youtube.com/embed/gCrVxbU3KU4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `zabbix` 통합구성요소는 Zabbix API를 통해 [Zabbix](https://www.zabbix.com/) 모니터링 인스턴스에 연결하기위한 주요 통합구성요소입니다.
 

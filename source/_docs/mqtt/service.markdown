@@ -4,9 +4,9 @@ description: "Instructions on how to setup the MQTT Publish service within Home 
 logo: mqtt.png
 ---
 
-MQTT 연동은 MQTT topic으로에 메시지를 퍼블리싱하도록 `mqtt.publish` 서비스를 등록하게 됩니다. 페이로드를 지정하는 두 가지 방법이 있습니다.  하드코딩으로 만든 `payload`를 사용하던지 [template](/topics/templating/)을 사용해서 `payload_template`를 사용하는 방법으로 페이로드를 생성하여 렌더할 수 있습니다. 
+MQTT 연동은 MQTT topic으로 메시지를 퍼블리싱하도록 `mqtt.publish` 서비스를 등록하게 됩니다. 페이로드를 지정하는 두 가지 방법이 있습니다. 하드코딩으로 만든 `payload`를 사용하던지 [template](/topics/templating/)을 사용해서 `payload_template`를 사용하는 방법으로 페이로드를 생성하여 렌더할 수 있습니다. 
 
-### Service `mqtt.publish`
+### `mqtt.publish` 서비스
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |

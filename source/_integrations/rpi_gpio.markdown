@@ -11,7 +11,9 @@ ha_release: pre 0.7
 ha_iot_class: Local Push
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="388" src="https://www.youtube.com/embed/wikJla6AilQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `rpi_gpio` 통합구성요소는 Home Assistant의 모든 관련 GPIO 플랫폼의 기본입니다. 연동 자체에 필요한 설정이 없습니다. 플랫폼의 경우 해당 페이지를 확인하십시오.
 

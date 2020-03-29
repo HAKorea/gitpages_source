@@ -13,7 +13,7 @@ ha_codeowners:
 
 `filter` 플랫폼은 다른 엔티티의 상태가 조정된 센서로 만들어줍니다.
 
-`filter`는 신호 처리 알고리즘을 센서, 이전 및 현재 상태에 적용하고 선택한 알고리즘에 따라 `new state`를 생성합니다. 다음 이미지는 [History Graph]({{site_roor}}/integrations/history_graph/) 구성 요소를 사용하여 동일한 센서의 원래 센서와 필터 센서를 보여줍니다.
+`filter`는 신호 처리 알고리즘을 센서, 이전과 현재 상태에 적용하고 선택한 알고리즘에 따라 `new state`를 생성합니다. 다음 이미지는 [History Graph]({{site_roor}}/integrations/history_graph/) 구성 요소를 사용하여 동일한 센서의 원래 센서와 필터 센서를 보여줍니다.
 
 <p class='img'>
   <img src='{{site_root}}/images/screenshots/filter-sensor.png' />
@@ -54,7 +54,7 @@ sensor:
 
 {% configuration %}
 entity_id:
-  description: 필터링 할 센서의 엔티티 ID.
+  description: 필터링할 센서의 엔티티 ID.
   required: true
   type: string
 name:
@@ -127,7 +127,7 @@ LowPass(state) = A * previous_state + B * state
 
 Outlier 필터 (`outlier`)는 특정범위 밖의 값을 잘라내기 때문에 기본 Band-pass 필터입니다.
 
-포함된 Outlier 필터는 이전값의 중앙값을 중심으로하는 대역(band)을 넘어서서 값을 버리고 이전 값의 중간 값으로 대체합니다. 대역안 안에 있으면 다음과 같습니다. 
+포함된 Outlier 필터는 이전값의 중앙값을 중심으로하는 대역(band)을 넘어서서 값을 버리고 이전값의 중간값으로 대체합니다. 대역안에 있으면 다음과 같습니다. 
 
 ```python
 distance = abs(state - median(previous_states))
@@ -160,7 +160,7 @@ Time SMA 필터(`time_simple_moving_average`)는 Andreas Eckner의 [Algorithms f
 
 이 논문은 SMA(Simple Moving Average)의 세 가지 유형/버전 : (*last*, *next* 및 *linear*)을 정의합니다. 현재 *last* 만 구현되었습니다.
 
-논문에 기술된 바와 같이, Theta는 `window_size` 파라미터이며, 시간 표기법 (예를 들어, 5 분 시간 윈도우의 경우 00:05)을 사용하여 표현될 수있다.
+논문에 기술된 바와 같이, Theta는 `window_size` 파라미터이며, 시간 표기법 (예를 들어, 5 분 시간 윈도우의 경우 00:05)을 사용하여 표현될 수 있습니다.
 
 ### Range
 

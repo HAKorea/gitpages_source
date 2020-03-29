@@ -9,9 +9,9 @@ redirect_from: /topics/templating/
 - [홈어시스턴트 아키텍처](/developers/architecture/), 특히 상태(states).
 - [상태(State) 객체](/topics/state_object/).
 
-템플릿은 시스템으로 들어오고 나가는 정보를 제어 할 수있는 강력한 기능입니다. 다음 용도로 사용됩니다. :
+템플릿은 시스템으로 들어오고 나가는 정보를 제어할 수있는 강력한 기능입니다. 다음 용도로 사용됩니다. :
 
-- [notify](/integrations/notify/) 플랫폼 및 [alexa](/integrations/alexa/) component와 같은 발신 메시지 형식화 
+- [notify](/integrations/notify/) 플랫폼, [alexa](/integrations/alexa/) component와 같은 발신 메시지 형식화 
 - [MQTT](/integrations/mqtt/), [`rest` sensor](/integrations/rest/) 혹은 [`command_line` sensor](/integrations/sensor.command_line/) 같은 원시 데이터를 제공하는 소스의 데이터 처리.
 - [자동화 템플릿 (Automation Templating))](/docs/automation/templating/).
 
@@ -25,7 +25,7 @@ redirect_from: /topics/templating/
 
 Jinja2는 [templates documentation](https://jinja.palletsprojects.com/en/master/templates/)에서 이 작업을 훌륭하게 수행하므로 문법의 기본사항은 다루지 않습니다 .
 
-프런트엔드에는 템플릿 개발 및 디버깅을 도와주는 템플릿 편집기 도구가 있습니다. <img src='/images/screenshots/developer-tool-templates-icon.png' alt='template developer tool icon' class="no-shadow" height="38" /> 아이콘을 클릭 하고 _템플릿 편집기_ 에서 템플릿을 생성 한 다음 오른쪽의 결과를 확인하십시오.
+프런트엔드에는 템플릿 개발과 디버깅을 도와주는 템플릿 편집기 도구가 있습니다. <img src='/images/screenshots/developer-tool-templates-icon.png' alt='template developer tool icon' class="no-shadow" height="38" /> 아이콘을 클릭 하고 _템플릿 편집기_ 에서 템플릿을 생성한 다음 오른쪽의 결과를 확인하십시오.
 
 템플릿은 매우 빠르게 커질 수 있습니다. 명확한 구성를 유지하려면 YAML 여러 줄 문자열을 사용하여 템플릿을 정의하십시오. :
 
@@ -47,22 +47,22 @@ script:
 
 ##  홈어시스턴트 템플릿 확장
 
-확장 기능을 통해 템플릿은 모든 홈어시스턴트 특정 상태에 액세스하고 다른 편리한 기능 및 필터를 추가 할 수 있습니다.
+확장 기능을 통해 템플릿은 모든 홈어시스턴트 특정 상태에 액세스하고 다른 편리한 기능과 필터를 추가할 수 있습니다.
 
-### 상태 (States)
+### 상태(States)
 
-- 반복된 `states`는 entity ID별로 알파벳순으로 정렬 된 각 상태(statese)를 생성시킵니다
-- 반복된 `states.domain`는 해당 도메인의 각 상태(states)가 entity ID별로 알파벳순으로 정렬됩니다.
-- `sensor.temperature`에 대한 상태(states) 객체를 `states.sensor.temperature`로 반환합니다. 
-- `states ( 'device_tracker.paulus')`는 해당 entity의 상태(state) 문자열(객체가 아닌)을 반환하고, 혹은 값이 존재하지 않는 경우 `unknown`을 반환합니다.
-- `is_state('device_tracker.paulus', 'home')`는 주어진 entity가 특정한 어떤 상태(state)인지를 테스트합니다.
-- `state_attr('device_tracker.paulus', 'battery')` 속성 값을 반환하거나 존재하지 않는 경우 None을 반환합니다.
-- `is_state_attr('device_tracker.paulus', 'battery', 40)` 주어진 entity 속성이 지정된 상태(state) (이 경우 숫자 값)인지 테스트합니다.
+- 반복된 `states`는 entity ID별로 알파벳순으로 정렬된 각 상태를 생성시킵니다
+- 반복된 `states.domain`는 해당 도메인의 각 상태가 entity ID별로 알파벳순으로 정렬됩니다.
+- `sensor.temperature`에 대한 상태 객체를 `states.sensor.temperature`로 반환합니다. 
+- `states('device_tracker.paulus')`는 해당 entity의 상태 문자열(객체가 아닌)을 반환하고, 혹은 값이 존재하지 않는 경우 `unknown`을 반환합니다.
+- `is_state('device_tracker.paulus', 'home')`는 주어진 entity가 특정한 어떤 상태인지를 테스트합니다.
+- `state_attr('device_tracker.paulus', 'battery')`는 속성값을 반환하거나 존재하지 않는 경우 None을 반환합니다.
+- `is_state_attr('device_tracker.paulus', 'battery', 40)`는 주어진 entity 속성이 지정된 상태(이 경우 숫자 값)인지 테스트합니다.
 
 <div class='note warning'>
 
-  `states('sensor.temperature')` 대체 방법으로 `states.sensor.temperature.state`를 사용 하지 마십시오.
-  entity가 아직 준비가 안되어있을 때, 오류 및 오류 메시지가 나타나지 않도록 가능한 한 `states()`, `is_state()`, `state_attr()` 그리고 `is_state_attr()` 를 사용하기를 권장합니다.  (예를 들어 홈어시스턴트를 시작하는 동안)
+  `states('sensor.temperature')` 대체 방법으로 `states.sensor.temperature.state`를 사용하지 마십시오.
+  entity가 아직 준비가 안되어있을 때, 오류와 오류 메시지가 나타나지 않도록 가능한한 `states()`, `is_state()`, `state_attr()`, `is_state_attr()` 를 사용하기를 권장합니다. (예를 들어 홈어시스턴트를 시작하는 동안)
 
 </div>
 
@@ -70,7 +70,7 @@ script:
 
 #### 상태(State) 사례들
 
-상태(state)가 존재하면 다음 두 명령문의 값은 동일합니다. 상태(state)가 존재하지 않으면 두 번째 사례은 오류가 발생합니다.
+상태가 존재하면 다음 두 명령문의 값은 동일합니다. 상태가 존재하지 않으면 두 번째 사례은 오류가 발생합니다.
 
 {% raw %}
 ```text
@@ -89,7 +89,7 @@ script:
 ```
 {% endraw %}
 
-다른 상태(state) 사례 :
+다른 상태 사례 :
 {% raw %}
 
 ```text
@@ -115,9 +115,9 @@ script:
 
 ### 속성 (Attributes)
 
-상태(state)가 정의 된 경우 `state_attr`을 사용하여 속성(Attribute)을 출력할 수 있습니다.
+상태가 정의된 경우 `state_attr`을 사용하여 속성을 출력할 수 있습니다.
 
-#### 속성 (Attributes) 사례들
+#### 속성 사례들
 
 {% raw %}
 ```text
@@ -145,7 +145,7 @@ script:
 
 ### 그룹 작업
 
-`expand` 기능과 필터는 entity를 정렬하고 그룹을 확장하는 데 사용할 수 있습니다. 중복되지 않은 정렬 된 entity 배열을 출력합니다.
+`expand` 기능과 필터는 entity를 정렬하고 그룹을 확장하는데 사용할 수 있습니다. 중복되지 않은 정렬된 entity 배열을 출력합니다.
 
 #### 예제 펼쳐보이기
 
@@ -171,25 +171,25 @@ script:
 ### 시간
 
 - `now()` 시간대의 현재 시간으로 렌더링됩니다.
-  - 특정 값의 경우: `now().second`, `now().minute`, `now().hour`, `now().day`, `now().month`, `now().year`, `now().weekday()` 그리고 `now().isoweekday()`
+  - 특정값의 경우: `now().second`, `now().minute`, `now().hour`, `now().day`, `now().month`, `now().year`, `now().weekday()` 그리고 `now().isoweekday()`
 - `utcnow()` UTC 시간으로 렌더링됩니다.
-  - 특정 값의 경우: `utcnow().second`, `utcnow().minute`, `utcnow().hour`, `utcnow().day`, `utcnow().month`, `utcnow().year`, `utcnow().weekday()` and `utcnow().isoweekday()`.
+  - 특정값의 경우: `utcnow().second`, `utcnow().minute`, `utcnow().hour`, `utcnow().day`, `utcnow().month`, `utcnow().year`, `utcnow().weekday()`, `utcnow().isoweekday()`.
 - `as_timestamp()` datetime 객체 또는 문자열을 UNIX 타임 스탬프로 변환합니다. 이 기능은 필터로도 사용됩니다.
-- `strptime(string, format)` 은 [format](https://docs.python.org/3.6/library/datetime.html#strftime-and-strptime-behavior)에  따라 날짜/시간 문자열을 파싱합니다.
-- `relative_time`은 날짜 시간 객체를 읽기쉬운 "age" 문자열로 변환합니다. age는 초, 분,시, 일, 월 또는 연도 일 수 있습니다 (그러나 가장 큰 단위 만 고려됩니다 (예 : 2 일 및 3 시간 인 경우 "2 일"이 반환 됨)). _지난 날짜_ 에 대해서만 작동한다는 것을 알아두십시오.
-- 필터 `timestamp_local` 는 UNIX 타임 스탬프를 현지 시간 / 데이터로 변환합니다.
-- 필터 `timestamp_utc` 는 UNIX 타임 스탬프를 UTC 시간 / 데이터로 변환합니다.
-- 필터 `timestamp_custom(format_string, local_boolean)` 는 UNIX 타임 스탬프를 사용자 정의 형식으로 변환하며 로컬 타임 스탬프 사용이 기본값입니다. [Python time formatting options](https://docs.python.org/3/library/time.html#time.strftime) 표준을 지원합니다.
+- `strptime(string, format)`은 [format](https://docs.python.org/3.6/library/datetime.html#strftime-and-strptime-behavior)에 따라 날짜/시간 문자열을 파싱합니다.
+- `relative_time`은 날짜 시간 객체를 읽기쉬운 "age" 문자열로 변환합니다. age는 초, 분, 시, 일, 월 또는 연도일 수 있습니다 (그러나 가장 큰 단위만 고려됩니다 (예: 2 일 3 시간인 경우 "2 일"이 반환됨)). _지난 날짜_ 에 대해서만 작동한다는 것을 알아두십시오.
+- 필터 `timestamp_local`은 UNIX 타임스탬프를 현지시간/데이터로 변환합니다.
+- 필터 `timestamp_utc` 는 UNIX 타임스탬프를 UTC시간/데이터로 변환합니다.
+- 필터 `timestamp_custom(format_string, local_boolean)` 는 UNIX 타임스탬프를 사용자정의 형식으로 변환하며 로컬 타임스탬프 사용이 기본값입니다. [Python time formatting options](https://docs.python.org/3/library/time.html#time.strftime) 표준을 지원합니다.
 
 ### To/From JSON
 
-`to_json` 필터는 JSON 문자열로 객체를 직렬화합니다(serialize).경우에 따라 명령 줄 유틸리티 또는 기타 여러 응용 프로그램의 매개 변수로 웹 후크와 함께 사용하기 위해 JSON 문자열을 형식화해야 할 수도 있습니다. 특히 특수 문자 이스케이프 처리시 템플릿에서 복잡 할 수 있습니다. `to_json` 필터를 사용하면 자동으로 처리됩니다
+`to_json` 필터는 JSON 문자열로 객체를 직렬화합니다(serialize). 경우에 따라 command line 유틸리티 또는 기타 여러 응용 프로그램의 매개 변수로 웹 후크와 함께 사용하기 위해 JSON 문자열을 형식화해야 할 수도 있습니다. 특히 특수 문자 이스케이프 처리시 템플릿에서 복잡할 수 있습니다. `to_json` 필터를 사용하면 자동으로 처리됩니다
 
 `from_json` 필터는 유사하게 작동하지만 다른 방법으로, 객체로 JSON 문자열 등을 탈직렬화 시킬 수 있습니다.
 
 ### To/From JSON 예제들
 
-본 예시에서 유효한 JSON을 생성하기 위해 특수 문자  '°' 가 자동으로 이스케이프됩니다. 문자열 화 된 객체와 실제 JSON의 차이점은 분명합니다.
+본 예시에서 유효한 JSON을 생성하기 위해 특수 문자 '°'가 자동으로 이스케이프됩니다. 문자열화 된 객체와 실제 JSON의 차이점은 분명합니다.
 
 *Template*
 
@@ -210,7 +210,7 @@ object|to_json: {"temperature": 25, "unit": "\u00b0C"}
 ```
 {% endraw %}
 
-반대로 `from_json`을 사용하면 JSON 문자열을 객체로 역 직렬화하여 사용 가능한 데이터를 쉽게 추출 할 수 있습니다.
+반대로 `from_json`을 사용하면 JSON 문자열을 객체로 역직렬화하여 사용 가능한 데이터를 쉽게 추출할 수 있습니다.
 
 *Template*
 
@@ -231,7 +231,7 @@ The temperature is 25°C
 
 ### 거리
 
-- `distance()` 집, entity, 좌표 사이의 거리를 킬로미터 단위로 측정합니다..
+- `distance()` 집, entity, 좌표 사이의 거리를 킬로미터 단위로 측정합니다.
 - `closest()` 가장 가까운 entity를 찾습니다..
 
 #### distance 예시
@@ -252,7 +252,7 @@ These can also be combined in any combination:
 
 #### Closest 예시
 
-가장 가까운 함수 및 필터는 홈어시스턴트 위치에 가장 가까운 entity를 찾습니다. :
+가장 가까운 함수와 필터는 홈어시스턴트 위치에 가장 가까운 entity를 찾습니다. :
 
 {% raw %}
 ```text
@@ -273,7 +273,7 @@ Closest to an entity: {{ closest(states.zone.school, 'group.children') }}
 ```
 {% endraw %}
 
-closest 상태를 반환하므로 distance와도 결합 할 수 있습니다.
+closest 상태를 반환하므로 distance와도 결합할 수 있습니다.
 
 {% raw %}
 ```text
@@ -281,7 +281,7 @@ closest 상태를 반환하므로 distance와도 결합 할 수 있습니다.
 ```
 {% endraw %}
 
-closest 함수의 마지막 인수는 암시적(implicit) `expand`이며 반복 가능한 상태(states) 또는 entity ID 시퀀스를 취할 수 있으며 그룹을 확장시킬 수 있습니다.
+closest 함수의 마지막 인수는 암시적(implicit) `expand`이며 반복 가능한 상태 또는 entity ID 시퀀스를 취할 수 있으며 그룹을 확장시킬 수 있습니다.
 
 {% raw %}
 ```text
@@ -312,7 +312,7 @@ Closest to some entity:
 
 ### 숫자형 함수와 핕터 (Numeric functions and filters)
 
-이러한 함수 중 일부는 [filter](https://jinja.palletsprojects.com/en/master/templates/#id11)에 사용할 수도 있습니다. 이는 `sqrt(2)` 같은 일반 함수로 혹은 `2|sqrt`와 같은 필터의 일부로 동작함을 의미합니다.
+이러한 함수중 일부는 [filter](https://jinja.palletsprojects.com/en/master/templates/#id11)에 사용할 수도 있습니다. 이는 `sqrt(2)` 같은 일반 함수로 혹은 `2|sqrt`와 같은 필터의 일부로 동작함을 의미합니다.
 
 - `log(value, base)`는 입력 대수(로그)를 취합니다. 기본이 생략되면, `e` - 자연 대수(로그)로 기본값이 나타납니다. 
 - `sin(value)` 은 사인 입력을 반환합니다. 필터로 사용할 수 있습니다.
@@ -321,21 +321,20 @@ Closest to some entity:
 - `asin(value)` 은 역사인 입력을 반환합니다. 필터로 사용할 수 있습니다.
 - `acos(value)` 은 역코사인 입력을 반환합니다. 필터로 사용할 수 있습니다.
 - `atan(value)` 은 역탄젠트 입력을 반환합니다. 필터로 사용할 수 있습니다.
-- `atan2(y, x)` y / x의 4사분면 역탄젠트를 반환합니다. 필터로 사용할 수 있습니다.
+- `atan2(y, x)` y/x의 4사분면 역탄젠트를 반환합니다. 필터로 사용할 수 있습니다.
 - `sqrt(value)` 입력의 제곱근을 반환합니다. 필터로 사용할 수 있습니다.
 - `e` 수학 상수, 약 2.71828
 - `pi` 수학 상수, 약 3.14159
 - `tau` 수학 상수, 약 6.28318.
-- 필터 `round(x)`는 입력을 숫자로 변환하고 `x`를 소수로 반올림합니다. Round에는 네 가지 모드가 있으며 기본 모드 (모드를 지정하지 않은 경우)는 [round-to-even](https://en.wikipedia.org/wiki/Rounding#Roundhalfto_even) 입니다.
-  - `round(x, "floor")` will always round down to `x` decimals
+- 필터 `round(x)`는 입력을 숫자로 변환하고 `x`를 소수로 반올림합니다. Round에는 네 가지 모드가 있으며 기본 모드(모드를 지정하지 않은 경우)는 [round-to-even](https://en.wikipedia.org/wiki/Rounding#Roundhalfto_even) 입니다.
   - `round(x, "floor")`는 `x`를 항상 소수점 이하로 내림
-  - `round(x, "ceil")` 는 `x`를 항상 소수점 이하로 내림
-  - `round(1, "half")` 항상 가장 가까운 0.5 값으로 반올림합니다. `x` 이 모드에서는 1이어야합니다
+  - `round(x, "ceil")` 는 `x`를 항상 소수점 이하로 올림
+  - `round(1, "half")` 항상 가장 가까운 0.5 값으로 반올림. `x`는 이 모드에서는 1이어야합니다
 - 필터 `max` 는 가장 큰 항목을 순서대로 가져옵니다.
 - 필터 `min` 는 가장 작은 항목을 순서대로 가져옵니다.
 - 필터 `value_one|bitwise_and(value_two)` 는 두 가지 값으로 비트 단위 (&) 연산을 수행합니다.
 - 필터 `value_one|bitwise_or(value_two)` 두 가지 값으로 비트 단위 또는 (|) 연산을 수행합니다.
-- 필터 `ord` 는 인수가 유니코드 객체 인 경우 문자의 유니코드 코드 포인트를 나타내는 정수 1의 길이의 문자열 또는 인수가 8 비트 문자열인 경우 바이트 값을 반환합니다.
+- 필터 `ord` 는 인수가 유니코드 객체인 경우 문자의 유니코드 코드 포인트를 나타내는 정수 1의 길이의 문자열 또는 인수가 8 비트 문자열인 경우 바이트 값을 반환합니다.
 
 ### 정규식
 
@@ -346,9 +345,9 @@ Closest to some entity:
 
 ## 수신 데이터 처리
 
-템플릿의 다른 부분은 들어오는 데이터를 처리합니다. 수신 데이터를 수정하고 관심있는 데이터만 추출 할 수 있습니다. 이는 문서에서 이를 지원하는 플랫폼 및 통합구성요소에서만 작동합니다.
+템플릿의 다른 부분은 들어오는 데이터를 처리합니다. 수신 데이터를 수정하고 관심있는 데이터만 추출할 수 있습니다. 이는 문서에서 이를 지원하는 플랫폼과 통합구성요소에서만 작동합니다.
 
-통합구성요소 또는 플랫폼에 따라 다르지만, `value_template` 설정 키를 사용하여 템플릿을 정의하는 것이 일반적입니다. 새 값이 도착하면 일반적인 홈어시스턴트 확장 프로그램의 상단에있는 다음 값에 액세스하면서 템플릿이 렌더링됩니다. :
+통합구성요소 또는 플랫폼에 따라 다르지만, `value_template` 설정 키를 사용하여 템플릿을 정의하는 것이 일반적입니다. 새 값이 도착하면 일반적인 홈어시스턴트 확장 프로그램의 상단에 있는 다음 값에 액세스하면서 템플릿이 렌더링됩니다. :
 
 | Variable     | Description                        |
 |--------------|------------------------------------|
@@ -423,7 +422,7 @@ Closest to some entity:
 {% raw %}{{ value_json.tst | timestamp_custom('%Y' True) }}{% endraw %}
 ```
 
-응답으로 값을 받으려면, <img src='/images/screenshots/developer-tool-templates-icon.png' alt='template developer tool icon' class="no-shadow" height="38" /> 템플리트 개발자 도구 로 이동하여, "템플릿"에서 출력을 작성한 후 결과를 확인하십시오.
+응답으로 값을 받으려면, <img src='/images/screenshots/developer-tool-templates-icon.png' alt='template developer tool icon' class="no-shadow" height="38" /> 템플릿 개발자 도구로 이동하여, "템플릿"에서 출력을 작성한 후 결과를 확인하십시오.
 
 {% raw %}
 ```yaml
@@ -451,7 +450,7 @@ Closest to some entity:
 
 ### 연산자 우선 순위
 
-연산자의 기본 우선 순위는 필터 (`|`) 가 대괄호를 제외한 모든 것보다 우선 순위 가 있다는 것입니다. 이것은 다음을 의미합니다.
+연산자의 기본 우선 순위는 필터 (`|`) 가 대괄호를 제외한 모든 것보다 우선 순위가 있다는 것입니다. 이는 다음을 의미합니다.
 
 {% raw %}
 ```yaml

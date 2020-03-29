@@ -10,7 +10,9 @@ ha_codeowners:
   - '@Michsior14'
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/ppZ-72iJ2Lc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/ppZ-72iJ2Lc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `kaiterra` 통합구성요소를 통해 [Kaiterra REST API](https://www.kaiterra.com/dev/)를 사용하여 Laser Egg 또는 Sensedge 장치의 판독값을 볼 수 있습니다.
 

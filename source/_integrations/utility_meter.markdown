@@ -11,7 +11,9 @@ ha_codeowners:
   - '@dgomes'
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/qw0bk4wZCZY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="690" height="437" src="https://www.youtube.com/embed/SdG7jUyk8BA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `utility meter` 통합구성요소는 다양한 유틸리티 (예: 에너지, 가스, 물, 난방)의 소비를 추적하는 기능을 제공합니다.
 

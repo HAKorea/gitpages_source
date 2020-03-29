@@ -10,7 +10,9 @@ ha_codeowners:
   - '@andrey-git'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/azPxDpb0prM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 [Sensibo](https://sensibo.com) 에어컨 컨트롤러를 홈어시스턴트에 연동합니다.
 
@@ -35,7 +37,7 @@ id:
 {% endconfiguration %}
 
 <div class="note">
- 서브 사용자(메인 사용자가 아닌)를 사용하여 API 키를 생성하면 Sensibo 앱 로그에서 앱에서 수행한 작업과 Home Assistant에서 수행한 작업을 구별 할 수 있습니다.
+ 서브 사용자(메인 사용자가 아닌)를 사용하여 API 키를 생성하면 Sensibo 앱 로그에서 앱에서 수행한 작업과 Home Assistant에서 수행한 작업을 구별할 수 있습니다.
 </div>
 
 ### Full config example

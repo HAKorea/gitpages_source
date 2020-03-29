@@ -80,7 +80,7 @@ automation:
 ```
 
 <div class='note'>
-known_devices.yaml 파일에서 차량의 정확한 ID를 얻을 수 있습니다. 자동화 트리거에서 vehicle ID를 사용할 때 vehicle ID에 포함 된 문자를 모두 소문자로 입력하십시오.
+known_devices.yaml 파일에서 차량의 정확한 ID를 얻을 수 있습니다. 자동화 트리거에서 vehicle ID를 사용할 때 vehicle ID에 포함된 문자를 모두 소문자로 입력하십시오.
 </div>
 
 차량을 추적하도록 구성하는 방법에 대한 지침은 [device tracker integration page](/integrations/device_tracker/)를 참조하십시오.

@@ -8,7 +8,9 @@ ha_iot_class: Local Polling
 ha_release: 0.62
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/udsRxmlfJv4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `Xeoma` 카메라 플랫폼을 사용하면 [Xeoma](https://felenasoft.com/xeoma) 비디오 감시 서버에서 비디오 피드를 볼 수 있습니다.
 
@@ -81,6 +83,6 @@ camera:
 
 이 플랫폼을 사용하려면 하나 이상의 카메라 체인에서 Xeoma 웹서버 모듈을 활성화해야합니다.
 
-이 플랫폼은 Xeoma 웹 인터페이스를 분석하여 활성화 된 모든 카메라를 찾아 Home Assistant에 추가합니다. 플랫폼 설정을 사용하여 개별 카메라를 숨길 수 있습니다.
+이 플랫폼은 Xeoma 웹인터페이스를 분석하여 활성화 된 모든 카메라를 찾아 Home Assistant에 추가합니다. 플랫폼 설정을 사용하여 개별 카메라를 숨길 수 있습니다.
 
 각 카메라의 `image_name` 설정값은 _.jpg_ 확장자가 제거된 Xeoma 웹서버 설정 (_path to access images_)에서 제공한 이름과 일치해야합니다.

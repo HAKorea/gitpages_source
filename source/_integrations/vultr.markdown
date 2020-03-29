@@ -90,7 +90,7 @@ binary_sensor:
 
 ## Sensor
 
-`vultr` 센서 플랫폼을 사용하면 [Vultr](https://www.vultr.com/) 구독에 대한 현재 대역폭 사용량 및  요금을 볼 수 있습니다.
+`vultr` 센서 플랫폼을 사용하면 [Vultr](https://www.vultr.com/) 구독에 대한 현재 대역폭 사용량 및 요금을 볼 수 있습니다.
 
 이 센서를 사용하려면 Vultr 허브를 설정해야합니다.
 
@@ -155,7 +155,7 @@ sensor:
 
 ## Switch
 
-`vultr` 스위치 플랫폼을 사용하면 [Vultr](https://www.vultr.com/) 가입을 제어 (시작/중지) 할 수 있습니다.
+`vultr` 스위치 플랫폼을 사용하면 [Vultr](https://www.vultr.com/) 가입을 제어(시작/중지)할 수 있습니다.
 
 Vultr 구독을 제어하려면 먼저 Vultr 허브를 설정해야합니다.
 

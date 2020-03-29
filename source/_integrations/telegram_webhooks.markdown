@@ -9,10 +9,9 @@ ha_release: 0.42
 
 텔레그램 [documentation](https://core.telegram.org/bots/webhooks)에 설명된대로 텔레그램 챗봇 웹 후크 구현.
 
-Using Telegrams `setWebhook` method your bot's webhook URL should be set to `https://<public_url>:<port>/api/telegram_webhooks`.
 텔레그램 `setWebhook` 메소드를 사용한 봇의 webhook URL은 `https://<public_url>:<port>/api/telegram_webhooks`로 설정되어야합니다.
 
-이것은 텔레그램이 지원하는 두 가지 봇 구현 중 하나입니다. Telegram에서 선호하는 구현방법으로 설명하지만 Home Assistant 인스턴스가 인터넷에 노출되어 있어야합니다.
+이는 텔레그램이 지원하는 두 가지 봇 구현 중 하나입니다. Telegram에서 선호하는 구현방법으로 설명하자면 Home Assistant 인스턴스가 인터넷에 노출되어 있어야합니다.
 
 ## 설정
 
@@ -55,7 +54,7 @@ proxy_params:
   required: false
   type: string
 url:
-  description: 다른 설정들에 대해 [`http`](/integrations/http/) 통합구성요소에서 `base_url`을 덮어 쓸 수 있도록 허용. (`https://<public_url>:<port>`)
+  description: 다른 설정들에 대해 [`http`](/integrations/http/) 통합구성요소에서 `base_url`을 덮어쓸 수 있도록 허용. (`https://<public_url>:<port>`)
   required: false
   type: string
 trusted_networks:
@@ -65,7 +64,7 @@ trusted_networks:
   default: 149.154.160.0/20, 91.108.4.0/22
 {% endconfiguration %}
 
-`chat_id` 와 `api_key`를 얻으려면 [here](/integrations/telegram)의 지시 사항을 따르십시오. 채팅을 승인할 뿐만 아니라 봇을 그룹에 추가한 경우 웹 후크와 상호 작용할 모든 사용자에게 권한을 부여해야합니다. 권한이 없는 사용자가 webhook 홈어시스턴트와 상호작용하려고 하면 오류가 발생합니다 ("수신 메시지는 허용되지 않습니다"). 이 오류 메시지의 "보낸 사람(from)" 섹션에서 사용자 ID를 쉽게 얻을 수 있습니다.
+`chat_id` 와 `api_key`를 얻으려면 [여기](/integrations/telegram)의 지시 사항을 따르십시오. 채팅을 승인할 뿐만 아니라 봇을 그룹에 추가한 경우 웹 후크와 상호 작용할 모든 사용자에게 권한을 부여해야합니다. 권한이 없는 사용자가 webhook 홈어시스턴트와 상호작용하려고 하면 오류가 발생합니다 ("수신 메시지는 허용되지 않습니다"). 이 오류 메시지의 "보낸 사람(from)" 섹션에서 사용자 ID를 쉽게 얻을 수 있습니다.
 
 ## 전체 설정 샘플
 

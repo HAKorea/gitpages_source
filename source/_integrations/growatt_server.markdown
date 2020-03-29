@@ -11,7 +11,9 @@ ha_codeowners:
   - '@indykoning'
 ---
 
-<iframe width="690" height="388" src="https://www.youtube.com/embed/2Aw3mQpgaM0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/2Aw3mQpgaM0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 This is a sensor to collect information from your Growatt inverters using [Growatt server](https://server.growatt.com/).
 

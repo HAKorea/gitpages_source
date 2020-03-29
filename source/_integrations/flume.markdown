@@ -10,17 +10,19 @@ ha_codeowners:
   - '@ChrisMandich'
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/tXsxCLkJD_o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/tXsxCLkJD_o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `flume` 센서는 주어진 장치 ID에 대한 현재 [flume](https://portal.flumetech.com/) 상태를 보여줍니다.
 
-Flume은 가정용 수도 미터기의 실시간 상태를 모니터링합니다. 사용자가 작은 누수를 감지하고 가정의 물 소비량에 대한 실시간 정보를 얻고, 물의 사용 목표 및 예산을 설정하고, 의심스러운 물의 활동이 발생하면 푸시 알림을 받을 수 있습니다.
+Flume은 가정용 수도 미터기의 실시간 상태를 모니터링합니다. 사용자가 작은 누수를 감지하고 가정의 물소비량에 대한 실시간 정보를 얻고, 물의 사용 목표 및 예산을 설정하고, 의심스러운 물의 활동이 발생하면 푸시 알림을 받을 수 있습니다.
 
 ## 설정
 
 [settings page](https://portal.flumetech.com/#settings)의 "API Access"에서 Client ID와 Client 비밀정보를 확인할 수 있습니다.
 
-flume 센서를 활성화하려면 `configuration.yaml` 파일에 다음 라인을 추가하십시오 :
+flume 센서를 활성화하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry

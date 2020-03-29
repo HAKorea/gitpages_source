@@ -10,7 +10,7 @@ ha_iot_class: Configurable
 
 `mqtt` 카메라 플랫폼을 사용하면 MQTT를 통해 전송된 이미지 파일의 컨텐츠를 카메라로 홈어시스턴트에 연동할 수 있습니다. 설정에서 `topic` 아래의 메시지가 수신될 때마다 홈어시스턴트에 표시된 이미지도 업데이트됩니다.
 
-MQTT를 통해 이미지를 전송할 수있는 애플리케이션 또는 서비스와 함께 사용할 수 있습니다.
+MQTT를 통해 이미지를 전송할 수 있는 애플리케이션 또는 서비스와 함께 사용할 수 있습니다.
 
 ## 설정
 
@@ -46,7 +46,7 @@ device:
       required: false
       type: [list, string]
     connections:
-      description: '`"connections": ["mac", "02:5b:26:a8:dc:12"]`. 튜플 목록인 `[connection_type, connection_identifier]`로 장치를 외부 세계에 연결한 목록입니다. 예를 들어 네트워크 인터페이스의 MAC주소: `"connections": ["mac", "02:5b:26:a8:dc:12"]` '
+      description: '`"connections": ["mac", "02:5b:26:a8:dc:12"]`. 튜플 목록인 `[connection_type, connection_identifier]`로 장치를 외부 세계에 연결한 목록입니다. 예를 들어 네트워크 인터페이스의 MAC주소: `"connections": ["mac", "02:5b:26:a8:dc:12"]`'
       required: false
       type: list
     manufacturer:

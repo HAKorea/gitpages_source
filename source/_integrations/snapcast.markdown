@@ -8,11 +8,13 @@ ha_release: 0.13
 ha_iot_class: Local Polling
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="388" src="https://www.youtube.com/embed/oA0L4tSvPKk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `snapcast` 플랫폼을 사용하면 Home Assistant에서 [Snapcast](https://github.com/badaix/snapcast)를 제어할 수 있습니다.
 
-Snapcast를 설치에 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
+Snapcast를 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

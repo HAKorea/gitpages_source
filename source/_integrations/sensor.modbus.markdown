@@ -118,7 +118,7 @@ registers:
 
 <div class='note'>
 
-스케일(scale) 또는 오프셋(offset)을 부동 소수점 값으로 지정하면 배정도 부동 소수점 산술(double precision floating point arithmetic)이 최종값을 계산하는 데 사용됩니다. 이로 인해 2^53보다 큰 값의 정밀도가 손실될 수 있습니다.
+스케일(scale) 또는 오프셋(offset)을 부동 소수점 값으로 지정하면 배정도 부동 소수점 산술(double precision floating point arithmetic)이 최종값을 계산하는데 사용됩니다. 이로 인해 2^53보다 큰 값의 정밀도가 손실될 수 있습니다.
 
 </div>
 

@@ -17,7 +17,7 @@ ha_codeowners:
 logger:
 ```
 
-모든 메시지를 기록하고 특정 구성 요소에 대한 위험보다 낮은 이벤트를 무시하려면 :
+모든 메시지를 기록하고 특정 구성요소에 대한 위험도보다 낮은 이벤트를 무시하려면 :
 
 ```yaml
 logger:
@@ -27,7 +27,7 @@ logger:
     custom_components.my_integration: critical
 ```
 
-특정 구성 요소에 대해 위험 및 로그 이벤트보다 낮은 모든 메시지를 무시하려면 다음을 수행하십시오. :
+특정 구성요소에 대해 위험도와 로그 이벤트가 낮은 모든 메시지를 무시하려면 다음을 수행하십시오. :
 
 ```yaml
 logger:
@@ -59,7 +59,6 @@ logger:
     glances_api: fatal
 ```
 
-The log entries are in the form  *timestamp* *log-level* *thread* [**namespace**] *message*  where **namespace** is the *<component_namespace>* currently logging. 
 로그 항목은 *timestamp* *log-level* *thread* [**namespace**] *메시지* 여기서 **namespace**는 *<component_namespace>* 현재 로깅입니다.
 
 {% configuration %}
@@ -74,7 +73,7 @@ The log entries are in the form  *timestamp* *log-level* *thread* [**namespace**
     type: map
     keys:
       '&lt;component_namespace&gt;':
-        description: 구성 요소의 로거 네임 스페이스. [log_level](#log-levels) 참고.
+        description: 구성요소의 로거 네임 스페이스. [log_level](#log-levels) 참고.
         type: string
 {% endconfiguration %}
 
@@ -82,8 +81,8 @@ The log entries are in the form  *timestamp* *log-level* *thread* [**namespace**
 다른 API에 의해 기록됩니다.
 
 자신의 환경에서 네임스페이스를 알고 싶다면 시작시 로그 파일을 확인하십시오.
-homeassistant.loader에서 `loaded <component> from <namespace>`의 상태를 확인했다는 INFO log가 메시지가 표시됩니다.
-이것들이 `log level`을 설정할 수있는 네임 스페이스입니다.
+homeassistant.loader에서 `loaded <component> from <namespace>`의 상태를 확인했다는 INFO log 메시지가 표시됩니다.
+이들이 `log level`을 설정할 수 있는 네임스페이스입니다.
 
 ### 로그 레벨 (Log Levels)
 
@@ -98,7 +97,7 @@ homeassistant.loader에서 `loaded <component> from <namespace>`의 상태를 �
 - debug
 - notset
 
-## 서비스 (Services)
+## 서비스 
 
 ### `set_default_level` 서비스
 
@@ -129,13 +128,13 @@ data:
 ```
 
 
-Hass.io 사용자 인 경우 [SSH 애드온] (/ addons / ssh /)을 통해 로그인 할 때 아래 예를 사용할 수 있습니다. :
+Hass.io 사용자인 경우 [SSH 애드온](/addons/ssh/)을 통해 로그인할 때 아래 예를 사용할 수 있습니다. :
 
 ```bash
 $ tail -f /config/home-assistant.log
 ```
 
-Docker에서는 호스트 명령 줄을 직접 사용할 수 있습니다. - 동적으로 로그를 확인합니다 : 
+Docker에서는 호스트 command line을 직접 사용할 수 있습니다. - 동적으로 로그를 확인합니다 : 
 
 ```bash
 # follow the log dynamically

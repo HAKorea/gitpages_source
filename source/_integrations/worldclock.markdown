@@ -11,7 +11,7 @@ ha_codeowners:
   - '@fabaff'
 ---
 
-`worldclock` 센서 플랫폼은 단순히 다른 시간대(time zone)에 현재 시간을 표시한다.
+`worldclock` 센서 플랫폼은 단순히 다른 시간대(time zone)의 현재시간을 표시합니다.
 
 ## 설정 (Configuration)
 
@@ -36,7 +36,7 @@ name:
   default: Worldclock Sensor
 {% endconfiguration %}
 
-유효한 시간대 는 [Wikipedia overview](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)에서 **TZ** 열을 확인하십시오 . 또는 [pytz](https://pypi.python.org/pypi/pytz) 모듈 에서 전체 목록을 가져 옵니다 .
+유효한 시간대는 [Wikipedia overview](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)에서 **TZ** 열을 확인하십시오. 혹은 [pytz](https://pypi.python.org/pypi/pytz) 모듈에서 전체 목록을 가져옵니다 .
 
 ```shell
 python3 -c "import pytz;print(pytz.all_timezones)"

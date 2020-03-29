@@ -13,7 +13,9 @@ ha_codeowners:
   - '@bachya'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="388" src="https://www.youtube.com/embed/D--VKkI7Om4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 The `Notion` component retrieves data from [Notion](https://getnotion.com) wireless
 home monitoring sensor kits.

@@ -16,7 +16,7 @@ ha_codeowners:
 
 [Ambiclimate](https://ambiclimate.com/) 에어컨 컨트롤러를 홈어시스턴트에 연동합니다.
 
-`client_id` 및 `client_secret`을 얻으려면 [here](https://api.ambiclimate.com/clients) 응용 프로그램을 만들어야합니다.
+`client_id` 및 `client_secret`을 얻으려면 [여기](https://api.ambiclimate.com/clients) 응용 프로그램을 만들어야합니다.
 콜백 URL은 홈어시스턴트 `base_url` + `/api/ambiclimate`로 설정해야합니다. 예를 들어 `https://example.com/api/ambiclimate`
 
 이 플랫폼을 활성화하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오 :
@@ -41,7 +41,7 @@ client_secret:
   type: string
 {% endconfiguration %}
 
-홈어시스턴트에서 A/C를 제어하려면 Ambiclimate 앱에서 수동 모드를 선택해야합니다.
+홈어시스턴트에서 AC를 제어하려면 Ambiclimate 앱에서 수동 모드를 선택해야합니다.
 
 ## Component 서비스
 

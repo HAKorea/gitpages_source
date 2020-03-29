@@ -10,9 +10,9 @@ ha_codeowners:
   - '@home-assistant/core'
 ---
 
-`input_boolean`통합구성요소를 통해 사용자는 프론트 엔드에서 제어 할 수 있고 자동화 조건 내에서 사용할 수있는 boolean 값을 정의 할 수 있습니다. 예를 들어 특정 자동화를 비활성화하거나 활성화하는 데 사용할 수 있습니다.
+`input_boolean` 통합구성요소를 통해 사용자는 프론트 엔드에서 제어할 수 있고 자동화 조건 내에서 사용할 수있는 boolean 값을 정의할 수 있습니다. 예를 들어 특정 자동화를 비활성화하거나 활성화하는데 사용할 수 있습니다.
 
-설치에서 input boolean을 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오
+input boolean을 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오
 
 ```yaml
 # Example configuration.yaml entry
@@ -57,7 +57,7 @@ input_boolean:
 
 ### Restore State
 
-`initial` 에 유효한 값을 설정하면이 통합구성요소는 해당 값으로 설정된 상태로 시작됩니다. 그렇지 않으면, 홈어시스턴트 중지 이전의 상태를 복원합니다.
+`initial` 에 유효한 값을 설정하면 이 통합구성요소는 해당 값으로 설정된 상태로 시작됩니다. 그렇지 않으면, 홈어시스턴트 중지 이전의 상태를 복원합니다.
 
 ## Automation Examples
 
@@ -81,7 +81,7 @@ automation:
       message: "Honey, I'm home!"
 ```
 
-자동화에서 `input_boolean.turn_on`,`input_boolean.turn_off` 또는 `input_boolean.toggle`을 사용하여 `input_boolean`의 상태를 설정하거나 변경할 수도 있습니다.
+자동화에서 `input_boolean.turn_on`, `input_boolean.turn_off` 또는 `input_boolean.toggle`을 사용하여 `input_boolean`의 상태를 설정하거나 변경할 수도 있습니다.
 
 ```yaml
     - service: input_boolean.turn_on

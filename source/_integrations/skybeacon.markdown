@@ -7,7 +7,9 @@ ha_release: 0.37
 ha_iot_class: Local Polling
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/qHJz19Z1b7k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `skybeacon` 센서 플랫폼은 온도/센서 모듈과 함께 제공되며 [CR2477](https://cnsky9.en.alibaba.com/)밧데리로 구동되는 [iBeacon](https://en.wikipedia.org/wiki/IBeacon)/eddystone 센서를 지원합니다.
 

@@ -8,7 +8,9 @@ ha_release: 0.66
 ha_iot_class: Cloud Polling
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/DCuYVf1ii3A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/DCuYVf1ii3A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `foobot` 센서 플랫폼은 [Foobot device(s)](https://foobot.io/features/)에서 공기측정 데이터를 가져옵니다
 
@@ -38,7 +40,7 @@ sensor:
 
 ## 사용가능한 지표
 
-10 분마다 다음 측정 값의 마지막 10 분 평균을 가져옵니다.
+10 분마다 다음 측정값의 마지막 10 분 평균을 가져옵니다.
 
   * Temperature
   * Humidity

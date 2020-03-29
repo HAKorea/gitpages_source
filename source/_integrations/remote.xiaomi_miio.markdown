@@ -8,17 +8,19 @@ ha_release: 0.63
 ha_iot_class: Local Polling
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="388" src="https://www.youtube.com/embed/Y1rg0tXAqbI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
-`xiaomi miio` 원격 플랫폼을 사용하면 Xiaomi IR Remote 에서 적외선 리모콘 신호을 보낼 수 있습니다.
+`xiaomi miio` 원격 플랫폼을 사용하면 Xiaomi IR Remote 에서 적외선 리모콘 신호를 보낼 수 있습니다.
 
-## Setup
+## 셋업
 
-`configuration.yaml` 에서 사용할 API 토큰을 찾으려면 [액세스 토큰 검색] (/ integrations / vacuum.xiaomi_miio / # retrieving-the-access-token)의 지침을 따르십시오.
+`configuration.yaml` 에서 사용할 API 토큰을 찾으려면 [액세스 토큰 검색](/integrations/vacuum.xiaomi_miio/#retrieving-the-access-token)의 지침을 따르십시오.
 
-## Configuring the Platform
+## 플랫폼 설정하기
 
-Xiaomi IR Remote를 추가하려면`configuration.yaml` 에 다음을 추가하십시오:
+Xiaomi IR Remote를 추가하려면 `configuration.yaml` 에 다음을 추가하십시오:
 
 ```yaml
 remote:
@@ -56,7 +58,7 @@ commands:
   type: map
   keys:
     command:
-      description: 명령어 리스트는 [raw (learned command)](/integrations/remote.xiaomi_miio/#raw) or [pronto hex code](/integrations/remote.xiaomi_miio/#pronto-hex-code)로 표현 가능합니다. 
+      description: 명령어 리스트는 [raw (learned command)](/integrations/remote.xiaomi_miio/#raw) 혹은 [pronto hex code](/integrations/remote.xiaomi_miio/#pronto-hex-code)로 표현 가능합니다. 
       required: true
       type: list
 
@@ -104,7 +106,7 @@ script:
 
 ## 명령어 타입 종류
 
-The Xiaomi IR Remote Platform currently supports two different formats for IR codes.
+Xiaomi IR Remote Platform은 현재 IR 코드에 대해 서로 다른 두 가지 형식을 지원합니다.
 
 ### Raw
 
@@ -153,7 +155,7 @@ Xiaomi IR Remote Platform은 두 가지 서비스가 등록 가능 합니다.
 
 ### `remote.send_command`
 
-식별자를 사용하여 명명 된 명령을 보내거나 [명령 유형] (/ integrations / remote.xiaomi_miio / # command-types)에 정의 된 두 가지 유형 중 하나로 명령을 보낼 수 있습니다.
+식별자를 사용하여 명명된 명령을 보내거나 [명령 유형](/integrations/remote.xiaomi_miio/#command-types)에 정의된 두 가지 유형 중 하나로 명령을 보낼 수 있습니다.
 
 ### `xiaomi_miio.remote_learn_command`
 
@@ -161,6 +163,6 @@ Xiaomi IR Remote Platform은 두 가지 서비스가 등록 가능 합니다.
 
 학습 프로세스를 시작하려면 Xiaomi IR Remote의 entity_id를 사용하십시오.
 
-`slot` 및 `timeout` 을 지정할 수 있지만 동일한 슬롯에 대해 학습 된 여러 명령을 덮어 쓰더라도 [`remote.send_command`](/integrations/remote.xiaomi_miio/#remotesend_command) 를 사용하여 계속 보낼 수 있습니다.
+`slot` 및 `timeout` 을 지정할 수 있지만 동일한 슬롯에 대해 학습된 여러 명령을 덮어 쓰더라도 [`remote.send_command`](/integrations/remote.xiaomi_miio/#remotesend_command) 를 사용하여 계속 보낼 수 있습니다.
 
-명령을 학습 한 후 Overview에서 base64 명령문자열을 notification으로 찾을 수 있습니다. 명령문자열을 마우스 왼쪽 버튼으로 클릭하고 복사 옵션을 선택하여 해당 명령문자열을 복사 할 수 있습니다.
+명령을 학습한 후 Overview에서 base64 명령문자열을 notification으로 찾을 수 있습니다. 명령문자열을 마우스 왼쪽 버튼으로 클릭하고 복사 옵션을 선택하여 해당 명령문자열을 복사할 수 있습니다.

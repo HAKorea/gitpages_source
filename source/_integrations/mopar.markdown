@@ -11,7 +11,9 @@ ha_release: 0.53
 ha_iot_class: Cloud Polling
 ---
 
-<iframe width="690" height="388" src="https://www.youtube.com/embed/zXBm4TgyrXk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/zXBm4TgyrXk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `mopar` 통합구성요소는 uConnect 가입을 통해 FCA 차량 소유자에게 다음을 제공합니다.
 

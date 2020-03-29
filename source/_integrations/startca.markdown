@@ -8,7 +8,9 @@ ha_release: 0.64
 ha_iot_class: Cloud Polling
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="440" src="https://www.youtube.com/embed/eTr-346Do7E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 Integrate your [Start.ca](https://www.start.ca/) account information into Home Assistant.
 

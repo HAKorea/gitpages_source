@@ -7,7 +7,9 @@ ha_category:
 ha_release: pre 0.7
 ---
 
+<div class='videoWrapper'>
 <iframe width="692" height="388" src="https://www.youtube.com/embed/6c7_TpPUpL0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `slack` 플랫폼을 통해 Home Assistant에서 [Slack](https://slack.com/)으로 알림을 전달할 수 있습니다.
 

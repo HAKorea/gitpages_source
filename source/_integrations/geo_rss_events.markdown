@@ -22,7 +22,6 @@ ha_codeowners:
 
 *georss.org* 형식 또는 *WGS84 위도/경도*에서 위치를 `point` 또는 `polygon`으로 정의하는 피드 항목만 다룹니다. 
 
-The data is updated every 5 minutes.
 데이터는 5 분마다 업데이트됩니다.
 
 ## 설정

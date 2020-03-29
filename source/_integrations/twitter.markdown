@@ -7,7 +7,6 @@ ha_category:
 ha_release: 0.12
 ---
 
-The `twitter` notification platform uses [Twitter](https://twitter.com) to deliver notifications from Home Assistant.
 `twitter` 알림 플랫폼은 [Twitter](https://twitter.com)를 사용하여 Home Assistant에서 알림을 전달합니다.
 
 ## 셋업

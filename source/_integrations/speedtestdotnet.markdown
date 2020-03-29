@@ -11,9 +11,11 @@ ha_codeowners:
   - '@rohankapoorcom'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/kV3NBzz2Afw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
-`speedtestdotnet` 통합구성요소는 [Speedtest.net](https://speedtest.net/) 웹 서비스를 사용하여 네트워크 대역폭 성능을 측정합니다.
+`speedtestdotnet` 통합구성요소는 [Speedtest.net](https://speedtest.net/) 웹서비스를 사용하여 네트워크 대역폭 성능을 측정합니다.
 
 이 통합구성요소를 활성화하면 모니터링된 조건(아래)에 대한 Speedtest.net 센서가 자동으로 생성됩니다.
 
@@ -25,7 +27,7 @@ ha_codeowners:
 
 `server_id`의 경우 [available servers](http://www.speedtestserver.com)목록을 확인하십시오.
 
-Speedtest.net 센서를 설치에 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
+Speedtest.net 센서를 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 시간당 한 번 (기본값) :
 
@@ -77,7 +79,7 @@ scan_interval:
 
 ### 서비스
 
-일단 `speedtestdotnet` 통합구성요소는 필요할 때 Speedtest.net 속도 테스트를 실행하기 위해 호출  수있는 서비스 (`speedtestdotnet.speedtest`)를 노출합니다. 이 서비스에는 매개 변수가 없습니다. 수동 모드를 활성화한 경우 활용할 수 있습니다.
+일단 `speedtestdotnet` 통합구성요소는 필요할 때 Speedtest.net 속도 테스트를 실행하기 위해 호출될 수 있는 서비스(`speedtestdotnet.speedtest`)를 노출합니다. 이 서비스에는 매개 변수가 없습니다. 수동 모드를 활성화한 경우 활용할 수 있습니다.
 
 ```yaml
 action:
@@ -85,12 +87,12 @@ action:
 ```
 
 이 통합구성요소는 [speedtest-cli](https://github.com/sivel/speedtest-cli)를 사용하여 Speedtest.net에서 네트워크 성능 데이터를 수집합니다.
-이 통합구성요소가 표시할 수있는 잠재적인 [inconsistencies](https://github.com/sivel/speedtest-cli#inconsistency)에 유의하십시오.
-홈어시스턴트가 처음 시작되면 속도 테스트 센서의 값이 `Unknown` 으로 표시됩니다. `speedtestdotnet.speedtest` 서비스를 사용하여 수동 속도 테스트를 실행하고 데이터를 채우거나 정기적으로 예약된 다음 테스트를 기다릴 수 있습니다. 수동 모드를 켜서 예약된 속도 테스트를 비활성화 할 수 있습니다.
+이 통합구성요소가 표시할 수 있는 잠재적인 [inconsistencies](https://github.com/sivel/speedtest-cli#inconsistency)에 유의하십시오.
+홈어시스턴트가 처음 시작되면 속도 테스트 센서의 값이 `Unknown`으로 표시됩니다. `speedtestdotnet.speedtest` 서비스를 사용하여 수동 속도 테스트를 실행하고 데이터를 채우거나 정기적으로 예약된 다음 테스트를 기다릴 수 있습니다. 수동 모드를 켜서 예약된 속도 테스트를 비활성화할 수 있습니다.
 
 ## 사례
 
-이 섹션에서는이 구성 요소를 사용하는 방법에 대한 실제 예를 제공합니다.
+본 섹션에서는 이 구성 요소를 사용하는 방법에 대한 실제 예를 제공합니다.
 
 ### 주기적으로 실행
 
@@ -131,8 +133,8 @@ automation:
 
 ## 참고사항
 
-- Raspberry Pi에서 실행할 때 최대 속도는 LAN 어댑터에 의해 제한됩니다. Raspberry Pi 3+ 모델은 300Mbit/s의 [maximum throughput](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/)을 지원하는 기가비트 LAN 어댑터와 함께 제공됩니다.
+- Raspberry Pi에서 실행할 때 최대속도는 LAN 어댑터에 의해 제한됩니다. Raspberry Pi 3+ 모델은 300Mbit/s의 [maximum throughput](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/)을 지원하는 기가비트 LAN 어댑터와 함께 제공됩니다.
 - 이 통합구성요소를 실행하면 상당한 양의 메모리가 필요하므로 시스템 성능에 부정적인 영향을 줄 수 있습니다.
-- `monitored_conditions` 아래의 항목은 Home Assistant에서 사용할 수있는 엔티티 만 제어하며 실행시 조건들을 비활성화하지 않습니다.
+- `monitored_conditions` 아래의 항목은 Home Assistant에서 사용할 수 있는 엔티티만 제어하며 실행시 조건들을 비활성화하지 않습니다.
 - 자주 실행하는 경우이 통합구성요소에는 상당한 양의 데이터를 사용할 수 있습니다. 대역폭 제한 연결시엔 자주 업데이트하지 않아야합니다.
 - 속도 테스트가 실행되는 동안 네트워크 용량이 전부 활용됩니다. 이는 게임 콘솔이나 스트리밍 박스와 같은 네트워크를 사용하는 다른 장치에 부정적인 영향을 줄 수 있습니다.

@@ -87,7 +87,7 @@ apps:
   default: {}
   type: map
 device_class:
-  description: "장치 유형: `auto` (Android TV 또는 Fire TV 장치인지 감지), `androidtv` 또는`firetv`."
+  description: "장치 유형: `auto` (Android TV 또는 Fire TV 장치인지 감지), `androidtv` 또는 `firetv`."
   required: false
   default: auto
   type: string
@@ -97,11 +97,11 @@ state_detection_rules:
   default: {}
   type: map
 turn_on_command:
-  description: 기본 `turn_on` 명령을 대체 할 ADB 쉘 명령.
+  description: 기본 `turn_on` 명령을 대체할 ADB 쉘 명령.
   required: false
   type: string
 turn_off_command:
-  description: 기본 `turn_off` 명령을 대체 할 ADB 쉘 명령.
+  description: 기본 `turn_off` 명령을 대체할 ADB 쉘 명령.
   required: false
   type: string
 {% endconfiguration %}
@@ -176,7 +176,7 @@ Home Assistant 0.101 이전에는 이 ​​방법이 최신 장치에서는 제
 
 두 번째 옵션은 ADB 서버를 사용하여 Android TV 및 Fire TV 장치에 연결하는 것입니다.
 
-Hass.io 사용자의 경우 [Android Debug Bridge](https://github.com/hassio-addons/addon-adb/blob/master/README.md) 애드온을 설치할 수 있습니다. 이 방법을 사용하면 Home Assistant는 ADB 명령을 서버로 전송한 다음 Android TV / Fire TV 장치로 전송하여 Home Assistant에 다시 보고합니다. 이 옵션을 사용하려면 `adb_server_ip` 옵션을 설정에 추가하십시오. 홈 어시스턴트와 동일한 머신에서 서버를 실행중인 경우이 값으로 `127.0.0.1`을 사용할 수 있습니다.
+Hass.io 사용자의 경우 [Android Debug Bridge](https://github.com/hassio-addons/addon-adb/blob/master/README.md) 애드온을 설치할 수 있습니다. 이 방법을 사용하면 Home Assistant는 ADB 명령을 서버로 전송한 다음 Android TV / Fire TV 장치로 전송하여 Home Assistant에 다시 보고합니다. 이 옵션을 사용하려면 `adb_server_ip` 옵션을 설정에 추가하십시오. 홈어시스턴트와 동일한 머신에서 서버를 실행중인 경우 이 값으로 `127.0.0.1`을 사용할 수 있습니다.
 
 ## ADB 문제 해결
 
@@ -186,21 +186,21 @@ Android TV 또는 Fire TV 장치 설정에 실패하면 ADB 연결에 문제가 
 
 2. 장치에서 ADB를 사용할 수 없습니다.
 
-3. 다른 기기에서 ADB를 통해 Android TV / Fire TV에 ​​이미 연결되어 있습니다. 하나의 장치 만 연결할 수 있으므로 다른 장치의 연결을 끊고 Android TV / Fire TV를 다시 시작한 다음 (가정용) 홈어시스턴트를 다시 시작하십시오.
+3. 다른 기기에서 ADB를 통해 Android TV / Fire TV에 ​​이미 연결되어 있습니다. 하나의 장치만 연결할 수 있으므로 다른 장치의 연결을 끊고 Android TV / Fire TV를 다시 시작한 다음 정확한 동작을 위해 홈어시스턴트를 다시 시작하십시오.
 
-4. ADB 연결을 승인해야합니다. 위의 [ADB Setup](#adb-setup) 섹션에있는 참고 사항을 참조하십시오.
+4. ADB 연결을 승인해야합니다. 위의 [ADB Setup](#adb-setup) 섹션에 있는 참고 사항을 참조하십시오.
 
-5. 일부 Android TV 장치 (예: Android TV를 실행하는 Philips TV)는 Wi-Fi 인터페이스를 통한 초기 ADB 연결 요청만 수락합니다. TV가 유선 인 경우 WiFi에 연결하고 초기 연결을 다시 시도해야합니다. Wi-Fi를 통해 인증이 승인되면 유선 인터페이스를 통해 TV에 연결할 수도 있습니다.
+5. 일부 Android TV 장치 (예: Android TV를 실행하는 Philips TV)는 Wi-Fi 인터페이스를 통한 초기 ADB 연결 요청만 수락합니다. TV가 유선인 경우 WiFi에 연결하고 초기 연결을 다시 시도해야합니다. Wi-Fi를 통해 인증이 승인되면 유선 인터페이스를 통해 TV에 연결할 수도 있습니다.
 
-6. 장치가 WiFi를 끊어 ADB 연결을 끊고 Home Assistant에서 엔터티를 사용할 수 없는 경우 깨우기 잠금 유틸리티(such as [Wakelock](https://github.com/d4rken/wakelock-revamp))를 설치하여 이 문제가 발생하지 않도록 할 수 있습니다. 일부 사용자는 Xiaomi Mi Box 장치에서이 문제를 보고했습니다.
+6. 장치가 WiFi를 끊어 ADB 연결을 끊고 Home Assistant에서 엔터티를 사용할 수 없는 경우 깨우기 잠금 유틸리티([Wakelock](https://github.com/d4rken/wakelock-revamp)같은 유틸)를 설치하여 이 문제가 발생하지 않도록 할 수 있습니다. 일부 사용자는 Xiaomi Mi Box 장치에서 이 문제를 보고했습니다.
 
-7. 위에서 언급한 [Python ADB implementation](#1-python-adb-implementation) 접근 방식을 사용하는 경우 최신 장치에 문제가있을 수 있습니다. 이 경우 [ADB 서버](#2-adb-server) 방법을 대신 사용해야합니다.
+7. 위에서 언급한 [Python ADB implementation](#1-python-adb-implementation) 접근 방식을 사용하는 경우 최신 장치에 문제가 있을 수 있습니다. 이 경우 [ADB 서버](#2-adb-server) 방법을 대신 사용해야합니다.
 
 ## 서비스
 
 ### `media_player.select_source`
 
-`media_player.select_source` 명령을 사용하여 장치에서 앱을 시작할 수 있습니다. 간단히 앱 ID를 `source` 로 제공하십시오. 앱 ID 앞에 `!`를 붙여서 앱을 중지 할 수도 있습니다. 예를 들어 다음과 같이 Netflix를 시작 및 중지하도록 [scripts](/docs/scripts)를 정의 할 수 있습니다.
+`media_player.select_source` 명령을 사용하여 장치에서 앱을 시작할 수 있습니다. 간단히 앱 ID를 `source` 로 제공하십시오. 앱 ID 앞에 `!`를 붙여서 앱을 중지할 수도 있습니다. 예를 들어 다음과 같이 Netflix를 시작 및 중지하도록 [scripts](/docs/scripts)를 정의 할 수 있습니다.
 
 ```yaml
 start_netflix:
@@ -228,7 +228,7 @@ stop_netflix:
 | `entity_id`            |       no | Name(s) of Android TV / Fire TV entities.
 | `command`              |       no | Either a key command or an ADB shell command.
 
-[automation setup](/getting-started/automation/) 의 [action](/getting-started/automation-action/)에서 다음과 같이 보일 수 있습니다.
+[automation setup](/getting-started/automation/)의 [action](/getting-started/automation-action/)에서 다음과 같이 보이게 할 수 있습니다.
 
 ```yaml
 action:
@@ -251,11 +251,11 @@ action:
 - `BACK`
 - `MENU`
 
-주요 명령의 전체 목록은 [here](https://github.com/JeffLIrion/python-androidtv/blob/bf1058a2f746535921b3f5247801469c4567e51a/androidtv/constants.py#L143-L186)에서 찾을 수 있습니다 .
+주요 명령의 전체 목록은 [여기](https://github.com/JeffLIrion/python-androidtv/blob/bf1058a2f746535921b3f5247801469c4567e51a/androidtv/constants.py#L143-L186)에서 찾을 수 있습니다 .
 
-`GET_PROPERTIES` 명령을 사용하여 홈어시스턴트가 장치의 상태를 업데이트하는데 사용하는 속성을 검색 할 수도 있습니다. 이들은 미디어 플레이어의 `'adb_response'` 속성에 저장되고 INFO 레벨에서 기록됩니다. 이 정보는 백엔드 [androidtv](https://github.com/JeffLIrion/python-androidtv) 패키지에서 상태 감지를 개선하고 고유한 [custom state detection](#custom-state-detection) 규칙을 정의하는 데 사용될 수 있습니다.
+`GET_PROPERTIES` 명령을 사용하여 홈어시스턴트가 장치의 상태를 업데이트하는데 사용하는 속성을 검색할 수도 있습니다. 이들은 미디어 플레이어의 `'adb_response'` 속성에 저장되고 INFO 레벨에서 기록됩니다. 이 정보는 백엔드 [androidtv](https://github.com/JeffLIrion/python-androidtv) 패키지에서 상태 감지를 개선하고 고유한 [custom state detection](#custom-state-detection) 규칙을 정의하는 데 사용될 수 있습니다.
 
-다양한 의도(intents) 목록은 [here](https://gist.github.com/mcfrojd/9e6875e1db5c089b1e3ddeb7dba0f304)에서 찾을 수 있습니다
+다양한 의도(intents) 목록은 [여기](https://gist.github.com/mcfrojd/9e6875e1db5c089b1e3ddeb7dba0f304)에서 찾을 수 있습니다
 
 ### `androidtv.download` 및 `androidtv.upload`
 
@@ -277,7 +277,7 @@ action:
 
 ## 사용자 정의 상태 감지 (Custom State Detection)
 
-Android TV 통합은 Android TV / Fire TV 장치를 정기적으로 폴링하고 소수의 속성을 수집하여 작동합니다. 불행히도 모든 앱이 준수하는 기기의 상태를 결정하기 위한 표준 API는 없습니다. 대신, 백엔드 `androidtv` 패키지는 상태를 판별하기 위해 수집하는 세 가지 특성을 사용합니다. : `audio_state`, `media_session_state`, `wake_lock_size`. 상태를 결정하는 올바른 로직은 현재 앱에 따라 다르며 백엔드 `androidtv` 패키지는 소수의 앱에 대해 앱별 상태 감지 로직을 구현합니다. 물론, `androidtv` 패키지의 각 앱마다 맞춤형 로직을 구현하는 것은 불가능합니다. 또한 올바른 상태 감지 로직은 장치 및 장치 설정에 따라 다를 수 있습니다.
+Android TV 통합구성요소는 Android TV / Fire TV 장치를 정기적으로 폴링하고 몇가지 속성을 수집하여 작동합니다. 불행히도 모든 앱이 준수하는 기기의 상태를 결정하기 위한 표준 API는 없습니다. 대신, 백엔드 `androidtv` 패키지는 상태를 판별하기 위해 수집하는 세 가지 특성을 사용합니다. : `audio_state`, `media_session_state`, `wake_lock_size`. 상태를 결정하는 올바른 로직은 현재 앱에 따라 다르며 백엔드 `androidtv` 패키지는 몇가지 앱에 대해 앱별 상태 감지 로직을 구현합니다. 물론, `androidtv` 패키지의 각 앱마다 맞춤형 로직을 구현하는 것은 불가능합니다. 또한 올바른 상태 감지 로직은 장치 및 장치 설정에 따라 다를 수 있습니다.
 
 이 문제에 대한 해결책은 `state_detection_rules` 설정 매개 변수로, 상태 감지에 대한 고유한 규칙을 제공할 수 있습니다. 키는 앱ID이고 값은 순서대로 평가되는 규칙 목록입니다. 유효한 규칙은 다음과 같습니다. :
 

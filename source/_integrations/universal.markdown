@@ -8,9 +8,9 @@ ha_release: 0.11
 ha_quality_scale: internal
 ---
 
-Universal Media Player는 Home Assistant의 여러 기존 엔티티를 하나의 미디어 플레이어 엔티티로 결합합니다. 전체 미디어 센터를 제어하는 ​​단일 엔터티를 만드는 데 사용됩니다.
+Universal Media Player는 Home Assistant의 여러 기존 엔티티를 하나의 Media Player 엔티티로 결합합니다. 전체 미디어 센터를 제어하는 ​​단일 엔터티를 만드는데 사용됩니다.
 
-Universal 미디어 플레이어에서 여러 미디어 플레이어 개체를 제어할 수 있습니다. 또한 Universal 미디어 플레이어를 사용하면 볼륨 및 전원 명령을 홈어시스턴트의 다른 엔티티로 다시 라우팅 할 수 있습니다. 이를 통해 전원 및 볼륨이 있는 텔레비전 또는 오디오 수신기와 같은 외부 장치를 제어 할 수 있습니다.
+Universal Media Player에서 여러 Media Player 개체를 제어할 수 있습니다. 또한 Universal Media Player를 사용하면 볼륨 및 전원 명령을 홈어시스턴트의 다른 엔티티로 다시 라우팅할 수 있습니다. 이를 통해 전원 및 볼륨이 있는 텔레비전 또는 오디오 수신기와 같은 외부 장치를 제어할 수 있습니다.
 
 `configuration.yaml`에서 다음과 같이 Universal Media Player가 생성됩니다.
 
@@ -66,9 +66,9 @@ attributes:
   type: string
 {% endconfiguration %}
 
-Universal Media Player는 주로 `children` 중 하나를 모방합니다. Universal Media Player는 활성화 된 (not idle/off) 목록의 첫 번째 child을 제어합니다. 유니버설 미디어 플레이어는 또한 `state_template`이 제공되지 않으면 첫 번째 활성 child에서 상태를 상속합니다. `children:` 목록의 엔티티는 미디어 플레이어 여야하지만 상태 템플릿은 어떤 엔티티도 포함할 수 있습니다.
+Universal Media Player는 주로 `children` 중 하나를 모방합니다. Universal Media Player는 활성화된 (not idle/off) 목록의 첫 번째 child을 제어합니다. Universal Media Player는 또한 `state_template`이 제공되지 않으면 첫 번째 활성 child에서 상태를 상속합니다. `children:` 목록의 엔티티는 Media Player여야하지만 상태 템플릿은 어떤 엔티티도 포함할 수 있습니다.
 
-`turn_on` 명령, `turn_off` 명령 및 `state` 속성은 모두 함께 제공하는 것이 좋습니다. `state` 속성은 미디어 플레이어가 켜져 있는지 꺼져 있는지를 나타냅니다. `state`는 미디어 플레이어가 꺼져 있음을 나타내는 경우, 이 상태는 child의 상태보다 우선합니다. 모든 child가 idle/off 이고 상태가 켜져 있으면 Universal Media Player의 상태가 켜집니다.
+`turn_on` 명령, `turn_off` 명령 및 `state` 속성은 모두 함께 제공하는 것이 좋습니다. `state` 속성은 Media Player가 켜져 있는지 꺼져 있는지를 나타냅니다. `state`는 Media Player가 꺼져 있음을 나타내는 경우, 이 상태는 child의 상태보다 우선합니다. 모든 child가 idle/off 이고 상태가 켜져 있으면 Universal Media Player의 상태가 켜집니다.
 
 `volume_up` 명령, `vol_down` 명령, `volume_mute` 명령 및 `_is_volume_muted` 속성을 모두 함께 제공하는 것이 좋습니다. `is_volume_muted` 속성은 볼륨이 음소거되면 True 또는 on 상태를 반환해야합니다. `volume_mute` 서비스는 음소거 설정을 토글합니다.
 
@@ -137,9 +137,9 @@ media_player:
 
 이 예에서 [Kodi Media Player](/integrations/kodi)는 CEC 가능 장치 (예: Raspberry Pi 24/7에서 실행되는 OSMC/OpenElec)에서 실행되며 JSON-CEC Kodi 애드온이 설치된 연결된 TV를 켜고 끌 수 있습니다.
 
-연결된 TV의 상태를 숨겨진 [input boolean](/integrations/input_boolean/)에 저장하므로 Kodi가 항상 'idle'인 동안 TV를 켜거나 끄고 universal 미디어 플레이어를 사용하여 상태를 템플릿으로 렌더링합니다.  Kodi Media Player도 숨길 수 있으며 universal만 표시합니다. 이제는 'idle'상태와 'off'상태를 구분할 수 있습니다. (몇 초가 지나가면 idle일 때 TV는 꺼집니다).
+연결된 TV의 상태를 숨겨진 [input boolean](/integrations/input_boolean/)에 저장하므로 Kodi가 항상 'idle'인 동안 TV를 켜거나 끄고 universal Media Player를 사용하여 상태를 템플릿으로 렌더링합니다.  Kodi Media Player도 숨길 수 있으며 universal만 표시합니다. 이제는 'idle'상태와 'off'상태를 구분할 수 있습니다. (몇 초가 지나가면 idle일 때 TV는 꺼집니다).
 
-TV 상태를 저장하는데 사용되는 input boolean은 홈어시스턴트 `turn_on` 및 `turn_off` 액션을 사용할 때만 변경되므로 Kodi는 여러 가지 방법으로 제어 할 수 있으므로 필요할 때 이 input boolean을 업데이트하기 위한 자동화도 정의합니다.
+TV 상태를 저장하는데 사용되는 input boolean은 홈어시스턴트 `turn_on` 및 `turn_off` 액션을 사용할 때만 변경되므로 Kodi는 여러 가지 방법으로 제어할 수 있으므로 필요할 때 이 input boolean을 업데이트하기 위한 자동화도 정의합니다.
 
 완전한 설정은 다음과 같습니다. :
 

@@ -17,7 +17,7 @@ ha_release: 0.27
 
 ## 설정
 
-소음 감지 기능이있는 FFmpeg를 설치에 추가하려면`configuration.yaml` 파일에 다음을 추가하십시오.
+노이즈 감지 기능이 있는 FFmpeg를 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

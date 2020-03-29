@@ -9,7 +9,9 @@ ha_codeowners:
   - '@robbiet480'
 ---
 
-<iframe width="690" height="388" src="https://www.youtube.com/embed/dUy8SR5qCvE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/dUy8SR5qCvE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 [GNTP](http://growl.info/documentation/developer/gntp.php) is a specification for sending and receiving notifications between computers. The most well known server implementations are [Growl](http://grㅇowl.info) for Mac and [Growl for Windows](http://www.growlforwindows.com/).
 

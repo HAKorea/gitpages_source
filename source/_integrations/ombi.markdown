@@ -10,6 +10,10 @@ ha_codeowners:
   - '@larssont'
 ---
 
+<div class='videoWrapper'>
+<iframe width="776" height="485" src="https://www.youtube.com/embed/QPNlqqkjNJw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 The `Ombi` integration monitors data from your [Ombi](https://ombi.io) instance.
 
 ## Setup

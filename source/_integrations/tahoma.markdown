@@ -47,7 +47,7 @@ password:
   required: true
   type: string
 exclude:
-  description: 제외 할 장치 목록.
+  description: 제외할 장치 목록.
   required: false
   type: list
 {% endconfiguration %}

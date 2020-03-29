@@ -13,7 +13,9 @@ ha_codeowners:
   - '@vanstinator'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="388" src="https://www.youtube.com/embed/zPHy5okxnTk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `raincloud` 통합구성요소를 통해 [Melnor RainCloud](https://wifiaquatimer.com) 스프링클러 시스템을 Home Assistant에 연동할 수 있습니다.
 
@@ -47,7 +49,7 @@ password:
 
 ## Binary Sensor
 
-[Raincloud component](#configuration)를 활성화하고 난 후 `configuration.yaml` 파일에 다음을 추가하십시오.
+[Raincloud component](#configuration)를 활성화한 뒤 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -70,7 +72,7 @@ monitored_conditions:
 
 ## Sensor
 
-[Raincloud component](#configuration)를 활성화하고 난 후 `configuration.yaml` 파일에 다음을 추가하십시오.
+[Raincloud component](#configuration)를 활성화한 뒤 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -97,7 +99,7 @@ monitored_conditions:
 
 ## Switch
 
-[Raincloud component](#configuration)를 활성화하고 난 후 `configuration.yaml` 파일에 다음을 추가하십시오.
+[Raincloud component](#configuration)를 활성화한 뒤 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

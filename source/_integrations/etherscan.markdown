@@ -8,7 +8,9 @@ ha_release: 0.47
 ha_iot_class: Cloud Polling
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/RYXD4xqurmE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/RYXD4xqurmE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `Etherscan` 센서 플랫폼은 [Etherscan.io](https://etherscan.io)의 Ether 및 ERC-20 토큰 잔액을 표시합니다.
 

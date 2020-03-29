@@ -12,7 +12,9 @@ ha_codeowners:
   - '@heythisisnate'
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/S5u75YaHgsY?list=PLdUNT36dLo6aKDtVr41maak3zbw7BuRVd" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/S5u75YaHgsY?list=PLdUNT36dLo6aKDtVr41maak3zbw7BuRVd" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 The `konnected` integration lets you connect wired sensors and switches to a NodeMCU ESP8226 based device running the [open source Konnected software](https://github.com/konnected-io/konnected-security). Reuse the wired sensors and siren from an old or pre-wired alarm system installation and integrate them directly into Home Assistant.
 

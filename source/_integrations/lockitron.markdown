@@ -8,13 +8,15 @@ ha_iot_class: Cloud Polling
 ha_release: 0.42
 ---
 
-`lockitron` 플랫폼을 사용하면 Home Assistant 내에서 [Lockitron](https://lockitron.com/) lock을 제어할 수 있습니다.
-
+<div class='videoWrapper'>
 <iframe width="650" height="437" src="https://www.youtube.com/embed/AWo1YjBF1Z8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+`lockitron` 플랫폼을 사용하면 Home Assistant 내에서 [Lockitron](https://lockitron.com/) lock을 제어할 수 있습니다.
 
 ## 셋업
 
-올바른 `access_token` 및 `id`를 얻으려면 [developer page](https://api.lockitron.com/)에 로그온하여 새 앱을 작성한 후 그들이 제공 한 access_token을 받으십시오. 그런 다음 페이지에서 모든 lock 검색 기능을 호출하고 lock ID를 가져 오십시오 (lock ID가 생성되고 가상 lock이 아닌 lock ID를 가져 오십시오).
+올바른 `access_token` 및 `id`를 얻으려면 [developer page](https://api.lockitron.com/)에 로그온하여 새 앱을 작성한 후 그들이 제공한 access_token을 받으십시오. 그런 다음 페이지에서 모든 lock 검색 기능을 호출하고 lock ID를 가져 오십시오 (lock ID가 생성되고 가상 lock이 아닌 lock ID를 가져 오십시오).
 
 ## 설정
 

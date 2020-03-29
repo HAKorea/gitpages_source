@@ -10,7 +10,7 @@ ha_iot_class: Local Push
 
 <div class='note'>
 
-이 통합구성요소를 사용하려면 `knx` 연동을 올바르게 구성해야합니다. [KNX Integration](/integrations/knx)을 참조하십시오.
+이 통합구성요소를 사용하려면 `knx` 연동을 올바르게 설정해야합니다. [KNX Integration](/integrations/knx)을 참조하십시오.
 
 </div>
 

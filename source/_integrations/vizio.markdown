@@ -11,17 +11,17 @@ ha_codeowners:
   - '@raman325'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="388" src="https://www.youtube.com/embed/n1KNQfmgI8A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 Vizio SmartCast 장치는 **설정** -> **통합구성요소** -> **Vizio SmartCast** 로 쉽게 설정 가능합니다. 
 
-이하는 참조로만 보도록 하십시오. 
+`vizio` 통합구성요소를 통해 [SmartCast](https://www.vizio.com/smartcast-app) 호환 TV 및 사운드 바(2016+ 모델)를 제어할 수 있습니다.
 
-The `vizio` integration allows you to control [SmartCast](https://www.vizio.com/smartcast-app)-compatible TVs and sound bars (2016+ models).
+## 장치 찾기
 
-## Find your device
-
-Install the command line tool using `pip` (or download it manually):
+`pip`를 사용하여 command line tool으로 설치하거나 수동으로 다운로드하십시오. : 
 
 ```bash
 $ pip3 install pyvizio
@@ -44,45 +44,45 @@ Find your device using the following command:
 pyvizio --ip=0 discover
 ```
 
-and note its IP address. If using the IP address by itself does not work, you may need to append `:9000` or `:7345` to it when using it as a parameter in future commands.
+IP 주소를 기록해 두십시오. IP 주소 자체를 사용할 수 없는 경우 다음 명령에서 매개 변수로 사용할 때 `:9000` 또는 `:7345`를 추가해야합니다.
 
-## Pairing
+## 페어링
 
-Before adding your device to Home Assistant, you may need to pair it manually. In particular, it is unclear how a sound bar would notify you of a valid auth token. In this case, it might be best to first skip the pairing process entirely, specify a `device_class` of `speaker` in your configuration, and try interacting with the entity to see if you have any success. If the media player controls aren't working, and if specifying different ports as mentioned above doesn't work, you will need to find a way to obtain the auth token during this process.
+장치를 Home Assistant에 추가하기 전에 수동으로 페어링해야 할 수 있습니다. 특히, 사운드 바가 유효한 인증 토큰을 어떻게 알리는지 확실하지 않습니다. 이 경우 먼저 페어링 프로세스를 완전히 건너 뛰고 설정에서 `speaker`로 `device_class`를 지정한 다음 엔터티와 상호 작용하여 성공 여부를 확인하는 것이 가장 좋습니다. 미디어 플레이어 컨트롤이 작동하지 않고 위에서 언급 한대로 다른 포트를 지정해도 작동하지 않으면 이 프로세스 중에 인증 토큰을 얻는 방법을 찾아야합니다.
 
-To obtain an auth token, follow these steps:
+인증 토큰을 얻으려면 다음 단계를 수행하십시오. : 
 
-Make sure that your device is on before continuing.
+계속하기 전에 장치가 켜져 있는지 확인하십시오.
 
 | Parameter       | Description          |
 |:----------------|:---------------------|
 | `ip`            | IP address (possibly including port) obtained from the previous section |
 | `device_type`   | The type of device you are connecting to. Options are `tv` or `speaker` |
 
-Enter the following command to initiate pairing:
+페어링을 시작하려면 다음 명령을 입력하십시오. : 
 
 ```bash
 $ pyvizio --ip={ip} --device_type={device_type} pair
 ```
 
-Initiation will show you two different values:
+시작하면 두 가지 다른 값이 표시됩니다. : 
 
 | Value           | Description          |
 |:----------------|:---------------------|
 | Challenge type  | Usually it should be `"1"`. If not, use the additional parameter `--ch_type=your_type` in the next step |
 | Challenge token | Token required to finalize pairing in the next step |
 
-At this point, a PIN code should be displayed at the top of your TV. With all these values, you can now finish pairing:
+이때 TV 상단에 PIN 코드가 표시되어야합니다. 이 모든 값을 사용하여 페어링을 완료할 수 있습니다.
 
 ```bash
 $ pyvizio --ip={ip} --device_type={device_type} pair-finish --token={challenge_token} --pin={pin}
 ```
 
-You will need the authentication token returned by this command to configure Home Assistant.
+Home Assistant를 설정하려면 이 명령으로 리턴된 인증 토큰이 필요합니다.
 
-## Configuration
+## 설정
 
-To add your Vizio TV to your installation, add the following to your `configuration.yaml` file:
+Vizio TV를 설치에 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -117,16 +117,16 @@ volume_step:
   default: 1
 {% endconfiguration %}
 
-## Notes and limitations
+## 참고사항과 한계점
 
-### Turning device on
+### 장치 켜기
 
-If the `Power Mode` of your device is set to `Eco Mode`, turning the device on won't work.
+장치의 `Power Mode`가 `Eco Mode`로 설정되어 있으면 장치를 켤 수 없습니다.
 
-### Changing tracks
+### 트랙 변경
 
-Changing tracks works like switching channels. If the current input is anything other than regular TV, this command might not do anything.
+트랙 변경은 채널 전환처럼 작동합니다. 현재 입력이 일반 TV 이외의 것이면 이 명령은 아무 것도 수행하지 않을 수 있습니다.
 
-### Sources
+### 입력 신호(Sources)
 
-The source list shows all external devices connected to the Vizio device through HDMI, plus a list of internal devices (TV mode, Chromecast, etc.)
+입력 목록에는 HDMI를 통해 Vizio 장치에 연결된 모든 외부 장치와 내부 장치 (TV mode, Chromecast 등) 목록이 표시됩니다.

@@ -18,7 +18,7 @@ ha_release: 0.14
 
 ## 설정
 
-설치에서 Steam을 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
+Steam을 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

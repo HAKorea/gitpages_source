@@ -8,16 +8,18 @@ ha_release: '0.40'
 ha_config_flow: true
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/JCjzEKdlezk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
-The `twilio` integration enables the sending of notifications via SMS and the creation of calls with [Twilio](https://twilio.com).
+`twilio` 통합구성요소는 SMS를 통해 알림을 전송하고 [Twilio](https://twilio.com)를 통해 전화통화를 생성할 수 있습니다.
 
-A free trial account is available at [Twilio](https://twilio.com) website providing free calls to verified phone numbers.
-Calls are limited to 10 minutes and will play a short trial message before your message runs. Upgraded accounts have no limitation.
+무료 평가판 계정은 [Twilio](https://twilio.com) 웹 사이트에서 확인된 전화 번호로 무료 통화를 제공합니다.
+통화는 10 분으로 제한되며 메시지가 실행되기 전에 짧은 평가판 메시지를 재생합니다. 업그레이드된 계정에는 제한이 없습니다.
 
-## Configuration
+## 설정
 
-To use this notification integration in your installation, add the following to your `configuration.yaml` file:
+이 알림 통합구성요소를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -37,19 +39,19 @@ auth_token:
   type: string
 {% endconfiguration %}
 
-### Usage
+### 사용법
 
-After configuring the base Twilio component, add and configure either or both of the [twilio SMS](/integrations/twilio_sms) and [twilio Phone](/integrations/twilio_call) integrations to utilize the notification functionality.
+기본 Twilio 구성 요소를 설정한 후 [twilio SMS](/integrations/twilio_sms) 및 [twilio Phone](/integrations/twilio_call) 통합구성요소 중 하나 혹은 둘 다를 추가하고 설정하여 알림 기능을 활용하십시오.
 
-To be able to receive events from Twilio, your Home Assistant instance needs to be accessible from the web ([Hass.io instructions](/addons/duckdns/)) and you need to have the `base_url` configured for the HTTP integration ([docs](/integrations/http/#base_url)).
+Twilio에서 이벤트를 수신하려면 웹에서 홈어시스턴트 인스턴스에 액세스할 수 있어야하고 ([Hass.io instructions](/addons/duckdns/)) HTTP 연동을 위해 `base_url`을 설정해야합니다 ([문서](/integrations/http/# base_url)).
 
-To set it up, go to the integrations page in the configuration screen and find Twilio. Click on configure. Follow the instructions on the screen to configure Twilio.
+설정하려면 설정 화면의 통합구성요소 페이지로 이동하여 Twilio를 찾으십시오. 설정을 클릭하십시오. 화면의 지시사항에 따라 Twilio를 설정하십시오.
 
-You will get a URL of the following format: `https://<home-assistant-domain>/api/webhook/9940e99a26fae4dcf6fe0a478124b6b58b578ea4c55c9a584beb1c9f5057bb91`. To generate inbound events, you have to configure your webhooks with [Twilio](https://www.twilio.com/docs/glossary/what-is-a-webhook)
+다음 형식의 URL이 제공됩니다. : `https://<home-assistant-domain>/api/webhook/9940e99a26fae4dcf6fe0a478124b6b58b578ea4c55c9a584beb1c9f5057bb91`. 인바운드 이벤트를 생성하려면 [Twilio](https://www.twilio.com/docs/glossary/what-is-a-webhook)를 사용하여 웹 후크를 설정해야합니다.
 
-Events coming in from Twilio will be available as events in Home Assistant and are fired as `twilio_data_received`. The data specified by Twilio will be available as the event data. You can use this event to trigger automations.
+Twilio에서 들어오는 이벤트는 Home Assistant에서 이벤트로 사용할 수 있으며 `twilio_data_received`로 시작됩니다. Twilio가 지정한 데이터는 이벤트 데이터로 사용 가능합니다. 이 이벤트를 사용하여 자동화를 트리거할 수 있습니다.
 
-You can then consume that information with the following automation:
+그런 후 다음 자동화를 통해 해당 정보를 사용할 수 있습니다. : 
 
 ```yaml
 automation:

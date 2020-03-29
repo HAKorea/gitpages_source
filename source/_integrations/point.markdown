@@ -15,7 +15,9 @@ ha_codeowners:
   - '@fredrike'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="388" src="https://www.youtube.com/embed/GGgVRjiepUI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 The Point hub enables integration with the [Minut Point](https://minut.com/). To connect with Point, you will have to [sign up for a developer account](https://minut.com/community/developers/) and get a `client_id` and `client_secret` with the `callback url` configured as your Home Assistant `base_url` + `/api/minut`, e.g. `http://localhost:8123/api/minut`. The `client_id` and `client_secret` should be used as below.
 

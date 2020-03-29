@@ -12,7 +12,9 @@ ha_codeowners:
   - '@kbickar'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/5RyDxZLA8b8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 [Sense](https://sense.com) 미터 정보를 Home Assistant에 연동하십시오.
 
@@ -49,7 +51,7 @@ timeout:
 
 다음 이름으로 사용량 및 생산량용 센서가 추가됩니다.
 
-- **Active Usage/Production**: 와트단위의 현재 유효 전력사용량/생산량. 60 초마다 업데이트됩니다.
+- **Active Usage/Production**: W 단위의 현재 유효 전력사용량/생산량. 60 초마다 업데이트됩니다.
 - **Daily/Weekly/Monthly Usage/Production**: kWh 단위의 일일/주간/월간 전력사용량 및 생산량. 5분마다 업데이트됩니다.
 
 Sense 모니터에서 감지된 각 장치에 대해 이진 센서가 만들어져 전원 상태를 표시합니다.

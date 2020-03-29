@@ -1,5 +1,5 @@
 ---
-title: Time of Flight
+title: 거리측정센서(Time of Flight)
 description: Instructions on how to integrate a VL53L1X ToF sensor into Home Assistant.
 logo: raspberry-pi.png
 ha_category:
@@ -9,17 +9,17 @@ ha_release: '0.90'
 ha_iot_class: Local Polling
 ---
 
-The Time of Flight sensor uses an invisible laser to measure distance with millimeter resolution.
+Time of Flight 센서는 보이지 않는 레이저를 사용하여 밀리미터 해상도로 거리를 측정합니다. 
 
-Tested devices:
+테스트된 장치 :
 
 - [Raspberry Pi](https://www.raspberrypi.org/)
 - [VL53L1X](https://www.st.com/en/imaging-and-photonics-solutions/vl53l1x.html)
 - [Schematic](https://cdn.sparkfun.com/assets/3/5/c/e/2/Qwiic_Distance_Sensor_-_VL53L1X.pdf)
 
-## Configuration
+## 설정
 
-To use the VL53L1X sensor in your installation, add to your `configuration.yaml`:
+VL53L1X 센서를 사용하려면 `configuration.yaml`에 다음을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -50,9 +50,9 @@ xshut:
   type: integer
 {% endconfiguration %}
 
-## Example
+## 사례
 
-The distance is measured in millimeters, according to the VL53L1X specifications.
+거리는 VL53L1X 사양에 따라 밀리미터 단위로 측정됩니다.
 
 ```yaml
 # Example of customized configuration.yaml entry
@@ -62,11 +62,11 @@ sensor:
     i2c_address: 0x29
     xshut: 16
 ```
-Several devices may be attached and a GPIO port from RPI is used for reset. XSHUT signal is generated pulsing LOW at initialization and after that, it is kept HIGH all time. This version uses VL53L1X long-range mode that may reach up to 4 meters.
+여러 장치가 연결되어 있고 RPI의 GPIO 포트가 재설정에 사용됩니다. 초기화시 XSHUT 신호가 펄스 LOW로 생성된 후 항상 HIGH로 유지됩니다. 이 버전은 VL53L1X 장거리 모드를 사용하며 최대 4 미터에 이를 수 있습니다.
 
-## Directions for installing i2c on Raspberry Pi
+## Raspberry Pi에 i2c 설치 지침
 
-Enable the I2c interface with the Raspberry Pi configuration utility:
+Raspberry Pi 설정 유틸리티를 사용하여 I2c 인터페이스를 활성화하십시오.
 
 ```bash
 # pi user environment: Enable i2c interface
@@ -88,9 +88,9 @@ $ sudo addgroup homeassistant i2c
 $ sudo reboot
 ```
 
-### Check the i2c address of the sensor
+### 센서의 i2c 주소 확인
 
-After installing `i2c-tools`, a new utility is available to scan the addresses of the connected sensors:
+`i2c-tools`를 설치한 후, 연결된 센서의 주소를 스캔할 수 있는 새로운 유틸리티가 제공됩니다 :
 
 ```bash
 $ /usr/sbin/i2cdetect -y 1
@@ -110,4 +110,4 @@ It will output a table like this:
 70: -- -- -- -- -- -- -- --
 ```
 
-So you can see the sensor address what you are looking for is **0x29** (there are more i2c sensors in this Raspberry Pi).
+따라서 찾고있는 센서 주소가 **0x29**임을 알 수 있습니다 (이 라즈베리 파이에는 i2c 센서가 더 있습니다).

@@ -19,7 +19,7 @@ MyLeviton API를 통한 [Leviton Decora Wi-Fi](https://www.leviton.com/en/produc
 - [DW6HD1-BZ](https://www.leviton.com/en/products/dw6hd-1bz) (Decora Smart Wi-Fi 600W Dimmer)
 - [DW15S-1BZ](https://www.leviton.com/en/products/dw15s-1bz) (Decora Smart Wi-Fi 15A Switch)
 
-이 라이트를 활성화하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오.
+이 조명을 활성화하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

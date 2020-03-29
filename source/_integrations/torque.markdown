@@ -8,9 +8,11 @@ ha_release: '0.10'
 ha_iot_class: Cloud Polling
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/JIa0nsrQXI0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
-`Torque` 플랫폼을 사용하면 Torque 모바일 애플리케이션을 통해 Bluetooth OBD2 스틱에서 릴레이된 [Torque](https://torque-bhp.com/) 데이터를 모니터링 할 수 있습니다.
+`Torque` 플랫폼을 사용하면 Torque 모바일 애플리케이션을 통해 Bluetooth OBD2 스틱에서 릴레이된 [Torque](https://torque-bhp.com/) 데이터를 모니터링할 수 있습니다.
 
 ## 셋업
 

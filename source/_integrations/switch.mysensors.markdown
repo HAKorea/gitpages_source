@@ -46,13 +46,12 @@ S_WATER_QUALITY | V_STATUS
 
 플랫폼의 액추에이터를 활성화하려면 위의 각 S_TYPE에 대한 모든 V_TYPES가 필요합니다. 해당 V_TYPE이 필요한 경우 라이브러리 버전에 따라 V_LIGHT 또는 V_STATUS를 사용하십시오.
 
-For more information, visit the [serial api] of MySensors.
 자세한 내용은 MySensors의 [serial api]를 방문하십시오.
 
 ## 서비스
 
 MySensors 스위치 플랫폼은 IR 스위치 장치의 IR 코드 속성을 변경하고 스위치를 켜는 서비스를 제공합니다. 
-MySensors 구성 요소의 [config](/integrations/mysensors/#configuration)에서 `optimistic` 이 `true`로 설정되어 있으면 IR 스위치가 켜진 후 자동으로 꺼집니다. 리모컨의 푸시 버튼을 시뮬레이션합니다. `optimistic`이 `false`인 경우 MySensors 장치는 스위치를 재설정하기 위해 업데이트 된 상태를 보고해야합니다. 아래 IR 스위치에 대한  [example sketch](#ir-switch-sketch)를 참조하십시오.
+MySensors 구성 요소의 [config](/integrations/mysensors/#configuration)에서 `optimistic` 이 `true`로 설정되어 있으면 IR 스위치가 켜진 후 자동으로 꺼집니다. 리모컨의 푸시 버튼을 시뮬레이션합니다. `optimistic`이 `false`인 경우 MySensors 장치는 스위치를 재설정하기 위해 업데이트된 상태를 보고해야합니다. 아래 IR 스위치에 대한  [example sketch](#ir-switch-sketch)를 참조하십시오.
 
 | Service | Description |
 | ------- | ----------- |

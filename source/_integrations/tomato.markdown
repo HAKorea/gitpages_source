@@ -7,7 +7,9 @@ ha_category:
 ha_release: pre 0.7
 ---
 
+<div class='videoWrapper'>
 <iframe width="776" height="437" src="https://www.youtube.com/embed/1UkoZ-YQz7c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 The `tomato` platform requires an extra config variable called `http_id`. The
 value can be obtained by logging in to the Tomato admin interface and search for

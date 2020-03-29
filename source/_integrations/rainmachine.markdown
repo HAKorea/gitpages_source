@@ -14,7 +14,9 @@ ha_codeowners:
   - '@bachya'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="388" src="https://www.youtube.com/embed/Q0afxjfgPKs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `rainmachine` 통합구성요소는 [RainMachine smart Wi-Fi sprinkler controllers](https://www.rainmachine.com/)와 관련된 모든 플랫폼을 연동하기 위한 주요 통합구성요소입니다.
 
@@ -193,7 +195,7 @@ RainMachine 영역을 중지하십시오.
 
 ## Switch
 
-`rainmachine` 스위치 플랫폼을 사용하면 [RainMachine smart Wi-Fi sprinkler controller](https://www.rainmachine.com/) 내에서 프로그램 및 구역을 제어할 수 있습니다.
+`rainmachine` 스위치 플랫폼을 사용하면 [RainMachine smart Wi-Fi sprinkler controller](https://www.rainmachine.com/) 내에서 프로그램 및 영역을 제어할 수 있습니다.
 
 ### 장치 제어하기
 

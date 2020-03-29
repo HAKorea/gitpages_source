@@ -11,9 +11,11 @@ ha_codeowners:
   - '@fabaff'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/MQJvwuwz3Ig" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
-`workday` 이진 센서는 현재 일이 근무일인지 여부를 나타냅니다. 요일로 계산할 요일을 지정할 수 있으며 Python 모듈 [holidays](https://pypi.python.org/pypi/holidays)을 사용하여 지역별 공휴일에 대한 정보를 연동할 수 있습니다.
+`workday` 이진 센서는 현재 날짜가 근무일인지 여부를 나타냅니다. 근무일로 계산할 요일을 지정할 수 있으며 Python 모듈 [holidays](https://pypi.python.org/pypi/holidays)을 사용하여 지역별 공휴일에 대한 정보를 연동할 수 있습니다.
 
 ## 셋업
 
@@ -115,6 +117,6 @@ automation:
 
 <div class='note'>
 
-[as explained here](/docs/configuration/devices/) 하나의 `automation:`항목만 가질 수 있습니다. 기존 자동화에 자동화를 추가하십시오.
+[여기 설명과 같이](/docs/configuration/devices/) 하나의 `automation:`항목만 가질 수 있습니다. 기존 자동화에 자동화를 추가하십시오.
 
 </div>

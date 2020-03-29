@@ -78,4 +78,4 @@ power_on_enabled:
 - LC-60SQ15U
 - LC-50US40 (no volume control, not fully tested)
 
-모델이 목록에 없으면 테스트를 해보고 모든 것이 올바르게 작동하면 [GitHub](https://github.com/home-assistant/home-assistant.io/blob/current/source/_integrations/aquostv.markdown)의 목록에 추가하십시오.
+모델이 목록에 없으면 테스트를 해보고 모든 것이 올바르게 작동하면 [GitHub](https://github.com/home-assistant/home-assistant.io/blob/current/source/_integrations/aquostv.markdown)의 목록에 추가해 주십시오.

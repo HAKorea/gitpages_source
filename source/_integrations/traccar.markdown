@@ -11,17 +11,19 @@ ha_codeowners:
   - '@ludeeus'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/F6EPwLjFdcA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `Traccar`는 추적시 GPS를 사용하며 1500 가지가 넘는 다양한 유형의 장치를 지원합니다. 하나의 옵션은 `webhook`을 통해 스마트폰에서 [Traccar Client](https://www.traccar.org/client/) 앱을 추적하는 것입니다. 다른 옵션은 Hass.io addon으로도 제공되는 기존 [Traccar Server](https://www.traccar.org/server/) 설치에 연결하는 것입니다.
 
 ## Traccar 클라이언트
 
-Traccar 클라이언트를 설정하려면 설정 화면의 통합구성요소 패널을 통해 Traccar 클라이언트를 설정해야합니다. 그러면 모바일 장치 구성 중에 사용할 웹 후크 URL이 제공됩니다. 이 URL은 Traccar 앱에서 설정해야합니다. 
+Traccar 클라이언트를 설정하려면 설정 화면의 통합구성요소 패널을 통해 Traccar 클라이언트를 설정해야합니다. 그러면 모바일 장치 설정 중에 사용할 웹 후크 URL이 제공됩니다. 이 URL은 Traccar 앱에서 설정해야합니다. 
 
 ## Traccar 서버
 
-홈어시스턴트에 Traccar 서버를 통합하려면 `configuration.yaml` 파일에 다음 섹션을 추가하십시오.
+홈어시스턴트에 Traccar 서버를 연동하려면 `configuration.yaml` 파일에 다음 섹션을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -161,7 +163,7 @@ device_tracker:
     monitored_conditions: ['alarm', 'mycomputedattribute']
 ```
 
-`event` 매개 변수를 사용하면 traccar 플랫폼 (https://www.traccar.org/documentation/events/)에서 이벤트를 가져와 홈어시스턴트에서 실행할 수 있습니다. 모니터하고 가져 오는 이벤트 목록을 승인하며 각 이벤트는 소문자 공백없는 문자로 나열해야합니다. 이벤트는 위에 언급 된 목록에 정의 된 것과 동일한 이벤트 이름으로 시작되며 앞에는 `traccar_` 접두사가 붙습니다. 예를 들어, 홈어시스턴트에서 Traccar 이벤트 `deviceOverspeed` 및 `deviceFuelDrop`을 가져와야하는 경우 `event` 매개 변수를 다음과 같이 채워야합니다. :
+`event` 매개 변수를 사용하면 traccar 플랫폼 (https://www.traccar.org/documentation/events/)에서 이벤트를 가져와 홈어시스턴트에서 실행할 수 있습니다. 모니터하고 가져 오는 이벤트 목록을 승인하며 각 이벤트는 소문자 공백없는 문자로 나열해야합니다. 이벤트는 위에 언급된 목록에 정의된 것과 동일한 이벤트 이름으로 시작되며 앞에는 `traccar_` 접두사가 붙습니다. 예를 들어, 홈어시스턴트에서 Traccar 이벤트 `deviceOverspeed` 및 `deviceFuelDrop`을 가져와야하는 경우 `event` 매개 변수를 다음과 같이 채워야합니다. :
 
 ```yaml
 device_tracker:

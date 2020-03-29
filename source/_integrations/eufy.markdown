@@ -10,10 +10,12 @@ ha_release: 0.68
 ha_iot_class: Local Polling
 ---
 
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/NYalEpeqJTk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 우리나라는 **eufy 로봇청소기**만 와디즈에서 펀딩을 받아 판매했습니다. 
 해당 로봇청소기를 홈어시스턴트에 연동하려면, [여기](https://github.com/mitchellrj/eufy_robovac)를 참조해서 커스텀 컴포넌트를 설치하십시오. 
-
-<iframe width="690" height="437" src="https://www.youtube.com/embed/NYalEpeqJTk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 `eufy` 통합구성요소는 다양한 [eufy](https://www.eufylife.com/) 장치를 Home Assistant와 연동하기위한 메인 통합구성요소입니다.
 

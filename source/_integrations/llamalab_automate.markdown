@@ -7,7 +7,9 @@ ha_category:
 ha_release: 0.27
 ---
 
-<iframe width="690" height="388" src="https://www.youtube.com/embed/i53Yd30TFrU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/i53Yd30TFrU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `llamalab_automate` 플랫폼은 Google 클라우드 메시징 서비스를 사용하여 Home Assistant에서 LlamaLab [Automate](https://llamalab.com/automate/) 앱을 실행하는 Android 기기로 메시지를 푸시합니다. 이것은 Tasker + AutoRemote의 대안으로 사용될 수 있습니다.
 

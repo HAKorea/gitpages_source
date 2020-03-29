@@ -10,7 +10,9 @@ ha_codeowners:
   - '@robbiet480'
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/bsxh-Ow0sNM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/bsxh-Ow0sNM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 [LaMetric Time](https://lametric.com/)은 응용 프로그램에 액세스하고 웹 라디오를 듣고 알림을 표시하는 데 사용할 수있는 스마트 시계입니다.
 

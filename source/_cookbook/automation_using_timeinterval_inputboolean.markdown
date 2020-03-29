@@ -6,7 +6,7 @@ ha_category: Automation Examples
 
 #### input_boolean 상태에 따라 Hue 조명을 일정 시간 간격으로 임의의 색상으로 변경
 
-_Note, 필립스 Hue는 현재 Random Effect를 지원하는 유일한 경량 플랫폼._
+_Note, 필립스 Hue는 현재 Random Effect를 지원하는 유일한 조명 플랫폼._
 
 ```yaml
 input_boolean:

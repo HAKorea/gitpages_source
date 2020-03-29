@@ -10,9 +10,11 @@ ha_codeowners:
   - '@ehendrix23'
 ---
 
-<iframe width="690" height="394" src="https://www.youtube.com/embed/CoFgTYq7VKA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/CoFgTYq7VKA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
-`harmony` 원격 플랫폼을 사용하면 [Harmony Hub Device](https://www.logitech.com/en-us/product/harmony-hub)의 상태를 제어 할 수 있습니다
+`harmony` 원격 플랫폼을 사용하면 [Harmony Hub Device](https://www.logitech.com/en-us/product/harmony-hub)의 상태를 제어할 수 있습니다
 
 지원 유닛들 :
 
@@ -33,7 +35,7 @@ remote:
     host: 10.168.1.13
 ```
 
-`configuration.yaml` 설정을 추가하여 검색된 허브의 일부 기본 설정 값 (예 : `port` 또는 `activity`)을 대체 할 수 있습니다. 이 경우 플랫폼이 호스트 IP를 자동으로 감지하도록 `host` 설정을 비워 두십시오. 그러나 설정에서 `name`을 허브에 설정한 이름과 정확히 일치하도록 설정하여 플랫폼이 설정하려는 허브를 플랫폼이 인식하도록 합니다.
+`configuration.yaml` 설정을 추가하여 검색된 허브의 일부 기본 설정값 (예: `port` 또는 `activity`)을 대체할 수 있습니다. 이 경우 플랫폼이 호스트 IP를 자동으로 감지하도록 `host` 설정을 비워두십시오. 그러나 설정에서 `name`을 허브에 설정한 이름과 정확히 일치하도록 설정하여 플랫폼이 설정하려는 허브를 플랫폼이 인식하도록 합니다.
 
 ```yaml
 # Example configuration.yaml entry with discovery
@@ -74,13 +76,13 @@ hold_secs:
 
 ### 설정 파일 
 
-시작시 하나의 파일이 다음 형식으로 장치당 홈어시스턴트 설정 디렉토리에 작성됩니다. :  `harmony_REMOTENAME.conf` 파일은 다음을 포함합니다
+시작시 하나의 파일이 다음 형식으로 장치당 홈어시스턴트 설정 디렉토리에 작성됩니다. : `harmony_REMOTENAME.conf` 파일은 다음을 포함합니다
 
-- 프로그래밍 된 모든 활동 이름 및 ID 번호 목록
-- 프로그래밍 된 모든 장치 이름 및 ID 번호 목록
-- 프로그래밍 된 장치 당 사용 가능한 모든 명령 목록
+- 프로그래밍된 모든 활동이름 및 ID 번호 목록
+- 프로그래밍된 모든 장치이름 및 ID 번호 목록
+- 프로그래밍된 장치당 사용 가능한 모든 명령 목록
 
-Harmony HUB에 새로운 설정이 있을 때마다 이 파일을 덮어 쓰므로 홈어시스턴트를 다시 시작할 필요가 없습니다.
+Harmony HUB에 새로운 설정이 있을 때마다 이 파일을 덮어쓰므로 홈어시스턴트를 다시 시작할 필요가 없습니다.
 
 ### `remote.turn_off` 서비스
 
@@ -92,7 +94,7 @@ Harmony HUB에 새로운 설정이 있을 때마다 이 파일을 덮어 쓰므�
 
 ### `remote.turn_on` 서비스
 
-activity를 시작하십시오. activity가 지정되지 않은 경우 configuration.yaml에서 기본 `activity`를 시작합니다. 지정된 activity는 [Home Assistant configuration directory](/docs/configuration/)에 기록된 설정 파일의 activity 이름 또는 activity ID 일 수 있습니다.
+activity를 시작하십시오. activity가 지정되지 않은 경우 configuration.yaml에서 기본 `activity`를 시작합니다. 지정된 activity는 [Home Assistant configuration directory](/docs/configuration/)에 기록된 설정 파일의 activity이름 또는 activity ID일 수 있습니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
@@ -114,7 +116,7 @@ activity를 시작하십시오. activity가 지정되지 않은 경우 configura
 }
 ```
 
-activity 이름 'Watch TV'을 사용하여 자동화를 통해 서비스를 호출하여이 activity를 켤 수 있습니다. : 
+activity이름 'Watch TV'을 사용하여 자동화를 통해 서비스를 호출하여 이 activity를 켤 수 있습니다. : 
 
 ```yaml
 action:
@@ -133,7 +135,7 @@ action:
 | `entity_id`            |       no | 대상 엔티티ID.
 | `device`               |       no | 명령을 보낼 장치 ID 또는 장치 이름.
 | `command`              |       no | 보낼 단일 명령 또는 명령 목록.
-| `num_repeats`          |      yes | 명령을 반복 할 횟수.
+| `num_repeats`          |      yes | 명령을 반복할 횟수.
 | `delay_secs`           |      yes | 각 명령 전송 사이의 시간(초).
 
 'harmony_REMOTENAME.conf' 파일에서 사용 가능한 장치 및 명령을 찾을 수 있습니다. 예를 들면 : 
@@ -175,6 +177,7 @@ data:
   delay_secs: 0.6
 ```
 혹은
+
 ```yaml
 service: remote.send_command
 data:
@@ -195,8 +198,7 @@ data:
 | `entity_id`            |       no | Entity ID to target.
 | `channel`              |       no | Channel number to change to
 
-A typical service call for changing the channel would be::
-채널 변경을위한 일반적인 서비스 요청은 다음과 같습니다.
+채널 변경을 위한 일반적인 서비스 요청은 다음과 같습니다.
 
 ```yaml
 service: harmony.change_channel
@@ -207,7 +209,7 @@ data:
 
 ### `harmony.sync` 서비스
 
-하모니 장치와 하모니 클라우드 간 강제 동기화 
+하모니 장치와 하모니 클라우드간 강제 동기화 
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |

@@ -8,7 +8,11 @@ ha_release: 0.42
 ha_iot_class: Local Polling
 ---
 
-`eddystone_temperature` 센서 플랫폼은 [Eddystone](https://en.wikipedia.org/wiki/Eddystone_(Google)) 비콘을 통해 전송된 Bluetooth LE 알림에서 온도 정보를 읽습니다. 비콘은 UID 프레임 (식별)과 TLM 프레임 (온도)을 전송하도록 구성해야합니다. Eddystone 프로토콜을 지원하고 온도 센서가 있으며 TLM 프레임을 전송할 수있는 모든 비콘은 이 플랫폼과 호환됩니다. 예를 들어 [Gimbal](https://store.gimbal.com/collections/beacons/), [Estimote](https://estimote.com/) 또는 [kontakt.io](https://kontakt.io/ ). 더 많은 제조업체는 Google의 [this overview](https://developers.google.com/beacons/eddystone#beacon_manufacturers)를 참조하십시오.
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/mb_gWNrQcS8 frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+`eddystone_temperature` 센서 플랫폼은 [Eddystone](https://en.wikipedia.org/wiki/Eddystone_(Google)) 비콘을 통해 전송된 Bluetooth LE 알림에서 온도 정보를 읽습니다. 비콘은 UID 프레임 (식별)과 TLM 프레임 (온도)을 전송하도록 설정해야합니다. Eddystone 프로토콜을 지원하고 온도 센서가 있으며 TLM 프레임을 전송할 수 있는 모든 비콘은 이 플랫폼과 호환됩니다. 예를 들어 [Gimbal](https://store.gimbal.com/collections/beacons/), [Estimote](https://estimote.com/) 또는 [kontakt.io](https://kontakt.io/ ). 더 많은 제조업체는 Google의 [this overview](https://developers.google.com/beacons/eddystone#beacon_manufacturers)를 참조하십시오.
 
 ## 요구사항
 
@@ -48,7 +52,7 @@ bt_device_id:
   default: 0
   type: integer
 beacons:
-  description: 모니터링해야 할 비콘.
+  description: 모니터링해야할 비콘.
   required: true
   type: list
   keys:
@@ -58,11 +62,11 @@ beacons:
       type: list
       keys:
         namespace:
-          description: 16진 표기법으로 된 비콘의 네임 스페이스 ID입니다. 정확히 20자 여야합니다(10 bytes).
+          description: 16진 표기법으로된 비콘의 네임 스페이스 ID입니다. 정확히 20자 여야합니다(10 bytes).
           required: true
           type: string
         instance:
-          description: 16진 표기법으로 된 비콘의 인스턴스 ID. 정확히 12자 (6 바이트) 여야합니다.
+          description: 16진 표기법으로된 비콘의 인스턴스 ID. 정확히 12자 (6 바이트) 여야합니다.
           required: true
           type: string
         name:

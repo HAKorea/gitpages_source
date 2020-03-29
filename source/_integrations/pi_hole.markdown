@@ -11,7 +11,9 @@ ha_codeowners:
   - '@johnluetke'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="399" src="https://www.youtube.com/embed/I3des9ver1o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `pi_hole` 통합구성요소를 통해 통계를 검색하고 [Pi-hole](https://pi-hole.net/) 시스템과 상호 작용할 수 있습니다.
 
@@ -28,14 +30,14 @@ pi_hole:
 {% configuration %}
 host:
   description: >
-    "호스트 이름 (및 포트) (예 : Pi-hole이 실행중인 호스트의 '192.168.0.3:4865') Hass.io 애드온 사용자는 반드시`4865` 포트를 지정해야합니다."
+    "호스트 이름(및 포트) (예: Pi-hole이 실행중인 호스트의 '192.168.0.3:4865') Hass.io 애드온 사용자는 반드시 `4865` 포트를 지정해야합니다."
   required: true
   type: string
 name:
   description: >
-    "Pi-hole의 이름입니다. 이 이름은 생성된 센서의 일부입니다 (예 : `name: My Awesome Pi-hole`은 센서 이름이 `sensor.my_awesome_pi_hole_`로 시작합니다.)"
+    "Pi-hole의 이름. 이 이름은 생성된 센서의 일부입니다 (예: `name: My Awesome Pi-hole`은 센서 이름이 `sensor.my_awesome_pi_hole_`로 시작합니다.)"
 
-    **Note:** 여러 Pi-Holes를 구성하는 경우 각각의 고유한 이름이 *있어야합니다.*
+    **Note:** 여러 Pi-Holes를 설정하는 경우 각각의 고유한 이름이 *있어야합니다.*
   required: false
   type: string
   default: Pi-hole
@@ -80,7 +82,7 @@ pi_hole:
     name: 'Secondary Pi-Hole'
 ```
 
-자체 서명 인증서가있는 Pi-hole :
+자체 서명 인증서가 있는 Pi-hole :
 
 ```yaml
 pi_hole:
@@ -89,7 +91,7 @@ pi_hole:
     verify_ssl: false
 ```
 
-활성화 또는 비활성화 할 수있는 `api_key`가 있는 Pi-hole:
+활성화 또는 비활성화할 수 있는 `api_key`가 있는 Pi-hole:
 
 ```yaml
 pi_hole:
@@ -123,4 +125,4 @@ _Note: 이 서비스는 설정에 `api_key`를 지정해야합니다._
 
 _Note: 이 서비스는 설정에 `api_key`를 지정해야합니다._
 
-이 통합은 Pi-hole LLC 또는 Pi-hole 커뮤니티가 수행하지 않았습니다. 그들은 창조, 지원, 피드백, 테스트 또는 다른 도움을 제공하지 않았습니다. Pi-hole이 이후 릴리스에서 API를 변경하면 중단 될 수 있는 타사 플랫폼입니다. 공식적이거나 개발되지 않았으며 지원되지 않으며 Pi-hole LLC 또는 Pi-hole 커뮤니티를 보증하지 않습니다. 플랫폼 `Pi-hole`과 로고는 여기에서 플랫폼을 설명하는 데 사용됩니다. `Pi-hole`은 Pi-hole LLC의 등록 상표입니다.
+이 통합구성요소는 Pi-hole LLC 또는 Pi-hole 커뮤니티가 수행하지 않았습니다. 그들은 창조, 지원, 피드백, 테스트 또는 다른 도움을 제공하지 않았습니다. Pi-hole이 이후 릴리스에서 API를 변경하면 중단될 수 있는 타사 플랫폼입니다. 공식적이거나 개발되지 않았으며 지원되지 않으며 Pi-hole LLC 또는 Pi-hole 커뮤니티를 보증하지 않습니다. 플랫폼 `Pi-hole`과 로고는 여기에서 플랫폼을 설명하는데 사용됩니다. `Pi-hole`은 Pi-hole LLC의 등록 상표입니다.

@@ -10,7 +10,10 @@ ha_codeowners:
   - '@danielhiversen'
   - '@ChristianKuehnel'
 ---
-<iframe width="690" height="437" src="https://www.youtube.com/embed/UE-vcslPnKc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/UE-vcslPnKc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 샤오미 miflora는 본 문서와 같이 홈어시스턴트의 블루투스 장치에 연결하여 사용하지만, 블루투스의 태생적 한계로 인해 5미터 이상 거리가 떨어져 있는 경우 올바른 동작을 하지 않습니다. 이를 해결하기위한 방법은 다음과 같습니다. 
 

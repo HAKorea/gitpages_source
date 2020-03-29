@@ -8,9 +8,9 @@ ha_iot_class: Local Polling
 ha_release: '0.20'
 ---
 
-`gpmdp` 미디어 플레이어 플랫폼을 사용하면 홈어시스턴트의 컴퓨터에서 실행되는 [GPMDP](https://www.googleplaymusicdesktopplayer.com/) 인스턴스를 제어 할 수 있습니다.
+`gpmdp` 미디어 플레이어 플랫폼을 사용하면 홈어시스턴트의 컴퓨터에서 실행되는 [GPMDP](https://www.googleplaymusicdesktopplayer.com/) 인스턴스를 제어할 수 있습니다.
 
-먼저 GPMDP 설정에서 "Enable playback API"을 확인한 다음 방화벽에 인바운드 규칙을 추가하여 GPMDP를 실행하는 컴퓨터의 포트 5672에 액세스 할 수 있도록 해야합니다.
+먼저 GPMDP 설정에서 "Enable playback API"을 확인한 다음 방화벽에 인바운드 규칙을 추가하여 GPMDP를 실행하는 컴퓨터의 포트 5672에 액세스할 수 있도록 해야합니다.
 
 그런 다음 `configuration.yaml` 파일에 다음을 추가하십시오.
 

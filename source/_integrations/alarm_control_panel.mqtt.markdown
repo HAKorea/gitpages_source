@@ -1,5 +1,5 @@
 ---
-title: "MQTT 경보 제어판"
+title: "MQTT 경보 패널"
 description: "Instructions on how to integrate MQTT capable Alarm Panels into Home Assistant."
 logo: mqtt.png
 ha_category:
@@ -8,7 +8,7 @@ ha_release: 0.7.4
 ha_iot_class: Configurable
 ---
 
-`mqtt` 경보 패널 플랫폼을 사용하면 MQTT를 사용할 수 있는 경보 패널을 제어 할 수 있습니다. 경보 아이콘은 `state_topic`에서 새로운 상태를 받은 후 해당 상태를 변경합니다. 이러한 메시지가 *RETAIN* 플래그와 함께 공개되면 MQTT 경보 패널은 등록후 즉시 상태 업데이트를 수신하고 변경된 상태로 시작합니다. 그렇지 않으면 초기 상태는 `unknown`이 됩니다.
+`mqtt` 경보 패널 플랫폼을 사용하면 MQTT를 사용할 수 있는 경보 패널을 제어할 수 있습니다. 경보 아이콘은 `state_topic`에서 새로운 상태를 받은 후 해당 상태를 변경합니다. 이러한 메시지가 *RETAIN* 플래그와 함께 공개되면 MQTT 경보 패널은 등록후 즉시 상태 업데이트를 수신하고 변경된 상태로 시작합니다. 그렇지 않으면 초기 상태는 `unknown`이 됩니다.
 
 통합구성요소는 경보 패널에서 다음 상태를 수락합니다 (소문자).
 

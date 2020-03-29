@@ -10,11 +10,10 @@ ha_codeowners:
   - '@home-assistant/core'
 ---
 
-`input_datetime` 통합구성요소를 통해 사용자는 날짜 및 시간 값을 정의 할 수 있습니다
-프론트 엔드를 통해 제어 할 수 있으며 자동화 및 템플릿 내에서 사용할 수 있습니다.
+`input_datetime` 통합구성요소를 통해 사용자는 날짜 및 시간 값을 정의할 수 있습니다
+프론트 엔드를 통해 제어할 수 있으며 자동화 및 템플릿 내에서 사용할 수 있습니다.
 
-설치에 3 개의 날짜 / 시간 입력을 추가하려면 
-하나는 날짜,시간이 있고 다른 하나는 날짜 혹은 시간을 각각 입력 받으려면 `configuration.yaml`에 다음 줄을 추가하십시오.
+3 개의 날짜/시간 입력을 추가하려면 하나는 날짜, 시간이 있고 다른 하나는 날짜 혹은 시간을 각각 입력 받으려면 `configuration.yaml`에 다음 줄을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -66,8 +65,6 @@ input_datetime:
 
 ### 속성 (Attributes) 
 
-A datetime input entity's state exports several attributes that can be useful in
-automations and templates.
 datetime 입력 enttity의 상태는 자동화 및 템플릿에 유용한 여러 속성을 내보냅니다.
 
 | Attribute | Description |
@@ -75,29 +72,29 @@ datetime 입력 enttity의 상태는 자동화 및 템플릿에 유용한 여러
 | `has_time` | `true` 해당 entity에 시간이 있을 경우.
 | `has_date` | `true` 해당 entity에 날짜가 있을 경우.
 | `year`<br>`month`<br>`day` | 날짜의 연, 월, 일.<br>(`has_date: true` 로 설정시 활용 가능)
-| `timestamp` | 입력에 소요된 시간을 나타내는 타임 스탬프입니다.<br>(`has_date: true` 로 설정시 활용 가능)
+| `timestamp` | 입력에 소요된 시간을 나타내는 타임 스탬프입니다.<br>(`has_date: true`로 설정시 활용 가능)
 
 ### 상태 복원 (Restore State)
 
-`initial`에 유효한 값을 설정하면이 연동은 상태가 해당 값으로 설정된 상태에서 시작됩니다. 그렇지 않으면, 홈어시스턴트 중지 이전의 상태를 복원합니다. 
+`initial`에 유효한 값을 설정하면 이 연동은 상태가 해당 값으로 설정된 상태에서 시작됩니다. 그렇지 않으면, 홈어시스턴트 중지 이전의 상태를 복원합니다. 
 
 ### 서비스 (Services)
 
-사용가능한 서비스: `input_datetime.set_datetime` 및 `input_datetime.reload`.
+사용가능한 서비스: `input_datetime.set_datetime`, `input_datetime.reload`.
 
 Service data attribute | Format String | Description
 -|-|-
-`date` | `%Y-%m-%d` | 날짜를 동적으로 설정하는 데 사용할 수 있습니다.
-`time` | `%H:%M:%S` | 시간을 동적으로 설정하는 데 사용할 수 있습니다.
-`datetime` | `%Y-%m-%d %H:%M:%S` | 날짜와 시간을 모두 동적으로 설정하는 데 사용할 수 있습니다.
+`date` | `%Y-%m-%d` | 날짜를 동적으로 설정하는데 사용할 수 있습니다.
+`time` | `%H:%M:%S` | 시간을 동적으로 설정하는데 사용할 수 있습니다.
+`datetime` | `%Y-%m-%d %H:%M:%S` | 날짜와 시간을 모두 동적으로 설정하는데 사용할 수 있습니다.
 
-같은 호출(call)에서 날짜와 시간을 모두 설정하려면 `date` 와 `time`을 함께 사용하거나 `datetime`을 단독으로 사용하십시오.
+같은 호출(call)에서 날짜와 시간을 모두 설정하려면 `date`와 `time`을 함께 사용하거나 `datetime`을 단독으로 사용하십시오.
 
 `input_dateteime.reload` 서비스를 통해 홈어시스턴트 자체를 다시 시작하지 않고도 `input_datetime`의 설정을 다시로드 할 수 있습니다.
 
 ## 자동화 예시 (Automation Examples)
 
-다음은 `input_datetime`을 자동화에서 트리거로 사용하는 예입니다. ([time sensor](/integrations/time_date)가 설정에서 꼭 필요하게 될 것입니다. )
+다음은 `input_datetime`을 자동화에서 트리거로 사용하는 예입니다. ([time sensor](/integrations/time_date)가 설정에서 꼭 필요하게 될 것입니다.)
 
 {% raw %}
 ```yaml
@@ -113,8 +110,8 @@ automation:
 ```
 {% endraw %}
 
-`input_datetime`을 동적으로 설정하기 위해 `input_datetime.set_datetime`를 호출 할 수 있습니다. 호출이 성공하려면 `date`및 `time`의 값이 특정 형식이어야합니다. (위의 서비스 설명을 참조하십시오.)
-만일 `datetime` 객체가 있다면`strftime` 메소드를 사용할 수 있습니다. 혹은  타임 스탬프가 있다면 `timestamp_custom` 필터를 사용할 수 있습니다. 자동화 규칙에서 다음 예제를 사용할 수 있습니다.
+`input_datetime`을 동적으로 설정하기 위해 `input_datetime.set_datetime`를 호출할 수 있습니다. 호출이 성공하려면 `date`,`time`의 값이 특정 형식이어야합니다. (위의 서비스 설명을 참조하십시오.)
+만일 `datetime` 객체가 있다면 `strftime` 메소드를 사용할 수 있습니다. 혹은 타임 스탬프가 있다면 `timestamp_custom` 필터를 사용할 수 있습니다. 자동화 규칙에서 다음 예제를 사용할 수 있습니다.
 
 {% raw %}
 ```yaml

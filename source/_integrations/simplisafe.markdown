@@ -11,7 +11,9 @@ ha_codeowners:
   - '@bachya'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/FV6603-j27k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `simplisafe` 통합구성요소는 [SimpliSafe home security](https://simplisafe.com) (V2 및 V3) 시스템을 Home Assistant에 연동합니다. 여러 개의 SimpliSafe 계정을 수용할 수 있습니다.
 

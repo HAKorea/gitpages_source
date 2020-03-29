@@ -11,7 +11,9 @@ ha_codeowners:
   - '@JohNan'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/Ib6qq5brrpU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 이 통합구성요소는 [Plaato Airlock](https://www.plaato.io/)과의 연동을 설정합니다. Plaato Airlock은 발효 과정에 대한 독특한 통찰력을 원하는 맥주 양조업자를 위한 도구입니다. 이 연동으로 Home Assistant에서 모든 발효 데이터를 사용할 수 있습니다!
 

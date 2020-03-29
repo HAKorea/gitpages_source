@@ -10,7 +10,9 @@ ha_codeowners:
   - '@danielhiversen'
 ---
 
-<iframe width="690" height="388" src="https://www.youtube.com/embed/J2uG9tB_xPE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/J2uG9tB_xPE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 Mill 히터를 Home Assistant에 통합합니다.
 

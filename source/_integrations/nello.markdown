@@ -10,7 +10,9 @@ ha_codeowners:
   - '@pschmitt'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="388" src="https://www.youtube.com/embed/iqmdyaXiGx8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 The `nello` platform allows you to control [Nello](https://www.nello.io) intercoms.
 

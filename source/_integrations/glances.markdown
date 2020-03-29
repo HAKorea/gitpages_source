@@ -12,42 +12,43 @@ ha_codeowners:
   - '@engrbm87'
 ---
 
-<iframe width="690" height="485" src="https://www.youtube.com/embed/m9qIqq104as" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/m9qIqq104as" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 glances 통합구성요소는 기본적으로 [glance Addon](https://github.com/hassio-addons/addon-glances)이 지원됨으로 홈어시스턴트의 Supervisor -> DASHBOARD에서 `glance add-on` 을 찾아 설치합니다. 
-
 
 ------------------------------------------------------------------------------------------------------------------
 차후 번역 예정
 
-The `glances` integration allows you to monitor the system information provided by the [Glances](https://github.com/nicolargo/glances) API. This enables one to track remote host and display their stats in Home Assistant.
+`glances` 통합구성요소를 통해 [Glances](https://github.com/nicolargo/glances) API에서 제공하는 시스템 정보를 모니터링 할 수 있습니다. 이를 통해 원격 호스트를 추적하고 통계를 Home Assistant에 표시할 수 있습니다.
 
-## Setup
+## 셋업
 
-These sensors needs a running instance of `glances` on the host. The minimal supported version of `glances` is 2.3.
-To start a Glances RESTful API server on its default port 61208 then test you can use the following command:
+이러한 센서는 호스트에서 실행중인 `glances` 인스턴스가 필요합니다. 지원되는 `glances`의 최소 버전은 2.3입니다.
+기본 포트 61208에서 Glances RESTful API 서버를 시작한 후 다음 명령을 사용하여 테스트할 수 있습니다.
 
 ```bash
 $ sudo glances -w
 Glances web server started on http://0.0.0.0:61208/
 ```
 
-Check if you are able to access the API located at `http://IP_ADRRESS:61208/api/3`. Don't use `-s` as this will start the XMLRPC server on port 61209. Home Assistant only supports the REST API of GLANCES.
+`http://IP_ADRRESS:61208/api/3`에 있는 API에 액세스할 수 있는지 확인하십시오. 61209 포트에서 XMLRPC 서버를 시작하므로 `-s`를 사용하지 마십시오. 홈어시스턴트는 GLANCES의 REST API 만 지원합니다.
 
-The details about your memory usage is provided as a JSON response. If so, you are good to proceed.
+메모리 사용량에 대한 세부 사항은 JSON 응답으로 제공됩니다. 그렇다면 계속 진행하십시오.
 
 ```bash
 $ curl -X GET http://IP_ADDRESS:61208/api/3/mem/free
 {"free": 203943936}
 ```
 
-If this doesn't work, try changing the `3` to `2`, if you don't have the latest version of Glances installed.
+그래도 문제가 해결되지 않으면 최신 버전의 Glance가 설치되어 있지 않으면 `3`을 `2`로 변경해보십시오.
 
-For details about auto-starting `glances`, please refer to [Start Glances through Systemd](https://github.com/nicolargo/glances/wiki/Start-Glances-through-Systemd).  
+`glances` 자동 시작에 대한 자세한 내용은 [Start Glances through Systemd](https://github.com/nicolargo/glances/wiki/Start-Glances-through-Systemd)을 참조하십시오.
 
-## Configuration
+## 설정
 
-Set up the integration through **Configuration -> Integrations -> Glances**. To import the configuration from `configuration.yaml` remove any previously configured sensors with platform type `glances` and add the following lines:
+**설정 -> 통합구성요소 -> Glances**를 통해 연동을 설정하십시오. `configuration.yaml`에서 설정을 가져 오려면 플랫폼 유형이 `glances`인 이전에 설정된 센서를 제거하고 다음 행을 추가하십시오. : 
 
 ```yaml
 # Example configuration.yaml entry
@@ -96,9 +97,9 @@ version:
   default: 3
 {% endconfiguration %}
 
-## Integration Entities
+## 연동시 엔티티들
 
-Glances integration will add the following sensors:
+Glances 통합구성요소에 다음 센서가 추가됩니다. : 
 
 - disk_use_percent: The used disk space in percent.
 - disk_use: The used disk space.
@@ -120,4 +121,4 @@ Glances integration will add the following sensors:
 - docker_cpu_use: The total CPU usage in percent of Docker containers.
 - docker_memory_use: The total memory used by Docker containers.
 
-Not all platforms are able to provide all metrics. For instance `cpu_temp` is requires installing and configuring `lmsensors` in Ubuntu, and may not be available at all in other platforms.
+모든 플랫폼이 모든 metrics을 제공할 수 있는 것은 아닙니다. 예를 들어 `cpu_temp`는 우분투에서 `lmsensors`를 설치하고 설정해야하며 다른 플랫폼에서는 전혀 사용하지 못할 수 있습니다.

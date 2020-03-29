@@ -10,9 +10,11 @@ ha_release: 0.57
 ha_iot_class: Cloud Polling
 ---
 
-<iframe width="690" height="388" src="https://www.youtube.com/embed/gdzXNF2NYLc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/gdzXNF2NYLc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
-`linode` 통합구성요소를 통해 Home Assistant에서 [Linode](https://linode.com) 시스템에 대한 정보에 액세스 할 수 있습니다.
+`linode` 통합구성요소를 통해 Home Assistant에서 [Linode](https://linode.com) 시스템에 대한 정보에 액세스할 수 있습니다.
 
 현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
@@ -48,7 +50,7 @@ linode:
 
 ## Binary Sensor
 
-`linode` 이진 센서 플랫폼을 사용하면 Linode 노드를 모니터링 할 수 있습니다.
+`linode` 이진 센서 플랫폼을 사용하면 Linode 노드를 모니터링할 수 있습니다.
 
 `configuration.yaml` 파일에 다음을 추가하십시오 :
 

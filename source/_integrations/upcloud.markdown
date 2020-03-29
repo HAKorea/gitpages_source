@@ -12,7 +12,7 @@ ha_codeowners:
   - '@scop'
 ---
 
-`upcloud` 통합구성요소를 통해 Home Assistant에서 [UpCloud](https://upcloud.com/) 서버에 대한 정보에 액세스 할 수 있습니다.
+`upcloud` 통합구성요소를 통해 Home Assistant에서 [UpCloud](https://upcloud.com/) 서버에 대한 정보에 액세스할 수 있습니다.
 
 현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
@@ -52,7 +52,7 @@ scan_interval:
 
 ## Binary Sensor
 
-`upcloud` 바이너리 센서 플랫폼을 사용하면 UpCloud 서버를 모니터링 할 수 있습니다.
+`upcloud` 바이너리 센서 플랫폼을 사용하면 UpCloud 서버를 모니터링할 수 있습니다.
 
 UpCloud 서버를 사용하려면 먼저 [UpCloud hub](#configuration)를 설정한 다음 `configuration.yaml` 파일에 다음을 추가해야합니다.
 
@@ -74,9 +74,9 @@ servers:
 
 ## Switch
 
-`upcloud` 스위치 플랫폼을 사용하면 UpCloud 서버를 제어 (start/stop) 할 수 있습니다.
+`upcloud` 스위치 플랫폼을 사용하면 UpCloud 서버를 제어(start/stop)할 수 있습니다.
 
-UpCloud 서버를 사용하려면 먼저 [UpCloud hub](#configuration)를 설정 한 다음 `configuration.yaml` 파일에 다음을 추가해야합니다.
+UpCloud 서버를 사용하려면 먼저 [UpCloud hub](#configuration)를 설정한 다음 `configuration.yaml` 파일에 다음을 추가해야합니다.
 
 ```yaml
 # Example configuration.yaml entry

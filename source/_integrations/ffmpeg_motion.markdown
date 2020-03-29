@@ -17,11 +17,11 @@ ha_release: 0.27
 
 ## 모션 (Motion)
 
-FFmpeg에는 동작 감지 필터가 없지만 장면 필터를 사용하여 scene/motion을 감지 할 수 있습니다. 프레임 간 변화의 백분율 값인 'changes' 옵션을 사용하여 움직임을 감지하기 위해 얼마나 많이 변경해야 하는지 설정할 수 있습니다. 'changes'에 대해 실제로 작은값을 원한다면 노이즈 제거 필터를 추가할 수도 있습니다.
+FFmpeg에는 모션 감지 필터가 없지만 장면 필터를 사용하여 scene/motion을 감지 할 수 있습니다. 프레임 간 변화의 백분율 값인 'changes' 옵션을 사용하여 움직임을 감지하기 위해 얼마나 많이 변경해야 하는지 설정할 수 있습니다. 'changes'에 대해 실제로 작은값을 원한다면 노이즈 제거 필터를 추가할 수도 있습니다.
 
 ## 설정
 
-모션 감지 기능이있는 FFmpeg를 설치에 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
+모션 감지 기능이 있는 FFmpeg를 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -45,7 +45,7 @@ initial_state:
   type: boolean
   default: true
 changes:
-  description: 모션으로 감지하기 위해 두 프레임 사이에서 얼마나 많이 변경해야하는지 백분율로 표시합니다 (값이 낮을수록 더 민감합니다).
+  description: 모션으로 감지하기 위해 두 프레임 사이에서 얼마나 많이 변경해야 하는지 백분율로 표시합니다 (값이 낮을수록 더 민감합니다).
   required: false
   type: integer
   default: 10
@@ -55,12 +55,12 @@ reset:
   type: integer
   default: 20
 repeat:
-  description: 모션을 트리거하기 위해 *repeat_time* 에서 감지해야하는 이벤트, 0번 반복은 비활성화됨을 의미합니다.
+  description: 모션을 트리거하기 위해 *repeat_time* 에서 감지해야하는 이벤트, 0번 반복은 비활성화됨을 의미.
   required: false
   type: integer
   default: 0
 repeat_time:
-  description: 모션을 트리거하기 전에 *repeat* 이벤트 기간이 필요합니다. 0 초는 비활성화됨을 의미합니다.
+  description: 모션을 트리거하기 전에 *repeat* 이벤트 기간이 필요합니다. 0 초는 비활성화됨을 의미.
   required: false
   type: integer
   default: 0

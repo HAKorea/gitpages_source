@@ -8,16 +8,16 @@ Home Assistant의 주요 장점 중 하나는 클라우드 서비스에 의존�
 
 ## 점검표
 
-다음 은 홈어시스턴트 시스템을 보호하기 위해 *반드시 수행* 해야 할 작업에 대한 요약입니다. :
+다음은 홈어시스턴트 시스템을 보호하기 위해 *반드시 수행* 해야할 작업에 대한 요약입니다. :
 
-- [secrets](/docs/configuration/secrets/) 설정하십시오. (백업을 반드시 하십시오.)
+- [secrets](/docs/configuration/secrets/)를 설정하십시오. (백업을 필수.)
 - 시스템을 정기적으로 최신 상태로 유지하십시오
 
 ## 원격 접속
 
 안전한 원격 액세스를 원할 경우 가장 쉬운 방법은 [Home Assistant cloud](/cloud/)를 사용하는 것입니다. 다른 옵션은 [TLS/SSL](/docs/ecosystem/certificates/lets_encrypt/)을 사용하는 [VPN](https://pivpn.dev/), [Tor](/docs/ecosystem/tor/) 혹은 [SSH tunnel](/blog/2017/11/02/secure-shell-tunnel/)를 사용하여 인터넷에 인스턴스를 노출시키는 방법이 있습니다.  
 
-### 수동 설치를위한 추가 기능
+### 수동 설치를 위한 추가 기능
 
 위의 내용뿐만 아니라 보안을 개선하기 위해 다음 사항을 고려하는 것이 좋습니다.:
 

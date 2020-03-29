@@ -8,9 +8,11 @@ ha_release: 0.32
 ha_iot_class: Cloud Polling
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/--lLuR9o9QQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/--lLuR9o9QQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
-`garadget` Cover 플랫폼을 사용하면 Home Assistant를 통해 [Garadget](https://www.garadget.com/)의 garage door futurizers로 제어 할 수 있습니다.
+`garadget` Cover 플랫폼을 사용하면 Home Assistant를 통해 [Garadget](https://www.garadget.com/)의 garage door futurizers로 제어할 수 있습니다.
 
 ## 설정
 
@@ -64,9 +66,9 @@ covers:
           type: string
 {% endconfiguration %}
 
-제공되는 경우 **access_token** 이 사용되며, 그렇지 않으면 **username** 및 **password**가 시작시 자동으로 액세스 토큰을 생성하는 데 사용됩니다.
+제공되는 경우 **access_token** 이 사용되며, 그렇지 않으면 **username** 및 **password**가 시작시 자동으로 액세스 토큰을 생성하는데 사용됩니다.
 
-## Example
+## 사례 
 
 <p class='img'>
   <img src='{{site_root}}/images/integrations/garadget/cover_garadget_details.png' />
@@ -124,7 +126,7 @@ logbook:
       - sensor.garage_door_wifi_signal_strength
 ```
 
-펌웨어 릴리스 1.17부터 garadget 장치는 MQTT를 기본적으로 지원합니다. 이 옵션을 통해 최종 사용자는 '클라우드 만', '클라우드 및 MQTT' 또는 'MQTT 만'과 같은 방식으로 장치를 설정할 수 있습니다.
+펌웨어 릴리스 1.17부터 garadget 장치는 MQTT를 기본적으로 지원합니다. 이 옵션을 통해 최종 사용자는 '클라우드만', '클라우드 및 MQTT' 또는 'MQTT만'과 같은 방식으로 장치를 설정할 수 있습니다.
 
 garadget을 MQTT Cover로 설정하려면 다음을 수행하십시오.
 

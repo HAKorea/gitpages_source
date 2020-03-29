@@ -9,7 +9,11 @@ ha_release: 0.77
 ha_config_flow: true
 ---
 
-이 연동을 통해 [Google 행 아웃](https://hangouts.google.com) 대화에 메시지를 보내고 대화의 메시지에 반응 할 수 있습니다. 설정된 명령중 하나가 트리거될 때 이벤트를 발생시켜 명령에 반응합니다. 홈어시스턴트는 Smartisan YQ603 전화를 가장하여 Google 기기에 표시됩니다.
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/Jy0Lcw7Y1hM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+이 연동을 통해 [Google 행 아웃](https://hangouts.google.com) 대화에 메시지를 보내고 대화의 메시지에 반응할 수 있습니다. 설정된 명령중 하나가 트리거될 때 이벤트를 발생시켜 명령에 반응합니다. 홈어시스턴트는 Smartisan YQ603 전화를 가장하여 Google 기기에 표시됩니다.
 
 현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
@@ -122,7 +126,7 @@ error_suppressed_conversations:
       type: string
 {% endconfiguration %}
 
-대화(conversations)는 미리 작성해야하며, conversation ID는 `hangouts.conversations` 엔티티에서 얻을 수 있습니다. conversations ID 또는 별명(alias)을 따옴표로 묶어 YAML에서 특수 문자 (`!`, `#`)를 이스케이프하십시오.
+대화(conversations)는 미리 작성해야하며, conversation ID는 `hangouts.conversations` 엔티티에서 얻을 수 있습니다. conversations ID 또는 별명(alias)을 따옴표로 묶어 YAML에서 특수 문자(`!`, `#`)를 이스케이프하십시오.
 
 `HangoutsHelp` 의도(intent)는 연동작업의 일부이며 연동작업에서 이해할 수 없는 모든 문장의 목록을 이 대화에서 반환합니다.
 
@@ -162,7 +166,7 @@ intent_script:
 
 문장에는 슬롯 (중괄호: `{name}`)과 선택적 단어 (대괄호: `[the]`)가 포함될 수 있습니다. 슬롯값은 의도(intent)로 전달되며 템플릿 내에서 사용할 수 있습니다.
 
-다음 설정은 다음 문장을 처리 할 수 ​​있습니다.
+다음 설정은 다음 문장을 처리할 수 ​​있습니다.
 
 - Change the lights to red
 - Change the lights to green
@@ -290,7 +294,7 @@ default_conversations:
 
 ### conversation ID 찾기
 
-대화(conversation)는 미리 작성해야하며, conversation ID는 `hangouts.conversations` 엔티티에서 얻을 수 있으며, 사이드 바에서 이 아이콘 <img src='/images/screenshots/developer-tool-states-icon.png' class='no-shadow' height='38' />로 표시되는 상태 개발자 도구에서 찾을 수 있습니다. 웹 브라우저 검색 도구를 사용하여 `hangouts.conversations` 엔티티를 찾으십시오. 아래와 같은 것을 찾을 수 있습니다.
+대화(conversation)는 미리 작성해야하며, conversation ID는 `hangouts.conversations` 엔티티에서 얻을 수 있으며, 사이드 바에서 이 아이콘 <img src='/images/screenshots/developer-tool-states-icon.png' class='no-shadow' height='38' />로 표시되는 상태 개발자 도구에서 찾을 수 있습니다. 웹브라우저 검색 도구를 사용하여 `hangouts.conversations` 엔티티를 찾으십시오. 아래와 같은 것을 찾을 수 있습니다.
 
 ```json
 0: {

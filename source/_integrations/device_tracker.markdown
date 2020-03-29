@@ -38,7 +38,7 @@ device_tracker:
 | Parameter           | Default | Description                                                                                                                                                                                                                                                                                                                                                                               |
 |----------------------|---------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `interval_seconds`   | 12      | 새 장치를 검색 할 때마다 시간 (초)                                                                                                                                                                                                                                                                                     |
-| `consider_home`      | 180     | 미처 찾지 못한 이후 누군가가 집에 없는 것으로 표시 될 때까지 기다립니다. 이 매개 변수는 집에서 배터리 수명을 절약하기 위해 절전 모드로 전환되는 Apple iOS 장치가 있는 가정에서 가장 유용합니다.  iPhone은 때때로 네트워크를 끊었다가 다시 나타납니다. `consider_home`은 Nmap과 같은 IP 스캐너를 사용할 때 재실 감지시 잘못된 탐지를 방지합니다. `consider_home`  다양한 시간 표현을 인식합니다. (예를 들어, 다음 모두가 3분을 나타냅니다 : `180`, `0:03`, `0:03:00`)  |
+| `consider_home`      | 180     | 미처 찾지 못한 이후 누군가가 집에 없는 것으로 표시될 때까지 기다립니다. 이 매개 변수는 집에서 배터리 수명을 절약하기 위해 절전 모드로 전환되는 Apple iOS 장치가 있는 가정에서 가장 유용합니다. iPhone은 때때로 네트워크를 끊었다가 다시 나타납니다. `consider_home`은 Nmap과 같은 IP 스캐너를 사용할 때 재실 감지시 잘못된 탐지를 방지합니다. `consider_home`  다양한 시간 표현을 인식합니다. (예를 들어, 다음 모두가 3분을 나타냅니다 : `180`, `0:03`, `0:03:00`)  |
 
 <div class='note'>
 
@@ -66,7 +66,7 @@ device_tracker:
 
 <div class='note warning'>
 
-0.94 기준 `known_devices.yaml`은 단계적으로 폐지되어 모든 트래커에서 더 이상 사용하지 않습니다. 통합구성요소의 상황에 따라 이 섹션이 더 이상 적용되지 않을 수 있습니다. 여기에는 모바일앱, OwnTracks, GeoFency, GPSLogger, Locative 및 Huawei LTE가 해당됩니다.
+0.94 기준 `known_devices.yaml`은 단계적으로 폐지되어 모든 트래커에서 더이상 사용하지 않습니다. 통합구성요소의 상황에 따라 이 섹션이 더이상 적용되지 않을 수 있습니다. 여기에는 모바일앱, OwnTracks, GeoFency, GPSLogger, Locative 및 Huawei LTE가 해당됩니다.
 
 </div>
 
@@ -90,17 +90,17 @@ devicename:
 
 | Parameter      | Default                       | Description                                                                                             |
 |----------------|-------------------------------|---------------------------------------------------------------------------------------------------------|
-| `name`         | Host name or "Unnamed Device" | 장치의 이름입니다.                                                                         |
+| `name`         | Host name or "Unnamed Device" | 장치의 이름.                                                                         |
 | `mac`          | None                          | MAC 주소. Nmap 또는 SNMP와 같은 네트워크 장치 추적기를 사용하는 경우 이를 추가하십시오.     |
-| `picture`      | None                          | 사람이나 장치를 쉽게 식별하는데 사용할 수 있는 사진입니다. configuration.yaml 파일에 `picture:/local/favicon-192x192.png`를 입력하고 동일 위치의 (개발자 도구에서 얻을 수있는) “www” 폴더에 배치시킬 경우. 'local' 이라는 경로는 지금 만든 'www' 폴더로 매핑됩니다. 
-| `icon`         | mdi:account                   | 이 장치의 아이콘입니다. (`picture` 대신 사용).                           |
-| `gravatar`     | None                          | 기기 소유자의 이메일 주소입니다. 설정할 경우, `picture`에 합쳐집니다.                        |
+| `picture`      | None                          | 사람이나 장치를 쉽게 식별하는데 사용할 수 있는 사진. configuration.yaml 파일에 `picture:/local/favicon-192x192.png`를 입력하고 동일 위치의 (개발자 도구에서 얻을 수 있는) “www” 폴더에 배치시킬 경우. 'local' 이라는 경로는 지금 만든 'www' 폴더로 매핑됩니다. 
+| `icon`         | mdi:account                   | 이 장치의 아이콘. (`picture` 대신 사용).                           |
+| `gravatar`     | None                          | 기기 소유자의 이메일 주소. 설정할 경우, `picture`에 합쳐집니다.                        |
 | `track`        | [uses platform setting]       | `yes`/`on`/`true`일 경우 추적됩니다. 그렇지 않으면 위치와 상태가 업데이트되지 않습니다. |
 | `consider_home` | [uses platform setting]      | 미처 찾지 못한후 누군가가 집에 없는 것으로 표시될 때까지 기다립니다. 각 장치별 플랫폼 설정에서 `consider_home` 전역설정을 통해 재정의 할 수 있습니다.  
 
 ## 장치 상태(Device states)
 
-[home zone](/integrations/zone#home-zone) 에 있을 경우 추적 된 장치가 네트워크나 블루투스 기반의 재실 감지로 찾아지면 `'home'` 상태가 될 것입니다. 좌표를 포함하는 재실 감지 방법을 사용하는 경우 영역에있을 때, 상태는 영역의 이름이됩니다 (대소 문자 구분). 기기가 집에없고 어떤 구역에도 있지 않으면 상태는 `'not_home'` 입니다.
+[home zone](/integrations/zone#home-zone) 에 있을 경우 추적된 장치가 네트워크나 블루투스 기반의 재실 감지로 찾아지면 `'home'` 상태가 될 것입니다. 좌표를 포함하는 재실 감지 방법을 사용하는 경우 영역에 있을 때, 상태는 영역의 이름이됩니다 (대소 문자 구분). 기기가 집에 없고 어떤 구역에도 있지 않으면 상태는 `'not_home'` 입니다.
 
 ## `device_tracker.see` 서비스
 
@@ -108,10 +108,10 @@ devicename:
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
-| `dev_id`               |       no | `entity_id` 전체이름의 후반부 이름 , 예) `device_tracker.tardis` 에서 `tardis`   |
+| `dev_id`               |       no | `entity_id` 전체이름의 후반부 이름, 예:  `device_tracker.tardis` 에서 `tardis`   |
 | `location_name`        |       no | 위치, `home`, `not_home`, 또는 영역의 이름 |
 | `host_name`            |      yes | device tracker의 호스트 이름 |
 | `mac`                  |      yes | entity의 MAC 주소 (네트워크 기반 추적기를 업데이트하는 경우에만 지정) |
-| `gps`                  |      yes | 위치를 제공하는 경우 예) `[51.513845, -0.100539]` |
+| `gps`                  |      yes | 위치를 제공하는 경우 예: `[51.513845, -0.100539]` |
 | `gps_accuracy`         |      yes | GPS의 정확성 |
 | `battery`              |      yes | 장치의 배터리 잔량 |

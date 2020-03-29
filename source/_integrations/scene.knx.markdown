@@ -13,7 +13,7 @@ ha_release: 0.63
 
 </div>
 
-`knx` scenes 플랫폼을 사용하면 [KNX](https://www.knx.org/) 장면(씬)을 트리거할 수 있습니다.
+`knx` scenes 플랫폼을 사용하면 [KNX](https://www.knx.org/) 씬(장면)을 트리거할 수 있습니다.
 
 ## 설정
 

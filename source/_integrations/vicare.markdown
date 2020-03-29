@@ -9,7 +9,9 @@ ha_codeowners:
   - '@oischinger'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="388" src="https://www.youtube.com/embed/A13dHnIta10" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 The `ViCare` integration lets you control [Viessmann](https://www.viessmann.com) devices via the Viessmann ViCare (REST) API.
 Most recent network-connected Viessmann heating devices (e.g., gas boilers) should be supported.

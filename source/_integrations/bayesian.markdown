@@ -9,13 +9,15 @@ ha_release: 0.53
 ha_quality_scale: internal
 ---
 
-`Bayesian` 이진 센서 플랫폼은 여러 센서의 상태를 관찰하고 [Bayes' rule](https://en.wikipedia.org/wiki/Bayes%27_theorem)을 사용하여 이벤트가 발생한 상황을 예측합니다 관찰 된 센서. 추정 사후 확률이 `probability_threshold` 보다 높으면 센서가 `on` 이고, 그렇지 않으면 `off` 입니다.
+`Bayesian` 이진 센서 플랫폼은 여러 센서의 상태를 관찰하고 [Bayes' rule](https://en.wikipedia.org/wiki/Bayes%27_theorem)을 사용하여 관찰된 센서의 상태에서 이벤트가 발생할 확률을 추정합니다.
 
-이를 통해 요리, 샤워, 침대에서, 아침 루틴 시작 등과 같이 쉽게 관찰할 수 없는 복잡한 이벤트를 감지 할 수 있습니다. 또한 직접 관찰할 수 있지만 센서가 존재하지 않는 등 신뢰할 수 없는 이벤트에 대한 신뢰도를 높이는 데 사용할 수도 있습니다.
+추정 사후 확률이 `probability_threshold` 보다 높으면 센서가 `on` 이고, 그렇지 않으면 `off` 입니다.
+
+이를 통해 요리, 샤워, 침대에서 아침 루틴 시작 등과 같이 쉽게 관찰할 수 없는 복잡한 이벤트를 감지할 수 있습니다. 또한 직접 관찰할 수 있지만 센서가 존재하지 않는 등 신뢰할 수 없는 이벤트에 대한 신뢰도를 높이는 데 사용할 수도 있습니다.
 
 ## 설정 
 
-베이지안 센서를 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오 :
+Bayesian 센서를 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -60,7 +62,7 @@ observations:
       required: true
       type: string
     entity_id:
-      description: 모니터링 할 엔티티의 이름. Required for `state` and `numeric_state`.
+      description: 모니터링할 엔티티의 이름. Required for `state` and `numeric_state`.
       required: false
       type: string
     value_template:

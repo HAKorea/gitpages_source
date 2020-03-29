@@ -11,7 +11,9 @@ ha_category:
 ha_iot_class: Local Polling
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="388" src="https://www.youtube.com/embed/KCrGikV9w3g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 Home Assistant 용 Netgear LTE 통합구성요소로 [Netgear LTE 모뎀](https://www.netgear.com/home/products/mobile-broadband/lte-modems/default.aspx)을 관찰하고 제어할 수 있습니다.
 

@@ -67,7 +67,7 @@ device_class:
   required: false
   type: string
 value_template:
-  description: "값을 추출 할 [template](/docs/configuration/templating/#processing-incoming-data) 을 정의"
+  description: "값을 추출할 [template](/docs/configuration/templating/#processing-incoming-data)을 정의"
   required: false
   type: template
 payload:
@@ -125,18 +125,18 @@ URL이 엔드 포인트 또는 리소스와 정확히 일치하는지 확인.
 
 </div>
 
-`curl`은 홈어시스턴트 프론트 엔드에 표시하려는 변수를 식별하는 데 도움이됩니다. 아래 예는 [aREST](https://arest.io/)로 실행중인 장치의 JSON 응답을 보여줍니다.
+`curl`은 홈어시스턴트 프론트 엔드에 표시하려는 변수를 식별하는데 도움이 됩니다. 아래 예는 [aREST](https://arest.io/)로 실행중인 장치의 JSON 응답을 보여줍니다.
 
 ```bash
 $ curl -X GET http://192.168.1.31/temperature/
 {"temperature": 77, "id": "sensor02", "name": "livingroom", "connected": true}
 ```
 
-응답은 사전(dictionary)이거나 0 번째 요소 인 사전(dictionary)이 있는 목록 일 것으로 예상됩니다.
+응답은 사전(dictionary)이거나 0 번째 요소인 사전(dictionary)이 있는 목록 일 것으로 예상됩니다.
 
 ## 사례 
 
-이 섹션에는이 센서를 사용하는 방법에 대한 실제 예가 나와 있습니다.
+본 섹션에는 이 센서를 사용하는 방법에 대한 실제 예가 나와 있습니다.
 
 ### 외부 IP 주소
 
@@ -150,9 +150,9 @@ sensor:
     value_template: '{% raw %}{{ value_json.ip }}{% endraw %}'
 ```
 
-###  로컬 GLANCES 인스턴스의 단일값 (Single value from a local Glances instance)
+###  로컬 GLANCES 인스턴스의 단일값 
 
-[glances](/integrations/glances) 센서는 모든 노출 된 값에 대해 똑같은 일을합니다.
+[glances](/integrations/glances) 센서는 모든 노출된 값에 대해 똑같은 일을합니다.
 
 ```yaml
 sensor:
@@ -163,9 +163,9 @@ sensor:
     unit_of_measurement: MB
 ```
 
-### 다른 홈 어시스턴트 인스턴스의 값 (Value from another Home Assistant instance)
+### 다른 홈어시스턴트 인스턴스 값 
 
-홈어시스턴트 [API](/developers/rest_api/)는 연결된 센서에서 데이터를 노출합니다. [connected](/developers/architecture/#multiple-connected-instances) 가 아닌 여러 Home Assistant 인스턴스를 실행중인 경우에도 해당 정보를 얻을 수 있습니다.
+홈어시스턴트 [API](/developers/rest_api/)는 연결된 센서에서 데이터를 노출합니다. [connected](/developers/architecture/#multiple-connected-instances)가 아닌 여러 Home Assistant 인스턴스를 실행중인 경우에도 해당 정보를 얻을 수 있습니다.
 
 자원 변수에서 홈어시스턴트 인스턴스가 API 비밀번호로 보호되는 경우, `? api_password = YOUR_PASSWORD`를 자원 URL에 추가하여 `headers:`를 인증하거나 사용할 수 있습니다.
 
@@ -178,7 +178,7 @@ sensor:
     unit_of_measurement: "°C"
 ```
 
-### HTTP 인증으로 보호 된 엔드 포인트에 액세스 (Accessing an HTTP authentication protected endpoint)
+### HTTP 인증으로 보호된 엔드 포인트에 액세스 
 
 REST 센서는 HTTP 인증 및 사용자 정의된 헤더를 지원.
 
@@ -194,7 +194,7 @@ sensor:
       Content-Type: application/json
 ```
 
-헤더에는 모든 관련 세부 사항이 포함. 또한 토큰으로 보호되는 엔드 포인트에 액세스 할 수 있습니다.
+헤더에는 모든 관련 세부 사항이 포함. 또한 토큰으로 보호되는 엔드 포인트에 액세스할 수 있습니다.
 
 ```bash
 Content-Length: 1024
@@ -206,7 +206,7 @@ User-Agent: Home Assistant
 ```
 
 `Authorization` 헤더의 `Bearer` 토큰으로 보호되는 리소스에 액세스하는 경우 센서 설정의 헤더 필드에 토큰을 넣거나 (권장하지 않음) [`secrets.yaml`](/docs/configuration/secrets/) 파일에 토큰을 저장할 수 있습니다. 
-이 경우,`secrets` 파일에 `Bearer`라는 단어를 포함 시키십시오.
+이 경우, `secrets` 파일에 `Bearer`라는 단어를 포함시키십시오.
 
 ```yaml
 sensor:
@@ -265,7 +265,7 @@ sensor:
 ```
 {% endraw %}
 
-이 샘플은 [OpenWeatherMap](https://openweathermap.org/)에서 날씨 보고서를 가져 와서 결과 데이터를 RESTful 센서의 속성에 맵핑 한 후 속성을 모니터링하는 [template](/integrations/template) 센서 세트를 작성하고 해당 값을 사용 가능한 형식으로 나타냅니다. 
+이 샘플은 [OpenWeatherMap](https://openweathermap.org/)에서 날씨 보고서를 가져 와서 결과 데이터를 RESTful 센서의 속성에 맵핑한 후 속성을 모니터링하는 [template](/integrations/template) 센서 세트를 작성하고 해당 값을 사용 가능한 형식으로 나타냅니다. 
 
 {% raw %}
 ```yaml

@@ -13,7 +13,9 @@ ha_codeowners:
   - '@bachya'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/_5uLx83s10w?list=PLWlpiQXaMerTyzl_Pe1PEloZTj9MoU5cl" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `openuv` 통합구성요소는 [openuv.io](https://www.openuv.io/)의 UV 및 오존 데이터를 표시합니다.
 

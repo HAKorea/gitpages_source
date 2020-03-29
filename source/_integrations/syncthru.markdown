@@ -12,9 +12,9 @@ ha_codeowners:
 
 Samsung SyncThru 프린터 플랫폼을 사용하면 로컬 Samsung 프린터에서 현재 데이터를 읽을 수 있습니다.
 
-일반적으로 장치 상태, 잉크 잔량 또는 토너 량 및 용지함 상태에 대한 정보를 제공합니다. 플랫폼은 지원되는 모든 부품을 자동으로 모니터링합니다.
+일반적으로 장치 상태, 잉크 잔량 또는 토너량 및 용지함 상태에 대한 정보를 제공합니다. 플랫폼은 지원되는 모든 부품을 자동으로 모니터링합니다.
 
-모니터링되는 특정 값을 포함하지 않으려면 `monitored_conditions` 설정을 통해 프런트 엔드에 표시할 값을 지정하십시오.
+모니터링되는 특정값을 포함하지 않으려면 `monitored_conditions` 설정을 통해 프런트 엔드에 표시할 값을 지정하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -26,7 +26,7 @@ sensor:
 
 {% configuration %}
   resource:
-    description: 프린터 연결을위한 주소. SyncThru 웹 서비스 주소와 같습니다.
+    description: 프린터 연결을 위한 주소. SyncThru 웹 서비스 주소와 같습니다.
     required: true
     default: false
     type: string

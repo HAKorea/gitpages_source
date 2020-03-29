@@ -10,13 +10,15 @@ ha_codeowners:
   - '@Ernst79'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/eMXbTN2X4Ek" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `solarlog` 통합구성요소는 [Solar-Log PV monitoring systems](https://www.solar-log.com/)의 개방형 JSON 인터페이스를 사용하여 Solar-Log 장치에서 세부 정보를 가져와 이를 Home Assistant에 연동할 수 있습니다.
 
 통합구성요소를 사용하기 전에 Solar-Log 장치에서 열린 JSON 인터페이스를 활성화해야합니다. 이는 Solar-Log 장치의 Configuration | System | Access control menu 에서 활성화 할 수 있습니다. 인터페이스를 활성화하면 보안 정보 및 위험 요소가있는 빨간색 경고 삼각형이 표시됩니다.
 
-`solarlog` 통합구성요소는 호스트를 지정하지 않으면 기본 호스트 주소 "http://solar-log"를 사용합니다. 이 주소에서 장치에 액세스 할 수 없으면 대신 IP주소를 사용하십시오.
+`solarlog` 통합구성요소는 호스트를 지정하지 않으면 기본 호스트 주소 "http://solar-log"를 사용합니다. 이 주소에서 장치에 액세스할 수 없으면 대신 IP주소를 사용하십시오.
 
 <div class='note warning'>
 open JSON 인터페이스는 기본적으로 비활성화되어 있습니다. open JSON 인터페이스를 활성화하려면 먼저 사용자 비밀번호를 설정해야합니다. open JSON 인터페이스에 액세스하는데 비밀번호가 필요하지 않습니다.
@@ -103,5 +105,5 @@ sensor:
 | usage                 |        | Usage (equals to consumption_ac / power_ac) |
 
 <div class='note'>
-solarlog 통합구성요소는 sunwatcher pypi 패키지를 사용하여 Solar-Log 장치에서 데이터를 가져옵니다. 마지막 5 개의 센서는 Solar-Log 장치에 의해 직접보고되지 않지만 sunwatcher 패키지에 의해 계산됩니다.
+solarlog 통합구성요소는 sunwatcher pypi 패키지를 사용하여 Solar-Log 장치에서 데이터를 가져옵니다. 마지막 5 개의 센서는 Solar-Log 장치에 의해 직접 보고되지 않지만 sunwatcher 패키지에 의해 계산됩니다.
 </div>

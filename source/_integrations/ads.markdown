@@ -99,7 +99,7 @@ device_class:
 
 `ads` 조명 플랫폼을 사용하면 connecte ADS 조명을 제어할 수 있습니다.
 
-ADS 장치를 사용하려면 먼저 [ADS hub](#configuration)를 설정 한 다음 `configuration.yaml` 파일에 다음을 추가해야합니다.
+ADS 장치를 사용하려면 먼저 [ADS hub](#configuration)를 설정한 다음 `configuration.yaml` 파일에 다음을 추가해야합니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -126,7 +126,7 @@ name:
 
 ## Sensor
 
-`ads` 센서 플랫폼을 사용하면 ADS 장치의 숫자 변수 값을 읽을 수 있습니다. 변수는 *INT*, *UINT*, *BYTE*, *DINT* 또는 *UDINT* 유형일 수 있습니다.
+`ads` 센서 플랫폼을 사용하면 ADS 장치의 숫자 변수값을 읽을 수 있습니다. 변수는 *INT*, *UINT*, *BYTE*, *DINT* 또는 *UDINT* 유형일 수 있습니다.
 
 ADS 장치를 사용하려면 먼저 [ADS hub](#configuration)를 설정한 다음 `configuration.yaml` 파일에 다음을 추가해야합니다.
 
@@ -160,8 +160,7 @@ factor:
   type: integer
 {% endconfiguration %}
 
-The *factor* can be used to implement fixed decimals. E.g., set *factor* to 100 if you want to display a fixed decimal value with two decimals. A variable value of `123` will be displayed as `1.23`.
-*factor*는 고정 소수점을 구현하는 데 사용할 수 있습니다. 예를 들어, 소수점 이하 두 자리로 고정 소수점 값을 표시하려면 *factor*를 100으로 설정하십시오. `123`의 변수값은 `1.23`으로 표시됩니다.
+*factor*는 고정 소수점을 구현하는데 사용할 수 있습니다. 예를 들어, 소수점 이하 두 자리로 고정 소수점 값을 표시하려면 *factor*를 100으로 설정하십시오. `123`의 변수값은 `1.23`으로 표시됩니다.
 
 ## Switch
 

@@ -12,7 +12,9 @@ ha_codeowners:
   - '@fabaff'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="388" src="https://www.youtube.com/embed/M-Wr8bX12WM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `mystrom` 라이트 플랫폼을 사용하면 [myStrom](https://mystrom.ch/en/) WiFi 전구를 제어 할 수 있습니다.
 

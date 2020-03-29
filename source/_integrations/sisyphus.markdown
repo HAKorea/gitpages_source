@@ -10,14 +10,16 @@ ha_release: 0.75
 ha_iot_class: Local Push
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/2rxHZwpxCk0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 홈어시스턴트를 위한 [Sisyphus](https://sisyphus-industries.com/) 연동으로 Sisyphus Kinetic Art Table을 관찰하고 제어할 수 있습니다.
 
 현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다. : 
 
 - **Light** - 테이블을 잠자거나 깨우거나 테이블 조명의 밝기를 조정하는 데 사용할 수 있습니다.
-- **Media Player** - 테이블을 잠자기/깨우기, 재생/일시 정지, 트랙 간 이동 또는 셔플 켜기/끄기를 전환하는데 사용할 수 있습니다. "볼륨" 컨트롤은 테이블의 속도를 조정합니다.
+- **Media Player** - 테이블을 잠자기/깨우기, 재생/일시 정지, 트랙간 이동 또는 셔플 켜기/끄기를 전환하는데 사용할 수 있습니다. "볼륨" 컨트롤은 테이블의 속도를 조정합니다.
 
 Sisyphus 통합구성요소가 설정된 경우 라이트 및 미디어 플레이어가 각 Sisyphus 테이블에 자동으로 추가됩니다.
 

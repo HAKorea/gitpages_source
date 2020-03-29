@@ -13,7 +13,7 @@ ha_codeowners:
   - '@flamm3blemuff1n'
 ---
 
-`VersaSense` 통합구성요소는 VersaSense Edge Gateway를 지원합니다. 게이트웨이는 메시 네트워크에서 허브와 주변 장치 (센서 및 액추에이터)를 제어 할 수 있습니다.
+`VersaSense` 통합구성요소는 VersaSense Edge Gateway를 지원합니다. 게이트웨이는 메시 네트워크에서 허브와 주변 장치(센서 및 액추에이터)를 제어할 수 있습니다.
 
 ## 설정
 

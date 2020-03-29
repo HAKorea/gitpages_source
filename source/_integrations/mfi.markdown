@@ -10,7 +10,9 @@ ha_iot_class: Local Polling
 ha_release: 0.13
 ---
 
-<iframe width="690" height="388" src="https://www.youtube.com/embed/TUjdDQVL9tA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/TUjdDQVL9tA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 There is currently support for the following device types within Home Assistant:
 

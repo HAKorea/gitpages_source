@@ -8,7 +8,9 @@ ha_release: 0.69
 ha_iot_class: Local Polling
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/RtJpx8BZvMw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/RtJpx8BZvMw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 The `mitemp_bt` 센서 플랫폼은 모니터 온습도를 실시간으로 측정할 수 있습니다.  [LCD 내장 Xiaomi Mijia BLE 온습도 센서](https://www.amazon.com/Temperature-Humidity-Xiaomi-Bluetooth-Screen-Remote/dp/B079L6N6PC) 는 실내 온습도를 측정하는 소형 초저전력 블루투스 장치입니다. 
 

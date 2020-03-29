@@ -13,28 +13,25 @@ ha_codeowners:
   - '@frenck'
 ---
 
-AdGuard Home은 Parental Control(성인 컨텐츠 블럭킹)이 가능하며 네트워크 전체의 광고 및 추적기 차단 기능을 하는 DNS서버입니다. `adguard` 통합구성요소는 Home Assistant에서 AdGuard Home 인스턴스를 제어하고 모니터링 할 수 있습니다.
+AdGuard Home은 Parental Control(성인 컨텐츠 차단)이 가능하며 네트워크 전체의 광고 및 추적기 차단 기능을 하는 DNS서버입니다. `adguard` 통합구성요소는 Home Assistant에서 AdGuard Home 인스턴스를 제어하고 모니터링 할 수 있습니다.
 
 [AdGuard Home]((https://github.com/hassio-addons/addon-adguard-home))은 Home Assistant Add-on에 몇번의 클릭으로 설치할 수 있도록 Add-on으로 제공합니다. 
 HA에서 **Supervisor**로 이동하시고 **ADD-ON STORE**에서 **Home Assistant Community Add-ons**에서 **AdGuard Home** 을 찾아 설치하십시오. 
 
------------------------------------------------------------------------------------------------------
-
+--------------------------------------------------------------------------
 이하 차후 번역 
 
 
+## 프론트 엔드를 통한 설정
 
-## Configuration via the frontend
+Menu: **설정** -> **통합구성요소**.
 
-Menu: **Configuration** -> **Integrations**.
-
-Click on the `+` sign to add an integration and click on **AdGuard Home**.
-After completing the configuration flow, the AdGuard Home
-integration will be available.
+`+` 를 클릭하여 통합구성요소를 추가하고 **AdGuard Home**을 클릭하십시오.
+설정 단계를 완료하면 AdGuard Home 통합구성요소를 사용할 수 있습니다.
 
 ## Sensors
 
-This integration provides sensors for the following information from AdGuard Home:
+이 통합구성요소는 AdGuard Home의 다음 정보에 대한 센서를 제공합니다. : 
 
 - Number of DNS queries.
 - Number of blocked DNS queries.
@@ -47,7 +44,7 @@ This integration provides sensors for the following information from AdGuard Hom
 
 ## Switches
 
-The integration will create a number of switches:
+연동이후 많은 스위치를 생성합니다 :
 
 - AdGuard Protection (master switch).
 - Filtering.
@@ -56,66 +53,61 @@ The integration will create a number of switches:
 - Safe Search.
 - Query Log.
 
-These switches allow you to automate things easily. For example, one could
-write an automation to turn off Safe Search after the kids' bedtime.
+이 스위치를 사용하면 작업(things)을 쉽게 자동화 할 수 있습니다. 예를 들어, 어린이가 잠든 후 세이프 서치를 끄는 자동화를 만들 수 있습니다.
 
-The "AdGuard Protection" switch is a master switch. It will turn off and
-bypass all AdGuard features, regardless of whether they are switched on or not.
+"AdGuard Protection" 스위치는 마스터 스위치입니다. 전원이 켜져 있는지 여부에 관계없이 모든 AdGuard 기능이 꺼지고 무시됩니다.
 
 <div class="note">
-Turning off Query Log will result in all sensors not receiving updates anymore.
-AdGuard relies on Query Log to provide stats.
+쿼리 로그를 끄면 모든 센서가 더이상 업데이트를 받지 않습니다.
+AdGuard는 통계를 제공하기 위해 쿼리 로그를 사용합니다.
 </div>
 
-## Services
+## 서비스
 
-These services allow one to manage filter subscriptions in AdGuard Home.
-Using these services in automations could be helpful to block certain
-sites/domains at certain times.
+이러한 서비스를 통해 AdGuard Home에서 필터 구독(filter subscriptions)을 관리 할 수 ​​있습니다.
+자동화에서 이러한 서비스를 사용하면 특정 시간에 특정 사이트/도메인을 차단하는 데 도움이 될 수 있습니다.
 
-For example, you could create a custom filter list that blocks social media sites
-during the day and releases them during the evening.
+예를 들어 낮에는 소셜 미디어 사이트를 차단하고 저녁에는 해제하는 사용자 지정 필터 목록을 만들 수 있습니다.
 
-### Service `add_url`
+### `add_url` 서비스
 
-Add a new filter subscription to AdGuard Home.
+AdGuard Home에 새 필터 구독(filter subscription)을 추가하십시오.
 
 | Service data attribute | Optional | Description                                                  |
 | ---------------------- | -------- | ------------------------------------------------------------ |
 | `name`                 | No       | The name of the filter subscription.                         |
 | `url`                  | No       | The filter URL to subscribe to, containing the filter rules. |
 
-### Service `remove_url`
+### `remove_url` 서비스
 
-Removes a filter subscription from AdGuard Home.
+AdGuard Home에서 필터 구독을 제거합니다.
 
 | Service data attribute | Optional | Description                            |
 | ---------------------- | -------- | -------------------------------------- |
 | `url`                  | No       | The filter subscription URL to remove. |
 
-### Service `enable_url`
+### `enable_url` 서비스
 
-Enables a filter subscription in AdGuard Home.
+AdGuard Home에서 필터 구독을 활성화합니다.
 
 | Service data attribute | Optional | Description                            |
 | ---------------------- | -------- | -------------------------------------- |
 | `url`                  | No       | The filter subscription URL to enable. |
 
-### Service `disable_url`
+### `disable_url` 서비스
 
-Disables a filter subscription in AdGuard Home.
+AdGuard Home에서 필터 구독을 비활성화합니다.
 
 | Service data attribute | Optional | Description                             |
 | ---------------------- | -------- | --------------------------------------- |
 | `url`                  | No       | The filter subscription URL to disable. |
 
-### Service `refresh`
+### `refresh` 서비스
 
-Refresh all filter subscriptions in AdGuard Home.
+AdGuard Home에서 모든 필터 구독을 새로고칩니다.
 
 | Service data attribute | Optional | Description                                       |
 | ---------------------- | -------- | ------------------------------------------------- |
 | `force`                | Yes      | Force update (bypasses AdGuard Home throttling).  |
 
-By default, `force` is set to `false`. Forcing an update bypasses AdGuard Home's
-throttling logic, so use with care.
+기본적으로 `force`는 `false`로 설정되어 있습니다. 강제 업데이트는 AdGuard Home의 스로틀 로직(throttling logic)을 무시하므로 주의해서 사용하십시오.

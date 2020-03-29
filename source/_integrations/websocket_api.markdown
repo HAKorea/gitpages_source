@@ -29,7 +29,7 @@ WebSocket API 사용에 대한 자세한 내용은 [WebSocket API documentation]
 
 ## 현재 연결 추적
 
-websocket API는 현재 연결된 클라이언트 수를 추적하는 센서를 제공합니다. 설정에 다음을 추가하여 추가 할 수 있습니다.
+websocket API는 현재 연결된 클라이언트 수를 추적하는 센서를 제공합니다. 설정에 다음을 추가하여 추가할 수 있습니다.
 
 ```yaml
 # Example configuration.yaml entry

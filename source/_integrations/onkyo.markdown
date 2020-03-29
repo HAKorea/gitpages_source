@@ -8,7 +8,9 @@ ha_release: 0.17
 ha_iot_class: Local Polling
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="388" src="https://www.youtube.com/embed/sUhaebTY_HU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `onkyo` 플랫폼을 사용하면 Home Assistant의 [Onkyo](http://www.onkyo.com/), [Integra](http://www.integrahometheater.com/) 및 일부 [Pioneer](http://www.pioneerelectronics.com) 리시버를 제어할 수 있습니다.
 이 통합구성요소가 하드웨어에서 작동하려면 "Network Standby"를 활성화해야 합니다.

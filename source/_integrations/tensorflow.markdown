@@ -8,9 +8,11 @@ ha_iot_class: Local Polling
 ha_release: 0.82
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/iKQC4oCvSXU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
-`tensorflow` 이미지 처리 플랫폼을 사용하면 [TensorFlow](https://www.tensorflow.org/)를 사용하여 카메라 이미지의 객체를 감지하고 인식 할 수 있습니다. 개체의 상태는 감지된 개체의 수이며 인식된 개체는 수량과 함께 `summary` 속성에 나열됩니다. `matches` 속성은 인식에 대한 신뢰도 `score`와 각 탐지 범주에 대한 객체의 경계 `box`를 제공합니다.
+`tensorflow` 이미지 처리 플랫폼을 사용하면 [TensorFlow](https://www.tensorflow.org/)를 사용하여 카메라 이미지의 객체를 감지하고 인식할 수 있습니다. 개체의 상태는 감지된 개체의 수이며 인식된 개체는 수량과 함께 `summary` 속성에 나열됩니다. `matches` 속성은 인식에 대한 신뢰도 `score`와 각 탐지 범주에 대한 객체의 경계 `box`를 제공합니다.
 
 <div class='note warning'>
 
@@ -24,7 +26,7 @@ ha_release: 0.82
 
 `tensorflow` Python 패키지를 설치해야합니다. : `$ pip3 install tensorflow==1.13.2`. wheel이 모든 플랫폼에서 사용 가능한 것은 아닙니다. 다른 옵션에 대해서는 [the official install guide](https://www.tensorflow.org/install/)를 참조하십시오. Hass.io는 아직 지원되지 않지만 애드온이 개발중입니다.
 
-이 통합구성요소를 위해서는 파일을 컴퓨터에서 다운로드하고 컴파일 한 후 홈어시스턴트 설정 디렉토리에 추가해야합니다. 이 단계는 [this gist](https://gist.github.com/hunterjm/6f9332f92b60c3d5e448ad936d7353c3)의 샘플 스크립트를 사용하여 수행 할 수 있습니다. 또는 프로세스를 수동으로 수행하려는 경우 프로세스는 다음과 같습니다.
+이 통합구성요소를 위해서는 파일을 컴퓨터에서 다운로드하고 컴파일 한 후 홈어시스턴트 설정 디렉토리에 추가해야합니다. 이 단계는 [this gist](https://gist.github.com/hunterjm/6f9332f92b60c3d5e448ad936d7353c3)의 샘플 스크립트를 사용하여 수행할 수 있습니다. 또는 프로세스를 수동으로 수행하려는 경우 프로세스는 다음과 같습니다.
 
 - Clone [tensorflow/models](https://github.com/tensorflow/models/tree/master/research/object_detection)
 - Compile protobuf models located in `research/object_detection/protos` with `protoc`
@@ -53,7 +55,7 @@ ha_release: 0.82
 
 ## 설정
 
-설치에서이 플랫폼을 활성화하려면`configuration.yaml` 파일에 다음을 추가하십시오.
+설치시 이 플랫폼을 활성화하려면`configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -76,7 +78,7 @@ source:
       required: true
       type: string
     name:
-      description: 이 매개 변수를 사용하면`image_processing` 엔티티의 이름을 대체 할 수 있습니다.
+      description: 이 매개 변수를 사용하면`image_processing` 엔티티의 이름을 대체할 수 있습니다.
       required: false
       type: string
 file_out:
@@ -133,7 +135,7 @@ model:
         required: false
 {% endconfiguration %}
 
-`categories`는 아래 고급 설정에서 볼 수 있듯 각 카데고리에 대한 영역을 제공하는 사전(dictionary)으로 정의 할 수도 있습니다.
+`categories`는 아래 고급 설정에서 볼 수 있듯 각 카데고리에 대한 영역을 제공하는 사전(dictionary)으로 정의할 수도 있습니다.
 
 ```yaml
 # Example advanced configuration.yaml entry
@@ -160,7 +162,7 @@ image_processing:
 
 ## 자원 최적화
 
-[Image processing components](/integrations/image_processing/)는 `scan_interval`에 의해 주어진 일정한 주기로 카메라로부터 이미지를 처리합니다. 기본 `scan_interval`이  10 초이므로 카메라의 이미지가 변경되지 않은 경우 과도한 처리가 발생합니다. `scan_interval : 10000`(간격을 10,000초로 세팅)을 설정에 추가하여 이를 무시할 수 있습니다, 그렇게 한 후 실제로 처리를 수행하고자 할 때 `image_processing.scan` 서비스를 호출합니다.
+[Image processing components](/integrations/image_processing/)는 `scan_interval`에 의해 주어진 일정한 주기로 카메라로부터 이미지를 처리합니다. 기본 `scan_interval`이 10 초이므로 카메라의 이미지가 변경되지 않은 경우 과도한 처리가 발생합니다. `scan_interval : 10000`(간격을 10,000초로 세팅)을 설정에 추가하여 이를 무시할 수 있습니다, 그렇게 한 후 실제로 처리를 수행하고자 할 때 `image_processing.scan` 서비스를 호출합니다.
 
 ```yaml
 # Example advanced configuration.yaml entry

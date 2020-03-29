@@ -8,7 +8,9 @@ ha_release: 0.25
 ha_iot_class: Local Polling
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="388" src="https://www.youtube.com/embed/SR6IuN1wuDM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `russound_rnet` 플랫폼을 사용하면 RNET 프로토콜을 사용하는 Russound 장치를 제어할 수 있습니다.
 

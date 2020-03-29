@@ -10,11 +10,13 @@ ha_codeowners:
   - '@fabaff'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="388" src="https://www.youtube.com/embed/DCOrwp_48TA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
-The `pvoutput` sensor platform consumes information from [PVOutput](https://pvoutput.org/) which were uploaded by your solar photovoltaic (PV) system.
+`pvoutput` 센서 플랫폼은 태양광 발전(PV) 시스템에 의해 업로드된 [PVOutput](https://pvoutput.org/)의 정보를 소비합니다.
 
-To add PVOutput details to your installation, add the following to your `configuration.yaml` file:
+설치에 PVOutput 세부 사항을 추가하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -43,11 +45,11 @@ name:
 
 <div class='note warning'>
 
-It's recommended to set `scan_interval:` according to a value greater than 60 seconds. The service only allows 60 requests per hour but the sensor's default is 30 seconds.
+`scan_interval:`을 60 초보다 큰 값에 따라 설정하는 것이 좋습니다. 이 서비스는 시간당 60 개의 요청만 허용하지만 센서의 기본값은 30 초입니다.
 
 </div>
 
-To format the PVoutput sensor it's recommended to use the [template component](/topics/templating/). For example:
+PV 출력 센서를 포맷하려면 [template component](/topics/templating/)를 사용하는 것이 좋습니다. 예를 들면 다음과 같습니다.
 
 ```yaml
 sensor:

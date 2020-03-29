@@ -8,9 +8,9 @@ ha_release: 0.44
 ha_quality_scale: internal
 ---
 
-`rss_feed_template` 통합구성요소는 Home Assistant의 모든 정보를 정적 RSS 피드로 내보낼 수 있습니다. RSS 리더를 사용하여 여러 유형의 장치에 해당 정보를 표시하는 데 사용할 수 있습니다. 홈어시스턴트 용 기본 앱은 널리 사용되지 않지만 기본 RSS 리더는 거의 모든 플랫폼에 존재합니다. 
+`rss_feed_template` 통합구성요소는 Home Assistant의 모든 정보를 정적 RSS 피드로 내보낼 수 있습니다. RSS 리더를 사용하여 여러 유형의 장치에 해당 정보를 표시하는데 사용할 수 있습니다. 홈어시스턴트용 기본앱은 널리 사용되지 않지만 기본 RSS 리더는 거의 모든 플랫폼에 존재합니다. 
 
-예를 들어, Android에서는 "Simple RSS Widget"앱을 사용하여 홈 화면에 온도를 표시 할 수 있습니다.
+예를 들어, Android에서는 "Simple RSS Widget"앱을 사용하여 홈화면에 온도를 표시할 수 있습니다.
 
 ```yaml
 # Example configuration.yaml entry

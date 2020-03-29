@@ -11,7 +11,9 @@ ha_codeowners:
   - '@ualex73'
 ---
 
+<div class='videoWrapper'>
 <iframe width="692" height="388" src="https://www.youtube.com/embed/fcofNbbm1OQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `slide` 구현을 통해 [official API](https://documenter.getpostman.com/view/6223391/S1Lu2pSf?version=latest)를 사용하여 홈어시스턴트에서 [slide.store](https://slide.store/) 장치를 연동할 수 있습니다.
 

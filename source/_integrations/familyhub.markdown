@@ -8,13 +8,15 @@ ha_release: '0.70'
 ha_iot_class: Local Polling
 ---
 
-<iframe width="690" height="703" src="https://www.youtube.com/embed/XDfXm-YrZ8k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/MATe2WnAGE4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
-familyhub플랫폼을 사용하면 홈어시스턴트에서 [Samsung Family Hub refrigerator](https://www.samsung.com/us/explore/family-hub-refrigerator/connected-hub/) 내부 이미지를 얻을 수 있습니다.
+familyhub 플랫폼을 사용하면 홈어시스턴트에서 [Samsung Family Hub refrigerator](https://www.samsung.com/us/explore/family-hub-refrigerator/connected-hub/) 내부 이미지를 얻을 수 있습니다.
 
 ## 설정 
 
-설치시 Family Hub 카메라를 활성화하려면 `configuration.yaml`파일에 다음을 추가 하십시오.
+설치시 Family Hub 카메라를 활성화하려면 `configuration.yaml`파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

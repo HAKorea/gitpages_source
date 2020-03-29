@@ -9,7 +9,9 @@ ha_codeowners:
   - '@jalmeroth'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/NIHZxNjeEg0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `yamaha_musiccast` 플랫폼을 사용하면 Home Assistant에서 [Yamaha MusicCast Receivers](https://usa.yamaha.com/products/audio_visual/hifi_components/index.html)를 제어할 수 있습니다.
 
@@ -43,7 +45,7 @@ interval_seconds:
 
 ### 지원 동작
 
-현재 이 통합구성요소는 전원 켜기/끄기, 음소거, 볼륨 제어 및 소스 선택을 지원합니다. 재생 및 정지와 같은 재생 컨트롤은 이를 지원하는 소스에서 사용할 수 있습니다.
+현재 이 통합구성요소는 전원 켜기/끄기, 음소거, 볼륨 제어 및 입력 선택을 지원합니다. 재생 및 정지와 같은 재생 컨트롤은 이를 지원하는 입력에서 사용할 수 있습니다.
 
 ### 설정 사례
 

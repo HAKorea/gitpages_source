@@ -7,7 +7,7 @@ ha_category:
 ha_release: 0.47
 ---
 
-`onvif` 카메라 플랫폼을 사용하면 Home Assistant에서 [ONVIF](https://www.onvif.org/) 카메라를 사용할 수 있습니다. 이를 위해서는 [`ffmpeg` component](/integrations/ffmpeg/)가 이미 설정되어 있어야합니다. 
+`onvif` 카메라 플랫폼을 사용하면 Home Assistant에서 [ONVIF](https://www.onvif.org/) 카메라를 사용할 수 있습니다. 이를 위해서는 [`ffmpeg` 통합구성요소](/integrations/ffmpeg/)가 이미 설정되어 있어야합니다. 
 
 ## 설정
 
@@ -46,7 +46,7 @@ port:
   type: integer
   default: 5000
 profile:
-  description: 스트림을 얻는 데 사용되는 비디오 프로필, 자세한 내용은 아래를 참조.
+  description: 스트림을 얻는데 사용되는 비디오 프로필, 자세한 내용은 아래를 참조.
   required: false
   type: integer
   default: 0
@@ -57,11 +57,11 @@ extra_arguments:
   default: -q:v 2
 {% endconfiguration %}
 
-대부분의 ONVIF 카메라는 둘 이상의 오디오 / 비디오 프로파일을 지원합니다. 각 프로파일은 서로 다른 이미지 품질을 제공합니다. 일반적으로 첫 번째 프로필의 품질이 가장 높으며 기본적으로 사용되는 프로필입니다. 그러나 저품질 이미지를 사용하고 싶을 수도 있습니다. 그 이유 중 하나는 하드웨어가 특히 Raspberry Pi에서 실행될 때 실시간으로 최고 품질의 이미지를 렌더링 할 수 없기 때문일 수 있습니다. 따라서 설정에서 `profile` 변수를 세팅하여 사용하려는 프로파일을 선택할 수 있습니다.
+대부분의 ONVIF 카메라는 둘 이상의 오디오/비디오 프로파일을 지원합니다. 각 프로파일은 서로 다른 이미지 품질을 제공합니다. 일반적으로 첫 번째 프로필의 품질이 가장 높으며 기본적으로 사용되는 프로필입니다. 그러나 저품질 이미지를 사용하고 싶을 수도 있습니다. 그 이유 중 하나는 하드웨어가 특히 Raspberry Pi에서 실행될 때 실시간으로 최고 품질의 이미지를 렌더링할 수 없기 때문일 수 있습니다. 따라서 설정에서 `profile` 변수를 세팅하여 사용하려는 프로파일을 선택할 수 있습니다.
 
 ### `camera.onvif_ptz` 서비스
 
-ONVIF 카메라가 PTZ를 지원하면 카메라를 패닝, 틸트 또는 줌할 수 있습니다. 
+ONVIF 카메라가 PTZ를 지원하면 카메라를 패닝, 틸트 또는 줌을 할 수 있습니다. 
 
 | Service data attribute | Description |
 | -----------------------| ----------- |

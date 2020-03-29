@@ -8,9 +8,11 @@ ha_iot_class: Local Polling
 ha_release: 0.66
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/BcYLcdWRBCo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
-`xiaomi_miio` 센서 플랫폼은 Xiaomi Mi Air Quality Monitor (PM2.5)를 관찰하고 대기질 지수를보고합니다.
+`xiaomi_miio` 센서 플랫폼은 Xiaomi Mi Air Quality Monitor (PM2.5)를 관찰하고 대기질 지수를 보고합니다.
 
 현재 지원되는 기능은 다음과 같습니다. : 
 

@@ -11,7 +11,9 @@ ha_codeowners:
   - '@andrewsayre'
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/ck6UGL8G7Cs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/ck6UGL8G7Cs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 HEOS 통합구성요소는 스피커, 앰프 및 수신기 (Denon 및 Marantz)와 같은 [HEOS](http://heosbydenon.denon.com) 가능 제품에 대한 지원을 Home Assistant에 추가합니다. 현재 기능은 다음과 같습니다.
 
@@ -23,7 +25,7 @@ HEOS 통합구성요소는 스피커, 앰프 및 수신기 (Denon 및 Marantz)�
 
 ## 설정
 
-[discovery](/integrations/discovery) 통합구성요소가 활성화 되면 HEOS 장치가 자동으로 검색되고 설정됩니다 . 또는 프론트 엔드 제어판 통합 페이지를 통해 또는 `configuration.yaml` 파일에 다음을 추가하여 수동으로 연동을 설정할 수 있습니다 .
+[discovery](/integrations/discovery) 통합구성요소가 활성화 되면 HEOS 장치가 자동으로 검색되고 설정됩니다. 또는 프론트 엔드 제어판 통합구성요소 페이지를 통해 또는 `configuration.yaml` 파일에 다음을 추가하여 수동으로 연동을 설정할 수 있습니다 .
 
 ```yaml
 # Example configuration.yaml entry
@@ -86,7 +88,7 @@ host:
 
 #### 플레이 리스트 재생
 
-`media_player.play_media` 서비스를 통해 HEOS 플레이 리스트를 재생할 수 있습니다 . 서비스 데이터 페이로드 예 :
+`media_player.play_media` 서비스를 통해 HEOS 플레이 리스트를 재생할 수 있습니다. 서비스 데이터 페이로드 예 :
 
 ```json
 {
@@ -104,7 +106,7 @@ host:
 
 #### 빠른 선택 재생
 
-`media_player.play_media` 서비스를 통해 nubmer 또는 이름으로 HEOS Quick Select를 재생할 수 있습니다 . 서비스 데이터 페이로드 예 :
+`media_player.play_media` 서비스를 통해 nubmer 또는 이름으로 HEOS Quick Select를 재생할 수 있습니다. 서비스 데이터 페이로드 예 :
 
 ```json
 {
@@ -160,6 +162,6 @@ logger:
 ### 즐겨찾기 누락
 
 HEOS 컨트롤러가 HEOS 계정에 로그인하지 않으면 HEOS 즐겨찾기가 미디어 플레이어 소스 선택에 채워지지 않고 `favorite` 및 `playlist`에 대한 `media_player.play_media` 서비스가 실패합니다. 또한 시작시 다음 경고가 기록됩니다. :
-> IP_ADDRESS가 HEOS 계정에 로그인되어 있지 않으며 HEOS 즐겨 찾기를 검색 할 수 없습니다. 'heos.sign_in' 서비스를 사용하여 HEOS 계정에 로그인하십시오.
+> IP_ADDRESS가 HEOS 계정에 로그인되어 있지 않으며 HEOS 즐겨 찾기를 검색할 수 없습니다. 'heos.sign_in' 서비스를 사용하여 HEOS 계정에 로그인하십시오.
 
-이 문제를 해결하려면 `heos.sign_in` 서비스를 사용하여 위에서 설명한대로 계정에 컨트롤러에 서명하십시오. 계정 자격 증명이 유효한 동안 컨트롤러는 로그인 상태를 유지하므로이 작업은 한 번만 수행하면됩니다.
+이 문제를 해결하려면 `heos.sign_in` 서비스를 사용하여 위에서 설명한대로 계정에 컨트롤러에 서명하십시오. 계정 자격 증명이 유효한 동안 컨트롤러는 로그인 상태를 유지하므로 이 작업은 한 번만 수행하면됩니다.

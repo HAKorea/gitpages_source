@@ -7,7 +7,9 @@ ha_category:
 ha_release: 0.16
 ---
 
-<iframe width="690" height="388" src="https://www.youtube.com/embed/V7eUf2UsO4Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/V7eUf2UsO4Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `MessageBird` 알림 플랫폼은 [MessageBird](https://www.messagebird.com/)를 사용하여 SMS 메시지로 알림을 휴대폰으로 보냅니다.
 

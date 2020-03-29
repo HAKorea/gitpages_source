@@ -118,7 +118,7 @@ night_mode_name:
     entity_id: alarm_control_panel.my_arlo_base_station
 ```
 
-집에 도착시 Arlo를 커스텀 모드(`configuration.yaml`의 `home_mode_name`에 매핑) 로 설정합니다.
+집에 도착시 Arlo를 커스텀 모드(`configuration.yaml`의 `home_mode_name`에 매핑)로 설정합니다.
 
 ```yaml
 - id: disarm_arlo_when_arriving
@@ -143,7 +143,7 @@ night_mode_name:
 
 ### 설정
 
-[Arlo component](/integrations/arlo)를 활성화하면 `configuration.yaml` 파일에 다음을 추가하십시오.
+[Arlo component](/integrations/arlo)를 활성화하고 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -165,12 +165,11 @@ ffmpeg_arguments:
 
 Home Assistant 내에서 [Arlo](https://arlo.netgear.com/) 센서를 작동시키려면 일반 [Arlo component](/integrations/arlo)에 대한 지침을 따르십시오.
 
-This platform does not support Arlo Q.
 이 플랫폼은 Arlo Q를 지원하지 않습니다.
 
 ### 설정
 
-[Arlo component](/integrations/arlo)를 활성화하면 `configuration.yaml` 파일에 다음을 추가하십시오. : 
+[Arlo component](/integrations/arlo)를 활성화하고 `configuration.yaml` 파일에 다음을 추가하십시오. : 
 
 ```yaml
 # Example configuration.yaml entry
@@ -184,7 +183,7 @@ sensor:
       - signal_strength
 ```
 
-또한 추가 센서가 있는 Arlo Baby 카메라의 경우 `monitored_conditions` 컬렉션에 추가 할 수 있습니다.
+또한 추가 센서가 있는 Arlo Baby 카메라의 경우 `monitored_conditions` 컬렉션에 추가할 수 있습니다.
 
 ```yaml
 # Additional sensors available for Arlo Baby cameras
@@ -199,16 +198,16 @@ sensor:
 
 {% configuration %}
 monitored_conditions:
-  description: 프론트 엔드에 표시 할 조건. 다음과 같은 조건을 모니터링 할 수 있습니다. 
+  description: 프론트 엔드에 표시할 조건. 다음과 같은 조건을 모니터링 할 수 있습니다. 
   required: false
   type: list
   keys:
     captured_today:
-      description: 현재 날짜에 캡처 한 비디오 수를 반환.
+      description: 현재 날짜에 캡처한 비디오 수를 반환.
     last_capture:
-      description: Arlo 카메라에서 마지막으로 캡처 한 비디오의 타임 스탬프를 반환
+      description: Arlo 카메라에서 마지막으로 캡처한 비디오의 타임 스탬프를 반환
     total_cameras:
-      description: Arlo 계정에 연결된 인식 및 활성화 된 카메라 수를 반환
+      description: Arlo 계정에 연결된 인식 및 활성화된 카메라 수를 반환
     battery_level:
       description: Arlo 카메라의 배터리 잔량을 반환
     signal_strength:
@@ -218,7 +217,7 @@ monitored_conditions:
     humidity:
       description: Arlo Baby 카메라가 감지한 주변 상대 습도를 반환
     air_quality:
-      description: Arlo Baby 카메라가 감지 한 주변 대기질 (백만분의 1의 휘발성 유기 화합물(VOC) 판독값)을 반환.
+      description: Arlo Baby 카메라가 감지한 주변 대기질 (백만분의 1의 휘발성 유기 화합물(VOC) 판독값)을 반환.
 {% endconfiguration %}
 
 **monitor_conditions**를 지정하지 않으면 위의 모든 항목이 기본적으로 사용됩니다.

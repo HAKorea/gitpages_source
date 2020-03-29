@@ -13,7 +13,9 @@ ha_codeowners:
   - '@danielhiversen'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="388" src="https://www.youtube.com/embed/GXqooSgcIcM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 The `tibber` integration provides a sensor with the current electricity price if you are a [Tibber](https://tibber.com/) customer.
 If you have a [Tibber Pulse](https://norge.tibber.com/products/pulse/) or [Watty](https://watty.io/) it will also show the electricity consumption in real time.

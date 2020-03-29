@@ -10,7 +10,9 @@ ha_codeowners:
   - '@robbiet480'
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/2kX5Pr9OE6Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/2kX5Pr9OE6Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `foursquare` 통합구성요소는 Foursquare [Real-Time API](https://developer.foursquare.com/overview/realtime)에서 푸시(push)를 받고 Swarm에서 사용자를 체크인하는 서비스를 허용합니다.
 
@@ -34,21 +36,19 @@ push_secret:
 
 #### 액세스 토큰 받기 ####
 
-After you have registered your APP on your [My Apps Page](https://foursquare.com/developers/apps) you get a `CLIENT_ID` and you have specified a `REDIRECT_URL` which can be any URL you like, but since it will get your access token via an HTTP GET request, it should be a URL which will ignore the `access_token` HTTP GET variable. A good idea is to choose the URL of your Home Assistant.
-Visit the following URL in your browser:
 [My Apps Page](https://foursquare.com/developers/apps)에 APP를 등록한 후 `CLIENT_ID`가 표시되고 원하는 URL로 `REDIRECT_URL`을 지정했을 것입니다. 하지만, HTTP GET 요청을 통해 액세스 토큰을 얻으므로, `access_token` HTTP GET 변수를 무시하는 URL일 것입니다. 결국 홈어시스턴트의 URL을 선택하는 것이 좋습니다. 브라우저에서 다음 URL을 방문하십시오. :
 
 ```txt
 https://foursquare.com/oauth2/authenticate?client_id=CLIENT_ID&response_type=token&redirect_uri=YOUR_REGISTERED_REDIRECT_URI
 ```
 
-`CLIENT_ID` 및 `YOUR_REGISTERED_REDIRECT_URL` 을 실제 값으로 변경하십시오. Foursquare 계정을 새로 만든 앱에 연결할지 묻는 OAuth 요청 랜딩 페이지가 나타납니다. "Yes"라고 하십시오. 그 후에는 HTTP GET 변수로 `access_token`을 사용하여 `REDIRECT_URL`으로 리디렉션됩니다. = 뒤에 모든 것을 복사하고 configuration.yaml에 `access_token`으로 붙여 넣으십시오.
+`CLIENT_ID` 및 `YOUR_REGISTERED_REDIRECT_URL` 을 실제값으로 변경하십시오. Foursquare 계정을 새로 만든 앱에 연결할지 묻는 OAuth 요청 랜딩 페이지가 나타납니다. "Yes"라고 하십시오. 그 후에는 HTTP GET 변수로 `access_token`을 사용하여 `REDIRECT_URL`으로 리디렉션됩니다. = 뒤에 모든 것을 복사하고 configuration.yaml에 `access_token`으로 붙여 넣으십시오.
 
 ### 실시간 API
 
 연동 이후 `/api/foursquare`에서 Foursquare의 푸시를 허용합니다. 경로는 인증이 필요하지 않습니다.
 
-Foursquare 체크인 이벤트를 즉시 사용하여 자동화 액션을 트리거 할 수 있습니다. 다음예를 보십시오. 
+Foursquare 체크인 이벤트를 즉시 사용하여 자동화 액션을 트리거할 수 있습니다. 다음예를 보십시오. 
 
 ```yaml
 automation:
@@ -63,7 +63,7 @@ automation:
 
 ### 체크인 (Check ins)
 
-사용자를 체크인하려면 `foursquare / checkin` 서비스를 사용하십시오.
+사용자를 체크인하려면 `foursquare/checkin` 서비스를 사용하십시오.
 
 Parameters:
 

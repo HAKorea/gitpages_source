@@ -9,11 +9,13 @@ ha_release: 0.49
 ha_iot_class: Local Push
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/PtiX4TcdDSg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `wake_on_lan` 통합구성요소를 통해 _magic packet_ 을 [Wake on LAN](https://en.wikipedia.org/wiki/Wake-on-LAN) 지원 장치로 전송하여 장치를 켤 수 있습니다.
 
-현재 홈 어시스턴트에는 다음과 같은 장치 유형이 지원됩니다 :
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다 :
 
 - [Switch](#switch)
 
@@ -93,7 +95,7 @@ broadcast_address:
 
 ### 사례
 
-다음은 **turn_off** 변수 를 사용하는 방법에 대한 실제 예입니다.
+다음은 **turn_off** 변수를 사용하는 방법에 대한 실제 예입니다.
 
 #### Suspending Linux 
 

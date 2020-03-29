@@ -10,7 +10,9 @@ ha_codeowners:
   - '@tinloaf'
 ---
 
-<iframe width="690" height="388" src="https://www.youtube.com/embed/jr2mXSKq3B4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/jr2mXSKq3B4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 이 통합구성요소를 통해 매트릭스 rooms에 메시지를 보낼뿐만 아니라 매트릭스 rooms에 메시지를 보낼 수 있습니다. 설정된 명령 중 하나가 트리거 될 때 이벤트를 발생시켜 명령에 반응합니다.
 

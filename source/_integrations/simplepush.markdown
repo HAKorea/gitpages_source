@@ -7,7 +7,9 @@ ha_category:
 ha_release: 0.29
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/hZ671C1VSB4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `simplepush` 플랫폼은 [Simplepush](https://simplepush.io/)를 사용하여 Home Assistant에서 Android 장치로 알림을 전달합니다. 유사한 앱과 달리 Simplepush 앱은 등록이 필요하지 않습니다.
 
@@ -44,7 +46,7 @@ notify:
     type: string
 {% endconfiguration %}
 
-서비스가 작동하는지 테스트하려면 명령 줄에서 `curl` 메시지를 보내십시오.
+서비스가 작동하는지 테스트하려면 command line에서 `curl` 메시지를 보내십시오.
 
 ```bash
 $ curl 'https://api.simplepush.io/send/device_key/title/message'

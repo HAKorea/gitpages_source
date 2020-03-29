@@ -10,7 +10,9 @@ ha_codeowners:
   - '@bachya'
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/BmkJyhk5Bwc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/BmkJyhk5Bwc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 The `flunearyou` sensor platform allows users in the United States and its
 territories to get information regarding reported flu symptoms from [Flu Near

@@ -25,7 +25,7 @@ media_player:
 
 {% configuration %}
 url:
-  description: "장치 설명. `.xml` 파일의 URL (예 : `http://192.168.0.10:9197/description.xml`)"
+  description: "장치 설명. `.xml` 파일의 URL (예: `http://192.168.0.10:9197/description.xml`)"
   required: true
   type: string
 listen_ip:
@@ -42,7 +42,7 @@ name:
   required: false
   type: string
 callback_url_override:
-  description: "Override the advertised callback URL. 홈어시스턴트 인스턴스에 직접 연결할 수 없는 경우 (예 : 브리지 된 네트워킹없이 도커 컨테이너에서 실행) 이벤트에 대해 이 콜백 URL을 알리십시오."
+  description: "발행된 callback URL 재정의. 홈어시스턴트 인스턴스에 직접 연결할 수 없는 경우 (예: 브리지된 네트워킹없이 도커 컨테이너에서 실행) 이벤트에 대해 이 콜백 URL을 알리십시오."
   required: false
   type: string
 {% endconfiguration %}

@@ -10,7 +10,9 @@ ha_codeowners:
   - '@home-assistant/core'
 ---
 
+<div class='videoWrapper'>
 <iframe width="692" height="388" src="https://www.youtube.com/embed/SQOJwWQgUno" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `persistent_notification` 통합구성요소는 사용자에 의해 해제해야하는 프론트 엔드에 필수 알림을 표시하는 데 사용할 수 있습니다.
 
@@ -44,9 +46,9 @@ action:
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
-| `notification_id`      |      no  | `notification_id`는 제거해야 할 알림을 식별하는 데 필요합니다.
+| `notification_id`      |      no  | `notification_id`는 제거해야 할 알림을 식별하는데 필요합니다.
 
-이 서비스를 사용하면 스크립트 또는 자동화로 알림을 제거 할 수 있습니다.
+이 서비스를 사용하면 스크립트 또는 자동화로 알림을 제거할 수 있습니다.
 
 ```yaml
 action:
@@ -95,7 +97,7 @@ message 속성은 [Markdown formatting syntax](https://daringfireball.net/projec
 
 <div class="note">
 
-  `/local/` in this context refers to the `.homeassistant/www/` folder.
+  이 문맥에서 `/local/`은 `.homeassistant/www/`폴더를 가리 킵니다.
 
 </div>
 

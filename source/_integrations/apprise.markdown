@@ -20,7 +20,7 @@ notify:
     url: YOUR_APPRISE_URLS
 ```
 
-원격 또는 로컬로 저장하는 동안 고유한 설정 파일을 미리 정의 할 수도 있습니다. `config` 옵션 만 사용하면됩니다.
+원격 또는 로컬로 저장하는 동안 고유한 설정 파일을 미리 정의할 수도 있습니다. `config` 옵션만 사용하면됩니다.
 
 ```yaml
 # Example configuration.yaml entry using externally located Apprise
@@ -79,9 +79,9 @@ config:
 
 ### 참고
 
-Apprise는 50 가지가 넘는 지원 알림 서비스를 지원합니다. 각각에는 활용할 수 있는 자체 조정 및 사용자 정의가 있습니다.
+Apprise는 50 가지가 넘는 알림 서비스를 지원합니다. 각각에는 활용할 수 있는 자체 조정 및 사용자 정의가 있습니다.
 
-- URL을 구성하는 방법에 대한 지침을 보려면 [여기](https://github.com/caronc/apprise/wiki#notification-services)를 방문하십시오.
+- URL을 설정하는 방법에 대한 지침을 보려면 [여기](https://github.com/caronc/apprise/wiki#notification-services)를 방문하십시오.
 - 자신의 Apprise 설정 파일 (`config` 가이드를 통해 참조)을 사용자 정의하는 방법에 대한 지침은 다음을 확인하십시오.
    - [Text Formatted URLs](https://github.com/caronc/apprise/wiki/config_text)
    - [YAML Formatted URLs](https://github.com/caronc/apprise/wiki/config_yaml)

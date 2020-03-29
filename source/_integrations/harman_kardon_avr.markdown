@@ -8,7 +8,9 @@ ha_iot_class: Local Polling
 ha_release: 0.85
 ---
 
-<iframe width="690" height="388" src="https://www.youtube.com/embed/SAI-suh2aCY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/SAI-suh2aCY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `harman_kardon_avr` 플랫폼을 사용하면 Home Assistant에서 Harman Kardon 네트워크 수신기를 제어 할 수 있습니다.
 

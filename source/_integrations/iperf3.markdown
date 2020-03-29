@@ -98,7 +98,7 @@ scan_interval:
   milliseconds: 0
 ```
 
-public Iperf3 서버 목록은 [here](https://iperf.fr/iperf-servers.php)에서 찾을 수 있습니다. [mlabbe/iperf3's](https://hub.docker.com/r/mlabbe/iperf3/) 도커 이미지를 사용하여 자체 Iperf3 서버를 시작하거나 `iperf3` 명령의 매뉴얼 페이지를 참조할 수도 있습니다.
+public Iperf3 서버 목록은 [여기](https://iperf.fr/iperf-servers.php)에서 찾을 수 있습니다. [mlabbe/iperf3's](https://hub.docker.com/r/mlabbe/iperf3/) 도커 이미지를 사용하여 자체 Iperf3 서버를 시작하거나 `iperf3` 명령의 매뉴얼 페이지를 참조할 수도 있습니다.
 
 `scan_interval` 값을 초단위로 설정하여 테스트가 자동으로 트리거되는 빈도를 조정할 수 있습니다.
 

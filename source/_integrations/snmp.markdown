@@ -11,9 +11,11 @@ ha_iot_class: Local Polling
 ha_release: 0.57
 ---
 
+<div class='videoWrapper'>
 <iframe width="692" height="388" src="https://www.youtube.com/embed/II1iu_JSW_U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
-많은 WiFi 액세스 포인트와 WiFi 라우터는 SNMP(Simple Network Management Protocol)를 지원합니다. 네트워크 연결 장치를 모니터링/관리하는 표준화 된 방법입니다. SNMP는 각 노드가 객체인 트리와 같은 계층을 사용합니다. 이러한 많은 개체에는 네트워크 인터페이스, 디스크 및 WiFi 등록과 같은 인스턴스(instances) 및 메트릭(metrics) 목록이 포함되어 있습니다.
+많은 WiFi 액세스 포인트와 WiFi 라우터는 SNMP(Simple Network Management Protocol)를 지원합니다. 네트워크 연결 장치를 모니터링/관리하는 표준화된 방법입니다. SNMP는 각 노드가 객체인 트리와 같은 계층을 사용합니다. 이러한 많은 개체에는 네트워크 인터페이스, 디스크 및 WiFi 등록과 같은 인스턴스(instances) 및 메트릭(metrics) 목록이 포함되어 있습니다.
 
 현재 홈어시스턴트에는 다음 장치 유형이 지원됩니다.
 
@@ -27,7 +29,7 @@ ha_release: 0.57
 
 ## 재실 감지
 
-다음 OID 예제는 라우터에서 현재 MAC 주소 테이블을 가져옵니다. 이것은 네트워크에서 본 모든 최근 장치를 반영합니다. 그러나 시간이 초과될 때까지 장치가 제거되지 않기 때문에 [device tracker integration page](/integrations/device_tracker/)에는 바람직하지 않습니다. 대신 [Ping](/integrations/ping) or [Nmap](/integrations/nmap_tracker)를 사용하는 것이 좋습니다.
+다음 OID 예제는 라우터에서 현재 MAC 주소 테이블을 가져옵니다. 이는 네트워크에서 본 모든 최근 장치를 반영합니다. 그러나 시간이 초과될 때까지 장치가 제거되지 않기 때문에 [device tracker integration page](/integrations/device_tracker/)에는 바람직하지 않습니다. 대신 [Ping](/integrations/ping) 혹은 [Nmap](/integrations/nmap_tracker)를 사용하는 것이 좋습니다.
 
 | Brand | Device/Firmware | OID |
 | --- | --- | --- |
@@ -221,7 +223,7 @@ laLoad.1 = STRING: 0.19
 
 #### 프린터 가동 시간
 
-가장 일반적인 SNMP 표준에 따르면 장치의 가동 시간은 OID `1.3.6.1.2.1.1.3.0`에서 액세스 할 수 있습니다. 이 값은 `TimeTicks`라는 형식을 사용하여 100 분의 1 초 단위로 나타냅니다.
+가장 일반적인 SNMP 표준에 따르면 장치의 가동 시간은 OID `1.3.6.1.2.1.1.3.0`에서 액세스할 수 있습니다. 이 값은 `TimeTicks`라는 형식을 사용하여 100 분의 1 초 단위로 나타냅니다.
 
 프린터 가동 시간을 분 단위로 표시하는 센서를 만들려면 다음 설정을 사용할 수 있습니다.
 
@@ -239,7 +241,7 @@ sensor:
 ```
 {% endraw %}
 
-`accept_errors` 옵션은 홈어시스턴트가 처음 시작될 때 프린터가 켜져 있지 않아도 센서가 작동 할 수 있도록합니다. 센서는 분 단위 대신 `-` 만 표시합니다.
+`accept_errors` 옵션은 홈어시스턴트가 처음 시작될 때 프린터가 켜져 있지 않아도 센서가 작동할 수 있도록합니다. 센서는 분 단위 대신 `-` 만 표시합니다.
 
 `value_template` 옵션은 원래 값을 분으로 변환합니다.
 

@@ -22,7 +22,7 @@ ha_release: 0.67
 
 ## 설정
 
-설치시 이 통합구성요소를 사용하려면`configuration.yaml` 파일에 다음을 추가하십시오.
+설치시 이 통합구성요소를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

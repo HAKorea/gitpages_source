@@ -7,7 +7,7 @@ ha_category:
 ha_release: 0.48
 ---
 
-**메시지 전송만** 지원하는 텔레 그램 구현. 홈어시스턴트 인스턴스는 인터넷에 노출 될 필요가 없으며 봇에게 전송된 메시지를 수신하기 위한 폴링이 없습니다.
+**메시지 전송만** 지원하는 텔레그램 구현. 홈어시스턴트 인스턴스는 인터넷에 노출될 필요가 없으며 봇에게 전송된 메시지를 수신하기 위한 폴링이 없습니다.
 
 ## 설정
 
@@ -42,9 +42,9 @@ proxy_url:
   required: false
   type: string
 proxy_params:
-  description: "프록시 뒤에서 작업 할 경우 프록시 구성 매개 변수 (예: 사용자 이름, 비밀번호 등)"
+  description: "프록시 뒤에서 작업할 경우 프록시 설정 매개 변수 (예: 사용자 이름, 비밀번호 등)"
   required: false
   type: string
 {% endconfiguration %}
 
-`chat_id` 와 `api_key`를 얻으려면 [here](/integrations/telegram)의 지시사항을 따르십시오.
+`chat_id` 와 `api_key`를 얻으려면 [여기](/integrations/telegram)의 지시사항을 따르십시오.

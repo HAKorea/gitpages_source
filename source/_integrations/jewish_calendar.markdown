@@ -1,5 +1,5 @@
 ---
-title: Jewish Calendar
+title: 히브리 달력(Jewish Calendar)
 description: Instructions on how to integrate the Jewish Calendar integration within Home Assistant.
 ha_category:
   - Calendar

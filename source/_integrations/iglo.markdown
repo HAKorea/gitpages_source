@@ -8,7 +8,9 @@ ha_iot_class: Local Polling
 ha_release: 0.61
 ---
 
-<iframe width="690" height="388" src="https://www.youtube.com/embed/oHTS9ji_v-s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/oHTS9ji_v-s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 The `iglo` platform allows you to integrate your [iGlo Lights](https://www.youtube.com/watch?v=oHTS9ji_v-s) into Home Assistant.
 

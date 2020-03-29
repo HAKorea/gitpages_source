@@ -10,7 +10,9 @@ ha_codeowners:
   - '@Julius2342'
 ---
 
-<iframe width="690" height="420" src="https://www.youtube.com/embed/5328k4lxShw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/5328k4lxShw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 The [KNX](https://www.knx.org) integration for Home Assistant allows you to connect to a KNX/IP devices.
 

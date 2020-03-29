@@ -17,7 +17,7 @@ ha_iot_class: Local Polling
 port=127.0.0.1:9001
 ```
 
-`supervisord`를 다시 시작하면 웹 인터페이스에 액세스 할 수 있어야합니다. 필요한 경우 [iFrame panel](/integrations/panel_iframe/)로 추가 할 수 있습니다.
+`supervisord`를 다시시작하면 웹인터페이스에 액세스할 수 있어야합니다. 필요한 경우 [iFrame panel](/integrations/panel_iframe/)로 추가할 수 있습니다.
 
 <p class='img'>
   <img src='{{site_root}}/images/screenshots/supervisor.png' />

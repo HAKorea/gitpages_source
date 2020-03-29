@@ -9,13 +9,15 @@ ha_release: 0.78
 ha_iot_class: Cloud Polling
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/Al6QgbOdMqI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/Al6QgbOdMqI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
-이 통합구성요소를 통해 Habitica 프로필을 모니터링하고 관리 할 수 ​​있습니다. 이 통합구성요소는 [Habitica 's API](https://habitica.com/apidoc/)를 홈어시스턴트 서비스로 노출시킵니다. 여러 사용자를 지원하며 홈어시스턴트를 사용하여 습관 및 일상적인 작업을 확인하거나 마법을 캐스팅 할 수 있습니다.
+이 통합구성요소를 통해 Habitica 프로필을 모니터링하고 관리할 수 ​​있습니다. 이 통합구성요소는 [Habitica 's API](https://habitica.com/apidoc/)를 홈어시스턴트 서비스로 노출시킵니다. 여러 사용자를 지원하며 홈어시스턴트를 사용하여 습관 및 일상적인 작업을 확인하거나 마법을 캐스팅할 수 있습니다.
 
-현재 홈 어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
-- Sensor - 홈어시스턴트의 [Habitica](https://habitica.com/)에서 플레이어 데이터를 보고 모니터링 할 수 있습니다.
+- Sensor - 홈어시스턴트의 [Habitica](https://habitica.com/)에서 플레이어 데이터를 보고 모니터링할 수 있습니다.
 
 Habitica 구성 요소를 설정하면 센서가 자동으로 나타납니다.
 
@@ -69,7 +71,7 @@ API는 `habitica.api_call`이라는 서비스로 Home Assistant에 노출됩니�
 | `path` | yes | [string] | Items from API URL in form of an array with method attached at the end. See the example below. |
 | `args` | no | map | Any additional json or url parameter arguments. See the example below and [apidoc](https://habitica.com/apidoc/). |
 
-이 서비스를 성공적으로 호출하면 'habitica_api_call_success'이벤트가 발생합니다.
+이 서비스를 성공적으로 호출하면 'habitica_api_call_success' 이벤트가 발생합니다.
 
 | Event data attribute |  Type     |    Description  |
 |----------------------|--------|----------------|
@@ -79,9 +81,9 @@ API는 `habitica.api_call`이라는 서비스로 Home Assistant에 노출됩니�
 
 #### 서비스 호출 방법에 대한 몇 가지 예를 살펴 보겠습니다.
 
-예를 들어, 사용자 `xxxNotAValidNickxxx`에 대해 각각 `api_user` 및 `api_key`로 구성된 `habitica` 플랫폼이 있다고 가정 해 봅시다.
-Home Assistant를 통해 이 사용자에 대한 새 작업 (할 일)을 만들어 봅시다. 이를 위해 [API 호출](https://habitica.com/apidoc/#api-Task-CreateUserTasks)을 합니다.
-새 작업을 만들려면 작업 속성이있는 json 객체로 POST 요청으로 `https://habitica.com/api/v3/tasks/user` 끝점(endpoint)에 도달해야합니다.
+예를 들어, 사용자 `xxxNotAValidNickxxx`에 대해 각각 `api_user` 및 `api_key`로 구성된 `habitica` 플랫폼이 있다고 가정해 봅시다.
+Home Assistant를 통해 이 사용자에 대한 새 작업(할 일)을 만들어 봅시다. 이를 위해 [API 호출](https://habitica.com/apidoc/#api-Task-CreateUserTasks)을 합니다.
+새 작업을 만들려면 작업 속성이 있는 json 객체로 POST 요청으로 `https://habitica.com/api/v3/tasks/user` endpoint에 도달해야합니다.
 `habitica.api_call`에서 API를 호출해 봅시다.
 
 * The `name` key becomes `xxxNotAValidNickxxx`.

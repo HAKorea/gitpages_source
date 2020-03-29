@@ -10,13 +10,15 @@ ha_codeowners:
   - '@ludeeus'
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/vMoOdgGJv4I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/vMoOdgGJv4I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
-The `launch_library` sensor will provide you with information about the next planned space launch.
+`launch_library` 센서는 다음 계획된 우주 발사에 대한 정보를 제공합니다.
 
-## Configuration
+## 설정
 
-Add the data to your `configuration.yaml` file as shown in the example:
+예제와 같이 `configuration.yaml` 파일에 데이터를 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -31,6 +33,6 @@ name:
   type: string
 {% endconfiguration %}
 
-The data this platform presents comes from [launchlibrary.net][launchlibrary].
+이 플랫폼이 제공하는 데이터는 [launchlibrary.net][launchlibrary]에서 제공됩니다.
 
 [launchlibrary]: https://launchlibrary.net/

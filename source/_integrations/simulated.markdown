@@ -9,7 +9,7 @@ ha_release: 0.65
 ha_quality_scale: internal
 ---
 
-`simulated` 센서 플랫폼은 [function](https://en.wikipedia.org/wiki/Sine_wave)에 의해 주어진 time-varying signal `V (t)`를 생성하는 시뮬레이션 센서를 제공합니다.
+`simulated` 센서 플랫폼은 [function](https://en.wikipedia.org/wiki/Sine_wave)에 의해 주어진 time-varying signal `V(t)`를 생성하는 시뮬레이션 센서를 제공합니다.
 
 ```text
 V(t) = M + A sin((2 pi (t - t_0) / w) + P) + N(s)
@@ -86,7 +86,7 @@ relative_to_epoch:
 
 ## 사례
 
-실제 데이터를 시뮬레이션하는 예제를 제공하기 위해 다음 설정을 사용하여 시뮬레이션 된 상대 습도 센서 (%)를 추가 할 수 있습니다.
+실제 데이터를 시뮬레이션하는 예제를 제공하기 위해 다음 설정을 사용하여 시뮬레이션된 상대 습도 센서(%)를 추가할 수 있습니다.
 
 ```yaml
 sensor:

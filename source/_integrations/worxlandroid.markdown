@@ -8,7 +8,9 @@ ha_release: 0.54
 ha_iot_class: Local Polling
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/1kP1Drt1rSY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `worxlandroid` 센서 플랫폼을 사용하면 현재 상태, 배터리 레벨 및 오류 상태 Worx Landroid WG796E.1 또는 WG797E를 얻을 수 있습니다.
 

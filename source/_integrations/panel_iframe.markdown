@@ -1,5 +1,5 @@
 ---
-title: iframe 패널
+title: 아이프레임 패널(iframe Panel)
 description: Instructions on how to add iFrames in the frontend of Home Assistant.
 logo: home-assistant.png
 ha_category:
@@ -10,10 +10,10 @@ ha_codeowners:
   - '@home-assistant/frontend'
 ---
 
-`panel_iframe` 지원을 통해 홈어시스턴트 프론트 엔드에 패널을 추가 할 수 있습니다. 패널은 사이드 바에 나열되며 라우터, 모니터링 시스템 또는 미디어 서버의 웹프런트엔드와 같은 외부 리소스를 포함 할 수 있습니다.
+`panel_iframe` 지원을 통해 홈어시스턴트 프론트 엔드에 패널을 추가할 수 있습니다. 패널은 사이드 바에 나열되며 라우터, 모니터링 시스템 또는 미디어 서버의 웹프런트엔드와 같은 외부 리소스를 포함할 수 있습니다.
 
 <div class='note warning'>
-SSL을 사용하여 HTTPS를 통해 Home Assistant에 액세스하는 경우 iframe 패널을 통해 HTTP 사이트에 액세스 할 수 없습니다.
+SSL을 사용하여 HTTPS를 통해 Home Assistant에 액세스하는 경우 iframe 패널을 통해 HTTP 사이트에 액세스할 수 없습니다.
 </div>
 
 설치에서 패널 iFrame을 활성화하려면 `configuration.yaml`파일에 다음을 추가 하십시오.

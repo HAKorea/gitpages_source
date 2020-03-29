@@ -20,13 +20,13 @@ ha_codeowners:
   - '@home-assistant/z-wave'
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/BrZhsSpv3BY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
-자막을 한글 혹은 영어로 변경하여 시청을 권장합니다. 
+<div class='videoWrapper'>
+<iframe width="690" height="437" src="https://www.youtube.com/embed/BrZhsSpv3BY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
-Home Assistant의 [Z-Wave](https://www.z-wave.com/) 통합구성요소를 통해 연결된 Z-Wave 장치를 관찰하고 제어할 수 있습니다. Z-Wave 컴포넌트 사용 및 설정 방법에 대한 자세한 문서는 [Z-Wave getting started section](/docs/z-wave/)을 참조하십시오.
+Home Assistant의 [Z-Wave](https://www.z-wave.com/) 통합구성요소를 통해 연결된 Z-Wave 장치를 관찰하고 제어할 수 있습니다. Z-Wave 컴포넌트 사용과 설정 방법에 대한 자세한 문서는 [Z-Wave getting started section](/docs/z-wave/)을 참조하십시오.
 
-현재 홈 어시스턴트에서 다음 장치 유형이 지원됩니다.
+현재 홈어시스턴트에서 다음 장치 유형이 지원됩니다.
 
 - Binary Sensor
 - [Climate](#climate)
@@ -39,7 +39,7 @@ Home Assistant의 [Z-Wave](https://www.z-wave.com/) 통합구성요소를 통해
 
 ## 설정 
 
-요구 사항을 설정 한 경우 다음 항목을 `configuration.yaml` 파일에 추가하십시오. :
+요구 사항을 설정한 경우 다음 항목을 `configuration.yaml` 파일에 추가하십시오. :
 
 ```yaml
 # Example configuration.yaml entry
@@ -48,13 +48,13 @@ zwave:
 
 ## Climate
 
-Z-Wave 온도 조절기 또는 HVAC 장치를 Home Assistant와 함께 사용하려면 일반적인 [Z-Wave component](/getting-started/z-wave/) 지침을 따르십시오.
+Z-Wave 온도조절기 또는 HVAC 장치를 Home Assistant와 함께 사용하려면 일반적인 [Z-Wave component](/getting-started/z-wave/) 지침을 따르십시오.
 
 <div class='note'>
 
-팬모드 또는 다른 작동 모드를 지원하는 온도 조절 장치는 HVAC 장치처럼 처리되며 하나의 장치로도 감지됩니다.
+팬모드 혹은 다른 작동 모드를 지원하는 온도 조절 장치는 HVAC 장치처럼 처리되며 하나의 장치로도 감지됩니다.
 
-온도 조절기가 다른 작동 모드를 지원하는 경우 각 모드마다 하나의 온도 조절기 엔터티가 제공됩니다. `configuration.yaml` 파일의 사용자 정의 설정을 사용하여 설정으로 숨길 수 있습니다. 
+온도조절기가 다른 작동 모드를 지원하는 경우 각 모드마다 하나의 온도조절기 엔터티가 제공됩니다. `configuration.yaml` 파일의 사용자 정의 설정을 사용하여 설정으로 숨길 수 있습니다. 
 
 </div>
 
@@ -65,9 +65,9 @@ climate:
   - platform: zwave
 ```
 
-활성화되면 Z-Wave 기후 장치를 Home Assistant에서 사용할 수 있습니다. 여러 엔티티가 작성 될 수 있습니다. Remotec ZXT-120에 대해 다음 엔티티가 작성됩니다.
+활성화되면 Z-Wave Climate 장치를 Home Assistant에서 사용할 수 있습니다. 여러 엔티티가 작성될 수 있습니다. Remotec ZXT-120에 대해 다음 엔티티가 작성됩니다.
 
-- `climate.remotec_zxt120_heating_1_id`: 연결된 장치를 제어 할 수 있습니다. 사례는 아래를 참조.
+- `climate.remotec_zxt120_heating_1_id`: 연결된 장치를 제어할 수 있습니다. 사례는 아래를 참조.
 - `sensor.remotec_zxt120_temperature_38`: 연결된 장치에 설정된 현재 온도를 반환하는 센서.
 
 ### Z-Wave Climate 장치 자동화
@@ -91,7 +91,7 @@ automation:
           temperature: 24
 ```
 
-일반적으로 Home Assistant에서 `homeassistant / turn_off` 서비스를 사용하여 장치를 끌 수 있습니다. Remotec ZXT-120의 경우 대신 다음과 같이 서비스를 요청해야합니다.
+일반적으로 Home Assistant에서 `homeassistant/turn_off` 서비스를 사용하여 장치를 끌 수 있습니다. Remotec ZXT-120의 경우 대신 다음과 같이 서비스를 요청해야합니다.
 
 ```yaml
 automation:
@@ -121,11 +121,11 @@ Z-Wave Climate 장치가 작동하는지 테스트하는 간단한 방법은 **�
 
 ## Cover 
 
-Z-Wave 차고 문, 블라인드 및 롤러 셔터는 홈어시스턴트의 Cover로 지원됩니다.
+Z-Wave 차고문, 블라인드, 롤러 셔터는 홈어시스턴트의 Cover로 지원됩니다.
 
 Z-Wave Cover가 홈어시스턴트와 작동하게 하려면 일반 [Z-Wave component](#configuration)에 대한 지시 사항을 따르십시오.
 
-특정 장치에 대해 닫기/열기의 [invert the operation](/docs/z-wave/installation/#invert_openclose_buttons)해야한다는 것을 발견 한 경우, `configuration.yaml` 파일의 Z-Wave 섹션에서 이 동작을 다음과 같이 변경할 수 있습니다. 또한 [invert percent position](/docs/z-wave/installation/#invert_percent)도 추가할 수 있습니다. 
+특정 장치에 대해 닫기/열기의 [invert the operation](/docs/z-wave/installation/#invert_openclose_buttons)해야한다는 상황을 발견한 경우, `configuration.yaml` 파일의 Z-Wave 섹션에서 이 동작을 다음과 같이 변경할 수 있습니다. 또한 [invert percent position](/docs/z-wave/installation/#invert_percent)도 추가할 수 있습니다. 
 
 ```yaml
 zwave:

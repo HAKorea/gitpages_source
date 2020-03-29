@@ -11,7 +11,7 @@ ha_codeowners:
   - '@tetienne'
 ---
 
-Somfy 통합구성요소를 통해 사용자는 [tahoma](/integrations/tahoma/) 구성 요소와 달리 [official API](https://developer.somfy.com/somfy-open-api/apis)를 사용하여 Somfy 장치를 Home Assistant에 연동 할 수 있습니다. 
+Somfy 통합구성요소를 통해 사용자는 [tahoma](/integrations/tahoma/) 구성 요소와 달리 [official API](https://developer.somfy.com/somfy-open-api/apis)를 사용하여 Somfy 장치를 Home Assistant에 연동할 수 있습니다. 
 
 ## 설치
 
@@ -23,7 +23,7 @@ Somfy는 새로운 계정 연결 서비스를 활용하고 있습니다. 즉, So
 
 ## 자체 개발자 계정으로 설치
 
-자신의 개발자 계정을 만들고 이를 통해 Somfy를 설정 할 수 있습니다.
+자신의 개발자 계정을 만들고 이를 통해 Somfy를 설정할 수 있습니다.
 
 ### 개발자 계정 설정
 

@@ -74,9 +74,9 @@ include:
       type: list
 {% endconfiguration %}
 
-## Examples
+## 사례
 
-### Full configuration
+### 전체 사례
 
 ```yaml
 watson_iot:

@@ -171,7 +171,7 @@ sensor:
 ```
 {% endraw %}
 
-설계상 센서의 상태 및 속성은 동일한 MQTT topic을 공유하는 경우 동기 방식으로 업데이트되지 않습니다. 상태와 속성이 동일한 MQTT 메시지에 의해 동시에 변경되면 상태와 속성 데이터 사이의 시간 불일치가 발생할 수 있습니다. 센서의 상태 변경시 트리거되는 자동화는 상태 변경 또는 속성 변경시 모두 트리거됩니다. 상태와 속성이 모두 변경되면 이러한 자동화가 두 번 트리거됩니다.
+설계상 센서의 상태 및 속성은 동일한 MQTT topic을 공유하는 경우 동기방식으로 업데이트되지 않습니다. 상태와 속성이 동일한 MQTT 메시지에 의해 동시에 변경되면 상태와 속성 데이터 사이의 시간 불일치가 발생할 수 있습니다. 센서의 상태 변경시 트리거되는 자동화는 상태 변경 또는 속성 변경시 모두 트리거됩니다. 상태와 속성이 모두 변경되면 이러한 자동화가 두 번 트리거됩니다.
 [MQTT trigger](/docs/automation/trigger/#mqtt-trigger)를 사용하고 동일한 MQTT 메시지 내에서 여러 JSON 값을 동기적으로 처리해야하는 자동화를 위해 {% raw %}`{{ trigger.payload_json }}`{% endraw %}[trigger data](/docs/automation/templating/#mqtt)를 통해 자동화에서 JSON을 직접 처리하십시오.
 
 ### 밧데리 레벨 받기
@@ -198,7 +198,7 @@ sensor:
 
 ### 온습도 받기
 
-DHT 센서와 NodeMCU 보드 (esp8266)를 사용하는 경우 MQTT 센서로 온도 및 습도를 검색 할 수 있습니다. [here](https://github.com/mertenats/open-home-automation/tree/master/ha_mqtt_sensor_dht22)에서 코드 예제를 찾을 수 있습니다. 이 예제의 일반 MQTT 메시지는 다음과 같습니다.
+DHT 센서와 NodeMCU 보드 (esp8266)를 사용하는 경우 MQTT 센서로 온도 및 습도를 검색할 수 있습니다. [여기](https://github.com/mertenats/open-home-automation/tree/master/ha_mqtt_sensor_dht22)에서 코드 예제를 찾을 수 있습니다. 이 예제의 일반 MQTT 메시지는 다음과 같습니다.
 
 ```json
 office/sensor1

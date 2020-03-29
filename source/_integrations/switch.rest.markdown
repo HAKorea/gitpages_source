@@ -8,7 +8,9 @@ ha_release: 0.7.6
 ha_iot_class: Local Polling
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/E99-17XyyUg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `rest` 스위치 플랫폼을 사용하면 [RESTful API](https://en.wikipedia.org/wiki/Representational_state_transfer)를 지원하는 지정된 엔드 포인트를 제어할 수 있습니다. 스위치는 GET을 통해 상태를 얻고 주어진 REST 리소스에서 POST를 통해 상태를 설정할 수 있습니다.
 
@@ -77,7 +79,6 @@ verify_ssl:
 {% endconfiguration %}
 
 <div class='note warning'>
-Make sure that the URL matches exactly your endpoint or resource.
 URL이 엔드 포인트 또는 리소스와 정확히 일치하는지 확인하십시오.
 </div>
 
@@ -85,7 +86,7 @@ URL이 엔드 포인트 또는 리소스와 정확히 일치하는지 확인하�
 
 ### 템플릿 값을 응용한 Switch
 
-이 예는 [template](/topics/templating/)을 사용하여 Home Assistant가 상태를 확인할 수있는 스위치를 보여줍니다. 이 예제에서 REST 엔드 포인트는 스위치가 켜져 있음을 나타내는 `true`로 이 JSON 응답을 리턴합니다.
+이 예는 [template](/topics/templating/)을 사용하여 Home Assistant가 상태를 확인할 수 있는 스위치를 보여줍니다. 이 예제에서 REST 엔드 포인트는 스위치가 켜져 있음을 나타내는 `true`로 이 JSON 응답을 리턴합니다.
 
 ```json
 {"is_active": "true"}

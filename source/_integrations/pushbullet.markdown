@@ -9,7 +9,9 @@ ha_release: 0.44
 ha_iot_class: Cloud Polling
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/WxvXQ8ShbEU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
@@ -75,7 +77,7 @@ monitored_conditions:
     title:
       description: 푸시의 제목.
     type:
-      description: Type of push.
+      description: 푸시의 유형.
 {% endconfiguration %}
 
 모든 properties가 attributes으로 표시됩니다. properties 배열은 여러 properties에 대한 센서 판독값을 기록하기 위한 것입니다.
@@ -108,7 +110,7 @@ name:
 
 ### 사용법
 
-Pushbullet은 알림 플랫폼이므로 알림 서비스 [as described here](/integrations/notify/)를 호출하여 제어할 수 있습니다. Pushbullet 계정에 등록된 모든 장치에 알림을 보냅니다. 특정 계정의 장치, 연락처 또는 채널을 지정하기 위해 선택적인 **target** 매개 변수를 Pushbullet에 제공할 수 있습니다.
+Pushbullet은 알림 플랫폼이므로 알림 서비스[as described here](/integrations/notify/)를 호출하여 제어할 수 있습니다. Pushbullet 계정에 등록된 모든 장치에 알림을 보냅니다. 특정 계정의 장치, 연락처 또는 채널을 지정하기 위해 선택적인 **target** 매개 변수를 Pushbullet에 제공할 수 있습니다.
 
 Type | Prefix | Suffix | Example
 ---- | ------ | ------ | -------
@@ -145,7 +147,7 @@ action:
       url: google.com
 ```
 
-- **url** (*Required*): Pushbullet과 함께 보낼 페이지 URL입니다
+- **url** (*Required*): Pushbullet과 함께 보낼 페이지 URL.
 
 ### File 지원
 
@@ -190,6 +192,6 @@ action:
 
 <div class='note'>
 
-[whitelist external directories](/docs/configuration/basic/)을 잊지 마십시오. 그래야 홈어시스턴트가 액세스 할 수 있습니다.
+[whitelist external directories](/docs/configuration/basic/)을 잊지 마십시오. 그래야 홈어시스턴트가 액세스할 수 있습니다.
 
 </div>

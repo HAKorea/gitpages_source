@@ -8,19 +8,23 @@ ha_release: 0.38
 ha_iot_class: Local Polling
 ---
 
-The `rflink` integration supports devices that use [RFLink gateway firmware](http://www.nemcon.nl/blog2/), for example the [Nodo RFLink Gateway](https://www.nodo-shop.nl/nl/21-rflink-gateway). RFLink gateway is an Arduino firmware that allows two-way communication with a multitude of RF wireless devices using cheap hardware (Arduino + transceiver).
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/oYfbEyzT-Gs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
-## Configuration
+`rflink` 통합구성요소는 [RFLink gateway firmware](http://www.nemcon.nl/blog2/)를 사용하는 장치 (예: [Nodo RFLink Gateway](https://www.nodo-shop.nl/nl/21-rflink-gateway))를 지원합니다. RFLink 게이트웨이는 저렴한 하드웨어 (Arduino + 트랜시버)를 사용하여 여러 RF 무선 장치와 양방향 통신을 가능하게하는 Arduino 펌웨어입니다. 
 
-First, you have to set up your [RFLink hub](/integrations/rflink/).
+## 설정
 
-After configuring the RFLink hub, sensors will be automatically discovered and added.
+먼저 [RFLink 허브](/integrations/rflink/)를 설정해야합니다.
 
-RFLink sensor ID's are composed of: protocol, id and type (optional). For example: `alectov1_0334_temp`. Some sensors emit multiple types of data. Each will be created as its own.
+RFLink 허브를 설정하면 센서가 자동으로 감지되어 추가됩니다.
 
-Once the ID of a sensor is known, it can be used to configure the sensor in Home Assistant, for example to add it to a different group, hide it or configure a nice name.
+RFLink 센서 ID는 protocol, ID 및 type(옵션)으로 구성됩니다 (예: `alectov1_0334_temp`). 일부 센서는 여러 유형의 데이터를 내보냅니다. 각각 자체적으로 생성됩니다.
 
-Configuring a device as a sensor:
+센서의 ID를 알고 나면 Home Assistant에서 센서를 설정하는데 사용할 수 있습니다 (예: 다른 그룹에 추가하거나 숨기거나 익숙한 이름을 설정하는 등).
+
+장치를 센서로 설정 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -65,9 +69,9 @@ devices:
           type: [list, string]
 {% endconfiguration %}
 
-## Sensor types
+## 센서 타입
 
-Sensor type values:
+센서 타입 값들 :
 
 - average_windspeed
 - barometric_pressure
@@ -102,21 +106,22 @@ Sensor type values:
 - windspeed
 - windtemp
 
-## Hiding/ignoring sensors
+## 센서 숨기기/무시하기
 
 Sensors are added automatically when the RFLink gateway intercepts a wireless command in the ether. To prevent cluttering the frontend use any of these methods:
+RFLink 게이트웨이가 이더넷에서 무선 명령을 가로 채면 센서가 자동으로 추가됩니다. 프론트 엔드가 복잡해지지 않게하려면 다음 방법 중 하나를 사용하십시오.
 
-- Disable automatically adding of unconfigured new sensors (set `automatic_add` to `false`).
-- Hide unwanted devices using [customizations](/getting-started/customizing-devices/)
+- 설정되지 않은 새 센서 자동 추가를 비활성화합니다 (`auto_add`를 `false`로 설정).
+- [customizations](/getting-started/customizing-devices/)를 사용하여 원치 않는 장치 숨기기
 - [Ignore devices on a platform level](/integrations/rflink/#ignoring-devices)
 
-## Device support
+## 지원 장치
 
-See [device support](/integrations/rflink/#device-support)
+[device support](/integrations/rflink/#device-support) 참조. 
 
-## Additional configuration examples
+## 추가 설정 사례
 
-Multiple sensors with `automatic_add` disabled and `aliases`
+`automatic_add`가 비활성화되고 `aliases`가 있는 다중 센서
 
 ```yaml
 # Example configuration.yaml entry

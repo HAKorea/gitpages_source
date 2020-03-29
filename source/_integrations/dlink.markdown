@@ -36,7 +36,7 @@ host:
   required: true
   type: string
 name:
-  description: 이 스위치를 표시 할 때 사용할 이름.
+  description: 이 스위치를 표시할 때 사용할 이름.
   required: false
   default: D-link Smart Plug W215
   type: string

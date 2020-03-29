@@ -1,5 +1,5 @@
 ---
-title: 미국 지질 조사 지진 위험 (USGS)
+title: 미국 지질조사 지진위험(USGS)
 description: Instructions on how to integrate the U.S. Geological Survey Earthquake Hazards Program Feed feed into Home Assistant.
 logo: us-geological-survey.png
 ha_category:
@@ -10,7 +10,9 @@ ha_codeowners:
   - '@exxamalte'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/mYJOx14H79I?list=PLWlpiQXaMerTyzl_Pe1PEloZTj9MoU5cl" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 The `usgs_earthquakes_feed` platform lets you integrate a GeoJSON feed provided by the [U.S. Geological Survey](https://earthquake.usgs.gov/) with information about seismic events like earthquakes. It retrieves incidents from a feed and shows information of those incidents filtered by distance to Home Assistant's location.
 

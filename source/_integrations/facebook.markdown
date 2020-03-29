@@ -8,7 +8,7 @@ ha_release: 0.36
 ---
 
 `facebook` 알림 플랫폼은 Facebook 메신저로 알림을 보낼 수 있습니다. powered by [Facebook](https://facebook.com).
- 
+
 
 설치시 이 알림 플랫폼을 사용하려면 `configuration.yaml` 파일에 다음을 추가 하십시오.
 

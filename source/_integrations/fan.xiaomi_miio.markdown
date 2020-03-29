@@ -8,9 +8,11 @@ ha_iot_class: Local Polling
 ha_release: 0.57
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/vKUJs1IOnTk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/vKUJs1IOnTk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
-The `xiaomi_miio` fan 플랫폼을 사용하면 샤오미 공기 청정기, 공기 가습기와 공기 정화기를 제어 할 수 있습니다.
+`xiaomi_miio` fan 플랫폼을 사용하면 샤오미 공기청정기, 가습기와 공기 정화기를 제어할 수 있습니다.
 
 지원되는 장치:
 
@@ -301,9 +303,9 @@ Air Fresh VA2         | zhimi.airfresh.va2     | |
   - motor_speed
   - extra_features
 
-API 토큰을 파일 에서 사용하기 위해 [Retrieving the Access Token](/integrations/vacuum.xiaomi_miio/#retrieving-the-access-token) 에 대한 지시사항을 따르십시오 `configuration.yaml`.
+`configuration.yaml` 파일에서 API 토큰을 사용하려면 [Retrieving the Access Token](/integrations/vacuum.xiaomi_miio/#retrieving-the-access-token)에 대한 지시 사항을 따르십시오.
 
-Xiaomi 공기 청정기를 추가하려면, `configuration.yaml` 에 다음을 추가 하십시오.:
+Xiaomi 공기청정기를 추가하려면 `configuration.yaml` 에 다음을 추가 하십시오.:
 
 ```yaml
 fan:
@@ -328,80 +330,80 @@ name:
   type: string
   default: Xiaomi Air Purifier
 model:
-  description: miio fan의 모델입니다. 해당 기기의 값을 위의 표를 참조하여 찾으세요. ( 예) `zhimi.airpurifier.v2`). 이 설정은 장치 모델 감지를 자동으로 찾는 것을 피하는 데 사용할 수 있으며 장치를 사용할 수없는 경우에 상세설정으로 권장합니다. 
+  description: "miio fan의 모델입니다. 해당 기기의 값을 위의 표를 참조하여 찾으세요. (예: `zhimi.airpurifier.v2`). 이 설정은 장치 모델 감지를 자동으로 찾는 것을 피하는데 사용할 수 있으며 장치를 사용할 수 없는 경우에 상세설정으로 권장합니다."
   required: false
   type: string
 {% endconfiguration %}
 
 ## 플랫폼 서비스
 
-### Service `fan.set_speed`
+### `fan.set_speed` 서비스
 
-팬 속도 / 작동 모드를 설정하십시오.
+팬 속도/작동 모드를 설정하십시오.
 
 | Service data attribute    | Optional | Description                                                         |
 |---------------------------|----------|---------------------------------------------------------------------|
-| `entity_id`               |       no | 특정 Xiaomi miIO fan entity에서만 작동합니다.                         |
-| `speed`                   |       no | fan 속도. 유효한 값은 'Auto', 'Silent', 'Favorite'및 'Idle'입니다.    |
+| `entity_id`               |       no | 특정 Xiaomi miIO fan entity에서만 작동.                         |
+| `speed`                   |       no | fan 속도. 유효한 값은 'Auto', 'Silent', 'Favorite', 'Idle'입니다.    |
 
-### Service `xiaomi_miio.fan_set_buzzer_on` (Air Purifier Pro 제외)
+### `xiaomi_miio.fan_set_buzzer_on` 서비스 (Air Purifier Pro 제외)
 
 부저를 켭니다.
 
 | Service data attribute    | Optional | Description                                             |
 |---------------------------|----------|---------------------------------------------------------|
-| `entity_id`               |       no | 특정 Xiaomi miIO fan entity에서만 작동합니다.             |
+| `entity_id`               |       no | 특정 Xiaomi miIO fan entity에서만 작동.             |
 
-### Service `xiaomi_miio.fan_set_buzzer_off` (Air Purifier Pro 제외)
+### `xiaomi_miio.fan_set_buzzer_off` 서비스 (Air Purifier Pro 제외) 
 
 부저를 끕니다.
 
 | Service data attribute    | Optional | Description                                             |
 |---------------------------|----------|---------------------------------------------------------|
-| `entity_id`               |       no | 특정 Xiaomi miIO fan entity에서만 작동합니다.             |
+| `entity_id`               |       no | 특정 Xiaomi miIO fan entity에서만 작동.             |
 
-### Service `xiaomi_miio.fan_set_led_on` (Air Purifiers 만 해당)
+### `xiaomi_miio.fan_set_led_on` 서비스 (Air Purifiers만 해당)
 
 LED를 켭니다.
 
 | Service data attribute    | Optional | Description                                             |
 |---------------------------|----------|---------------------------------------------------------|
-| `entity_id`               |       no | 특정 Xiaomi miIO fan entity에서만 작동합니다.             |
+| `entity_id`               |       no | 특정 Xiaomi miIO fan entity에서만 작동.             |
 
-### Service `xiaomi_miio.fan_set_led_off` (Air Purifiers 만 해당)
+### `xiaomi_miio.fan_set_led_off` 서비스 (Air Purifiers만 해당)
 
 LED를 끕니다.
 
 | Service data attribute    | Optional | Description                                             |
 |---------------------------|----------|---------------------------------------------------------|
-| `entity_id`               |       no | 특정 Xiaomi miIO fan entity에서만 작동합니다.             |
+| `entity_id`               |       no | 특정 Xiaomi miIO fan entity에서만 작동.             |
 
-### Service `xiaomi_miio.fan_set_child_lock_on`
+### `xiaomi_miio.fan_set_child_lock_on` 서비스
 
 아동용 잠금 장치를 켭니다.
 
 | Service data attribute    | Optional | Description                                             |
 |---------------------------|----------|---------------------------------------------------------|
-| `entity_id`               |       no | 특정 Xiaomi miIO fan entity에서만 작동합니다.             |
+| `entity_id`               |       no | 특정 Xiaomi miIO fan entity에서만 작동.             |
 
-### Service `xiaomi_miio.fan_set_child_lock_off`
+### `xiaomi_miio.fan_set_child_lock_off` 서비스
 
 아동용 잠금 장치를 끕니다.
 
 | Service data attribute    | Optional | Description                                             |
 |---------------------------|----------|---------------------------------------------------------|
-| `entity_id`               |       no | 특정 Xiaomi miIO fan entity에서만 작동합니다.             |
+| `entity_id`               |       no | 특정 Xiaomi miIO fan entity에서만 작동.             |
 
-### Service `xiaomi_miio.fan_set_led_brightness` (Air Purifier 2S, Air Purifier Pro 제외)
+### `xiaomi_miio.fan_set_led_brightness` 서비스 (Air Purifier 2S, Air Purifier Pro 제외)
 
 LED 밝기를 설정하십시오. 지원되는 값은 0 (Bright), 1 (Dim), 2 (Off)입니다.
 
 | Service data attribute    | Optional | Description                                             |
 |---------------------------|----------|---------------------------------------------------------|
-| `entity_id`               |       no | 특정 Xiaomi miIO fan entity에서만 작동합니다.             |
+| `entity_id`               |       no | 특정 Xiaomi miIO fan entity에서만 작동.             |
 | `brightness`              |       no | 0에서 2 사이의 밝기.                                      |
 
-### Service `xiaomi_miio.fan_set_favorite_level` (Air Purifiers 만 해당)
+### `xiaomi_miio.fan_set_favorite_level` 서비스 (Air Purifiers 만 해당)
 
 작동 모드의 즐겨찾기를 단계별 "favorite"로 설정하십시오.
 
@@ -410,56 +412,56 @@ LED 밝기를 설정하십시오. 지원되는 값은 0 (Bright), 1 (Dim), 2 (Of
 | `entity_id`               |       no | 특정 Xiaomi miIO fan entity에서만 작동합니다.               |
 | `level`                   |       no | 레벨은 0에서 16 사이입니다.                               |
 
-### Service `xiaomi_miio.fan_set_auto_detect_on` (Air Purifier 2S and Air Purifier Pro 만 해당)
+### `xiaomi_miio.fan_set_auto_detect_on` 서비스 (Air Purifier 2S, Air Purifier Pro만 해당)
 
 자동 감지를 켭니다.
 
 | Service data attribute    | Optional | Description                                             |
 |---------------------------|----------|---------------------------------------------------------|
-| `entity_id`               |       no | 	특정 Xiaomi miIO fan entity에서만 작동합니다.            |
+| `entity_id`               |       no | 	특정 Xiaomi miIO fan entity에서만 작동.            |
 
-### Service `xiaomi_miio.fan_set_auto_detect_off` (Air Purifier 2S and Air Purifier Pro 만 해당)
+### `xiaomi_miio.fan_set_auto_detect_off` 서비스 (Air Purifier 2S and Air Purifier Pro만 해당)
 
 자동 감지를 끕니다.
 
 | Service data attribute    | Optional | Description                                             |
 |---------------------------|----------|---------------------------------------------------------|
-| `entity_id`               |       no | 특정 Xiaomi miIO fan entity에서만 작동합니다.             |
+| `entity_id`               |       no | 특정 Xiaomi miIO fan entity에서만 작동.             |
 
-### Service `xiaomi_miio.fan_set_learn_mode_on` (Air Purifier 2 만 해당)
+### `xiaomi_miio.fan_set_learn_mode_on` 서비스 (Air Purifier 2만 해당)
 
 학습 모드를 켭니다.
 
 | Service data attribute    | Optional | Description                                             |
 |---------------------------|----------|---------------------------------------------------------|
-| `entity_id`               |       no | 특정 Xiaomi miIO fan entity에서만 작동합니다.             |
+| `entity_id`               |       no | 특정 Xiaomi miIO fan entity에서만 작동.             |
 
-### Service `xiaomi_miio.fan_set_learn_mode_off` (Air Purifier 2 만 해당)
+### `xiaomi_miio.fan_set_learn_mode_off` 서비스 (Air Purifier 2만 해당)
 
 학습 모드를 끕니다.
 
 | Service data attribute    | Optional | Description                                             |
 |---------------------------|----------|---------------------------------------------------------|
-| `entity_id`               |       no | 특정 Xiaomi miIO fan entity에서만 작동합니다.             |
+| `entity_id`               |       no | 특정 Xiaomi miIO fan entity에서만 작동.             |
 
-### Service `xiaomi_miio.fan_set_volume` (Air Purifier Pro 만 해당)
+### `xiaomi_miio.fan_set_volume` 서비스 (Air Purifier Pro만 해당)
 
 음량을 설정하십시오.
 
 | Service data attribute    | Optional | Description                                             |
 |---------------------------|----------|---------------------------------------------------------|
 | `entity_id`               |       no | 특정 Xiaomi miIO fan entity에서만 작동합니다.             |
-| `volume`                  |       no | Volume, between 0 and 100.                              |
+| `volume`                  |       no | 볼륨, 0 ~ 100   |
 
-### Service `xiaomi_miio.fan_reset_filter` (Air Purifier 2 만 해당)
+### `xiaomi_miio.fan_reset_filter` 서비스 (Air Purifier 2만 해당)
 
 필터 수명과 사용량을 재설정하십시오.
 
 | Service data attribute    | Optional | Description                                             |
 |---------------------------|----------|---------------------------------------------------------|
-| `entity_id`               |       no | 특정 Xiaomi miIO fan entity에서만 작동합니다.             |
+| `entity_id`               |       no | 특정 Xiaomi miIO fan entity에서만 작동.             |
 
-### Service `xiaomi_miio.fan_set_extra_features` (Air Purifier 만 해당)
+### `xiaomi_miio.fan_set_extra_features` 서비스 (Air Purifier만 해당)
 
 추가 기능을 설정하십시오.
 
@@ -468,16 +470,16 @@ LED 밝기를 설정하십시오. 지원되는 값은 0 (Bright), 1 (Dim), 2 (Of
 | `entity_id`               |       no | 특정 Xiaomi miIO fan entity에서만 작동합니다.             |
 | `features`                |       no | 정수, 0 과 1 값으로 구분.                                 |
 
-### Service `xiaomi_miio.fan_set_target_humidity` (Air Humidifier 만 해당)
+### `xiaomi_miio.fan_set_target_humidity` 서비스 (Air Humidifier만 해당)
 
 목표 습도를 설정하십시오.
 
 | Service data attribute    | Optional | Description                                                     |
 |---------------------------|----------|-----------------------------------------------------------------|
-| `entity_id`               |       no | 특정 Xiaomi miIO fan entity에서만 작동합니다.                     |
-| `humidity`                |       no | 목표습도. 설정 허용값은 30, 40, 50, 60, 70 및 80입니다.           |
+| `entity_id`               |       no | 특정 Xiaomi miIO fan entity에서만 작동.                     |
+| `humidity`                |       no | 목표습도. 설정 허용값은 30, 40, 50, 60, 70 ,80.           |
 
-### Service `fan.xiaomi_miio_set_dry_on` (Air Humidifier CA and CB)
+### `fan.xiaomi_miio_set_dry_on` 서비스 (Air Humidifier CA, CB)
 
 건조 모드를 켭니다.
 
@@ -485,10 +487,10 @@ LED 밝기를 설정하십시오. 지원되는 값은 0 (Bright), 1 (Dim), 2 (Of
 |---------------------------|----------|---------------------------------------------------------|
 | `entity_id`               |       no | 특정 Xiaomi miIO fan entity에서만 작동합니다.             |
 
-### Service `fan.xiaomi_miio_set_dry_off` (Air Humidifier CA and CB)
+### `fan.xiaomi_miio_set_dry_off` 서비스 (Air Humidifier CA, CB)
 
 건조 모드를 끄십시오.
 
 | Service data attribute    | Optional | Description                                             |
 |---------------------------|----------|---------------------------------------------------------|
-| `entity_id`               |       no | 특정 Xiaomi miIO fan entity에서만 작동합니다.             |
+| `entity_id`               |       no | 특정 Xiaomi miIO fan entity에서만 작동.             |

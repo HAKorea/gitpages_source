@@ -9,6 +9,10 @@ ha_codeowners:
   - '@fbradyirl'
 ---
 
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/SV0wSEtDKlY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 이 `hikvisioncam` 스위치 플랫폼을 사용하면 [Hikvision](https://www.hikvision.com/) 카메라에서 모션 감지 세팅으로 제어할 수 있습니다.
 
 <div class='note warning'>
@@ -26,7 +30,7 @@ switch:
 
 {% configuration %}
 host:
-  description: "Hikvision 카메라의 IP 주소 (예 : 192.168.1.32)"
+  description: "Hikvision 카메라의 IP 주소 (예: 192.168.1.32)"
   required: true
   type: string
 port:
@@ -40,7 +44,7 @@ name:
   default: Hikvision Camera Motion Detection
   type: string
 username:
-  description: Hikvision 카메라에 액세스하기 위한 사용자 이름
+  description: Hikvision 카메라에 액세스하기위한 사용자 이름
   required: false
   default: admin
   type: string

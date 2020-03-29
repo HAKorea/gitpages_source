@@ -15,7 +15,9 @@ ha_category:
 ha_release: pre 0.7
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/thBwWReWGpc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 [Vera](https://getvera.com/) 허브는 주로 Z-Wave 장치에 연결하기위한 컨트롤러입니다.
 
@@ -56,7 +58,7 @@ vera_controller_url:
 
 ### 장치 설정
 
-기본적으로 스위치는 홈어시스턴트에 스위치로 추가되지만 일부 스위치가 라이트 스위치 인 경우 아래에 표시된 것처럼 `lights` 매개 변수를 사용하여 홈 어시스턴트에게이를 알릴 수 있습니다.
+기본적으로 스위치는 홈어시스턴트에 스위치로 추가되지만 일부 스위치가 조명 스위치인 경우 아래에 표시된 것처럼 `lights` 매개 변수를 사용하여 홈어시스턴트에게 이를 알릴 수 있습니다.
 
 Vera는 정교하게 Z-Wave 장치를 Home Assistant로 가져옵니다. 여기에는 사용하지 않는 시스템 장치 및 기타 장치가 포함될 수 있습니다. 아래와 같이 `exclude:`매개 변수를 사용하여 이러한 장치를 로드하지 않도록 Home Assistant에 지시할 수 있습니다.
 
@@ -74,7 +76,7 @@ vera:
 ### 자동화에서 Z-Wave 장치 사용
 
 Home Assistant 자동화의 Vera 컨트롤러에서 Z-Wave 장치를 사용하려면 엔티티 ID가 필요합니다. 
-홈 어시스턴트 UI에는 개발자 도구 섹션의 <img src='/images/screenshots/developer-tool-states-icon.png' alt='service developer tool icon' class="no-shadow" height="38" /> 아이콘 아래에 모든 엔티티가 표시됩니다. 속성에 `Vera Device Id`가 포함된 엔티티를 찾으면 왼쪽에 엔티티 ID가 있습니다.
+홈어시스턴트 UI에는 개발자 도구 섹션의 <img src='/images/screenshots/developer-tool-states-icon.png' alt='service developer tool icon' class="no-shadow" height="38" /> 아이콘 아래에 모든 엔티티가 표시됩니다. 속성에 `Vera Device Id`가 포함된 엔티티를 찾으면 왼쪽에 엔티티 ID가 있습니다.
 
 ### Sensor
 

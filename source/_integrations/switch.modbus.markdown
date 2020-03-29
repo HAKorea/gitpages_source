@@ -8,7 +8,7 @@ ha_release: pre 0.7
 ha_iot_class: Local Push
 ---
 
-`modbus` 스위치 플랫폼을 사용하면 [Modbus](http://www.modbus.org/) coils 또는 registers를 제어 할 수 있습니다.
+`modbus` 스위치 플랫폼을 사용하면 [Modbus](http://www.modbus.org/) coils 또는 registers를 제어할 수 있습니다.
 
 ## 설정
 

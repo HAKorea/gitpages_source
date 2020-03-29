@@ -12,7 +12,7 @@ ha_codeowners:
   - '@fabaff'
 ---
 
-현재 홈 어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
+현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - [Notifications](#notifications)
 - [Sensor](#sensor)
@@ -50,9 +50,9 @@ timestamp:
 
 알림을 사용하려면 [getting started with automation page](/getting-started/automation/)를 참조하십시오.
 
-## 센서 (Sensor)
+## 센서 
 
-`file` 센서 플랫폼은 일반 텍스트 파일에서 항목을 읽고 찾은 값을 보여줍니다. 파일의 마지막 줄만 사용됩니다. 이것은 명령행에서 `$ tail -n 1 sensor.txt`와 유사합니다. 파일 경로는 [whitelist_external_dirs](/docs/configuration/basic/)에 추가되어야합니다.
+`file` 센서 플랫폼은 일반 텍스트 파일에서 항목을 읽고 찾은 값을 보여줍니다. 파일의 마지막 줄만 사용됩니다. 이것은 command line에서 `$ tail -n 1 sensor.txt`와 유사합니다. 파일 경로는 [whitelist_external_dirs](/docs/configuration/basic/)에 추가되어야합니다.
 
 `file` 센서를 활성화하려면 `configuration.yaml`에 다음 줄을 추가하십시오 :
 

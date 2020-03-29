@@ -10,7 +10,9 @@ ha_codeowners:
   - '@skgsergio'
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/ifkI8RT5R_c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/ifkI8RT5R_c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `foscam` 플랫폼을 사용하면 홈어시스턴트에서 [Foscam](https://www.foscam.com) IP 카메라의 라이브 스트림을 볼 수 있습니다.
 
@@ -38,7 +40,7 @@ port:
   default: 88
   type: integer
 rtsp_port:
-  description: 카메라가 RTSP에 사용하는 포트.  이는 일반적으로 자동 검색되지만 R2 및 R2C와 같은 일부 모델에는 이 세트가 필요할 수 있습니다.
+  description: 카메라가 RTSP에 사용하는 포트. 이는 일반적으로 자동 검색되지만 R2 및 R2C와 같은 일부 모델에는 이 세트가 필요할 수 있습니다.
   required: false
   default: None
   type: integer
@@ -74,7 +76,7 @@ Foscam 카메라가 PTZ를 지원하는 경우 카메라를 이동하거나 기�
 
 <p class='img'>
   <img src='/images/integrations/foscam/example-card.png' alt='Screenshot showing a foscam camera using a picture-elements with PTZ controls.'>
-  팬 및 틸트 컨트롤이있는 Foscam 카메라를 보여주는 예.
+  팬 및 틸트 컨트롤이 있는 Foscam 카메라를 보여주는 예.
 </p>
 
 
@@ -186,4 +188,4 @@ elements:
 
 ### 추가 CGI 명령
 
-CGI 명령을 지원하는 oscam 웹캠은 홈어시스턴트 ([Source](http://www.ipcamcontrol.net/files/Foscam%20IPCamera%20CGI%20User%20Guide-V1.0.4.pdf)에서 제어 할 수 있습니다). 이 작업을 수행하는 방법에 대한 예는 [Foscam IP Camera Pan, Tilt, Zoom Control](/cookbook/foscam_away_mode_PTZ/) Cookbook 항목을 참조하십시오.
+CGI 명령을 지원하는 oscam 웹캠은 홈어시스턴트 ([Source](http://www.ipcamcontrol.net/files/Foscam%20IPCamera%20CGI%20User%20Guide-V1.0.4.pdf)에서 제어할 수 있습니다). 이 작업을 수행하는 방법에 대한 예는 [Foscam IP Camera Pan, Tilt, Zoom Control](/cookbook/foscam_away_mode_PTZ/) Cookbook 항목을 참조하십시오.

@@ -8,7 +8,9 @@ ha_iot_class: Cloud Polling
 ha_release: 0.47
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/M2fYzlsJW68" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `seame` 플랫폼을 사용하면 CANDY HOUSE, Inc.의 [Sesame](https://candyhouse.co/) 스마트 잠금 장치를 제어할 수 있습니다.
 
@@ -18,7 +20,7 @@ ha_release: 0.47
 
 또한 [my.candyhouse.co](https://my.candyhouse.co/#/credentials)에서 API 키를 생성해야합니다.
 
-위의 설정 중 하나를 사용하여 원격 액세스를 활성화하고 해당 잠금 설정에 대해 Sesame 앱에서 Integration - cloud 옵션을 활성화 한 경우 `configuration.yaml` 파일에 다음을 추가하십시오.
+위의 설정 중 하나를 사용하여 원격 액세스를 활성화하고 해당 잠금 설정에 대해 Sesame 앱에서 Integration - cloud 옵션을 활성화한 경우 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

@@ -9,7 +9,7 @@ ha_release: 0.42
 
 텔레그램 Chatbot polling 구현. 
 
-Telegram에서 지원하는 두 가지 봇 구현 중 하나입니다. 홈어시스턴트가 인터넷에 노출 될 필요는 없습니다.
+Telegram에서 지원하는 두 가지 봇 구현 중 하나입니다. 홈어시스턴트가 인터넷에 노출될 필요는 없습니다.
 
 ## 설정
 
@@ -49,4 +49,4 @@ proxy_params:
   type: string
 {% endconfiguration %}
 
-`chat_id`와 `api_key`를 얻으려면 지침을 따르십시오. [here](/integrations/telegram).
+`chat_id`와 `api_key`를 얻으려면 [여기](/integrations/telegram) 지침을 따르십시오. 

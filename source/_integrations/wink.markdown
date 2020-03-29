@@ -20,12 +20,14 @@ ha_iot_class: Cloud Polling
 ha_release: pre 0.7
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/9ax5ml0YC2s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 [Wink](https://www.wink.com/)는 시중에서 판매되는 광범위한 장치를 제어할 수 있는 홈오토메이션 허브입니다. 또는 제조사가 자신들에 대해 말하는 것처럼 :
 
 <blockquote>
-  윙크는 집에서 매일 도움을 주는 IOT기기와 사람들을 연결하는 빠르고 쉬운 방법을 제공합니다. !!
+  윙크는 집에서 항상 도움을 주는 IOT기기와 사람들을 연결하는 빠르고 쉬운 방법을 제공합니다. !!
 </blockquote>
 
 Home Assistant는 Wink API와 연동되어 switches, lights, locks, fans, climate devices (thermostats, air conditioners, water heaters), covers, sensors, alarms, and sirens을 자동으로 설정합니다.
@@ -51,7 +53,7 @@ Wink를 사용하여 개발자 계정을 설정해야합니다. 이 프로세스
 윙크는 개발자 계정에 가입할 때 사용자에게 세 가지 정보를 요청합니다.
 
 1. `Name:` 원하는 이름을 넣어도 되지만, 예를 들어 "Home Assistant"라고 써도 됩니다.
-2. `Website:` Home Assistant 인스턴스의 외부 주소입니다. 외부에서 액세스 할 수 없는 경우 이메일 주소를 사용할 수 있습니다.
+2. `Website:` Home Assistant 인스턴스의 외부 주소입니다. 외부에서 액세스할 수 없는 경우 이메일 주소를 사용할 수 있습니다.
 3. `Redirect URI:` IP를 홈어시스턴트 박스의 내부 IP로 바꾸는 `http://192.168.1.5:8123/auth/wink/callback` 이어야합니다.
 
 `wink` 이외의 `configuration.yaml`에는 설정이 필요하지 않습니다 :
@@ -59,7 +61,7 @@ Wink를 사용하여 개발자 계정을 설정해야합니다. 이 프로세스
 `wink:`를 `configuration.yaml`에 추가하고 홈어시스턴트를 다시 시작하면 프론트 엔드 Configurator를 통해 설정을 안내하는 `CONFIGURE` 버튼이 있는 프론트 엔드에 지속적인 알림이 표시됩니다.
 
 <div class='note'>
-When using the configurator make sure the initial setup is performed on the same local network as the Home Assistant server, if not from the same box Home Assistant is running on. This will allow for authentication redirects to happen correctly.
+configurator를 사용하는 경우 홈어시스턴트가 실행중인 동일한 box가 아닌 경우 홈어시스턴트 서버와 동일한 로컬 네트워크에서 초기 설정을 수행해야합니다. 이를 통해 인증 리디렉션이 올바르게 수행될 수 있습니다.
 </div>
 
 ```yaml
@@ -114,7 +116,7 @@ local_control:
 
 <div class='note'>
 
-허브가 로컬 제어 요청 수락을 중지하는 잘못된 상태가 될 수 있습니다. 이 경우 온라인으로 리디렉션될 때 요청이 훨씬 오래 걸린다는 것을 알 수 있습니다. 자주 발생하지는 않지만 허브를 재부팅하면 문제가 해결 된 것으로 보입니다.
+허브가 로컬 제어 요청 수락을 중지하는 잘못된 상태가 될 수 있습니다. 이 경우 온라인으로 리디렉션될 때 요청이 훨씬 오래 걸린다는 것을 알 수 있습니다. 자주 발생하지는 않지만 허브를 재부팅하면 문제가 해결된 것으로 보입니다.
 
 허브가 로컬 요청을 거부하면 다음 오류가 기록됩니다.
 
@@ -170,7 +172,7 @@ Wink 장치의 홈어시스턴트 entity_id는 Wink 장치의 이름을 기반�
 </div>
 
 <div class='note'>
-Wink 허브는 기본적으로 클라우드를 통해서만 액세스 할 수 있습니다. 즉, 인터넷에 연결되어 있어야하며 장치를 제어하고 업데이트 할 때 지연이 발생합니다 (~ 3 초).
+Wink 허브는 기본적으로 클라우드를 통해서만 액세스할 수 있습니다. 즉, 인터넷에 연결되어 있어야하며 장치를 제어하고 업데이트할 때 지연이 발생합니다 (~ 3 초).
 </div>
 
 ## 커스텀 Wink 장치 및 서비스
@@ -285,7 +287,7 @@ script:
 
 ### `set_siren_strobe_enabled` 서비스
 
-wink/set_siren_strobe_enabled 서비스를 사용하여 siren이 실행될 때 strobe를 활성화 또는 비활성화 할 수 있습니다.
+wink/set_siren_strobe_enabled 서비스를 사용하여 siren이 실행될 때 strobe를 활성화 또는 비활성화할 수 있습니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
@@ -305,7 +307,7 @@ script:
 
 ### `set_chime_strobe_enabled` 서비스
 
-wink/set_chime_strobe_enabled 서비스를 사용하여 chime이 실행될 때 strobe를 활성화 또는 비활성화 할 수 있습니다.
+wink/set_chime_strobe_enabled 서비스를 사용하여 chime이 실행될 때 strobe를 활성화 또는 비활성화할 수 있습니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
@@ -325,7 +327,7 @@ script:
 
 ### `set_nimbus_dial_state` 서비스
 
-wink/set_nimbus_dial_state 서비스를 사용하여 개별 dial의 value/position 및 label을 업데이트 할 수 있습니다
+wink/set_nimbus_dial_state 서비스를 사용하여 개별 dial의 value/position 과 label을 업데이트할 수 있습니다
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
@@ -350,7 +352,7 @@ script:
 
 ### `set_nimbus_dial_configuration` 서비스
 
-wink/set_nimbus_dial_configuration 서비스를 사용하여 개별 dial의 설정을 업데이트 할 수 있습니다.
+wink/set_nimbus_dial_configuration 서비스를 사용하여 개별 dial의 설정을 업데이트할 수 있습니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
@@ -386,7 +388,7 @@ Wink 경보 플랫폼을 사용하면 [Wink](https://www.wink.com/) Canary all-i
 - Canary all-in-one security camera
 
 <div class='note'>
-위의 장치는 작동하는 것으로 확인되었지만 다른 장치도 작동 할 수 있습니다.
+위의 장치는 작동하는 것으로 확인되었지만 다른 장치도 작동할 수 있습니다.
 </div>
 
 ## Binary Sensor
@@ -395,7 +397,7 @@ Wink Binary Sensor 플랫폼을 사용하면 [Wink](https://www.wink.com/) Binar
 
 요구 사항은 위에서 [Wink](/integrations/wink/)를 설정해야합니다.
 
-### 지원 Binary sensor 장치
+### Binary sensor 지원 장치
 
 - Smoke and CO detectors (No Wink hub required for Nest)
 - Window/Door sensors
@@ -415,7 +417,7 @@ Wink Binary Sensor 플랫폼을 사용하면 [Wink](https://www.wink.com/) Binar
 
 ## Climate
 
-Wink Climate 플랫폼을 사용하면 [Wink](https://www.wink.com/) thermostats 및 air conditioners에서 데이터를 얻을 수 있습니다.
+Wink Climate 플랫폼을 사용하면 [Wink](https://www.wink.com/) 온도조절기 및 에어컨에서 데이터를 얻을 수 있습니다.
 
 요구 사항은 위에서 [Wink](/integrations/wink/)를 설정해야합니다.
 
@@ -430,18 +432,18 @@ Wink Climate 플랫폼을 사용하면 [Wink](https://www.wink.com/) thermostats
 - Quirky Aros window AC unit
 
 <div class='note'>
-위의 장치는 작동하는 것으로 확인되었지만 다른 장치도 작동 할 수 있습니다.
+위의 장치는 작동하는 것으로 확인되었지만 다른 장치도 작동할 수 있습니다.
 </div>
 
 ## Cover
 
-Wink Cover garage door 기능은 제품에 따라 다릅니다. 홈어시스턴트는 GoControl/Linear opener의 상태를 열고 닫고 볼 수 있습니다. Chamberlain MyQ-enabled openers의 경우 홈어시스턴트는이 Wink Cover를 사용하는 경우에만 현재 상태 (open 혹은 closed)를 표시하도록 제한됩니다. 이 제한은 Chamberlain에 의해 제3자 통제로 맡겨져 있습니다. 윙크는 MyQ 고객이 권한 추가에 대해 Chamberlain에 직접 문의하고 제안해야 합니다. 
+Wink Cover garage door 기능은 제품에 따라 다릅니다. 홈어시스턴트는 GoControl/Linear opener의 상태를 열고 닫고 볼 수 있습니다. Chamberlain MyQ-enabled openers의 경우 홈어시스턴트는 이 Wink Cover를 사용하는 경우에만 현재 상태(open 혹은 closed)를 표시하도록 제한됩니다. 이 제한은 Chamberlain에 의해 제3자 통제로 맡겨져 있습니다. 윙크는 MyQ 고객이 권한 추가에 대해 Chamberlain에 직접 문의하고 제안해야 합니다. 
 
 [MyQ Cover](/integrations/myq)는 MyQ-enabled garage doors을 열고 닫을 수 있는 모든 기능을 제공합니다. Wink Component와 함께 설치하면 garage doors 엔터티가 중복될 수 있습니다. 이 경우 semi-functional Wink garage doors 엔터티는 customize.yaml을 통해 숨길 수 있습니다.
 
 요구 사항은 위에서 [Wink](/integrations/wink/)를 설정해야합니다.
 
-### 지원 cover 장치
+### cover 지원 장치
 
 - Bali window treatments
 - Lutron shades
@@ -450,22 +452,22 @@ Wink Cover garage door 기능은 제품에 따라 다릅니다. 홈어시스턴�
 - Chamberlain MyQ (Limited functionality) (No Wink hub required)
 
 <div class='note'>
-위의 장치는 작동하는 것으로 확인되었지만 다른 장치도 작동 할 수 있습니다.
+위의 장치는 작동하는 것으로 확인되었지만 다른 장치도 작동할 수 있습니다.
 </div>
 
 ## Fan
 
-Wink Fan 플랫폼을 사용하면 [Wink](https://www.wink.com/) Fan을 제어 할 수 있습니다.
+Wink Fan 플랫폼을 사용하면 [Wink](https://www.wink.com/) Fan을 제어할 수 있습니다.
 
 요구 사항은 위에서 [Wink](/integrations/wink/)를 설정해야합니다.
 
-### 지원 fan 장치
+### fan 지원 장치
 
 - Home Decorator Wink-enabled Gardinier ceiling fan
 - Hampton Bay ceiling fan module
 
 <div class='note'>
-위의 장치는 작동하는 것으로 확인되었지만 다른 장치도 작동 할 수 있습니다.
+위의 장치는 작동하는 것으로 확인되었지만 다른 장치도 작동할 수 있습니다.
 </div>
 
 ## Light
@@ -474,7 +476,7 @@ Wink Fan 플랫폼을 사용하면 [Wink](https://www.wink.com/) Fan을 제어 �
 
 요구 사항은 위에서 [Wink](/integrations/wink/)를 설정해야합니다.
 
-### 지원 light 장치
+### light 지원 장치
 
 - Z-wave switches with dimming
 - Hue
@@ -488,7 +490,7 @@ Wink Fan 플랫폼을 사용하면 [Wink](https://www.wink.com/) Fan을 제어 �
 
 ## Lock
 
-Wink Lock 플랫폼을 사용하면 [Wink](https://www.wink.com/) Lock을 제어 할 수 있습니다.
+Wink Lock 플랫폼을 사용하면 [Wink](https://www.wink.com/) Lock을 제어할 수 있습니다.
 
 요구 사항은 위에서 [Wink](/integrations/wink/)를 설정해야합니다.
 
@@ -565,7 +567,7 @@ script:
 
 ### `set_lock_beeper_state` 서비스
 
-wink/set_lock_beeper_state 서비스를 사용하여 lock 신호음 상태를 설정할 수 있습니다.
+wink/set_lock_beeper_state 서비스를 사용하여 lock beeper state를 설정할 수 있습니다.
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |
@@ -638,7 +640,7 @@ Wink Sensor 플랫폼을 사용하면 [Wink](https://www.wink.com/) Sensor에서
 - Quirky refuel propane tank monitor (No Wink hub required)
 
 <div class='note'>
-위의 장치는 작동하는 것으로 확인되었지만 다른 장치도 작동 할 수 있습니다.
+위의 장치는 작동하는 것으로 확인되었지만 다른 장치도 작동할 수 있습니다.
 </div>
 
 ## Switch
@@ -647,7 +649,7 @@ Wink Switch 플랫폼을 사용하면 [Wink](https://www.wink.com/) Switch를 �
 
 요구 사항은 위에서 [Wink](/integrations/wink/)를 설정해야한다는 것입니다.
 
-## 지원 switch 장치
+## switch 지원 장치
 
 - Wink Pivot power genius (No Wink hub required)
 - non-dimming Z-wave in-wall switches (dimming switches show up as lights)

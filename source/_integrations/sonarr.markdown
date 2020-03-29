@@ -8,7 +8,9 @@ ha_release: 0.34
 ha_iot_class: Local Polling
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/0Pm-qOSKvyo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 이 `sonarr` 센서 플랫폼은 주어진 [Sonarr](https://sonarr.tv/) 인스턴스에서 데이터를 가져옵니다.
 
@@ -130,7 +132,7 @@ sensor:
 
 ### 리스트된 저장 위치에 디스크 공간 확보
 
-Sonarr가 반환하는 저장 위치는 시스템 페이지에 있으며 하위 경로가 별도로 마운트 된 경우 중복되게 나열될 수 있습니다. 포함할 경로를 나열하여 센서가 보고할 데이터를 선택할 수 있습니다.
+Sonarr가 반환하는 저장 위치는 시스템 페이지에 있으며 하위 경로가 별도로 마운트된 경우 중복되게 나열될 수 있습니다. 포함할 경로를 나열하여 센서가 보고할 데이터를 선택할 수 있습니다.
 
 ```yaml
 # Example configuration.yaml entry

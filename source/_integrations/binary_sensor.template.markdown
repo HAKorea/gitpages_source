@@ -46,7 +46,7 @@ sensors:
           required: false
           type: string
         entity_id:
-          description: 센서가 이러한 엔티티의 상태 변경에만 반응하도록 엔티티 ID 목록. 자동 분석에서 모든 관련 엔티티를 찾지 못하면 사용할 수 있습니다. 
+          description: 센서가 이러한 엔티티의 상태 변경에만 반응하도록한 엔티티 ID 목록. 자동 분석에서 모든 관련 엔티티를 찾지 못하면 사용할 수 있습니다. 
           required: false
           type: [string, list]
         device_class:
@@ -59,7 +59,7 @@ sensors:
           required: true
           type: template
         availability_template:
-          description: 컴포넌트의 `available` 상태를 가져 오도록 템플리트를 정의합니다. 템플릿이 `true`를 반환하면 장치는 `available` 입니다. 템플릿이 다른 값을 반환하면 장치는 `unavailable`입니다. `availability_template`이 설정되어 있지 않으면 컴포넌트를 항상 사용할 수 있습니다`
+          description: 컴포넌트의 `available` 상태를 가져오도록 템플릿을 정의합니다. 템플릿이 `true`를 반환하면 장치는 `available` 입니다. 템플릿이 다른 값을 반환하면 장치는 `unavailable`입니다. `availability_template`이 설정되어 있지 않으면 컴포넌트를 항상 사용할 수 있습니다`
           required: false
           type: template
           default: true
@@ -94,13 +94,13 @@ sensors:
 
 ### Startup
 
-로드하는데 시간이 더 걸리는 플랫폼의 상태를 사용하는 경우 시작시 템플릿 바이너리 센서가 `unknown` 상태가 될 수 있습니다. 그러면 해당 플랫폼이로드를 완료 할 때까지 로그 파일에 오류 메시지가 나타납니다.
-템플릿에서 `is_state ()`함수를 사용하면 이런 상황을 피할 수 있습니다.
-예를 들어, {% raw %}`{{ states.switch.source.state == 'on' }}`{% endraw %}가 `true` /`false`를 반환하고 알 수 없는 결과 값을 절대 반환하지 않게 하는 것으로 대체합니다 : {% raw %}`{{ is_state('switch.source', 'on') }}`{% endraw %}
+로드하는데 시간이 더 걸리는 플랫폼의 상태를 사용하는 경우 시작시 템플릿 바이너리 센서가 `unknown` 상태가 될 수 있습니다. 그러면 해당 플랫폼이 로드를 완료할 때까지 로그 파일에 오류 메시지가 나타납니다.
+템플릿에서 `is_state ()` 함수를 사용하면 이런 상황을 피할 수 있습니다.
+예를 들어, {% raw %}`{{ states.switch.source.state == 'on' }}`{% endraw %}가 `true` /`false`를 반환하고 unknown 결과값을 절대 반환하지 않게 하는 것으로 대체합니다 : {% raw %}`{{ is_state('switch.source', 'on') }}`{% endraw %}
 
 ### Entity IDs
 
-템플릿 엔진은 센서 업데이트를 트리거 할 엔티티를 처리하려고 시도합니다. 예를 들어 템플릿이 그룹의 내용을 반복하는 경우 실패 할 수 있습니다. 이 경우`entity_id`를 사용하여 센서가 업데이트되도록 하는 엔티티 ID 목록 또는 서비스 `homeassistant.update_entity`를 실행하여 원하는대로 센서를 업데이트 할 수 있습니다.
+템플릿 엔진은 센서 업데이트를 트리거할 엔티티를 처리하려고 시도합니다. 예를 들어 템플릿이 그룹의 내용을 반복하는 경우 실패할 수 있습니다. 이 경우 `entity_id`를 사용하여 센서가 업데이트되도록 하는 엔티티 ID 목록 또는 서비스 `homeassistant.update_entity`를 실행하여 원하는대로 센서를 업데이트할 수 있습니다.
 
 ## 사례 
 
@@ -108,7 +108,7 @@ sensors:
 
 ### 센서 임계값 (Sensor Threshold)
 
-이 예는 센서가 지정된 임계 값을 초과하면 `true`를 나타냅니다. 팬 모터에 전류 판독 값을 제공하는 `furnace` 센서를 가정하면 furnace(난방용기계)가 일부 임계값을 초과하는지 확인하여 furnace(난방용기계)가 실행 중인지 확인할 수 있습니다.
+이 예는 센서가 지정된 임계값을 초과하면 `true`를 나타냅니다. 팬 모터에 전류 판독값을 제공하는 `furnace` 센서를 가정하면 furnace(난방용기계)가 일부 임계값을 초과하는지 확인하여 furnace(난방용기계)가 실행 중인지 확인할 수 있습니다.
 
 {% raw %}
 
@@ -126,7 +126,7 @@ binary_sensor:
 
 ### 센서 스위치 (Switch as Sensor)
 
-일부 이동 센서 및 도어/창 센서가 스위치로 나타납니다. 템플릿 바이너리 센서를 사용하면 스위치를 바이너리 센서로 표시할 수 있습니다. 그런 다음 [customizing](/getting-started/customizing-devices/)으로 원래 스위치를 숨길 수 있습니다.
+일부 센서 및 도어/창 센서가 스위치로 나타납니다. 템플릿 바이너리 센서를 사용하면 스위치를 바이너리 센서로 표시할 수 있습니다. 그런 다음 [customizing](/getting-started/customizing-devices/)으로 원래 스위치를 숨길 수 있습니다.
 
 {% raw %}
 
@@ -146,7 +146,7 @@ binary_sensor:
 
 ### 여러 센서 결합 (Combining Multiple Sensors)
 
-이 예는 여러 CO 센서를 단일 전체 상태로 결합합니다. binary sensors 템플릿을 사용하는 경우 명시 적으로 `true` 또는`false`를 반환해야합니다.
+이 예는 여러 CO 센서를 단일 전체 상태(single overall status)로 결합합니다. binary sensors 템플릿을 사용하는 경우 명시적으로 `true` 또는`false`를 반환해야합니다.
 
 {% raw %}
 
@@ -188,7 +188,7 @@ binary_sensor:
 
 ### 재실 확인 (Is Anyone Home)
 
-이 예는 장치 추적 및 모션 센서의 조합을 기반으로 집에 사람이 있는지 확인하는 것입니다. 홈어시스턴트에서 추적 가능한 장치로 표시되지 않는 집에 있을 수 있는 어린이/베이비 시터/할머니할아버지가 있는 경우 매우 유용합니다. 이것은 WiFi 기반 장치 추적 및 Z-Wave 센서와의 다중 재실 센서의 합성(composite)을 제공합니다.
+이 예는 장치 추적 및 모션 센서의 조합을 기반으로 집에 사람이 있는지 확인하는 것입니다. 홈어시스턴트에서 추적 가능한 장치로 표시되지 않는 집에 있을 수 있는 어린이/베이비시터/할머니할아버지가 있는 경우 매우 유용합니다. 이는 WiFi 기반 장치 추적 및 Z-Wave 센서와의 다중 재실 센서의 합성(composite)을 제공합니다.
 
 {% raw %}
 
@@ -209,9 +209,9 @@ binary_sensor:
 
 {% endraw %}
 
-### 위도 및 경도 속성이있는 장치 추적 센서 
+### 위도 및 경도 속성이 있는 장치 추적 센서 
 
-이 예는 위도 및 경도 속성을 계속 포함하면서 non-GPS (예 : NMAP) 및 GPS 장치 추적기를 결합(composite)하는 방법을 보여줍니다.
+이 예는 위도 및 경도 속성을 계속 포함하면서 non-GPS (예: NMAP) 및 GPS 장치 추적기를 결합(composite)하는 방법을 보여줍니다.
 
 {% raw %}
 ```yaml
@@ -238,7 +238,7 @@ binary_sensor:
 ```
 {% endraw %}
 
-### 상태가 변경시 아이콘 변경
+### 상태 변경시 아이콘 변경
 
 이 예제는 `icon_template`을 사용하여 상태 변화에 따라 엔티티 아이콘을 변경하고 자체 센서의 상태를 평가하고 조건문을 사용하여 적절한 아이콘을 출력하는 방법을 보여줍니다.
 

@@ -23,24 +23,24 @@ ha_codeowners:
 <iframe width="776" height="437" src="https://www.youtube.com/embed/S5NcbONhyBI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-`abode` 통합구성요소를 통해 사용자는 Abode Home Security 시스템을 Home Assistant에 연동하고 경보 시스템과 센서를 사용하여 집안을 자동화 할 수 있습니다.
+`abode` 통합구성요소를 통해 사용자는 Abode Home Security 시스템을 Home Assistant에 연동하고 경보 시스템과 센서를 사용하여 집안을 자동화할 수 있습니다.
 
 Abode Security에 대한 자세한 내용은 [Abode website](https://goabode.com/)를 방문하십시오.
 
 현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
-- **Alarm Control Panel**: 현재 경보 상태를 보고하고 시스템을 설정 및 해제하는데 사용할 수 있습니다.
-- [**Binary Sensor**](/integrations/abode/#binary-sensor): `Quick Actions`, `Door Contacts`, `Connectivity` 센서 (원격조정, 키패드 및 상태 표시기), `Moisture` 센서 및 `Motion` 또는 `Occupancy` 센서에 대해 보고입니다. 또한 세팅된 모든 Abode `Quick Actions`도 리스트합니다. quick actions 이진 센서의 `entity_id`를 [trigger_quick_action service](/integrations/abode/#trigger_quick_action)에 전달하여 이러한 quick actions를 트리거할 수 있습니다.
+- **Alarm Control Panel**: 현재 경보 상태를 보고하고 시스템을 설정,해제하는데 사용할 수 있습니다.
+- [**Binary Sensor**](/integrations/abode/#binary-sensor): `Quick Actions`, `Door Contacts`, `Connectivity` 센서 (원격조정, 키패드, 상태 표시기), `Moisture` 센서와 `Motion` 혹은 `Occupancy` 센서에 대한 보고입니다. 또한 세팅된 모든 Abode `Quick Actions`도 리스트합니다. quick actions 이진 센서의 `entity_id`를 [trigger_quick_action service](/integrations/abode/#trigger_quick_action)에 전달하여 이러한 quick actions를 트리거할 수 있습니다.
 - **Camera**: `Camera` 장치에 대해 보고하고 최신 캡처된 스틸 이미지를 다운로드하여 표시합니다.
-- **Cover**: `Secure Barriers`에 대한 보고이며 커버를 열고 닫는 데 사용할 수 있습니다.
-- **Lock**: `Door Locks`에 대한 보고이며 문을 lock/unlock 하는 데 사용할 수 있습니다.
-- [**Light**](/integrations/abode/#light): `Dimmer` 조명에 대해 보고하며 조명을 켜거나 끄는 데 사용할 수 있습니다.
-- [**Switch**](/integrations/abode/#switch): `Power Switch` 장치에 대해 보고하며 전원 스위치를 켜고 끄는 데 사용할 수 있습니다. 또한 Abode 시스템에 설정된 `Automations`에 대한 보고를 통해 이를 활성화 또는 비활성화 할 수 있습니다 (Abode의 CUE 자동화에서는 작동하지 않음).
+- **Cover**: `Secure Barriers`에 대한 보고이며 커버를 열고 닫는데 사용할 수 있습니다.
+- **Lock**: `Door Locks`에 대한 보고이며 문을 lock/unlock 하는데 사용할 수 있습니다.
+- [**Light**](/integrations/abode/#light): `Dimmer` 조명에 대해 보고하며 조명을 켜거나 끄는데 사용할 수 있습니다.
+- [**Switch**](/integrations/abode/#switch): `Power Switch` 장치에 대해 보고하며 전원 스위치를 켜고 끄는데 사용할 수 있습니다. 또한 Abode 시스템에 설정된 `Automations`에 대한 보고를 통해 이를 활성화 또는 비활성화할 수 있습니다 (Abode의 CUE 자동화에서는 작동하지 않음).
 - **Sensor**: `Temperature`, `Humidity`, `Light`에 대해 보고합니다.
 
 ## 설정
 
-설치에서 Abode 장치를 사용하려면 통합구성요소 페이지에서 Abode 계정을 추가하십시오. Abode 계정에서 2 단계 인증을 비활성화해야합니다. 또는 다음 `abode` 섹션을`configuration.yaml` 파일에 추가하여 Abode를 설정할 수 있습니다.
+설치시 Abode 장치를 사용하려면 통합구성요소 페이지에서 Abode 계정을 추가하십시오. Abode 계정에서 2 단계 인증을 비활성화해야합니다. 또는 다음 `abode` 섹션을 `configuration.yaml` 파일에 추가하여 Abode를 설정할 수 있습니다.
 
 ```yaml
 # Example configuration.yaml entry
@@ -108,7 +108,7 @@ Field | Description
 ### `change_setting` 서비스
 
 Abode 시스템의 설정을 변경하십시오.
-설정 및 유효한 값의 전체 목록을 보려면 [AbodePy settings section](https://github.com/MisterWil/abodepy/blob/master/README.rst#settings)을 참조하십시오. 
+설정과 유효한 값의 전체 목록을 보려면 [AbodePy settings section](https://github.com/MisterWil/abodepy/blob/master/README.rst#settings)을 참조하십시오. 
 
 | Service data attribute | Optional | Description |
 | ---------------------- | -------- | ----------- |

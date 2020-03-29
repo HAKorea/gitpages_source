@@ -18,7 +18,7 @@ ha_iot_class: Configurable
 
 `state_topic`이 사용 가능하더라도 Optimistic 모드를 강제할 수 있습니다. 잘못된 스위치 작동이 발생하면 활성화하십시오.
 
-설치에서이 스위치를 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
+설치시 이 스위치를 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -145,7 +145,7 @@ topic이 정확히 일치하는지 확인하십시오. `some-topic/` 과 `some-t
 
 ## 사례
 
-이 섹션에서는 이 센서를 사용하는 방법에 대한 실제 예를 제공합니다.
+본 섹션에서는 이 센서를 사용하는 방법에 대한 실제 예를 제공합니다.
 
 ### 전체 설정
 
@@ -176,7 +176,7 @@ mosquitto_pub -h 127.0.0.1 -t home/bedroom/switch1 -m "ON"
 
 ### ESPEasy를 사용하여 장치 상태 설정 
 
-[ESPEasy](https://github.com/letscontrolit/ESPEasy)를 사용하여 ESP8266 장치를 플래시했다고 가정합니다. "Config"아래에 장치의 이름 ( "Unit Name:")이 있습니다 (여기서는 "bathroom"). "OpenHAB MQTT" 프로토콜을 사용하는 MQTT에 대한 "Controller"에 대한 설정이 있으며 항목 ( "Controller Subscribe:"및 "Controller Publish:")이 필요에 맞게 조정됩니다. 이 예에서 topic은 "home"으로 시작합니다. [GPIO](https://www.letscontrolit.com/wiki/index.php/GPIO)를 MQTT로 직접 제어할 수 있으므로 추가 설정이 필요하지 않습니다.
+[ESPEasy](https://github.com/letscontrolit/ESPEasy)를 사용하여 ESP8266 장치를 플래시했다고 가정합니다. "Config"아래에 장치의 이름 ("Unit Name:")이 있습니다 (여기서는 "bathroom"). "OpenHAB MQTT" 프로토콜을 사용하는 MQTT에 대한 "Controller"에 대한 설정이 있으며 항목("Controller Subscribe:" 및 "Controller Publish:")이 필요에 맞게 조정됩니다. 이 예에서 topic은 "home"으로 시작합니다. [GPIO](https://www.letscontrolit.com/wiki/index.php/GPIO)를 MQTT로 직접 제어할 수 있으므로 추가설정이 필요하지 않습니다.
 
 `mosquitto_pub` 또는 다른 MQTT 도구를 사용하여 pin 13을 수동으로 HIGH로 설정할 수 있습니다.
 

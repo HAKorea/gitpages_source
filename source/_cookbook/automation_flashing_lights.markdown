@@ -4,9 +4,9 @@ description: "Automation examples for flashing lights in case of an alarm."
 ha_category: Automation Examples
 ---
 
-#### 경보로 깜박이는 표시 등
+#### 경보로 깜박이는 조명
 
-알람이 발생(trigger)하는 경우 일반 표시등이 깜박이는 경우.
+알람이 발생(trigger)하는 경우 일반 조명이 깜박이는 경우.
 
 ```yaml
 # AlmAct1 - switch to activate the alarm in Room1

@@ -12,10 +12,14 @@ ha_codeowners:
   - '@exxamalte'
 ---
 
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/2zX03PJ6-xE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 `gdacs` 통합구성요소를 통해 [GDACS](https://www.gdacs.org/)에서 제공하는 GeoRSS 피드를 전세계 주요 가뭄, 지진, 홍수, 열대 저기압, 쓰나미 및 화산 활동에 대한 정보와 함께 사용할 수 있습니다. 
 피드에서 알림을 검색하고 홈어시스턴트 위치까지 거리별로 필터링된 알림 정보를 표시합니다.
 
-피드에서 업데이트 할 때마다 엔티티가 생성되고, 업데이트 및 자동 제거됩니다.
+피드에서 업데이트할 때마다 엔티티가 생성되고, 업데이트 및 자동 제거됩니다.
 각 엔티티는 위도 및 경도를 정의하며 기본맵에 자동으로 표시되거나 소스 `gdacs` 를 정의하여 맵 카드에 표시됩니다.
 거리는 각 엔티티의 상태로 사용 가능하며 홈어시스턴트에서 설정된 단위 (킬로미터 또는 마일)로 변환됩니다.
 
@@ -27,14 +31,13 @@ ha_codeowners:
 
 <div class='note'>
 
-이 통합구성요소에 사용된 자료는 [GDACS (Global Disaster Alert and Coordination System)](https://www.gdacs.org/)에서 제공합니다. - 유엔과 유럽 연합 집행위원회 간의 협력 체제 -  [Creative Commons Attribution 4.0 International (CC BY 4.0) license](http://creativecommons.org/licenses/by/4.0/)에 따라.
-홈어시스턴트에서 자료를 제공할 목적으로만 수정되었습니다. 자세한 내용은 [creator's disclaimer and terms of use notice](https://www.gdacs.org/About/termofuse.aspx)를 참조하십시오.
+이 통합구성요소에 사용된 자료는 [GDACS (Global Disaster Alert and Coordination System)](https://www.gdacs.org/)에서 제공합니다. - 유엔과 유럽 연합 집행위원회 간의 협력 체제 -  [Creative Commons Attribution 4.0 International (CC BY 4.0) license](http://creativecommons.org/licenses/by/4.0/)에 따라 홈어시스턴트에서 자료를 제공할 목적으로만 수정되었습니다. 자세한 내용은 [creator's disclaimer and terms of use notice](https://www.gdacs.org/About/termofuse.aspx)를 참조하십시오.
 
 </div>
 
 ## 설정
 
-GDACS 피드를 통합하려면 GUI의 "Integrations" 기능을 사용하거나 Configurations - Integrations에서 찾거나 `configuration.yaml`에 다음 줄을 추가하십시오.
+GDACS 피드를 통합하려면 GUI의 "통합구성요소" 기능을 사용하거나 설정 - 통합구성요소에서 찾거나 `configuration.yaml`에 다음 줄을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -43,11 +46,11 @@ gdacs:
 
 {% configuration %}
 categories:
-  description: 포함 할 경고의 범주입니다. 유효한 카테고리는 '가뭄', '지진', '홍수', '열대 사이클론', '해일', '화산폭발'입니다.
+  description: 포함할 경고의 범주입니다. 유효한 카테고리는 '가뭄', '지진', '홍수', '열대 사이클론', '해일', '화산폭발'입니다.
   required: false
   type: list
 radius:
-  description: 모니터링 할 위치 주변의 반경입니다. 기본값은 500km 또는 mi입니다 (`configuration.yaml`에 정의 된 단위 시스템에 따라 다름).
+  description: 모니터링할 위치 주변의 반경입니다. 기본값은 500km 또는 mi입니다 (`configuration.yaml`에 정의 된 단위 시스템에 따라 다름).
   required: false
   type: float
   default: 500.0
@@ -57,7 +60,7 @@ latitude:
   type: float
   default: Latitude defined in your configuration.
 longitude:
-  description: 경고가 고려되는 좌표의 경도
+  description: 경고가 고려되는 좌표의 경도.
   required: false
   type: float
   default: Longitude defined in your configuration.
@@ -102,8 +105,8 @@ longitude:
 | last update successful | 피드에서 마지막으로 성공한 업데이트의 타임 스탬프  |
 | last timestamp         | 피드에서 최근 항목의 타임 스탬프.  |
 | created                | 마지막 업데이트 중에 작성된 엔티티 수 (선택 사항).  |
-| updated                | 마지막 업데이트 중 업데이트 된 엔터티 수 (선택 사항).  |
-| removed                | 마지막 업데이트 중에 제거 된 엔티티 수 (선택 사항).  |
+| updated                | 마지막 업데이트 중 업데이트된 엔터티 수 (선택 사항).  |
+| removed                | 마지막 업데이트 중에 제거된 엔티티 수 (선택 사항).  |
 
 ## 전체 설정
 

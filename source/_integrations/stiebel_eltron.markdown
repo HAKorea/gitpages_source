@@ -10,7 +10,9 @@ ha_codeowners:
   - '@fucm'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="440" src="https://www.youtube.com/embed/5NL9AKgCzes?list=PL9WFtCbSR987CaNzHLfT5n-mMUxMHWN4o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 The `stiebel_eltron` integration lets you control integral ventilation or heat pump units of [STIEBEL ELTRON](https://www.stiebel-eltron.com).
 

@@ -8,7 +8,9 @@ ha_release: 0.19
 ha_iot_class: Local Polling
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="388" src="https://www.youtube.com/embed/SyHCDhrr70g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 `pioneer` 플랫폼을 사용하면 Pioneer 네트워크 리시버를 제어할 수 있습니다. 그러나 최신 Pioneer 모델은 [Onkyo](/integrations/onkyo) 플랫폼과 함께 작동합니다.
 

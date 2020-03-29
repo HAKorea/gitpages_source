@@ -10,7 +10,7 @@ ha_iot_class: Assumed State
 
 `rpi_rf` 스위치 플랫폼을 사용하면 [Raspberry Pi](https://www.raspberrypi.org/)의 일반 저가형 GPIO RF 모듈로 433/315MHz LPD/SRD 신호를 통해 장치를 제어할 수 있습니다.
 
-[rpi-rf 모듈](https://pypi.python.org/pypi/rpi-rf) 또는 [rc-switch](https://github.com/sui77/rc-switch)를 통해 스니핑된 코드와 상호 운용 가능 .
+[rpi-rf 모듈](https://pypi.python.org/pypi/rpi-rf) 또는 [rc-switch](https://github.com/sui77/rc-switch)를 통해 스니핑된 코드와 상호 운용 가능.
 자세한 내용은 PyPi 모듈 설명을 참조하십시오 : [rpi-rf](https://pypi.python.org/pypi/rpi-rf)
 
 ## 설정

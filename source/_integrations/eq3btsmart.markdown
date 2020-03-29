@@ -1,5 +1,5 @@
 ---
-title: EQ3 Bluetooth Smart Thermostats
+title: EQ3 블투투스 스마트 온도조절기
 description: Instructions on how to integrate EQ3 Bluetooth Smart Thermostats into Home Assistant.
 logo: eq3.gif
 ha_category:
@@ -10,7 +10,9 @@ ha_codeowners:
   - '@rytilahti'
 ---
 
-<iframe width="690" height="437" src="https://www.youtube.com/embed/xdVsIUbqBPY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/xdVsIUbqBPY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 The `eq3btsmart` climate platform allows you to integrate EQ3 Bluetooth Smart Thermostats.
 

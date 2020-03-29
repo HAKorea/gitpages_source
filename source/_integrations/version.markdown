@@ -11,7 +11,7 @@ ha_codeowners:
   - '@fabaff'
 ---
 
-현재 홈어시스턴트 버전을 표시할 수있는 `version` 센서 플랫폼.
+현재 홈어시스턴트 버전을 표시할 수 있는 `version` 센서 플랫폼.
 
 ## 설정
 
@@ -52,7 +52,7 @@ source:
 
 ## 로컬 버전을 표시하기위한 대안
 
-이 센서는 다양한 솔루션을 통해 동일한 결과를 얻기 위한 기존 솔루션의 대안입니다. 컴맨드 라인에서 설치된 버전을 쉽게 얻을 수 있습니다.
+이 센서는 다양한 솔루션을 통해 동일한 결과를 얻기 위한 기존 솔루션의 대안입니다. command line에서 설치된 버전을 쉽게 얻을 수 있습니다.
 
 ```bash
 hass --version
@@ -78,9 +78,7 @@ sensor:
     command: "cat /home/homeassistant/.homeassistant/.HA_VERSION"
 ```
 
-*번역 재검토 필요*
-
-You might think that a [`rest` sensor](/integrations/rest) could work, too , but it will not as Home Assistant is not ready when the sensor gets initialized.
+[`rest` sensor](/integrations/rest)도 작동할 수 있다고 생각할 수도 있지만 센서가 초기화 될 때 Home Assistant가 준비되지 않은 것은 아닙니다.
 
 {% raw %}
 ```yaml

@@ -11,7 +11,9 @@ ha_codeowners:
   - '@webdjoe'
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="388" src="https://www.youtube.com/embed/CohoDAdOXVw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 The `vesync` integration enables you to control Etekcity smart switches and outlets connected to the VeSync App.
 

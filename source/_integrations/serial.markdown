@@ -64,7 +64,7 @@ value_template:
 
 ### Arduino
 
-Arduino 제품군 컨트롤러의 경우 온도와 습도를 읽을 수있는 스케치는 아래 샘플과 같습니다. 반환된 데이터는 JSON 형식이며 [template](/docs/configuration/templating/#processing-incoming-data)을 사용하여 개별 센서 값으로 분할할 수 있습니다.
+Arduino 제품군 컨트롤러의 경우 온도와 습도를 읽을 수 있는 스케치는 아래 샘플과 같습니다. 반환된 데이터는 JSON 형식이며 [template](/docs/configuration/templating/#processing-incoming-data)을 사용하여 개별 센서 값으로 분할할 수 있습니다.
 
 ```c
 #include <ArduinoJson.h>
@@ -89,7 +89,7 @@ void loop() {
 ### 여러 센서를 텍스트 문자열로 반환하는 장치
 
 
-구분기호(delimiter)를 사용하여 여러 센서를 연결된 값 문자열로 반환하는 장치의 경우 (즉, 반환된 문자열이 JSON 형식이 아님) 모두 동일한 직렬 응답을 사용하여 여러 템플릿 센서를 만들 수 있습니다. 예를 들어 [Sparkfun USB Weather Board](https://www.sparkfun.com/products/retired/9800)의 스트림에는 반환된 텍스트 문자열 내에 온도, 습도 및 기압이 포함됩니다. 샘플 반환 데이터 :
+구분기호(delimiter)를 사용하여 여러 센서를 연결된 값 문자열로 반환하는 장치의 경우 (즉, 반환된 문자열이 JSON 형식이 아님) 모두 동일한 직렬 응답을 사용하여 여러 템플릿 센서를 만들 수 있습니다. 예를 들어 [Sparkfun USB Weather Board](https://www.sparkfun.com/products/retired/9800)의 스트림에는 반환된 텍스트 문자열 내에 온도, 습도, 기압이 포함됩니다. 샘플 반환 데이터 :
 
 
 ```c

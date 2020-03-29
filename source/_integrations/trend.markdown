@@ -9,11 +9,11 @@ ha_iot_class: Local Push
 ha_quality_scale: internal
 ---
 
-`trend` 플랫폼을 사용하면 다른 엔티티의 숫자 `state` 또는 `state_attributes` 트렌드(trend)를 보여주는 센서를 만들 수 있습니다. 이 센서에는 트렌드를 설정하기 위해 기본 센서의 업데이트가 두 개 이상 필요합니다. 따라서 정확한 상태를 표시하는 데 시간이 걸릴 수 있습니다. 트렌드를 기반으로 작업을 수행하려는 자동화의 일부로 유용할 수 있습니다.
+`trend` 플랫폼을 사용하면 다른 엔티티의 숫자 `state` 또는 `state_attributes` 트렌드(trend)를 보여주는 센서를 만들 수 있습니다. 이 센서에는 트렌드를 설정하기 위해 기본 센서의 업데이트가 두 개 이상 필요합니다. 따라서 정확한 상태를 표시하는데 시간이 걸릴 수 있습니다. 트렌드를 기반으로 작업을 수행하려는 자동화의 일부로 유용할 수 있습니다.
 
 ## 설정
 
-트렌드 바이너리 센서를 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
+트렌드 이진 센서를 활성화하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry

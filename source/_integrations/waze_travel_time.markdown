@@ -18,7 +18,7 @@ ha_release: 0.67
 
 ## 설정
 
-설치시 이 센서를 사용하려면 다음 `sensor` 섹션을 configuration.yaml 파일에 추가하십시오.
+설치시 이 센서를 사용하려면 다음 `sensor`섹션을 configuration.yaml 파일에 추가하십시오.
 
 ```yaml
 # Example entry for configuration.yaml
@@ -85,7 +85,7 @@ avoid_subscription_roads:
   default: false
 {% endconfiguration %}
 
-`avoid_toll_roads`, `avoid_subscription_roads` 및 `avoid_ferries` 옵션을 사용할 때 유효한 vignette/subscription을 가정할 경우 Waze가 유료 도로나 페리를 통해 경로를 안내하는 경우가 있습니다. 기본 동작은 Waze가 subscription 옵션으로 도로를 안내하는 것입니다. 가장 좋은 방법은 `avoid_toll_roads` 와 `avoid_subscription_roads` 또는 `avoid_ferries`를 설정하고 원하는 결과를 얻기 위해 실험하는 것입니다.
+`avoid_toll_roads`, `avoid_subscription_roads`, `avoid_ferries` 옵션을 사용할 때 유효한 vignette/subscription을 가정할 경우 Waze가 유료도로나 페리(배)를 통해 경로를 안내하는 경우가 있습니다. 기본 동작은 Waze가 subscription 옵션으로 도로를 안내하는 것입니다. 가장 좋은 방법은 `avoid_toll_roads`와 `avoid_subscription_roads` 혹은 `avoid_ferries`를 설정하고 원하는 결과를 얻기 위해 실험하는 것입니다.
 
 ## 동적 목적지를 사용하는 예
 

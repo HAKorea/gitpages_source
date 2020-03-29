@@ -72,7 +72,7 @@ duration:
 
 <div class='note'>
 
-  `start`,`end` 및 `duration`에서 **정확하게 두가지**를 제공해야 합니다.
+  `start`,`end`, `duration`에서 **정확하게 두가지**를 제공해야 합니다.
 <br/>
   `now ()` 또는 `as_timestamp ()`와 같은 [template extensions](/topics/templating/#home-assistant-template-extensions)를 사용하여 아래 예와 같이 동적 날짜를 처리할 수 ​​있습니다.
 
@@ -93,11 +93,11 @@ duration:
 - 기간이 끝나는 시점  (`end` 변수)
 - 기간은 길이 (`duration` 변수)
 
-`start` 및 `end` 변수는 날짜 시간 또는 타임 스탬프일 수 있으므로 원하는 기간을 대부분 설정할 수 있습니다.
+`start`와 `end` 변수는 날짜 시간 또는 타임 스탬프일 수 있으므로 원하는 기간을 대부분 설정할 수 있습니다.
 
 ### Duration (지속 기간)
 
-Duration 변수는 고정된 기간에 사용됩니다. 아래에 표시된 것처럼 기간 동안 다른 문법 구문이 지원됩니다.
+Duration 변수는 고정된 기간에 사용됩니다. 아래에 표시된 것처럼 해당 기간 동안 다른 문법구문이 지원됩니다.
 
 ```yaml
 # 6 hours
@@ -119,7 +119,7 @@ duration:
 
 <div class='note'>
 
-  duration이 `recorder` 구성 요소에 의해 저장된 기록일 수(`purge_keep_days`)를 초과하는 경우, History Stat 센서는 전체 duration을 보는데 필요한 모든 정보를 갖지 않습니다. 예를 들어, `purge_keep_days`가 7로 설정되면 duration이 30 일인 History Stat 센서는 최근 7 일의 History를 기반으로 한 값만 보고합니다.
+  duration이 `recorder` 구성요소에 의해 저장된 기록일 수(`purge_keep_days`)를 초과하는 경우, History Stat 센서는 전체 duration을 보는데 필요한 모든 정보를 갖지 않습니다. 예를 들어, `purge_keep_days`가 7로 설정되면 duration이 30 일인 History Stat 센서는 최근 7 일의 History를 기반으로 한 값만 보고합니다.
 
 </div>
 
@@ -188,6 +188,6 @@ duration:
 
 <div class='note'>
 
-  홈어시스턴트 UI의 `/developer-tools/template` 페이지에서 `start`, `end` 또는 `duration` 값이 올바른지 확인할 수 있습니다. period가 올바른지 확인하려면 구성 요소를 클릭하기만 하면 `from` 및 `to` 속성에 기간의 시작과 끝이 멋지게 형식화되어 보입니다.
+  홈어시스턴트 UI의 `/developer-tools/template` 페이지에서 `start`, `end` 또는 `duration` 값이 정확한지 확인할 수 있습니다. period가 정확한지 확인하려면 구성요소를 클릭하기만 하면 `from`과 `to` 속성에 기간의 시작과 끝이 멋지게 형식화되어 보입니다.
 
 </div>

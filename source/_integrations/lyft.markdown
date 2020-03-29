@@ -12,11 +12,12 @@ ha_release: 0.41
 <iframe width="776" height="437" src="https://www.youtube.com/embed/WauRZJ5vnzk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-The `lyft` sensor will give you time and price estimates for all available [Lyft](https://lyft.com) products at the given `start_latitude` and `start_longitude`.The `ATTRIBUTES` are used to provide extra information about products, such as vehicle capacity and fare rates. If an `end_latitude` and `end_longitude` are specified, a price estimate will also be provided. One sensor will be created for each product at the given `start` location, for pickup time. A second sensor for each product, for estimated price, will be created if a destination is specified. The sensor is powered by the official Lyft [API](https://developer.lyft.com/reference/).
+`lyft` 센서는 주어진 `start_latitude`와 `start_longitude`에서 사용 가능한 모든 [Lyft](https://lyft.com)에 대한 시간과 가격 추정치를 제공합니다. `ATTRIBUTES`는 차량 용량과 운임과 같은 서비스에 대한 추가 정보를 제공하는데 사용됩니다. `end_latitude`와 `end_longitude`가 지정되면 가격 추정치도 제공됩니다. 주어진 `start` 위치에서 픽업시간 동안 각 서비스에 대해 하나의 센서가 생성됩니다. 목적지가 지정되면 예상 가격에 대해 각 서비스에 대한 두 번째 센서가 작성됩니다. 센서는 공식 Lyft [API](https://developer.lyft.com/reference/)에 의해 구동됩니다.
 
-You must create an application [here](https://www.lyft.com/developers/manage) to obtain a `client_id` and `client_secret`.
 
-To enable this sensor, add the following lines to your `configuration.yaml` file:
+`client_id`와 `client_secret`을 얻으려면 [여기](https://www.lyft.com/developers/manage) 응용 프로그램을 생성해야합니다.
+
+이 센서를 활성화하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry
@@ -59,7 +60,7 @@ product_ids:
   type: [list, string]
 {% endconfiguration %}
 
-A full configuration entry could look like the sample below:
+전체 설정 항목은 아래 샘플과 같습니다.
 
 ```yaml
 # Example configuration.yaml entry

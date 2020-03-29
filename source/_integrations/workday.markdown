@@ -117,6 +117,6 @@ automation:
 
 <div class='note'>
 
-[as explained here](/docs/configuration/devices/) 하나의 `automation:`항목만 가질 수 있습니다. 기존 자동화에 자동화를 추가하십시오.
+[여기 설명과 같이](/docs/configuration/devices/) 하나의 `automation:`항목만 가질 수 있습니다. 기존 자동화에 자동화를 추가하십시오.
 
 </div>

@@ -14,7 +14,7 @@ ha_codeowners:
 
 ## 셋업
 
-`python3-dev` 또는 `python3-devel` 패키지와 CUPS 개발 파일(`libcups2-dev` 또는 `cups-devel`)을 시스템에 컴파일러 (`gcc`)와 함께 수동으로 설치해야합니다. (예 :`sudo apt-get install python3-dev libcups2-dev` or `sudo dnf -y install python3-devel cups-devel`) 이 통합구성요소는 컨테이너 기반 설정에서 기본적으로 작동하지 않습니다.
+`python3-dev` 또는 `python3-devel` 패키지와 CUPS 개발 파일(`libcups2-dev` 또는 `cups-devel`)을 시스템에 컴파일러 (`gcc`)와 함께 수동으로 설치해야합니다.(예: `sudo apt-get install python3-dev libcups2-dev` 혹은 `sudo dnf -y install python3-devel cups-devel`) 이 통합구성요소는 컨테이너 기반 설정에서 기본적으로 작동하지 않습니다.
 
 센서를 설정하려면 프린터의 "Queue Name"이 필요합니다. 가장 빠른 방법은 CUPS 웹인터페이스 "http://[IP ADDRESS PRINT SERVER]:631"을 방문하여 "Printers"로 이동하는 것입니다.
 
@@ -73,6 +73,5 @@ sensor:
 
 <div class='note'>
 
-You will need to install the `python3-dev` or `python3-devel` and the development files for CUPS (`libcups2-dev` or`cups-devel`) package on your system manually (eg. `sudo apt-get install python3-dev libcups2-dev` or `sudo dnf -y install python3-devel cups-devel`) along with a compiler (`gcc`).
-
+시스템에 수동으로 `python3-dev` 혹은 `python3-devel`와 CUPS(`libcups2-dev` 혹은 `cups-devel`) 패키지용 개발 파일을 설치해야합니다 (예: `sudo apt-get install python3-dev libcups2-dev` 또는 `sudo dnf -y는 python3-devel cups-devel`을 컴파일러(`gcc`)와 함께 설치합니다.)
 </div>

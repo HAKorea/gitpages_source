@@ -25,7 +25,7 @@ ha_iot_class: Local Polling
 
 Hass.io와의 연동을 사용하려면 [unofficial add-on](https://github.com/korylprince/hassio-apcupsd/)을 설치하십시오. 단, add-on을 공식 지원할 수는 없습니다.
 
-설치 후 Github 페이지의 지침에 따라 플러그인을 설정하십시오. 그런 다음 아래 연동 설정을 계속 따르십시오.
+설치후 Github 페이지의 지침에 따라 플러그인을 설정하십시오. 그런 다음 아래 연동 설정을 계속 따르십시오.
 
 ## 설정
 
@@ -79,7 +79,7 @@ name:
 
 ## Sensor
 
- `apcupsd` 센서 플랫폼을 사용하면 [apcaccess](https://linux.die.net/man/8/apcaccess) 명령의 데이터를 사용하여 UPS (배터리 백업)를 모니터링 할 수 있습니다.
+ `apcupsd` 센서 플랫폼을 사용하면 [apcaccess](https://linux.die.net/man/8/apcaccess) 명령의 데이터를 사용하여 UPS (배터리 백업)를 모니터링할 수 있습니다.
 
 ### 설정
 

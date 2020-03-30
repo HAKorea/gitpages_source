@@ -1,11 +1,11 @@
 ---
-title: "Hass.io 설치"
+title: "Home Assistant 설치"
 description: "Instructions on how to install Hass.io."
 ---
 
 **참고** : 더 상세한 설치기는 [HA 네이버카페 설치가이드](https://cafe.naver.com/ArticleList.nhn?search.clubid=29860180&search.menuid=7&search.boardtype=L)를 참고하세요.  
 
-Hass.io를 설치하는 과정을 단계별로 따라하세요.
+Home Assistant를 설치하는 과정을 단계별로 따라하세요.
 
 1. 적합한 설치 파일을 다운 받으세요:
 
@@ -34,16 +34,16 @@ Hass.io를 설치하는 과정을 단계별로 따라하세요.
      - [Raspberry Pi Zero-W][pi0-w]
      - [Raspberry Pi 2][pi2]
 
-2. Hass.io 설치:
+2. Home Assistant 설치:
 
    - 다운 받은 이미지 파일을 [balenaEtcher][balenaEtcher]를 사용하여 SD카드에 플래싱합니다. 추천하는 라즈베리파이를 사용한다면 용량 부족을 피하기 위해 최소 32기가 이상의 SD카드를 사용하세요. 버추얼 머신에 설치한다면 VM의 디스크 공간을 32기가 이상으로 설정하세요.
    - 버추얼 소프트웨어가 설치된 장비 이미지를 사용하려면 64-bit 리눅스와 UEFI boot를 선택하세요.
 
 3. 옵션 - 무선 와이파이를 설정하거나 고정IP를 부여하려면 2가지 방법이 존재합니다.
    - FAT32로 포맷한 USB 메모리 스틱을 준비하고 디스크 볼륨명은 `CONFIG`으로 정합니다. 최상위 폴더에 `network/my-network`라는 이름의 파일을 생성하거나
-   - Hass.io SD카드의 첫번째 부팅 파티션( `hassio-boot` 레이블로 리눅스에서 자동으로 마운트는 안됩니다)에 `CONFIG/network/my-network` 파일을 생성합니다.
+   - Home Assistant SD카드의 첫번째 부팅 파티션( `hassio-boot` 레이블로 리눅스에서 자동으로 마운트는 안됩니다)에 `CONFIG/network/my-network` 파일을 생성합니다.
 
-   이렇게 만든 파일의 환경 설정은 [HassOS howto][hassos-network]를 참고하여 입력합니다.
+   이렇게 만든 파일의 환경 설정은 [Home Assistant Operating System howto][hassos-network]를 참고하여 입력합니다.
 
 4. 이미지로 만든 SD카드를 장비에 꼽아주세요(옵션으로 만든 USB를 같이 꼽습니다).
 
@@ -51,10 +51,15 @@ Hass.io를 설치하는 과정을 단계별로 따라하세요.
 
    <img src='/images/hassio/screenshots/first-start.png' style='clear: right; border:none; box-shadow: none; float: right; margin-bottom: 12px;' width='150' />
 
-6. 웹브라우저에서 `http://hassio.local:8123`로 접근합니다 (만일 접속이 안되면 아래 Note를 참고하세요).
+6. 웹브라우저에서 `http://homeassistant.local:8123`로 접근합니다 (만일 접속이 안되면 아래 Note를 참고하세요).
 
-7. 환경 설정을 하기 위해서는 Hass.io CLI tools 같은 것이 필요합니다. [삼바 애드온][samba] 또는 [SSH 애드온][ssh]이 첫번째로 설치할 애드온들입니다. 이들 애드온을 통해 `/config/` 폴더에 접근하여 환경 설정을 수정할 수 있습니다.웹 UI에서 **Hass.io** 를 클릭하세요. 그 다음 애드온 스토어(add-on store)를 선택하고 해당 애드온을 찾아서 설치합니다. [HA 카페 다모아님의 글](https://cafe.naver.com/koreassistant/137)을 참조하세요.  
+7. 환경 설정을 하기 위해서는 Home Assistant CLI tools 같은 것이 필요합니다. [삼바 애드온][samba] 또는 [SSH 애드온][ssh]이 첫번째로 설치할 애드온들입니다. 이들 애드온을 통해 `/config/` 폴더에 접근하여 환경 설정을 수정할 수 있습니다.웹 UI에서 **Supervisor** 를 클릭하세요. 그 다음 애드온 스토어(add-on store)를 선택하고 해당 애드온을 찾아서 설치합니다. [HA 카페 다모아님의 글](https://cafe.naver.com/koreassistant/137)을 참조하세요.  
 
+<div class='note warning'>
+
+이전에는`hassio.local`을 사용했지만 이름 변경 전에 설치된 시스템이 있는 경우 `homeassistant.local` 대신 `hassio.local`을 사용해야합니다.
+
+</div>
 
 <div class='note'>
 
@@ -70,43 +75,43 @@ Hass.io를 설치하는 과정을 단계별로 따라하세요.
 
 이제 [환경 설정][configure]을 할 차례입니다.
 
-## Hass.io 업데이트
+## Home Assistant 업데이트
 
-Hass.io 업데이트 설치를 위한 추천 방법:
+Home Assistant 업데이트 설치를 위한 추천 방법:
 
-1. 환경 구성을 백업하세요. Hass.io가 제공하는 스냅샷(Snapshot)을 이용하면 손쉽게 백업 가능합니다.
+1. 환경 구성을 백업하세요. Home Assistant가 제공하는 스냅샷(Snapshot)을 이용하면 손쉽게 백업 가능합니다.
 2. [홈어시스턴트 릴리즈 노트](https://github.com/home-assistant/home-assistant/releases)에서 어떤 변경 사항이 반영됐는지 살펴봅니다. 기존에 쓰는 버전과 신규로 설치할 버전의 차이가 어떤지 꼼꼼히 살펴봅니다. 브라우저에서 (`CTRL + f`)를 눌러 **Breaking Changes** 단어들을 검색합니다.
 3. [Check Home Assistant configuration](/addons/check_config/) 애드온으로 업데이트할 버전과 호환성을 체크해볼 수도 있습니다.
 4. 체크가 끝나면 안전하게 업데이트를 설치합니다. 만일 문제가 있다면 업데이트 버전에 맞춰 환경 설정을 수정합니다.
-5. _Hass.io_ 메뉴에서 _Dashboard_ 를 선택하고 신규 업데이트가 표시된 카드창에서 _Update_ 를 누르면 새로운 버전을 설치합니다.
+5. _Supervisor_ 메뉴에서 _Dashboard_ 를 선택하고 신규 업데이트가 표시된 카드창에서 _Update_ 를 누르면 새로운 버전을 설치합니다.
 
-## 특정 버전의 Hass.io 설치
+## 특정 버전의 Home Assistant 설치
 
-Hass.io 시스템에 SSH로 접속하거나 도커 등 다른 환경에서 콘솔로 접속하여 아래 명령을 실행하면 특정 버전의 Hass.io를 이용할 수 있습니다.
+Home Assistant 시스템에 SSH로 접속하거나 도커 등 다른 환경에서 콘솔로 접속하여 아래 명령을 실행하면 특정 버전의 Home Assistant를 이용할 수 있습니다.
 
 ```bash
-hassio ha update --version=0.XX.X
+ha core update --version=0.XX.X
 ```
 
-## 베타버전 Hass.io 설치
+## 베타버전 Home Assistant 설치
 새로운 버전이 릴리즈 되기전에 먼저 사용해보고 싶다면 3주마다 배포되는 베타버전을 사용해볼 수 있습니다:
 
-1. Hass.io에서 제공하면 스냅샷 기능으로 환경 설정을 백업하세요.
-2. [Home Assistant RC release notes](https://rc.home-assistant.io/latest-release-notes/)  버전에서 breaking changes를 확인하세요. 릴리즈 노트에서 현재 운영하는 버전과의 차이점을 잘 살펴봅니다. 브라우저에서 (`CTRL + f`) **Breaking Changes** 를 꼼꼼히 확인합니다.
-3. _Hass.io_ 의 _System_ 탭에서 _Hass.io supervisor_ 아래 있는 _Join Beta Channel_ 을 선택합니다. 그리고 _Reload_ 를 누릅니다.
-4. _Hass.io_ 메뉴의 _Dashboard_ 탭에서 _Update_ 를 누릅니다.
+1. Home Assistant에서 제공하면 스냅샷 기능으로 환경 설정을 백업하세요.
+2. [Home Assistant Beta release notes](https://rc.home-assistant.io/latest-release-notes/)  버전에서 breaking changes를 확인하세요. 릴리즈 노트에서 현재 운영하는 버전과의 차이점을 잘 살펴봅니다. 브라우저에서 (`CTRL + f`) **Breaking Changes** 를 꼼꼼히 확인합니다.
+3. _Supervisor_ 의 _System_ 탭에서 _Supervisor_ 아래 있는 _Join Beta Channel_ 을 선택합니다. 그리고 _Reload_ 를 누릅니다.
+4. _Supervisor_ 메뉴의 _Dashboard_ 탭에서 _Update_ 를 누릅니다.
 
-## 다른 방법: 일반적인 리눅스 컴퓨터에 설치
+## 다른 방법: 일반적인 리눅스 컴퓨터에 Home Assistant 설치
 
-HA 네이버카페 까꿍TM님의 라즈베리파이에 도커환경에서 Hassio 설치하기 
+HA 네이버카페 까꿍TM님의 라즈베리파이에 도커환경에서 Home Assistant 설치하기 
 
 <div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/W2-MgYE6FA4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-능숙한 유저라면 [리눅스 서버 또는 버추얼 머신][Linux]에 Hass.io를 설치할 수 있습니다. 아래 제시한 방법은 우분투와 Arch 리눅스에서 테스트 했습니다만 다른 리눅스 배포판에서도 비슷하게 설치할 수 있습니다.
+능숙한 유저라면 [리눅스 서버 또는 버추얼 머신][Linux]에 Home Assistant를 설치할 수 있습니다. 아래 제시한 방법은 우분투와 Arch 리눅스에서 테스트 했습니다만 다른 리눅스 배포판에서도 비슷하게 설치할 수 있습니다.
 
-Hass.io를 실행하기 위한 패키지들을 시스템에 따라 조금씩 다를 수 있습니다.
+Home Assistant를 실행하기 위한 패키지들을 시스템에 따라 조금씩 다를 수 있습니다.
 
 ### Debian/Ubuntu
 
@@ -154,7 +159,7 @@ NetworkManager 없이는 UI를 통해 호스트 네트웍 설정을 할 수 없�
 
 ### Preparation
 
-본인의 리눅스에 따라 Hass.io 를 설치하기 위해 다음 명령을 실행하세요:
+본인의 리눅스에 따라 Home Assistant 를 설치하기 위해 다음 명령을 실행하세요:
 
 Ubuntu:
 
@@ -173,7 +178,7 @@ systemctl disable ModemManager
 curl -fsSL get.docker.com | sh
 ```
 
-다음의 스크립트가 다양한 OS와 컴퓨터에 Hass.io 를 설치합니다.
+다음의 스크립트가 다양한 OS와 컴퓨터에 Home Assistant 를 설치합니다.
 
 ```bash
 curl -sL "https://raw.githubusercontent.com/home-assistant/hassio-installer/master/hassio_install.sh" | bash -s
@@ -210,11 +215,11 @@ curl -sL "https://raw.githubusercontent.com/home-assistant/hassio-installer/mast
 위와 같은 방법으로 설치하면 공식 core SSH 애드온이 정상 동작 하지 않을 수 있습니다. 그럴 경우,커뮤니티에서 제공하는 SSH 애드온을 설치하세요. 설치 방법에 따라 문서에서 이야기 하는 내용이 조금씩 다를 수도 있습니다.
 </div>
 
-버추얼 머신에서 Hass.io 설치는 [blog][hassio-vm] 글을 참고하세요.
+버추얼 머신에서 Home Assistant 설치는 [blog][hassio-vm] 글을 참고하세요.
 
 ## 또 다른 방법: 시놀로지 NAS에서의 설치
 
-HA 네이버카페 멀더요원님의 [시놀로지 NAS에 Hassio 설치하기](https://cafe.naver.com/koreassistant/95)를 참고하십시오. 
+HA 네이버카페 멀더요원님의 [시놀로지 NAS에 Home Assistant 설치하기](https://cafe.naver.com/koreassistant/95)를 참고하십시오. 
 
 <div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/QdBYUbj0B5Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

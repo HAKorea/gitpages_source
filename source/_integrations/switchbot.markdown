@@ -35,6 +35,10 @@ name:
   description: 프런트 엔드에 스위치를 표시하는데 사용되는 이름.
   required: false
   type: string
+password:
+  description: 설정된 경우 스위치의 비밀번호
+  required: false
+  type: string  
 {% endconfiguration %}
 
 ## Switchbot Entity

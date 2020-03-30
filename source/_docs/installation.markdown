@@ -52,7 +52,7 @@ Hass.io 애드온을 사용하기 위해서는 Hass.io 이미지로 설치하거
 
 **설치 방법**|**현재 보유중**|**추천 대상**
 :-----|:-----|:-----
-[Hass.io](/hassio/installation/)|Raspberry Pi<br>VM|누구나
+[Home Assistant](/hassio/installation/)|Raspberry Pi<br>VM|누구나
 [Docker](/docs/installation/docker/)|Docker|도커를 사용중인 유저
 
 ## 다른 설치 방법

@@ -24,5 +24,5 @@ Hass.io 애드온은 홈어시스턴트의 기능을 확장합니다. 애드온�
 * [HA base images](https://github.com/home-assistant/hassio-base)
 * [HA Builder](https://github.com/home-assistant/hassio-builder)
 * [HA community Add-ons](https://github.com/hassio-addons)
-* [HassOS embedded Linux](https://github.com/home-assistant/hassos)
+* [Home Assistant OS](https://github.com/home-assistant/hassos)
 * [Home Assistant Dockerfile](https://github.com/home-assistant/hassio-homeassistant)

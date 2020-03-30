@@ -1,15 +1,15 @@
 ---
-title: "Home Assistant/Hass.io 보안에 대한 고찰"
+title: "Home Assistant 보안에 대한 고찰"
 description: "Use nmap to scan your Home Assistant instance."
 ---
 
-많은 사용자가 [Hass.io](/hassio/)를 실행함에 따라 여기에서는 Raspberry Pi 3B 및 Hass.io 0.70.0을 사용하여 Home Assistant가 네트워크 쪽에서 어떻게 보이는지 보여줍니다. 이것은 완전한 조사가 아니라 간단한 개요입니다.
+많은 사용자가 [홈어시스턴트](/hassio/)를 실행함에 따라 여기에서는 Raspberry Pi 3B 및 Hass.io 0.70.0을 사용하여 Home Assistant가 네트워크 쪽에서 어떻게 보이는지 보여줍니다. 이것은 완전한 조사가 아니라 간단한 개요입니다.
 
 홈어시스턴트 시스템의 IP 주소는 192.168.0.215입니다. 스캔 소스인 시스템은 Fedora 27을 실행하는 시스템이며 Nmap 7.60은 포트 스캔을 수행하는 데 사용됩니다. 두 시스템 모두 동일한 네트워크에 있습니다.
 
 ## SSH server Add-on
 
-Hass.io에 안전하게 액세스하기 위해 SSH는 [SSH 서버 애드온](/addons/ssh/)에 의해 제공됩니다.
+홈어시스턴트에 안전하게 액세스하기 위해 SSH는 [SSH 서버 애드온](/addons/ssh/)에 의해 제공됩니다.
 
 ```bash
 $ sudo nmap -A -n --reason -Pn -T5 -p1-65535 192.168.0.215

@@ -80,7 +80,7 @@ INFO (MainThread) [homeassistant.components.http.auth] You need to use a bearer 
 * `auth`
 * `auth_provider.homeassistant`
 * `onboarding`
-* `hassio` (Hass.io 사용자)
+* `hassio` (홈어시스턴트 사용자)
 * `cloud` (nabucasa 사용자)
 
 

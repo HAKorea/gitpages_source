@@ -1,11 +1,11 @@
 ---
-title: "HassOS에서 I2C 사용"
+title: "홈어시스턴트 OS에서 I2C 사용"
 description: "Instructions on how to enable I2C on a Raspberry PI for Hass.io."
 ---
 
-Hass.io는 제한된 환경으로 일반적인 방법으로 라즈베리파이의 I2C bus를 사용할 수 없습니다.
+홈어시스턴트는 제한된 환경으로 일반적인 방법으로 라즈베리파이의 I2C bus를 사용할 수 없습니다.
 
-만일 직접 라즈베리파이에 외부 센서를 연결하려면 USB 메모리 스틱을 사용하여 [enable the I2C interface in the Hass.io configuration](https://github.com/home-assistant/hassos/blob/dev/Documentation/boards/raspberrypi.md#i2c) 를 실행해야 합니다.
+만일 직접 라즈베리파이에 외부 센서를 연결하려면 USB 메모리 스틱을 사용하여 [enable the I2C interface in the Home Assistant configuration](https://github.com/home-assistant/hassos/blob/dev/Documentation/boards/raspberrypi.md#i2c) 를 실행해야 합니다.
 
 ## 단계별 적용 방법
 
@@ -38,8 +38,8 @@ Hass.io는 제한된 환경으로 일반적인 방법으로 라즈베리파이�
 ### 3단계 - USB 드라이브로 설치
 
 - 라즈베리파이에 USB 드라이브를 꼽습니다.
-- 홈어시스턴트 웹페이지로 가서 **Hass.io** > **System** 을 클릭합니다.
+- 홈어시스턴트 웹페이지로 가서 **supervisor** > **System** 을 클릭합니다.
 - 이제 `Import from USB`를 클릭합니다.
-- Hass.io를 재시작하면, 새로운 USB 설정을 반영합니다.
+- 홈어시스턴트를 재시작하면, 새로운 USB 설정을 반영합니다.
 
 서버를 재시작 하면 I2C interface를 사용할 수 있습니다.

@@ -20,9 +20,11 @@ redirect_from: /getting-started/troubleshooting-configuration/
 
 Home Assistant의 가장 일반적인 문제중 하나는 유효하지 않은 `configuration.yaml` 설정이거나 configuaration 파일이 다른 것일 경우입니다. 
  
- - 다음과 같은 명령을 사용하여 설정을 테스트 할 수 있습니다: `hass --script check_config`.
-   - Hass.io에서 [hassio command](/hassio/commandline/#home-assistant) : `hassio homeassistant check`.
-   - 도커에서 `docker exec home-assistant python -m homeassistant --script check_config --config /config` - `home-assistant`는 컨테이너의 이름입니다. 
+- 홈어시스턴트로 [`ha` command](/hassio/commandline/#home-assistant) 사용 가능합니다. : `ha core check`.
+  - `hass --script check_config` command line을 사용하여 Home Assistant Core로 설정을 테스트할 수 있습니다.
+  - Docker에서는 `docker exec home-assistant python -m homeassistant --script check_config --config /config`를 사용할 수 있습니다. 여기서 `home-assistant`는 컨테이너의 이름입니다.
+
+
  - 설정 파일들, `configuration.yaml` 포함 모두 UTF-8 인코딩을 씁니다. `'utf-8' codec can't decode byte` 와 같은 오류가 표시되면, 문제가 되는 설정내용을 편집하여 UTF-8로 다시 저장합니다.
  - [this online YAML parser](http://yaml-online-parser.appspot.com/) 혹은 [YAML Lint](http://www.yamllint.com/)를 사용하여 설정의 yaml 구조를 확인할 수 있습니다. 
  - YAML의 특성에 대해 자세히 알아보려면, SaltStack 사이트에서 [YAML IDIOSYNCRASIES](https://docs.saltstack.com/en/latest/topics/troubleshooting/yaml_idiosyncrasies.html), (SaltStack에서 별도로 분석한 예제이지만 YAML 문제를 잘 설명하고 있습니다).

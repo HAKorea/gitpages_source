@@ -56,12 +56,12 @@ systemctl disable ModemManager.service
 
 ### USB path 찾기
 
-위에서 작성한 바대로 지웨이브 스틱이 동작하지 않는다면  [`hassio` 명령](/hassio/commandline/#hardware) 으로 USB의 경로를 확인해보세요:
+위에서 작성한 바대로 지웨이브 스틱이 동작하지 않는다면  [`ha` 명령](/hassio/commandline/#hardware) 으로 USB의 경로를 확인해보세요:
 
 ```bash
-$ hassio hardware info
+$ ha hardware info
 ```
-그 밖에 웹페이지의 *Hass.io* 패널 안에서 *System* 섹션에서도 경로를 확인할 수 있습니다. *Hardware* 버튼을 누르면 모든 하드웨어 정보들이 표시됩니다.
+그 밖에웹페이지의 *Supervisor* 패널 안에서 *System 섹션에서도 경로를 확인할 수 있습니다. *Hardware* 버튼을 누르면 모든 하드웨어 정보들이 표시됩니다.
 
 ## Further reading
 

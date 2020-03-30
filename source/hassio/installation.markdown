@@ -1,5 +1,5 @@
 ---
-title: "Home Assistant 설치"
+title: "홈어시스턴트 설치"
 description: "Instructions on how to install Hass.io."
 ---
 

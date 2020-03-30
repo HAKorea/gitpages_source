@@ -1,10 +1,10 @@
 ---
-title: "경보 패널 카드"
+title: 경보 패널 카드(Alarm Panel Card)
 sidebar_label: Alarm Panel
 description: "The Alarm Panel allows you to Arm and Disarm your Alarm Control Panel Integrations"
 ---
 
-경보 패널을 사용하면 경보 제어판 통합구성요소를 설정 및 해제 할 수 있습니다.
+경보 패널(Alarm Panel)을 사용하면 경보 패널 통합구성요소를 Arm과 Disarm을 할 수 있습니다.
 
 <p class='img'>
 <img src='/images/lovelace/lovelace_alarm_panel_card.gif' alt='Screenshot of the alarm panel card'>

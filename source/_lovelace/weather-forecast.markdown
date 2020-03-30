@@ -8,7 +8,7 @@ Weather Forecast는 날씨를 표시하는 카드입니다. 월패드에 표시�
 
 <p class='img'>
 <img src='/images/lovelace/lovelace_weather.png' alt='Screenshot of the weather card'>
-날씨 카드의 스크린 샷.
+날씨 카드의 스크린샷.
 </p>
 
 {% configuration %}
@@ -22,7 +22,7 @@ entity:
   type: string
 name:
   required: false
-  description: 친숙한 이름을 덮어 씁니다.
+  description: 친숙한 이름을 덮어씁니다.
   type: string
   default: Entity Name
 theme:
@@ -40,7 +40,7 @@ entity: weather.dark_sky
 
 <div class="note">
 
-  이 카드는 `weather` 엔티티 를 정의하는 플랫폼에서만 작동합니다 . 
-  예를 들어, [Dark Sky](/integrations/weather.darksky/) 에서는 작동 하지만 [Dark Sky Sensor](/integrations/darksky) 에서는 작동 하지 않습니다.
+  이 카드는 `weather` 엔티티를 정의하는 플랫폼에서만 작동합니다 . 
+  예를 들어, [Dark Sky](/integrations/weather.darksky/)에서는 작동하지만 [Dark Sky Sensor](/integrations/darksky)에서는 작동하지 않습니다.
 
 </div>

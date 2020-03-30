@@ -3,7 +3,7 @@ title: "Lovelace 작동 방식"
 description: "Explains how Lovelace works under the hood."
 ---
 
-기존 사용자 인터페이스는 상태 머신에만 의존했습니다. 이는 상태 머신이 이제 디바이스 상태의 소스 일뿐만 아니라 사용자 인터페이스 설정 소스라는 의미에서 문제가 있어왔습니다. Lovelace와는 완전히 다른 접근법을 취하고 있습니다. 모든 사용자 인터페이스 구성은 사용자가 제어하는 ​​별도의 파일에 있습니다. 
+기존 사용자 인터페이스는 State machine에만 의존했습니다. 이는 State machine이 이제 Device state의 소스일 뿐만 아니라 사용자 인터페이스 설정 소스라는 의미에서 문제가 있어왔습니다. Lovelace와는 완전히 다른 접근법을 취하고 있습니다. 모든 사용자 인터페이스 설정은 사용자가 제어하는 ​​별도의 파일에 있습니다. 
 
 <p class='img'>
 <img

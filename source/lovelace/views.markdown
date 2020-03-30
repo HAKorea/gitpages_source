@@ -22,11 +22,11 @@ views:
       type: string
     badges:
       required: false
-      description: badge로 표시 할 엔티티 ID 또는 `badge` 개체 목록.
+      description: badge로 표시할 엔티티 ID 또는 `badge` 개체 목록.
       type: list
     cards:
       required: false
-      description: View에 표시 할 카드.
+      description: View에 표시할 카드.
       type: list
     path:
       required: false
@@ -64,7 +64,7 @@ view 탭을 표시하기위한 조건을 지정하기 위해 부울(boolean) 대
 {% configuration badges %}
 user:
   required: true
-  description: view 탭을 볼 수있는 사용자 ID (사용자 설정 페이지에있는 고유한 16 진수 값).
+  description: view 탭을 볼 수 있는 사용자 ID (사용자 설정 페이지에있는 고유한 16 진수 값).
   type: string
 {% endconfiguration %}
 
@@ -120,7 +120,7 @@ Picture card config:
 
 ## Visible
 
-view를 구분해서 전체 또는 사용자별로 지정할 수 있습니다. (참고 : 탭표시 전용. URL 경로는 여전히 액세스 가능)
+view를 구분해서 전체 또는 사용자별로 지정할 수 있습니다. (참고: 탭표시 전용. URL 경로는 여전히 액세스 가능)
 
 ### 사례
 
@@ -205,12 +205,12 @@ entity:
   type: string
 name:
   required: false
-  description: 친숙한 이름을 덮어 씁니다.
+  description: 친숙한 이름을 덮어씁니다.
   type: string
   default: Name of Entity
 icon:
   required: false
-  description: 아이콘 또는 엔터티 그림을 덮어 씁니다.
+  description: 아이콘 또는 엔터티 그림을 덮어씁니다.
   type: string
   default: Entity Domain Icon
 image:
@@ -239,17 +239,17 @@ tap_action:
       default: "`toggle`"
     navigation_path:
       required: false
-      description: "`action`이 `navigate`로 정의된 경우 탐색할 경로 (예 :`/lovelace/0/`)"
+      description: "`action`이 `navigate`로 정의된 경우 탐색할 경로 (예: `/lovelace/0/`)"
       type: string
       default: none
     url_path:
       required: false
-      description: "`action`이`url`로 정의된 경우 탐색 경로 (예 :`https : // www.home-assistant.io`)"
+      description: "`action`이`url`로 정의된 경우 탐색 경로 (예: `https : // www.home-assistant.io`)"
       type: string
       default: none
     service:
       required: false
-      description: "`call-service`로 정의된 `action` 일 때 호출할 서비스 (예 :`media_player.media_play_pause`)"
+      description: "`call-service`로 정의된 `action` 일 때 호출할 서비스 (예: `media_player.media_play_pause`)"
       type: string
       default: none
     service_data:
@@ -274,22 +274,22 @@ hold_action:
       default: "`more-info`"
     navigation_path:
       required: false
-      description: "`action`이 `navigate`로 정의된 경우 탐색할 경로 (예 :`/lovelace/0/`)"
+      description: "`action`이 `navigate`로 정의된 경우 탐색할 경로 (예: `/lovelace/0/`)"
       type: string
       default: none
     url_path:
       required: false
-      description: "`action`이 `url`로 정의된 경우 탐색 경로 (예 :`https://www.home-assistant.io`)"
+      description: "`action`이 `url`로 정의된 경우 탐색 경로 (예: `https://www.home-assistant.io`)"
       type: string
       default: none
     service:
       required: false
-      description: "`action`이 `call-service`로 정의된 경우 호출할 서비스 (예 :`media_player.media_play_pause`)"
+      description: "`action`이 `call-service`로 정의된 경우 호출할 서비스 (예: `media_player.media_play_pause`)"
       type: string
       default: none
     service_data:
       required: false
-      description: "`action`이 `call-service`로 정의된 경우 포함할 서비스 데이터 (예 :`entity_id : media_player.bedroom`)."
+      description: "`action`이 `call-service`로 정의된 경우 포함할 서비스 데이터 (예: `entity_id : media_player.bedroom`)."
       type: string
       default: none
     confirmation:
@@ -336,12 +336,12 @@ double_tap_action:
 
 #### 확인 옵션 (Options For Confirmation)
 
-boolean 대신 객체로 확인(confirmation)을 정의하면 더 많은 사용자 정의 및 설정을 추가 할 수 있습니다. :
+boolean 대신 객체로 확인(confirmation)을 정의하면 더 많은 사용자 정의와 설정을 추가할 수 있습니다. :
 
 {% configuration confirmation %}
 text:
   required: false
-  description: 확인 대화 상자에 표시 할 텍스트.
+  description: 확인 대화 상자에 표시할 텍스트.
   type: string
 exemptions:
   required: false
@@ -354,13 +354,13 @@ exemptions:
 {% configuration badges %}
 user:
   required: true
-  description: 보기 탭을 볼 수있는 사용자 ID. 
+  description: 보기 탭을 볼 수 있는 사용자 ID. 
   type: string
 {% endconfiguration %}
 
 ### 엔티티 필터 뱃지 (Entity Filter Badge)
 
-이 뱃지를 사용하면 특정 상태에 있을 때만 추적하려는 엔터티 목록을 정의할 수 있습니다. 집에 있을 때만 사람들의 전원을 깜빡하고 못 끈 전등을 끄는데 매우 유용합니다.
+이 뱃지를 사용하면 특정 상태에 있을 때만 추적하려는 엔터티 목록을 정의할 수 있습니다. 끄는 것을 잊어 버린 조명을 보여주고 가족들이 집에있을 때만 목록을 보여주는데 매우 유용합니다. 
 
 {% configuration filter_badge %}
 type:
@@ -379,7 +379,7 @@ state_filter:
 
 #### 엔티티 옵션 (Options For Entities)
 
-엔티티를 문자열 대신 객체로 정의(엔티티 ID 앞에 `entity:` 추가)하면 더 많은 사용자 정의 및 설정을 추가 할 수 있습니다.
+엔티티를 문자열 대신 객체로 정의(엔티티 ID 앞에 `entity:` 추가)하면 더 많은 사용자 정의와 설정을 추가할 수 있습니다.
 
 {% configuration entities %}
 type:
@@ -392,11 +392,11 @@ entity:
   type: string
 name:
   required: false
-  description: 친숙한 이름을 덮어 씁니다.
+  description: 친숙한 이름을 덮어씁니다.
   type: string
 icon:
   required: false
-  description: 아이콘 또는 엔터티 그림을 덮어 씁니다.
+  description: 아이콘 또는 엔터티 그림을 덮어씁니다.
   type: string
 image:
   required: false
@@ -404,13 +404,13 @@ image:
   type: string
 state_filter:
   required: false
-  description: 상태 또는 `filter` 객체를 나타내는 문자열 목록 은 아래를 참조.
+  description: 상태 또는 `filter` 객체를 나타내는 문자열 목록은 아래를 참조.
   type: list
 {% endconfiguration %}
 
 #### state_filter 옵션 (Options For state_filter)
 
-state_filter를 문자열 대신 객체로 정의하면(state value 앞에 `value:`를 추가) 필터에 더 많은 사용자 정의를 추가 할 수 있습니다. :
+state_filter를 문자열 대신 객체로 정의하면(state value 앞에 `value:`를 추가) 필터에 더 많은 사용자 정의를 추가할 수 있습니다. :
 
 {% configuration state_filter %}
 value:
@@ -419,7 +419,7 @@ value:
   type: string
 operator:
   required: false
-  description: "비교에 사용할 연산자. (예: `==`, `<=`, `<`, `>=`, `>`, `!=` or `regex`)"
+  description: "비교에 사용할 연산자. (예: `==`, `<=`, `<`, `>=`, `>`, `!=` 혹은 `regex`)"
   type: string
 attribute:
   required: false
@@ -429,7 +429,7 @@ attribute:
 
 #### 사례
 
-집에 활성된 스위치 또는 전등 만 표시
+집에 활성된 스위치 혹은 조명만 표시
 
 ```yaml
 type: entity-filter

@@ -4,7 +4,7 @@ sidebar_label: Entity Button
 description: "The Entity Button card allows you to add buttons to perform tasks"
 ---
 
-Entity Button 카드를 사용하면 작업을 수행하기 위해 버튼을 추가 할 수 있습니다.
+Entity Button 카드를 사용하면 작업을 수행하기 위해 버튼을 추가할 수 있습니다.
 
 <p class='img'>
 <img src='/images/lovelace/lovelace_entity_button_card.png' alt='Screenshot of the entity button card'>
@@ -27,12 +27,12 @@ entity:
   type: string
 name:
   required: false
-  description: 친숙한 이름을 덮어 씁니다.
+  description: 친숙한 이름을 덮어씁니다.
   type: string
   default: 엔터티 이름
 icon:
   required: false
-  description: 아이콘 또는 엔터티 그림을 덮어 씁니다.
+  description: 아이콘 또는 엔터티 그림을 덮어씁니다.
   type: string
   default: 엔터티 도메인 아이콘
 show_name:
@@ -47,7 +47,7 @@ show_icon:
   default: "true"
 icon_height:
   required: false
-  description: 아이콘의 높이를 설정하십시오. 설정 UI에서 처리하는 픽셀 단위입니다. (고급 사용자는 원하는 경우 다른 CSS 값을 사용할 수 있습니다)
+  description: 아이콘의 높이를 설정하십시오. UI 구성에서 처리하는 픽셀 단위입니다. (고급 사용자는 원하는 경우 다른 CSS 값을 사용할 수 있습니다)
   type: string
   default: auto
 tap_action:
@@ -62,22 +62,22 @@ tap_action:
       default: "`more-info`"
     navigation_path:
       required: false
-      description: "`action`이 `navigate` 로 정의된 경우 탐색 할 경로 (예: `/lovelace/0/`)"
+      description: "`action`이 `navigate`로 정의된 경우 탐색할 경로 (예: `/lovelace/0/`)"
       type: string
       default: none
     url_path:
       required: false
-      description: "`action`이 `url` 로 정의된 경우 (예: `https://www.home-assistant.io`"
+      description: "`action`이 `url`로 정의된 경우 (예: `https://www.home-assistant.io`"
       type: string
       default: none
     service:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 호출할 서비스 (예 :`media_player.media_play_pause`)"
+      description: "`action`이 `call-service`로 정의된 경우 호출할 서비스 (예: `media_player.media_play_pause`)"
       type: string
       default: none
     service_data:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
+      description: "`action`이 `call-service`로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
       type: string
       default: none
     confirmation:
@@ -97,22 +97,22 @@ hold_action:
       default: "`more-info`"
     navigation_path:
       required: false
-      description: "`action`이 `navigate` 로 정의된 경우 탐색 할 경로 (예: `/lovelace/0/`)"
+      description: "`action`이 `navigate` 로 정의된 경우 탐색할 경로 (예: `/lovelace/0/`)"
       type: string
       default: none
     url_path:
       required: false
-      description: "`action`이 `url` 로 정의된 경우 (예: `https://www.home-assistant.io`)"
+      description: "`action`이 `url`로 정의된 경우 (예: `https://www.home-assistant.io`)"
       type: string
       default: none
     service:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 호출할 서비스 (예 :`media_player.media_play_pause`)"
+      description: "`action`이 `call-service`로 정의된 경우 호출할 서비스 (예: `media_player.media_play_pause`)"
       type: string
       default: none
     service_data:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
+      description: "`action`이 `call-service`로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
       type: string
       default: none
     confirmation:
@@ -132,22 +132,22 @@ double_tap_action:
       default: "`more-info`"
     navigation_path:
       required: false
-      description: "`action`이 `navigate` 로 정의된 경우 탐색 할 경로 (예: `/lovelace/0/`)"
+      description: "`action`이 `navigate`로 정의된 경우 탐색할 경로 (예: `/lovelace/0/`)"
       type: string
       default: none
     url_path:
       required: false
-      description: "`action`이 `url` 로 정의된 경우 (예: `https://www.home-assistant.io`)"
+      description: "`action`이 `url`로 정의된 경우 (예: `https://www.home-assistant.io`)"
       type: string
       default: none
     service:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 호출할 서비스 (예 :`media_player.media_play_pause`)"
+      description: "`action`이 `call-service`로 정의된 경우 호출할 서비스 (예 :`media_player.media_play_pause`)"
       type: string
       default: none
     service_data:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
+      description: "`action`이 `call-service`로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
       type: string
       default: none
     confirmation:
@@ -163,11 +163,11 @@ theme:
 
 ## Confirmation 옵션
 
-boolean 대신 객체로 컴펌을 정의하면 더 많은 사용자 정의 및 설정을 추가 할 수 있습니다:
+boolean 대신 객체로 컴펌(Confirmation)을 정의하면 더 많은 사용자 정의와 설정을 추가할 수 있습니다:
 {% configuration %}
 text:
   required: false
-  description: 컨펌 대화 상자에 표시 할 텍스트.
+  description: 컨펌 대화 상자에 표시할 텍스트.
   type: string
 exemptions:
   required: false
@@ -180,13 +180,13 @@ exemptions:
 {% configuration badges %}
 user:
   required: true
-  description: View 탭을 볼 수있는 사용자 ID.
+  description: View 탭을 볼 수 있는 사용자 ID.
   type: string
 {% endconfiguration %}
 
 ## 사례 
 
-제목 및 스크립트 서비스 예:
+제목과 스크립트 서비스 예:
 
 ```yaml
 type: entity-button
@@ -201,5 +201,5 @@ entity: script.turn_off_lights
 
 <p class='img'>
 <img src='/images/lovelace/lovelace_entity_button_complex_card.png' alt='Screenshot of the entity button card'>
-제목 및 스크립트 서비스가 포함 된 Entity Button 카드의 스크린 샷
+제목과 스크립트 서비스가 포함된 Entity Button 카드의 스크린 샷
 </p>

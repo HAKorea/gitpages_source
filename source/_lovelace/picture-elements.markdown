@@ -8,7 +8,9 @@ Picture elements 카드는 가장 다양한 유형의 카드 중 하나입니다
 
 좌표를 기준으로 한 이미지 위에 이 카드를 사용하면 아이콘이나 텍스트, 심지어 서비스까지 배치할 수 있습니다! 평면도(floorplan)를 그려보세요! [picture-glance](/lovelace/picture-glance/)로 어떤 제한도 없이 그려보세요 !
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/LsFUwqb-6As" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 <p class='img'>
   <img src='/images/lovelace/lovelace_picture_elements.gif' alt='A functional floorplan powered by picture elements'>
@@ -76,27 +78,27 @@ tap_action:
       default: "`toggle`"
     navigation_path:
       required: false
-      description: "`action`이 `navigate` 로 정의된 경우 탐색 할 경로 (예: `/lovelace/0/`)"
+      description: "`action`이 `navigate`로 정의된 경우 탐색할 경로 (예: `/lovelace/0/`)"
       type: string
       default: none
     url_path:
       required: false
-      description: "`action`이 `url` 로 정의된 경우 (예: `https://www.home-assistant.io`)"
+      description: "`action`이 `url`로 정의된 경우 (예: `https://www.home-assistant.io`)"
       type: string
       default: none
     service:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 호출할 서비스 (예 :`media_player.media_play_pause`)"
+      description: "`action`이 `call-service`로 정의된 경우 호출할 서비스 (예: `media_player.media_play_pause`)"
       type: string
       default: none
     service_data:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
+      description: "`action`이 `call-service`로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
       type: string
       default: none
     confirmation:
       required: false
-      description: "작업을 컨펌하는 확인 대화 상자를 표시. 아래`confirmation` 개체 참조"
+      description: "작업을 컨펌하는 확인 대화 상자를 표시. 아래 `confirmation` 개체 참조"
       type: [boolean, map]
       default: "false"
 hold_action:
@@ -111,22 +113,22 @@ hold_action:
       default: "`more-info`"
     navigation_path:
       required: false
-      description: "`action`이 `navigate` 로 정의된 경우 탐색 할 경로 (예: `/lovelace/0/`)"
+      description: "`action`이 `navigate`로 정의된 경우 탐색할 경로 (예: `/lovelace/0/`)"
       type: string
       default: none
     url_path:
       required: false
-      description: "`action`이 `url` 로 정의된 경우 (예: `https://www.home-assistant.io`)"
+      description: "`action`이 `url`로 정의된 경우 (예: `https://www.home-assistant.io`)"
       type: string
       default: none
     service:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 호출할 서비스 (예 :`media_player.media_play_pause`)"
+      description: "`action`이 `call-service`로 정의된 경우 호출할 서비스 (예: `media_player.media_play_pause`)"
       type: string
       default: none
     service_data:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
+      description: "`action`이 `call-service`로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
       type: string
       default: none
     confirmation:
@@ -146,22 +148,22 @@ double_tap_action:
       default: "`more-info`"
     navigation_path:
       required: false
-      description: "`action`이 `navigate` 로 정의된 경우 탐색 할 경로 (예: `/lovelace/0/`)"
+      description: "`action`이 `navigate`로 정의된 경우 탐색할 경로 (예: `/lovelace/0/`)"
       type: string
       default: none
     url_path:
       required: false
-      description: "`action`이 `url` 로 정의된 경우 (예: `https://www.home-assistant.io`)"
+      description: "`action`이 `url`로 정의된 경우 (예: `https://www.home-assistant.io`)"
       type: string
       default: none
     service:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 호출할 서비스 (예 :`media_player.media_play_pause`)"
+      description: "`action`이 `call-service`로 정의된 경우 호출할 서비스 (예: `media_player.media_play_pause`)"
       type: string
       default: none
     service_data:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
+      description: "`action`이 `call-service`로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
       type: string
       default: none
     confirmation:
@@ -184,7 +186,7 @@ entity:
   type: string
 icon:
   required: false
-  description: 아이콘을 덮어 씁니다.
+  description: 아이콘을 덮어씁니다.
   type: string
 title:
   required: false
@@ -202,22 +204,22 @@ tap_action:
       default: "`more-info`"
     navigation_path:
       required: false
-      description: "`action`이 `navigate` 로 정의된 경우 탐색 할 경로 (예: `/lovelace/0/`)"
+      description: "`action`이 `navigate`로 정의된 경우 탐색할 경로 (예: `/lovelace/0/`)"
       type: string
       default: none
     url_path:
       required: false
-      description: "`action`이 `url` 로 정의된 경우 (예: `https://www.home-assistant.io`"
+      description: "`action`이 `url`로 정의된 경우 (예: `https://www.home-assistant.io`"
       type: string
       default: none
     service:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 호출할 서비스 (예 :`media_player.media_play_pause`)"
+      description: "`action`이 `call-service`로 정의된 경우 호출할 서비스 (예: `media_player.media_play_pause`)"
       type: string
       default: none
     service_data:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
+      description: "`action`이 `call-service`로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
       type: string
       default: none
     confirmation:
@@ -237,22 +239,22 @@ hold_action:
       default: "`more-info`"
     navigation_path:
       required: false
-      description: "`action`이 `navigate` 로 정의된 경우 탐색 할 경로 (예: `/lovelace/0/`)"
+      description: "`action`이 `navigate`로 정의된 경우 탐색할 경로 (예: `/lovelace/0/`)"
       type: string
       default: none
     url_path:
       required: false
-      description: "`action`이 `url` 로 정의된 경우 (예: `https://www.home-assistant.io`)"
+      description: "`action`이 `url`로 정의된 경우 (예: `https://www.home-assistant.io`)"
       type: string
       default: none
     service:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 호출할 서비스 (예 :`media_player.media_play_pause`)"
+      description: "`action`이 `call-service`로 정의된 경우 호출할 서비스 (예: `media_player.media_play_pause`)"
       type: string
       default: none
     service_data:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
+      description: "`action`이 `call-service`로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
       type: string
       default: none
     confirmation:
@@ -272,22 +274,22 @@ double_tap_action:
       default: "`more-info`"
     navigation_path:
       required: false
-      description: "`action`이 `navigate` 로 정의된 경우 탐색 할 경로 (예: `/lovelace/0/`)"
+      description: "`action`이 `navigate`로 정의된 경우 탐색할 경로 (예: `/lovelace/0/`)"
       type: string
       default: none
     url_path:
       required: false
-      description: "`action`이 `url` 로 정의된 경우 (예: `https://www.home-assistant.io`)"
+      description: "`action`이 `url`로 정의된 경우 (예: `https://www.home-assistant.io`)"
       type: string
       default: none
     service:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 호출할 서비스 (예 :`media_player.media_play_pause`)"
+      description: "`action`이 `call-service`로 정의된 경우 호출할 서비스 (예: `media_player.media_play_pause`)"
       type: string
       default: none
     service_data:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
+      description: "`action`이 `call-service`로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
       type: string
       default: none
     confirmation:
@@ -337,22 +339,22 @@ tap_action:
       default: "`more-info`"
     navigation_path:
       required: false
-      description: "`action`이 `navigate` 로 정의된 경우 탐색 할 경로 (예: `/lovelace/0/`)"
+      description: "`action`이 `navigate`로 정의된 경우 탐색할 경로 (예: `/lovelace/0/`)"
       type: string
       default: none
     url_path:
       required: false
-      description: "`action`이 `url` 로 정의된 경우 (예: `https://www.home-assistant.io`"
+      description: "`action`이 `url`로 정의된 경우 (예: `https://www.home-assistant.io`"
       type: string
       default: none
     service:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 호출할 서비스 (예 :`media_player.media_play_pause`)"
+      description: "`action`이 `call-service`로 정의된 경우 호출할 서비스 (예: `media_player.media_play_pause`)"
       type: string
       default: none
     service_data:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
+      description: "`action`이 `call-service`로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
       type: string
       default: none
     confirmation:
@@ -372,22 +374,22 @@ hold_action:
       default: "`more-info`"
     navigation_path:
       required: false
-      description: "`action`이 `navigate` 로 정의된 경우 탐색 할 경로 (예: `/lovelace/0/`)"
+      description: "`action`이 `navigate` 로 정의된 경우 탐색할 경로 (예: `/lovelace/0/`)"
       type: string
       default: none
     url_path:
       required: false
-      description: "`action`이 `url` 로 정의된 경우 (예: `https://www.home-assistant.io`)"
+      description: "`action`이 `url`로 정의된 경우 (예: `https://www.home-assistant.io`)"
       type: string
       default: none
     service:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 호출할 서비스 (예 :`media_player.media_play_pause`)"
+      description: "`action`이 `call-service`로 정의된 경우 호출할 서비스 (예: `media_player.media_play_pause`)"
       type: string
       default: none
     service_data:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
+      description: "`action`이 `call-service`로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
       type: string
       default: none
     confirmation:
@@ -407,22 +409,22 @@ double_tap_action:
       default: "`more-info`"
     navigation_path:
       required: false
-      description: "`action`이 `navigate` 로 정의된 경우 탐색 할 경로 (예: `/lovelace/0/`)"
+      description: "`action`이 `navigate`로 정의된 경우 탐색할 경로 (예: `/lovelace/0/`)"
       type: string
       default: none
     url_path:
       required: false
-      description: "`action`이 `url` 로 정의된 경우 (예: `https://www.home-assistant.io`)"
+      description: "`action`이 `url`로 정의된 경우 (예: `https://www.home-assistant.io`)"
       type: string
       default: none
     service:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 호출할 서비스 (예 :`media_player.media_play_pause`)"
+      description: "`action`이 `call-service`로 정의된 경우 호출할 서비스 (예: `media_player.media_play_pause`)"
       type: string
       default: none
     service_data:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
+      description: "`action`이 `call-service`로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
       type: string
       default: none
     confirmation:
@@ -494,22 +496,22 @@ tap_action:
       default: "`more-info`"
     navigation_path:
       required: false
-      description: "`action`이 `navigate` 로 정의된 경우 탐색 할 경로 (예: `/lovelace/0/`)"
+      description: "`action`이 `navigate`로 정의된 경우 탐색할 경로 (예: `/lovelace/0/`)"
       type: string
       default: none
     url_path:
       required: false
-      description: "`action`이 `url` 로 정의된 경우 (예: `https://www.home-assistant.io`"
+      description: "`action`이 `url`로 정의된 경우 (예: `https://www.home-assistant.io`"
       type: string
       default: none
     service:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 호출할 서비스 (예 :`media_player.media_play_pause`)"
+      description: "`action`이 `call-service`로 정의된 경우 호출할 서비스 (예: `media_player.media_play_pause`)"
       type: string
       default: none
     service_data:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
+      description: "`action`이 `call-service`로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
       type: string
       default: none
     confirmation:
@@ -529,22 +531,22 @@ hold_action:
       default: "`more-info`"
     navigation_path:
       required: false
-      description: "`action`이 `navigate` 로 정의된 경우 탐색 할 경로 (예: `/lovelace/0/`)"
+      description: "`action`이 `navigate`로 정의된 경우 탐색할 경로 (예: `/lovelace/0/`)"
       type: string
       default: none
     url_path:
       required: false
-      description: "`action`이 `url` 로 정의된 경우 (예: `https://www.home-assistant.io`)"
+      description: "`action`이 `url`로 정의된 경우 (예: `https://www.home-assistant.io`)"
       type: string
       default: none
     service:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 호출할 서비스 (예 :`media_player.media_play_pause`)"
+      description: "`action`이 `call-service`로 정의된 경우 호출할 서비스 (예: `media_player.media_play_pause`)"
       type: string
       default: none
     service_data:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
+      description: "`action`이 `call-service`로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
       type: string
       default: none
     confirmation:
@@ -564,22 +566,22 @@ double_tap_action:
       default: "`more-info`"
     navigation_path:
       required: false
-      description: "`action`이 `navigate` 로 정의된 경우 탐색 할 경로 (예: `/lovelace/0/`)"
+      description: "`action`이 `navigate`로 정의된 경우 탐색할 경로 (예: `/lovelace/0/`)"
       type: string
       default: none
     url_path:
       required: false
-      description: "`action`이 `url` 로 정의된 경우 (예: `https://www.home-assistant.io`)"
+      description: "`action`이 `url`로 정의된 경우 (예: `https://www.home-assistant.io`)"
       type: string
       default: none
     service:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 호출할 서비스 (예 :`media_player.media_play_pause`)"
+      description: "`action`이 `call-service`로 정의된 경우 호출할 서비스 (예: `media_player.media_play_pause`)"
       type: string
       default: none
     service_data:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
+      description: "`action`이 `call-service`로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
       type: string
       default: none
     confirmation:
@@ -603,7 +605,7 @@ type:
   type: string
 entity:
   required: false
-  description: state_image 및 state_filter에 사용할 엔티티이며 액션의 대상이기도 함
+  description: state_image과 state_filter에 사용할 엔티티이며 액션의 대상이기도 함
   type: string
 title:
   required: false
@@ -621,22 +623,22 @@ tap_action:
       default: "`more-info`"
     navigation_path:
       required: false
-      description: "`action`이 `navigate` 로 정의된 경우 탐색 할 경로 (예: `/lovelace/0/`)"
+      description: "`action`이 `navigate`로 정의된 경우 탐색할 경로 (예: `/lovelace/0/`)"
       type: string
       default: none
     url_path:
       required: false
-      description: "`action`이 `url` 로 정의된 경우 (예: `https://www.home-assistant.io`"
+      description: "`action`이 `url`로 정의된 경우 (예: `https://www.home-assistant.io`"
       type: string
       default: none
     service:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 호출할 서비스 (예 :`media_player.media_play_pause`)"
+      description: "`action`이 `call-service`로 정의된 경우 호출할 서비스 (예: `media_player.media_play_pause`)"
       type: string
       default: none
     service_data:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
+      description: "`action`이 `call-service`로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
       type: string
       default: none
     confirmation:
@@ -656,22 +658,22 @@ hold_action:
       default: "`more-info`"
     navigation_path:
       required: false
-      description: "`action`이 `navigate` 로 정의된 경우 탐색 할 경로 (예: `/lovelace/0/`)"
+      description: "`action`이 `navigate`로 정의된 경우 탐색할 경로 (예: `/lovelace/0/`)"
       type: string
       default: none
     url_path:
       required: false
-      description: "`action`이 `url` 로 정의된 경우 (예: `https://www.home-assistant.io`)"
+      description: "`action`이 `url`로 정의된 경우 (예: `https://www.home-assistant.io`)"
       type: string
       default: none
     service:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 호출할 서비스 (예 :`media_player.media_play_pause`)"
+      description: "`action`이 `call-service`로 정의된 경우 호출할 서비스 (예: `media_player.media_play_pause`)"
       type: string
       default: none
     service_data:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
+      description: "`action`이 `call-service`로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
       type: string
       default: none
     confirmation:
@@ -691,22 +693,22 @@ double_tap_action:
       default: "`more-info`"
     navigation_path:
       required: false
-      description: "`action`이 `navigate` 로 정의된 경우 탐색 할 경로 (예: `/lovelace/0/`)"
+      description: "`action`이 `navigate`로 정의된 경우 탐색할 경로 (예: `/lovelace/0/`)"
       type: string
       default: none
     url_path:
       required: false
-      description: "`action`이 `url` 로 정의된 경우 (예: `https://www.home-assistant.io`)"
+      description: "`action`이 `url`로 정의된 경우 (예: `https://www.home-assistant.io`)"
       type: string
       default: none
     service:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 호출할 서비스 (예 :`media_player.media_play_pause`)"
+      description: "`action`이 `call-service`로 정의된 경우 호출할 서비스 (예: `media_player.media_play_pause`)"
       type: string
       default: none
     service_data:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
+      description: "`action`이 `call-service`로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
       type: string
       default: none
     confirmation:
@@ -724,7 +726,7 @@ camera_image:
   type: string
 camera_view:
   required: false
-  description: '`stream`이 활성화 된 경우 "live"는 라이브 뷰를 표시합니다.'
+  description: '`stream`이 활성화된 경우 "live"는 라이브 뷰를 표시합니다.'
   default: auto
   type: string
 state_image:
@@ -741,7 +743,7 @@ state_filter:
   type: map
 aspect_ratio:
   required: false
-  description: 높이 너비 비율..
+  description: 높이 너비 비율.
   type: string
   default: "50%"
 style:
@@ -753,7 +755,7 @@ style:
 
 ### 조건부 요소 (Conditional Element)
 
-조건부(conditional) 카드와 마찬가지로 이 요소를 사용하면 엔터티 상태를 기반으로 하위 요소를 표시 할 수 있습니다.
+조건부(conditional) 카드와 마찬가지로 이 요소를 사용하면 엔터티 상태를 기반으로 하위 요소를 표시할 수 있습니다.
 
 {% configuration %}
 type:
@@ -767,7 +769,7 @@ conditions:
   keys:
     entity:
       required: true
-      description: HA entity ID.
+      description: HA 엔티티 ID.
       type: string
     state:
       required: false
@@ -779,17 +781,17 @@ conditions:
       type: string
 elements:
   required: true
-  description: 조건이 충족 될 때 표시할 모든 유형의 하나 이상의 요소입니다. 예는 아래를 참조하십시오.
+  description: 조건이 충족될 때 표시할 모든 유형의 하나 이상의 요소입니다. 예는 아래를 참조하십시오.
   type: list
 {% endconfiguration %}
 
 ## 확인 옵션 (Options For Confirmation)
 
-boolean 대신 객체로 확인을 정의하면 더 많은 사용자 정의 및 설정을 추가 할 수 있습니다.:
+boolean 대신 객체로 확인을 정의하면 더 많은 사용자 정의와 설정을 추가할 수 있습니다.:
 {% configuration %}
 text:
   required: false
-  description: 확인 대화 상자에 표시 할 텍스트.
+  description: 확인 대화 상자에 표시할 텍스트.
   type: string
 exemptions:
   required: false
@@ -802,7 +804,7 @@ exemptions:
 {% configuration badges %}
 user:
   required: true
-  description: 보기 탭을 볼 수있는 사용자 ID.
+  description: 보기 탭을 볼 수 있는 사용자 ID.
   type: string
 {% endconfiguration %}
 
@@ -824,7 +826,7 @@ style:
 
 ## 스타일 객체 사용법
 
-[CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)를 사용하여 요소 배치 및 스타일 지정. 더 많은/다른 키도 가능합니다. 
+[CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)를 사용하여 요소 배치와 스타일 지정. 더 많은/다른 키도 가능합니다. 
 
 ```yaml
 style:

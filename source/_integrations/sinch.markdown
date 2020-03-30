@@ -17,7 +17,7 @@ ha_codeowners:
 
 ## 전제 조건
 
-[Sinch Dashboard](https://dashboard.sinch.com/sms/api/rest)로 이동하여 "Add new REST API"를 클릭하십시오. 이제 `service_plan_id`와`api_key`를 얻을 수 있습니다.
+[Sinch Dashboard](https://dashboard.sinch.com/sms/api/rest)로 이동하여 "Add new REST API"를 클릭하십시오. 이제 `service_plan_id`와 `api_key`를 얻을 수 있습니다.
 
 ## 설정
 
@@ -55,7 +55,7 @@ sender:
   default: 'Home Assistant'
 {% endconfiguration %}
 
-To use notifications, please see the [getting started with automation page](/getting-started/automation/).
+알림을 사용하려면 [getting started with automation page](/getting-started/automation/)를 참조하십시오.
 
 ### 전체 설정 예시
 

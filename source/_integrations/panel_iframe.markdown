@@ -65,6 +65,6 @@ panel_iframe:
 
 <div class='note warning'>
 
-`lovelace`라는 이름의 iframe 패널을 **절대** 만들지 마십시오. lovelace라는 이름이로 덮어 쓰기 하면 절대 로드되지 않습니다.
+`lovelace`라는 이름의 iframe 패널을 **절대** 만들지 마십시오. lovelace라는 이름으로 덮어 쓰기 하면 절대 로드되지 않습니다.
 
 </div>

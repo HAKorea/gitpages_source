@@ -4,7 +4,7 @@ description: "Steps to help you get your devices in Home Assistant."
 redirect_from: /getting-started/devices/
 ---
 
-[the discovery component](/integrations/discovery/)가 활성화된 경우 홈어시스턴트는 네트워크에서 사용 가능한 많은 장치와 서비스를 자동으로 검색할 수 있습니다. (기본 설정)
+[discovery 구성요소](/integrations/discovery/)가 활성화된 경우 홈어시스턴트는 네트워크에서 사용 가능한 많은 장치와 서비스를 자동으로 검색할 수 있습니다. (기본 설정)
 
 장치와 서비스에 대한 설치지침을 찾으려면 [통합구성요소 개요 페이지](/integrations/)를 참조하십시오. 즐겨 사용하는 장치 혹은 서비스에 대한 지원을 찾을 수 없으면 [지원기기 추가 고려](/developers/add_new_platform/)를 참조하십시오. 
 

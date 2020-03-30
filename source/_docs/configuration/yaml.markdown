@@ -6,7 +6,7 @@ redirect_from: /getting-started/yaml/
 
 <iframe width="690" height="437" src="https://www.youtube.com/embed/cdLNKUoMc6c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-홈어시스턴트는 설정에 [YAML](https://yaml.org/) 문법을 사용합니다. YAML은 익숙해지기까지 다소 시간이 걸리지만 복잡한 설정을 표현할 수있는 능력이 있습니다.
+홈어시스턴트는 설정에 [YAML](https://yaml.org/) 문법을 사용합니다. YAML은 익숙해지기까지 다소 시간이 걸리지만 복잡한 설정을 표현할 수 있는 능력이 있습니다.
 
 홈어시스턴트에서 통합구성요소를 사용하려는 연동의 경우 `configuration.yaml` 파일에 코드를 추가하여 설정을 합니다. 이는 특히 UI를 통해 설정할 수 없는 연동시 적용됩니다. 
 
@@ -19,21 +19,21 @@ notify:
   name: pushbullet
 ```
 
-- **component** 특정 기능을 위한 핵심 로직을 제공합니다. (`notify`가 통지(notification)를 보내는 기능을 제공하는 것처럼).
-- **platform** 특정 소프트웨어 또는 하드웨어 플랫폼으로 연결을 만듭니다. (`pushbullet`가 pushbullet.com에서 서비스로 제공한 내용을 동작시키는 것처럼).
+- **component(구성요소)** 특정 기능을 위한 핵심 로직을 제공합니다. (`notify`가 통지(notification)를 보내는 기능을 제공하는 것처럼).
+- **platform(플랫폼)** 특정 소프트웨어 또는 하드웨어 플랫폼으로 연결을 만듭니다. (`pushbullet`가 pushbullet.com에서 서비스로 제공한 내용을 동작시키는 것처럼).
 
 YAML 문법의 기본 사항은 key-value pair들을 포함하는 블록모음과 매핑들입니다. 컬렉션의 각 항목은 `-`로 시작하고 매핑은 `key: value` 형식으로 나타냅니다. 중복된 key를 지정하면 key의 마지막 value가 사용됩니다. 이는 해시 테이블 또는 파이썬의 dictionary와 다소 유사합니다. 마찬가지로 중첩될 수 있습니다.
 
 들여쓰기는 YAML을 사용하여 관계를 지정하는데 중요한 부분입니다. 한 단계 높게 "안쪽으로" 중첩되어 들여쓰기된 것들 입니다. 위의 예로 보면, `platform: pushbullet`는 `notify` component의 속성입니다. 
 
-고정폭 글꼴이 있는 편집기를 사용하지 않는 경우 올바른 들여쓰기를 얻는 것이 까다로울 수 있습니다. 들여쓰기에는 탭을 사용할 수 없습니다. 규칙은 각 들여 쓰기 수준에 2개의 공백을 사용하는 것입니다.
+고정폭 글꼴이 있는 편집기를 사용하지 않는 경우 정확한 들여쓰기를 사용하는 것이 까다로울 수 있습니다. 들여쓰기에는 탭을 사용할 수 없습니다. 규칙은 각 들여쓰기 수준에 2개의 공백을 사용하는 것입니다.
 
 온라인 서비스 [YAMLLint](http://www.yamllint.com/)를 사용하여 홈어시스턴트로 로드하기 전에 YAML 구문이 올바른지 확인하면 시간을 절약할 수 있습니다. 
 이 서비스는 타사 서비스이며 홈어시스턴트 커뮤니티에서 유지 관리하지 않습니다.
 
 <div class='note'>
 
-개인 데이터(암호, API 키 등)를 `configuration.yaml` 파일에 직접 저장하지 않도록 주의하십시오. 개인 데이터는 [별도의 파일](/docs/configuration/secrets/) 또는  [환경 변수](/docs/configuration/yaml/#using-environment-variables)에 저장하여 보안 문제를 피할 수 있습니다. 
+개인 데이터(암호, API 키 등)를 `configuration.yaml` 파일에 직접 저장하지 않도록 주의하십시오. 개인 데이터는 [별도의 파일](/docs/configuration/secrets/) 혹은  [환경 변수](/docs/configuration/yaml/#using-environment-variables)에 저장하여 보안 문제를 피할 수 있습니다. 
 </div>
 
 다음에 나오는 문자열 `#`는 주석이며 시스템에서 무시됩니다.
@@ -95,7 +95,7 @@ lights: !include lights.yaml
 
 ## 일반적인 문제
 
-### 발견 된 문자 '\t'
+### 발견된 문자 '\t'
 
 다음 메시지가 표시되면 :
 
@@ -107,6 +107,6 @@ found character '\t' that cannot start any token
 
 ### 대문자와 소문자
 
-홈어시스턴트는 대소 문자를 구분하며 `'on'`상태는 `'On'`, `'ON'`과 같지 않습니다. 마찬가지로의 entity도 `group.Doors`와 `group.doors`는 같지 않습니다
+홈어시스턴트는 대소문자를 구분하며 `'on'`상태는 `'On'`, `'ON'`과 같지 않습니다. 마찬가지로 entity도 `group.Doors`와 `group.doors`는 같지 않습니다
 
-문제가 있는 경우 *개발자 도구* 아래에 dev 상태 메뉴에서 홈어시스턴트가 보고하는 상황을 확인하십시오.
+문제가 있는 경우 *개발자 도구*의 상태 메뉴에서 홈어시스턴트가 보고하는 상황을 확인하십시오.

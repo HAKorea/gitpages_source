@@ -29,11 +29,11 @@ Abode Security에 대한 자세한 내용은 [Abode website](https://goabode.com
 
 현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
-- **Alarm Control Panel**: 현재 경보 상태를 보고하고 시스템을 설정,해제하는데 사용할 수 있습니다.
+- **Alarm Control Panel**: 현재 경보 상태를 보고하고 시스템을 설정, 해제하는데 사용할 수 있습니다.
 - [**Binary Sensor**](/integrations/abode/#binary-sensor): `Quick Actions`, `Door Contacts`, `Connectivity` 센서 (원격조정, 키패드, 상태 표시기), `Moisture` 센서와 `Motion` 혹은 `Occupancy` 센서에 대한 보고입니다. 또한 세팅된 모든 Abode `Quick Actions`도 리스트합니다. quick actions 이진 센서의 `entity_id`를 [trigger_quick_action service](/integrations/abode/#trigger_quick_action)에 전달하여 이러한 quick actions를 트리거할 수 있습니다.
-- **Camera**: `Camera` 장치에 대해 보고하고 최신 캡처된 스틸 이미지를 다운로드하여 표시합니다.
+- **Camera**: `Camera` 장치에 대해 보고하고 최신 캡처된 정지 이미지를 다운로드하여 표시합니다.
 - **Cover**: `Secure Barriers`에 대한 보고이며 커버를 열고 닫는데 사용할 수 있습니다.
-- **Lock**: `Door Locks`에 대한 보고이며 문을 lock/unlock 하는데 사용할 수 있습니다.
+- **Lock**: `Door Locks`에 대한 보고이며 자물쇠를 lock/unlock 하는데 사용할 수 있습니다.
 - [**Light**](/integrations/abode/#light): `Dimmer` 조명에 대해 보고하며 조명을 켜거나 끄는데 사용할 수 있습니다.
 - [**Switch**](/integrations/abode/#switch): `Power Switch` 장치에 대해 보고하며 전원 스위치를 켜고 끄는데 사용할 수 있습니다. 또한 Abode 시스템에 설정된 `Automations`에 대한 보고를 통해 이를 활성화 또는 비활성화할 수 있습니다 (Abode의 CUE 자동화에서는 작동하지 않음).
 - **Sensor**: `Temperature`, `Humidity`, `Light`에 대해 보고합니다.
@@ -69,7 +69,7 @@ polling:
 
 ## Events
 
-Abode에서 트리거 할 수 있는 많은 이벤트가 있습니다.
+Abode에서 트리거할 수 있는 많은 이벤트가 있습니다.
 다음과 같은 이벤트로 그룹화됩니다.
 
 - **abode_alarm**: Fired when an alarm event is triggered from Abode. This includes Smoke, CO, Panic, and Burglar alarms.

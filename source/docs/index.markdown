@@ -10,7 +10,7 @@ description: "홈어시스턴트 문서"
     <div class='img-container'>
       <img src='/images/supported_brands/home-assistant.png' />
     </div>
-    <div class='title'>Hass.io</div>
+    <div class='title'>Home Assistant</div>
   </a>
   <a class='option-card' href='/docs/configuration/'>
     <div class='img-container'>

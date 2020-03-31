@@ -5,7 +5,7 @@ description: "Command line utility to control Home Assistant."
 
 <p class='img'>
 <img src='/images/hassio/screenshots/ssh-upgrade.png'>
-SSH로 접속하여 명령어로 Hass.io 업그레이드 실행
+SSH로 접속하여 명령어로 Home Assistant로 업그레이드 실행 화면 hassio대신 ha로 바뀌었습니다.
 </p>
 
 SSH로 접속하면 `ha` 명령어로 로그를 보거나 사용중인 하드웨어 정보 등을 살펴볼 수 있습니다.

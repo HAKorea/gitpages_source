@@ -4,8 +4,7 @@ description: "A sample to do automations in Python Code."
 ha_category: Automation in Python Examples
 ---
 
-Example integration to target an `entity_id` to:
-`entity_id` 를 대상으로하는 연동 사례 : 
+`entity_id` 를 대상으로 하는 연동 사례 : 
 
  - 아침에 오전 7시에 켜십시오
  - 누군가 집에 와서 끄면 켜십시오
@@ -13,7 +12,6 @@ Example integration to target an `entity_id` to:
  - 모든 사람들이 집을 떠나면 끄십시오
  - 10 초 동안 켜는 서비스 제공
 
-To set it up, add the following lines to your `configuration.yaml` file:
 설정하려면 `configuration.yaml` 파일에 다음 줄을 추가 하십시오.
 
 ```yaml
@@ -24,12 +22,12 @@ example:
 
 {% configuration %}
 target:
-  description: "TARGET_ENTITY는 켜거나 끌 수 있는 장치 중 하나여야 합니다 (예 : 조명 또는 스위치). 예제 값은 light.Ceiling 또는 switch.AC 일 수 있습니다 (해당 이름의 장치가 있는 경우)."
+  description: "TARGET_ENTITY는 켜거나 끌 수 있는 장치중 하나여야 합니다 (예: 조명 또는 스위치). 예제값은 light.Ceiling 또는 switch.AC 일 수 있습니다 (해당 이름의 장치가 있는 경우)."
   required: true
   type: string
 {% endconfiguration %}
 
-파일 `<config dir>/custom_components/example.py`를 만들고 아래 내용을 복사하여 붙여 넣습니다.
+`<config dir>/custom_components/example.py` 파일을 만들고 아래 내용을 복사하여 붙여 넣습니다.
 
 ```python
 """

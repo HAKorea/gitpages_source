@@ -1,10 +1,10 @@
 ---
-title: "Send notification if new Home Assistant release"
+title: "새로운 홈어시스턴트가 출시되면 알림 보내기"
 description: "Basic example of how to send a notification if a new Home Assistant release is available"
 ha_category: Automation Examples
 ---
 
-The following example sends a notification via XMPP if a new Home Assistant release is available:
+다음 예는 새로운 홈어시스턴트 릴리스가 사용 가능한 경우 XMPP를 통해 알림을 보냅니다. : 
 
 ```yaml
 notify:
@@ -27,7 +27,7 @@ automation:
           message: 'There is a new Home Assistant release available.'
 ```
 
-You can use [templates](/topics/templating/) to include the release number of Home Assistant if you prefer. The following example sends a notification via [Pushbullet](/integrations/pushbullet) with the Home Assistant version in the message.
+원하는 경우 [templates](/topics/templating/)를 사용하여 Home Assistant의 릴리즈 번호를 포함할 수 있습니다. 다음 예는 [Pushbullet](/integrations/pushbullet)을 통해 메시지에 홈어시스턴트 버전으로 알림을 보냅니다.
 
 ```yaml
 notify:

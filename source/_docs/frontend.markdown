@@ -3,7 +3,7 @@ title: "Frontend of Home Assistant"
 description: "Frontend of Home Assistant."
 ---
 
-홈 어시스턴트의 프론트엔드는 [Polymer](https://www.polymer-project.org/)로 제작되었습니다.
+홈어시스턴트의 프론트엔드는 [Polymer](https://www.polymer-project.org/)로 제작되었습니다.
 
 <p class='img'>
   <img src='{{site_root}}/images/screenshots/ui2015.png' />

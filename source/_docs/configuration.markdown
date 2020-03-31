@@ -21,7 +21,7 @@ description: "홈어시스턴트 설정."
 
 다른 폴더에 설정 파일을 저장하려면: `hass --config path/to/config`로 실행하십시오.
 
-설정 폴더 안에 `configuration.yaml`이 있습니다. 이것은 설정으로부터 로드된 통합구성요소를 포함한 주요한 파일입니다. 문서 전체에서 기능을 사용하기 위해 설정 파일에 추가할 수 있는 스니펫을 찾을 수 있습니다.
+설정 폴더안에 `configuration.yaml`이 있습니다. 이것은 설정으로부터 로드된 통합구성요소를 포함한 주요한 파일입니다. 문서 전체에서 기능을 사용하기 위해 설정 파일에 추가할 수 있는 스니펫을 찾을 수 있습니다.
 
 홈어시스턴트를 설정하는 동안 문제가 발생하면  [설정 문제해결 페이지](/getting-started/troubleshooting-configuration/) 와 [configuration.yaml 예시](/cookbook/#example-configurationyaml)를 살펴보십시오.
 
@@ -31,9 +31,9 @@ description: "홈어시스턴트 설정."
 
 </div>
 
-## 변경 사항 새로 고침
+## 변경사항 새로고침
 
-대부분의 변경 사항을 적용하려면 `configuration.yaml`이 영향을 미치도록 홈어시스턴트를 다시 시작해야 합니다. 
+대부분의 변경사항을 적용하려면 `configuration.yaml`이 영향을 미치도록 홈어시스턴트를 다시 시작해야 합니다. 
 [자동화](/docs/automation/), [core (customize)](/docs/configuration/customizing-devices/), [그룹](/integrations/group/), 그리고 [스크립트](/integrations/script/)는 다시 시작하지 않고 적용 가능합니다. 
 
 <div class='note warning'>

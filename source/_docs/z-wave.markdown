@@ -4,36 +4,36 @@ description: "Using Z-Wave with Home Assistant."
 redirect_from: /getting-started/z-wave/
 ---
 
-[Z-Wave](https://www.z-wave.com/) integration for Home Assistant allows you to observe and control connected Z-Wave devices. Z-Wave support requires a [supported Z-Wave USB stick or module](/docs/z-wave/controllers/) to be plugged into the host.
+Home Assistant의 [Z-Wave](https://www.z-wave.com/) 통합구성요소로 연결된 Z-Wave 장치를 관찰하고 제어할 수 있습니다. Z-Wave를 지원하려면 [지원되는 Z-Wave USB 스틱 또는 모듈](/docs/z-wave/controllers/)을 호스트에 연결해야합니다.
 
-There is currently support for climate, covers, lights, locks, sensors, switches, and thermostats. All will be picked up automatically after configuring this platform.
+현재 climate, covers, lights, locks, sensors, switches, thermostats이 지원됩니다. 이 플랫폼을 설정한 후 모두 자동으로 선택됩니다.
 
-Before configuring the Z-Wave setup, please take a moment and read [this article](https://drzwave.blog/2017/01/20/seven-habits-of-highly-effective-z-wave-networks-for-consumers/) to understand the most common pitfalls of Z-Wave networks.
+Z-Wave 설정을 하기 전에 잠시 시간을 내서 [이 기사](https://drzwave.blog/2017/01/20/seven-habits-of-highly-effective-z-wave-networks-for-consumers/)를 읽고 Z-Wave 네트워크의 가장 일반적인 주의사항을 이해하십시오.
 
-## What is Z-Wave
+## Z-Wave란 ? 
 
-Z-Wave is a wireless communication protocol designed for home automation. It uses a low power, and low bandwidth, mesh network that allows devices that aren't within direct range of each other to communicate indirectly, via other nodes. Any device that's permanently powered (not battery powered) will help build the mesh, if you don't have enough powered devices, or you locate these poorly, your mesh will be unreliable. You can [view the state](https://community.home-assistant.io/t/graph-your-z-wave-mesh-python-auto-update/40549) of your mesh [by graphing it](https://community.home-assistant.io/t/z-wave-graph-without-the-python/64275).
+Z-Wave는 홈자동화를 위해 설계된 무선 통신 프로토콜입니다. 서로 직접적인 범위 내에 있지 않은 장치가 다른 노드를 통해 간접적으로 통신할 수 있도록 저전력, 저대역폭 메시 네트워크를 사용합니다. 영구적으로 전원이 공급되는(배터리로 작동하지 않는) 모든 장치는 메쉬를 만드는 데 도움이 됩니다. 전원이 공급된 장치가 충분하지 않거나 잘못 배치하면 메쉬를 신뢰할 수 없게됩니다. 메시를 [그래프](https://community.home-assistant.io/t/z-wave-graph-without-the-python/64275)로 그려서 [상태를 볼 수 있습니다](https://community.home-assistant.io/t/graph-your-z-wave-mesh-python-auto-update/40549).
 
-There is a limit of 232 devices in a single Z-Wave network. If you need more devices then you could set up a second Home Assistant system with its own Z-Wave network and connect these with the [MQTT Eventstream](/integrations/mqtt_eventstream/) or [MQTT Statestream](/integrations/mqtt_statestream) integrations. There is also a limit of 4 hops for Z-Wave, so placing the controller as centrally as you can is important.
+단일 Z-Wave 네트워크에는 232 개의 장치로 제한됩니다. 더 많은 장치가 필요한 경우 자체 Z-Wave 네트워크를 사용하여 두 번째 Home Assistant 시스템을 설정하고 [MQTT Eventstream](/integrations/mqtt_eventstream/) 또는 [MQTT Statestream](/integrations/mqtt_statestream) 통합구성요소에 연결할 수 있습니다.
 
-The Z-Wave standard was improved with Z-Wave Plus, and if you only use Z-Wave plus devices then you will gain the full benefits.
+Z-Wave 표준은 Z-Wave Plus로 개선되었으며 Z-Wave plus 장치만 사용하면 모든 해당 개선점을 얻을 수 있습니다.
 
-## What do you need to use Z-Wave
+## Z-Wave를 사용하려면 무엇이 필요합니까?
 
-There are 2 basic things you'll need to use Z-Wave, a Z-Wave [controller](/docs/z-wave/controllers/) and one or more [devices](/docs/z-wave/devices/). 
+Z-Wave, Z-Wave [제어기](/docs/z-wave/controllers/)와 하나 이상의 [장치](/docs/z-wave/devices/)를 사용해야하는 두 가지 기본 사항이 있습니다. 
 
-### Regional differences
+### 지역(국가)별 차이
 
-There are 12 different regions for Z-Wave devices, which relates to the frequency the devices use. There is overlap between the regions, but you should ensure that you buy devices for your region. Wikipedia has a list of the [frequencies used](https://en.wikipedia.org/wiki/Z-Wave#Radio_frequencies).
+Z-Wave 장치에는 12 개의 서로 다른 지역이 있으며 이 지역은 장치가 사용하는 주파수와 관련이 있습니다. 지역간에 겹치는 부분이 있지만 해당 지역의 장치를 구입해야합니다. Wikipedia에는 ​​[사용된 주파수](https://en.wikipedia.org/wiki/Z-Wave#Radio_frequencies) 목록이 있습니다.
 
-## Getting started
+## 시작하기
 
-You'll now need to connect your [controller](/docs/z-wave/controllers/), [configure](/docs/z-wave/installation) the Z-Wave integration, then [add some devices](/docs/z-wave/adding) using the [control panel](/docs/z-wave/control-panel). [This explains](/docs/z-wave/devices/) about devices, and how [entities are named](/docs/z-wave/entities).
+이제 [제어기](/docs/z-wave/controllers/)를 연결하고 Z-Wave 통합구성요소를 [설정](/docs/z-wave/installation)한 다음 [제어판](/docs/z-wave/control-panel)을 사용하여 [일부 장치 추가](/docs/z-wave/adding)가 필요합니다. 장치와 [엔티티 이름](/docs/z-wave/entities) 지정 방법에 대해 [설명](/docs/z-wave/devices/)합니다.
 
-You can get more information on the [available services](/docs/z-wave/services/) and [events](/docs/z-wave/events/), what the [query stages](/docs/z-wave/query-stage) of battery powered devices are, as well as details on configuring [specific devices](/docs/z-wave/device-specific/).
+[사용 가능한 서비스](/docs/z-wave/services/)와 [이벤트](/docs/z-wave/events/), 배터리 구동 장치의 [쿼리 단계](/docs/z-wave/query-stage) 그리고 [특정 장치](/docs/z-wave/device-specific/) 설정에 대한 자세한 정보를 얻을 수 있습니다.
 
-## Instant status updates
+## 즉각적인 상태 업데이트
 
-When you toggle a switch or control a light locally you may find that it takes some time for that to be reflected in Home Assistant. That's because Lutron had patents on the status updates using the *Hail* command class, the traditional way of allowing devices to tell the controller that something happened locally. The same result can be achieved through the *Association* command class, or *Central Scene* command class (though, *Central Scene* isn't [fully supported](https://github.com/OpenZWave/open-zwave/pull/1125) in OpenZWave). 
+스위치를 토글하거나 조명을 로컬로 제어할 때 홈어시스턴트에 반영되는데 시간이 걸릴 수 있습니다. Lutron은 장치가 컨트롤러에 무언가 로컬에서 발생한 것을 알리는 전통적인 방법인 *Hail* 명령 클래스를 사용하여 상태 업데이트에 대한 특허를 보유하고 있기 때문입니다. *Association* 명령 클래스 혹은 *Central Scene* 명령 클래스를 통해 동일한 결과를 얻을 수 있습니다. (하지만 OpenZWave에서는 *Central Scene*이 [완전히 지원되지 않습니다.](https://github.com/OpenZWave/open-zwave/pull/1125))
 
-If you search [the Z-Wave products database](https://products.z-wavealliance.org/) for your product and it lists one of those in the **Controlled** command classes (not the **Supported** command classes), then your device will be able to report state changes when they happen. If it doesn't then updates may either happen eventually, or you may need to (carefully) [enable polling](/docs/z-wave/control-panel/#entities-of-this-node).
+제품에 대한 [Z-Wave 제품 데이터베이스](https://products.z-wavealliance.org/)를 검색하고 **Controlled** 명령 클래스(**Supported** 명령 클래스가 아님)에 있는 제품 중 하나를 나열하면 장치가 발생할 때 상태 변경을 보고할 수 있습니다.

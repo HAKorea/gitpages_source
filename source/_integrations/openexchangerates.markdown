@@ -8,11 +8,11 @@ ha_iot_class: Cloud Polling
 ha_release: 0.23
 ---
 
-The `openexchangerates` sensor will show you the current exchange rate from [Open Exchange Rates](https://openexchangerates.org) that provides realtime exchange rates for [170 currencies](https://openexchangerates.org/currencies). The free account is limited to only USD as a base currency, allows 1000 requests per month, and updates every hour.
+`openexchangerates` 센서는 [170개 통화](https://openexchangerates.org/currencies)에 대한 실시간 환율을 제공하는 [Open Exchange Rates](https://openexchangerates.org)의 현재 환율을 보여줍니다.
 
-Obtain your API key [here](https://openexchangerates.org/signup)
+당신의 API 키를 [여기](https://openexchangerates.org/signup)서 받으십시오 
 
-To enable this sensor, add the following lines to your `configuration.yaml` file:
+이 센서를 활성화하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry

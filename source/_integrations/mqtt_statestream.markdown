@@ -8,11 +8,11 @@ ha_release: 0.54
 ha_iot_class: Configurable
 ---
 
-The `mqtt_statestream` integration publishes state changes in Home Assistant to individual MQTT topics.
+`mqtt_statestream` 통합구성요소는 홈어시스턴트의 state 변경 사항을 개별 MQTT topic에 publish합니다.
 
-## Configuration
+## 설정
 
-To enable MQTT Statestream in Home Assistant, add the following section to your `configuration.yaml` file:
+홈어시스턴트에서 MQTT Statestream을 사용하려면 `configuration.yaml` 파일에 다음 섹션을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -67,26 +67,26 @@ include:
 
 ## Operation
 
-When any Home Assistant entity changes, this integration will publish that change to MQTT.
+홈어시스턴트 엔티티가 변경되면 이 통합구성요소는 해당 변경사항을 MQTT에 publish합니다.
 
-The topic for each entity is different, so you can easily subscribe other systems to just the entities you are interested in.
-The topic will be in the form `base_topic/domain/entity/state`.
+각 엔티티에 대한 topic이 다르므로 관심있는 엔티티에만 다른 시스템을 쉽게 subscribe할 수 있습니다.
+topic은 `base_topic/domain/entity/state` 형식입니다.
 
-For example, with the example configuration above, if an entity called 'light.master_bedroom_dimmer' is turned on, this integration will publish `on` to `homeassistant/light/master_bedroom_dimmer/state`.
+예를 들어 위 설정 사례에서 'light.master_bedroom_dimmer'라는 엔티티가 켜져 있으면 이 통합구성요소는 `on`을 `homeassistant/light/master_bedroom_dimmer/state`에 publish합니다.
 
-If that entity also has an attribute called `brightness`, the integration will also publish the value of that attribute to `homeassistant/light/master_bedroom_dimmer/brightness`.
+해당 엔티티도 `brightness`라는 속성이 있는 경우, 통합구성요소는 해당 속성의 값도 `homeassistant/light/master_bedroom_dimmer/brightness`에 publish합니다.
 
-All states and attributes are passed through JSON serialization before publishing. **Please note** that this causes strings to be quoted (e.g., the string 'on' will be published as '"on"'). You can access the JSON deserialized values (as well as unquoted strings) at many places by using `value_json` instead of `value`.
+모든 상태와 속성은 publishing 하기 전에 JSON 직렬화(serialization)를 통해 전달됩니다. 이로 인해 문자열이 인용된다는 것을 **참고하세요**(예를 들어 문자열 'on'은 '"on"'으로 publish됩니다). `value` 대신 `value_json`을 사용하여 여러 위치에서 JSON 역직렬화된(deserialized) 값(인용되지 않은 문자열)에 액세스할 수 있습니다.
 
-The last_updated and last_changed values for the entity will be published to `homeassistant/light/master_bedroom_dimmer/last_updated` and `homeassistant/light/master_bedroom_dimmer/last_changed`, respectively. The timestamps are in ISO 8601 format - for example, `2017-10-01T23:20:30.920969+00:00`.
+엔터티의 last_updated과 last_changed 값은 각각 `homeassistant/light/master_bedroom_dimmer/last_updated`과 `homeassistant/light/master_bedroom_dimmer/last_changed`에 publish됩니다. 타임 스탬프는 ISO 8601 형식입니다 - 예: `2017-10-01T23:20:30.920969+00:00`
 
 ## Include/exclude
 
-The **exclude** and **include** configuration variables can be used to filter the items that are published to MQTT.
+**exclude**와 **include** 설정변수를 사용하여 MQTT에 publish된 항목을 필터링할 수 있습니다.
 
-1\. If neither **exclude** or **include** are specified, all entities are published.
+1\. **exclude** 혹은 **include**를 지정하지 않으면 모든 엔터티가 publish됩니다.
 
-2\. If only **exclude** is specified, then all entities except the ones listed are published.
+2\. **exclude**만 지정하면 나열된 항목을 제외한 모든 항목이 publish됩니다.
 
 ```yaml
 # Example of excluding entities
@@ -98,9 +98,9 @@ mqtt_statestream:
     entities:
       - sensor.nopublish
 ```
-In the above example, all entities except for *switch.x* and *sensor.nopublish* will be published to MQTT.
+위 예에서 *switch.x*와 *sensor.nopublish*를 제외한 모든 엔티티가 MQTT에 publish됩니다.
 
-3\. If only **include** is specified, then only the specified entries are published.
+3\. **include** 만 지정하면 지정된 항목만 publish됩니다.
 
 ```yaml
 # Example of excluding entities
@@ -112,10 +112,9 @@ mqtt_statestream:
     entities:
       - lock.important
 ```
-In this example, only *sensor.x* and *lock.important* will be published.
+이 예에서는 *sensor.x*와 *lock.important*만 publish됩니다.
 
-4\. If both **include** and **exclude** are specified then all entities specified by **include** are published except for the ones
-specified by **exclude**.
+4\. **include**와 **exclude**가 모두 지정된 경우 **exclude**로 지정된 엔티티를 제외하고 **include**로 지정된 모든 엔티티가 publish됩니다.
 
 ```yaml
 # Example of excluding entities
@@ -128,4 +127,4 @@ mqtt_statestream:
     entities:
       - sensor.noshow
 ```
-In this example, all sensors except for *sensor.noshow* will be published.
+이 예에서는 *sensor.noshow*를 제외한 모든 센서가 publish됩니다.

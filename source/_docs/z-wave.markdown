@@ -20,7 +20,7 @@ Z-Wave 표준은 Z-Wave Plus로 개선되었으며 Z-Wave plus 장치만 사용�
 
 ## Z-Wave를 사용하려면 무엇이 필요합니까?
 
-Z-Wave, Z-Wave [제어기](/docs/z-wave/controllers/)와 하나 이상의 [장치](/docs/z-wave/devices/)를 사용해야하는 두 가지 기본 사항이 있습니다. 
+Z-Wave, Z-Wave [콘트롤러](/docs/z-wave/controllers/)와 하나 이상의 [장치](/docs/z-wave/devices/)를 사용해야하는 두 가지 기본 사항이 있습니다. 
 
 ### 지역(국가)별 차이
 
@@ -28,7 +28,7 @@ Z-Wave 장치에는 12 개의 서로 다른 지역이 있으며 이 지역은 �
 
 ## 시작하기
 
-이제 [제어기](/docs/z-wave/controllers/)를 연결하고 Z-Wave 통합구성요소를 [설정](/docs/z-wave/installation)한 다음 [제어판](/docs/z-wave/control-panel)을 사용하여 [일부 장치 추가](/docs/z-wave/adding)가 필요합니다. 장치와 [엔티티 이름](/docs/z-wave/entities) 지정 방법에 대해 [설명](/docs/z-wave/devices/)합니다.
+이제 [콘트롤러](/docs/z-wave/controllers/)를 연결하고 Z-Wave 통합구성요소를 [설정](/docs/z-wave/installation)한 다음 [제어판](/docs/z-wave/control-panel)을 사용하여 [일부 장치 추가](/docs/z-wave/adding)가 필요합니다. 장치와 [엔티티 이름](/docs/z-wave/entities) 지정 방법에 대해 [설명](/docs/z-wave/devices/)합니다.
 
 [사용 가능한 서비스](/docs/z-wave/services/)와 [이벤트](/docs/z-wave/events/), 배터리 구동 장치의 [쿼리 단계](/docs/z-wave/query-stage) 그리고 [특정 장치](/docs/z-wave/device-specific/) 설정에 대한 자세한 정보를 얻을 수 있습니다.
 

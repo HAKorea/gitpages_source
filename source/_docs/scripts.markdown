@@ -1,5 +1,5 @@
 ---
-title: "Script 문법"
+title: "스크립트 문법"
 description: "Documentation for the Home Assistant Script Syntax."
 redirect_from: /getting-started/scripts/
 ---

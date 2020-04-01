@@ -36,9 +36,9 @@ Philips Hue support는 조명과 센서 플랫폼을 구동할 수 있는 허브
 - 조명
 - 모션 센서 (온도와 조도 센서 포함)
 
-이 통합구성요소를 설정하려면 사이드 바에서 설정을 클릭 한 다음 통합규성요소를 클릭하십시오. 발견된 섹션에 "Philips Hue"가 표시되어야합니다. (그렇지 않은 경우 오른쪽 하단의 + 아이콘을 클릭하고 필립스 휴를 찾으십시오.) 설정을 클릭하면 시작 대화 상자가 나타납니다. Hue 브리지의 버튼을 눌러 홈어시스턴트로 허브를 등록하라는 메시지가 표시됩니다. 제출을 클릭하면 브리지가 있는 구역을 선택할 수 있습니다.
+이 통합구성요소를 설정하려면 사이드바에서 설정을 클릭한 다음 통합구성요소를 클릭하십시오. 발견된 섹션에 "Philips Hue"가 표시되어야합니다. (그렇지 않은 경우 오른쪽 하단의 + 아이콘을 클릭하고 필립스 휴를 찾으십시오.) 설정을 클릭하면 시작 대화 상자가 나타납니다. Hue 브릿지의 버튼을 눌러 홈어시스턴트로 허브를 등록하라는 메시지가 표시됩니다. 제출을 클릭하면 브릿지가 있는 구역을 선택할 수 있습니다.
 
-Home Assistant에서 Hue 브리지를 설정하면 Home Assistant [configuration directory](/docs/configuration/)의 파일에 토큰을 기록합니다. 이 토큰은 Hue 브리지와의 통신을 인증합니다. 브리지의 IP 주소가 변경되면 홈어시스턴트에 다시 등록해야합니다. 이를 방지하기 위해 라우터에서 Hue 브리지의 DHCP 예약을 설정하여 항상 동일한 IP 주소를 갖도록 할 수 있습니다
+Home Assistant에서 Hue 브릿지를 설정하면 Home Assistant [configuration directory](/docs/configuration/)의 파일에 토큰을 기록합니다. 이 토큰은 Hue 브릿지와의 통신을 인증합니다. 브릿지의 IP 주소가 변경되면 홈어시스턴트에 다시 등록해야합니다. 이를 방지하기 위해 라우터에서 Hue 브릿지의 DHCP 예약을 설정하여 항상 동일한 IP 주소를 갖도록 할 수 있습니다
 
 등록이 완료되면 Hue 조명이 `light` 엔티티로, Hue 모션 센서가 `binary_sensor` 엔티티로, Hue 온도와 조도 센서(모션 센서에 내장된)가 `sensor` 엔티티로 표시됩니다. 그렇지 않으면 홈어시스턴트를 다시 한번 더 시작해야 할 수도 있습니다.
 
@@ -53,7 +53,7 @@ hue:
 
 {% configuration %}
 host:
-  description: "브리지의 IP 주소 (예: 192.168.1.10). Hue 브리지를 발견하기 위해 `discovery` 통합구성요소를 사용하지 않는 경우 필요."
+  description: "브릿지의 IP 주소 (예: 192.168.1.10). Hue 브릿지를 발견하기 위해 `discovery` 통합구성요소를 사용하지 않는 경우 필요."
   required: true
   type: string
 allow_unreachable:
@@ -62,7 +62,7 @@ allow_unreachable:
   type: boolean
   default: false
 allow_hue_groups:
-  description: Hue 브리지에 정의된 그룹을 Home Assistant에서 가져오지 못하게하려면 이 기능을 비활성화.
+  description: Hue 브릿지에 정의된 그룹을 Home Assistant에서 가져오지 못하게하려면 이 기능을 비활성화.
   required: false
   type: boolean
   default: true
@@ -95,7 +95,7 @@ hue:
 
 Hue API를 사용하면 조명을 그룹화할 수 있습니다. 홈어시스턴트는 기본적으로 엔티티 그룹화를 지원하지만 때때로 Hue 그룹을 사용하여 조명을 그룹화하는 것이 유용할 수 있습니다. 이렇게하면 홈어시스턴트는 그룹의 모든 조명에 대해 한 번의 호출 대신 해당 그룹의 모든 조명 상태를 변경하기 위해 한 번의 API 호출만 보내면됩니다. 이로 인해 모든 조명이 동시에 상태가 변경됩니다.
 
-이 Hue 그룹은 `Luminaire`, `Lightsource`, `LightGroup` 또는 `Room`이 될 수 있습니다. Hue 브리지가 감지된 조명을 기반으로 자동으로 관리하기 때문에 `Luminaire`와 `Lightsource`를 수동으로 만들 수 없습니다. `Room`과 `LightGroup`은 API 혹은 모바일 앱을 통해 수동으로 생성할 수 있습니다. 조명은 하나의 `Room`에만 존재할 수 있지만 둘 이상의 `LightGroup`에 존재할 수도 있습니다. `LightGroup`은 특정 조명을 서로 연결하려는 경우 유용할 수 있습니다.
+이 Hue 그룹은 `Luminaire`, `Lightsource`, `LightGroup` 또는 `Room`이 될 수 있습니다. Hue 브릿지가 감지된 조명을 기반으로 자동으로 관리하기 때문에 `Luminaire`와 `Lightsource`를 수동으로 만들 수 없습니다. `Room`과 `LightGroup`은 API 혹은 모바일 앱을 통해 수동으로 생성할 수 있습니다. 조명은 하나의 `Room`에만 존재할 수 있지만 둘 이상의 `LightGroup`에 존재할 수도 있습니다. `LightGroup`은 특정 조명을 서로 연결하려는 경우 유용할 수 있습니다.
 
 2세대 Hue 앱은 `Room`만 만들 수 있습니다. `LightGroup`을 만들려면 1세대 앱 또는 API를 사용해야합니다.
 
@@ -107,7 +107,7 @@ Hue API를 사용하면 조명을 그룹화할 수 있습니다. 홈어시스턴
 $ curl -XPOST -d '{"name": "Ceiling lights", "lights": ["1", "2", "3"]}' http://<bridge>/api/<username>/groups
 ```
 
-`<username>`은 브리지에서 홈어시스턴트를 등록하는데 사용하는 문자열입니다. configuration\.storage 경로의 `core.config_entries` 파일에서 찾을 수 있습니다. `<bridge>`는 Hue 브릿지의 IP 주소 또는 호스트 이름입니다.
+`<username>`은 브릿지에서 홈어시스턴트를 등록하는데 사용하는 문자열입니다. configuration\.storage 경로의 `core.config_entries` 파일에서 찾을 수 있습니다. `<bridge>`는 Hue 브릿지의 IP 주소 또는 호스트 이름입니다.
 
 다음 명령을 실행하여 조명의 ID를 찾을 수 있습니다 : 
 
@@ -118,7 +118,7 @@ $ curl http://<bridge>/api/<username>/lights
 홈어시스턴트는 새 `LightGroup`을 자동으로 감지하여 인터페이스에 추가합니다.
 
 <div class='note warning'>
-  Hue 조명 그룹을 지원하려면 브리지에 펌웨어 1.13 이상이 있어야합니다 (2016년 6월 3일 출시).
+  Hue 조명 그룹을 지원하려면 브릿지에 펌웨어 1.13 이상이 있어야합니다 (2016년 6월 3일 출시).
 </div>
 
 자세한 내용은 [Philips Hue API documentation](https://www.developers.meethue.com/documentation/groups-api#22_create_group)에서 확인할 수 있습니다.

@@ -1,5 +1,5 @@
 ---
-title: "Z-Wave Device Specific Settings"
+title: "Z-Wave 장치별 설정"
 description: "Notes for specific Z-Wave devices."
 redirect_from: /getting-started/z-wave-device-specific/
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Z-Wave Control Panel"
+title: "Z-Wave 제어판"
 description: "How to use the Z-Wave control panel."
 redirect_from: /getting-started/z-wave-panel/
 ---
@@ -7,31 +7,34 @@ redirect_from: /getting-started/z-wave-panel/
 <div class='note'>
 
   If you don't see the **Configuration** menu on the menubar, where you'll find the Z-Wave menu, [see here](/integrations/config/).
+  메뉴바에 **설정** 메뉴가 표시되지 않으면 Z-Wave 메뉴를 찾을 수 있습니다 ([여기 참조](/integrations/config/)).
 
 </div>
 
 Renaming Z-Wave entities is now done using the same [customization options](/docs/configuration/customizing-devices/) as for any other entity.
+Z-Wave 엔티티의 이름 바꾸기는 이제 다른 엔티티와 동일한 [사용자 정의 옵션](/docs/configuration/customizing-devices/)을 사용하여 수행됩니다.
 
-## Z-Wave Network Management
+## Z-Wave 네트워크 관리
 
 Here is where you [include and exclude](/docs/z-wave/adding/) Z-Wave devices from your network.
+네트워크에서 Z-Wave 장치를 [포함하기와 제외하기](/docs/z-wave/adding/)위한 곳입니다.
 
-* **Add Node** puts the controller into inclusion mode, so you can include (add) a device to your Z-Wave network
-* **Add Node Secure** puts the controller into secure inclusion mode (this requires that you've created a [security key](/docs/z-wave/adding#sdding-security-devices))
-* **Remove Node** puts the controller into exclusion mode, so you can exclude (remove) a device. Note that you can exclude a non-secure device that's been added to another network
-* **Cancel Command** cancels any of the above
+* **Add Node** 컨트롤러를 포함 모드로 전환하여 장치를 Z-Wave 네트워크에 포함(추가)할 수 있습니다
+* **Add Node Secure** 컨트롤러를 보안 포함 모드로 전환합니다 ([보안 키](/docs/z-wave/adding#sdding-security-devices)를 생성해야합니다)
+* **Remove Node** 컨트롤러를 제외 모드로 전환하므로 장치를 제외(제거)할 수 있습니다. 다른 네트워크에 추가된 비보안 장치를 제외할 수 있습니다.
+* **Cancel Command** 위의 중 하나를 취소
 
-* **Heal Network** tells the controller to "heal" the Z-Wave network. Basically asks the nodes to tell the controller all of their neighbors so the controller can recompute optimal routing.
-* **Start Network** starts the Z-Wave network
-* **Stop Network** stops the Z-Wave network
-* **Soft Reset** tells the controller to do a "soft reset." This is not supposed to lose any data, but different controllers can behave differently to a "soft reset" command, and may cause the Z-Wave network to hang.
-* **Test Network** tells the controller to send no-op commands to each node and measure the time for a response. In theory, this can also bring back nodes which have been marked "presumed dead".
-* **Save Config** Saves the current cache of the network to zwcfg_[home_id].xml
+* **Heal Network** 컨트롤러가 Z-Wave 네트워크를 "heal"하도록 지시합니다. 기본적으로 노드에게 컨트롤러에게 모든 인접 항목을 알려주도록하여 컨트롤러가 최적의 라우팅을 재계산할 수 있도록합니다.
+* **Start Network** Z-Wave 네트워크를 시작합니다.
+* **Stop Network** Z-Wave 네트워크를 중지합니다.
+* **Soft Reset** tells the controller to do a "soft reset." This is not supposed to lose any data, but different controllers can behave differently to a "soft reset" command, and may cause the Z-Wave network to hang. "soft reset"을 컨트롤러에 지시합니다. 데이터가 손실되지는 않지만 다른 컨트롤러는 "soft reset" 명령과 다르게 동작할 수 있으며 Z-Wave 네트워크가 중단될 수 있습니다.
+* **Test Network** 컨트롤러가 no-op 명령을 각 노드에 보내고 응답 시간을 측정하도록 지시합니다. 이론적으로 이는 "사망한 것으로 추정된" 노드를 다시 가져올 수도 있습니다.
+* **Save Config** 네트워크의 현재 캐시를 zwcfg_[home_id].xml에 저장합니다.
 
-## Z-Wave Node Management
+## Z-Wave 노드 관리
 
-* **Refresh Node** refreshes the information on the node and its entities. If used on a battery powered device, the device will first need to wake for this to work.
-* **Remove Failed Node** will remove a failed node from the network. The node needs to be on the controller's Failed Node List (marked as `is_failed: true`), otherwise this command will fail. You can trick OpenZWave into thinking the node is failed by selecting the `zwave` entity in the *States* menu, under *Developer tools*, and changing `"is_failed": false,` to `"is_failed": true,` then selecting *Set State*.
+* **Refresh Node** refreshes the information on the node and its entities. If used on a battery powered device, the device will first need to wake for this to work. 노드와 해당 엔티티에 대한 정보를 새로 고칩니다. 배터리 구동 장치에서 사용하는 경우 장치가 작동하려면 먼저 깨워 야합니다.
+* **Remove Failed Node** will remove a failed node from the network. The node needs to be on the controller's Failed Node List (marked as `is_failed: true`), otherwise this command will fail. You can trick OpenZWave into thinking the node is failed by selecting the `zwave` entity in the *States* menu, under *Developer tools*, and changing `"is_failed": false,` to `"is_failed": true,` then selecting *Set State*. 
 * **Replace Failed Node** will replace a failed device with another. If the node is not in the controller's Failed Node List, or the node responds, this command will fail.
 * **Print Node** prints all state of Z-Wave node to the console log
 

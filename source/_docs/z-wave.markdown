@@ -36,4 +36,4 @@ Z-Wave 장치에는 12 개의 서로 다른 지역이 있으며 이 지역은 �
 
 스위치를 토글하거나 조명을 로컬로 제어할 때 홈어시스턴트에 반영되는데 시간이 걸릴 수 있습니다. Lutron은 장치가 컨트롤러에 무언가 로컬에서 발생한 것을 알리는 전통적인 방법인 *Hail* 명령 클래스를 사용하여 상태 업데이트에 대한 특허를 보유하고 있기 때문입니다. *Association* 명령 클래스 혹은 *Central Scene* 명령 클래스를 통해 동일한 결과를 얻을 수 있습니다. (하지만 OpenZWave에서는 *Central Scene*이 [완전히 지원되지 않습니다.](https://github.com/OpenZWave/open-zwave/pull/1125))
 
-제품에 대한 [Z-Wave 제품 데이터베이스](https://products.z-wavealliance.org/)를 검색하고 **Controlled** 명령 클래스(**Supported** 명령 클래스가 아님)에 있는 제품 중 하나를 나열하면 장치가 발생할 때 상태 변경을 보고할 수 있습니다.
+제품에 대한 [Z-Wave 제품 데이터베이스](https://products.z-wavealliance.org/)를 검색하고 **Controlled** 명령 클래스(**Supported** 명령 클래스가 아님)에 있는 제품 중 하나를 나열하면 장치에 변화가 발생할 때 상태 변경을 보고할 수 있습니다. 이 부분이 동작하지 않더라도, 기다리면 업데이트가 결국 발생하거나 [enable polling](/docs/z-wave/control-panel/#entities-of-this-node)을 주의해서 수행합니다.

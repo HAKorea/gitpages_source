@@ -1,15 +1,15 @@
 ---
-title: "Z-Wave Controllers"
+title: "Z-Wave 컨트롤러"
 description: "Extended instructions how to setup Z-Wave."
 ---
 
-## Supported Z-Wave USB Sticks & Hardware Modules
+## 지원되는 Z-Wave USB 스틱과 하드웨어 모듈
 
-You need to have a compatible Z-Wave stick or module installed. This needs to be a *static controller*, which most Z-Wave sticks and modules will be. If yours is a *bridge* device then it won't work with [OpenZWave](http://openzwave.com/), which is what provides Home Assistant's Z-Wave capabilities. USB sticks using the new 700 series Z-Wave platform are not compatible. The following devices have been confirmed to work:
+호환되는 Z-Wave 스틱 혹은 모듈이 설치되어 있어야합니다. 이는 대부분의 Z-Wave 스틱과 모듈이 될 *static controller* 여야합니다. *bridge* 장치인 경우 [OpenZWave](http://openzwave.com/)에서 작동하지 않으므로 Home Assistant의 Z-Wave 기능이 제공됩니다. 새로운 700 시리즈 Z-Wave 플랫폼을 사용하는 USB 스틱은 호환되지 않습니다. 다음 장치가 작동하는 것으로 확인되었습니다. : 
 
 <div class='note'>
   
-There have [been reports](https://www.raspberrypi.org/forums/viewtopic.php?f=28&t=245031#p1502030) of the Aeotec stick not working on the Raspberry Pi 4.
+Raspberry Pi 4에서 작동하지 않는 Aeotec 스틱의 [보고](https://www.raspberrypi.org/forums/viewtopic.php?f=28&t=245031#p1502030)가 있습니다.
 
 </div>
 
@@ -21,27 +21,27 @@ There have [been reports](https://www.raspberrypi.org/forums/viewtopic.php?f=28&
 * ZWave.me Razberry Board
 * ZWave.me UZB1 stick
 
-We recommend that you purchase a [Z-Wave Plus](https://z-wavealliance.org/z-wave_plus_certification/) controller, to take advantage of the improvements this provides. As OpenZWave doesn't support S2 or Smart Start, there's no need to buy one just for support of these features.
+개선된 기능을 활용하려면 [Z-Wave Plus](https://z-wavealliance.org/z-wave_plus_certification/) 컨트롤러를 구입하는 것이 좋습니다. OpenZWave는 S2 또는 Smart Start를 지원하지 않으므로 이러한 기능을 지원하기 위해 하나만 구입할 필요는 없습니다.
 
 <div class='note'>
-  If you're using Hass.io or running Home Assistant in a Docker container, it's recommended to use a USB stick, not a module. Passing a module through Docker is more complicated than passing a USB stick through.
+  HA를 사용하거나 Docker 컨테이너에서 Home Assistant를 실행하는 경우 모듈이 아닌 USB 스틱을 사용하는 것이 좋습니다. Docker를 통해 모듈을 전달하는 것은 USB 스틱을 전달하는 것보다 더 복잡합니다. 
 </div>
 
-## Stick Alternatives
+## 스틱 대안
 
-The alternative to a stick is a hub that supports Z-Wave. Home Assistant supports the following hubs with Z-Wave support:
+스틱 대신 Z-Wave를 지원하는 허브가 있습니다. Home Assistant는 Z-Wave를 지원하는 다음 허브를 지원합니다.
 
  - [Vera](/integrations/vera/)
  - [Wink](/integrations/wink/)
  - [Fibaro](/integrations/fibaro/)
  - [SmartThings](/integrations/smartthings/)
 
-## Controller Notes
+## 컨트롤러 노트 
 
-### Aeotec Stick
+### Aeotec 스틱
 
-By default this will turn on "disco lights", which you can turn off by following the instructions in the [device specific page](/docs/z-wave/device-specific/#aeotec-z-stick)
+기본적으로 "disco lights"가 켜지며 [장치별 페이지](/docs/z-wave/device-specific/#aeotec-z-stick)의 지침에 따라 끌 수 있습니다.
 
 ### Razberry Board
 
-You need to disable the on-board Bluetooth since the board requires the use of the hardware UART (and there's only one on the Pi3). You do this by following the instructions in the [device specific page](/docs/z-wave/device-specific/#razberry-board)
+보드에 하드웨어 UART를 사용해야하고 Pi3에는 하드웨어가 하나만 있기 때문에 온보드 Bluetooth를 비활성화해야합니다. [장치 별 페이지](/docs/z-wave/device-specific/#razberry-board)의 지침에 따라 이를 수행하십시오.

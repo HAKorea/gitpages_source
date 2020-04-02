@@ -101,121 +101,80 @@ ha core update --version=0.XX.X
 3. _Supervisor_ 의 _System_ 탭에서 _Supervisor_ 아래 있는 _Join Beta Channel_ 을 선택합니다. 그리고 _Reload_ 를 누릅니다.
 4. _Supervisor_ 메뉴의 _Dashboard_ 탭에서 _Update_ 를 누릅니다.
 
-## 다른 방법: 일반적인 리눅스 컴퓨터에 Home Assistant 설치
+## 다른 방법: 일반적인 리눅스 컴퓨터에 Supervised Home Assistant 설치
 
-HA 네이버카페 까꿍TM님의 라즈베리파이에 도커환경에서 Home Assistant 설치하기 
+Home Assistant Supervised라는 Linux 운영 체제에 Home Assistant를 설치할 수도 있습니다.
 
-<div class='videoWrapper'>
-<iframe width="690" height="437" src="https://www.youtube.com/embed/W2-MgYE6FA4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+Home Assistant Supervised는 애드온을 포함하여 Home Assistant가 제공하는 대부분의 기능에 계속 액세스할 수 있도록합니다.
 
-능숙한 유저라면 [리눅스 서버 또는 버추얼 머신][Linux]에 Home Assistant를 설치할 수 있습니다. 아래 제시한 방법은 우분투와 Arch 리눅스에서 테스트 했습니다만 다른 리눅스 배포판에서도 비슷하게 설치할 수 있습니다.
+### 지원되는 시스템과 제한 사항
 
-Home Assistant를 실행하기 위한 패키지들을 시스템에 따라 조금씩 다를 수 있습니다.
+Home Assistant Supervised는 거의 모든 Linux 시스템에서 실행될 수 있지만 Home Assistant 프로젝트는 이 설치 방법에 대한 지원을 제한합니다. 
 
-### Debian/Ubuntu
+Debian 또는 Ubuntu 사용만 지원됩니다. 다른 Linux 기반 시스템은 작동할 수 있지만 테스트에 포함되지 않으므로 지원되지 않습니다.
 
- - `apparmor-utils`
- - `apt-transport-https`
- - `avahi-daemon`
- - `ca-certificates`
- - `curl`
- - `dbus`
- - `jq`
- - `socat`
- - `software-properties-common`
+또한 Home Assistant Supervised를 실행하기로 선택한 경우 시스템 업그레이드과 시스템 설정 측면에서 있어서 선택한 운영 체제(Debian/Ubuntu 포함)는 당신의 책임입니다. 
 
-Optional:
+사용자 정의 운영 체제에 대한 커스텀 설정은 홈어시스턴트를 방해할 수 있습니다. 따라서 선택한 운영 체제를 관리, 설정, 유지 보수하는데 필요한 지식이 있어야합니다.
 
- - `network-manager`
+확실하지 않은 경우 위에 제공된대로 홈어시스턴트를 정기적으로 설치하는 것이 좋습니다. 이 경우 Home Assistant가 Home Assistant 운영 체제를 관리하고 업데이트합니다.
 
-<div class='note warning'>
+### 사전 준비
 
-NetworkManager 없이는 UI를 통해 호스트 네트웍 설정을 할 수 없습니다. `modemmanager` 패키지는 Z-Wave나 Zigbee 스틱을 이용하는데 방해가 될 수 있어 삭제하거나 중지시켜두는게 좋습니다. 스틱을 사용할 수 없다면 기기를 통합 설정하는데 않좋은 영향을 미치므로 `sudo systemctl disable ModemManager` 명령으로 중지하거나 `sudo apt-get purge modemmanager`명령으로 삭제하세요.
+홈어시스턴트 설치를 위해 시스템을 준비하려면 다음 명령을 실행하십시오. : 
 
-</div>
-
-### Arch Linux
-
- - `apparmor`
- - `avahi`
- - `ca-certificates`
- - `curl`
- - `dbus`
- - `docker`
- - `jq`
- - `socat`
-
-### 도커
-위 패키지와는 별도로 Docker-CE의 설치가 필요합니다. 우분투에 도커를 설치하는 방법은 [Docker.com](https://docs.docker.com/install/linux/docker-ce/ubuntu/)를 참고하세요. 다른 배포판에서 설치 방법은 왼쪽 메뉴를 살펴보면 됩니다.
-
-<div class='note warning'>
-
-  우분투와 같은 몇몇 배포판은 `docker.io`를 포함하고 있습니다. 그러나 이 패키지들을 몇가지 이슈가 있습니다! 위 URL에서 공식 Docker-CE 설치 방법을 따르세요.
-
-  우분투 배포판이 릴리즈 될때 도커 배포판이 같이 배포되지 않으므로 우분투 버전에 따라 [도커 지원 문서](https://docs.docker.com/install/linux/docker-ce/ubuntu/)를 참고하세요.
-
-</div>
-
-### Preparation
-
-본인의 리눅스에 따라 Home Assistant 를 설치하기 위해 다음 명령을 실행하세요:
-
-Ubuntu:
+Ubuntu를 실행하는 경우 먼저 다음 명령을 실행하십시오. : 
 
 ```bash
-add-apt-repository universe
+sudo add-apt-repository universe
 ```
 
-Debian/Ubuntu:
+그 다음 명령을 실행하십시오 (Debian과 Ubuntu 모두). : 
 
 ```bash
 sudo -i
-apt-get install software-properties-common
 apt-get update
-apt-get install -y apparmor-utils apt-transport-https avahi-daemon ca-certificates curl dbus jq network-manager socat
+apt-get install -y software-properties-common apparmor-utils apt-transport-https avahi-daemon ca-certificates curl dbus jq network-manager socat
 systemctl disable ModemManager
+systemctl stop ModemManager
 curl -fsSL get.docker.com | sh
 ```
 
-다음의 스크립트가 다양한 OS와 컴퓨터에 Home Assistant 를 설치합니다.
+### 홈어시스턴트 Supervised 설치 
+
+다음 스크립트는 다양한 운영 체제와 컴퓨터 유형에 Home Assistant를 설치합니다.
 
 ```bash
-curl -sL "https://raw.githubusercontent.com/home-assistant/hassio-installer/master/hassio_install.sh" | bash -s
+curl -sL "https://raw.githubusercontent.com/home-assistant/supervised-installer/master/installer.sh" | bash -s
 ```
 
-설치 과정에 컴퓨터의 종류를 명시해야 하는 경우가 있습니다. 예를 들어 라즈베리파이 3의 경우 `-- -m raspberrypi3` 을 명령어 옵션으로 추가합니다. 설치 스크립트는 다음과 같습니다:
+일부 설치 유형에는 컴퓨터 유형을 식별하기 위한 플래그가 필요합니다. 예를 들어, Raspberry Pi 4를 사용할 때 `--m raspberrypi4` 플래그가 필요합니다. 설치 스크립트는 다음과 같습니다.
 
 ```bash
-curl -sL "https://raw.githubusercontent.com/home-assistant/hassio-installer/master/hassio_install.sh" | bash -s -- -m raspberrypi3
+curl -sL "https://raw.githubusercontent.com/home-assistant/supervised-installer/master/installer.sh" | bash -s -- -m raspberrypi4
 ```
 
 #### 다양한 machine types
 
- - `intel-nuc`
- - `raspberrypi`
- - `raspberrypi2`
- - `raspberrypi3`
- - `raspberrypi3-64`
- - `raspberrypi4`
- - `raspberrypi4-64`
- - `odroid-c2`
- - `odroid-cu2`
- - `odroid-xu`
- - `orangepi-prime`
- - `tinker`
- - `qemuarm`
- - `qemuarm-64`
- - `qemux86`
- - `qemux86-64`
+- `intel-nuc`
+- `raspberrypi`
+- `raspberrypi2`
+- `raspberrypi3`
+- `raspberrypi3-64`
+- `raspberrypi4`
+- `raspberrypi4-64`
+- `odroid-c2`
+- `odroid-n2`
+- `odroid-xu`
+- `tinker`
+- `qemuarm`
+- `qemuarm-64`
+- `qemux86`
+- `qemux86-64`
 
-지원하는 최신 machine type을 살펴보기 위해 [hassio-installer](https://github.com/home-assistant/hassio-installer) 깃허브 페이지를 방문하세요.
+지원되는 machine types의 최신 목록은 [installer](https://github.com/home-assistant/supervised-installer) GitHub 페이지를 참조하십시오.
 
-<div class='note'>
-위와 같은 방법으로 설치하면 공식 core SSH 애드온이 정상 동작 하지 않을 수 있습니다. 그럴 경우,커뮤니티에서 제공하는 SSH 애드온을 설치하세요. 설치 방법에 따라 문서에서 이야기 하는 내용이 조금씩 다를 수도 있습니다.
-</div>
-
-버추얼 머신에서 Home Assistant 설치는 [blog][hassio-vm] 글을 참고하세요.
+리스트에서 머신 타입을 찾을 수 없다면 `qemu` 릴리즈를 선택해야합니다. 즉, 일반적인 64 비트 Linux 배포의 경우 `qemux86-64` 또는 Raspberry Pi 클론 또는 TV 박스와 같은 최신 ARM 기반 대상의 경우 qemuarm-64입니다.
 
 ## 또 다른 방법: 시놀로지 NAS에서의 설치
 
@@ -234,27 +193,27 @@ HA 네이버카페 멀더요원님의 [시놀로지 NAS에 Home Assistant 설치
 </div>
 
 [balenaEtcher]: https://www.balena.io/etcher
-[Virtual Appliance]: https://github.com/home-assistant/hassos/blob/dev/Documentation/boards/ova.md
-[hassos-network]: https://github.com/home-assistant/hassos/blob/dev/Documentation/network.md
-[pi0-w]: https://github.com/home-assistant/hassos/releases/download/3.8/hassos_rpi0-w-3.8.img.gz
-[pi1]: https://github.com/home-assistant/hassos/releases/download/3.8/hassos_rpi-3.8.img.gz
-[pi2]: https://github.com/home-assistant/hassos/releases/download/3.8/hassos_rpi2-3.8.img.gz
-[pi3-32]: https://github.com/home-assistant/hassos/releases/download/3.8/hassos_rpi3-3.8.img.gz
-[pi3-64]: https://github.com/home-assistant/hassos/releases/download/3.8/hassos_rpi3-64-3.8.img.gz
-[pi4-32]: https://github.com/home-assistant/hassos/releases/download/3.8/hassos_rpi4-3.8.img.gz
-[pi4-64]: https://github.com/home-assistant/hassos/releases/download/3.8/hassos_rpi4-64-3.8.img.gz
-[tinker]: https://github.com/home-assistant/hassos/releases/download/3.8/hassos_tinker-3.8.img.gz
-[odroid-c2]: https://github.com/home-assistant/hassos/releases/download/3.8/hassos_odroid-c2-3.8.img.gz
-[odroid-n2]: https://github.com/home-assistant/hassos/releases/download/4.0/hassos_odroid-n2-4.0.img.gz
-[odroid-xu4]: https://github.com/home-assistant/hassos/releases/download/3.8/hassos_odroid-xu4-3.8.img.gz
-[intel-nuc]: https://github.com/home-assistant/hassos/releases/download/3.8/hassos_intel-nuc-3.8.img.gz
-[vmdk]: https://github.com/home-assistant/hassos/releases/download/3.8/hassos_ova-3.8.vmdk.gz
-[vhdx]: https://github.com/home-assistant/hassos/releases/download/3.8/hassos_ova-3.8.vhdx.gz
-[vdi]: https://github.com/home-assistant/hassos/releases/download/3.8/hassos_ova-3.8.vdi.gz
-[linux]: https://github.com/home-assistant/hassio-installer
-[local]: http://hassio.local:8123
+[Virtual Appliance]: https://github.com/home-assistant/operating-system/blob/dev/Documentation/boards/ova.md
+[hassos-network]: https://github.com/home-assistant/operating-system/blob/dev/Documentation/network.md
+[pi0-w]: https://github.com/home-assistant/operating-system/releases/download/3.12/hassos_rpi0-w-3.12.img.gz
+[pi1]: https://github.com/home-assistant/operating-system/releases/download/3.12/hassos_rpi-3.12.img.gz
+[pi2]: https://github.com/home-assistant/operating-system/releases/download/3.12/hassos_rpi2-3.12.img.gz
+[pi3-32]: https://github.com/home-assistant/operating-system/releases/download/3.12/hassos_rpi3-3.12.img.gz
+[pi3-64]: https://github.com/home-assistant/operating-system/releases/download/3.12/hassos_rpi3-64-3.12.img.gz
+[pi4-32]: https://github.com/home-assistant/operating-system/releases/download/3.12/hassos_rpi4-3.12.img.gz
+[pi4-64]: https://github.com/home-assistant/operating-system/releases/download/3.12/hassos_rpi4-64-3.12.img.gz
+[tinker]: https://github.com/home-assistant/operating-system/releases/download/3.12/hassos_tinker-3.12.img.gz
+[odroid-c2]: https://github.com/home-assistant/operating-system/releases/download/3.12/hassos_odroid-c2-3.12.img.gz
+[odroid-n2]: https://github.com/home-assistant/operating-system/releases/download/4.4/hassos_odroid-n2-4.4.img.gz
+[odroid-xu4]: https://github.com/home-assistant/operating-system/releases/download/3.12/hassos_odroid-xu4-3.12.img.gz
+[intel-nuc]: https://github.com/home-assistant/operating-system/releases/download/3.12/hassos_intel-nuc-3.12.img.gz
+[vmdk]: https://github.com/home-assistant/operating-system/releases/download/3.12/hassos_ova-3.12.vmdk.gz
+[vhdx]: https://github.com/home-assistant/operating-system/releases/download/3.12/hassos_ova-3.12.vhdx.gz
+[vdi]: https://github.com/home-assistant/operating-system/releases/download/3.12/hassos_ova-3.12.vdi.gz
+[linux]: https://github.com/home-assistant/supervised-installer
+[local]: http://homeassistant.local:8123
 [samba]: /addons/samba/
 [ssh]: /addons/ssh/
 [pi-power]: https://www.raspberrypi.org/help/faqs/#powerReqs
-[hassio-vm]: https://www.home-assistant.io/blog/2017/11/29/hassio-virtual-machine/
 [configure]: /getting-started/configuration/
+

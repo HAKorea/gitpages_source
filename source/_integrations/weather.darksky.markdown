@@ -15,7 +15,7 @@ ha_iot_class: Cloud Polling
 
 <div class='note warning'>
 
-2020 년 3 월 31 일 Dark Sky는 [Apple에서 인수](https://blog.darksky.net/dark-sky-has-a-new-home/)로 더이상 새로운 API 등록을 허용하지 않습니다. Dark Sky API는 2021 년 말까지 기존 사용자에게 계속 작동하지만 더 이상 새로운 사용자를위한 API 키를 얻을 수 없습니다.
+2020 년 3 월 31 일 Dark Sky는 [Apple에서 인수](https://blog.darksky.net/dark-sky-has-a-new-home/)로 더이상 새로운 API 등록을 허용하지 않습니다. Dark Sky API는 2021 년 말까지 기존 사용자에게 계속 작동하지만 더이상 새로운 사용자를 위한 API 키를 얻을 수 없습니다.
 
 </div>
 

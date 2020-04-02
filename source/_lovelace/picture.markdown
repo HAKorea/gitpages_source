@@ -8,7 +8,7 @@ description: "A very simple card that allows you to set an image to use for navi
 
 <p class='img'>
 <img src='/images/lovelace/lovelace_picture.png' alt='Screenshot of the picture card'>
-Picture 카드의 스크린 샷.
+Picture 카드의 스크린샷.
 </p>
 
 {% configuration %}
@@ -36,22 +36,22 @@ tap_action:
       default: "`none`"
     navigation_path:
       required: false
-      description: "`action`이 `navigate` 로 정의된 경우 탐색 할 경로 (예: `/lovelace/0/`)"
+      description: "`action`이 `navigate`로 정의된 경우 탐색할 경로 (예: `/lovelace/0/`)"
       type: string
       default: none
     url_path:
       required: false
-      description: "`action`이 `url` 로 정의된 경우 (예: `https://www.home-assistant.io`)"
+      description: "`action`이 `url`로 정의된 경우 (예: `https://www.home-assistant.io`)"
       type: string
       default: none
     service:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 호출 할 서비스 (예 :`media_player.media_play_pause`)"
+      description: "`action`이 `call-service`로 정의된 경우 호출할 서비스 (예: `media_player.media_play_pause`)"
       type: string
       default: none
     service_data:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
+      description: "`action`이 `call-service`로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
       type: string
       default: none
     confirmation:
@@ -71,22 +71,22 @@ hold_action:
       default: "`none`"
     navigation_path:
       required: false
-      description: "`action`이 `navigate` 로 정의된 경우 탐색 할 경로 (예: `/lovelace/0/`)"
+      description: "`action`이 `navigate`로 정의된 경우 탐색할 경로 (예: `/lovelace/0/`)"
       type: string
       default: none
     url_path:
       required: false
-      description: "`action`이 `url` 로 정의된 경우 (예: `https://www.home-assistant.io`)"
+      description: "`action`이 `url`로 정의된 경우 (예: `https://www.home-assistant.io`)"
       type: string
       default: none
     service:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 호출 할 서비스 (예 :`media_player.media_play_pause`)"
+      description: "`action`이 `call-service`로 정의된 경우 호출할 서비스 (예: `media_player.media_play_pause`)"
       type: string
       default: none
     service_data:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
+      description: "`action`이 `call-service`로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
       type: string
       default: none
     confirmation:
@@ -106,22 +106,22 @@ double_tap_action:
       default: "`more-info`"
     navigation_path:
       required: false
-      description: "`action`이 `navigate` 로 정의된 경우 탐색 할 경로 (예: `/lovelace/0/`)"
+      description: "`action`이 `navigate`로 정의된 경우 탐색할 경로 (예: `/lovelace/0/`)"
       type: string
       default: none
     url_path:
       required: false
-      description: "`action`이 `url` 로 정의된 경우 (예: `https://www.home-assistant.io`)"
+      description: "`action`이 `url`로 정의된 경우 (예: `https://www.home-assistant.io`)"
       type: string
       default: none
     service:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 호출 할 서비스 (예 :`media_player.media_play_pause`)"
+      description: "`action`이 `call-service`로 정의된 경우 호출할 서비스 (예: `media_player.media_play_pause`)"
       type: string
       default: none
     service_data:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`"
+      description: "`action`이 `call-service`로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`"
       type: string
       default: none
     confirmation:
@@ -133,11 +133,11 @@ double_tap_action:
 
 ## Confirmation 옵션
 
-boolean 대신 객체로 확인을 정의하면 더 많은 사용자 정의 및 설정을 추가 할 수 있습니다
+boolean 대신 객체로 컨펌(Confirmation)을 정의하면 더 많은 사용자 정의와 설정을 추가할 수 있습니다
 {% configuration %}
 text:
   required: false
-  description: Confirmation 대화 상자에 표시 할 텍스트.
+  description: Confirmation 대화 상자에 표시할 텍스트.
   type: string
 exemptions:
   required: false
@@ -150,7 +150,7 @@ exemptions:
 {% configuration badges %}
 user:
   required: true
-  description: 보기 탭을 볼 수있는 사용자 ID.
+  description: 보기 탭을 볼 수 있는 사용자 ID.
   type: string
 {% endconfiguration %}
 

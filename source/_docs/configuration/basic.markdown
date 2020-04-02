@@ -64,6 +64,6 @@ whitelist_external_dirs:
   type: list
 {% endconfiguration %}
 
-### Core Service 재로드
+### Core Service 리로드
 
-홈어시스턴트는 `homeassistant.reload_core_config` 서비스가 실행되는 동안 Core 설정을 다시로드하는 서비스를 제공합니다. 이를 통해 위의 섹션을 변경하고 홈어시스턴트를 다시 시작할 필요없이 적용되는 것을 확인할 수 있습니다. 이 서비스를 호출하려면 개발자 도구 아래의 "서비스"탭으로 이동하여 `homeassistant.reload_core_config` 서비스를 선택 하고 "서비스 호출"버튼을 클릭하십시오. 또는 설정 > 서버 제어 > 일반에서 "위치와 사용자 정의 다시로드" 버튼을 누를 수 있습니다.
+홈어시스턴트는 `homeassistant.reload_core_config` 서비스가 실행되는 동안 Core 설정을 다시 로드하는 서비스를 제공합니다. 이를 통해 위의 섹션을 변경하고 홈어시스턴트를 다시 시작할 필요없이 적용되는 것을 확인할 수 있습니다. 이 서비스를 호출하려면 개발자 도구 아래의 "서비스"탭으로 이동하여 `homeassistant.reload_core_config` 서비스를 선택 하고 "서비스 호출"버튼을 클릭하십시오. 또는 설정 > 서버 제어 > 일반에서 "위치와 사용자 정의 다시로드" 버튼을 누를 수 있습니다.

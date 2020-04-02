@@ -45,7 +45,7 @@ TARGET="$(jq --raw-output '.target' $CONFIG_PATH)"
 
 ## 애드온 도커파일
 
-모든 애드온은 알파인 리눅스 최신 버전을 기초로 만듭니다. Hass.io는 컴퓨터(machine architecture)에 따라 적당한 알파인 리눅스의 베이스 이미지를 사용합니다. 타임존의 경우 필요에 따라 `tzdata`를 설정할 수도 있으며 HA가 제공하는 베이스 이미지에는 타임존에 따라 미리 설정되어있습니다.
+모든 애드온은 알파인 리눅스 최신 버전을 기초로 만듭니다. 홈어시스턴트는 컴퓨터(machine architecture)에 따라 적당한 알파인 리눅스의 베이스 이미지를 사용합니다. 타임존의 경우 필요에 따라 `tzdata`를 설정할 수도 있으며 HA가 제공하는 베이스 이미지에는 타임존에 따라 미리 설정되어있습니다.
 
 ```dockerfile
 ARG BUILD_FROM
@@ -63,7 +63,7 @@ RUN chmod a+x /run.sh
 CMD [ "/run.sh" ]
 ```
 
-만일 Hass.io가 설치된 기기에서 빌드를 하지 않거나 제공된 빌드 스크립트를 사용하지 않는다면(다른 컴퓨터에서 애드온을 만든다면), Dockerfile 안에는 다음과 같은 레이블을 포함시켜야 합니다:
+만일 홈어시스턴트가 설치된 기기에서 빌드를 하지 않거나 제공된 빌드 스크립트를 사용하지 않는다면(다른 컴퓨터에서 애드온을 만든다면), Dockerfile 안에는 다음과 같은 레이블을 포함시켜야 합니다:
 ```
 LABEL io.hass.version="VERSION" io.hass.type="addon" io.hass.arch="armhf|aarch64|i386|amd64"
 ```
@@ -209,7 +209,7 @@ LABEL io.hass.version="VERSION" io.hass.type="addon" io.hass.arch="armhf|aarch64
 
 ## Add-on extended build
 
-애드온의 추가적인 빌드옵션은 `build.json` 파일에 설정합니다. 이 파일은 해쇼의 빌드 시스템이 확인하고 빌드시 사용합니다. 제공하는 기본 이미지가 아닌 다른 베이스 이미지를 사용한다면 아래와 같이 설정하세요.
+애드온의 추가적인 빌드옵션은 `build.json` 파일에 설정합니다. 이 파일은 홈어시스턴트의 빌드 시스템이 확인하고 빌드시 사용합니다. 제공하는 기본 이미지가 아닌 다른 베이스 이미지를 사용한다면 아래와 같이 설정하세요.
 
 ```json
 {
@@ -229,7 +229,7 @@ LABEL io.hass.version="VERSION" io.hass.type="addon" io.hass.arch="armhf|aarch64
 | squash | no | Default `False`. Be carfully with this option, you can not use the image for caching stuff after that!
 | args | no | Allow to set additional Docker build arguments as a dictionary.
 
-해쇼가 제공하는 [베이스 이미지][hassio-base]는 다양한 기능을 포함하고 있으며, 만일 다른 알파인 리눅스 버전을 쓰고 싶거나 특정 이미지를 사용하려면 `build_from` 옵션에 명시적으로 작성하면 됩니다.
+홈어시스턴트가 제공하는 [베이스 이미지][hassio-base]는 다양한 기능을 포함하고 있으며, 만일 다른 알파인 리눅스 버전을 쓰고 싶거나 특정 이미지를 사용하려면 `build_from` 옵션에 명시적으로 작성하면 됩니다.
 
 [hassio-base]: https://github.com/home-assistant/hassio-base
 

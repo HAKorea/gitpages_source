@@ -1,35 +1,35 @@
 ---
-title: "Z-Wave Device Specific Settings"
+title: "Z-Wave 장치별 설정"
 description: "Notes for specific Z-Wave devices."
 redirect_from: /getting-started/z-wave-device-specific/
 ---
 
-## Device Categories
+## 장치 카테고리
 
-### Motion or alarm sensors
+### 모션 또는 알람 센서
 
-In order for Home Assistant to recognize the sensor properly, you will need to change its configuration from `Basic Set (default)` to `Binary Sensor report` or `Alarm report`.
-These devices will either show as a binary sensor or a sensor called `Alarm xxxx` and will report a numeric value. Test to see what value is what. Sometimes this is noted in the device manual.
+홈어시스턴트가 센서를 올바르게 인식하려면 설정을 `Basic Set (default)`에서 `Binary Sensor report` 또는 `Alarm report`로 변경해야합니다.
+이러한 장치는 이진 센서 또는 `Alarm xxxx`라는 센서로 표시되며 숫자값을 보고합니다. 어떤 값이 무엇인지 테스트하십시오. 때로는 장치 설명서에 나와 있습니다.
 
-You can set the settings of the Z-Wave device through the Z-Wave control panel.
+Z-Wave 제어판을 통해 Z-Wave 장치의 설정을 지정할 수 있습니다.
 
-### Locks and other secure devices
+### 잠금 장치와 기타 보안 장치 (Locks and other secure devices)
 
-These devices require a network key to be set for the Z-Wave network before they are paired, using the **Add Node Secure** option.
+이러한 장치는 **Add Node Secure** 옵션을 사용하여 Z-Wave 네트워크에 대해 네트워크 키를 설정해야합니다.
 
-Home Assistant stores logs from Z-Wave in `OZW_log.txt` in the Home Assistant config directory, when you pair a secure device you should see communication from the node with lines starting with `info: NONCES` in `OZW_log.txt` when the device is paired successfully with a secure connection.
+홈어시스턴트는 홈어시스턴트 설정 디렉토리의 OZW_log.txt에 Z-Wave의 로그를 저장합니다. 보안 장치를 페어링할 때 장치가 보안 연결과 성공적으로 페어링되면 `OZW_log.txt`의 `info: NONCES`로 시작하는 라인으로 노드와 통신하는 것이 보일 것입니다.
 
-### Specific Devices
+### 특정 장치들
 
 ### Aeotec Z-Stick
 
-It's totally normal for your Z-Wave stick to cycle through its LEDs (Yellow, Blue and Red) while plugged into your system. If you don't like this behavior it can be turned off.
+Z-Wave 스틱이 시스템에 연결되어있는 동안 LED(노란색, 파란색 및 빨간색)가 순환하는 것은 완전히 정상입니다. 이 동작이 마음에 들지 않으면 끌 수 있습니다.
 
-Use the following example commands from a terminal session on your Pi where your Z-Wave stick is connected.
+Z-Wave 스틱이 연결된 Pi의 터미널 세션에서 다음 예제 명령을 사용하십시오.
 
-**Note:** You should only do this when Home Assistant has been stopped.
+**참고:** 홈어시스턴트가 중지된 경우에만 이 작업을 수행해야합니다.
 
-Turn off "Disco lights":
+"Disco 조명"을 끕니다. : 
 
 ```bash
 $ echo -e -n "\x01\x08\x00\xF2\x51\x01\x00\x05\x01\x51" > /dev/serial/by-id/usb-0658_0200-if00
@@ -41,9 +41,9 @@ Turn on "Disco lights":
 $ echo -e -n "\x01\x08\x00\xF2\x51\x01\x01\x05\x01\x50" > /dev/serial/by-id/usb-0658_0200-if00
 ```
 
-If the above two commands give errors about not having that device, you should try replacing the `/dev/serial/by-id/usb-0658_0200-if00` with `/dev/ttyACM0` or `/dev/ttyACM1` (depending on which tty your Aeotec stick is addressed to).
+위의 두 명령으로 해당 장치가 없는 오류가 발생하면 `/dev/serial/by-id/usb-0658_0200-if00`를 `/dev/ttyACM0` 혹은 `/dev/ttyACM1`로 바꿔보십시오.((Aeotec 스틱이 어느 tty에 연결되어 있는지에 따라.)
 
-On some systems, such as macOS, you need to pipe the output of the `echo` command, rather than redirecting to the serial device, to something like `cu` (replacing `/dev/zstick` acccordingly) to properly set the baud rate to 115200 bps:
+macOS와 같은 일부 시스템에서는 보드를 올바르게 설정하기 위해 serial 장치로 리디렉션하는 대신 `echo` 명령의 출력을 `cu`(`/dev/zstick` 대체)로 연결하고 baud rate를 115200bps 속도로 적당히 세팅해줘야합니다. :
 
 ```bash
 echo -e -n "...turn on/off string from examples above..." | cu -l /dev/zstick -s 115200
@@ -51,30 +51,30 @@ echo -e -n "...turn on/off string from examples above..." | cu -l /dev/zstick -s
 
 ### Razberry Board
 
-You need to disable the on-board Bluetooth since the board requires the use of the hardware UART (and there's only one on the Pi3). You do this by adding the following to the end of `/boot/config.txt`:
+보드에 하드웨어 UART를 사용해야하고 Pi3에는 하드웨어가 하나만 있기 때문에 온보드 Bluetooth를 비활성화해야합니다. `/boot/config.txt`의 끝에 다음을 추가하면됩니다 :
 
 ```text
 dtoverlay=pi3-disable-bt
 ```
 
-Then disable the Bluetooth modem service:
+그런 다음 Bluetooth 모뎀 서비스를 비활성화하십시오. : 
 
 ```bash
 $ sudo systemctl disable hciuart
 ```
 
-Once Bluetooth is off, enable the serial interface via the `raspi-config` tool. After reboot run:
+Bluetooth가 꺼지면 `raspi-config` 도구를 통해 serial 인터페이스를 활성화하십시오. 재부팅 후 :
 
 ```bash
 $ sudo systemctl mask serial-getty@ttyAMA0.service
 ```
 
-so that your serial interface looks like:
+serial 인터페이스는 다음과 같습니다.
 
 ```text
 crw-rw---- 1 root dialout 204, 64 Sep  2 14:38 /dev/ttyAMA0
 ```
-at this point simply add your user (homeassistant) to the dialout group:
+이 시점에서 간단히 사용자 (homeassistant)를 dialout 그룹에 추가하십시오.
 
 ```bash
 $ sudo usermod -a -G dialout homeassistant
@@ -82,13 +82,13 @@ $ sudo usermod -a -G dialout homeassistant
 
 <div class='note'>
 
-  If you've installed the Z-Way software, you'll need to ensure you disable it before you install Home Assistant or you won't be able to access the board. Do this with `sudo /etc/init.d/z-way-server stop; sudo update-rc.d z-way-server disable`.
+  Z-Way 소프트웨어를 설치한 경우 Home Assistant를 설치하기 전에 소프트웨어를 비활성화해야합니다. 그렇지 않으면 보드에 액세스할 수 없습니다. `sudo /etc/init.d/z-way-server stop; sudo update-rc.d z-way-server disable`를 실행하십시오. 
 
 </div>
 
 ### Aeon Minimote
 
-Here's a handy configuration for the Aeon Labs Minimote that defines all possible button presses. Put it into `automation.yaml`.
+다음은 가능한 모든 버튼 누름을 정의하는 Aeon Labs Minimote의 편리한 설정입니다. `automation.yaml`에 넣으십시오.
 
 ```yaml
   - id: mini_1_pressed
@@ -159,15 +159,15 @@ Here's a handy configuration for the Aeon Labs Minimote that defines all possibl
 
 ### Zooz Toggle Switches
 
-Some models of the Zooz Toggle switches ship with an instruction manual with incorrect instruction for Z-Wave inclusion/exclusion. The instructions say that the switch should be quickly switched on-off-on for inclusion and off-on-off for exclusion. However, the correct method is on-on-on for inclusion and off-off-off for exclusion.
+Zooz 토글 스위치의 일부 모델에는 Z-Wave 포함/제외에 대한 지침이 잘못된 사용 설명서가 함께 제공됩니다. 지침에 따르면 스위치를 신속하게 on-off-on를 누르면 포함되고 off-on-off를 누르면 제외하도록 되어 있습니다. 그러나 올바른 방법은 포함을 위해 on-on-on이고 제외를 위해 off-off-off 입니다.
 
 ## Central Scene configuration
 
-To provide Central Scene support you need to **shutdown Home Assistant** and modify your `zwcfg_*.xml` file according to the following guides.
+Central Scene을 지원하려면 **shutdown Home Assistant** 를 종료하고 다음 안내서에 따라 `zwcfg_*.xml` 파일을 수정해야합니다.
 
 ### Inovelli Scene Capable On/Off and Dimmer Wall Switches
 
-For Inovelli switches, you'll need to update (or possibly add) the `COMMAND_CLASS_CENTRAL_SCENE` for each node in your `zwcfg` file with the following:
+Inovelli 스위치의 경우, 다음과 같이 `zwcfg` 파일의 각 노드에 대해 `COMMAND_CLASS_CENTRAL_SCENE`을 업데이트하거나 추가해야합니다.
 
 ```xml
 			<CommandClass id="91" name="COMMAND_CLASS_CENTRAL_SCENE" version="1" request_flags="4" innif="true" scenecount="0">
@@ -178,7 +178,7 @@ For Inovelli switches, you'll need to update (or possibly add) the `COMMAND_CLAS
 			</CommandClass>
 ```
 
-Once this is complete, you should see the follow `zwave.scene_activated` events:
+이것이 완료되면 다음과 같은 `zwave.scene_activated` 이벤트가 나타납니다.
 
 **Action**|**scene\_id**|**scene\_data**
 :-----:|:-----:|:-----:
@@ -193,9 +193,9 @@ Triple tap on|2|4
 
 ### Zooz Scene Capable On/Off and Dimmer Wall Switches (Zen26 & Zen27 - Firmware 2.0+)
 
-Many Zooz Zen26/27 switches that have been sold do not have firmware 2.0+. Contact Zooz to obtain the over the air firmware update instructions and new user manual for the switches.
+판매된 많은 Zooz Zen26/27 스위치에는 펌웨어 2.0 이상이 없습니다. 무선 펌웨어 업데이트 지침과 스위치에 대한 새로운 사용 설명서를 얻으려면 Zooz에 문의하십시오.
 
-Once the firmware is updated, the the new configuration parameters will have to be added to the `zwcfg` file. Replace the existing `COMMAND_CLASS_CONFIGURATION` with the one of the following options (depending on your model of switch):
+펌웨어가 업데이트되면 새로운 구성 매개 변수를 `zwcfg` 파일에 추가해야합니다. 기존 `COMMAND_CLASS_CONFIGURATION`을 다음 옵션 중 하나로 바꿉니다 (스위치 모델에 따라 다름). : 
 
 Zen26 (On/Off Switch):
 ```xml
@@ -319,7 +319,7 @@ Zen27 (Dimmer):
 </CommandClass>
 ```
 
-For Zooz switches, you'll need to update (or possibly add) the `COMMAND_CLASS_CENTRAL_SCENE` for each node in your `zwcfg` file with the following:
+Zooz 스위치의 경우 다음과 같이 `zwcfg`파일의 각 노드에 대해 `COMMAND_CLASS_CENTRAL_SCENE`을 업데이트(또는 추가)해야합니다.
 ```xml
 <CommandClass id="91" name="COMMAND_CLASS_CENTRAL_SCENE" version="1" request_flags="4" innif="true" scenecount="0">
 	<Instance index="1" />
@@ -329,9 +329,9 @@ For Zooz switches, you'll need to update (or possibly add) the `COMMAND_CLASS_CE
 </CommandClass>
 ```
 
-Go to the Z-Wave Network Management section in the Home Assistant Configuration, select the node which has just been updated and enable the scene support configuration parameter.
+홈어시스턴트 설정의 Z-Wave 네트워크 관리 섹션으로 이동하여 방금 업데이트된 노드를 선택하고 씬(scene) 지원 설정 매개 변수를 활성화하십시오.
 
-Once this is complete, you should see the following `zwave.scene_activated` events:
+이것이 완료되면 다음과 같은 `zwave.scene_activated` 이벤트가 나타납니다 :
 
 **Action**|**scene\_id**|**scene\_data**
 :-----:|:-----:|:-----:
@@ -348,7 +348,7 @@ Triple tap on|2|7920
 
 ### HomeSeer Switches
 
-For the HomeSeer devices specifically, you may need to update the `COMMAND_CLASS_CENTRAL_SCENE` for each node in your `zwcfg` file with the following:
+특히 HomeSeer 장치의 경우 다음과 같이 `zwcfg` 파일의 각 노드에 대해 `COMMAND_CLASS_CENTRAL_SCENE`을 업데이트해야합니다.
 
 ```xml
 <CommandClass id="91" name="COMMAND_CLASS_CENTRAL_SCENE" version="1" request_flags="4" innif="true" scenecount="0">
@@ -359,7 +359,7 @@ For the HomeSeer devices specifically, you may need to update the `COMMAND_CLASS
 </CommandClass>
 ```
 
-Below is a table of the action/scenes for the HomeSeer devices (as a reference for other similar devices):
+아래는 HomeSeer 장치의 액션/씬 표입니다 (다른 유사한 장치에 대한 참조).
 
 **Action**|**scene\_id**|**scene\_data**
 :-----:|:-----:|:-----:
@@ -372,7 +372,7 @@ Triple tap off|2|4
 Tap and hold on|1|2
 Tap and hold off|2|2
 
-Some installations will see those details:
+일부 설치에는 다음 세부 정보가 표시됩니다. : 
 
 **Top button ID: 1, Bottom ID: 2**
 
@@ -390,7 +390,7 @@ Hold Button|7740
 
 <!-- from https://hastebin.com/esodiweduq.cs -->
 
-For the Button, you may need to update the `COMMAND_CLASS_CENTRAL_SCENE` for each node in your `zwcfg` file with the following:
+Button의 경우 `zwcfg` 파일의 각 노드에 대해 `COMMAND_CLASS_CENTRAL_SCENE`을 다음과 같이 업데이트해야합니다. : 
 
 ```xml
       <CommandClass id="91" name="COMMAND_CLASS_CENTRAL_SCENE" version="1" request_flags="4" innif="true" scenecount="0">
@@ -400,7 +400,7 @@ For the Button, you may need to update the `COMMAND_CLASS_CENTRAL_SCENE` for eac
       </CommandClass>
 ```
 
-Below is a table of the action/scenes for the Button (as a reference for other similar devices):
+아래는 버튼의 액션/씬 표입니다(다른 유사한 장치에 대한 참조).
 
 **Action**|**scene\_id**|**scene\_data**
 :-----:|:-----:|:-----:
@@ -408,12 +408,12 @@ Single tap on|1|0
 Double tap on|1|3
 Triple tap on|1|4
 
-Tap and hold wakes up the Button.
+길게 누르면 버튼이 깨어납니다.
 
 ### Fibaro Keyfob FGKF-601
 
 
-For the Fibaro Keyfob, you may need to update the `COMMAND_CLASS_CENTRAL_SCENE` for each node in your `zwcfg` file with the following:
+Fibaro Keyfob의 경우 `zwcfg` 파일의 각 노드에 대해 `COMMAND_CLASS_CENTRAL_SCENE`을 다음과 같이 업데이트해야합니다.
 
 ```xml
       <CommandClass id="91" name="COMMAND_CLASS_CENTRAL_SCENE" version="1" request_flags="4" innif="true" scenecount="6">
@@ -428,7 +428,7 @@ For the Fibaro Keyfob, you may need to update the `COMMAND_CLASS_CENTRAL_SCENE` 
 </CommandClass>
 ```
 
-Below is a table of the action/scenes for the Keyfob (as a reference for other similar devices):
+아래는 Keyfob의 액션/씬 표입니다 (다른 유사한 장치에 대한 참조).
 
 **Action**|**scene\_id**|**scene\_data**
 :-----:|:-----:|:-----:
@@ -451,13 +451,13 @@ Button six (Triangle) single tap|6|7680
 Button six (Triangle) hold|6|7800
 Button six (Triangle) release|6|7740
 
-Press circle and plus simultaneously to wake up the device.
+서클과 플러스를 동시에 눌러 기기를 깨웁니다.
 
 ### Aeotec NanoMote Quad
 
 <!-- from https://products.z-wavealliance.org/products/2817 -->
 
-Once you've added the NanoMote to your z-wave network, you'll need to update your zwcfg_\*.xml file with the below xml data. Stop Home Assistant and open your zwcfg_\*.xml file (located in your config folder). Find the NanoMote device section and then its corresponding `CommandClass` section with id="91". Replace the entire CommandClass section with the below xml data. Save the file and restart Home Assistant.  
+z-wave 네트워크에 NanoMote를 추가한 후에는 아래 xml 데이터로 zwcfg_\*.xml 파일을 업데이트해야합니다. 홈어시스턴트를 중지하고 zwcfg_\*.xml 파일(config 폴더에 있음)을 여십시오. NanoMote 장치 섹션을 찾은 다음 id="91"로 해당하는 `CommandClass` 섹션을 찾으십시오. 전체 CommandClass 섹션을 아래 xml 데이터로 바꾸십시오. 파일을 저장하고 Home Assistant를 다시 시작하십시오.
 
 ```xml
     <CommandClass id="91" name="COMMAND_CLASS_CENTRAL_SCENE" version="1" request_flags="4" innif="true" scenecount="0">
@@ -470,7 +470,7 @@ Once you've added the NanoMote to your z-wave network, you'll need to update you
     </CommandClass>
 ```
 
-Below is a table of the action/scenes for the NanoMote Quad:
+아래는 NanoMote Quad의 액션/씬 표입니다.
 
 **Action**|**scene\_id**|**scene\_data**
 :-----:|:-----:|:-----:
@@ -487,7 +487,7 @@ Button four single tap|4|7680
 Button four hold|4|7800
 Button four release|4|7740
 
-Example Event:
+Event 예시 :
 
 ```yaml
     "event_type": "zwave.scene_activated",
@@ -502,7 +502,7 @@ Example Event:
 
 <!-- from https://hastebin.com/esodiweduq.cs -->
 
-For the Aeotec Wallmote, you may need to update the `COMMAND_CLASS_CENTRAL_SCENE` for each node in your `zwcfg` file with the following:
+Aeotec Wallmote의 경우 `zwcfg` 파일의 각 노드에 대해 `COMMAND_CLASS_CENTRAL_SCENE`을 다음과 같이 업데이트해야합니다.
 
 ```xml
       <CommandClass id="91" name="COMMAND_CLASS_CENTRAL_SCENE" version="1" request_flags="5" innif="true" scenecount="0">
@@ -516,7 +516,7 @@ For the Aeotec Wallmote, you may need to update the `COMMAND_CLASS_CENTRAL_SCENE
       </CommandClass>
 ```
 
-Below is a table of the action/scenes for the Wallmote (as a reference for other similar devices):
+다음은 Wallmote의 액션/씬 표입니다 (다른 유사한 장치에 대한 참조).
 
 **Action**|**scene\_id**|**scene\_data**
 :-----:|:-----:|:-----:
@@ -535,11 +535,11 @@ Button four release|4|1
 
 ### WallC-S Switch
 
-Use the same configuration as for the Aeotec Wallmote.
+Aeotec Wallmote와 동일한 설정을 사용하십시오.
 
 ### HANK One-key Scene Controller HKZN-SCN01/HKZW-SCN01
 
-For the HANK One-key Scene Controller, you may need to update the `COMMAND_CLASS_CENTRAL_SCENE` for each node in your `zwcfg` file with the following:
+HANK One-key Scene Controller의 경우 `zwcfg` 파일의 각 노드에 대해 `COMMAND_CLASS_CENTRAL_SCENE`을 다음과 같이 업데이트해야합니다.
 
 ```xml
       <CommandClass id="91" name="COMMAND_CLASS_CENTRAL_SCENE" version="1" request_flags="1" innif="true" scenecount="0">
@@ -549,7 +549,7 @@ For the HANK One-key Scene Controller, you may need to update the `COMMAND_CLASS
       </CommandClass>
 ```
 
-Below is a table of the action/scenes for the Button (as a reference for other similar devices):
+아래는 버튼의 액션/씬 표입니다 (다른 유사한 장치에 대한 참조).
 
 **Action**|**scene\_id**|**scene\_data**
 :-----:|:-----:|:-----:
@@ -559,7 +559,7 @@ Button release|1|1
 
 ### HANK Four-key Scene Controller HKZN-SCN04
 
-For the HANK Four-key Scene Controller, you may need to update the `COMMAND_CLASS_CENTRAL_SCENE` for each node in your `zwcfg` file with the following:
+HANK 4 키 씬 컨트롤러의 경우 `zwcfg` 파일의 각 노드에 대해 `COMMAND_CLASS_CENTRAL_SCENE`을 다음과 같이 업데이트해야합니다.
 
 ```xml
       <CommandClass id="91" name="COMMAND_CLASS_CENTRAL_SCENE" version="1" request_flags="5" innif="true" scenecount="0">
@@ -573,7 +573,7 @@ For the HANK Four-key Scene Controller, you may need to update the `COMMAND_CLAS
       </CommandClass>
 ```
 
-Below is a table of the action/scenes for the Buttons and associated Pictogram:
+아래는 버튼과 관련 픽토그램(Pictogram)의 액션/씬 표입니다.
 
 **Action**|**Pictogram**|**scene\_id**|**scene\_data**
 :-----:|:-----:|:-----:|:-----:
@@ -592,13 +592,13 @@ Button four release|Circle with Line|4|1
 
 ### Remotec ZRC-90 Scene Master
 
-To get the ZRC-90 Scene Master working in Home Assistant, you must first edit the `COMMAND_CLASS_CENTRAL_SCENE` in your `zwcfg` file.
+ZRC-90 Scene Master가 Home Assistant에서 작동하게 하려면 먼저 `zwcfg` 파일에 서`COMMAND_CLASS_CENTRAL_SCENE`을 편집해야합니다.
 
-1. Go the Z-Wave control panel in Home Assistant and make a note of the node number your ZRC-90 has been assigned.
-2. *Stop* Home Assistant.
-3. Make a backup of your `zwfcg` file, just in case.
-4. In the `zwcfg` file, find the `Node id` that corresponds to the number you noted in the first step.
-5. Within the `Node id` you identified, highlight everything between `<CommandClass id="91"` and `</CommandClass>` (inclusive) and paste in the following:
+1. 홈어시스턴트의 Z-Wave 제어판으로 이동하여 ZRC-90이 할당된 노드 번호를 기록하십시오.
+2. 홈어시스턴트 *Stop*.
+3. 만일을 대비하여 `zwfcg` 파일을 백업하십시오.
+4. `zwcfg` 파일에서 첫 번째 단계에서 적어둔 번호에 해당하는 `Node id`를 찾으십시오.
+5. 식별한 `Node id`에서`<CommandClass id="91"`와 `</CommandClass>`사이의 모든 항목을 강조 표시하고 다음을 붙여넣습니다. : 
 
     ```xml
     <CommandClass id="91" name="COMMAND_CLASS_CENTRAL_SCENE" version="1" request_flags="5" innif="true" scenecount="0">
@@ -616,16 +616,16 @@ To get the ZRC-90 Scene Master working in Home Assistant, you must first edit th
     </CommandClass>
     ```
 
-6. Save the changes you made the `zwcfg` file and start Home Assistant back up.
+6. `zwcfg` 파일의 변경 사항을 저장하고 Home Assistant 백업을 시작하십시오.
 
-Button presses will trigger `zwave.scene_activated` with the following:
+버튼을 누르면 다음과 같이 `zwave.scene_activated`가 트리거됩니다.
 
 - `node_id`: the node of your Scene Master (useful if you have more than one)
 - `scene_id`: the number button you press (1-8)
 - `scene_data`: the type of press registered (see below)
 
-The Scene Master has eight buttons which can send four actions.
-The type of action is reflected in the `scene_data` parameter:
+Scene Master에는 4 개의 액션을 보낼 수있는 8 개의 버튼이 있습니다.
+액션 유형은 `scene_data` 매개 변수에 반영됩니다. : 
 
 **Action**|**scene\_data**
 :-----:|:-----:
@@ -634,7 +634,7 @@ Long press (2s) | 1
 Release from hold | 2
 Double-press | 3
 
-Let's see how this works in an automation for a Scene Master that's assigned as Node 7:
+노드 7로 지정된 Scene Master의 자동화에서 이것이 어떻게 작동하는지 봅시다. : 
 
 ```yaml
 - id: '1234567890'
@@ -655,7 +655,7 @@ Let's see how this works in an automation for a Scene Master that's assigned as 
 
 ### RFWDC Cooper 5-button Scene Control Keypad
 
-For the RFWDC Cooper 5-button Scene Control Keypad, you may need to update the `COMMAND_CLASS_CENTRAL_SCENE` for each node in your `zwcfg` file with the following:
+RFWDC Cooper 5 버튼 씬 제어 키패드의 경우 `zwcfg` 파일의 각 노드에 대해 `COMMAND_CLASS_CENTRAL_SCENE`을 다음과 같이 업데이트해야합니다.
 
 ```xml
 <CommandClass id="91" name="COMMAND_CLASS_CENTRAL_SCENE" version="1" request_flags="5" innif="true" scenecount="0">
@@ -669,7 +669,7 @@ For the RFWDC Cooper 5-button Scene Control Keypad, you may need to update the `
 </CommandClass>
 ```
 
-Below is a table of the action/scenes for the Buttons:
+아래는 버튼의 액션/씬의 표입니다.
 
 **Action**|**scene\_id**
 :-----:|:-----:
@@ -679,9 +679,9 @@ Button three tap|3
 Button four tap|4
 Button five tap|5
 
-When a button turns off, the controller sends `basic_set` in a generic `node_event` and does not specify which button was pressed. The status of the buttons is encoded into the `indicator` value, so in order to determine the status of each button, you need to refresh the indicator value. You can also control the LEDs for each button by setting the indicator value. For responsiveness, automations should be triggered with `zwave.scene_activated` events rather than the switch status.
+버튼이 꺼지면 컨트롤러는 일반 `node_event`에서 `basic_set`을 보내고 어떤 버튼을 눌렀는지 지정하지 않습니다. 버튼의 상태는 `indicator` 값으로 인코딩되므로 각 버튼의 상태를 확인하려면 indicator 값을 새로 고쳐야합니다. indicator 값을 설정하여 각 버튼의 LED를 제어할 수도 있습니다. 응답성을 위해서는 스위치 상태가 아닌 `zwave.scene_activated` 이벤트로 자동화를 트리거해야합니다.
 
-Here is an example configuration needed for the scene controller:
+씬 컨트롤러에 필요한 설정 예는 다음과 같습니다.
 
 {% raw %}
 ```yaml
@@ -778,13 +778,13 @@ switch:
 
 ### HeatIt/ThermoFloor Z-Push Button 2/8 Wall Switch
 
-To get the Z-Push Button 2 or the Z-Push Button 8 working in Home Assistant, you must first edit the `COMMAND_CLASS_CENTRAL_SCENE` in your `zwcfg` file.
+Z-Push Button 2 또는 Z-Push Button 8을 Home Assistant에서 작동시키려면 먼저 `zwcfg` 파일에서 `COMMAND_CLASS_CENTRAL_SCENE`을 편집해야합니다.
 
-1. Go the Z-Wave control panel in Home Assistant and make a note of the node number your wall switch has been assigned.
-2. *Stop* Home Assistant.
-3. Make a backup of your `zwfcg` file, just in case.
-4. In the `zwcfg` file, find the `Node id` that corresponds to the number you noted in the first step.
-5. Within the `Node id` you identified, highlight everything between `<CommandClass id="91"` and `</CommandClass>` (inclusive) and paste in the following:
+1. 홈어시스턴트의 Z-Wave 제어판으로 이동하여 벽 스위치에 할당된 노드 번호를 기록하십시오.
+2. 홈어시스턴트 *Stop*.
+3. 만일을 대비하여 `zwfcg` 파일을 백업하십시오.
+4. `zwcfg` 파일에서 첫 번째 단계에서 적어둔 번호에 해당하는 `Node id`를 찾으십시오.
+5. 식별한 `Node id`에서 `<CommandClass id="91"`와 `</CommandClass>` 사이의 모든 항목을 강조 표시하고 다음을 붙여 넣습니다. :
     - 5.1 For the Z-Push Button 2:
 
     ```xml
@@ -811,10 +811,10 @@ To get the Z-Push Button 2 or the Z-Push Button 8 working in Home Assistant, you
         </CommandClass>
     ```
 
-6. Save the changes you made the `zwcfg` file and start Home Assistant back up.
+6. `zwcfg` 파일의 변경 사항을 저장하고 Home Assistant 백업을 시작하십시오.
 
-Button presses will trigger `zwave.scene_activated` with the following:
+버튼을 누르면 다음과 같이 `zwave.scene_activated`가 트리거됩니다.
 
-- `scene_id`: the number of the button you press from top left (1) to bottom right (8)
+- `scene_id`: 왼쪽 위(1)에서 오른쪽 아래(8)까지 누르는 버튼의 수
 
 {% endraw %}

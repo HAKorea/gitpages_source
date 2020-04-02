@@ -4,7 +4,7 @@ sidebar_label: Gauge
 description: "The Gauge card allows you to display sensor information visually"
 ---
 
-gauge 카드는 센서 데이터를 시각적으로 볼 수있는 기본 카드
+게이지(gauge) 카드는 센서 데이터를 시각적으로 볼 수 있는 기본 카드입니다. 
 
 <p class='img'>
 <img src='/images/lovelace/lovelace_gauge_card.gif' alt='Screenshot of the gauge card'>
@@ -23,7 +23,7 @@ type:
   type: string
 entity:
   required: true
-  description: "표시 할 엔티티 ID"
+  description: "표시할 엔티티 ID"
   type: string
 name:
   required: false
@@ -64,13 +64,13 @@ severity:
       type: integer
     red:
       required: true
-      description: 붉은 색을 시작할 값
+      description: 붉은색을 시작할 값
       type: integer
 {% endconfiguration %}
 
 ## 예시
 
-제목 및 측정 단위 예:
+제목과 측정 단위 예:
 
 ```yaml
 type: gauge
@@ -81,10 +81,10 @@ entity: sensor.cpu_usage
 
 <p class='img'>
 <img src='/images/lovelace/lovelace_gauge_card.gif' alt='Screenshot of the gauge card with custom title and unit of measurement'>
-사용자 정의 제목 및 측정 단위가있는 gauge 카드의 스크린 샷.
+사용자 정의 제목과 측정 단위가 있는 게이지 카드의 스크린 샷.
 </p>
 
-심각도 맵을 정의 :
+심각도 수준(map)을 정의 :
 
 ```yaml
 type: gauge

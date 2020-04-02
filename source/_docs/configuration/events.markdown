@@ -55,7 +55,7 @@ Field | Description
 ----- | -----------
 `domain` | 서비스 도메인. 예: `light`.
 `service` | 호출할 서비스입니다. 예: `turn_on`
-`service_data` | 서비스 호출 매개 변수가있는 상세내용 예:  `{ 'brightness': 120 }`.
+`service_data` | 서비스 호출 매개 변수가 있는 상세내용 예: `{ 'brightness': 120 }`.
 `service_call_id` | unique 호출 ID를 가진 문자열입니다. 예: `23123-4`.
 
 ### Event `service_executed`

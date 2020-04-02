@@ -9,15 +9,15 @@ ha_release: 0.61
 ha_iot_class: Cloud Polling
 ---
 
-<div class='videoWrapper'>
-<iframe width="690" height="437" src="https://www.youtube.com/embed/rxqSG7o5N6Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-
  `darksky` 플랫폼은 [Dark Sky](https://darksky.net/) 웹서비스를 사용자 위치의 기상 데이터 소스로 사용합니다.
 
 ## 설정
 
-무료이긴 하지만 [가입](https://darksky.net/dev/register)을 한 이후 API키를 받아야 합니다. 무료서비스로는 하루에 최대 1000번의 데이터 사용을 허용하며 플랫폼은 최대 3 분마다 최대 480번을 사용하여 업데이트합니다. (보통은 그 이하로 사용하므로 개인사용자는 무료로 사용 가능)
+<div class='note warning'>
+
+2020 년 3 월 31 일 Dark Sky는 [Apple에서 인수](https://blog.darksky.net/dark-sky-has-a-new-home/)로 더이상 새로운 API 등록을 허용하지 않습니다. Dark Sky API는 2021 년 말까지 기존 사용자에게 계속 작동하지만 더이상 새로운 사용자를 위한 API 키를 얻을 수 없습니다.
+
+</div>
 
 <div class='note warning'>
 

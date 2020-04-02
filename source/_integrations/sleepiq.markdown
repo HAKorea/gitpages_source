@@ -18,7 +18,7 @@ SleepIQ 구현을 통해 [SleepIQ by SleepNumber](https://www.sleepnumber.com/sl
 
 ## 셋업
 
-이 구성 요소를 사용하려면 [SleepIQ] (https://sleepiq.sleepnumber.com/)에 계정이 필요합니다.
+이 구성 요소를 사용하려면 [SleepIQ](https://sleepiq.sleepnumber.com/)에 계정이 필요합니다.
 
 ## 설정
 

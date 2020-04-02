@@ -6,19 +6,19 @@ regenerate: true
 hide_github_edit: true
 ---
 
-다음은 홈어시스턴트 설정의 예시들입니다. 대부분의 예시들은 [automation] 자동화 기능을 사용하여 [automation related][sec-automation]과 [organization]의 통합구성요소를 응용하여 설정한 것들입니다. 
+다음은 홈어시스턴트 설정의 예시들입니다. 대부분의 예시들은 [Automation] 기능을 사용하여 [Automation 관련][sec-automation]과 [organization]의 통합구성요소를 응용하여 설정한 것들입니다. 
 
-[`python_script:` examples](/integrations/python_script/)를 예시를 살펴보기 위해선  [Scripts section](https://community.home-assistant.io/c/projects/scripts) 포럼을 방문해주세요.
+[`python_script:` 사례](/integrations/python_script/)의 예시를 살펴보기 위해선 [Scripts 색션](https://community.home-assistant.io/c/projects/scripts) 포럼을 방문해주세요.
 
 [automation]: /getting-started/automation/
 [sec-automation]: /integrations/#automation
 [organization]: /integrations/#organization
 
-새로운 설정(recipes)은 [home-assistant.io repository](https://github.com/home-assistant/home-assistant.io/tree/current/source/_cookbook)에 추가될 수 있습니다.
+새로운 설정(recipes)은 [home-assistant.io 저장소](https://github.com/home-assistant/home-assistant.io/tree/current/source/_cookbook)에 추가될 수 있습니다.
 
 <div class='note'>
 
-최신 유행하는 설정을 찾기 위한 최적의 방법은 `home-assistant-config` topic으로 [GitHub search](https://github.com/search?q=topic%3Ahome-assistant-config&type=Repositories)에서 검색하는 것입니다. 
+최신 유행하는 설정을 찾기 위한 최적의 방법은 `home-assistant-config` 주제로 [GitHub 검색](https://github.com/search?q=topic%3Ahome-assistant-config&type=Repositories)에서 찾는 것입니다. 
 
 </div>
 

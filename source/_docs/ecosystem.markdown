@@ -1,6 +1,6 @@
 ---
 title: "생태계"
-description: "홈 어시스턴트를 위한 외부 도구"
+description: "홈어시스턴트를 위한 외부 도구"
 redirect_from: /ecosystem/
 ---
 

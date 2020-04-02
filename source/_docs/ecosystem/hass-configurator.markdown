@@ -6,7 +6,7 @@ redirect_from: /ecosystem/hass-configurator/
 
 ### 홈어시스턴트 Configuration UI
 
-현재 홈어시스턴트가 프론트 엔드를 통해 사용하는 YAML 파일을 편집할 수있는 좋은 방법이 없기 때문에 여기에는 설정을 보다 쉽게 ​​해주는 작은 웹앱이 있습니다. 홈어시스턴트의 설정 파일에 사용되는 포맷인 YAML에 대한 문법 강조 표시가 있는 사용자 정의이며 시스템에 내장된 [Ace editor](https://ace.c9.io/) 입니다. 편집하려는 파일을 선택할 수있는 통합 파일 브라우저도 있습니다. 파일 편집을 마치면 저장 버튼을 클릭하기 만하면 변경 사항이 적용됩니다. 이것은 본질적으로 SSH, Windows + SMB, Github 등을 통해 설정을 수정하는 브라우저 기반의 대체 방법입니다.
+현재 홈어시스턴트가 프론트 엔드를 통해 사용하는 YAML 파일을 편집할 수 있는 좋은 방법이 없기 때문에 여기에는 설정을 보다 쉽게 ​​해주는 작은 웹앱이 있습니다. 홈어시스턴트의 설정 파일에 사용되는 포맷인 YAML에 대한 문법 강조 표시가 있는 사용자 정의이며 시스템에 내장된 [Ace editor](https://ace.c9.io/) 입니다. 편집하려는 파일을 선택할 수있는 통합 파일 브라우저도 있습니다. 파일 편집을 마치면 저장 버튼을 클릭하기 만하면 변경 사항이 적용됩니다. 이것은 본질적으로 SSH, Windows + SMB, Github 등을 통해 설정을 수정하는 브라우저 기반의 대체 방법입니다.
 
 <p class='img'>
 <img src='/images/hassio/screenshots/addon-hass-configurator.png'>
@@ -48,7 +48,7 @@ Screenshot of the Configurator.
 #### LISTENPORT (integer)
 서비스가 수신하는 포트입니다. 기본적으로 `3218`을 사용하지만, 필요한 경우이를 변경할 수 있습니다.
 #### BASEPATH (string)
-configurator.py를 다른 곳에 배치 할 수 있습니다. `BASEPATH`를 `"/home/homeassistant/.homeassistant"`같은 곳으로 세팅하면, 어디에서 실행하든 해당 경로에서 파일을 읽어옵니다. systemd를 사용하여 configurator를 실행하거나 configurator를 데몬화하는 다른 방법을 사용하려는 경우에 필요합니다.
+configurator.py를 다른 곳에 배치할 수 있습니다. `BASEPATH`를 `"/home/homeassistant/.homeassistant"`같은 곳으로 세팅하면, 어디에서 실행하든 해당 경로에서 파일을 읽어옵니다. systemd를 사용하여 configurator를 실행하거나 configurator를 데몬화하는 다른 방법을 사용하려는 경우에 필요합니다.
 #### SSL_CERTIFICATE / SSL_KEY (string)
 SSL을 사용하는 경우 여기에서 SSL 파일의 경로를 설정하십시오.  이는 홈어시스턴트에서 수행 할 수있는 SSL 설정과 유사합니다.
 #### HASS_API (string)

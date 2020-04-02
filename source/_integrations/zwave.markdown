@@ -24,6 +24,17 @@ ha_codeowners:
 <iframe width="690" height="437" src="https://www.youtube.com/embed/BrZhsSpv3BY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
+[Z-Wave](https://www.z-wave.com/)는 우리나라에서 [**스마트홈을 가장 먼저 시작한 통신사인 LG유플러스**](https://www.uplus.co.kr/ent/shome/SmartHomeInfo.hpi)의 장치들을 HA에서 사용할 수 있습니다. 
+
+대신 LG유플러스에서 제공하는 자체적인 서비스는 사용할 수 없지만, 기존 [Z-WAVE LG유플러스 동글](http://www.grib-iot.com/iotdevice/iot_hub_dongle.asp)을 활용하여 HA에서 Z-WAVE 환경을 어렵지 않게 만들 수 있습니다. 
+
+기존에 LG유플러스에서 쓰던 [플러그](https://m.blog.naver.com/activetia/220901736851), [스위치](https://www.uplus.co.kr/ent/shome/IotswiInfo.hpi), 심지어 도어락까지 어렵지 않게 페어링해서 쓸 수 있습니다. 
+
+[다모아님의 Z-WAVE USB 동글 설치기](https://cafe.naver.com/koreassistant/198)를 참조하시고 LG유플러스 USB동글에 동일하게 적용할 시 기존의 Z-WAVE 장치들을 어렵지않게 쓰실 수 있습니다. 
+
+----------------------------------------------------------------------------------------------
+이하 Z-WAVE 번역
+
 Home Assistant의 [Z-Wave](https://www.z-wave.com/) 통합구성요소를 통해 연결된 Z-Wave 장치를 관찰하고 제어할 수 있습니다. Z-Wave 컴포넌트 사용과 설정 방법에 대한 자세한 문서는 [Z-Wave getting started section](/docs/z-wave/)을 참조하십시오.
 
 현재 홈어시스턴트에서 다음 장치 유형이 지원됩니다.

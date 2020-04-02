@@ -4,7 +4,7 @@ sidebar_label: Plant Status
 description: "The Plant card gives you an easy way of viewing the status of your plants"
 ---
 
-아름다운 식물원을 위한 카드입니다. 나무를 키우거나 화분을 관리할 수 있는 카드입니다. 
+아름다운 정원을 위한 카드입니다. 나무를 키우거나 화분을 관리할 수 있는 카드입니다. 
 
 <p class='img'>
 <img src='/images/lovelace/lovelace_plant_card.png' alt='Screenshot of the plant status card'>
@@ -22,7 +22,7 @@ entity:
   type: string
 name:
   required: false
-  description: 이름을 덮어 씁니다
+  description: 이름을 덮어씁니다
   type: string
   default: 엔터티 이름
 theme:

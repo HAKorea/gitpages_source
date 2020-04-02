@@ -13,13 +13,13 @@ ha_codeowners:
   - '@frenck'
 ---
 
-AdGuard Home은 Parental Control(성인 컨텐츠 차단)이 가능하며 네트워크 전체의 광고 및 추적기 차단 기능을 하는 DNS서버입니다. `adguard` 통합구성요소는 Home Assistant에서 AdGuard Home 인스턴스를 제어하고 모니터링 할 수 있습니다.
+AdGuard Home은 Parental Control(성인 컨텐츠 차단)이 가능하며 네트워크 전체의 광고와 추적기 차단 기능을 하는 DNS서버입니다. `adguard` 통합구성요소는 Home Assistant에서 AdGuard Home 인스턴스를 제어하고 모니터링할 수 있습니다.
 
 [AdGuard Home]((https://github.com/hassio-addons/addon-adguard-home))은 Home Assistant Add-on에 몇번의 클릭으로 설치할 수 있도록 Add-on으로 제공합니다. 
 HA에서 **Supervisor**로 이동하시고 **ADD-ON STORE**에서 **Home Assistant Community Add-ons**에서 **AdGuard Home** 을 찾아 설치하십시오. 
 
 --------------------------------------------------------------------------
-이하 차후 번역 
+이하 adguard 번역
 
 
 ## 프론트 엔드를 통한 설정
@@ -53,7 +53,7 @@ Menu: **설정** -> **통합구성요소**.
 - Safe Search.
 - Query Log.
 
-이 스위치를 사용하면 작업(things)을 쉽게 자동화 할 수 있습니다. 예를 들어, 어린이가 잠든 후 세이프 서치를 끄는 자동화를 만들 수 있습니다.
+이 스위치를 사용하면 작업(things)을 쉽게 자동화할 수 있습니다. 예를 들어, 어린이가 잠든 후 세이프 서치를 끄는 자동화를 만들 수 있습니다.
 
 "AdGuard Protection" 스위치는 마스터 스위치입니다. 전원이 켜져 있는지 여부에 관계없이 모든 AdGuard 기능이 꺼지고 무시됩니다.
 
@@ -64,8 +64,8 @@ AdGuard는 통계를 제공하기 위해 쿼리 로그를 사용합니다.
 
 ## 서비스
 
-이러한 서비스를 통해 AdGuard Home에서 필터 구독(filter subscriptions)을 관리 할 수 ​​있습니다.
-자동화에서 이러한 서비스를 사용하면 특정 시간에 특정 사이트/도메인을 차단하는 데 도움이 될 수 있습니다.
+이러한 서비스를 통해 AdGuard Home에서 필터 구독(filter subscriptions)을 관리할 수 ​​있습니다.
+자동화에서 이러한 서비스를 사용하면 특정 시간에 특정 사이트/도메인을 차단하는데 도움이 될 수 있습니다.
 
 예를 들어 낮에는 소셜 미디어 사이트를 차단하고 저녁에는 해제하는 사용자 지정 필터 목록을 만들 수 있습니다.
 

@@ -22,11 +22,11 @@ ha_codeowners:
 <iframe width="776" height="437" src="https://www.youtube.com/embed/HtCLiuSSS_Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-[dresden elektronik](https://www.dresden-elektronik.de)의 [deCONZ](https://www.dresden-elektronik.de/funk/software/deconz.html)는 ConBee/RaspBee Zigbee 게이트웨이와 통신하고 게이트웨이에 연결된 Zigbee 장치를 보여주는 소프트웨어입니다.
+[드레스덴 일렉트로닉사](https://www.dresden-elektronik.de)의 [deCONZ](https://www.dresden-elektronik.de/funk/software/deconz.html)는 ConBee/RaspBee Zigbee 게이트웨이와 통신하고 게이트웨이에 연결된 Zigbee 장치를 보여주는 소프트웨어입니다.
 
 [deCONZ REST API](https://dresden-elektronik.github.io/deconz-rest-doc/).
 
-현재 홈 어시스턴트에서 다음 장치 유형이 지원됩니다. :
+현재 홈어시스턴트에서 다음 장치 유형이 지원됩니다. :
 
 
 - [Binary Sensor](#binary-sensor)
@@ -48,15 +48,15 @@ ha_codeowners:
 
 ## 설정
 
-`configuration.yaml` 파일에 `discovery : `가 있으면 Home Assistant는 네트워크에서 deCONZ를 자동으로 감지합니다.
+`configuration.yaml` 파일에 `discovery:`가 있으면 Home Assistant는 네트워크에서 deCONZ를 자동으로 감지합니다.
 
-API 키가 없는 경우 Philips Hue와 유사한 원클릭 기능을 사용하여 deCONZ 용 API 키를 생성할 수 있습니다. Phoscon 앱에서 **Settings** → **Gateway** → **Advanced** → **Authenticate app** 으로 이동 한 후 홈어시스턴트 프론트 엔드의 deCONZ 설정을 사용하여 API 키를 작성하십시오. deCONZ 설정을 마치면 설정 항목으로 저장됩니다.
+API 키가 없는 경우 Philips Hue와 유사한 원클릭 기능을 사용하여 deCONZ용 API 키를 생성할 수 있습니다. Phoscon 앱에서 **Settings** → **Gateway** → **Advanced** → **Authenticate app** 으로 이동한 후 홈어시스턴트 프론트 엔드의 deCONZ 설정을 사용하여 API 키를 작성하십시오. deCONZ 설정을 마치면 설정 항목으로 저장됩니다.
 
 통합구성요소 페이지로 이동하여 deCONZ를 수동으로 추가할 수 있습니다.
 
-## 디버깅 
+## 연동 디버깅 
 
-deCONZ 또는 연동에 문제가 있는 경우 로그에 디버그 출력을 추가할 수 있습니다.
+deCONZ가 혹은 해당 연동에 문제가 있는 경우 로그에 디버그 출력을 추가할 수 있습니다.
 
 ```yaml
 logger:
@@ -68,15 +68,15 @@ logger:
 
 ## 문제 해결
 
-문제가 발생하여 문제를 보고하려는 경우 항상 최신 [deCONZ software version](https://github.com/dresden-elektronik/deconz-rest-plugin/releases) 및 [latest firmware for hardware](http://deconz.dresden-elektronik.de/deconz-firmware/?C=M;O=D)를 사용하고 있는지 확인하십시오 .
+문제가 발생하여 문제를 보고하려는 경우 항상 최신 [deCONZ 소프트웨어 버전](https://github.com/dresden-elektronik/deconz-rest-plugin/releases)과 [최신 펌웨어 버전](http://deconz.dresden-elektronik.de/deconz-firmware/?C=M;O=D)을 사용하고 있는지 확인하십시오.
 
 ## 장치 서비스
 
-사용 가능한 서비스: `configure` 및 `deconz.device_refresh`.
+사용 가능한 서비스: `configure`, `deconz.device_refresh`.
 
 ### `deconz.configure` 서비스
 
-[REST-API](https://dresden-elektronik.github.io/deconz-rest-doc/rest/) 를 사용하여 deCONZ에서 장치의 속성 설정
+[REST-API](https://dresden-elektronik.github.io/deconz-rest-doc/rest/)를 사용하여 deCONZ에서 장치의 속성 설정
 
 | Service data attribute | Optional | Description |
 |-----------|----------|-------------|
@@ -104,16 +104,15 @@ logger:
 
 #### `deconz.device_refresh` 서비스
 
-Home Assistants가 최근에 다시 시작된 후 deCONZ에 추가된 장치로 새로 고칩니다.
+Home Assistants가 최근에 다시시작된 후 deCONZ에 추가된 장치로 새로 고칩니다.
 
 참고: 새 센서가 추가되면 deCONZ가 자동으로 Home Assistant에 신호를 보내지만 이 시점에서(deCONZ v2.05.35) 다른 장치를 추가할 경우 이 서비스를 사용하여 수동으로 추가하거나 홈어시스턴트를 다시 시작해야합니다.
 
 ## 리모콘 장치
 
-원격 제어 (ZHASwitch 범주)는 일반 엔티티로 표시되지 않고 페이로드가 `id`와 `event`인 `deconz_event`라는 이벤트로 표시되고 Aqara Magic Cube의 경우 `gesture`로 나타납니다. Id는 deCONZ의 장치 이름이고 Event는 스위치의 순간 상태입니다. gesture는 90도 뒤집기, 180도 뒤집기, 시계 방향 및 시계 반대 방향 회전과 같은 Aqara Magic Cube 특정 이벤트에 사용됩니다. 그러나 deCONZ에 의해 보고된 sensor.device_name_battery_level 이라는 스위치의 배터리 레벨을 표시하는 센서 엔티티가 작성됩니다. 
+원격 제어(ZHASwitch 카테고리)는 일반 엔티티로 표시되지 않고 페이로드가 `id`와 `event`인 `deconz_event`라는 이벤트로 표시되고 Aqara Magic Cube의 경우 `gesture`로 나타납니다. Id는 deCONZ의 장치 이름이고 Event는 스위치의 순간 상태입니다. gesture는 90도 뒤집기, 180도 뒤집기, 시계 방향, 시계 반대 방향 회전과 같은 Aqara Magic Cube 특정 이벤트에 사용됩니다. 한편 deCONZ에 의해 보고된 sensor.device_name_battery_level 이라는 스위치의 배터리 레벨을 표시하는 센서 엔티티가 작성됩니다. 
 
-Typical values for switches, the event codes are 4 numbers where the first and last number are of interest here. 
-스위치의 일반적인 값인 이벤트 코드는 4개의 숫자입니다. 여기서 첫 번째 숫자와 마지막 숫자가 중요합니다.
+스위치의 일반적인 값인 이벤트 코드는 여기에서 첫 번째 숫자와 마지막 숫자가 관심을 끄는 4 개의 숫자입니다.
 
 | Switch code | Description |
 |-------------|-------------|
@@ -142,11 +141,11 @@ Aqara Magic Cube의 특정 제스처는 :
 
 ### 이벤트 찾기 (Finding your events)
 
-**개발자 도구 -> 이벤트**로 이동하십시오 . **Listen to events** 섹션에서 `deconz_event`를 추가하고 **START LISTENING**을 누릅니다. deCONZ의 모든 이벤트가 표시되고 로그를 모니터링하는 동안 원격 버튼을 누르면 원하는 이벤트를 쉽게 찾을 수 있습니다.
+**개발자 도구 -> 이벤트**로 이동하십시오 . **이벤트 내용 들어보기** 섹션에서 `deconz_event`를 추가하고 **청취 시작**을 누릅니다. deCONZ의 모든 이벤트가 표시되고 로그를 모니터링하는 동안 원격 버튼을 누르면 원하는 이벤트를 쉽게 찾을 수 있습니다.
 
 ### 장치 트리거
 
-자동화에서 원격 제어 장치 사용을 단순화하기 위해 deCONZ 통합구성요소는 장치를 장치 트리거로 표시합니다. 이렇게하면 가능한 모든 버튼 누름 및 회전 변형이 보입니다. 이 목록은 수동으로 선별된 목록이며 deCONZ가 지원하는 것만큼 초기에는 완성되지 않습니다.
+자동화에서 원격 제어 장치 사용을 단순화하기 위해 deCONZ 통합구성요소는 장치를 장치 트리거로 표시합니다. 이렇게하면 가능한 모든 버튼 누름, 회전 변형이 보입니다. 이 목록은 수동으로 선별된 목록이며 deCONZ가 지원하는 것만큼 초기에는 완성되지 않습니다.
 
 장치 트리거로 현재 지원되는 장치 :
 
@@ -165,7 +164,7 @@ Aqara Magic Cube의 특정 제스처는 :
 
 #### 새로운 장치 트리거에 대한 지원 요청
 
-추가 장치에 대한 지원을 요청하려면 장치 모델(디버그 로그에서 얻을 수 있음)과 동작 및 버튼 이벤트 매핑 (예: Hue dimmer remote model “RWL021”, Short press on 1000)이 필요합니다.
+추가 장치에 대한 지원을 요청하려면 장치 모델(디버그 로그에서 얻을 수 있음)과 액션과 버튼 이벤트 매핑 (예: Hue dimmer remote model “RWL021”, Short press on 1000)이 필요합니다.
 
 ## 사례
 
@@ -320,7 +319,7 @@ class RemoteControl(hass.Hass):
 
 #### Appdaemon 원격 템플릿
 
-[Teachingbirds](https://community.home-assistant.io/u/teachingbirds/summary)의 커뮤니티앱. 이 앱은 Ikea Tradfri 리모컨을 사용하여 재생/일시정지, 볼륨 증가 및 감소, 다음 및 이전 트랙으로 Sonos 스피커를 제어합니다.
+[Teachingbirds](https://community.home-assistant.io/u/teachingbirds/summary)의 커뮤니티앱. 이 앱은 Ikea Tradfri 리모컨을 사용하여 재생/일시정지, 볼륨 증가와 감소, 다음과 이전 트랙으로 Sonos 스피커를 제어합니다.
 
 {% raw %}
 
@@ -376,7 +375,7 @@ class SonosRemote(hass.Hass):
 
 ## Binary 센서
 
-다음과 같은 센서 유형이 지원 :
+다음과 같은 센서 유형을 지원 :
 
 - 화재/연기 감지
 - 개폐 감지
@@ -403,7 +402,7 @@ class SonosRemote(hass.Hass):
 
 Climate는 통상 온도조절기를 나타냅니다.
 
-climate 플랫폼의 장치는 센서로 식별되므로 climate 장치인 "센서"를 정의하는 수동 선별 목록이 있습니다.
+climate 플랫폼의 장치는 센서로 식별되므로 climate 장치인 "sensor"를 정의하는 수동 선별 목록이 있습니다.
 
 `entity_id` 이름은 `climate.device_name`이며, 여기서 `device_name`은 deCONZ에 정의되어 있습니다.
 
@@ -416,7 +415,7 @@ climate 플랫폼의 장치는 센서로 식별되므로 climate 장치인 "센�
 
 Cover는 환기 댐퍼 또는 스마트 창 커버와 같은 장치입니다.
 
-Cover 플랫폼의 장치는 라이트로 식별되므로 어떤 "Light"가 Cover인지를 정의하는 수동으로 선별된 목록이 있습니다. 따라서 deCONZ(Phoscon App)에서 Cover 장치를 Light 장치로 추가합니다.
+Cover 플랫폼의 장치는 Light로 식별되므로 어떤 "Light"가 Cover인지를 정의하는 수동으로 선별된 목록이 있습니다. 따라서 deCONZ(Phoscon 앱)에서 Cover 장치를 Light 장치로 추가합니다.
 
 `entity_id` 이름은 `cover.device_name`이며, 여기서 `device_name`은 deCONZ에 정의되어 있습니다.
 
@@ -451,9 +450,9 @@ Cover 플랫폼의 장치는 라이트로 식별되므로 어떤 "Light"가 Cove
 - Busch Jaeger ZigBee Light Link univ. relai (6711 U) with ZigBee Light Link control element 6735-84
 - Xiaomi Aqara Smart Led Bulb (white) E27 ZNLDP12LM 
 
-## 장면,씬 (Scene)
+## 씬(Scene)
 
-`entity_id` 이름은`scene.group_scene_name`이 됩니다. 여기서 `group`은 장면(scene)이 속한 그룹이고 장면 이름, 그룹과 이름 모두 deCONZ에 정의되어 있습니다.
+`entity_id` 이름은 `scene.group_scene_name`이 됩니다. 여기서 `group`은 씬이 속한 그룹이고 씬 이름, 그룹 이름 모두 deCONZ에 정의되어 있습니다.
 
 ## 센서
 
@@ -496,26 +495,26 @@ deCONZ Daylight 센서는 버전 2.05.12 이후 deCONZ 소프트웨어에 내장
 |--------------|-------------|
 | sunrise_start | 일출 (태양의 가장자리가 수평선에 나타남) |
 | sunrise_end | 일출이 끝납니다 (태양의 아래쪽 가장자리가 수평선에 닿음) |
-| golden_hour_1 | 아침 황금 시간 (소프트 라이트, 사진 촬영에 가장 좋은 시간) |
+| golden_hour_1 | 아침 최적 시간 (소프트 라이트, 사진 촬영에 가장 좋은 시간) |
 | solar_noon | 정오 (태양이 가장 높은 위치에 있음) |
-| golden_hour_2 | 저녁 황금 시간 |
+| golden_hour_2 | 저녁 최적 시간 |
 | sunset_start | 일몰이 시작됩니다 (태양의 아래쪽 가장자리가 수평선에 닿음) |
-| sunset_end | 일몰 (해가 수평선 아래에서 사라지고, 저녁 시민 황혼이 시작됩니다) |
-| dusk | 황혼 (저녁 해상 황혼의 시작) |
-| nautical_dusk | 해상 황혼 (저녁 천문 황혼 시작) |
-| night_start | 야간 시작 (천문학적 관측에 충분한 어둠) |
+| sunset_end | 일몰 (해가 수평선 아래에서 사라지고, 저녁 민간관측 황혼이 시작됩니다) |
+| dusk | 황혼 (저녁 황혼의 시작) |
+| nautical_dusk | 해상관측 황혼 (저녁 해상관측 황혼 시작) |
+| night_start | 야간 시작 (천문관측에 충분한 어둠) |
 | nadir | nadir (밤의 가장 어두운 순간, 태양은 가장 낮은 위치에 있습니다) |
-| night_end | 밤의 끝 (아침 천문학적 황혼이 시작된다) |
-| nautical_dawn | 해상 새벽 (아침 해상 황혼이 시작됩니다) |
+| night_end | 밤의 끝 (아침 천문관측 황혼이 시작된다) |
+| nautical_dawn | 해상관측 새벽 (아침 해상관측 황혼이 시작됩니다) |
 | dawn | 새벽 (아침 황혼이 시작됩니다) |
 
 센서에는 "daylight" 라는 속성이 있는데, 센서 상태가 `golden_hour_1`, `solar_noon` 또는 `golden_hour_2`이면 `true`값을 가지며 그렇지 않으면 `false`입니다.
 
-이러한 상태는 자동화에서 트리거 (예: 특정 일광 단계가 시작되거나 종료 될 때 트리거) 또는 조건 (예: 특정 일광 단계에있는 경우에만 트리거)으로 사용될 수 있습니다.
+이러한 상태는 자동화에서 트리거 (예: 특정 일광 단계가 시작되거나 종료될 때 트리거) 또는 조건 (예: 특정 일광 단계에있는 경우에만 트리거)으로 사용될 수 있습니다.
 
 ## 스위치
 
-스위치는 전원 플러그 및 사이렌과 같은 장치입니다.
+스위치는 전원 플러그와 사이렌 같은 장치입니다.
 
 스위치 플랫폼의 장치는 Light으로 식별되므로 스위치인 "Light"을 정의하는 수동으로 선별된 목록이 있습니다.
 

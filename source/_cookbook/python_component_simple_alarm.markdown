@@ -4,9 +4,9 @@ description: "Detect intruders by checking if the light is turning on while no o
 ha_category: Automation in Python Examples
 ---
 
-이 예제는 침입자를 탐지합니다. 집에 사람이 없을 때 조명이 켜져 있는지 확인하면됩니다. 이 경우 표시등이 빨간색으로 바뀌고 30 초 동안 깜박 인 다음 [the notify integration](/integrations/notify/)을 통해 메시지를 보냅니다 . 알려진 사람이 집으로 돌아오면 특정 표시등이 깜박입니다. 
+이 예제는 침입자를 탐지합니다. 집에 사람이 없을 때 조명이 켜져 있는지 확인하면 됩니다. 이 경우 조명이 빨간색으로 바뀌고 30 초 동안 깜박인 다음 [notify 통합구성요소](/integrations/notify/)를 통해 메시지를 보냅니다. 아는 사람이 집으로 돌아오면 특정 조명이 깜박입니다. 
 
-이 연동방식은 [device_tracker](/integrations/device_tracker/) 및 [light](/integrations/light/) 통합구성요소에 따라 다릅니다.
+이 연동방식은 [device_tracker](/integrations/device_tracker/)와 [light](/integrations/light/) 통합구성요소에 따라 다릅니다.
 
 설정하려면 `configuration.yaml` 파일에 다음 줄을 추가하십시오 :
 
@@ -20,16 +20,16 @@ simple_alarm:
 
 {% configuration %}
 known_light:
-  description: 알려진 장치가 집으로 돌아 왔을 때 깜박이는 조명/조명그룹.
+  description: "알려진 장치(예: 휴대폰)가 집으로 돌아왔을 때 깜박이는 조명/조명그룹."
   required: false
   type: string
 unknown_light:
-  description: 집에 없을 때 조명이 켜지면 어떤 조명/조명 그룹이 빨간색으로 깜박 여야합니까?
+  description: 집에 없을 때 조명이 켜지면 어떤 조명/조명그룹이 빨간색으로 깜박여야합니까?
   required: false
   type: string
 {% endconfiguration %}
 
-`<config dir>/custom_components/simple_alarm.py`파일을 만들고 아래 내용을 복사하여 붙여 넣습니다.
+`<config dir>/custom_components/simple_alarm.py` 파일을 만들고 아래 내용을 복사하여 붙여넣습니다.
 
 ```python
 """Simple alarm component."""

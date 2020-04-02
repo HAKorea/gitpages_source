@@ -22,11 +22,11 @@ conditions:
       type: string
     state:
       required: false
-      description: 엔티티 상태는 이 값과 같습니다. *
+      description: 엔티티 상태는 이 값과 같습니다.*
       type: string
     state_not:
       required: false
-      description: 엔티티 상태가 이 값과 다릅니다. *
+      description: 엔티티 상태가 이 값과 다릅니다.*
       type: string
 card:
   required: true
@@ -36,7 +36,7 @@ card:
 
 *하나는 필요합니다. (`state` 혹은 `state_not`)
 
-참고 : 엔티티가 둘 이상인 조건은 'and' 조건으로 취급합니다. 즉, 카드가 표시 되려면 *모든* 엔티티가 설정된 주요 요구사항을 모두 충족해야합니다.
+참고: 엔티티가 둘 이상인 조건은 'and' 조건으로 취급합니다. 즉, 카드가 표시되려면 *모든* 엔티티가 설정된 주요 요구사항을 모두 충족해야합니다.
 
 ### 사례
 

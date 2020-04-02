@@ -4,7 +4,7 @@ description: "Example of how to set Foscam to only have Motion Detection Recordi
 ha_category: Automation Examples
 ---
 
-이를 위해서 PTZ (팬, 틸트, 줌)과 CGI 기능이있는 [Foscam IP Camera](/integrations/foscam) 카메라 ([Source](https://www.foscam.es/descarga/Foscam-IPCamera-CGI-User-Guide-AllPlatforms-2015.11.06.pdf))가 필요합니다. 
+이를 위해서 PTZ (팬, 틸트, 줌)과 CGI 기능이 있는 [Foscam IP Camera](/integrations/foscam) 카메라 ([Source](https://www.foscam.es/descarga/Foscam-IPCamera-CGI-User-Guide-AllPlatforms-2015.11.06.pdf))가 필요합니다. 
 
 Foscam 카메라는 여러 CGI 명령을 통해 Home Assistant에서 제어할 수 있습니다. 다음은 모션 감지를 제어하는 ​​동안 2개의 사전 설정 대상간에 이동하는데 필요한 스위치, 서비스 그리고 스크립트의 예를 간략히 설명하지만 위에 링크된 Foscam CGI 사용 설명서에 다른 많은 동작 옵션이 ​​제공됩니다.
 
@@ -34,7 +34,7 @@ shell_command:
   foscam_turn_on: 'curl -k "https://ipaddress:443/cgi-bin/CGIProxy.fcgi?cmd=ptzGotoPresetPoint&name=Main&usr=admin&pwd=password"'
 ```
 
-`script.foscam_off`, `script.foscam_on`을 사용하여 모션 감지를 적절하게 설정한 다음 카메라를 이동할 수 있습니다. 이 스크립트는 Foscam에 대해 `home`, `not_home`모드를 설정하고 `home`일때 모션 감지 녹화를 비활성화하는 `device_tracker` 트리거를 사용하여 자동화의 일부로 호출할 수 있습니다.
+`script.foscam_off`, `script.foscam_on`을 사용하여 모션 감지를 적절하게 설정한 다음 카메라를 이동할 수 있습니다. 이 스크립트는 Foscam에 대해 `home`, `not_home` 모드를 설정하고 `home`일때 모션 감지 녹화를 비활성화하는 `device_tracker` 트리거를 사용하여 자동화의 일부로 호출할 수 있습니다.
 
 ```yaml
 script:

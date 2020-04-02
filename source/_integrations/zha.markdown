@@ -24,7 +24,7 @@ ha_codeowners:
 <iframe width="690" height="437" src="https://www.youtube.com/embed/9InA6kc6r9s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-홈어시스턴트에서 Zigbee 장치를 다루는 방법은 아래 ZHA(Zigbee Home Automation)로 연동하여 다루는 방법이 있기는 하지만, 가장 많이 쓰고 있지는 않습니다. 현재 가장 사용자층에서 많이 쓰는 방식은 Hass.io add-on에서 지원하는 현존 Zigbee 허브중 가장 많은 116개회사의 644개 장치를 지원하는 [Zigbee2mqtt](https://www.zigbee2mqtt.io/) 를 사용하는 방법이 현재 가장 널리 쓰이고 있는 방법입니다. 
+홈어시스턴트에서 Zigbee 장치를 다루는 방법은 아래 ZHA(Zigbee Home Automation)로 연동하여 다루는 방법이 있기는 하지만, 가장 많이 쓰고 있지는 않습니다. 현재 가장 사용자층에서 많이 쓰는 방식은 Home Assistant add-on에서 지원하는 현존 Zigbee 허브중 가장 많은 116개회사의 644개 장치를 지원하는 [Zigbee2mqtt](https://www.zigbee2mqtt.io/) 를 사용하는 방법이 현재 가장 널리 쓰이고 있는 방법입니다. 
 
 왜 Zigbee2mqtt가 사용하기 좋은 장치인지는 [Zigbee 허브는 한개로 충분하다](https://cafe.naver.com/koreassistant/505)를 참조하십시오.
 
@@ -135,7 +135,7 @@ enable_quirks:
   default: true
 {% endconfiguration %}
 
-네트워크에 새 장치를 추가하려면 `zha` 에서 `permit`서비스를 호출하십시오. 개발자 도구에서 서비스 아이콘을 클릭하고 **서비스** 드롭 다운 상자에 `zha.permit`을 입력하면됩니다.  그런다음 장치 지침에 따라 추가, 스캔 혹은 공장 초기화를 수행하십시오.
+네트워크에 새 장치를 추가하려면 `zha` 에서 `permit`서비스를 호출하십시오. 개발자 도구에서 서비스 아이콘을 클릭하고 **서비스** 드롭 다운 상자에 `zha.permit`을 입력하면됩니다. 그런다음 장치 지침에 따라 추가, 스캔 혹은 공장 초기화를 수행하십시오.
 
 ## 장치 추가
 
@@ -143,17 +143,17 @@ enable_quirks:
 
 **ADD DEVICES**를 클릭하여 새 장치를 검색하십시오.
 
-제조업체가 제공한 장치 지침에 따라 Zigbee 장치를 재설정하십시오 (예: 조명 켜기/끄기 표시등을 최대 10회, 스위치에는 일반적으로 재설정 버튼/핀이 있음).
+제조업체가 제공한 장치 지침에 따라 Zigbee 장치를 재설정하십시오 (예: 조명을 최대 10회 켜고 끄기, 스위치에는 일반적으로 재설정 버튼/핀이 있음).
 
 ## 문제 해결
 
 ### 이전 다른 브릿지에 추가된 Philips Hue 전구 추가
 
-이전에 다른 브리지에 추가된 Philips Hue 전구는 검색중에 표시되지 않습니다. 먼저 전구를 공장 설정으로 복원해야합니다. 이를 위해 기본적으로 다음 방법이 있습니다. 
+이전에 다른 브리지에 추가된 Philips Hue 전구는 검색중에 표시되지 않습니다. 먼저 전구를 공장설정으로 복원해야합니다. 이를 위해 기본적으로 다음 방법이 있습니다. 
 
 #### Philips Hue Dimmer Switch
 
-전구를 공장 초기화하는 가장 쉬운 방법은 보통 Philips Hue Dimmer Switch를 사용하는 것입니다. 이 기능을 사용하려면 리모컨을 이전 브리지와 페어링할 필요가 없습니다.
+전구를 공장초기화하는 가장 쉬운 방법은 보통 Philips Hue Dimmer Switch를 사용하는 것입니다. 이 기능을 사용하려면 리모컨을 이전 브리지와 페어링할 필요가 없습니다.
 
 1. 재설정하려는 Hue 전구를 켭니다.
 2. 전구 근처에 디머 스위치를 배치합니다. (< 10 cm)

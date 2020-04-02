@@ -48,7 +48,7 @@ automation:
           message: 'Your husband coming home!'
           delay: '00:00:05'
 ```
-이 예제는 `voicerss` TTS (text-to-speech) 플랫폼을 사용합니다. 사용할 수있는 많은 플랫폼이 있습니다. Home Assistant와 함께 기본적으로 설치되는 것은 Google TTS입니다. `configuration.yaml` 파일에 다음과 같이 나타냅니다 .
+이 예제는 `voicerss` TTS (text-to-speech) 플랫폼을 사용합니다. 사용할 수 있는 많은 플랫폼이 있습니다. Home Assistant와 함께 기본적으로 설치되는 것은 Google TTS입니다. `configuration.yaml` 파일에 다음과 같이 나타냅니다 .
 
 ```yaml
 tts:

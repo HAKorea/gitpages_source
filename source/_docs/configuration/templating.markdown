@@ -9,9 +9,9 @@ redirect_from: /topics/templating/
 - [홈어시스턴트 아키텍처](/developers/architecture/), 특히 상태(states).
 - [상태(State) 객체](/topics/state_object/).
 
-템플릿은 시스템으로 들어오고 나가는 정보를 제어할 수있는 강력한 기능입니다. 다음 용도로 사용됩니다. :
+템플릿은 시스템으로 들어오고 나가는 정보를 제어할 수 있는 강력한 기능입니다. 다음 용도로 사용됩니다. :
 
-- [notify](/integrations/notify/) 플랫폼, [alexa](/integrations/alexa/) component와 같은 발신 메시지 형식화 
+- [notify](/integrations/notify/) platform, [alexa](/integrations/alexa/) component와 같은 발신 메시지 형식화 
 - [MQTT](/integrations/mqtt/), [`rest` sensor](/integrations/rest/) 혹은 [`command_line` sensor](/integrations/sensor.command_line/) 같은 원시 데이터를 제공하는 소스의 데이터 처리.
 - [자동화 템플릿 (Automation Templating))](/docs/automation/templating/).
 
@@ -23,7 +23,7 @@ redirect_from: /topics/templating/
 - [Comparisons](https://jinja.palletsprojects.com/en/master/templates/#comparisons)
 - [Logic](https://jinja.palletsprojects.com/en/master/templates/#logic)
 
-Jinja2는 [templates documentation](https://jinja.palletsprojects.com/en/master/templates/)에서 이 작업을 훌륭하게 수행하므로 문법의 기본사항은 다루지 않습니다 .
+Jinja2는 [templates documentation](https://jinja.palletsprojects.com/en/master/templates/)에서 이 작업을 훌륭하게 수행하므로 문법의 기본사항은 다루지 않습니다.
 
 프런트엔드에는 템플릿 개발과 디버깅을 도와주는 템플릿 편집기 도구가 있습니다. <img src='/images/screenshots/developer-tool-templates-icon.png' alt='template developer tool icon' class="no-shadow" height="38" /> 아이콘을 클릭 하고 _템플릿 편집기_ 에서 템플릿을 생성한 다음 오른쪽의 결과를 확인하십시오.
 
@@ -57,7 +57,7 @@ script:
 - `states('device_tracker.paulus')`는 해당 entity의 상태 문자열(객체가 아닌)을 반환하고, 혹은 값이 존재하지 않는 경우 `unknown`을 반환합니다.
 - `is_state('device_tracker.paulus', 'home')`는 주어진 entity가 특정한 어떤 상태인지를 테스트합니다.
 - `state_attr('device_tracker.paulus', 'battery')`는 속성값을 반환하거나 존재하지 않는 경우 None을 반환합니다.
-- `is_state_attr('device_tracker.paulus', 'battery', 40)`는 주어진 entity 속성이 지정된 상태(이 경우 숫자 값)인지 테스트합니다.
+- `is_state_attr('device_tracker.paulus', 'battery', 40)`는 주어진 entity 속성이 지정된 상태(이 경우 숫자값)인지 테스트합니다.
 
 <div class='note warning'>
 
@@ -171,7 +171,7 @@ script:
 ### 시간
 
 - `now()` 시간대의 현재 시간으로 렌더링됩니다.
-  - 특정값의 경우: `now().second`, `now().minute`, `now().hour`, `now().day`, `now().month`, `now().year`, `now().weekday()` 그리고 `now().isoweekday()`
+  - 특정값의 경우: `now().second`, `now().minute`, `now().hour`, `now().day`, `now().month`, `now().year`, `now().weekday()`, `now().isoweekday()`
 - `utcnow()` UTC 시간으로 렌더링됩니다.
   - 특정값의 경우: `utcnow().second`, `utcnow().minute`, `utcnow().hour`, `utcnow().day`, `utcnow().month`, `utcnow().year`, `utcnow().weekday()`, `utcnow().isoweekday()`.
 - `as_timestamp()` datetime 객체 또는 문자열을 UNIX 타임 스탬프로 변환합니다. 이 기능은 필터로도 사용됩니다.
@@ -179,13 +179,13 @@ script:
 - `relative_time`은 날짜 시간 객체를 읽기쉬운 "age" 문자열로 변환합니다. age는 초, 분, 시, 일, 월 또는 연도일 수 있습니다 (그러나 가장 큰 단위만 고려됩니다 (예: 2 일 3 시간인 경우 "2 일"이 반환됨)). _지난 날짜_ 에 대해서만 작동한다는 것을 알아두십시오.
 - 필터 `timestamp_local`은 UNIX 타임스탬프를 현지시간/데이터로 변환합니다.
 - 필터 `timestamp_utc` 는 UNIX 타임스탬프를 UTC시간/데이터로 변환합니다.
-- 필터 `timestamp_custom(format_string, local_boolean)` 는 UNIX 타임스탬프를 사용자정의 형식으로 변환하며 로컬 타임스탬프 사용이 기본값입니다. [Python time formatting options](https://docs.python.org/3/library/time.html#time.strftime) 표준을 지원합니다.
+- 필터 `timestamp_custom(format_string, local_boolean)`은 UNIX 타임스탬프를 사용자정의 형식으로 변환하며 로컬 타임스탬프 사용이 기본값입니다. [Python time formatting options](https://docs.python.org/3/library/time.html#time.strftime) 표준을 지원합니다.
 
 ### To/From JSON
 
 `to_json` 필터는 JSON 문자열로 객체를 직렬화합니다(serialize). 경우에 따라 command line 유틸리티 또는 기타 여러 응용 프로그램의 매개 변수로 웹 후크와 함께 사용하기 위해 JSON 문자열을 형식화해야 할 수도 있습니다. 특히 특수 문자 이스케이프 처리시 템플릿에서 복잡할 수 있습니다. `to_json` 필터를 사용하면 자동으로 처리됩니다
 
-`from_json` 필터는 유사하게 작동하지만 다른 방법으로, 객체로 JSON 문자열 등을 탈직렬화 시킬 수 있습니다.
+`from_json` 필터는 유사하게 작동하지만 다른 방법으로, 객체로 JSON 문자열 등을 역직렬화(de-serialize) 시킬 수 있습니다.
 
 ### To/From JSON 예제들
 
@@ -210,7 +210,7 @@ object|to_json: {"temperature": 25, "unit": "\u00b0C"}
 ```
 {% endraw %}
 
-반대로 `from_json`을 사용하면 JSON 문자열을 객체로 역직렬화하여 사용 가능한 데이터를 쉽게 추출할 수 있습니다.
+반대로 `from_json`을 사용하면 JSON 문자열을 객체로 역직렬화(de-serialize)하여 사용 가능한 데이터를 쉽게 추출할 수 있습니다.
 
 *Template*
 
@@ -232,7 +232,7 @@ The temperature is 25°C
 ### 거리
 
 - `distance()` 집, entity, 좌표 사이의 거리를 킬로미터 단위로 측정합니다.
-- `closest()` 가장 가까운 entity를 찾습니다..
+- `closest()` 가장 가까운 entity를 찾습니다.
 
 #### distance 예시
 
@@ -338,7 +338,7 @@ Closest to some entity:
 
 ### 정규식
 
-- 필터 `string|regex_match(find, ignorecase=FALSE)`는 정규식을 사용하여 문자열의 시작 부분에서 찾기 표현식과 일치시킵니다.
+- 필터 `string|regex_match(find, ignorecase=FALSE)`는 정규식을 사용하여 문자열의 시작 부분에서 찾기 표현식과 일치(match)시킵니다.
 - 필터 `string|regex_search(find, ignorecase=FALSE)` 는 정규식을 사용하여 문자열의 어디에서나 찾기 표현식과 일치시킵니다.
 - 필터 `string|regex_replace(find='', replace='', ignorecase=False)` 는 정규식을 사용하여 교체된 찾기 표현식을 바꿉니다.
 - 필터 `string|regex_findall_index(find='', index=0, ignorecase=False)`는 문자열에서 찾기의 모든 정규식 match를 찾고 색인에서 match를 리턴합니다 (findall은 match 배열을 리턴함).
@@ -444,7 +444,7 @@ Closest to some entity:
 
 템플릿이 (예: `states.device_tracker.2008_gmc`)와 같이 숫자로 시작하는 `entity_id`를 사용한다면, 렌더링하여 발생하는 오류를 피하려면 대괄호 구문을 사용해야합니다. 주어진 예에서 장치 추적기의 올바른 구문은 다음과 같습니다. : `states.device_tracker['2008_gmc']`
 
-### NOW ()를 사용하는 entity가 없는 템플릿
+### NOW()를 사용하는 entity가 없는 템플릿
 
 (`now()`)은 시간에 종속되어 entity를 사용하지 않는 템플릿은 entity 상태 변경에서만 발생하므로 업데이트되지 않습니다. 자세한 내용과 예는 [`template` sensor documentation](/integrations/template/#working-without-entities)를 참조하십시오. 
 

@@ -59,7 +59,7 @@ dummy:
 
 ## 지원되는 protocols
 
-알려진대로 모든 protocol이 트랜시버의 초기 설정에서 활성화되는 것은 아닙니다. 모든 protocol을 활성화하는 것은 권장되지 않습니다. 433.92 제품이 로그에 표시되지 않습니까? RFXtrx 웹사이트를 방문하여 [RFXmgmr 다운로드](http://www.rfxcom.com/epages/78165469.sf/nl_NL/?ObjectPath=/Shops/78165469/Categories/Downloads)를 하고 필요한 프로토콜을 활성화하십시오.
+알려진대로 모든 protocol이 트랜시버의 초기 설정에서 활성화되는 것은 아닙니다. 모든 protocol을 활성화하는 것은 권장되지 않습니다. 433.92 제품이 로그에 표시되지 않습니까? RFXtrx 웹사이트를 방문하여 [RFXmgmr 다운로드]((http://www.rfxcom.com/epages/78165469.sf/en_GB/?ViewObjectPath=%2FShops%2F78165469%2FCategories%2FDownloads)를 하고 필요한 프로토콜을 활성화하십시오.
 
 ### ser2net
 

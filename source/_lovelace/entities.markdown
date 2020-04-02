@@ -36,7 +36,7 @@ theme:
 
 ## 엔티티 옵션 (Options For Entities)
 
-엔터티를 문자열 대신 개체로 정의(엔티티 ID 앞에 `entity :`를 추가)하면 사용자 지정 및 설정을 더 추가 할 수 있습니다.
+엔터티를 문자열 대신 개체로 정의(엔티티 ID 앞에 `entity:`를 추가)하면 사용자 지정 및 설정을 더 추가할 수 있습니다.
 
 {% configuration %}
 entity:
@@ -49,31 +49,31 @@ type:
   type: string
 name:
   required: false
-  description: 친숙한 이름을 덮어 씁니다.
+  description: 친숙한 이름을 덮어씁니다.
   type: string
 icon:
   required: false
-  description: 아이콘 또는 엔터티 picture를 덮어 씁니다.
+  description: 아이콘 또는 엔터티 picture를 덮어씁니다.
   type: string
 image:
   required: false
-  description: 엔터티  picture를 덮어 씁니다.
+  description: 엔터티 picture를 덮어씁니다.
   type: string
 secondary_info:
   required: false
-  description: "추가 정보를 표시. 값 : `entity-id`, `last-changed`, `last-triggered` (자동화 및 스크립트만 적용)."
+  description: "추가 정보를 표시. 값: `entity-id`, `last-changed`, `last-triggered` (자동화와 스크립트만 적용)."
   type: string
 format:
   required: false
-  description: "상태의 형식을 지정하는 방법. 현재 타임 스탬프 센서에만 사용. 유효한 값 : `relative`, `total`, `date`, `time`, `datetime`."
+  description: "상태의 형식을 지정하는 방법. 현재 타임 스탬프 센서에만 사용. 유효한 값: `relative`, `total`, `date`, `time`, `datetime`."
   type: string
 header:
   required: false
-  description: 렌더링 할 머릿글 위젯. [header documentation](/lovelace/header-footer/) 참조.
+  description: 렌더링할 머릿글 위젯. [header documentation](/lovelace/header-footer/) 참조.
   type: map
 footer:
   required: false
-  description: 렌더링 할 바닥글 위젯. [footer documentation](/lovelace/header-footer/) 참조.
+  description: 렌더링할 바닥글 위젯. [footer documentation](/lovelace/header-footer/) 참조.
   type: map
 tap_action:
   required: false
@@ -87,17 +87,17 @@ tap_action:
       default: "`toggle`"
     navigation_path:
       required: false
-      description: "`action`이 `navigate` 로 정의된 경우 탐색 할 경로 (예: `/lovelace/0/`)"
+      description: "`action`이 `navigate`로 정의된 경우 탐색할 경로 (예: `/lovelace/0/`)"
       type: string
       default: none
     url_path:
       required: false
-      description: "`action`이 `url` 로 정의된 경우 (예: `https://www.home-assistant.io`)"
+      description: "`action`이 `url`로 정의된 경우 (예: `https://www.home-assistant.io`)"
       type: string
       default: none
     service:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 호출 할 서비스 (예 :`media_player.media_play_pause`)"
+      description: "`action`이 `call-service` 로 정의된 경우 호출할 서비스 (예 :`media_player.media_play_pause`)"
       type: string
       default: none
     service_data:
@@ -117,7 +117,7 @@ hold_action:
       default: "`more-info`"
     navigation_path:
       required: false
-      description: "`action`이 `navigate` 로 정의된 경우 탐색 할 경로 (예: `/lovelace/0/`)"
+      description: "`action`이 `navigate`로 정의된 경우 탐색할 경로 (예: `/lovelace/0/`)"
       type: string
       default: none
     url_path:
@@ -127,12 +127,12 @@ hold_action:
       default: none
     service:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 호출 할 서비스 (예 :`media_player.media_play_pause`)"
+      description: "`action`이 `call-service`로 정의된 경우 호출할 서비스 (예: `media_player.media_play_pause`)"
       type: string
       default: none
     service_data:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
+      description: "`action`이 `call-service`로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`)"
       type: string
       default: none
 double_tap_action:
@@ -147,22 +147,22 @@ double_tap_action:
       default: "`more-info`"
     navigation_path:
       required: false
-      description: "`action`이 `navigate` 로 정의된 경우 탐색 할 경로 (예: `/lovelace/0/`)"
+      description: "`action`이 `navigate`로 정의된 경우 탐색할 경로 (예: `/lovelace/0/`)"
       type: string
       default: none
     url_path:
       required: false
-      description: "`action`이 `url` 로 정의된 경우 (예: `https://www.home-assistant.io`)"
+      description: "`action`이 `url`로 정의된 경우 (예: `https://www.home-assistant.io`)"
       type: string
       default: none
     service:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 호출 할 서비스 (예 :`media_player.media_play_pause`"
+      description: "`action`이 `call-service`로 정의된 경우 호출할 서비스 (예: `media_player.media_play_pause`"
       type: string
       default: none
     service_data:
       required: false
-      description: "`action`이 `call-service` 로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`"
+      description: "`action`이 `call-service`로 정의된 경우 포함할 서비스 데이터 (예: `entity_id: media_player.bedroom`"
       type: string
       default: none
 {% endconfiguration %}
@@ -202,7 +202,7 @@ service_data:
 
 ### Cast
 
-홈어시스턴트 캐스트를 시작하기위한 특별 행.
+홈어시스턴트 캐스트를 시작하기위한 특별한 행(row).
 
 {% configuration %}
 type:
@@ -215,7 +215,7 @@ view:
   type: string
 name:
   required: false
-  description: 행에 표시 할 이름
+  description: 행에 표시할 이름
   type: string
   default: Home Assistant Cast
 icon:
@@ -322,5 +322,5 @@ entities:
 ```
 
 <div class='note'>
-엔티티 유형 구분선(divider) 및 웹링크(Weblink)는 아직 UI ​​편집기에서 지원되지 않으며 '예상 값 유형 ...'에 대한 경고가 표시됩니다. 경고를 무시하고 편집 내용을 저장하여 확인할 수 있습니다.
+엔티티 유형 구분선(divider)과 웹링크(Weblink)는 아직 구성 코드 편집기에서 지원되지 않으며 `Expected a value of type...` 에 대한 경고가 표시됩니다. 경고를 무시하고 편집 내용을 저장하여 확인할 수 있습니다.
 </div>

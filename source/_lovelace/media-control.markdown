@@ -4,11 +4,11 @@ sidebar_label: Media Control
 description: "The media controller card is used to display Media Player entities on an interface with easy to use controls. "
 ---
 
-Media Control 카드는 사용하기 쉬운 컨트롤이 있는 인터페이스에 [Media Player](/integrations/#search/media-player) 엔티티를 표시하는 데 사용됩니다 .
+Media Control 카드는 사용하기 편리한 제어 화면으로 [Media Player](/integrations/#search/media-player) 엔티티를 표시하는데 사용됩니다.
 
 <p class='img'>
 <img src='/images/lovelace/lovelace_mediaplayer.png' alt='Screenshot of the media player control card'>
-Media Control 카드의 스크린 샷.
+Media Control 카드의 스크린샷.
 </p>
 
 {% configuration %}

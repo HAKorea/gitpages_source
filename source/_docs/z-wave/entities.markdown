@@ -5,28 +5,29 @@ description: "A summary of common entity names."
 
 <div class='note'>
 
-This is a work in progress, based upon reports in the forum, the author's own devices and reading of various documentation. It will be incomplete, so if you have a device that isn't reported here or have a device that reports a different value, please provide a report in the [Z-Wave section](https://community.home-assistant.io/c/configuration/zwave) of the forum or the #zwave channel on [Discord](https://discord.gg/RkajcgS).
+이것은 포럼의 보고서, 저자 자신의 장치와 다양한 문서 읽기를 기반으로 진행중인 작업입니다. 불완전하므로 여기에 보고되지 않은 장치가 있거나 다른 값을 보고하는 장치가 있는 경우 포럼의 [Z-Wave 섹션](https://community.home-assistant.io/c/configuration/zwave) 혹은 [Discord](https://discord.gg/RkajcgS)의 #zwave 채널에 보고서를 제공하십시오.
 
 </div>
 
 ## Binary Sensor
 
-Devices that support the Binary Sensor command class will create one (or more) entities starting with `binary_sensor`. For example, if the node is `door_sensor` then the binary sensor entity will be `binary_sensor.door_sensor`.
+이진 센서 명령 클래스를 지원하는 장치는 `binary_sensor`로 시작하는 하나 이상의 엔티티를 만듭니다. 예를 들어 노드가 `door_sensor`인 경우 이진 센서 엔터티는 `binary_sensor.door_sensor`입니다.
 
-These will normally be `on` when the sensor is active, otherwise they will be `off`. Some devices use `on` for closed, and some use `on` for open, and some devices allow you to change how they report.
+센서가 활성화되면 일반적으로 `on`이 되고 그렇지 않으면 `off`이 됩니다. 일부 장치는 닫힘에 `on`을 사용하고 일부 장치는 열림에 `on`을 사용하고 일부 장치에서는 보고 방식을 변경할 수 있습니다.
 
 ## Alarm
 
-This is for a single purpose sensor, multi sensors are explained under Multi Sensor.
+이는 단일 목적 센서용이며 다중 센서는 다중 센서 아래에 설명되어 있습니다.
 
-Devices (usually sensors) that support the Alarm command class will create entities starting with `sensor`, and with some generic suffixes, and a suffix that relates to the supported alarm class. For example, the smoke detector `lounge` will have an entity `sensor.lounge_smoke`, and possibly also `sensor.lounge_alarm_type` and `sensor.lounge_alarm_level`. If the device creates a `binary_sensor` entity, it is recommended to use that rather then the `sensor` entity.
+Alarm 명령 클래스를 지원하는 장치 (일반적으로 센서)는 `sensor`로 시작하고 일부 일반 접미사와 지원되는 알람 클래스와 관련된 접미사로 엔터티를 만듭니다. 예를 들어, 연기 감지기 `lounge`에는 엔티티 `sensor.lounge_smoke`와 `sensor.lounge_alarm_type`, `sensor.lounge_alarm_level` 엔티티가 있습니다. 장치가 `binary_sensor` 엔티티를 생성하는 경우 `sensor` 엔티티 대신 해당 엔티티를 사용하는 것이 좋습니다.
 
-Note that the older Z-Wave alarm command class version 1 didn't have standardized types, and so each manufacturer specified their own version and type info. With Version 2 the alarm type was standardized to the below list. See the [openzwave alarm command class documents](https://github.com/OpenZWave/open-zwave/wiki/Alarm-Command-Class) for more info. You can see which version your sensor supports via the zwcfg_0x\*.xml file. An example with version 2 support:
+이전 Z-Wave 알람 명령 클래스 버전 1에는 표준화된 유형이 없으므로 각 제조업체는 고유한 버전과 유형 정보를 지정했습니다. 버전 2에서는 경보 유형이 아래 목록으로 표준화되었습니다. 자세한 내용은 [openzwave 알람 명령 클래스 문서](https://github.com/OpenZWave/open-zwave/wiki/Alarm-Command-Class)를 참조하십시오. zwcfg_0x\*.xml 파일을 통해 센서가 지원하는 버전을 확인할 수 있습니다. 버전 2를 지원하는 예 :
+
 ```xml
 <CommandClass id="113" name="COMMAND_CLASS_ALARM" version="2" request_flags="2" innif="true">
 ```
 
-### Alarm Type Entity
+### Alarm 유형 엔티티
 
 [//]: # (from the openzwave source found here: https://github.com/OpenZWave/open-zwave/blob/master/cpp/src/command_classes/Alarm.cpp#L56)
 
@@ -64,9 +65,9 @@ Note that the older Z-Wave alarm command class version 1 didn't have standardize
   - **168**: Critical battery level
   - **169**: Battery too low to operate
 
-### Alarm Level Entity
+### Alarm 레벨 엔티티
 
-The meaning of the `alarm_level` entity depends on the nature of the alarm sensor.
+`alarm_level` 엔티티의 의미는 알람 센서의 특성에 따라 다릅니다.
 
 #### Smoke, CO, and CO2
 
@@ -147,7 +148,7 @@ The meaning of the `alarm_level` entity depends on the nature of the alarm senso
   - **254**: Deep sleep
   - **255**: Case open
 
-If your device has an `access_control` entity, but not a `binary_sensor` equivalent, you can use a [template binary sensor](/integrations/binary_sensor.template/) to create one (here we've defined it as a door, but you can use [any relevant device class](/integrations/binary_sensor/#device-class):
+장치에 `access_control` 엔티티가 있지만 `binary_sensor`에 해당하지 않는 경우 [template binary sensor](/integrations/binary_sensor.template/)를 사용하여 하나를 작성할 수 있습니다. (여기서 문으로 정의했지만 [모든 관련 기기 클래스](/integrations/binary_sensor/#device-class)를 사용할 수 있습니다.) :
 
 {% raw %}
 ```yaml
@@ -173,7 +174,7 @@ binary_sensor:
    - **254**: Deep sleep
    - **255**: Case open
 
-If your device has a `burglar` entity, but not a `binary_sensor` equivalent, you can use a [template binary sensor](/integrations/binary_sensor.template/) to create one (here we've defined it as a motion sensor, but you can use [any relevant device class](/integrations/binary_sensor/#device-class):
+장치에 `access_control` 엔티티가 있지만 `binary_sensor`에 해당하지 않는 경우 [template binary sensor](/integrations/binary_sensor.template/)를 사용하여 하나를 작성할 수 있습니다. (여기서 모션 센서로 정의했지만 [모든 관련 기기 클래스](/integrations/binary_sensor/#device-class)를 사용할 수 있습니다.) :
 
 {% raw %}
 ```yaml
@@ -189,13 +190,13 @@ binary_sensor:
 
 ### Source Node ID Entity
 
-- **sourcenodeid**: Reports the sensor that generated the alarm - this is only valid for Zensor Net based devices
+- **sourcenodeid**: alarm을 생성한 센서를 보고합니다. - 이는 Zensor Net 기반 장치에만 유효합니다.
 
 ## Multisensor
 
-Multi sensor devices will create a number of entities, one for each sensor, potentially a `binary_sensor` entity, and probably also `alarm_type` and `alarm_level` entities.
+다중센서 장치는 각 센서마다 하나씩, 잠재적으로 `binary_sensor` 엔티티와 아마도 `alarm_type`과 `alarm_level` 엔티티를 여러 엔티티로 작성합니다.
 
-These are all generally self explanatory, however it's worth noting:
+이들은 일반적으로 설명할게 없는 내용이지만, 주목할 가치가 있습니다. 
 
-- **ultraviolet** sensors will usually report zero indoors, as UVB is blocked by glass
-- **luminance** sensors should report in [Lux](https://en.wikipedia.org/wiki/Lux)
+- **ultraviolet** UVB가 유리에 의해 차단되므로 센서는 일반적으로 실내에 0을 보고합니다
+- **luminance** 센서는 [Lux](https://en.wikipedia.org/wiki/Lux)로 보고해야합니다

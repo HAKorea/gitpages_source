@@ -4,7 +4,7 @@ sidebar_label: Sensor
 description: "The sensor card gives you information about the sensor state"
 ---
 
-Sensor 카드는 시간 경과에 따른 변화를 시각화 할 수있는 옵션 그래프를 통해 센서 상태에 대한 빠른 개요를 제공합니다.
+Sensor 카드는 시간 경과에 따른 변화를 시각화할 수 있는 옵션 그래프를 통해 센서 상태에 대한 빠른 개요를 제공합니다.
 
 <p class='img'>
   <img src='/images/lovelace/lovelace_sensor.png' alt='Screenshot of the sensor card'>
@@ -38,12 +38,12 @@ unit:
   type: string
 detail:
   required: false
-  description: 그래프의 디테일 `1` 혹은 `2`, `1`은 시간당 1점, `2` 는 시간당 6점
+  description: 그래프의 디테일 `1` 혹은 `2`, `1`은 시간당 1점, `2`는 시간당 6점
   type: integer
   default: 1
 hours_to_show:
   required: false
-  description: 그래프로 표시 할 시간
+  description: 그래프로 표시할 시간
   type: integer
   default: 24
 theme:

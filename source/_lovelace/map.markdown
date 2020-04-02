@@ -1,10 +1,10 @@
 ---
-title: "지도 카드"
+title: "Map 카드"
 sidebar_label: Map
 description: "A card that allows you to display entities on a map"
 ---
 
-지도에 엔티티를 표시 할 수있는 카드입니다.
+지도(Map)에 엔티티를 표시할 수 있는 카드입니다.
 
 <p class='img'>
 <img src='/images/lovelace/lovelace_map_card.png' alt='Screenshot of the map card'>
@@ -45,7 +45,7 @@ dark_mode:
 {% endconfiguration %}
 
 <div class='note'>
-  위도 및 경도 속성이있는 엔티티만 맵에 표시됩니다.
+  위도와 경도 속성이 있는 엔티티만 맵에 표시됩니다.
 <div class="note">
 
 `default_zoom` 값은 지도창에서 보이는 모든 엔티티 마커(표시)를 맞춘 후 현재 확대/축소 수준보다 높게 설정된 경우 나타나지 않습니다. 다시 말해, 이는 오직 기본적으로 지도를 _상세표현_ 하는데 사용됩니다.

@@ -4,7 +4,7 @@ description: "Automation to switch a Philips Hue lamp with an enocean switch."
 ha_category: Automation Examples
 ---
 
-enocean 벽스위치와 일부 Philips Hue 램프가 있다고 가정하십시오. enocean 벽스위치는 button_pressed 이벤트를 발생시키고 램프를 켜고 끄는 데 사용되는 여러 매개 변수를 전달합니다. 
+enocean 벽스위치와 일부 Philips Hue 램프가 있다고 가정하십시오. enocean 벽스위치는 button_pressed 이벤트를 발생시키고 램프를 켜고 끄는데 사용되는 여러 매개 변수를 전달합니다. 
 
 event_data:
 

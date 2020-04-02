@@ -101,30 +101,33 @@ broadcast_address:
 - F6500
 - F7000
 - F8000BF
-- K5579 (port must be set to 8001, On/Off, Forward/Backward, Volume control, but no Play button)
+- K5579 (On/Off, Forward/Backward, Volume control, but no Play button)
 - K5600AK (partially supported, turn on works but state is not updated)
-- K6500AF (port must be set to 8001)
-- KS7005 (port must be set to 8001, MAC address must be provided, On/Off, Volume are OK, no channel change)
-- KS7502 (port must be set to 8001, turn on doesn't work, turn off works fine)
-- KS8000 (port must be set to 8001)
-- KS8005 (port must be set to 8001)
-- KS8500 (port must be set to 8001)
-- KU6020 (port must be set to 8001)
-- KU6100 (port must be set to 8001)
-- KU6290 (port must be set to 8001)
-- KU6400U (port must be set to 8001)
-- KU7000 (port must be set to 8001)
-- M5620 (port must be set to 8001)
-- MU6170UXZG (port must be set to 8001)
-- NU7090 (port must be set to 8801, On/Off, MAC must be specified for Power On)
-- NU7400 (port set to 8001)
+- K6500AF
+- KS7005 (MAC address must be provided, On/Off, Volume are OK, no channel change)
+- KS7502 (turn on doesn't work, turn off works fine)
+- KS8000
+- KS8005
+- KS8500
+- KU6020
+- KU6100
+- KU6290
+- KU6400U
+- KU7000
+- M5620
+- MU6170UXZG
+- NU7090 (On/Off, MAC must be specified for Power On)
+- NU7400
 - NU8000
-- U6000 (port must be set to 8001)
-- U6300 (port must be set to 8001)
-- UE6199UXZG (port must be set to 8001, On/Off, Forward/Backward, Volume control, but no Play button)
-- UE65KS8005 (port must be set to 8001, On/Off, Forward/Backward, Volume are OK, but no Play button)
-- UE49KU6470 (port must be set to 8001, On/Off, Forward/Backward, Volume are OK, but no Play button)
+- U6000
+- U6300
 - UE46ES5500 (partially supported, turn on doesn't work)
+- UE46D7000
+- UE49KU6470 (On/Off, Forward/Backward, Volume are OK, but no Play button)
+- UE55MU6179
+- UE55NU8070
+- UE6199UXZG (On/Off, Forward/Backward, Volume control, but no Play button)
+- UE65KS8005 (On/Off, Forward/Backward, Volume are OK, but no Play button)
 
 #### 테스트했지만 동작하지 않았던 모델들
 
@@ -146,6 +149,7 @@ broadcast_address:
 - Q6F – Port set to 8001, turning on works, turning off does not work, status not working reliably.
 - Q7F - State is always "off" and unable to control via port 8001.
 - Q9F - Turning on works, turning off does not work. State is correct. Nothing else works. Port 8001.
+- RU8000 - Turning on works, turning off does not work. State is correct but says on periodically but in reality is not. Nothing else works via port 8001.
 
 None of the 2014 (H) and 2015 (J) model series (e.g., J5200) will work, since Samsung have used a different (encrypted) type of interface for these.
 

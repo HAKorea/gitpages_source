@@ -4,7 +4,7 @@ description: "Basic example how to use weather conditions to set states"
 ha_category: Automation Examples
 ---
 
-비가오고 있는지를 알려주는 'precip_intensity'조건이 있는 [Dark Sky](/integrations/darksky) 센서가 필요합니다. `cloud_cover`와 같은 다른 속성으로 실험할 수도 있습니다.
+비가오고 있는지를 알려주는 'precip_intensity' 조건이 있는 [Dark Sky](/integrations/darksky) 센서가 필요합니다. `cloud_cover`와 같은 다른 속성으로 실험할 수도 있습니다.
 
 비가 올 때, 누군가 집에 있고, 오후 혹은 그 이후에 거실의 조명을 켜십시오.
 

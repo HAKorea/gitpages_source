@@ -72,7 +72,7 @@ Lutron Smart Bridge에 고정 IP 주소를 할당하는 것이 좋습니다. 이
 라우터에서 DHCP 예약을 사용하여 주소를 예약하거나 Smart Bridge의 PRO 모델에서 모바일 앱의 Advanced / Integration 메뉴에 있는 네트워크 설정에서 IP 주소를 설정하십시오.
 </div>
 
-Lutron Caseta roller, honeycomb shades, lights, scene 및 switch를 Home Assistant와 함께 사용하려면, 먼저 위의 일반적인 Lutron Caseta 통합 지침을 따르십시오.
+Lutron Caseta roller, honeycomb shades, lights, scene, switch를 Home Assistant와 함께 사용하려면, 먼저 위의 일반적인 Lutron Caseta 연동 지침을 따르십시오.
 
 ## Cover
 
@@ -80,25 +80,25 @@ Lutron Caseta roller, honeycomb shades, lights, scene 및 switch를 Home Assista
 
 Home Assistant에서 shades 작업에 대한 자세한 내용은 [Covers component](/integrations/cover/)를 참조하십시오.
 
-사용 가능한 서비스 : `cover.open_cover`, `cover.close_cover` 및 `cover.set_cover_position`. 커버의 위치는 완전 폐쇄의 경우 0, 완전 개방의 경우 100까지입니다.
+사용 가능한 서비스 : `cover.open_cover`, `cover.close_cover`, `cover.set_cover_position`. 커버의 위치는 완전 닫힘의 경우 0, 완전 개방의 경우 100까지입니다.
 
 ## Light
 
-설정 후 벽 및 플러그인 dimmers를 포함한 디밍 가능 조명이 Lutron 모바일 앱에서 사용된 이름을 기반으로 `entity_id`를 사용하여 Home Assistant에 나타납니다. 예를 들어 'Bedroom Lamp'라는 조명은 홈 어시스턴트에 `light.bedroom_lamp`로 나타납니다.
+설정 후 벽과 플러그인 dimmers를 포함한 디밍 가능 조명이 Lutron 모바일 앱에서 사용된 이름을 기반으로 `entity_id`를 사용하여 Home Assistant에 나타납니다. 예를 들어 'Bedroom Lamp'라는 조명은 홈어시스턴트에 `light.bedroom_lamp`로 나타납니다.
 
 디밍 불가능한 조명 또는 스위치로드에 대해서는 이 페이지의 스위치 섹션을 참조하십시오.
 
 Home Assistant에서 조명 작업에 대한 자세한 내용은 [Lights component](/integrations/light/)를 참조하십시오.
 
-사용 가능한 서비스 : `light.turn_on`, `light.turn_off`, `light.toggle`.  `light.turn_on` 서비스는 `brightness` 및 `brightness_pct` 속성을 지원합니다.
+사용 가능한 서비스 : `light.turn_on`, `light.turn_off`, `light.toggle`.  `light.turn_on` 서비스는 `brightness`, `brightness_pct` 속성을 지원합니다.
 
-## 장면(Scene)
+## 씬(Scene)
 
-Lutron Caseta 장면 플랫폼을 사용하면 Lutron 모바일 앱에서 생성된 Smart Bridge 장면을 제어 할 수 있습니다.
+Lutron Caseta 씬 플랫폼을 사용하면 Lutron 모바일 앱에서 생성된 Smart Bridge 씬을 제어할 수 있습니다.
 
-설정 후 장면은 Lutron 모바일 앱에서 사용된 이름을 기반으로 `entity_id`를 사용하여 Home Assistant에 나타납니다. 예를 들어 `Entertain`이라는 장면은 Home Assistant에서 `scene.entertain`으로 나타납니다.
+설정 후 씬은 Lutron 모바일 앱에서 사용된 이름을 기반으로 `entity_id`를 사용하여 Home Assistant에 나타납니다. 예를 들어 `Entertain`이라는 장면은 Home Assistant에서 `scene.entertain`으로 나타납니다.
 
-Home Assistant에서 장면 작업에 대한 자세한 내용은 [Scenes component](/integrations/scene/)를 참조하십시오.
+Home Assistant에서 씬 작업에 대한 자세한 내용은 [Scenes component](/integrations/scene/)를 참조하십시오.
 
 사용가능한 서비스: `scene.turn_on`.
 
@@ -106,7 +106,7 @@ Home Assistant에서 장면 작업에 대한 자세한 내용은 [Scenes compone
 
 설정 후 스위치는 Lutron 모바일 앱에서 사용되는 이름을 기반으로 `entity_id`를 사용하여 Home Assistant에 나타납니다. 예를 들어 'Master Bathroom Vanity'라는 전등 스위치는 홈어시스턴트에 `switch.master_bathroom_vanity`로 나타납니다.
 
-벽 및 플러그인 디머를 포함한 디밍 가능 라이트에 대해서는 이 페이지의 라이트 섹션을 참조하십시오.
+벽과 플러그인 디머를 포함한 디밍 가능 라이트에 대해서는 이 페이지의 라이트 섹션을 참조하십시오.
 
 Home Assistant에서 스위치 작업에 대한 자세한 내용은 [Switches component](/integrations/switch/)를 참조하십시오.
 

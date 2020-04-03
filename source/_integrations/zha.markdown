@@ -164,7 +164,7 @@ enable_quirks:
 
 [https://github.com/vanviegen/hue-thief/](https://github.com/vanviegen/hue-thief/)의 지침을 따르십시오 (EZSP 기반 Zigbee USB 스틱 필요)
 
-### LINUX 호스트에 HOME-ASSISTANT DOCKER/HASS.IO 설치시 ZHA 시작 문제
+### HA CORE DOCKER 혹은 HA SUPERVISED 설치시 ZHA 시작 문제
 
 Linux 호스트에서 Zigbee USB 장치가 호스트의 modemmanager service에 의해 쓰이기 때문에 HA 시작 중에 ZHA가 시작되지 않거나 다시 시작되지 않을 수 있습니다. 이 문제를 해결하려면 호스트 시스템에서 modemmanger를 비활성화하십시오.
 

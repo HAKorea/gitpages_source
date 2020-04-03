@@ -4,7 +4,9 @@ description: "Details about YAML to configure Home Assistant."
 redirect_from: /getting-started/yaml/
 ---
 
+<div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/cdLNKUoMc6c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 홈어시스턴트는 설정에 [YAML](https://yaml.org/) 문법을 사용합니다. YAML은 익숙해지기까지 다소 시간이 걸리지만 복잡한 설정을 표현할 수 있는 능력이 있습니다.
 

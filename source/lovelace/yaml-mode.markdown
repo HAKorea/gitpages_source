@@ -27,7 +27,103 @@ YAML을 통해 UI를 제어하면 수정을 위한 홈어시스턴트 인터페�
 
 UI를 사용하여 Lovelace 인터페이스를 편집하도록 되돌리려면 `configuration.yaml`에서 `lovelace` 섹션을 제거하고 `ui-lovelace.yaml`의 내용을 Home Assistant의 구성 코드 섹션에 복사한 후 다시 시작하십시오.
 
-아주 최소한의 예로서, 이를 동작시키는데 필요한 최소값은 다음과 같습니다.
+### 고급 설정 
+
+모두 고유한 YAML 파일이 있는 여러 대시 보드를 정의하고 모든 대시 보드에서 공유하는 사용자 지정 리소스를 추가할 수 있습니다.
+
+대시 보드의 키는 URL로 사용되며 하이픈 (`-`)을 포함해야합니다.
+
+```yaml
+lovelace:
+  mode: yaml
+  # Include external resources only add when mode is yaml, otherwise manage in the resources in the lovelace configuration panel.
+  resources:
+    - url: /local/my-custom-card.js
+      type: module
+    - url: /local/my-webfont.css
+      type: css
+  # Add more dashboards
+  dashboards:
+    lovelace-generated: # Needs to contain a hyphen (-)
+      mode: yaml
+      filename: notexist.yaml
+      title: Generated
+      icon: mdi:tools
+      show_in_sidebar: true
+      require_admin: true
+    lovelace-hidden:
+      mode: yaml
+      title: hidden
+      show_in_sidebar: false
+      filename: hidden.yaml
+```
+
+기본 대시 보드가 UI 구성되어있을 때 YAML 대시 보드를 추가할 수도 있습니다.
+```yaml
+lovelace:
+  mode: storage
+  # Add yaml dashboards
+  dashboards:
+    lovelace-yaml:
+      mode: yaml
+      title: YAML
+      icon: mdi:script
+      show_in_sidebar: true
+      filename: lovelace.yaml
+```
+
+{% configuration Lovelace %}
+mode:
+  required: true
+  description: "In what mode should the main Lovelace panel be, `yaml` or `storage` (UI managed)."
+  type: string
+resources:
+  required: false
+  description: "List of resources that should be loaded when you use Lovelace. Only use this when mode is `yaml`."
+  type: list
+  keys:
+    url:
+      required: true
+      description: The URL of the resource to load.
+      type: string
+    type:
+      required: true
+      description: "The type of resource, this should be either `module` for a JavaScript module or `css` for a StyleSheet."
+      type: string
+dashboards:
+  required: false
+  description: Additional Lovelace YAML dashboards. The key is used for the URL and should contain a hyphen (`-`)
+  type: map
+  keys:
+    mode:
+      required: true
+      description: "The mode of the dashboard, this should always be `yaml`. Dashboards in `storage` mode can be created in the Lovelace configuration panel."
+      type: string
+    filename:
+      required: true
+      description: "The file in your `config` directory where the Lovelace configuration for this panel is."
+      type: string
+    title:
+      required: true
+      description: "The title of the dashboard, will be used in the sidebar."
+      type: string
+    icon:
+      required: false
+      description: The icon to show in the sidebar.
+      type: string
+    show_in_sidebar:
+      required: false
+      description: Should this view be shown in the sidebar.
+      type: boolean
+      default: true
+    require_admin:
+      required: false
+      description: Should this view be only accessible for admin users.
+      type: boolean
+      default: false
+{% endconfiguration %}
+
+Lovelace 대시 보드 구성의 최소 단위 예를 들면 다음과 같습니다. : 
 
 ```yaml
 title: My Awesome Home
@@ -42,17 +138,10 @@ views:
           Welcome to your **Lovelace UI**.
 ```
 
-약간 더 발전된 예는 프런트엔드를 커스텀 제작하는데 사용할 수 있는 추가 요소를 보여줍니다.
+약간 더 발전된 예 :
 
 ```yaml
 title: My Awesome Home
-# Include external resources
-resources:
-  - url: /local/my-custom-card.js
-    type: js
-  - url: /local/my-webfont.css
-    type: css
-
 views:
     # View tab title.
   - title: Example

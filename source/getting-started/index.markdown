@@ -42,15 +42,15 @@ So here are guidelines:
 
 ### 소프트웨어 요구사항
 
-- [구매한 하드웨어](/hassio/installation/)에 맞는 HassOS 이미지를 다운받고 압축을 해제합니다.
+- [구매한 하드웨어](/hassio/installation/)에 맞는 Home Assistant 이미지를 다운받고 압축을 해제합니다.
 - SD카드에 이미지를 기록할 [balenaEtcher]를 다운 받아 설치합니다.
 
 [balenaEtcher]: https://www.balena.io/etcher
 
 ### 설치
-이 방법은 HassOS 설치방법입니다. [도커에 Hassio](/docs/installation/docker)를 설치하는 방법과는 다른 것으로 Hassio를 포함하는 HassOS입니다.  
+
 1. SD카드를 카드리더기에 삽입합니다.
-2. balenaEtcher를 실행하고 HassOS 이미지를 선택, SD카드에 flash 합니다.
+2. balenaEtcher를 실행하고 Home Assisstant 이미지를 선택, SD카드에 flash 합니다.
 3. SD card를 마운트해제(이동식 디스크 꺼내기)하고 카드리더기에서 뽑습니다.
 4. 무선 와이파이를 설정하거나 고정IP를 부여하려면 다음 과정을 따라하시고 유선으로 랜케이블을 사용하면 5번 과정으로 진행하세요.
    - FAT32로 포맷한 USB 메모리 스틱을 준비합니다. USB 스틱의 디스크 볼륨명은 `CONFIG`으로 정합니다.
@@ -62,7 +62,7 @@ So here are guidelines:
 5. SD 카드를 라즈베리파이에 꼽습니다. 유선 랜을 사용 하는 경우라면 랜 케이블을 연결합니다.
 6. 라즈베리파이의 전원을 켭니다.
 7. 이제 라즈베리파이를 부팅하고 인터넷에서 홈어시스턴트에 필요한 최신 파일들을 다운받습니다. 이 과정은 자동으로 실행되며 최대 약 20분 정도의 시간이 걸립니다.
-8. 홈어시스턴트를 확인하기 위해 웹브라우저에서 `http://hassio.local:8123`로 접속하세요. 본인의 윈도우가 구버전이거나 네트웍에 따라서 접속이 불가한 경우도 있습니다. 그럴때는 `http://hassio:8123` 또는 공유기에서 라즈베리파이의 IP주소를 찾아서 `http://ip주소:8123` 으로 접속해보세요. 웹사이트가 보인다면 성공이며 화면에 잔여시간이 나타납니다.
+8. 홈어시스턴트를 확인하기 위해 웹브라우저에서 `http://homeassistant.local:8123`로 접속하세요. 본인의 윈도우가 구버전이거나 네트웍에 따라서 접속이 불가한 경우도 있습니다. 그럴때는 `http://homeassistant:8123` 또는 공유기에서 라즈베리파이의 IP주소를 찾아서 `http://ip주소:8123` 으로 접속해보세요. 웹사이트가 보인다면 성공이며 화면에 잔여시간이 나타납니다.
 9. 모든 설치가 끝나면 네트웍 설정을 위해 꼽아둔 USB 스틱을 제거하세요. 최초 부팅이 끝난 이후에는 더이상 필요하지 않습니다.
 
 [다음 예제]: https://github.com/home-assistant/hassos/blob/dev/Documentation/network.md

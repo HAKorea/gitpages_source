@@ -16,7 +16,9 @@ ha_codeowners:
 <iframe width="776" height="437" src="https://www.youtube.com/embed/soKuma8DJWQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-[ESPHome](https://esphome.io) 장치를 통합구성요소로 사용할 시에는 [native ESPHome API](https://esphome.io/components/api.html)로 완벽하게 직접 연결됩니다. 
+[ESPHome](https://esphome.io) 장치를 통합구성요소로 사용할 시에는 [native ESPHome API](https://esphome.io/components/api.html)로 완벽하게 직접 연결되고 어떠한 상용 IOT제품보다 안정적으로 동작합니다. 
+
+상용품의 펌웨어를 ESPHOME으로 변경해서 **더 많은 기능**을 넣을 수 있고 **로컬로 동작**하게 만들 수 있습니다. 한편 DIY 제작으로 직접 센서와 ESP칩(NodeMCU)을 구매해서 만들 경우 상용품 대비 최대 약 **10분의 1가격**에도 **신뢰도 높은 IOT기기**를 만들 수 있습니다. 
 
 ### ESPHOME의 특징 ### 
   
@@ -45,8 +47,29 @@ ha_codeowners:
 
 ### ESPHOME 활용 사례 ###
 
-[HA 네이버 카페 ESPHOME 게시판](https://cafe.naver.com/ArticleList.nhn?search.clubid=29860180&search.menuid=14&search.boardtype=L) 및 [ST 네이버 카페 ESP 게시판](https://cafe.naver.com/ArticleList.nhn?search.clubid=29087792&search.menuid=117&search.boardtype=L)을 참조하여 다른분들의 설정기를 따라해 보십시오. 조금만 익숙해지면 초보자들도 쉽게 따라 할 수 있습니다.  
+[HA카페 ESP 게시판](https://cafe.naver.com/ArticleList.nhn?search.clubid=29860180&search.menuid=14&search.boardtype=L)과 [ST카페 ESP 게시판](https://cafe.naver.com/ArticleList.nhn?search.clubid=29087792&search.menuid=117&search.boardtype=L)을 참조하십시오. 
 
+## 유용한 ESPHOME 사례 
+
+0. [5.5만원 통합실내환경 모니터](https://cafe.naver.com/stsmarthome/9355) - 더니즈
+
+1. [0.6만원 보안카메라 제작](https://cafe.naver.com/stsmarthome/9612) - 민쇼 
+2. [2.5만원 다기능 버튼식 3구스위치 펌웨어 변경](https://cafe.naver.com/stsmarthome/9947) - 민쇼
+3. [제스처센서로 LED 스트립 제작](https://cafe.naver.com/stsmarthome/11127) - 검은별3
+4. [반려동물 전용 카메라 제작](https://cafe.naver.com/stsmarthome/11740) - 검은별3 
+5. [6.8만원 스마트 커튼 제작](https://cafe.naver.com/stsmarthome/13634) - 검은별3 
+6. [0.6만원 1구 벽스위치 펌웨어 변경](https://cafe.naver.com/stsmarthome/12541) -민쇼 
+7. [아나로그볼륨으로 원격가전음성조절기 제작](https://cafe.naver.com/stsmarthome/12756) - 민쇼
+8. [1만원 RS485 월패드 제어기 제작](https://cafe.naver.com/stsmarthome/12973) - 깡스
+9. [2.5만원 상용 3구스위치에 모션센서추가](https://cafe.naver.com/stsmarthome/13100) - 하얀가지
+10. [변기 물내림 자동화 제작](https://cafe.naver.com/stsmarthome/13101) - 카라스테
+11. [멀티플러그 스마트멀티탭 펌웨어 변경](https://cafe.naver.com/stsmarthome/13941) - 민쇼 
+12. [3만원 꽃나무 자동관수시스템 펌웨어 변경](https://cafe.naver.com/koreassistant/82) - 민쇼
+13. [버튼 하나로 다양한 명령 넣기](https://cafe.naver.com/koreassistant/188) - 은찬파
+14. [1만원 배전반용 실시간 전력측정기 제작](https://cafe.naver.com/koreassistant/232) - 민쇼
+15. [상용 LED 스트립에 디머스위치 추가](https://cafe.naver.com/koreassistant/288) - zeibis
+16. [짬뽕형 센서 모듈](https://cafe.naver.com/koreassistant/830) - 검은별3
+17. [Sonoff Basic 괴롭히기](https://cafe.naver.com/koreassistant/370) - 민쇼
 
 ## 통합 구성요소(Integrations)를 통한 기기 추가 방법 
 

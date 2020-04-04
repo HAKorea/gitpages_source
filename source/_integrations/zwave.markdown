@@ -28,7 +28,7 @@ ha_codeowners:
 
 대신 LG유플러스에서 제공하는 자체적인 서비스는 사용할 수 없지만, 기존 [Z-WAVE LG유플러스 동글](http://www.grib-iot.com/iotdevice/iot_hub_dongle.asp)을 활용하여 HA에서 Z-WAVE 환경을 어렵지 않게 만들 수 있습니다. 
 
-기존에 LG유플러스에서 쓰던 [플러그](https://m.blog.naver.com/activetia/220901736851), [스위치](https://www.uplus.co.kr/ent/shome/IotswiInfo.hpi), 심지어 도어락까지 어렵지 않게 페어링해서 쓸 수 있습니다. 
+기존에 LG유플러스에서 쓰던 [플러그](https://m.blog.naver.com/activetia/220901736851), [스위치](https://www.uplus.co.kr/ent/shome/IotswiInfo.hpi), 심지어 [가스락](http://blog.naver.com/fromzip/221887786159), [도어락](https://cafe.naver.com/koreassistant/37) 까지 어렵지 않게 페어링해서 쓸 수 있습니다. 
 
 [다모아님의 Z-WAVE USB 동글 설치기](https://cafe.naver.com/koreassistant/198)를 참조하시고 LG유플러스 USB동글에 동일하게 적용할 시 기존의 Z-WAVE 장치들을 어렵지않게 쓰실 수 있습니다. 
 

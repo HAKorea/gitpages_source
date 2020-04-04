@@ -117,7 +117,7 @@ Debian 또는 Ubuntu 사용만 지원됩니다. 다른 Linux 기반 시스템은
 
 사용자 정의 운영 체제에 대한 커스텀 설정은 홈어시스턴트를 방해할 수 있습니다. 따라서 선택한 운영 체제를 관리, 설정, 유지 보수하는데 필요한 지식이 있어야합니다.
 
-확실하지 않은 경우 위에 제공된대로 홈어시스턴트를 정기적으로 설치하는 것이 좋습니다. 이 경우 Home Assistant가 Home Assistant 운영 체제를 관리하고 업데이트합니다.
+확실하지 않은 경우 위에 제공된대로 홈어시스턴트를 정기적으로 설치하는 것이 좋습니다. 이 경우 Home Assistant가 Home Assistant OS를 관리하고 업데이트합니다.
 
 ### 사전 준비
 
@@ -186,7 +186,7 @@ HA 네이버카페 멀더요원님의 [시놀로지 NAS에 Home Assistant 설치
 
 ## 또 다른 방법: 가상 머신에서의 설치 
 
-일반 PC에서 가상머신 Virualbox를 이용해서 설치하는 방법입니다. 영상을 잘따라서 설치하십시오. 
+일반 PC에서 가상머신 Virualbox를 이용해서 설치하는 방법입니다. 영상을 잘따라서 설치하십시오. ST 네이버카페 마이토이님의 [VirtualBox 설치기](https://cafe.naver.com/stsmarthome/12789)를 참조하세요. 
 
 <div class='videoWrapper'>
 <iframe width="776" height="437" src="https://www.youtube.com/embed/sVqyDtEjudk?start=242" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

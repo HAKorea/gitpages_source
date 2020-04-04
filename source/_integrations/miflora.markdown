@@ -19,25 +19,22 @@ ha_codeowners:
 
 miflora를 실제 사용시 어떤 위치에도 식물재배기를 설치할 수 있도록 [ESPHOME](https://hakorea.github.io/integrations/esphome/)의 [ESP32의 내장된 블루투스를 통해 연결하는 방식](https://esphome.io/components/sensor/xiaomi_hhccjcy01.html)으로 설치하시길 적극적으로 추천 드립니다. 
 
--------------------------------------------------------------------------------------------------------
-이하 차후 번역
+`miflora` 센서 플랫폼은 식물의 토양과 공기상태를 모니터링할 수 있습니다. [Mi Flora 플랜트 센서](https://gadget-freakz.com/product/xiaomi-mi-flora-plant-sensor/)는 주변의 빛과 온도뿐만 아니라 토양의 수분과 전도도를 모니터링하는 소형 Bluetooth 저에너지 장치입니다. 한 번에 하나의 BLE 장치만 폴링할 수 있으므로 라이브러리는 한 번에 둘 이상의 장치를 폴링하지 않도록 잠금을 구현합니다.
 
-The `miflora` sensor platform allows one to monitor plant soil and air conditions. The [Mi Flora plant sensor](https://gadget-freakz.com/product/xiaomi-mi-flora-plant-sensor/) is a small Bluetooth Low Energy device that monitors the moisture and conductivity of the soil as well as ambient light and temperature. Since only one BLE device can be polled at a time, the library implements locking to prevent polling more than one device at a time.
+사용 가능한 "중국"과 "인터네셔널" 버전이 있으며 "인터네셔널"만 작동하는 [보고서](https://community.home-assistant.io/t/miflora-showing-data-unknown/19550/8)가 있습니다.
 
-There are "Chinese" and "International" versions available and there is a [report](https://community.home-assistant.io/t/miflora-showing-data-unknown/19550/8) that only the "International" works.
+## 블루투스 백엔드 설치
 
-## Install a Bluetooth Backend
+Home Assistant를 설정하기 전에 Bluetooth 백엔드와 센서의 MAC 주소가 필요합니다. 운영 체제에 따라 시스템에 적합한 Bluetooth 백엔드를 설정해야 할 수도 있습니다. : 
 
-Before configuring Home Assistant you need a Bluetooth backend and the MAC address of your sensor. Depending on your operating system, you may have to configure the proper Bluetooth backend for your system:
-
-- On [Hass.io](/hassio/installation/): Miflora will work out of the box.
-- On a [generic Docker installation](/docs/installation/docker/): Works out of the box with `--net=host` and properly configured Bluetooth on the host.
+- On [Home Assistant](/hassio/installation/): Miflora will work out of the box.
+- On a [Home Assistant Core Docker](/docs/installation/docker/): Works out of the box with `--net=host` and properly configured Bluetooth on the host.
 - On other Linux systems:
   - Preferred solution: Install the `bluepy` library (via pip). When using a virtual environment, make sure to install the library in the right one.
   - Fallback solution: Install `gatttool` via your package manager. Depending on the distribution, the package name might be: `bluez`, `bluetooth`, `bluez-deprecated`
 - On Windows and MacOS there is currently no support for the [miflora library](https://github.com/open-homeautomation/miflora/).
 
-## Scan for devices
+## 장치 스캔하기
 
 Start a scan to determine the MAC addresses of the sensor (you can identify your sensor by looking for `Flower care` or `Flower mate` entries) using this command:
 
@@ -59,11 +56,11 @@ $ bluetoothctl
 [NEW] C4:D3:8C:12:4C:57 Flower mate
 ```
 
-If you can't use `hcitool` or `bluetoothctl` but have access to an Android phone you can try `BLE Scanner` or similar scanner applications from the Play Store to easily find your sensor MAC address. If you are using Windows 10, try the `Microsoft Bluetooth LE Explorer` app from the Windows Store.
+`hcitool` 또는 `bluetoothctl`을 사용할 수 없지만 Android 전화기에 액세스 할 수 있는 경우 Play Store에서 `BLE 스캐너` 또는 유사한 스캐너 응용 프로그램을 사용해 센서 MAC 주소를 쉽게 찾을 수 있습니다. Windows 10을 사용하는 경우 Windows 스토어에서 `Microsoft Bluetooth LE Explorer`앱을 사용해보십시오.
 
-## Configuration
+## 설정
 
-To use your Mi Flora plant sensor in your installation, add the following to your `configuration.yaml` file:
+Mi Flora plant 센서를 사용하려면 `configuration.yaml` 파일에 다음을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -118,12 +115,13 @@ adapter:
 <div class='note warning'>
 
 By default the sensor is only polled once every 20 minutes (`scan_interval` is 1200 seconds by default). On a Home Assistant restart sensor will report initial value. If you set `median: 3`, it will take _at least_ 40 minutes before the sensor will report an average value. Keep in mind though that reducing polling intervals will have a negative effect on the battery life.
+기본적으로 센서는 20 분마다 한 번만 폴링됩니다 (`scan_interval`은 기본적으로 1200 초입니다). 홈어시스턴트 재시작시, 센서에서 초기값을 보고합니다. `median: 3`을 설정하면 센서가 평균값을 보고하는데 최소 40 분이 걸립니다. 폴링 간격을 줄이면 배터리 수명에 부정적인 영향을 미칩니다.
 
 </div>
 
-## Full example
+## 전체 사례 
 
-A full configuration example could look like the one below:
+전체 설정 예는 다음과 같습니다.
 
 ```yaml
 # Example configuration.yaml entry

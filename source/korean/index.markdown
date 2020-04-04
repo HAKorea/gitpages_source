@@ -6,7 +6,7 @@ regenerate: true
 hide_github_edit: true
 ---
 
-다음은 국내에서 제작된 컴포넌트와 애드온들입니다.
+다음은 국내에서 제작된 컴포넌트와 애드온 및 팁들입니다.
 
 ### Calendar
 * [기념일 센서](https://github.com/GrecHouse/anniversary) - 그레고리하우스
@@ -44,6 +44,8 @@ hide_github_edit: true
 * [서울 버스](https://github.com/miumida/seoul_bus) - miumida
 * [네이버 경로](https://github.com/wkd8176/Naver-Travel-Time-Component) - 깜찍근영
 * [헬로버스 아이경로](https://cafe.naver.com/stsmarthome/9595) - 모쏘
+* [티맵 경로](https://cafe.naver.com/stsmarthome/14521) - af950833
+* [챠량 카톡 실시간 위치확인](https://cafe.naver.com/stsmarthome/11626) - 제이슨B
 
 ### Weather
 * [SK weather](https://cafe.naver.com/koreassistant/16) - stkang90
@@ -65,8 +67,6 @@ hide_github_edit: true
 * [Lotto 6/45](https://github.com/miumida/lotto645) - miumida
 
 
-
-
 ### 애드온
 * [국내 애드온 repository](https://github.com/HAKorea/addons) - 아래 애드온은 본 통합 저장소를 HA의 supervisor > Addon Store에 등록하면 애드온 카드가 나타납니다.
 
@@ -84,3 +84,9 @@ hide_github_edit: true
 
     * redis : [밍밍1님 Youtube 플레이 리스트 아이디어](https://cafe.naver.com/koreassistant/1001)를 애드온으로 제작했습니다. 
     
+### TIPS 
+
+* [Tasker로 HA의 모든것을 제어하기](https://cafe.naver.com/stsmarthome/11516) - af950833
+* [체감온도 센서 만들기](https://cafe.naver.com/stsmarthome/11306) - 크리틱
+* [Garmin 장치로 집안을 통제하기](https://cafe.naver.com/stsmarthome/10848) - 민쇼
+* [샤오미센서로 슈퍼 카운터 센서만들기](https://cafe.naver.com/stsmarthome/9505) - af950833

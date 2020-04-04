@@ -95,13 +95,13 @@ NUC i7/i9 | 최고의 성능, **어떤** 성능이슈도 없습니다.
   </a>
   <a class='option-card' href='/docs/installation/macos/'>
     <div class='img-container'>
-      <img src='/images/supported_brands/apple.png' />
+      <img src='https://brands.home-assistant.io/ios/icon.png' />
     </div>
     <div class='title'>macOS</div>
   </a>
   <a class='option-card' href='/docs/installation/synology/'>
     <div class='img-container'>
-      <img src='/images/supported_brands/synology.png' />
+      <img src='https://brands.home-assistant.io/synology/logo.png' />
     </div>
     <div class='title'>Synology</div>
   </a>
@@ -111,10 +111,11 @@ NUC i7/i9 | 최고의 성능, **어떤** 성능이슈도 없습니다.
     </div>
     <div class='title'>FreeNAS</div>
   </a>
-  <a class='option-card' href='/hassio/installation/#alternative-install-on-a-generic-linux-host'>
+  <a class='option-card' href='/hassio/installation/#alternative-install-home-assistant-supervised-on-a-generic-linux-host'>
     <div class='img-container'>
-      <img src='/images/supported_brands/home-assistant.png' />
+      <img src='https://brands.home-assistant.io/homeassistant/icon.png' />
     </div>
-    <div class='title'>Hass.io <br> on generic Linux server</div>
+    <div class='title'>Home Assistant Supervised <br> on generic Linux server</div>
   </a>
 </div>
+

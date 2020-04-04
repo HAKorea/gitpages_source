@@ -38,10 +38,9 @@ redirect_from: /integrations/hassio/
 [Let's Encrypt]: /addons/lets_encrypt/
 [Duck DNS]: /addons/duckdns/
 [forums]: https://community.home-assistant.io/c/hass-io
-[kr-forum]: https://cafe.naver.com/koreassistant
 [comm-add-ons]: https://community.home-assistant.io/tags/hassio-repository
 [all]: /addons/
 [chat]: https://discord.gg/K3UVxJd
-[HassOS]: https://github.com/home-assistant/hassos
-[Docker]: https://www.docker.com/
+[Home Assistant Operating System]: https://github.com/home-assistant/operating-system
+[Home Assistant Core]: https://www.home-assistant.io/docs/installation/
 [install]: /hassio/installation/

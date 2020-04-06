@@ -90,3 +90,4 @@ hide_github_edit: true
 * [체감온도 센서 만들기](https://cafe.naver.com/stsmarthome/11306) - 크리틱
 * [Garmin 장치로 집안을 통제하기](https://cafe.naver.com/stsmarthome/10848) - 민쇼
 * [샤오미센서로 슈퍼 카운터 센서만들기](https://cafe.naver.com/stsmarthome/9505) - af950833
+* [현관문 휴대폰 NFC로 열기](https://cafe.naver.com/koreassistant/1174) - 갓북왕

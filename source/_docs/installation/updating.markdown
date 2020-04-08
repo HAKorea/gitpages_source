@@ -1,80 +1,81 @@
 ---
-title: "Updating Home Assistant"
+title: "홈어시스턴트 업데이트"
 description: "Step to update Home Assistant."
 redirect_from: /getting-started/updating/
 ---
 
 <div class='note warning'>
 
-The upgrade process differs depending on the installation you have, so please review the documentation that is specific to your install [Hass.io](/hassio/) or [Virtualenv](/docs/installation/virtualenv/#upgrading-home-assistant).
+업그레이드 프로세스는 설치에 따라 다르므로 설치 관련 설명서 ([Home Assistant](/hassio/) 또는 [Home Assistant Core](/docs/installation/virtualenv/#upgrading-home-assistant)) 를 검토하십시오 .
 
 </div>
 
-Check what's new in the latest version and potentially impacts your system in [Home Assistant release notes](https://github.com/home-assistant/home-assistant/releases). It is good practice to review these release notes and pay close attention to the **Breaking Changes** that are listed there. If you haven't done an update for a while, you should also check previous release notes as they can also contain relevant **Breaking Changes**. **Breaking Changes** may require configuration updates for your components. If you missed this and Home Assistant refuses to start, check the log file in the [configuration](/docs/configuration/) directory, e.g., `.homeassistant/home-assistant.log`, for details about broken components.
+최신 버전의 새로운 기능을 확인하고 [Home Assistant 릴리즈 노트](https://github.com/home-assistant/home-assistant/releases) 에서 시스템에 영향을 줄 수 있습니다. 이 릴리스 노트를 검토하고 여기에 나열된 **Breaking Changes**에 주의를 기울이는 것이 좋습니다. 한동안 업데이트를 수행하지 않은 경우 이전 릴리스 노트에도 관련 **Breaking Changes**이 포함될 수 있으므로 확인해야합니다 . 이러한 **Breaking Changes**에는 구성 요소에 대한 설정 업데이트가 필요할 수 있습니다. 이를 놓치고 홈어시스턴트가 시작을 거부하면 [configuration](/docs/configuration/) 디렉토리 (예: `.homeassistant/home-assistant.log`)의 로그 파일에서 깨진 구성 요소에 대한 세부사항을 확인하십시오.
 
 <div class='note'>
 
-To avoid permission errors, the upgrade must be run as the same user as the installation was completed, again review the documentation specific to your install [Hass.io](/hassio/) or [Virtualenv](/docs/installation/virtualenv).
+권한 오류를 피하려면 초기설치 중에 사용한 것과 동일한 사용자로 업그레이드를 실행해야합니다. [Home Assistant](/hassio/) 또는 [Home Assistant Core](/docs/installation/virtualenv) 설치와 관련된 설명서를 다시 검토하십시오.
 
 </div>
 
-The default way to update Home Assistant to the latest release, when available, is:
+사용 가능한 경우 Home Assistant를 최신 릴리스로 업데이트하는 기본 방법은 다음과 같습니다.
 
 ```bash
-$ pip3 install --upgrade homeassistant
+pip3 install --upgrade homeassistant
 ```
 
 For a Docker container, simply pull the latest one:
 
 ```bash
-$ sudo docker pull homeassistant/home-assistant:latest
+sudo docker pull homeassistant/home-assistant:latest
 ```
 
 For a Raspberry Pi Docker container, simply pull the latest one:
+Raspberry Pi Docker 컨테이너의 경우 최신 컨테이너를 pull 하십시오. : 
 
 ```bash
-$ sudo docker pull homeassistant/raspberrypi3-homeassistant:latest
+sudo docker pull homeassistant/raspberrypi3-homeassistant:latest
 ```
 
+업데이트 후 변경사항을 적용하려면 Home Assistant를 시작/다시시작 해야합니다. 즉, `hass` 자체 또는 [autostarting](/docs/autostart/) 데몬(해당되는 경우)을 다시 시작해야합니다. 장치에 따라 시작하는데 상당한 시간(예: 분)이 걸릴 수 있습니다. 모든 요구사항도 업데이트되기 때문입니다.
 
-After updating, you must start/restart Home Assistant for the changes to take effect. This means that you will have to restart `hass` itself or the [autostarting](/docs/autostart/) daemon (if applicable). Startup can take considerable amount of time (i.e. minutes) depending on your device. This is because all requirements are updated as well.
+[BRUH 자동화](https://www.bruhautomation.io/)가 Home Assistant 업그레이드 방법을 설명하는 [튜토리얼 비디오](https://www.youtube.com/watch?v=tuG2rs1Cl2Y)를 만들었습니다.
 
-[BRUH automation](https://www.bruhautomation.io/) has created [a tutorial video](https://www.youtube.com/watch?v=tuG2rs1Cl2Y) explaining how to upgrade Home Assistant.
+#### 특정 버전을 실행
 
-#### Run a specific version
-
-In the event that a Home Assistant version doesn't play well with your hardware setup, you can downgrade to a previous release:
+Home Assistant 버전이 하드웨어 설정에서 제대로 작동하지 않는 경우 이전 릴리스로 다운그레이드 할 수 있습니다.
 
 ```bash
-$ pip3 install homeassistant==0.XX.X
+pip3 install homeassistant==0.XX.X
 ```
 
-#### Run the beta version
+#### 베타 버전을 실행
 
-If you would like to test next release before anyone else, you can install the beta version released every two weeks:
+다른 사람보다 먼저 다음 릴리스를 테스트하려면 2 주마다 릴리스된 베타 버전을 설치할 수 있습니다.
+
 
 ```bash
-$ pip3 install --pre --upgrade homeassistant
+pip3 install --pre --upgrade homeassistant
 ```
 
-#### Run the development version
+#### 개발 버전을 실행
 
-If you want to stay on the bleeding-edge Home Assistant development branch, you can upgrade to `dev`.
+최첨단 홈어시스턴트 개발 브랜치를 유지하려면 `dev`로 업그레이드하면됩니다.
 
 <div class='note warning'>
-  The "dev" branch is likely to be unstable. Potential consequences include loss of data and instance corruption.
+  "dev" 브랜치가 불안정할 수 있습니다. 데이터 손실과 인스턴스 손상이 발생할 수 있습니다.
 </div>
 
 ```bash
 $ pip3 install --upgrade git+git://github.com/home-assistant/home-assistant.git@dev
 ```
 
-### Update Hass.io installation
+### HOME ASSISTANT 설치 업데이트
 
-Best practice for updating a Hass.io installation:
+Home Assistant 설치 업데이트 모범 사례 : 
 
-1. Backup your installation, using the snapshot functionality Hass.io offers.
-2. Check the release notes for breaking changes on [Home Assistant release notes](https://github.com/home-assistant/home-assistant/releases). Be sure to check all release notes between the version you are running and the one you are upgrading to. Use the search function in your browser (`CTRL + f`) and search for **Breaking Changes**.
-3. Check your configuration using the [Check Home Assistant configuration](/addons/check_config/) add-on.
-4. If the check passes, you can safely update. If not, update your configuration accordingly.
-5. Update Home Assistant.
+1. Home Assistant가 제공하는 스냅샷 기능을 사용하여 설치를 백업하십시오.
+2. [Home Assistant 릴리스 정보](https://github.com/home-assistant/home-assistant/releases)의 변경 사항을 해제하려면 릴리스 정보를 확인하십시오. 실행중인 버전과 업그레이드하려는 버전 사이의 모든 릴리스 정보를 확인하십시오. 브라우저에서 검색 기능 (`CTRL + f`)을 사용하고 **Breaking Changes**을 검색하십시오.
+3. [Home Assistant 설정 확인](/addons/check_config/) 애드온을 사용하여 설정을 확인하십시오.
+4. 확인이 통과되면 안전하게 업데이트할 수 있습니다. 그렇지 않은 경우 적절하게 설정을 업데이트하십시오.
+5. 홈어시스턴트를 업데이트하십시오.

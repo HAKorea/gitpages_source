@@ -13,7 +13,8 @@ ha_codeowners:
   - '@frenck'
 ---
 
-<div class='videoWrapper'>"775" height="436" src="https://www.youtube.com/embed/AIO0JKQeHuk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/AIO0JKQeHuk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 AdGuard Home은 Parental Control(성인 컨텐츠 차단)이 가능하며 네트워크 전체의 광고와 추적기 차단 기능을 하는 DNS서버입니다. `adguard` 통합구성요소는 Home Assistant에서 AdGuard Home 인스턴스를 제어하고 모니터링할 수 있습니다.

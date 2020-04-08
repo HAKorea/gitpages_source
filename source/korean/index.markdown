@@ -86,6 +86,7 @@ hide_github_edit: true
     
 ### TIPS 
 
+* [HA 전용앱으로 휴대폰과 연동하기](https://cafe.naver.com/koreassistant/1200)
 * [Tasker로 HA의 모든것을 제어하기](https://cafe.naver.com/stsmarthome/11516) - af950833
 * [체감온도 센서 만들기](https://cafe.naver.com/stsmarthome/11306) - 크리틱
 * [Garmin 장치로 집안을 통제하기](https://cafe.naver.com/stsmarthome/10848) - 민쇼

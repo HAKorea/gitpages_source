@@ -12,7 +12,7 @@ redirect_from: /integrations/auth/
 
 API 비밀번호에서 쉽게 전환할 수 있도록 _Legacy API Password_ 인증 제공자(auth provider)를 추가했습니다 . API 비밀번호가 설정되어 있어도 로그인할 수 있는 경우 기본적으로 사용됩니다.
 
-그러나 이 기능은 더 이상 사용되지 않으며 향후 릴리스에서 제거 될 예정이므로 최신 인증 기술 중 하나를 설정해야합니다.
+그러나 이 기능은 더 이상 사용되지 않으며 향후 릴리스에서 제거될 예정이므로 최신 인증 기술 중 하나를 설정해야합니다.
 </div>
 
 ## 인증 제공자 설정 (Configuring auth providers)

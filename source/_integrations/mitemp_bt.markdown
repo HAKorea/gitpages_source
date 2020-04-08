@@ -20,8 +20,8 @@ The `mitemp_bt` 센서 플랫폼은 모니터 온습도를 실시간으로 측�
 
 실행중인 운영 체제에 따라 시스템에서 다음과 같은 여러상황에 맞는 Bluetooth 설정을 해야합니다.:
 
-- [Hass.io](/hassio/installation/): `mitemp_bt` 설치한 시스템이 블루투스를 지원한다면 즉시 사용 가능합니다. (블루투스를 지원하는 라즈베리파이의 경우 바로 사용가능).
-- [generic Docker installation](/docs/installation/docker/): `--net=host` 명령을 이용하여 시스템에 적절한 블루투스 설정을 할 수 있습니다.
+- [홈어시스턴트](/hassio/installation/): `mitemp_bt` 설치한 시스템이 블루투스를 지원한다면 즉시 사용 가능합니다. (블루투스를 지원하는 라즈베리파이의 경우 바로 사용가능).
+- [홈어시스턴트 코어 on Docker](/docs/installation/docker/): `--net=host` 명령을 이용하여 시스템에 적절한 블루투스 설정을 할 수 있습니다.
 - 그외 리눅스 시스템:
   - 기본 솔루션: `bluepy` 및 `btlewrap` 라이브러리를 pip 명령으로 설치하십시오. 가상 환경을 사용하는 경우 그에 맞는 라이브러리 설치를 해야합니다.
   - 대체 솔루션: pip 명령으로 `btlewrap` 라이브러리를 설치하고 Package 관리 명령으로 `gatttool` 를 설치합니다. 배포판에 따라 패키지 이름은 `bluez`, `bluetooth` 혹은 `bluez-deprecated`일 수 있습니다.

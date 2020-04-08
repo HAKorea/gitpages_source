@@ -3,6 +3,11 @@ title: "홈어시스턴트 설치"
 description: "Instructions on how to install Hass.io."
 ---
 
+<div class='videoWrapper'>
+<iframe width="775" height="388" src="https://www.youtube.com/embed/XdiGdC7K4sI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+
 **참고** : 더 상세한 설치기는 [HA 네이버카페 설치가이드](https://cafe.naver.com/ArticleList.nhn?search.clubid=29860180&search.menuid=7&search.boardtype=L)를 참고하세요.  
 
 Home Assistant를 설치하는 과정을 단계별로 따라하세요.

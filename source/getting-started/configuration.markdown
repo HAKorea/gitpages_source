@@ -9,15 +9,15 @@ description: "Instructions to get Home Assistant configured."
 
 <div class='note'>
 
-아래 과정은 홈어시스턴트를 Hass.io로 설치한 경우에 해당합니다. 만일 다른 방법으로 설치했다면 [이 곳](/docs/configuration/)을 참고하세요.
+아래 과정은 홈어시스턴트를 Home Assistant Core로 설치한 경우에는 해당하지 않습니다. 만일 다른 방법으로 설치했다면 [이 곳](/docs/configuration/)을 참고하세요.
 
 </div>
 
-이제 처음으로 `configuration.yaml` 파일을 편집 해봅시다. 이를 위해 Hass.io 애드온 스토어에서 Configurator  애드온을 설치해야 합니다. 왼쪽 메뉴에서 Hass.io를 선택하고 화면 상단에서 애드온 스토어(add-on store) 탭을 누릅니다.
+이제 처음으로 `configuration.yaml` 파일을 편집 해봅시다. 이를 위해 Home Assistant 애드온 스토어에서 File Editor  애드온을 설치해야 합니다. 왼쪽 메뉴에서 File Editor를 선택하고 화면 상단에서 애드온 스토어(add-on store) 탭을 누릅니다.
 
 <p class='img'>
 <img src='/images/hassio/screenshots/main_panel_addon_store.png' />
-Hass.io 메인 패널에서 애드온 스토어를 엽니다
+Supervisor 메인 패널에서 애드온 스토어를 엽니다
 </p>
 
 공식 애드온(official add-ons) 섹션에서 File editor를 찾을 수 있습니다.

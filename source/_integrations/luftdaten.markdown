@@ -14,7 +14,7 @@ ha_codeowners:
 ---
 
 <div class='videoWrapper'>
-<iframe width="776" height="437" src="https://www.youtube.com/embed/83nSjiInZ3U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="775" height="436" src="https://www.youtube.com/embed/PCPoD4qAOPY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 The `luftdaten` integration will query the open data API of [luftdaten.info](https://luftdaten.info/) to monitor air quality and other weather data from a specific (self build) sensor station.

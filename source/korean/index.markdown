@@ -56,7 +56,7 @@ hide_github_edit: true
 * [월패드 RS485 관련 설명](https://cafe.naver.com/koreassistant/605) - 까꿍TM 
 * [코콤 월패드 제어 python 버전](https://github.com/GuGu927/RS485) - 랜이
 * [트루월드 버전 코콤 월패드 Nodejs V2](https://cafe.naver.com/koreassistant/601) - 트루월드
-* [자이 ezvill 월패드용 js](https://cafe.naver.com/koreassistant/959) - 싱아하
+* [자이 ezvill 월패드용 js](https://cafe.naver.com/koreassistant/1133) - 싱아하, rubato103
 * [코맥스 소켓지원 애드온](https://cafe.naver.com/koreassistant/733) - 사람
 * [월패드 연동 ESPHOME RS485 컴포넌트](https://cafe.naver.com/stsmarthome/12973) - 깡스
 
@@ -90,3 +90,4 @@ hide_github_edit: true
 * [체감온도 센서 만들기](https://cafe.naver.com/stsmarthome/11306) - 크리틱
 * [Garmin 장치로 집안을 통제하기](https://cafe.naver.com/stsmarthome/10848) - 민쇼
 * [샤오미센서로 슈퍼 카운터 센서만들기](https://cafe.naver.com/stsmarthome/9505) - af950833
+* [현관문 휴대폰 NFC로 열기](https://cafe.naver.com/koreassistant/1174) - 갓북왕

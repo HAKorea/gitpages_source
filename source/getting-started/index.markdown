@@ -31,6 +31,11 @@ So here are guidelines:
 
 [supported]: /hassio/installation/
 
+
+<div class='videoWrapper'>
+<iframe width="775" height="388" src="https://www.youtube.com/embed/XdiGdC7K4sI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 ### 추천 하드웨어
 
 홈어시스턴트를 설치하기 위해서는 몇가지 요구사항이 있습니다. 홈오토메이션을 구현하기 위한 첫 시작으로는 라즈베리파이 4B (모델B)를 추천합니다. 아래 링크에서 미국 아마존 사이트를 통해 구매할 수 있습니다.
@@ -46,6 +51,7 @@ So here are guidelines:
 - SD카드에 이미지를 기록할 [balenaEtcher]를 다운 받아 설치합니다.
 
 [balenaEtcher]: https://www.balena.io/etcher
+
 
 ### 설치
 

@@ -15,6 +15,8 @@ ha_codeowners:
 
 `filter`는 신호 처리 알고리즘을 센서, 이전과 현재 상태에 적용하고 선택한 알고리즘에 따라 `new state`를 생성합니다. 다음 이미지는 [History Graph]({{site_roor}}/integrations/history_graph/) 구성 요소를 사용하여 동일한 센서의 원래 센서와 필터 센서를 보여줍니다.
 
+**참고** : 이 통합구성요소를 활용하면 [HA카페 머루아저씨님의 Filter 셉서를 활용한 엔티티 데이터 기록 횟수 줄이기](https://cafe.naver.com/koreassistant/504) 도 구현 가능합니다. 
+
 <p class='img'>
   <img src='{{site_root}}/images/screenshots/filter-sensor.png' />
 </p>

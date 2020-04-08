@@ -1,5 +1,5 @@
 ---
-title: "국내 컴포넌트 & 애드온"
+title: "국내 컴포넌트 & 애드온 & TIPS"
 description: "Community maintained list of different ways to use Home Assistant."
 sidebar: false
 regenerate: true
@@ -86,9 +86,12 @@ hide_github_edit: true
     
 ### TIPS 
 
-* [HA 전용앱으로 휴대폰과 연동하기](https://cafe.naver.com/koreassistant/1200)
+* [HA 전용앱으로 휴대폰과 연동하기](https://cafe.naver.com/koreassistant/1200) - 민쇼
 * [Tasker로 HA의 모든것을 제어하기](https://cafe.naver.com/stsmarthome/11516) - af950833
 * [체감온도 센서 만들기](https://cafe.naver.com/stsmarthome/11306) - 크리틱
 * [Garmin 장치로 집안을 통제하기](https://cafe.naver.com/stsmarthome/10848) - 민쇼
 * [샤오미센서로 슈퍼 카운터 센서만들기](https://cafe.naver.com/stsmarthome/9505) - af950833
 * [현관문 휴대폰 NFC로 열기](https://cafe.naver.com/koreassistant/1174) - 갓북왕
+* [Tuya 전력량계 HA에 제대로 연동시키기](https://cafe.naver.com/koreassistant/822) - 하얀가지
+* [구글드라이드로 HA 설정 백업해두기](https://cafe.naver.com/koreassistant/732) - 갓북왕
+* [중성선 시공하기](https://cafe.naver.com/koreassistant/582) - 갓북왕

@@ -54,14 +54,17 @@ hide_github_edit: true
 
 ### Wallpad 
 * [월패드 RS485 관련 설명](https://cafe.naver.com/koreassistant/605) - 까꿍TM 
+
 * [코콤 월패드 제어 python 버전](https://github.com/GuGu927/RS485) - 랜이
+
+* [제이슨님의 유니버셜 월패드 애드온 연동 사용기](https://cafe.naver.com/koreassistant/579) - 민쇼
 * [트루월드 버전 코콤 월패드 Nodejs V2](https://cafe.naver.com/koreassistant/601) - 트루월드
 * [자이 ezvill 월패드용 js](https://cafe.naver.com/koreassistant/1133) - 싱아하, rubato103
 * [코맥스 소켓지원 애드온](https://cafe.naver.com/koreassistant/733) - 사람
-* [월패드 연동 ESPHOME RS485 컴포넌트](https://cafe.naver.com/stsmarthome/12973) - 깡스
 
-* [제이슨님의 유니버셜 월패드 애드온 연동 사용기](https://cafe.naver.com/koreassistant/579) - 민쇼
+* [월패드 연동 ESPHOME RS485 컴포넌트](https://cafe.naver.com/stsmarthome/12973) - 깡스
 * [깡스님의 ESPHOME 월패드 애드온 연동 사용기](https://cafe.naver.com/koreassistant/581) - 까꿍TM
+* [현대통신 월패드 RS485 엘리베이터 호출 추가](https://cafe.naver.com/koreassistant/1227) - 준테크
 
 ### Others
 * [Lotto 6/45](https://github.com/miumida/lotto645) - miumida
@@ -86,7 +89,7 @@ hide_github_edit: true
     
 ### TIPS 
 
-* [HA 전용앱으로 휴대폰과 연동하기](https://cafe.naver.com/koreassistant/1200) - 민쇼
+* [HA 모바일앱 설치로 휴대폰과 쉽게 연동하기](https://cafe.naver.com/koreassistant/1200) - 민쇼
 * [Tasker로 HA의 모든것을 제어하기](https://cafe.naver.com/stsmarthome/11516) - af950833
 * [체감온도 센서 만들기](https://cafe.naver.com/stsmarthome/11306) - 크리틱
 * [Garmin 장치로 집안을 통제하기](https://cafe.naver.com/stsmarthome/10848) - 민쇼
@@ -95,3 +98,10 @@ hide_github_edit: true
 * [Tuya 전력량계 HA에 제대로 연동시키기](https://cafe.naver.com/koreassistant/822) - 하얀가지
 * [구글드라이드로 HA 설정 백업해두기](https://cafe.naver.com/koreassistant/732) - 갓북왕
 * [중성선 시공하기](https://cafe.naver.com/koreassistant/582) - 갓북왕
+* [실시간 비 예보시스템 만들기](https://cafe.naver.com/koreassistant/1244) - 크리틱
+* [아마존 AI 활용 자동화 시스템 만들기](https://cafe.naver.com/koreassistant/1225) - 민쇼
+* [ESPHOME 활용 자신만의 월패드 만들기](https://cafe.naver.com/koreassistant/1197) - 민쇼
+
+### Lovelace 
+
+* [초보자도 만드는 HA러브레이스 응용](https://cafe.naver.com/koreassistant/1246) - 장난감놀이

@@ -1,5 +1,5 @@
 ---
-title: 아마존 웹 서비스 (AWS)
+title: 아마존 웹서비스 (AWS)
 description: Instructions on how to integrate Amazon Web Services with Home Assistant.
 logo: aws.png
 ha_category:

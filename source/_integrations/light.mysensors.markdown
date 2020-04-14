@@ -9,9 +9,9 @@ ha_release: 0.13
 ha_iot_class: Local Push
 ---
 
-Integrates MySensors lights into Home Assistant. See the [main component] for configuration instructions.
+MySensors Light를 Home Assistant에 연동합니다. 설정 지침은 [main component]를 참조하십시오.
 
-The following actuator types are supported:
+다음과 같은 액추에이터 유형이 지원됩니다. : 
 
 ##### MySensors version 1.4
 
@@ -27,11 +27,11 @@ S_DIMMER    | [V_DIMMER\* or V_PERCENTAGE\*], [V_LIGHT\* or V_STATUS\*]
 S_RGB_LIGHT | V_RGB*, [V_LIGHT\* or V_STATUS\*], [V_DIMMER or V_PERCENTAGE]
 S_RGBW_LIGHT | V_RGBW*, [V_LIGHT\* or V_STATUS\*], [V_DIMMER or V_PERCENTAGE]
 
-V_TYPES with a star (\*) denote V_TYPES that should be sent at sketch startup. For an S_DIMMER, send both a V_DIMMER/V_PERCENTAGE and a V_LIGHT/V_STATUS message.  For an S_RGB_LIGHT, send both a V_RGB and a V_LIGHT/V_STATUS message with a V_DIMMER/V_PERCENTAGE message being optional. Same principal applies for S_RGBW_LIGHT and V_RGBW.
+별표 (\*)가 있는 V_TYPES는 스케치 시작시 보내야하는 V_TYPES를 나타냅니다. S_DIMMER의 경우 V_DIMMER/V_PERCENTAGE와 V_LIGHT/V_STATUS 메시지를 모두 보냅니다. S_RGB_LIGHT의 경우, V_DIMMER/V_PERCENTAGE 메시지가 선택적으로 V_RGB과 V_LIGHT/V_STATUS 메시지를 모두 보냅니다. S_RGBW_LIGHT과 V_RGBW에도 동일한 원칙이 적용됩니다.
 
-Sketch should acknowledge a command sent from controller with the same type.  If command invokes a change to off state (including a V_PERCENTAGE, V_RGB, or V_RGBW message of zero), only a V_STATUS of zero message should be sent.  See sketches below for examples.
+스케치는 동일한 유형의 컨트롤러에서 전송된 명령을 인식해야합니다. 명령이 오프 상태(V_PERCENTAGE, V_RGB 또는 V_RGBW 메시지 0 포함)로 변경을 호출하면 V_STATUS 0 메시지만 보내야합니다. 예를 들어 아래 스케치를 참조하십시오.
 
-For more information, visit the [serial api] of MySensors.
+자세한 내용은 MySensors의 [serial api]를 방문하십시오.
 
 ### MySensors 1.x example sketch
 

@@ -51,8 +51,8 @@ ha_codeowners:
 
 ## 유용한 ESPHOME 사례 
 
-  * [5.5만원 통합실내환경 모니터](https://cafe.naver.com/stsmarthome/9355) - 더니즈
-  * [레고를 응용한 디자인 성능 다잡은 센서](https://cafe.naver.com/koreassistant/1138) - 파르마
+  * [5.5만원 통합실내환경 모니터 제작](https://cafe.naver.com/stsmarthome/9355) - 더니즈
+  * [레고를 응용한 디자인 성능 다잡은 센서 제작](https://cafe.naver.com/koreassistant/1138) - 파르마
 
   * [0.6만원 보안카메라 제작](https://cafe.naver.com/stsmarthome/9612) - 민쇼 
   * [2.5만원 다기능 버튼식 3구스위치 펌웨어 변경](https://cafe.naver.com/stsmarthome/9947) - 민쇼

@@ -12,9 +12,9 @@ description: Open source home automation that puts local control and privacy fir
 
 # Home Assistant release details
 current_major_version: 0
-current_minor_version: 107
-current_patch_version: 0
-date_released: 2020-03-18
+current_minor_version: 108
+current_patch_version: 3
+date_released: 2020-04-08
 
 keep_files: ["README.md",".git", ".svn",".gitignore"]
 

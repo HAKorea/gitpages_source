@@ -7,7 +7,9 @@ redirect_from: /getting-started/yaml/
 <div class='videoWrapper'>
 <iframe width="690" height="437" src="https://www.youtube.com/embed/cdLNKUoMc6c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
-
+<div class='videoWrapper'>
+<iframe width="775" height="436" src="https://www.youtube.com/embed/FfjSA2o_0KA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 홈어시스턴트는 설정에 [YAML](https://yaml.org/) 문법을 사용합니다. YAML은 익숙해지기까지 다소 시간이 걸리지만 복잡한 설정을 표현할 수 있는 능력이 있습니다.
 
 홈어시스턴트에서 통합구성요소를 사용하려는 연동의 경우 `configuration.yaml` 파일에 코드를 추가하여 설정을 합니다. 이는 특히 UI를 통해 설정할 수 없는 연동시 적용됩니다. 

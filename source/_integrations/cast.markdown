@@ -16,6 +16,8 @@ ha_config_flow: true
 
 홈어시스턴트에서 설정 - 통합구성요소로 이동하여 Cast 통합구성요소를 추가하여 사용할 수 있습니다.
 
+**참고 : HA카페 [지영파님의 Nest Hub를 깨우자](https://cafe.naver.com/koreassistant/120)의 글을 활용하시면 HA화면을 구글 NEST 허브에 나타나게 할 수 있습니다.
+
 ## Home Assistant Cast
 
 홈어시스턴트에는 Chromecast 기기에 홈어시스턴트 UI를 표시하는 고유한 전송 애플리케이션이 있습니다. [Cast entity row](/lovelace/entities/#cast)를 Lovelace UI에 추가하여 사용하거나 `cast.show_lovelace_view` 서비스를 호출해서 사용할 수 있습니다. 해당 서비스는 Cast 장치의 entity와 Lovelace 화면의 경로를 통해서 view로 화면에 노출시킬 수 있습니다. [views documentation](/lovelace/views/#path)에서 제시하였듯이 `path`는 각 view 화면을 위한 Lovelace YAML에서 정의되어야 합니다.  

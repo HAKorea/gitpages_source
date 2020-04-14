@@ -51,25 +51,26 @@ ha_codeowners:
 
 ## 유용한 ESPHOME 사례 
 
-0. [5.5만원 통합실내환경 모니터](https://cafe.naver.com/stsmarthome/9355) - 더니즈
+  * [5.5만원 통합실내환경 모니터 제작](https://cafe.naver.com/stsmarthome/9355) - 더니즈
+  * [레고를 응용한 디자인 성능 다잡은 센서 제작](https://cafe.naver.com/koreassistant/1138) - 파르마
 
-1. [0.6만원 보안카메라 제작](https://cafe.naver.com/stsmarthome/9612) - 민쇼 
-2. [2.5만원 다기능 버튼식 3구스위치 펌웨어 변경](https://cafe.naver.com/stsmarthome/9947) - 민쇼
-3. [제스처센서로 LED 스트립 제작](https://cafe.naver.com/stsmarthome/11127) - 검은별3
-4. [반려동물 전용 카메라 제작](https://cafe.naver.com/stsmarthome/11740) - 검은별3 
-5. [6.8만원 스마트 커튼 제작](https://cafe.naver.com/stsmarthome/13634) - 검은별3 
-6. [0.6만원 1구 벽스위치 펌웨어 변경](https://cafe.naver.com/stsmarthome/12541) -민쇼 
-7. [아나로그볼륨으로 원격가전음성조절기 제작](https://cafe.naver.com/stsmarthome/12756) - 민쇼
-8. [1만원 RS485 월패드 제어기 제작](https://cafe.naver.com/stsmarthome/12973) - 깡스
-9. [2.5만원 상용 3구스위치에 모션센서추가](https://cafe.naver.com/stsmarthome/13100) - 하얀가지
-10. [변기 물내림 자동화 제작](https://cafe.naver.com/stsmarthome/13101) - 카라스테
-11. [멀티플러그 스마트멀티탭 펌웨어 변경](https://cafe.naver.com/stsmarthome/13941) - 민쇼 
-12. [3만원 꽃나무 자동관수시스템 펌웨어 변경](https://cafe.naver.com/koreassistant/82) - 민쇼
-13. [버튼 하나로 다양한 명령 넣기](https://cafe.naver.com/koreassistant/188) - 은찬파
-14. [1만원 배전반용 실시간 전력측정기 제작](https://cafe.naver.com/koreassistant/232) - 민쇼
-15. [상용 LED 스트립에 디머스위치 추가](https://cafe.naver.com/koreassistant/288) - zeibis
-16. [짬뽕형 센서 모듈](https://cafe.naver.com/koreassistant/830) - 검은별3
-17. [Sonoff Basic 괴롭히기](https://cafe.naver.com/koreassistant/370) - 민쇼
+  * [0.6만원 보안카메라 제작](https://cafe.naver.com/stsmarthome/9612) - 민쇼 
+  * [2.5만원 다기능 버튼식 3구스위치 펌웨어 변경](https://cafe.naver.com/stsmarthome/9947) - 민쇼
+  * [제스처센서로 LED 스트립 제작](https://cafe.naver.com/stsmarthome/11127) - 검은별3
+  * [반려동물 전용 카메라 제작](https://cafe.naver.com/stsmarthome/11740) - 검은별3 
+  * [6.8만원 스마트 커튼 제작](https://cafe.naver.com/stsmarthome/13634) - 검은별3 
+  * [0.6만원 1구 벽스위치 펌웨어 변경](https://cafe.naver.com/stsmarthome/12541) -민쇼 
+  * [아나로그볼륨으로 원격가전음성조절기 제작](https://cafe.naver.com/stsmarthome/12756) - 민쇼
+  * [1만원 RS485 월패드 제어기 제작](https://cafe.naver.com/stsmarthome/12973) - 깡스
+  * [2.5만원 상용 3구스위치에 모션센서추가](https://cafe.naver.com/stsmarthome/13100) - 하얀가지
+  * [변기 물내림 자동화 제작](https://cafe.naver.com/stsmarthome/13101) - 카라스테
+  * [멀티플러그 스마트멀티탭 펌웨어 변경](https://cafe.naver.com/stsmarthome/13941) - 민쇼 
+  * [3만원 꽃나무 자동관수시스템 펌웨어 변경](https://cafe.naver.com/koreassistant/82) - 민쇼
+  * [버튼 하나로 다양한 명령 넣기](https://cafe.naver.com/koreassistant/188) - 은찬파
+  * [1만원 배전반용 실시간 전력측정기 제작](https://cafe.naver.com/koreassistant/232) - 민쇼
+  * [상용 LED 스트립에 디머스위치 추가](https://cafe.naver.com/koreassistant/288) - zeibis
+  * [짬뽕형 센서 모듈](https://cafe.naver.com/koreassistant/830) - 검은별3
+  * [Sonoff Basic 괴롭히기](https://cafe.naver.com/koreassistant/370) - 민쇼
 
 ## 통합 구성요소(Integrations)를 통한 기기 추가 방법 
 

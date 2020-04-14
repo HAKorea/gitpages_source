@@ -12,7 +12,7 @@ ha_iot_class: Local Polling
 <iframe width="776" height="437" src="https://www.youtube.com/embed/RtJpx8BZvMw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-**참고** : 본 통합구성요소 이외에 샤오미 블루투스 센서 **전제품군**을 추가할 수 있는 [커스텀 컴포넌트](https://cafe.naver.com/koreassistant/1117)를 참조하십시오. 
+**참고** : 본 통합구성요소 이외에 샤오미 블루투스 센서 **전제품군**을 추가할 수 있는 [커스텀 컴포넌트](https://cafe.naver.com/koreassistant/1117)를 참조하십시오. 최근에 출시한 LYWSD03MMC와 같은 제품과 같은 경우 암호키를 별도로 찾아서 설정해주셔야 합니다. [여기](https://www.kapiba.ru/2017/11/mi-home.html)서 과거 Mi-Home 앱을 다운받으신 뒤 휴대폰의 `/your_interlal_storage/vevs/logs/pairings.txt`에서 key 값을 찾아 설정해주셔야 합니다. 
 
 The `mitemp_bt` 센서 플랫폼은 모니터 온습도를 실시간으로 측정할 수 있습니다.  [LCD 내장 Xiaomi Mijia BLE 온습도 센서](https://www.amazon.com/Temperature-Humidity-Xiaomi-Bluetooth-Screen-Remote/dp/B079L6N6PC) 는 실내 온습도를 측정하는 소형 초저전력 블루투스 장치입니다. 
 

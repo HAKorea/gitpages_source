@@ -53,6 +53,11 @@ hide_github_edit: true
 * [세차 센서 제작](https://cafe.naver.com/koreassistant/809) - 검은별31
 
 ### Wallpad 
+
+<div class='videoWrapper'>
+<iframe width="1250" height="713" src="https://www.youtube.com/embed/6Sv064RfYGs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 * [월패드 RS485 관련 설명](https://cafe.naver.com/koreassistant/605) - 까꿍TM 
 
 * [코콤 월패드 제어 python 버전](https://github.com/GuGu927/RS485) - 랜이

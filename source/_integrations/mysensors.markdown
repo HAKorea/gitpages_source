@@ -10,6 +10,10 @@ ha_codeowners:
   - '@MartinHjelmare'
 ---
 
+<div class='videoWrapper'>
+<iframe width="1250" height="713" src="https://www.youtube.com/embed/RwMASJiN7uA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 [MySensors](https://www.mysensors.org) 프로젝트는 Arduino, ESP8266, Raspberry Pi, NRF24L01+, RFM69와 같은 장치를 결합하여 저렴한 센서 네트워크를 구축합니다. 이 통합구성요소는 [presentation](#presentation)이 완료된 후 사용 가능한 모든 장치를 Home Assistant에 자동으로 추가합니다. 즉, 장치를 추가하기 위해 설정에 아무것도 추가하지 않아도됩니다. 식별된 장치를 찾으려면 개발자 도구의 **상태** 섹션으로 이동하십시오.
 
 ### 설정

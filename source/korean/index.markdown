@@ -34,6 +34,7 @@ hide_github_edit: true
 
 ### Sensor
 * [LG smartThinQ](https://github.com/GuGu927/hass-smartthinq) - 랜이
+* [HACS LG SmartThinQ](https://cafe.naver.com/koreassistant/1396) - 럭키박스
 * [음식물 쓰레기 배출량](https://github.com/staiji/citywaste_korea) - staiji
 
 ### Switch
@@ -106,6 +107,12 @@ hide_github_edit: true
 * [실시간 비 예보시스템 만들기](https://cafe.naver.com/koreassistant/1244) - 크리틱
 * [아마존 AI 활용 자동화 시스템 만들기](https://cafe.naver.com/koreassistant/1225) - 민쇼
 * [ESPHOME 활용 자신만의 월패드 만들기](https://cafe.naver.com/koreassistant/1197) - 민쇼
+* [HA 정보를 이용한 미니전광판 만들기](https://cafe.naver.com/koreassistant/1397) - 민쇼
+* [DNALAND보드를 이용한 실내공기질 자동화](https://cafe.naver.com/koreassistant/1378) - 랜이 
+* [내가 원하는 곳 전력량 체크하기](https://cafe.naver.com/koreassistant/1363) - its주크
+* [Lora를 이용한 10km 반경 무료 위치 확인](https://cafe.naver.com/koreassistant/1356) - 민쇼 
+* [Home Assistant Core를 이용한 A부터 Z까지 통합 설정기](https://cafe.naver.com/koreassistant/1327) - ㅋㅋ잠자 
+* [라즈보다 저전력 PC로 가성비 좋은 서버 만들기](https://cafe.naver.com/koreassistant/1321) - 제이슨
 
 ### Lovelace 
 

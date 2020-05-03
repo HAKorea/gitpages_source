@@ -13,7 +13,7 @@ ha_codeowners:
 ---
 
 <div class='videoWrapper'>
-<iframe width="776" height="437" src="https://www.youtube.com/embed/soKuma8DJWQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/eze1CR4xObM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 [ESPHome](https://esphome.io) 장치를 통합구성요소로 사용할 시에는 [native ESPHome API](https://esphome.io/components/api.html)로 완벽하게 직접 연결되고 어떠한 상용 IOT제품보다 안정적으로 동작합니다. 

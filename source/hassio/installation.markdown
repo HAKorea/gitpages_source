@@ -112,6 +112,10 @@ Home Assistant Supervised라는 Linux 운영 체제에 Home Assistant를 설치�
 
 Home Assistant Supervised는 애드온을 포함하여 Home Assistant가 제공하는 대부분의 기능에 계속 액세스할 수 있도록합니다.
 
+<div class='videoWrapper'>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/dbWAjoKjSA4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 ### 지원되는 시스템과 제한 사항
 
 Home Assistant Supervised는 거의 모든 Linux 시스템에서 실행될 수 있지만 Home Assistant 프로젝트는 이 설치 방법에 대한 지원을 제한합니다. 

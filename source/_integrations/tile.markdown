@@ -11,7 +11,7 @@ ha_codeowners:
 ---
 
 <div class='videoWrapper'>
-<iframe width="690" height="437" src="https://www.youtube.com/embed/skD3m1fjmxE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="775" height="436" src="https://www.youtube.com/embed/VZ7LmLMch1w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 `tile` 플랫폼을 통해 Home Assistant는 [Tile® Bluetooth 추적기](https://www.thetileapp.com)를 활용할 수 있습니다. 공식 Tile 모바일앱은 모바일 장치의 Bluetooth 및 GPS를 사용하여 Tile 장치의 실제 추적을 처리합니다.

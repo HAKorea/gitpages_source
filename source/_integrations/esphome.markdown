@@ -13,7 +13,7 @@ ha_codeowners:
 ---
 
 <div class='videoWrapper'>
-<iframe width="776" height="437" src="https://www.youtube.com/embed/soKuma8DJWQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="776" height="437" src="https://www.youtube.com/embed/eze1CR4xObM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 [ESPHome](https://esphome.io) 장치를 통합구성요소로 사용할 시에는 [native ESPHome API](https://esphome.io/components/api.html)로 완벽하게 직접 연결되고 어떠한 상용 IOT제품보다 안정적으로 동작합니다. 
@@ -71,6 +71,11 @@ ha_codeowners:
   * [상용 LED 스트립에 디머스위치 추가](https://cafe.naver.com/koreassistant/288) - zeibis
   * [짬뽕형 센서 모듈](https://cafe.naver.com/koreassistant/830) - 검은별3
   * [Sonoff Basic 괴롭히기](https://cafe.naver.com/koreassistant/370) - 민쇼
+  * [중성선 필요없는 스위치](https://cafe.naver.com/koreassistant/1316) - 민쇼 
+  * [코로나19 국내 현황 모니터](https://cafe.naver.com/koreassistant/1304) - 민쇼
+  * [4.2인치 실내외 날씨 예보기](https://cafe.naver.com/koreassistant/1291) - 민쇼 
+  * [Scrape을 활용한 비예보 시스템](https://cafe.naver.com/koreassistant/1244) - 크리틱 
+  * [현대통신 ESPHOME 월패드로 엘리베이터 호출 기능 넣기](https://cafe.naver.com/koreassistant/1227) - 준테크
 
 ## 통합 구성요소(Integrations)를 통한 기기 추가 방법 
 

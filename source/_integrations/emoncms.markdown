@@ -1,5 +1,5 @@
 ---
-title: 오픈소스비쥬얼로거(Emoncms)
+title: 오픈소스에너지모니터(Emoncms)
 description: Instructions on how to integrate Emoncms feeds as sensors into Home Assistant.
 logo: emoncms.png
 ha_category:

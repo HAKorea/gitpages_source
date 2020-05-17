@@ -28,7 +28,7 @@ SmartThings는 SmartThings Cloud API를 통해 Home Assistant에 연동됩니다
 1. 홈어시스턴트에서 각각 통합구성요소 인스턴스로 표시되는 여러 SmartThings 계정과 위치를 지원합니다.
 1. 브로커, 브릿지 또는 추가 종속성이 없습니다.
 
-**최근 Smarthings의 연동방법이 쉽고 간편해졌습니다. ** 이를 연동한 HA카페의 [레이군님 게시물](https://cafe.naver.com/koreassistant/1476)을 참조하세요.  
+**최근 Smarthings의 연동방법이 쉽고 간편해졌습니다.** 이를 연동한 HA카페의 [레이군님 게시물](https://cafe.naver.com/koreassistant/1476)을 참조하세요.  
 
 ## 전제 조건
 

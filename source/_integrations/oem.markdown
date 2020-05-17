@@ -12,11 +12,13 @@ ha_iot_class: Local Polling
 <iframe width="776" height="437" src="https://www.youtube.com/embed/t3y08wBBB8c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-This platform supports the ESP8266 based "WiFi MQTT Relay / Thermostat" sold by [OpenEnergyMonitor](https://shop.openenergymonitor.com/wifi-mqtt-relay-thermostat/). The underlying [library](https://oemthermostat.readthedocs.io/) only supports this single relay variant of the [original device](https://harizanov.com/2014/12/wifi-iot-3-channel-relay-board-with-mqtt-and-http-api-using-esp8266/).
+이 플랫폼은 [OpenEnergyMonitor](https://shop.openenergymonitor.com/wifi-mqtt-relay-thermostat/)에서 판매하는 ESP8266 기반 "WiFi MQTT 릴레이/온도조절장치"를 지원합니다.
 
-This platform controls the setpoint of the thermostat in its "manual" mode.
+기본 [라이브러리](https://oemthermostat.readthedocs.io/)는 [원래 장치](https://harizanov.com/2014/12/wifi-iot-3-channel-relay-board-with-mqtt-and-http-api-using-esp8266/)의  단일 릴레이 변경만 지원합니다.
 
-To set it up, add the following information to your `configuration.yaml` file:
+이 플랫폼은 "수동" 모드에서 온도 조절기의 설정치를 제어합니다.
+
+설정하려면 `configuration.yaml` 파일에 다음 정보를 추가하십시오 :
 
 ```yaml
 # Example configuration.yaml entry

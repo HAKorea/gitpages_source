@@ -22,6 +22,7 @@ hide_github_edit: true
 
 ### Health
 * [Airkorea](https://cafe.naver.com/koreassistant/14) - stkang90
+* [Awair2mqtt](https://cafe.naver.com/koreassistant/1496) - miumida
 
 ### Network
 * [해외 로그인 알림](https://cafe.naver.com/stsmarthome/13026) - 보마
@@ -52,6 +53,9 @@ hide_github_edit: true
 * [SK weather](https://cafe.naver.com/koreassistant/16) - stkang90
 * [기상청 동네예보](https://github.com/miumida/local_weather_rss) - miumida
 * [세차 센서 제작](https://cafe.naver.com/koreassistant/809) - 검은별31
+* [대기 상태 정보 카드](https://cafe.naver.com/koreassistant/1706) - aidenyun 
+* [Miumida님 Naver Weather Custom Weather Card](https://cafe.naver.com/koreassistant/1684) - 밍밍1
+* [네이버 날씨 Custom Component](https://cafe.naver.com/koreassistant/1650) - miumida
 
 ### Wallpad 
 
@@ -113,7 +117,43 @@ hide_github_edit: true
 * [Lora를 이용한 10km 반경 무료 위치 확인](https://cafe.naver.com/koreassistant/1356) - 민쇼 
 * [Home Assistant Core를 이용한 A부터 Z까지 통합 설정기](https://cafe.naver.com/koreassistant/1327) - ㅋㅋ잠자 
 * [라즈보다 저전력 PC로 가성비 좋은 서버 만들기](https://cafe.naver.com/koreassistant/1321) - 제이슨
+* [HA앱을 이용한 위치기반 알림이](https://cafe.naver.com/koreassistant/1751) - 알카서스 
+* [5달러짜리 지문인식센서로 보안기능만들기](https://cafe.naver.com/koreassistant/1735) - 민쇼 
+* [크롬확장기능으로 다양한 아이콘 사용하기](https://cafe.naver.com/koreassistant/1732) - 그렉하우스 
+* [Broadlink IR 시스템 쉽게 활용하기](https://cafe.naver.com/koreassistant/1728) - 지영파 
+* [Smarthings 허브 없이 Smarthings 장치 HA에 활용하기](https://cafe.naver.com/koreassistant/1723) - 초후
+* [5달러짜리 CCTV를 MotionEYE에서 제대로 활용하기](https://cafe.naver.com/koreassistant/1704) - 민쇼
+* [ESP8266으로 CC2531 zigbee허브 플래싱하기](https://cafe.naver.com/koreassistant/1697) - 그렉하우스
+* [블투 확장가능 1만원짜리 오늘의 날씨 컬러LCD 기기 만들기](https://cafe.naver.com/koreassistant/1691) - 민쇼
+* [HA 3D로 우리집 꾸미기 무작정 따라하기](https://cafe.naver.com/koreassistant/1682) - 민쇼
+* [유튜브 노래 연속 재생시키기](https://cafe.naver.com/koreassistant/1668) - miumida 
+* [해외고수 유저의 그림으로 보는 HA 고급 설정](https://cafe.naver.com/koreassistant/1651) - 민쇼 
+* [하트모양 IR HUB ESPHOME으로 활용하기](https://cafe.naver.com/koreassistant/1647) - 알벗 
+* [HA 테슬라 연동 영상 제작기](https://cafe.naver.com/koreassistant/1629) - 카멜스튜디오 
+* [Mysensors를 활용한 중장거리 IOT장치 활용하기](https://cafe.naver.com/koreassistant/1611) - 민쇼 
+* [아마존 대쉬 버튼 활용하기](https://cafe.naver.com/koreassistant/1605) - 늘봄 
+* [허브없이 ESP Mesh를 활용한 스마트홈](https://cafe.naver.com/koreassistant/1592) - 민쇼
+* [1만원짜리 컬러 기상 통합모니터 만들기](https://cafe.naver.com/koreassistant/1588) - 민쇼 
+* [아이폰 NFC 태그로 도어락 열기](https://cafe.naver.com/koreassistant/1585) - rubato
+* [레이군님의 NUC 이전 사용기](https://cafe.naver.com/koreassistant/1583) - 레이군
+* [ESPHOME을 이용한 기존 아파트 모션, 도어센서 활용기](https://cafe.naver.com/koreassistant/1584) - rubato
+* [OpenMQTTGateway로 샤오미 체중계 연동하기](https://cafe.naver.com/koreassistant/1567) - 민쇼 
+* [ESPHOME을 활용한 아파트 빌트인 전열교환기 제어하기](https://cafe.naver.com/koreassistant/1563) - rubato
+* [제이슨님 코드를 활용한 HA 실시간 내차 위치 연동하기](https://cafe.naver.com/koreassistant/1562) - 민쇼 
+* [0.5만원짜리 HA 방범시스템 및 8개 스위치 만들기](https://cafe.naver.com/koreassistant/1539) - 민쇼 
+* [HA를 활용한 오피스텔 IOT 구축기](https://cafe.naver.com/koreassistant/1532) - ㅋㅋ잠자 
+* [HA에 완벽하게 연동되는 TeslaMate 도커 버전 소개](https://cafe.naver.com/koreassistant/1523) - 민쇼 
+* [ESPHOME활용 화장실 환풍기 동작 자체 자동화](https://cafe.naver.com/koreassistant/1493) - 검은별31
+* [ESPHOME활용 아이 장난감 만들기](https://cafe.naver.com/koreassistant/1491) - zeibis
+* [40달러짜리 야외 기상 관측기 만들기](https://cafe.naver.com/koreassistant/1485) - 민쇼
+* [더이상 ST스마트앱은 필요없다 ST->HA 간소화](https://cafe.naver.com/koreassistant/1476) - 레이군 
+* [아두이노 경험으로 HA에 IOT기기 추가하기](https://cafe.naver.com/koreassistant/1473) - 민쇼 
+* [독일명품 벤타 가습청정기 ESPHOME으로 자동화 만들기](https://cafe.naver.com/koreassistant/1455) - 민쇼 
+
 
 ### Lovelace 
 
 * [초보자도 만드는 HA러브레이스 응용](https://cafe.naver.com/koreassistant/1246) - 장난감놀이
+* [러브레이스 움직이는 글자 사용하기](https://cafe.naver.com/koreassistant/1577) - 장난감놀이
+* [심플한 뉴모피즘 디자인](https://cafe.naver.com/koreassistant/1570) - 장난감놀이 
+* [뉴모피즘 x 대시보드 스타일 러브레이스](https://cafe.naver.com/koreassistant/1483) - 장난감놀이 

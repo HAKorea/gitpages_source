@@ -10,17 +10,20 @@ ha_codeowners:
   - '@k4ds3'
 ---
 
-[Proxmox VE](https://www.proxmox.com/en/) is an open-source server virtualization environment. This integration allows you to poll various data from your instance.
+<div class='videoWrapper'>
+<iframe width="775" height="436" src="https://www.youtube.com/embed/LlxTPLnM3zw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
-After configuring this component, the binary sensors automatically appear.
+[Proxmox VE](https://www.proxmox.com/en/)는 오픈 소스 서버 가상화 환경입니다. 이 통합구성요소를 통해 인스턴스에서 다양한 데이터를 불러올 수 있습니다.
 
-## Configuration
+이 구성 요소를 구성하면 이진 센서가 자동으로 나타납니다.
+
+## 설정
 
 <div class='note'>
-You should have at least one VM or container entry configured, else this integration won't do anything.
+하나 이상의 VM 또는 컨테이너 항목이 구성되어 있어야합니다. 그렇지 않으면 이 통합구성요소로 아무 작업도 수행하지 않습니다.
 </div>
 
-To use the `proxmoxve` component, add the following config to your `configuration.yaml` file:
+`proxmoxve` 컴포넌트를 사용하려면 `configuration.yaml` 파일에 다음 설정을 추가하십시오.
 
 ```yaml
 # Example configuration.yaml entry
@@ -99,17 +102,17 @@ proxmoxve:
 
 ## Binary Sensor
 
-The integration will automatically create a binary sensor for each tracked virtual machine or container. The binary sensor will either be on if the VM's state is running or off if the VM's state is different.
+본 통합구성요소는 추적된 각 가상 머신 또는 컨테이너에 대한 이진 센서가 자동으로 생성됩니다. 이진 센서는 VM의 상태가 실행중인 경우 켜져 있거나 VM의 상태가 다른 경우 꺼져 있습니다.
 
-The created sensor will be called `binary_sensor.NODE_NAME_VMNAME_running`.
+생성된 센서는 `binary_sensor.NODE_NAME_VMNAME_running`입니다.
 
 ## Proxmox Permissions
 
-To be able to retrieve the status of VMs and containers, the user used to connect must minimally have the `VM.Audit` privilege. Below is a guide to how to configure a new user with the minimum required permissions.
+VM과 컨테이너의 상태를 확인하려면 연결에 사용된 사용자는 최소한 VM.Audit 권한을 가져야합니다. 다음은 최소 필수 권한으로 새 사용자를 구성하는 방법에 대한 안내서입니다.
 
 ### Create Home Assistant Role
 
-Before creating the user, we need to create a permissions role for the user.
+사용자를 만들기 전에 사용자에 대한 권한 역할을 만들어야합니다.
 
 * Click `Datacenter`
 * Open `Permissions` and click `Roles`
@@ -120,7 +123,7 @@ Before creating the user, we need to create a permissions role for the user.
 
 ### Create Home Assistant User
 
-Creating a dedicated user for home assistant limited to only the role just created is the most secure method. These instructions use the `pve` realm for the user. This allows a connection, but ensures that the user is not authenticated for SSH connections. If you use the `pve` realm, just be sure to add `realm: pve` to your config.
+방금 만든 역할로만 제한된 홈어시스턴트 전용 사용자를 작성하는 것이 가장 안전한 방법입니다. 이 명령어들은 사용자를 위해 `pve` 영역을 사용합니다. 이렇게하면 연결이 가능하지만 사용자는 SSH 연결에 대해 인증되지 않습니다. `pve` 영역을 사용한다면, 설정에 `realm: pve`를 추가하십시오.
 
 * Click `Datacenter`
 * Open `Permissions` and click `Users`
@@ -133,7 +136,7 @@ Creating a dedicated user for home assistant limited to only the role just creat
 
 ### Add User Permissions to Assets
 
-To apply the user and role just created, we need to give it permissions
+방금 생성한 사용자와 역할을 적용하려면 권한을 부여해야합니다.
 
 * Click `Datacenter`
 * Click `Permissions`

@@ -8,6 +8,9 @@ ha_iot_class: Cloud Polling
 ha_release: '0.40'
 ---
 
+<div class='videoWrapper'>
+<iframe width="775" height="436" src="https://www.youtube.com/embed/lCFzOA21h1M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
 `dnsip` 센서는 DNS 확인을 통해 가져온 IP 주소를 값으로 노출합니다. 두 가지 작동 모드가 있습니다.
 
 1. 최소 설정으로 센서를 활성화하면 호스트 이름이 `myip.opendns.com`인 [OpenDNS](https://www.opendns.com/) 네임 서버를 쿼리하여 external/public IP 주소로 확인합니다. 

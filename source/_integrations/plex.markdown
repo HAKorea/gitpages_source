@@ -13,6 +13,10 @@ ha_codeowners:
   - '@jjlawren'
 ---
 
+<div class='videoWrapper'>
+<iframe width="1250" height="713" src="https://www.youtube.com/embed/s-TTmdZ4rn0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 `plex` 통합구성요소로 [Plex Media Server](https://plex.tv)에 연결할 수 있습니다. 
 한번 연결되면 연결된 Plex Media Server에서 미디어를 재생하는 [Plex Clients](https://www.plex.tv/apps-devices/)가 [Media Players](/integrations/media_player/)로 표시되고 Home Assistant의 [Sensor](/integrations/sensor/)를 통해 재생 상태를 보고합니다. 미디어 플레이어를 사용하면 미디어 재생을 제어하고 현재 재생중인 항목을 볼 수 있습니다.
 

@@ -11,6 +11,8 @@ ha_codeowners:
   - '@fabaff'
 ---
 
+<div class='videoWrapper'><iframe width="1249" height="712" src="https://www.youtube.com/embed/49Nv1HqYhqQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
 `threshold` 이진 센서 플랫폼은 다른 센서의 상태를 관찰합니다. 값이 주어진 임계값보다 낮거나(`lower`) 높거나( `upper`)하면 임계값 센서의 상태가 변경됩니다. `lower`와 `upper`가 주어지면 범위를 지원합니다.
 
 센서가 히스테리시스(탄력성)없이 설정되고 센서값이 임계값과 같으면 임계값에 대해 센서가 `lower` 또는 `upper`가 아니기 때문에 센서가 꺼집니다. 

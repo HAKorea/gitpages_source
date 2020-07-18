@@ -8,6 +8,8 @@ ha_release: 0.57
 ha_quality_scale: internal
 ---
 
+<div class='videoWrapper'><iframe width="775" height="436" src="https://www.youtube.com/embed/jIE4MtBWdE8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
 `timer` 통합구성요소의 목적은 (동적으로)기간에 따라 자동화를 단순화합니다
 
 타이머가 끝나거나 취소되면 해당 이벤트가 시작됩니다. 이를 통해 주어진 지속시간이 경과됬거나 취소되었기 때문에 타이머가 `active`에서 `idle`로 전환되었는지 구별할 수 있습니다. 자동화에서 타이머를 제어하려면 아래 언급된 서비스를 사용할 수 있습니다. 이미 실행중인 타이머에서 `start`서비스를 호출하면, 취소되거나 완료된 이벤트를 트리거하지 않고 타이머를 완료하고 다시시작해야하는 시간이 재설정됩니다. 예를 들어 모션센서에 의해 트리거되는 시간이 지정된 조명을 쉽게 만들 수 있습니다. 타이머를 시작하면 타이머가 일시중지되지 않은 경우 시작된 이벤트가 트리거되며, 이 경우 다시시작된 이벤트가 트리거됩니다.

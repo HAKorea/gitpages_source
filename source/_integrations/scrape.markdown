@@ -10,6 +10,8 @@ ha_codeowners:
   - '@fabaff'
 ---
 
+<div class='videoWrapper'><iframe width="1250" height="713" src="https://www.youtube.com/embed/RZ7DkD3G6aM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
 `scrape` 센서 플랫폼은 웹사이트에서 정보를 스크랩합니다. 센서는 HTML 페이지를 로드하고 값을 검색하고 분리할 수 있는 옵션을 제공합니다. 이는 [scrapy](https://scrapy.org/)와 같은 본격적인 웹스크레이퍼가 아니기 때문에 간단한 웹페이지에서만 작동하며 올바른 섹션을 얻는데 시간이 오래 걸릴 수 있습니다.
 
 ### 한국형 스크랩 사례

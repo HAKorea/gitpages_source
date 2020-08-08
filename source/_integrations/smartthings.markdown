@@ -339,6 +339,9 @@ SmartThings가 webhook URL을 사용하여 Home Assistant 인스턴스에 도달
 
 ### Debugging
 
+<div class='videoWrapper'>
+<iframe width="775" height="436" src="https://www.youtube.com/embed/ijNNxn8TbKE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
 SmartThings 통합구성요소는 로그 레벨이 `debug`로 설정된 경우 수신된 푸시 업데이트, 발생한 이벤트 및 기타 메시지에 대한 추가 정보를 기록합니다. 아래의 관련 내용을 `configuration.yaml`에 추가하십시오 :
 
 ```yaml

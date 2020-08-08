@@ -8,6 +8,8 @@ ha_release: 0.26
 ha_quality_scale: internal
 ---
 
+<div class='videoWrapper'><iframe width="776" height="437" src="https://www.youtube.com/embed/cSMUF0WTP0Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
 `group` 알림 플랫폼을 사용하면 여러 `notify` 플랫폼을 단일 서비스로 결합 할 수 있습니다.
 
 ## 설정

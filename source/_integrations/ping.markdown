@@ -10,6 +10,8 @@ ha_release: 0.43
 ha_quality_scale: internal
 ---
 
+<div class='videoWrapper'><iframe width="775" height="436" src="https://www.youtube.com/embed/ZqvMIGill4g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
 현재 홈어시스턴트에는 다음과 같은 장치 유형이 지원됩니다.
 
 - [Binary Sensor](#binary-sensor)

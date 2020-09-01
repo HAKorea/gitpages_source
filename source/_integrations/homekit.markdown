@@ -7,6 +7,8 @@ ha_release: 0.64
 logo: apple-homekit.png
 ---
 
+<div class='videoWrapper'><iframe width="776" height="437" src="https://www.youtube.com/embed/ACkmLC85c84" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
 <div class='videoWrapper'>
 <iframe width="776" height="437" src="https://www.youtube.com/embed/m46HUBhZoDQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>

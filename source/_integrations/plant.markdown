@@ -10,6 +10,8 @@ ha_codeowners:
   - '@ChristianKuehnel'
 ---
 
+<div class='videoWrapper'><iframe width="776" height="437" src="https://www.youtube.com/embed/AmsmAuHolHw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
 이 `plant` 구성 요소를 사용하면 식물의 수분, 전도도, 광도, 온도 및 배터리 수준을 단일 UI 요소로 병합할 수 있습니다. 또한 각 측정에 대한 최소값과 최대 값 설정을 지원하며 해당 한계 내에 있지 않은 경우 상태를 "problem"로 변경합니다. 
 
 ## 설정

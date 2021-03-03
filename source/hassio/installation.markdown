@@ -185,11 +185,15 @@ curl -sL "https://raw.githubusercontent.com/home-assistant/supervised-installer/
 
 리스트에서 머신 타입을 찾을 수 없다면 `qemu` 릴리즈를 선택해야합니다. 즉, 일반적인 64 비트 Linux 배포의 경우 `qemux86-64` 또는 Raspberry Pi 클론 또는 TV 박스와 같은 최신 ARM 기반 대상의 경우 qemuarm-64입니다.
 
-## 또 다른 방법: 시놀로지 NAS에서의 설치
+HA 네이버카페 멀더요원님의 [시놀로지 NAS에 Home Assistant 설치하기](https://cafe.naver.com/koreassistant/95)를 참고하십시오. 
 
-Synology NAS에서는 Docker를 이용해 설치를 진행합니다. 
+<div class='videoWrapper'>
+<iframe width="690" height="437" src="https://www.youtube.com/embed/QdBYUbj0B5Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
-[공식문서의 Synology NAS](https://www.home-assistant.io/installation/alternative#synology-nas) 섹션을 참고하십시오.
+
+>❗️ Synology DSM package 개발자의 [최신 글](https://community.home-assistant.io/t/home-assistant-supervised-previously-known-as-hass-io-on-synology-dsm-as-native-package-not-supported-or-working-atm/125559)에 따르면, Synology NAS Package Manager를 이용한 설치방법은 21년 1월 15일부로 지원이 중단되었습니다.
+만약 이 방법에 문제가 생긴다면 개발자의 제안을 따라 [공식문서의 Synology NAS](https://www.home-assistant.io/installation/alternative#synology-nas) 섹션을 참고하십시오.
 
 
 ## 또 다른 방법: 가상 머신에서의 설치 

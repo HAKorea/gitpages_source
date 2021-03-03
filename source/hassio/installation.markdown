@@ -187,11 +187,10 @@ curl -sL "https://raw.githubusercontent.com/home-assistant/supervised-installer/
 
 ## 또 다른 방법: 시놀로지 NAS에서의 설치
 
-HA 네이버카페 멀더요원님의 [시놀로지 NAS에 Home Assistant 설치하기](https://cafe.naver.com/koreassistant/95)를 참고하십시오. 
+Synology NAS에서는 Docker를 이용해 설치를 진행합니다. 
 
-<div class='videoWrapper'>
-<iframe width="690" height="437" src="https://www.youtube.com/embed/QdBYUbj0B5Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+[공식문서의 Synology NAS](https://www.home-assistant.io/installation/alternative#synology-nas) 섹션을 참고하십시오.
+
 
 ## 또 다른 방법: 가상 머신에서의 설치 
 
